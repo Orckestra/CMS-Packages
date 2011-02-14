@@ -1,0 +1,100 @@
+<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0">
+	<cms:bindings>
+		<cms:binding name="Id" type="System.Guid" optional="true" />
+		<cms:binding name="Title" type="System.String" optional="true" />
+		<cms:binding name="Image" type="System.String" optional="true" />
+		<cms:binding name="Teaser" type="System.String" optional="true" />
+		<cms:binding name="Date" type="System.DateTime" optional="true" />
+		<cms:binding name="Author" type="System.Guid" optional="true" />
+		<cms:binding name="Tags" type="System.String" optional="true" />
+		<cms:binding name="Content" type="System.String" optional="true" />
+		<cms:binding name="PageId" type="System.Guid" optional="true" />
+		<cms:binding name="DisplayComments" type="System.Boolean" optional="true" />
+		<cms:binding name="AllowNewComments" type="System.Boolean" optional="true" />
+		<cms:binding name="NotifyOnNewComments" type="System.Boolean" optional="true" />
+	</cms:bindings>
+	<cms:layout>
+		<cms:layout.label>
+			<cms:read source="Title" />
+		</cms:layout.label>
+		<TabPanels>
+			<FieldGroup Label="Settings">
+				<TextBox Label="Title" Help="The title of the blog entry. Consider a short title for quick reference in lists and feeds.">
+					<TextBox.Text>
+						<cms:bind source="Title" />
+					</TextBox.Text>
+				</TextBox>
+				<DataReferenceTreeSelector Label="Image" Help="The image to illustrate the blog entry (optional)." Handle="Composite.Management.ImageSelectorDialog" SearchToken="Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider.MediaFileSearchToken,Composite|MimeTypes=',\ \'image/gif\',\ \'image/jpeg\',\ \'image/png\',\ \'image/bmp\'', Extensions=null, Folder=null, HideSubfolders='False', Keyword=null" DataType="Composite.Data.Types.IImageFile,Composite" NullValueAllowed="true">
+					<DataReferenceTreeSelector.Selected>
+						<cms:bind source="Image" />
+					</DataReferenceTreeSelector.Selected>
+				</DataReferenceTreeSelector>
+				<TextArea Label="Teaser" Help="The summary or highlights of the blog entry's content. Consider a short description, one or two lines long.">
+					<TextArea.Text>
+						<cms:bind source="Teaser" />
+					</TextArea.Text>
+				</TextArea>
+				<DateTimeSelector Label="Date" Help="The date of the blog entry’s publication.">
+					<DateTimeSelector.Date>
+						<cms:bind source="Date" />
+					</DateTimeSelector.Date>
+				</DateTimeSelector>
+				<KeySelector Label="Author" Help="The name of the blog entry's author." OptionsKeyField="Key" OptionsLabelField="Label" Required="true">
+					<KeySelector.Selected>
+						<cms:bind source="Author" />
+					</KeySelector.Selected>
+					<KeySelector.Options>
+						<f:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=1.2.3637.26658, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;
+	  &lt;t n=&quot;DynamicType:Composite.Community.Blog.Authors&quot; /&gt;&#xD;
+	&lt;/t&gt;" Method="GetOptions" Parameters="DynamicType:Composite.Community.Blog.Authors" />
+					</KeySelector.Options>
+				</KeySelector>
+
+				<CheckBox Label="Display comments" Help="If this option is selected, the comments to blog entries will be displayed.">
+					<CheckBox.Checked>
+						<cms:bind source="DisplayComments" />
+					</CheckBox.Checked>
+				</CheckBox>
+
+				<CheckBox Label="Allow new comments" Help="If this option is selected, adding new comments to blog entries will be allowed.">
+					<CheckBox.Checked>
+						<cms:bind source="AllowNewComments" />
+					</CheckBox.Checked>
+				</CheckBox>
+
+				<CheckBox Label="Notify on new comments" Help="If this option is selected, the author of the blog entry will receive a notification by email when a new comment is added.">
+					<CheckBox.Checked>
+						<cms:bind source="NotifyOnNewComments" />
+					</CheckBox.Checked>
+				</CheckBox>
+
+			</FieldGroup>
+			<FieldGroup Label="Tags">
+				<MultiKeySelector Label="Tags" Help="A key word or term assigned to the blog entry to classify its content and help in search and filtering. If necessary, select one or more tags that best describe the item." OptionsKeyField="Key" OptionsLabelField="Label" Required="true" CompactMode="false">
+					<MultiKeySelector.SelectedAsString>
+						<cms:bind source="Tags" />
+					</MultiKeySelector.SelectedAsString>
+					<MultiKeySelector.Options>
+						<f:StaticMethodCall Type="Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.String.SelectorWidgetFunction,Composite" Method="GetOptions" Parameters="&lt;SelectorOptionsSource KeyFieldName=&quot;Tag&quot; LabelFieldName=&quot;Tag&quot;&gt;&#xD;
+	  &lt;TreeNode&gt;&#xD;
+	    &lt;f:param xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Options&quot;&gt;&#xD;
+	      &lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Community.Blog.Tags.GetTagsXml&quot;&gt;&#xD;
+	        &lt;f:param name=&quot;PropertyNames&quot;&gt;&#xD;
+	          &lt;f:paramelement value=&quot;Tag&quot; /&gt;&#xD;
+	        &lt;/f:param&gt;&#xD;
+	        &lt;f:param name=&quot;OrderByField&quot; value=&quot;Tag&quot; /&gt;&#xD;
+	      &lt;/f:function&gt;&#xD;
+	    &lt;/f:param&gt;&#xD;
+	  &lt;/TreeNode&gt;&#xD;
+	&lt;/SelectorOptionsSource&gt;" />
+					</MultiKeySelector.Options>
+				</MultiKeySelector>
+			</FieldGroup>
+			<XhtmlEditor Label="Content" Help="The content of the blog entry." ClassConfigurationName="common">
+				<XhtmlEditor.Xhtml>
+					<cms:bind source="Content" />
+				</XhtmlEditor.Xhtml>
+			</XhtmlEditor>
+		</TabPanels>
+	</cms:layout>
+</cms:formdefinition>

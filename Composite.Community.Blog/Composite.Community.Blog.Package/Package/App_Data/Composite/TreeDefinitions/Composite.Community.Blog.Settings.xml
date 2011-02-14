@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AutoAttachments>
+		<NamedParent Name="Content.WebsiteItems" Position="Bottom"/>
+	</ElementStructure.AutoAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Label="Blog Settings" Id="BlogSettings">
+				<Actions>
+					<AddDataAction Label="Add Author" Type="Composite.Community.Blog.Authors"/>
+					<AddDataAction Label="Add Tag" Type="Composite.Community.Blog.Tags"/>
+				</Actions>
+				<Children>
+					<Element Label="Authors" Id="BlogAuthors">
+						<Actions>
+							<AddDataAction Label="Add Author" Type="Composite.Community.Blog.Authors"/>
+						</Actions>
+						<Children>
+							<DataElements Type="Composite.Community.Blog.Authors" Label="${C1:Data:Composite.Community.Blog.Authors:Name}" Display="Auto">
+								<Actions>
+									<EditDataAction Label="Edit Author" />
+									<DeleteDataAction Label="Delete Author" />
+								</Actions>
+							</DataElements>
+						</Children>
+					</Element>
+					<Element Label="Tags" Id="BlogTags">
+						<Actions>
+							<AddDataAction Label="Add Tag" Type="Composite.Community.Blog.Tags"/>
+						</Actions>
+						<Children>
+							<DataElements Type="Composite.Community.Blog.Tags" Label="${C1:Data:Composite.Community.Blog.Tags:Tag}" Display="Auto">
+								<Actions>
+									<EditDataAction Label="Edit Tag" />
+									<DeleteDataAction Label="Delete Tag" />
+								</Actions>
+							</DataElements>
+						</Children>
+					</Element>
+				</Children>
+			</Element>
+		</Children>
+	</ElementRoot>
+</ElementStructure>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AllowedAttachments ApplicationName="Blog">
+		<DataType Type="Composite.Data.Types.IPage"/>
+	</ElementStructure.AllowedAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Label="Blog Entries" Id="Root">
+				<Actions>
+					<AddDataAction Label="Add Blog Entry" Type="Composite.Community.Blog.Entries"/>
+				</Actions>
+				<Children>
+					<DataFolderElements Type="Composite.Community.Blog.Entries" DateFormat="yyyy MMMM" FieldGroupingName="Date" Display="Compact">
+						<Children>
+							<DataElements Type="Composite.Community.Blog.Entries" Label="${C1:Data:Composite.Community.Blog.Entries:Title}" Display="Auto">
+								<Actions>
+									<EditDataAction Label="Edit Blog Entry" />
+									<DeleteDataAction Label="Delete Blog Entry" />
+								</Actions>
+								<Filters>
+									<ParentIdFilter ParentType="Composite.Data.Types.IPage" ReferenceFieldName="PageId" />
+								</Filters>
+								<OrderBy>
+									<Field FieldName="Date" Direction="descending"></Field>
+								</OrderBy>
+								<Children>
+									<Element Label="Comments" Id="Comments">
+										<Children>
+											<DataElements Type="Composite.Community.Blog.Comments" Label="${C1:Data:Composite.Community.Blog.Comments:Title}" Display="Compact">
+												<Actions>
+													<EditDataAction Label="Edit Comment" />
+													<DeleteDataAction Label="Delete Comment" />
+												</Actions>
+												<Filters>
+													<ParentIdFilter ParentType="Composite.Community.Blog.Entries" ReferenceFieldName="BlogEntry" />
+												</Filters>
+												<OrderBy>
+													<Field FieldName="Date" Direction="descending"></Field>
+												</OrderBy>
+											</DataElements>
+										</Children>
+									</Element>
+								</Children>
+							</DataElements>
+						</Children>
+					</DataFolderElements>
+				</Children>
+			</Element>
+		</Children>
+	</ElementRoot>
+</ElementStructure>

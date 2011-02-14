@@ -1,0 +1,42 @@
+<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0">
+  <cms:bindings>
+    <cms:binding name="Id" type="System.Guid" optional="true" />
+    <cms:binding name="Name" type="System.String" optional="true" />
+    <cms:binding name="Email" type="System.String" optional="true" />
+    <cms:binding name="Picture" type="System.String" optional="true" />
+    <cms:binding name="DisplayEmail" type="System.Boolean" optional="true" />
+    <cms:binding name="Password" type="System.String" optional="true" />
+  </cms:bindings>
+  <cms:layout>
+    <cms:layout.label>
+      <cms:read source="Name" />
+    </cms:layout.label>
+    <FieldGroup>
+      <TextBox Label="Name" Help="The name of the blog's author. Also used as the username to post to the blog from external applications  (Windows Live Writer etc) via MetaWebBlog">
+        <TextBox.Text>
+          <cms:bind source="Name" />
+        </TextBox.Text>
+      </TextBox>
+      <TextBox Label="Email" Help="The author’s email address.">
+        <TextBox.Text>
+          <cms:bind source="Email" />
+        </TextBox.Text>
+      </TextBox>
+      <DataReferenceTreeSelector Label="Picture" Help="The photo or image (avatar) to graphically represent the blog’s author." Handle="Composite.Management.ImageSelectorDialog" SearchToken="Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider.MediaFileSearchToken,Composite|MimeTypes=',\ \'image/gif\',\ \'image/jpeg\',\ \'image/png\',\ \'image/bmp\'', Extensions=null, Folder=null, HideSubfolders='False', Keyword=null" DataType="Composite.Data.Types.IImageFile,Composite" NullValueAllowed="true">
+        <DataReferenceTreeSelector.Selected>
+          <cms:bind source="Picture" />
+        </DataReferenceTreeSelector.Selected>
+      </DataReferenceTreeSelector>
+      <CheckBox Label="Display Email" Help="Display the author's email address.">
+        <CheckBox.Checked>
+          <cms:bind source="DisplayEmail" />
+        </CheckBox.Checked>
+      </CheckBox>
+      <TextBox Label="Password" Type="Password" Help="The password used by the author to post to the blog from external applications  (Windows Live Writer etc) via MetaWebBlog. External posting is impossible when the password is blank.">
+        <TextBox.Text>
+          <cms:bind source="Password" />
+        </TextBox.Text>
+      </TextBox>
+    </FieldGroup>
+  </cms:layout>
+</cms:formdefinition>

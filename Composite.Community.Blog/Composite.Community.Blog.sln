@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Community.Blog", "Composite.Community.Blog\Composite.Community.Blog.csproj", "{86537839-E75D-42AF-AB00-5F0A136EEB1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Community.Blog.Package", "Composite.Community.Blog.Package\Composite.Community.Blog.Package.csproj", "{5ABB45B7-FE54-4C10-9574-82B79F4DB9B6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{86537839-E75D-42AF-AB00-5F0A136EEB1D} = {86537839-E75D-42AF-AB00-5F0A136EEB1D}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.Community.Blog\\Composite.Community.Blog.csproj
+		SccProjectName1 = Composite.Community.Blog
+		SccLocalPath1 = Composite.Community.Blog
+		SccProjectUniqueName2 = Composite.Community.Blog.Package\\Composite.Community.Blog.Package.csproj
+		SccProjectName2 = Composite.Community.Blog.Package
+		SccLocalPath2 = Composite.Community.Blog.Package
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86537839-E75D-42AF-AB00-5F0A136EEB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86537839-E75D-42AF-AB00-5F0A136EEB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86537839-E75D-42AF-AB00-5F0A136EEB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86537839-E75D-42AF-AB00-5F0A136EEB1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ABB45B7-FE54-4C10-9574-82B79F4DB9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ABB45B7-FE54-4C10-9574-82B79F4DB9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ABB45B7-FE54-4C10-9574-82B79F4DB9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ABB45B7-FE54-4C10-9574-82B79F4DB9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

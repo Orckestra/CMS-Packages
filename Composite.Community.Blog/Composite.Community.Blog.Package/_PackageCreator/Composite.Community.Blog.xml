@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:PageTypes>
+		<Add name="Blog" />
+	</pc:PageTypes>
+	<pc:XsltFunctions>
+		<Add name="Composite.Community.Blog.Archive" />
+		<Add name="Composite.Community.Blog.Comments" />
+		<Add name="Composite.Community.Blog.TagCloud" />
+		<Add name="Composite.Community.Blog.BlogRenderer" />
+	</pc:XsltFunctions>
+	<pc:CSharpFunctions>
+		<Add name="Composite.Community.Blog.SaveComment" />
+		<Add name="Composite.Community.Blog.GetArchiveXml" />
+		<Add name="Composite.Community.Blog.GetTagCloudXml" />
+		<Add name="Composite.Community.Blog.GetCommentsCount" />
+		<Add name="Composite.Community.Blog.XsltExtensions" />
+		<Add name="Composite.Community.Blog.GetBlogFilterFromUrl" />
+		<Add name="Composite.Community.Blog.GetCommentsFilterFromUrl" />
+	</pc:CSharpFunctions>
+	<pc:DynamicDataTypes>
+		<Add name="Composite.Community.Blog.Authors" />
+		<Add name="Composite.Community.Blog.Comments" />
+		<Add name="Composite.Community.Blog.Tags" />
+		<Add name="Composite.Community.Blog.Entries" />
+	</pc:DynamicDataTypes>
+	<pc:Directories>
+		<Add name="Frontend\Composite\Community\Blog\" />
+		<Add name="App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\" />
+	</pc:Directories>
+	<pc:Files>
+		<Add name="BlogRssFeed.ashx" />
+		<Add name="Bin\Composite.Community.Blog.dll" />
+		<Add name="App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" />
+		<Add name="App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Settings.xml" />
+		<Add name="BlogMetaWeblog.ashx" />
+		<Add name="Bin\CookComputing.XmlRpcV2.dll" />
+	</pc:Files>
+	<pc:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite" Ordering="10">
+			<XslFiles>
+				<XslFile pathXml="~\Web.config" installXsl="~\Config\Install.xsl" />
+			</XslFiles>
+		</mi:Add>
+	</pc:PackageFragmentInstallers>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.Blog" groupName="Composite.Community" version="1.4.4" author="Composite A/S" website="http://composite.net" id="303b7865-055b-4fe7-a429-907b32bb6776" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+		<Description>This package sets up one or more blogs on a website. Blog entries can be filtered by month/year or tag, shared at many popular online communities and services, commented on or fed to RSS aggregators.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
