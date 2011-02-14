@@ -27,10 +27,10 @@
 		<msxsl:assembly name="System.Web" />
 		<msxsl:using namespace="System.Web" />
 		<![CDATA[
-	public string UrlEncode(string text)
-	{
-		return HttpUtility.UrlEncode(text);
-	}
-	]]>
+			public string UrlEncode(string text)
+			{
+				return HttpUtility.UrlEncode(text);
+			}
+		]]>
 	</msxsl:script>
 </xsl:stylesheet>
