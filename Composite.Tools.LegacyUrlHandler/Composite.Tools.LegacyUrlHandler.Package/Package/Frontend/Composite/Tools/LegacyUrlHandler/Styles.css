@@ -1,0 +1,88 @@
+﻿body {
+	text-align: center;
+	padding: 3em;
+}
+
+body, input, select, textarea {
+	font-family: Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+.corner {
+	vertical-align:top;
+	vertical-align:top;
+	width: 48px;
+	height: 48px;
+	overflow:hidden;
+}
+
+.backgroundfill {
+	background-color: #ffffff;
+}
+
+.left {
+	vertical-align:top;
+	width: 50px;
+	overflow:hidden;
+	background-image: url("Images/left.png");
+}
+
+.right {
+	vertical-align:top;
+	width: 50px;
+	overflow:hidden;
+	background-image: url("Images/right.png");
+}
+
+.top {
+	vertical-align:top;
+	overflow:hidden;
+	background-image: url("Images/top.png");
+}
+
+.bottom {
+	vertical-align:top;
+	overflow:hidden;
+	background-image: url("Images/bottom.png");
+}
+
+.title img {
+	vertical-align:middle;
+}
+
+.title {
+	color: #000000;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.title img {
+	vertical-align:middle;
+}
+
+fieldset {
+	margin: 1.5em 0 0 0;
+	padding: 0;
+	border: none;
+	text-align: left;
+}
+
+h4 {
+	color: #000000;
+	font-weight:bold;
+	font-size: 100%;
+	margin-bottom: 0;
+	padding-left:3px;
+}
+
+.info {
+	color: Black;
+}
+
+.error {
+	color: Red;
+}
+
+table.list td{
+	border: 1px solid #C1C1C1;
+}

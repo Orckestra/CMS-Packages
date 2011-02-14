@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3993.21339" maximumCompositeVersion="2.9.9" />
+	<mi:PackageInformation name="Composite.Tools.LegacyUrlHandler" groupName="Composite.Tools" version="1.0.7" author="Composite A/S" website="http://composite.net" id="f0de8a66-23b8-41de-8cdc-9dc6d4395022" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Legacy url handler</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\RemoveRedunantPaths.aspx" targetFilename="~\RemoveRedunantPaths.aspx" allowOverwrite="false" />
+				<File sourceFilename="~\StoreCurrentPaths.aspx" targetFilename="~\StoreCurrentPaths.aspx" allowOverwrite="false" />
+				<File sourceFilename="~\Bin\Composite.Tools.LegacyUrlHandler.dll" targetFilename="~\Bin\Composite.Tools.LegacyUrlHandler.dll" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Composite\Tools\LegacyUrlHandler\" targetDirectory="~\Frontend\Composite\Tools\LegacyUrlHandler\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite" Ordering="10">
+			<XslFiles>
+				<XslFile pathXml="~\Web.config" installXsl="~\Config\Install.xsl" />
+			</XslFiles>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
