@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:XsltFunctions>
+		<Add name="Composite.Web.Maps.GoogleMaps" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.0" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.Web.Maps.GoogleMaps" groupName="Composite.Web.Maps" version="1.0.1" author="Composite A/S" website="http://composite.net" id="941de2b9-b1a2-4edf-9a67-b70dcdac39b8" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Shows a map for an address using Google Maps</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
