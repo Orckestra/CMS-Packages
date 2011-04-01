@@ -1,8 +1,8 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.Blog" groupName="Composite.Community" version="1.4.4" author="Composite A/S" website="http://composite.net" id="303b7865-055b-4fe7-a429-907b32bb6776" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
-		<Description>This package sets up one or more blogs on a website. Blog entries can be filtered by month/year or tag, shared at many popular online communities and services, commented on or fed to RSS aggregators.</Description>
+	<mi:PackageInformation name="Composite.Community.Blog" groupName="Composite.Community" version="1.4.8" author="Composite A/S" website="http://composite.net" id="303b7865-055b-4fe7-a429-907b32bb6776" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+		<Description>Allows you to set up one or more blogs on a website. Entries can be filtered by month/year or tag, commented on, shared with popular online communities and services. Supports RSS export.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>

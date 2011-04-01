@@ -12,12 +12,14 @@ namespace Composite.Community.Blog
 {
 	public class BlogRssFeed : IHttpHandler
 	{
+		public const string CacheRSSKeyTemplate = "BlogRssFeed-{0}-{1}";
+
 		public void ProcessRequest(HttpContext context)
 		{
 			var pageId = new Guid(context.Request["bid"]);
 			var cultureName = context.Request["cultureName"];
 
-			string cachedRssKey = string.Format("BlogRssFeed-{0}-{1}", pageId, cultureName);
+			string cachedRssKey = string.Format(CacheRSSKeyTemplate, pageId, cultureName);
 			if (context.Cache[cachedRssKey] == null)
 			{
 				if (string.IsNullOrEmpty(cultureName))

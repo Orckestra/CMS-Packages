@@ -269,7 +269,17 @@ namespace Composite.Community.Blog
 		public static string Encode(string text)
 		{
 			text = HttpContext.Current.Server.UrlEncode(text);
-			return text.Replace("+","%20");
+			return text.Replace("+", "%20");
+		}
+
+		public static void ClearRssFeedCache(object sender, DataEventArgs dataEventArgs)
+		{
+			Entries entry = (Entries)dataEventArgs.Data;
+			if (entry != null)
+			{
+				HttpRuntime.Cache.Remove(string.Format(BlogRssFeed.CacheRSSKeyTemplate, entry.PageId, GetCurrentCultureName()));
+			}
+			
 		}
 	}
 }
