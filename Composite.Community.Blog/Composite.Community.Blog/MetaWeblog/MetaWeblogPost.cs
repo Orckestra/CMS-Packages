@@ -48,10 +48,15 @@ namespace Composite.Community.Blog.MetaWeblog
 
 		public bool DeletePost()
 		{
-			DataFacade.Delete<Entries>(predicate);
+			foreach (PublicationScope scope in Enum.GetValues(typeof(PublicationScope)))
+			{
+				using (DataConnection connection = new DataConnection(scope))
+				{
+					var entries = connection.Get<Entries>().Where(predicate);
+					connection.Delete<Entries>(entries);
+				}
+			}
 			return true;
 		}
-
-
 	}
 }
