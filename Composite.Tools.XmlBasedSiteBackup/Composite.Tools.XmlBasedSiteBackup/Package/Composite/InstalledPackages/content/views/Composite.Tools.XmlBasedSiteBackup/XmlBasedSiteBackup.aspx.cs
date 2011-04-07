@@ -15,7 +15,6 @@ public partial class XmlBasedSiteBackup : Page
 	string hash = "App_Data\\Backups";
 	private static object _lock = new object();
 	protected readonly string _deleteCommand = "DeleteCommand";
-	public Repeater BackupList;
 
 	public string BackupFilename
 	{
