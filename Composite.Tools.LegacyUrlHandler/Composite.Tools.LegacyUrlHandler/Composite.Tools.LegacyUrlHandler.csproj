@@ -35,7 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Composite">
+    <Reference Include="Composite, Version=2.1.4000.27166, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Composite.Tools.LegacyUrlHandler.Package\Dll\Composite.dll</HintPath>
     </Reference>
     <Reference Include="System" />

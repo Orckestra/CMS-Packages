@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
+using Composite.Core.IO;
 using Composite.Core.WebClient.Renderings.Page;
+using Composite.Core.Xml;
 using Composite.Data;
 using Composite.Data.Types;
 
@@ -27,12 +27,14 @@ namespace Composite.Tools.LegacyUrlHandler
 
 			doc.Add(xe);
 
+			//TODO: use XmlWriterUtils.Create() when it's will be public. Now it's internal.
 			var writer = new XmlTextWriter(XmlFileName, null)
 			             	{
 			             		Formatting = Formatting.Indented,
 			             		Indentation = 1,
 			             		IndentChar = '\t'
 			             	};
+
 			doc.Save(writer);
 			writer.Close();
 		}
@@ -41,9 +43,9 @@ namespace Composite.Tools.LegacyUrlHandler
 		{
 			var mappings = new Dictionary<string, string>();
 
-			if (File.Exists(XmlFileName))
+			if (C1File.Exists(XmlFileName))
 			{
-				var doc = XDocument.Load(XmlFileName).Descendants("Mapping");
+				var doc = XDocumentUtils.Load(XmlFileName).Descendants("Mapping");
 
 				foreach (var m in doc)
 				{
