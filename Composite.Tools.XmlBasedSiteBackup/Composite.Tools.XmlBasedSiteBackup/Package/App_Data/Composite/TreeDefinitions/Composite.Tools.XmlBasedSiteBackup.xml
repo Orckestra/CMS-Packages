@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AutoAttachments>
+		<NamedParent Name="System" Position="Bottom"/>
+	</ElementStructure.AutoAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Label="XML-based site backup" Id="XmlBasedSiteBackup" Icon="save">
+				<Actions>
+					<CustomUrlAction Url="~/Composite/InstalledPackages/content/views/Composite.Tools.XmlBasedSiteBackup/XmlBasedSiteBackup.aspx" Label="Open" Icon="forward" ViewLabel="XML-based site backup" ViewIcon="save" ViewToolTip="sdsad" ViewType="documentview" />
+				</Actions>
+			</Element>
+		</Children>
+	</ElementRoot>
+</ElementStructure>
