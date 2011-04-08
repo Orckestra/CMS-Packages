@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Add Id="7ff3973c-d44e-4692-95f5-b1f33d433b5c" Name="Detail" Namespace="Composite.Lists.FAQ" Description="Display FAQ for a given target audience" OutputXmlSubType="XHTML" XslFilePath="\Composite\Lists\FAQ\Detail.xsl" />
+  <Add Id="eea1d073-f54b-4ce2-a4b6-28b67a434755" Name="Latest" Namespace="Composite.Lists.FAQ" Description="Emits the question part of the latest FAQ items" OutputXmlSubType="XHTML" XslFilePath="\Composite\Lists\FAQ\Latest.xsl" />
+</Data>
