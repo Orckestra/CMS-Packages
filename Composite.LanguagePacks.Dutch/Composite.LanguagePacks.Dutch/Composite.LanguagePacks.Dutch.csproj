@@ -98,6 +98,7 @@
     <Content Include="Package\Config\Install.xsl" />
     <Content Include="Package\Config\Uninstall.xsl" />
     <Content Include="Package\install.xml" />
+    <Content Include="_PackageCreator\Composite.LanguagePacks.Dutch.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Release\Composite.LanguagePacks.Dutch.zip" />

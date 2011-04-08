@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Localizations>
+		<Add name="uk-UA" />
+	</pc:Localizations>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3800.0000" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.LanguagePacks.Dutch" groupName="Composite.LanguagePack" version="1.0.8" author="Composite A/S" website="www.composite.net" id="DF2C772B-66BB-4607-8F25-CDC3532D695E" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Dutch language pack for the console GUI.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
