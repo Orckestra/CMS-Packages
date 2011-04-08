@@ -1,0 +1,63 @@
+﻿		<hr />
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="FirstPages" />
+		</f:function>
+		<hr />
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="TranslatedPages" />
+			<f:param name="ShowCurrent" value="False" />
+			<f:param name="Description" value="Translation available in :" />
+		</f:function>
+		<hr />		
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="TranslatedOrFirstPages" />
+		</f:function>
+		
+		
+		
+		
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="HomePages" />
+			<f:param name="Format" value="DisplayName" />
+		</f:function>
+		<hr />
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="HomePages" />
+			<f:param name="Format" value="EnglishName" />
+		</f:function>
+		<hr />
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="HomePages" />
+			<f:param name="Format" value="Name" />
+		</f:function>
+		<hr />
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="HomePages" />
+			<f:param name="Format" value="NativeName" />
+		</f:function>
+		<hr />
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="HomePages" />
+			<f:param name="Format" value="ThreeLetterISOLanguageName" />
+		</f:function>
+		<hr />
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="HomePages" />
+			<f:param name="Format" value="ThreeLetterWindowsLanguageName" />
+		</f:function>
+		<hr />
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="HomePages" />
+			<f:param name="Format" value="TwoLetterISOLanguageName" />
+		</f:function>
+		<hr />
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="HomePages" />
+			<f:param name="Format" value="Image" />
+		</f:function>
+		<hr />
+		<f:function name="Composite.Navigation.LanguageSwitcher" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="Mode" value="HomePages" />
+			<f:param name="NavigationId" value="LanguageSwitcherImage" />
+			<f:param name="Format" value="Empty" />
+		</f:function>
