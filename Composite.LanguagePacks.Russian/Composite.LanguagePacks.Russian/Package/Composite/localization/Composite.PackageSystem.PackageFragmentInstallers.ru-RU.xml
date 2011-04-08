@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="AddOnManager.CompositeVersionMisMatch" value="Версия пакета C1 не соответствует текущей версии С1" />
+  <string key="AddOnManager.NewerVersionInstlled" value="Пакет с более новой версией  уже установлен" />
+  <string key="AddOnManager.MissingAddOnDirectory" value="Невозможно найти путь каталогу пакета '{0}'" />
+  <string key="AddOnManager.Uninstallable" value="Пакет отмечен как неудаляемый из системы" />
+  <string key="AddOnManager.MissingZipFile" value="Не удалось найти путь к Zip-файлу пакета '{0}'" />
+  <string key="AddOnManager.MissingUninstallFile" value="Не удалось найти путь к файлу удаления пакета &quot;{0} '" />
+  <string key="AddOnManager.MissingElement" value="Отсутствует элемент '{0}'." />
+  <string key="AddOnManager.MissingAttribute" value="Отсутствует атрибут '{0}'." />
+  <string key="AddOnManager.InvalidAttributeValue" value="Значение атрибута '{0}' недопустимо." />
+  <string key="AddOnManager.InvalidElementValue" value="Значение элемента '{0}' недопустимо." />
+  <string key="ConfigurationTransformationAddOnFragmentInstaller.ExpectedExactlyTwoElements" value="Ожидались ровно два элемента, '{0} &quot;и&quot; {1}'" />
+  <string key="ConfigurationTransformationAddOnFragmentInstaller.MissingElement" value="Отсутствует элемент '{0}'." />
+  <string key="ConfigurationTransformationAddOnFragmentInstaller.MissingAttribute" value="Отсутствует атрибут '{0}'." />
+  <string key="ConfigurationTransformationAddOnFragmentInstaller.PathDoesNotExist" value="Путь '{0} &quot;не существует в Zip-файле." />
+  <string key="ConfigurationTransformationAddOnFragmentInstaller.UnableToParsXslt" value="Не удалось распарсить XSLT в Zip-файле '{0}'. {1}" />
+  <string key="ConfigurationTransformationAddOnFragmentInstaller.XsltWillGeneratedInvalid" value="XSLT файл '{0}' сгенерирует файл конфигурации в недопустимом формате. {1}" />
+  <string key="DataAddOnFragmentInstaller.OnlyOneElement" value="Допускается только один элемент &quot;Types&quot;" />
+  <string key="DataAddOnFragmentInstaller.MissingElement" value="Отсутствует элемент &quot;Types&quot;" />
+  <string key="DataAddOnFragmentInstaller.MissingAttribute" value="Oтсутствует атрибут {0}  в конфигурации" />
+  <string key="DataAddOnFragmentInstaller.WrongDataScopeIdentifier" value="Неправильное имя DataScopeIdentifier ({0}) в конфигурации" />
+  <string key="DataAddOnFragmentInstaller.WrongLocale" value="Неправильно имя культуры ({0}) в конфигурации" />
+  <string key="DataAddOnFragmentInstaller.MissingFile" value="Отсутствует файл '{0}' в Zip-файле пакета" />
+  <string key="DataAddOnFragmentInstaller.TypeNotConfigured" value="Тип интерфейса данных '{0}' не был настроен в системе" />
+  <string key="DataAddOnFragmentInstaller.TypeNotInheriting" value="Тип интерфейса данных '{0}' не наследует интерфейс '{1} '" />
+  <string key="DataAddOnFragmentInstaller.MissingProperty" value="Тип интерфейса данных '{0}' не имеет свойство с именем '{1}'" />
+  <string key="DataAddOnFragmentInstaller.MissingWritableProperty" value="У типа интерфейса данных '{0}' нет изменяемого свойства с именем '{1}'" />
+  <string key="DataAddOnFragmentInstaller.ConversionFailed" value="Не удалось преобразовать значение '{0}' в тип '{1}'" />
+  <string key="DataAddOnFragmentInstaller.MissingPropertyVaule" value="У свойства '{0}' интерфейса '{1}'отсутствует значение." />
+  <string key="DataAddOnFragmentInstaller.DataExists" value="Элемент данных типа интерфейса данных '{0}' уже существует" />
+  <string key="DataAddOnFragmentInstaller.MissingTypeDescriptor" value="Отсутствует дескриптор типа данных для типа {0}" />
+  <string key="DataAddOnFragmentInstaller.TypeNonLocalizedWithLocale" value="Тип данных &quot;{0}&quot; не локализован, но локаль указана в конфигурации" />
+  <string key="DataAddOnFragmentInstaller.TypeLocalizedWithoutLocale" value="Тип данных &quot;{0}&quot; локализован, но локали не указаны в конфигурации" />
+  <string key="DataAddOnFragmentUninstaller.OnlyOneElement" value="Допускается только один элемент &quot;Types&quot;" />
+  <string key="DataAddOnFragmentUninstaller.MissingAttribute" value="Отсутствует атрибут {0} в конфигурации" />
+  <string key="DataAddOnFragmentUninstaller.MissingKeyProperty" value="Тип данных '{0}'не содержит ключевое свойство с именем '{1}'" />
+  <string key="DataTypeAddOnFragmentInstaller.OnlyOneElement" value="Допускается только один элемент &quot;Types&quot;" />
+  <string key="DataTypeAddOnFragmentInstaller.MissingElement" value="Отсутствует элемент &quot;Types&quot;" />
+  <string key="DataTypeAddOnFragmentInstaller.MissingAttribute" value="Отсутствует атрибут {0} в конфигурации" />
+  <string key="DataTypeAddOnFragmentInstaller.TypeNotConfigured" value="Тип интерфейса данных '{0}' не был настроен в системе" />
+  <string key="DataTypeAddOnFragmentInstaller.TypeNotInheriting" value="Тип интерфейса данных '{0}' не наследует интерфейс '{1}'" />
+  <string key="DataTypeAddOnFragmentInstaller.TypeExists" value="Интерфейс типа &quot;{0}&quot; уже существует в системе" />
+  <string key="DataTypeAddOnFragmentInstaller.InterfaceCodeError" value="Интерфейс типа '{0}' неправильно закодирован" />
+  <string key="DataTypeAddOnFragmentUninstaller.OnlyOneElement" value="Допускается только один элемент &quot;Types&quot;" />
+  <string key="DataTypeAddOnFragmentUninstaller.MissingAttribute" value="Отсутствует атрибут {0} в конфигурации" />
+  <string key="DataTypeAddOnFragmentUninstaller.WrongAttributeFormat" value="Неправильный формат атрибутов в конфигурации" />
+  <string key="DynamicDataTypeAddOnFragmentInstaller.OnlyOneElement" value="Допускается только один элемент &quot;Types&quot;" />
+  <string key="DynamicDataTypeAddOnFragmentInstaller.MissingElement" value="Отсутствует элемент &quot;Types&quot;" />
+  <string key="DynamicDataTypeAddOnFragmentInstaller.DataTypeDescriptorParseError" value="Ошибка XML при парсинге атрибут данных TypeDescriptor" />
+  <string key="DynamicDataTypeAddOnFragmentInstaller.DataTypeDescriptorDeserializeError" value="Ошибка при десериализации типа данных. Текст ошибки: {0}." />
+  <string key="DynamicDataTypeAddOnFragmentInstaller.MissingReferencedType" value="Не могу найти зависимый тип '{0} '." />
+  <string key="DynamicDataTypeAddOnFragmentInstaller.TypeExists" value="Тип интерфейса &quot;{0}&quot; уже существует в системе" />
+  <string key="DynamicDataTypeAddOnFragmentUninstaller.OnlyOneElement" value="Допускается только один элемент &quot;Types&quot;" />
+  <string key="DynamicDataTypeAddOnFragmentUninstaller.MissingAttribute" value="Отсутствует атрибут {0} в конфигурации" />
+  <string key="DynamicDataTypeAddOnFragmentUninstaller.WrongAttributeFormat" value="Неправильный формат атрибутов в конфигурации" />
+  <string key="FileAddOnFragmentInstaller.OnlyOneFilesElement" value="Допускается только один элемент &quot;Files&quot;" />
+  <string key="FileAddOnFragmentInstaller.OnlyOneDirectoriesElement" value="Допускается только один элемент &quot;Directories&quot;" />
+  <string key="FileAddOnFragmentInstaller.MissingAttribute" value="Отсутствует атрибут {0} в конфигурации" />
+  <string key="FileAddOnFragmentInstaller.DeleteTargetDirectoryNotAllowed" value="Атрибут 'deleteTargetDirectory' может быть применен только к каталогам, а не файлам" />
+  <string key="FileAddOnFragmentInstaller.WrongAttributeBoolFormat" value="Неправильный формат значения атрибута, ожидается значение bool" />
+  <string key="FileAddOnFragmentInstaller.MissingFile" value="Инсталляционный ZIP-файл не содержит файл '{0}'" />
+  <string key="FileAddOnFragmentInstaller.FileExists" value="Файл '{0}' уже существует" />
+  <string key="FileAddOnFragmentInstaller.FileReadOnly" value="Файл '{0}' помечен &quot;только для чтения &quot; и поэтому не может быть перезаписан." />
+  <string key="FileAddOnFragmentInstaller.AssemblyLoadNotAllowed" value="Атрибут &quot;assemblyLoad 'может быть применен только к файлам, а не каталогам" />
+  <string key="FileAddOnFragmentInstaller.OnlyUpdateNotAllowed" value="Атрибут &quot;onlyUpdate 'может быть применен только к файлам, а не каталогам" />
+  <string key="FileAddOnFragmentInstaller.OnlyUpdateNotAllowedWithLoadAssemlby" value="Атрибут &quot;onlyUpdate&quot; недопустим в сочетании с атрибутом &quot;loadAssembly&quot;" />
+  <string key="FileAddOnFragmentInstaller.MissingDirectory" value="Инсталляционный ZIP-файл не содержит каталог '{0}'" />
+  <string key="FileAddOnFragmentInstaller.WrongBasePath" value="Uninstall.xml содержит пути к файлам, связанные к исходному местоположению сайта, таким образом пакет не может быть безопасно удален из системы." />
+  <string key="FileAddOnFragmentUninstaller.OnlyOneFilesElement" value="Допускается только один элемент &quot;Files&quot;" />
+  <string key="VirtualElementProviderNodeAddOnFragmentInstaller.OnlyOneElement" value="Допускается только один элемент &quot;Areas&quot;" />
+  <string key="VirtualElementProviderNodeAddOnFragmentInstaller.MissingType" value="Не удалось найти тип '{0}'" />
+  <string key="VirtualElementProviderNodeAddOnFragmentInstaller.MissingIcon" value="Не удалось найти значок '{0}'" />
+  <string key="VirtualElementProviderNodeAddOnFragmentUninstaller.OnlyOneElement" value="Допускается только один элемент &quot;Areas&quot;" />
+  <string key="VirtualElementProviderNodeAddOnFragmentUninstaller.MissingAttribute" value="Отсутствует атрибут {0} в конфигурации" />
+  <string key="FileXslTransformationPackageFragmentInstaller.MissingAttribute" value="Отсутствует атрибут {0} в конфигурации" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileNotFound" value="Файл '{0}' не найден" />
+  <string key="PackageVersionBumberFragmentInstaller.OnlyOneElement" value="Допускается только один элемент &quot;PackageVersions&quot;" />
+  <string key="PackageVersionBumberFragmentInstaller.MissingAttribute" value="Отсутствует атрибут {0} в конфигурации" />
+  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeGuidFormat" value="Неправильный формат значения атрибута, ожидается значение Guid" />
+  <string key="PackageVersionBumberFragmentInstaller.PackageIdDuplicate" value="Дублирующийся идентификатор пакета: '{0}'" />
+  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeVersionFormat" value="Неправильный формат значения атрибута, ожидается значение версии (x.y.z)" />
+  <string key="PackageVersionBumberFragmentUninstaller.OnlyOneElement" value="Допускается только один элемент &quot;PackageVersions&quot;" />
+  <string key="PackageVersionBumberFragmentUninstaller.MissingAttribute" value="Отсутствует атрибут {0} в конфигурации" />
+  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeGuidFormat" value="Неправильный формат значения атрибута, ожидается значение Guid" />
+  <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="Дублирующийся идентификатор пакета: '{0}'" />
+  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeVersionFormat" value="Неправильный формат значения атрибута, ожидается значение версии (x.y.z)" />
+  <string key="PackageLicenseFragmentInstaller.MissingPublicKeyElement" value="Публичный ключ RSA отсутствует в конфигурации пакета" />
+</strings>

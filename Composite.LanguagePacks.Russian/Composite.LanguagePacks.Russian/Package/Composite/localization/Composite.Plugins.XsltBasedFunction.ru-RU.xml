@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderLabel" value="XSLT функции" />
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderToolTip" value="XSLT функции" />
+  <string key="AddNewXsltFunctionWorkflow.DuplicateName" value="XSLT функция с тем же именем уже существует." />
+  <string key="AddNewXsltFunctionWorkflow.MethodEmpty" value="Имя метода не должно быть пустым" />
+  <string key="AddNewXsltFunctionWorkflow.NamespaceEmpty" value="Пространство имен не должно быть пустым" />
+  <string key="AddNewXsltFunctionWorkflow.InvalidNamespace" value="Пространство имен должно выглядеть как A.B.C - и не начинаться или заканчиваться на &quot;.&quot;" />
+  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageTitle" value="Отсутствует язык" />
+  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Для создания XSLT функции, требуется наличие языка, но языки еще не добавлены. Вы можете добавить язык в разделе &quot;Система&quot;." />
+  <string key="AddNewXsltFunctionWorkflow.MissingPageTitle" value="Отсутствует страница" />
+  <string key="AddNewXsltFunctionWorkflow.MissingPageMessage" value="Для создания XSLT-функции должна быть добавлена по крайней мере одна страница." />
+  <string key="AddNewXsltFunctionWorkflow.TotalNameTooLang" value="Общая длина имени и пространства имен слишком большая (используется в имени XSL файла)." />
+  <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteTitle" value="Удалить XSLT?" />
+  <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteMessage" value="Удалить выбранный XSLT?" />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorMessage" value="На данный тип ссылается другой тип, который не допускает каскадное удаление. Выполнение операции приостановлено." />
+  <string key="EditXsltFunctionWorkflow.DuplicateName" value="XSLT функция с тем же именем уже существует." />
+  <string key="EditXsltFunctionWorkflow.EmptyMethodName" value="Имя метода не должно быть пустым" />
+  <string key="EditXsltFunctionWorkflow.NamespaceEmpty" value="Пространство имен не может быть пустым." />
+  <string key="EditXsltFunctionWorkflow.InvalidNamespace" value="Пространство имен должно выглядеть как A.B.C - и не начинаться или заканчиваться на &quot;.&quot;." />
+  <string key="EditXsltFunctionWorkflow.InvalidFileName" value="Путь к файлу XSLT должен начинаться с \ или /" />
+  <string key="EditXsltFunctionWorkflow.InvalidName" value="Недопустимое имя функции" />
+  <string key="EditXsltFunctionWorkflow.CannotRenameFileExists" value="Нельзя переименовать функцию, файл '{0}' уже существует." />
+  <string key="EditXsltFunctionWorkflow.TotalNameTooLang" value="Общая длина имени и пространства имен слишком большая (используется в имени XSL файла)." />
+  <string key="XsltBasedFunctionProviderElementProvider.Add" value="Добавить XSLT функцию" />
+  <string key="XsltBasedFunctionProviderElementProvider.AddToolTip" value="Добавить новую XSLT функцию" />
+  <string key="XsltBasedFunctionProviderElementProvider.Edit" value="Изменить" />
+  <string key="XsltBasedFunctionProviderElementProvider.EditToolTip" value="Изменить XSLT функцию" />
+  <string key="XsltBasedFunctionProviderElementProvider.Delete" value="Удалить" />
+  <string key="XsltBasedFunctionProviderElementProvider.DeleteToolTip" value="Удалить XSLT функцию" />
+  <string key="AddNewXsltFunctionStep1.LabelDialog" value="Добавить новую XSLT функцию" />
+  <string key="AddNewXsltFunctionStep1.LabelFieldGroup" value="Название и тип вывода" />
+  <string key="AddNewXsltFunctionStep1.LabelName" value="Имя" />
+  <string key="AddNewXsltFunctionStep1.HelpName" value="" />
+  <string key="AddNewXsltFunctionStep1.LabelNamespace" value="Пространство имен" />
+  <string key="AddNewXsltFunctionStep1.HelpNamespace" value="" />
+  <string key="AddNewXsltFunctionStep1.LabelOutputType" value="Тип вывода" />
+  <string key="EditXsltFunction.LabelSettings" value="Настройки" />
+  <string key="EditXsltFunction.LabelName" value="Имя" />
+  <string key="EditXsltFunction.HelpName" value="" />
+  <string key="EditXsltFunction.LabelNamespace" value="Пространство имен" />
+  <string key="EditXsltFunction.HelpNamespace" value="" />
+  <string key="EditXsltFunction.LabelDescription" value="Описание" />
+  <string key="EditXsltFunction.HelpDescription" value="" />
+  <string key="EditXsltFunction.LabelDebug" value="Отладка" />
+  <string key="EditXsltFunction.LabelPage" value="Страница" />
+  <string key="EditXsltFunction.HelpPage" value="При отладке эта страница используется как контекст для рендеринга." />
+  <string key="EditXsltFunction.LabelAdminitrativeScope" value="Административная" />
+  <string key="EditXsltFunction.LabelPublicScope" value="Публичная" />
+  <string key="EditXsltFunction.LabelPageDataScope" value="Область видимости данных" />
+  <string key="EditXsltFunction.HelpPageDataScope" value="Выберите публичную версию или версию для разработки в качестве контекста для рендеринга." />
+  <string key="EditXsltFunction.LabelActiveLocales" value="Язык" />
+  <string key="EditXsltFunction.HelpActiveLocales" value="Выберите язык, который будет использоваться при отладке функции." />
+  <string key="EditXsltFunction.OutputType" value="Тип вывода" />
+  <string key="EditXsltFunction.LabelInputParameters" value="Входные параметры" />
+  <string key="EditXsltFunction.LabelFunctionCalls" value="Вызовы функций" />
+  <string key="EditXsltFunction.LabelTemplate" value="Шаблон" />
+  <string key="EditXsltFunction.LabelPreview" value="Просмотр" />
+  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageTitle" value="Отсутствует язык" />
+  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Для создания XSLT функции, требуется наличие языка, но языки еще не добавлены. Вы можете добавить язык в разделе &quot;Система&quot;." />
+  <string key="EditXsltFunctionWorkflow.MissingPageTitle" value="Отсутствует страница" />
+  <string key="EditXsltFunctionWorkflow.MissingPageMessage" value="Для изменения XSLT функции должна быть добавлена по крайней мере одна страница." />
+</strings>

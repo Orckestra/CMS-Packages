@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootFolderLabel" value="Пакеты" />
+  <string key="RootFolderToolTip" value="Выбрать и управлять установленными пакетами" />
+  <string key="AvailableAddOnsFolderLabel" value="Доступные пакеты" />
+  <string key="AvailableAddOnsFolderToolTip" value="Доступные пакеты" />
+  <string key="InstalledAddOnFolderLabel" value="Установленные пакеты" />
+  <string key="InstalledAddOnFolderToolTip" value="Установленные пакеты" />
+  <string key="LocalAddOnsFolderLabel" value="Локальные пакеты" />
+  <string key="LocalAddOnsFolderToolTip" value="Локальные пакеты" />
+  <string key="AddOnSourcesFolderLabel" value="Серверы пакетов" />
+  <string key="AddOnSourcesFolderToolTip" value="Серверы пакетов" />
+  <string key="ViewAvailableInformationLabel" value="Информация о пакете" />
+  <string key="ViewAvailableInformationToolTip" value="Просмотреть информацию о пакете" />
+  <string key="ViewInstalledInformationLabel" value="Информация о пакете" />
+  <string key="ViewInstalledInformationToolTip" value="Просмотреть информацию о пакете" />
+  <string key="InstallLocalAddOnLabel" value="Установить локальный пакет..." />
+  <string key="InstallLocalAddOnToolTip" value="Установить пакет из локальной файловой системы" />
+  <string key="AddAddOnSourceLabel" value="Добавить сервер пакетов" />
+  <string key="AddAddOnSourceToolTip" value="Добавить сервер пакетов" />
+  <string key="DeleteAddOnSourceLabel" value="Удалить сервер пакетов" />
+  <string key="DeleteAddOnSourceToolTip" value="Удалить сервер пакетов" />
+  <string key="ClearServerCacheLabel" value="Очистить кеш" />
+  <string key="ClearServerCacheToolTip" value="Очистить кеш, чтобы обновить список пакетов" />
+  <string key="ViewAvailableInformation.FieldGroupLabel" value="Информация о пакете" />
+  <string key="ViewAvailableInformation.NameTextLabel" value="Название" />
+  <string key="ViewAvailableInformation.DescriptionTextLabel" value="Описание" />
+  <string key="ViewAvailableInformation.AuthorTextLabel" value="Автор" />
+
+  <string key="ViewAvailableInformation.TrialInfoFieldGroupLabel" value="Информация о бесплатной пробной версии" />
+  <string key="ViewAvailableInformation.TrialInformationLabel" value="Информация о пробной версии" />
+  <string key="ViewAvailableInformation.TrialInformationText" value="Это коммерческий пакет, бесплатный во время пробного периода. Когда истечет срок действия пробного периода, может быть отключена некоторая функциональность, пока вы не приобретете лицензию." />
+  <string key="ViewAvailableInformation.TrialDaysLabel" value="Бесплатный пробный период (дни)" />
+
+
+  <string key="ViewAvailableInformation.InstallationInfoFieldGroupLabel" value="Информация об установке пакета" />
+  <string key="ViewAvailableInformation.VersionTextLabel" value="Версия" />
+  <string key="ViewAvailableInformation.TechicalDescriptionTextLabel" value="Техническое описание" />
+  <string key="ViewAvailableInformation.AddOnSourceTextLabel" value="Сервер пакетов" />
+
+
+  <string key="ViewAvailableInformation.PriceTextLabel" value="Цена (евро)" />
+  <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="Установить" />
+  <string key="ViewAvailableInformation.Toolbar.ReadMoreLabel" value="Подробнее" />
+  <string key="ViewAvailableInformation.ShowError.MessageTitle" value="Уже установлен" />
+  <string key="ViewAvailableInformation.ShowError.MessageMessage" value="Пакет уже установлен. Выбранный пакет нельзя установить." />
+  <string key="ViewAvailableInformation.ShowServerError.MessageTitle" value="Сервер пакетов не отвечает" />
+  <string key="ViewAvailableInformation.ShowServerError.MessageMessage" value="Сервер пакетов не отвечает. Повторите попытку или обратитесь к системному администратору" />
+  <string key="ViewInstalledInformation.FieldGroupLabel" value="Информация о пакете" />
+  <string key="ViewInstalledInformation.NameTextLabel" value="Название" />
+  <string key="ViewInstalledInformation.DateTextLabel" value="Дата установки" />
+  <string key="ViewInstalledInformation.UserTextLabel" value="Установил(а)" />
+  <string key="ViewInstalledInformation.AuthorTextLabel" value="Автор" />
+  <string key="ViewInstalledInformation.VersionTextLabel" value="Версия" />
+  <string key="ViewInstalledInformation.TrialInfoFieldGroupLabel" value="Информация о пробной версии" />
+  <string key="ViewInstalledInformation.TrialInformationLabel" value="Информация о пробной версии" />
+  <string key="ViewInstalledInformation.TrialInformationText" value="Это коммерческий пакет, бесплатный во время пробного периода. Когда истечет срок действия пробного периода, может быть отключена некоторая функциональность, пока вы не приобретете лицензию." />
+  <string key="ViewInstalledInformation.TrialExpireLabel" value="Дата истечения пробного периода" />
+
+  <string key="ViewInstalledInformation.Toolbar.UninstallLabel" value="Удалить" />
+  <string key="ViewInstalledInformation.Toolbar.PurchaseLabel" value="Купить!" />
+  <string key="ViewInstalledInformation.ShowError.MessageTitle" value="Уже удален" />
+  <string key="ViewInstalledInformation.ShowError.MessageMessage" value="Пакет уже удален. Выбранный пакет нельзя удалить." />
+  <string key="InstallRemoteAddOn.Step1.LayoutLabel" value="Установить пакет" />
+  <string key="InstallRemoteAddOn.Step1.HeadingTitle" value="Это пробная версия пакета / платный пакет" />
+  <string key="InstallRemoteAddOn.Step1.HeadingDescription" value="Этот пакет является платным. Пожалуйста, изучите лицензионное соглашение в следующем окне мастера с подробной информацией об пробном периоде и условиях оплаты." />
+  <string key="InstallRemoteAddOn.Step2.LayoutLabel" value="Установить пакет" />
+  <string key="InstallRemoteAddOn.Step2.HeadingTitle" value="Лицензионное соглашение" />
+  <string key="InstallRemoteAddOn.Step2.HeadingDescription" value="Если вы принимаете условия соглашения, установите флажок ниже. Вы должны принять соглашение для установки." />
+  <string key="InstallRemoteAddOn.Step2.IAcceptItemLabel" value="Я принимаю условия лицензионного соглашения" />
+  <string key="InstallRemoteAddOn.Step2.AcceptMissing" value="Вы должны принять условия лицензионного соглашения, чтобы продолжить." />
+  <string key="InstallRemoteAddOn.Step3.LayoutLabel" value="Установить пакет" />
+  <string key="InstallRemoteAddOn.Step3.HeadingTitle" value="Скачать и проверить пакет" />
+  <string key="InstallRemoteAddOn.Step3.HeadingDescription" value="Пакет будет загружен и проверен. Пожалуйста, обратите внимание на то, что это может занять несколько минут. Для продолжения нажмите кнопку ''Далее''." />
+  <string key="InstallRemoteAddOn.Step4.LayoutLabel" value="Установить локальный пакет" />
+  <string key="InstallRemoteAddOn.Step4.HeadingTitle" value="Все готово к установке" />
+  <string key="InstallRemoteAddOn.Step4.HeadingDescription" value="Все готово к установке пакета. Обратите внимание на то, что установка может занять несколько минут. Для продолжения нажмите кнопку ''Далее''." />
+  <string key="InstallRemoteAddOn.Step4.NonUninstallableHeadingTitle" value="Все готово к установке" />
+  <string key="InstallRemoteAddOn.Step4.NonUninstallableHeadingDescription" value="Все готово к установке пакетов. Обратите внимание на то, что установка может занять несколько минут, а также то, что этот пакет нельзя удалить. Для продолжения нажмите кнопку ''Далее''." />
+  <string key="InstallRemoteAddOn.Step5.LayoutLabel" value="Пакет установлен" />
+  <string key="InstallRemoteAddOn.Step5.HeadingTitle" value="Пакет успешно установлен" />
+  <string key="InstallRemoteAddOn.Step5.HeadingDescription" value="Пакет успешно установлен." />
+  <string key="InstallRemoteAddOn.ShowError.LayoutLabel" value="Не удалось установить пакет" />
+  <string key="InstallRemoteAddOn.ShowError.InfoTableCaption" value="Не удалось установить пакет" />
+  <string key="InstallRemoteAddOn.ShowError.MessageTitle" value="Сообщение" />
+  <string key="InstallLocalAddOn.Step1.LayoutLabel" value="Установить локальный пакет" />
+  <string key="InstallLocalAddOn.Step1.FieldGroupLabel" value="Локальный пакет" />
+  <string key="InstallLocalAddOn.Step1.FileUploadLabel" value="Файл пакета" />
+  <string key="InstallLocalAddOn.Step1.FileUploadHelp" value="Выберите файл пакета" />
+  <string key="InstallLocalAddOn.Step2.LayoutLabel" value="Установить локальный пакет" />
+  <string key="InstallLocalAddOn.Step2.HeadingTitle" value="Все готово к установке" />
+  <string key="InstallLocalAddOn.Step2.HeadingDescription" value="Все готово к установке пакета. Обратите внимание на то, что установка может занять несколько минут. Для продолжения нажмите кнопку ''Далее''." />
+  <string key="InstallLocalAddOn.Step3.LayoutLabel" value="Пакет установлен" />
+  <string key="InstallLocalAddOn.Step3.HeadingTitle" value="Пакет успешно установлен" />
+  <string key="InstallLocalAddOn.Step3.HeadingDescription" value="Пакет успешно установлен." />
+  <string key="InstallLocalAddOn.ShowError.LayoutLabel" value="Не удалось установить пакет" />
+  <string key="InstallLocalAddOn.ShowError.InfoTableCaption" value="Не удалось установить пакет" />
+  <string key="InstallLocalAddOn.ShowError.MessageTitle" value="Сообщение" />
+  <string key="UninstallRemoteAddOn.Step1.LayoutLabel" value="Удалить пакет" />
+  <string key="UninstallRemoteAddOn.Step1.HeadingTitle" value="Все готово для проверки процесса удаления" />
+  <string key="UninstallRemoteAddOn.Step1.HeadingDescription" value="Все готово для проверки процесса удаления. Для продолжения нажмите кнопку ''Далее''." />
+  <string key="UninstallRemoteAddOn.Step2.LayoutLabel" value="Удалить пакет" />
+  <string key="UninstallRemoteAddOn.Step2.HeadingTitle" value="Все готово к удалению" />
+  <string key="UninstallRemoteAddOn.Step2.HeadingDescription" value="Все готово к удалению пакета. Обратите внимание на то, что установка может занять несколько минут. Для продолжения нажмите кнопку ''Далее''." />
+  <string key="UninstallRemoteAddOn.Step3.LayoutLabel" value="Пакет удален" />
+  <string key="UninstallRemoteAddOn.Step3.HeadingTitle" value="Пакет успешно удален" />
+  <string key="UninstallRemoteAddOn.Step3.HeadingDescription" value="Пакет успешно удален." />
+  <string key="UninstallRemoteAddOn.ShowError.LayoutLabel" value="Не удалось удалить пакет" />
+  <string key="UninstallRemoteAddOn.ShowError.InfoTableCaption" value="Не удалось удалить пакет" />
+  <string key="UninstallRemoteAddOn.ShowError.MessageTitle" value="Сообщение" />
+  <string key="UninstallRemoteAddOn.ShowUnregistre.LayoutLabel" value="Удалить пакет" />
+  <string key="UninstallRemoteAddOn.ShowUnregistre.HeadingTitle" value="Не удалось зарегистрировать удаление" />
+  <string key="UninstallRemoteAddOn.ShowUnregistre.HeadingDescription" value="Не удалось зарегистрировать удаление. Связаться поставщиком пакета для ручной отмены регистрации." />
+  <string key="UninstallLocalAddOn.Step1.LayoutLabel" value="Удалить локальный пакет" />
+  <string key="UninstallLocalAddOn.Step1.HeadingTitle" value="Все готово для проверки процесса удаления" />
+  <string key="UninstallLocalAddOn.Step1.HeadingDescription" value="Все готово для проверки процесса удаления пакета. Для продолжения нажмите кнопку ''Далее''." />
+  <string key="UninstallLocalAddOn.Step2.LayoutLabel" value="Удалить локальный пакет" />
+  <string key="UninstallLocalAddOn.Step2.HeadingTitle" value="Все готово к удалению" />
+  <string key="UninstallLocalAddOn.Step2.HeadingDescription" value="Все готово к удалению пакета. Обратите внимание на то, что установка может занять несколько минут. Для продолжения нажмите кнопку &quot;Далее&quot;." />
+  <string key="UninstallLocalAddOn.Step3.LayoutLabel" value="Пакет удален" />
+  <string key="UninstallLocalAddOn.Step3.HeadingTitle" value="Пакет успешно удален" />
+  <string key="UninstallLocalAddOn.Step3.HeadingDescription" value="Пакет успешно удален." />
+  <string key="UninstallLocalAddOn.ShowError.LayoutLabel" value="Не удалось удалить пакет" />
+  <string key="UninstallLocalAddOn.ShowError.InfoTableCaption" value="Не удалось удалить пакет" />
+  <string key="UninstallLocalAddOn.ShowError.MessageTitle" value="Сообщение" />
+  <string key="AddAddOnSource.Step1.LayoutLabel" value="Новый сервер пакетов" />
+  <string key="AddAddOnSource.Step1.FieldGroupLabel" value="Данные о сервере пакетов" />
+  <string key="AddAddOnSource.Step1.UrlLabel" value="URL веб-службы пакета" />
+  <string key="AddAddOnSource.Step1.UrlHelp" value="Пакеты могут быть размещены на удаленных серверах. URL веб-службы пакета будет проверен на следующем шаге." />
+  <string key="AddAddOnSource.Step1.UrlNotValid" value="Введенный текст не является допустимым URL-адресом" />
+  <string key="AddAddOnSource.Step1.UrlNonAddOnServer" value="Сервер не является сервером пакетов Composite C1" />
+  <string key="AddAddOnSource.Step2.LayoutLabel" value="Добавить сервер пакетов" />
+  <string key="AddAddOnSource.Step2.HeadingTitle" value="URL сервера является допустимым" />
+  <string key="AddAddOnSource.Step2.HeadingNoHttpsDescription" value="Обратите внимание на то, что для этого соединения используется протокол HTTP. Это означает, что вся информация будет отправлена в незашифрованном виде. Для добавления сервера нажмите кнопку &quot;Готово&quot;." />
+  <string key="AddAddOnSource.Step2.HeadingWithHttpsDescription" value="Для добавления сервера нажмите кнопку &quot;Готово&quot;." />
+  <string key="DeleteAddOnSource.Step1.LayoutLabel" value="Подтвердить удаление" />
+  <string key="DeleteAddOnSource.Step1.Text" value="Удалить выбранный сервер" />
+</strings>

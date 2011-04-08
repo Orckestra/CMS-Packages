@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<strings>
+  
+  <string key="AddNewButtonLabel" value="Добавить" />
+  <string key="DeleteButtonLabel" value="Удалить" />
+
+  <string key="TreeRootNodeLabel" value="Список входных параметров" />
+
+  <string key="ParameterNamingGroupLabel" value="Имена параметров и справка" />
+  <string key="Name" value="Имя параметра" />
+  <string key="NameHelp" value="Имя параметра. Имя используется системой для идентификации этого параметра. Имена должны быть уникальными и не могут содержать пробелы и другие специальные символы. Используйте имена такие, как &quot;Title&quot;, &quot;StartDate&quot;, &quot;LargeImage&quot; и т.д." />
+  <string key="Label" value="Надпись" />
+  <string key="LabelHelp" value="Текст, который пользователи будут видеть при выборе значения для этого параметра. Это &quot;понятное пользователю имя&quot; для параметра." />
+  <string key="Help" value="Справка" />
+  <string key="HelpHelp" value="Напишите краткий текст, который объяснит пользователю, что делать с параметром." />
+
+  <string key="ParameterTypeValueGroupLabel" value="Тип и значение параметра" />
+  <string key="Type" value="Тип параметра" />
+  <string key="TypeHelp" value="Тип этого параметра." />
+  <string key="DefaultValue" value="Значение по умолчанию" />
+  <string key="DefaultValueHelp" value="Вы можете указать значение по умолчанию для этого параметра. Если у параметра есть значение по умолчанию, пользователям не требуется указать его при вызове функции." />
+  <string key="DefaultValueSpecify" value="Выбрать значение по умолчанию" />
+  <string key="DefaultValueEdit" value="Изменить значение по умолчанию" />
+  <string key="DefaultValueDialogLabel" value="Значение параметра по умолчанию" />
+  
+  <string key="TestValue" value="Тестовое значение" />
+  <string key="TestValueHelp" value="Во время предварительного просмотра можно проверить функцию различными значениями входных параметров при помощи этого поля. Если его оставить пустым, для предварительного  просмотра будет использоваться значение по умолчанию." />
+  <string key="TestValueSpecify" value="Выбрать тестовое значение" />
+  <string key="TestValueEdit" value="Изменить тестовое значение" />
+  <string key="TestValueDialogLabel" value="Тестовое значение параметра" />
+
+  <string key="ParameterPresentationGroupLabel" value="Представление параметра" />
+  <string key="Widget" value="Виджет" />
+  <string key="WidgetHelp" value="Вы можете выбрать тип виджета для ввода (например, TextBox), используя его при определении значения этого параметра. Виджеты доступны только для простых типов." />
+  <string key="NoWidgetSpecifiedLabel" value="(Не указан виджет)" />
+  <string key="WidgetDialogLabel" value="Виджет параметра" />
+  <string key="Position" value="Позиция" />
+  <string key="PositionLast" value="Последняя" />
+  <string key="PositionHelp" value="Позиция параметра. Управляет порядком параметров в списке." />
+
+  <string key="SpecifyWidgetTip" value="Не забудьте указать виджет ..." />
+  <string key="NoWidgetsTip" value="Виджеты для указанного типа не доступны. Пользователи должны использовать вызов функции, чтобы выбрать значение для этого параметра." />
+
+  <string key="FieldNameSyntaxInvalid" value="Указанное имя недопустимо." />
+  <string key="CannotSave" value="Не удалось сохранить ... Другой параметр имеет то же имя. Пожалуйста, используйте другое имя." />
+
+  <string key="SpaceInNameError" value="Недопустимое имя. Имена параметров не могут содержать пробелы. Вы можете указать понятное пользователю имя в поле &quot;Надпись&quot; ниже." />
+  <string key="NameEmptyError" value="Имена параметров не могут быть пустыми. Пожалуйста, укажите имя." />
+  <string key="NameAlreadyInUseError" value="Другой параметр использует это имя. Имена параметров должны быть уникальными." />
+
+
+
+</strings>
+
+
+

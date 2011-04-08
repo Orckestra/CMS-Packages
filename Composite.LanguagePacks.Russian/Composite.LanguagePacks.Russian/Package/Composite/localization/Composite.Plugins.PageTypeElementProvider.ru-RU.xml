@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="PageType.Tree.Root.Label" value="Типы страниц" />
+  <string key="PageType.Tree.DefaultContentElement.Label" value="Контент по умолчанию" />
+  <string key="PageType.Tree.MetaDataFieldsElement.Label" value="Поля метаданных" />
+  <string key="PageType.Tree.AddNewPageType.Label" value="Добавить тип страниц" />
+  <string key="PageType.Tree.AddNewPageType.ToolTip" value="Добавить новый тип страниц" />
+  <string key="PageType.Tree.EditPageType.Label" value="Изменить тип страниц" />
+  <string key="PageType.Tree.EditPageType.ToolTip" value="Изменить выбранный тип страниц" />
+  <string key="PageType.Tree.DeletePageType.Label" value="Удалить тип страниц" />
+  <string key="PageType.Tree.DeletePageType.ToolTip" value="Удалить выбранный тип страниц" />
+  <string key="PageType.Tree.AddDefaultPageContent.Label" value="Добавить контент по умолчанию" />
+  <string key="PageType.Tree.AddDefaultPageContent.ToolTip" value="Добавить контент по умолчанию" />
+  <string key="PageType.Tree.EditDefaultPageContent.Label" value="Изменить контент по умолчанию" />
+  <string key="PageType.Tree.EditDefaultPageContent.ToolTip" value="Изменить контент по умолчанию" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.Label" value="Удалить контент по умолчанию" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.ToolTip" value="Удалить контент по умолчанию" />
+  <string key="PageType.Tree.AddMetaDataField.Label" value="Добавить поля метаданных" />
+  <string key="PageType.Tree.AddMetaDataField.ToolTip" value="Добавить новое поле метаданных" />
+  <string key="PageType.Tree.EditMetaDataField.Label" value="Изменить поле метаданных" />
+  <string key="PageType.Tree.EditMetaDataField.ToolTip" value="Изменить выбранное поле метаданных" />
+  <string key="PageType.Tree.DeleteMetaDataField.Label" value="Удалить поле метаданных" />
+  <string key="PageType.Tree.DeleteMetaDataField.ToolTip" value="Удалить выбранное поле метаданных" />
+  <string key="PageType.AddNewPageTypeWorkflow.Layout.Label" value="Добавить новый тип страниц" />
+  <string key="PageType.AddNewPageTypeWorkflow.FieldGroup.Label" value="Настройки нового типа страниц" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Label" value="Название" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Help" value="Название нового типа страниц" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Label" value="Описание" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Help" value="Описание нового типа страниц" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsPlaceHolder.Label" value="Настройки" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsFieldGroup.Label" value="Настройки типа страниц" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Label" value="Название" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Help" value="Название типа страниц" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Label" value="Описание" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Help" value="Описание типа страниц" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Label" value="Доступен" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Help" value="Снимите флажок, чтобы сделать невозможным выбор этого типа на страницах" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Label" value="Автоматически задавать заголовок меню" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Help" value="Если флажок установлен, в заголовке меню на страницах автоматически задается значение по умолчанию" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Label" value="Дочерний тип страниц по умолчанию" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Help" value="Выберите тип страницы в качестве типа по умолчанию для подстраниц, созданных при помощи этого типа" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.NoneSelectedLabel" value="[Нет]" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplatePlaceHolder.Label" value="Макет" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionFieldGroup.Label" value="Макет" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Label" value="Ограничения шаблонов" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Help" value="Ограничения шаблонов" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Label" value="Шаблон по умолчанию" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Help" value="Выберите шаблон по умолчанию для страниц, созданных при помощи этого типа" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.NoneSelectedLabel" value="[Нет]" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityPlaceHolder.Label" value="Доступность" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityFieldGroup.Label" value="Доступность" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Label" value="Связь с домашними страницами" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Help" value="Связь с домашними страницами" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.NoRestrictionLabel" value="Без ограничений" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlySubPagesLabel" value="Только подстраницы" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlyHomePagesLabel" value="Только домашние страницы" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Label" value="Ограничение родительских типов страниц" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Help" value="Разрешить только такой тип для подстраниц с указанными типами страниц" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderApplicationPlaceHolder.Label" value="Папки данных / Приложения" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderFieldGroup.Label" value="Папки данных" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Label" value="Папки данных" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Help" value="Выберите папки данных, которые должны быть автоматически добавлены на страницы, использующие этот тип страниц" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationFieldGroup.Label" value="Приложения" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Label" value="Приложения" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Help" value="Выберите приложения, которые должны быть автоматически добавлены на страницы, использующие этот тип страниц" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.DefaultTemplateNotInRestrictions" value="Шаблон по умолчанию не выбран в ограничениях шаблонов" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.HomepageRelationConflictsWithParentRestrictions" value="Ограничения родительского типа страниц недопустим, если выбраны &quot;Только домашние страницы&quot;." />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Label" value="Удалить этот тип страниц?" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Messeage" value="Удалить шаблон страницы {0}?" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Label" value="Шаблон страницы используется" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Message" value="Шаблон страницы {0} уже используется, и его нельзя удалить" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.Layout.Label" value="Добавить контент по умолчанию" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.FieldGroup.Label" value="Выберите заполнитель" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Идентификатор заполнителя" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="Идентификатор заполнителя. Вы можете указать несуществующий идентификатор и создать заполнитель позже (изменив шаблон страницы)." />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Title" value="Нет шаблонов с {0}" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Message" value="Обратите внимание, что указанный вами идентификатор заполнителя '{0}' в данный момент отсутствует в шаблонах страниц." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.Layout.Label" value="Изменить контент по умолчанию" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsPlaceHolder.Label" value="Настройки" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsFieldGroup.Label" value="Информация о заполнителе" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Идентификатор заполнителя" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="Идентификатор заполнителя. Вы можете указать несуществующий идентификатор и создать заполнитель позже (изменив шаблон страницы)." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.ContentXhtmlEditor.Label" value="Контент" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.Layout.Label" value="Добавить поле метаданных" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="" />
+  <!-- "Metadata settings" - but too much text! -->
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Программное имя" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="Уникальное имя поля метаданных. Его нельзя изменить позже!" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Показывать с надписью" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Надпись поля метаданных. Используется в пользовательском интерфейсе." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Label" value="Тип метаданных" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Help" value="Тип метаданных" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Показывать на вкладке" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="Выберите вкладку, на которой следует показывать метаданные при изменении страницы." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.AddingDefaultMetaData.Title" value="Добавить значения метаданных по умолчанию" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Такое имя поля другого типа уже используется." />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Label" value="Удалить это поле метаданных?" />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Message" value="Удалить поле метаданных {0}? Предупреждение: все существующие элементы метаданных также будут удалены" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.Layout.Label" value="Изменить поле метаданных" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="Настройки поля метаданных" />
+  <!--<string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Name" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="The uniqueue name of the Metadata field" />-->
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Надпись" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Надпись поля метаданных. Используется в пользовательском интерфейсе" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Вкладка" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="Выберите вкладку, где следует добавить метаданные при изменении страницы" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Такой тип метаданных уже используется с тем же именем, но с другой надписью" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataContainerChangeNotAllowed" value="Существует одно или несколько определений с тем же именем. Изменение контейнера недопустимо." />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Title" value="Этот тип метаданных был удален" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Message" value="Этот тип метаданных был удален из системы и его нельзя добавлять к типам страниц" />
+</strings>

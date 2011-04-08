@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="WebsiteFilesRootElement.Label" value="/" />
+	<string key="LayoutResourcesRootElement.Label" value="/" /> <!-- Layout Resources -->
+	<string key="LayoutResourcesKeyNameLabel" value="Макет" />
+	
+	<string key="DeleteFile.LabelFieldGroup" value="Удалить файл?" />
+	<string key="DeleteFile.Text" value="Удалить файл?" />
+	<string key="DeleteFolder.LabelFieldGroup" value="Удалить папку?" />
+	<string key="DeleteFolder.Text" value="Удалить папку?" />
+	<string key="AddNewFolder.LabelFieldGroup" value="Добавить новую папку" />
+	<string key="AddNewFolder.Text" value="Имя папки" />
+	<string key="AddNewFolder.Help" value="Введите имя новой папки" />
+	<string key="AddNewFolder.Error.FolderExist" value="Папка с таким именем уже существует" />
+	<string key="AddNewFile.LabelFieldGroup" value="Добавить новый файл" />
+	<string key="AddNewFile.Text" value="Имя файла" />
+	<string key="AddNewFile.Help" value="Введите имя нового файла" />
+	<string key="AddNewFile.Error.FileExist" value="Файл с таким именем уже существует" />
+	<string key="UploadNewWebsiteFile.LabelFieldGroup" value="Загрузить файл" />
+	<string key="UploadNewWebsiteFile.LabelFile" value="Выберите файл" />
+	<string key="UploadNewWebsiteFile.HelpFile" value="Выберите файл для загрузки" />
+  <string key="UploadNewWebsiteFile.ConfirmOverwriteTitle" value="Перезаписать существующий файл" />
+  <string key="UploadNewWebsiteFile.ConfirmOverwriteDescription" value="Файл с таким именем уже существует, перезаписать?" />
+	<string key="UploadFile.Error.WrongTypeTitle" value="Неверный тип файла" />
+	<string key="UploadFile.Error.WrongTypeMessage" value="Неверный тип файла" />
+	
+
+	<string key="AddWebsiteFolderTitle" value="Новая папка" />
+	<string key="AddWebsiteFolderToolTip" value="Добавить новую папку" />
+	<string key="AddWebsiteFileTitle" value="Новый файл" />
+	<string key="AddWebsiteFileToolTip" value="Создать новый файл" />
+	<string key="DeleteWebsiteFileTitle" value="Удалить файл" />
+	<string key="DeleteWebsiteFileToolTip" value="Удалить файл" />
+  <string key="DownloadFileTitle" value="Скачать" />
+  <string key="DownloadFileToolTip" value="Скачать файл" />
+  <string key="DeleteWebsiteFolderTitle" value="Удалить папку" />
+	<string key="DeleteWebsiteFolderToolTip" value="Удалить папку" />
+	<string key="EditWebsiteFileTitle" value="Изменить файл" />
+	<string key="EditWebsiteFileToolTip" value="Изменить файл" />
+	<string key="UploadWebsiteFileTitle" value="Загрузить файл" />
+	<string key="UploadWebsiteFileToolTip" value="Загрузить файл" />
+	<string key="AddFolderToWhiteListTitle" value="Показать в разделе &quot;{0}&quot;" />
+	<string key="AddFolderToWhiteListToolTip" value="Выбрать, должна ли эта папка быть видна в разделе &quot;{0}&quot;" />
+	<string key="RemoveFolderFromWhiteListTitle" value="Показать в разделе &quot;{0}&quot;" />
+	<string key="RemoveFolderFromWhiteListToolTip" value="Выбрать, должна ли эта папка быть видна в разделе &quot;{0}&quot;" />
+
+	<string key="DeleteWebsiteFileWorkflow.DeleteErrorTitle" value="Ошибка" />
+	<string key="DeleteWebsiteFileWorkflow.DeleteErrorMessage" value="Не удается удалить файл" />
+	<string key="DeleteWebsiteFolderWorkflow.DeleteErrorTitle" value="Ошибка" />
+	<string key="DeleteWebsiteFolderWorkflow.DeleteErrorMessage" value="Не удается удалить папку" />
+</strings>

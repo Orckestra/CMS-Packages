@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="GlobalDataFolderLabel" value="Глобальные типы данных" />
+  <string key="GlobalDataFolderToolTip" value="Глобальные типы данных" />
+  <string key="GlobalDataFolderLabel_OnlyGlobalData" value="Элементы веб-сайтов" />
+  <string key="GlobalDataFolderToolTip_OnlyGlobalData" value="Элементы веб-сайтов (данные)" />
+  <string key="PageDataFolderDataFolderLabel" value="Папки данных для страниц" />
+  <string key="PageDataFolderDataFolderToolTip" value="Папки данных для страниц" />
+  <string key="PageMetaDataFolderLabel" value="Метатипы для страниц" />
+  <string key="PageMetaDataFolderToolTip" value="Метатипы для страниц" />
+  <string key="Add" value="Добавить тип данных" />
+  <string key="AddToolTip" value="Добавить новый глобальный тип данных" />
+  <string key="ViewUnpublishedItems" value="Список неопубликованных данных" />
+  <string key="ViewUnpublishedItemsToolTip" value="Обзор данных, которые не были еще опубликованы" />
+  <string key="ViewUnpublishedItems-document-title" value="Неопубликованные данные" />
+  <string key="ViewUnpublishedItems-document-description" value="В приведенном ниже списке отображены элементы данных, которые в данный момент изменяются или готовы к утверждению / публикации." />
+  <string key="ViewUnpublishedItems-document-empty-label" value="Нет неопубликованных данных." />
+  <string key="AddDataFolder" value="Добавить тип данных" />
+  <string key="AddDataFolderToolTip" value="Добавить новую папку данных" />
+  <string key="AddMetaDataLabel" value="Добавить метатип" />
+  <string key="AddMetaDataToolTip" value="Добавить метатип" />
+  <string key="Edit" value="Изменить тип данных" />
+  <string key="EditToolTip" value="Изменить выбранный тип данных" />
+  <string key="EditDataFolderTypeLabel" value="Изменить" />
+  <string key="EditDataFolderTypeToolTip" value="Изменить выбранную папку данных" />
+  <string key="EditMetaDataTypeLabel" value="Изменить" />
+  <string key="EditMetaDataTypeToolTip" value="Изменить выбранный метатип данных" />
+  <string key="Delete" value="Удалить тип данных" />
+  <string key="DeleteToolTip" value="Удалить выбранный тип данных" />
+  <string key="DeleteDataFolderTypeLabel" value="Удалить" />
+  <string key="DeleteDataFolderTypeToolTip" value="Удалить выбранную папку данных" />
+  <string key="DeleteMetaDataTypeLabel" value="Удалить" />
+  <string key="DeleteMetaDataTypeToolTip" value="Удалить выбранный метатип данных" />
+  <string key="EditFormMarkup" value="Изменить разметку формы" />
+  <string key="EditFormMarkupToolTip" value="Изменить макет формы данных, используя разметку формы" />
+  <string key="EnableLocalization" value="Включить локализацию" />
+  <string key="EnableLocalizationToolTip" value="Включить локализацию" />
+  <string key="DisableLocalization" value="Отключить локализацию" />
+  <string key="DisableLocalizationToolTip" value="Отключить локализацию" />
+  <string key="DisabledData" value="Еще не утверждено или опубликовано" />
+  <string key="UndefinedLabelTemplate" value="(не определено [{0}])" />
+  <string key="UndefinedDataLavelTemplate" value="(не определено)" />
+  <string key="ShowInContent" value="Показывать в разделе &quot;Контент&quot;" />
+  <string key="ShowInContentToolTip" value="Показывать на разделе &quot;Контент&quot;" />
+  <string key="AddData" value="Добавить данные" />
+  <string key="AddDataToolTip" value="Добавить новые данные" />
+  <string key="EditData" value="Изменить данные" />
+  <string key="EditDataToolTip" value="Изменить выбранные данные" />
+  <string key="DeleteData" value="Удалить данные" />
+  <string key="DeleteDataToolTip" value="Удалить выбранные данные" />
+  <string key="LocalizeData" value="Перевести данные" />
+  <string key="LocalizeDataToolTip" value="Перевести выбранные данные" />
+  <string key="LabelPublicationState" value="Статус публикации" />
+  <string key="DraftTransition" value="Черновик" />
+  <string key="AwaitingApprovalTransition" value="Ожидает утверждения" />
+  <string key="AddNewInterfaceTypeStep1.DocumentTitle" value="Новый тип данных" />
+  <string key="AddNewCompositionTypeWorkflow.DocumentTitle" value="Новый метатип для страниц" />
+  <string key="AddNewAggregationTypeWorkflow.DocumentTitle" value="Новая папка данных для страниц" />
+  <string key="EditorCommon.SettingsTab" value="Настройки" />
+  <string key="EditorCommon.LabelTitleGroup" value="Название типа" />
+  <string key="EditorCommon.LabelProgrammaticNamingAndServices" value="Программное наименование и службы" />
+  <string key="EditorCommon.LabelProgrammaticNaming" value="Программное наименование" />
+  <string key="EditorCommon.LabelTypeName" value="Имя типа" />
+  <string key="EditorCommon.HelpTypeName" value="Техническое имя типа данных (например, Product). Используется для идентификации этого типа в коде и не должно изменяться, если имелся хотя бы один случай внешнего использования." />
+  <string key="EditorCommon.LabelTypeNamespace" value="Пространство имен типа" />
+  <string key="EditorCommon.HelpTypeNamespace" value="Пространство имен (модуль / название категории) типа. Используется для идентификации этого типа в коде и не должно изменяться, если имелся хотя бы один случай внешнего использования." />
+  <string key="EditorCommon.LabelTitle" value="Название" />
+  <string key="EditorCommon.HelpTitle" value="В этом поле нужно указать понятное для пользователя название типа. Используется главным образом в  пользовательском интерфейсе." />
+  <string key="EditorCommon.LabelFields" value="Поля" />
+  <string key="EditorCommon.ServicesLabel" value="Службы" />
+  <string key="EditorCommon.HasCaching" value="Поддержка кеширования" />
+  <string key="EditorCommon.HasPublishing" value="Поддержка публикации" />
+  <string key="EditorCommon.HasLocalization" value="Поддержка локализации" />
+  <string key="DeleteGeneratedDataStep1.LabelFieldGroup" value="Удалить данные?" />
+  <string key="DeleteGeneratedDataStep1.Text" value="Удалить данные?" />
+  <string key="DeleteDataConfirmationText" value="Некоторые зависимые данные также будут удалены. Вы хотите продолжить?" />
+  <string key="DeleteGeneratedInterfaceStep1.LabelFieldGroup" value="Удалить тип данных" />
+  <string key="DeleteGeneratedInterfaceStep1.Text" value="Удалить тип данных" />
+  <string key="CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
+  <string key="CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип, который не допускает каскадное удаление. Выполнение операции приостановлено." />
+  <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="Удалить тип данных" />
+  <string key="DeleteAggregationTypeWorkflow.Text" value="Удалить тип данных" />
+  <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="Удалить тип данных" />
+  <string key="DeleteCompositionTypeWorkflow.Text" value="Удалить тип данных" />
+  <string key="DeleteCompositionTypeWorkflow.ErrorTitle" value="Ошибка" />
+  <string key="ToXmlLabel" value="В XML" />
+  <string key="ToXmlToolTip" value="В XML" />
+  <string key="EnableTypeLocalizationWorkflow.Dialog.Label" value="Включить локализацию" />
+  <string key="EnableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Включить локализацию" />
+  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Переместить существующие данные в ..." />
+  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="При включении &quot;локализации&quot; в типе данных, все данные должны принадлежать какому-то языку. Выберите язык, куда должны быть перемещены существующие данные." />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Title" value="Подтверждение" />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Description" value="Тип данных будет локализован и данные скопированы в выбранную локаль. Нажмите кнопку Готово для продолжения." />
+  <string key="EnableTypeLocalizationWorkflow.Step3.Title" value="Предупреждение" />
+  <string key="EnableTypeLocalizationWorkflow.Step3.Description" value="Некоторые типы данных имеют ссылки на этот тип. Во время локализации данные будут скопированы во все языки, чтобы предотвратить появление неработающих ссылок." />
+  <string key="EnableTypeLocalizationWorkflow.Abort.Title" value="Отсутствуют активные локали" />
+  <string key="EnableTypeLocalizationWorkflow.Abort.Description" value="Не добавлены активные локали. Добавьте по крайней мере одну локаль перед локализацией этого типа данных." />
+  <string key="DisableTypeLocalizationWorkflow.Dialog.Label" value="Отключить локализацию" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Отключить локализацию" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Сохранить данные из..." />
+  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="При отключении локализации в типе данных, может быть сохранен только один перевод. Данные из других языков будут утеряны." />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Title" value="Подтверждение" />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Description" value="Все данные из других локалей, кроме выбранной, будут утеряны. Нажмите кнопку Готово для продолжения." />
+  <string key="LocalizeDataWorkflow.ShowError.LayoutLabel" value="Не удалось перевести данные" />
+  <string key="LocalizeDataWorkflow.ShowError.InfoTableCaption" value="Ошибки перевода" />
+  <string key="LocalizeDataWorkflow.ShowError.AlreadyTranslated" value="Эти данные уже были переведены. Переведенная версия принадлежит к другой группе." />
+  <string key="LocalizeDataWorkflow.ShowError.Description" value="Следующие поля ссылаются на определенный тип данных. Вы должны перевести эти элементы данных, прежде чем переводить этот элемент данных" />
+  <string key="LocalizeDataWorkflow.ShowError.FieldErrorFormat" value="Поле '{0}' ссылается на данные типа '{1}' с надписью '{2} '" />
+  <string key="AddNewInterfaceTypeStep1.ErrorTitle" value="Ошибка" />
+  <string key="EditInterfaceTypeStep1.ErrorTitle" value="Ошибка" />
+  <string key="AddNewCompositionTypeWorkflow.ErrorTitle" value="Ошибка" />
+  <string key="AddNewAggregationTypeWorkflow.ErrorTitle" value="Ошибка" />
+
+  <string key="EditCompositionTypeWorkflow.ErrorTitle" value="Ошибка" />
+  <string key="DataTypeDescriptorToXmlLabel" value="XML-результат" />
+</strings>

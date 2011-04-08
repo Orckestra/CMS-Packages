@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Localizations>
+		<Add name="ru-RU" />
+	</pc:Localizations>
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4055.27225" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.LanguagePacks.Russian" groupName="Composite.LanguagePacks" version="1.0.14" author="Composite a/s" website="www.composite.net" id="cfe219d3-ac46-4c0e-80ff-afd4cc9011c6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Russian language pack for the console GUI</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

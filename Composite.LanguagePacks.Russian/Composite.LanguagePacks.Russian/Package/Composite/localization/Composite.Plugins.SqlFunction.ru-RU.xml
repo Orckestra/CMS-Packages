@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="SqlFunctionElementProvider.RootLabel" value="SQL функции" />
+  <string key="SqlFunctionElementProvider.RootLabelToolTip" value="Добавить подключения, а затем запросы к подключениям" />
+  <string key="SqlFunctionElementProvider.AddConnection" value="Добавить SQL подключение" />
+  <string key="SqlFunctionElementProvider.AddConnectionToolTip" value="Добавить новое SQL подключение" />
+  <string key="SqlFunctionElementProvider.EditConnection" value="Изменить" />
+  <string key="SqlFunctionElementProvider.EditConnectionToolTip" value="Изменить SQL подключение" />
+  <string key="SqlFunctionElementProvider.DeleteConnection" value="Удалить" />
+  <string key="SqlFunctionElementProvider.DeleteConnectionToolTip" value="Удалить SQL подключение" />
+  <string key="SqlFunctionElementProvider.AddQuery" value="Добавить новый SQL запрос" />
+  <string key="SqlFunctionElementProvider.AddQueryToolTip" value="Добавить новый SQL запрос" />
+  <string key="SqlFunctionElementProvider.EditQuery" value="Изменить" />
+  <string key="SqlFunctionElementProvider.EditQueryToolTip" value="Изменить SQL запрос" />
+  <string key="SqlFunctionElementProvider.DeleteQuery" value="Удалить" />
+  <string key="SqlFunctionElementProvider.DeleteQueryToolTip" value="Удалить SQL запрос" />
+  <string key="AddNewSqlFunction.LabelDialog" value="Добавить новый SQL запрос" />
+  <string key="AddNewSqlFunction.LabelNamingPanel" value="Название функции" />
+  <string key="AddNewSqlFunction.LabelName" value="Название" />
+  <string key="AddNewSqlFunction.HelpName" value="" />
+  <string key="AddNewSqlFunction.LabelNamespace" value="Пространство имен" />
+  <string key="AddNewSqlFunction.HelpNamespace" value="" />
+  <string key="AddNewSqlFunction.LabelQueryCOmmand" value="Текст SQL команды" />
+  <string key="AddNewSqlFunction.HelpQueryCOmmand" value="" />
+  <!-- shared on add and edit -->
+  <string key="AddEditSqlFunction.LabelIsStoredProcedure" value="Является хранимой процедурой" />
+  <string key="AddEditSqlFunction.LabelIsStoredProcedureCheckBox" value="Да, эта команда является процедурой" />
+  <string key="AddEditSqlFunction.LabelReturnsXml" value="Возвращает результат в виде XML" />
+  <string key="AddEditSqlFunction.LabelReturnsXmlCheckBox" value="Да, эта команда возвращает XML" />
+  <string key="AddEditSqlFunction.LabelIsQuery" value="Является запросом" />
+  <string key="AddEditSqlFunction.LabelIsQueryCheckBox" value="Да, эта команда возвращает данные" />
+  <string key="AddEditSqlFunction.LabelCommandBehaviour" value="Поведение SQL команды" />
+  <string key="AddEditSqlFunctionConnection.LabelFieldGroup" value="Настройки SQL подключения" />
+  <string key="AddEditSqlFunction.LabelSqlEditor" value="SQL команда" />
+  <string key="AddNewSqlFunctionConnection.LabelDialog" value="Добавить новое SQL подключение" />
+  <string key="AddNewSqlFunctionConnection.LabelName" value="Название" />
+  <string key="AddNewSqlFunctionConnection.HelpName" value="" />
+  <string key="AddNewSqlFunctionConnection.LabelConnectionString" value="Строка подключения" />
+  <string key="AddNewSqlFunctionConnection.HelpConnectionString" value="" />
+  <string key="AddNewSqlFunctionConnection.LabelIsMSSQL" value="MS SQL Server" />
+  <string key="AddNewSqlFunctionConnection.LabelIsMSSQLCheckBox" value="Это база данных MS SQL Server" />
+  <string key="EditSqlFunction.LabelInputParameters" value="Входные параметры" />
+  <string key="EditSqlFunction.LabelSettings" value="Настройки" />
+  <string key="EditSqlFunction.LabelNamingAndDescription" value="Название и описание функции" />
+  <string key="EditSqlFunction.LabelName" value="Название" />
+  <string key="EditSqlFunction.HelpName" value="" />
+  <string key="EditSqlFunction.LabelNamespace" value="Пространство имен" />
+  <string key="EditSqlFunction.HelpNamespace" value="" />
+  <string key="EditSqlFunction.LabelDescription" value="Описание" />
+  <string key="EditSqlFunction.HelpDescription" value="" />
+  <string key="EditSqlFunction.LabelPreview" value="Просмотр" />
+  <string key="EditSqlFunctionConnection.LabelName" value="Название" />
+  <string key="EditSqlFunctionConnection.HelpName" value="" />
+  <string key="EditSqlFunctionConnection.LabelConnectionString" value="Строка подключения" />
+  <string key="EditSqlFunctionConnection.HelpConnectionString" value="" />
+  <string key="EditSqlFunctionConnection.LabelIsMSSQL" value="MS SQL Server" />
+  <string key="EditSqlFunctionConnection.LabelIsMSSQLCheckBox" value="Это база данных MS SQL Server" />
+  <string key="DeleteSqlConnection.LabelFieldGroup" value="Удалить это SQL подключение?" />
+  <string key="DeleteSqlConnection.Text" value="Удалить это SQL подключение?" />
+  <string key="DeleteSqlFunction.LabelFieldGroup" value="Удалить эту SQL функцию?" />
+  <string key="DeleteSqlFunction.Text" value="Удалить эту SQL функцию?" />
+  <string key="CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
+  <string key="CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип, который не допускает каскадное удаление. Выполнение этой операции приостановлено." />
+</strings>

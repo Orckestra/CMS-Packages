@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="DialogTitle" value="Свойства функции" />
+  <string key="FunctionLocalNameGroupLabel" value="Локальное название результата функции" />
+  <string key="FunctionLocalNameLabel" value="Локальное название" />
+  <string key="FunctionLocalNameHelp" value="Если вы добавляете функцию несколько раз, это поле может помочь вам различать их отдельные результаты по их локальному названию." />
+  <string key="ParameterValueLabel" value="Значение параметра" />
+  <string key="AddNewFunctionDialogLabel" value="Выберите функцию" />
+  <string key="ComplexFunctionCallDialogLabel" value="Значение параметра &quot;{0}&quot;" />
+  <string key="ParameterTypeLabel" value="Тип параметра" />
+  <string key="ParameterNameLabel" value="Имя параметра" />
+  <string key="ReturnTypeLabel" value="Тип возвращаемого значения" />
+  <string key="ValidationFailedAlertTitle" value="Ошибка проверки" />
+  <string key="FunctionNotFound" value="Функция &quot;{0}&quot; не существует." />
+  <string key="RequiredParameterNotDefined" value="Обязательный параметр &quot;{0}&quot; не определен." />
+  <string key="IncorrectTypeCast" value="Неправильное приведения типа. Имя параметра: &quot;{0}&quot;, имя функции: &quot;{1}&quot;." />
+  <string key="ParameterTypeDefaultLabel" value="По умолчанию" />
+  <string key="ParameterTypeConstantLabel" value="Константа" />
+  <string key="ParameterTypeInputParameterLabel" value="Входной параметр" />
+  <string key="ParameterTypeFunctionLabel" value="Функция" />
+  <string key="AddNewButtonLabel" value="Добавить" />
+  <string key="DeleteButtonLabel" value="Удалить" />
+  <string key="ToolBar.LabelSource" value="Код" />
+  <string key="ToolBar.LabelDesign" value="Дизайн" />
+</strings>

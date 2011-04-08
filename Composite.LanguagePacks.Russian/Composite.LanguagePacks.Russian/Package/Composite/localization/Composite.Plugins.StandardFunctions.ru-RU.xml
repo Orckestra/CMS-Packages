@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="Composite.AspNet.LoadUserControl.description" value="Загружает пользовательский ASP.NET-элемент управления" />
+  <string key="Composite.AspNet.LoadUserControl.param.Path.help" value="Путь к пользовательским элементам управления. .ascx файл, например, &quot;~/Controls/MyControl.ascx&quot;" />
+  <string key="Composite.AspNet.LoadUserControl.param.Path.label" value="Path" />
+  <string key="Composite.Constant.Boolean.description" value="Позволяет указать постоянное булево значение" />
+  <string key="Composite.Constant.Boolean.param.Constant.help" value="" />
+  <string key="Composite.Constant.Boolean.param.Constant.label" value="Value" />
+  <string key="Composite.Constant.DateTime.description" value="Позволяет указать постоянное значение даты и времени" />
+  <string key="Composite.Constant.DateTime.param.Constant.help" value="" />
+  <string key="Composite.Constant.DateTime.param.Constant.label" value="Value" />
+  <string key="Composite.Constant.Decimal.description" value="Позволяет указать постоянное десятичное значение" />
+  <string key="Composite.Constant.Decimal.param.Constant.help" value="" />
+  <string key="Composite.Constant.Decimal.param.Constant.label" value="Value" />
+  <string key="Composite.Constant.Guid.description" value="Позволяет указать постоянное GUID значение" />
+  <string key="Composite.Constant.Guid.param.Constant.help" value="" />
+  <string key="Composite.Constant.Guid.param.Constant.label" value="Value" />
+  <string key="Composite.Constant.Integer.description" value="Позволяет указать постоянное целое число" />
+  <string key="Composite.Constant.Integer.param.Constant.help" value="" />
+  <string key="Composite.Constant.Integer.param.Constant.label" value="Value" />
+  <string key="Composite.Constant.String.description" value="Позволяет указать постоянное строковое значение" />
+  <string key="Composite.Constant.String.param.Constant.help" value="" />
+  <string key="Composite.Constant.String.param.Constant.label" value="Value" />
+  <string key="Composite.Constant.XhtmlDocument.description" value="Позволяет визуально указать документ XHTML как постоянное значение" />
+  <string key="Composite.Constant.XhtmlDocument.param.Constant.help" value="" />
+  <string key="Composite.Constant.XhtmlDocument.param.Constant.label" value="Value" />
+
+  <string key="Composite.IDataGenerated.AddDataInstance.description" value="Добавляет новый экземпляр данного типа." />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.description" value="Обновляет экземпляр(ы) с заданными значениями." />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.label" value="Filter" />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.description" value="Удаляет экземпляр(ы) с заданным фильтром." />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.label" value="Filter" />
+  <string key="Composite.IDataGenerated.GetDataReference.description" value="Создает ссылку на тип данных на основе значения ключа." />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.help" value="Значение ключа элемента данных для ссылки." />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.label" value="Key value" />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.description" value="Создает ссылку на тип данных, допускающую пустое значение, на основе значения ключа. Значение по умолчанию является null, без ссылки." />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.help" value="Значение ключа элемента данных для ссылки." />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.label" value="Key value" />
+
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.description" value="Преобразует ссылку на тип данных в фильтр одного элемента. В этом фильтре выбирается максимум один элемент." />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.help" value="Ссылка на тип данных для использования при выборе данных." />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.label" value="Data Reference" />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Позволяет выбрать элемент данных, основанный на его ссылке на страницу, обрабатываемую в данный момент." />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.help" value="Выберите, какая связь должна быть у текущей страницы с данными, которые вы хотите получить." />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.label" value="Page scope" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.description" value="Определяет запрос типа &quot;и&quot; или &quot;или&quot;, объединяя два других фильтра." />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.label" value="And / or filter" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.help" value="Если вы выберите опцию &quot;и&quot;, оба фильтры будут применены к данным. Выбор опции &quot;или&quot; вернет вам данные, которые соответствуют лишь одному из фильтров." />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.help" value="Один из двух фильтров (тот, который обрабатывается первым)" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.label" value="Left filter" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.help" value="Один из двух фильтров (тот, который обрабатывается последним)" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.label" value="Right filter" />
+  <string key="Composite.IDataGenerated.Filter.FieldPredicatesFilter.description" value="Позволяет указать фильтр для данных, установив требования к отдельным полям. Если установить требования по нескольким полям, все они будут задействованы (и попадут в запрос)." />
+  <string key="Composite.IDataGenerated.GetXml.description" value="Возвращает данные в виде XML." />
+  <string key="Composite.IDataGenerated.GetXml.param.ElementName.label" value="Element name" />
+  <string key="Composite.IDataGenerated.GetXml.param.ElementNamespace.label" value="Element namespace" />
+  <string key="Composite.IDataGenerated.GetXml.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.GetXml.param.Filter.label" value="Filter" />
+  <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.help" value="Если флажок установлен, данным  в виде XML будет предшествовать элемент &lt;PagingInfo /&gt;, в котором указываются детали о числе страниц, элементов и многое другое." />
+  <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.label" value="Include paging info" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderByField.help" value="Поле, по которому сортируются данные" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderByField.label" value="Order by" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.help" value="При установке значение &quot;true&quot;, результаты возвращаются в порядке возрастания, в противном случае, в порядке убывания. По умолчанию используется порядок возрастания." />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.label" value="Order ascending" />
+  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.help" value="Если количество элементов данных превышает размер страницы, можно использовать постраничный просмотр, чтобы перейти к другим страницам. См. параметр Page size (размер страницы)." />
+  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.label" value="Page number" />
+  <string key="Composite.IDataGenerated.GetXml.param.PageSize.help" value="Количество элементов, отображаемых на одной странице - максимальное количество возвращаемых элементов." />
+  <string key="Composite.IDataGenerated.GetXml.param.PageSize.label" value="Page size" />
+  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.help" value="Поля данных для вывода в XML. Меньшее число полей может обеспечить более быструю обработку." />
+  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.label" value="Selected fields" />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.help" value="Если вы включите данные по ссылкам в параметры Selected properties, можно будет использовать эту опцию для контроля над включениями данных по ссылкам. Опция inline (Встроено) проста в использовании, но может значительно увеличить размер XML-документа." />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.label" value="Show reference data inline" />
+  <string key="Composite.IDataGenerated.GetXml.param.Randomized.help" value="В значении true, данные могут быть отсортированы в случайном порядке. Укажите число нужных вам случайных результатов, установив значение параметра Page size(Размер страницы). Если фильтр указан, он применяется до случайного выбора. Если вы указываете значение Order by, вы должны указать малое значение Page size,  иначе случайный выбор будет недействительным." />
+  <string key="Composite.IDataGenerated.GetXml.param.Randomized.label" value="Randomized" />
+  <string key="Composite.IDataGenerated.GetXml.param.CachePriority.help" value="Определяет, нужно ли результат в виде XML кешировать, а также какой приоритет должен быть у записей кеша." />
+  <string key="Composite.IDataGenerated.GetXml.param.CachePriority.label" value="Cache Priority" />  
+  <string key="Composite.Pages.GetPageId.description" value="Возвращает идентификатор текущей страницы или страницы, связанной с текущей страницей." />
+  <string key="Composite.Pages.GetPageId.param.SitemapScope.help" value="Идентификатор какой страницы получить. По умолчанию, текущей страницы." />
+  <string key="Composite.Pages.GetPageId.param.SitemapScope.label" value="Page association" />
+  <string key="Composite.Pages.QuickSitemap.description" value="Быстрый и необработанный XHTML карты сайта." />
+  <string key="Composite.Pages.SitemapXml.description" value="Возвращает иерархическую структуру страниц в виде XML. При выполнении в рамках обработки страницы, к XML-элементам, представляющих собой текущие страницы или их предков, будут добавлены атрибуты IsOpen = &quot;True&quot; и IsCurrent = &quot;True&quot;" />
+  <string key="Composite.Pages.SitemapXml.param.SourcePage.label" value="Source page" />
+  <string key="Composite.Pages.SitemapXml.param.SourcePage.help" value="По умолчанию исходной страницей является страница, обрабатываемая в данный момент. Укажите другое значение, если вы хотите получить информацию о карте сайта, связанной с другой страницей. Исходная страница контролирует как элементы страницы аннотируются при помощи &quot;IsOpen&quot; и &quot;IsCurrent и является отправной точкой при вычислении области видимости страниц." />
+  <string key="Composite.Pages.SitemapXml.param.SitemapScope.label" value="Page scope" />
+  <string key="Composite.Pages.SitemapXml.param.SitemapScope.help" value="Область видимости страниц для извлечения из карты сайта. По умолчанию - это &quot;все страницы&quot;. Вы можете использовать этот параметр для извлечения структуры, которая нужна вам для выполнения вашей задачи." />
+  <string key="Composite.Pages.GetForeignPageInfo.description" value="Получает информацию о текущей странице на всех языках." />
+
+  <string key="Composite.Utils.Caching.PageObjectCache.description" value="Определяет &quot;зону кеша&quot; вокруг вызова функции или кода разметки (обычно содержащего вызовы функций). Эта функция может быть использована для повышения производительности при обработке страниц за счет кеширования частей веб-страницы. Значение Object Cache ID должны быть уникальными для кешируемого контента." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.label" value="Object to cache" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.help" value="То, что вы хотите кешировать - это может быть один вызов функции или часть кода разметки, содержащей один или несколько вызовов функций." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.label" value="Unique cache id" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.help" value="Укажите идентификатор уникальный для кешируемого контента. Это значение используется - в сочетании с областью видимости страниц - чтобы определить уникальный ключ кеша." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.label" value="Page scope" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.help" value="Область видимости страниц, в которой кешированные данные должны использоваться совместно. По умолчанию область видимости страниц - &quot;этот сайт&quot;, но вы можете изменить его на кеширование для конкретной страницы и т.д." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.label" value="Cache duration (seconds)" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.help" value="Количество секунд, в течении которых кешированный объект должен быть повторно использован. По умолчанию - 1 минута (60 секунд)." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.label" value="Language specific" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.help" value="Выберите, нужно ли кешировать объект специально для каждого языка веб-сайта, или использовать один и тот же объект для разных языков." />
+
+  <string key="Composite.Utils.Compare.AreEqual.description" value="AreEqual" />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueA.help" value="Сравнение двух объектов на равенство. Возвращает true, если два объекта равны." />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueA.label" value="Value A to compare." />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueB.help" value="" />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueB.label" value="Value B to compare." />
+  <string key="Composite.Utils.Compare.IsLessThan.description" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueA.help" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueA.label" value="Value A to compare." />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueB.help" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueB.label" value="Value B to compare." />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.description" value="Читает строку из файла конфигурации приложения (Web.config или app.config)" />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.help" value="" />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.label" value="Key Name" />
+  <string key="Composite.Utils.Date.AddDays.description" value="Добавить несколько дней до текущей даты и получить результирующую дату." />
+  <string key="Composite.Utils.Date.AddDays.param.DaysToAdd.help" value="Укажите отрицательное или положительное значение для количества дней, которое нужно добавить к текущей дате." />
+  <string key="Composite.Utils.Date.AddDays.param.DaysToAdd.label" value="Days to add" />
+  <string key="Composite.Utils.Date.Now.description" value="Текущие дата и время" />
+  <string key="Composite.Utils.GetInputParameter.description" value="Возвращает входной параметр из контекста выполняемой функции. Используйте его при разработке для копирования входного значения в новый вызов функции." />
+  <string key="Composite.Utils.GetInputParameter.param.InputParameterName.help" value="Укажите имя входного параметра, значение которого вы хотите использовать здесь." />
+  <string key="Composite.Utils.GetInputParameter.param.InputParameterName.label" value="Parameter name" />
+
+  <string key="Composite.Utils.ParseStringToObject.description" value="Парсит строку и преобразовывает ее в объект. Тип объекта зависит от получателя. При использовании этой функции, чтобы установить значение в параметре типа DateTime, система распарсит строку как DateTime и т.д." />
+  <string key="Composite.Utils.ParseStringToObject.param.StringToParse.help" value="Укажите строку для парсинга. Обратите внимание на то, что у строки должен быть формат, по которому она может быть преобразована в ожидаемый тип объекта." />
+  <string key="Composite.Utils.ParseStringToObject.param.StringToParse.label" value="String to parse" />
+
+  <string key="Composite.Utils.Guid.NewGuid.description" value="Возвращает новый случайный GUID." />
+  <string key="Composite.Utils.Globalization.AllCultures.description" value="Список всех культур" />
+  <string key="Composite.Utils.Globalization.CurrentCulture.description" value="Культуры для текущего пользователя / запроса." />
+  <string key="Composite.Utils.Integer.Sum.description" value="Возвращает сумму из списка целых чисел" />
+  <string key="Composite.Utils.Integer.Sum.param.Ints.help" value="" />
+  <string key="Composite.Utils.Integer.Sum.param.Ints.label" value="Integer list" />
+  <string key="Composite.Utils.Predicates.BoolEquals.description" value="Проверяет, является ли булево значение истинным или ложным." />
+  <string key="Composite.Utils.Predicates.BoolEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.BoolEquals.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.description" value="Проверяет, равна ли дата определенному значению." />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.description" value="Проверяет, больше ли дата определенного значения" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.description" value="Проверяет, меньше ли дату определенного значения" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.description" value="Проверяет, имеет ли это десятичное число определенное значение" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.description" value="Проверяет, больше ли это десятичное число определенного значения" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.description" value="Проверяет, меньше ли это десятичное число определенного значения" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.GuidEquals.description" value="Проверяет, равен  ли Guid определенному значению" />
+  <string key="Composite.Utils.Predicates.GuidEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.GuidEquals.param.Value.label" value="The value to compare with" />
+
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.description" value="Проверяет, существует ли Guid в списке разделенных запятыми строк" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.label" value="List of Guid" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.help" value="Строка, содержащая ноль или более значений типа Guid, разделенных запятыми" />
+
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.description" value="Проверяет, совпадает ли строковое поле с одним из значений из списка строк, разделенных запятыми" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.label" value="Search terms" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="Строка, содержащая условия поиска, через запятую, например, 'c1,cms,linq'" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.label" value="Ignore case" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.help" value="При значении false, регистр букв в слове должен точно соблюдаться. По умолчанию - false, то есть поиск без учета регистра" />
+
+  <string key="Composite.Utils.Predicates.StringInList.description" value="Проверяет, совпадает ли строковое поле с одной из строк в предоставленном списке" />
+  <string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.label" value="Search terms" />
+  <string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.help" value="Список строк для сравнения с искомым строковым полем." />
+  <string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.label" value="Ignore case" />
+  <string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.help" value="При значении false, регистр букв в слове должен точно соблюдаться. По умолчанию - false, то есть поиск без учета регистра" />
+
+
+  <string key="Composite.Utils.Predicates.IntegerEquals.description" value="Проверяете, равно ли целое число определенному значению" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.description" value="Проверяет, больше ли целое число определенного значения" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.description" value="Проверяет, меньше ли целое число определенного значения" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.StringContains.description" value="Проверяет, содержит ли строка определенное значение" />
+  <string key="Composite.Utils.Predicates.StringContains.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringContains.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.description" value="Проверяет, заканчивается ли строка определенным значением" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.StringEquals.description" value="Проверяет, равна ли строка определенному значению" />
+  <string key="Composite.Utils.Predicates.StringEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringEquals.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.description" value="Проверяет, начинается ли строка определенным значением" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.description" value="Проверяет, равен ли Guid определенному значению" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.NullableGuidNoValue.description" value="Проверяет, отсутствует ли значение у Guid, который допускает пустое значение (null)" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.description" value="Проверяет, равно ли целое число определенному значению" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.NullableIntegerNoValue.description" value="Проверяет, отсутствует ли значение у целого числа, которое допускает пустое значение (null)" />
+  <string key="Composite.Utils.Predicates.StringNoValue.description" value="Проверяет, отсутствует ли значение у строки" />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.description" value="Проверяет, является ли булево значение истинным или ложным." />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.NullableBoolNoValue.description" value="Проверяет, отсутствует ли значение у булева типа, которое допускает пустое значение (null)" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.description" value="Проверяет, равна ли дата определенному значению" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.description" value="Проверяет, больше ли дата определенного значения" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.description" value="Проверяет, меньше ли дата определенного значения" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeNoValue.description" value="Проверяет, отсутствует ли значение у даты, которая допускает пустое значение (null)" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.description" value="Проверяет, есть ли у десятичного числа определенное значение" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.label" value="The value to compare with" />
+  <string key="Composite.Utils.Predicates.NullableDecimalNoValue.description" value="Проверяет, отсутствует ли значение у десятичного числа, которое допускает пустое значение (null)" />
+
+  <string key="Composite.Utils.String.Join.description" value="Объединяет список строк в одну строку" />
+  <string key="Composite.Utils.String.Join.param.Separator.help" value="Разделитель для вставки между строк." />
+  <string key="Composite.Utils.String.Join.param.Separator.label" value="Separator" />
+  <string key="Composite.Utils.String.Join.param.Strings.help" value="Список строк для объединения" />
+  <string key="Composite.Utils.String.Join.param.Strings.label" value="Strings to join" />
+  <string key="Composite.Utils.String.JoinTwo.description" value="Соединяет две строки в простую строку" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringA.help" value="Строка, которую нужно вставить первой" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringA.label" value="String A" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringB.help" value="Строка, которую нужно вставить последней" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringB.label" value="String B" />
+  <string key="Composite.Utils.String.JoinTwo.param.Separator.help" value="Строку, которую нужно вставить между строкой А и строкой Б. По умолчанию - разделитель отсутствует." />
+  <string key="Composite.Utils.String.JoinTwo.param.Separator.label" value="Separator" />
+  <string key="Composite.Utils.String.Split.description" value="Разбивает строку на строки в списке" />
+  <string key="Composite.Utils.String.Split.param.Separator.help" value="Разделитель, используемый при разбивке строки. По умолчанию - запятая (&quot;,&quot;)" />
+  <string key="Composite.Utils.String.Split.param.Separator.label" value="Separator" />
+  <string key="Composite.Utils.String.Split.param.String.help" value="Строка, которую вы хотите разбить на строки в списке." />
+  <string key="Composite.Utils.String.Split.param.String.label" value="String to split" />
+  <string key="Composite.Utils.Validation.DateTimeNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.DecimalNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.description" value="Проверяет точность цифр (количество десятичных знаков, указанных пользователем)" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.help" value="Максимальное количество цифр, допустимое для десятичного числа" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.label" value="Max number of decimal digits" />
+  <string key="Composite.Utils.Validation.GuidNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.Int32NotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.description" value="Проверяет, находится ли целое число в пределах определенного диапазона." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.help" value="Максимально допустимое число в этом поле." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.label" value="Maximum number" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.help" value="Минимально допустимое число в этом поле." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.label" value="Minimum number" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.description" value="Проверяет, чтобы строки соответствовали указанному регулярному выражению" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.help" value="Используемый шаблон регулярного выражения" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.label" value="RegEx pattern" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.description" value="Проверяет, чтобы длина строки находилась в пределах указанного диапазона" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.max.help" value="" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.max.label" value="Maximum length" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.min.help" value="" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.min.label" value="Minimum length" />
+  <string key="Composite.Utils.Validation.StringNotNullValidation.description" value="" />
+  <string key="Composite.Web.Client.BrowserPlatform.description" value="" />
+  <string key="Composite.Web.Client.BrowserString.description" value="" />
+  <string key="Composite.Web.Client.BrowserType.description" value="" />
+  <string key="Composite.Web.Client.BrowserVersion.description" value="" />
+  <string key="Composite.Web.Client.EcmaScriptVersion.description" value="" />
+  <string key="Composite.Web.Client.IsCrawler.description" value="True (истина), если текущий запрос определяется как исходящий от программы-обходчика (поисковика)." />
+  <string key="Composite.Web.Client.IsMobileDevice.description" value="Правда, если текущий запрос определяется как исходящий от мобильного устройства." />
+  <string key="Composite.Web.Request.CookieValue.description" value="Получает значение из текущей пользовательской коллекции cookie" />
+  <string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
+  <string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Cookie name" />
+  <string key="Composite.Web.Request.CookieValue.param.FallbackValue.help" value="Если у пользователя нет этого cookie, используйте это поле для указания значения по умолчанию." />
+  <string key="Composite.Web.Request.CookieValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.FormPostBoolValue.description" value="Возвращает логическое значение из отправки формы (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.description" value="Возвращает десятичное значение из отправки формы (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.label" value="Fallback name" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.FormPostGuidValue.description" value="Возвращает значение типа GUID из отправки формы (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.description" value="Возвращает целое число из отправки формы (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.FormPostValue.description" value="Возвращает строковое значение из отправки формы (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.FormPostValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.description" value="Возвращает значение даты и времени из отправки формы (HTTP POST). Входящая строка даты, как ожидается, будет отформатирован как XML (например, &quot;2003-09-26T13: 30:00&quot;)" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.help" value="Используемое значение, если отправка формы не содержит указанное имя параметра." />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.description" value="Возвращает логическое значение из параметра URL (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.description" value="Возвращает десятичное значение из параметра URL (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.description" value="Возвращает значение типа GUID из параметра URL (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.description" value="Возвращает значение целого числа из параметра URL (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.QueryStringValue.description" value="Возвращает строковое значение из параметра URL (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.QueryStringValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.description" value="Получает значение даты и времени из параметра URL (HTTP GET). Входящая строка даты, как ожидается, будет отформатирована как XML (например, &quot;2003-09-26T13: 30:00&quot;)" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.help" value="Используемое значение , если URL-адрес не содержит указанное имя параметра." />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.SessionVariable.description" value="Возвращает переменную из текущей сессии пользователя в виде строки." />
+  <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="Используемое значение, если переменная сессии не была найдена" />
+  <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.SessionVariable.param.VariableName.help" value="" />
+  <string key="Composite.Web.Request.SessionVariable.param.VariableName.label" value="Variable name" />
+  <string key="Composite.Web.Response.Redirect.description" value="Перенаправляет посетителя сайта на другой URL. URL-перенаправления, подавляются, когда эта функция выполняется в консоли С1." />
+  <string key="Composite.Web.Response.Redirect.param.Url.help" value="URL, на который должен быть перенаправлен пользователь, либо абсолютный (http://contoso.com/default.aspx), либо относительный (/ Login.aspx))." />
+  <string key="Composite.Web.Response.Redirect.param.Url.label" value="URL" />
+  <string key="Composite.Web.Response.SetCookieValue.description" value="Устанавливает значение cookie для текущего пользователя" />
+  <string key="Composite.Web.Response.SetCookieValue.param.CookieName.help" value="Имя cookie для установки / перезаписи" />
+  <string key="Composite.Web.Response.SetCookieValue.param.CookieName.label" value="Cookie name" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Value.help" value="Значение, сохраняемое в cookie" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Value.label" value="Cookie value" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Expires.help" value="Когда должен заканчиваться срок действия cookie. Значение по умолчанию &quot;сессия&quot;, т.е. когда пользователь закрывает браузер." />
+  <string key="Composite.Web.Response.SetCookieValue.param.Expires.label" value="Expiration" />
+
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.description" value="Устанавливает максимальное число секунд, в течение которых текущая страница должна быть публично кеширована на сервере. Чтобы избежать кеширования ответа, установите этому параметру значение &quot;0&quot;. При наличии нескольких источников с установленной продолжительностью кеширования, используется наименьшее число. Обратите внимание на то, что файл &quot;~/Renderers/page.aspx&quot; содержит значение по умолчанию для продолжительности кеширования. Вы можете изменить этот файл, чтобы изменить это значение по умолчанию." />
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.help" value="Максимальное количество секунд, в течение которых текущая страница должна быть публично кеширована на сервере. При большем значении достигается хорошая производительность, при меньшем изменения проявляются быстрее. Значение &quot;0&quot; обеспечивает каждого посетителя уникальным ответом." />
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.label" value="Maximum seconds" />
+
+  <string key="Composite.Web.Response.SetSessionVariable.description" value="Устанавливает переменную сессии для текущего пользователя" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.Value.help" value="" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.Value.label" value="Value" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.VariableName.help" value="Имя устанавливаемой переменной сессии." />
+  <string key="Composite.Web.Response.SetSessionVariable.param.VariableName.label" value="Variable name" />
+  <string key="Composite.Web.Server.ApplicationPath.description" value="Возвращает виртуальный путь веб-приложения. Как правило, это &quot;&quot; (пустая строка), при запуске из корневого каталога сайта, но если Composite C1 запущен из подкаталога, он может быть &quot;/ MySubfolder&quot;. Вы можете использовать это значение в качестве префикса к разным URL, чтобы они работали независимо от того, запущен C1 из подпапки или нет. Пример использования в XSLT: &lt;img src=&quot;{/in:inputs/in:result[@name='ApplicationPath']}/images/myImage.png&quot; /&gt;" />
+  <string key="Composite.Web.Server.ApplicationVariable.description" value="Возвращает переменную приложений IIS" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.help" value="Используемое значение, если переменная приложения не обнаружена." />
+  <string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.VariableName.help" value="" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.VariableName.label" value="Variable name" />
+  <string key="Composite.Web.Server.ServerVariable.description" value="Получает значение переменной сервера IIS" />
+  <string key="Composite.Web.Server.ServerVariable.param.VariableName.help" value="Получаемая переменная сервера IIS." />
+  <string key="Composite.Web.Server.ServerVariable.param.VariableName.label" value="Variable name" />
+  <string key="Composite.Xml.LoadFile.description" value="Загружает локальный XML-файл, при заданном относительном пути" />
+  <string key="Composite.Xml.LoadFile.param.RelativePath.help" value="Относительный путь к XML-файлу для загрузки" />
+  <string key="Composite.Xml.LoadFile.param.RelativePath.label" value="Relative path" />
+  <string key="Composite.Xml.LoadXhtmlFile.description" value="Загружает локальный XHTML-файл, при заданном относительном пути" />
+  <string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.help" value="Относительный путь к XHTML-файлу для загрузки" />
+  <string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.label" value="Relative path" />
+  <string key="Composite.Xml.LoadUrl.description" value="Загружает удаленный XML-файл, по заданному URL-адресу" />
+  <string key="Composite.Xml.LoadUrl.param.Url.help" value="" />
+  <string key="Composite.Xml.LoadUrl.param.Url.label" value="Url" />
+  <string key="Composite.Xml.LoadUrl.param.CacheTime.help" value="Период времени в секундах, в течение которых результат должен кешироваться. По умолчанию 0 (без кеширования)." />
+  <string key="Composite.Xml.LoadUrl.param.CacheTime.label" value="Seconds to cache" />
+  <string key="Composite.Xslt.Extensions.DateFormatting.description" value="Предоставляет функции форматирования  локализованных дат для использования в XSLT." />
+  <string key="Composite.Xslt.Extensions.Globalization.description" value="Предоставляет функции глобализации для использования в XSLT." />
+  <string key="Composite.Xslt.Extensions.MarkupParser.description" value="Предоставляет функции для парсинга кодированных XML-документов или XHTML-фрагментов в узлы. Используйте это расширение, когда у вас есть код XML или XHTML в виде строки и необходимо скопировать его в средство вывода или сделать с ним преобразования." />
+
+  <string key="Composite.Mail.SendMail.description" value="Отправляет электронную почту. Не забудьте настроить SMTP-соединение с сервером в файле web.config." />
+  <string key="Composite.Mail.SendMail.param.From.label" value="From" />
+  <string key="Composite.Mail.SendMail.param.From.help" value="Адрес отправителя." />
+  <string key="Composite.Mail.SendMail.param.To.label" value="To" />
+  <string key="Composite.Mail.SendMail.param.To.help" value="Получатель. Список разделенных запятыми адресов электронной почты." />
+  <string key="Composite.Mail.SendMail.param.Subject.label" value="Subject" />
+  <string key="Composite.Mail.SendMail.param.Subject.help" value="Тема электронного сообщения." />
+  <string key="Composite.Mail.SendMail.param.Body.label" value="Body" />
+  <string key="Composite.Mail.SendMail.param.Body.help" value="Тело электронного сообщения." />
+  <string key="Composite.Mail.SendMail.param.IsHtml.label" value="IsHtml" />
+  <string key="Composite.Mail.SendMail.param.IsHtml.help" value="Определяет, является ли формат сообщения электронной почты  HTML или текстом." />
+  <string key="Composite.Mail.SendMail.param.CC.label" value="CC" />
+  <string key="Composite.Mail.SendMail.param.CC.help" value="Копия. Список разделенных запятыми адресов электронной почты, которые являются вторичными получателями сообщения." />
+  <string key="Composite.Mail.SendMail.param.ReplyTo.label" value="ReplyTo" />
+  <string key="Composite.Mail.SendMail.param.ReplyTo.help" value="Адрес, который должен быть использован для ответа на сообщение." />
+  <string key="Composite.Mail.SendMail.param.BCC.label" value="BCC" />
+  <string key="Composite.Mail.SendMail.param.BCC.help" value="Скрытая копия. Список получателей, которые получат почту, но их индивидуальные адреса будут скрыты от полного списка получателей." />
+  <string key="Composite.Mail.SendMail.param.Attachment.label" value="Attachment" />
+  <string key="Composite.Mail.SendMail.param.Attachment.help" value="Список прикрепленных файлов. \n  Отформатируйте его таким образом, следуя [{имя} =] {путь к файлу} [, {MIME-тип] [| .... ]. \n Путь к файлу может быть или относительным, или абсолютным, напр. &quot;C: \ someimage.jpg&quot; или &quot;/coolpicture.jpg&quot; \n, Если путь к файлу начинается с &quot;Composite /&quot;, он будет считаться как путем к медиа-файлу C1, напр. &quot;Composite / MediaArchive: someImage.gif '\n \n Примеры: \n / attachment.jpg \n image.jpg = /attachment.jpg \n image.jpg = / attachment.jpg, image/jpg\n image1.jpg = / attachment1.jpg, image/jpg| image2.jpg = / attachment2.jpg, image/jpg" />
+
+	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="AttachmentFromMedia" />
+	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.help" value="Прикрепляемый файл из библиотеки мультимедиа." />
+
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.description" value="Фильтрует изображения по пути к папке" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.label" value="Media Folder" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.help" value="Ссылка на медиа-папку" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Include Subfolders" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Определяет нужно ли включать изображения из подпапок." />
+
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.description" value="Фильтрует изображения по пути к папке" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.label" value="Media Folder" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.help" value="Ссылка на медиа-папку" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Media Folder" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Определяет, нужно ли включать медиа-файлы из подпапок." />
+</strings>

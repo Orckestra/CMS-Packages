@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<strings>
+  <string key="BasicTabLabel" value="Основные" />
+  <string key="AdvancedTabLabel" value="Расширенные" />
+
+  <string key="AddNewButtonLabel" value="Добавить" />
+  <string key="DeleteButtonLabel" value="Удалить" />
+  <string key="LabelDataTypeFields" value="Поля типа данных" />
+  
+  <string key="FieldDetailsGroupLabel" value="Свойства поля" />
+  <string key="Name" value="Имя" />
+  <string key="NameHelp" value="Имя поля используется системой для идентификации этого поля. Имена должны быть уникальными и не могут содержать пробелы и другие специальные символы. Используйте имена, как &quot;Title&quot;, &quot;StartDate&quot;, &quot;LargeImage&quot; и т.д." />
+  <string key="Label" value="Надпись" />
+  <string key="LabelHelp" value="Надпись показывается пользователям при добавлении нового элемента на основе этого типа данных." />
+  <string key="Help" value="Справка" />
+  <string key="HelpHelp" value="Используйте это поле для краткой справки для пользователей." />
+
+  <string key="FieldTypeGroupLabel" value="Тип поля и требования" />
+  <string key="FieldType" value="Тип поля" />
+  <string key="FieldTypeHelp" value="Выберите тип данных для поля. Тип определяет, какой тип данных допустим в этом поле." />
+  <string key="System.String" value="Строка" />
+  <string key="System.Int32" value="Целое число" />
+  <string key="System.Decimal" value="Десятичное число" />
+  <string key="System.DateTime" value="Дата" />
+  <string key="System.Boolean" value="Булево" />
+  <string key="System.Guid" value="Уникальный идентификатор (GUID)" />
+  <string key="Reference" value="Ссылка на тип данных" />
+  <string key="TypeDetailsHelp" value="Используйте это поле для дальнейшей настройки выбранного типа." />
+  <string key="Optional" value="Необязательное" />
+  <string key="OptionalHelp" value="Необязательные поля можно оставить пустыми." />
+  <string key="OptionalFalseLabel" value="Нет" />
+  <string key="OptionalTrueLabel" value="Да" />
+  <string key="ValidationRules" value="Правила проверки" />
+  <string key="ValidationRulesHelp" value="Вы можете указать строгие правила для данных, которые вводятся в этой области, то есть &quot;должно быть не менее 5 символов&quot;, &quot;должен быть действующий адрес электронной почты&quot;, &quot;должна быть дата в прошлом&quot; и т.д." />
+  <string key="ValidationRulesAdd" value="Добавить правила проверки ..." />
+  <string key="ValidationRulesEdit" value="Изменить правила проверки" />
+  <string key="ValidationRulesDialogLabel" value="Настройка правил проверки поля" />
+
+  
+  <string key="FieldValidationGroupLabel" value="Проверка поля" />
+  <string key="FieldPresentationGroupLabel" value="Представление поля формы" />
+  <string key="FieldStructureGroupLabel" value="Структурные представления" />
+  
+  <string key="Widget" value="Тип виджета" />
+  <string key="WidgetHelp" value="Вы можете выбрать тип виджета для ввода (например, текстовое поле), используя его при изменении этого поля." />
+  <string key="WidgetDialogLabel" value="Настройка виджета поля" />
+  <string key="Position" value="Позиция" />
+  <string key="PositionLast" value="Последняя" />
+  <string key="PositionHelp" value="Позиция поля. Управляет порядком полей в списке." />
+  <string key="GroupByPriority" value="Группировка полей" />
+  <string key="GroupByPriorityNone" value="Нет группировки" />
+  <string key="GroupByPriorityFirst" value="Группировать по этому полю" />
+  <string key="GroupByPriorityN" value="Группировать с {0} приоритетом" />
+  <string key="GroupByPriorityHelp" value="Вы можете указать, что поле должно использоваться для группировки данных - это может улучшить читаемость при просмотре длинных списков. Используйте приоритет когда для группировки используется несколько полей." />
+  <string key="IsTitleField" value="Является титульным полем" />
+  <string key="IsTitleFieldHelp" value="Установите флажок, если вы хотите, чтобы это поле использовалось как титульное. Титульные поля используются  при выводе данных в списке, например в дереве слева." />
+  <string key="IsTitleFieldLabel" value="Использовать его в качестве титульного поля в списках" />
+
+  
+  <string key="DefaultValueGroupLabel" value="Значение поля по умолчанию" />
+  <string key="DefaultValue" value="Значение по умолчанию" />
+  <string key="DefaultValueHelp" value="Вы можете определить значение по умолчанию для этого поля." />
+  <string key="DefaultValueDialogLabel" value="Настройка значения поля по умолчанию" />
+
+  <string key="StringMaximumLength" value="Максимальная длина строки" />
+  <string key="16CharMax" value="16 символов максимум" />
+  <string key="32CharMax" value="32 символа максимум" />
+  <string key="64CharMax" value="64 символа максимум" />
+  <string key="128CharMax" value="128 символов максимум" />
+  <string key="256CharMax" value="256 символов максимум" />
+  <string key="512CharMax" value="512 символов максимум" />
+  <string key="1024CharMax" value="1024 символа максимум" />
+  <string key="Unlimited" value="Неограниченная длина" />
+  
+  <string key="DecimalNumberFormat" value="Формат десятичных чисел" />
+  <string key="1DecimalPlace" value="1 десятичный знак" />
+  <string key="2DecimalPlace" value="2 десятичных знака" />
+  <string key="3DecimalPlace" value="3 десятичных знака" />
+  <string key="4DecimalPlace" value="4 десятичных знака" />
+  
+  <string key="ReferenceType" value="Тип ссылки" />
+  
+  <string key="FieldNameSyntaxInvalid" value="Указанное имя недопустимо." />
+  <string key="CannotSave" value="Не удалось сохранить ... Существует другое поле с таким же именем. Пожалуйста, используйте другое имя." />
+
+  <string key="SpaceInNameError" value="Недопустимое имя. Имена полей данных не могут содержать пробелы. Вы можете указать понятное пользователю имя в поле &quot;Надпись&quot; ниже." />
+  <string key="NameEmptyError" value="Имена полей данных не могут быть пустыми. Пожалуйста, укажите имя." />
+  <string key="NameAlreadyInUseError" value="Другое поле использует это имя. Имена полей данных должны быть уникальными." />
+  <string key="NotAnOptionalTypeError" value="Выбранный тип не может быть необязательным." />
+  <string key="NoWidgetSelected" value="Не забудьте указать виджет ..." />
+  <string key="NoWidgetSelectedLabel" value="(Не указан виджет)" />
+</strings>
+
+
+

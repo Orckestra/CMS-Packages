@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="KeyFacade.ErrorTreeNode.Label" value="Ошибка в дереве" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Label" value="Показать сообщение" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.ToolTip" value="Показать сообщение об ошибке" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Title" value="Сообщение об ошибке" />
+  
+  <!-- Validation -->
+  <string key="TreeValidationError.Common.UnknownException" value="Неизвестное исключение: '{0} '" />
+  <string key="TreeValidationError.Common.UnknownElement" value="Неизвестный элемент '{0}'" />
+  <string key="TreeValidationError.Common.MissingAttribute" value="Отсутствует обязательный атрибут '{0}'" />
+  <string key="TreeValidationError.Common.WrongAttributeValue" value="Атрибут '{0}' имеет недопустимое значение" />  
+  <string key="TreeValidationError.Common.MissingProperty" value="Тип '{0}'  не содержит свойство с именем '{1}'" />
+  <string key="TreeValidationError.Common.UnkownInterfaceType" value="Тип '{0}'  не найден" />
+  <string key="TreeValidationError.Common.NotImplementingIData" value="Тип '{0}'  не реализует интерфейс '{1}'" />
+  <string key="TreeValidationError.Common.WrongPermissinValue" value="Значение '{0}'  не допустимо в качестве значения типа разрешения" />
+  <string key="TreeValidationError.Common.WrongLocationValue" value="Значение '{0}' не допустимо в качестве значения местоположения" />
+  <string key="TreeValidationError.Common.MissingFunctionMarkup" value="Не предоставлена разметка функции в качестве дочернего элемента" />
+  <string key="TreeValidationError.Common.WrongFunctionMarkup" value="Функция не создана для данной разметки функции" />
+
+  <string key="TreeValidationError.Markup.NoRootElement" value="Отсутствует корневой элемент в разметке дерева" />
+  <string key="TreeValidationError.Markup.SchemaError" value="Синтаксическая ошибка: {0} в строке {1} в позиции {2}" />
+  
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPoint" value="Точка присоединения '{0}' неизвестна" />
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPosition" value="Позиция присоединения  '{0}' неизвестна" />
+  <string key="TreeValidationError.DataAttachments.NoElementsAllowed" value="Не допускаются элементы в деревьях, которые используют с деревьями с присоединенными данными" />
+
+  <string key="TreeValidationError.SimpleElement.WrongIdValue" value="Значение ID недопустимо. ID  не должен быть пустым,  не может начинаться  с NodeAutoId_ и быть RootTreeNode" />
+  <string key="TreeValidationError.SimpleElement.AlreadyUsedId" value="Значение '{0}' поля ID уже используется  в этом дереве" />
+
+  <string key="TreeValidationError.DataElementsTreeNode.SameInterfaceUsedTwice" value="Интерфейс данных '{0}' используется более одного раза как дочерний элемент одного и того же родительского  элемента,  и это недопустимо" />
+  <string key="TreeValidationError.DataElementsTreeNode.SameParentFilterInterfaceUsedTwice" value="Тот же интерфейс '{0}'  используется как родительский тип в качестве родительского фильтра,  и это недопустимо" />
+  <string key="TreeValidationError.DataElementsTreeNode.MoreThanOnParentFilterIsPointingToMe" value="Более чем один родительский фильтр указывает на интерфейс '{0}'. Установите значение Display в Lazy" />
+
+  <string key="TreeValidationError.DataFolderElements.MissingInterfaceType" value="Отсутствует атрибут type" />
+  <string key="TreeValidationError.DataFolderElements.WrongInterfaceType" value="Тип интерфейса '{0}' не соответствует типу интерфейса '{1}' родительских элементов" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetNotAllowed" value="Атрибут DateFormat требует, чтобы свойство '{0}' было типа '{1}', а является типом  '{2}'" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetIsMissing" value="Свойство '{0}' имеет тип Date, а это требует присутствие атрибута DateFormat" />
+  <string key="TreeValidationError.DataFolderElements.RangesAndFirstLetterOnlyNotAllowed" value="Использование атрибутов Ranges  и  first-letter-only одновременно не допускается" />
+  <string key="TreeValidationError.DataFolderElements.WrongFirstLetterOnlyPropertyType" value="Атрибут First-letter-only требует, чтобы свойство '{0}'  было типа '{1}', а является типом '{2}'" />
+  <string key="TreeValidationError.DataFolderElements.WrongDateChildInterfaceType" value="В качестве группировки по папкам  ('{0}')  допускаются только дочерние элементы данных с тем же типом интерфейса" />
+  <string key="TreeValidationError.DataFolderElements.InterfaceTypeSwitchNotAllowed" value="Переключение с типа интерфейса '{0}' в другой тип интерфейса '{1}' не допускается в той же группе группировки по папкам" />
+  <string key="TreeValidationError.DataFolderElements.SameFieldUsedTwice" value="Не допускается использование имя поля '{0}' дважды в том же дереве группировки" />
+  <string key="TreeValidationError.DataFolderElements.TooManyParentIdFilters" value="Максимум один узел фильтра по родительскому ID может быть использован в элементах данных , используемых в группировке" />
+
+  <string key="TreeValidationError.ParentIdFilterNode.TypeIsNotInParentTree" value="Тип '{0}' не находится в родительском дереве этого узла или объявлен как тип точек присоединения" />
+  <string key="TreeValidationError.FieldFilter.UnknownOperatorName" value="Оператор '{0}' неизвестен или не поддерживается" />
+  <string key="TreeValidationError.FieldFilter.ValueCouldNotBeConverted" value="Строковое значение '{0}' не преобразовано в тип '{1}'" />
+  <string key="TreeValidationError.FieldFilter.OperatorNotSupportedForType" value="Оператор '{0}' не поддерживается для типа '{1}'" />
+
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionMarkup" value="Функция не может быть создана для данной разметки" />
+  <string key="TreeValidationError.FunctionFilter.WrongReturnValue" value="Функция не возвращает значение типа '{0}'" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionReturnType" value="Тип выражения, возвращенный функцией - '{0}', Ожидался тип  '{1}'" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterCount" value="Количество параметров выражения, возвращенное функцией -  '{0}', Ожидался 1" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterType" value="Тип параметра выражения, возвращенный функцией -  '{0}', Ожидался '{1}'" />
+  
+  <string key="TreeValidationError.ReportFunctionAction.WrongReturnValue" value="Функция не возвращает значение типа '{0}'" />
+  <string key="TreeValidationError.GenericAddDataAction.MissingMarkupFile" value="Файл '{0}' не существует" />
+  <string key="TreeValidationError.GenericAddDataAction.BadMarkupPath" value="Выборочный путь '{0}'  - неправильного формата.  Используйте ~/ Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericEditDataAction.OwnerIsNotDataNode" value="Операция &quot;изменить данные&quot; применяется только для элементов, которые производят элементы данных" />
+  <string key="TreeValidationError.GenericEditDataAction.MissingMarkupFile" value="Файл '{0}' не существует" />
+  <string key="TreeValidationError.GenericEditDataAction.BadMarkupPath" value="Выборочный путь '{0}' неправильного формата. Используйте ~/ Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericDeleteDataAction.OwnerIsNotDataNode" value="Операция &quot;Удалить данные&quot; применяется только для элементов, которые производит элементы данных" />
+  <string key="TreeValidationError.MessageBoxAction.UnknownDialogType" value="Тип диалогового окна '{0}' не поддерживается" />
+  <string key="TreeValidationError.CustomUrlAction.TooManyPostParameterElements" value="Слишком много '{0}' элементов.  Допускается только один" />
+  <string key="TreeValidationError.CustomUrlAction.UnknownViewType" value="Тип вида  '{0}' не поддерживается" />
+
+  <string key="TreeValidationError.FieldOrderBy.UnknownDirection" value="Значение направления  '{0}' неправильное.  Должно быть либо 'ascending' либо 'descending'" />
+  <string key="TreeValidationError.FieldOrderBy.UnknownField" value="Тип '{0}' не содержит поле с именем '{1}'" />
+
+  <string key="TreeValidationError.DataFieldValueHelper.WrongFormat" value="'{0}' - в неправильном формате, используйте формат: {1}" />
+  <string key="TreeValidationError.DataFieldValueHelper.InterfaceNotInParentTree" value="Интерфейс '{0}' не содержится в текущем элементе или в каком-нибудь его родительском элементе" />
+
+  <string key="TreeValidationError.Range.WrongFormat" value="Значение Range - в неправильном формате" />
+  <string key="TreeValidationError.Range.UnsupportedType" value="Свойство '{0}' - типа '{1}', который  не поддерживает диапазоны" />
+
+  <string key="TreeValidationError.Range.MinMaxError" value="Первое значение ({0}) в диапазоне должно быть меньше, чем второе значение ({1})" />
+  <string key="TreeValidationError.Range.NextRangeError" value="Макс. значение диапазона должно быть меньше, чем мин. значение из последующих диапазонов" />
+
+  
+  <!-- Ranges -->
+  
+  <string key="TreeRanges.IntRange.Closed" value="От {0}  до {1}" />
+  <string key="TreeRanges.IntRange.MinOpenEnded" value="{0} или меньше" />
+  <string key="TreeRanges.IntRange.MaxOpenEnded" value="{0} или больше" />
+  <string key="TreeRanges.IntRange.Other" value="Другое" />
+
+  <string key="TreeRanges.StringRange.Closed" value="От {0} до {1}" />
+  <string key="TreeRanges.StringRange.MinOpenEnded" value="{0} и до" />
+  <string key="TreeRanges.StringRange.MaxOpenEnded" value="{0} и после" />
+  <string key="TreeRanges.StringRange.Other" value="Другое" />
+
+  
+  <!-- Other -->
+  <string key="GenericAddDataAction.DefaultLabel" value="Добавить" />
+  <string key="GenericEditDataAction.DefaultLabel" value="Изменить" />
+  <string key="GenericDeleteDataAction.DefaultLabel" value="Удалить" />
+  
+  
+  <string key="TreeGenericDelete.CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
+  <string key="TreeGenericDelete.CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип,  который не допускает каскадное удаление. Выполнение операции приостановлено" />
+  
+  <string key="TreeGenericDeleteConfirm.LabelFieldGroup" value="Удалить данные?" />
+  <string key="TreeGenericDeleteConfirm.Text" value="Удалить" />
+  
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.LabelFieldGroup" value="Удалить данные?" />
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.ConfirmationText" value="Существуют некоторые связанные данные, которые также будут удалены. Вы хотите продолжить?" />
+
+
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.Label" value="Добавить" />
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.ToolTip" value="Добавить новое определение дерева" />           
+  <string key="TreeAddTreeDefinition.Layout.Label" value="Добавить новое определение дерева" />
+  <string key="TreeAddTreeDefinition.FieldGroup.Label" value="Добавить новое определение дерева" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Label" value="Имя определения" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Help" value="Имя определения" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Label" value="Шаблон" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Help" value="Выберите начальный шаблон" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Label" value="Позиция" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Help" value="Позиция" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.Label" value="Удалить" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.ToolTip" value="Удалить определение дерева" />
+  <string key="TreeDeleteTreeDefinition.Layout.Label" value="Удалить определение дерева" />
+  <string key="TreeDeleteTreeDefinition.Title" value="Удалить выбранное определение дерева" />
+  <string key="TreeDeleteTreeDefinition.Description" value="Удалить выбранное определение дерева?" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.Label" value="Изменить" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.ToolTip" value="Изменить определение дерева" />
+
+  <string key="AddApplicationWorkflow.AddApplication.Label" value="Добавить приложение" />
+  <string key="AddApplicationWorkflow.AddApplication.ToolTip" value="Добавить новое приложение" />
+  <string key="AddApplication.Layout.Label" value="Добавить приложение" />
+  <string key="AddApplication.FieldGroup.Label" value="Выбрать приложение" />
+  <string key="AddApplication.TreeIdSelector.Label" value="Приложение" />
+  <string key="AddApplication.TreeIdSelector.Help" value="Выберите приложение, которое вы желаете добавить" />
+  <string key="AddApplication.PositionSelector.Label" value="Позиция" />
+  <string key="AddApplication.PositionSelector.Help" value="Позиция для вставки этого приложения" />
+  <string key="AddApplication.NoTrees.Title" value="Нет приложений" />
+  <string key="AddApplication.NoTrees.Message" value="Вы уже добавили все доступные приложения" />
+
+  <string key="RemoveApplicationWorkflow.RemoveApplication.Label" value="Удалить приложение" />
+  <string key="RemoveApplicationWorkflow.RemoveApplication.ToolTip" value="Удалить существующее приложение" />
+  <string key="RemoveApplication.Layout.Label" value="Удалить приложение" />
+  <string key="RemoveApplication.FieldGroup.Label" value="Удалить приложение" />
+  <string key="RemoveApplication.TreeIdSelector.Label" value="Приложение" />
+  <string key="RemoveApplication.TreeIdSelector.Help" value="Выберите приложение, которое вы хотите удалить" />
+  <string key="RemoveApplication.NoTrees.Title" value="Нет приложений" />
+  <string key="RemoveApplication.NoTrees.Message" value="Вы уже удалили все доступные  приложения" />
+
+  <string key="LocalizeDataWorkflow.LocalizeDataLabel" value="Перевести данные" />
+  <string key="LocalizeDataWorkflow.LocalizeDataToolTip" value="Перевести данные" />
+  <string key="LocalizeDataWorkflow.DisabledData" value="Еще не утверждены или опубликованы" />
+  <string key="LocalizeData.ShowError.Layout.Label" value="Не удалось перевести данные" />
+  <string key="LocalizeData.ShowError.InfoTable.Caption" value="Ошибки перевода" />  
+  <string key="LocalizeData.ShowError.Description" value="Следующие поля ссылаются на тип данных. Вы должны  перевести эти элементы данных, прежде чем вы сможете перевести этот элемент данных" />
+  <string key="LocalizeData.ShowError.FieldErrorFormat" value="Поле '{0}' ссылается на данные типа '{1}' с надписью  '{2}'" />
+  <string key="LocalizeData.ShowError.AlreadyTranslated" value="Эти данные уже были переведены. Переведенная версия принадлежит другой группе." />
+</strings>

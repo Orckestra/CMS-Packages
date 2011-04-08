@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="TypesAreReferencing" value="Один или несколько типов ссылаются на этот тип. Переименование невозможно." />
+  <string key="TypeNameInNamespace" value="Имя типа '{0}' появляется в пространстве имен '{1}' - это не допускается" />
+  <string key="TypesNameClash" value="Тип с таким именем уже существует" />
+	<string key="MissingFields" value="Поля не добавлены" />
+	<string key="TypeNameIsInvalidIdentifier" value="Имя типа '{0}' не является допустимым идентификатором" />
+	<string key="FieldNameCannotBeUsed" value="Имя поля '{0}' не может быть использовано" />
+  <string key="NameSpaceIsTypeTypeName" value="Указанное 'Пространство имен типа'  уже используется в качестве 'Имя типа' (пространство имен + имя). Рекомендуется изменить имя '{0}' на '{0}.Item'." />
+	<string key="NamespaceIsReserved" value="Имя типа принадлежит зарезервированному пространству имен." />
+	<string key="CompileErrorWhileAddingType" value="Нельзя добавить тип данных, так как это приведет к ошибкам при компиляции." />
+	<string key="CompileErrorWhileChangingType" value="Нельзя изменить тип данных, так как это приведет к ошибкам при компиляции." />
+  <string key="FieldDoesNotHaveWidget" value="Для поля '{0}' не указан виджет" />
+</strings>

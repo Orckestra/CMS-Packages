@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <!-- preload precaution -->
+  <string key="Preload.Key" value="Получено при запуске VisualEditorBinding, чтобы убедиться, что строки загружаются :)" />
+  <!-- simple toolbar -->
+  <string key="ToolBar.ToolTipStrong" value="Жирный шрифт" />
+  <string key="ToolBar.ToolTipEmphasize" value="Выделение текста" />
+  <string key="ToolBar.ToolTipUnderline" value="Подчеркивание текста" />
+  <string key="ToolBar.ToolTipStrike" value="Перечеркнутый текст" />
+  <string key="ToolBar.ToolTipAlignLeft" value="Выровнять по левому краю" />
+  <string key="ToolBar.ToolTipAlignRight" value="Выровнять по правому краю" />
+  <string key="ToolBar.ToolTipJustifyLeft" value="Выровнять по левому краю" />
+  <string key="ToolBar.ToolTipJustifyRight" value="Выровнять по правому краю" />
+  <string key="ToolBar.ToolTipJustifyCenter" value="Выровнять по центру" />
+  <string key="ToolBar.ToolTipJustifyFull" value="Выровнять по ширине" />
+  <string key="ToolBar.ToolTipUnorderedList" value="Неупорядоченный список" />
+  <string key="ToolBar.ToolTipOrderedList" value="Упорядоченный список" />
+  <string key="ToolBar.ToolTipLink" value="Ссылка" />
+  <string key="ToolBar.ToolTipDeleteLink" value="Удалить ссылку" />
+  <string key="ToolBar.ToolTipCleanup" value="Очистить избыточный код" />
+  <string key="ToolBar.ToolTipUndo" value="Отменить" />
+  <string key="ToolBar.ToolTipRedo" value="Вернуть" />
+  <string key="ToolBar.LabelSource" value="Код" />
+  <string key="ToolBar.LabelWysiwyg" value="Дизайн" />
+  <!-- format selector -->
+  <string key="FormatSelector.LabelParagraph" value="Абзац" />
+  <string key="FormatSelector.LabelAddress" value="Адрес" />
+  <string key="FormatSelector.LabelBlockQuote" value="Цитата" />
+  <string key="FormatSelector.LabelDivision" value="Текстовый блок" />
+  <string key="FormatSelector.LabelHeading1" value="Заголовок 1" />
+  <string key="FormatSelector.LabelHeading2" value="Заголовок 2" />
+  <string key="FormatSelector.LabelHeading3" value="Заголовок 3" />
+  <string key="FormatSelector.LabelHeading4" value="Заголовок 4" />
+  <string key="FormatSelector.LabelHeading5" value="Заголовок 5" />
+  <string key="FormatSelector.LabelHeading6" value="Заголовок 6" />
+  <!-- classname selector -->
+  <string key="ClassSelector.LabelNone" value="(Нет)" />
+  <!-- contextmenu (duplicated in toolbar) -->
+  <string key="ContextMenu.LabelInsert" value="Добавить" />
+  <string key="ContextMenu.LabelPaste" value="Вставить" />
+  <string key="ContextMenu.LabelLink" value="Ссылка" />
+  <string key="ContextMenu.LabelUnLink" value="Удалить ссылку" />
+  <string key="ContextMenu.LabelLinkProperties" value="Свойства ссылки" />
+  <string key="ContextMenu.LabelTable" value="Таблицу..." />
+  <string key="ContextMenu.LabelTableManage" value="Управлять таблицей" />
+  <string key="ContextMenu.LabelImage" value="Изображение..." />
+  <string key="ContextMenu.LabelFromWord" value="Из документа Word..." />
+  <string key="ContextMenu.LabelAsText" value="Как простой текст ..." />
+  <string key="ContextMenu.LabelField" value="Поле" />
+  <string key="ContextMenu.LabelFieldDelete" value="Удалять поле" />
+  <string key="ContextMenu.LabelRendering" value="Функцию..." />
+  <string key="ContextMenu.LabelCharacter" value="Символ..." />
+  <string key="ContextMenu.LabelImageProperties" value="Свойства изображения..." />
+  <string key="ContextMenu.LabelRenderingProperties" value="Свойства функции..." />
+  <string key="ContextMenu.LabelCutRow" value="Вырезать строку" />
+  <string key="ContextMenu.LabelCopyRow" value="Копировать строку" />
+  <string key="ContextMenu.LabelPasteRow" value="Вставить строку" />
+  <string key="ContextMenu.LabelBefore" value="До" />
+  <string key="ContextMenu.LabelAfter" value="После" />
+  <string key="ContextMenu.LabelTableProperties" value="Свойства таблицы" />
+  <string key="ContextMenu.LabelCellProperties" value="Свойства ячейки" />
+  <string key="ContextMenu.LabelRowProperties" value="Свойства строки" />
+  <string key="ContextMenu.LabelInsertRow" value="Вставить строку" />
+  <string key="ContextMenu.LabelDeleteRow" value="Удалить строку" />
+  <string key="ContextMenu.LabelInsertcolumn" value="Вставить столбец" />
+  <string key="ContextMenu.LabelDeleteColumn" value="Удалить столбец" />
+  <string key="ContextMenu.LabelMergeTableCells" value="Объединить ячейки таблицы" />
+  <string key="ContextMenu.LabelSplitMergedCells" value="Разбить объединенные ячейки" />
+  <string key="ContextMenu.LabelDeleteTable" value="Удалить таблицу" />
+  <!-- error dialog -->
+  <string key="ContentError.DialogTitle" value="Ошибка редактора кода" />
+  <string key="ContentError.DialogText" value="Ошибка в исходном коде:" />
+  <!-- template selector -->
+  <string key="TemplateTree.NoTemplateWarning" value="Нет заполнителей в шаблоне." />
+  <!-- PLUGINS ............................................................... -->
+  <!-- general -->
+  <string key="LabelTabBasic" value="Основные" />
+  <string key="LabelTabAdvanced" value="Дополнительно" />
+  <string key="LabelPresentation" value="Представление" />
+  <string key="LabelClass" value="Класс" />
+  <string key="HelpClass" value="Атрибут class определяет имя класса CSS для элемента." />
+  <string key="LabelId" value="ID" />
+  <string key="HelpId" value="Атрибут ID может быть использован в JavaScript или CSS, чтобы изменить элемент." />
+  <string key="MozSecurityNote.LabelSecurityStuff" value="Буфер обмена отключен" />
+  <string key="MozSecurityNote.TextSecurityStuff" value="По соображениям безопасности, доступ к буферу обмена было заблокирован вашим браузером. Пожалуйста, используйте стандартные сочетания клавиш. Для технического описания того, как настроить браузер для работы с Composite C1, нажмите кнопку &quot;Подробнее&quot;." />
+  <!-- link -->
+  <string key="Link.LabelInsertLink" value="Вставить ссылку" />
+  <string key="Link.LabelLinkProperties" value="Свойства ссылки" />
+  <string key="Link.LinkDestination" value="URL" />
+  <string key="Link.LinkRole" value="Роль" />
+  <string key="Link.TitleText" value="Название" />
+  <string key="Link.LinkTarget" value="Цель" />
+  <string key="Link.LinkTarget.LabelCheckBox" value="Открыть в новом окне" />
+  <string key="Link.TitleTextToolTip" value="Текст названия отображается в подсказке при наведении указателя мыши на ссылку. Это может быть использовано, чтобы сообщить вашим клиентам, куда указывает ссылка, не нарушая структуру текста." />
+  <string key="Link.LabelLink" value="Свойства ссылки" />
+  <!-- table -->
+  <string key="Tables.Cell.CellType" value="Тип ячейки" />
+  <string key="Tables.Cell.LabelWidth" value="Ширина ячейки" />
+  <string key="Tables.Cell.HorizontalAlignment" value="Гориз. выравнивание" />
+  <string key="Tables.Cell.VerticalAlignment" value="Вертик. выравнивание" />
+  <string key="Tables.Cell.ApplyTo" value="Применить изменения к" />
+  <string key="Tables.Cell.LabelCellProperties" value="Свойства ячейки" />
+  <string key="Tables.Cell.LabelLayout" value="Макет" />
+  <string key="Tables.Cell.LabelDataCell" value="Ячейка данных" />
+  <string key="Tables.Cell.LabelHeaderCell" value="Ячейка заголовка" />
+  <string key="Tables.Cell.LabelLeft" value="Слева" />
+  <string key="Tables.Cell.LabelRight" value="Справа" />
+  <string key="Tables.Cell.LabelTop" value="Вверху" />
+  <string key="Tables.Cell.LabelCenter" value="По центру" />
+  <string key="Tables.Cell.LabelBottom" value="Внизу" />
+  <string key="Tables.Cell.LabelScope" value="Область видимости" />
+  <string key="Tables.Cell.LabelCurrentCell" value="Текущей ячейке" />
+  <string key="Tables.Cell.LabelAllRowCells" value="Всем ячейкам в строке" />
+  <string key="Tables.Cell.LabelAllTableCells" value="Всем ячейкам в таблице" />
+  <string key="Tables.Merge.Columns" value="Столбцы" />
+  <string key="Tables.Merge.Rows" value="Строки" />
+  <string key="Tables.Merge.LabelMergeCells" value="Объединить ячейки таблицы" />
+  <string key="Tables.Row.Rows" value="Строка в части таблицы" />
+  <string key="Tables.Row.HorizontalAlignment" value="Гориз. выравнивание" />
+  <string key="Tables.Row.VerticalAlignment" value="Вертик. выравнивание" />
+  <string key="Tables.Row.ApplyTo" value="Применить изменения к" />
+  <string key="Tables.Row.LabelRowProperties" value="Свойства строки" />
+  <string key="Tables.Row.LabelLayout" value="Макет" />
+  <string key="Tables.Row.LabelTableHead" value="Верхний колонтитул таблицы" />
+  <string key="Tables.Row.LabelTableBody" value="Основной текст таблицы" />
+  <string key="Tables.Row.LabelTableFoot" value="Нижний колонтитул таблицы" />
+  <string key="Tables.Row.LabelLeft" value="Слева" />
+  <string key="Tables.Row.LabelCenter" value="По центру" />
+  <string key="Tables.Row.LabelRight" value="Справа" />
+  <string key="Tables.Row.LabelTop" value="Вверху" />
+  <string key="Tables.Row.LabelBottom" value="Внизу" />
+  <string key="Tables.Row.LabelScope" value="Область видимости" />
+  <string key="Tables.Row.LabelCurrentRow" value="Текущей строке" />
+  <string key="Tables.Row.LabelOddRows" value="Нечетным строкам в таблице" />
+  <string key="Tables.Row.LabelEvenRows" value="Четным строкам в таблице" />
+  <string key="Tables.Row.LabelAllRows" value="Всем строкам в таблице" />
+  <string key="Tables.Table.TitleInsert" value="Вставить таблицу" />
+  <string key="Tables.Table.TitleUpdate" value="Свойства таблицы" />
+  <string key="Tables.Table.Columns" value="Столбцы" />
+  <string key="Tables.Table.Rows" value="Строки" />
+  <string key="Tables.Table.Summary" value="Резюме" />
+  <string key="Tables.Table.SummaryHelp" value="В резюме объясняется содержание и структура таблицы, чтобы люди, использующие невизуальные браузеры (например, слепые), могли бы лучше понять их. Это особенно важно для таблиц без подписей." />
+  <string key="Tables.Table.LabelLayout" value="Макет таблицы" />
+  <string key="Tables.Table.LabelMeta" value="Описание таблицы" />
+  <!-- image -->
+  <string key="Image.Source" value="Источник" />
+  <string key="Image.AlternativeText" value="Альтернативный текст" />
+  <string key="Image.AlternativeTextToolTip" value="Альтернативный текст отображается как видимый текст в браузерах, где изображения не могут быть показаны в обычном режиме. Например, для браузеров мобильных телефонов и специальных браузеров для слабовидящих. Атрибут alt должен четко описать содержание изображения." />
+  <string key="Image.TitleText" value="Текст названия" />
+  <string key="Image.TitleTextToolTip" value="Текст названия отображается в подсказке при наведении указателя мыши на изображение. Изображение, непонятное пользователю, может быть моментально объяснено при помощи названия." />
+  <string key="Image.LabelImage" value="Свойства изображения" />
+  <string key="Image.LabelInsertImage" value="Вставить изображение" />
+  <string key="Image.LabelImageProperties" value="Свойства изображения" />
+  <!-- charmap -->
+  <string key="CharMap.LabelSelectSpecialChar" value="Выберите символ" />
+  <string key="CharMap.LabelGeneral" value="Общие" />
+  <string key="CharMap.LabelAlphabetical" value="Буквы" />
+  <string key="CharMap.LabelMathSymbols" value="Математические и другие символы" />
+  <string key="CharMap.LabelCommon" value="Общие" />
+  <string key="CharMap.LabelQuotation" value="Цитата" />
+  <string key="CharMap.LabelCurrency" value="Валюта" />
+  <string key="CharMap.LabelLatin" value="Латинские" />
+  <string key="CharMap.LabelGreek" value="Греческие" />
+  <string key="CharMap.LabelMathAndLogic" value="Математические и логические" />
+  <string key="CharMap.LabelSymbols" value="Символы" />
+  <string key="CharMap.LabelArrows" value="Стрелки" />
+  <!-- word paste -->
+  <string key="WordPaste.Label" value="Вставить из документа Word" />
+  <string key="WordPaste.PasteHereContent" value="Вставьте сюда содержимое документа Word. Затем нажмите OK." />
+  <!-- text paste -->
+  <string key="TextPaste.Label" value="Вставить как простой текст" />
+  <string key="TextPaste.PasteHereContent" value="Вставьте текст сюда. Затем нажмите OK." />
+
+</strings>

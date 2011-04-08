@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="PageTemplateElementProvider.RootLabel" value="Шаблоны страниц" />
+  <string key="PageTemplateElementProvider.RootLabelToolTip" value="Здесь вы можете найти XHTML шаблоны веб-сайтов." />
+  <string key="PageTemplateElementProvider.AddTemplate" value="Добавить шаблон" />
+  <string key="PageTemplateElementProvider.AddTemplateToolTip" value="Добавить новый шаблон" />
+  <string key="PageTemplateElementProvider.EditTemplate" value="Изменить шаблон" />
+  <string key="PageTemplateElementProvider.EditTemplateToolTip" value="Изменить выбранный шаблон" />
+	<string key="PageTemplateElementProvider.DeleteTemplate" value="Удалить" />
+	<string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="Удалить выбранный шаблон" />
+	
+  <string key="AddNewPageTemplateStep1.LabelDialog" value="Добавить новый шаблон веб-сайта" />
+  <string key="AddNewPageTemplateStep1.LabelFieldGroup" value="Шаблон веб-сайта" />
+  <string key="AddNewPageTemplateStep1.LabelTemplateTitle" value="Название шаблона" />
+  <string key="AddNewPageTemplateStep1.LabelTemplateTitleHelp" value="Название шаблона идентифицирует его в списках. Рекомендуется выбрать короткое и осмысленное название." />
+  <string key="AddNewPageTemplateStep1.LabelCopyFrom" value="Копировать из" />
+  <string key="AddNewPageTemplateStep1.LabelCopyFromHelp" value="Можно скопировать код разметки из другого шаблона, выбрав его в этом списке." />
+  <string key="AddNewPageTemplateStep1.LabelCopyFromEmptyOption" value="(Новый шаблон)" />
+  <string key="AddNewPageTemplateStep1.TitleInUseTitle" value="Название уже используется" />
+  <string key="AddNewPageTemplateStep1.TitleTooLong" value="Название слишком длинное (используется как часть имени XML файла)." />
+
+  <string key="EditPageTemplate.LabelMarkUpCode" value="Разметка" />
+  <string key="EditPageTemplate.LabelTemplateIdentification" value="Информация о шаблоне" />
+  <string key="EditPageTemplate.LabelTemplateTitle" value="Название шаблона" />
+  <string key="EditPageTemplate.LabelTemplateTitleHelp" value="Название шаблона идентифицирует его в списках. Рекомендуется выбрать короткое и осмысленное название." />
+
+  <string key="EditPageTemplateWorkflow.InvalidXmlTitle" value="Невозможно сохранить страницу" />
+  <string key="EditPageTemplateWorkflow.InvalidXmlMessage" value="Код разметки шаблона не прошел проверку. {0}" />
+  <string key="EditPageTemplateWorkflow.CannotRenameFileExists" value="Нельзя переименовать шаблон - файл с именем '{0}' уже существует." />
+  <string key="EditPageTemplateWorkflow.TitleInUseTitle" value="Название уже используется" />
+
+  <string key="DeletePageTemplateStep1.LabelFieldGroup" value="Удалить этот шаблон страницы?" />
+	<string key="DeletePageTemplateStep1.Text" value="Удалить шаблон страницы?" />
+	
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип данных, который не допускает каскадное удаление. Выполнение операции приостановлено." />
+</strings>
