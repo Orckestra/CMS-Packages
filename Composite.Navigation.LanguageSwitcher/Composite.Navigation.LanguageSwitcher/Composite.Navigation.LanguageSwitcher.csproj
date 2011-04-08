@@ -45,7 +45,7 @@
   <ItemGroup>
     <Reference Include="Composite, Version=2.1.4087.22991, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Dll\Composite.dll</HintPath>
+      <HintPath>..\..\References\Composite\2.1\Composite.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -63,8 +63,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="7za.exe" />
-    <Content Include="Dll\Composite.dll" />
     <Content Include="Package\App_Data\Xslt\Composite\Navigation\LanguageSwitcher.xsl" />
     <Content Include="Package\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
@@ -264,7 +262,7 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
-"$(ProjectDir)7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
-"$(ProjectDir)7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
   </PropertyGroup>
 </Project>
