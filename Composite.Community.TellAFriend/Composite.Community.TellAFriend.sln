@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Community.TellAFriend.Package", "Composite.Community.TellAFriend.Package\Composite.Community.TellAFriend.Package.csproj", "{177A53F9-9665-43A6-9C1D-3CC59FB8ACEE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{837250A6-4DC1-402D-A508-855DB3CDCD07} = {837250A6-4DC1-402D-A508-855DB3CDCD07}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Community.TellAFriend", "Composite.Community.TellAFriend\Composite.Community.TellAFriend.csproj", "{837250A6-4DC1-402D-A508-855DB3CDCD07}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.Community.TellAFriend.Package\\Composite.Community.TellAFriend.Package.csproj
+		SccProjectName1 = Composite.Community.TellAFriend.Package
+		SccLocalPath1 = Composite.Community.TellAFriend.Package
+		SccProjectUniqueName2 = Composite.Community.TellAFriend\\Composite.Community.TellAFriend.csproj
+		SccProjectName2 = Composite.Community.TellAFriend
+		SccLocalPath2 = Composite.Community.TellAFriend
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{177A53F9-9665-43A6-9C1D-3CC59FB8ACEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{177A53F9-9665-43A6-9C1D-3CC59FB8ACEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{177A53F9-9665-43A6-9C1D-3CC59FB8ACEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{177A53F9-9665-43A6-9C1D-3CC59FB8ACEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{837250A6-4DC1-402D-A508-855DB3CDCD07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{837250A6-4DC1-402D-A508-855DB3CDCD07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{837250A6-4DC1-402D-A508-855DB3CDCD07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{837250A6-4DC1-402D-A508-855DB3CDCD07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

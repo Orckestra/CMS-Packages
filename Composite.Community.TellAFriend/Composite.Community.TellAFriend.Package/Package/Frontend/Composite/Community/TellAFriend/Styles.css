@@ -1,0 +1,77 @@
+﻿#TellAFriendForm, #TellAFriend h4, #ErrorBox, #ErrorBox li {
+	margin: 0px;
+	padding: 0px;
+}
+
+#TellAFriend 
+{
+	background-color: #f2f2f2;
+	width: 300px;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	font: 15px/22px "Helvetica Neue",Arial,Helvetica,Geneva,sans-serif;
+	font-size: 14px;
+	color: #808080;
+	padding: 15px;
+}
+
+#TellAFriend .FieldError {
+	background-color: #FFDFDF;
+}
+
+#TellAFriend legend {
+	font-weight: bold;
+}
+
+#ErrorBox li{
+	color: Red;
+	list-style: square;
+	padding-bottom: 4px;
+	font-size: 12px;
+	margin-left: 15px;
+}
+
+#TellAFriendForm li {
+	padding-bottom: 4px;
+	list-style: none;
+}
+
+#TellAFriendForm li img {
+	margin-bottom: 4px;
+	border: solid 1px #000;
+}
+
+.dynamic {
+	position: absolute;
+	z-index: 1;
+	margin-bottom: 20px;
+	left: 300px;
+}
+
+.dynamic a.close {
+	background: url(Images/closebox.png) no-repeat;
+	scroll 0 0 transparent;
+	height: 30px;
+	overflow: hidden;
+	position: absolute;
+	right: -10px;
+	text-indent:-1000px;
+	top: -10px;
+	width: 30px;
+}
+
+#TellAFriend li label, #TellAFriend li img {
+	display: block;
+}
+
+#TellAFriend textarea, #TellAFriend input[type="text"] {
+	border: 1px solid #CCCCCC;
+	color: #6E6E6E;
+	padding: 5px;
+	width: 97%;
+}
+
+#TellAFriend textarea {
+	height: 120px;
+}

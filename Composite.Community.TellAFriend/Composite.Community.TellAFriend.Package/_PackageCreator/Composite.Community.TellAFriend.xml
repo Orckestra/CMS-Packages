@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="Frontend\Composite\Community\TellAFriend\" />
+	</pc:Directories>
+	<pc:Files>
+		<Add name="App_GlobalResources\Composite\Community\TellAFriend.resx" />
+		<Add name="TellAFriend.asmx" />
+		<Add name="Bin\Composite.Community.TellAFriend.dll" />
+	</pc:Files>
+	<pc:XsltFunctions>
+		<Add name="Composite.Community.TellAFriend" />
+	</pc:XsltFunctions>
+	<pc:CSharpFunctions>
+		<Add name="Composite.Community.TellAFriend.Send" />
+		<Add name="Composite.Community.TellAFriend.XsltExtensions" />
+	</pc:CSharpFunctions>
+	<pc:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite" Ordering="10">
+			<XslFiles>
+				<XslFile pathXml="~\Web.config" installXsl="~\Config\Install.xsl" />
+			</XslFiles>
+		</mi:Add>
+	</pc:PackageFragmentInstallers>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.TellAFriend" groupName="Composite.Community" version="1.4.0" author="Composite A/S" website="http://composite.net" id="e46fde90-fda8-4de1-88a2-54c4474ac26f" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<Description>Tell a friend</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Add XsltFunctionId="e7c6040d-aa4b-4300-8969-e7a069054202" Name="LoadUrl" SerializedFunction="&lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Xml.LoadUrl&quot;&gt;&lt;f:param xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Url&quot;&gt;&lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Utils.GetInputParameter&quot;&gt;&lt;f:param name=&quot;InputParameterName&quot; value=&quot;RSSSource&quot; /&gt;&lt;/f:function&gt;&lt;/f:param&gt;&lt;f:param name=&quot;CacheTime&quot; value=&quot;60&quot; /&gt;&lt;/f:function&gt;" />
+  <Add XsltFunctionId="e7c6040d-aa4b-4300-8969-e7a069054202" Name="MarkupParser" SerializedFunction="&lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Xslt.Extensions.MarkupParser&quot; /&gt;" />
+</Data>
