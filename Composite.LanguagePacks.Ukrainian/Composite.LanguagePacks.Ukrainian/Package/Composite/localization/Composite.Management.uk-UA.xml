@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Змінити дозволи" />
+  <string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Змінити дозволи" />
+  <string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Глобальні дозволи" />
+  <string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Керувати дозволами користувача" />
+  <string key="LogElementProvider.RootLabel" value="Журнал" />
+  <string key="LogElementProvider.RootLabelToolTip" value="Системний журнал" />
+  <string key="LogElementProvider.ShowLogLabel" value="Показати журнал" />
+  <string key="LogElementProvider.ShowLogToolTip" value="Показати системний журнал" />
+  <string key="DataCompositionVisabilityFacade.DefaultContainerLabel" value="Метадані" />
+  <string key="Website.Forms.Administrative.DeleteUserStep1.LabelFieldGroup" value="Видалити користувача?" />
+  <string key="Website.Forms.Administrative.DeleteUserStep1.Text" value="Видалити обраного користувача?" />
+  <string key="DeleteUserWorkflow.CascadeDeleteErrorTitle" value="Помилка каскадного видалення" />
+  <string key="DeleteUserWorkflow.CascadeDeleteErrorMessage" value="На цей тип посилається інший тип, який не допускає каскадне видалення. Виконання операції припинено." />
+  <string key="DeleteUserWorkflow.DeleteSelfTitle" value="Не вдається видалити користувача" />
+  <string key="DeleteUserWorkflow.DeleteSelfErrorMessage" value="Не можна видалити обліковий запис, з яким ви увійшли в систему." />
+  
+  <string key="Website.Function.SelectDialog.Title" value="Вибрати функцію" />
+  <string key="Website.Widget.SelectDialog.Title" value="Вибрати віджет" />
+  <string key="Website.ContentLink.SelectDialog.Title" value="Вибрати сторінку або файл" />
+  <string key="Website.Page.SelectDialog.Title" value="Вибрати сторінку" />
+  <string key="Website.FrontendFile.SelectDialog.Title" value="Вибрати Frontend файл" />
+  <string key="Website.Media.SelectDialog.Title" value="Вибрати медіа-файл" />
+  <string key="Website.Image.SelectDialog.Title" value="Вибрати зображення" />
+
+
+  <string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Змінити користувача" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Ім'я користувача" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserNameHelp" value="Імена користувачів не можна змінити. Це поле - тільки для читання." />
+  <string key="Website.Forms.Administrative.EditUserStep1.PasswordLabel" value="Пароль" />
+  <string key="Website.Forms.Administrative.EditUserStep1.PasswordHelp" value="У паролі повинно бути більше ніж 6 символів." />
+  <string key="Website.Forms.Administrative.EditUserStep1.EmailLabel" value="Адреса ел. пошти" />
+  <string key="Website.Forms.Administrative.EditUserStep1.EmailHelp" value="Адреса електронної пошти користувача (необов'язково)." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GroupLabel" value="Папка" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Якщо ви введете ім'я папки, що ще не існує, буде створена нова папка." />
+  <string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Регіональні настройки" />
+  <string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="Щоб змінити спосіб відображення чисел, дат і часу, виберіть мову зі списку. Записи, позначені зірочкою (*) вже перекладені. Непозначені записи буде показано англійською мовою." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveFieldLabel" value="Розділи" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectLabel" value="Видимі розділи" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectHelp" value="Виберіть, які розділи мають бути видимими, коли користувач запускає консоль C1." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsFieldLabel" value="Глобальні дозволи" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectLabel" value="Глобальні дозволи" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectHelp" value="Дозвіл &quot;Адмініструвати&quot; надає користувачеві доступ до керування дозволами користувачів та виконання інших адміністративних задач." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissions.IgnoredOwnAdministrativeRemoval" value="Видалення вашого дозволу &quot;Адмініструвати&quot; проігноровано. Ви зберегли свої адміністративні привілеї." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesFieldLabel" value="Доступ до мови даних" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectLabel" value="Мови даних" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectHelp" value="Користувач має доступ до керування даними на вибраних мовах." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleLabel" value="Поточна мова" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Поточна мова" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleNotChecked" value="Вибрана мова не зазначена у розділі даних мови." />
+  <string key="Website.Forms.Administrative.EditUserStep1.NoActiveLocaleSelected" value="Ви повинні вибрати хоча б одну активну мову." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GenerelTabLabel" value="Стандартні" />
+  <string key="Website.Forms.Administrative.EditUserStep1.PermissionsTabLabel" value="Дозволи" />
+  <string key="Website.Forms.Administrative.EditUserStep1.PerspectivesTabLabel" value="Розділи" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserGroupsFieldLabel" value="Групи користувачів" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserGroupsMultiSelectHelp" value="Виберіть групи користувачів, членом яких повинен бути вибраний користувач." />
+  <string key="UserElementProvider.RootLabel" value="Користувачі" />
+  <string key="UserElementProvider.RootToolTip" value="Користувачі" />
+  <string key="UserElementProvider.AddUserLabel" value="Додати користувача..." />
+  <string key="UserElementProvider.AddUserToolTip" value="Додати нового користувача" />
+  <string key="UserElementProvider.EditUserLabel" value="Змінити користувача" />
+  <string key="UserElementProvider.EditUserToolTip" value="Змінити обраного користувача" />
+  <string key="UserElementProvider.DeleteUserLabel" value="Видалити користувача" />
+  <string key="UserElementProvider.DeleteUserToolTip" value="Видалити обраного користувача" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleTitle" value="Попередження" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleMessage" value="Ви змінили поточну мову для користувача, який вже увійшов у систему. Консоль користувача буде перезапущена і дані можуть бути втрачені." />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogTitle" value="Потрібне очищення" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogText" value="Для цього потрібне очищення. Активні редактори будуть збережені і закриті." />
+  <string key="AddNewUserWorkflow.UsernameDuplicateError" value="Користувач з таким ім'ям вже існує" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.LabelFieldGroup" value="Додати нового користувача" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.UserNameLabel" value="Ім'я користувача" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.UserNameHelp" value="Після створення нового користувача ім'я користувача не може бути змінено" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.PasswordLabel" value="Пароль" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.PasswordHelp" value="У паролі повинно бути більше ніж 6 символів." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.EmailLabel" value="Адреса ел. пошти" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.EmailHelp" value="Адреса електронної пошти користувача (необов'язково)." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.GroupLabel" value="Папка" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.GroupHelp" value="Якщо ви введете ім'я папки, якої ще не існує, буде створена нова папка." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.CultureLabel" value="Регіональні настройки" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="Щоб змінити спосіб відображення чисел, дат і часу, виберіть мову зі списку. Записи, позначені зірочкою (*) вже переведені. Непозначені записи буде показано англійською мовою." />
+  <string key="UserElementProvider.MissingActiveLanguageTitle" value="Наявність мови обов'язково" />
+  <string key="UserElementProvider.MissingActiveLanguageMessage" value="Для створення користувача потрібна наявність мови, але жодна мова ще додана. Ви можете додати мову в розділі &quot;Система&quot;." />
+  <string key="UserElementProvider.UserLoginIsAlreadyUsed" value="Користувач з таким ім'ям вже існує" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderTypeLabel" value="Додати папку даних" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderTypeToolTip" value="Додати папку даних" />
+  <string key="AssociatedDataElementProviderHelper.AddAssociatedDataLabel" value="Додати дані" />
+  <string key="AssociatedDataElementProviderHelper.AddAssociatedDataToolTip" value="Додати дані" />
+  <string key="AssociatedDataElementProviderHelper.EditAssociatedDataLabel" value="Змінити дані" />
+  <string key="AssociatedDataElementProviderHelper.EditAssociatedDataToolTip" value="Змінити дані" />
+  <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataLabel" value="Видалити дані" />
+  <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataToolTip" value="Видалити дані" />
+  <string key="AssociatedDataElementProviderHelper.LocalizeData" value="Локалізувати" />
+  <string key="AssociatedDataElementProviderHelper.LocalizeDataToolTip" value="Локалізувати дані" />
+  <string key="AssociatedDataElementProviderHelper.DisabledData" value="Ще не затверджені або опубліковані" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.FieldLabel" value="Додати папку даних" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorLabel" value="Тип папки даних" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorHelp" value="Створіть новий тип даних або використовуйте вже існуючий (якщо є)." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelNewType" value="Настройки" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeName" value="Ім'я типу" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeName" value="Технічне ім'я типу даних (наприклад, Product). Використовується для ідентифікації цього типу в коді і не повинно змінюватися, якщо був хоча б один випадок зовнішнього використання." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeNamespace" value="Простір імен типу" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeNamespace" value="Простір імен (модуль / назва категорії) типу. Використовується для ідентифікації цього типу в коді і не повинно змінюватися." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeTitle" value="Назва" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeTitle" value="У цьому полі потрібно вказати зрозумілу для користувача назву типу. Ви можете змінювати це поле за бажанням." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelFields" value="Поля" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ServicesLabel" value="Служби" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasPublishing" value="Підтримка публікації" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasLocalization" value="Підтримка локалізації" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesTitle" value="Не існує жодної папки даних для сторінки" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Жодної папки даних для сторінки ще не створено. Ви можете створити папку даних для сторінки в розділі &quot;Дані&quot;." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesTitle" value="Не існують невикористані папки даних для сторінки" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Всі доступні папки даних для сторінки вже додані. Створити нову папку даних ви можете в розділі &quot;Дані&quot;." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ErrorTitle" value="Помилка" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.FieldLabel" value="Виберіть папку даних, щоб додати" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorLabel" value="Існуючі типи папки даних" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorHelp" value="Виберіть тип папки даних, щоб додати" />
+  <string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeLabel" value="Видалити поле метаданих" />
+  <string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeToolTip" value="Видалити поле метаданих" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.LabelFieldGroup" value="Видалити папку даних сторінки" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.FieldGroupLabel" value="Очищення даних" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataLabel" value="Видалити дані" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataCheckBoxLabel" value="Так, видалити дані з папки" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataHelp" value="Якщо ви хочете, щоб дані з папки залишилися в базі даних, ви повинні зняти прапорець з цієї опції." />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.LayoutLabel" value="Додати поле метаданих" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataTypeLabel" value="Додати поле метаданих" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataTypeToolTip" value="Додати поле метаданих" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.FieldLabel" value="Виберіть існуючий тип метаданих, щоб додати" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorLabel" value="Існуючі типи метаданих" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorHelp" value="Виберіть існуючий тип метаданих, щоб додати" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesTitle" value="Не існує жодного типу метаданих для сторінок" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesMessage" value="Жоден тип метаданих для сторінок ще не був створений. Ви можете створити тип метаданих для сторінок в розділі &quot;Дані&quot;." />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.NamingFieldLabel" value="Ім'я групи полів метаданих" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameLabel" value="Ім'я" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameHelp" value="Введіть унікальне ім'я, що ідентифікує цю групу полів метаданих" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelLabel" value="Напис" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelHelp" value="Введіть зрозумілий користувачу напис для цієї групи полів метаданих" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.VisabilityFieldLabel" value="Видимість групи полів метаданих" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorLabel" value="Вкладка" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorHelp" value="Виберіть вкладку, на якій це поле метаданих повинно відображатися" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorLabel" value="Відображати, починаючи з" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorHelp" value="Відображати, починаючи з" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorLabel" value="Успадковувати відображення" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorHelp" value="Успадковувати відображення" />
+  <string key="AssociatedDataElementProviderHelper.NoItems.Title" value="У групи полів метаданих немає елементів у цьому діапазоні" />
+  <string key="AssociatedDataElementProviderHelper.NoItems.Description" value="В даний час немає елементів у вказаному діапазоні відображення. Натисніть 'Назад', щоб змінити діапазон відображення або 'Готово', щоб створити групу полів метаданих." />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption0" value="Цього елемента" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption1" value="Дочірніх елементів" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption2" value="Нащадків 2-го покоління" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption3" value="Нащадків 3-го покоління" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption4" value="Нащадків 4-го покоління" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption5" value="Нащадків 5-го покоління" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption0" value="Не успадковувати" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption1" value="Успадковувати першого покоління" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption2" value="Успадковувати 2-ге покоління" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption3" value="Успадковувати 3-тє покоління" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption4" value="Завжди успадковувати" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.FieldGroupNameNotValid" value="Назва групи полів вже використовується" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectType.LayoutLabel" value="Видалити групу полів метаданих" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.FieldLabel" value="Виберіть групу полів метаданих для видалення" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorLabel" value="Група полів" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorHelp" value="Виберіть групу полів метаданих для видалення" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataTypeLabel" value="Змінити поле метаданих" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataTypeToolTip" value="Змінити поле метаданих" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.Layout.Label" value="Змінити поле метаданих для сторінки" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.FieldGroup.Label" value="Параметри поля метаданих для сторінки" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Label" value="Напис" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Help" value="Напис поля метаданих. Використовується при змінюванні сторінок" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Label" value="Вкладка" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Help" value="Виберіть вкладку, на якій ці метадані повинні відображатися" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorLabel" value="Відображати, починаючи з" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorHelp" value="Відображати, починаючи з" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorLabel" value="Успадковувати відображення" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorHelp" value="Успадковувати відображення" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Label" value="Поле метаданих" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Help" value="Виберіть поле метаданих для зміни" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Title" value="Немає полів метаданих для зміни" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Message" value="Немає полів метаданих, визначених для цього елемента, для зміни" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataFieldNameAlreadyUsed" value="Тип метаданих використовується в іншому місці з тим же ім'ям, але з іншим написом" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerChangeNotAllowed" value="Існує одне або більше визначень з тією ж назвою. Зміна елемента, що містить, не допускається." />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Title" value="Натисніть &quot;Готово&quot;, щоб зберегти" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Description" value="Вся необхідна інформація була зібрана. Натисніть &quot;Готово&quot; для оновлення поля метаданих" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Title" value="Немає полів метаданих для видалення" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Message" value="Немає полів метаданих, визначених для цього елемента, для видалення" />
+  <string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorTitle" value="Помилка каскадного видалення" />
+  <string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorMessage" value="На цей тип посилається інший тип, який не допускає каскадне видалення. Виконання операції припинено." />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelNewType" value="Настройки" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeName" value="Ім'я типу" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeName" value="Ім'я нового типу, який ви створюєте (наприклад, Product)" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeNamespace" value="Простір імен типу" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeNamespace" value="Назва модуля, категорії або простору імен, які ви створюєте" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeTitle" value="Назва" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeTitle" value="У цьому полі потрібно вказати зрозуміле користувачу ім'я" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelFields" value="Поля" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.ServicesLabel" value="Служби" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasVersioning" value="Підтримка версій" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasPublishing" value="Підтримка публікації" />
+  <string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.FieldGroupLabel" value="Видалити дані?" />
+  <string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.Text" value="Видалити дані?" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.FieldGroupLabel" value="Додати дані сторінки" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorLabel" value="Виберіть тип даних, щоб додати" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorHelp" value="Виберіть один з існуючих типів для додавання даних" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeWorkflow.FieldGroupLabel" value="Додати тип даних для сторінки" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorLabel" value="Виберіть тип для додавання" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorHelp" value="Виберіть один з існуючих типів у системі" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorLabel" value="Виберіть зовнішній ключ" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorHelp" value="Виберіть одне з полів із типу для використання в якості зовнішнього ключа" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorLabel" value="Додати" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorHelp" value="Створення нового типу або використання існуючого типу" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorLabel" value="Виберіть тип:" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorHelp" value="Звичайні дані - це новий тип, який створюється під сторінкою. Метадані - це нове поле, яке створюється на сторінці" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameLabel" value="Ім'я правила" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameHelp" value="Ім'я правила зберігається разом з метаданими і є частиною ключа метаданих. Ім'я повинно бути унікальним." />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleLabelLabel" value="Напис правила" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleHelpHelp" value="Напис правила використовується як зрозуміла користувачу назва для об'єкта. Може бути локалізована." />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorLabel" value="Вибрати контейнер для композиції" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorHelp" value="Виберіть контейнер для нового правила." />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorLabel" value="Вибрати область видимості композиції" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorHelp" value="Виберіть область видимості нової композиції" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsLabel" value="Рівні" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsHelp" value="Глибина підсторінок, на якій композицію буде видно" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeLabel" value="Підтвердіть новий тип даних:" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeHelp" value="Метадані - це нове поле, яке створюється на сторінці" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Ім'я правила області видимості композиції" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameHelp" value="Ім'я правила зберігається разом з метаданими і є частиною ключа метаданих. Ім'я повинно бути унікальним." />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleLabelLabel" value="Напис правила області видимості композиції" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleHelpHelp" value="Напис правила використовується як зрозуміле користувачу ім'я об'єкта. Може бути локалізований." />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeLabel" value="Область видимості композиції" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeHelp" value="Це - область, в якій нову композицію буде видно при змінюванні сторінок" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeLabel" value="Додавання типу" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeHelp" value="Створити новий тип або використовувати існуючий тип" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameLabel" value="Ім'я існуючого типу" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameHelp" value="Ім'я вибраного існуючого типу в системі для використання" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameLabel" value="Ім'я поля зовнішнього ключа" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameHelp" value="Ім'я поля існуючого типу для використання в якості зовнішнього ключа" />
+  <string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeLabel" value="Видалити папку даних" />
+  <string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeToolTip" value="Видалити папку даних" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedType.FieldGroupLabel" value="Видалити тип даних для сторінок" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.AssociationTypeLabel" value="Видалити тип даних для сторінок" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Ім'я правила області видимості композиції" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorLabel" value="Виберіть правило" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorHelp" value="Ім'я правила для видалення" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorLabel" value="Виберіть тип даних сторінки" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorHelp" value="" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorLabel" value="Виберіть тип даних" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorHelp" value="Виберіть один з існуючих типів" />
+  <string key="VirtualElementProviderElementProvider.ID01" value="Віртуальний кореневий елемент" />
+  <string key="VirtualElementProviderElementProvider.UserPerspective" value="Користувачі" />
+  <string key="VirtualElementProviderElementProvider.UserGroupPerspective" value="Групи користувачів" />
+  <string key="VirtualElementProviderElementProvider.SystemPerspective" value="Система" />
+  <string key="VirtualElementProviderElementProvider.ContentPerspective" value="Контент" />
+  <string key="VirtualElementProviderElementProvider.DatasPerspective" value="Дані" />
+  <string key="VirtualElementProviderElementProvider.DesignPerspective" value="Макет" />
+  <string key="VirtualElementProviderElementProvider.FunctionsPerspective" value="Функції" />
+  <string key="VirtualElementProviderElementProvider.MediaFilePerspective" value="Всі медіа-файли" />
+  <string key="VirtualElementProviderElementProvider.MediaPerspective" value="Мультимедіа" />
+  <string key="VirtualElementProviderElementProvider.ReadOnlyFunctionPerspective" value="Всі функції" />
+  <string key="VirtualElementProviderElementProvider.ReadOnlyWidgetFunctionPerspective" value="Всі віджет-функції" />
+  <string key="VirtualElementProviderElementProvider.SqlFunctionPerspective" value="SQL-функції" />
+  <string key="VirtualElementProviderElementProvider.XsltBasedFunctionPerspective" value="XSLT-функції" />
+  <string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogLabel" value="Журнал сервера" />
+  <string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogTooltip" value="Переглянути останні події на сервері" />
+  <string key="VirtualElementProviderElementProvider.RootActions.SendMessageLabel" value="Надіслати повідомлення" />
+  <string key="VirtualElementProviderElementProvider.RootActions.SendMessageTooltip" value="Надіслати повідомлення в усі запущені консолі" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Перезапустити сервер" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Перезапустити сервер" />
+  <string key="SendMessageToConsolesWorkflow.Layout.Label" value="Надіслати повідомлення в усі консолі C1" />
+  <string key="SendMessageToConsolesWorkflow.FieldGroup.Label" value="Повідомлення, яке буде відправлено" />
+  <string key="SendMessageToConsolesWorkflow.TitleTextBox.Label" value="Тема" />
+  <string key="SendMessageToConsolesWorkflow.TitleTextBox.Help" value="Тема діалогового вікна повідомлення" />
+  <string key="SendMessageToConsolesWorkflow.MessageTextArea.Label" value="Повідомлення" />
+  <string key="SendMessageToConsolesWorkflow.MessageTextArea.Help" value="Повідомлення, яке буде відправлено" />
+  <string key="LoginWebRequestHandler.Login" value="Увійти" />
+  <string key="LoginWebRequestHandler.Header" value="Увійти в {0}" />
+  <string key="LoginWebRequestHandler.LoginFailed" value="Неправильне ім'я користувача або пароль" />
+  <string key="LoginWebRequestHandler.Password" value="Пароль" />
+  <string key="LoginWebRequestHandler.Username" value="Ім'я користувача" />
+  <string key="LoginWebRequestHandler.LogInAsOtherUser" value="Увійти як інший користувач." />
+  <string key="LoginWebRequestHandler.WrongUserNameOrPassword" value="Неправильне ім'я користувача або пароль." />
+  <string key="LoginWebRequestHandler.UserNameNotRegistered" value="Даний Windows-логін {0} \ {1} не зареєстрований в базі даних користувачів. Ви повинні використовувати інший логін." />
+  <string key="DataInterfaceValidator.TypeNotAnInterface" value="Тип {0} не є інтерфейсом." />
+  <string key="DataInterfaceValidator.TypeDoesNotImplementInterface" value="Тип інтерфейсу {0} не реалізує інтерфейс {1}." />
+  <string key="DataInterfaceValidator.NotAcceptedType" value="Властивість {0} у типа інтерфейсу {1} не є допустимим типом." />
+  <string key="DataInterfaceValidator.NotValidIDataInterface" value="Інтерфейс {0} не є допустимим інтерфейсом типу IData." />
+  <string key="DeleteMediaFileWorkflow.CascadeDeleteErrorTitle" value="Помилка каскадного видалення" />
+  <string key="DeleteMediaFileWorkflow.CascadeDeleteErrorMessage" value="На цей тип посилається інший тип, який не допускає каскадне видалення. Виконання операції припинено." />
+  <string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorTitle" value="Помилка каскадного видалення" />
+  <string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorMessage" value="На цей тип посилається інший тип, який не допускає каскадне видалення. Виконання операції припинено." />
+  <string key="MediaFileProviderElementProvider.RootToolTip" value="Додати папки та файли в мультимедіа-архів" />
+  <string key="MediaFileProviderElementProvider.AddMediaFolder" value="Додати папку" />
+  <string key="MediaFileProviderElementProvider.AddMediaFolderToolTip" value="Додати нову медіа-папку" />
+  <string key="MediaFileProviderElementProvider.AddMediaFile" value="Надіслати файл" />
+  <string key="MediaFileProviderElementProvider.AddMediaFileToolTip" value="Додати новий медіа-файл" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFile" value="Видалити файл" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFileToolTip" value="Видалити вибраний медіа-файл" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFolder" value="Видалити папку" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFolderToolTip" value="Видалити медіа-папку з усім вмістом." />
+  <string key="MediaFileProviderElementProvider.Download" value="Завантажити" />
+  <string key="MediaFileProviderElementProvider.DownloadToolTip" value="Завантажити файл" />
+  <string key="MediaFileProviderElementProvider.EditMediaFile" value="Властивості файлу" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileToolTip" value="Перейменувати вибраний медіа-файл" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileTextContent" value="Змінити текст" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileTextContentToolTip" value="Змінити зміст тексту" />
+  <string key="MediaFileProviderElementProvider.EditImage" value="Редактор зображень" />
+  <string key="MediaFileProviderElementProvider.EditImageToolTip" value="Відкрити вибраний медіа-файл у редакторі зображень" />
+  <string key="MediaFileProviderElementProvider.EditMediaFolder" value="Властивості папки" />
+  <string key="MediaFileProviderElementProvider.EditMediaFolderToolTip" value="Змінити властивості медіа-папки" />
+  <string key="MediaFileProviderElementProvider.ChangeMediaFile" value="Замінити файл" />
+  <string key="MediaFileProviderElementProvider.ChangeMediaFileToolTip" value="Замінити вибраний файл іншим медіа-файлом" />
+  <string key="MediaFileProviderElementProvider.UploadZipFile" value="Надіслати кілька файлів" />
+  <string key="MediaFileProviderElementProvider.UploadZipFileToolTip" value="Надіслати Zip-файл" />
+  <string key="MediaFileProviderElementProvider.MediaFileItemToolTip" value="Медіа-елемент" />
+  <string key="MediaFileProviderElementProvider.OrganizedFilesAndFoldersToolTip" value="Організувати папки та файли" />
+  <string key="MediaFileProviderElementProvider.ErrorMessageTitle" value="Помилка" />
+  <string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Файл '{0}' вже існує в папці '{1}'" />
+  <string key="UploadNewMediaFileWorkflow.UploadFailure" value="Збій" />
+  <string key="UploadNewMediaFileWorkflow.UploadFailureMessage" value="Файл, повинен бути того ж типу, що й оригінал. Файл, який ви надсилаєте, має інший тип." />
+  <string key="RelationshipGraphActionExecutor.ShowGraph" value="Показати діаграму" />
+  <string key="RelationshipGraphActionExecutor.ShowGraphToolTip" value="Показати діаграму відносин" />
+  <string key="RelationshipGraphActionExecutor.ShowOrientedGraph" value="Показати орієнтовану діаграму" />
+  <string key="RelationshipGraphActionExecutor.ShowOrientedGraphToolTip" value="Показати орієнтовану діаграму відносин" />
+  <string key="ShowElementInformationActionExecutor.ShowElementInformation.Label" value="Показати інформацію елемента" />
+  <string key="ShowElementInformationActionExecutor.ShowElementInformation.ToolTip" value="Показати інформацію елемента" />
+  <string key="RelationshipGraphActionExecutor.Search" value="Шукати елементи" />
+  <string key="RelationshipGraphActionExecutor.SearchToolTip" value="Шукати елементи" />
+  <string key="RelationshipGraphActionExecutor.SearchElements" value="Шукати елементи" />
+  <string key="RelationshipGraphActionExecutor.SearchElementsToolTip" value="Шукати елементи" />
+  <!-- WEBSITE -->
+  <string key="Website.General.LabelVersionNumber" value="№ версії" />
+  <string key="Website.Application.DialogReload.Title" value="Перезапустити?" />
+  <string key="Website.Application.DialogReload.Text" value="Перезапустити Composite C1? Всі незбережені зміни будуть втрачені." />
+  <string key="WebSite.Application.DialogSaveResource.Title" value="Зберегти ресурс?" />
+  <string key="WebSite.Application.DialogSaveResource.Text" value="&quot;${resourcename}&quot; був змінений. Зберегти зміни?" />
+  <string key="Website.Dialogs.SaveAll.LabelSaveResources" value="Зберегти ресурси?" />
+  <string key="Website.Dialogs.SaveAll.LabelUnsavedResources" value="Незбережені ресурси" />
+  <string key="Website.Dialogs.LabelAccept" value="ОК" />
+  <string key="Website.Dialogs.LabelCancel" value="Скасувати" />
+  <string key="Website.Dialogs.LabelDisclosure" value="Детальніше" />
+  <string key="Website.Dialogs.About.Title" value="Про Composite C1" />
+  <string key="Website.Dialogs.About.LabelCredits" value="Титри" />
+  <string key="Website.Dialogs.About.LabelBack" value="Назад" />
+  <string key="Website.Dialogs.About.LabelCredits2" value="Титри" />
+  
+  <string key="Website.Dialogs.NoAccessTitle" value="Немає доступу" />
+  <string key="Website.Dialogs.NoAccessText" value="Вам не надано права доступу до системи. Будь ласка, зверніться до свого адміністратора." />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Unit" value="Одиниця виміру" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Width" value="Ширина" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Height" value="Висота" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelScaleImage" value="Масштаб зображення" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelDimensions" value="Розміри" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelImageSize" value="Розмір зображення" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFixedRatio" value="Пропорційно" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFreeResize" value="Незалежно" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPixels" value="Пікселі" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPercent" value="Відсотки" />
+  <string key="Website.Dialogs.Options.LoginScreen" value="Екран входу в систему" />
+  <string key="Website.Dialogs.Options.SoundEffects" value="Звукові ефекти" />
+  <string key="Website.Dialogs.Options.LabelOptions" value="Параметри" />
+  <string key="Website.Dialogs.Options.LabelGeneral" value="Загальні" />
+  <string key="Website.Dialogs.Options.LabelAdvanced" value="Розширені" />
+  <string key="Website.Dialogs.Options.LabelLoginPreferences" value="Настройки входу в систему" />
+  <string key="Website.Dialogs.Options.LabelFakeLoginScreen" value="Псевдо-екран входу в систему" />
+  <string key="Website.Dialogs.Options.LabelNoLoginScreen" value="Без екрана входу в систему" />
+  <string key="Website.Dialogs.Options.LabelAudioPreferences" value="Аудіо налаштування" />
+  <string key="Website.Dialogs.Options.LabelSoundOn" value="Дратівливі звукові ефекти" />
+  <string key="Website.Dialogs.Options.LabelSoundOff" value="Без звукових ефектів" />
+  <string key="Website.Dialogs.WebServices.Error" value="Помилка в методі веб-служби" />
+  <string key="Website.Dialogs.WebServices.LabelWebServiceError" value="Помилка веб-служби" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.Title" value="Вставити де?" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelPosition" value="Позиція" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertBefore" value="Вставити до" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertAfter" value="Вставити після" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTitle" value="Змінити зображення" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFile" value="Файл" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSave" value="Зберегти" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSaveAs" value="Зберегти як ..." />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRevert" value="Скасувати зміни" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelView" value="Вид" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoom" value="Масштаб" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomIn" value="Збільшити" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomOut" value="Зменшити" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label800" value="800%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label400" value="400%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label200" value="200%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label100" value="100%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label50" value="50%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label25" value="25%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label12" value="12%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelImage" value="Зображення" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTransform" value="Перетворити" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipHorizontal" value="Повернути по горизонталі" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipVertical" value="Повернути по вертикалі" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CW" value="Повернути на 90 градусів за годинниковою стрілкою" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CCW" value="Повернути на 90 градусів проти годинникової стрілки" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate180" value="Повернути на 180 градусів" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelScale" value="Масштаб зображення..." />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelCrop" value="Обрізати зображення" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipSelect" value="Вибрати" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipZoom" value="Масштаб" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelSave" value="Зберегти" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelScale" value="Масштаб зображення" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelCrop" value="Обрізати зображенне" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelUndo" value="Скасувати" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelRedo" value="Повторити" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTitle" value="Дозволи" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUsers" value="Користувачі" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUserGroups" value="Групи користувачей" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelButtonSave" value="Зберегти" />
+  <string key="Website.Content.Views.Help.ToolTipBack" value="Перейти на попередню сторінку" />
+  <string key="Website.Content.Views.Help.ToolTipForward" value="Перейти на наступну сторінку" />
+  <string key="Website.Content.Views.Help.ToolTipRefresh" value="Оновити сторінку" />
+  <string key="Website.Content.Views.Help.LabelContents" value="Зміст" />
+  <string key="Website.Content.Views.Help.ToolTipContents" value="Зміст довідки" />
+  <string key="Website.Content.Views.SystemView.ToolTipCollapseAll" value="Згорнути все" />
+  <string key="Website.Content.Views.SystemView.ToolTipLinkWithEditor" value="Зв'язати з редактором" />
+  <string key="Website.Content.Views.Search.Search.LabelNewSearch" value="Новий пошук..." />
+  <string key="Website.Content.Views.ViewSource.LabelFormatted" value="Форматовано" />
+  <string key="Website.Content.Views.ViewSource.LabelRaw" value="Без формату" />
+  <string key="ServerLog.LabelTitle" value="Журнал сервера" />
+  <string key="ServerLog.LabelButtonDeleteOld" value="Видалити старі" />
+  <string key="ServerLog.LabelButtonRefresh" value="Оновити" />
+  <string key="FunctionDocumentation.LabelButtonRefresh" value="Оновити" />
+  <string key="FunctionDocumentation.LabelButtonPrint" value="Друкувати" />
+  <string key="Website.FlowUICompleted.ExecutionEndedTitle" value="Виконання завершилося" />
+  <string key="Website.FlowUICompleted.ExecutionEndedMessage" value="Дія, що виконується в цьому вікні, завершилася." />
+  <string key="Website.ServerError.ServerErrorTitle" value="Помилка сервера" />
+  <string key="Website.ServerError.ServerErrorMessage" value="На жаль, сталася помилка." />
+  <string key="Website.ServerError.ServerErrorDetails" value="Детальніше" />
+  <string key="Website.LicenseViolation.LicenseViolationTitle" value="Порушення ліцензії" />
+  <string key="Website.LicenseViolation.LicenseViolationMessage" value="Дія запиту порушує вашу поточну ліцензію." />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelFlashOptions" value="Параметри Flash" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelHigh" value="Висока" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLow" value="Низька" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutohigh" value="Висока (автом.)" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutolow" value="Низька (автом.)" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelBest" value="Краща" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelWindow" value="Вікно" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelOpaque" value="Непрозоре" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelTransparent" value="Прозоре" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowall" value="Показати всі" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelNoborder" value="Порядок" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelExactfit" value="Точний збіг" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutoPlay" value="Грати автоматично" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLoop" value="Повторювати" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowMenu" value="Показати меню" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelSWLiveConnect" value="SW Live Connect" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelQuickTimeOptions" value="Параметри Quicktime" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelLoop" value="Повторювати" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelCache" value="Кеш" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelNoCorrection" value="Без корекції" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelKioskMode" value="Режим кіоску" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelPlayEveryFrame" value="Показувати кожен кадр" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoPlay" value="Грати автоматично" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelController" value="Контролер" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelEnableJavaScript" value="Включіть Javascript" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoHRef" value="Auto HREF" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelTargetCache" value="Цільовий кеш" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShockWaveOptions" value="Параметри Shockwave" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelHigh" value="Висока" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLow" value="Низька" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoHigh" value="Високе (автом.)" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoLow" value="Низька (автом.)" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelBest" value="Краща" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelWindow" value="Вікно" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelOpaque" value="Непрозоре" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelTransparent" value="Прозоре" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowAll" value="Показати всі" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelNoBorder" value="Порядок" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelExactFit" value="Точний збіг" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoPlay" value="Грати автоматично" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLoop" value="Повторювати" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowMenu" value="Показати меню" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelSWLiveConnect" value="SW Live Connect" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelQuickTimeOptions" value="Параметри Quicktime" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelAutoStart" value="Автоматичний запуск" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelShowMenu" value="Показати меню" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelInvokeURLs" value="Запускати з веб-адрес" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelStretchToFit" value="Розтягнути за розміром екрана" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelEnabled" value="Включено" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelFullScreen" value="На весь екран" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelMute" value="Вимкнути звук" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelWindowLessVideo" value="Відео без показу вікна" />
+  <string key="Website.App.LabelSave" value="Зберегти" />
+  <string key="Website.App.LabelCloseTab" value="Закрити вкладку" />
+  <string key="Website.App.LabelCloseOthers" value="Закрити решту" />
+  <string key="Website.App.LabelRefreshView" value="Оновити вигляд" />
+  <string key="Website.App.LabelMakeDirty" value="Помітити як &quot;брудний&quot;" />
+  <string key="Website.App.LabelViewSource" value="Перегляд HTML-коду" />
+  <string key="Website.App.LabelViewGenerated" value="Відкрити сгенероване" />
+  <string key="Website.App.LabelViewSerialized" value="Відкрити серіалізоване" />
+  <string key="Website.App.LabelClose" value="Закрити" />
+  <string key="Website.App.LabelFile" value="Файл" />
+  <string key="Website.App.LabelFileClose" value="Закрити" />
+  <string key="Website.App.LabelFileCloseAll" value="Закрити все" />
+  <string key="Website.App.LabelFileSaveAll" value="Зберегти все..." />
+  <string key="Website.App.LabelFileExit" value="Вихід" />
+  <string key="Website.App.LabelView" value="Вид" />
+  <string key="Website.App.LabelViewCompositeStart" value="Початкова сторінка" />
+  <string key="Website.App.LabelSystemLog" value="Журнал системи" />
+  <string key="Website.App.LabelDeveloperPanel" value="Панель розробника" />
+  <string key="Website.App.LabelTools" value="Інструменти" />
+  <string key="Website.App.LabelHelp" value="Довідка" />
+  <string key="Website.App.LabelHelpContents" value="Зміст довідки" />
+  <string key="Website.App.LabelFeedback" value="Написати відгук ..." />
+  <string key="Website.App.LabelAboutComposite" value="Про Composite C1" />
+  <string key="Website.App.LabelCut" value="Вирізати" />
+  <string key="Website.App.LabelCopy" value="Копіювати" />
+  <string key="Website.App.LabelPaste" value="Вставити" />
+  <string key="Website.App.LabelRefresh" value="Оновити" />
+  <string key="Website.App.LabelLoading" value="Завантаження ..." />
+  <string key="Website.App.LabelLoaded" value="Завантажено" />
+  <string key="Website.App.LabelSaved" value="Збережено" />
+  <string key="Website.App.ToolTipMinimize" value="Згорнути" />
+  <string key="Website.App.ToolTipMaximize" value="Розгорнути" />
+  <string key="Website.App.ToolTipUnMaximize" value="Відновити" />
+  <string key="Website.App.ToolTipUnMinimize" value="Відновити" />
+  <string key="Website.App.ToolTipClose" value="Закрити" />
+  <string key="Website.App.StatusBar.Opening" value="Відкриття {0} ..." />
+  <string key="Website.App.StatusBar.Refreshing" value="Оновлення {0} ..." />
+  <string key="Website.App.StatusBar.Loading" value="Завантаження {0} ..." />
+  <string key="Website.App.StatusBar.Error" value="Помилка" />
+  <string key="Website.App.StatusBar.Warn" value="Попередження" />
+  <string key="Website.App.StatusBar.Busy" value="Виконується ..." />
+  <string key="Website.App.StatusBar.Ready" value="Готово!" />
+  <string key="Website.App.StatusBar.ErrorInField" value="Помилка в" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.Layout.Label" value="Додати новий медіа-файл" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FieldGroup.Label" value="Властивості медіа-файлу" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Label" value="Назва файлу" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Help" value="Виберіть або введіть ім'я файлу для надсилання" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Label" value="Дозволити перезапис" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Help" value="Замінити існуючий файл" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Label" value="Назва файлу" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Help" value="Ім'я файлу в бібліотеці мультимедіа" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Label" value="Назва" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Help" value="Використовуйте це поле для назви зображення" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Label" value="Опис" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Help" value="Використовуйте це поле для короткого опису зображення" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.MissingUploadedFile.Message" value="Будь ласка, виберіть файл для надсилання" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FileExists.Message" value="Файл з такою назвою вже існує. Поставьте прапорець у опції  &quot;Дозволити перезапис&quot; або змініть ім'я файлу" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.TotalFilenameToLong.Message" value="Повне ім'я файлу (папка та ім'я файлу) занадто довге" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.Label.AddNewMediaFolder" value="Додати нову медіа-папку" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelFolderName" value="Ім'я папки" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpFolderName" value="" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelTitle" value="Назва" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpTitle" value="" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelDescription" value="Опис" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpDescription" value="" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameAlreadyUsed" value="Папка вже існує" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="Повне ім'я папки задовге" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Ім'я папки не може бути лише '/' або '\'" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Надсилання декількох файлів за допомогою Zip-файлу" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFieldGroup" value="Виберіть Zip-файл, що містить файли для вилучення" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Zip-файл" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpFile" value="Створіть Zip-файл (клацніть правою кнопкою миші на локальній папці і виберіть Відправити -&gt; Стиснута папка) і виберіть його, користуючись кнопкою &quot;Огляд&quot;" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructure" value="Створити папки" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpRecreateStructure" value="При виборі цієї опції буде скопійована повна структура папок з Zip-файлу" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructureCheckBox" value="Витягти папки з Zip-файлу" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsisting" value="Перезаписати" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpOverwriteExsisting" value="При виборі цієї опції будуть перезаписані існуючі файли в медіа-архіві у випадку збігу імен" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.Error.Title" value="Помилка" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Перезаписати існуючі файли" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.MissingUploadedFile.Message" value="Будь ласка, виберіть файл для надсилання" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.WrongUploadedFile.Message" value="Вибраний файл не є правильним zip-файлом" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelFunctionSearch" value="Пошук функції" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeyword" value="Ключове слово" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeywordHelp" value="Напишіть ключове слово для пошуку." />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnType" value="Тип значення, що повертається" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnTypeHelp" value="Виберіть тип вихідного значення для пошуку." />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.LabelFieldGroup" value="Видалити цей файл?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.Text" value="Видалити цей файл?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationHeader" value="Видалення файлів" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationText" value="Деякі залежні дані також будуть видалені. Ви хочете продовжити?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.LabelFieldGroup" value="Видалити цю папку?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.Text" value="Видалити цю папку?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.HasChildringText" value="Ця папка містить один або декілька файлів або підпапок. Видалення цієї папки призведе до видалення всіх розміщених файлів і підпапок. Видалити цю папку?" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelFieldGroup" value="Властивості медіа-файлу" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelTitle" value="Назва" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpTitle" value="Використовуйте це поле для назви зображення" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelFileName" value="Назва файлу" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpFileName" value="Значення, зазначене в цьому полі, є частиною ідентифікатора зображення" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelDescription" value="Опис" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpDescription" value="Використовуйте це поле для короткого опису зображення" />
+  <string key="Website.Forms.Administrative.EditMediaFile.TotalFilenameToLong.Message" value="Повне ім'я файлу (папка та ім'я файлу) занадто довге" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFieldGroup" value="Властивості папки" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFolderName" value="Ім'я папки" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpFolderName" value="" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelTitle" value="Назва" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpTitle" value="Використовуйте це поле для назви зображення" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelDescription" value="Опис" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpDescription" value="" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.TotalFilenameToLong.Message" value="Папка містить файл, в якому ім'я файлу та ім'я нової папки разом занадто довге" />
+  <string key="Website.Forms.Administrative.EditPage.DraftTransition" value="Чернетка" />
+  <string key="Website.Forms.Administrative.EditPage.AwaitingApprovalTransition" value="Очікує затвердження" />
+  <string key="Website.Forms.Administrative.EditPage.AwaitingPublicationTransition" value="Чекає публікації" />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelFieldGroup" value="Пошук" />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelKeyword" value="Ключове слово" />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelSearchKeyword" value="Напишіть ключове слово для пошуку." />
+  <string key="Website.Forms.Administrative.UploadMediaFile.LabelFieldGroup" value="Надіслати новий медіа-файл" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.LabelFile" value="Ім'я файлу:" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.HelpFile" value="" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorTitle" value="Файл відсутній або порожній" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorMessage" value="Дані файлу не отримані. Будь ласка, скористуйтеся кнопкою &quot;Огляд&quot; і переконайтеся, що обраний файл не є порожнім." />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFieldGroup" value="Надіслати новий медіа-файл замість існуючого файлу" />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFile" value="Ім'я файлу:" />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.HelpFile" value="" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSave" value="Зберегти" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSaveAs" value="Зберегти як ..." />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelPrevious" value="Назад" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelNext" value="Далі" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelFinish" value="Готово" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelCancel" value="Скасувати" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelOk" value="ОК" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelCancel" value="Скасувати" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelOk" value="ОК" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelCancel" value="Скасувати" />
+  <string key="Website.Misc.SourceCodeViewer.LabelInput" value="Ввід" />
+  <string key="Website.Misc.SourceCodeViewer.LabelOutput" value="Вивід" />
+  <string key="Website.Misc.Trees.DialogTitle.PasteNotAllowed" value="Неприпустимо." />
+  <string key="Website.Misc.Trees.DialogText.PasteNotAllowed" value="Вставка неприпустима в даному контексті." />
+  <string key="Website.Misc.Trees.DialogTitle.PasteTypeNotAllowed" value="Неприпустимо" />
+  <string key="Website.Misc.Trees.DialogText.PasteTypeNotAllowed" value="Папка не приймає цей тип документа." />
+  <string key="Website.Misc.MultiSelector.LabelEditSelections" value="Змінити вибране" />
+  <string key="GenericVersionProcessController.Version" value="Інформація про версію" />
+  <string key="GenericVersionProcessController.VersionToolTip" value="Показати інформацію про версію" />
+  <string key="AspNetUiControl.Selector.SelectValueLabel" value="Виберіть значення..." />
+  <string key="AspNetUiControl.Selector.BrokenReference" value="&lt;Недійсне посилання&gt; ..." />
+  <string key="AspNetUiControl.Selector.NoSelection" value="(Не вибрано)" />
+</strings>

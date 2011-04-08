@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootFolderLabel" value="C# функції" />
+  <string key="RootFolderToolTip" value="Функції на основі методів" />
+  <string key="DeleteFunction.LabelFieldGroup" value="Видалити цю функцію" />
+  <string key="DeleteFunction.Text" value="Видалити цю функцію" />
+  <string key="Add" value="Додати зовнішню C# функцію" />
+  <string key="AddToolTip" value="Додати зовнішню C# функцію на основі методу" />
+  <string key="Create" value="Додати вбудовану C# функцію" />
+  <string key="CreateToolTip" value="Додати вбудовану C# функцію на основі методу" />
+  <string key="Edit" value="Змінити" />
+  <string key="EditToolTip" value="Змінити функцію" />
+  <string key="Delete" value="Видалити" />
+  <string key="DeleteToolTip" value="Видалити функцію" />
+  <string key="AddNewMethodBasedFunction.LabelFieldGroup" value="Додати функцію на основі методу" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelType" value="Тип" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="Тип, який містить потрібний метод" />
+  <string key="AddNewMethodBasedFunctionStep2.LabelMethodName" value="Назва методу" />
+  <string key="AddNewMethodBasedFunctionStep2.HelpMethodName" value="" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelMethodName" value="Назва методу" />
+  <string key="AddNewMethodBasedFunctionStep3.HelpMethodName" value="" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelNamespaceName" value="Назва простору імен" />
+  <string key="AddNewMethodBasedFunctionStep3.HelpNamespaceName" value="" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelError" value="Помилка" />
+  <string key="CascadeDeleteErrorTitle" value="Помилка каскадного видалення" />
+  <string key="CascadeDeleteErrorMessage" value="На цей тип посилається інший тип, який не допускає каскадні видалення. Виконання операції припинено." />
+  <string key="AddFunction.CouldNotFindType" value="Не вдалося знайти тип" />
+  <string key="AddFunction.TypeHasNoValidMethod" value="Тип не містить допустимі методи" />
+  <string key="AddFunction.TypeIsAbstractOrStatic" value="Тип позначений як абстрактний або статичний. Виклик методів з абстрактних або статичних типів не підтримується." />
+  <string key="AddFunction.TypeMustNotHaveOverloads" value="Тип не може мати перевантаження" />
+  <string key="AddFunction.MethodNameIsEmpty" value="Ім'я методу не повинно бути порожнім" />
+  <string key="AddFunction.InvalidNamespace" value="Простір імен повинен бути у вигляді A.B.C Не може починатися і не закінчуватися &quot;.&quot;." />
+  <string key="AddFunction.NameAlreadyUsed" value="Ім'я функції '{0}' вже використовується" />
+  <string key="EditMethodBasedFunction.LabelFieldGroup" value="Змінити запит на основі методу" />
+  <string key="EditMethodBasedFunction.LabelMethodName" value="Назва методу" />
+  <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="Назва, під якою функція повинна бути відома." />
+  <string key="EditMethodBasedFunction.LabelNamespaceName" value="Назва простору імен" />
+  <string key="EditMethodBasedFunction.LabelNamespaceNameHelp" value="Простір імен, в який додати метод." />
+  <string key="EditMethodBasedFunction.LabelType" value="Тип" />
+  <string key="EditMethodBasedFunction.LabelTypeHelp" value="Тип, який містить потрібний метод." />
+  <string key="EditMethodBasedFunction.LabelMethod" value="Метод" />
+  <string key="EditMethodBasedFunction.LabelMethodHelp" value="Метод, який викликається з типу." />
+  <string key="EditMethodBasedFunction.LabelError" value="Помилка" />
+  <string key="EditFunction.MethodNameEmpty" value="Ім'я методу не повинно бути порожнім" />
+  <string key="EditFunction.InvalidNamespace" value="Простір імен не повинен починатися і закінчуватися &quot;.&quot;, Наприклад, A.B.C" />
+  <string key="EditFunction.TypeNotFound" value="Не вдалося знайти тип" />
+  <string key="EditFunction.MethodNotInType" value="Тип не містить метод" />
+  <string key="EditFunction.NoValidMethod" value="Тип не містить неприпустимі методи" />
+  <string key="EditFunction.MethodOverloadsNotAllowed" value="Тип не повинен мати перевантаження" />
+  <string key="AddInlineFunctionWorkflow.FieldGroup.Label" value="Настройки" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Label" value="Назва" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Help" value="Назва методу, який ви хочете створити" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Label" value="Простір імен" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Help" value="Простір імен методу, який ви хочете створити" />
+  <string key="AddInlineFunctionWorkflow.MethodDescription.Label" value="Опис" />
+  <string key="AddInlineFunctionWorkflow.MethodDescription.Help" value="Короткий опис функції" />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Label" value="Шаблон" />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Help" value="Виберіть шаблон, який ви хочете використовувати для нового методу." />
+  <string key="EditInlineFunctionWorkflow.FieldGroup.Label" value="Настройки" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Label" value="Назва" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Help" value="Назва методу, який ви хочете створити" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Label" value="Простір імен" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Help" value="Простір імен методу, який ви хочете створити" />
+  <string key="EditInlineFunctionWorkflow.MethodDescription.Label" value="Опис" />
+  <string key="EditInlineFunctionWorkflow.MethodDescription.Help" value="Короткий опис функції" />
+  <string key="EditInlineFunctionWorkflow.DebugFieldGroup.Label" value="Налагодження" />
+  <string key="EditInlineFunctionWorkflow.DebugPage.Label" value="Сторінка" />
+  <string key="EditInlineFunctionWorkflow.DebugPage.Help" value="При налагодженні, ця сторінка використовується в якості поточної сторінки" />
+  <string key="EditInlineFunctionWorkflow.DebugPageDataScope.Label" value="Область видимості даних" />
+  <string key="EditInlineFunctionWorkflow.DebugPageDataScope.Help" value="При налагодженні, використовується в якості поточної області видимості даних" />
+  <string key="EditInlineFunctionWorkflow.DebugActiveLocale.Label" value="Мова" />
+  <string key="EditInlineFunctionWorkflow.DebugActiveLocale.Help" value="При налагодженні, використовується в якості поточної мови" />
+  <string key="EditInlineFunctionWorkflow.Code.Label" value="Код" />
+  <string key="EditInlineFunctionWorkflow.AssembliesFieldGroup.Label" value="Посилання складань" />
+  <string key="EditInlineFunctionWorkflow.Preview.Label" value="Перегляд" />
+  <string key="EditInlineFunctionWorkflow.ParameterFieldGroup.Label" value="Вхідні параметри" />
+  <string key="EditInlineFunctionWorkflow.AdminitrativeScope.Label" value="Адміністративна" />
+  <string key="EditInlineFunctionWorkflow.PublicScope.Label" value="Публічна" />
+  <string key="InlineFunctionMethodTemplate.Clean" value="Порожній метод" />
+  <string key="InlineFunctionMethodTemplate.WithParameters" value="Метод з параметрами" />
+  <string key="InlineFunctionMethodTemplate.DataConnection" value="Метод з використанням підключення даних" />
+  <string key="CSharpInlineFunction.OnMissingContainerType" value="У коді відсутній публічний статичний клас з ім'ям {0}. Цей клас повинен містити метод функції." />
+  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="Простір імен в коді '{0}' не відповідає простору імен даної функції '{1}'." />
+  <string key="CSharpInlineFunction.OnMissionMethod" value="Дане ім'я функції '{0}' не знайдено або не є публічним статичним у класі &quot;{1} '." />
+  <string key="CSharpInlineFunction.MissingParameterDefinition" value="Параметр '{0}' не був доданий у &quot;Вхідні параметри&quot;. Для виклику функції потрібно додати параметр і призначити йому значення, або тестове, або за замовчуванням." />
+  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="Параметр '{0}' очікує тестове значення типу '{1}', Одержано значення типу '{2}'." />
+  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="Параметру '{0}', визначений у &quot;Вхідних параметрах&quot;, повинно бути присвоєно тестове значення або значення за замовчуванням до обчислення функції." />
+</strings>
