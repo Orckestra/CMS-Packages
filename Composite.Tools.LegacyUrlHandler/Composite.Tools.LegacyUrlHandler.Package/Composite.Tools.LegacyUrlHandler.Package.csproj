@@ -61,8 +61,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="7za.exe" />
-    <Content Include="Dll\Composite.dll" />
     <Content Include="Package\Bin\Composite.Tools.LegacyUrlHandler.dll" />
     <Content Include="Package\Config\Install.xsl" />
     <Content Include="Package\Frontend\Composite\Tools\LegacyUrlHandler\Images\bottom.png" />
@@ -107,8 +105,8 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:Checkout  "$(ProjectDir)Release\$(SolutionName).zip"
-"$(ProjectDir)7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
-"$(ProjectDir)7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PostBuildEvent>
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
