@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3800.0000" maximumCompositeVersion="2.9999.9999.9999"></mi:PackageRequirements>
+	<mi:PackageInformation name="Composite.LanguagePacks.Dutch" groupName="Composite.LanguagePacks" version="1.0.8" author="Composite A/S" website="www.composite.net" id="DF2C772B-66BB-4607-8F25-CDC3532D695E" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
+		<Description>Dutch language pack for the console GUI.</Description>
+	</mi:PackageInformation>
+
+	<mi:PackageFragmentInstallerBinaries>
+	</mi:PackageFragmentInstallerBinaries>
+
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
+			<Install xsltFilePath="~\Config\Install.xsl" />
+			<Uninstall xsltFilePath="~\Config\Uninstall.xsl" />
+		</mi:Add>
+
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Directories>
+				<Directory sourceDirectory="~\App_Data\Composite\LanguagePacks\nl-NL\" targetDirectory="~\App_Data\Composite\LanguagePacks\nl-NL\" allowOverwrite="true" deleteTargetDirectory="false"/>
+			</Directories>
+		</mi:Add>
+
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
+

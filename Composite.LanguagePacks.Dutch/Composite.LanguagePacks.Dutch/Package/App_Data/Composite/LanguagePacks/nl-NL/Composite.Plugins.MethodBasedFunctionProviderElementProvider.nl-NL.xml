@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootFolderLabel" value="C# functies" />
+  <string key="RootFolderToolTip" value="Method functions" />
+  <string key="DeleteFunction.LabelFieldGroup" value="Verwijder deze functie" />
+  <string key="DeleteFunction.Text" value="Verwijder deze functie" />
+  <string key="Add" value="Toevoegen" />
+  <string key="AddToolTip" value="Nieuwe functie toevoegen" />
+  <string key="Edit" value="Bewerk" />
+  <string key="EditToolTip" value="Bewerk functie" />
+  <string key="Delete" value="Verwijder" />
+  <string key="DeleteToolTip" value="Verwijder functie" />
+  <string key="AddNewMethodBasedFunction.LabelFieldGroup" value="Nieuw method based function toevoegen" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelType" value="Type" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="The type that contains the method in question" />
+  <string key="AddNewMethodBasedFunctionStep2.LabelMethodName" value="Method naam" />
+  <string key="AddNewMethodBasedFunctionStep2.HelpMethodName" value="--" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelMethodName" value="Method naam" />
+  <string key="AddNewMethodBasedFunctionStep3.HelpMethodName" value="-" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelNamespaceName" value="Naamruimte naam" />
+  <string key="AddNewMethodBasedFunctionStep3.HelpNamespaceName" value="-" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelError" value="Fout" />
+  <string key="CascadeDeleteErrorTitle" value="Cascade verwijderingsfout" />
+  <string key="CascadeDeleteErrorMessage" value="Er wordt door een ander datatype verwezen naar dit datatype welke geen cascade verwijdering toestaat. Deze operatie wordt stopgezet." />
+  <string key="AddFunction.CouldNotFindType" value="Kan type niet vinden" />
+  <string key="AddFunction.TypeHasNoValidMethod" value="Het type bevat geen geldige methode" />
+  <string key="AddFunction.TypeIsAbstractOrStatic" value="Type is gemarkeerd als abstract of statisch. Het aanroepen van methoden over abstracte of statische soorten wordt niet ondersteund." />
+  <string key="AddFunction.TypeMustNotHaveOverloads" value="Type mag niet voorzien zijn van overbelasting" />
+  <string key="AddFunction.MethodNameIsEmpty" value="Method name mag niet leeg zijn" />
+  <string key="AddFunction.InvalidNamespace" value="Naamruimte moet net als ABC - niet starten en eindigen op." />
+  <string key="EditMethodBasedFunction.LabelFieldGroup" value="Bewerk Method Based query" />
+  <string key="EditMethodBasedFunction.LabelMethodName" value="Method naam" />
+  <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="De naam die de functie moet weten onder." />
+  <string key="EditMethodBasedFunction.LabelNamespaceName" value="Naamruimte naam" />
+  <string key="EditMethodBasedFunction.LabelNamespaceNameHelp" value="De naam die de functie moet weten onder." />
+  <string key="EditMethodBasedFunction.LabelType" value="Type" />
+  <string key="EditMethodBasedFunction.LabelTypeHelp" value="The type that contains the method in question." />
+  <string key="EditMethodBasedFunction.LabelMethod" value="Method" />
+  <string key="EditMethodBasedFunction.LabelMethodHelp" value="De methode die daarbij een beroep doen op het type." />
+  <string key="EditMethodBasedFunction.LabelError" value="Fout" />
+  <string key="EditFunction.MethodNameEmpty" value="Method naam moet niet leeg zijn" />
+  <string key="EditFunction.InvalidNamespace" value="Naamruimte moet niet starten en eindigen met. voorbeeld A.B.C" />
+  <string key="EditFunction.TypeNotFound" value="Kan type niet vinden" />
+  <string key="EditFunction.MethodNotInType" value="Het type bevat niet de methode" />
+  <string key="EditFunction.NoValidMethod" value="Het type bevat geen geldige methode" />
+  <string key="EditFunction.MethodOverloadsNotAllowed" value="Type mag geen overbelasting hebben" />
+</strings>

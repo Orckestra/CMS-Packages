@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Bewerk permissie" />
+  <string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Bewerk permissies" />
+  <string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Globale permissies" />
+  <string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Beheer gebruiker permissies" />
+  <string key="LogElementProvider.RootLabel" value="Log" />
+  <string key="LogElementProvider.RootLabelToolTip" value="System log" />
+  <string key="LogElementProvider.ShowLogLabel" value="Toon logbestand" />
+  <string key="LogElementProvider.ShowLogToolTip" value="Toon het systeembestand" />
+  <string key="DataCompositionVisabilityFacade.DefaultContainerLabel" value="Meta data" />
+  <string key="Website.Forms.Administrative.DeleteUserStep1.LabelFieldGroup" value="Verwijder gebruiker?" />
+  <string key="Website.Forms.Administrative.DeleteUserStep1.Text" value="Verwijder de geselecteerde gebruiker" />
+  <string key="DeleteUserWorkflow.CascadeDeleteErrorTitle" value="Cascade verwijderingsfout" />
+  <string key="DeleteUserWorkflow.DeleteSelfTitle" value="Verwijder zelf" />
+  <string key="DeleteUserWorkflow.DeleteSelfErrorMessage" value="Je kan jezelf niet verwijderen" />
+  <string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Bewerk gebruiker" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Gebruikersnaam" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserNameHelp" value="Gebruikersnamen kunnen niet worden veranderd. Dit is een 'alleen lezen&quot;veld" />
+  <string key="Website.Forms.Administrative.EditUserStep1.PasswordLabel" value="Wachtwoord" />
+  <string key="Website.Forms.Administrative.EditUserStep1.PasswordHelp" value="Wachtwoord moet langer zijn dan 6 karakters" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GroupLabel" value="Groep" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Bij het maken van een groepnaam die niet bestaat wordt een nieuwe groep geactiveerd" />
+  <string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Regionale instellingen" />
+  <string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="Als u de manier waarop getallen, tijden en data zijn weergegeven, selecteert u een item uit de lijst. Items gemarkeerd met een sterretje (*) zijn vertaald. Ongemarkeerde inzendingen zullen gebruik maken van de Engelse taal" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveFieldLabel" value="Onderdelen" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectLabel" value="Onderdelen" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsFieldLabel" value="Globale permissies" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectLabel" value="Globale permissies" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectHelp" value="Selecteer de onderdelen die gebruiker mag zien" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectHelp" value="Het beheersgedeelte verleent de gebruiker toegang tot het beheer van toegangsrechten en andere administratieve taken." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissions.IgnoredOwnAdministrativeRemoval" value="De verwijdering van je eigen administratieve toestemming is genegeerd. Je hebt nog administratieve priveleges" />
+  <string key="DeleteUserWorkflow.CascadeDeleteErrorMessage" value="Er wordt door een ander datatype verwezen naar dit datatype welke geen cascade verwijdering toestaat. Deze operatie wordt stopgezet." />
+  <string key="UserElementProvider.RootLabel" value="Gebruikers" />
+  <string key="UserElementProvider.RootToolTip" value="Gebruikers" />
+  <string key="UserElementProvider.AddUserLabel" value="Voeg gebruiker toe" />
+  <string key="UserElementProvider.AddUserToolTip" value="Voeg nieuwe gebruiker toe" />
+  <string key="UserElementProvider.EditUserLabel" value="Bewerk gebruiker" />
+  <string key="UserElementProvider.EditUserToolTip" value="Bewerkgeselecteerde gebruiker" />
+  <string key="UserElementProvider.DeleteUserLabel" value="Verwijder gebruiker" />
+  <string key="UserElementProvider.DeleteUserToolTip" value="Verwijder geselecteerde gebruiker" />
+  <string key="AddNewUserWorkflow.UsernameDuplicateError" value="Gebruiker met dezelfde naam bestaat al" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.LabelFieldGroup" value="Voeg nieuwe gebruiker toe" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.UserNameLabel" value="Gebruikersnaam" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.UserNameHelp" value="Nieuwe gebruikers kunnen niet hun gebruikersnaam veranderen" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.PasswordLabel" value="Wachtwoord" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.PasswordHelp" value="Wachtwoord moet langer zijn dan 6 karakters" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.GroupLabel" value="Groep" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.GroupHelp" value="Een groepsnaam die nog niet bestaat wordt een nieuwe groep gecreerd" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.CultureLabel" value="Regionale instellingen" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderTypeLabel" value="Voeg datafolder toe" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderTypeToolTip" value="Voeg datafolder toe" />
+  <string key="AssociatedDataElementProviderHelper.AddAssociatedDataLabel" value="Voeg data toe" />
+  <string key="AssociatedDataElementProviderHelper.AddAssociatedDataToolTip" value="Voeg data toe" />
+  <string key="AssociatedDataElementProviderHelper.EditAssociatedDataLabel" value="Bewerk data" />
+  <string key="AssociatedDataElementProviderHelper.EditAssociatedDataToolTip" value="Bewerk data" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="-" />
+  <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataLabel" value="Verwijder data" />
+  <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataToolTip" value="Verwijder data" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.FieldLabel" value="Voeg datafolder toe" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorLabel" value="Datafolder type" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorHelp" value="Creer een nieuw datatype of gebruik een bestaand datatype" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelNewType" value="Instellingen" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeName" value="Type een naam" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeName" value="De naam van een gecreerd nieuw type" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeNamespace" value="Type namespace" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeNamespace" value="De naam van de module, category of namespace dat is gecreerd" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeTitle" value="Titel" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeTitle" value="Gebruik dit item om een gebruikersvriendelijke naam te specificeren" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelFields" value="Velden" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ServicesLabel" value="Services" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasPublishing" value="Heeft publicatie" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ErrorTitle" value="Fout" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.FieldLabel" value="Selecteer bestaande datafolder om toe te voegen" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorLabel" value="Bestaande data folder types" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorHelp" value="Selecteer bestaande datafolder om toe te voegen" />
+  <string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeLabel" value="Verwijder metadata veld" />
+  <string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeToolTip" value="Verwijder metadata veld" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.LabelFieldGroup" value="Verwijder data folder" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.LayoutLabel" value="Voeg metadata veld toe" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataTypeLabel" value="Voeg metadata veld toe" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataTypeToolTip" value="Voeg metadata veld toe" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.FieldLabel" value="Voeg geselecteerd bestaand metadata type toe" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorLabel" value="Bestaande metadata types" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorHelp" value="Voeg geselecteerd bestaand metadata type toe" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesTitle" value="Metadata types bestaan niet" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesMessage" value="Metadata types bestaan niet" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.NamingFieldLabel" value="Meta data veld groep naamgeving" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameLabel" value="Naam" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameHelp" value="Geef een unieke naam om deze meta-data veld groep te identificeren" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelLabel" value="Label" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelHelp" value="Geef een gebruikersvriendelijk label voor dit meta data veld groep" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.VisabilityFieldLabel" value="Zichtbare dataveld groep" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorLabel" value="Tab" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorHelp" value="Selecteer de tab voor deze metadata" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorLabel" value="Toon vanaf" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorHelp" value="Weergave vanaf" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorLabel" value="Erf weergave" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorHelp" value="Erf weergave" />
+  <string key="AssociatedDataElementProviderHelper.NoItems.Title" value="Metadataveldgroep heeft geen items in scope" />
+  <string key="AssociatedDataElementProviderHelper.NoItems.Description" value="Er zijn momenteel geen items binnen de gespecificeerde weergave. Klik vorige om de weergave aan te passen of beeindig het gecreeerde metadata veldgroep" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption0" value="Dit item" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption1" value="Kinderen" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption2" value="2de generatie nakomelingen" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption3" value="3e generatie nakomelingen" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption4" value="4de generatie nakomelingen" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption5" value="5de generatie nakomelingen" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption0" value="Niet erven" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption1" value="erf 1ste generatie" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption2" value="Erf 2de generatie" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption3" value="Erf 3de generatie" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption4" value="Altijd erven" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.FieldGroupNameNotValid" value="De veldnaamgroep is in gebruik" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectType.LayoutLabel" value="Verwijder metadata veld groep" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.FieldLabel" value="Selecteer om een metadata veldgroep te verwijderen" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorLabel" value="Veldgroep" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorHelp" value="Selecteer om een metadata veldgroep te verwijderen" />
+  <string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorTitle" value="Cascade verwijderfout" />
+  <string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorMessage" value="Dit type is gekoppeld aan een ander type dat niet toestaat cascade te verwijderen. Deze actie wordt gestopt" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelNewType" value="Instellingen" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeName" value="Type naam" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeName" value="De naam van het nieuwe gecreerde  type (ex,product)" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeNamespace" value="Type naamspace" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeNamespace" value="De naam van de gecreerde module, category of naamspace" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeTitle" value="Titel" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeTitle" value="Gebruik dit item om een gebruikersvriendelijke naam te specificeren" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelFields" value="Velden" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.ServicesLabel" value="Diensten" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasVersioning" value="Heeft versiebeheer" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasPublishing" value="Heeft schrijfrechten" />
+  <string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.FieldGroupLabel" value="Verwijder data" />
+  <string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.Text" value="Verwijder data?" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.FieldGroupLabel" value="Voeg paginadata toe" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorLabel" value="Selecteer een datatype om toe te voegen" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorHelp" value="Selecteer 1 van de bestaande types om data toe te voegen" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeWorkflow.FieldGroupLabel" value="Voeg een pagina datatype toe" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorLabel" value="Selecteer type om toe te voegen" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorHelp" value="Selecteer 1 van de bestaande types in het systeem" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorLabel" value="Selecteer een vreemde sleutel" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorHelp" value="Selecteer 1 van de velden van het type om een vreemde sleutel te gebruiken" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorLabel" value="Voeg" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorHelp" value="Creer een nieuw type of gebruik een bestaand type" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorLabel" value="Selecteer type" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorHelp" value="Reguliere gegevens zijn een nieuw type die zijn gemaakt op grond van een pagina. Metadata is een nieuw veld die zijn gemaakt op een pagina" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameLabel" value="Artikel naam" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameHelp" value="Artikelnaam is bewaard met metadata en zijn onderdeel van de metadatasleutel. Unieke naam is verplicht" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleLabelLabel" value="Artikel label" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleHelpHelp" value="Artikel label is gebruikt voor een gebruikersvriendelijke naam die kan worden gelocaliseerd" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorLabel" value="Selecteer inhoudssamenstelling" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorHelp" value="Selecteer een container voor een nieuwe regel" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorLabel" value="Selecteer samenstelling werkingsfeer" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorHelp" value="Selecteer ruimte voor de nieuwe samenstelling" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsLabel" value="Niveaus" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsHelp" value="De diepete van de subpagina's waarvan de samenstelling zichtbaar wordt" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeLabel" value="Bevestig nieuw datatype" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeHelp" value="Metadata is een nieuw veld dat op de pagina is gecreerd" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameHelp" value="Artikelnaam is opgeslagen met de metadata and onderdeel van de metadatasleutel. Unieke naam is verplicht" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleHelpHelp" value="Artikel label is gebruikt als een gebruikersvriendelijk naam. Kan worden gelocaliseerd" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeLabel" value="Samenstellings werkingssfeer" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeHelp" value="Dit is de werkomgeving waar de nieuwe samenstelling zichtbaar wordt als er pagina's worden bewerkt" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeLabel" value="Voeg type toe" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeHelp" value="Creer een nieuw type of gebruik een bestaand type" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameLabel" value="Bestaande type naam" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameHelp" value="De naam van het geslecteerde bestaande type is in het systeem in gebruik" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameLabel" value="Vreemde sleutel veld naam" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameHelp" value="De veldnaam van het bestaande type te gebruiken als vreemde sleutel" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="--" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleLabelLabel" value="--" />
+  <string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeLabel" value="Verwijder datafolder" />
+  <string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeToolTip" value="Verwijder datafolder" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedType.FieldGroupLabel" value="Verwijder pagina datatype" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.AssociationTypeLabel" value="Verwijder pagina datatype" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="--" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorLabel" value="Selecteer een artikel" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorHelp" value="De artikelnaam verwijder" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorLabel" value="Selecteer pagina datatype" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorHelp" value="--" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorLabel" value="Selecteer datatype" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorHelp" value="Selecteer 1 van de bestaande types" />
+  <string key="VirtualElementProviderElementProvider.ID01" value="Virtuele root" />
+  <string key="VirtualElementProviderElementProvider.UserPerspective" value="Gebruikers" />
+  <string key="VirtualElementProviderElementProvider.SystemPerspective" value="Systeem" />
+  <string key="VirtualElementProviderElementProvider.ContentPerspective" value="Content" />
+  <string key="VirtualElementProviderElementProvider.DatasPerspective" value="Data" />
+  <string key="VirtualElementProviderElementProvider.DesignPerspective" value="Layout" />
+  <string key="VirtualElementProviderElementProvider.FunctionsPerspective" value="Functies" />
+  <string key="VirtualElementProviderElementProvider.MediaFilePerspective" value="Alle media bestanden" />
+  <string key="VirtualElementProviderElementProvider.MediaPerspective" value="Media" />
+  <string key="VirtualElementProviderElementProvider.ReadOnlyFunctionPerspective" value="Alle functies" />
+  <string key="VirtualElementProviderElementProvider.ReadOnlyWidgetFunctionPerspective" value="Alle Widget functies" />
+  <string key="VirtualElementProviderElementProvider.SqlFunctionPerspective" value="SQL functies" />
+  <string key="VirtualElementProviderElementProvider.XsltBasedFunctionPerspective" value="Xlst gebaseerde functies" />
+  <string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogLabel" value="Server log" />
+  <string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogTooltip" value="Bekijk recente server evenementen" />
+  <string key="LoginWebRequestHandler.LogInAsOtherUser" value="Log in als een andere gebruiker" />
+  <string key="LoginWebRequestHandler.WrongUserNameOrPassword" value="Foute gebruikersnaam en wachtwoord" />
+  <string key="LoginWebRequestHandler.UserNameNotRegistered" value="Dde aangeleverde windows login, {0}\{1} is geregistreerd in de gebruikers database. Je moet een andere login gebruiken" />
+  <string key="DataInterfaceValidator.TypeNotAnInterface" value="Het type {0} is geen interface" />
+  <string key="DataInterfaceValidator.TypeDoesNotImplementInterface" value="Het interface type{0} implementeert niet de interface {1}" />
+  <string key="DataInterfaceValidator.NotAcceptedType" value="--" />
+  <string key="DataInterfaceValidator.NotValidIDataInterface" value="The interface {0} is not a valid IData interface." />
+  <string key="DeleteMediaFileWorkflow.CascadeDeleteErrorTitle" value="Cascade verwijdersfout" />
+  <string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorTitle" value="Cascade verwijderingsfout" />
+  <string key="DeleteMediaFileWorkflow.CascadeDeleteErrorMessage" value="Het type dat verwijst naar ander type geeft geen mogelijkheid cascade te verwijderen. De operatie is mislukt" />
+  <string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorMessage" value="Het type dat verwijst naar ander type geeft geen mogelijkheid cascade te verwijderen. De operatie is gestopt" />
+  <string key="MediaFileProviderElementProvider.RootToolTip" value="Voeg folders en bestanden toe media archief" />
+  <string key="MediaFileProviderElementProvider.AddMediaFolder" value="Voeg folder toe" />
+  <string key="MediaFileProviderElementProvider.AddMediaFolderToolTip" value="Voeg nieuwe media folder toe" />
+  <string key="MediaFileProviderElementProvider.AddMediaFile" value="Upload bestand" />
+  <string key="MediaFileProviderElementProvider.AddMediaFileToolTip" value="Voeg nieuwe media bestand toe" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFile" value="Verwijder bestand" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFileToolTip" value="Verwijder geselecteerd media bestand" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFolder" value="Verwijder folder" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFolderToolTip" value="Verwijder media folder en onderliggende items" />
+  <string key="MediaFileProviderElementProvider.EditMediaFile" value="Bestandeigenschappen" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileToolTip" value="Hernoem geselecteerd media bestand" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileTextContent" value="Bewerk tekst" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileTextContentToolTip" value="Bewerk tekst content" />
+  <string key="MediaFileProviderElementProvider.EditImage" value="Image editor" />
+  <string key="MediaFileProviderElementProvider.EditImageToolTip" value="Open geselecteerd mediabestand in de image editor" />
+  <string key="MediaFileProviderElementProvider.EditMediaFolder" value="Folder eigenschappen" />
+  <string key="MediaFileProviderElementProvider.EditMediaFolderToolTip" value="Bewerk mediafolder eigenschappen" />
+  <string key="MediaFileProviderElementProvider.ChangeMediaFile" value="Vervang bestand" />
+  <string key="MediaFileProviderElementProvider.ChangeMediaFileToolTip" value="Vervang geselecteerd bestand met ander mediabestand" />
+  <string key="MediaFileProviderElementProvider.UploadZipFile" value="Upload meerdere" />
+  <string key="MediaFileProviderElementProvider.UploadZipFileToolTip" value="Upload Zip bestand" />
+  <string key="MediaFileProviderElementProvider.MediaFileItemToolTip" value="Media item" />
+  <string key="MediaFileProviderElementProvider.OrganizedFilesAndFoldersToolTip" value="Organiseer folders en bestanden" />
+  <string key="UploadNewMediaFileWorkflow.UploadFailure" value="Mislukt" />
+  <string key="UploadNewMediaFileWorkflow.UploadFailureMessage" value="Upload bestand moet hetzelfde type zijn als het origineel. Upload bestand is ander type" />
+  <string key="RelationshipGraphActionExecutor.SearchElements" value="Zoek elementen" />
+  <string key="RelationshipGraphActionExecutor.SearchElementsToolTip" value="Zoek elementen" />
+  <string key="RelationshipGraphActionExecutor.ShowGraph" value="Toon grafiek" />
+  <string key="RelationshipGraphActionExecutor.ShowGraphToolTip" value="Toon relatie grafiek" />
+  <string key="RelationshipGraphActionExecutor.Search" value="Zoek elementen" />
+  <string key="RelationshipGraphActionExecutor.SearchToolTip" value="Zoek elementen" />
+  <string key="Website.General.LabelVersionNumber" value="Versie Nr:" />
+  <string key="Website.Application.DialogReload.Title" value="Opnieuw?" />
+  <string key="Website.Application.DialogReload.Text" value="Composite C1 opnieuw opstarten? Alle niet opgeslagen veranderingen zijn weg" />
+  <string key="WebSite.Application.DialogSaveResource.Title" value="Bewaar bron?" />
+  <string key="WebSite.Application.DialogSaveResource.Text" value="&quot;${resourcename}&quot; has been modified. Save changes?" />
+  <string key="Website.Dialogs.LabelAccept" value="Ok" />
+  <string key="Website.Dialogs.LabelCancel" value="Annuleren" />
+  <string key="Website.Dialogs.LabelDisclosure" value="Meer info" />
+  <string key="Website.Dialogs.About.Title" value="Over Composite C1" />
+  <string key="Website.Dialogs.NoAccessTitle" value="Geen toegang" />
+  <string key="Website.Dialogs.NoAccessText" value="Je hebt geen toegangsrechten. Neem contact op met je beheerder" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Unit" value="Eenheid" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Width" value="Breedte" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Height" value="Hoogte" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelScaleImage" value="Schaal afbeelding" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelDimensions" value="Afmetingen" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelImageSize" value="Beeldformaat" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFixedRatio" value="Vast Ratio" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFreeResize" value="Vrije resize" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPixels" value="Pixels" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPercent" value="Procent" />
+  <string key="Website.Dialogs.Options.LoginScreen" value="Login scherm" />
+  <string key="Website.Dialogs.Options.SoundEffects" value="Geluidseffecten" />
+  <string key="Website.Dialogs.Options.LabelOptions" value="Opties" />
+  <string key="Website.Dialogs.Options.LabelGeneral" value="Algemeen" />
+  <string key="Website.Dialogs.Options.LabelAdvanced" value="Geavanceerd" />
+  <string key="Website.Dialogs.Options.LabelLoginPreferences" value="Login voorkeuren" />
+  <string key="Website.Dialogs.Options.LabelFakeLoginScreen" value="Fake login scherm" />
+  <string key="Website.Dialogs.Options.LabelNoLoginScreen" value="Geen login scherm" />
+  <string key="Website.Dialogs.Options.LabelAudioPreferences" value="Audio voorkeuren" />
+  <string key="Website.Dialogs.Options.LabelSoundOn" value="Vervelende geluid effecten" />
+  <string key="Website.Dialogs.Options.LabelSoundOff" value="Geen geluidseffecten" />
+  <string key="Website.Dialogs.WebServices.Error" value="Fout in webservice methode" />
+  <string key="Website.Dialogs.WebServices.LabelWebServiceError" value="Web service fout" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.Title" value="Waar invoegen?" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelPosition" value="Positie" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertBefore" value="Invoegen voor" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertAfter" value="Voegen na" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTitle" value="Wijzig beeld" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFile" value="Bestand" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSave" value="Bewaar" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSaveAs" value="Bewaar als.." />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRevert" value="Terug" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelView" value="Bekijken" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoom" value="Zoom" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomIn" value="Zoom in.." />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomOut" value="Zoom uit" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label800" value="800%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label400" value="400%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label200" value="200%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label100" value="100%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label50" value="50%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label25" value="25%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label12" value="12%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelImage" value="Beeld" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTransform" value="Transformeren" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipHorizontal" value="Horizontaal spiegelen" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipVertical" value="Verticaal spiegelen" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CW" value="90 graden draaien CW" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CCW" value="90 graden draaien CCW" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate180" value="180 graden draaien" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelScale" value="Beeldformaat" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelCrop" value="Crop image" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipSelect" value="Selecteer" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipZoom" value="Zoom" />
+  <string key="Website.Content.Views.Help.ToolTipBack" value="Ga 1 pagina terug" />
+  <string key="Website.Content.Views.Help.ToolTipForward" value="Ga 1 pagina vooruit" />
+  <string key="Website.Content.Views.Help.ToolTipRefresh" value="Ververs pagina" />
+  <string key="Website.Content.Views.Search.Search.LabelNewSearch" value="Nieuwe zoekopdracht" />
+  <string key="Website.FlowUICompleted.ExecutionEndedTitle" value="Execution beeindigt" />
+  <string key="Website.FlowUICompleted.ExecutionEndedMessage" value="De utigevoerde actie in dit scherm is geeindigd" />
+  <string key="Website.ServerError.ServerErrorTitle" value="Server fout" />
+  <string key="Website.ServerError.ServerErrorMessage" value="Er is een fout opgetreden" />
+  <string key="Website.LicenseViolation.LicenseViolationTitle" value="Licentie schending" />
+  <string key="Website.LicenseViolation.LicenseViolationMessage" value="De gevraagde actie is in strijd met uw huidige licentie" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelFlashOptions" value="Flash opties" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelHigh" value="Hoog" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLow" value="Laag" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutohigh" value="Autohoog" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutolow" value="Autolaag" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelBest" value="Best" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelWindow" value="Scherm" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelOpaque" value="Ondoorzichtig" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelTransparent" value="Transparant" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowall" value="Toon alle" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelNoborder" value="Geen grens" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelExactfit" value="Exactfit" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutoPlay" value="Auto play" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLoop" value="Loop" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowMenu" value="Toon menu" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelSWLiveConnect" value="SWLiveconnect" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelQuickTimeOptions" value="Quicktime opties" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelLoop" value="Loop" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelCache" value="Cache" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelNoCorrection" value="Geen wijziging" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelKioskMode" value="Kioskmode" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelPlayEveryFrame" value="Speel elk frame" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoPlay" value="Autoplay" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelController" value="Controller" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelEnableJavaScript" value="Javascript ingeschakeld" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoHRef" value="AutoHREF" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelTargetCache" value="Target cache" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShockWaveOptions" value="Shockwave opties" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelHigh" value="Hoog" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLow" value="Laag" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoHigh" value="Autohoog" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoLow" value="Autolaag" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelBest" value="Best" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelWindow" value="Scherm" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelOpaque" value="Ondoorzichtig" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelTransparent" value="Transparant" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowAll" value="Toon al" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelNoBorder" value="Geen grens" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelExactFit" value="Exactfit" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoPlay" value="Autoplay" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLoop" value="loop" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowMenu" value="Toon menu" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelSWLiveConnect" value="SWLiveConnect" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelQuickTimeOptions" value="Quicktime opties" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelAutoStart" value="Auto Start" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelShowMenu" value="Toon menu" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelInvokeURLs" value="aanroepen URLs" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelStretchToFit" value="Stretch to fit" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelEnabled" value="Ingeschakeld" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelFullScreen" value="Full scherm" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelMute" value="Dempen" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelWindowLessVideo" value="Windowsless video" />
+  <string key="Website.App.LabelCloseTab" value="Tabblad sluiten" />
+  <string key="Website.App.LabelCloseOthers" value="Anderen sluiten" />
+  <string key="Website.App.LabelRefreshView" value="Ververs beeld" />
+  <string key="Website.App.LabelMakeDirty" value="Vuilmaken" />
+  <string key="Website.App.LabelViewSource" value="Bekijken bron" />
+  <string key="Website.App.LabelViewGenerated" value="Beeld gegenereerd" />
+  <string key="Website.App.LabelViewSerialized" value="View serialized" />
+  <string key="Website.App.LabelClose" value="Sluiten" />
+  <string key="Website.App.LabelFile" value="Bestand" />
+  <string key="Website.App.LabelView" value="Bekijken" />
+  <string key="Website.App.LabelSystemLog" value="Systeem log" />
+  <string key="Website.App.LabelDeveloperPanel" value="Ontwikkelaars panel" />
+  <string key="Website.App.LabelTools" value="Gereedschappen" />
+  <string key="Website.App.LabelHelp" value="Help" />
+  <string key="Website.App.LabelHelpContents" value="Help contents" />
+  <string key="Website.App.LabelFeedback" value="Voorzie terugkoppeling" />
+  <string key="Website.App.LabelAboutComposite" value="Over Composite C1" />
+  <string key="Website.App.LabelCut" value="Snijden" />
+  <string key="Website.App.LabelCopy" value="Kopieer" />
+  <string key="Website.App.LabelPaste" value="Plakken" />
+  <string key="Website.App.LabelRefresh" value="Verversen" />
+  <string key="Website.App.LabelLoading" value="Laden..." />
+  <string key="Website.App.LabelLoaded" value="Geladen" />
+  <string key="Website.App.ToolTipMinimize" value="Minimaliseer" />
+  <string key="Website.App.ToolTipMaximize" value="Maximaliseer" />
+  <string key="Website.App.ToolTipUnMaximize" value="Herstellen" />
+  <string key="Website.App.ToolTipUnMinimize" value="Herstellen" />
+  <string key="Website.App.ToolTipClose" value="Sluiten" />
+  <string key="Website.App.StatusBar.Opening" value="Open {0}..." />
+  <string key="Website.App.StatusBar.Refreshing" value="Verversen {0}..." />
+  <string key="Website.App.StatusBar.Loading" value="Laden {0}..." />
+  <string key="Website.App.StatusBar.Error" value="Fout" />
+  <string key="Website.App.StatusBar.Warn" value="Waarschuwing" />
+  <string key="Website.App.StatusBar.Busy" value="Werken..." />
+  <string key="Website.App.StatusBar.Ready" value="Klaar!" />
+  <string key="Website.App.StatusBar.ErrorInField" value="Fout in" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.Label.AddNewMediaFolder" value="Voeg nieuwe media folder toe" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelFolderName" value="Foldernaam" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelTitle" value="Titel" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpFolderName" value="-" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpTitle" value="-" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelDescription" value="Omschrijving" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpDescription" value="-" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Upload meerdere files met een zip file" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFieldGroup" value="Selecteer Zipbestand voor het uitpakken van bestanden" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Zip bestand" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpFile" value="Maak een zip-bestand (rechts klikken lokale map en selecteer Send to -&gt; gecomprimeerde map) en het selecteren met behulp van de knop Bladeren" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructure" value="Creer folders" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpRecreateStructure" value="Het selecteren van deze optie kopieert u de exacte mappenstructuur van uw zip-bestand" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructureCheckBox" value="Folders uit Zip file uitpakken" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsisting" value="Overschrijf bestaande" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpOverwriteExsisting" value="Het selecteren van deze optie zal bestaande bestanden overschirjven in media-archief met bijpassende bestandsnamen" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Bestaande bestanden overschrijven" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelFunctionSearch" value="Zoek functie" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeyword" value="Trefwoord" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeywordHelp" value="Schrijf een trefwoord om te zoeken" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnType" value="Terug type" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnTypeHelp" value="Kies terug om te zoeken" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.LabelFieldGroup" value="Verwijder dit bestand?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.Text" value="Verwijder dit bestand" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.LabelFieldGroup" value="Verwijder deze folder" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.Text" value="Verwijder deze folder?" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelFieldGroup" value="Media eigenschappen" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelTitle" value="Titel" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpTitle" value="Gebruik dit veld voor titel voor een beeld" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelFileName" value="Bestandsnaam" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpFileName" value="De vermelding in dit veld is een deel van het beeld ID" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelDescription" value="Omschrijving" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpDescription" value="Gebruik dit veld voor een beeldomschrijving" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFieldGroup" value="Folder eigenschappen" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFolderName" value="Foldernaam" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpFolderName" value="-" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelTitle" value="Titel" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpTitle" value="Gebruik dit veld voor een beeldtitel" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelDescription" value="Omschrijving" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpDescription" value="-" />
+  <string key="Website.Forms.Administrative.EditPage.DraftTransition" value="Ontwerp" />
+  <string key="Website.Forms.Administrative.EditPage.AwaitingApprovalTransition" value="Wacht op goedkeuring" />
+  <string key="Website.Forms.Administrative.EditPage.AwaitingPublicationTransition" value="In afwachting van publicatie" />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelFieldGroup" value="Zoek" />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelKeyword" value="Trefwoord" />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelSearchKeyword" value="Schrijf een trefwoord om te zoeken" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.LabelFieldGroup" value="Upload nieuw media bestand" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.LabelFile" value="Bestandsnaam:" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.HelpFile" value="-" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorTitle" value="Bestand ontbreekt of is leeg" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorMessage" value="Geen bestand gegevens ontvangen. Gebruik de knop Bladeren dat het geselecteerde bestand niet leeg is." />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFieldGroup" value="Upload nieuw media bestand naar bestaand bestand" />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFile" value="Bestandsnaam:" />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.HelpFile" value="-" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSave" value="Bewaar" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSaveAs" value="Bewaar als" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelPrevious" value="Vorige" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelNext" value="Volgende" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelFinish" value="Einde" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelCancel" value="Afbreken" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelOk" value="OK" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelCancel" value="Afbreken" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelOk" value="OK" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelCancel" value="Afbreken" />
+  <string key="Website.Misc.SourceCodeViewer.LabelInput" value="Invoer" />
+  <string key="Website.Misc.SourceCodeViewer.LabelOutput" value="Uitvoer" />
+  <string key="Website.Misc.Trees.DialogTitle.PasteNotAllowed" value="Niet toegestaan" />
+  <string key="Website.Misc.Trees.DialogText.PasteNotAllowed" value="Plakken niet toegestaan in deze context" />
+  <string key="Website.Misc.Trees.DialogTitle.PasteTypeNotAllowed" value="Niet toegestaan" />
+  <string key="Website.Misc.Trees.DialogText.PasteTypeNotAllowed" value="Folder accepteert niet document type" />
+  <string key="Website.Misc.MultiSelector.LabelEditSelections" value="Bewerk selecties" />
+  <string key="GenericVersionProcessController.Version" value="Versie informatie" />
+  <string key="GenericVersionProcessController.VersionToolTip" value="Toon versie informatie" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesFieldLabel" value="data lokale toegang" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectLabel" value="data lokale toegang" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectHelp" value="data lokale toegang" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleLabel" value="Actieve Lokale" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Active lokale" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleNotChecked" value="Geselecteerde Lokaal is niet bevestign in het lokale gedeelte" />
+  <string key="Website.Forms.Administrative.EditUserStep1.NoActiveLocaleSelected" value="Je dient op zijn minst 1 lokale te selecteren" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleTitle" value="Waarschuwing" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleMessage" value="Je hebt de actieve taal gewijzigd voor een gebruiker die nu is ingelogd. Gebruikers console zal opnieuw worden geladen en data kan verloren raken" />
+  <string key="UserElementProvider.MissingActiveLanguageTitle" value="Een taal is vereist" />
+  <string key="UserElementProvider.MissingActiveLanguageMessage" value="Om een gebruiker aan te maken is een taal verplicht, maar er zijn talen toegevoegd. Je kan er 1 maken in het systeem gebied" />
+  <string key="AssociatedDataElementProviderHelper.LocalizeData" value="Lokaliseer" />
+  <string key="AssociatedDataElementProviderHelper.LocalizeDataToolTip" value="Lokaliseer data" />
+  <string key="AssociatedDataElementProviderHelper.DisabledData" value="Nog niet goedgekeurd of gepubliceerd" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasLocalization" value="Heeft lokalisatie" />
+  <string key="Website.App.LabelSave" value="Bewaar" />
+  <string key="AspNetUiControl.Selector.SelectValueLabel" value="Selecteer een waarde" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogTitle" value="Cleanup vereist" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogText" value="Dit vereist een fase cleanup. Actieve gebruikers worden opgeslagen en afgesloten" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesTitle" value="Er bestaat geen pagina datafolders" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Er zijn nog geen pagina datafolders gecreeerd tot nu toe. Er kan een pagina datafolder worden gemaakt in de Data perspectief" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesTitle" value="Er bestaan geen ongebruikte pagina datafolders" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Alle beschikbare pagina datafolders zijn reeds toegevoegd. Om een nieuwe pagina datafolder te maken ga naar Data perspectief" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Herstart server" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Herstart de server" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationHeader" value="Verwijder een bestand" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationText" value="Data met enkele referente data zal ook worden verwijderd,       wilt u toch doorgaan" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.HasChildringText" value="Deze map bevat een of meer bestanden of submappen. Verwijderen van deze map worden ook alle onderdelen van bestanden en mappen verwijdert. Wilt u deze map verwijderen" />
+</strings>

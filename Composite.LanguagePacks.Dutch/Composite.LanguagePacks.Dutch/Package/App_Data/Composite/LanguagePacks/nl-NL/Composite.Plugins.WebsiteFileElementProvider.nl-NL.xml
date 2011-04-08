@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="WebsiteFilesRootElement.Label" value="/" />
+  <string key="LayoutResourcesRootElement.Label" value="/" />
+  <string key="LayoutResourcesKeyNameLabel" value="Layout" />
+  <string key="DeleteFile.LabelFieldGroup" value="Verwijder bestand?" />
+  <string key="DeleteFile.Text" value="Verwijder bestand?" />
+  <string key="DeleteFolder.LabelFieldGroup" value="Verwijder folder?" />
+  <string key="DeleteFolder.Text" value="Verwijder folder?" />
+  <string key="AddNewFolder.LabelFieldGroup" value="Voeg nieuwe folder toe" />
+  <string key="AddNewFolder.Text" value="Foldernaam" />
+  <string key="AddNewFolder.Help" value="Vul in de naam van de nieuwe folder" />
+  <string key="AddNewFolder.Error.FolderExist" value="Een folder met dezelfde naam bestaat reeds" />
+  <string key="AddNewFile.LabelFieldGroup" value="Voeg nieuw bestand toe" />
+  <string key="AddNewFile.Text" value="Bestandsnaam" />
+  <string key="AddNewFile.Help" value="Geef de naam van het nieuwe bestand" />
+  <string key="AddNewFile.Error.FileExist" value="Een bestand met dezelfde naam bestaat reeds" />
+  <string key="UploadNewWebsiteFile.LabelFieldGroup" value="Upload bestand" />
+  <string key="UploadNewWebsiteFile.LabelFile" value="Selecteer bestand" />
+  <string key="UploadNewWebsiteFile.HelpFile" value="Selecteer bestand om te uploaden" />
+  <string key="UploadFile.Error.WrongTypeTitle" value="Verkeerd bestandstype" />
+  <string key="UploadFile.Error.WrongTypeMessage" value="Verkeerd bestandstype" />
+  <string key="AddWebsiteFolderTitle" value="Nieuwe folder" />
+  <string key="AddWebsiteFolderToolTip" value="Voeg nieuwe folder toe" />
+  <string key="AddWebsiteFileTitle" value="Nieuw bestand" />
+  <string key="AddWebsiteFileToolTip" value="Maak een nieuw bestand" />
+  <string key="DeleteWebsiteFileTitle" value="Verwijder bestand" />
+  <string key="DeleteWebsiteFileToolTip" value="Verwijder bestand" />
+  <string key="DeleteWebsiteFolderTitle" value="Verwijder folder" />
+  <string key="DeleteWebsiteFolderToolTip" value="Verwijder folder" />
+  <string key="EditWebsiteFileTitle" value="Bewerk bestand" />
+  <string key="EditWebsiteFileToolTip" value="Bewerk bestand" />
+  <string key="UploadWebsiteFileTitle" value="Upload bestand" />
+  <string key="UploadWebsiteFileToolTip" value="Upload bestand" />
+  <string key="AddFolderToWhiteListTitle" value="Toon in &quot;{0}&quot;" />
+  <string key="AddFolderToWhiteListToolTip" value="Controleer indien deze map  zichtbaar moet zijn in &quot;(0)&quot;" />
+  <string key="RemoveFolderFromWhiteListTitle" value="Toon in &quot;{0}&quot;" />
+  <string key="RemoveFolderFromWhiteListToolTip" value="Controleer indien deze map  zichtbaar moet zijn in &quot;{0}&quot;" />
+  <string key="DeleteWebsiteFileWorkflow.DeleteErrorTitle" value="Fout" />
+  <string key="DeleteWebsiteFileWorkflow.DeleteErrorMessage" value="Bestand kan niet worden verwijderd" />
+  <string key="DeleteWebsiteFolderWorkflow.DeleteErrorTitle" value="Fout" />
+  <string key="DeleteWebsiteFolderWorkflow.DeleteErrorMessage" value="Folder kan niet worden verwijderd" />
+</strings>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="TypesAreReferencing" value="Een of meerdere typen verwijzen naar dit type. Hernoemen is niet mogelijk." />
+  <string key="TypeNameInNamespace" value="Type naam '{0}' komt voor in namespace '{1}' - dit is niet toegestaan." />
+  <string key="TypesNameClash" value="Er bestaat al een type met dezelfde naam" />
+  <string key="MissingFields" value="Geen velden toegevoegd" />
+  <string key="FieldNameCannotBeUsed" value="Veldnaam '{0}' kan niet gebruikt worden" />
+  <string key="NameSpaceIsTypeTypeName" value="The specified 'Type namespace' is already in use as a 'Type name' (namespace + name). Consider changing the name of '{0}' to '{0}.Item'." />
+  <string key="NamespaceIsReserved" value="Type naam behoort aan een voorbehouden naamruimte" />
+  <string key="CompileErrorWhileAddingType" value="Er kan niet een datatype worden toegevoegd omdat het compilatie fouten veroorzaakt" />
+  <string key="CompileErrorWhileChangingType" value="Een datatype kan worden omgewisseld omdat het compilatie fouten veroorzaakt" />
+</strings>

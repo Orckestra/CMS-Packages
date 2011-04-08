@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="PageTemplateElementProvider.RootLabel" value="Layout Templates" />
+  <string key="PageTemplateElementProvider.RootLabelToolTip" value="Je kan XHTML templates hier vinden" />
+  <string key="PageTemplateElementProvider.AddTemplate" value="Voeg template toe" />
+  <string key="PageTemplateElementProvider.AddTemplateToolTip" value="Voeg nieuwe template toe" />
+  <string key="PageTemplateElementProvider.EditTemplate" value="Bewerk template" />
+  <string key="PageTemplateElementProvider.EditTemplateToolTip" value="Bewerk geselecteerde template" />
+  <string key="AddNewPageTemplateStep1.LabelDialog" value="Voeg nieuwe lay out template toe" />
+  <string key="AddNewPageTemplateStep1.LabelFieldGroup" value="Layout Template" />
+  <string key="AddNewPageTemplateStep1.LabelTemplateTitle" value="Template titel" />
+  <string key="AddNewPageTemplateStep1.LabelTemplateTitleHelp" value="Titel identificeert de templates in de lijsten. Neem bijvoorbeeld  een korte maar betekenisvolle naam." />
+  <string key="EditPageTemplate.LabelMarkUpCode" value="Markup code" />
+  <string key="EditPageTemplate.LabelTemplateIdentification" value="Template identificatie" />
+  <string key="EditPageTemplate.LabelTemplateTitle" value="Titel template" />
+  <string key="EditPageTemplate.LabelTemplateTitleHelp" value="Titel identificeert de templates in de lijsten. Neem bijvoorbeeld  een korte maar betekenisvolle naam." />
+  <string key="EditPageTemplateWorkflow.InvalidXmlTitle" value="Onmogelijk pagina te bewaren" />
+  <string key="EditPageTemplateWorkflow.InvalidXmlMessage" value="Pagina template markup niet te valideren. {0}" />
+  <string key="PageTemplateElementProvider.DeleteTemplate" value="Verwijder" />
+  <string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="Verwijder dit item" />
+  <string key="DeletePageTemplateStep1.LabelFieldGroup" value="Verwijder pagina template?" />
+  <string key="DeletePageTemplateStep1.Text" value="Verwijder pagina template" />
+  <string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="Cascade verwijderingsfout" />
+  <string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="Dit type verwijst naar een ander type dat het verwijderen van cascades niet toestaat. De actie is gestopt" />
+</strings>

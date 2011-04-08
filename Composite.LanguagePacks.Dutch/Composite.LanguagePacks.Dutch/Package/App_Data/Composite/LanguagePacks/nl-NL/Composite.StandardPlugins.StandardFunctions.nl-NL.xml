@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="Composite.AspNet.LoadUserControl.description" value="Laad een ASP.Net User Control" />
+  <string key="Composite.AspNet.LoadUserControl.param.Path.help" value="The path to the User Controls .ascx file, like “~/Controls/MyControl.ascx”" />
+  <string key="Composite.AspNet.LoadUserControl.param.Path.label" value="Pad" />
+  <string key="Composite.Constant.Boolean.description" value="Lets you specify constant boolean value" />
+  <string key="Composite.Constant.Boolean.param.Constant.help" value="d" />
+  <string key="Composite.Constant.Boolean.param.Constant.label" value="Waarde" />
+  <string key="Composite.Constant.DateTime.description" value="Kunt u de datum en tijd constante waarde specificeren" />
+  <string key="Composite.Constant.DateTime.param.Constant.help" value="d" />
+  <string key="Composite.Constant.DateTime.param.Constant.label" value="waarde" />
+  <string key="Composite.Constant.Decimal.description" value="Hiermee kunt u opgeven constante decimale waarde specificeren" />
+  <string key="Composite.Constant.Decimal.param.Constant.help" value="d" />
+  <string key="Composite.Constant.Decimal.param.Constant.label" value="Waarde" />
+  <string key="Composite.Constant.Guid.description" value="Hiermee kunt u opgeven constante GUID-waarde specificeren" />
+  <string key="Composite.Constant.Guid.param.Constant.help" value="d" />
+  <string key="Composite.Constant.Guid.param.Constant.label" value="Waarde" />
+  <string key="Composite.Constant.Integer.description" value="Kunt u integer constante waarde specificieren" />
+  <string key="Composite.Constant.Integer.param.Constant.help" value="d" />
+  <string key="Composite.Constant.Integer.param.Constant.label" value="Waarde" />
+  <string key="Composite.Constant.String.description" value="Kunt u constante string waarde specificeren" />
+  <string key="Composite.Constant.String.param.Constant.help" value="d" />
+  <string key="Composite.Constant.String.param.Constant.label" value="Waarde" />
+  <string key="Composite.IDataGenerated.GetDataReference.description" value="Maak een DataReference gebaseerd op een belangrijke waarde." />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.help" value="De belangrijkste waarde van de gegevens te raadplegen" />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.label" value="Sleutel waarde" />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.description" value="Converteert een DataReference in een enkel element filter. Dit filter selecteert een maximum van een object." />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.help" value="Gebruik de data referentie bij het selecteren van gegevens." />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.label" value="Data referentie" />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Kunt u de gegevens op basis van zijn verwijzing naar de huidige pagina weergegeven." />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.PageAssociationScope.help" value="Selecteer welke relatie  de huidige pagina moet hebben n met de gegevens die u wilt ophalen." />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.PageAssociationScope.label" value="Pagina toepassingsgebied" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.description" value="Definieert een &quot;en&quot; of &quot;of&quot; query, het combineren van twee andere filters." />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.label" value="En/of filter" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.help" value="Als u &quot;En&quot; Beide filters worden toegepast op de gegevens. Selecteren &quot;Of&quot; geeft u de gegevens die overeenkomen met  een van de filters." />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.help" value="Een van de twee filters (een voor de evaluatie van de eerste)" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.label" value="Linker  filter" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.help" value="Een van de twee filters (een voor de evaluatie van de eerste)" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.label" value="Rechter filter" />
+  <string key="Composite.IDataGenerated.Filter.FieldPredicatesFilter.description" value="Hiermee kunt u een filter op de gegevens onder vermelding van eisen voor de afzonderlijke gebieden specificieren. Als je specificaties op meerdere gebieden instelt, worden ze allemaal gehandhaafd (en query)." />
+  <string key="Composite.IDataGenerated.GetXml.description" value="Haalt een XML representatie van de gegevens." />
+  <string key="Composite.IDataGenerated.GetXml.param.ElementName.label" value="Element naam" />
+  <string key="Composite.IDataGenerated.GetXml.param.ElementNamespace.label" value="Element naamruimte" />
+  <string key="Composite.IDataGenerated.GetXml.param.Filter.help" value="." />
+  <string key="Composite.IDataGenerated.GetXml.param.Filter.label" value="Filter" />
+  <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.help" value="Bij het selecteren van de XML-gegevens zullen deze worden voorafgegaan door een &lt;PagingInfo /&gt; element detaillering aantal pagina's, items en nog veel meer." />
+  <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.label" value="Inclusief pagina informatie" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderByField.help" value="Het veld om gegevens te ordenen" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderByField.label" value="Sorteer" />
+  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.help" value="Indien het aantal data-elementen hoger is dan de pagina die u kunt gebruiken wissel het bestand  en verplaats deze  naar de andere pagina's. Zie de pagina grootte parameter." />
+  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.label" value="Pagina nummer" />
+  <string key="Composite.IDataGenerated.GetXml.param.PageSize.help" value="Het aantal weer te geven items op een pagina - het maximum aantal elementen om terug te keren." />
+  <string key="Composite.IDataGenerated.GetXml.param.PageSize.label" value="Pagina grootte" />
+  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.help" value="De velden van de output in XML. Minder velden kan sneller renderings opleveren ." />
+  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.label" value="Geselecteerde velden" />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.help" value="Als u tevens de vermelding van gegevens in de 'Geselecteerde eigenschappen' instelling, u kunt deze optie gebruiken om te controleren hoe de betreffende gegevens zijn opgenomen. 'Inline' is eenvoudig te gebruiken, maar kan  de grootte van het XML-document te groot maken." />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.label" value="Toon referentiegegevens inline" />
+  <string key="Composite.Pages.GetPageId.description" value="Haalt de ID van de huidige pagina of een pagina ten opzichte van de huidige pagina." />
+  <string key="Composite.Pages.GetPageId.param.PageAssociationScope.help" value="Van welke pagina komt de ID. De standaard is van de huidige pagina." />
+  <string key="Composite.Pages.GetPageId.param.PageAssociationScope.label" value="Pagina vereniging" />
+  <string key="Composite.Pages.QuickSitemap.description" value="Snel en ruwe sitemap xhtml" />
+  <string key="Composite.Pages.SitemapXml.description" value="Retourneert een hiërarchische structuur van de XML-pagina's. Als het wordt uitgevoerd als onderdeel van een pagina t die XML elementen presenteert die de huidige en voorouder pagina's worden toegevoegd de attributen isopen = &quot;true&quot; en iscurrent = &quot;true&quot;" />
+  <string key="Composite.Utils.Compare.AreEqual.description" value="Zijn gelijk" />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueA.help" value="Vergelijkt twee objecten voor gelijkheid. Retourneer OK als de twee objecten gelijk zijn." />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueA.label" value="Waarde a vergelijken" />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueB.help" value="." />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueB.label" value="Waarde B vergelijken" />
+  <string key="Composite.Utils.Compare.IsLessThan.description" value="." />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueA.help" value="." />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueA.label" value="Waarde A vergelijken" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueB.help" value="." />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueB.label" value="Waarde B te vergelijken" />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.description" value="Leest een string uit de toepassing van het configuratiebestand (Web.config of app.config)" />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.help" value="." />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.label" value="Sleutel naam" />
+  <string key="Composite.Utils.Date.AddDays.description" value="Voeg een aantal dagen toe aan de huidige datum en krijg het resultaat" />
+  <string key="Composite.Utils.Date.AddDays.param.DaysToAdd.help" value="Specificeer een negatieve of positieve aantal dagen toe aan de huidige datum" />
+  <string key="Composite.Utils.Date.AddDays.param.DaysToAdd.label" value="Dagen toevoegen" />
+  <string key="Composite.Utils.Date.Now.description" value="De huidige datum en tijdstip" />
+  <string key="Composite.Utils.GetInputParameter.description" value="Retourneert een input parameter van uitvoerende functie context. Gebruik deze in de ontwikkeling van het kopiëren van een input waarde aan een nieuwe functie-oproep." />
+  <string key="Composite.Utils.GetInputParameter.param.InputParameterName.help" value="Geef de naam van de input parameter die waarde die u wenst te gebruiken hier." />
+  <string key="Composite.Utils.GetInputParameter.param.InputParameterName.label" value="Parameter naam" />
+  <string key="Composite.Utils.ParseStringToObject.description" value="Parseert een string in een object. Het type object dat afhankelijk is van de ontvanger. Met deze functie om een waarde aan een datetime parameter aan te leveren, zal het systeem parse de string als een datetime enz.opleveren" />
+  <string key="Composite.Utils.ParseStringToObject.param.StringToParse.help" value="Geef de string die moet worden geparst. Merk op dat de string moet worden geformatteerd op een wijze die kan worden omgezet naar het type object dat wordt verwacht." />
+  <string key="Composite.Utils.ParseStringToObject.param.StringToParse.label" value="String te parsen" />
+  <string key="Composite.Utils.Globalization.AllCultures.description" value="Een lijst van alle culturen" />
+  <string key="Composite.Utils.Globalization.CurrentCulture.description" value="De cultuur voor de huidige bezoeker/verzoek" />
+  <string key="Composite.Utils.Integer.Sum.description" value="Retourneert de som van een lijst van integers" />
+  <string key="Composite.Utils.Integer.Sum.param.Ints.help" value="." />
+  <string key="Composite.Utils.Integer.Sum.param.Ints.label" value="Integer lijst" />
+  <string key="Composite.Utils.Predicates.BoolEquals.description" value="Controleer of er een boolean is waar of onwaar." />
+  <string key="Composite.Utils.Predicates.BoolEquals.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.BoolEquals.param.Value.label" value="De waarde die vergelijken moet worden met" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.description" value="Kijk of een datum een zekere waarde heeft" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.description" value="Controleer of er een datum groter is dan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.description" value="Controleer of er een datum kleiner is dan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.description" value="Check een decimaal of die een bepaalde waarde heeft" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.DecimalEquals.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.description" value="Check of een decimaal een bepaalde waarde heeft" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.description" value="Check of er een decimaal lager is dan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.GuidEquals.description" value="." />
+  <string key="Composite.Utils.Predicates.GuidEquals.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.GuidEquals.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.description" value="Controleer of een geheel getal is gelijk is aan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.IntegerEquals.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.description" value="Check of een getal groter is dan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.description" value="Controleren of een getal kleineris dan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.label" value="de waarde vergelijken met" />
+  <string key="Composite.Utils.Predicates.StringContains.description" value="Check  of een string  een bepaalde waarde bevat" />
+  <string key="Composite.Utils.Predicates.StringContains.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.StringContains.param.Value.label" value="De waarde vergelijken met" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.description" value="Check of een string eindigt met een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.StringEndsWith.param.Value.label" value="De waarde vergelijken met" />
+  <string key="Composite.Utils.Predicates.StringEquals.description" value="Controleren of een string is gelijk aan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.StringEquals.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.StringEquals.param.Value.label" value="De waarde vergelijken met" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.description" value="Controleren of een string begint met een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.param.Value.help" value="." />
+  <string key="Composite.Utils.Predicates.StringStartsWith.param.Value.label" value="De waarde vergelijken met" />
+  <string key="Composite.Utils.String.Join.description" value="Maak  een lijst van strings naar een string" />
+  <string key="Composite.Utils.String.Join.param.Separator.help" value="Het scheidingsteken invoegen tussen strings" />
+  <string key="Composite.Utils.String.Join.param.Separator.label" value="Scheidingsteken" />
+  <string key="Composite.Utils.String.Join.param.Strings.help" value="De lijst van strings om toe te voegen" />
+  <string key="Composite.Utils.String.Join.param.Strings.label" value="Strings toevoegen" />
+  <string key="Composite.Utils.String.JoinTwo.description" value="Brengt twee strings naar een simpele string" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringA.help" value="De string die als  eerste gaat" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringA.label" value="String A" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringB.help" value="De string die als laatste wordt toegevoegd" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringB.label" value="String B" />
+  <string key="Composite.Utils.String.JoinTwo.param.Separator.help" value="Een string in te voegen tussen String String A en B. De standaardinstelling is geen scheidingsteken" />
+  <string key="Composite.Utils.String.JoinTwo.param.Separator.label" value="Scheidingsteken" />
+  <string key="Composite.Utils.String.Split.description" value="Splits een string in een lijst van strings" />
+  <string key="Composite.Utils.String.Split.param.Separator.help" value="Scheidingsteken gebruiken om de string te splitsen" />
+  <string key="Composite.Utils.String.Split.param.Separator.label" value="Scheidingsteken" />
+  <string key="Composite.Utils.String.Split.param.String.help" value="De string die je wenst te splitsen naar een lijst" />
+  <string key="Composite.Utils.String.Split.param.String.label" value="String te splitsen" />
+  <string key="Composite.Utils.Validation.DateTimeNotNullValidation.description" value="." />
+  <string key="Composite.Utils.Validation.DecimalNotNullValidation.description" value="." />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.description" value="Valideert de nauwkeurigheid van de cijfers (het aantal decimalen die de gebruiker heeft opgegeven)" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.help" value="Het maximum aantal tekens toe te staan op de decimale" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.label" value="Max aantal decimalen" />
+  <string key="Composite.Utils.Validation.GuidNotNullValidation.description" value="." />
+  <string key="Composite.Utils.Validation.Int32NotNullValidation.description" value="." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.description" value="Valideert een integer die binnen een bepaald bereik is" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.help" value="Het maximaal aantal dat is toegestaan in dit veld" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.label" value="Maximaal aantal" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.help" value="Het minimale aantal dat is toegestaan in dit veld" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.label" value="Minimum aantal" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.description" value="Valideert een string die voldoet aan de opgegeven reguliere expressie" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.help" value="De reguliere expressie patroon gebruiken" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.label" value="RegEx patroon" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.description" value="Valideert dat de lengte van een string is binnen het opgegeven bereik is" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.max.help" value="." />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.max.label" value="Maximale lengte" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.min.help" value="." />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.min.label" value="Minimum lengte" />
+  <string key="Composite.Utils.Validation.StringNotNullValidation.description" value="." />
+  <string key="Composite.Web.Client.BrowserPlatform.description" value="." />
+  <string key="Composite.Web.Client.BrowserString.description" value="." />
+  <string key="Composite.Web.Client.BrowserType.description" value="." />
+  <string key="Composite.Web.Client.BrowserVersion.description" value="." />
+  <string key="Composite.Web.Client.EcmaScriptVersion.description" value="." />
+  <string key="Composite.Web.Client.IsCrawler.description" value="Waar het huidige verzoek is geïdentificeerd als afkomstig van een crawler (zoekmachine)." />
+  <string key="Composite.Web.Client.IsMobileDevice.description" value="Waar als het huidige verzoek is geïdentificeerd als afkomstig van een mobiel apparaat." />
+  <string key="Composite.Web.Request.CookieValue.description" value="Krijgt een waarde van de huidige gebruikers cookie collectie." />
+  <string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="." />
+  <string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Cookie naam" />
+  <string key="Composite.Web.Request.CookieValue.param.FallbackValue.help" value="Als de gebruiker niet over deze cookie beschikt, gebruik dit gebied om aan te geven welke waarde de standaardstijl is." />
+  <string key="Composite.Web.Request.CookieValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.FormPostBoolValue.description" value="Krijgt een booleaanse waarde uit een formulier post (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.help" value="." />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.help" value="." />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.description" value="Krijgt een decimale  waarde uit een formulier post (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.help" value="." />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.help" value="." />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.FormPostGuidValue.description" value="Krijgt een GUID waarde van een post (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.help" value="." />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.help" value="." />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.description" value="Krijgt een integer waarde uit een formulier post (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.help" value="." />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.help" value="." />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.FormPostValue.description" value="Krijgt een string waarde uit een vorm post (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostValue.param.FallbackValue.help" value="." />
+  <string key="Composite.Web.Request.FormPostValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.FormPostValue.param.ParameterName.help" value="." />
+  <string key="Composite.Web.Request.FormPostValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.description" value="Krijgt een datum en tijd de waarde van een formulier post (HTTP POST). De inkomende datum string is naar verwachting XML-formaat (zoals &quot;2003-09-26T13: 30:00&quot;)" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.help" value="De waarde te gebruiken als het bericht bevatte niet de opgegeven parameter naam." />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.help" value="." />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.description" value="Krijgt een booleaanse waarde uit een URL-parameter (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.help" value="." />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.help" value="." />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.description" value="Krijgt een decimale waarde van een URL-parameter (HTTP GET))" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.help" value="." />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.help" value="." />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.description" value="Krijgt een GUID waarde van een URL-parameter (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.help" value="." />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.help" value="." />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.description" value="Krijgt een integer waarde uit Url parameter (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.help" value="." />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.help" value=".," />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.QueryStringValue.description" value="Krijgt een string waarde uit een URL-parameter (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.help" value="." />
+  <string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.QueryStringValue.param.ParameterName.help" value="." />
+  <string key="Composite.Web.Request.QueryStringValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.description" value="Krijgt een datum en tijd van waarde uit een URL-parameter (HTTP GET). De inkomende datum string is naar verwachting XML-formaat (zoals &quot;2003-09-26T13: 30:00&quot;)" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.help" value="De waarde te gebruiken als de URL niet de opgegeven parameter naam heeft." />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="." />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameter naam" />
+  <string key="Composite.Web.Request.SessionVariable.description" value="Haalt een variabele van de huidige gebruikers sessie als een string." />
+  <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="De waarde te gebruiken als de sessie variabele niet is gevonden." />
+  <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Request.SessionVariable.param.VariableName.help" value="." />
+  <string key="Composite.Web.Request.SessionVariable.param.VariableName.label" value="Variabele naam" />
+  <string key="Composite.Web.Response.SetCookieValue.description" value="Geeft een cookie waarde voor de huidige gebruiker" />
+  <string key="Composite.Web.Response.SetCookieValue.param.CookieName.help" value="De naam van de cookie in te stellen / overschrijven." />
+  <string key="Composite.Web.Response.SetCookieValue.param.CookieName.label" value="Cookie naam" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Value.help" value="De waarde om op te slaan in de cookue" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Value.label" value="Cookie waarde" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Expires.help" value="Als de cookie is verlopen (ophouden te bestaan). De standaardwaarde is' sessie ', wanneer de gebruiker de browser sluit." />
+  <string key="Composite.Web.Response.SetCookieValue.param.Expires.label" value="Geldigheidsduur" />
+  <string key="Composite.Web.Response.SetSessionVariable.description" value="Stelt een sessie variabele voor aan de huidige gebruiker" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.Value.help" value="." />
+  <string key="Composite.Web.Response.SetSessionVariable.param.Value.label" value="Waarde" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.VariableName.help" value="De naam van de sessie variabele in te stellen." />
+  <string key="Composite.Web.Response.SetSessionVariable.param.VariableName.label" value="Variabele naam" />
+  <string key="Composite.Web.Server.ApplicationVariable.description" value="Krijgt een IIS toepassing variabele" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.help" value="Waarde te gebruiken indien de aanvraag variabele niet wordt gevonden" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.label" value="Fallback waarde" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.VariableName.help" value="." />
+  <string key="Composite.Web.Server.ApplicationVariable.param.VariableName.label" value="Variabele naam" />
+  <string key="Composite.Web.Server.ServerVariable.description" value="Krijgt de waarde van een IIS-server variabele" />
+  <string key="Composite.Web.Server.ServerVariable.param.VariableName.help" value="De IIS-server variabele krijgen." />
+  <string key="Composite.Web.Server.ServerVariable.param.VariableName.label" value="Variabele naam" />
+  <string key="Composite.Xml.LoadFile.description" value="Laadt een lokale XML-bestand aan gegeven pad" />
+  <string key="Composite.Xml.LoadFile.param.RelativePath.help" value="De relatieve pad van het XML-bestand  laden" />
+  <string key="Composite.Xml.LoadFile.param.RelativePath.label" value="Relatieve pad" />
+  <string key="Composite.Xml.LoadUrl.description" value="Laadt een externe XML-bestand aan een gegeven URL" />
+  <string key="Composite.Xml.LoadUrl.param.Url.help" value="." />
+  <string key="Composite.Xml.LoadUrl.param.Url.label" value="Url" />
+  <string key="Composite.Xslt.Extensions.DateFormatting.description" value="Biedt gelokaliseerde datum opmaak functies voor XSLT gebruik." />
+  <string key="Composite.Xslt.Extensions.Globalization.description" value="Biedt de globalisering functies voor XSLT gebruik." />
+  <string key="Composite.Xslt.Extensions.MarkupParser.description" value="Biedt functies die parse gecodeerd XML documenten of XHTML fragmenten in knopen. Gebruik deze uitbreiding wanneer u XML of XHTML als een string en de noodzaak om te kopiëren naar de output of transformaties hierop." />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.help" value="Standaard is oplopende volgorde ingesteld anders wordt aflopend gebruikt. Standaard is het oplopend" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.label" value="Stel opgaand in" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.description" value="Controleer of een Guid bestaat in een comma separetd string list" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.label" value="Lijst van de GUID" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.help" value="A string containing zero or more Guids separated by commas" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.description" value="Controleer of een string veld overeenkomst met een comma seperated string list" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.label" value="Zoek termen" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="Een string bestaat uit zoektermen separeted by commas zoals &quot;c1, cms, linq" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.label" value="'Hoofdletterongevoelig" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.help" value="worden moeten precies met elkaar overeenkomen.                standaard is hoofdlettergevoelig ingesteld" />
+  <string key="Composite.Utils.Predicates.StringInList.description" value="Controleer of een string veld overeenkomt met 1 van de strings in de aangeleverde lijst" />
+  <string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.label" value="Zoektermen" />
+  <string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.help" value="Een lijst van strings moeten overeenkomen met het gezochte string veld" />
+  <string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.label" value="Hoofdletterongevoelig" />
+  <string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.help" value="woorden moeten precies met elkaar overeenkomen.                standaard is hoofdlettergevoelig ingesteld." />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.description" value="Controleer of een GUID gelijk is aan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.help" value="l" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.label" value="De waarde vergelijken met" />
+  <string key="Composite.Utils.Predicates.NullableGuidNoValue.description" value="Controleer of een nulwaarde GUID geen waarde heeft" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.description" value="Controleer of een integer getal gelijk is aan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.help" value="'" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.NullableIntegerNoValue.description" value="Controleer of een nul getal geen waarde heeft" />
+  <string key="Composite.Utils.Predicates.StringNoValue.description" value="Controleer of een string geen waarde heeft" />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.description" value="Controleer of er een boolean is waar of onwaar." />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.help" value="'" />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.NullableBoolNoValue.description" value="Controleer of er een nulwaarde boolean geen waarde heeft" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.description" value="Controleer of een datum gelijk is aan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.help" value="'" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.description" value="Controleer of er een datum groter is dan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.help" value="'" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.description" value="Controleer of er een datum lager is dan een bepaalde waarde" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.help" value="'" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeNoValue.description" value="Controleer of er een nulwaarde datum geen waarde heeft" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.description" value="Controleer of een decimaal een bepaalde waarde heeft" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.help" value="'" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.label" value="De waarde om te vergelijken met" />
+  <string key="Composite.Utils.Predicates.NullableDecimalNoValue.description" value="Controleer of een nul decimaal geen waarde heeft" />
+  <string key="Composite.Web.Response.Redirect.description" value="Leidt de webbezoeker naar een andere url. Url omleidingen in C1 console worden onderdrukt wanneer deze functie wordt uitgevoerd" />
+  <string key="Composite.Web.Response.Redirect.param.Url.help" value="Url waar de bezoeker naar toe wordt geleid absoluut (http://contoso.com/default.aspx) of relatief (/Login.aspx))." />
+  <string key="Composite.Web.Response.Redirect.param.Url.label" value="URL" />
+</strings>

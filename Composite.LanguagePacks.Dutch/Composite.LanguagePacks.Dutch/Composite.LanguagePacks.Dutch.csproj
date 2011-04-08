@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24BDAC0F-C4B3-4E2F-9847-A00DF6FC73DE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.LanguagePacks.Dutch</RootNamespace>
+    <AssemblyName>Composite.LanguagePacks.Dutch</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="7za.exe" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.C1Console.Users.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Cultures.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.EntityTokenLocked.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.GeneratedTypes.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Management.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.NameValidation.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.PackageSystem.PackageFragmentInstallers.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Permissions.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.AllFunctionsElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.GeneratedDataTypesElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.GenericPublishProcessController.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.LocalizationElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.MethodBasedFunctionProviderElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.PackageElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.PageElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.PageTemplateElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.SqlFunction.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.StandardFunctions.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.VisualFunction.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.WebsiteFileElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.XsltBasedFunction.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.SecurityViolation.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.FormControl.FunctionCallsDesigner.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.FormControl.FunctionParameterDesigner.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.FormControl.TypeFieldDesigner.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.SEOAssistant.nl-NL.xml" />
+    <Content Include="Package\Config\Install.xsl" />
+    <Content Include="Package\Config\Uninstall.xsl" />
+    <Content Include="Package\install.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Release\Composite.LanguagePacks.Dutch.zip" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2469</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:Checkout  "$(ProjectDir)Release\$(ProjectName).zip"
+"$(ProjectDir)7za.exe" d "$(ProjectDir)Release\$(ProjectName).zip"
+"$(ProjectDir)7za.exe" a -tzip "$(ProjectDir)Release\$(ProjectName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
+  </PropertyGroup>
+</Project>
