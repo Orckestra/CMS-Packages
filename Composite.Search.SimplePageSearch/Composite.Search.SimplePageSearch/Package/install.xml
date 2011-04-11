@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.Search.SimplePageSearch" groupName="Composite.Search" version="2.0.1" author="Composite" website="http://www.composite.net/" id="76D60B61-8BD7-42EC-AAAB-67EFE4584C5F" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Allows visitors search static content on a website by keywords.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Search\SimplePageSearch\SearchForm.xsl" targetFilename="~\App_Data\Xslt\Composite\Search\SimplePageSearch\SearchForm.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Composite\Search\SimplePageSearch\SearchResults.xsl" targetFilename="~\App_Data\Xslt\Composite\Search\SimplePageSearch\SearchResults.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Composite\Search\SimplePageSearch\SimplePageSearch.cs" targetFilename="~\App_Code\Composite\Search\SimplePageSearch\SimplePageSearch.cs" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Composite\Search\SimplePageSearch\Styles.css" targetFilename="~\Frontend\Composite\Search\SimplePageSearch\Styles.css" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IMethodBasedFunctionInfo,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

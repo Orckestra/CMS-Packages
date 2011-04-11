@@ -1,0 +1,21 @@
+#SearchResults ol#Results {
+	list-style: decimal;
+	list-style-image: none;
+	list-style-position: outside;
+}
+
+#Submit {
+	text-decoration: none;
+}
+
+#Submit:hover {
+	text-decoration: underline;
+}
+
+#SearchResults .Paging {
+	clear: both;
+}
+
+#SearchResults .Paging a, #SearchResults .Paging span {
+	margin-right: 5px;
+}
