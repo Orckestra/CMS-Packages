@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" >
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="2.9999.9999.9999">
+	</mi:PackageRequirements>
+	<mi:PackageInformation name="Composite.Navigation.SlidingSidebar"
+	groupName="Composite.Navigation"
+	version="1.1.7"
+	author="Composite A/S"
+	website="www.composite.net"
+	id="201E0077-4AD0-467d-8A02-00A5BCED6597"
+	canBeUninstalled="true"
+	systemLocking="none"
+	flushOnCompletion="true">
+		<Description>Allows visitors to navigate the website via a sliding sidebar menu.</Description>
+	</mi:PackageInformation>
+
+	<XsltFunctions>
+		<Add fullName="Composite.Navigation.SlidingSidebar"></Add>
+	</XsltFunctions>
+
+	<Directories>
+		<Add path="Frontend\Composite\Navigation\SlidingSidebar\" />
+	</Directories>
+
+</mi:PackageInstaller>
+
+
+
+
+
+
+
