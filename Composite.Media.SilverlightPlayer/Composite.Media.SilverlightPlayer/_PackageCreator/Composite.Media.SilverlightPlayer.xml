@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Files>
+		<Add name="App_Code\Composite\Media\Silverlight\Functions.cs" />
+	</pc:Files>
+	<pc:XsltFunctions>
+		<Add name="Composite.Media.SilverlightPlayer" />
+	</pc:XsltFunctions>
+	<pc:CSharpFunctions>
+		<Add name="Composite.Media.Silverlight.ListOfSilverlightFiles" />
+	</pc:CSharpFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.Media.SilverlightPlayer" groupName="Composite.Media" version="1.0.2" author="Composite A/S" website="http://www.composite.net" id="9d4e5261-ece6-4251-b7d2-fff683f26ea2" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Embeds and plays Silverlight files</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
