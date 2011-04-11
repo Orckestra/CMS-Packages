@@ -98,6 +98,7 @@
     <Compile Include="BlogXsltExtensionsFunction.cs" />
     <Compile Include="CommentsFacade.cs" />
     <Compile Include="BlogStartupHandler.cs" />
+    <Compile Include="Localization\Resource.cs" />
     <Compile Include="MetaWeblog\Extensions.cs" />
     <Compile Include="MetaWeblog\Handler.cs" />
     <Compile Include="MetaWeblog\IMetaWeblog.cs" />

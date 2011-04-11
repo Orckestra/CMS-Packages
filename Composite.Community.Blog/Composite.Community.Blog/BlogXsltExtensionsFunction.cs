@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using Composite.Community.Blog.Localization;
 
 namespace Composite.Community.Blog
 {
@@ -49,6 +50,11 @@ namespace Composite.Community.Blog
 		public string Encode(string text)
 		{
 			return BlogFacade.Encode(text);
+		}
+
+		public string GetLocalized(string resourceName, string key)
+		{
+			return Resource.GetLocalized(resourceName, key);
 		}
 	}
 }

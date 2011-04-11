@@ -79,7 +79,7 @@
 		<xsl:variable name="Tags" select="be:GetBlogTags(@Tags)/Tag" />
 		<xsl:if test="count($Tags)&gt;0">
 			<div class="BlogTags">
-				SUBJECTS:
+				<xsl:value-of select="be:GetLocalized('Blog','subjectsText')" />
 				<xsl:apply-templates mode="TagsList" select="$Tags" />
 			</div>
 		</xsl:if>
@@ -96,7 +96,7 @@
 			<img class="BlogAuthorPicture" border="0" src="~/Renderers/ShowMedia.ashx?i={@Author.Picture}" alt="{@Author.Name}" />
 		</xsl:if>
 		<div class="BlogAuthorDate">
-			WRITTEN BY
+			<xsl:value-of select="be:GetLocalized('Blog','writtenByText')" />&#160;
 			<xsl:choose>
 				<xsl:when test="@Author.Email != '' and @Author.DisplayEmail = 'true'">
 					<a href="mailto:{@Author.Email}">
@@ -126,8 +126,7 @@
 			</xsl:choose>
 		</xsl:variable>
 		<a href="~/Renderers/Page.aspx{be:GetBlogUrl(@Date, @Title)}?pageId={$pageId}">
-			COMMENTS (
-			<xsl:value-of select="$Count" />)
+			<xsl:value-of select="be:GetLocalized('Blog','commentsText')" /> (<xsl:value-of select="$Count" />)
 		</a>
 	</xsl:template>
 	<xsl:template name="AddThis">

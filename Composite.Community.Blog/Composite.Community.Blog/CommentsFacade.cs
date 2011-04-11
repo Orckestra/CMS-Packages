@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using Composite.Data;
 using Composite.Core.WebClient.Renderings.Page;
 using Composite.Functions;
+using Composite.Community.Blog.Localization;
 
 namespace Composite.Community.Blog
 {
@@ -47,27 +48,27 @@ namespace Composite.Community.Blog
 
 				if (captcha != "true")
 				{
-					errorText.Add("Captcha", "Incorrect Captcha value");
+					errorText.Add("Captcha", Resource.GetLocalized("Blog", "captchaError"));
 				}
 
-				if(string.IsNullOrEmpty(name))
+				if (string.IsNullOrEmpty(name))
 				{
-					errorText.Add("Name", "Incorrect Name value");
+					errorText.Add("Name", Resource.GetLocalized("Blog", "nameError"));
 				}
 
-				if(!BlogFacade.Validate(RegExpLib.Email, email, true))
+				if (!BlogFacade.Validate(RegExpLib.Email, email, true))
 				{
-					errorText.Add("Email", "Incorrect E-mail value");
+					errorText.Add("Email", Resource.GetLocalized("Blog", "emailError"));
 				}
 
 				if (string.IsNullOrEmpty(commentTitle))
 				{
-					errorText.Add("Title", "Incorrect Title value");
+					errorText.Add("Title", Resource.GetLocalized("Blog", "titleError"));
 				}
 
 				if (string.IsNullOrEmpty(commentText))
 				{
-					errorText.Add("Comment", "Incorrect Comment value");
+					errorText.Add("Comment", Resource.GetLocalized("Blog", "commentError"));
 				}
 
 				foreach (string key in errorText.Keys)
@@ -79,7 +80,7 @@ namespace Composite.Community.Blog
 			}
 			else
 			{
-				if(blog.AllowNewComments)
+				if (blog.AllowNewComments)
 				{
 					var commentItem = DataFacade.BuildNew<Comments>();
 					commentItem.Id = Guid.NewGuid();

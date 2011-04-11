@@ -17,7 +17,7 @@
 						<xsl:if test="count(in:inputs/in:result[@name='GetCommentsXml']/Comments)>0">
 							<fieldset>
 								<legend>
-									Comments
+									<xsl:value-of select="be:GetLocalized('Blog','commentsText')" />
 								</legend>
 								<ul id="CommentsList">
 									<xsl:for-each select="/in:inputs/in:result[@name='GetCommentsXml']/Comments">
@@ -75,13 +75,13 @@
 		<fieldset>
 			<input type="hidden" name="CommentSubmit" value="true" />
 			<legend>
-				Write Your Comment
+				<xsl:value-of select="be:GetLocalized('Blog','commentsTitleText')" />
 			</legend>
 			<xsl:if test="$Submitted = 'true'">
 				<div id="ErrorBox">
 					<xsl:if test="count($SaveActionErrors)>0">
 						<h4>
-							Please correct the errors below:
+							<xsl:value-of select="be:GetLocalized('Blog','correctErrorsText')" />
 						</h4>
 						<ul>
 							<xsl:for-each select="$SaveActionErrors">
