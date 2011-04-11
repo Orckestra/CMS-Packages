@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:PageTypes>
+		<Add name="News page" />
+	</pc:PageTypes>
+	<pc:Configuration>
+		<Add name="/configuration/Composite.Functions.Plugins.XslExtensionsProviderConfiguration/XslExtensionProviders/add[@name='ConfigurationBasedXslExtensionsProvider']/xslExtensions/add[@name='http://c1.composite.net/News']" />
+	</pc:Configuration>
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Composite.News.dll" />
+	</mi:PackageFragmentInstallerBinaries>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3957.24485" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.News" groupName="Composite.News" version="2.0.5" author="Composite A/S" website="www.composite.net" id="8c2dfc2d-1fcb-47c6-9faa-de80c384a66f" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<Description>Allows visitors to read the latest news on a website. Supports a news archive and export to RSS.</Description>
+	</mi:PackageInformation>
+	<pc:PageTemplates />
+	<pc:XsltFunctions>
+		<Add fullName="Composite.News.Archive" />
+		<Add fullName="Composite.News.Latest" />
+	</pc:XsltFunctions>
+	<pc:CSharpFunctions>
+		<Add name="Composite.News.GetPageNumber" />
+		<Add name="Composite.News.GetNewsFilterFromUrl" />
+	</pc:CSharpFunctions>
+	<pc:VisualFunctions />
+	<pc:DynamicDataTypes>
+		<Add fullName="Composite.News.NewsItem" />
+	</pc:DynamicDataTypes>
+	<pc:DynamicDataTypesData />
+	<pc:Files>
+		<Add fileName="NewsRssFeed.ashx" />
+		<Add name="Bin\Composite.News.dll" />
+		<Add name="App_Data\Composite\TreeDefinitions\Composite.News.xml" />
+	</pc:Files>
+	<pc:FilesInDirectories />
+	<pc:Directories>
+		<Add path="Frontend\Composite\News\" />
+	</pc:Directories>
+	<pc:Datas />
+</pc:PackageCreator>

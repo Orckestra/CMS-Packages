@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AllowedAttachments ApplicationName="News">
+		<DataType Type="Composite.Data.Types.IPage"/>
+	</ElementStructure.AllowedAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Label="News" Id="Root">
+				<Actions>
+					<AddDataAction Label="Add news" Type="Composite.News.NewsItem"/>
+				</Actions>
+				<Children>
+					<DataFolderElements Type="Composite.News.NewsItem" DateFormat="yyyy MMMM" FieldGroupingName="Date" Display="Compact">
+						<Children>
+							<DataElements Type="Composite.News.NewsItem" Label="${C1:Data:Composite.News.NewsItem:Title}" Display="Auto">
+								<Actions>
+									<EditDataAction Label="Edit News" />
+									<DeleteDataAction Label="Delete News" />
+								</Actions>
+								<Filters>
+									<ParentIdFilter ParentType="Composite.Data.Types.IPage" ReferenceFieldName="PageId" />
+								</Filters>
+								<OrderBy>
+									<Field FieldName="Date" Direction="descending"></Field>
+								</OrderBy>
+							</DataElements>
+						</Children>
+					</DataFolderElements>
+				</Children>
+			</Element>
+		</Children>
+	</ElementRoot>
+</ElementStructure>

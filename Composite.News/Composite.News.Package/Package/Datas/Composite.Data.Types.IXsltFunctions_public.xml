@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Add Id="c3a4bc4a-7f1a-4bbd-aa41-81ab4e91d934" Name="Archive" Namespace="Composite.News" Description="Shows all the news (archive) or the details of a selected news item (details)" OutputXmlSubType="XHTML" XslFilePath="\Composite\News\Archive.xsl" />
+  <Add Id="435542f4-4749-44e4-8417-330845b5b187" Name="Latest" Namespace="Composite.News" Description="Shows the latest news on a page" OutputXmlSubType="XHTML" XslFilePath="\Composite\News\Latest.xsl" />
+</Data>
