@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.0" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.Search.MicrosoftSearchServer" groupName="Composite.Search" version="1.2.3" author="Composite A/S" website="www.composite.net" id="94e92fe9-b8bc-4f2f-a436-b33b20baa3be" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<Description>Allows visitors to search a website with Microsoft Search.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Search\MicrosoftSearchServer\SearchForm.xsl" targetFilename="~\App_Data\Xslt\Composite\Search\MicrosoftSearchServer\SearchForm.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Composite\Search\MicrosoftSearchServer\SearchResults.xsl" targetFilename="~\App_Data\Xslt\Composite\Search\MicrosoftSearchServer\SearchResults.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Composite\Search\MicrosoftSearchServer\Functions.cs" targetFilename="~\App_Code\Composite\Search\MicrosoftSearchServer\Functions.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Composite\Search\MicrosoftSearchServer\QueryService.cs" targetFilename="~\App_Code\Composite\Search\MicrosoftSearchServer\QueryService.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Composite\Search\MicrosoftSearchServer\QueryCacheValue.cs" targetFilename="~\App_Code\Composite\Search\MicrosoftSearchServer\QueryCacheValue.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Composite\Search\MicrosoftSearchServer\RemapperHttpModule.cs" targetFilename="~\App_Code\Composite\Search\MicrosoftSearchServer\RemapperHttpModule.cs" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Composite\Search\MicrosoftSearchServer\" targetDirectory="~\Frontend\Composite\Search\MicrosoftSearchServer\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IMethodBasedFunctionInfo,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

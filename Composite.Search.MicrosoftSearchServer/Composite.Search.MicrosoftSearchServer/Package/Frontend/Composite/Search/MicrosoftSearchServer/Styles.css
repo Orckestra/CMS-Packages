@@ -1,0 +1,34 @@
+#SearchResults ol#Results {
+	list-style: decimal;
+	list-style-image: none;
+	list-style-position: outside;
+}
+
+#SearchResults .Summary {
+	display: block;
+}
+
+#SearchResults .Link {
+	color: #008800;
+}
+
+#SearchResults .Size {
+	color: #CCC;
+	margin: 0 0 0 5px;
+}
+
+#Submit {
+	text-decoration: none;
+}
+
+#Submit:hover {
+	text-decoration: underline;
+}
+
+#SearchResults .Paging {
+	clear: both;
+}
+
+#SearchResults .Paging a, #SearchResults .Paging span {
+	margin-right: 5px;
+}

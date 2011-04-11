@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Add Id="96473e27-a111-46fc-aa48-8b0b2911de22" Name="SearchForm" Namespace="Composite.Search.MicrosoftSearchServer" Description="Contains search form: input textbox and submit button" OutputXmlSubType="XHTML" XslFilePath="\Composite\Search\MicrosoftSearchServer\SearchForm.xsl" />
+  <Add Id="085a6491-54dd-4434-9a04-619773839db3" Name="SearchResults" Namespace="Composite.Search.MicrosoftSearchServer" Description="Display search result" OutputXmlSubType="XHTML" XslFilePath="\Composite\Search\MicrosoftSearchServer\SearchResults.xsl" />
+</Data>
