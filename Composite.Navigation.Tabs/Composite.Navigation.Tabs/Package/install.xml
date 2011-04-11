@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3947.24461" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.Navigation.Tabs" groupName="Composite.Navigation" version="1.0.3" author="Composite A/S" website="http://composite.net/" id="c8102353-976c-430c-9ceb-fdda5298e3e7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Adds a tabbed navigation menu to the website where each tab represents a sub page to the homepage as well as the homepage itself.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Navigation\Tabs.xsl" targetFilename="~\App_Data\Xslt\Composite\Navigation\Tabs.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Composite\Navigation\Tabs\Styles.css" targetFilename="~\Frontend\Composite\Navigation\Tabs\Styles.css" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

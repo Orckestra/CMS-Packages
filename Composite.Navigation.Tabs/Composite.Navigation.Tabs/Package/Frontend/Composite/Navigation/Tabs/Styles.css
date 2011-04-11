@@ -1,0 +1,77 @@
+﻿.tbTabs {
+	clear: both;
+	height: 30px;
+	text-align: center;
+}
+
+.tbTopMenuContainer {
+	float: left;
+	border: solid 1px white;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-bottom-color: #808080;
+}
+
+.tbTopMenuItem {
+	float: left;
+	font-weight: bolder;
+	margin: 5px 2px 0px 2px;
+	padding: 0px 10px;
+	background-color: #808080;
+}
+
+.tbTopMenuContainerSelected {
+	float: left;
+	border: solid 1px #808080;
+	border-bottom-color: white;
+	background-color: white;
+	padding: 0px 10px;
+}
+
+#tbTopMenuContainerSelected .tbTopMenuItem {
+	float: left;
+	background-color: white;
+	font-weight: bolder;
+	margin: 5px 0px 0px 2px;
+}
+
+#tbTabs a:link {
+	color: white;
+	text-decoration: none;
+}
+
+#tbTabs a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+#tbTabs a:hover {
+	color: #303030;
+	text-decoration: none;
+}
+
+#tbTabs a:active {
+	color: white;
+	text-decoration: none;
+}
+
+
+#tbTopMenuContainerSelected a:link {
+	color: #808080;
+	text-decoration: none;
+}
+
+#tbTopMenuContainerSelected a:visited {
+	color: #808080;
+	text-decoration: none;
+}
+
+#tbTopMenuContainerSelected a:hover {
+	color: #303030;
+	text-decoration: none;
+}
+
+#tbTopMenuContainerSelected a:active {
+	color: #808080;
+	text-decoration: none;
+}
