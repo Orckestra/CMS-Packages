@@ -68,7 +68,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="7za.exe" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.C1Console.Users.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Cultures.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.EntityTokenLocked.nl-NL.xml" />
@@ -133,7 +132,7 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:Checkout  "$(ProjectDir)Release\$(ProjectName).zip"
-"$(ProjectDir)7za.exe" d "$(ProjectDir)Release\$(ProjectName).zip"
-"$(ProjectDir)7za.exe" a -tzip "$(ProjectDir)Release\$(ProjectName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(ProjectName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(ProjectName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
   </PropertyGroup>
 </Project>
