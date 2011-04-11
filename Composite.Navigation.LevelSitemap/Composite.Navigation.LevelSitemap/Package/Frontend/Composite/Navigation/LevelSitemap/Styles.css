@@ -1,0 +1,41 @@
+div#LevelSitemap ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+div#LevelSitemap ul li.level0 {
+  width: 25%;
+  float: left;
+}
+
+div#LevelSitemap .mainarea5,
+div#LevelSitemap .mainarea9,
+div#LevelSitemap .mainarea13,
+div#LevelSitemap .mainarea17,
+div#LevelSitemap .mainarea21,
+div#LevelSitemap .mainarea25 {
+	clear: left;
+}
+
+
+
+div#LevelSitemap ul ul {
+  margin-left: 0.8em;
+}
+
+div#LevelSitemap ul li {
+  padding: 0;
+}
+
+div#LevelSitemap a {
+  text-decoration: none;
+}
+
+div#LevelSitemap a.NavigationSelected {
+  font-weight: bold;
+}
+
+div#LevelSitemap a.NavigationOpen {
+  font-style: italic;
+}
