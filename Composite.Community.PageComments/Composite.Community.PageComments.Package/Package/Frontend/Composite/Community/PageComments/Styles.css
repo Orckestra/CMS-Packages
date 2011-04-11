@@ -1,0 +1,73 @@
+﻿#PageComments {
+	display: block;
+}
+
+#PageComments .CommentsList, #PageComments .CommentsForm {
+	border: solid 1px #ccc;
+}
+
+#PageComments .CommentsList legend, #PageComments .CommentsForm legend {
+	font-weight: bold;
+	padding: 0px;
+}
+
+#PageComments .CommentsList ul li {
+	margin-bottom: 12px;
+}
+
+#PageComments .CommentsList .Title {
+	font-weight: bold;
+}
+
+#PageComments .CommentsList .Author {
+	font-size: smaller;
+	float: left;
+	padding-right: 22px;
+}
+
+#PageComments .CommentsList .Date {
+	font-size: smaller;
+	font-style: italic;
+}
+
+#PageComments .CommentsList .Comment {
+	font-size: normal;
+	clear: both;
+}
+
+#PageComments .CommentsForm .ErrorBox h4, #PageComments .CommentsForm .ErrorBox ul li{
+	color: Red;
+}
+
+#PageComments .CommentsList ul, #PageComments .CommentsForm .ErrorBox ul {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#PageComments .CommentsForm ol, #PageComments .CommentsList ul, #PageComments .CommentsForm .ErrorBox h4{
+	margin: 0px;
+	padding: 0px;
+}
+
+#PageComments .CommentsForm ol li, #PageComments .CommentsList ul {
+	list-style: none;
+	padding-bottom: 4px;
+}
+
+#PageComments .CommentsForm ol li label, #PageComments .CommentsForm ol li img {
+	display: block;
+}
+
+#PageComments .CommentsForm ol li img {
+	margin-bottom: 4px;
+	border: solid 1px #000;
+}
+
+#PageComments .CommentsForm ol li textarea {
+	width: 240px;
+	height: 120px;
+}
+
+.FieldError input, .FieldError textarea {
+	border: solid 1px red;
+}

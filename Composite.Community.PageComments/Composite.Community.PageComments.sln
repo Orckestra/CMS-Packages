@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Community.PageComments", "Composite.Community.PageComments\Composite.Community.PageComments.csproj", "{2B8876FC-7C15-44CF-9370-6DF5615D151F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Community.PageComments.Package", "Composite.Community.PageComments.Package\Composite.Community.PageComments.Package.csproj", "{C775AA73-FE01-46C6-AD22-6C503392195F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2B8876FC-7C15-44CF-9370-6DF5615D151F} = {2B8876FC-7C15-44CF-9370-6DF5615D151F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.Community.PageComments\\Composite.Community.PageComments.csproj
+		SccProjectName1 = Composite.Community.PageComments
+		SccLocalPath1 = Composite.Community.PageComments
+		SccProjectUniqueName2 = Composite.Community.PageComments.Package\\Composite.Community.PageComments.Package.csproj
+		SccProjectName2 = Composite.Community.PageComments.Package
+		SccLocalPath2 = Composite.Community.PageComments.Package
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B8876FC-7C15-44CF-9370-6DF5615D151F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8876FC-7C15-44CF-9370-6DF5615D151F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8876FC-7C15-44CF-9370-6DF5615D151F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8876FC-7C15-44CF-9370-6DF5615D151F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C775AA73-FE01-46C6-AD22-6C503392195F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C775AA73-FE01-46C6-AD22-6C503392195F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C775AA73-FE01-46C6-AD22-6C503392195F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C775AA73-FE01-46C6-AD22-6C503392195F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
