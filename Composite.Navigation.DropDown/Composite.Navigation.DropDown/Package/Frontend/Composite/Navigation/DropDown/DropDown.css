@@ -1,0 +1,50 @@
+#DropDown, #DropDown ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	z-index: 100;
+}
+
+#DropDown li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+#DropDown a {
+	display: block;
+}
+
+#DropDown ul {
+	left: 0;
+	position: absolute;
+	width: 180px;
+}
+
+#DropDown ul li {
+	float: none;
+	height: auto;
+	width: 180px;
+}
+
+#DropDown ul a {
+	width: 120px;
+}
+
+#DropDown ul ul {
+	left: 180px;
+	top: 1px;
+}
+
+#DropDown ul, #DropDown :hover ul ul, #DropDown .hover ul ul {
+	margin-left: -9999px;
+}
+
+#DropDown li:hover > ul, #DropDown li.hover > ul, #DropDown a:focus + ul, #DropDown ul ul, #DropDown .hover a:focus {
+	margin-left: 0;
+}
+
+#DropDown ul a:focus {
+	margin-left: 9999px;
+}

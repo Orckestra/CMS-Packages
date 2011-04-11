@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Navigation.DropDown" groupName="Composite.Navigation" version="2.1.1" author="Composite A/S" website="www.composite.net" id="0a777a0d-01c9-4dcf-ad62-81da8acbb558" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
+		<Description>Allows visitors to navigate the website via a dropdown menu.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Navigation\DropDown.xsl" targetFilename="~\App_Data\Xslt\Composite\Navigation\DropDown.xsl" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Composite\Navigation\DropDown\" targetDirectory="~\Frontend\Composite\Navigation\DropDown\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
