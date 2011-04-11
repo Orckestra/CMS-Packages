@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3947.24461" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Tools.PagePrintCommand" groupName="Composite.Tools" version="1.0.2" author="Composite A/S" website="http://composite.net" id="7eda36bb-13dd-422f-aa6b-46f4458556e7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Allows users to print pages directly from the Administrative console.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallers>
+		
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Composite\TreeDefinitions\PagePrintCommand.xml" targetFilename="~\App_Data\Composite\TreeDefinitions\PagePrintCommand.xml" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Composite\InstalledPackages\content\views\Composite.Tools.PagePrintCommand\" targetDirectory="~\Composite\InstalledPackages\content\views\Composite.Tools.PagePrintCommand\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

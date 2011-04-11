@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AutoAttachments>
+		<DataType Type="Composite.Data.Types.IPage" />
+	</ElementStructure.AutoAttachments>
+	<ElementRoot>
+		<Actions>
+			<CustomUrlAction Label="Print" Icon="Print" Url="~/Composite/InstalledPackages/content/views/Composite.Tools.PagePrintCommand/Print.aspx?id=${C1:Data:Composite.Data.Types.IPage:Id}&amp;dataScope=administrated" />
+		</Actions>
+	</ElementRoot>
+</ElementStructure>
+
