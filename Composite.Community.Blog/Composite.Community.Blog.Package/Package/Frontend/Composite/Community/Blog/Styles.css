@@ -2,9 +2,14 @@
 	display: block;
 }
 
-.BlogTitle a { 
-	font-size: larger;
-	text-transform: uppercase;
+.BlogTitle a {
+  font-size: larger;
+  font-weight:bold;
+  text-transform: uppercase;
+}
+.BlogTitle h1 {
+ text-transform: uppercase;
+ margin:0px;
 }
 
 .BlogAuthorPicture {
@@ -113,11 +118,6 @@
 #CommentsForm li img {
 	margin-bottom: 4px;
 	border: solid 1px #000;
-}
-
-#CommentsForm li textarea {
-	width: 240px;
-	height: 120px;
 }
 
 #CommentsForm .FieldError input, #CommentsForm .FieldError textarea {
