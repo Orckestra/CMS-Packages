@@ -1,0 +1,32 @@
+div#spots input.text {
+	width: 165px;
+	border: 1px solid rgb(188,188,184);
+	border-top-color: rgb(124,124,120);
+	border-left-color: rgb(124,124,120);
+	padding: 4px;
+	margin-bottom: 4px;
+	position: relative;
+	z-index: 1;
+}
+div#spots input.submit {
+	width: 177px;
+	padding: 4px;
+	position: relative;
+	left: -1px;
+}
+div#results a {
+	display: block;
+	padding-bottom: 20px;
+	text-decoration: none;
+}
+div#results a span.title {
+}
+div#results a span.snippet {
+	color: rgb(44,44,40);
+}
+div#results a:hover {
+	text-decoration: none;
+}
+div#results a:hover span.title {
+	text-decoration: underline;
+}

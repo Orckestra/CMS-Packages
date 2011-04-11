@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Search.GoogleSiteSearch", "Composite.Search.GoogleSiteSearch\Composite.Search.GoogleSiteSearch.csproj", "{7FD27E7D-1288-44D1-A7B2-D5461C768B07}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.Search.GoogleSiteSearch\\Composite.Search.GoogleSiteSearch.csproj
+		SccProjectName1 = Composite.Search.GoogleSiteSearch
+		SccLocalPath1 = Composite.Search.GoogleSiteSearch
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FD27E7D-1288-44D1-A7B2-D5461C768B07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD27E7D-1288-44D1-A7B2-D5461C768B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD27E7D-1288-44D1-A7B2-D5461C768B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD27E7D-1288-44D1-A7B2-D5461C768B07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:CSharpFunctions>
+		<Add name="Composite.Search.GoogleSiteSearch.GetRequestUrl" />
+	</pc:CSharpFunctions>
+	<pc:Files>
+		<Add name="Frontend\Composite\Search\GoogleSiteSearch\Styles.css" />
+		<Add name="App_Code\Composite\Search\GoogleSiteSearch\Functions.cs" />
+	</pc:Files>
+	<pc:XsltFunctions>
+		<Add name="Composite.Search.GoogleSiteSearch.SearchResult" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3947.24461" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.Search.GoogleSiteSearch" groupName="Composite.Search" version="1.0.4" author="Composite A/S" website="http://composite.net" id="9fe6f664-63b9-4112-9029-4b682ea70a47" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>
+			Allows visitors to search a website with the Google Site Search.
+		</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
