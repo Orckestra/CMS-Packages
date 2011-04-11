@@ -63,7 +63,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="7za.exe" />
     <Content Include="Package\App_Data\Xslt\Composite\Feeds\RssReader.xsl" />
     <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
@@ -105,7 +104,7 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:Checkout  "$(ProjectDir)Release\$(ProjectName).zip"
-"$(ProjectDir)7za.exe" d "$(ProjectDir)Release\$(ProjectName).zip"
-"$(ProjectDir)7za.exe" a -tzip "$(ProjectDir)Release\$(ProjectName).zip" -r "$(ProjectDir)Package\*" -x!*designer.c</PreBuildEvent>
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(ProjectName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(ProjectName).zip" -r "$(ProjectDir)Package\*" -x!*designer.c</PreBuildEvent>
   </PropertyGroup>
 </Project>
