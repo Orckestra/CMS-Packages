@@ -71,11 +71,47 @@ namespace Composite.Community.Blog.Package.Package.App_GlobalResources.Composite
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Write the text from the image.
+        /// </summary>
+        internal static string commentCaptchaFiledText {
+            get {
+                return ResourceManager.GetString("commentCaptchaFiledText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comment.
+        /// </summary>
+        internal static string commentCommentFieldText {
+            get {
+                return ResourceManager.GetString("commentCommentFieldText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string commentEmailFieldText {
+            get {
+                return ResourceManager.GetString("commentEmailFieldText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Incorrect Comment value.
         /// </summary>
         internal static string commentError {
             get {
                 return ResourceManager.GetString("commentError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string commentNameFieldText {
+            get {
+                return ResourceManager.GetString("commentNameFieldText", resourceCulture);
             }
         }
         
@@ -94,6 +130,15 @@ namespace Composite.Community.Blog.Package.Package.App_GlobalResources.Composite
         internal static string commentsTitleText {
             get {
                 return ResourceManager.GetString("commentsTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        internal static string commentTitleFieldText {
+            get {
+                return ResourceManager.GetString("commentTitleFieldText", resourceCulture);
             }
         }
         

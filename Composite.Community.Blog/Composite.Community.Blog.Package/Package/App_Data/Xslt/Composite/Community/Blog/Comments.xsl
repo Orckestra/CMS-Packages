@@ -102,7 +102,7 @@
 						</xsl:attribute>
 					</xsl:if>
 					<label for="Name">
-						Name
+						<xsl:value-of select="be:GetLocalized('Blog','commentNameFieldText')" />
 					</label>
 					<input type="text" name="Name" id="Name" value="{$SaveActionData[@Fieldname = 'Name']/@Value}" maxlength="64" />
 				</li>
@@ -113,7 +113,7 @@
 						</xsl:attribute>
 					</xsl:if>
 					<label for="Email">
-						Email
+						<xsl:value-of select="be:GetLocalized('Blog','commentEmailFieldText')" />
 					</label>
 					<input type="text" name="Email" id="Email" value="{$SaveActionData[@Fieldname = 'Email']/@Value}" maxlength="128" />
 				</li>
@@ -124,7 +124,7 @@
 						</xsl:attribute>
 					</xsl:if>
 					<label for="Title">
-						Title
+						<xsl:value-of select="be:GetLocalized('Blog','commentTitleFieldText')" />
 					</label>
 					<input type="text" name="Title" id="Title" value="{$SaveActionData[@Fieldname = 'CommentTitle']/@Value}" maxlength="128" />
 				</li>
@@ -135,7 +135,7 @@
 						</xsl:attribute>
 					</xsl:if>
 					<label for="Comment">
-						Comment
+						<xsl:value-of select="be:GetLocalized('Blog','commentCommentFieldText')" />
 					</label>
 					<textarea name="Comment" id="Comment">
 						<xsl:value-of select="$SaveActionData[@Fieldname = 'CommentText']/@Value" />
@@ -148,7 +148,7 @@
 						</xsl:attribute>
 					</xsl:if>
 					<label for="CaptchaUserInput">
-						Write the text from the image
+						<xsl:value-of select="be:GetLocalized('Blog','commentCaptchaFiledText')" />
 					</label>
 					<img src="{captcha:GetImageUrl($captchaEncryptedValue)}" alt="Captcha image" />
 					<input name="captcha" type="hidden" value="{$captchaEncryptedValue}" />
