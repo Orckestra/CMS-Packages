@@ -1,0 +1,31 @@
+<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0">
+  <cms:bindings>
+    <cms:binding name="Id" type="System.Guid" optional="true" />
+    <cms:binding name="Title" type="System.String" optional="true" />
+    <cms:binding name="ApiKey" type="System.String" optional="true" />
+    <cms:binding name="ApiSecret" type="System.String" optional="true" />
+    <cms:binding name="Default" type="System.Boolean" optional="true" />
+  </cms:bindings>
+  <cms:layout>
+    <cms:layout.label>
+      <cms:read source="Title" />
+    </cms:layout.label>
+    <FieldGroup>
+      <TextBox Label="Title" Help="The user-friendly title of the API key/secret pair">
+        <TextBox.Text>
+          <cms:bind source="Title" />
+        </TextBox.Text>
+      </TextBox>
+      <TextBox Label="API key" Help="The API key, which is a string of alphanumeric characters you should obtain on the Issuu website">
+        <TextBox.Text>
+          <cms:bind source="ApiKey" />
+        </TextBox.Text>
+      </TextBox>
+      <TextBox Label="API secret" Help="The API secret key, which is a string of alphanumeric characters you should obtain on the Issuu website">
+        <TextBox.Text>
+          <cms:bind source="ApiSecret" />
+        </TextBox.Text>
+      </TextBox>
+    </FieldGroup>
+  </cms:layout>
+</cms:formdefinition>

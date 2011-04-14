@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Media.IssuuPlayer.Package", "Composite.Media.IssuuPlayer.Package\Composite.Media.IssuuPlayer.Package.csproj", "{8B45FDAA-192D-401B-8DF5-9C5DC14DF139}"
+	ProjectSection(ProjectDependencies) = postProject
+		{69187637-BCA0-4C1B-A806-180AF950DAE0} = {69187637-BCA0-4C1B-A806-180AF950DAE0}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Media.IssuuPlayer", "Composite.Media.IssuuPlayer\Composite.Media.IssuuPlayer.csproj", "{69187637-BCA0-4C1B-A806-180AF950DAE0}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.Media.IssuuPlayer.Package\\Composite.Media.IssuuPlayer.Package.csproj
+		SccProjectName1 = Composite.Media.IssuuPlayer.Package
+		SccLocalPath1 = Composite.Media.IssuuPlayer.Package
+		SccProjectUniqueName2 = Composite.Media.IssuuPlayer\\Composite.Media.IssuuPlayer.csproj
+		SccProjectName2 = Composite.Media.IssuuPlayer
+		SccLocalPath2 = Composite.Media.IssuuPlayer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B45FDAA-192D-401B-8DF5-9C5DC14DF139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B45FDAA-192D-401B-8DF5-9C5DC14DF139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B45FDAA-192D-401B-8DF5-9C5DC14DF139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B45FDAA-192D-401B-8DF5-9C5DC14DF139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69187637-BCA0-4C1B-A806-180AF950DAE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69187637-BCA0-4C1B-A806-180AF950DAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69187637-BCA0-4C1B-A806-180AF950DAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69187637-BCA0-4C1B-A806-180AF950DAE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

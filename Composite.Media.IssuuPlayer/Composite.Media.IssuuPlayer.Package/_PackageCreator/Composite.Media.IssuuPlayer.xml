@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Configuration>
+		<Add name="/configuration/Composite.C1Console.Elements.Plugins.ElementAttachingProviderConfiguration/ElementAttachingProviderPlugins/add[@name='CompositeMediaIssuuPlayer']" />
+		<Add name="/configuration/Composite.C1Console.Elements.Plugins.ElementActionProviderConfiguration/ElementActionProviderPlugins/add[@name='Composite.Media.IssuuPlayer']" />
+	</pc:Configuration>
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Composite.Media.IssuuPlayer.dll" />
+	</mi:PackageFragmentInstallerBinaries>
+	<pc:Files>
+		<Add name="Bin\Composite.Media.IssuuPlayer.dll" />
+	</pc:Files>
+	<pc:DynamicDataTypes>
+		<Add name="Composite.Media.IssuuPlayer.ApiKey" />
+	</pc:DynamicDataTypes>
+	<pc:Directories />
+	<pc:CSharpFunctions>
+		<Add name="Composite.Media.IssuuPlayer.GetDocument" />
+		<Add name="Composite.Media.IssuuPlayer.GetDefaultApiKeyId" />
+	</pc:CSharpFunctions>
+	<pc:XsltFunctions>
+		<Add name="Composite.Media.IssuuPlayer" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Media.IssuuPlayer" groupName="Composite.Media" version="1.3.0" author="Composite A/S" website="http://composite.net" id="b355df93-e2f6-43d7-8655-8da41d2e9172" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Composite.Media.IssuuPlayer displays a PDF document on a web page in a user-friendly and readable way by using the services of Issuu, a Web-based PDF viewing and sharing online service.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
