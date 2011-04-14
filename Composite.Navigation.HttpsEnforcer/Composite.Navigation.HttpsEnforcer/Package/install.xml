@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29873" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Navigation.HttpsEnforcer" groupName="Composite.Navigation" version="1.1.3" author="Composite A/S" website="http://compsite.net" id="B640C851-4A5D-40e1-864F-351C324F3DE7" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<Description>This package enforce encrypted navigation to page areas in C1, ensuring that entire sites or portions of your site is served to the visitor using the https protocol. </Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Navigation\HttpsEnforcer.xsl" targetFilename="~\App_Data\Xslt\Composite\Navigation\HttpsEnforcer.xsl" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite">
+			<Types>
+				<Type providerName="GeneratedDataTypesElementProvider" dataTypeDescriptor="&lt;DataTypeDescriptor dataTypeId=&quot;d6eac352-433f-4648-9b9d-0e311fd96e22&quot; name=&quot;PageSettings&quot; namespace=&quot;Composite.Navigation.HttpsEnforcer&quot; title=&quot;HttpsEnforcer Page Settings&quot; hasCustomPhysicalSortOrder=&quot;false&quot; isCodeGenerated=&quot;true&quot; cachable=&quot;false&quot; labelFieldName=&quot;RequireHttpsOnBranch&quot; typeManagerTypeName=&quot;DynamicType:Composite.Navigation.HttpsEnforcer.PageSettings&quot; version=&quot;6&quot;&gt;&#xD;&#xA;  &lt;DataAssociations /&gt;&#xD;&#xA;  &lt;DataScopes&gt;&#xD;&#xA;    &lt;DataScopeIdentifier name=&quot;public&quot; /&gt;&#xD;&#xA;    &lt;DataScopeIdentifier name=&quot;administrated&quot; /&gt;&#xD;&#xA;  &lt;/DataScopes&gt;&#xD;&#xA;  &lt;KeyPropertyNames /&gt;&#xD;&#xA;  &lt;SuperInterfaces&gt;&#xD;&#xA;    &lt;SuperInterface type=&quot;Composite.Data.ProcessControlled.IPublishControlled,Composite&quot; /&gt;&#xD;&#xA;    &lt;SuperInterface type=&quot;Composite.Data.ProcessControlled.IProcessControlled,Composite&quot; /&gt;&#xD;&#xA;    &lt;SuperInterface type=&quot;Composite.Data.ProcessControlled.ILocalizedControlled,Composite&quot; /&gt;&#xD;&#xA;    &lt;SuperInterface type=&quot;Composite.Data.IPageData,Composite&quot; /&gt;&#xD;&#xA;    &lt;SuperInterface type=&quot;Composite.Data.IPageMetaData,Composite&quot; /&gt;&#xD;&#xA;  &lt;/SuperInterfaces&gt;&#xD;&#xA;  &lt;Fields&gt;&#xD;&#xA;    &lt;DataFieldDescriptor id=&quot;e6f12d9e-2a89-4cb8-8367-4bb447d10c3f&quot; name=&quot;RequireHttpsOnBranch&quot; isNullable=&quot;false&quot; position=&quot;0&quot; groupByPriority=&quot;0&quot; inherited=&quot;false&quot; instanceType=&quot;System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; storeType=&quot;PhysicalStoreType='Boolean'&quot; newInstanceDefaultFieldValue=&quot;&amp;lt;f:function xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; name=&amp;quot;Composite.Constant.Boolean&amp;quot;&amp;gt;&amp;lt;f:param name=&amp;quot;Constant&amp;quot; value=&amp;quot;True&amp;quot; /&amp;gt;&amp;lt;/f:function&amp;gt;&quot; defaultValue=&quot;ValueType='Boolean'Value='False'&quot;&gt;&#xD;&#xA;      &lt;FormRenderingProfile label=&quot;Require HTTPS&quot; helpText=&quot;When checked all page requests to this page and sub pages are directed to use https&quot; widgetFunctionMarkup=&quot;&amp;lt;f:widgetfunction xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; name=&amp;quot;Composite.Widgets.Bool.CheckBox&amp;quot; label=&amp;quot;&amp;quot; bindingsourcename=&amp;quot;&amp;quot;&amp;gt;&amp;lt;f:helpdefinition xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; helptext=&amp;quot;&amp;quot; /&amp;gt;&amp;lt;f:param name=&amp;quot;ItemLabel&amp;quot; value=&amp;quot;Require HTTPS on this site area&amp;quot; /&amp;gt;&amp;lt;/f:widgetfunction&amp;gt;&quot; /&gt;&#xD;&#xA;      &lt;ValidationFunctionMarkups /&gt;&#xD;&#xA;    &lt;/DataFieldDescriptor&gt;&#xD;&#xA;  &lt;/Fields&gt;&#xD;&#xA;&lt;/DataTypeDescriptor&gt;" />
+			</Types>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
