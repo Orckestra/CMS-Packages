@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3927.42711" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.Media.ImageGallery.ADGallery" groupName="Composite.Media" version="1.0.4" author="Composite A/S" website="http://www.composite.net" id="758b0028-abb1-4f67-bd35-5ddad97ad96e" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Displays a gallery of images using AD Gallery, a highly customizable gallery/showcase plugin for jQuery</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\ADGallery.xsl" targetFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\ADGallery.xsl" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Composite\Media\ImageGallery\ADGallery\" targetDirectory="~\Frontend\Composite\Media\ImageGallery\ADGallery\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
