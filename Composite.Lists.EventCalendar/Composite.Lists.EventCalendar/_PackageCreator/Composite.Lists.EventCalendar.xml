@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29873" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Lists.EventCalendar" groupName="Composite.Lists" version="1.4.4" author="Composite A/S" website="www.composite.net" id="2C3719EB-7536-4888-B557-C5E74E414DC1" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
+		<Description>Allows visitors to view the list of events and their details. Displays either past or upcoming events.</Description>
+	</mi:PackageInformation>
+	<pc:PageTemplates />
+	<pc:XsltFunctions>
+		<Add fullName="Composite.Lists.EventCalendar.Detail" />
+		<Add fullName="Composite.Lists.EventCalendar.List" />
+	</pc:XsltFunctions>
+	<pc:CSharpFunctions />
+	<pc:VisualFunctions />
+	<pc:DynamicDataTypes>
+		<Add fullName="Composite.Lists.EventCalendar" />
+	</pc:DynamicDataTypes>
+	<pc:DynamicDataTypesData />
+	<pc:Files />
+	<pc:FilesInDirectories />
+	<pc:Directories>
+		<Add path="Frontend\Composite\Lists\EventCalendar\" />
+	</pc:Directories>
+	<pc:Datas />
+</pc:PackageCreator>
