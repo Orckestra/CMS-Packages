@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Add Id="fbf196e3-0ff3-415d-b180-374e29a7bf15" Name="QuickPoll" Namespace="Composite.Community" Description="Displays the Quickpoll on the front-end" OutputXmlSubType="XHTML" XslFilePath="\Composite\Community\QuickPoll.xsl" />
+  <Add Id="19df562e-58f6-4565-a056-f51ed42ec3ad" Name="AnswerOptions" Namespace="Composite.Community.QuickPoll" Description="Show poll form" OutputXmlSubType="XML" XslFilePath="\Composite\Community\QuickPoll\AnswerOptions.xsl" />
+  <Add Id="77931ce6-eeef-41e8-9800-51e8cf6ad077" Name="Master" Namespace="Composite.Community.QuickPoll" Description="Contains the actual visual implentation of the Quick Poll feature. Controls if options or scores should be shown. Intended to be called from Composite.Community.QuickPoll" OutputXmlSubType="XML" XslFilePath="\Composite\Community\QuickPoll\Master.xsl" />
+  <Add Id="f7d545f9-8986-4ee5-a66d-16b1f91fbc58" Name="Results" Namespace="Composite.Community.QuickPoll" Description="Show poll results" OutputXmlSubType="XML" XslFilePath="\Composite\Community\QuickPoll\Results.xsl" />
+  <Add Id="aef19c79-780f-43db-a15c-44cae63f48f6" Name="Stores" Namespace="Composite.Community.QuickPoll" Description="Store vote" OutputXmlSubType="XML" XslFilePath="\Composite\Community\QuickPoll\Stores.xsl" />
+</Data>

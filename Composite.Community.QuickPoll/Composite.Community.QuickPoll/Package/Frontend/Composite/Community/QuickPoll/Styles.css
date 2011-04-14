@@ -1,0 +1,25 @@
+.QuickPoll {
+	padding: 2px;
+	margin: 2px;
+}
+
+.QuickPoll .Header {
+	font-weight: bold;
+}
+
+.QuickPoll .Questions {
+	text-decoration: underline;
+}
+
+.QuickPoll .Answers {
+	font-weight: lighter;
+}
+
+.QuickPoll .Button {
+	font-weight: bold;
+}
+
+.QuickPoll .PercentageElement {
+	background-color: Red;
+	color: Black;
+}

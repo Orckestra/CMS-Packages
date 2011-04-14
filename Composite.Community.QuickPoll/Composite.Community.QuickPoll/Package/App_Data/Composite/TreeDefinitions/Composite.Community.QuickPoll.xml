@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AutoAttachments>
+		<NamedParent Name="Content" Position="Bottom"/>
+	</ElementStructure.AutoAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Label="QuickPoll" Id="QuickPoll">
+				<Actions>
+					<AddDataAction Type="Composite.Community.QuickPoll.Question" />
+				</Actions>
+				<Children>
+					<DataElements Type="Composite.Community.QuickPoll.Question" Icon="question">
+						<Actions>
+							<AddDataAction Type="Composite.Community.QuickPoll.Answers" />
+							<EditDataAction />
+							<DeleteDataAction />
+						</Actions>
+						<Children>
+							<DataElements Type="Composite.Community.QuickPoll.Answers" Icon="bookmark">
+								<Filters>
+									<ParentIdFilter ParentType="Composite.Community.QuickPoll.Question" ReferenceFieldName="QuestionRef"/>
+								</Filters>
+								<Actions>
+									<EditDataAction />
+									<DeleteDataAction />
+								</Actions>
+							</DataElements>
+						</Children>
+					</DataElements>
+				</Children>
+			</Element>
+		</Children>
+	</ElementRoot>
+</ElementStructure>

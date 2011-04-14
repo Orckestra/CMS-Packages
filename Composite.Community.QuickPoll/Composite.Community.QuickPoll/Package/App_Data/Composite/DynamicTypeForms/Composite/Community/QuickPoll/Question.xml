@@ -1,0 +1,31 @@
+<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0">
+	<cms:bindings>
+		<cms:binding name="Id" type="System.Guid" />
+		<cms:binding name="QuestionText" type="System.String" />
+		<cms:binding name="ActiveFrom" type="System.DateTime" optional="true" />
+	</cms:bindings>
+	<cms:layout>
+		<cms:layout.label>
+			<cms:read source="QuestionText" />
+		</cms:layout.label>
+		<FieldGroup>
+			<TextBox Label="Question Text" Help="Specify question text">
+				<TextBox.Text>
+					<cms:bind source="QuestionText" />
+				</TextBox.Text>
+			</TextBox>
+			<DateSelector Label="Active From Date " Help="This poll active from">
+				<DateSelector.Date>
+					<cms:bind source="ActiveFrom" />
+				</DateSelector.Date>
+			</DateSelector>
+			<PlaceHolder Label="Current Results">
+				<QuickPollResults xmlns="http://www.composite.net/ns/Composite/Community/QuickPoll/1.0">
+					<QuickPollResults.QuestionId>
+						<cms:bind source="Id" />
+					</QuickPollResults.QuestionId>
+				</QuickPollResults>
+			</PlaceHolder>
+		</FieldGroup>
+	</cms:layout>
+</cms:formdefinition>
