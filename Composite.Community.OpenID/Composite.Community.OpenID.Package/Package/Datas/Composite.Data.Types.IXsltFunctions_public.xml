@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Add Id="8a065f7c-1ca8-4083-8b7d-f2b10e350749" Name="ContentProtection" Namespace="Composite.Community.OpenID" Description="Protects content areas on a page from unauthorized access." OutputXmlSubType="XHTML" XslFilePath="\Composite\Community\OpenID\ContentProtection.xsl" />
+  <Add Id="3d065f7c-2ad1-2111-bb7a-abcd0e350721" Name="PageProtection" Namespace="Composite.Community.OpenID" Description="Protects pages from unauthorized access." OutputXmlSubType="XHTML" XslFilePath="\Composite\Community\OpenID\PageProtection.xsl" />
+  <Add Id="193c7f2a-6db8-4c19-a503-1044d8652cf1" Name="SignInForm" Namespace="Composite.Community.OpenID" Description="Displays an OpenID based sign-in form on a page." OutputXmlSubType="XHTML" XslFilePath="\Composite\Community\OpenID\SignInForm.xsl" />
+  <Add Id="20d67562-58a8-4b9f-8723-cc3f7de9e4d9" Name="SignInStatus" Namespace="Composite.Community.OpenID" Description="Displays the current user’s sign-in status." OutputXmlSubType="XHTML" XslFilePath="\Composite\Community\OpenID\SignInStatus.xsl" />
+  <Add Id="210829cd-4980-4326-838c-fe3026ab96b5" Name="UserDetailsForm" Namespace="Composite.Community.OpenID" Description=" Displays the user profile information allowed by the OpenID provider." OutputXmlSubType="XHTML" XslFilePath="\Composite\Community\OpenID\UserDetailsForm.xsl" />
+</Data>

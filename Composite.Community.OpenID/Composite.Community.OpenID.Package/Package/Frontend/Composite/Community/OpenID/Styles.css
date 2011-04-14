@@ -1,0 +1,139 @@
+#InputForm, #Input h4, #ErrorBox, #ErrorBox li {
+	margin: 0px;
+	padding: 0px;
+}
+
+#Input {
+	background-color: #f2f2f2;
+	width: 480px;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	font: 15px/22px "Helvetica Neue",Arial,Helvetica,Geneva,sans-serif;
+	font-size: 14px;
+	color: #808080;
+	padding: 15px;
+}
+
+#Input .FieldError {
+	background-color: #FFDFDF;
+}
+
+#Input legend {
+	font-weight: bold;
+}
+
+#Input .ErrorsHeader {
+	color: Red;
+}
+
+#ErrorBox li {
+	color: Red;
+	list-style: square;
+	padding-bottom: 4px;
+	font-size: 12px;
+	margin-left: 15px;
+}
+
+#InputForm li {
+	padding-bottom: 4px;
+	list-style: none;
+}
+
+#InputForm li img {
+	margin-bottom: 4px;
+	border: solid 1px #000;
+}
+
+#Input li label, #Input li img {
+	display: block;
+}
+
+#Input textarea, #Input input, #InputForm li .openid-identifier {
+	border: 1px solid #CCCCCC;
+	color: #6E6E6E;
+	padding: 5px;
+	height: 32px;
+	width: 100%;
+}
+
+#Input textarea {
+	height: 130px;
+}
+
+#Input li label.inline {
+	display:inline;
+}
+
+#openid_choice
+{
+	margin-top: 10px;
+	display: none;
+}
+
+#openid_input_area
+{
+	padding-top: 10px;
+	margin-bottom: 10px;
+	clear: both;
+}
+
+#openid_username
+{
+	margin-right: 5px;
+}
+
+#openid_btns, #openid_btns br
+{
+	clear: both;
+}
+
+#openid_highlight
+{
+	padding: 3px;
+	background-color: #FFFCC9;
+	float: left;
+}
+
+.openid_large_btn
+{
+	width: 100px;
+	height: 60px;
+	border: 1px solid #DDD;
+	margin: 3px;
+	float: left;
+}
+
+.openid_small_btn
+{
+	width: 24px;
+	height: 24px;
+	border: 1px solid #DDD;
+	margin: 3px;
+	float: left;
+}
+
+a.openid_large_btn:focus
+{
+	outline: none;
+}
+
+a.openid_large_btn:focus
+{
+	-moz-outline-style: none;
+}
+
+.openid_selected
+{
+	border: 4px solid #DDD;
+}
+
+#InputForm li .openid-identifier
+{
+	background: url("Images/openid.png") no-repeat scroll left center #FFF;
+	padding-left: 18px;
+}
+
+#InputForm li .submit {
+	width: 100px;
+}

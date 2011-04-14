@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Community.OpenID", "Composite.Community.OpenID\Composite.Community.OpenID.csproj", "{2D811A19-E04E-402C-BCB2-B573978310D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Community.OpenID.Package", "Composite.Community.OpenID.Package\Composite.Community.OpenID.Package.csproj", "{4346AA97-6EE0-46C0-9A2B-A1753C296348}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.Community.OpenID\\Composite.Community.OpenID.csproj
+		SccProjectName1 = Composite.Community.OpenID
+		SccLocalPath1 = Composite.Community.OpenID
+		SccProjectUniqueName2 = Composite.Community.OpenID.Package\\Composite.Community.OpenID.Package.csproj
+		SccProjectName2 = Composite.Community.OpenID.Package
+		SccLocalPath2 = Composite.Community.OpenID.Package
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D811A19-E04E-402C-BCB2-B573978310D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D811A19-E04E-402C-BCB2-B573978310D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D811A19-E04E-402C-BCB2-B573978310D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D811A19-E04E-402C-BCB2-B573978310D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4346AA97-6EE0-46C0-9A2B-A1753C296348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4346AA97-6EE0-46C0-9A2B-A1753C296348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4346AA97-6EE0-46C0-9A2B-A1753C296348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4346AA97-6EE0-46C0-9A2B-A1753C296348}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
