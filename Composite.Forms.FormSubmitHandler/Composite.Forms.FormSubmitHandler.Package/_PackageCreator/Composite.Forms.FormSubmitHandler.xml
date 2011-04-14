@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="Composite\InstalledPackages\content\views\Composite.Forms.FormSubmitHandler\" />
+	</pc:Directories>
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Composite.Forms.FormSubmitHandler.dll" />
+	</mi:PackageFragmentInstallerBinaries>
+	<pc:Configuration>
+		<Add name="/configuration/Composite.C1Console.Elements.Plugins.ElementActionProviderConfiguration/ElementActionProviderPlugins/add[@name='Composite.Forms.FormSubmitHandler']" />
+	</pc:Configuration>
+	<pc:Files>
+		<Add name="Bin\Composite.Forms.FormSubmitHandler.dll" />
+	</pc:Files>
+	<pc:CSharpFunctions>
+		<Add name="Composite.Forms.FormSubmitHandler.GetForm" />
+	</pc:CSharpFunctions>
+	<pc:XsltFunctions>
+		<Add name="Composite.Forms.FormSubmitHandler" />
+	</pc:XsltFunctions>
+	<pc:DataItems>
+		<Type type="Composite.Data.Types.IFolderWhiteList, Composite">
+			<Data dataScopeIdentifier="administrated">
+				<Add TildeBasedPath="~\App_Data\FormSubmitHandler" />
+			</Data>
+		</Type>
+	</pc:DataItems>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3947.24461" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Forms.FormSubmitHandler" groupName="Composite.Forms" version="1.1.2" author="Composite A/S" website="http://composite.net" id="de9ec564-71c5-430f-8d61-6969e2e64ec2" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Collects input from visitors via HTML forms. Supports email notifications to owners and users as well as custom responses on form submission.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
