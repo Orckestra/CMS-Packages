@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AutoAttachments>
+		<NamedParent Name="System" Position="Bottom"/>
+	</ElementStructure.AutoAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Label="SqlServer Data Provider" Id="SqlServerDataProvider" Icon="sql-based-connection">
+				<Actions>
+					<CustomUrlAction Url="~/Composite/InstalledPackages/content/views/Composite.Tools.SqlServerDataProvider/SqlServerDataProvider.aspx" Label="Convert to SQL" Icon="forward" ViewLabel="Convert to SQL" ViewIcon="forward" ViewToolTip="Convert to SQL" ViewType="documentview" />
+				</Actions>
+			</Element>
+		</Children>
+	</ElementRoot>
+</ElementStructure>
