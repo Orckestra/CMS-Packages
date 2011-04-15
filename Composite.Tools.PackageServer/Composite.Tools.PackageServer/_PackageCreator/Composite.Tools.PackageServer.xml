@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="App_Code\Composite\Tools\PackageServer\" />
+	</pc:Directories>
+	<pc:Files>
+		<Add name="Packages.asmx" />
+		<Add name="App_Data\Composite\TreeDefinitions\Composite.Tools.PackageServer.xml" />
+	</pc:Files>
+	<pc:DynamicDataTypes>
+		<Add name="Composite.Tools.PackageServer.Eula" />
+		<Add name="Composite.Tools.PackageServer.Package" />
+	</pc:DynamicDataTypes>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3919.5834" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Tools.PackageServer" groupName="Composite.Tools" version="1.0.4" author="Composite A/S" website="http://composite.net" id="89803d48-1f52-47c1-9029-2ec9240d6130" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+		<Description>Sets up a server to store and distribute packages among C1 users. Presents packages in the Administrative console if added as the package source in C1.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Tools.PackageServer", "Composite.Tools.PackageServer\Composite.Tools.PackageServer.csproj", "{AF410577-A179-442C-8C91-DC72091BC216}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.Tools.PackageServer\\Composite.Tools.PackageServer.csproj
+		SccProjectName1 = Composite.Tools.PackageServer
+		SccLocalPath1 = Composite.Tools.PackageServer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF410577-A179-442C-8C91-DC72091BC216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF410577-A179-442C-8C91-DC72091BC216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF410577-A179-442C-8C91-DC72091BC216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF410577-A179-442C-8C91-DC72091BC216}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

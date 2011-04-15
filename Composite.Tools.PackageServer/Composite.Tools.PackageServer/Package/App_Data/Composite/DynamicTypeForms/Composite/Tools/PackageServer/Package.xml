@@ -1,0 +1,128 @@
+<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0">
+	<cms:bindings>
+		<cms:binding name="Id" type="System.Guid" optional="true" />
+		<cms:binding name="PackageId" type="System.Guid" optional="true" />
+		<cms:binding name="Name" type="System.String" optional="true" />
+		<cms:binding name="GroupName" type="System.String" optional="true" />
+		<cms:binding name="PackageVersion" type="System.String" optional="true" />
+		<cms:binding name="Author" type="System.String" optional="true" />
+		<cms:binding name="Description" type="System.String" optional="true" />
+		<cms:binding name="TechicalDetails" type="System.String" optional="true" />
+		<cms:binding name="EULA" type="System.Guid" optional="true" />
+		<cms:binding name="ReadMoreUrl" type="System.String" optional="true" />
+		<cms:binding name="MinCompositeVersionSupported" type="System.String" optional="true" />
+		<cms:binding name="MaxCompositeVersionSupported" type="System.String" optional="true" />
+		<cms:binding name="PackageFile" type="System.String" optional="true" />
+	</cms:bindings>
+	<cms:layout>
+		<cms:layout.label>
+			<cms:read source="Name" />
+		</cms:layout.label>
+		<TabPanels>
+			
+			<PlaceHolder Label="Package">
+				<FieldGroup>
+					<DataReferenceTreeSelector Label="PackageFile" Help="" Handle="Composite.Management.EmbeddableMediaSelectorDialog" SearchToken="Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider.MediaFileSearchToken,Composite|MimeTypes=null, Extensions=',\ \'zip\'', Folder=null, HideSubfolders='False', Keyword=null" DataType="Composite.Data.Types.IMediaFile,Composite" NullValueAllowed="false">
+						<DataReferenceTreeSelector.Selected>
+							<cms:bind source="PackageFile" />
+						</DataReferenceTreeSelector.Selected>
+					</DataReferenceTreeSelector>
+					<f:NullCheck>
+						<f:NullCheck.CheckValue>
+							<cms:read source="Name" />
+						</f:NullCheck.CheckValue>
+						<f:NullCheck.WhenNotNull>
+							<TextBox Label="Name" Help="" Type="ReadOnly">
+								<TextBox.Text>
+									<cms:read source="Name" />
+								</TextBox.Text>
+							</TextBox>
+						</f:NullCheck.WhenNotNull>
+					</f:NullCheck>
+							<f:NullCheck>
+								<f:NullCheck.CheckValue>
+									<cms:read source="Name" />
+								</f:NullCheck.CheckValue>
+								<f:NullCheck.WhenNotNull>
+							<TextBox Label="Group Name" Help="" Type="ReadOnly">
+								<TextBox.Text>
+									<cms:read source="GroupName" />
+								</TextBox.Text>
+							</TextBox>
+								</f:NullCheck.WhenNotNull>
+							</f:NullCheck>
+							<f:NullCheck>
+								<f:NullCheck.CheckValue>
+									<cms:read source="Name" />
+								</f:NullCheck.CheckValue>
+								<f:NullCheck.WhenNotNull>
+							<TextArea Label="Description" Help="" Type="ReadOnly">
+								<TextArea.Text>
+									<cms:read source="Description" />
+								</TextArea.Text>
+							</TextArea>
+						</f:NullCheck.WhenNotNull>
+					</f:NullCheck>
+
+					<TextArea Label="Techical Details" Help="">
+						<TextArea.Text>
+							<cms:bind source="TechicalDetails" />
+						</TextArea.Text>
+					</TextArea>
+					<KeySelector Label="EULA" Help="" OptionsKeyField="Key" OptionsLabelField="Label" Required="true">
+						<KeySelector.Selected>
+							<cms:bind source="EULA" />
+						</KeySelector.Selected>
+						<KeySelector.Options>
+							<f:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=2.0.3925.22817, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;DynamicType:Composite.Tools.PackageServer.EULA&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" Method="GetOptions" Parameters="DynamicType:Composite.Tools.PackageServer.EULA" />
+						</KeySelector.Options>
+					</KeySelector>
+					<TextBox Label="Read More Url" Help="">
+						<TextBox.Text>
+							<cms:bind source="ReadMoreUrl" />
+						</TextBox.Text>
+					</TextBox>
+				
+				</FieldGroup>
+			</PlaceHolder>
+			<f:NullCheck>
+				<f:NullCheck.CheckValue>
+					<cms:read source="Name" />
+				</f:NullCheck.CheckValue>
+				<f:NullCheck.WhenNotNull>
+					<PlaceHolder Label="Advanced">
+						<FieldGroup>
+							<TextBox Label="PackageId" Help="" Type="ReadOnly">
+								<TextBox.Text>
+									<cms:read source="PackageId" />
+								</TextBox.Text>
+							</TextBox>
+
+							<TextBox Label="Package Version" Help="" Type="ReadOnly">
+								<TextBox.Text>
+									<cms:read source="PackageVersion" />
+								</TextBox.Text>
+							</TextBox>
+							<TextBox Label="Author" Help="" Type="ReadOnly">
+								<TextBox.Text>
+									<cms:read source="Author" />
+								</TextBox.Text>
+							</TextBox>
+							<TextBox Label="Min Composite Version Supported" Help="" Type="ReadOnly">
+								<TextBox.Text>
+									<cms:read source="MinCompositeVersionSupported" />
+								</TextBox.Text>
+							</TextBox>
+							<TextBox Label="Max Composite Version Supported" Help="" Type="ReadOnly">
+								<TextBox.Text>
+									<cms:read source="MaxCompositeVersionSupported" />
+								</TextBox.Text>
+							</TextBox>
+
+						</FieldGroup>
+					</PlaceHolder>
+				</f:NullCheck.WhenNotNull>
+			</f:NullCheck>
+		</TabPanels>
+	</cms:layout>
+</cms:formdefinition>

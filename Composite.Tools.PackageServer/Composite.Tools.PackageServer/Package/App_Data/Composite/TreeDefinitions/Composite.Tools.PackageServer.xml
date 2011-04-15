@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AutoAttachments>
+		<NamedParent Name="Content" Position="Bottom"/>
+	</ElementStructure.AutoAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Label="Package Server" Id="PackageServer">
+				<Actions>
+					<AddDataAction Label="Add Package" Type="Composite.Tools.PackageServer.Package" />
+				</Actions>
+				<Children>
+					<Element Label="Packages" Id="Packages">
+						<Actions>
+							<AddDataAction Label="Add Package" Type="Composite.Tools.PackageServer.Package" />
+						</Actions>
+						<Children>
+							<DataFolderElements FieldGroupingName="GroupName" Type="Composite.Tools.PackageServer.Package">
+								<Children>
+									<DataElements Type="Composite.Tools.PackageServer.Package"  Display="Auto">
+										<Actions>
+											<EditDataAction Label="Edit Package" />
+											<DeleteDataAction Label="Delete Package" />
+										</Actions>
+									</DataElements>
+								</Children>
+							</DataFolderElements>
+						</Children>
+					</Element>
+					<Element Label="EULAs" Id="EULAs">
+						<Actions>
+							<AddDataAction Label="Add EULA" Type="Composite.Tools.PackageServer.EULA"/>
+						</Actions>
+						<Children>
+							<DataElements Type="Composite.Tools.PackageServer.EULA" Display="Auto">
+								<Actions>
+									<EditDataAction Label="Edit Eula" />
+									<DeleteDataAction Label="Delete Eula" />
+								</Actions>
+							</DataElements>
+						</Children>
+					</Element>
+				</Children>
+			</Element>
+		</Children>
+	</ElementRoot>
+</ElementStructure>
