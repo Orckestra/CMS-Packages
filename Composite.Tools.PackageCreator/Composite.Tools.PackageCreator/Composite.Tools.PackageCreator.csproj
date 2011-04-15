@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B92A1CB9-9584-4B3E-9E53-11CA5DB74CFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Composite.Tools.PackageCreator</RootNamespace>
+    <AssemblyName>Composite.Tools.PackageCreator</AssemblyName>
+    <ProjectTypeGuids>{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Composite">
+      <HintPath>..\..\References\Composite\2.1.1\Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\References\Composite\2.1.1\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation">
+      <HintPath>..\..\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Workflow.Activities">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.ComponentModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.Runtime">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.WorkflowServices">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action\PackageCreatorActionFacade.cs" />
+    <Compile Include="Action\PackageCreatorActionToken.cs" />
+    <Compile Include="Action\PackageCreatorElementActionProvider.cs" />
+    <Compile Include="Action\PackageCreatorElementProviderActionExecutor.cs" />
+    <Compile Include="ElementProvider\Action\DownloadPackageActionToken.cs" />
+    <Compile Include="ElementProvider\Action\SetActivePackageActionToken.cs" />
+    <Compile Include="ElementProvider\EntityToken\Interfaces\PackageCreatorEntityToken.cs" />
+    <Compile Include="ElementProvider\EntityToken\PackageCreatorItemElementProviderEntityToken.cs" />
+    <Compile Include="ElementProvider\EntityToken\PackageCreatorPackageElementProviderEntityToken.cs" />
+    <Compile Include="ElementProvider\EntityToken\XmlNodeAttributeProviderEntityToken.cs" />
+    <Compile Include="ElementProvider\EntityToken\XmlNodeElementProviderEntityToken.cs" />
+    <Compile Include="PackageCreatorFragmentInstaller.cs" />
+    <Compile Include="PackageCreator\Tools\SelfPositionExtension.cs" />
+    <Compile Include="PackageInformation.cs" />
+    <Compile Include="Types\Interfaces\IPackagable.cs" />
+    <Compile Include="Types\Interfaces\IPackageCreatorItemActionToken.cs" />
+    <Compile Include="Types\MIPackageFragmentInstallerBinary.cs" />
+    <Compile Include="Types\PCConfiguration.cs" />
+    <Compile Include="Types\PCContent.cs" />
+    <Compile Include="Types\PCFileXslTransformation.cs" />
+    <Compile Include="Types\PCInlineFunction.cs" />
+    <Compile Include="Types\PCLocalizations.cs" />
+    <Compile Include="Types\PCPageTemplate.cs" />
+    <Compile Include="Types\PCDirectory.cs" />
+    <Compile Include="Types\PCFilesInDirectory.cs" />
+    <Compile Include="Types\Interfaces\Category.cs" />
+    <Compile Include="Types\Interfaces\IPackageCreatorItem.cs" />
+    <Compile Include="ElementProvider\Action\DeletePackageCreatorActionToken.cs" />
+    <Compile Include="ElementProvider\Action\DeleteItemPackageCreatorActionToken.cs" />
+    <Compile Include="ElementProvider\PackageCreatorElementProvider.cs" />
+    <Compile Include="ElementProvider\EntityToken\PackageCreatorCategoryElementProviderEntityToken.cs" />
+    <Compile Include="ElementProvider\EntityToken\PackageCreatorElementProviderEntityToken.cs" />
+    <Compile Include="ElementProvider\PackageCreatorProviderEntityTokenSecurityAncestorProvider.cs" />
+    <Compile Include="PackageCreator\Tools\Extension.cs" />
+    <Compile Include="PackageCreator\Tools\FileSystem.cs" />
+    <Compile Include="PackageCreator\Tools\GuidReplacer.cs" />
+    <Compile Include="PackageCreator\PackageCreator.cs" />
+    <Compile Include="PackageCreatorFacade.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\PCCSharpFunction.cs" />
+    <Compile Include="Types\PCDynamicDataType.cs" />
+    <Compile Include="Types\PCDynamicDataTypesData.cs" />
+    <Compile Include="Types\PCFiles.cs" />
+    <Compile Include="Types\PCPageType.cs" />
+    <Compile Include="Types\PCVisualFunction.cs" />
+    <Compile Include="Types\PCXsltFunction.cs" />
+    <Compile Include="Types\SimplePackageCreatorItem.cs" />
+    <Compile Include="Workflow\ConfirmPackageWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflow\ConfirmPackageWorkflow.Designer.cs">
+      <DependentUpon>ConfirmPackageWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\ConfirmWorkflowActionToken.cs" />
+    <Compile Include="Workflow\CreatePackageWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflow\CreatePackageWorkflow.designer.cs">
+      <DependentUpon>CreatePackageWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\CreatePackageWorkflowActionToken.cs" />
+    <Compile Include="Workflow\EditPackageWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflow\EditPackageWorkflow.Designer.cs">
+      <DependentUpon>EditPackageWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\UploadConfigWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflow\UploadConfigWorkflow.Designer.cs">
+      <DependentUpon>UploadConfigWorkflow.cs</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Workflow\ConfirmPackageWorkflow.layout">
+      <DependentUpon>ConfirmPackageWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workflow\CreatePackageWorkflow.layout">
+      <DependentUpon>CreatePackageWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workflow\EditPackageWorkflow.layout">
+      <DependentUpon>EditPackageWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workflow\UploadConfigWorkflow.layout">
+      <DependentUpon>UploadConfigWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(SolutionDir)$(SolutionName).Package\Package\Bin\$(TargetFileName)"
+copy "$(TargetPath)" "$(SolutionDir)$(SolutionName).Package\Package\Bin\"</PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Workflow.Targets" />
+</Project>

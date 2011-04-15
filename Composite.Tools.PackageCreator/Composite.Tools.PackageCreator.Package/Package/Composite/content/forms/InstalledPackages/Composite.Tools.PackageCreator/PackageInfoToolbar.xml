@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cms:formdefinition xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0">
+	<cms:bindings>
+		<cms:binding name="PackageUrl" type="System.String" />
+		<cms:binding name="ConfigUrl" type="System.String" />
+	</cms:bindings>
+	<cms:layout iconhandle="package-element-closed-availableitem">
+		<PlaceHolder>
+			<!--<ToolbarButton Label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.DownloadPackageButton.Label}" IconHandle="package-installer-readmore">
+				<ToolbarButton.LaunchUrl>
+					<cms:read source="PackageUrl"/>
+				</ToolbarButton.LaunchUrl>
+			</ToolbarButton>
+			<ToolbarButton Label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.DownloadConfigButton.Label}" IconHandle="package-installer-readmore">
+				<ToolbarButton.LaunchUrl>
+					<cms:read source="ConfigUrl"/>
+				</ToolbarButton.LaunchUrl>
+			</ToolbarButton>-->
+		</PlaceHolder>
+	</cms:layout>
+</cms:formdefinition>
