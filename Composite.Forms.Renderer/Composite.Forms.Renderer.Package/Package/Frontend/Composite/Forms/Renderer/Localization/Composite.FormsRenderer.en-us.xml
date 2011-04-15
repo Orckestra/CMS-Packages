@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<string key="Composite.Forms.Renderer.description" value="Builds form based Dynamic DataType" />
+
+	<string key="Composite.Forms.Renderer.param.DataType.label" value="DataType" />
+	<string key="Composite.Forms.Renderer.param.DataType.help" value="The data type that’s used to render the form" />
+	<string key="Composite.Forms.Renderer.param.IntroText.label" value="Intro Text" />
+	<string key="Composite.Forms.Renderer.param.IntroText.help" value="Xhtml block that’s shown above the form (before submit)" />
+	<string key="Composite.Forms.Renderer.param.ResponseText.label" value="Response Text" />
+	<string key="Composite.Forms.Renderer.param.ResponseText.help" value="Xhtml block, that’s shown instead of the intro and form after submit" />
+	<string key="Composite.Forms.Renderer.param.ResponseUrl.label" value="Responce URL" />
+	<string key="Composite.Forms.Renderer.param.ResponseUrl.help" value="A page to which a user will be redirected after submitting a form. If you want to stay on the same page, leave the 'default' value and use 'ResponseText' parameter instead." />
+	<string key="Composite.Forms.Renderer.param.SendButtonLabel.label" value="Send Button Label" />
+	<string key="Composite.Forms.Renderer.param.SendButtonLabel.help" value="Label of send button " />
+	<string key="Composite.Forms.Renderer.param.ResetButtonLabel.label" value="Reset Button Label" />
+	<string key="Composite.Forms.Renderer.param.ResetButtonLabel.help" value="Label of reset button (if is empty = no button)." />
+	<string key="Composite.Forms.Renderer.param.Email.label" value="Email" />
+	<string key="Composite.Forms.Renderer.param.Email.help" value="Set email params to the sending email" />
+	<string key="Composite.Forms.Renderer.param.UseCaptcha.label" value="Use Captcha" />
+	<string key="Composite.Forms.Renderer.param.UseCaptcha.help" value="Select to use Captcha or not" />
+
+	<string key="Composite.Forms.FormEmailHeader.description" value="Set email parameters" />
+	<string key="Composite.Forms.FormEmailHeader.param.From.label" value="From" />
+	<string key="Composite.Forms.FormEmailHeader.param.From.help" value="Email from which it will be send" />
+	<string key="Composite.Forms.FormEmailHeader.param.To.label" value="To" />
+	<string key="Composite.Forms.FormEmailHeader.param.To.help" value="Comma separated list of emails to which an email will be send" />
+	<string key="Composite.Forms.FormEmailHeader.param.Cc.label" value="Cc" />
+	<string key="Composite.Forms.FormEmailHeader.param.Cc.help" value="Optional field, email to which send the copy" />
+	<string key="Composite.Forms.FormEmailHeader.param.Subject.label" value="Subject" />
+	<string key="Composite.Forms.FormEmailHeader.param.Subject.help" value="Subject of email" />
+
+	<string key="Composite.Forms.JoinEmailHeaders.description" value="Join two emails" />
+	<string key="Composite.Forms.JoinEmailHeaders.param.EmailHeaderA.label" value="Email A" />
+	<string key="Composite.Forms.JoinEmailHeaders.param.EmailHeaderA.help" value="Set email params to the sending email" />
+	<string key="Composite.Forms.JoinEmailHeaders.param.EmailHeaderB.label" value="Email B" />
+	<string key="Composite.Forms.JoinEmailHeaders.param.EmailHeaderB.help" value="Set email params to the sending email" />
+
+	<string key="Composite.Forms.FormsRendererParameter.description" value="Get value of submitted datatype" />
+	<string key="Composite.Forms.FormsRendererParameter.param.PropertyName.label" value="Property Name" />
+	<string key="Composite.Forms.FormsRendererParameter.param.PropertyName.help" value="Property name of datatype" />
+
+	<string key="Composite.Forms.Captcha.CaptchaText.label" value="Write the text from the image" />
+	<string key="Composite.Forms.Captcha.CaptchaText.error" value="Write valid text from the image" />
+	<string key="Composite.Forms.ValidationSummary.HeaderText" value="The following fields are incomplete:" />
+</strings>

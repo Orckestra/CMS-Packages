@@ -1,0 +1,123 @@
+.FormsRenderer {
+	width: 380px;
+}
+
+.FormsRenderer fieldset {
+	display: block;
+	border: 0;
+	margin: 10px 0 10px 0;
+	width: 370px;
+}
+
+.FormsRenderer fieldset fieldset {
+	display: block;
+	float: left;
+	width: 150px;
+	margin: 0px;
+}
+
+.FormsRenderer .Fields br {
+	display: none;
+	visibility: hidden;
+}
+
+.FormsRenderer .Fields label {
+	clear: both;
+	display: block;
+	float: left;
+	width: 170px;
+	margin-top: 5px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+.FormsRenderer .Fields span.Checkbox {
+	display: block;
+	float: left;
+	margin-top: 5px;
+	width: 180px;
+}
+
+.FormsRenderer .Fields label.Checkbox, .FormsRenderer .Fields span.Checkbox label {
+	clear: none;
+	float: left;
+	width: 150px;
+	margin-top: 5px;
+	text-align: left;
+	margin-right: 10px;
+	line-height: 20px;
+	overflow: hidden;
+}
+
+.FormsRenderer .Fields span.Checkbox label {
+	width: 140px;
+}
+
+
+.FormsRenderer .Fields label.error {
+	clear: both;
+	float: none;
+	text-align: right;
+	color: #FF0000;
+	width: auto;
+}
+
+.FormsRenderer .Fields input {
+	display: block;
+	float: left;
+	width: 180px;
+	border: 1px solid #000000;
+	margin-top: 5px;
+	height: 19px;
+}
+
+.FormsRenderer .Fields fieldset input {
+	border: 0px;
+	float: none;
+	width: auto;
+	display: inline;
+}
+
+.FormsRenderer .Fields input.Checkbox {
+	width: 19px;
+}
+
+.FormsRenderer .Fields textarea {
+	display: block;
+	float: left;
+	width: 180px;
+	border: 1px solid #000000;
+	margin-top: 5px;
+}
+
+.FormsRenderer .Fields select {
+	display: block;
+	float: left;
+	width: 180px;
+	border: 1px solid #000000;
+	margin-top: 5px;
+}
+
+.FormsRenderer .Fields input.Checkbox, .FormsRenderer .Fields span.Checkbox input {
+	width: auto;
+	height: auto;
+	border: 0px;
+	margin-top: 5px;
+}
+
+.FormsRenderer .Fields span.Checkbox input {
+	clear: both;
+}
+
+.FormsRenderer .Buttons input.Submit {
+	float: right;
+}
+
+.FormsRenderer .Buttons input.Reset {
+	float: left;
+}
+
+.FormsRenderer .Fields .CaptchaImage {
+	float: right;
+	margin-right: 25px;
+}
