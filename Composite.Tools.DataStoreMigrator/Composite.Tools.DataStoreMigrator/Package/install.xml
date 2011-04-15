@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29873" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Tools.DataStoreMigrator" groupName="Composite.Tools" version="1.2.1" author="Composite A/S" website="www.composite.net" id="aebfacc1-0a52-4ce5-ab7d-83fa8db0c6c7" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<Description>Transfers all types and data from one data provider to another.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\DataStoreMigrator.aspx" targetFilename="~\DataStoreMigrator.aspx" allowOverwrite="false" />
+				<File sourceFilename="~\DataStoreMigrator.aspx.cs" targetFilename="~\DataStoreMigrator.aspx.cs" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Composite\Tools\DataStoreMigrator\" targetDirectory="~\Frontend\Composite\Tools\DataStoreMigrator\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
