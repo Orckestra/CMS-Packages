@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.AspNet.MvcPlayer.Sample", "Composite.AspNet.MvcPlayer.Sample\Composite.AspNet.MvcPlayer.Sample.csproj", "{C01D0FE9-E890-4D59-888C-4D488AC0988A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.AspNet.MvcPlayer.Sample\\Composite.AspNet.MvcPlayer.Sample.csproj
+		SccProjectName1 = Composite.AspNet.MvcPlayer.Sample
+		SccLocalPath1 = Composite.AspNet.MvcPlayer.Sample
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C01D0FE9-E890-4D59-888C-4D488AC0988A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C01D0FE9-E890-4D59-888C-4D488AC0988A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C01D0FE9-E890-4D59-888C-4D488AC0988A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C01D0FE9-E890-4D59-888C-4D488AC0988A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

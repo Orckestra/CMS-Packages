@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.AspNet.MvcPlayer.Sample" groupName="Composite.AspNet" version="1.1.0" author="Composite A/S" website="www.composite.net" id="5f149f0b-2ad1-4fc7-8897-b37063aecd3f" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Sample MVC </Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\Views\Web.config" targetFilename="~\Views\Web.config" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Controllers\AccountController.cs" targetFilename="~\App_Code\Controllers\AccountController.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Controllers\CommentsController.cs" targetFilename="~\App_Code\Controllers\CommentsController.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Controllers\HomeController.cs" targetFilename="~\App_Code\Controllers\HomeController.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Models\Comments.cs" targetFilename="~\App_Code\Models\Comments.cs" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Views\Account\" targetDirectory="~\Views\Account\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\Views\Comments\" targetDirectory="~\Views\Comments\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\Views\Home\" targetDirectory="~\Views\Home\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\Views\Shared\" targetDirectory="~\Views\Shared\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\Scripts\" targetDirectory="~\Scripts\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

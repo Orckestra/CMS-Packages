@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Files>
+		<Add name="App_Code\Composite\AspNet\MvcPlayer\Player.cs" />
+		<Add name="App_Code\Composite\AspNet\MvcPlayer\Route.cs" />
+		<Add name="Views\Web.config" />
+	</pc:Files>
+	<pc:CSharpFunctions>
+		<Add name="Composite.AspNet.MvcPlayer.Render" />
+	</pc:CSharpFunctions>
+	<pc:XsltFunctions>
+		<Add name="Composite.AspNet.MvcPlayer" />
+	</pc:XsltFunctions>
+	<pc:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite" Ordering="10">
+			<XslFiles>
+				<XslFile pathXml="~\Web.config" installXsl="~\Config\Install.xsl" uninstallXsl="~\Config\Uninstall.xsl" />
+			</XslFiles>
+		</mi:Add>
+		<mi:Add installerType="Composite.PackageFragmentInstaller.CheckAssembly.CheckAssemblyPackageFragmentInstaller, Composite.PackageFragmentInstaller.CheckAssembly" uninstallerType="Composite.PackageFragmentInstaller.CheckAssembly.CheckAssemblyPackageFragmentUninstaller, Composite.PackageFragmentInstaller.CheckAssembly">
+			<Check assembly="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" message="MVC3 is not installed" />
+		</mi:Add>
+	</pc:PackageFragmentInstallers>
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.AspNet.MvcPlayer" groupName="Composite.AspNet" version="1.2.8" author="Composite A/S" website="http://www.composite.net" id="7fbb67a8-dc12-4693-b653-80c5f155ff7a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Allows you to integrate an ASP.NET MVC solution on a C1 website.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Composite.PackageFragmentInstaller.CheckAssembly.dll" />
+	</mi:PackageFragmentInstallerBinaries>
+</pc:PackageCreator>

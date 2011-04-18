@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3927.42711" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.AspNet.MvcPlayer.Samples.Comments" groupName="Composite.AspNet.MvcPlayer.Samples" version="1.0.0" author="Composite A/S" website="http://www.composite.net" id="57c1f4de-4fb5-41a0-810f-abb23aba837f" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Comments sample for MVC</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Code\Controllers\CommentsController.cs" targetFilename="~\App_Code\Controllers\CommentsController.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Models\Comments.cs" targetFilename="~\App_Code\Models\Comments.cs" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Views\Comments\" targetDirectory="~\Views\Comments\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

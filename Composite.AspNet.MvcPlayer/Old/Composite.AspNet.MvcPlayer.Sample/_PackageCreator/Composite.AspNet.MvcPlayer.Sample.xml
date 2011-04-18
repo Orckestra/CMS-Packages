@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Files>
+		<Add name="Views\Web.config" />
+		<Add name="App_Code\Controllers\AccountController.cs" />
+		<Add name="App_Code\Controllers\CommentsController.cs" />
+		<Add name="App_Code\Controllers\HomeController.cs" />
+		<Add name="App_Code\Models\Comments.cs" />
+	</pc:Files>
+	<pc:Directories>
+		<Add name="Views\Account\" />
+		<Add name="Views\Comments\" />
+		<Add name="Views\Home\" />
+		<Add name="Views\Shared\" />
+		<Add name="Scripts\" />
+	</pc:Directories>
+	<mi:PackageRequirements minimumCompositeVersion="1.0.0" maximumCompositeVersion="1.9.9" />
+	<mi:PackageInformation name="Composite.AspNet.MvcPlayer.Sample" groupName="Composite.AspNet" version="1.0.0" author="Composite A/S" website="www.composite.net" id="5f149f0b-2ad1-4fc7-8897-b37063aecd3f" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Sample MVC </Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
