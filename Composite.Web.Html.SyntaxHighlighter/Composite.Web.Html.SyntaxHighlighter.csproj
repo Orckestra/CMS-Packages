@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8820E32E-940D-47D7-87B0-098835028AF2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.Web.Html.SyntaxHighlighter</RootNamespace>
+    <AssemblyName>Composite.Web.Html.SyntaxHighlighter</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Composite">
+      <HintPath>..\References\Composite\2.1\Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Xslt\Composite\Web\Html\SyntaxHighlighter.xsl" />
+    <Content Include="Package\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\index.html" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shAutoloader.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushAS3.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushBash.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushCpp.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushCSharp.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushCss.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushDelphi.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushDiff.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushErlang.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushGroovy.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushJava.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushJScript.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushPerl.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushPhp.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushPlain.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushPython.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushRuby.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushSass.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushScala.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushSql.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushVb.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shBrushXml.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shCore.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\scripts\shLegacy.js" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shCore.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shCoreDefault.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shCoreDjango.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shCoreEclipse.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shCoreEmacs.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shCoreMDUltra.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shCoreMidnight.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shCoreRDark.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shThemeDefault.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shThemeDjango.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shThemeEclipse.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shThemeEmacs.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shThemeMDUltra.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shThemeMidnight.css" />
+    <Content Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\styles\shThemeRDark.css" />
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_PackageCreator\Composite.Web.Html.SyntaxHighlighter.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Package\App_Code\Composite\Web\Html\SyntaxHighlighter\Functions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\LGPL-LICENSE" />
+    <None Include="Package\Frontend\Composite\Web\Html\SyntaxHighlighter\MIT-LICENSE" />
+    <Content Include="Release\Composite.Web.Html.SyntaxHighlighter.zip" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55924</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
