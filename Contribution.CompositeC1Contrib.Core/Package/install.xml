@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Contribution.CompositeC1Contrib.Core" groupName="Contribution.CompositeC1Contrib" version="1.0.2" author="@burningice" website="http://compositec1contrib.codeplex.com" id="bc9f4504-b04a-4a57-a959-401839cb3565" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Contribution.CompositeC1Contrib.Core" groupName="Contribution.CompositeC1Contrib" version="1.0.3" author="@burningice" website="http://compositec1contrib.codeplex.com" id="bc9f4504-b04a-4a57-a959-401839cb3565" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>User contributions, hacks and optimization to Composite C1 CMS.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
