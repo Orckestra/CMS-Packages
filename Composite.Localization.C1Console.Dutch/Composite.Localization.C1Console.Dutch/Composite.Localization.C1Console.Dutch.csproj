@@ -97,10 +97,10 @@
     <Content Include="Package\Config\Install.xsl" />
     <Content Include="Package\Config\Uninstall.xsl" />
     <Content Include="Package\install.xml" />
-    <Content Include="_PackageCreator\Composite.LanguagePacks.Dutch.xml" />
+    <Content Include="_PackageCreator\Composite.Localization.C1Console.Dutch.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Release\Composite.LanguagePacks.Dutch.zip" />
+    <Content Include="Release\Composite.Localization.C1Console.Dutch.zip" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
