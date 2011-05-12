@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4055.27225" maximumCompositeVersion="2.9999.9999" />
-	<mi:PackageInformation name="Composite.LanguagePacks.Ukrainian" groupName="Composite.LanguagePacks" version="1.0.6" author="Composite a/s" website="www.composite.net" id="ca967d95-af83-4c11-9ea7-887f8a71d0d6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Localization.C1Console.Ukrainian" groupName="Composite.Localization.C1Console" version="1.0.6" author="Composite a/s" website="www.composite.net" id="ca967d95-af83-4c11-9ea7-887f8a71d0d6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Ukrainian language pack for the console GUI</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
