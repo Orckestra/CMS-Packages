@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Localization.MicrosoftTranslatorWidget" groupName="Composite.Localization" version="1.0.1" author="Composite A/S" website="http://www.composite.net" id="339c7c38-008e-41c4-b0ec-2c395bf1daaa" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>The Microsoft® Translator webpage widget allows you to bring real-time, in-place translations to your web site</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Localization\MicrosoftTranslatorWidget.xsl" targetFilename="~\App_Data\Xslt\Composite\Localization\MicrosoftTranslatorWidget.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Composite\Localization\MicrosoftTranslatorWidget\Styles.css" targetFilename="~\Frontend\Composite\Localization\MicrosoftTranslatorWidget\Styles.css" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
