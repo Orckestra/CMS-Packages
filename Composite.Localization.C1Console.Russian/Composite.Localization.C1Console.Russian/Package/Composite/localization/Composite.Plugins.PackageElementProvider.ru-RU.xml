@@ -83,6 +83,8 @@
   <string key="InstallRemoteAddOn.ShowError.LayoutLabel" value="Не удалось установить пакет" />
   <string key="InstallRemoteAddOn.ShowError.InfoTableCaption" value="Не удалось установить пакет" />
   <string key="InstallRemoteAddOn.ShowError.MessageTitle" value="Сообщение" />
+  <string key="InstallRemoteAddOn.ShowWarning.LayoutLabel" value="Пакет не прошел проверку." />
+  <string key="InstallRemoteAddOn.ShowWarning.InfoTableCaption" value="Пакет не прошел проверку." />
   <string key="InstallLocalAddOn.Step1.LayoutLabel" value="Установить локальный пакет" />
   <string key="InstallLocalAddOn.Step1.FieldGroupLabel" value="Локальный пакет" />
   <string key="InstallLocalAddOn.Step1.FileUploadLabel" value="Файл пакета" />
@@ -96,6 +98,8 @@
   <string key="InstallLocalAddOn.ShowError.LayoutLabel" value="Не удалось установить пакет" />
   <string key="InstallLocalAddOn.ShowError.InfoTableCaption" value="Не удалось установить пакет" />
   <string key="InstallLocalAddOn.ShowError.MessageTitle" value="Сообщение" />
+  <string key="InstallLocalAddOn.ShowWarning.LayoutLabel" value="Пакет не прошел проверку." />
+  <string key="InstallLocalAddOn.ShowWarning.InfoTableCaption" value="Пакет не прошел проверку." />
   <string key="UninstallRemoteAddOn.Step1.LayoutLabel" value="Удалить пакет" />
   <string key="UninstallRemoteAddOn.Step1.HeadingTitle" value="Все готово для проверки процесса удаления" />
   <string key="UninstallRemoteAddOn.Step1.HeadingDescription" value="Все готово для проверки процесса удаления. Для продолжения нажмите кнопку ''Далее''." />
@@ -135,4 +139,7 @@
   <string key="AddAddOnSource.Step2.HeadingWithHttpsDescription" value="Для добавления сервера нажмите кнопку &quot;Готово&quot;." />
   <string key="DeleteAddOnSource.Step1.LayoutLabel" value="Подтвердить удаление" />
   <string key="DeleteAddOnSource.Step1.Text" value="Удалить выбранный сервер" />
+
+  <string key="ConfirmLicense.ExpiredTitle" value="Срок действия пробного периода истек." />
+  <string key="ConfirmLicense.ExpiredMessage" value="Срок действия пробного периода для этого пакета истек. Вам нужен действительный лицензионный ключ." />
 </strings>

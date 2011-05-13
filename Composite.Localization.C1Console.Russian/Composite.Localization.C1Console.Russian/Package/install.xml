@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4055.27225" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Localization.C1Console.Russian" groupName="Composite.Localization.C1Console" version="1.0.14" author="Composite a/s" website="www.composite.net" id="cfe219d3-ac46-4c0e-80ff-afd4cc9011c6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Localization.C1Console.Russian" groupName="Composite.Localization.C1Console" version="1.0.15" author="Composite a/s" website="www.composite.net" id="cfe219d3-ac46-4c0e-80ff-afd4cc9011c6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Russian language pack for the console GUI</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />

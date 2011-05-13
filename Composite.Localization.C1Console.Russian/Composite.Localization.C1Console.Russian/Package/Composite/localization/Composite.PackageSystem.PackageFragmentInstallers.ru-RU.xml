@@ -86,4 +86,10 @@
   <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="Дублирующийся идентификатор пакета: '{0}'" />
   <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeVersionFormat" value="Неправильный формат значения атрибута, ожидается значение версии (x.y.z)" />
   <string key="PackageLicenseFragmentInstaller.MissingPublicKeyElement" value="Публичный ключ RSA отсутствует в конфигурации пакета" />
+
+  <string key="License.InvalidKeyTitle" value="Недействительный лицензионный ключ" />
+  <string key="License.InvalidKeyMessage" value="Лицензионный ключ недействителен. Вам нужен действительный лицензионный ключ." />
+  <string key="License.ExpiredTitle" value="Срок действия пробного периода истек." />
+  <string key="License.ExpiredMessage" value="Срок действия пробного периода для этого пакета истек. Вам нужен действительный лицензионный ключ." />
+  <string key="License.Failed" value="Не удалось получить лицензионную информацию. Идентификатор продукта: {0}" />
 </strings>

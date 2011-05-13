@@ -265,7 +265,15 @@
   <string key="Composite.Web.Client.BrowserVersion.description" value="" />
   <string key="Composite.Web.Client.EcmaScriptVersion.description" value="" />
   <string key="Composite.Web.Client.IsCrawler.description" value="True (истина), если текущий запрос определяется как исходящий от программы-обходчика (поисковика)." />
-  <string key="Composite.Web.Client.IsMobileDevice.description" value="Правда, если текущий запрос определяется как исходящий от мобильного устройства." />
+  <string key="Composite.Web.Client.IsMobileDevice.description" value="True (истина), если текущий запрос определяется как исходящий от мобильного устройства." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.description" value="Стандартные мета-теги HTML, которые вам, скорее всего, понадобяться в заголовке страницы (head)." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.label" value="Content-Type" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="По умолчанию: 'text/html; charset=utf-8'. Если вы используете другой тип, измените его здесь." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.label" value="Designer" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Кто разработал этот веб-сайт? Покажите это в мета-теге 'Designer'. По умолчанию этот мета-тег не добавляется." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.label" value="Show generator" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.help" value="Покажите всему миру, что вы поддерживаете Composite C1 - бесплатную систему с открытым исходным кодом!" />
+  <string key="Composite.Web.Html.Template.LangAttribute.description" value="Добавляет атрибут lang='(код языка)' к родительскому элементу, отражая язык текущей страницы. Можно вставить сразу под тэгом &lt;html /&gt;." />  
   <string key="Composite.Web.Request.CookieValue.description" value="Получает значение из текущей пользовательской коллекции cookie" />
   <string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
   <string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Cookie name" />

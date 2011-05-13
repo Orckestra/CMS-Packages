@@ -246,6 +246,7 @@
   <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorHelp" value="Выберите один из существующих типов" />
   <string key="VirtualElementProviderElementProvider.ID01" value="Виртуальный корневой элемент" />
   <string key="VirtualElementProviderElementProvider.UserPerspective" value="Пользователи" />
+  <string key="VirtualElementProviderElementProvider.DeveloperApplicationPerspective" value="Приложения" />
   <string key="VirtualElementProviderElementProvider.UserGroupPerspective" value="Группы пользователей" />
   <string key="VirtualElementProviderElementProvider.SystemPerspective" value="Система" />
   <string key="VirtualElementProviderElementProvider.ContentPerspective" value="Контент" />
@@ -333,6 +334,8 @@
   <string key="WebSite.Application.DialogSaveResource.Text" value="&quot;${resourcename}&quot; был изменен. Сохранить изменения?" />
   <string key="Website.Dialogs.SaveAll.LabelSaveResources" value="Сохранить ресурсы?" />
   <string key="Website.Dialogs.SaveAll.LabelUnsavedResources" value="Несохраненные ресурсы" />
+  <string key="Website.Dialogs.LabelYes" value="Да" />
+  <string key="Website.Dialogs.LabelNo" value="Нет" />
   <string key="Website.Dialogs.LabelAccept" value="ОК" />
   <string key="Website.Dialogs.LabelCancel" value="Отмена" />
   <string key="Website.Dialogs.LabelDisclosure" value="Подробнее" />
@@ -401,7 +404,11 @@
   <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelScale" value="Масштаб изображения" />
   <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelCrop" value="Обрезать изображение" />
   <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelUndo" value="Отменить" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelRedo" value="Вернуть" />  
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelRedo" value="Вернуть" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTitle" value="Разрешения" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUsers" value="Пользователи" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUserGroups" value="Группы пользователей" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelButtonSave" value="Сохранить" />
   <string key="Website.Content.Views.Help.ToolTipBack" value="Перейти на предыдущую страницу" />
   <string key="Website.Content.Views.Help.ToolTipForward" value="Перейти на следующую страницу" />
   <string key="Website.Content.Views.Help.ToolTipRefresh" value="Обновить страницу" />
@@ -410,6 +417,18 @@
   <string key="Website.Content.Views.SystemView.ToolTipCollapseAll" value="Свернуть все" />
   <string key="Website.Content.Views.SystemView.ToolTipLinkWithEditor" value="Связать с редактором" />
   <string key="Website.Content.Views.Search.Search.LabelNewSearch" value="Новый поиск ..." />
+  <string key="Website.Content.Views.ViewSource.LabelFormatted" value="Форматировано" />
+  <string key="Website.Content.Views.ViewSource.LabelRaw" value="Без форматирования" />
+  <string key="ServerLog.LabelTitle" value="Журнал сервера" />
+  <string key="ServerLog.LabelButtonDeleteOld" value="Удалить старые" />
+  <string key="ServerLog.LabelButtonRefresh" value="Обновить" />
+  <string key="ServerLog.EmptyLabel" value="Данных журнала нет" />
+  <string key="ServerLog.LogEntry.DateLabel" value="Дата" />
+  <string key="ServerLog.LogEntry.MessageLabel" value="Сообщение" />
+  <string key="ServerLog.LogEntry.TitleLabel" value="Заголовок" />
+  <string key="ServerLog.LogEntry.EventTypeLabel" value="Тип события" />
+  <string key="FunctionDocumentation.LabelButtonRefresh" value="Обновить" />
+  <string key="FunctionDocumentation.LabelButtonPrint" value="Печать" />
   <string key="Website.FlowUICompleted.ExecutionEndedTitle" value="Выполнение завершилось" />
   <string key="Website.FlowUICompleted.ExecutionEndedMessage" value="Действие, выполняемое в этом окне, завершилось." />
   <string key="Website.ServerError.ServerErrorTitle" value="Ошибка сервера" />
@@ -614,4 +633,8 @@
   <string key="AspNetUiControl.Selector.SelectValueLabel" value="Выберите значение ..." />
   <string key="AspNetUiControl.Selector.BrokenReference" value="&lt;Неверная ссылка&gt; ..." />
   <string key="AspNetUiControl.Selector.NoSelection" value="(не выбрано)" />
+
+  <string key="Validation.Decimal.SymbolsAfterPointAllowed" value="Только {0} цифр разрешено после запятой" />
+  <string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Только {0} цифр разрешено до запятой" />
+
 </strings>
