@@ -83,6 +83,8 @@
   <string key="InstallRemoteAddOn.ShowError.LayoutLabel" value="Не вдалося встановити пакет" />
   <string key="InstallRemoteAddOn.ShowError.InfoTableCaption" value="Не вдалося встановити пакет" />
   <string key="InstallRemoteAddOn.ShowError.MessageTitle" value="Повідомлення" />
+  <string key="InstallRemoteAddOn.ShowWarning.LayoutLabel" value="Пакет не пройшов перевірку" />
+  <string key="InstallRemoteAddOn.ShowWarning.InfoTableCaption" value="Пакет не пройшов перевірку" />
   <string key="InstallLocalAddOn.Step1.LayoutLabel" value="Встановити локальний пакет" />
   <string key="InstallLocalAddOn.Step1.FieldGroupLabel" value="Локальний пакет" />
   <string key="InstallLocalAddOn.Step1.FileUploadLabel" value="Файл пакету" />
@@ -96,6 +98,8 @@
   <string key="InstallLocalAddOn.ShowError.LayoutLabel" value="Не вдалося встановити пакет" />
   <string key="InstallLocalAddOn.ShowError.InfoTableCaption" value="Не вдалося встановити пакет" />
   <string key="InstallLocalAddOn.ShowError.MessageTitle" value="Повідомлення" />
+  <string key="InstallLocalAddOn.ShowWarning.LayoutLabel" value="Пакет не пройшов перевірку" />
+  <string key="InstallLocalAddOn.ShowWarning.InfoTableCaption" value="Пакет не пройшов перевірку" />
   <string key="UninstallRemoteAddOn.Step1.LayoutLabel" value="Видалити пакет" />
   <string key="UninstallRemoteAddOn.Step1.HeadingTitle" value="Все готово для перевірки процесу видалення" />
   <string key="UninstallRemoteAddOn.Step1.HeadingDescription" value="Все готово для перевірки процесу видалення. Для продовження натисніть кнопку ''Далі''." />
@@ -135,4 +139,7 @@
   <string key="AddAddOnSource.Step2.HeadingWithHttpsDescription" value="Щоб додати сервера натисніть кнопку &quot;Готово&quot;." />
   <string key="DeleteAddOnSource.Step1.LayoutLabel" value="Підтвердити видалення" />
   <string key="DeleteAddOnSource.Step1.Text" value="Видалити вибраний сервер" />
+
+  <string key="ConfirmLicense.ExpiredTitle" value="Термін дії ознайомлювального періоду завершено." />
+  <string key="ConfirmLicense.ExpiredMessage" value="Термін дії ознайомлювального періоду для цього пакету завершено. Вам потрібен дійсний ліцензійний ключ." />
 </strings>

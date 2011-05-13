@@ -86,4 +86,10 @@
   <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="Дублюючийся ідентифікатор пакету: '{0}'" />
   <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeVersionFormat" value="Неправильний формат значення атрибуту, очікується значення версії (x.y.z)" />
   <string key="PackageLicenseFragmentInstaller.MissingPublicKeyElement" value="Публічний ключ RSA відсутній у конфигурації пакета" />
+
+  <string key="License.InvalidKeyTitle" value="Недійсний ліцензійний ключ" />
+  <string key="License.InvalidKeyMessage" value="Ліцензійний ключ недійсний. Вам потрібен дійсний ліцензійний ключ." />
+  <string key="License.ExpiredTitle" value="Термін дії ознайомлювального періоду завершено" />
+  <string key="License.ExpiredMessage" value="Термін дії ознайомлювального періоду для цього пакету завершено. Вам потрібен дійсний ліцензійний ключ." />
+  <string key="License.Failed" value="Не вдалося отримати ліцензійну інформацію. Ідентифікатор продукту: {0}" />
 </strings>

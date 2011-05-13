@@ -80,9 +80,13 @@
   <string key="CascadeDeleteErrorMessage" value="На цей тип посилається інший тип, який не допускає каскадне видалення. Виконання операції припинено." />
   <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="Видалити тип даних" />
   <string key="DeleteAggregationTypeWorkflow.Text" value="Видалити тип даних" />
+  <string key="DeleteAggregationTypeWorkflow.ErrorTitle" value="Помилка" />
+  <string key="DeleteAggregationTypeWorkflow.IsUsedByPageType" value="Не можна видалити тип '{0}', тому що він використовується типом сторінок." />  
   <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="Видалити тип даних" />
   <string key="DeleteCompositionTypeWorkflow.Text" value="Видалити тип даних" />
   <string key="DeleteCompositionTypeWorkflow.ErrorTitle" value="Помилка" />
+  <string key="DeleteCompositionTypeWorkflow.TypeIsReferenced" value="Не можна видалити тип '{0}', тому що інші типи на нього посилаються." />
+  <string key="DeleteCompositionTypeWorkflow.IsUsedByPageType" value="Не можна видалити тип '{0}', тому що він використовується типом сторінок." />  
   <string key="ToXmlLabel" value="У XML" />
   <string key="ToXmlToolTip" value="У XML" />
   <string key="EnableTypeLocalizationWorkflow.Dialog.Label" value="Включити локалізацію" />

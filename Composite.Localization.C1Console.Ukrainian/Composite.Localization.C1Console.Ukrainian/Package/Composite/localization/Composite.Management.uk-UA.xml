@@ -246,6 +246,7 @@
   <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorHelp" value="Виберіть один з існуючих типів" />
   <string key="VirtualElementProviderElementProvider.ID01" value="Віртуальний кореневий елемент" />
   <string key="VirtualElementProviderElementProvider.UserPerspective" value="Користувачі" />
+  <string key="VirtualElementProviderElementProvider.DeveloperApplicationPerspective" value="Застосунки" />
   <string key="VirtualElementProviderElementProvider.UserGroupPerspective" value="Групи користувачів" />
   <string key="VirtualElementProviderElementProvider.SystemPerspective" value="Система" />
   <string key="VirtualElementProviderElementProvider.ContentPerspective" value="Контент" />
@@ -333,6 +334,8 @@
   <string key="WebSite.Application.DialogSaveResource.Text" value="&quot;${resourcename}&quot; був змінений. Зберегти зміни?" />
   <string key="Website.Dialogs.SaveAll.LabelSaveResources" value="Зберегти ресурси?" />
   <string key="Website.Dialogs.SaveAll.LabelUnsavedResources" value="Незбережені ресурси" />
+  <string key="Website.Dialogs.LabelYes" value="Так" />
+  <string key="Website.Dialogs.LabelNo" value="Ні" />
   <string key="Website.Dialogs.LabelAccept" value="ОК" />
   <string key="Website.Dialogs.LabelCancel" value="Скасувати" />
   <string key="Website.Dialogs.LabelDisclosure" value="Детальніше" />
@@ -402,10 +405,10 @@
   <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelCrop" value="Обрізати зображенне" />
   <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelUndo" value="Скасувати" />
   <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelRedo" value="Повторити" />
-  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTitle" value="Дозволи" />
-  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUsers" value="Користувачі" />
-  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUserGroups" value="Групи користувачей" />
-  <string key="Website.Content.Views.Editors.PermissionEditor.LabelButtonSave" value="Зберегти" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTitle" value="**** TO BE TRANSLATED ****" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUsers" value="**** TO BE TRANSLATED ****" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUserGroups" value="**** TO BE TRANSLATED ****" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelButtonSave" value="**** TO BE TRANSLATED ****" />
   <string key="Website.Content.Views.Help.ToolTipBack" value="Перейти на попередню сторінку" />
   <string key="Website.Content.Views.Help.ToolTipForward" value="Перейти на наступну сторінку" />
   <string key="Website.Content.Views.Help.ToolTipRefresh" value="Оновити сторінку" />
@@ -415,12 +418,17 @@
   <string key="Website.Content.Views.SystemView.ToolTipLinkWithEditor" value="Зв'язати з редактором" />
   <string key="Website.Content.Views.Search.Search.LabelNewSearch" value="Новий пошук..." />
   <string key="Website.Content.Views.ViewSource.LabelFormatted" value="Форматовано" />
-  <string key="Website.Content.Views.ViewSource.LabelRaw" value="Без формату" />
+  <string key="Website.Content.Views.ViewSource.LabelRaw" value="Без форматування" />
   <string key="ServerLog.LabelTitle" value="Журнал сервера" />
-  <string key="ServerLog.LabelButtonDeleteOld" value="Видалити старі" />
+  <string key="ServerLog.LabelButtonDeleteOld" value="Відалити старі" />
   <string key="ServerLog.LabelButtonRefresh" value="Оновити" />
+  <string key="ServerLog.EmptyLabel" value="Даних журналу немає" />
+  <string key="ServerLog.LogEntry.DateLabel" value="Дата" />
+  <string key="ServerLog.LogEntry.MessageLabel" value="Повідомлення" />
+  <string key="ServerLog.LogEntry.TitleLabel" value="Заголовок" />
+  <string key="ServerLog.LogEntry.EventTypeLabel" value="Тип події" />
   <string key="FunctionDocumentation.LabelButtonRefresh" value="Оновити" />
-  <string key="FunctionDocumentation.LabelButtonPrint" value="Друкувати" />
+  <string key="FunctionDocumentation.LabelButtonPrint" value="Друк" />
   <string key="Website.FlowUICompleted.ExecutionEndedTitle" value="Виконання завершилося" />
   <string key="Website.FlowUICompleted.ExecutionEndedMessage" value="Дія, що виконується в цьому вікні, завершилася." />
   <string key="Website.ServerError.ServerErrorTitle" value="Помилка сервера" />
@@ -625,4 +633,8 @@
   <string key="AspNetUiControl.Selector.SelectValueLabel" value="Виберіть значення..." />
   <string key="AspNetUiControl.Selector.BrokenReference" value="&lt;Недійсне посилання&gt; ..." />
   <string key="AspNetUiControl.Selector.NoSelection" value="(Не вибрано)" />
+
+  <string key="Validation.Decimal.SymbolsAfterPointAllowed" value="Лише {0} цифр дозволяється післе коми" />
+  <string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Лише {0} цифр дозволяється перед комою" />
+
 </strings>

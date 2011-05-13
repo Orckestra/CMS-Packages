@@ -23,6 +23,10 @@
   <string key="EditXsltFunctionWorkflow.InvalidName" value="Неприпустиме ім'я функції" />
   <string key="EditXsltFunctionWorkflow.CannotRenameFileExists" value="Не можна перейменувати функцію, файл '{0}' вже існує." />
   <string key="EditXsltFunctionWorkflow.TotalNameTooLang" value="Загальна довжина імені та простіру імен занадто велика (використовується в імені XSL файла)." />
+
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashTitle" value="Локальне ім'я функції вже використовується." />
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashMessage" value="Два або більше виклика функції використовують одне те ж саме локальне ім'я. Змініть імена так, щоб вони були різними." />
+  
   <string key="XsltBasedFunctionProviderElementProvider.Add" value="Додати XSLT функцію" />
   <string key="XsltBasedFunctionProviderElementProvider.AddToolTip" value="Додати нову XSLT функцію" />
   <string key="XsltBasedFunctionProviderElementProvider.Edit" value="Змінити" />

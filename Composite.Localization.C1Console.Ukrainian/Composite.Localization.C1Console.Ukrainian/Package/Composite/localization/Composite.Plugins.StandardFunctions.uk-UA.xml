@@ -266,6 +266,14 @@
   <string key="Composite.Web.Client.EcmaScriptVersion.description" value="" />
   <string key="Composite.Web.Client.IsCrawler.description" value="True (істина), якщо поточний запит визначається як вихідний від програми-обхідника (пошукача)." />
   <string key="Composite.Web.Client.IsMobileDevice.description" value="Правда, якщо поточний запит визначається як вихідний від мобільного пристрою." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.description" value="Стандартні мета-теги HTML, які вам, скоріш за все, будуть потрібні в заголовку сторінки (head)." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.label" value="Content-Type" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="За замовчанням: 'text/html; charset=utf-8'. Якщо ви користуєтесь іншим типом, змініть його тут." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.label" value="Designer" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Хто розробив цей веб-сайт? Покажіть це в мета-тезі 'Designer'. За замовчанням цей мета-тег не додається." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.label" value="Show generator" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.help" value="Покажіть усьому світові, що ви підтримуєте Composite C1 - бескоштовну систему з відкритим кодом" />
+  <string key="Composite.Web.Html.Template.LangAttribute.description" value="Додає атрибут lang='(код мови)' до батьківського элементу, відображаючи мову поточної сторінки. Можно вставити відразу під тегом &lt;html /&gt;" />  
   <string key="Composite.Web.Request.CookieValue.description" value="Отримує значення поточної колекції cookie користувача" />
   <string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
   <string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Cookie name" />
@@ -398,7 +406,16 @@
   <string key="Composite.Mail.SendMail.param.BCC.label" value="BCC" />
   <string key="Composite.Mail.SendMail.param.BCC.help" value="Прихована копія. Список одержувачів, які отримають пошту, але їх індивідуальні адреси будуть приховані від повного списку одержувачів." />
   <string key="Composite.Mail.SendMail.param.Attachment.label" value="Attachment" />
-  <string key="Composite.Mail.SendMail.param.Attachment.help" value="Список прикріплених файлів. \n Відформатуйте його таким чином, слідуючи [{ім'я} =] {шлях до файлу} [, {MIME-тип] [| .... ]. \n Шлях до файлу може бути або відносним, або абсолютним, напр. &quot;C:\\someimage.jpg&quot; або &quot;/ \coolpicture.jpg&quot; \ n, Якщо шлях до файлу починається з &quot;Composite /&quot;, він буде вважатися шляхом до медіа-файлу C1, напр. &quot;Composite / MediaArchive: someImage.gif '\ n \ n Приклади: \ n / attachment.jpg \ n image.jpg = / attachment.jpg \ n image.jpg = / attachment.jpg, image / jpg \ n image1.jpg = / attachment1.jpg, image / jpg | image2.jpg = / attachment2.jpg, image / jpg" />
+  <string key="Composite.Mail.SendMail.param.Attachment.help" value="List of attached files.
+\n					Format it the following [{name}=]{filepath}[,{mime-type] [ | .... ]. 
+\n					File path can be either relative or absolute path f.e. &quot;C:\someimage.jpg&quot; or &quot;/coolpicture.jpg&quot; 
+\n					If file path starts with &quot;Composite/&quot;, it will be recognized as a path to Composite media, f.e. 'Composite/MediaArchive:someImage.gif'
+\n					
+\n					Examples: 
+\n					   /attachment.jpg
+\n						 image.jpg=/attachment.jpg
+\n						 image.jpg=/attachment.jpg,image/jpg
+\n						 image1.jpg=/attachment1.jpg,image/jpg|image2.jpg=/attachment2.jpg,image/jpg" />
 
 	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="AttachmentFromMedia" />
 	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.help" value="Вкладений файл з бібліотеки мультимедіа." />
