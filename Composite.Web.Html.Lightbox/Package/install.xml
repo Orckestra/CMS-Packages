@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Web.Html.Lightbox" groupName="Composite.Web.Html" version="1.0.1" author="Composite " website="http://composite.net" id="8936697a-92f8-4d9e-a7d0-0c61ebe82d19" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Allows you to display HTML content in a lightbox popup by clicking a teaser on a page.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Web\Html\Lightbox.xsl" targetFilename="~\App_Data\Xslt\Composite\Web\Html\Lightbox.xsl" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Composite\Web\Html\Lightbox\" targetDirectory="~\Frontend\Composite\Web\Html\Lightbox\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
