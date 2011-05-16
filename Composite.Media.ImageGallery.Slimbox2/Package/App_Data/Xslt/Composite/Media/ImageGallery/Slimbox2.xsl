@@ -26,9 +26,7 @@
 						<xsl:attribute name="rel">
 							<xsl:choose>
 								<xsl:when test="$singleImage != ''">lightbox</xsl:when>
-								<xsl:otherwise>
-									lightbox-<xsl:value-of select="@FolderPath" />
-								</xsl:otherwise>
+								<xsl:otherwise>lightbox-<xsl:value-of select="@FolderPath" /></xsl:otherwise>
 							</xsl:choose>
 						</xsl:attribute>
 						<xsl:choose>
