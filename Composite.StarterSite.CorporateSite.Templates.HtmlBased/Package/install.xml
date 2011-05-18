@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Templates.HtmlBased" groupName="Composite.StarterSite.CorporateSite.Templates" version="1.0.6" author="Composite A/S" website="http://composite.net/" id="d73bef12-e605-4d98-a5d4-ea5ae24f8862" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>HTML based templates for Composite C1 Starter Site</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\PageTemplates\1 column, full width.xml" targetFilename="~\App_Data\PageTemplates\1 column, full width.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\2 columns, content and aside.xml" targetFilename="~\App_Data\PageTemplates\2 columns, content and aside.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\2 columns, navigation and content.xml" targetFilename="~\App_Data\PageTemplates\2 columns, navigation and content.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\3 columns.xml" targetFilename="~\App_Data\PageTemplates\3 columns.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\Frontpage.xml" targetFilename="~\App_Data\PageTemplates\Frontpage.xml" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IPageTemplate,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTemplates_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="Frontend\Contribution\HolisticWare\SilverlightPlayer\" />
+	</pc:Directories>
+	<pc:XsltFunctions>
+		<Add name="Contribution.HolisticWare.SilverlightPlayer" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.0.0" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Contribution.HolisticWare.SilverlightPlayer" groupName="Contribution" version="1.0.0" author="HolisticWare" website="http://composite.net" id="4a78da17-5739-4943-8140-04bf7dda6e53" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Embeds and plays Silverlight files</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
