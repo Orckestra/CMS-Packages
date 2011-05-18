@@ -1,0 +1,12 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/App_Data/PageTemplates/Common.master"
+	AutoEventWireup="true" CodeFile="1 column, full width.master.cs" Inherits="_1_column__full_width" %>
+
+<asp:Content ID="cHead" ContentPlaceHolderID="phHead" runat="Server">
+</asp:Content>
+<asp:Content ID="cContent" ContentPlaceHolderID="phContent" runat="Server">
+	<div id="contentcolumn" class="twelvecol last">
+		<div class="contentbox">
+			<rendering:Placeholder ID="content" Title="Content" Default="true" runat="server" />
+		</div>
+	</div>
+</asp:Content>

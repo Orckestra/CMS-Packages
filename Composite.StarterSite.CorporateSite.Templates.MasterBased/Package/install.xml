@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Templates.MasterBased" groupName="Composite.StarterSite.CorporateSite.Templates" version="1.0.0" author="Composite A/S" website="http://composite.net" id="bd36da27-b665-452e-866e-9ff77632de14" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>.master based templates</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\PageTemplates\1 column, full width.master" targetFilename="~\App_Data\PageTemplates\1 column, full width.master" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\1 column, full width.master.cs" targetFilename="~\App_Data\PageTemplates\1 column, full width.master.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\2 columns, content and aside.master" targetFilename="~\App_Data\PageTemplates\2 columns, content and aside.master" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\2 columns, content and aside.master.cs" targetFilename="~\App_Data\PageTemplates\2 columns, content and aside.master.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\2 columns, navigation and content.master" targetFilename="~\App_Data\PageTemplates\2 columns, navigation and content.master" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\2 columns, navigation and content.master.cs" targetFilename="~\App_Data\PageTemplates\2 columns, navigation and content.master.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\3 columns.master" targetFilename="~\App_Data\PageTemplates\3 columns.master" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\3 columns.master.cs" targetFilename="~\App_Data\PageTemplates\3 columns.master.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\Common.master" targetFilename="~\App_Data\PageTemplates\Common.master" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\Common.master.cs" targetFilename="~\App_Data\PageTemplates\Common.master.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\Frontpage.master" targetFilename="~\App_Data\PageTemplates\Frontpage.master" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\Frontpage.master.cs" targetFilename="~\App_Data\PageTemplates\Frontpage.master.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\NavigationColumn.master" targetFilename="~\App_Data\PageTemplates\NavigationColumn.master" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\NavigationColumn.master.cs" targetFilename="~\App_Data\PageTemplates\NavigationColumn.master.cs" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

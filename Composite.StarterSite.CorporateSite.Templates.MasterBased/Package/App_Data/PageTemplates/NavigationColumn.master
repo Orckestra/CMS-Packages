@@ -1,0 +1,20 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/App_Data/PageTemplates/Common.master"
+	AutoEventWireup="true" CodeFile="NavigationColumn.master.cs" Inherits="NavigationColumn" %>
+
+<asp:Content ID="cHead" ContentPlaceHolderID="phHead" runat="Server">
+	<asp:ContentPlaceHolder ID="phHead" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="cContent" ContentPlaceHolderID="phContent" runat="Server">
+	<asp:ContentPlaceHolder ID="phNavigationColumn" runat="server">
+		<div class="threecol" id="navigationcolumn">
+			<div class="contentbox">
+				<rendering:function id="fnNavColumn" runat="server">
+					<f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Layout.NavigationColumn" />
+				</rendering:function>
+			</div>
+		</div>
+	</asp:ContentPlaceHolder>
+	<asp:ContentPlaceHolder ID="phContentColumns" runat="server">
+	</asp:ContentPlaceHolder>
+</asp:Content>
