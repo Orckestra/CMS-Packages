@@ -10,8 +10,14 @@
 		<div class="threecol" id="navigationcolumn">
 			<div class="contentbox">
 				<rendering:function id="fnNavColumn" runat="server">
-					<f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Layout.NavigationColumn" />
-				</rendering:function>
+					<f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Composite.Navigation.Distributed">
+					  <f:param name="Level" value="2" />
+					  <f:param name="Parent" value="False" />
+					  <f:param name="Childs" value="True" />
+					  <f:param name="Expand" value="False" />
+					  <f:param name="NavigationId" value="NavigationMenu" />
+					</f:function>
+				 </rendering:function>
 			</div>
 		</div>
 	</asp:ContentPlaceHolder>
