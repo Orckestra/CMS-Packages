@@ -89,6 +89,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Package\App_Data\PageTemplates\1 column, full width.xml" />
+    <Content Include="Package\App_Data\PageTemplates\2 columns, content and aside.xml" />
+    <Content Include="Package\App_Data\PageTemplates\2 columns, navigation and content.xml" />
+    <Content Include="Package\App_Data\PageTemplates\3 columns.xml" />
+    <Content Include="Package\App_Data\PageTemplates\Frontpage.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTemplates_public.xml" />
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.StarterSite.CorporateSite.Templates.MasterBased.xml" />
