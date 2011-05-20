@@ -1,0 +1,228 @@
+﻿/* Layout for desktop version */
+html {
+  overflow-y: scroll;
+}
+
+body {
+    background-image: url(../Images/background.png);
+    background-repeat: repeat-x;
+    margin: 0px;
+    color: #282828;   
+}
+
+.contentbox > :first-child
+{
+    margin-top: 0;
+}
+
+/**************************************
+ *  Header                            *
+ **************************************/
+#header #Logo {
+    height: 105px;
+    width: 300px;
+    margin-bottom: 15px;
+    background-image: url(../Images/headerlogo.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    float: left;
+}
+
+#header #Logo a{
+    display:block;
+    height: 120px;
+    width: 300px;
+}
+
+#header #LanguageSwitcher, #header #TopLinks {
+    float: right;
+    font: 13px arial,sans-serif;
+    line-height: 36px;
+    text-transform: lowercase;
+}
+
+#header #TopLinks ul {
+    list-style: none;
+}
+
+#header #LanguageSwitcher a, #header #TopLinks a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #282828;
+}
+
+#header #LanguageSwitcher a:hover, #header #TopLinks a:hover {
+    color: #4AA1C6;
+}
+
+/**************************************
+ *  Header Menu                       *
+ **************************************/
+#header #Menu {
+    clear: right;
+    float: right;
+    margin-top: 11px;
+}
+
+#header #Menu a {
+    margin: 0 15px;
+    line-height: 28px;
+    font-size: 16px;
+    display: block;
+    float: left;
+    color: #282828;
+    text-decoration: none;
+    border-bottom: 6px solid #FFFFFF;
+    white-space: nowrap;
+}
+
+#header #Menu a:hover, #header #Menu a.NavigationOpen {
+    text-decoration: none;
+    border-bottom: 6px solid #4AA1C6;
+    color: #0091bc;
+}
+
+/**************************************
+ *  Header Image                      *
+ **************************************/
+#header #HeaderImage {
+    clear: both;
+    background-image: url(../Images/header.jpg);
+    background-repeat: no-repeat;
+    height: 273px;
+}
+
+
+/**************************************
+ *  Navigation Column                 *
+ **************************************/
+#navigationcolumn {
+    padding-top: 40px;
+
+}
+
+#NavigationMenu
+{
+    margin-left: 20px;
+}
+
+#NavigationMenu ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#NavigationMenu ul li {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+#NavigationMenu ul ul li {
+    font-size: 13px;
+    line-height: 20px;
+    background-image: url(../Images/arrow.png);
+    background-repeat: no-repeat;
+    background-position: 0px 3px;  
+    padding-left: 12px;
+    margin-bottom: 0px;
+}
+
+#NavigationMenu ul ul li a {
+    color: #282828;
+    line-height: 20px;
+}
+
+#NavigationMenu ul li a.NavigationSelected
+{
+  font-weight: bold;
+}
+
+#NavigationMenu ul li a.NavigationOpen
+{
+  
+}
+
+#NavigationMenu ul ul ul {
+    margin-left: 3px;
+}
+
+#NavigationMenu a {
+    text-decoration: none;
+}
+
+/**************************************
+ *  Content Column                    *
+ **************************************/
+#contentcolumn {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+#content ul{
+    padding: auto;
+    margin: auto;
+}
+
+/**************************************
+ *  Aside Column                      *
+ **************************************/
+#asidecolumn {
+    padding-top: 40px;
+}
+
+/**************************************
+ *  Footer                            *
+ **************************************/
+
+html, body {
+    height: 100%;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -43px;
+}
+#footer, #push {
+    height: 43px;
+}
+
+
+#footer {
+    background-color: #282828;
+    color: #FFFFFF;
+    line-height: 43px;
+    text-align: center;
+}
+#footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+/* Layout for mobile version */
+
+@media handheld, only screen and (max-width: 767px) {
+
+    .examplecontainer {
+    }
+
+    body {
+    }
+
+}
+
+
+/* Provide higher res assets for iPhone 4 */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+    /* An example of how to override an image with one twice the size for iPhone 4. Specify the original pixel size with background-size.
+            .download {
+            background: url(../img/downarrow@2x.png) no-repeat;
+            background-size: 27px 28px;
+            }
+            */
+
+}
+

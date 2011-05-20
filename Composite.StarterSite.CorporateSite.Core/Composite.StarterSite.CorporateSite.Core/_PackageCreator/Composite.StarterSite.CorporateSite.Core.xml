@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Localizations />
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Core" groupName="Composite.StarterSite.CorporateSite" version="1.0.1" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="f5e8484a-8c90-4b68-a263-3f1f174d42a5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>StarterSite xslt based template</Description>
+	</mi:PackageInformation>
+	<pc:Directories>
+		<Add name="Frontend\Images\" />
+	</pc:Directories>
+	<pc:Files>
+		<Add name="Frontend\Styles\typeimg.css" />
+		<Add name="Frontend\Styles\smallerscreen.css" />
+		<Add name="Frontend\Styles\mobile.css" />
+		<Add name="Frontend\Styles\ie.css" />
+		<Add name="Frontend\Styles\1140.css" />
+		<Add name="Frontend\Styles\layout.css" />
+		<Add name="favicon.ico" />
+	</pc:Files>
+	<pc:XsltFunctions>
+		<Add name="Layout.Navigation.Menu" />
+		<Add name="Layout.Navigation.TopLinks" />
+		<Add name="Layout.CommonHtmlHead" />
+	</pc:XsltFunctions>
+	<pc:PageTypes>
+		<Add name="Home" />
+		<Add name="Page" />
+	</pc:PageTypes>
+	<pc:DynamicDataTypes>
+		<Add name="Layout.Navigation.TopLink" />
+	</pc:DynamicDataTypes>
+	<pc:Content>
+		<Add name="Pages" />
+		<Add name="DatatypesData" />
+	</pc:Content>
+	<pc:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite" Ordering="10">
+			<XslFiles>
+				<XslFile pathXml="~\Frontend\Config\VisualEditor\common.xml" installXsl="~\VisualEditor.config\Install.xsl" uninstallXsl="~\VisualEditor.config\Uninstall.xsl" />
+			</XslFiles>
+		</mi:Add>
+	</pc:PackageFragmentInstallers>
+</pc:PackageCreator>

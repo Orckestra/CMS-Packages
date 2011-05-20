@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Add XsltFunctionId="91592040-2f83-4c5c-8a81-788e6b454a9e" Name="SitemapXml" SerializedFunction="&lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Pages.SitemapXml&quot;&gt;&lt;f:param name=&quot;SitemapScope&quot; value=&quot;Level1AndDescendants&quot; /&gt;&lt;/f:function&gt;" />
+  <Add XsltFunctionId="e2a81fd2-4f73-4152-bf2a-a257426e2401" Name="GetTopLinkXml" SerializedFunction="&lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Layout.Navigation.TopLink.GetTopLinkXml&quot;&gt;&lt;f:param name=&quot;PropertyNames&quot;&gt;&lt;f:paramelement value=&quot;Page.Title&quot; /&gt;&lt;f:paramelement value=&quot;PageId&quot; /&gt;&lt;f:paramelement value=&quot;Page.MenuTitle&quot; /&gt;&lt;f:paramelement value=&quot;Page&quot; /&gt;&lt;/f:param&gt;&lt;f:param name=&quot;OrderByField&quot; value=&quot;Position&quot; /&gt;&lt;/f:function&gt;" />
+</Data>

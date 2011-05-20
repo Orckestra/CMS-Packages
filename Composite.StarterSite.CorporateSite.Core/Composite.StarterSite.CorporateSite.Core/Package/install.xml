@@ -1,0 +1,80 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Core" groupName="Composite.StarterSite.CorporateSite" version="1.0.1" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="f5e8484a-8c90-4b68-a263-3f1f174d42a5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>StarterSite xslt based template</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Layout\CommonHtmlHead.xsl" targetFilename="~\App_Data\Xslt\Layout\CommonHtmlHead.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Layout\Navigation\Menu.xsl" targetFilename="~\App_Data\Xslt\Layout\Navigation\Menu.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Layout\Navigation\TopLinks.xsl" targetFilename="~\App_Data\Xslt\Layout\Navigation\TopLinks.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\typeimg.css" targetFilename="~\Frontend\Styles\typeimg.css" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\smallerscreen.css" targetFilename="~\Frontend\Styles\smallerscreen.css" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\mobile.css" targetFilename="~\Frontend\Styles\mobile.css" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\ie.css" targetFilename="~\Frontend\Styles\ie.css" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\1140.css" targetFilename="~\Frontend\Styles\1140.css" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\layout.css" targetFilename="~\Frontend\Styles\layout.css" allowOverwrite="false" />
+				<File sourceFilename="~\favicon.ico" targetFilename="~\favicon.ico" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Images\" targetDirectory="~\Frontend\Images\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite">
+			<Types>
+				<Type providerName="GeneratedDataTypesElementProvider" dataTypeDescriptor="&lt;DataTypeDescriptor dataTypeId=&quot;572c9c36-f1a8-4f21-b6d5-cd60c36c0b88&quot; name=&quot;TopLink&quot; namespace=&quot;Layout.Navigation&quot; title=&quot;Top links&quot; hasCustomPhysicalSortOrder=&quot;false&quot; isCodeGenerated=&quot;true&quot; cachable=&quot;true&quot; labelFieldName=&quot;Page&quot; typeManagerTypeName=&quot;DynamicType:Layout.Navigation.TopLink&quot; version=&quot;4&quot;&gt;&#xD;&#xA;  &lt;DataAssociations /&gt;&#xD;&#xA;  &lt;DataScopes&gt;&#xD;&#xA;    &lt;DataScopeIdentifier name=&quot;public&quot; /&gt;&#xD;&#xA;  &lt;/DataScopes&gt;&#xD;&#xA;  &lt;KeyPropertyNames&gt;&#xD;&#xA;    &lt;KeyPropertyName name=&quot;Id&quot; /&gt;&#xD;&#xA;  &lt;/KeyPropertyNames&gt;&#xD;&#xA;  &lt;SuperInterfaces&gt;&#xD;&#xA;    &lt;SuperInterface type=&quot;Composite.Data.ProcessControlled.ILocalizedControlled,Composite&quot; /&gt;&#xD;&#xA;    &lt;SuperInterface type=&quot;Composite.Data.ProcessControlled.IProcessControlled,Composite&quot; /&gt;&#xD;&#xA;    &lt;SuperInterface type=&quot;Composite.Data.IPageData,Composite&quot; /&gt;&#xD;&#xA;    &lt;SuperInterface type=&quot;Composite.Data.IPageFolderData,Composite&quot; /&gt;&#xD;&#xA;  &lt;/SuperInterfaces&gt;&#xD;&#xA;  &lt;Fields&gt;&#xD;&#xA;    &lt;DataFieldDescriptor id=&quot;56e290ab-e552-4164-a35e-aaa933282e64&quot; name=&quot;Page&quot; isNullable=&quot;false&quot; position=&quot;0&quot; groupByPriority=&quot;0&quot; inherited=&quot;false&quot; instanceType=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; storeType=&quot;PhysicalStoreType='Guid'&quot; defaultValue=&quot;ValueType='Guid'Value='00000000-0000-0000-0000-000000000000'&quot; foreignKeyReferenceTypeName=&quot;Composite.Data.Types.IPage,Composite&quot;&gt;&#xD;&#xA;      &lt;FormRenderingProfile label=&quot;Page&quot; helpText=&quot;Page to include in the top links section&quot; widgetFunctionMarkup=&quot;&amp;lt;f:widgetfunction xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; name=&amp;quot;Composite.Widgets.DataReference.PageSelector&amp;quot; label=&amp;quot;&amp;quot; bindingsourcename=&amp;quot;&amp;quot;&amp;gt;&amp;lt;f:helpdefinition xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; helptext=&amp;quot;&amp;quot; /&amp;gt;&amp;lt;/f:widgetfunction&amp;gt;&quot; /&gt;&#xD;&#xA;      &lt;ValidationFunctionMarkups /&gt;&#xD;&#xA;    &lt;/DataFieldDescriptor&gt;&#xD;&#xA;    &lt;DataFieldDescriptor id=&quot;bb709059-ae2f-416d-b42f-3ae39e07d795&quot; name=&quot;Position&quot; isNullable=&quot;false&quot; position=&quot;1&quot; groupByPriority=&quot;0&quot; inherited=&quot;false&quot; instanceType=&quot;System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; storeType=&quot;PhysicalStoreType='Integer'&quot; defaultValue=&quot;ValueType='Integer'Value='0'&quot;&gt;&#xD;&#xA;      &lt;FormRenderingProfile label=&quot;Position&quot; helpText=&quot;&quot; widgetFunctionMarkup=&quot;&amp;lt;f:widgetfunction xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; name=&amp;quot;Composite.Widgets.Integer.TextBox&amp;quot; label=&amp;quot;&amp;quot; bindingsourcename=&amp;quot;&amp;quot;&amp;gt;&amp;lt;f:helpdefinition xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; helptext=&amp;quot;&amp;quot; /&amp;gt;&amp;lt;/f:widgetfunction&amp;gt;&quot; /&gt;&#xD;&#xA;      &lt;ValidationFunctionMarkups /&gt;&#xD;&#xA;    &lt;/DataFieldDescriptor&gt;&#xD;&#xA;  &lt;/Fields&gt;&#xD;&#xA;&lt;/DataTypeDescriptor&gt;" />
+			</Types>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPageFolderDefinition,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageFolderDefinitions_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPageStructure,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageStructures_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPageType,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTypes_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPage,Composite">
+					<Data dataScopeIdentifier="administrated" locale="?" dataFilename="~\Datas\Composite.Data.Types.IPages_administrated.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPage,Composite">
+					<Data dataScopeIdentifier="public" locale="?" dataFilename="~\Datas\Composite.Data.Types.IPages_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPageTypeDataFolderTypeLink,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTypeDataFolderTypeLinks_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPageTypePageTemplateRestriction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTypePageTemplateRestrictions_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPagePlaceholderContent,Composite">
+					<Data dataScopeIdentifier="administrated" locale="?" dataFilename="~\Datas\Composite.Data.Types.IPagePlaceholderContents_administrated.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPagePlaceholderContent,Composite">
+					<Data dataScopeIdentifier="public" locale="?" dataFilename="~\Datas\Composite.Data.Types.IPagePlaceholderContents_public.xml" />
+				</Type>
+				<Type isDynamicAdded="true" type="DynamicType:Layout.Navigation.TopLink">
+					<Data dataScopeIdentifier="public" locale="?" dataFilename="~\Datas\Layout.Navigation.TopLinks_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
+			<XslFiles>
+				<XslFile pathXml="~\Frontend\Config\VisualEditor\common.xml" installXsl="~\VisualEditor.config\Install.xsl" uninstallXsl="~\VisualEditor.config\Uninstall.xsl" />
+			</XslFiles>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
