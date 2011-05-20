@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0" xmlns:lang="http://www.composite.net/ns/localization/1.0" xmlns:rendering="http://www.composite.net/ns/rendering/1.0" xmlns:asp="http://www.composite.net/ns/asp.net/controls">
+	<f:function name="Composite.Web.Html.Template.LangAttribute" />
+	<head>
+		<title>
+			<rendering:page.title />
+		</title>
+		<rendering:page.metatag.description />
+	</head>
+	<body>
+		<f:function name="Layout.MasterTemplate">
+			<f:param name="Content">
+				<rendering:placeholder id="content" title="Content" default="true" />
+			</f:param>
+			<f:param name="NavigationColumnCount" value="0" />
+			<f:param name="ContentColumnCount" value="12" />
+			<f:param name="AsideColumnCount" value="0" />
+		</f:function>
+	</body>
+</html>

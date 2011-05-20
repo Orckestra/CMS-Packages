@@ -1,0 +1,51 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Templates.XsltBased" groupName="Composite.StarterSite.CorporateSite" version="1.0.1" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="38ba73ed-c569-4b23-992e-0b9eff5a4678" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>StarterSite xslt based template</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Layout\AsideColumn.xsl" targetFilename="~\App_Data\Xslt\Layout\AsideColumn.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Layout\ContentColumn.xsl" targetFilename="~\App_Data\Xslt\Layout\ContentColumn.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Layout\Footer.xsl" targetFilename="~\App_Data\Xslt\Layout\Footer.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Layout\Header.xsl" targetFilename="~\App_Data\Xslt\Layout\Header.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Layout\MasterTemplate.xsl" targetFilename="~\App_Data\Xslt\Layout\MasterTemplate.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Layout\NavigationColumn.xsl" targetFilename="~\App_Data\Xslt\Layout\NavigationColumn.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\1 column, full width.xml" targetFilename="~\App_Data\PageTemplates\1 column, full width.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\2 columns, content and aside.xml" targetFilename="~\App_Data\PageTemplates\2 columns, content and aside.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\2 columns, navigation and content.xml" targetFilename="~\App_Data\PageTemplates\2 columns, navigation and content.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\3 columns.xml" targetFilename="~\App_Data\PageTemplates\3 columns.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\Frontpage.xml" targetFilename="~\App_Data\PageTemplates\Frontpage.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Composite\InlineCSharpFunctions\Layout.Helpers.EmptyNodeList.cs" targetFilename="~\App_Data\Composite\InlineCSharpFunctions\Layout.Helpers.EmptyNodeList.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Composite\InlineCSharpFunctions\Layout.Helpers.TestDataNodeList.cs" targetFilename="~\App_Data\Composite\InlineCSharpFunctions\Layout.Helpers.TestDataNodeList.cs" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Composite\InlineCSharpFunctions\Composite.Utils.NullFunction.cs" targetFilename="~\App_Data\Composite\InlineCSharpFunctions\Composite.Utils.NullFunction.cs" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IInlineFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctions_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IInlineFunctionAssemblyReference,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctionAssemblyReferences_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPageTemplate,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTemplates_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

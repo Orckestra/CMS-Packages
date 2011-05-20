@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Add Id="caafacb4-d24e-4df6-9185-1f5e741c5474" Name="EmptyNodeList" Namespace="Layout.Helpers" Description="Returns an empty IEnumerable&lt;XNode&gt;" CodePath="Layout.Helpers.EmptyNodeList.cs" />
+  <Add Id="00f20f5b-9115-4083-b930-da92ab71624e" Name="TestDataNodeList" Namespace="Layout.Helpers" Description="Returns a few static xhtml elements - use this as a test value for your XSLT function parameters to simulate content input." CodePath="Layout.Helpers.TestDataNodeList.cs" />
+  <Add Id="4476fb97-90c7-41f3-b3ec-013af4bf5dcf" Name="NullFunction" Namespace="Composite.Utils" Description="Returns null" CodePath="Composite.Utils.NullFunction.cs" />
+</Data>

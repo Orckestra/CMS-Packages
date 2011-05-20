@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="2.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Templates.XsltBased" groupName="Composite.StarterSite.CorporateSite" version="1.0.1" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="38ba73ed-c569-4b23-992e-0b9eff5a4678" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>StarterSite xslt based template</Description>
+	</mi:PackageInformation>
+	<pc:InlineFunctions>
+		<Add name="Layout.Helpers.EmptyNodeList" />
+		<Add name="Layout.Helpers.TestDataNodeList" />
+		<Add name="Composite.Utils.NullFunction" />
+	</pc:InlineFunctions>
+	<pc:PageTemplates>
+		<Add name="1 column, full width" />
+		<Add name="2 columns, content and aside" />
+		<Add name="2 columns, navigation and content" />
+		<Add name="3 columns" />
+		<Add name="Frontpage" />
+	</pc:PageTemplates>
+	<pc:XsltFunctions>
+		<Add name="Layout.AsideColumn" />
+		<Add name="Layout.ContentColumn" />
+		<Add name="Layout.MasterTemplate" />
+		<Add name="Layout.NavigationColumn" />
+		<Add name="Layout.Footer" />
+		<Add name="Layout.Header" />
+	</pc:XsltFunctions>
+</pc:PackageCreator>
