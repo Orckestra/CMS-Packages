@@ -1,73 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0" xmlns:lang="http://www.composite.net/ns/localization/1.0" xmlns:rendering="http://www.composite.net/ns/rendering/1.0" xmlns:asp="http://www.composite.net/ns/asp.net/controls">
-  <f:function name="Composite.Web.Html.Template.LangAttribute" />
-  <head>
-    <title>
-      <rendering:page.title />
-    </title>
-    <f:function name="Composite.Web.Html.Template.CommonMetaTags" />
-    <rendering:page.metatag.description />
+	<head />
+	<body>
+		<!--
+			THIS FILE IS ONLY USED BY THE CMS TO DETERMINE CONTENT PLACE HOLDERS
 
-    <!-- The 1140px Grid -->
-    <link rel="stylesheet" href="~/Frontend/Styles/1140.css" type="text/css" media="screen" />
-    <!--[if lte IE 9]><link rel="stylesheet" href="/Frontend/Styles/ie.css" type="text/css" media="screen" /><![endif]-->
+			THE TEMPLACE HTML AND CODE EXISTS IN: (name of template).master
 
-    <link rel="stylesheet" href="~/Frontend/Styles/VisualEditor.common.css" type="text/css" media="screen" />
-
-    <!-- Type and image presets - NOT ESSENTIAL -->
-    <link rel="stylesheet" href="~/Frontend/Styles/typeimg.css" type="text/css" media="screen" />
-
-    <!-- Make minor type adjustments for 1024 monitors -->
-    <link rel="stylesheet" href="~/Frontend/Styles/smallerscreen.css" media="only screen and (max-width: 1023px)" />
-
-    <!-- Resets grid for mobile -->
-    <link rel="stylesheet" href="~/Frontend/Styles/mobile.css" media="handheld, only screen and (max-width: 767px)" />
-
-    <!-- Put your layout here -->
-    <link rel="stylesheet" href="~/Frontend/Styles/layout.css" type="text/css" media="screen" />
-  </head>
-  <body id="frontpage">
-    <div class="container" id="wrapper">
-      <div class="row">
-        <div id="header" class="twelvecol last">
-          <div id="Logo">
-            <a href="/"></a>
-          </div>
-          <f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Composite.Navigation.LanguageSwitcher">
-            <f:param name="Mode" value="TranslatedOrHomePages" />
-            <f:param name="ShowCurrent" value="False" />
-            <f:param name="Format" value="NativeName" />
-          </f:function>
-          <f:function name="Layout.Navigation.TopLinks" />
-          <f:function name="Layout.Navigation.Menu" />
-          <div id="HeaderImage"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div id="contentcolumn" class="sixcol">
-          <article>
-            <div class="contentbox">
-              <rendering:placeholder id="content" title="Content" default="true" />
-            </div>
-          </article>
-        </div>
-        <div id="asidecolumn" class="sixcol last">
-          <aside>
-            <div class="contentbox">
-              <rendering:placeholder id="aside" title="Aside" />
-            </div>
-          </aside>
-        </div>
-      </div>
-      <div id="push"></div>
-    </div>
-    <div class="container" id="footer">
-      <div class="row">
-        <div class="twelvecol last">
-          <a href="http://www.composite.net/">Powered by Composite C1, Free Open Source .NET CMS</a>
-        </div>
-      </div>
-    </div>
-  </body>
+			FOR DOCUMENTATION SEE http://docs.composite.net/C1/Getting-started/Starter-sites/Starter-Site1/Master-Based.aspx
+		-->
+	</body>
 </html>
