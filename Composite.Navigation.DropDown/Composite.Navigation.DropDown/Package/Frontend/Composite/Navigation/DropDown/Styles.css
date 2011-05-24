@@ -1,11 +1,16 @@
 /* Menu Style */
-#DropDown {
+#NavigationDropDown {
 	height: 32px;
 	background: #bbbbbb;
+	line-height: 16px;
+}
+
+#DropDown {
+	height: 32px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
-	line-height: 21px;
+	line-height: 32px;
 }
 
 #DropDown li {
@@ -17,7 +22,7 @@
 #DropDown a {
 	background: #212121 none left top no-repeat;
 	color: #D4D4D4;
-	padding: 4px 30px 7px;
+	padding: 0px 30px;
 	text-decoration: none;
 }
 
