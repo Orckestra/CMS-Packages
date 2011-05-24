@@ -213,16 +213,24 @@ namespace Composite.Community.Blog
 
 		public static void SendMail(string to, string from, string subject, string body)
 		{
-			var mail = new MailMessage();
-			mail.To.Add(to);
-			mail.From = new MailAddress(from);
-			mail.Subject = subject;
-			mail.Body = body;
-			mail.IsBodyHtml = true;
-			mail.BodyEncoding = Encoding.Default;
-			mail.SubjectEncoding = Encoding.Default;
-			var smtpMail = new SmtpClient();
-			smtpMail.Send(mail);
+			try
+			{
+				var mail = new MailMessage();
+				mail.To.Add(to);
+				mail.From = new MailAddress(from);
+				mail.Subject = subject;
+				mail.Body = body;
+				mail.IsBodyHtml = true;
+				mail.BodyEncoding = Encoding.Default;
+				mail.SubjectEncoding = Encoding.Default;
+				var smtpMail = new SmtpClient();
+				smtpMail.Send(mail);
+			}
+			catch (Exception ex)
+			{
+				LoggingService.LogInformation("Composite.Community.Blog.BlogFacade.SendMail", "Error while sending Email. Check mail settings in web.config file.");
+				LoggingService.LogError("Composite.Community.Blog.BlogFacade.SendMail", ex);
+			}
 		}
 
 		public static string GetCurrentCultureName()
@@ -279,7 +287,7 @@ namespace Composite.Community.Blog
 			{
 				HttpRuntime.Cache.Remove(string.Format(BlogRssFeed.CacheRSSKeyTemplate, entry.PageId, GetCurrentCultureName()));
 			}
-			
+
 		}
 	}
 }
