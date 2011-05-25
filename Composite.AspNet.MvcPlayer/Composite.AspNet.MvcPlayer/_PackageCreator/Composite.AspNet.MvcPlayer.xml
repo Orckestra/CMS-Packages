@@ -18,11 +18,11 @@
 			</XslFiles>
 		</mi:Add>
 		<mi:Add installerType="Composite.PackageFragmentInstaller.CheckAssembly.CheckAssemblyPackageFragmentInstaller, Composite.PackageFragmentInstaller.CheckAssembly" uninstallerType="Composite.PackageFragmentInstaller.CheckAssembly.CheckAssemblyPackageFragmentUninstaller, Composite.PackageFragmentInstaller.CheckAssembly">
-			<Check assembly="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" message="MVC3 is not installed" />
+			<Check assembly="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" message="ASP.NET MVC 3 have not been installed on this webserver. Download and install this from Microsoft website" />
 		</mi:Add>
 	</pc:PackageFragmentInstallers>
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3947.24461" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.AspNet.MvcPlayer" groupName="Composite.AspNet" version="1.2.9" author="Composite A/S" website="http://www.composite.net" id="7fbb67a8-dc12-4693-b653-80c5f155ff7a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.AspNet.MvcPlayer" groupName="Composite.AspNet" version="1.2.10" author="Composite A/S" website="http://www.composite.net" id="7fbb67a8-dc12-4693-b653-80c5f155ff7a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows you to integrate an ASP.NET MVC solution on a C1 website.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries>
