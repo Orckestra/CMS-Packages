@@ -1,15 +1,51 @@
 .BlogImage {
 	display: block;
 }
+.BlogItem {
+	margin-bottom: 22px;
+}
 
 .BlogTitle a {
-  font-size: larger;
-  font-weight:bold;
-  text-transform: uppercase;
+	font-size: larger;
+	font-weight: bold;
+	text-transform: uppercase;
 }
+
+.BlogTitle a.t-count, .t-count span {
+	font-size: 12px;
+	background: url(comment_bulb.png) no-repeat;
+	height: 20px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+
+
+.BlogTitle a.t-count {
+	background-position: 0px 0px;
+	display: inline-block;
+	margin-left: 4px;
+	padding-left: 8px;
+	text-decoration: none;
+}
+
+.BlogTitle a.t-count span {
+	background-position: right 0px;
+	float: left;
+	padding: 0px 8px 0px 4px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.BlogTitle a.t-count:hover {
+	background-position: 0px -21px;
+}
+.BlogTitle a.t-count:hover span {
+	background-position: right -21px;
+}
+
 .BlogTitle h1 {
- text-transform: uppercase;
- margin:0px;
+	text-transform: uppercase;
+	margin: 0px;
 }
 
 .BlogAuthorPicture {
@@ -34,7 +70,6 @@
 
 .BlogCommentsCount {
 	text-transform: uppercase;
-	margin-bottom: 22px;
 }
 
 .AddThis {
@@ -91,7 +126,7 @@
 	clear: both;
 }
 
-#ErrorBox h4, #ErrorBox ul li{
+#ErrorBox h4, #ErrorBox ul li {
 	color: Red;
 	list-style: square;
 	padding-bottom: 4px;
@@ -102,12 +137,12 @@
 	margin-bottom: 0px;
 }
 
-#CommentsList, #CommentsForm, #ErrorBox h4{
+#CommentsList, #CommentsForm, #ErrorBox h4 {
 	margin: 0px;
 	padding: 0px;
 }
 
-#CommentsList li, #CommentsForm li{
+#CommentsList li, #CommentsForm li {
 	padding-bottom: 4px;
 }
 
