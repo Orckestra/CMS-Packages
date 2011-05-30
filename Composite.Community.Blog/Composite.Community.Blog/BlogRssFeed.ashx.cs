@@ -21,16 +21,14 @@ namespace Composite.Community.Blog
 			if (context.Request["bid"] != null && Guid.TryParse(context.Request["bid"], out pageId))
 			{
 				var cultureName = context.Request["cultureName"];
+				if (string.IsNullOrEmpty(cultureName))
+				{
+					cultureName = Composite.Data.DataLocalizationFacade.DefaultLocalizationCulture.Name;
+				}
 				string cachedRssKey = string.Format(CacheRSSKeyTemplate, pageId, cultureName);
 				if (context.Cache[cachedRssKey] == null)
 				{
-					if (string.IsNullOrEmpty(cultureName))
-					{
-						cultureName = string.Empty;
-					}
-
 					var cultureInfo = new CultureInfo(cultureName);
-
 					context.Response.ContentType = "text/xml";
 					using (new DataScope(DataScopeIdentifier.Public))
 					{
