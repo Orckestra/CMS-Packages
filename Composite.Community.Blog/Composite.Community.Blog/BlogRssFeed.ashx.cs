@@ -16,52 +16,59 @@ namespace Composite.Community.Blog
 
 		public void ProcessRequest(HttpContext context)
 		{
-			var pageId = new Guid(context.Request["bid"]);
-			var cultureName = context.Request["cultureName"];
+			Guid pageId = Guid.Empty;
 
-			string cachedRssKey = string.Format(CacheRSSKeyTemplate, pageId, cultureName);
-			if (context.Cache[cachedRssKey] == null)
+			if (context.Request["bid"] != null && Guid.TryParse(context.Request["bid"], out pageId))
 			{
-				if (string.IsNullOrEmpty(cultureName))
+				var cultureName = context.Request["cultureName"];
+				string cachedRssKey = string.Format(CacheRSSKeyTemplate, pageId, cultureName);
+				if (context.Cache[cachedRssKey] == null)
 				{
-					cultureName = string.Empty;
-				}
-
-				var cultureInfo = new CultureInfo(cultureName);
-
-				context.Response.ContentType = "text/xml";
-				using (new DataScope(DataScopeIdentifier.Public))
-				{
-					using (new DataScope(cultureInfo))
+					if (string.IsNullOrEmpty(cultureName))
 					{
-						string pageUrl;
-						PageStructureInfo.TryGetPageUrl(pageId, out pageUrl);
-						if (!string.IsNullOrEmpty(pageUrl))
+						cultureName = string.Empty;
+					}
+
+					var cultureInfo = new CultureInfo(cultureName);
+
+					context.Response.ContentType = "text/xml";
+					using (new DataScope(DataScopeIdentifier.Public))
+					{
+						using (new DataScope(cultureInfo))
 						{
-							pageUrl = BlogFacade.GetFullPath(pageUrl);
-							string pageTitle = DataFacade.GetData<IPage>().Where(p => p.Id == pageId).Select(p => p.Title).Single();
-							var feed = new SyndicationFeed(pageTitle, "", new Uri(pageUrl));
-							var blogItems =
-								DataFacade.GetData<Entries>().Where(b => b.PageId == pageId).Select(
-									b => new { b.Id, b.Title, b.Date, b.Teaser, b.Tags }).OrderByDescending(b => b.Date).ToList();
+							string pageUrl;
+							PageStructureInfo.TryGetPageUrl(pageId, out pageUrl);
+							if (!string.IsNullOrEmpty(pageUrl))
+							{
+								pageUrl = BlogFacade.GetFullPath(pageUrl);
+								string pageTitle = DataFacade.GetData<IPage>().Where(p => p.Id == pageId).Select(p => p.Title).Single();
+								var feed = new SyndicationFeed(pageTitle, "", new Uri(pageUrl));
+								var blogItems =
+									DataFacade.GetData<Entries>().Where(b => b.PageId == pageId).Select(
+										b => new { b.Id, b.Title, b.Date, b.Teaser, b.Tags }).OrderByDescending(b => b.Date).ToList();
 
-							var items = (from blog in blogItems
-										 let blogUrl = pageUrl + BlogFacade.GetBlogUrl(blog.Date, blog.Title)
-										 select new SyndicationItem(blog.Title, blog.Teaser, new Uri(blogUrl), blog.Id.ToString(), blog.Date))
-								.ToList();
+								var items = (from blog in blogItems
+											 let blogUrl = pageUrl + BlogFacade.GetBlogUrl(blog.Date, blog.Title)
+											 select new SyndicationItem(blog.Title, blog.Teaser, new Uri(blogUrl), blog.Id.ToString(), blog.Date))
+									.ToList();
 
-							feed.Items = items;
-							context.Cache[cachedRssKey] = feed;
+								feed.Items = items;
+								context.Cache[cachedRssKey] = feed;
+							}
 						}
 					}
 				}
+
+				var syndicationFeed = (SyndicationFeed)context.Cache[cachedRssKey];
+
+				using (XmlWriter writer = XmlWriter.Create(context.Response.OutputStream))
+				{
+					syndicationFeed.SaveAsRss20(writer);
+				}
 			}
-
-			var syndicationFeed = (SyndicationFeed)context.Cache[cachedRssKey];
-
-			using (XmlWriter writer = XmlWriter.Create(context.Response.OutputStream))
+			else
 			{
-				syndicationFeed.SaveAsRss20(writer);
+				context.Response.Write("The required query paramerer 'bid' (blog page GUID) is missing.");
 			}
 		}
 
