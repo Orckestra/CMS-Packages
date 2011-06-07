@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.Wiki.SimpleWiki" groupName="Composite.Community" version="1.0.5" author="Composite A/S" website="http://composite.net" id="fab8de62-fc81-4ff7-9bd0-685332dc7a88" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Enables visitors to the website to change the content of a page in a simple Wiki-like way.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Wiki\SimpleWiki.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Wiki\SimpleWiki.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\PageTemplates\Wiki.xml" targetFilename="~\App_Data\PageTemplates\Wiki.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Composite\Community\Wiki\SimpleWiki\SimpleWiki.cs" targetFilename="~\App_Code\Composite\Community\Wiki\SimpleWiki\SimpleWiki.cs" allowOverwrite="false" />
+				<File sourceFilename="~\SimpleWiki.asmx" targetFilename="~\SimpleWiki.asmx" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Composite\Community\Wiki\SimpleWiki\" targetDirectory="~\Frontend\Composite\Community\Wiki\SimpleWiki\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPageTemplate,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTemplates_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IPageType,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTypes_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

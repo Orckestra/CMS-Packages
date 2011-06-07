@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43B46BDC-84D3-4893-B6FF-38BBCFCBD5E1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.Community.Wiki.SimpleWiki</RootNamespace>
+    <AssemblyName>Composite.Community.Wiki.SimpleWiki</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Composite">
+      <HintPath>..\..\..\Public\References\Composite\2.1.1\Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Package\App_Code\Composite\Community\Wiki\SimpleWiki\SimpleWiki.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Package\App_Data\PageTemplates\Wiki.xml" />
+    <Content Include="Package\App_Data\Xslt\Composite\Community\Wiki\SimpleWiki.xsl" />
+    <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTemplates_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\Images\edit-icon.png" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\Images\save-icon.jpg" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\Scripts\simplewiki.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\Styles\Styles.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\changelog.txt" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\examples\css\content.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\examples\index.html" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\jquery.tinymce.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\langs\en.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\license.txt" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advhr\css\advhr.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advhr\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advhr\js\rule.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advhr\rule.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advimage\css\advimage.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advimage\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advimage\image.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advimage\img\sample.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advimage\js\image.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advlink\css\advlink.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advlink\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advlink\js\advlink.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advlink\link.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advlist\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\autolink\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\autosave\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\autosave\langs\en.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\directionality\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\emotions.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\js\emotions.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\example\dialog.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\example\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\example\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\example\img\example.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\example\js\dialog.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\example\langs\en.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\example\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\fullpage\fullpage.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\iespell\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\inlinepopups\template.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\layer\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\lists\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\lists\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\media\css\media.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\media\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\media\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\media\js\embed.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\media\js\media.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\media\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\media\media.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\media\moxieplayer.swf" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\paste\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\paste\js\pastetext.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\paste\js\pasteword.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\paste\pastetext.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\paste\pasteword.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\preview\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\preview\example.html" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\preview\jscripts\embed.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\preview\preview.html" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\print\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\print\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\save\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\save\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\spellchecker\css\content.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\style\css\props.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\style\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\style\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\style\js\props.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\style\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\style\props.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\cell.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\css\cell.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\css\row.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\css\table.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\js\cell.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\js\merge_cells.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\js\row.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\js\table.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\merge_cells.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\row.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\table\table.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\template\blank.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\template\css\template.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\template\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\template\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\template\js\template.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\template\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\template\template.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\about.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\anchor.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\charmap.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\color_picker.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\editor_template.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\editor_template_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\image.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\img\flash.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\img\icons.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\img\iframe.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\img\pagebreak.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\img\quicktime.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\img\realmedia.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\img\shockwave.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\img\trans.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\img\video.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\js\about.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\js\anchor.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\js\charmap.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\js\color_picker.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\js\image.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\js\link.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\js\source_editor.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\langs\en.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\link.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\shortcuts.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\content.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\ui.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\advanced\source_editor.htm" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\simple\editor_template.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\simple\editor_template_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\simple\img\icons.gif" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\simple\langs\en.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\simple\skins\default\content.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\simple\skins\default\ui.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\tiny_mce.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\tiny_mce_popup.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\tiny_mce_src.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\utils\editable_selects.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\utils\form_utils.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\utils\mctabs.js" />
+    <Content Include="Package\Frontend\Composite\Community\Wiki\SimpleWiki\tinymce\jscripts\tiny_mce\utils\validate.js" />
+    <Content Include="Package\install.xml" />
+    <Content Include="Package\SimpleWiki.asmx" />
+    <Content Include="_PackageCreator\Composite.Community.Wiki.SimpleWiki.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Release\Composite.Community.Wiki.SimpleWiki.zip" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55924</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
+</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,15 @@
+﻿a.editthisPage, a.savethisPage, a.cancelSavePage { 
+  padding-left: 18px;
+  display: block;
+  height: 16px;
+  line-height: 16px;
+  color: grey;
+  display: inline;
+}
+a.editthisPage{
+  background: url('/Frontend/Composite/Community/Wiki/SimpleWiki/Images/edit-icon.png') no-repeat left center;
+}
+a.savethisPage
+ {
+  background: url('/Frontend/Composite/Community/Wiki/SimpleWiki/Images/save-icon.jpg') no-repeat left center;
+}
