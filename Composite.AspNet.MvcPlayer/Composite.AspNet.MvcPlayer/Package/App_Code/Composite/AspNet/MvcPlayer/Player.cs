@@ -60,7 +60,7 @@ namespace Composite.AspNet.MvcPlayer
 			}
 
 			// Ajax requests
-			if (httpContext.Request.IsAjaxRequest() || httpResponceBase.ContentType != "text/html")
+			if (httpContext.Request.IsAjaxRequest())
 			{
 				byte[] bytes = Response.ContentEncoding.GetBytes(responseWriter.ToString());
 				Response.Buffer = true;
