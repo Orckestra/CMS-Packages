@@ -65,7 +65,8 @@ namespace Composite.Community.Raty
 				{
 					ratyIds.Add(ratyId);
 					httpCookie.Value = string.Join(",", ratyIds.ToArray());
-					HttpContext.Current.Response.Cookies.Add(httpCookie);
+					httpCookie.Expires = DateTime.Now.AddDays(30);
+					HttpContext.Current.Response.SetCookie(httpCookie);
 				}
 			}
 			else
@@ -73,7 +74,7 @@ namespace Composite.Community.Raty
 				httpCookie = new HttpCookie(RATY_COOKIE_KEY);
 				httpCookie.Value = ratyId;
 				httpCookie.Expires = DateTime.Now.AddDays(30);
-				HttpContext.Current.Response.SetCookie(httpCookie);
+				HttpContext.Current.Response.Cookies.Add(httpCookie);
 			}
 		}
 	}
