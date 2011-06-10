@@ -9,6 +9,8 @@
 	<xsl:variable name="isSquareSize" select="/in:inputs/in:param[@name='AutoSquareThumbnails']" />
 	<xsl:variable name="thWidth" select="/in:inputs/in:param[@name='ThumbnailMaxWidth']" />
 	<xsl:variable name="thHeight" select="/in:inputs/in:param[@name='ThumbnailMaxHeight']" />
+	<xsl:variable name="imgWidth" select="/in:inputs/in:param[@name='ImageMaxWidth']" />
+	<xsl:variable name="imgHeight" select="/in:inputs/in:param[@name='ImageMaxHeight']" />
 	<xsl:variable name="downloadOriginal" select="/in:inputs/in:param[@name='DownloadLinkText']" />
 	<xsl:variable name="appRoot" select="/in:inputs/in:result[@name='ApplicationPath']" />
 	<xsl:variable name="singleImage" select="/in:inputs/in:param[@name='MediaImage']" />
@@ -22,11 +24,13 @@
 			<body>
 
 				<xsl:for-each select="/in:inputs/in:result[@name='GetIImageFileXml']/IImageFile">
-					<a title="{@Description}" href="/Renderers/ShowMedia.ashx?id={@Id}&amp;mw=640&amp;mh=500">
+					<a title="{@Description}" href="/Renderers/ShowMedia.ashx?id={@Id}&amp;mw={$imgWidth}&amp;mh={$imgHeight}">
 						<xsl:attribute name="rel">
 							<xsl:choose>
 								<xsl:when test="$singleImage != ''">lightbox</xsl:when>
-								<xsl:otherwise>lightbox-<xsl:value-of select="@FolderPath" /></xsl:otherwise>
+								<xsl:otherwise>
+									lightbox-<xsl:value-of select="@FolderPath" />
+								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:attribute>
 						<xsl:choose>
