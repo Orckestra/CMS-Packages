@@ -1,4 +1,7 @@
-﻿.rating div {
+﻿.rating .results {
+	margin-right: 5px;
+}
+.rating div {
 	float: left;
 	font-size: 80%;
 }
@@ -8,4 +11,7 @@
 .rating img {
 	-moz-box-shadow: none !important;
 	-webkit-box-shadow: none !important;
+}
+.clear {
+	clear: both;
 }

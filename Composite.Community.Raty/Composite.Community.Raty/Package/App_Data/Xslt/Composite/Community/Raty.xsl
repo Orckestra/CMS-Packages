@@ -30,15 +30,30 @@ exclude-result-prefixes="xsl in lang f msxsl csharp">
 					<div>
 						<xsl:if test="count($results) = 0">
 							<xsl:attribute name="style">display:none</xsl:attribute>
-						</xsl:if>&#160;based on
-						<b class="count">
-							<xsl:value-of select="$results/@Count" />
-						</b> ratings, average:
-						<b class="avr"></b>
-						<xsl:if test="contains($cookie,$ratyId)">
-							&#160;<em>voted</em>
 						</xsl:if>
+						<lang:switch>
+							<lang:when culture="ru-RU">
+								<b class="count">
+									<xsl:value-of select="$results/@Count" />
+								</b> голосов, средняя оценка:
+								<b class="avr"></b>
+								<xsl:if test="contains($cookie,$ratyId)">
+									&#160;<em>оценено</em>
+								</xsl:if>
+							</lang:when>
+							<lang:default>
+								based on
+								<b class="count">
+									<xsl:value-of select="$results/@Count" />
+								</b> ratings, average:
+								<b class="avr"></b>
+								<xsl:if test="contains($cookie,$ratyId)">
+									&#160;<em>voted</em>
+								</xsl:if>
+							</lang:default>
+						</lang:switch>
 					</div>
+					<br class="clear" />
 					<xsl:value-of select="csharp:NoCache()" />
 				</div>
 				<script type="text/javascript">
@@ -73,7 +88,7 @@ exclude-result-prefixes="xsl in lang f msxsl csharp">
 		<msxsl:using namespace="System.Web" />
 		public void NoCache()
 		{
-			HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+		HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
 		}
 	</msxsl:script>
 </xsl:stylesheet>
