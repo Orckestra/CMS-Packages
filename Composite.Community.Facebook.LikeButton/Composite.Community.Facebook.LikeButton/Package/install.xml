@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.Facebook.LikeButton" groupName="Composite.Community.Facebook" version="1.0.1" author="Composite A/S" website="http://composite.net" id="43aeba79-ae83-4bcc-b7be-9e43b78c14b1" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Adds the Like button to a page for users to share content with their Facebook friends as well as one or more Open Graph meta tags to integrate the page into the social graph.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Facebook\LikeButton.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Facebook\LikeButton.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Facebook\OpenGraphProtocol.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Facebook\OpenGraphProtocol.xsl" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
