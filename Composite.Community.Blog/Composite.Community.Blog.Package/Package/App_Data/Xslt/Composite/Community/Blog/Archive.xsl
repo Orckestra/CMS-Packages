@@ -10,7 +10,7 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				<link rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
+				<link id="BlogStyles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
 			</head>
 
 			<body>

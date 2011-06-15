@@ -12,7 +12,7 @@
 						<xsl:value-of select="/in:inputs/in:result[@name='GetEntriesXml']/Entries/@Title" />
 					</title>
 				</xsl:if>
-				<link rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
+				<link id="BlogStyles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
 			</head>
 			<body>
 				<xsl:choose>
