@@ -155,7 +155,11 @@
 					<input type="text" name="txtCaptcha" value="{$captchaValue}" />
 				</li>
 				<li>
-					<input type="submit" value="Send" onclick="this.form.action=this.form.action+'#newcomment'" />
+					<input type="submit" onclick="this.form.action=this.form.action+'#newcomment'">
+						<xsl:attribute name="value">
+							<xsl:value-of select="be:GetLocalized('Blog','SendButton')" />
+						</xsl:attribute>
+					</input>
 				</li>
 			</ul>
 		</fieldset>

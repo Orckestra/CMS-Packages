@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.Mail;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -79,7 +80,8 @@ namespace Composite.Community.Blog
 				else
 				{
 					string tag = pathInfoParts[1];
-					// filter below replaced becuase of LINQ2SQL problems
+
+					// filter below replaced becauase of LINQ2SQL problems
 					//filter = f => f.Tags.Split(',').Any(t => t == tag) && f.PageId == currentPageId;
 					filter = f => ((f.Tags.Contains("," + tag + ",")) || f.Tags.StartsWith(tag + ",") || (f.Tags.EndsWith("," + tag)) || f.Tags.Equals(tag)) && f.PageId == currentPageId;
 				}
@@ -94,7 +96,7 @@ namespace Composite.Community.Blog
 
 						if (pathInfoParts.Length > 4)
 						{
-							DateTime blogDate = new DateTime(year, month, day);
+							var blogDate = new DateTime(year, month, day);
 
 							filter = f => f.Date.Date == blogDate && pathInfoParts[4] == f.TitleUrl && f.PageId == currentPageId;
 						}
@@ -184,9 +186,34 @@ namespace Composite.Community.Blog
 		public static string[] GetPathInfoParts()
 		{
 			// Expecting '/yyyy/mm/dd/title' OR /tag
-			var pathInfo = new UrlBuilder(HttpContext.Current.Request.RawUrl).PathInfo;
+			var pathInfo = GetPathInfo();
 
 			return pathInfo != null && pathInfo.Contains("/") ? pathInfo.Split('/') : null;
+		}
+
+		private static string GetPathInfo()
+		{
+			Type pageRoute = typeof(IData).Assembly.GetType("Composite.Core.Routing.Pages.C1PageRoute", false);
+
+			if(pageRoute == null)
+			{
+				// Support for version 2.1.2-
+				return HttpContext.Current.Request.PathInfo;
+			}
+
+			// Support for version 2.1.3+
+			string result = (pageRoute
+				.GetMethod("GetPathInfo", BindingFlags.Public | BindingFlags.Static)
+				.Invoke(null, new object[0]) as string) ?? string.Empty;
+
+			if(result != string.Empty)
+			{
+				pageRoute
+					.GetMethod("RegisterPathInfoUsage", BindingFlags.Public | BindingFlags.Static)
+					.Invoke(null, new object[0]);
+			}
+
+			return result;
 		}
 
 		public static string GetFullPath(string path)
