@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
+using System.Web;
 using System.Xml.Linq;
 using Composite.Core.WebClient.Renderings.Page;
 using Composite.Core.Xml;
-using Composite.Data;
 using Composite.Functions;
+using Composite.Data;
 
 namespace Composite.Navigation.LanguageSwitcher
 {
@@ -53,9 +54,15 @@ namespace Composite.Navigation.LanguageSwitcher
 			return GetPages(switcherMode, switcherFormat, includeQuery);
 		}
 
+		private static HttpRequest Request
+		{
+			get { return HttpContext.Current.Request; }
+		} 
+
 		private static IEnumerable<XElement> GetPages(SwitcherMode mode, SwitcherFormat format, bool includeQuery)
 		{
-			Func<CultureInfo, XNode> cultureFormat = c => null;
+			Func<CultureInfo, XNode> cultureFormat = culture => null;
+			Func<string, object, XAttribute> getXAttribute = (name, value) => value == null ? null : new XAttribute(name, value);
 			switch (format)
 			{
 				case SwitcherFormat.DisplayName:
@@ -95,7 +102,7 @@ namespace Composite.Navigation.LanguageSwitcher
 			}
 
 			// Grab all active languages...
-			foreach (CultureInfo culture in DataLocalizationFacade.ActiveLocalizationCultures)
+			foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
 			{
 				XElement annotatedMatch;
 
@@ -107,14 +114,18 @@ namespace Composite.Navigation.LanguageSwitcher
 					{
 						case SwitcherMode.HomePages:
 							match = PageStructureInfo.GetSiteMap().FirstOrDefault();
+							includeQuery = false;
 							break;
 						case SwitcherMode.TranslatedPages:
-							match = PageStructureInfo.GetSiteMap().DescendantsAndSelf().Where(f => f.Attribute("Id") != null && f.Attribute("Id").Value == PageRenderer.CurrentPageId.ToString()).FirstOrDefault();
+							match = PageStructureInfo.GetSiteMap().DescendantsAndSelf().Where(f => f.GetAttributeValue("Id") == PageRenderer.CurrentPageId.ToString()).FirstOrDefault();
 							break;
 						case SwitcherMode.TranslatedOrHomePages:
-							match = PageStructureInfo.GetSiteMap().DescendantsAndSelf().Where(f => f.Attribute("Id") != null && f.Attribute("Id").Value == PageRenderer.CurrentPageId.ToString()).FirstOrDefault();
-							if (match == null)
+							match = PageStructureInfo.GetSiteMap().DescendantsAndSelf().Where(f => f.GetAttributeValue("Id") == PageRenderer.CurrentPageId.ToString()).FirstOrDefault();
+							if(match == null)
+							{
 								match = PageStructureInfo.GetSiteMap().FirstOrDefault();
+								includeQuery = false;
+							}
 							break;
 						default:
 							break;
@@ -124,23 +135,21 @@ namespace Composite.Navigation.LanguageSwitcher
 						continue;
 					}
 
-					var url = match.Attribute("URL").Value;
-					var urlBuilder = PageUrl.Parse(url).Build();
-					if (includeQuery && urlBuilder != null)
+					var url = match.GetAttributeValue("URL");
+
+					if (includeQuery && Request.QueryString.Count > 0)
 					{
-						var queryParameters = System.Web.HttpContext.Current.Request.QueryString;
-						urlBuilder.AddQueryParameters(queryParameters);
-						url = urlBuilder.ToString();
+						url = string.Format("{0}?{1}", url, Request.Url.Query);
 					}
 					annotatedMatch = new XElement("LanguageVersion"
-							, new XAttribute("Culture", culture.Name)
-							, new XAttribute("CurrentCulture", culture.Equals(Thread.CurrentThread.CurrentCulture))
-							, new XAttribute("Id", match.Attribute("Id").Value)
-							, new XAttribute("Title", match.Attribute("Title").Value)
-							, (match.Attribute("MenuTitle") == null ? null : new XAttribute("MenuTitle", match.Attribute("MenuTitle").Value))
-							, new XAttribute("UrlTitle", match.Attribute("UrlTitle").Value)
-							, new XAttribute("Description", match.Attribute("Description").Value)
-							, new XAttribute("URL", url)
+							, getXAttribute("Culture", culture.Name)
+							, getXAttribute("CurrentCulture", culture.Equals(Thread.CurrentThread.CurrentCulture))
+							, getXAttribute("Id", match.GetAttributeValue("Id"))
+							, getXAttribute("Title", match.GetAttributeValue("Title"))
+							, getXAttribute("MenuTitle", match.GetAttributeValue("MenuTitle"))
+							, getXAttribute("UrlTitle", match.GetAttributeValue("UrlTitle"))
+							, getXAttribute("Description", match.GetAttributeValue("Description"))
+							, getXAttribute("URL", url)
 							, cultureFormat(culture)
 							);
 				}
@@ -148,4 +157,5 @@ namespace Composite.Navigation.LanguageSwitcher
 			}
 		}
 	}
+	
 }
