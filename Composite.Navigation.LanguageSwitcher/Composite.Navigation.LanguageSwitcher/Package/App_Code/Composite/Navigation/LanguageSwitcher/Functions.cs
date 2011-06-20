@@ -139,7 +139,7 @@ namespace Composite.Navigation.LanguageSwitcher
 
 					if (includeQuery && Request.QueryString.Count > 0)
 					{
-						url = string.Format("{0}?{1}", url, Request.Url.Query);
+						url = string.Format("{0}{1}", url, Request.Url.Query);
 					}
 					annotatedMatch = new XElement("LanguageVersion"
 							, getXAttribute("Culture", culture.Name)
