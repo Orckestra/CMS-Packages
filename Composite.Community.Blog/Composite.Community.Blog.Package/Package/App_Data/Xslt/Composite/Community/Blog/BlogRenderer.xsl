@@ -129,7 +129,8 @@
 			<img class="BlogAuthorPicture" border="0" src="~/Renderers/ShowMedia.ashx?i={@Author.Picture}" alt="{@Author.Name}" />
 		</xsl:if>
 		<div class="BlogAuthorDate">
-			<xsl:value-of select="be:GetLocalized('Blog','writtenByText')" />&#160;
+			<xsl:value-of select="be:GetLocalized('Blog','writtenByText')" />
+			<xsl:text> </xsl:text>
 			<xsl:choose>
 				<xsl:when test="@Author.Email != '' and @Author.DisplayEmail = 'true'">
 					<a href="mailto:{@Author.Email}">
@@ -139,7 +140,8 @@
 				<xsl:otherwise>
 					<xsl:value-of select="@Author.Name" />
 				</xsl:otherwise>
-			</xsl:choose>-
+			</xsl:choose>
+			<xsl:text> - </xsl:text>
 			<xsl:value-of select="be:CustomDateFormat(@Date, 'dd MMMM yyyy')" />
 		</div>
 	</xsl:template>
