@@ -131,9 +131,10 @@ namespace Composite.Community.Blog
 					int day = Int32.Parse(pathInfoParts[3]);
 					DateTime blogDate = new DateTime(year, month, day);
 
+				    string urlTitle = pathInfoParts[4];
 					Guid blogId =
 						(DataFacade.GetData<Entries>().Where(
-							b => b.PageId == currentPageId && b.Date.Date == blogDate && pathInfoParts[4] == b.TitleUrl).Select(
+                            b => b.PageId == currentPageId && b.Date.Date == blogDate && b.TitleUrl == urlTitle).Select(
 								b => b.Id)).First();
 
 					filter = f => f.BlogEntry == blogId;
