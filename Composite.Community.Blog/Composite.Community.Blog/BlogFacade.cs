@@ -98,7 +98,8 @@ namespace Composite.Community.Blog
 						{
 							var blogDate = new DateTime(year, month, day);
 
-							filter = f => f.Date.Date == blogDate && pathInfoParts[4] == f.TitleUrl && f.PageId == currentPageId;
+						    string title = pathInfoParts[4];
+                            filter = f => f.Date.Date == blogDate && f.TitleUrl == title && f.PageId == currentPageId;
 						}
 						else
 						{
