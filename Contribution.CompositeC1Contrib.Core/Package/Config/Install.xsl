@@ -7,32 +7,37 @@
 	<xsl:output method="xml" indent="yes"/>
 	<xsl:variable name="structure">
 		<system.web>
-			<httpModules>
-				<add name="Globalization" type="CompositeC1Contrib.Web.GlobalizationModule, CompositeC1Contrib"/>
-			</httpModules>
 			<httpHandlers>
 				<add:add verb="*" path="Renderers/Page.aspx" type="CompositeC1Contrib.Web.UI.CompositeC1Page, CompositeC1Contrib" />
 				<add verb="GET" path="sitemap.axd" type="CompositeC1Contrib.Web.SiteMapHandler, CompositeC1Contrib" />
 			</httpHandlers>
-			<siteMap defaultProvider="CompositeC1">
-				<providers>
-					<add:add name="CompositeC1" type="CompositeC1Contrib.Web.CompositeC1SiteMapProvider, CompositeC1Contrib" />
-				</providers>
-			</siteMap>
+
+			<httpModules>
+				<add name="Globalization" type="CompositeC1Contrib.Web.GlobalizationModule, CompositeC1Contrib"/>
+			</httpModules>
+
 			<pages>
 				<controls>
 					<add:add tagPrefix="rendering" namespace="CompositeC1Contrib.Web.UI.Rendering" assembly="CompositeC1Contrib"/>
 				</controls>
 			</pages>
+
+			<siteMap defaultProvider="CompositeC1">
+				<providers>
+					<add:add name="CompositeC1" type="CompositeC1Contrib.Web.CompositeC1SiteMapProvider, CompositeC1Contrib" />
+				</providers>
+			</siteMap>
+
 		</system.web>
 		<system.webServer>
-			<modules>
-				<add name="Globalization" type="CompositeC1Contrib.Web.GlobalizationModule, CompositeC1Contrib"/>
-			</modules>
 			<handlers>
 				<add:add name="CompositePage" verb="*" path="Renderers/Page.aspx" type="CompositeC1Contrib.Web.UI.CompositeC1Page, CompositeC1Contrib" />
 				<add name="SiteMap" verb="GET" path="sitemap.axd" type="CompositeC1Contrib.Web.SiteMapHandler, CompositeC1Contrib" />
 			</handlers>
+
+			<modules>
+				<add name="Globalization" type="CompositeC1Contrib.Web.GlobalizationModule, CompositeC1Contrib"/>
+			</modules>
 		</system.webServer>
 	</xsl:variable>
 
