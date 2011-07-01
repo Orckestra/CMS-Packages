@@ -71,7 +71,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="7za.exe" />
     <Content Include="Package\DataStoreMigrator.aspx" />
     <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Images\bottom.png" />
     <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Images\bottomleft.png" />
@@ -120,8 +119,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(ProjectName).zip"
-"$(ProjectDir)7za.exe" d "$(ProjectDir)Release\$(ProjectName).zip"
-"$(ProjectDir)7za.exe" a -tzip "$(ProjectDir)Release\$(ProjectName).zip" -r "$(ProjectDir)Package\*" -x!*designer.c</PreBuildEvent>
+    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:Checkout  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
   </PropertyGroup>
 </Project>
