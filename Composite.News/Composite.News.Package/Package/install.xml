@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.News" groupName="Composite.News" version="2.0.6" author="Composite A/S" website="www.composite.net" id="8c2dfc2d-1fcb-47c6-9faa-de80c384a66f" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.News" groupName="Composite.News" version="2.0.7" author="Composite A/S" website="www.composite.net" id="8c2dfc2d-1fcb-47c6-9faa-de80c384a66f" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<Description>Allows visitors to read the latest news on a website. Supports a news archive and export to RSS.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries>
