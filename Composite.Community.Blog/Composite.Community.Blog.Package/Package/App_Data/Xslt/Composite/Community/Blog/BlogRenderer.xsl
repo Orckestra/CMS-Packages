@@ -30,10 +30,11 @@
 						</div>
 					</xsl:otherwise>
 				</xsl:choose>
+				<xsl:value-of select="be:SetNoCache()" />
 			</body>
 		</html>
 	</xsl:template>
-	
+
 	<xsl:template mode="BlogItem" match="*">
 		<xsl:if test="@Image.Id != ''">
 			<img class="BlogImage" border="0" src="~/Renderers/ShowMedia.ashx?id={@Image.Id}" alt="{@Image.Title}" />
@@ -58,7 +59,7 @@
 			<xsl:copy-of select="c1:CallFunction($blogComments)" />
 		</xsl:if>
 	</xsl:template>
-	
+
 	<xsl:template mode="BlogList" match="*">
 		<xsl:variable name="Tags" select="be:GetBlogTags(@Tags)/Tag" />
 		<div class="BlogItem">
@@ -123,7 +124,7 @@
 			</xsl:choose>
 		</div>
 	</xsl:template>
-	
+
 	<xsl:template name="Author">
 		<xsl:if test="@Author.Picture != ''">
 			<img class="BlogAuthorPicture" border="0" src="~/Renderers/ShowMedia.ashx?i={@Author.Picture}" alt="{@Author.Name}" />
@@ -145,13 +146,13 @@
 			<xsl:value-of select="be:CustomDateFormat(@Date, 'dd MMMM yyyy')" />
 		</div>
 	</xsl:template>
-	
+
 	<xsl:template mode="TagsList" match="*">
 		<a href="~/Renderers/Page.aspx/{be:Encode(string(.))}?pageId={$pageId}" title="{.}">
 			<xsl:value-of select="." />
 		</a>
 	</xsl:template>
-	
+
 	<xsl:template name="CommentsCount">
 		<xsl:variable name="commentsCount" select="/in:inputs/in:result[@name='GetCommentsCount']/Comment[@Id=current()/@Id]/@Count" />
 		<xsl:variable name="Count">
@@ -164,14 +165,14 @@
 		</xsl:variable>
 		<xsl:value-of select="$Count" />
 	</xsl:template>
-	
+
 	<xsl:template name="AddThis">
 		<a class="AddThis" href="http://www.addthis.com/bookmark.php?v=250&amp;">
 			<img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0" />
 		</a>
 		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
 	</xsl:template>
-	
+
 	<xsl:template match="PagingInfo">
 		<xsl:param name="page" select="1" />
 		<xsl:if test="$page &lt; @TotalPageCount + 1">

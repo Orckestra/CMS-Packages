@@ -3,6 +3,7 @@ using System.Linq;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using Composite.Community.Blog.Localization;
+using System.Web;
 
 namespace Composite.Community.Blog
 {
@@ -56,5 +57,11 @@ namespace Composite.Community.Blog
 		{
 			return Resource.GetLocalized(resourceName, key);
 		}
+
+		public void SetNoCache()
+		{
+			HttpContext.Current.Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
+		}
+
 	}
 }
