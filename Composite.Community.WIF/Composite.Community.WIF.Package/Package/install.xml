@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.WindowsIdentityFoundation" groupName="Composite.Community" version="1.0.2" author="Composite A/S" website="http://composite.net/" id="3011c58e-9b65-4cd5-ab1c-6abf3c14de01" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Community.WIF" groupName="Composite.Community" version="1.0.3" author="Composite A/S" website="http://composite.net/" id="3011c58e-9b65-4cd5-ab1c-6abf3c14de01" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Demonstration of an integration with Windows Identity Foundation (WIF)</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
