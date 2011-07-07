@@ -126,7 +126,7 @@ $(document).ready(function() {
 
 	public string GetCaptchaImageUrl(string encryptedCaptchaValue)
 	{
-		var url = new UrlBuilder("/Renderers/Captcha.ashx");
+		var url = new UrlBuilder(Composite.Core.WebClient.UrlUtils.PublicRootPath + "/Renderers/Captcha.ashx");
 		url["value"] = encryptedCaptchaValue;
 		return url.ToString();
 	}
