@@ -42,7 +42,7 @@
 							<div class="sourcebody">
 								<span class="kwrd">Data Source</span>=<span >myServerAddress;</span><span 
 									class="kwrd">Initial Catalog</span>=<span >myDataBase;</span><span 
-									class="kwrd">Integrated Security</span>=<span>SSPI;</span><span 
+									class="kwrd">Integrated Security</span>=<span>SSPI;</span> 
 							</div>
 							<br />
 							Connection String:<br />
