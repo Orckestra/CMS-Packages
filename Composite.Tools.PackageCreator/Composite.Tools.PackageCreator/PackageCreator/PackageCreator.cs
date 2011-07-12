@@ -56,7 +56,7 @@ namespace Composite.Tools.PackageCreator
         </xsl:template>
 
 </xsl:stylesheet>";
-		
+
 
 		private string packageName;
 		public string PackageName
@@ -534,7 +534,7 @@ namespace Composite.Tools.PackageCreator
 						{
 							var configuration = PackageCreatorFacade.GetConfigurationDocument();
 							var element = configuration.XPathSelectElement(xpath);
-							Regex re = new Regex(@"^(.*?)/([^/]*\[[^\]]*\]?)$");
+							Regex re = new Regex(@"^(.*?)/([^/]*(\[[^\]]*\])?)$");
 							Match match = re.Match(xpath);
 							if (match.Success)
 							{
@@ -640,7 +640,7 @@ namespace Composite.Tools.PackageCreator
 				{
 					XPackageFragmentInstallers.Add(XPackageFragments.Elements());
 				}
-				
+
 
 				XPackageFragmentInstallers.Add(ConfigurationTransformationPackageFragmentInstaller);
 				XPackageFragmentInstallers.Add(FilePackageFragmentInstaller);
@@ -661,26 +661,32 @@ namespace Composite.Tools.PackageCreator
 				#region Zipping
 				var filenames = Directory.GetFiles(packageDirectoryPath, "*", SearchOption.AllDirectories);
 				var directories = Directory.GetDirectories(packageDirectoryPath, "*", SearchOption.AllDirectories);
-				using (ZipOutputStream s = new ZipOutputStream(File.Create(Path.Combine(zipDirectoryPath, zipFilename))))
+				using (var s = new ZipOutputStream(File.Create(Path.Combine(zipDirectoryPath, zipFilename))))
 				{
 					s.SetLevel(9); // 0 - store only to 9 - means best compression
-					byte[] buffer = new byte[4096];
+					var buffer = new byte[4096];
 
 					foreach (string directory in directories)
 					{
-						ZipEntry entry = new ZipEntry(directory.Replace(packageDirectoryPath + "\\", "").Replace("\\", "/") + "/");
-						entry.DateTime = DateTime.Now;
+						var entry = new ZipEntry(directory.Replace(packageDirectoryPath + "\\", "").Replace("\\", "/") + "/")
+										{
+											IsUnicodeText = true,
+											DateTime = DateTime.Now
+										};
 						s.PutNextEntry(entry);
 						s.CloseEntry();
 					}
 
 					foreach (string file in filenames)
 					{
-						ZipEntry entry = new ZipEntry(file.Replace(packageDirectoryPath + "\\", "").Replace("\\", "/"));
-						entry.DateTime = DateTime.Now;
+						var entry = new ZipEntry(file.Replace(packageDirectoryPath + "\\", "").Replace("\\", "/"))
+										{
+											IsUnicodeText = true,
+											DateTime = DateTime.Now
+										};
 						s.PutNextEntry(entry);
 
-						using (FileStream fs = File.OpenRead(file))
+						using (var fs = File.OpenRead(file))
 						{
 							int sourceBytes;
 							do
@@ -975,7 +981,7 @@ namespace Composite.Tools.PackageCreator
 			}
 			else if (pageDataTypeInterfaces.Contains(dataTypeDescriptor.GetInterfaceType()))
 			{
-				AddData<IPageFolderDefinition>( d => d.FolderTypeId == dataTypeDescriptor.DataTypeId);
+				AddData<IPageFolderDefinition>(d => d.FolderTypeId == dataTypeDescriptor.DataTypeId);
 				AddData(type);
 			}
 			else if (pageMetaTypeInterfaces.Contains(dataTypeDescriptor.GetInterfaceType()))
@@ -993,9 +999,9 @@ namespace Composite.Tools.PackageCreator
 		public void AddData(IData data)
 		{
 #warning #3102 Do not export ICompositionContainer with id eb210a75-be25-401f-b0d4-b3787bce36fa
-			if(data is ICompositionContainer)
+			if (data is ICompositionContainer)
 			{
-				if((data as ICompositionContainer).Id == new Guid("eb210a75-be25-401f-b0d4-b3787bce36fa"))
+				if ((data as ICompositionContainer).Id == new Guid("eb210a75-be25-401f-b0d4-b3787bce36fa"))
 					return;
 			}
 
@@ -1109,9 +1115,9 @@ namespace Composite.Tools.PackageCreator
 
 		internal void AddFile(string filename, string newFilename)
 		{
-			if(filename.StartsWith("~"))
+			if (filename.StartsWith("~"))
 				filename = filename.Substring(2);
-			if(newFilename.StartsWith("~"))
+			if (newFilename.StartsWith("~"))
 				newFilename = newFilename.Substring(2);
 			string targetFilename = Path.Combine(packageDirectoryPath, newFilename);
 			string targetDirectory = Path.GetDirectoryName(targetFilename);
