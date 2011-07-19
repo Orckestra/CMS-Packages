@@ -64,14 +64,14 @@
 				</CheckBox>
 			</FieldGroup>
 			<FieldGroup Label="Tags">
-				<MultiKeySelector Label="Tags" Help="A key word or term assigned to the blog entry to classify its content and help in search and filtering. If necessary, select one or more tags that best describe the item." OptionsKeyField="Key" OptionsLabelField="Label" Required="true" CompactMode="false">
-					<MultiKeySelector.SelectedAsString>
-						<cms:bind source="Tags" />
-					</MultiKeySelector.SelectedAsString>
-					<MultiKeySelector.Options>
-						<f:StaticMethodCall Type="Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.String.SelectorWidgetFunction,Composite" Method="GetOptions" Parameters="&lt;SelectorOptionsSource KeyFieldName=&quot;Tag&quot; LabelFieldName=&quot;Tag&quot;&gt;&#xD;&#xA;  &lt;TreeNode&gt;&#xD;&#xA;    &lt;f:param xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Options&quot;&gt;&#xD;&#xA;      &lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Community.Blog.Tags.GetTagsXml&quot;&gt;&#xD;&#xA;        &lt;f:param name=&quot;PropertyNames&quot;&gt;&#xD;&#xA;          &lt;f:paramelement value=&quot;Tag&quot; /&gt;&#xD;&#xA;        &lt;/f:param&gt;&#xD;&#xA;        &lt;f:param name=&quot;OrderByField&quot; value=&quot;Tag&quot; /&gt;&#xD;&#xA;      &lt;/f:function&gt;&#xD;&#xA;    &lt;/f:param&gt;&#xD;&#xA;  &lt;/TreeNode&gt;&#xD;&#xA;&lt;/SelectorOptionsSource&gt;" />
-					</MultiKeySelector.Options>
-				</MultiKeySelector>
+        <MultiKeySelector Label="Tags" Help="A key word or term assigned to the blog entry to classify its content and help in search and filtering. If necessary, select one or more tags that best describe the item." OptionsKeyField="Key" OptionsLabelField="Label" Required="true" CompactMode="false">
+          <MultiKeySelector.SelectedAsString>
+            <cms:bind source="Tags" />
+          </MultiKeySelector.SelectedAsString>
+          <MultiKeySelector.Options>
+            <f:StaticMethodCall Type="Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.String.SelectorWidgetFunction,Composite" Method="GetOptions" Parameters="&lt;SelectorOptionsSource KeyFieldName=&quot;Id&quot; LabelFieldName=&quot;Tag&quot;&gt;&#xD;&#xA;  &lt;TreeNode&gt;&#xD;&#xA;    &lt;f:param xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Options&quot;&gt;&#xD;&#xA;      &lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Community.Blog.Tags.GetTagsXml&quot;&gt;&#xD;&#xA;        &lt;f:param name=&quot;PropertyNames&quot;&gt;&#xD;&#xA;          &lt;f:paramelement value=&quot;Id&quot; /&gt;&#xD;&#xA;          &lt;f:paramelement value=&quot;Tag&quot; /&gt;&#xD;&#xA;        &lt;/f:param&gt;&#xD;&#xA;        &lt;f:param name=&quot;OrderByField&quot; value=&quot;Tag&quot; /&gt;&#xD;&#xA;      &lt;/f:function&gt;&#xD;&#xA;    &lt;/f:param&gt;&#xD;&#xA;  &lt;/TreeNode&gt;&#xD;&#xA;&lt;/SelectorOptionsSource&gt;" />
+          </MultiKeySelector.Options>
+        </MultiKeySelector>
 			</FieldGroup>
 			<XhtmlEditor Label="Content" Help="The content of the blog entry." ClassConfigurationName="common">
 				<XhtmlEditor.Xhtml>
