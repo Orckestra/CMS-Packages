@@ -15,23 +15,25 @@
 				</script>
 			</head>
 			<body>
-				<div id="id{$randomId}" class="ad-gallery">
-					<div class="ad-image-wrapper"></div>
-					<div class="ad-controls"></div>
-					<div class="ad-nav">
-						<div class="ad-thumbs">
-							<ul class="ad-thumb-list">
-								<xsl:for-each select="/in:inputs/in:result[@name='GetIImageFileXml']/IImageFile">
-									<li>
-										<a href="~/Renderers/ShowMedia.ashx?id={@Id}&amp;mw=600&amp;mh=400">
-											<img src="~/Renderers/ShowMedia.ashx?id={@Id}&amp;mh=60" title="{@Title}" alt="{@Description}" class="image{position()-1}" />
-										</a>
-									</li>
-								</xsl:for-each>
-							</ul>
-						</div>
-					</div>
-				</div>
+        <div class="gallery_wrapper">
+          <div id="id{$randomId}" class="ad-gallery">
+            <div class="ad-image-wrapper"></div>
+            <div class="ad-controls"></div>
+            <div class="ad-nav">
+              <div class="ad-thumbs">
+                <ul class="ad-thumb-list">
+                  <xsl:for-each select="/in:inputs/in:result[@name='GetIImageFileXml']/IImageFile">
+                    <li>
+                      <a href="~/Renderers/ShowMedia.ashx?id={@Id}&amp;mw=600&amp;mh=400">
+                        <img src="~/Renderers/ShowMedia.ashx?id={@Id}&amp;mh=60" title="{@Title}" alt="{@Description}" class="image{position()-1}" />
+                      </a>
+                    </li>
+                  </xsl:for-each>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 			</body>
 		</html>
 	</xsl:template>
