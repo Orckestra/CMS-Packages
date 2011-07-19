@@ -45,6 +45,10 @@ body {
     list-style: none;
 }
 
+#header #TopLinks ul li {
+    display: inline;
+}
+
 #header #LanguageSwitcher a, #header #TopLinks a {
     margin: 0 10px;
     text-decoration: none;
