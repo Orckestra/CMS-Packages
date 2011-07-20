@@ -49,6 +49,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DLL\Composite.Generated.dll" />
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Authors.xml" />
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Entries.xml" />
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" />
