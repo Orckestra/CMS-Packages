@@ -26,9 +26,7 @@ namespace Composite.Community.Blog
 
 		public static XPathNavigator GetBlogTags(string tags)
 		{
-			var blogTags = new XElement("Tags", tags.Split(',').Where(t => !string.IsNullOrEmpty(t)).Select(t => new XElement("Tag", t)));
-
-			return blogTags.CreateNavigator();
+	        return  (new XElement("Tags", BlogFacade.GetBlogTags(tags).Select(t=> new XElement("Tag", t.Tag)))).CreateNavigator();
 		}
 
 		public static bool IsBlogList()
