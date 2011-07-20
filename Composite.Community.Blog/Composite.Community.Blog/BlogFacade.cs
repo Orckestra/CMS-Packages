@@ -18,337 +18,305 @@ using Composite.Core;
 
 namespace Composite.Community.Blog
 {
-    public class BlogFacade
-    {
-        public static IEnumerable<XElement> GetTagCloudXml(double minFontSize, double maxFontSize)
-        {
-            using (DataConnection con = new DataConnection())
-            {
-                Guid currentPageId = SitemapNavigator.CurrentPageId;
+	public class BlogFacade
+	{
+		public static IEnumerable<XElement> GetTagCloudXml(double minFontSize, double maxFontSize)
+		{
+			Guid currentPageId = PageRenderer.CurrentPageId;
+			var blog = DataFacade.GetData<Entries>().Where(b => b.PageId == currentPageId).Select(b => b.Tags).ToList();
+			var dcTags = new Dictionary<string, int>();
 
-                var tagKeysReference = con.Get<Entries>().Where(b => b.PageId == currentPageId).Select(e => e.Tags).ToList();
-                var tags = con.Get<Tags>().ToList();
-                var dcTags = new Dictionary<string, int>();
+			foreach (var tag in blog.Where(b => !string.IsNullOrEmpty(b)).SelectMany(b => b.Split(','), (b, s) => s.Trim()))
+			{
+				if (dcTags.ContainsKey(tag))
+				{
+					dcTags[tag] = dcTags[tag] + 1;
+				}
+				else
+				{
+					dcTags.Add(tag, 1);
+				}
+			}
 
-                foreach (var tagKey in tagKeysReference.Where(b => !string.IsNullOrEmpty(b)).SelectMany(b => b.Split(','), (b, s) => s.Trim()))
-                {
-                    var tagEntry = tags.Where(t => t.Id.ToString() == tagKey).SingleOrDefault();
-                    if (tagEntry != null)
-                    {
-                        if (dcTags.ContainsKey(tagEntry.Tag))
-                        {
-                            dcTags[tagEntry.Tag] = dcTags[tagEntry.Tag] + 1;
-                        }
-                        else
-                        {
-                            dcTags.Add(tagEntry.Tag, 1);
-                        }
-                    }
-                }
+			return from d in dcTags
+				   let minOccurs = dcTags.Values.Min()
+				   let maxOccurs = dcTags.Values.Max()
+				   let occurencesOfCurrentTag = d.Value
+				   let weight = (Math.Log(occurencesOfCurrentTag) - Math.Log(minOccurs)) / (Math.Log(maxOccurs) - Math.Log(minOccurs))
+				   let fontSize = minFontSize + Math.Round((maxFontSize - minFontSize) * weight)
+				   select new XElement("Tags",
+									   new XAttribute("Tag", d.Key),
+									   new XAttribute("FontSize", fontSize),
+									   new XAttribute("Rel", d.Value)
+					);
+		}
 
-                return from d in dcTags
-                       let minOccurs = dcTags.Values.Min()
-                       let maxOccurs = dcTags.Values.Max()
-                       let occurencesOfCurrentTag = d.Value
-                       let weight = (Math.Log(occurencesOfCurrentTag) - Math.Log(minOccurs)) / (Math.Log(maxOccurs) - Math.Log(minOccurs))
-                       let fontSize = minFontSize + Math.Round((maxFontSize - minFontSize) * weight)
-                       select new XElement("Tags",
-                                           new XAttribute("Tag", d.Key),
-                                           new XAttribute("FontSize", fontSize),
-                                           new XAttribute("Rel", d.Value)
-                        );
+		public static IEnumerable<XElement> GetArchiveXml()
+		{
+			Guid currentPageId = PageRenderer.CurrentPageId;
+			return DataFacade.GetData<Entries>().Where(c => c.PageId == currentPageId).GroupBy(c => new { c.Date.Year, c.Date.Month }).Select(
+					b =>
+					new XElement("BlogEntries",
+									new XAttribute("Date", new DateTime(b.Key.Year, b.Key.Month, 1)),
+									new XAttribute("Count", b.Select(x => x.Date.Year).Count())
+								)
+				);
+		}
 
-            }
-        }
+		public static Expression<Func<Entries, bool>> GetBlogFilterFromUrl()
+		{
+			Guid currentPageId = PageRenderer.CurrentPageId;
+			Expression<Func<Entries, bool>> filter = f => f.PageId == currentPageId;
 
-        public static List<Tags> GetBlogTags(string tagsIds)
-        {
-            using (DataConnection con = new DataConnection())
-            {
-                var tagsIdsList = tagsIds.Split(',').ToList();
-                return con.Get<Tags>().Where(t => tagsIdsList.Contains(t.Id.ToString())).ToList();
-            }
+			var pathInfoParts = GetPathInfoParts();
+			if (pathInfoParts != null)
+			{
+				int year;
+				//TODO: this is very primitive and not ideal way of checking if it's year or tag: "2010" or "ASP.NET"
+				if (int.TryParse(pathInfoParts[1], out year) && (pathInfoParts[1].Length == 4))
+				{
+					filter = f => f.Date.Year == year && f.PageId == currentPageId;
+				}
+				else
+				{
+					string tag = pathInfoParts[1];
 
-        }
+					// filter below replaced becauase of LINQ2SQL problems
+					//filter = f => f.Tags.Split(',').Any(t => t == tag) && f.PageId == currentPageId;
+					filter = f => ((f.Tags.Contains("," + tag + ",")) || f.Tags.StartsWith(tag + ",") || (f.Tags.EndsWith("," + tag)) || f.Tags.Equals(tag)) && f.PageId == currentPageId;
+				}
 
-        private static List<string> GetBlogTagIds(string tag)
-        {
-            using (DataConnection con = new DataConnection())
-            {
-                return con.Get<Tags>().Where(t => t.Tag == tag).Select(t => t.Id.ToString()).ToList();
-            }
+				if (pathInfoParts.Length > 2)
+				{
+					int month = Int32.Parse(pathInfoParts[2]);
 
-        }
+					if (pathInfoParts.Length > 3)
+					{
+						int day = Int32.Parse(pathInfoParts[3]);
 
-        public static IEnumerable<XElement> GetArchiveXml()
-        {
-            Guid currentPageId = PageRenderer.CurrentPageId;
-            return DataFacade.GetData<Entries>().Where(c => c.PageId == currentPageId).GroupBy(c => new { c.Date.Year, c.Date.Month }).Select(
-                    b =>
-                    new XElement("BlogEntries",
-                                    new XAttribute("Date", new DateTime(b.Key.Year, b.Key.Month, 1)),
-                                    new XAttribute("Count", b.Select(x => x.Date.Year).Count())
-                                )
-                );
-        }
+						if (pathInfoParts.Length > 4)
+						{
+							var blogDate = new DateTime(year, month, day);
 
-        public static Expression<Func<Entries, bool>> GetBlogFilterFromUrl()
-        {
-            Guid currentPageId = PageRenderer.CurrentPageId;
-            Expression<Func<Entries, bool>> filter = f => f.PageId == currentPageId;
-
-            var pathInfoParts = GetPathInfoParts();
-            if (pathInfoParts != null)
-            {
-                int year;
-                //TODO: this is very primitive and not ideal way of checking if it's year or tag: "2010" or "ASP.NET"
-                if (int.TryParse(pathInfoParts[1], out year) && (pathInfoParts[1].Length == 4))
-                {
-                    filter = f => f.Date.Year == year && f.PageId == currentPageId;
-                }
-                else
-                {
-                    string tag = pathInfoParts[1];
-
-                    // filter below replaced becauase of LINQ2SQL problems
-                    //filter = f => f.Tags.Split(',').Any(t => t == tag) && f.PageId == currentPageId;
-                    //filter = f => ((f.Tags.Contains("," + tag + ",")) || f.Tags.StartsWith(tag + ",") || (f.Tags.EndsWith("," + tag)) || f.Tags.Equals(tag)) && f.PageId == currentPageId;
-                    var tagIdsByTagLabel = GetBlogTagIds(tag);
-                    filter = f => (f.Tags.Split(',').ToList().Any(t => tagIdsByTagLabel.Contains(t))) && f.PageId == currentPageId;
-
-                }
-
-                if (pathInfoParts.Length > 2)
-                {
-                    int month = Int32.Parse(pathInfoParts[2]);
-
-                    if (pathInfoParts.Length > 3)
-                    {
-                        int day = Int32.Parse(pathInfoParts[3]);
-
-                        if (pathInfoParts.Length > 4)
-                        {
-                            var blogDate = new DateTime(year, month, day);
-
-                            string title = pathInfoParts[4];
+						    string title = pathInfoParts[4];
                             filter = f => f.Date.Date == blogDate && f.TitleUrl == title && f.PageId == currentPageId;
-                        }
-                        else
-                        {
-                            filter = f => f.Date.Year == year && f.Date.Month == month && f.Date.Day == day && f.PageId == currentPageId;
-                        }
-                    }
-                    else
-                    {
-                        filter = f => f.Date.Year == year && f.Date.Month == month && f.PageId == currentPageId;
-                    }
-                }
-            }
+						}
+						else
+						{
+							filter = f => f.Date.Year == year && f.Date.Month == month && f.Date.Day == day && f.PageId == currentPageId;
+						}
+					}
+					else
+					{
+						filter = f => f.Date.Year == year && f.Date.Month == month && f.PageId == currentPageId;
+					}
+				}
+			}
 
-            return filter;
-        }
+			return filter;
+		}
 
-        public static Expression<Func<Comments, bool>> GetCommentsFilterFromUrl()
-        {
-            Guid currentPageId = PageRenderer.CurrentPageId;
-            Expression<Func<Comments, bool>> filter = f => true;
+		public static Expression<Func<Comments, bool>> GetCommentsFilterFromUrl()
+		{
+			Guid currentPageId = PageRenderer.CurrentPageId;
+			Expression<Func<Comments, bool>> filter = f => true;
 
-            var pathInfoParts = GetPathInfoParts();
-            if (pathInfoParts != null)
-            {
-                if (pathInfoParts.Length > 4)
-                {
-                    int year = Int32.Parse(pathInfoParts[1]);
-                    int month = Int32.Parse(pathInfoParts[2]);
-                    int day = Int32.Parse(pathInfoParts[3]);
-                    DateTime blogDate = new DateTime(year, month, day);
+			var pathInfoParts = GetPathInfoParts();
+			if (pathInfoParts != null)
+			{
+				if (pathInfoParts.Length > 4)
+				{
+					int year = Int32.Parse(pathInfoParts[1]);
+					int month = Int32.Parse(pathInfoParts[2]);
+					int day = Int32.Parse(pathInfoParts[3]);
+					DateTime blogDate = new DateTime(year, month, day);
 
-                    string urlTitle = pathInfoParts[4];
-                    Guid blogId =
-                        (DataFacade.GetData<Entries>().Where(
+				    string urlTitle = pathInfoParts[4];
+					Guid blogId =
+						(DataFacade.GetData<Entries>().Where(
                             b => b.PageId == currentPageId && b.Date.Date == blogDate && b.TitleUrl == urlTitle).Select(
-                                b => b.Id)).First();
+								b => b.Id)).First();
 
-                    filter = f => f.BlogEntry == blogId;
-                }
-            }
+					filter = f => f.BlogEntry == blogId;
+				}
+			}
 
-            return filter;
-        }
+			return filter;
+		}
 
-        public static IEnumerable<XElement> GetCommentsCount()
-        {
-            return DataFacade.GetData<Comments>().GroupBy(c => c.BlogEntry).Select(
-                    b =>
-                    new XElement("Comment",
-                                    new XAttribute("Id", b.Key),
-                                    new XAttribute("Count", b.Select(x => x.BlogEntry).Count())
-                                )
-                );
+		public static IEnumerable<XElement> GetCommentsCount()
+		{
+			return DataFacade.GetData<Comments>().GroupBy(c => c.BlogEntry).Select(
+					b =>
+					new XElement("Comment",
+									new XAttribute("Id", b.Key),
+									new XAttribute("Count", b.Select(x => x.BlogEntry).Count())
+								)
+				);
 
-        }
+		}
 
-        public static string GetUrlFromTitle(string title)
-        {
-            const string autoRemoveChars = @",./\?#!""@+'`´*():;$%&=¦§";
-            var generated = new StringBuilder();
+		public static string GetUrlFromTitle(string title)
+		{
+			const string autoRemoveChars = @",./\?#!""@+'`´*():;$%&=¦§";
+			var generated = new StringBuilder();
 
-            foreach (var c in title.Where(c => autoRemoveChars.IndexOf(c) == -1))
-            {
-                generated.Append(c);
-            }
+			foreach (var c in title.Where(c => autoRemoveChars.IndexOf(c) == -1))
+			{
+				generated.Append(c);
+			}
 
-            var url = generated.ToString().Replace(" ", "-");
+			var url = generated.ToString().Replace(" ", "-");
 
-            return url;
-        }
+			return url;
+		}
 
-        public static string GetBlogUrl(DateTime date, string title)
-        {
-            return string.Format("/{0}/{1}", CustomDateFormat(date, "yyyy/MM/dd"), GetUrlFromTitle(title));
-        }
+		public static string GetBlogUrl(DateTime date, string title)
+		{
+			return string.Format("/{0}/{1}", CustomDateFormat(date, "yyyy/MM/dd"), GetUrlFromTitle(title));
+		}
 
-        public static XsltExtensionDefinition<BlogXsltExtensionsFunction> XsltExtensions()
-        {
-            return new XsltExtensionDefinition<BlogXsltExtensionsFunction>
-            {
-                EntensionObject = new BlogXsltExtensionsFunction(),
-                ExtensionNamespace = "#BlogXsltExtensionsFunction"
-            };
-        }
+		public static XsltExtensionDefinition<BlogXsltExtensionsFunction> XsltExtensions()
+		{
+			return new XsltExtensionDefinition<BlogXsltExtensionsFunction>
+			{
+				EntensionObject = new BlogXsltExtensionsFunction(),
+				ExtensionNamespace = "#BlogXsltExtensionsFunction"
+			};
+		}
 
-        public static string[] GetPathInfoParts()
-        {
-            // Expecting '/yyyy/mm/dd/title' OR /tag
-            var pathInfo = GetPathInfo();
+		public static string[] GetPathInfoParts()
+		{
+			// Expecting '/yyyy/mm/dd/title' OR /tag
+			var pathInfo = GetPathInfo();
 
-            return pathInfo != null && pathInfo.Contains("/") ? pathInfo.Split('/') : null;
-        }
+			return pathInfo != null && pathInfo.Contains("/") ? pathInfo.Split('/') : null;
+		}
 
-        private static string GetPathInfo()
-        {
-            Type pageRoute = typeof(IData).Assembly.GetType("Composite.Core.Routing.Pages.C1PageRoute", false);
+		private static string GetPathInfo()
+		{
+			Type pageRoute = typeof(IData).Assembly.GetType("Composite.Core.Routing.Pages.C1PageRoute", false);
 
-            if (pageRoute == null)
-            {
-                // Support for version 2.1.2-
-                return HttpContext.Current.Request.PathInfo;
-            }
+			if(pageRoute == null)
+			{
+				// Support for version 2.1.2-
+				return HttpContext.Current.Request.PathInfo;
+			}
 
-            // Support for version 2.1.3+
-            string result = (pageRoute
-                .GetMethod("GetPathInfo", BindingFlags.Public | BindingFlags.Static)
-                .Invoke(null, new object[0]) as string) ?? string.Empty;
+			// Support for version 2.1.3+
+			string result = (pageRoute
+				.GetMethod("GetPathInfo", BindingFlags.Public | BindingFlags.Static)
+				.Invoke(null, new object[0]) as string) ?? string.Empty;
 
-            if (result != string.Empty)
-            {
-                pageRoute
-                    .GetMethod("RegisterPathInfoUsage", BindingFlags.Public | BindingFlags.Static)
-                    .Invoke(null, new object[0]);
-            }
+			if(result != string.Empty)
+			{
+				pageRoute
+					.GetMethod("RegisterPathInfoUsage", BindingFlags.Public | BindingFlags.Static)
+					.Invoke(null, new object[0]);
+			}
 
-            return result;
-        }
+			return result;
+		}
 
-        public static string GetFullPath(string path)
-        {
-            var request = HttpContext.Current.Request;
-            return (new Uri(request.Url, System.IO.Path.Combine(request.ApplicationPath, path))).OriginalString;
-        }
+		public static string GetFullPath(string path)
+		{
+			var request = HttpContext.Current.Request;
+			return (new Uri(request.Url, System.IO.Path.Combine(request.ApplicationPath, path))).OriginalString;
+		}
 
-        public static string CustomDateFormat(DateTime date, string dateFormat)
-        {
-            return date.ToString(dateFormat, CultureInfo.GetCultureInfo("en-US").DateTimeFormat);
-        }
+		public static string CustomDateFormat(DateTime date, string dateFormat)
+		{
+			return date.ToString(dateFormat, CultureInfo.GetCultureInfo("en-US").DateTimeFormat);
+		}
 
-        public static bool Validate(string regularExpression, object value, bool isRequired)
-        {
-            if (value == null)
-            {
-                return isRequired ? false : true;
-            }
-            {
-                return String.IsNullOrEmpty(value.ToString()) ? false : Regex.IsMatch(value.ToString(), regularExpression);
-            }
-        }
+		public static bool Validate(string regularExpression, object value, bool isRequired)
+		{
+			if (value == null)
+			{
+				return isRequired ? false : true;
+			}
+			{
+				return String.IsNullOrEmpty(value.ToString()) ? false : Regex.IsMatch(value.ToString(), regularExpression);
+			}
+		}
 
-        public static void SendMail(string to, string from, string subject, string body)
-        {
-            try
-            {
-                var mail = new MailMessage();
-                mail.To.Add(to);
-                mail.From = new MailAddress(from);
-                mail.Subject = subject;
-                mail.Body = body;
-                mail.IsBodyHtml = true;
-                mail.BodyEncoding = Encoding.Default;
-                mail.SubjectEncoding = Encoding.Default;
-                var smtpMail = new SmtpClient();
-                smtpMail.Send(mail);
-            }
-            catch (Exception ex)
-            {
-                LoggingService.LogInformation("Composite.Community.Blog.BlogFacade.SendMail", "Error while sending Email. Check mail settings in web.config file.");
-                LoggingService.LogError("Composite.Community.Blog.BlogFacade.SendMail", ex);
-            }
-        }
+		public static void SendMail(string to, string from, string subject, string body)
+		{
+			try
+			{
+				var mail = new MailMessage();
+				mail.To.Add(to);
+				mail.From = new MailAddress(from);
+				mail.Subject = subject;
+				mail.Body = body;
+				mail.IsBodyHtml = true;
+				mail.BodyEncoding = Encoding.Default;
+				mail.SubjectEncoding = Encoding.Default;
+				var smtpMail = new SmtpClient();
+				smtpMail.Send(mail);
+			}
+			catch (Exception ex)
+			{
+				LoggingService.LogInformation("Composite.Community.Blog.BlogFacade.SendMail", "Error while sending Email. Check mail settings in web.config file.");
+				LoggingService.LogError("Composite.Community.Blog.BlogFacade.SendMail", ex);
+			}
+		}
 
-        public static string GetCurrentCultureName()
-        {
-            return CultureInfo.CurrentCulture.Name.ToLower();
-        }
+		public static string GetCurrentCultureName()
+		{
+			return CultureInfo.CurrentCulture.Name.ToLower();
+		}
 
-        public static string GetCurrentPath()
-        {
-            var pathInfoParts = GetPathInfoParts();
-            string path = string.Empty;
-            if (pathInfoParts != null)
-            {
-                int year;
+		public static string GetCurrentPath()
+		{
+			var pathInfoParts = GetPathInfoParts();
+			string path = string.Empty;
+			if (pathInfoParts != null)
+			{
+				int year;
 
-                if (int.TryParse(pathInfoParts[1], out year))
-                {
-                    path = string.Format("/{0}", pathInfoParts[1]);
+				if (int.TryParse(pathInfoParts[1], out year))
+				{
+					path = string.Format("/{0}", pathInfoParts[1]);
 
-                    if (pathInfoParts.Length > 2)
-                    {
-                        int month;
-                        if (int.TryParse(pathInfoParts[2], out month))
-                        {
-                            path = string.Format("{0}/{1}", path, pathInfoParts[2]);
-                        }
-                    }
-                }
-                else
-                {
-                    path = string.Format("/{0}", pathInfoParts[1]);
-                }
-            }
+					if (pathInfoParts.Length > 2)
+					{
+						int month;
+						if (int.TryParse(pathInfoParts[2], out month))
+						{
+							path = string.Format("{0}/{1}", path, pathInfoParts[2]);
+						}
+					}
+				}
+				else
+				{
+					path = string.Format("/{0}", pathInfoParts[1]);
+				}
+			}
 
-            return path;
-        }
+			return path;
+		}
 
-        public static void SetTitleUrl(object sender, DataEventArgs dataEventArgs)
-        {
-            Entries entry = (Entries)dataEventArgs.Data;
-            entry.TitleUrl = GetUrlFromTitle(entry.Title);
-        }
+		public static void SetTitleUrl(object sender, DataEventArgs dataEventArgs)
+		{
+			Entries entry = (Entries)dataEventArgs.Data;
+			entry.TitleUrl = GetUrlFromTitle(entry.Title);
+		}
 
-        public static string Encode(string text)
-        {
-            text = HttpContext.Current.Server.UrlEncode(text);
-            return text.Replace("+", "%20");
-        }
+		public static string Encode(string text)
+		{
+			text = HttpContext.Current.Server.UrlEncode(text);
+			return text.Replace("+", "%20");
+		}
 
-        public static void ClearRssFeedCache(object sender, DataEventArgs dataEventArgs)
-        {
-            Entries entry = (Entries)dataEventArgs.Data;
-            if (entry != null)
-            {
-                HttpRuntime.Cache.Remove(string.Format(BlogRssFeed.CacheRSSKeyTemplate, entry.PageId, GetCurrentCultureName()));
-            }
+		public static void ClearRssFeedCache(object sender, DataEventArgs dataEventArgs)
+		{
+			Entries entry = (Entries)dataEventArgs.Data;
+			if (entry != null)
+			{
+				HttpRuntime.Cache.Remove(string.Format(BlogRssFeed.CacheRSSKeyTemplate, entry.PageId, GetCurrentCultureName()));
+			}
 
-        }
-    }
+		}
+	}
 }
