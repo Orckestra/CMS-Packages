@@ -69,6 +69,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Composite.Community.Blog.Package\Package\Bin\CookComputing.XmlRpcV2.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -95,6 +103,7 @@
     <Compile Include="BlogEventRegistrator.cs" />
     <Compile Include="BlogFacade.cs" />
     <Compile Include="BlogRssFeed.ashx.cs" />
+    <Compile Include="BlogCustomValidators.cs" />
     <Compile Include="BlogXsltExtensionsFunction.cs" />
     <Compile Include="CommentsFacade.cs" />
     <Compile Include="BlogStartupHandler.cs" />

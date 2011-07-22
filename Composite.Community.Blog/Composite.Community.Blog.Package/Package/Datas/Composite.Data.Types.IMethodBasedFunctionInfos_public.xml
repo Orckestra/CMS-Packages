@@ -7,4 +7,5 @@
   <Add Id="8d104c5b-f821-4d33-8cba-e63d75003c91" Type="Composite.Community.Blog.BlogFacade" MethodName="XsltExtensions" Namespace="Composite.Community.Blog" UserMethodName="XsltExtensions" />
   <Add Id="c996422c-9a11-4f80-b5a3-69b818227f90" Type="Composite.Community.Blog.BlogFacade" MethodName="GetBlogFilterFromUrl" Namespace="Composite.Community.Blog" UserMethodName="GetBlogFilterFromUrl" />
   <Add Id="a8fa2971-d4ea-4610-a03b-ee911192c390" Type="Composite.Community.Blog.BlogFacade" MethodName="GetCommentsFilterFromUrl" Namespace="Composite.Community.Blog" UserMethodName="GetCommentsFilterFromUrl" />
+  <Add Id="9b961d7c-ef4a-41d4-a156-9e6d4c5a31a4" Type="Composite.Community.Blog.TagValidatorContainer" MethodName="TagValidator" Namespace="Composite.Community.Blog.TagValidatorContainer" UserMethodName="TagValidator" />
 </Data>
