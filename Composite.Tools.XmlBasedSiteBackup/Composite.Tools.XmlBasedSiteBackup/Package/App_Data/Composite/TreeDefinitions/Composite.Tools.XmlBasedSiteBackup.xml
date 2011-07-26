@@ -7,7 +7,7 @@
 		<Children>
 			<Element Label="XML-based site backup" Id="XmlBasedSiteBackup" Icon="save">
 				<Actions>
-					<CustomUrlAction Url="~/Composite/InstalledPackages/content/views/Composite.Tools.XmlBasedSiteBackup/XmlBasedSiteBackup.aspx" Label="Open" Icon="forward" ViewLabel="XML-based site backup" ViewIcon="save" ViewToolTip="sdsad" ViewType="documentview" />
+					<CustomUrlAction Url="~/Composite/InstalledPackages/content/views/Composite.Tools.XmlBasedSiteBackup/XmlBasedSiteBackup.aspx" Label="Open" Icon="forward" ViewLabel="XML-based site backup" ViewIcon="save" ViewToolTip="XML-Based Site Backup" ViewType="documentview" />
 				</Actions>
 			</Element>
 		</Children>

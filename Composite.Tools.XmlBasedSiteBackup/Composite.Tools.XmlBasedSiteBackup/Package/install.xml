@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3927.42711" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.XmlBasedSiteBackup" groupName="Composite.Tools" version="1.2.4" author="Composite A/S" website="http://www.composite.net" id="058add2e-35fa-466b-9b33-a3f72d4aa7a5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+	<mi:PackageInformation name="Composite.Tools.XmlBasedSiteBackup" groupName="Composite.Tools" version="1.2.5" author="Composite A/S" website="http://www.composite.net" id="058add2e-35fa-466b-9b33-a3f72d4aa7a5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
 		<Description>Allows creating backups on websites with XML Data Stores.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
