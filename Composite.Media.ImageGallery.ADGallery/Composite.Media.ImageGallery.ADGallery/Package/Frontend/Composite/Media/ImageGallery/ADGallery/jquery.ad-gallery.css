@@ -2,6 +2,7 @@
 
 .ad-gallery { width: 600px; }
 .ad-gallery, .ad-gallery * { margin: 0; padding: 0;  line-height: 0px;}
+.ad-image * {line-height: 24px;}
 .ad-gallery .ad-image-wrapper { width: 100%; height: 400px; margin-bottom: 10px; position: relative; overflow: hidden; }
 .ad-gallery .ad-image-wrapper .ad-loader { position: absolute; z-index: 10; top: 48%; left: 48%; border: 1px solid #CCC; }
 .ad-gallery .ad-image-wrapper .ad-next { position: absolute; right: 0; top: 0; width: 25%; height: 100%; cursor: pointer; display: block; z-index: 100; }
