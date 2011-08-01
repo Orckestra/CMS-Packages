@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:DynamicDataTypesData>
+		<Add name="Composite.Community.ContactForm.EmailTemplate" />
+	</pc:DynamicDataTypesData>
+	<pc:Directories>
+		<Add name="Frontend\Composite\Community\ContactForm\" />
+	</pc:Directories>
+	<pc:CSharpFunctions>
+		<Add name="Composite.Community.ContactForm.Functions.GetEmbedableFieldsTypes" />
+		<Add name="Composite.Community.ContactForm.Functions.Send" />
+	</pc:CSharpFunctions>
+	<pc:Files>
+		<Add name="App_Data\Composite\DynamicTypeForms\Composite\Community\ContactForm\EmailTemplate.xml" />
+		<Add name="App_GlobalResources\Composite\Community\ContactForm.resx" />
+		<Add name="App_GlobalResources\Composite\Community\ContactForm.ru-RU.resx" />
+		<Add name="App_Data\Composite\TreeDefinitions\Composite.Community.ContactForm.xml" />
+		<Add name="App_Data\Composite\TreeDefinitions\Composite.Community.ContactFrom.EmailTemplate.xml" />
+		<Add name="App_Code\Composite\Community\ContactForm\Functions.cs" />
+	</pc:Files>
+	<pc:DynamicDataTypes>
+		<Add name="Composite.Community.ContactFormData" />
+		<Add name="Composite.Community.ContactForm.EmailTemplate" />
+	</pc:DynamicDataTypes>
+	<pc:XsltFunctions>
+		<Add name="Composite.Community.ContactForm" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.ContactForm" groupName="Composite.Community" version="1.0.1" author="Composite A/S" website="http://composite.net" id="c698558c-c7bb-4fe4-b1bd-0156a81f2d69" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Adds a form to a page for visitors to contact and send messages to website owners.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

@@ -1,0 +1,48 @@
+﻿#errors_contactform {
+	color: red;
+}
+#contact_form {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+#contact_form li {
+	list-style-image: none;
+	list-style-type: none;
+	margin-bottom: 15px;
+}
+#contact_form label {
+	display: block;
+}
+
+#contact_form .text {
+	border: 1px solid #CCCCCC;
+	color: #445566;
+	letter-spacing: 1px;
+	padding: 5px;
+	width: 50%;
+}
+
+#contact_form li.required label:after {
+	color: red;
+	content: '*';
+}
+
+#contact_form .clearfix {
+	clear: left;
+	padding-top: 10px;
+}
+
+#contact_form .captchaImg {
+	padding: 4px;
+	background: white;
+	border: 1px solid #CCCCCC;
+}
+#contact_form .right {
+	float: right;
+}
+#contact_form .error {
+	border: 1px solid red;
+}
+#contact_form .ok {
+	border: 1px solid green;
+}
