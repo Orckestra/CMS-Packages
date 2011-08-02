@@ -41,30 +41,6 @@
 		</system.webServer>
 	</xsl:variable>
 
-	<xsl:template match="configuration/system.webServer/modules">
-		<xsl:copy>
-			<xsl:apply-templates select="@*" />
-
-			<xsl:if test="count(add[@name='UrlFilter'])=0">
-				<add name="UrlFilter" type="CompositeC1Contrib.Web.UrlFilterModule, CompositeC1Contrib" />
-			</xsl:if>
-			
-			<xsl:apply-templates select="node()" />
-		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="configuration/system.web/httpModules">
-		<xsl:copy>
-			<xsl:apply-templates select="@*" />
-
-			<xsl:if test="count(add[@name='UrlFilter'])=0">
-				<add name="UrlFilter" type="CompositeC1Contrib.Web.UrlFilterModule, CompositeC1Contrib" />
-			</xsl:if>
-			
-			<xsl:apply-templates select="node()" />
-		</xsl:copy>
-	</xsl:template>
-
 	<!--Start Engine 1.0.2-->
 	<xsl:template match="/">
 		<xsl:variable name="xml">
