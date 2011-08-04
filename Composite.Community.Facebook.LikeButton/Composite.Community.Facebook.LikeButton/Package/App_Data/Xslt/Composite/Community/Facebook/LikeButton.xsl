@@ -21,11 +21,11 @@ exclude-result-prefixes="xsl in lang f fb msxsl csharp">
   <xsl:variable name="cultureForLikeButton" select="csharp:FixCurrentCultureString($culture)" />
   <xsl:template match="/">
     <html>
-      <head>
-        <!-- markup placed here will be shown in the head section of the rendered page --></head>
+		<head>
+			<script id="facebook-all-js" src="http://connect.facebook.net/{$cultureForLikeButton}/all.js#xfbml=1"></script>
+		</head>
       <body>
         <div>
-          <script src="http://connect.facebook.net/{$cultureForLikeButton}/all.js#xfbml=1"></script>
           <fb:like
           href="{$urlToLike}"
           send="{$sendButton}"
