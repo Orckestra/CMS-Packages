@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:XsltFunctions>
+		<Add name="Composite.Community.Forum.Nabble" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.Forum.Nabble" groupName="Composite.Community.Forum" version="1.0.0" author="Composite A/S" website="http://composite.net" id="571dc4a9-de13-4ba3-97db-45ec73072f3d" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Embeds a forum hosted on nabble.com</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
