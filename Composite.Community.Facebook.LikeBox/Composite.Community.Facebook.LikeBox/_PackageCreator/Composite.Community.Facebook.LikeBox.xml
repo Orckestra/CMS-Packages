@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:XsltFunctions>
+		<Add name="Composite.Community.Facebook.LikeBox" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.Facebook.LikeBox" groupName="Composite.Community.Facebook" version="1.0.0" author="Composite A/S" website="http://composite.net" id="68806560-fd02-4d2d-895f-9cea1df5c190" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Adds the Facebook Like Box to a web page to present recent posts from the Facebook Page, display  how many people and which friends liked the Page and allow likes in place without visiting the Page.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
