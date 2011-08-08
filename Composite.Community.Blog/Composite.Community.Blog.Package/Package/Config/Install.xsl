@@ -16,7 +16,7 @@
 	</system.net>
 	</xsl:variable>
 
-	<!--Start Engine-->
+	<!--Start Engine 1.0.2-->
 	<xsl:template match="/">
 		<xsl:variable name="xml">
 			<xsl:apply-templates select="/" mode="Prepare" />
@@ -30,50 +30,53 @@
 			<xsl:apply-templates select="@*" mode="Prepare" />
 			<xsl:variable name="input" select="." />
 			<xsl:apply-templates select="msxsl:node-set($nodes)/@set:*" mode="Copy" />
-			<xsl:for-each select="msxsl:node-set($nodes)/*">
-				<xsl:variable name="name" select="name()" />
-				<xsl:choose>
-					<xsl:when test="namespace-uri() = '' ">
-						<xsl:choose>
-							<xsl:when test="count($input/*[name()=$name])=0">
-								<xsl:apply-templates select="." mode="Copy"/>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:apply-templates select="$input/*[name()=$name]" mode="Prepare">
-									<xsl:with-param name="nodes" select="." />
-								</xsl:apply-templates>
-							</xsl:otherwise>
-						</xsl:choose>
-					</xsl:when>
-					<xsl:when test="namespace-uri() = 'http://www.composite.net/add/1.0'">
-						<xsl:variable name="localName" select="local-name()" />
-						<xsl:variable name="keyName">
-							<xsl:choose>
-								<xsl:when test="@add:key">
-									<xsl:value-of select="@add:key" />
-								</xsl:when>
-								<xsl:otherwise>name</xsl:otherwise>
-							</xsl:choose>
-						</xsl:variable>
-						<xsl:variable name="keyValue" select="@*[name()=$keyName]" />
-						<xsl:if test="count($input/*[local-name()=$localName and @*[name()=$keyName]=$keyValue])=0">
-							<xsl:apply-templates mode="Copy" select="." />
-						</xsl:if>
-					</xsl:when>
-				</xsl:choose>
+			<xsl:for-each select="msxsl:node-set($nodes)/configSections">
+				<xsl:if test="count($input/configSections)=0">
+					<xsl:apply-templates select="." mode="Copy"/>
+				</xsl:if>
 			</xsl:for-each>
 			<xsl:for-each select="node()">
-				<xsl:variable name="name" select="name()"  />
-				<xsl:if test="count(msxsl:node-set($nodes)/*[name()=$name])=0">
-					<xsl:apply-templates select="." mode="Prepare">
-						<xsl:with-param name="nodes" select="msxsl:node-set($nodes)/*[name()=$name]" />
-					</xsl:apply-templates>
+				<xsl:variable name="name" select="name()" />
+				<xsl:choose>
+					<xsl:when test="string(@configSource)=''">
+						<xsl:apply-templates select="." mode="Prepare">
+							<xsl:with-param name="nodes" select="msxsl:node-set($nodes)/*[name()=$name]" />
+						</xsl:apply-templates>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="Copy"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:for-each>
+			<xsl:for-each select="msxsl:node-set($nodes)/*[name()!='configSections']">
+				<xsl:variable name="name" select="name()" />
+				<xsl:if test="count($input/*[name()=$name])=0">
+					<xsl:choose>
+						<xsl:when test="namespace-uri() = '' ">
+							<xsl:apply-templates select="." mode="Copy" />
+						</xsl:when>
+						<xsl:when test="namespace-uri() = 'http://www.composite.net/add/1.0'">
+							<xsl:variable name="localName" select="local-name()" />
+							<xsl:variable name="keyName">
+								<xsl:choose>
+									<xsl:when test="@add:key">
+										<xsl:value-of select="@add:key" />
+									</xsl:when>
+									<xsl:otherwise>name</xsl:otherwise>
+								</xsl:choose>
+							</xsl:variable>
+							<xsl:variable name="keyValue" select="@*[name()=$keyName]" />
+							<xsl:if test="count($input/*[local-name()=$localName and @*[name()=$keyName]=$keyValue])=0">
+								<xsl:apply-templates mode="Copy" select="." />
+							</xsl:if>
+						</xsl:when>
+					</xsl:choose>
 				</xsl:if>
 			</xsl:for-each>
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="@add:*" mode="Copy" />
+	<xsl:template match="@add:*" mode="Copy"/>
 
 	<xsl:template match="@set:*" mode="Copy">
 		<xsl:attribute name="{local-name()}">
