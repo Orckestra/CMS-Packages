@@ -58,6 +58,7 @@
     <Content Include="Package\App_Data\Xslt\Composite\Community\Blog\BlogRenderer.xsl">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Package\App_Data\Xslt\Composite\Community\Blog\CommentsRss.xsl" />
     <Content Include="Package\App_Data\Xslt\Composite\Community\Blog\TagCloud.xsl" />
     <Content Include="Package\Bin\Composite.Community.Blog.dll" />
     <Content Include="Package\Bin\CookComputing.XmlRpcV2.dll" />
@@ -83,6 +84,7 @@
     <Content Include="Package\BlogRssFeed.ashx" />
     <Content Include="Package\BlogMetaWeblog.ashx" />
     <Content Include="DLL\Composite.Generated.dll" />
+    <Content Include="Package\BlogCommentsRssFeed.ashx" />
     <None Include="Release\Composite.Community.Blog.zip" />
   </ItemGroup>
   <ItemGroup>
