@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Navigation.LanguageSwitcher" groupName="Composite.Navigation" version="1.3.7" author="Composite A/S" website="http://www.composite.met" id="06c320f5-b068-46c2-8433-597d4d56f67e" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Navigation.LanguageSwitcher" groupName="Composite.Navigation" version="1.3.8" author="Composite A/S" website="http://www.composite.met" id="06c320f5-b068-46c2-8433-597d4d56f67e" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows visitors to switch between different language versions of the same website.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />

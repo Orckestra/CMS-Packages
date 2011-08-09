@@ -22,6 +22,9 @@
 					</xsl:if>
 					<xsl:for-each select="$links">
 						<a href="{@URL}" class="{@Culture}">
+							<xsl:attribute name="lang">
+								<xsl:value-of select="substring-before(@Culture, '-')" />
+							</xsl:attribute>
 							<xsl:apply-templates select="node()" />
 						</a>
 					</xsl:for-each>
