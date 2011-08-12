@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Composite.C1Console.Security;
+using Composite.Functions;
 
 namespace Composite.Forms.Renderer.FormsRendererFunctionProvider
 {
-	[SecurityAncestorProvider(typeof(NoAncestorSecurityAncestorProvider))]
+    [SecurityAncestorProvider(typeof(StandardFunctionSecurityAncestorProvider))]
 	public sealed class FormsRendererFunctionProviderEntityToken : EntityToken
 	{
 		private string _id;
@@ -42,7 +43,7 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider
 
 			DoDeserialize(serializedEntityToken, out type, out source, out id);
 
-			return new FormsRendererFunctionProviderEntityToken(id, source);
+			return new FormsRendererFunctionProviderEntityToken(source, id);
 		}
 	}
 
