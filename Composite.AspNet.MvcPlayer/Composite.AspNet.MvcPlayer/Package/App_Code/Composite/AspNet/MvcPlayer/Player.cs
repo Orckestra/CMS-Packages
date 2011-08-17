@@ -8,6 +8,7 @@ using Composite.Core;
 using Composite.Core.IO;
 using Composite.Core.WebClient;
 using Composite.Core.WebClient.Renderings.Page;
+using System.Reflection;
 
 namespace Composite.AspNet.MvcPlayer
 {
@@ -24,7 +25,28 @@ namespace Composite.AspNet.MvcPlayer
 		{
 			get
 			{
-				return new UrlBuilder(HttpContext.Current.Request.RawUrl).PathInfo;
+				Type pageRoute = typeof(Composite.Data.IData).Assembly.GetType("Composite.Core.Routing.Pages.C1PageRoute", false);
+
+				if (pageRoute == null)
+				{
+					// Support for version 2.1.2
+					return HttpContext.Current.Request.PathInfo;
+				}
+
+				// Support for version 2.1.3+
+				string result = (pageRoute
+					.GetMethod("GetPathInfo", BindingFlags.Public | BindingFlags.Static)
+					.Invoke(null, new object[0]) as string) ?? string.Empty;
+
+				if (result != string.Empty)
+				{
+					pageRoute
+						.GetMethod("RegisterPathInfoUsage", BindingFlags.Public | BindingFlags.Static)
+						.Invoke(null, new object[0]);
+				}
+
+				return result;
+
 			}
 		}
 
