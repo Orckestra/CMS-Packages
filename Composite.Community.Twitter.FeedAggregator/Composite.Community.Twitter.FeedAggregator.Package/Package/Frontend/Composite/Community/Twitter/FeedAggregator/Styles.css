@@ -1,0 +1,50 @@
+#FeedAggregator li {
+	border-bottom: 1px solid #EEEEEE;
+	margin: 0;
+	overflow: hidden;
+	padding: 15px 5px;
+}
+
+#FeedAggregator li div.avatar {
+	float: left;
+	height: 48px;
+	overflow: hidden;
+	width: 48px;
+}
+
+#FeedAggregator li div.avatar a {
+	text-decoration: none;
+}
+
+#FeedAggregator li div.avatar img {
+	height: 48px;
+	width: 48px;
+}
+
+#FeedAggregator li .msg {
+	font-size: 14px;
+	line-height: 17px;
+	margin-bottom: 2px;
+	margin-left: 58px;
+}
+
+#FeedAggregator li .info {
+	color: #777777;
+	font-size: 13px;
+	margin-left: 58px;
+}
+
+#FeedAggregator li .info .source a {
+	color: #777777;
+	font-style: italic;
+	text-decoration: none;
+}
+
+#FeedAggregator li .info .source a:visited {
+	color: #777777;
+}
+
+#FeedAggregator li .info .source a:hover {
+	color: #666666;
+	text-decoration: underline;
+}

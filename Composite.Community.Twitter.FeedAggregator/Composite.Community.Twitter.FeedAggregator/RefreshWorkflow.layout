@@ -1,0 +1,53 @@
+﻿<StateMachineWorkflowDesigner xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Size="661; 742" AutoSizeMargin="16; 24" Location="30; 30" Name="RefreshWorkflow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Size="169; 80" AutoSizeMargin="16; 24" Location="46; 101" Name="refreshInitialState">
+			<StateDesigner.Designers>
+				<StateInitializationDesigner Name="stateInitializationActivity" Size="150; 122" Location="54; 132">
+					<StateInitializationDesigner.Designers>
+						<CodeDesigner Name="stateInitializationCodeActivity" Size="130; 41" Location="64; 194" />
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+				<EventDrivenDesigner Name="delayBeforeStartActivity" Size="150; 182" Location="54; 156">
+					<EventDrivenDesigner.Designers>
+						<DelayDesigner Name="delayBeforeStart" Size="130; 41" Location="64; 218" />
+						<SetStateDesigner Name="setStateActivity1" Size="130; 41" Location="64; 278" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Size="206; 94" AutoSizeMargin="16; 24" Location="176; 216" Name="refreshStateActivity">
+			<StateDesigner.Designers>
+				<StateInitializationDesigner Name="refreshStateInitializationActivity" Size="150; 122" Location="184; 247">
+					<StateInitializationDesigner.Designers>
+						<CodeDesigner Name="refreshCodeActivity" Size="130; 41" Location="194; 309" />
+					</StateInitializationDesigner.Designers>
+				</StateInitializationDesigner>
+				<EventDrivenDesigner Name="timerEventDrivenActivity" Size="150; 182" Location="184; 271">
+					<EventDrivenDesigner.Designers>
+						<DelayDesigner Name="delayActivity" Size="130; 41" Location="194; 333" />
+						<SetStateDesigner Name="setStateActivity2" Size="130; 41" Location="194; 393" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Size="197; 80" AutoSizeMargin="16; 24" Location="464; 103" Name="finishStateActivity" />
+	</StateMachineWorkflowDesigner.Designers>
+	<StateMachineWorkflowDesigner.DesignerConnectors>
+		<StateDesignerConnector TargetActivity="refreshStateActivity" SetStateName="setStateActivity2" SourceActivity="refreshStateActivity" TargetConnectionIndex="0" SourceStateName="refreshStateActivity" TargetConnectionEdge="Top" SourceConnectionEdge="Right" EventHandlerName="timerEventDrivenActivity" SourceConnectionIndex="1" TargetStateName="refreshStateActivity">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="343" Y="281" />
+				<ns0:Point X="391" Y="281" />
+				<ns0:Point X="391" Y="208" />
+				<ns0:Point X="279" Y="208" />
+				<ns0:Point X="279" Y="216" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetActivity="refreshStateActivity" SetStateName="setStateActivity1" SourceActivity="refreshInitialState" TargetConnectionIndex="0" SourceStateName="refreshInitialState" TargetConnectionEdge="Top" SourceConnectionEdge="Right" EventHandlerName="delayBeforeStartActivity" SourceConnectionIndex="1" TargetStateName="refreshStateActivity">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="209" Y="166" />
+				<ns0:Point X="279" Y="166" />
+				<ns0:Point X="279" Y="216" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+	</StateMachineWorkflowDesigner.DesignerConnectors>
+</StateMachineWorkflowDesigner>
