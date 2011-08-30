@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.0.0" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.AddThis" groupName="Composite.Community" version="1.0.0" author="Composite A/S" website="http://composite.net" id="393574e1-6f5a-44d2-b5b1-9c5c17f902c0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.AddThis" groupName="Composite.Community" version="1.0.1" author="Composite A/S" website="http://composite.net" id="393574e1-6f5a-44d2-b5b1-9c5c17f902c0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows users to share the current web page with various online services such as FaceBook or Twitter by using AddThis (http://www.addthis.com/), the world's largest content sharing platform.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
