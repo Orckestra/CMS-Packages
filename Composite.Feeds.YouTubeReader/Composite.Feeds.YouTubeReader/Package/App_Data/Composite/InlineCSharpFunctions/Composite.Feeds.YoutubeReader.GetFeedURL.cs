@@ -13,9 +13,9 @@ namespace Composite.Feeds.YoutubeReader
 		{
 			string urlTemplate = string.Empty;
 			if (FeedType == "channel")
-				urlTemplate = "http://gdata.youtube.com/feeds/api/videos?alt=rss&author={0}&max-results={1}&start-index={2}";
+				urlTemplate = "http://gdata.youtube.com/feeds/api/videos?alt=rss&author={0}&max-results={1}&start-index={2}&orderby=published";
 			if (FeedType == "favorites")
-				urlTemplate = "http://gdata.youtube.com/feeds/api/users/{0}/favorites?alt=rss&max-results={1}&start-index={2}";
+				urlTemplate = "http://gdata.youtube.com/feeds/api/users/{0}/favorites?alt=rss&max-results={1}&start-index={2}&orderby=published";
 
 			return string.Format(urlTemplate, Username, ItemsPerPage, StartIndex);
 		}
