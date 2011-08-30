@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.Google.PlusOne" groupName="Composite.Community.Google" version="1.0.0" author="Composite A/S" website="http://composite.net" id="dd07b93f-847c-4f51-8bf1-a6e5a9e27e89" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.Google.PlusOne" groupName="Composite.Community.Google" version="1.0.1" author="Composite A/S" website="http://composite.net" id="dd07b93f-847c-4f51-8bf1-a6e5a9e27e89" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Adds Google's +1 Button to a page for users to recommend and share content on a website with their Google friends.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
