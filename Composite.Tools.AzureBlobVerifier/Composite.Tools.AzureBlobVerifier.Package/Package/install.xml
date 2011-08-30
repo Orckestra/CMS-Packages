@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.1.4112.14344" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.AzureBlobVerifier" groupName="Composite.Tools" version="1.0.0" author="Composite A/S" website="http://www.composite.net" id="81EFAC40-9D1B-4BAE-85D9-F0B9235C58BC" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4112.14344" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Tools.AzureBlobVerifier" groupName="Composite.Tools" version="1.0.1" author="Composite A/S" website="http://www.composite.net" id="81EFAC40-9D1B-4BAE-85D9-F0B9235C58BC" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
 		<Description>Allows C1 developers to ensure that C1 IO API methods are only used for IO operations on C1 websites on Windows Azure.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries>
