@@ -6,8 +6,8 @@
 	<pc:XsltFunctions>
 		<Add name="Composite.Media.ImageGallery.ADGallery" />
 	</pc:XsltFunctions>
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3927.42711" maximumCompositeVersion="2.9999.9999" />
-	<mi:PackageInformation name="Composite.Media.ImageGallery.ADGallery" groupName="Composite.Media" version="1.0.6" author="Composite A/S" website="http://www.composite.net" id="758b0028-abb1-4f67-bd35-5ddad97ad96e" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3927.42711" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Media.ImageGallery.ADGallery" groupName="Composite.Media" version="1.0.7" author="Composite A/S" website="http://www.composite.net" id="758b0028-abb1-4f67-bd35-5ddad97ad96e" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Displays a gallery of images using AD Gallery, a highly customizable gallery/showcase plugin for jQuery</Description>
 	</mi:PackageInformation>
 </pc:PackageCreator>
