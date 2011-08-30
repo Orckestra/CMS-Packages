@@ -60,16 +60,23 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Package\App_Data\Composite\InlineCSharpFunctions\Composite.Feeds.YoutubeReader.GetFeedURL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\Xslt\Composite\Feeds\YouTubeReader.xsl" />
+    <Content Include="Package\Datas\Composite.Data.Types.IInlineFunctionAssemblyReferences_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IInlineFunctions_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
-    <Content Include="Package\Frontend\Composite\Feeds\YouTubeReader\PlayList.css" />
+    <Content Include="Package\Frontend\Composite\Feeds\YouTubeReader\lightbox-css\closelabel.gif" />
+    <Content Include="Package\Frontend\Composite\Feeds\YouTubeReader\lightbox-css\html-lightbox.css" />
+    <Content Include="Package\Frontend\Composite\Feeds\YouTubeReader\lightbox-css\loading.gif" />
+    <Content Include="Package\Frontend\Composite\Feeds\YouTubeReader\lightbox-css\nextlabel.gif" />
+    <Content Include="Package\Frontend\Composite\Feeds\YouTubeReader\lightbox-css\prevlabel.gif" />
+    <Content Include="Package\Frontend\Composite\Feeds\YouTubeReader\lightbox-js\jquery.html-lightbox.js" />
     <Content Include="Package\Frontend\Composite\Feeds\YouTubeReader\Scripts\jquery.youtubeplaylist.js" />
-    <Content Include="Package\Frontend\Composite\Feeds\YouTubeReader\Gallery.css" />
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>

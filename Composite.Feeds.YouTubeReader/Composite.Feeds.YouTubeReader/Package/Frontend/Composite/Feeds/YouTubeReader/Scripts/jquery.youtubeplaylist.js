@@ -1,26 +1,20 @@
-//-------------------------------------------------
+﻿//-------------------------------------------------
 //                youtube playlist jquery plugin
-//                Created by dan@geckonm.com
-//                www.geckonewmedia.com
-//
-//                v1.1 - updated to allow fullscreen
-//                         - thanks Ashraf for the request
 //-------------------------------------------------
 
-jQuery.fn.ytplaylist = function(options) {
+jQuery.fn.ytplaylist = function(_options) {
 
 	// default settings
 	var options = jQuery.extend({
 		holderId: '_ytvideo',
 		playerHeight: '300',
 		playerWidth: '450',
-		addThumbs: false,
 		thumbSize: 'small',
-		showInline: false,
+		showInline: true,
 		autoPlay: true,
 		showRelated: true,
-		allowFullScreen: false
-	}, options);
+		allowFullScreen: true
+	}, _options);
 
 	return this.each(function() {
 
@@ -64,47 +58,29 @@ jQuery.fn.ytplaylist = function(options) {
 
 
 		//load inital video
-		var firstVid = selector.children("li:first-child").addClass("currentvideo").children("a").attr("href");
-		$("#" + options.holderId + "").html(play(youtubeid(firstVid)));
+		var firstVid = selector.children("div:first-child").addClass("currentvideo").children("a").attr("href");
+		//$("#" + options.holderId + "").html(play(youtubeid(firstVid)));
 
 		//load video on request
-		selector.children("li").children("a").click(function() {
+		selector.find(".video-link").click(function() {
 
-			if (options.showInline) {
-				$("li.currentvideo").removeClass("currentvideo");
-				$(this).parent("li").addClass("currentvideo").html(play(youtubeid($(this).attr("href"))));
+			if (options.showLightbox) {
+				$("div.currentvideo").removeClass("currentvideo");
+				showHtmlLightbox(this, {
+					          width: parseInt(options.playerWidth) + 20,
+					          height: parseInt(options.playerHeight) + 20,
+						  html: play(youtubeid($(this).attr("href"))) 
+						});
 			}
-			else {
-				$("#" + options.holderId + "").html(play(youtubeid($(this).attr("href"))));
-				$(this).parent().parent("ul").find("li.currentvideo").removeClass("currentvideo");
-				$(this).parent("li").addClass("currentvideo");
+			else
+			{		
+				$("div.currentvideo").removeClass("currentvideo");
+				$(this).parents("div.video-list-item").addClass("currentvideo").html(play(youtubeid($(this).attr("href"))));
 			}
-
-
-
 			return false;
 		});
 
-		//do we want thumns with that?
-		if (options.addThumbs) {
 
-			selector.children().each(function(i) {
-
-				var replacedText = $(this).text();
-
-				if (options.thumbSize == 'small') {
-					var thumbUrl = "http://img.youtube.com/vi/" + youtubeid($(this).children("a").attr("href")) + "/2.jpg";
-				}
-				else {
-					var thumbUrl = "http://img.youtube.com/vi/" + youtubeid($(this).children("a").attr("href")) + "/0.jpg";
-				}
-
-
-				$(this).children("a").empty().html("<img src='" + thumbUrl + "' alt='" + replacedText + "' />" + replacedText).attr("title", replacedText);
-
-			});
-
-		}
 
 
 
