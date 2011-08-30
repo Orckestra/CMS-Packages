@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29873" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Lists.EventCalendar" groupName="Composite.Lists" version="1.4.4" author="Composite A/S" website="www.composite.net" id="2C3719EB-7536-4888-B557-C5E74E414DC1" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29873" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Lists.EventCalendar" groupName="Composite.Lists" version="1.4.5" author="Composite A/S" website="www.composite.net" id="2C3719EB-7536-4888-B557-C5E74E414DC1" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
 		<Description>Allows visitors to view the list of events and their details. Displays either past or upcoming events.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
