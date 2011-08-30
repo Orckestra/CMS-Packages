@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Lists.FAQ" groupName="Composite.Lists" version="1.1.2" author="Composite A/S" website="www.composite.net" id="59f6c759-4f9c-4bae-9220-d440825abfff" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Lists.FAQ" groupName="Composite.Lists" version="1.1.9" author="Composite A/S" website="www.composite.net" id="59f6c759-4f9c-4bae-9220-d440825abfff" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>Allows visitors to browse useful information as a list of questions and answers (FAQ). Supports assigning each item a type and target audience.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
