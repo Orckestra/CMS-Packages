@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="2.9999.9999" />
-	<mi:PackageInformation name="Composite.Media.SilverlightPlayer" groupName="Composite.Media" version="1.0.2" author="Composite A/S" website="http://www.composite.net" id="9d4e5261-ece6-4251-b7d2-fff683f26ea2" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Media.SilverlightPlayer" groupName="Composite.Media" version="1.0.3" author="Composite A/S" website="http://www.composite.net" id="9d4e5261-ece6-4251-b7d2-fff683f26ea2" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Embeds and plays Silverlight files</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
