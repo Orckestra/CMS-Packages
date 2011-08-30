@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="2.9999.9999" />
-	<mi:PackageInformation name="Composite.Search.SEO.Sitemap" groupName="Composite.Search" version="1.0.3" author="Composite A/S" website="http://composite.net" id="d894f75f-7530-4b5a-8710-1c71b6ce2696" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Search.SEO.Sitemap" groupName="Composite.Search" version="1.0.4" author="Composite A/S" website="http://composite.net" id="d894f75f-7530-4b5a-8710-1c71b6ce2696" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>Automatically creates a sitemap that complies with the Sitemap protocol supported by various search engines such as Google, Bing, Yahoo.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
