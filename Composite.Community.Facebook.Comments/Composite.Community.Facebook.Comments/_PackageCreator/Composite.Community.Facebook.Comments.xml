@@ -4,8 +4,8 @@
 	<pc:XsltFunctions>
 		<Add name="Composite.Community.Facebook.Comments" />
 	</pc:XsltFunctions>
-	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.Facebook.Comments" groupName="Composite.Community.Facebook" version="1.0.1" author="Composite A/S" website="http://composite.net" id="0ca92900-3f76-432e-901d-f90d59a2382a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.Facebook.Comments" groupName="Composite.Community.Facebook" version="1.0.2" author="Composite A/S" website="http://composite.net" id="0ca92900-3f76-432e-901d-f90d59a2382a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Adds the Comments Box, Facebook's social plugin that enables visitors to your website  to comment on the pages.</Description>
 	</mi:PackageInformation>
 </pc:PackageCreator>
