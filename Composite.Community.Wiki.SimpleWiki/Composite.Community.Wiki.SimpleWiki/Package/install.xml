@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.Wiki.SimpleWiki" groupName="Composite.Community" version="1.0.5" author="Composite A/S" website="http://composite.net" id="fab8de62-fc81-4ff7-9bd0-685332dc7a88" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.Wiki.SimpleWiki" groupName="Composite.Community" version="1.0.6" author="Composite A/S" website="http://composite.net" id="fab8de62-fc81-4ff7-9bd0-685332dc7a88" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Enables visitors to the website to change the content of a page in a simple Wiki-like way.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
