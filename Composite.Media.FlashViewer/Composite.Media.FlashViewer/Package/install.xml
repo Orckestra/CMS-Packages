@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3947.24461" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Media.FlashViewer" groupName="Composite.Media" version="1.2.2" author="Composite A/S" website="http://www.composite.net" id="bbb000a4-ae1e-4857-0a2f-12b54ea1fc41" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3947.24461" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Media.FlashViewer" groupName="Composite.Media" version="1.2.3" author="Composite A/S" website="http://www.composite.net" id="bbb000a4-ae1e-4857-0a2f-12b54ea1fc41" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
 		<Description>Allows visitors to view Flash animations on pages.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
