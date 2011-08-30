@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.0" maximumCompositeVersion="2.9999.9999" />
-	<mi:PackageInformation name="Composite.Search.MicrosoftSearchServer" groupName="Composite.Search" version="1.2.3" author="Composite A/S" website="www.composite.net" id="94e92fe9-b8bc-4f2f-a436-b33b20baa3be" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Search.MicrosoftSearchServer" groupName="Composite.Search" version="1.2.4" author="Composite A/S" website="www.composite.net" id="94e92fe9-b8bc-4f2f-a436-b33b20baa3be" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<Description>Allows visitors to search a website with Microsoft Search.</Description>
 	</mi:PackageInformation>
 	<pc:PageTemplates />
