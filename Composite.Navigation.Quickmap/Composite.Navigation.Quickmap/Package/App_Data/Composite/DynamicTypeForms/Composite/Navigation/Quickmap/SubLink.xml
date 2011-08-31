@@ -1,0 +1,25 @@
+<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0">
+  <cms:bindings>
+    <cms:binding name="Id" type="System.Guid" optional="true" />
+    <cms:binding name="Page" type="System.Guid" optional="true" />
+    <cms:binding name="TopLink" type="System.Guid" optional="true" />
+    <cms:binding name="Position" type="System.Int32" optional="true" />
+  </cms:bindings>
+  <cms:layout>
+    <cms:layout.label>
+      <cms:read source="Page" />
+    </cms:layout.label>
+    <FieldGroup>
+      <DataReferenceTreeSelector Label="Page" Help="Page to include in the quickmap" Handle="Composite.Management.PageIdSelectorDialog" DataType="Composite.Data.Types.IPage,Composite" NullValueAllowed="false">
+        <DataReferenceTreeSelector.Selected>
+          <cms:bind source="Page" />
+        </DataReferenceTreeSelector.Selected>
+      </DataReferenceTreeSelector>
+      <TextBox Label="Position" Help="The position of the link." Type="Integer">
+        <TextBox.Text>
+          <cms:bind source="Position" />
+        </TextBox.Text>
+      </TextBox>
+    </FieldGroup>
+  </cms:layout>
+</cms:formdefinition>

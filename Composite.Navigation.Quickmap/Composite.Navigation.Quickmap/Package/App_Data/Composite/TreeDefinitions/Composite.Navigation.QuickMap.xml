@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AutoAttachments>
+		<NamedParent Name="Content" Position="Bottom"/>
+	</ElementStructure.AutoAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Label="Quickmap" Id="Quickmap">
+				<Actions>
+					<AddDataAction Type="Composite.Navigation.Quickmap.TopLink" />
+				</Actions>
+				<Children>
+					<DataElements Type="Composite.Navigation.Quickmap.TopLink" Icon="page">
+						<OrderBy>
+							<Field FieldName="Position" />
+						</OrderBy>
+						<Actions>
+							<AddDataAction Type="Composite.Navigation.Quickmap.SubLink" />
+							<EditDataAction />
+							<DeleteDataAction />
+						</Actions>
+						<Children>
+							<DataElements Type="Composite.Navigation.Quickmap.SubLink" Icon="page">
+								<Filters>
+									<ParentIdFilter ParentType="Composite.Navigation.Quickmap.TopLink" ReferenceFieldName="TopLink"/>
+								</Filters>
+								<OrderBy>
+									<Field FieldName="Position" />
+								</OrderBy>
+								<Actions>
+									<EditDataAction />
+									<DeleteDataAction />
+								</Actions>
+							</DataElements>
+						</Children>
+					</DataElements>
+				</Children>
+			</Element>
+		</Children>
+	</ElementRoot>
+</ElementStructure>

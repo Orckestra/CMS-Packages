@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Files>
+		<Add name="App_Data\Composite\TreeDefinitions\Composite.Navigation.QuickMap.xml" />
+	</pc:Files>
+	<pc:DynamicDataTypes>
+		<Add name="Composite.Navigation.Quickmap.TopLink" />
+		<Add name="Composite.Navigation.Quickmap.SubLink" />
+	</pc:DynamicDataTypes>
+	<pc:XsltFunctions>
+		<Add name="Composite.Navigation.Quickmap" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29873" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Navigation.Quickmap" groupName="Composite.Navigation" version="1.1.2" author="Composite A/S" website="http://composite.net" id="f3b77314-88c7-48c5-9fa9-d1220c8779d5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Allows visitors to navigate the website via a custom quick sitemap.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
