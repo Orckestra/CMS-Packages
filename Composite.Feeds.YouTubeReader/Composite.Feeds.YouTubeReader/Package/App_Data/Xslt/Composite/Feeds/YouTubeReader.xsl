@@ -30,23 +30,28 @@
 			<head>
 				<script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js" type="text/javascript" id="jquery-1-4-2"></script>
 				<script type="text/javascript" src="~/Frontend/Composite/Feeds/YouTubeReader/Scripts/jquery.youtubeplaylist.js" id="youtubeplaylist"></script>
-				<script type="text/ecmascript">
-					$(function() {
-					$("#YouTube").ytplaylist({
-					autoPlay: <xsl:value-of select="$autoPlay" />,
-					playerWidth: '<xsl:value-of select="$playerWidth" />',
-					playerHeight: '<xsl:value-of select="$playerHeight" />',
-					showLightbox: <xsl:value-of select="$lightbox" />,
-					thumbSize: '<xsl:value-of select="$thumbSize" />',
-					showRelated: <xsl:value-of select="$showRelated" />,
-					allowFullScreen: <xsl:value-of select="$fullscreen" />
-					});
-					});
-				</script>
 				<xsl:if test="$lightbox='true'">
 					<link id="youtube-lightbox-css" media="screen" type="text/css" href="/Frontend/Composite/Feeds/YouTubeReader/lightbox-css/html-lightbox.css" rel="stylesheet" />
 					<script id="youtube-lightbox-js" type="text/javascript" src="/Frontend/Composite/Feeds/YouTubeReader/lightbox-js/jquery.html-lightbox.js"></script>
 				</xsl:if>
+				<script type="text/ecmascript">
+					$(function() {
+					$("#YouTube").ytplaylist({
+						autoPlay: <xsl:value-of select="$autoPlay" />,
+						playerWidth: '<xsl:value-of select="$playerWidth" />',
+						playerHeight: '<xsl:value-of select="$playerHeight" />',
+						showLightbox: <xsl:value-of select="$lightbox" />,
+						thumbSize: '<xsl:value-of select="$thumbSize" />',
+						showRelated: <xsl:value-of select="$showRelated" />,
+						allowFullScreen: <xsl:value-of select="$fullscreen" />
+					});
+					if (window.location.hash.indexOf('#show') == 0)
+					{
+						var videoid = window.location.hash.substring(5);
+						$("a.video-link[href*='"+videoid+"']").click();
+					}
+					});
+				</script>
 				<style type="text/css">
 					.video_paging {border-bottom: solid 1px silver; border-top: solid 1px silver; margin: 0px 0px 10px 0px;}
 					.video_paging div.links {float: left; font-size: 85%;}

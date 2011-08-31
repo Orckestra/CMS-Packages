@@ -44,6 +44,7 @@ jQuery.fn.ytplaylist = function(_options) {
 			}
 			html += 'type="application/x-shockwave-flash" wmode="transparent"  height="' + options.playerHeight + '" width="' + options.playerWidth + '"></embed>';
 			html += '</object>';
+			window.location.hash = "#show" + id;
 			return html;
 
 		};
