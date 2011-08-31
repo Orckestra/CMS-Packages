@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3919.5834" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.PackageServer" groupName="Composite.Tools" version="1.0.4" author="Composite A/S" website="http://composite.net" id="89803d48-1f52-47c1-9029-2ec9240d6130" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3919.5834" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Tools.PackageServer" groupName="Composite.Tools" version="1.0.5" author="Composite A/S" website="http://composite.net" id="89803d48-1f52-47c1-9029-2ec9240d6130" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
 		<Description>Sets up a server to store and distribute packages among C1 users. Presents packages in the Administrative console if added as the package source in C1.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
