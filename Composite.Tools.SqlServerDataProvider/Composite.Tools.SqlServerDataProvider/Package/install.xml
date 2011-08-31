@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.1.4042.26527" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.SqlServerDataProvider" groupName="Composite.Tools" version="1.0.7" author="Composite A/S" website="http://composite.net/" id="c2ab3d31-d7c4-4ce2-9710-954ff6da903e" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4042.26527" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Tools.SqlServerDataProvider" groupName="Composite.Tools" version="1.0.8" author="Composite A/S" website="http://composite.net/" id="c2ab3d31-d7c4-4ce2-9710-954ff6da903e" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
 		<Description>Migrates a website’s data store from XML files to an SQL Server database.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
