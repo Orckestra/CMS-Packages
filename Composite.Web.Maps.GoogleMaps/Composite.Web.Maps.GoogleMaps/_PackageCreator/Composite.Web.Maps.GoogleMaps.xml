@@ -3,8 +3,8 @@
 	<pc:XsltFunctions>
 		<Add name="Composite.Web.Maps.GoogleMaps" />
 	</pc:XsltFunctions>
-	<mi:PackageRequirements minimumCompositeVersion="2.0.0" maximumCompositeVersion="2.9999.9999" />
-	<mi:PackageInformation name="Composite.Web.Maps.GoogleMaps" groupName="Composite.Web.Maps" version="1.0.1" author="Composite A/S" website="http://composite.net" id="941de2b9-b1a2-4edf-9a67-b70dcdac39b8" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Web.Maps.GoogleMaps" groupName="Composite.Web.Maps" version="1.0.2" author="Composite A/S" website="http://composite.net" id="941de2b9-b1a2-4edf-9a67-b70dcdac39b8" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Shows a map for an address using Google Maps</Description>
 	</mi:PackageInformation>
 </pc:PackageCreator>
