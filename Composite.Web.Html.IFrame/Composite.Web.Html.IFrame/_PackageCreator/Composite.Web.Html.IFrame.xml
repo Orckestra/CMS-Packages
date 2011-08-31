@@ -7,8 +7,8 @@
 	<pc:XsltFunctions>
 		<Add name="Composite.Web.Html.IFrame" />
 	</pc:XsltFunctions>
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29873" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Web.Html.IFrame" groupName="Composite.Web" version="1.1.1" author="Composite A/S" website="http://www.composite.net" id="9844256e-0503-4ab7-9e9e-e00dac0d56a0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29873" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Web.Html.IFrame" groupName="Composite.Web" version="1.1.2" author="Composite A/S" website="http://www.composite.net" id="9844256e-0503-4ab7-9e9e-e00dac0d56a0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Creates a HTML iframe tag - showing content from another web page.</Description>
 	</mi:PackageInformation>
 </pc:PackageCreator>
