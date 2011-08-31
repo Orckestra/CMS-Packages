@@ -6,8 +6,8 @@
 	<pc:XsltFunctions>
 		<Add name="Contribution.HolisticWare.SilverlightPlayer" />
 	</pc:XsltFunctions>
-	<mi:PackageRequirements minimumCompositeVersion="2.0.0.0" maximumCompositeVersion="2.9999.9999.9999" />
-	<mi:PackageInformation name="Contribution.HolisticWare.SilverlightPlayer" groupName="Contribution" version="1.0.0" author="HolisticWare" website="http://composite.net" id="4a78da17-5739-4943-8140-04bf7dda6e53" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Contribution.HolisticWare.SilverlightPlayer" groupName="Contribution" version="1.0.1" author="HolisticWare" website="http://composite.net" id="4a78da17-5739-4943-8140-04bf7dda6e53" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Embeds and plays Silverlight files</Description>
 	</mi:PackageInformation>
 </pc:PackageCreator>
