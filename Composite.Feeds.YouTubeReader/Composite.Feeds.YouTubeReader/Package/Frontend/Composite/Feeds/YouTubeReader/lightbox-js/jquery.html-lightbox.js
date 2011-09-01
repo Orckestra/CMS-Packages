@@ -91,6 +91,7 @@ function close() {
 	$(center).hide();
 	$(overlay).stop().fadeOut(options.overlayFadeDuration, setup);
 	$(htmlContent).children(":first").html("");
+	window.location.hash = "_";
 	return false;
 }
 

@@ -15,12 +15,12 @@ jQuery.fn.ytplaylist = function(_options) {
 		showRelated: true,
 		allowFullScreen: true
 	}, _options);
+	
+	var currentVideoHtml = "";
 
 	return this.each(function() {
 
 		var selector = $(this);
-
-
 		//throw a youtube player in
 		function play(id) {
 			var autoPlay = "";
@@ -57,7 +57,6 @@ jQuery.fn.ytplaylist = function(_options) {
 			return ytid;
 		};
 
-
 		//load inital video
 		var firstVid = selector.children("div:first-child").addClass("currentvideo").children("a").attr("href");
 		//$("#" + options.holderId + "").html(play(youtubeid(firstVid)));
@@ -72,18 +71,18 @@ jQuery.fn.ytplaylist = function(_options) {
 					          height: parseInt(options.playerHeight) + 20,
 						  html: play(youtubeid($(this).attr("href"))) 
 						});
+				$(this).parents("div.video-list-item").addClass("currentvideo");
 			}
 			else
 			{		
+				$("div.currentvideo").show();
+				$("div.currentvideo").next("object").remove();
 				$("div.currentvideo").removeClass("currentvideo");
-				$(this).parents("div.video-list-item").addClass("currentvideo").html(play(youtubeid($(this).attr("href"))));
+				$(this).parents("div.video-list-item").addClass("currentvideo").after(play(youtubeid($(this).attr("href"))));
+				$("div.currentvideo").hide();
 			}
 			return false;
 		});
-
-
-
-
 
 	});
 

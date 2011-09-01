@@ -3,25 +3,32 @@
 	<xsl:param name="rss" select="/in:inputs/in:result[@name='LoadUrl']" />
 	<xsl:param name="playerWidth" select="/in:inputs/in:param[@name='PlayerWidth']" />
 	<xsl:param name="playerHeight" select="/in:inputs/in:param[@name='PlayerHeight']" />
-	<xsl:param name="thumbSize" select="/in:inputs/in:param[@name='ThumbSize']" />
-	<xsl:param name="options" select="/in:inputs/in:param[@name='Options']" />
-	<xsl:param name="showRelated" select="contains($options, 'Show Related')" />
-	<xsl:param name="showTitle" select="contains($options, 'Show Title')" />
-	<xsl:param name="showDescription" select="contains($options, 'Show Description')" />
-	<xsl:param name="showAuthor" select="contains($options, 'Show Author')" />
-	<xsl:param name="showViewsCount" select="contains($options, 'Show Views Count')" />
-	<xsl:param name="autoPlay" select="contains($options, 'AutoPlay')" />
-	<xsl:param name="fullscreen" select="contains($options,'Allow Fullscreen')" />
-	<xsl:param name="lightbox" select="contains($options, 'LightBox View')" />
+	<xsl:param name="playeroptions" select="/in:inputs/in:param[@name='PlayerOptions']" />
+	<xsl:param name="listoptions" select="/in:inputs/in:param[@name='ListOptions']" />
+
+	<xsl:param name="lightbox" select="contains($playeroptions, 'LightBox View')" />
+	<xsl:param name="showRelated" select="contains($playeroptions, 'Show Related')" />
+	<xsl:param name="autoPlay" select="contains($playeroptions, 'AutoPlay')" />
+	<xsl:param name="fullscreen" select="contains($playeroptions,'Allow Fullscreen')" />
+
+	<xsl:param name="showTitle" select="contains($listoptions, 'Show Title')" />
+	<xsl:param name="showDescription" select="contains($listoptions, 'Show Description')" />
+	<xsl:param name="showAuthor" select="contains($listoptions, 'Show Author')" />
+	<xsl:param name="showViewsCount" select="contains($listoptions, 'Show Views Count')" />
+	<xsl:param name="thumbSmall" select="contains($listoptions, 'Small Thumbnails')" />
+	<xsl:param name="showPaging" select="contains($listoptions, 'Show Paging')" />
+
 	<xsl:param name="pageId" select="/in:inputs/in:result[@name='GetPageId']" />
+	<xsl:param name="videoId" select="/in:inputs/in:result[@name='NewGuid']"/>
 	<xsl:param name="maxDescriptionLength" select="350" />
+
 	<xsl:param name="thumbImg">
 		<xsl:choose>
-			<xsl:when test="$thumbSize = 'large'">
-				<xsl:text>0.jpg</xsl:text>
+			<xsl:when test="$thumbSmall = 'true'">
+				<xsl:text>default.jpg</xsl:text>
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:text>default.jpg</xsl:text>
+				<xsl:text>0.jpg</xsl:text>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:param>
@@ -36,15 +43,16 @@
 				</xsl:if>
 				<script type="text/ecmascript">
 					$(function() {
-					$("#YouTube").ytplaylist({
+						var videoId = '<xsl:value-of select="$videoId"/>'
+						$("#YouTube" + videoId).ytplaylist({
 						autoPlay: <xsl:value-of select="$autoPlay" />,
 						playerWidth: '<xsl:value-of select="$playerWidth" />',
 						playerHeight: '<xsl:value-of select="$playerHeight" />',
 						showLightbox: <xsl:value-of select="$lightbox" />,
-						thumbSize: '<xsl:value-of select="$thumbSize" />',
 						showRelated: <xsl:value-of select="$showRelated" />,
 						allowFullScreen: <xsl:value-of select="$fullscreen" />
 					});
+
 					if (window.location.hash.indexOf('#show') == 0)
 					{
 						var videoid = window.location.hash.substring(5);
@@ -56,7 +64,7 @@
 					.video_paging {border-bottom: solid 1px silver; border-top: solid 1px silver; margin: 0px 0px 10px 0px;}
 					.video_paging div.links {float: left; font-size: 85%;}
 					.video_paging div.links a {text-decoration: none;}
-					.video_paging div.info {float: right; font-weigth:bold;}
+					.video_paging div.info {float: right; font-weight: bold;}
 					.clear {clear: both;}
 					.video-list-item {margin-bottom: 10px; clear: both;}
 					.video-list-item a img { display: block; float: left; padding: 3px; border: solid 1px silver; margin: 0px 15px 5px 0px;}
@@ -67,12 +75,16 @@
 			</head>
 			<body>
 				<div class="video-list">
-					<xsl:call-template name="Paging" />
-					<div id="YouTube">
+					<xsl:if test="$showPaging = 'true'">
+						<xsl:call-template name="Paging" />
+					</xsl:if>
+					<div id="YouTube{$videoId}">
 						<xsl:apply-templates select="$rss/rss/channel/item" />
 						<div class="clear" />
 					</div>
-					<xsl:call-template name="Paging" />
+					<xsl:if test="$showPaging = 'true'">
+						<xsl:call-template name="Paging" />
+					</xsl:if>
 				</div>
 			</body>
 		</html>
