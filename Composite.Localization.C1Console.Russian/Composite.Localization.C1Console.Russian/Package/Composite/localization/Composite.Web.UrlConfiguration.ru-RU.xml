@@ -23,10 +23,10 @@
 	<string key="HostnameBinding.IncludeHomepageUrlTitle.Label" value="URL-адрес" />
 	<string key="HostnameBinding.IncludeHomepageUrlTitle.ItemLabel" value="Включать название URL-адреса домашней страницы" />
 	<string key="HostnameBinding.IncludeHomepageUrlTitle.Help" value="Определяет, будет ли название URL-адреса домашней страницы частью всего URL-адреса. Не ставьте флажок, если вам нужны более короткие URL-адреса." />
-	<string key="HostnameBinding.IncludeLanguageUrlMapping.ItemLabel" value="Include language URL mapping" />
-	<string key="HostnameBinding.IncludeLanguageUrlMapping.Help" value="Determines whether language code should be a part of a url" />
-	<string key="HostnameBinding.Custom404Page.Label" value="Custom 404 Page" />
-	<string key="HostnameBinding.Custom404Page.Help" value="Url to which request will be redirected in the case there's a request to non-existent c1 page" />
-	<string key="HostnameBinding.Aliases.Label" value="Alias hostnames" />
-	<string key="HostnameBinding.Aliases.Help" value="Hostnames from which all requests will be redirected to the current hostname" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.ItemLabel" value="Включать код языка для URL-адреса" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.Help" value="Определяет, будет ли код языка частью URL-адреса" />
+	<string key="HostnameBinding.Custom404Page.Label" value="Пользоват. страница 404" />
+	<string key="HostnameBinding.Custom404Page.Help" value="URL-адрес, на который будут перенаправляться запросы, при запросе страницы, несуществующей в С1" />
+	<string key="HostnameBinding.Aliases.Label" value="Псевдонимы узлов" />
+	<string key="HostnameBinding.Aliases.Help" value="Имена узлов, с которых будут перенаправляться на текущее имя узла все запросы" />
 </strings>
