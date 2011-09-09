@@ -261,6 +261,14 @@
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Web.UrlConfiguration']/Cultures">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@cultureName='ru-RU'])=0">
+        <add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Web.UrlConfiguration.ru-RU.xml" monitorFileChanges="true" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
 	<xsl:template match="configuration/Composite.Core.Configuration.Plugins.GlobalSettingsProviderConfiguration/GlobalSettingsProviderPlugins/add">
 		<xsl:copy>
 			<xsl:apply-templates select="@*" />
@@ -272,4 +280,5 @@
 			<xsl:apply-templates select="node()" />
 		</xsl:copy>
 	</xsl:template>
+
 </xsl:stylesheet>

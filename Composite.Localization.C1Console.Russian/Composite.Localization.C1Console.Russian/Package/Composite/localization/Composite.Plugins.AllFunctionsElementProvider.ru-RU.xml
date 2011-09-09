@@ -6,4 +6,24 @@
 	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderToolTip" value="Все виджет-функции" />
 	<string key="AllFunctionsElementProvider.GenerateDocumentation" value="Сгенерировать документацию" />
 	<string key="AllFunctionsElementProvider.GenerateDocumentationTooltip" value="Сгенерировать документацию для всех функций в этой папке и подпапках" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformation" value="Информация" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformationTooltip" value="Посмотреть информацию о функции" />
+
+  <string key="FunctionTesterWorkflow.Layout.Label" value="Тест функции" />
+  <string key="FunctionTesterWorkflow.FunctionCalls.Label" value="Функции" />
+  <string key="FunctionTesterWorkflow.Preview.Label" value="Результаты" />
+  <string key="FunctionTesterWorkflow.Runtime.FieldGroup.Label" value="Среда выполнения" />
+  <string key="FunctionTesterWorkflow.DebugFieldGroup.Label" value="Настройки" />
+  <string key="FunctionTesterWorkflow.DebugPage.Label" value="Страница" />
+  <string key="FunctionTesterWorkflow.DebugPage.Help" value="При отладке, эта страница используется в качестве текущей страницы" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Label" value="Область видимости данных" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Help" value="При отладке, используется в качестве текущей области видимости данных" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Label" value="Язык" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Help" value="При отладке, используется в качестве текущего языка" />
+  <string key="FunctionTesterWorkflow.AdminitrativeScope.Label" value="Административная" />
+  <string key="FunctionTesterWorkflow.PublicScope.Label" value="Публичная" />
+
+
+  <string key="AllFunctionsElementProvider.FunctionTester.Label" value="Тестировать функцию" />
+  <string key="AllFunctionsElementProvider.FunctionTester.ToolTip" value="Тестировать функцию" />
 </strings>

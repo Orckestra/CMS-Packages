@@ -339,6 +339,28 @@
   <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback value" />
   <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
   <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.PathInfo.description" value="Возвращает дополнительную информацию передаваемую в URL вместе с ссылкой на страницу." />
+  <string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Сегмент пути, который нужно получить, в формате '/(0)/(1)/(2)/...'. Укажите -1 чтобы получить всю строку." />
+  <string key="Composite.Web.Request.PathInfo.param.Segment.label" value="Segment" />
+  <string key="Composite.Web.Request.PathInfo.param.AutoApprove.help" value="В значении true (истина), Composite C1 получит указание принимать любую строку пути. По умолчанию - true." />
+  <string key="Composite.Web.Request.PathInfo.param.AutoApprove.label" value="AutoApprove" />
+  <string key="Composite.Web.Request.PathInfo.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfo.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.PathInfoInt.description" value="Извлекает значение как целое число из сегмента пути." />
+  <string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Сегмент пути, который нужно получить, в формате '/(0)/(1)/(2)/...'." />
+  <string key="Composite.Web.Request.PathInfoInt.param.Segment.label" value="Segment" />
+  <string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.help" value="В значении true (истина), Composite C1 получит указание принимать любую строку пути. По умолчанию - true." />
+  <string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.label" value="AutoApprove" />
+  <string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.PathInfoGuid.description" value="Извлекает значение как GUID из сегмента пути." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Сегмент пути, который нужно получить, в формате '/(0)/(1)/(2)/...'." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.Segment.label" value="Segment" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.help" value="В значении true (истина), Composite C1 получит указание принимать любую строку пути. По умолчанию - true." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.label" value="AutoApprove" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Извещает систему о том, что в адресе используется путь (PathInfo), чтобы запросы не перенаправлялись на страницу 'Страница не найдена'." />
   <string key="Composite.Web.Request.SessionVariable.description" value="Возвращает переменную из текущей сессии пользователя в виде строки." />
   <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="Используемое значение, если переменная сессии не была найдена" />
   <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Fallback value" />
@@ -422,4 +444,20 @@
   <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.help" value="Ссылка на медиа-папку" />
   <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Media Folder" />
   <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Определяет, нужно ли включать медиа-файлы из подпапок." />
+
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Преобразует перечисление XElement'ов в тип 'словарь' (Dictionary), используя указанные атрибуты в качестве ключей и значений." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.label" value="XElements" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.help" value="Перечисление XElement'ов, из которых будет создан 'словарь' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.label" value="Key Attribute Name" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Имя атрибута у каждого XElement'а, чье значение будет использоваться как ключ в 'словаре' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.label" value="Value Attribute Name" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Имя атрибута у каждого XElement'а, чье значение будет использоваться как значение в 'словаре' (Dictionary)." />
+
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Преобразует перечисление объектов в тип 'словарь' (Dictionary), используя указанные свойства в качестве ключей и значений." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.label" value="Objects" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.help" value="Перечисление объектов, из которых будет создан 'словарь' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.label" value="Key Property Name" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Имя свойства у каждого объекта, чье значение будет использоваться как ключ в 'словаре' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.label" value="Value Property Name" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Имя свойства у каждого объекта, чье значение будет использоваться как значение в 'словаре' (Dictionary)." />
 </strings>

@@ -263,6 +263,8 @@
   <string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogTooltip" value="Просмотреть последние события на сервере" />
   <string key="VirtualElementProviderElementProvider.RootActions.SendMessageLabel" value="Отправить сообщение" />
   <string key="VirtualElementProviderElementProvider.RootActions.SendMessageTooltip" value="Отправить сообщение во все запущенные консоли" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RebuildAssemblyCacheLabel" value="Перестроить кэш сборок" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RebuildAssemblyCacheTooltip" value="Перестроить кэш сборок" />
   <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Перезапустить сервер" />
   <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Перезапустить сервер" />
   <string key="SendMessageToConsolesWorkflow.Layout.Label" value="Отправить сообщение во все консоли C1" />
@@ -568,6 +570,7 @@
   <string key="Website.Forms.Administrative.AddZipMediaFile.Error.Title" value="Ошибка" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Перезаписать существующие файлы" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.MissingUploadedFile.Message" value="Пожалуйста, выберите файл для загрузки" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.CannotUploadDocxFile" value="Пожалуйста, используйте обычную загрузку на сервер для файлов .docx" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.WrongUploadedFile.Message" value="Выбранный файл не является правильным zip файлом" />
   <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelFunctionSearch" value="Поиск функции" />
   <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeyword" value="Ключевое слово" />
@@ -636,5 +639,6 @@
 
   <string key="Validation.Decimal.SymbolsAfterPointAllowed" value="Только {0} цифр разрешено после запятой" />
   <string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Только {0} цифр разрешено до запятой" />
+  <string key="Validation.Int32.Overflow" value="Указанное значение либо слишком большое, либо слишком маленькое. Диапазон допустимых значений от -2,147,483,648 до 2,147,483,647" />
 
 </strings>

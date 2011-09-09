@@ -12,14 +12,14 @@
 	<!-- Url configuration -->
 	<string key="UrlConfiguration.Title" value="Конфигурация URL-адресов" />
 	<string key="UrlConfiguration.PageUrlSuffix.Label" value="Суффикс URL-адреса страницы" />
-	<string key="UrlConfiguration.PageUrlSuffix.Help" value="Расширение, которое будет добавлено к URL-адресу всех страниц. Напр, '.aspx' or '.html'. Оставьте поле пустым, чтобы не использовать расширения с URL-адресами." />
+	<string key="UrlConfiguration.PageUrlSuffix.Help" value="Расширение, которое будет добавлено к URL-адресу всех страниц. Напр., '.aspx' або '.html'. Оставьте поле пустым, чтобы не использовать расширения с URL-адресами." />
 
 	<!-- Hostname binding editing -->
 	<string key="HostnameBinding.AddNewHostnameTitle" value="Новое имя узла" />
 	<string key="HostnameBinding.Hostname.Label" value="Имя узла" />
 	<string key="HostnameBinding.Hostname.Help" value="Имя узла, к которому будут применяться текущие правила построения URL-адресов" />
 	<string key="HostnameBinding.Page.Label" value="Страница" />
-	<string key="HostnameBinding.Page.Help" value="Корневая страница которая будет страницей по умолчанию для текущего имени узла." />
+	<string key="HostnameBinding.Page.Help" value="Корневая страница, которая будет страницей по умолчанию для текущего имени узла." />
 	<string key="HostnameBinding.IncludeHomepageUrlTitle.Label" value="URL-адрес" />
 	<string key="HostnameBinding.IncludeHomepageUrlTitle.ItemLabel" value="Включать название URL-адреса домашней страницы" />
 	<string key="HostnameBinding.IncludeHomepageUrlTitle.Help" value="Определяет, будет ли название URL-адреса домашней страницы частью всего URL-адреса. Не ставьте флажок, если вам нужны более короткие URL-адреса." />
