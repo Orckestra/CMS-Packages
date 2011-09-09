@@ -339,6 +339,28 @@
   <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback value" />
   <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
   <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameter name" />
+  <string key="Composite.Web.Request.PathInfo.description" value="Повертає додаткову інформацію, яка передається в URL разом з посиланням на сторінку." />
+  <string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Сегмент шляху, який потрібно отримати, в форматі '/(0)/(1)/(2)/...'. Вкажіть -1, щоб отримати весь рядок." />
+  <string key="Composite.Web.Request.PathInfo.param.Segment.label" value="Segment" />
+  <string key="Composite.Web.Request.PathInfo.param.AutoApprove.help" value="У значенні true (істина), Composite C1 отримає вказівку приймати будь-який рядок шляху. За промовчанням - true." />
+  <string key="Composite.Web.Request.PathInfo.param.AutoApprove.label" value="AutoApprove" />
+  <string key="Composite.Web.Request.PathInfo.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfo.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.PathInfoInt.description" value="Видобуває значення як ціле число зі сегменту шляху." />
+  <string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Сегмент шляху, який потрібно отримати, в форматі '/(0)/(1)/(2)/...'." />
+  <string key="Composite.Web.Request.PathInfoInt.param.Segment.label" value="Segment" />
+  <string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.help" value="У значенні true (істина), Composite C1 отримає вказівку приймати будь-який рядок шляху. За промовчанням - true." />
+  <string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.label" value="AutoApprove" />
+  <string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.PathInfoGuid.description" value="Видобуває значення як GUID зі сегменту шляху." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Сегмент шляху, який потрібно отримати, в форматі '/(0)/(1)/(2)/...'." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.Segment.label" value="" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.help" value="У значенні true (істина), Composite C1 отримає вказівку приймати будь-який рядок шляху. За промовчанням - true." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.label" value="AutoApprove" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.label" value="Fallback value" />
+  <string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Сповіщуєт систему про те, що в адресі використовується шлях (PathInfo), щоб запити не переспрямовувалися на сторінку 'Сторінку не знайдено'." />
   <string key="Composite.Web.Request.SessionVariable.description" value="Повертає змінну з поточної сесії користувача у вигляді рядка." />
   <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="Значення, що використовується, якщо змінна сесії не була знайдена" />
   <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Fallback value" />
@@ -406,18 +428,9 @@
   <string key="Composite.Mail.SendMail.param.BCC.label" value="BCC" />
   <string key="Composite.Mail.SendMail.param.BCC.help" value="Прихована копія. Список одержувачів, які отримають пошту, але їх індивідуальні адреси будуть приховані від повного списку одержувачів." />
   <string key="Composite.Mail.SendMail.param.Attachment.label" value="Attachment" />
-  <string key="Composite.Mail.SendMail.param.Attachment.help" value="List of attached files.
-\n					Format it the following [{name}=]{filepath}[,{mime-type] [ | .... ]. 
-\n					File path can be either relative or absolute path f.e. &quot;C:\someimage.jpg&quot; or &quot;/coolpicture.jpg&quot; 
-\n					If file path starts with &quot;Composite/&quot;, it will be recognized as a path to Composite media, f.e. 'Composite/MediaArchive:someImage.gif'
-\n					
-\n					Examples: 
-\n					   /attachment.jpg
-\n						 image.jpg=/attachment.jpg
-\n						 image.jpg=/attachment.jpg,image/jpg
-\n						 image1.jpg=/attachment1.jpg,image/jpg|image2.jpg=/attachment2.jpg,image/jpg" />
+  <string key="Composite.Mail.SendMail.param.Attachment.help" value="Список прикріплених файлів. \n Відформатуйте його таким чином, слідуючи [{ім'я} =] {шлях до файлу} [, {MIME-тип] [| .... ]. \n Шлях до файлу може бути або відносним, або абсолютним, напр. &quot;C:\\someimage.jpg&quot; або &quot;/ \coolpicture.jpg&quot; \ n, Якщо шлях до файлу починається з &quot;Composite /&quot;, він буде вважатися шляхом до медіа-файлу C1, напр. &quot;Composite / MediaArchive: someImage.gif '\ n \ n Приклади: \ n / attachment.jpg \ n image.jpg = / attachment.jpg \ n image.jpg = / attachment.jpg, image / jpg \ n image1.jpg = / attachment1.jpg, image / jpg | image2.jpg = / attachment2.jpg, image / jpg" />
 
-	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="AttachmentFromMedia" />
+  <string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="AttachmentFromMedia" />
 	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.help" value="Вкладений файл з бібліотеки мультимедіа." />
 
   <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.description" value="Фільтрує зображення за шляхом до папки" />
@@ -431,4 +444,20 @@
   <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.help" value="Посилання на медіа-папку" />
   <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Media Folder" />
   <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Визначає, чи потрібно включати медіа-файли з підпапок." />
+
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Перетворює перелічування XElement'ів у тип 'словник' (Dictionary), використовуючи вказані атрибути в якості ключів та значень." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.label" value="XElements" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.help" value="Перелічування XElement'ів, з яких буде створено 'словник' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.label" value="Key Attribute Name" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Ім'я атрибута в кожного XElement'а, чиє значення буде використано як ключ у 'словнику' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.label" value="Value Attribute Name" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Ім'я атрибута в кожного XElement'а, чиє значення буде використано як значення в 'словнику' (Dictionary)." />
+
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Перетворює перелічування об'єктів у тип 'словник' (Dictionary), використовуючи вказані властивості в якості ключів та значень." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.label" value="Objects" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.help" value="Перелічування об'єктів, з яких буде створено 'словник' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.label" value="Key Property Name" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Ім'я властивості в кожного об'єкта, чиє значення буде використано як ключ у 'словнику' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.label" value="Value Property Name" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Ім'я властивості в кожного об'єкта, чиє значення буде використано як значення у 'словнику' (Dictionary)." />
 </strings>

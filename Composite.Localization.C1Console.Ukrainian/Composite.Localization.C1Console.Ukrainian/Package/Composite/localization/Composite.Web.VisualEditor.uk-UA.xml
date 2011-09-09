@@ -152,9 +152,13 @@
   <string key="Image.AlternativeTextToolTip" value="Альтернативний текст відображається як видимий текст в браузерах, де зображення не можуть бути показані в звичайному режимі. Наприклад, для браузерів мобільних телефонів і спеціальних браузерів для слабозорих. Атрибут alt повинен чітко описати зміст зображення." />
   <string key="Image.TitleText" value="Текст назви" />
   <string key="Image.TitleTextToolTip" value="Текст назви відображається в підказці при наведенні вказівника миші на зображення. Зображення, незрозуміле користувачеві, може бути моментально пояснено за допомогою назви." />
-  <string key="Image.LabelImage" value="Свойства изображения" />
-  <string key="Image.LabelInsertImage" value="Вставить изображение" />
-  <string key="Image.LabelImageProperties" value="Свойства изображения" />
+  <string key="Image.LabelImage" value="Вставити зображення" />
+  <string key="Image.LabelInsertImage" value="Вставити зображення" />
+  <string key="Image.LabelImageProperties" value="Властивості зображення" />
+  <string key="Image.MaxWidth" value="Макс. ширина" />
+  <string key="Image.MaxWidthToolTip" value="Якщо ширина зображення більше вказанного значення, її буде зменшено до вказанного значення." />
+  <string key="Image.MaxHeight" value="Макс. висота" />
+  <string key="Image.MaxHeightToolTip" value="Якщо висота зображення більше вказанного значення, її буде зменшено до вказанного значення." />
   <!-- charmap -->
   <string key="CharMap.LabelSelectSpecialChar" value="Виберіть символ" />
   <string key="CharMap.LabelGeneral" value="Загальні" />

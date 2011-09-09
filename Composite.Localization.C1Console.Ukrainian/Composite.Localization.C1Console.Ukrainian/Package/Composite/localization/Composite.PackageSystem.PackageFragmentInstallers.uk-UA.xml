@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="AddOnManager.CompositeVersionMisMatch" value="Версія пакета C1 не відповідає поточній версії С1" />
-  <string key="AddOnManager.NewerVersionInstlled" value="Пакет з більш новою версією вже встановлено" />
+  <string key="AddOnManager.PackageAlreadyInstalled" value="Пакет вже встановлено" />
+  <string key="AddOnManager.NewerVersionInstalled" value="Пакет з більш новою версією вже встановлено" />  
   <string key="AddOnManager.MissingAddOnDirectory" value="Неможливо знайти шлях каталогу пакету '{0}'" />
   <string key="AddOnManager.Uninstallable" value="Пакет відзначений як такий, що не видаляється з системи" />
   <string key="AddOnManager.MissingZipFile" value="Не вдалося знайти шлях до Zip-файлу пакету '{0}'" />
@@ -75,6 +76,9 @@
   <string key="VirtualElementProviderNodeAddOnFragmentUninstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
   <string key="FileXslTransformationPackageFragmentInstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
   <string key="FileXslTransformationPackageFragmentInstaller.FileNotFound" value="Файл '{0}' не знайдено" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnly" value="Файл '{0}' позначено як 'Лише для читання' і тому він не може бути перезаписаний." />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnlyOverride" value="Файл '{0}' позначено як 'Лише для читання'. Цей атрибут файла було видалено явним чином и файл було нормально оновлено." />
+
   <string key="PackageVersionBumberFragmentInstaller.OnlyOneElement" value="Допускається лише один елемент &quot;PackageVersions&quot;" />
   <string key="PackageVersionBumberFragmentInstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
   <string key="PackageVersionBumberFragmentInstaller.WrongAttributeGuidFormat" value="Неправильний формат значення атрибуту, очікується значення Guid" />

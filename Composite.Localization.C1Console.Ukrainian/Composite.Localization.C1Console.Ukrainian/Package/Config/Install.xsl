@@ -261,7 +261,15 @@
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
-	<xsl:template match="configuration/Composite.Core.Configuration.Plugins.GlobalSettingsProviderConfiguration/GlobalSettingsProviderPlugins/add">
+	<xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Web.UrlConfiguration']/Cultures">
+		<xsl:copy>
+			<xsl:apply-templates select="@* | node()" />
+			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
+				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Web.UrlConfiguration.uk-UA.xml" monitorFileChanges="true" />
+			</xsl:if>
+		</xsl:copy>
+	</xsl:template>
+  <xsl:template match="configuration/Composite.Core.Configuration.Plugins.GlobalSettingsProviderConfiguration/GlobalSettingsProviderPlugins/add">
 		<xsl:copy>
 			<xsl:apply-templates select="@*" />
 			<xsl:if test="not(contains(@applicationCultureNames, 'uk-UA'))">

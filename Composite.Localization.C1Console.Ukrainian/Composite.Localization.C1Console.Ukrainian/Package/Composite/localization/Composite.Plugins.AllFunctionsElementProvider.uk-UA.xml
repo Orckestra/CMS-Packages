@@ -6,4 +6,24 @@
 	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderToolTip" value="Всі віджет-функції" />
 	<string key="AllFunctionsElementProvider.GenerateDocumentation" value="Згенерувати документацію" />
 	<string key="AllFunctionsElementProvider.GenerateDocumentationTooltip" value="Згенерувати документацію для всіх функцій у цій папці і підпапках" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformation" value="Інформація" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformationTooltip" value="Дивитися інформацію про функції" />
+
+  <string key="FunctionTesterWorkflow.Layout.Label" value="Тест функції" />
+  <string key="FunctionTesterWorkflow.FunctionCalls.Label" value="Функції" />
+  <string key="FunctionTesterWorkflow.Preview.Label" value="Результати" />
+  <string key="FunctionTesterWorkflow.Runtime.FieldGroup.Label" value="Середовище виконання" />
+  <string key="FunctionTesterWorkflow.DebugFieldGroup.Label" value="Настройки" />
+  <string key="FunctionTesterWorkflow.DebugPage.Label" value="Сторінка" />
+  <string key="FunctionTesterWorkflow.DebugPage.Help" value="Під час налагодження ця сторінка використовується в якості поточної сторінки" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Label" value="Область видимості даних" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Help" value="Під час налагодження використовується в якості поточної області видимості даних" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Label" value="Мова" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Help" value="Під час налагодження використовується в якості поточної мови" />
+  <string key="FunctionTesterWorkflow.AdminitrativeScope.Label" value="Адміністративна" />
+  <string key="FunctionTesterWorkflow.PublicScope.Label" value="Публічна" />
+
+
+  <string key="AllFunctionsElementProvider.FunctionTester.Label" value="Тестувати функцію" />
+  <string key="AllFunctionsElementProvider.FunctionTester.ToolTip" value="Тестувати функцію" />
 </strings>

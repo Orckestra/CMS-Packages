@@ -263,6 +263,8 @@
   <string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogTooltip" value="Переглянути останні події на сервері" />
   <string key="VirtualElementProviderElementProvider.RootActions.SendMessageLabel" value="Надіслати повідомлення" />
   <string key="VirtualElementProviderElementProvider.RootActions.SendMessageTooltip" value="Надіслати повідомлення в усі запущені консолі" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RebuildAssemblyCacheLabel" value="Перебудувати кеш складань" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RebuildAssemblyCacheTooltip" value="Перебудувати кеш складань" />
   <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Перезапустити сервер" />
   <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Перезапустити сервер" />
   <string key="SendMessageToConsolesWorkflow.Layout.Label" value="Надіслати повідомлення в усі консолі C1" />
@@ -568,6 +570,7 @@
   <string key="Website.Forms.Administrative.AddZipMediaFile.Error.Title" value="Помилка" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Перезаписати існуючі файли" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.MissingUploadedFile.Message" value="Будь ласка, виберіть файл для надсилання" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.CannotUploadDocxFile" value="Будь ласка, користуйтеся звичайним завантаженням на сервер для файлів .docx" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.WrongUploadedFile.Message" value="Вибраний файл не є правильним zip-файлом" />
   <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelFunctionSearch" value="Пошук функції" />
   <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeyword" value="Ключове слово" />
@@ -636,5 +639,5 @@
 
   <string key="Validation.Decimal.SymbolsAfterPointAllowed" value="Лише {0} цифр дозволяється післе коми" />
   <string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Лише {0} цифр дозволяється перед комою" />
-
+  <string key="Validation.Int32.Overflow" value="Вказане значення або занадто велике, або занадто мале. Диапазон припустимих значень від -2,147,483,648 до 2,147,483,647" />
 </strings>
