@@ -30,7 +30,7 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider.Functions
 					"Subject", typeof(string), true, new ConstantValueProvider(""), StandardWidgetFunctions.TextBoxWidget);
 
 				yield return new FormsRendererFunctionParameterProfile(
-					"Body", typeof(XhtmlDocument), false, new NoValueValueProvider(), StandardWidgetFunctions.VisualXhtmlDocumentEditorWidget);
+					"Body", typeof(XhtmlDocument), false, new ConstantValueProvider(new XhtmlDocument()), StandardWidgetFunctions.VisualXhtmlDocumentEditorWidget);
 
 				yield return new FormsRendererFunctionParameterProfile(
 					"AppendFormData", typeof(bool), false, new ConstantValueProvider(true), StandardWidgetFunctions.CheckBoxWidget);
