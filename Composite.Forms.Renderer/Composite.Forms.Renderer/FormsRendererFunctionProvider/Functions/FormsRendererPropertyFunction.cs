@@ -25,7 +25,7 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider.Functions
 
 		public override object Execute(ParameterList parameters, FunctionContextContainer context)
 		{
-			return new FormsRendererProperty(parameters.GetParameter<string>("PropertyName"));
+			return ParameterFacade.GetProperty(parameters.GetParameter<string>("PropertyName"));
 		}
 	}
 }

@@ -27,8 +27,7 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
 		ScriptManager oScriptManager = ScriptManager.GetCurrent(Page);
 		if (oScriptManager == null)
 		{
-			oScriptManager = new ScriptManager();
-			oScriptManager.ID = "ScriptManager1";
+			oScriptManager = new ScriptManager {ID = "ScriptManager1"};
 			Page.Controls.AddAt(0, oScriptManager);
 		}
 	}
@@ -84,10 +83,7 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
 
 
         //Localizing DatePicker
-        HtmlGenericControl script = InsertScriptIntoHeader();
-		script = new HtmlGenericControl("script");
-		script.Attributes.Add("type", "text/javascript");
-		script.Attributes.Add("language", "JavaScript");
+        var script = InsertScriptIntoHeader();
 		script.InnerHtml = @"
 <!--
 
@@ -132,7 +128,7 @@ $(document).ready(function() {
 	}
 	
 
-	private string NumberDecimalSeparator()
+	private static string NumberDecimalSeparator()
 	{
 		return CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator == "." ? "\\." : CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
 	}
@@ -147,7 +143,7 @@ $(document).ready(function() {
 
 	protected HtmlGenericControl InsertScriptIntoHeader()
 	{
-		HtmlGenericControl script = new HtmlGenericControl("script");
+		var script = new HtmlGenericControl("script");
 		script.Attributes.Add("type", "text/javascript");
 		script.Attributes.Add("language", "JavaScript");
 		Page.Header.Controls.Add(script);
@@ -170,12 +166,12 @@ $(document).ready(function() {
 		{
 			if (FormsRenderer.SubmitForm(parameters, CaptchaInput.Text))
 			{
-				string responseText = parameters.GetParameter<string>("ResponseText");
-				string responsePageId = parameters.GetParameter<string>("ResponseUrl");
-				string responsePageUrl;
+				var responseText = parameters.GetParameter<string>("ResponseText");
+				var responsePageId = parameters.GetParameter<string>("ResponseUrl");
 
 				try
 				{
+					string responsePageUrl;
 					PageStructureInfo.TryGetPageUrl(new Guid(responsePageId), out responsePageUrl);
 					if (responsePageUrl != string.Empty)
 					{

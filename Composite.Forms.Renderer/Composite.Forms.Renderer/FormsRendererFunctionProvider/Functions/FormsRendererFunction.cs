@@ -51,7 +51,7 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider.Functions
 					"ResetButtonLabel", typeof(string), false, new ConstantValueProvider(""), StandardWidgetFunctions.TextBoxWidget);
 
 				yield return new FormsRendererFunctionParameterProfile(
-					"Email", typeof(IEnumerable<FormEmailHeader>), false, new ConstantValueProvider(null), null);
+					"Email", typeof(IEnumerable<FormEmail>), false, new ConstantValueProvider(null), null);
 
 				yield return new FormsRendererFunctionParameterProfile(
 					"UseCaptcha", typeof(bool), false, new ConstantValueProvider(false), StandardWidgetFunctions.CheckBoxWidget);
@@ -61,12 +61,12 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider.Functions
 
 		public override object Execute(ParameterList parameters, FunctionContextContainer context)
 		{
-			XhtmlDocument result = new XhtmlDocument();
-			XElement functionCall = new XElement(Composite.Core.Xml.Namespaces.Function10 + "function",
+			var result = new XhtmlDocument();
+			var functionCall = new XElement(Composite.Core.Xml.Namespaces.Function10 + "function",
 				new XAttribute("name", "Composite.Forms.RendererControl"));
 			BaseRuntimeTreeNode paramNode = null;
 
-			foreach (string parameterName in parameters.AllParameterNames)
+			foreach (var parameterName in parameters.AllParameterNames)
 			{
 				try
 				{
@@ -92,10 +92,7 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider.Functions
 			generatedInterfaces = generatedInterfaces.Except(PageMetaDataFacade.GetAllMetaDataTypes());
 
 			generatedInterfaces = generatedInterfaces.OrderBy(t => t.FullName);
-			foreach (var type in generatedInterfaces)
-			{
-				yield return new KeyValuePair<Type, string>(type, type.FullName);
-			}
+			return generatedInterfaces.Select(type => new KeyValuePair<Type, string>(type, type.FullName)).ToList();
 		}
 	}
 }

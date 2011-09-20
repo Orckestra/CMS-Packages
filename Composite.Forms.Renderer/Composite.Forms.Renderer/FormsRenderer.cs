@@ -17,7 +17,9 @@ using Composite.Core.IO;
 using Composite.Core.Logging;
 using Composite.Core.ResourceSystem;
 using Composite.Core.Types;
+using Composite.Core.WebClient.Captcha;
 using Composite.Core.WebClient.Renderings.Page;
+using Composite.Core.Xml;
 using Composite.Data;
 using Composite.Data.DynamicTypes;
 using Composite.Data.GeneratedTypes;
@@ -26,12 +28,8 @@ using Composite.Data.ProcessControlled.ProcessControllers.GenericPublishProcessC
 using Composite.Data.Types;
 using Composite.Data.Validation;
 using Composite.Data.Validation.ClientValidationRules;
-using Composite.Forms;
 using Composite.Functions;
-using Composite.Core.WebClient.Captcha;
-
 using Microsoft.Practices.EnterpriseLibrary.Validation;
-using Composite.Core.Xml;
 
 namespace Composite.Forms.Renderer
 {
@@ -61,7 +59,7 @@ namespace Composite.Forms.Renderer
 		}
 
 		[ThreadStatic]
-		private static FormTreeCompiler compiler;
+		private static FormTreeCompiler _compiler;
 		[ThreadStatic]
 		private static DataTypeDescriptorFormsHelper formHelper;
 		[ThreadStatic]
@@ -114,7 +112,7 @@ namespace Composite.Forms.Renderer
 
 			}
 
-			compiler = new FormTreeCompiler();
+			_compiler = new FormTreeCompiler();
 
 			//bindings = formHelper.GetBindings(newData);
 			bindings = new Dictionary<string, object>();
@@ -126,11 +124,11 @@ namespace Composite.Forms.Renderer
 			{
 				try
 				{
-					compiler.Compile(reader, channelIdentifier, bindings, formHelper.GetBindingsValidationRules(newData));
+					_compiler.Compile(reader, channelIdentifier, bindings, formHelper.GetBindingsValidationRules(newData));
 
 					#region ClientValidationRules
 					clientValidationRules = new Dictionary<string,List<ClientValidationRule>>();
-					foreach(var item in compiler.GetField<object>("_context").GetProperty<IEnumerable>("Rebindings"))
+					foreach(var item in _compiler.GetField<object>("_context").GetProperty<IEnumerable>("Rebindings"))
 					{
 						
 						var SourceProducer  = item.GetProperty<object>("SourceProducer");
@@ -156,7 +154,7 @@ namespace Composite.Forms.Renderer
 
 				}
 			}
-			webUiControl = (IWebUiControl)compiler.UiControl;
+			webUiControl = (IWebUiControl)_compiler.UiControl;
 
 			Control form = webUiControl.BuildWebControl();
 			control.Controls.Add(form);
@@ -172,6 +170,9 @@ namespace Composite.Forms.Renderer
 			{
 				webUiControl.InitializeViewState();
 			}
+
+			
+
 			return;
 		}
 
@@ -179,9 +180,10 @@ namespace Composite.Forms.Renderer
 		{
 			try
 			{
-				compiler.SaveControlProperties();
+				_compiler.SaveControlProperties();
 			}
-			catch { }
+			catch (Exception)
+			{ }
 			webUiControl.InitializeViewState();
 
 			Dictionary<string, string> errorMessages = formHelper.BindingsToObject(bindings, newData);
@@ -198,8 +200,8 @@ namespace Composite.Forms.Renderer
 
 			ValidationResults validationResults = ValidationFacade.Validate(newData.DataSourceId.InterfaceType, newData);
 
-			bool isValid = true;
-			bool useCaptcha = parameters.GetParameter<bool>("UseCaptcha");
+			var isValid = true;
+			var useCaptcha = parameters.GetParameter<bool>("UseCaptcha");
 			if (useCaptcha)
 			{
 				var Session = HttpContext.Current.Session;
@@ -214,7 +216,7 @@ namespace Composite.Forms.Renderer
 			{
 				isValid = false;
 
-				Dictionary<string, string> _errorSummary = new Dictionary<string, string>();
+				Dictionary<string, string> errorSummary = new Dictionary<string, string>();
 
 				foreach (ValidationResult result in validationResults)
 				{
@@ -233,18 +235,18 @@ namespace Composite.Forms.Renderer
 							help = result.Message;
 						}
 
-						string _error = GetLocalized(label) + ": " + GetLocalized(help);
+						string error = GetLocalized(label) + ": " + GetLocalized(help);
 
-						if (!_errorSummary.ContainsValue(_error))
+						if (!errorSummary.ContainsValue(error))
 						{
-							_errorSummary.Add(_errorSummary.Count().ToString(), _error);
+							errorSummary.Add(errorSummary.Count().ToString(), error);
 						}
 					}
 					catch { }
 				}
 
 				// add errors to ErrorSummary
-				foreach (var dict in _errorSummary)
+				foreach (var dict in errorSummary)
 				{
 					ErrorSummary.AddError(dict.Value);
 				}
@@ -278,86 +280,73 @@ namespace Composite.Forms.Renderer
 
 					using (var datascope = new FormsRendererDataScope(newData))
 					{
-						var formEmailHeaders = parameters.GetParameter("Email") as IEnumerable<FormEmailHeader>;
+						var formEmailHeaders = parameters.GetParameter("Email") as IEnumerable<FormEmail>;
 
 						if (formEmailHeaders != null)
 						{
-							//var page = HttpContext.Current.Handler as Page;
-							//var attachments = new List<Attachment>();
-							//if (page != null)
-							//{
-							//    foreach (string fileName in page.Request.Files)
-							//    {
-							//        HttpPostedFile file = page.Request.Files[fileName];
-							//        attachments.Add(new Attachment(file.InputStream, file.FileName, file.ContentType));
-							//    }
-							//}
-
-							foreach (var formEmailHeader in formEmailHeaders)
+							foreach (var formEmail in formEmailHeaders)
 							{
-								XElement inputXml = GetXElement(newData);
-								XDocument mailBody = new XDocument();
+								ParameterFacade.ResolveProperties(formEmail);
+								var inputXml = GetXElement(newData);
+								var body = new XhtmlDocument();
 
-								XslCompiledTransform xslTransform =  new XslCompiledTransform();
-								
-								xslTransform.LoadFromPath(FormsRendererLocalPath + "Xslt/MailBody.xslt");
+								body.AppendDocument(formEmail.Body);
 
-								using (var writer = mailBody.CreateWriter())
+								if (formEmail.AppendFormData)
 								{
-									xslTransform.Transform(inputXml.CreateReader(), writer);
+									var formData = new XDocument();
+									var xslTransform = new XslCompiledTransform();
+
+									xslTransform.LoadFromPath(FormsRendererLocalPath + "Xslt/MailBody.xslt");
+
+									using (var writer = formData.CreateWriter())
+									{
+										xslTransform.Transform(inputXml.CreateReader(), writer);
+									}
+
+									body.AppendDocument(formData);
 								}
 
-								MailMessage msgMail = new MailMessage();
+								Reflection.CallStaticMethod<object>("Composite.Core.WebClient.Renderings.Page.PageRenderer", "NormalizeXhtmlDocument", body);
+
+								var mailMessage = new MailMessage();
 								try
 								{
-									msgMail.From = new MailAddress(formEmailHeader.From);
+									mailMessage.From = new MailAddress(formEmail.From);
 								}
 								catch (Exception e)
 								{
-									LoggingService.LogError(string.Format("Mail sending(From: '{0}')", formEmailHeader.From), e.Message);
+									LoggingService.LogError(string.Format("Mail sending(From: '{0}')", formEmail.From), e.Message);
 									continue;
 								}
 								try
 								{
-									msgMail.To.Add(formEmailHeader.To);
+									mailMessage.To.Add(formEmail.To);
 								}
 								catch (Exception e)
 								{
-									LoggingService.LogError(string.Format("Mail sending(To: '{0}')", formEmailHeader.To), e.Message);
+									LoggingService.LogError(string.Format("Mail sending(To: '{0}')", formEmail.To), e.Message);
 									continue;
 								}
-								if (!string.IsNullOrEmpty(formEmailHeader.Cc))
+								if (!string.IsNullOrEmpty(formEmail.Cc))
 								{
 									try
 									{
-										msgMail.CC.Add(formEmailHeader.Cc);
+										mailMessage.CC.Add(formEmail.Cc);
 									}
 									catch (Exception e)
 									{
-										LoggingService.LogError(string.Format("Mail sending(Cc: '{0}')", formEmailHeader.Cc), e.Message);
+										LoggingService.LogError(string.Format("Mail sending(Cc: '{0}')", formEmail.Cc), e.Message);
 									}
 								}
-
-								//foreach (var attachment in attachments)
-								//{
-								//    try
-								//    {
-								//        msgMail.Attachments.Add(attachment);
-								//    }
-								//    catch (Exception e)
-								//    {
-								//        LoggingService.LogError(string.Format("Mail sending(Attachment: '{0}')", attachment.Name), e.Message);
-								//    }
-								//}
-
+								
 								try
 								{
-									msgMail.Subject = formEmailHeader.Subject;
-									msgMail.IsBodyHtml = true;
-									msgMail.Body = mailBody.ToString();
-									
-									SmtpClient client = new SmtpClient();
-									client.Send(msgMail);
+									mailMessage.Subject = formEmail.Subject;
+									mailMessage.IsBodyHtml = true;
+									mailMessage.Body = body.ToString();
+
+									new SmtpClient().Send(mailMessage);
 								}
 								catch (Exception e)
 								{
@@ -442,7 +431,7 @@ namespace Composite.Forms.Renderer
 		}
 	}
 
-	internal static class DataExtensions
+	internal static class FormsRendererExtensions
 	{
 		public static T GetField<T>(this object data, string fieldName)
 		{
@@ -466,7 +455,10 @@ namespace Composite.Forms.Renderer
 			return (T)getMethodInfo.Invoke(data, null);
 		}
 
-
+		public static void AppendDocument(this XhtmlDocument document1, XDocument document)
+		{
+			document1.Body.Add(document.Root);
+		}
 	}
 
 	internal static class Reflection

@@ -2,7 +2,7 @@
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="9.9999.9999.9999">
 	</mi:PackageRequirements>
-	<mi:PackageInformation name="Composite.Forms.Renderer" groupName="Composite.Forms" version="1.4.3" author="Composite A/S" website="www.composite.net" id="6fe2ef97-15e6-4aca-a1e3-588d770b435b" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Forms.Renderer" groupName="Composite.Forms" version="1.5.0" author="Composite A/S" website="www.composite.net" id="6fe2ef97-15e6-4aca-a1e3-588d770b435b" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows you to build input forms on pages to collect date from visitors. Supports email notifications. Uses CAPTCHA for protection from abuse.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries>

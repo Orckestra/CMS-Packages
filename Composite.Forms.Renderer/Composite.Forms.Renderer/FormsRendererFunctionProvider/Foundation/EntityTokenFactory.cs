@@ -6,7 +6,7 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider.Foundation
 {
 	public sealed class EntityTokenFactory
 	{
-		private string _providerName;
+		private readonly string _providerName;
 
 		internal EntityTokenFactory(string providerName)
 		{

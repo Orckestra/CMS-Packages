@@ -34,7 +34,7 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider
 					InitializeStaticTypeFunctions();
 				}
 
-				foreach (IFunction function in _functions)
+				foreach (var function in _functions)
 				{
 					yield return function;
 				}
@@ -43,14 +43,14 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider
 
 		private void InitializeStaticTypeFunctions()
 		{
-			_functions = new List<IFunction>();
-
-			_functions.Add(new FormsRendererFunction(_entityTokenFactory));
-			_functions.Add(new FormsRendererControlFunction(_entityTokenFactory));
-			_functions.Add(new FormsRendererPropertyFunction(_entityTokenFactory));
-			_functions.Add(new FormEmailHeaderFunction(_entityTokenFactory));
-			_functions.Add(new JoinEmailHeadersFunction(_entityTokenFactory));
-			
+			_functions = new List<IFunction>
+			             	{
+			             		new FormsRendererFunction(_entityTokenFactory),
+			             		new FormsRendererControlFunction(_entityTokenFactory),
+			             		new FormsRendererPropertyFunction(_entityTokenFactory),
+			             		new FormEmailFunction(_entityTokenFactory),
+			             		new JoinEmailsFunction(_entityTokenFactory)
+			             	};
 		}
 	}
 

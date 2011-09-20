@@ -19,21 +19,25 @@
 	<string key="Composite.Forms.Renderer.param.UseCaptcha.label" value="Use Captcha" />
 	<string key="Composite.Forms.Renderer.param.UseCaptcha.help" value="Select to use Captcha or not" />
 
-	<string key="Composite.Forms.FormEmailHeader.description" value="Set email parameters" />
-	<string key="Composite.Forms.FormEmailHeader.param.From.label" value="From" />
-	<string key="Composite.Forms.FormEmailHeader.param.From.help" value="Email from which it will be send" />
-	<string key="Composite.Forms.FormEmailHeader.param.To.label" value="To" />
-	<string key="Composite.Forms.FormEmailHeader.param.To.help" value="Comma separated list of emails to which an email will be send" />
-	<string key="Composite.Forms.FormEmailHeader.param.Cc.label" value="Cc" />
-	<string key="Composite.Forms.FormEmailHeader.param.Cc.help" value="Optional field, email to which send the copy" />
-	<string key="Composite.Forms.FormEmailHeader.param.Subject.label" value="Subject" />
-	<string key="Composite.Forms.FormEmailHeader.param.Subject.help" value="Subject of email" />
+	<string key="Composite.Forms.FormEmail.description" value="Set email parameters" />
+	<string key="Composite.Forms.FormEmail.param.From.label" value="From" />
+	<string key="Composite.Forms.FormEmail.param.From.help" value="Email from which it will be send" />
+	<string key="Composite.Forms.FormEmail.param.To.label" value="To" />
+	<string key="Composite.Forms.FormEmail.param.To.help" value="Comma separated list of emails to which an email will be send" />
+	<string key="Composite.Forms.FormEmail.param.Cc.label" value="Cc" />
+	<string key="Composite.Forms.FormEmail.param.Cc.help" value="Optional field, email to which send the copy" />
+	<string key="Composite.Forms.FormEmail.param.Subject.label" value="Subject" />
+	<string key="Composite.Forms.FormEmail.param.Subject.help" value="Subject of email" />
+	<string key="Composite.Forms.FormEmail.param.AppendFormData.label" value="Append Form Input" />
+	<string key="Composite.Forms.FormEmail.param.AppendFormData.help" value="When selected, a table showing what was written in the form is appended to the e-mail" />
+	<string key="Composite.Forms.FormEmail.param.Body.label" value="E-mail content" />
+	<string key="Composite.Forms.FormEmail.param.Body.help" value="The content of the e-mail you wish to send" />
 
-	<string key="Composite.Forms.JoinEmailHeaders.description" value="Join two emails" />
-	<string key="Composite.Forms.JoinEmailHeaders.param.EmailHeaderA.label" value="Email A" />
-	<string key="Composite.Forms.JoinEmailHeaders.param.EmailHeaderA.help" value="Set email params to the sending email" />
-	<string key="Composite.Forms.JoinEmailHeaders.param.EmailHeaderB.label" value="Email B" />
-	<string key="Composite.Forms.JoinEmailHeaders.param.EmailHeaderB.help" value="Set email params to the sending email" />
+	<string key="Composite.Forms.JoinEmails.description" value="Join two emails" />
+	<string key="Composite.Forms.JoinEmails.param.EmailA.label" value="Email A" />
+	<string key="Composite.Forms.JoinEmails.param.EmailA.help" value="Set email params to the sending email" />
+	<string key="Composite.Forms.JoinEmails.param.EmailB.label" value="Email B" />
+	<string key="Composite.Forms.JoinEmails.param.EmailB.help" value="Set email params to the sending email" />
 
 	<string key="Composite.Forms.FormsRendererParameter.description" value="Get value of submitted datatype" />
 	<string key="Composite.Forms.FormsRendererParameter.param.PropertyName.label" value="Property Name" />

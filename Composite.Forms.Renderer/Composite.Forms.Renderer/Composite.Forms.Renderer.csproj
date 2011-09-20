@@ -81,7 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ErrorSummary.cs" />
-    <Compile Include="FormEmailHeader.cs" />
+    <Compile Include="FormEmail.cs" />
     <Compile Include="FormsRenderer.cs" />
     <Compile Include="FormsRendererDataScope.cs" />
     <Compile Include="FormsRendererFunctionProvider\FormsRendererFunctionProvider.cs" />
@@ -89,13 +89,13 @@
     <Compile Include="FormsRendererFunctionProvider\Foundation\EntityTokenFactory.cs" />
     <Compile Include="FormsRendererFunctionProvider\Foundation\FormsRendererFunctionBase.cs" />
     <Compile Include="FormsRendererFunctionProvider\Foundation\FormsRendererFunctionParameterProfile.cs" />
-    <Compile Include="FormsRendererFunctionProvider\Functions\FormEmailHeaderFunction.cs" />
+    <Compile Include="FormsRendererFunctionProvider\Functions\FormEmailFunction.cs" />
     <Compile Include="FormsRendererFunctionProvider\Functions\FormsRendererControlFunction.cs" />
     <Compile Include="FormsRendererFunctionProvider\Functions\FormsRendererFunction.cs" />
     <Compile Include="FormsRendererFunctionProvider\Functions\FormsRendererPropertyFunction.cs" />
-    <Compile Include="FormsRendererFunctionProvider\Functions\JoinEmailHeadersFunction.cs" />
+    <Compile Include="FormsRendererFunctionProvider\Functions\JoinEmailsFunction.cs" />
     <Compile Include="FormsRendererFunctionProvider\StandardFunctionSecurityAncestorProvider.cs" />
-    <Compile Include="FormsRendererParameter.cs" />
+    <Compile Include="ParameterFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebChannel\FormsRendererChannel.cs" />
     <AppDesigner Include="Properties\" />
