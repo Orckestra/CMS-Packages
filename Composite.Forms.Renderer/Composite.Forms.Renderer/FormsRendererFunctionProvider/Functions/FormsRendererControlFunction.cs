@@ -15,10 +15,9 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider.Functions
 	public sealed class FormsRendererControlFunction : FormsRendererFunctionBase
 	{
 		public FormsRendererControlFunction(EntityTokenFactory entityTokenFactory)
-			: base("RendererControl", "Composite.Forms", typeof(Control), entityTokenFactory)
+			: base("RendererControl", "Composite.Forms", typeof(object), entityTokenFactory)
 		{
-
-			this.ResourceHandleNameStem = "Composite.Forms.Renderer";
+			ResourceHandleNameStem = "Composite.Forms.Renderer";
 		}
 
 		protected override IEnumerable<FormsRendererFunctionParameterProfile> FunctionParameterProfiles

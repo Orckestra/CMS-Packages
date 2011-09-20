@@ -466,7 +466,7 @@ namespace Composite.Forms.Renderer
 		public static T CallStaticMethod<T>(string typeName, string methodName, params object[] parameters)
 		{
 			var type = typeof(IData).Assembly.GetType(typeName);
-			var methodInfos = type.GetMethods(BindingFlags.NonPublic | BindingFlags.Static);
+			var methodInfos = type.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static);
 			var methodInfo = methodInfos.Where(m => m.Name == methodName && !m.IsGenericMethod).First();
 			return (T)methodInfo.Invoke(null, parameters);
 		}
