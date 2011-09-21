@@ -1,14 +1,14 @@
 using System;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
-using Composite.Core;
 using Composite.Core.IO;
 using Composite.Core.WebClient;
 using Composite.Core.WebClient.Renderings.Page;
-using System.Reflection;
 
 namespace Composite.AspNet.MvcPlayer
 {
@@ -52,49 +52,62 @@ namespace Composite.AspNet.MvcPlayer
 
 		public static XDocument Render(string Path)
 		{
+			if (!string.IsNullOrEmpty(PathInfo))
+			{
+				Path = PathInfo;
+			}
+			return RenderInternal(Path) ?? new XDocument();
+		}
+
+		public static XDocument RenderView(string Path)
+		{
 			return RenderInternal(Path) ?? new XDocument();
 		}
 
 		private static XDocument RenderInternal(string path)
 		{
-			if (!string.IsNullOrEmpty(PathInfo))
-			{
-				path = PathInfo;
-			}
-
-			Guid pageId = PageRenderer.CurrentPageId;
-
 			var responseWriter = new StringWriter();
 
-			var httpResponceBase = new MvcPlayerHttpResponseWrapper(new HttpResponse(responseWriter), pageId);
-			var httpContext = new MvcPlayerHttpContextWrapper(Context, httpResponceBase);
+			var mvcResponse = new MvcPlayerHttpResponseWrapper(responseWriter, PageRenderer.CurrentPageId);
+			var mvcRequest = new MvcPlayerHttpRequestWrapper(Request, path);
+			var mvcContext = new MvcPlayerHttpContextWrapper(Context, mvcResponse, mvcRequest);
 
-
-			ProcessRequest(httpContext, path);
+			lock (HttpContext.Current)
+			{
+				new MvcHttpHandlerWrapper().PublicProcessRequest(mvcContext);
+			}
 
 			// Redirects
-			if (!string.IsNullOrEmpty(httpResponceBase.RedirectLocation))
+			if (!string.IsNullOrEmpty(mvcResponse.RedirectLocation))
 			{
-				Response.Redirect(httpResponceBase.RedirectLocation, false);
+				Response.Redirect(mvcResponse.RedirectLocation, false);
 				Response.Flush();
 				Response.Close();
 				return null;
 			}
 
 			// Ajax requests
-			if (httpContext.Request.IsAjaxRequest())
+			if ((mvcRequest.IsAjaxRequest() || !mvcResponse.IsHtmlResponse()) && path == PathInfo)
 			{
 				byte[] bytes = Response.ContentEncoding.GetBytes(responseWriter.ToString());
-				Response.Buffer = true;
-				Response.ClearContent();
-				Response.ClearHeaders();
-				Response.ContentType = httpResponceBase.ContentType;
-				Response.AddHeader("Content-Length", bytes.Length.ToString());
-				Response.AddHeader("Content-Encoding", "none");
-				Response.BinaryWrite(bytes);
-				Response.Flush();
-				Response.Close();
-				return null;
+
+				var page = Context.Handler as System.Web.UI.Page;
+				if (page != null)
+				{
+					page.PreRender += (a, b) =>
+					{
+						Response.ClearContent();
+						Response.ClearHeaders();
+						Response.ContentType = mvcResponse.ContentType;
+						Response.AddHeader("Content-Length", bytes.Length.ToString());
+						Response.AddHeader("Content-Encoding", "none");
+						Response.BinaryWrite(bytes);
+						Response.Flush();
+						Response.End();
+					};
+					return null;
+				}
+
 			}
 
 			var sbHtml = new StringBuilder();
@@ -116,21 +129,20 @@ namespace Composite.AspNet.MvcPlayer
 				throw new InvalidOperationException("MvcPlayer: failed to parse result markup as xml", ex);
 			}
 		}
-
-		public static void ProcessRequest(HttpContextWrapper httpContext, string path)
-		{
-			httpContext.RewritePath(string.Format("~/{0}", path));
-			new MvcHttpHandlerWrapper().ProcessRequest(httpContext);
-		}
 	}
 
 	public class MvcPlayerHttpResponseWrapper : HttpResponseWrapper
 	{
-		private string _pageUrl;
+		private readonly string _pageUrl;
 		public MvcPlayerHttpResponseWrapper(HttpResponse httpResponse, Guid pageId)
 			: base(httpResponse)
 		{
 			PageStructureInfo.TryGetPageUrl(pageId, out _pageUrl);
+		}
+
+		public MvcPlayerHttpResponseWrapper(TextWriter responseWriter, Guid pageId)
+			: this(new HttpResponse(responseWriter), pageId)
+		{
 		}
 
 		public override string ApplyAppPathModifier(string virtualPath)
@@ -146,16 +158,55 @@ namespace Composite.AspNet.MvcPlayer
 			return virtualPath;
 		}
 
-
 		public override void Redirect(string url, bool endResponse)
 		{
 			RedirectLocation = url;
 		}
 	}
 
+	public class MvcPlayerHttpRequestWrapper : HttpRequestWrapper
+	{
+		private readonly string _path;
+
+		public MvcPlayerHttpRequestWrapper(HttpRequest httpRequest, string path)
+			: base(httpRequest)
+		{
+			_path = path;
+		}
+
+		public override string Path
+		{
+			get
+			{
+				return _path;
+			}
+		}
+
+		public override string AppRelativeCurrentExecutionFilePath
+		{
+			get
+			{
+				return string.Format("~{0}", _path);
+			}
+		}
+
+		public override string PathInfo
+		{
+			get
+			{
+				return string.Empty;
+			}
+		}
+	}
+
 	public class MvcHttpHandlerWrapper : MvcHttpHandler
 	{
-		public void ProcessRequest(HttpContextBase httpContext)
+		public MvcHttpHandlerWrapper()
+		{
+			RouteCollection = MvcPlayerRouteTable.Routes;
+		}
+
+		public void PublicProcessRequest(HttpContextBase httpContext)
 		{
 			base.ProcessRequest(httpContext);
 		}
@@ -163,11 +214,13 @@ namespace Composite.AspNet.MvcPlayer
 
 	public class MvcPlayerHttpContextWrapper : HttpContextWrapper
 	{
-		private HttpResponseBase _response;
-		public MvcPlayerHttpContextWrapper(HttpContext httpContext, HttpResponseBase response)
+		private readonly HttpResponseBase _response;
+		private readonly HttpRequestBase _request;
+		public MvcPlayerHttpContextWrapper(HttpContext httpContext, HttpResponseBase response, HttpRequestBase request)
 			: base(httpContext)
 		{
 			_response = response;
+			_request = request;
 		}
 
 		public override HttpResponseBase Response
@@ -178,10 +231,26 @@ namespace Composite.AspNet.MvcPlayer
 			}
 		}
 
+		public override HttpRequestBase Request
+		{
+			get
+			{
+				return _request;
+			}
+		}
+
 		public override void SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior sessionStateBehavior)
 		{
 #warning does not support SessionStateAttribute
 			//base.SetSessionStateBehavior(sessionStateBehavior);
+		}
+	}
+
+	internal static class MvcPlayerExtension
+	{
+		public static bool IsHtmlResponse(this HttpResponseBase response)
+		{
+			return response.ContentType == "text/html";
 		}
 	}
 }
