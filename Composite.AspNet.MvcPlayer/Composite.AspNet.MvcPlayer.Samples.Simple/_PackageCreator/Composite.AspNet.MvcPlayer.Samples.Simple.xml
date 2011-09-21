@@ -6,8 +6,8 @@
 	<pc:Files>
 		<Add name="App_Code\Controllers\HomeController.cs" />
 	</pc:Files>
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3927.42711" maximumCompositeVersion="2.9999.9999" />
-	<mi:PackageInformation name="Composite.AspNet.MvcPlayer.Samples.Simple" groupName="Composite.AspNet.MvcPlayer.Samples" version="1.0.0" author="Composite A/S" website="http://www.composite.net" id="6ca7dc7a-66f1-4ebb-8a60-ef623f41b64c" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3927.42711" maximumCompositeVersion="3.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.AspNet.MvcPlayer.Samples.Simple" groupName="Composite.AspNet.MvcPlayer.Samples" version="1.0.1" author="Composite A/S" website="http://www.composite.net" id="6ca7dc7a-66f1-4ebb-8a60-ef623f41b64c" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Simple sample for Ajax</Description>
 	</mi:PackageInformation>
 </pc:PackageCreator>
