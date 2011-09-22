@@ -30,7 +30,7 @@ namespace Composite.AspNet.MvcPlayer
 				if (pageRoute == null)
 				{
 					// Support for version 2.1.2
-					return HttpContext.Current.Request.PathInfo;
+					return HttpUtility.UrlDecode(HttpContext.Current.Request.PathInfo);
 				}
 
 				// Support for version 2.1.3+
