@@ -74,17 +74,15 @@ namespace Composite.News
         private static string GetPathInfo()
         {
             Type pageRoute = typeof(Composite.Data.IData).Assembly.GetType("Composite.Core.Routing.Pages.C1PageRoute", false);
-            string result = string.Empty;
-
+           
             if (pageRoute == null)
             {
-                // Support for version 2.1.2
-                result = HttpContext.Current.Request.PathInfo;
-                return !string.IsNullOrEmpty(result) ? result: new UrlBuilder(HttpContext.Current.Request.RawUrl).PathInfo;
+                // Support for version 2.1.1+
+                return new UrlBuilder(HttpContext.Current.Request.RawUrl).PathInfo;
             }
 
             // Support for version 2.1.3+
-             result = (pageRoute
+			string result = (pageRoute
                 .GetMethod("GetPathInfo", BindingFlags.Public | BindingFlags.Static)
                 .Invoke(null, new object[0]) as string) ?? string.Empty;
 
