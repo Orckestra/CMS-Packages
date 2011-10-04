@@ -42,8 +42,9 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Composite">
-      <HintPath>..\..\References\Composite\2.1\Composite.dll</HintPath>
+    <Reference Include="Composite, Version=2.1.4087.22991, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Composite\2.1.3\Composite.dll</HintPath>
     </Reference>
     <Reference Include="Composite.Generated, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

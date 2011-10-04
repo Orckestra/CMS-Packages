@@ -28,7 +28,7 @@ namespace Composite.Community.PageComments
 		[FunctionParameterDescription("Captcha", "Captcha input", "Antibot protection", "")]
 		public static IEnumerable<XElement> SaveComment(string name, string email, string commentTitle, string commentText, string Captcha)
 		{
-			var currentPageId = PageRenderer.CurrentPageId;
+			var currentPageId = SitemapNavigator.CurrentPageId;
 
 			yield return new XElement("SubmittedData",
 							new XAttribute("Fieldname", "Name"),
@@ -81,67 +81,72 @@ namespace Composite.Community.PageComments
 			}
 			else
 			{
-				var currentPage = PageManager.GetPageById(currentPageId);
-
-				if (!currentPage.GetDefinedFolderTypes().Contains(typeof(Item)))
+				using (DataConnection conn = new DataConnection())
 				{
-					currentPage.AddFolderDefinition(typeof(Item).GetImmutableTypeId());
-				}
+					var currentPage = conn.Get<IPage>().Where(p=>p.Id == currentPageId).SingleOrDefault();
 
-				//add data
-				var commentItem = DataFacade.BuildNew<Item>();
+					if (!currentPage.GetDefinedFolderTypes().Contains(typeof(Item)))
+					{
+						currentPage.AddFolderDefinition(typeof(Item).GetImmutableTypeId());
+					}
 
-				commentItem.Name = name;
-				commentItem.Email = email;
-				commentItem.Title = commentTitle;
-				commentItem.Date = DateTime.Now;
-				commentItem.Comment = commentText;
+					//add data
+					var commentItem = conn.CreateNew<Item>();
 
-				PageFolderFacade.AssignFolderDataSpecificValues(commentItem, currentPage);
-				DataFacade.AddNew(commentItem);
+					commentItem.Name = name;
+					commentItem.Email = email;
+					commentItem.Title = commentTitle;
+					commentItem.Date = DateTime.Now;
+					commentItem.Comment = commentText;
 
-				// Redirect to view newly added comment
-				string pageUrl;
-				var found = PageStructureInfo.TryGetPageUrl(currentPageId, out pageUrl);
+					PageFolderFacade.AssignFolderDataSpecificValues(commentItem, currentPage);
+					conn.Add<Item>(commentItem);
+					
+					// Redirect to view newly added comment
+					string pageUrl;
+					var found = PageStructureInfo.TryGetPageUrl(currentPageId, out pageUrl);
 
-				if (found)
-				{
-					PrepareMail(currentPageId, pageUrl, name, email, commentTitle, commentText, DateTime.Now.ToString());
-					HttpContext.Current.Response.Redirect(pageUrl, false);
+					if (found)
+					{
+						PrepareMail(currentPageId, pageUrl, name, email, commentTitle, commentText, DateTime.Now.ToString());
+						HttpContext.Current.Response.Redirect(pageUrl, false);
+					} 
 				}
 			}
 		}
 
 		private static void PrepareMail(Guid pageId, string pageUrl, string commentName, string commentEmail, string commentTitle, string commentText, string commentDate)
 		{
-			var moderatorEmails = DataFacade.GetData<Settings>().Where(s => s.PageId == pageId).Select(s => s.Email).FirstOrDefault();
-
-			if (string.IsNullOrEmpty(moderatorEmails)) return;
-			var mailTo = moderatorEmails;
-			var mailFrom = moderatorEmails;
-
-			var websiteTitle = (from x in PageStructureInfo.PageListInDocumentOrder() where x.Key == PageStructureInfo.GetAssociatedPageIds(PageRenderer.CurrentPageId, SitemapScope.Level1).First() select x.Value).First();
-
-			var hostname = string.Empty;
-			try
+			using (DataConnection conn = new DataConnection())
 			{
-				hostname = (from x in DataFacade.GetData<IPageHostNameBinding>() where x.PageId == PageStructureInfo.GetAssociatedPageIds(PageRenderer.CurrentPageId, SitemapScope.Level1).First() select x.HostName).First();
-			}
-			catch (Exception)
-			{
-				hostname = Dns.GetHostName();
-			}
+				var moderatorEmails = conn.Get<Settings>().Where(s => s.PageId == pageId).Select(s => s.Email).FirstOrDefault();
 
-			if (!hostname.StartsWith("http"))
-			{
-				hostname = "http://" + hostname;
+				if (string.IsNullOrEmpty(moderatorEmails)) return;
+				var mailTo = moderatorEmails;
+				var mailFrom = moderatorEmails;
+
+				var websiteTitle = conn.SitemapNavigator.GetPageNodeById(SitemapNavigator.CurrentHomePageId).Title;
+				var hostname = string.Empty;
+				try
+				{
+					hostname = conn.Get<IHostnameBinding>().Where(h => h.HomePageId == SitemapNavigator.CurrentHomePageId).First().Hostname;
+				}
+				catch (Exception)
+				{
+					hostname = Dns.GetHostName();
+				}
+
+				if (!hostname.StartsWith("http"))
+				{
+					hostname = "http://" + hostname;
+				}
+
+				var mailSubject = string.Format("New Comment: {0}", websiteTitle);
+				var mailBody = string.Format("<h1>The following comments have been added:</h1>{0}{0}<b>Page:</b> {1}{0}<a target='_blank' href='{8}{7}'>{8}{7}</a>{0}{0}<b>Date and time:</b> {2}{0}<b>Name:</b> {3}{0}<b>E-mail:</b> {4}{0}{0}<b>Comment:</b> {0}<i>{5}</i>{0}{6}",
+						GetNewline(), conn.SitemapNavigator.CurrentPageNode.Title, commentDate, commentName, commentEmail, commentTitle, commentText, pageUrl, hostname).Replace("\r", "<br/>");
+
+				SendMail(mailTo, mailFrom, mailSubject, mailBody);
 			}
-
-			var mailSubject = string.Format("New Comment: {0}", websiteTitle);
-			var mailBody = string.Format("<h1>The following comments have been added:</h1>{0}{0}<b>Page:</b> {1}{0}<a target='_blank' href='{8}{7}'>{8}{7}</a>{0}{0}<b>Date and time:</b> {2}{0}<b>Name:</b> {3}{0}<b>E-mail:</b> {4}{0}{0}<b>Comment:</b> {0}<i>{5}</i>{0}{6}",
-					GetNewline(), PageRenderer.CurrentPage.Title, commentDate, commentName, commentEmail, commentTitle, commentText, pageUrl, hostname).Replace("\r", "<br/>");
-
-			SendMail(mailTo, mailFrom, mailSubject, mailBody);
 		}
 
 		public static string GetNewline()
