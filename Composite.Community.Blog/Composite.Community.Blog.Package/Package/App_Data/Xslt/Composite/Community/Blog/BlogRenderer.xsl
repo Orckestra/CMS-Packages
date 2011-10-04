@@ -72,11 +72,13 @@
 						<a href="~/Renderers/Page.aspx{be:GetBlogUrl(@Date, @Title)}?pageId={$pageId}" title="{@Title}">
 							<xsl:value-of select="@Title" />
 						</a>
-						<a class="t-count" href="~/Renderers/Page.aspx{be:GetBlogUrl(@Date, @Title)}?pageId={$pageId}#newcomment">
-							<span>
-								<xsl:call-template name="CommentsCount" />
-							</span>
-						</a>
+						<xsl:if test="@DisplayComments = 'true'">
+							<a class="t-count" href="~/Renderers/Page.aspx{be:GetBlogUrl(@Date, @Title)}?pageId={$pageId}#newcomment">
+								<span>
+									<xsl:call-template name="CommentsCount" />
+								</span>
+							</a>
+						</xsl:if>
 					</div>
 					<div class="BlogTeaser">
 						<xsl:value-of select="@Teaser" />

@@ -255,8 +255,8 @@ namespace Composite.Community.Blog
                 mail.Subject = subject;
                 mail.Body = body;
                 mail.IsBodyHtml = true;
-                mail.BodyEncoding = Encoding.Default;
-                mail.SubjectEncoding = Encoding.Default;
+                mail.BodyEncoding = Encoding.UTF8;
+                mail.SubjectEncoding = Encoding.UTF8;
                 var smtpMail = new SmtpClient();
                 smtpMail.Send(mail);
             }
