@@ -27,7 +27,8 @@
 							Found <xsl:value-of select="$pagingInfo/@HitsTotal" /> results for <xsl:value-of select="concat('&quot;',$searchQuery,'&quot;')" />
 						</p>
 						<xsl:if test="count($items)">
-							<ol id="Results">
+							<xsl:variable name="startIndex" select="number($pagingInfo/@PageSize) * (number($pagingInfo/@PageCount) -1) + 1" />
+							<ol id="Results" start="{$startIndex}">
 								<xsl:for-each select="$items">
 									<li>
 										<a href="{@Url}">
