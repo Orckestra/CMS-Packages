@@ -45,6 +45,10 @@
     <Reference Include="Composite">
       <HintPath>..\..\References\Composite\2.1\Composite.dll</HintPath>
     </Reference>
+    <Reference Include="Composite.Generated, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Composite.Generated.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -62,6 +66,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DLL\Composite.Generated.dll" />
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Community.QuickPoll.xml" />
     <Content Include="Package\Frontend\Composite\Community\QuickPoll\QuickPollPieChart.ascx" />
     <Content Include="Package\Web.Config\Install.xsl" />
@@ -88,10 +93,10 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Package\App_Code\Composite\Community\QuickPoll\Functions.cs" />
-    <Compile Include="Package\Frontend\Composite\Community\QuickPoll\QuickPollPieChart.ascx.cs">
+    <Content Include="Package\Frontend\Composite\Community\QuickPoll\QuickPollPieChart.ascx.cs">
       <DependentUpon>QuickPollPieChart.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    </Content>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

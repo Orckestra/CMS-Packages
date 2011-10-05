@@ -8,17 +8,58 @@
 	<xsl:param name="items" select="/in:inputs/in:result[@name='GetQuickPollAnswersXml']/Answers" />
 	<xsl:param name="barLength" select="/in:inputs/in:param[@name='BarLength']" />
 	<xsl:param name="isPieChartResult" select="/in:inputs/in:param[@name='PieChartResult']" />
+	<!--PieChart Setting-->
+	<xsl:variable name="is3D" select="1" />
+	<xsl:variable name="width" select="400" />
+	<xsl:variable name="height" select="300" />
 
 	<xsl:template match="/">
 		<html>
 			<head>
+				<xsl:if test="$isPieChartResult='true'">
+					<script id="google.com-jsapi" type="text/javascript" src="https://www.google.com/jsapi"></script>
+					<script type="text/javascript">
+
+						// Load the Visualization API and the piechart package.
+						google.load('visualization', '1.0', {'packages':['corechart']});
+
+						// Set a callback to run when the Google Visualization API is loaded.
+						google.setOnLoadCallback(drawChart);
+
+						// Callback that creates and populates a data table,
+						// instantiates the pie chart, passes in the data and
+						// draws it.
+						function drawChart() {
+
+						// Create the data table.
+						var data = new google.visualization.DataTable();
+						data.addColumn('string', 'Topping');
+						data.addColumn('number', 'Slices');
+						data.addRows([
+						<xsl:for-each select="$items">
+							['<xsl:value-of select="@AnswerText"/>', <xsl:value-of select="@TotalVotes"/>]<xsl:if test="position()!=last()" >,</xsl:if>
+						</xsl:for-each>
+						]);
+
+						// Set chart options
+						var options = {'is3D':<xsl:value-of select="$is3D" />,
+						'width':<xsl:value-of select="$width"/>,
+						'height':<xsl:value-of select="$height"/>};
+
+						// Instantiate and draw our chart, passing in some options.
+						var chart_div_id = 'chart_div'  + '<xsl:value-of select="$questionId" />';
+						var chart = new google.visualization.PieChart(document.getElementById(chart_div_id));
+						chart.draw(data, options);
+						}
+					</script>
+
+				</xsl:if>
 			</head>
 			<body>
 				<xsl:choose>
 					<xsl:when test="$isPieChartResult='true'">
-						<f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Composite.Community.QuickPoll.LoadPieChart">
-							<f:param name="questionId" value="{$questionId}" />
-						</f:function>
+						<!--Div that will hold the pie chart-->
+						<div id="chart_div{$questionId}"></div>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:variable name="votes" select="sum($items/@TotalVotes)" />
@@ -45,5 +86,4 @@
 			</body>
 		</html>
 	</xsl:template>
-
 </xsl:stylesheet>

@@ -29,43 +29,6 @@ namespace Composite.Community.QuickPoll
 			}
 		}
 
-		[FunctionParameterDescription("questionId", "QuestionId", "Question Id")]
-		public static Control LoadPieChart(Guid questionId)
-		{
-			return new UserControlPieChart(questionId);
-		}
 	}
 
-	internal class UserControlPieChart : WebControl
-	{
-		private Guid questionId;
-
-		public UserControlPieChart(Guid questionId)
-		{
-			this.questionId = questionId;
-		}
-
-		protected override void OnInit(EventArgs e)
-		{
-			base.OnInit(e);
-			Control control = null;
-			try
-			{
-				control = Page.LoadControl(@"~\Frontend\Composite\Community\QuickPoll\QuickPollPieChart.ascx");
-			}
-			catch (Exception ex)
-			{
-				control = new Literal()
-				{
-					Text = ex.Message
-				};
-			}
-			var questionControl = control as QuestionControl;
-			if (questionControl != null)
-			{
-				questionControl.QuestionId = questionId;
-			}
-			this.Controls.Add(control);
-		}
-	}
 }

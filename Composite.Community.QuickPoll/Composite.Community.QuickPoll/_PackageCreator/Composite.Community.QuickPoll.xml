@@ -5,17 +5,10 @@
 		<Add name="/configuration/Composite.C1Console.Forms.Plugins.UiControlFactoryConfiguration/Channels/Channel[@name='AspNet.Management']/Namespaces/Namespace[@name='http://www.composite.net/ns/Composite/Community/QuickPoll/1.0']" />
 	</pc:Configuration>
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3904.14629" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.QuickPoll" groupName="Composite.Community" version="1.4.5" author="Composite A/S" website="www.composite.net" id="480ddca7-bf60-4f96-9525-d81318c917f4" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Community.QuickPoll" groupName="Composite.Community" version="1.4.6" author="Composite A/S" website="www.composite.net" id="480ddca7-bf60-4f96-9525-d81318c917f4" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows visitors to take part in polls on a website. Supports automatic rotation by schedule.</Description>
 	</mi:PackageInformation>
 	<pc:PageTemplates />
-	<pc:PackageFragmentInstallers>
-		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite" Ordering="10">
-			<XslFiles>
-				<XslFile pathXml="~\Web.config" installXsl="~\Web.Config\Install.xsl" uninstallXsl="~\Web.Config\Uninstall.xsl" />
-			</XslFiles>
-		</mi:Add>
-	</pc:PackageFragmentInstallers>
 	<pc:XsltFunctions>
 		<Add name="Composite.Community.QuickPoll" />
 		<Add name="Composite.Community.QuickPoll.AnswerOptions" />
@@ -26,7 +19,6 @@
 	<pc:CSharpFunctions>
 		<Add name="Composite.Community.QuickPoll.ActiveNowFilter" />
 		<Add name="Composite.Community.QuickPoll.IncreaseAnswerCounter" />
-		<Add name="Composite.Community.QuickPoll.LoadPieChart" />
 	</pc:CSharpFunctions>
 	<pc:VisualFunctions />
 	<pc:DynamicDataTypes>
@@ -35,7 +27,6 @@
 	</pc:DynamicDataTypes>
 	<pc:DynamicDataTypesData />
 	<pc:Files>
-		<Add name="Frontend\Composite\Community\QuickPoll\QuickPollPieChart.ascx" />
 		<Add name="App_Data\Composite\TreeDefinitions\Composite.Community.QuickPoll.xml" />
 	</pc:Files>
 	<pc:FilesInDirectories />
