@@ -4,7 +4,9 @@
 	xmlns:f="http://www.composite.net/ns/function/1.0"
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:asp="http://www.composite.net/ns/asp.net/controls"
-	exclude-result-prefixes="xsl in">
+	xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+	xmlns:csharp="http://c1.composite.net/sample/csharp"
+	exclude-result-prefixes="xsl in msxsl csharp">
 
 	<xsl:param name="submitTitle" select="/in:inputs/in:param[@name='SubmitTitle']" />
 	<xsl:param name="question" select="/in:inputs/in:param[@name='Question']" />
@@ -22,6 +24,7 @@
 						<h1>
 							<xsl:value-of select="$questionText" />
 						</h1>
+						<xsl:value-of select="csharp:SetNoCache()" />
 						<xsl:choose>
 							<xsl:when test="$userHasVoted='0'">
 								<xsl:choose>
@@ -29,7 +32,6 @@
 										<f:function name="Composite.Community.QuickPoll.AnswerOptions">
 											<f:param name="Question" value="{$question}" />
 											<f:param name="SubmitTitle" value="{$submitTitle}" />
-											
 										</f:function>
 									</xsl:when>
 									<xsl:otherwise>
@@ -53,5 +55,12 @@
 			</body>
 		</html>
 	</xsl:template>
-
+	<msxsl:script implements-prefix="csharp" language="C#">
+		<msxsl:assembly name="System.Web" />
+		<msxsl:using namespace="System.Web" />
+		public void SetNoCache()
+		{
+		HttpContext.Current.Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
+		}
+	</msxsl:script>
 </xsl:stylesheet>
