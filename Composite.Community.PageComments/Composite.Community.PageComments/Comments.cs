@@ -83,7 +83,7 @@ namespace Composite.Community.PageComments
 			{
 				using (DataConnection conn = new DataConnection())
 				{
-					var currentPage = conn.Get<IPage>().Where(p=>p.Id == currentPageId).SingleOrDefault();
+					var currentPage = conn.Get<IPage>().Where(p => p.Id == currentPageId).SingleOrDefault();
 
 					if (!currentPage.GetDefinedFolderTypes().Contains(typeof(Item)))
 					{
@@ -101,7 +101,7 @@ namespace Composite.Community.PageComments
 
 					PageFolderFacade.AssignFolderDataSpecificValues(commentItem, currentPage);
 					conn.Add<Item>(commentItem);
-					
+
 					// Redirect to view newly added comment
 					string pageUrl;
 					var found = PageStructureInfo.TryGetPageUrl(currentPageId, out pageUrl);
@@ -110,7 +110,7 @@ namespace Composite.Community.PageComments
 					{
 						PrepareMail(currentPageId, pageUrl, name, email, commentTitle, commentText, DateTime.Now.ToString());
 						HttpContext.Current.Response.Redirect(pageUrl, false);
-					} 
+					}
 				}
 			}
 		}
@@ -127,19 +127,10 @@ namespace Composite.Community.PageComments
 
 				var websiteTitle = conn.SitemapNavigator.GetPageNodeById(SitemapNavigator.CurrentHomePageId).Title;
 				var hostname = string.Empty;
-				try
-				{
-					hostname = conn.Get<IHostnameBinding>().Where(h => h.HomePageId == SitemapNavigator.CurrentHomePageId).First().Hostname;
-				}
-				catch (Exception)
-				{
-					hostname = Dns.GetHostName();
-				}
 
-				if (!hostname.StartsWith("http"))
-				{
-					hostname = "http://" + hostname;
-				}
+				hostname = string.Format("{0}://{1}",
+				HttpContext.Current.Request.Url.Scheme,
+				HttpContext.Current.Request.Headers["host"]);
 
 				var mailSubject = string.Format("New Comment: {0}", websiteTitle);
 				var mailBody = string.Format("<h1>The following comments have been added:</h1>{0}{0}<b>Page:</b> {1}{0}<a target='_blank' href='{8}{7}'>{8}{7}</a>{0}{0}<b>Date and time:</b> {2}{0}<b>Name:</b> {3}{0}<b>E-mail:</b> {4}{0}{0}<b>Comment:</b> {0}<i>{5}</i>{0}{6}",
