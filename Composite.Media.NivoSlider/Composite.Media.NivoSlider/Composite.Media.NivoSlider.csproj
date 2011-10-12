@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9AA7BDC-790F-4716-A263-2723F0165CE1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.Media.NivoSlider</RootNamespace>
+    <AssemblyName>Composite.Media.NivoSlider</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Xslt\Composite\Media\NivoSlider.xsl" />
+    <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\demo.html" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\images\dev7logo.png" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\images\nemo.jpg" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\images\toystory.jpg" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\images\up.jpg" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\images\walle.jpg" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\scripts\jquery-1.6.1.min.js" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\style.css" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\jquery.nivo.slider.js" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\jquery.nivo.slider.pack.js" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\license.txt" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\nivo-slider.css" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\default\arrows.png" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\default\bullets.png" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\default\default.css" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\default\loading.gif" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\orman\arrows.png" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\orman\bullets.png" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\orman\loading.gif" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\orman\orman.css" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\orman\readme.txt" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\orman\ribbon.png" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\orman\slider.png" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\pascal\bullets.png" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\pascal\controlnav.png" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\pascal\featured.png" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\pascal\loading.gif" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\pascal\pascal.css" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\pascal\readme.txt" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\pascal\ribbon.png" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\themes\pascal\slider.png" />
+    <Content Include="Package\install.xml" />
+    <Content Include="_PackageCreator\Composite.Media.NivoSlider.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Package\Frontend\Composite\Media\NivoSlider\README" />
+    <Content Include="Release\Composite.Media.NivoSlider.zip" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55924</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
+
+</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
