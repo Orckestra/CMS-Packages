@@ -5,19 +5,20 @@
 	<xsl:output method="xml" indent="yes"/>
 
 	<xsl:param name="ConnectionString"></xsl:param>
-
+	<xsl:param name="ConnectionStringName"></xsl:param>
+	
 	<xsl:template match="/configuration/Composite.Data.Plugins.DataProviderConfiguration/DataProviderPlugins">
 		<xsl:copy>
 			<xsl:if test="count(add[@name='DynamicSqlDataProvider'])=0">
-				<add connectionString="{$ConnectionString}" sqlQueryLoggingEnabled="false" sqlQueryLoggingIncludeStack="false" type="Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider, Composite" name="DynamicSqlDataProvider" />
+				<add connectionStringName="{$ConnectionStringName}" sqlQueryLoggingEnabled="false" sqlQueryLoggingIncludeStack="false" type="Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider, Composite" name="DynamicSqlDataProvider" />
 			</xsl:if>
 			<xsl:apply-templates select="@* | node()" />
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="/configuration/Composite.Data.Plugins.DataProviderConfiguration/DataProviderPlugins/add[@name='DynamicSqlDataProvider']/@connectionString">
-		<xsl:attribute name="connectionString">
-			<xsl:value-of select="$ConnectionString"/>
+	<xsl:template match="/configuration/Composite.Data.Plugins.DataProviderConfiguration/DataProviderPlugins/add[@name='DynamicSqlDataProvider']/@connectionStringName">
+		<xsl:attribute name="connectionStringName">
+			<xsl:value-of select="$ConnectionStringName"/>
 		</xsl:attribute>
 	</xsl:template>
 

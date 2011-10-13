@@ -21,10 +21,16 @@ using Composite.Core.IO;
 using Composite.Core.Application;
 using Composite;
 using Composite.C1Console.Users;
+using System.Configuration;
+using System.Web.Configuration;
+using System.Xml.Xsl;
+using System.Xml;
+using System.Web.Hosting;
 
 public partial class SqlServerDataProvider : System.Web.UI.Page
 {
 	private const string DynamicSqlDataProviderName = "DynamicSqlDataProvider";
+	private const string DynamicSqlDataProviderConnectionStringName = "c1";
 	private const string DynamicXmlDataProviderName = "DynamicXmlDataProvider";
 	private const string TreeDefinitionPath = "~/App_Data/Composite/TreeDefinitions/Composite.Tools.SqlServerDataProvider.xml";
 	private const string DynamicXmlDataProviderConfigPath = "~/App_Data/Composite/Configuration/DynamicXmlDataProvider.config";
@@ -78,8 +84,10 @@ public partial class SqlServerDataProvider : System.Web.UI.Page
 			{
 				using (ApplicationOnlineHandlerFacade.TurnOffScope(false))
 				{
+					KeyValuePair[] trParams = new KeyValuePair[] { new KeyValuePair("ConnectionStringName", DynamicSqlDataProviderConnectionStringName), new KeyValuePair("ConnectionString", txtConnectionString.Text) };
+					TransformWebConfiguration("SetConnectionString.xslt", trParams);
 					TransformConfiguration("SetDynamicSqlDataProvider.xslt",
-						new KeyValuePair("ConnectionString", txtConnectionString.Text));
+						new KeyValuePair("ConnectionStringName", DynamicSqlDataProviderConnectionStringName));
 				}
 			}
 		}
@@ -90,6 +98,34 @@ public partial class SqlServerDataProvider : System.Web.UI.Page
 				ConnectionStringValidator.Text = x.InnerException.Message;
 			args.IsValid = false;
 			return;
+		}
+	}
+
+	private void TransformWebConfiguration(string xsltName, params KeyValuePair[] @params)
+	{
+		var xsltPath = this.MapPath(xsltName);
+		var xslt = XDocument.Load(xsltPath);
+		foreach (var param in @params)
+		{
+			xslt.SetParam(param.Key, param.Value);
+		}
+		using (typeof(GlobalInitializerFacade).GetStaticProperty<IDisposable>("CoreLockScope"))
+		{
+			lock (_lock)
+			{
+				XslCompiledTransform transformer = new XslCompiledTransform();
+				XDocument resultDocument = new XDocument();
+				string webConfigFilePath = HostingEnvironment.MapPath("~/web.config");
+				using (XmlReader reader = xslt.CreateReader())
+				{
+					transformer.Load(reader);
+				}
+				using (XmlWriter writer = resultDocument.CreateWriter())
+				{
+					transformer.Transform(webConfigFilePath, writer);
+				}
+				resultDocument.SaveToFile(webConfigFilePath);
+			}
 		}
 	}
 
@@ -158,7 +194,7 @@ public partial class SqlServerDataProvider : System.Web.UI.Page
 
 	protected void TransformConfiguration(string xsltName, params KeyValuePair[] @params)
 	{
-	    var xsltPath = this.MapPath(xsltName);
+		var xsltPath = this.MapPath(xsltName);
 		var xslt = XDocument.Load(xsltPath);
 		foreach (var param in @params)
 		{
@@ -166,7 +202,6 @@ public partial class SqlServerDataProvider : System.Web.UI.Page
 		}
 		ConfigurationServices.TransformConfiguration(xslt, false);
 	}
-
 
 	protected bool TestOutOfBoundStringFields()
 	{
