@@ -64,10 +64,10 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Package\DataStoreMigrator.aspx.cs">
+    <Content Include="Package\DataStoreMigrator.aspx.cs">
       <DependentUpon>DataStoreMigrator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    </Content>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

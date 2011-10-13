@@ -68,11 +68,24 @@ public partial class DataStoreMigrator : System.Web.UI.Page
 
 	private bool TestSQLConnection(string providerName)
 	{
-		var dataProviderSettings = Reflection.CallStaticMethod<object>("Composite.Data.Plugins.DataProvider.DataProviderConfigurationServices","GetDataProviderConfiguration", providerName);
+		var dataProviderSettings = Reflection.CallStaticMethod<object>("Composite.Data.Plugins.DataProvider.DataProviderConfigurationServices", "GetDataProviderConfiguration", providerName);
 		var connectionString = dataProviderSettings.GetProperty("ConnectionString");
+		var connectionStringName = dataProviderSettings.GetProperty("ConnectionStringName");
 
 		try
 		{
+			if (string.IsNullOrEmpty(connectionString))
+			{
+				System.Configuration.Configuration rootWebConfig =
+					System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("~/");
+				System.Configuration.ConnectionStringSettings connString;
+				if (rootWebConfig.ConnectionStrings.ConnectionStrings.Count > 0)
+				{
+					connString =
+						rootWebConfig.ConnectionStrings.ConnectionStrings[connectionStringName];
+					connectionString = connString.ConnectionString;
+				}
+			}
 			SqlConnection conn = new SqlConnection(connectionString);
 			conn.Open();
 			conn.Close();
