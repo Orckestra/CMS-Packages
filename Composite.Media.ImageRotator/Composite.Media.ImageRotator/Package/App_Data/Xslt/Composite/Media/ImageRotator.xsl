@@ -14,9 +14,8 @@
 						#ImageRotator {
 						position:relative;
 						height: 350px;
-						overflow: hidden;
+						/*overflow: hidden;*/
 						}
-						
 						#ImageRotator img {
 						position:absolute;
 						top:0;
