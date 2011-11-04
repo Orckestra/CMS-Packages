@@ -5,6 +5,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Linq;
 using Composite.Tools.PackageCreator.Types;
+using System.IO;
 
 namespace Composite.Tools.PackageCreator
 {
@@ -67,6 +68,18 @@ namespace Composite.Tools.PackageCreator
 			}
 			catch { }
 			return default(T);
+		}
+
+		public static void Add<TKey, TValue>(this Dictionary<TKey, HashSet<TValue>> dictionary, TKey key, TValue value)
+		{
+			if (!dictionary.ContainsKey(key))
+				dictionary[key] = new HashSet<TValue>();
+			dictionary[key].Add(value);
+		}
+
+		public static bool IsBinFolder(this Assembly assembly)
+		{
+			return !assembly.IsDynamic && Path.GetFileName(Path.GetDirectoryName(assembly.CodeBase)).ToLower().Equals("bin");
 		}
 
 		public static void Add(this Dictionary<string, Dictionary<string, XElement>> dictionary, string key, string listKey, XElement listValue)

@@ -602,7 +602,7 @@ namespace Composite.Tools.PackageCreator
 				new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite"),
 				new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite"),
 				new XElement("Files"
-					, Files
+					, Files.OrderBy(d => ReferencedAssemblies.AssemblyPosition(d))
 					),
 				new XElement("Directories"
 					, Directories
