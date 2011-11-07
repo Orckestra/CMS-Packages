@@ -147,7 +147,7 @@ namespace Composite.AspNet.MvcPlayer
 
 		public override string ApplyAppPathModifier(string virtualPath)
 		{
-			if (virtualPath.StartsWith(UrlUtils.PublicRootPath))
+			if (_pageUrl != "/" && virtualPath.StartsWith(UrlUtils.PublicRootPath))
 			{
 				var path = virtualPath.Substring(UrlUtils.PublicRootPath.Length);
 				if (!File.Exists(PathUtil.BaseDirectory + path))
