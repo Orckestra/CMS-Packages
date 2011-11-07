@@ -146,13 +146,13 @@
 			<div class="links">
 				<xsl:choose>
 					<xsl:when test="$startIndex &gt; 2">
-						<a name="next" rel="prev" href="~/page({$pageId})/{$prevIndex}#next">&lt;&lt; Previous</a>
+						<a name="next" rel="prev" href="~/page({$pageId})/?index={$prevIndex}#next">&lt;&lt; Previous</a>
 					</xsl:when>
 					<xsl:otherwise>&lt;&lt; Previous</xsl:otherwise>
 				</xsl:choose>&#160;&#160;
 				<xsl:choose>
 					<xsl:when test="($startIndex + $itemsPerPage) &lt; $totalCount">
-						<a name="next" rel="next" href="~/page({$pageId})/{$nextIndex}#next">Next &gt;&gt;</a>
+						<a name="next" rel="next" href="~/page({$pageId})/?index={$nextIndex}#next">Next &gt;&gt;</a>
 					</xsl:when>
 					<xsl:otherwise>Next &gt;&gt;</xsl:otherwise>
 				</xsl:choose>
