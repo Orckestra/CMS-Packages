@@ -230,7 +230,7 @@ namespace Composite.Tools.PackageCreator
 			package.ReloadConsoleOnCompletion = bool.Parse(packageInformation.AttributeValue("reloadConsoleOnCompletion") ?? false.ToString()); ;
 
 			package.MinCompositeVersionSupported = (packageRequirements.AttributeValue("minimumCompositeVersion") != null) ? new Version(packageRequirements.AttributeValue("minimumCompositeVersion")) : RuntimeInformation.ProductVersion;
-			package.MaxCompositeVersionSupported = new Version(packageRequirements.AttributeValue("maximumCompositeVersion") ?? "2.9999.9999.9999");
+			package.MaxCompositeVersionSupported = new Version(packageRequirements.AttributeValue("maximumCompositeVersion") ?? "9.9999.9999.9999");
 
 			return package;
 		}
