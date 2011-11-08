@@ -20,14 +20,14 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
 	public ParameterList parameters { get; set; }
 
 	static readonly string[] i18n = { "af", "ar", "az", "bg", "bs", "ca", "cs", "da", "de", "el", "en-GB", "eo", "es", "et", "eu", "fa", "fi", "fo", "fr", "fr-CH", "gl", "he", "hr", "hu", "hy", "id", "is", "it", "ja", "ko", "kz", "lt", "lv", "ms", "nl", "no", "pl", "pt", "pt-BR", "rm", "ro", "ru", "sk", "sl", "sq", "sr", "sr-SR", "sv", "ta", "th", "tr", "uk", "vi", "zh-CN", "zh-HK", "zh-TW" };
-	static readonly string[] jquery_validate_localizations = {"cn", "cs", "da", "de", "es", "fr", "hu", "it", "kk", "nl", "no", "pl", "ptbr", "ro", "ru", "se", "sk", "tr", "tw", "ua"};  
+	static readonly string[] jquery_validate_localizations = { "cn", "cs", "da", "de", "es", "fr", "hu", "it", "kk", "nl", "no", "pl", "ptbr", "ro", "ru", "se", "sk", "tr", "tw", "ua" };
 
 	protected void OnPreInit(EventArgs e)
 	{
 		ScriptManager oScriptManager = ScriptManager.GetCurrent(Page);
 		if (oScriptManager == null)
 		{
-			oScriptManager = new ScriptManager {ID = "ScriptManager1"};
+			oScriptManager = new ScriptManager { ID = "ScriptManager1" };
 			Page.Controls.AddAt(0, oScriptManager);
 		}
 	}
@@ -36,7 +36,7 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
 	{
 		IntroText.Text = parameters.GetParameter<string>("IntroText");
 		useCaptcha = parameters.GetParameter<bool>("UseCaptcha");
-		ValidationSummary.HeaderText = FormsRenderer.GetFrontendString("Composite.Plugins.FormsRenderer", "Composite.Forms.ValidationSummary.HeaderText"); 
+		ValidationSummary.HeaderText = FormsRenderer.GetFrontendString("Composite.Plugins.FormsRenderer", "Composite.Forms.ValidationSummary.HeaderText");
 		var sendButtonLabel = parameters.GetParameter<string>("SendButtonLabel");
 		if (sendButtonLabel != string.Empty)
 			Send.Text = GetLocalized(sendButtonLabel);
@@ -46,7 +46,7 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
 		if (resetButtonLabel == string.Empty)
 			Reset.Visible = false;
 
-		FormsRenderer.InsertForm(this.Fields,parameters);
+		FormsRenderer.InsertForm(this.Fields, parameters);
 	}
 
 	private static string GetLocalized(string text)
@@ -67,7 +67,7 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
 		{
 			InsertScriptIntoHeader(string.Format("http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.7/i18n/jquery.ui.datepicker-{0}.js", CultureInfo.CurrentCulture.Name));
 		}
-		else if(i18n.Contains(CultureInfo.CurrentCulture.TwoLetterISOLanguageName))
+		else if (i18n.Contains(CultureInfo.CurrentCulture.TwoLetterISOLanguageName))
 		{
 			InsertScriptIntoHeader(string.Format("http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.7/i18n/jquery.ui.datepicker-{0}.js", CultureInfo.CurrentCulture.TwoLetterISOLanguageName));
 		}
@@ -82,15 +82,13 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
 		}
 
 
-        //Localizing DatePicker
-        var script = InsertScriptIntoHeader();
+		//Localizing DatePicker
+		var script = InsertScriptIntoHeader();
 		script.InnerHtml = @"
 <!--
 
-$('.InputDate').datepicker();
-
-
 $(document).ready(function() {
+    $('.InputDate').datepicker();
 	$.validator.addMethod(""integer"", function(value, element) {
 		return /^\d+$/.test(value);;
 	}, $.validator.messages[""digits""]);
@@ -115,7 +113,7 @@ $(document).ready(function() {
 			Session["FormsRendererCaptcha"] = encryptedValue;
 		}
 		else
-		{	
+		{
 			Captcha.Visible = false;
 		}
 	}
@@ -126,7 +124,7 @@ $(document).ready(function() {
 		url["value"] = encryptedCaptchaValue;
 		return url.ToString();
 	}
-	
+
 
 	private static string NumberDecimalSeparator()
 	{
