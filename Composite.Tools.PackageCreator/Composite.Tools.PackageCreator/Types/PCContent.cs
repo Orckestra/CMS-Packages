@@ -72,12 +72,12 @@ namespace Composite.Tools.PackageCreator.Types
 				#region All Pages
 				if (creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToAllLocales || creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToCurrentLocale)
 				{
-					List<Guid> pages;
+					HashSet<Guid> pages;
 					using (var locale = new DataScope(DataLocalizationFacade.DefaultLocalizationCulture))
 					{
 						using (var scope = new DataScope(DataScopeIdentifier.Administrated))
 						{
-							pages = DataFacade.GetData<IPage>().Select(p => p.Id).ToList();
+							pages = DataFacade.GetData<IPage>().Select(p => p.Id).ToHashSet();
 						}
 
 						creator.AddData(typeof(IPage), DataScopeIdentifier.Public, d => pages.Contains((d as IPage).Id));

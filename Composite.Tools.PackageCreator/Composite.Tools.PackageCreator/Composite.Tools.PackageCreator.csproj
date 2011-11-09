@@ -96,6 +96,7 @@
     <Compile Include="ElementProvider\EntityToken\XmlNodeAttributeProviderEntityToken.cs" />
     <Compile Include="ElementProvider\EntityToken\XmlNodeElementProviderEntityToken.cs" />
     <Compile Include="PackageCreatorFragmentInstaller.cs" />
+    <Compile Include="PackageCreator\Tools\DataFileDictionary.cs" />
     <Compile Include="PackageCreator\Tools\ReferencedAssemblies.cs" />
     <Compile Include="PackageCreator\Tools\SelfPositionExtension.cs" />
     <Compile Include="PackageInformation.cs" />

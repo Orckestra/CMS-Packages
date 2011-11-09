@@ -25,6 +25,9 @@ namespace Composite.Tools.PackageCreator
 		public static readonly XNamespace help = "http://www.composite.net/ns/help/1.0";
 		private static readonly XNamespace xsl = "http://www.w3.org/1999/XSL/Transform";
 
+		
+		public static string InstallFilename { get { return "install.xml"; } }
+
 		public static readonly string configDirectoryName = "Config";
 		public static readonly string configInstallFileName = "Install.xsl";
 		public static readonly string configUninstallFileName = "Uninstall.xsl";
@@ -35,13 +38,14 @@ namespace Composite.Tools.PackageCreator
 		private string serviceDirectoryPath;
 		private string packageDirectoryPath;
 		private string zipDirectoryPath;
-		private List<XElement> Files;
-		private List<XElement> Directories;
-		private List<XElement> XslFiles;
-		private HashSet<string> ConfigurationXPaths;
-		private List<XElement> ConfigurationInstallXsltTemplates;
+		private List<XElement> Files = new List<XElement>();
+		private List<XElement> Directories = new List<XElement>();
+		private List<XElement> XslFiles = new List<XElement>();
+		private HashSet<string> ConfigurationXPaths = new HashSet<string>();
+		private List<XElement> ConfigurationInstallXsltTemplates =new List<XElement>();
 
-		private Dictionary<string, XElement> Datas;
+		private Dictionary<string, XElement> Datas = new Dictionary<string, XElement>();
+		private DataFileDictionary DataFiles = new DataFileDictionary();
 		private List<string> installDataTypeNamesList = new List<string>();
 		private const string CREATOR_DRECTORY = "PackageCreator";
 		private Dictionary<Type, int> dataPosition = new Dictionary<Type, int>();
@@ -82,7 +86,7 @@ namespace Composite.Tools.PackageCreator
 			}
 		}
 
-		public PackageCreator(string path, string packageName)
+		internal PackageCreator(string path, string packageName)
 		{
 			this.serviceDirectoryPath = path;
 			this.packageName = packageName;
@@ -100,13 +104,6 @@ namespace Composite.Tools.PackageCreator
 			using (new DataScope(DataScopeIdentifier.Public))
 			{
 				#region Init
-				Files = new List<XElement>();
-				Directories = new List<XElement>();
-				Datas = new Dictionary<string, XElement>();
-				XslFiles = new List<XElement>();
-				ConfigurationXPaths = new HashSet<string>();
-				ConfigurationInstallXsltTemplates = new List<XElement>();
-
 				if (packageName == string.Empty)
 				{
 					return "";
@@ -498,7 +495,7 @@ namespace Composite.Tools.PackageCreator
 
 					foreach (var categoryType in PackageCreatorActionFacade.CategoryTypes)
 					{
-						if (categoryType.Value.GetInterfaces().Contains(typeof(IPackagable)))
+						if (categoryType.Value.IsIPackagable())
 						{
 							foreach (var packageItem in PackageCreatorFacade.GetItems(categoryType.Value, config.Root))
 							{
@@ -623,7 +620,7 @@ namespace Composite.Tools.PackageCreator
 
 				#region DataPackageFragmentInstaller
 
-				XElement DataPackageFragmentInstaller = new XElement(mi + "Add",
+				var DataPackageFragmentInstaller = new XElement(mi + "Add",
 						new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite"),
 						new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite"),
 						new XElement("Types",
@@ -646,16 +643,16 @@ namespace Composite.Tools.PackageCreator
 				XPackageFragmentInstallers.Add(FilePackageFragmentInstaller);
 				XPackageFragmentInstallers.Add(DynamicDataTypePackageFragmentInstaller);
 				XPackageFragmentInstallers.Add(DataPackageFragmentInstaller);
+				DataFiles.Save();
 
-				XPackageFragmentInstallers.ReplaceNodes(XPackageFragmentInstallers.Elements().OrderBy(d => FragmentPosition(d)).Select(d => DeleteOrderingMark(d)));
+				XPackageFragmentInstallers.ReplaceNodes(XPackageFragmentInstallers.Elements().OrderBy(FragmentPosition).Select(DeleteOrderingMark));
 				XPackageInstaller.Add(XPackageFragmentInstallers);
 
 				XPackage.Add(XPackageInstaller);
 
-				XPackage.SaveTabbed(Path.Combine(packageDirectoryPath, "install.xml"));
+				XPackage.SaveTabbed(Path.Combine(packageDirectoryPath, InstallFilename));
 
-				//        string zipFilename = packageName + "_" + DateTime.Now.ToString("yyyy_\\vM.d_\\bHmm") + ".zip";
-				string zipFilename = packageName + ".zip";
+				var zipFilename = packageName + ".zip";
 
 
 				#region Zipping
@@ -719,7 +716,7 @@ namespace Composite.Tools.PackageCreator
 				}
 				catch { }
 
-				return PathCombine(packageName, "Release", zipFilename);
+				return Path.Combine(packageName, "Release", zipFilename);
 			}
 
 		}
@@ -851,15 +848,10 @@ namespace Composite.Tools.PackageCreator
 
 		#endregion
 
-		// Sets the read-only value of a file.
-		public static void SetFileReadAccess(string FileName, bool SetReadOnly)
+
+		public static void SetFileReadAccess(string fileName, bool setReadOnly)
 		{
-			// Create a new FileInfo object.
-			FileInfo fInfo = new FileInfo(FileName);
-
-			// Set the IsReadOnly property.
-			fInfo.IsReadOnly = SetReadOnly;
-
+			new FileInfo(fileName) {IsReadOnly = setReadOnly};
 		}
 
 		#region XsltConfigiration
@@ -1038,7 +1030,6 @@ namespace Composite.Tools.PackageCreator
 					return;
 			}
 
-			XElement x;
 			var shortFilePath = "Datas\\" + dataTypeFileName;
 			var filePath = Path.Combine(packageDirectoryPath, shortFilePath);
 
@@ -1056,26 +1047,36 @@ namespace Composite.Tools.PackageCreator
 							)
 						)
 					);
-				x = new XElement("Data");
-				string targetDirectory = Path.GetDirectoryName(filePath);
-				if (Directory.Exists(targetDirectory) == false)
-				{
-					Directory.CreateDirectory(targetDirectory);
-				}
-				x.Save(filePath);
+				//x = new XElement("Data");
+				//string targetDirectory = Path.GetDirectoryName(filePath);
+				//if (Directory.Exists(targetDirectory) == false)
+				//{
+				//    Directory.CreateDirectory(targetDirectory);
+				//}
+				//x.Save(filePath);
 			}
-			x = XElement.Load(filePath);
-			x.Add(
+			
+			DataFiles.Add(filePath,
 				new XElement("Add",
 					from s in TypeManager.GetType(dataTypeName).GetPropertiesRecursively()
-
 					where s.CanWrite && s.CanRead
 					let val = s.GetValue(data, null)
 					where val != null
 					select new XAttribute(s.Name, SerializeDataField(val))
 				)
 			);
-			x.Save(filePath);
+			//x = XElement.Load(filePath);
+			//x.Add(
+			//    new XElement("Add",
+			//        from s in TypeManager.GetType(dataTypeName).GetPropertiesRecursively()
+
+			//        where s.CanWrite && s.CanRead
+			//        let val = s.GetValue(data, null)
+			//        where val != null
+			//        select new XAttribute(s.Name, SerializeDataField(val))
+			//    )
+			//);
+			//x.Save(filePath);
 		}
 
 		private static string SerializeDataField(object o)
@@ -1139,18 +1140,7 @@ namespace Composite.Tools.PackageCreator
 		#endregion
 
 
-		public static string PathCombine(params string[] path)
-		{
 
-			if (path.Length == 0)
-				return string.Empty;
-			return path.Aggregate((path1, path2) => Path.Combine(path1, path2));
-		}
-
-		internal static class PackageSystemSettings
-		{
-			public static string InstallFilename { get { return "install.xml"; } }
-		}
 
 		#endregion
 	}

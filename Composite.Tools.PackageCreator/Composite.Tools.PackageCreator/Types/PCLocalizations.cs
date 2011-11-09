@@ -40,10 +40,7 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
 		{
-			if (entityToken is PackageCreatorPackageElementProviderEntityToken)
-			{
-				yield return new PCLocalizations(UserSettings.CultureInfo.ToString());
-			}
+			yield break;
 		}
 
 		public void Pack(PackageCreator creator)

@@ -70,6 +70,11 @@ namespace Composite.Tools.PackageCreator
 			return default(T);
 		}
 
+		public static HashSet<T> ToHashSet<T>(this IEnumerable<T> source)
+		{
+			return new HashSet<T>(source);
+		}
+
 		public static void Add<TKey, TValue>(this Dictionary<TKey, HashSet<TValue>> dictionary, TKey key, TValue value)
 		{
 			if (!dictionary.ContainsKey(key))
@@ -87,6 +92,11 @@ namespace Composite.Tools.PackageCreator
 			if(!dictionary.ContainsKey(key))
 				dictionary[key] = new Dictionary<string,XElement>();
 			dictionary[key][listKey] = listValue;
+		}
+
+		public static bool IsIPackagable(this Type type)
+		{
+			return type.GetInterfaces().Contains(typeof (IPackagable));
 		}
 	}
 }
