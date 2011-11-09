@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Add Id="e5b72015-b306-4c39-bbfd-b0e5deb11f58" Name="AlbumsGallery" Namespace="Composite.Media.ImageGallery.Facebook" Description="Display images from Facebook albums on a page." OutputXmlSubType="XHTML" XslFilePath="\Composite\Media\ImageGallery\Facebook\AlbumsGallery.xsl" />
+  <Add Id="c28b7473-9be0-4598-931e-031f8824feaf" Name="AlbumsList" Namespace="Composite.Media.ImageGallery.Facebook" Description="" OutputXmlSubType="XML" XslFilePath="\Composite\Media\ImageGallery\Facebook\AlbumsList.xsl" />
+  <Add Id="6857ae71-001a-4731-a385-f861e4531089" Name="PhotosList" Namespace="Composite.Media.ImageGallery.Facebook" Description="Display images from a specific Facebook album on a page." OutputXmlSubType="XHTML" XslFilePath="\Composite\Media\ImageGallery\Facebook\PhotosList.xsl" />
+</Data>
