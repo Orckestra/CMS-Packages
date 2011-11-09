@@ -1,0 +1,48 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4241.27463" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Media.ImageGallery.Flickr" groupName="Composite.Media" version="1.0.1" author="Composite A/S" website="http://composite.net" id="6e3014de-5f75-4260-971a-c2a49ea325d5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Displays photos from Flickr's photostreams, favorites, photo sets on your website.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\Favorites.xsl" targetFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\Favorites.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\PhotoSets.xsl" targetFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\PhotoSets.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\PhotoSets\CommentsList.xsl" targetFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\PhotoSets\CommentsList.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\PhotoSets\List.xsl" targetFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\PhotoSets\List.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\PhotoSets\Photos.xsl" targetFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\PhotoSets\Photos.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\Photostream.xsl" targetFilename="~\App_Data\Xslt\Composite\Media\ImageGallery\Flickr\Photostream.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Code\Composite\Media\ImageGallery\Flickr\Functions.cs" targetFilename="~\App_Code\Composite\Media\ImageGallery\Flickr\Functions.cs" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Composite\Media\ImageGallery\Flickr\" targetDirectory="~\Frontend\Composite\Media\ImageGallery\Flickr\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite">
+			<Types>
+				<Type providerName="GeneratedDataTypesElementProvider" dataTypeDescriptor="&lt;DataTypeDescriptor dataTypeId=&quot;d56c2d93-31ed-4ab0-a7ce-9b20c7b0a20f&quot; name=&quot;ApiKey&quot; namespace=&quot;Composite.Media.ImageGallery.Flickr&quot; title=&quot;Flickr API Key&quot; hasCustomPhysicalSortOrder=&quot;false&quot; isCodeGenerated=&quot;true&quot; cachable=&quot;false&quot; labelFieldName=&quot;Title&quot; typeManagerTypeName=&quot;DynamicType:Composite.Media.ImageGallery.Flickr.ApiKey&quot; version=&quot;6&quot;&gt;&#xD;&#xA;  &lt;DataAssociations /&gt;&#xD;&#xA;  &lt;DataScopes&gt;&#xD;&#xA;    &lt;DataScopeIdentifier name=&quot;public&quot; /&gt;&#xD;&#xA;  &lt;/DataScopes&gt;&#xD;&#xA;  &lt;KeyPropertyNames&gt;&#xD;&#xA;    &lt;KeyPropertyName name=&quot;Id&quot; /&gt;&#xD;&#xA;  &lt;/KeyPropertyNames&gt;&#xD;&#xA;  &lt;SuperInterfaces /&gt;&#xD;&#xA;  &lt;Fields&gt;&#xD;&#xA;    &lt;DataFieldDescriptor id=&quot;256045d2-74cf-40d5-9cab-419f83a7e6f2&quot; name=&quot;Id&quot; isNullable=&quot;false&quot; position=&quot;-1&quot; groupByPriority=&quot;0&quot; inherited=&quot;false&quot; instanceType=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; storeType=&quot;PhysicalStoreType='Guid'&quot;&gt;&#xD;&#xA;      &lt;FormRenderingProfile /&gt;&#xD;&#xA;      &lt;ValidationFunctionMarkups /&gt;&#xD;&#xA;    &lt;/DataFieldDescriptor&gt;&#xD;&#xA;    &lt;DataFieldDescriptor id=&quot;aa1c24b7-fb42-4b42-a3e7-c7ffe4728311&quot; name=&quot;Title&quot; isNullable=&quot;false&quot; position=&quot;0&quot; groupByPriority=&quot;0&quot; inherited=&quot;false&quot; instanceType=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; storeType=&quot;PhysicalStoreType='String'Length='128'&quot; defaultValue=&quot;ValueType='String'Value=''&quot;&gt;&#xD;&#xA;      &lt;FormRenderingProfile label=&quot;Flickr API Key Title&quot; helpText=&quot;The user-defined title of the API Key to refer to in functions.&quot; widgetFunctionMarkup=&quot;&amp;lt;f:widgetfunction xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; name=&amp;quot;Composite.Widgets.String.TextBox&amp;quot; label=&amp;quot;&amp;quot; bindingsourcename=&amp;quot;&amp;quot;&amp;gt;&amp;lt;f:helpdefinition xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; helptext=&amp;quot;&amp;quot; /&amp;gt;&amp;lt;/f:widgetfunction&amp;gt;&quot; /&gt;&#xD;&#xA;      &lt;ValidationFunctionMarkups /&gt;&#xD;&#xA;    &lt;/DataFieldDescriptor&gt;&#xD;&#xA;    &lt;DataFieldDescriptor id=&quot;5d1e4b4e-50f0-4c88-8228-04486d55adb2&quot; name=&quot;Key&quot; isNullable=&quot;false&quot; position=&quot;1&quot; groupByPriority=&quot;0&quot; inherited=&quot;false&quot; instanceType=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; storeType=&quot;PhysicalStoreType='String'Length='64'&quot; defaultValue=&quot;ValueType='String'Value=''&quot;&gt;&#xD;&#xA;      &lt;FormRenderingProfile label=&quot;Flickr API Key&quot; helpText=&quot;The Flickr API Key to use in functions.&quot; widgetFunctionMarkup=&quot;&amp;lt;f:widgetfunction xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; name=&amp;quot;Composite.Widgets.String.TextBox&amp;quot; label=&amp;quot;&amp;quot; bindingsourcename=&amp;quot;&amp;quot;&amp;gt;&amp;lt;f:helpdefinition xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; helptext=&amp;quot;&amp;quot; /&amp;gt;&amp;lt;/f:widgetfunction&amp;gt;&quot; /&gt;&#xD;&#xA;      &lt;ValidationFunctionMarkups /&gt;&#xD;&#xA;    &lt;/DataFieldDescriptor&gt;&#xD;&#xA;  &lt;/Fields&gt;&#xD;&#xA;&lt;/DataTypeDescriptor&gt;" />
+			</Types>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IGeneratedTypeWhiteList,Composite">
+					<Data dataScopeIdentifier="administrated" dataFilename="~\Datas\Composite.Data.Types.IGeneratedTypeWhiteLists_administrated.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IMethodBasedFunctionInfo,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IXsltFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
