@@ -1,0 +1,20 @@
+div#maincontent {
+	width: 600px;
+}
+div#maincontent div.box {
+	padding-left: 0;
+}
+div#maincontent div.box > div {
+	-moz-column-width: 280px;
+	-moz-column-gap: 20px;
+	-webkit-column-width: 280px;
+	-webkit-column-gap: 20px;
+	column-width: 280px;
+	column-gap: 20px;
+}
+em.css3note { /* shows a message to IE users */
+	font-style: normal;
+}
+:root em.css3note { /* hide for real browsers */
+	display: none;
+}

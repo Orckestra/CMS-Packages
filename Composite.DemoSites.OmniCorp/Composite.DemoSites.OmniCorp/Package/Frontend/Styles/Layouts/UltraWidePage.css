@@ -1,0 +1,7 @@
+div#maincontent {
+	width: 100%;
+}
+div#maincontent > div.box {
+	padding-left: 0;
+	padding-right: 0;
+}

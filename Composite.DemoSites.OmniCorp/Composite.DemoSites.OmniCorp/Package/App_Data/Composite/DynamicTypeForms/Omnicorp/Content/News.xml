@@ -1,0 +1,40 @@
+﻿<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0">
+  <cms:bindings>
+    <cms:binding name="Id" type="System.Guid" optional="true" />
+    <cms:binding name="Date" type="System.DateTime" optional="true" />
+    <cms:binding name="Title" type="System.String" optional="true" />
+    <cms:binding name="Summary" type="System.String" optional="true" />
+    <cms:binding name="Content" type="System.String" optional="true" />
+    <cms:binding name="CultureName" type="System.String" optional="true" />
+    <cms:binding name="SourceCultureName" type="System.String" optional="true" />
+  </cms:bindings>
+  <cms:layout>
+    <cms:layout.label>
+      <cms:read source="Title" />
+    </cms:layout.label>
+    <TabPanels>
+      <FieldGroup Label="Settings">
+        <DateSelector Label="Date" Help="The news publishing date. This can be set to a date in the future for automatic publishing.">
+          <DateSelector.Date>
+            <cms:bind source="Date" />
+          </DateSelector.Date>
+        </DateSelector>
+        <TextBox Label="Title" Help="The news title. Consider a short title for easy reading in news lists and feeds.">
+          <TextBox.Text>
+            <cms:bind source="Title" />
+          </TextBox.Text>
+        </TextBox>
+        <TextBox Label="Summary" Help="The news summary. One or two lines should do it.">
+          <TextBox.Text>
+            <cms:bind source="Summary" />
+          </TextBox.Text>
+        </TextBox>
+      </FieldGroup>
+      <XhtmlEditor Label="Content" Help="The news article." ClassConfigurationName="common">
+        <XhtmlEditor.Xhtml>
+          <cms:bind source="Content" />
+        </XhtmlEditor.Xhtml>
+      </XhtmlEditor>
+    </TabPanels>
+  </cms:layout>
+</cms:formdefinition>

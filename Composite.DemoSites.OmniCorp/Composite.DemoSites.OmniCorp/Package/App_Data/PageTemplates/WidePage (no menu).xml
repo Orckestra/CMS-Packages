@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0" xmlns:lang="http://www.composite.net/ns/localization/1.0" xmlns:rendering="http://www.composite.net/ns/rendering/1.0" xmlns:asp="http://www.composite.net/ns/asp.net/controls">
+	<head>
+	    	<title>Omnicorp - <rendering:page.title /></title>
+        <f:function name="Composite.Web.Html.Template.LangAttribute" />
+        <f:function name="Composite.Web.Html.Template.CommonMetaTags" />
+	    	<rendering:page.metatag.description />
+	    	<link rel="stylesheet" type="text/css" media="screen" href="~/Frontend/Styles/Screen.css"/>
+	    	<link rel="stylesheet" type="text/css" media="screen" href="~/Frontend/Styles/Layouts/WidePageNoMenu.css"/>
+	    	<link rel="stylesheet" type="text/css" media="print" href="~/Frontend/Styles/Print.css"/>
+	    	<f:function name="Omnicorp.Layout.SplashImage" />
+	</head>
+	<body>
+		<div id="header">
+			<div class="layout">
+				<f:function name="Omnicorp.Navigation.Quick"/>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<hr/>
+		<div id="head">
+			<div class="layout">
+				<f:function name="Omnicorp.Content.Head" />
+				<div id="topnav">
+					<f:function name="Omnicorp.Navigation.Top" />
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<hr/>
+		<div id="body">
+			<div class="layout">
+				<div id="splash">
+					<f:function name="Omnicorp.Layout.SplashText" />
+				</div>
+				<hr/>
+				<div id="main">
+					<div id="maincontent">
+						<div class="box">
+							<rendering:placeholder id="content" title="Content" default="true" />
+						</div>
+					</div>
+					<hr/>
+					<div id="spots">
+						<div class="deco"></div>
+						<div class="box">
+							<rendering:placeholder id="spotsplaceholder" title="Spots"/>
+							<f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Omnicorp.Content.SpotsRendering" />
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div id="foot">
+			<div class="layout">
+				<f:function name="Omnicorp.Content.Foot" />
+				<div class="clear"></div>
+			</div>
+		</div>
+		<hr/>
+		<div id="footer">
+			<div class="layout">
+				<f:function name="Omnicorp.Content.Footer" />
+				<div class="clear"></div>
+			</div>
+		</div>
+	</body>
+</html>

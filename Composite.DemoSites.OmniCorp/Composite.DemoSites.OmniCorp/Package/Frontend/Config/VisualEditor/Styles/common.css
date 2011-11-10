@@ -1,0 +1,95 @@
+﻿*.left {
+	float: left;
+	margin: 0 22px 10px 0;	
+}
+*.right {
+	float: right;
+	margin: 0 0 10px 22px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;	
+}
+
+img.floatleft {
+	float: left;
+	margin: 7px 20px 13px 0;
+}
+img.floatright {
+	float: right;
+	margin: 7px 0 13px 20px;
+}
+
+h1.c1tip:before,
+p.c1tip:before {
+	content: url("../../../Images/c1tip.png");
+	position: relative;
+	top: 5px;
+	left: -6px;
+	margin-left: -5px;
+}
+p.c1tip {
+	position: relative;
+	background-color: rgb(235,235,235);
+	padding: 20px;
+	padding-left: 55px;
+}
+p.c1tip:before {
+	position: absolute;
+	top: 18px;
+	left: 27px;
+}
+
+table.text,
+table.data {
+	-moz-box-shadow: 2px 2px 6px 0 rgb(50,50,50);
+	-webkit-box-shadow: 2px 2px 6px rgb(50,50,50);
+	border-collapse: collapse;
+}
+
+table.text th,
+table.text td,
+table.data th,
+table.data td {
+	text-align: left;
+	vertical-align: top;
+	padding: 6px 10px 6px 10px;
+}
+table.text th,
+table.text td {
+	border: 1px solid rgb(180,180,170);
+}
+table.text th {
+	background-color: rgb(210,210,210);
+	font-weight: normal;
+}
+table.text td {
+	background-color: rgb(245,245,245);
+}
+table.data {
+	border: 1px solid rgb(50,50,50);
+	border-bottom: none;
+}
+table.data th {
+	background-color: rgb(50,50,50);
+	border-color: rgb(50,50,50);
+	color: rgb(255,255,255);
+	text-align: right;
+}
+table.data th:first-child {
+	text-align: left;
+}
+table.data td {
+	background-color: rgb(255,255,255);
+	border-bottom: 1px solid rgb(50,50,50);
+	text-align: right;
+}
+table.data td:first-child {
+	background-color: rgb(210,210,210);
+	text-align: left;
+}
+

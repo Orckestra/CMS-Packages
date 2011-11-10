@@ -1,0 +1,54 @@
+html,
+body {
+	padding: 0 1.5cm 2cm 0;
+	margin: 0;
+}
+body {
+	font-family: Cambria, "Palatino Linotype", Arial, sans-serif;
+	font-size: 82.5%;
+	line-height: 175%;
+	color: black;
+}
+div#header,
+div#head,
+div#footer,
+div#foot,
+div#subnav,
+div#spots,
+div#splash,
+hr {
+	display: none;
+}
+p,
+table,
+ul, 
+ol,
+form {
+	margin: 0 0 0.5cm 0;
+}
+h1,h2,h3,h4,h5,h6 {
+	line-height: 170%;
+	page-break-before: avoid;
+}
+h1 {
+	font-size: 250%;
+	text-indent: 0;
+	margin: 0 0 1.5cm 0;
+	font-weight: normal;
+	border-bottom: 1px solid gray;
+	padding-top: 1cm;
+}
+h2 {
+	font-size: 100%;
+	margin: 1cm 0 0 0;
+}
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}
+hr {
+	display: none;
+}

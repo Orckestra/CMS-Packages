@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:XsltFunctions>
+		<Add name="Omnicorp.Content.Foot" />
+		<Add name="Omnicorp.Content.Footer" />
+		<Add name="Omnicorp.Content.Head" />
+		<Add name="Omnicorp.Content.News" />
+		<Add name="Omnicorp.Content.Projects" />
+		<Add name="Omnicorp.Content.RandomSpot" />
+		<Add name="Omnicorp.Content.SpotsRendering" />
+		<Add name="Omnicorp.Layout.SplashImage" />
+		<Add name="Omnicorp.Layout.SplashText" />
+		<Add name="Omnicorp.Navigation.Quick" />
+		<Add name="Omnicorp.Navigation.Sitemap" />
+		<Add name="Omnicorp.Navigation.Sub" />
+		<Add name="Omnicorp.Navigation.Top" />
+	</pc:XsltFunctions>
+	<pc:DynamicDataTypesData>
+		<Add name="Omnicorp.Content.AllSpots" />
+		<Add name="Omnicorp.Content.News" />
+	</pc:DynamicDataTypesData>
+	<pc:DynamicDataTypes>
+		<Add name="Omnicorp.Content.PageSpots" />
+		<Add name="Omnicorp.Layout.SplashImage" />
+		<Add name="Omnicorp.Layout.SplashText" />
+		<Add name="Omnicorp.Content.AllSpots" />
+		<Add name="Omnicorp.Content.News" />
+	</pc:DynamicDataTypes>
+	<pc:Content>
+		<Add name="Pages" />
+		<Add name="Medias" />
+		<Add name="DatatypesData" />
+		<Add name="Applications" />
+	</pc:Content>
+	<pc:Directories>
+		<Add name="Frontend\Styles\Pages\" />
+		<Add name="Frontend\Styles\Layouts\" />
+		<Add name="Frontend\Styles\Functions\" />
+		<Add name="Frontend\Images\" />
+		<Add name="Frontend\Config\" />
+    <Add name="App_Data\Composite\DynamicTypeForms\" />
+    <Add name="App_Data\Composite\TreeDefinitions\" />
+ </pc:Directories>
+	<pc:Files>
+		<Add name="Frontend\Styles\Print.css" />
+		<Add name="Frontend\Styles\Screen.css" />
+    <Add name="Frontend\Styles\VisualEditor.common.css" />
+	</pc:Files>
+	<pc:PageTemplates>
+		<Add name="DefaultPage" />
+		<Add name="FrontPage" />
+		<Add name="UltraWidePage" />
+		<Add name="WidePage (no menu)" />
+		<Add name="WidePage (no spots)" />
+	</pc:PageTemplates>
+	<pc:PageTypes>
+		<Add name="Content page" />
+	</pc:PageTypes>
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4266.16056" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.DemoSites.OmniCorp" groupName="Composite.DemoSites" version="1.0.10" author="Composite A/S" website="http://composite.net" id="926b633c-8000-40bb-8127-25f0c2ffd113" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+		<Description>Omnicorp site demo</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

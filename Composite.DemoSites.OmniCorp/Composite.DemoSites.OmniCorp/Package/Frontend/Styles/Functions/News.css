@@ -1,0 +1,48 @@
+ul#news {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul#news a {
+	display: block;
+	font-weight: normal;
+	color: rgb(50,50,50);
+	padding-bottom: 20px;
+}
+ul#news a:hover {
+	text-decoration: none;
+}
+ul#news a:hover strong {
+	text-decoration: underline;
+}
+ul#news a span:first-child {
+	color: rgb(120,120,120);
+}
+ul#news a:focus {
+	outline: none;
+}
+
+/* Content specials */
+
+div#maincontent ul#news li:last-child a{
+	padding-bottom: 0;
+}
+div#maincontent ul#news a {
+	padding-left: 17px;
+}
+div#maincontent ul#news a:before {
+	content: "►";
+	position: absolute;
+	margin-left: -17px;
+	color: rgb(251,137,10);
+	color: rgb(120,120,120);
+}
+
+/* Spot specials */
+
+div#spots ul#news a {
+	color: rgb(100,100,100);
+}
+div#spots ul#news a span:first-child {
+	display: none;
+}

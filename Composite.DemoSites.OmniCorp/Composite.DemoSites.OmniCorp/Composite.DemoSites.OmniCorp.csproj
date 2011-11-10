@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F09A34D1-01AB-484F-8B90-E54726C7EB9E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.DemoSites.OmniCorp</RootNamespace>
+    <AssemblyName>Composite.DemoSites.OmniCorp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package\App_Data\Media\02644b63-6bf8-4c67-83e4-f5bfb44fc02e" />
+    <None Include="Package\App_Data\Media\07ae9931-a105-412d-a96d-c1e03a829fcb" />
+    <None Include="Package\App_Data\Media\0bb82947-956c-49c8-ac46-9bb4d149730e" />
+    <None Include="Package\App_Data\Media\0f8c52bf-2b0b-4d5c-abdc-6f0759226820" />
+    <None Include="Package\App_Data\Media\155c1d20-ac36-441d-8001-8747356c317c" />
+    <None Include="Package\App_Data\Media\16d7e359-1595-4e95-80b0-af7468f361d8" />
+    <None Include="Package\App_Data\Media\1a0aa123-d439-4d0c-b4ec-c161ca88491f" />
+    <None Include="Package\App_Data\Media\1d3363c2-122d-4151-9665-8722a02f3db1" />
+    <None Include="Package\App_Data\Media\1d96d262-cb14-4fca-ae54-18e506d8f1fa" />
+    <None Include="Package\App_Data\Media\21b94c33-4185-4fe5-8d80-4ce925eb0c28" />
+    <None Include="Package\App_Data\Media\2de47c6e-824c-4c77-b58d-3a80659c4baa" />
+    <None Include="Package\App_Data\Media\2e424330-8822-4f09-8e38-8d668cd66f4f" />
+    <None Include="Package\App_Data\Media\37a15ad6-60b3-4594-a52a-a96439932f30" />
+    <None Include="Package\App_Data\Media\3a5f0dd5-cff4-4c19-b30b-f8038db2cfea" />
+    <None Include="Package\App_Data\Media\3d55dd14-f152-46a1-862f-fe9f2a3ed91c" />
+    <None Include="Package\App_Data\Media\447129d6-cff5-4ca9-aea5-32dc8a1a145a" />
+    <None Include="Package\App_Data\Media\585d1ebf-3aba-48cc-a22f-58429131de19" />
+    <None Include="Package\App_Data\Media\593ad2da-5c53-4f09-9ab9-66173a9439a1" />
+    <None Include="Package\App_Data\Media\59d14299-9b34-4064-b5cb-300a507863e9" />
+    <None Include="Package\App_Data\Media\6282563b-9763-4d67-a7d9-62d93a217053" />
+    <None Include="Package\App_Data\Media\62dad7c1-dfe6-442c-ab0f-01cddfcaf0e5" />
+    <None Include="Package\App_Data\Media\65b1d51f-52d7-477a-b50b-d8f8d3feaebc" />
+    <None Include="Package\App_Data\Media\66816159-5652-45b2-8099-0916f760febe" />
+    <None Include="Package\App_Data\Media\692808ee-6fb1-4e27-90cb-e5d52eb0a925" />
+    <None Include="Package\App_Data\Media\6fe4f684-6573-4cfe-9798-d7ff787e5d1f" />
+    <None Include="Package\App_Data\Media\767f5e21-082c-4062-9820-8910cbe541f8" />
+    <None Include="Package\App_Data\Media\778c731e-0fa1-4d2c-9540-249bcce45ff9" />
+    <None Include="Package\App_Data\Media\797ba53e-17ea-42d1-9668-0368983c55b4" />
+    <None Include="Package\App_Data\Media\7b31125d-3a7b-4686-821d-bd66dc9ad043" />
+    <None Include="Package\App_Data\Media\8aca0033-8fd5-4c82-a7b7-9b5f24b358e7" />
+    <None Include="Package\App_Data\Media\8c24d603-38e5-43fe-a883-9ec7b871971b" />
+    <None Include="Package\App_Data\Media\98a52e8b-afdc-45e7-adf0-6fd15deb12ff" />
+    <None Include="Package\App_Data\Media\9f0269ab-8d14-4509-8702-920ca7b6f190" />
+    <None Include="Package\App_Data\Media\aa1082d0-807f-46b0-9cd2-81e9125ef35a" />
+    <None Include="Package\App_Data\Media\b261615c-6d3d-488b-b402-75691cd4b8d5" />
+    <None Include="Package\App_Data\Media\b8b3723f-c984-462e-840a-1944cc5760f4" />
+    <None Include="Package\App_Data\Media\b90521ff-984c-4eb9-a64e-54c8d4f527e2" />
+    <None Include="Package\App_Data\Media\bb010898-8783-4df8-8ded-20faf74e4d96" />
+    <None Include="Package\App_Data\Media\bc6f5a48-d4fb-4a3b-8d10-d4b707dbcc3e" />
+    <None Include="Package\App_Data\Media\d9d9bf0b-3a51-40d6-ab99-a06a6588cf5b" />
+    <None Include="Package\App_Data\Media\e57fe1f0-269c-4783-b80f-66bc7538bc8f" />
+    <None Include="Package\App_Data\Media\e96bd4a6-a65c-4b44-a88c-24bea0088854" />
+    <None Include="Package\App_Data\Media\f3ef3fb6-5c9d-48df-8047-bd9de011db97" />
+    <None Include="Package\Frontend\fonts\Calibri.ttf" />
+    <None Include="Package\Frontend\fonts\CalibriItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Composite\DynamicTypeForms\Omnicorp\Content\AllSpots.xml" />
+    <Content Include="Package\App_Data\Composite\DynamicTypeForms\Omnicorp\Content\News.xml" />
+    <Content Include="Package\App_Data\Composite\TreeDefinitions\News.xml" />
+    <Content Include="Package\App_Data\PageTemplates\DefaultPage.xml" />
+    <Content Include="Package\App_Data\PageTemplates\FrontPage.xml" />
+    <Content Include="Package\App_Data\PageTemplates\UltraWidePage.xml" />
+    <Content Include="Package\App_Data\PageTemplates\WidePage %28no menu%29.xml" />
+    <Content Include="Package\App_Data\PageTemplates\WidePage %28no spots%29.xml" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Content\Foot.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Content\Footer.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Content\Head.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Content\News.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Content\Projects.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Content\RandomSpot.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Content\SpotsRendering.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Layout\SplashImage.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Layout\SplashText.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Navigation\Quick.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Navigation\Sitemap.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Navigation\Sub.xsl" />
+    <Content Include="Package\App_Data\Xslt\Omnicorp\Navigation\Top.xsl" />
+    <Content Include="Package\Datas\Composite.Data.Types.ICompositionContainers_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IGeneratedTypeWhiteLists_administrated.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IMediaFileDatas_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IMediaFolderDatas_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageMetaDataDefinitions_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPagePlaceholderContents_administrated.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPagePlaceholderContents_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageStructures_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPages_administrated.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPages_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTemplates_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserActiveLocale_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserActivePerspective_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserSettings_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserUserGroupRelation_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUser_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+    <Content Include="Package\Datas\Omnicorp.Content.AllSpotss_public.xml" />
+    <Content Include="Package\Datas\Omnicorp.Content.Newss_public.xml" />
+    <Content Include="Package\Datas\Omnicorp.Content.PageSpotss_administrated.xml" />
+    <Content Include="Package\Datas\Omnicorp.Content.PageSpotss_public.xml" />
+    <Content Include="Package\Datas\Omnicorp.Layout.SplashImages_administrated.xml" />
+    <Content Include="Package\Datas\Omnicorp.Layout.SplashImages_public.xml" />
+    <Content Include="Package\Datas\Omnicorp.Layout.SplashTexts_administrated.xml" />
+    <Content Include="Package\Datas\Omnicorp.Layout.SplashTexts_public.xml" />
+    <Content Include="Package\Frontend\Config\VisualEditor\common.xml" />
+    <Content Include="Package\Frontend\Config\VisualEditor\Images\bold.png" />
+    <Content Include="Package\Frontend\Config\VisualEditor\Images\italic.png" />
+    <Content Include="Package\Frontend\Config\VisualEditor\Images\left.png" />
+    <Content Include="Package\Frontend\Config\VisualEditor\Images\right.png" />
+    <Content Include="Package\Frontend\Images\c1tip.png" />
+    <Content Include="Package\Frontend\Images\gradient.png" />
+    <Content Include="Package\Frontend\Images\logo.png" />
+    <Content Include="Package\Frontend\Images\rss.png" />
+    <Content Include="Package\Frontend\Styles\Functions\News.css" />
+    <Content Include="Package\Frontend\Styles\Functions\Sitemap.css" />
+    <Content Include="Package\Frontend\Styles\Layouts\UltraWidePage.css" />
+    <Content Include="Package\Frontend\Styles\Layouts\WidePageNoMenu.css" />
+    <Content Include="Package\Frontend\Styles\Layouts\WidePageNoSpots.css" />
+    <Content Include="Package\Frontend\Styles\Pages\AboutUs.css" />
+    <Content Include="Package\Frontend\Styles\Pages\FrontPage.css" />
+    <Content Include="Package\Frontend\Styles\Pages\Sitemap.css" />
+    <Content Include="Package\Frontend\Styles\Pages\TermsAndPrivacy.css" />
+    <Content Include="Package\Frontend\Styles\Print.css" />
+    <Content Include="Package\Frontend\Styles\Screen.css" />
+    <Content Include="Package\Frontend\Styles\VisualEditor.common.css" />
+    <Content Include="Package\Frontend\Styles\VisualEditor\VisualEditor.Config.xml" />
+    <Content Include="Package\install.xml" />
+    <Content Include="Release\Composite.DemoSites.OmniCorp.zip" />
+    <Content Include="_PackageCreator\Composite.DemoSites.OmniCorp.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Package\Frontend\Config\VisualEditor\Styles\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58286</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

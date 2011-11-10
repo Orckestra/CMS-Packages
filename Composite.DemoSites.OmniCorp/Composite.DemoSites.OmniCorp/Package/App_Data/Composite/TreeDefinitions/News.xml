@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+  <ElementStructure.AutoAttachments>
+    <NamedParent Name="Content" Position="Bottom" />
+  </ElementStructure.AutoAttachments>
+  <ElementRoot>
+    <Children>
+      <Element Label="News" Id="News" Icon="folder" OpenedIcon="folder-open">
+        <Actions>
+          <AddDataAction Type="Omnicorp.Content.News" Label="Add News article"></AddDataAction>
+        </Actions>
+        <Children>
+          <DataFolderElements Type="Omnicorp.Content.News" FieldGroupingName="Date" DateFormat="yyyy" Display="Compact">
+            <Actions>
+              <AddDataAction Type="Omnicorp.Content.News" Label="Add News article"></AddDataAction>
+            </Actions>
+            <Children>
+              <DataFolderElements  FieldGroupingName="Date" DateFormat="MMMM" Display="Compact">
+                <Actions>
+                  <AddDataAction Type="Omnicorp.Content.News" Label="Add News article"></AddDataAction>
+                </Actions>
+                <Children>
+                  <DataElements Type="Omnicorp.Content.News" Label="${C1:Data:Omnicorp.Content.News:Title}">
+                    <Actions>
+                      <EditDataAction Label="Edit News article" />
+                      <DeleteDataAction Label="Delete News article" />
+                    </Actions>
+                    <OrderBy>
+                      <Field FieldName="Date" Direction="descending"></Field>
+                    </OrderBy>
+                  </DataElements>
+                </Children>
+              </DataFolderElements>
+            </Children>
+          </DataFolderElements>
+        </Children>
+      </Element>
+    </Children>
+  </ElementRoot>
+</ElementStructure>

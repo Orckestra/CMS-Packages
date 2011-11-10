@@ -1,0 +1,37 @@
+div#maincontent ul.sitemap,
+div#maincontent ul.sitemap ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+div#maincontent ul.sitemap ul {
+	padding-left: 20px;
+}
+div#maincontent ul.sitemap {
+	display: block;	
+	position: relative;
+	top: -19px;
+}
+div#maincontent ul.sitemap > li {
+	display: inline-block;
+	vertical-align: top;
+	padding: 20px;
+	border-left: 1px solid rgb(180,180,170);
+}
+div#maincontent ul.sitemap a,
+div#maincontent ul.sitemap span {
+	color: rgb(50,50,50);
+	font-weight: normal;
+}
+div#maincontent ul.sitemap > li > a,
+div#maincontent ul.sitemap > li > span {
+	font-weight: bold;
+}
+div#maincontent ul.sitemap > li:first-child {
+	border: none;
+	padding-left: 0;
+}
+*+html div#maincontent ul.sitemap > li { /* IE7 */
+	zoom: 1;
+	display: inline;
+}

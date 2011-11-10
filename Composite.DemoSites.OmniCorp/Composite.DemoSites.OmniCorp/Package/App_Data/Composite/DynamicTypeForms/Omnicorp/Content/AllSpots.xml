@@ -1,0 +1,34 @@
+﻿<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0">
+  <cms:bindings>
+    <cms:binding name="Id" type="System.Guid" optional="true" />
+    <cms:binding name="Title" type="System.String" optional="true" />
+    <cms:binding name="Content" type="System.String" optional="true" />
+    <cms:binding name="UseRandom" type="System.Boolean" optional="true" />
+    <cms:binding name="CultureName" type="System.String" optional="true" />
+    <cms:binding name="SourceCultureName" type="System.String" optional="true" />
+  </cms:bindings>
+  <cms:layout>
+    <cms:layout.label>
+      <cms:read source="Title" />
+    </cms:layout.label>
+    <TabPanels>
+      <FieldGroup Label="Settings">
+        <TextBox Label="Title" Help="The spot title is for internal use only. It is not shown on the website.">
+          <TextBox.Text>
+            <cms:bind source="Title" />
+          </TextBox.Text>
+        </TextBox>
+        <CheckBox Label="Use random" Help="When checked, this spot will be available for random rendering. To show a random spot on a page, simply include the spot titled &quot;Random spot&quot;.">
+          <CheckBox.Checked>
+            <cms:bind source="UseRandom" />
+          </CheckBox.Checked>
+        </CheckBox>
+      </FieldGroup>
+      <XhtmlEditor Label="Content" Help="The spot content. All HTML may be used with caution." ClassConfigurationName="common">
+        <XhtmlEditor.Xhtml>
+          <cms:bind source="Content" />
+        </XhtmlEditor.Xhtml>
+      </XhtmlEditor>
+    </TabPanels>
+  </cms:layout>
+</cms:formdefinition>
