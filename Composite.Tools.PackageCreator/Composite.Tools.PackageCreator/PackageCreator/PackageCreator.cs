@@ -172,6 +172,8 @@ namespace Composite.Tools.PackageCreator
 				catch
 				{
 				}
+
+				XPackageFragmentInstallerBinaries.ReplaceNodes(XPackageFragmentInstallerBinaries.Elements().OrderBy(ReferencedAssemblies.AssemblyPosition));
 				XPackageInstaller.Add(XPackageFragmentInstallerBinaries);
 
 

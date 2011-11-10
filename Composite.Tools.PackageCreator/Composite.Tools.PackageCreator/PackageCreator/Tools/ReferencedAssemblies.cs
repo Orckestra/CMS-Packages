@@ -44,15 +44,24 @@ namespace Composite.Tools.PackageCreator
 			}
 		}
 
-		public static int AssemblyPosition(XElement file)
+		public static int AssemblyPosition(XElement element)
 		{
-			var path = file.AttributeValue("targetFilename");
-			var filename = Path.GetFileName(path);
-			return AssemblyPosition(filename);
+
+			var targetFilename = element.AttributeValue("targetFilename");
+			if(targetFilename != null)
+				return AssemblyPosition(Path.GetFileName(targetFilename));
+
+			var path = element.AttributeValue("path");
+			if(path != null)
+				return AssemblyPosition(Path.GetFileName(path));
+			
+			return 0;
 		}
 
 		public static int AssemblyPosition(string name, string[] chain = null)
 		{
+			if (name.Equals("Composite.Generated.dll", StringComparison.CurrentCultureIgnoreCase))
+				return 0;
 
 			if (chain != null && chain.Contains(name))
 				return int.MaxValue/2;
