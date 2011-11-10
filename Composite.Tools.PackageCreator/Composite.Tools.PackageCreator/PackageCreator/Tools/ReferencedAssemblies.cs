@@ -37,6 +37,7 @@ namespace Composite.Tools.PackageCreator
 							}
 
 						}
+
 					}
 					return _referenced;
 				}
@@ -50,11 +51,16 @@ namespace Composite.Tools.PackageCreator
 			return AssemblyPosition(filename);
 		}
 
-		public static int AssemblyPosition(string name)
+		public static int AssemblyPosition(string name, string[] chain = null)
 		{
+
+			if (chain != null && chain.Contains(name))
+				return int.MaxValue/2;
+
 			if (Referenced.ContainsKey(name))
 			{
-				return Referenced[name].Select(d => AssemblyPosition(d)).Max() + 1;
+				var newchain = (chain ?? new string[]{}).Concat(new[]{name}).ToArray();
+				return Referenced[name].Select(d => AssemblyPosition(d, newchain)).Max() + 1;
 			}
 			return 0;
 		}

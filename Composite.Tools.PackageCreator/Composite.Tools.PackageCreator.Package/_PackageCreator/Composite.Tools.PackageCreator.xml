@@ -18,7 +18,7 @@
 		<Add name="Bin\Composite.Tools.PackageCreator.dll" />
 	</pc:Files>
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.PackageCreator" groupName="Composite.Tools" version="3.3.14" author="Composite A/S" website="www.composite.net" id="2264b427-9e2d-4247-8ef2-8646682f39e7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+	<mi:PackageInformation name="Composite.Tools.PackageCreator" groupName="Composite.Tools" version="3.3.15" author="Composite A/S" website="www.composite.net" id="2264b427-9e2d-4247-8ef2-8646682f39e7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
 		<Description>Allows users to export website data (pages, templates, page types, media files, functions, data types, data items, flat files, localizations) to packages and reuse them on other sites.</Description>
 	</mi:PackageInformation>
 </pc:PackageCreator>
