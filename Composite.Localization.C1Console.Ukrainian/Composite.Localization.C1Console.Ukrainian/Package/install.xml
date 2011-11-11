@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4055.27225" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Localization.C1Console.Ukrainian" groupName="Composite.Localization" version="1.1.1" author="Composite a/s" website="www.composite.net" id="ca967d95-af83-4c11-9ea7-887f8a71d0d6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Localization.C1Console.Ukrainian" groupName="Composite.Localization" version="1.1.2" author="Composite a/s" website="www.composite.net" id="ca967d95-af83-4c11-9ea7-887f8a71d0d6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Ukrainian language pack for the console GUI</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
@@ -11,45 +11,9 @@
 			<Uninstall xsltFilePath="~\Config\Uninstall.xsl" />
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
-			<Files>
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.StandardFunctions.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.StandardFunctions.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Cultures.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Cultures.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Management.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Management.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.PageElementProvider.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.PageElementProvider.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.AllFunctionsElementProvider.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.AllFunctionsElementProvider.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.MethodBasedFunctionProviderElementProvider.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.MethodBasedFunctionProviderElementProvider.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.XsltBasedFunction.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.XsltBasedFunction.uk-UA.xml" allowOverwrite="false" />
-        <File sourceFilename="~\Composite/localization/Composite.SecurityViolation.uk-UA.xml" targetFilename="~\Composite/localization/Composite.SecurityViolation.uk-UA.xml" allowOverwrite="false" />
-        <File sourceFilename="~\Composite/localization/Composite.C1Console.Users.uk-UA.xml" targetFilename="~\Composite/localization/Composite.C1Console.Users.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.GenericPublishProcessController.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.GenericPublishProcessController.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.GeneratedDataTypesElementProvider.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.GeneratedDataTypesElementProvider.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.FormControl.TypeFieldDesigner.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Web.FormControl.TypeFieldDesigner.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.FormControl.FunctionParameterDesigner.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Web.FormControl.FunctionParameterDesigner.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.SqlFunction.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.SqlFunction.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.VisualFunction.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.VisualFunction.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.PageTemplateElementProvider.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.PageTemplateElementProvider.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.FormControl.FunctionCallsDesigner.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Web.FormControl.FunctionCallsDesigner.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Permissions.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Permissions.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.GeneratedTypes.uk-UA.xml" targetFilename="~\Composite/localization/Composite.GeneratedTypes.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.NameValidation.uk-UA.xml" targetFilename="~\Composite/localization/Composite.NameValidation.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.WebsiteFileElementProvider.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.WebsiteFileElementProvider.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.EntityTokenLocked.uk-UA.xml" targetFilename="~\Composite/localization/Composite.EntityTokenLocked.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.PackageElementProvider.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.PackageElementProvider.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.PackageSystem.PackageFragmentInstallers.uk-UA.xml" targetFilename="~\Composite/localization/Composite.PackageSystem.PackageFragmentInstallers.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.LocalizationElementProvider.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.LocalizationElementProvider.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.SEOAssistant.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Web.SEOAssistant.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.VisualEditor.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Web.VisualEditor.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.SourceEditor.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Web.SourceEditor.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.PageBrowser.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Web.PageBrowser.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.UserGroupElementProvider.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.UserGroupElementProvider.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.C1Console.Trees.uk-UA.xml" targetFilename="~\Composite/localization/Composite.C1Console.Trees.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.PageTypeElementProvider.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Plugins.PageTypeElementProvider.uk-UA.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.UrlConfiguration.uk-UA.xml" targetFilename="~\Composite/localization/Composite.Web.UrlConfiguration.uk-UA.xml" allowOverwrite="false" />
-		     </Files>
-			<Directories />
-		</mi:Add>
-		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
-			<Types />
+			<Directories>
+				<Directory sourceDirectory="~\App_Data\Composite\LanguagePacks\uk-UA\" targetDirectory="~\App_Data\Composite\LanguagePacks\uk-UA\" allowOverwrite="true" deleteTargetDirectory="false"/>
+			</Directories>
 		</mi:Add>
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>
