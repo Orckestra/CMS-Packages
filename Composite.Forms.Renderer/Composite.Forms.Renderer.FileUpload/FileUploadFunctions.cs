@@ -11,6 +11,8 @@ using Composite.Data;
 using Composite.Forms.Renderer;
 using Composite.Functions;
 using System.Text;
+using System.Linq;
+using System.IO;
 
 namespace Composite.Forms.Renderer.FileUpload
 {
@@ -33,11 +35,8 @@ namespace Composite.Forms.Renderer.FileUpload
 				foreach (string fileName in page.Request.Files)
 				{
 					HttpPostedFile file = page.Request.Files[fileName];
-					var filename = file.FileName;
-					foreach(var pair in new Dictionary<char,char>{{'æ','e'}, {'ø','o'}, {'å','a'}, {'Æ','E'},{'Ø','O'},{'Å','A'}})
-					{
-						filename = filename.Replace(pair.Key, pair.Value);
-					};
+					var filename = NormalizeFilename(file.FileName);
+
 					attachments.Add(new Attachment(file.InputStream, filename, file.ContentType)
 					{ 
 						NameEncoding = Encoding.ASCII
@@ -113,6 +112,20 @@ namespace Composite.Forms.Renderer.FileUpload
 				throw new InvalidOperationException("Unable to send mail. Please ensure that web.config has correct /configuration/system.net/mailSettings: " + e.Message);
 			}
 			return ResponseText;
+		}
+
+		private static string NormalizeFilename(string filename)
+		{
+			foreach (var pair in new Dictionary<string, string> { { "æ", "ae" }, { "Æ", "AE" }})
+			{
+				filename = filename.Replace(pair.Key, pair.Value);
+			};
+			filename = string.Join(string.Empty, filename
+						.Select(d => d.ToString().Normalize(NormalizationForm.FormKD))
+						.Select(d => d.Length == 1 ? (d[0] < 128 ? d : "_") : string.Join(string.Empty, d.Where(c => c < 128))));
+			filename = filename.Trim(Path.GetInvalidFileNameChars());
+
+			return filename;
 		}
 
 	}
