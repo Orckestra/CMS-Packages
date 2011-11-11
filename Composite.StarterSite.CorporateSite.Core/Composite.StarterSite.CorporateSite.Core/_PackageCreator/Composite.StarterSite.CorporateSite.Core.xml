@@ -2,7 +2,7 @@
 <pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
 	<pc:Localizations />
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4266.16056" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Core" groupName="Composite.StarterSite.CorporateSite" version="1.0.5" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="f5e8484a-8c90-4b68-a263-3f1f174d42a5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Core" groupName="Composite.StarterSite.CorporateSite" version="1.0.6" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="f5e8484a-8c90-4b68-a263-3f1f174d42a5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>StarterSite xslt based template</Description>
 	</mi:PackageInformation>
 	<pc:Directories>
