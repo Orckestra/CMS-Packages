@@ -9,7 +9,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.StandardFunctions.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.StandardFunctions.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -17,7 +17,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Cultures.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Cultures.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -25,7 +25,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Management.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Management.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -33,7 +33,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.PageElementProvider.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.PageElementProvider.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -41,7 +41,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.AllFunctionsElementProvider.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.AllFunctionsElementProvider.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -49,7 +49,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.MethodBasedFunctionProviderElementProvider.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.MethodBasedFunctionProviderElementProvider.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -57,7 +57,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.XsltBasedFunction.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.XsltBasedFunction.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -65,7 +65,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.SecurityViolation.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.SecurityViolation.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -73,7 +73,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.C1Console.Users.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.C1Console.Users.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -81,7 +81,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.GeneratedDataTypesElementProvider.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.GeneratedDataTypesElementProvider.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -89,7 +89,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.GenericPublishProcessController.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.GenericPublishProcessController.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -97,7 +97,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Web.FormControl.TypeFieldDesigner.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Web.FormControl.TypeFieldDesigner.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -105,7 +105,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Web.FormControl.FunctionParameterDesigner.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Web.FormControl.FunctionParameterDesigner.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -113,7 +113,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.SqlFunction.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.SqlFunction.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -121,7 +121,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.VisualFunction.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.VisualFunction.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -129,7 +129,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.PageTemplateElementProvider.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.PageTemplateElementProvider.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -137,7 +137,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Web.FormControl.FunctionCallsDesigner.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Web.FormControl.FunctionCallsDesigner.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -145,7 +145,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Permissions.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Permissions.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -153,7 +153,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.GeneratedTypes.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.GeneratedTypes.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -161,7 +161,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.NameValidation.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.NameValidation.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -169,7 +169,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.WebsiteFileElementProvider.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.WebsiteFileElementProvider.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -177,7 +177,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.EntityTokenLocked.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.EntityTokenLocked.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -185,7 +185,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.PackageElementProvider.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.PackageElementProvider.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -193,7 +193,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.PackageSystem.PackageFragmentInstallers.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.PackageSystem.PackageFragmentInstallers.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -201,7 +201,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.LocalizationElementProvider.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.LocalizationElementProvider.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -209,7 +209,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Web.SEOAssistant.ru-RU.xml" monitorFileChanges="true" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Web.SEOAssistant.ru-RU.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -217,7 +217,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Web.VisualEditor.ru-RU.xml" monitorFileChanges="true" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Web.VisualEditor.ru-RU.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -225,7 +225,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Web.SourceEditor.ru-RU.xml" monitorFileChanges="true" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Web.SourceEditor.ru-RU.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -233,7 +233,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Web.PageBrowser.ru-RU.xml" monitorFileChanges="true" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Web.PageBrowser.ru-RU.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -241,7 +241,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.UserGroupElementProvider.ru-RU.xml" monitorFileChanges="true" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.UserGroupElementProvider.ru-RU.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -249,7 +249,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.C1Console.Trees.ru-RU.xml" monitorFileChanges="true" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.C1Console.Trees.ru-RU.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -257,7 +257,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Plugins.PageTypeElementProvider.ru-RU.xml" monitorFileChanges="true" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.PageTypeElementProvider.ru-RU.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -265,7 +265,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" />
       <xsl:if test="count(add[@cultureName='ru-RU'])=0">
-        <add cultureName="ru-RU" xmlFile="~/Composite/localization/Composite.Web.UrlConfiguration.ru-RU.xml" monitorFileChanges="true" />
+        <add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Web.UrlConfiguration.ru-RU.xml" monitorFileChanges="true" />
       </xsl:if>
     </xsl:copy>
   </xsl:template>

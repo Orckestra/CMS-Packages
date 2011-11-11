@@ -17,6 +17,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,38 +55,38 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\Composite\localization\Composite.C1Console.Trees.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.C1Console.Users.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Cultures.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.EntityTokenLocked.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.GeneratedTypes.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Management.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.NameValidation.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.PackageSystem.PackageFragmentInstallers.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Permissions.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.AllFunctionsElementProvider.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.GeneratedDataTypesElementProvider.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.GenericPublishProcessController.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.LocalizationElementProvider.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.MethodBasedFunctionProviderElementProvider.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.PackageElementProvider.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.PageElementProvider.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.PageTemplateElementProvider.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.PageTypeElementProvider.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.SqlFunction.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.StandardFunctions.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.UserGroupElementProvider.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.VisualFunction.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.WebsiteFileElementProvider.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.XsltBasedFunction.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.SecurityViolation.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.FormControl.FunctionCallsDesigner.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.FormControl.FunctionParameterDesigner.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.FormControl.TypeFieldDesigner.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.PageBrowser.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.SEOAssistant.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.SourceEditor.ru-RU.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.VisualEditor.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.C1Console.Trees.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.C1Console.Users.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Cultures.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.EntityTokenLocked.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.GeneratedTypes.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Management.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.NameValidation.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.PackageSystem.PackageFragmentInstallers.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Permissions.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.AllFunctionsElementProvider.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.GeneratedDataTypesElementProvider.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.GenericPublishProcessController.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.LocalizationElementProvider.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.MethodBasedFunctionProviderElementProvider.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.PackageElementProvider.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.PageElementProvider.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.PageTemplateElementProvider.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.PageTypeElementProvider.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.SqlFunction.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.StandardFunctions.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.UserGroupElementProvider.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.VisualFunction.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.WebsiteFileElementProvider.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Plugins.XsltBasedFunction.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.SecurityViolation.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Web.FormControl.FunctionCallsDesigner.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Web.FormControl.FunctionParameterDesigner.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Web.FormControl.TypeFieldDesigner.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Web.PageBrowser.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Web.SEOAssistant.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Web.SourceEditor.ru-RU.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Web.VisualEditor.ru-RU.xml" />
     <Content Include="Package\Config\Install.xsl" />
     <Content Include="Package\Config\Uninstall.xsl" />
     <Content Include="Package\install.xml" />

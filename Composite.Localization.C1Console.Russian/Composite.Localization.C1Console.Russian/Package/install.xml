@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4055.27225" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Localization.C1Console.Russian" groupName="Composite.Localization" version="1.1.1" author="Composite a/s" website="www.composite.net" id="cfe219d3-ac46-4c0e-80ff-afd4cc9011c6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Localization.C1Console.Russian" groupName="Composite.Localization" version="1.1.2" author="Composite a/s" website="www.composite.net" id="cfe219d3-ac46-4c0e-80ff-afd4cc9011c6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Russian language pack for the console GUI</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
@@ -11,42 +11,9 @@
 			<Uninstall xsltFilePath="~\Config\Uninstall.xsl" />
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
-			<Files>
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.StandardFunctions.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.StandardFunctions.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Cultures.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Cultures.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Management.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Management.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.PageElementProvider.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.PageElementProvider.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.AllFunctionsElementProvider.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.AllFunctionsElementProvider.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.MethodBasedFunctionProviderElementProvider.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.MethodBasedFunctionProviderElementProvider.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.XsltBasedFunction.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.XsltBasedFunction.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.SecurityViolation.ru-RU.xml" targetFilename="~\Composite/localization/Composite.SecurityViolation.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.C1Console.Users.ru-RU.xml" targetFilename="~\Composite/localization/Composite.C1Console.Users.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.GeneratedDataTypesElementProvider.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.GeneratedDataTypesElementProvider.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.GenericPublishProcessController.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.GenericPublishProcessController.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.FormControl.TypeFieldDesigner.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Web.FormControl.TypeFieldDesigner.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.FormControl.FunctionParameterDesigner.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Web.FormControl.FunctionParameterDesigner.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.SqlFunction.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.SqlFunction.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.VisualFunction.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.VisualFunction.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.PageTemplateElementProvider.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.PageTemplateElementProvider.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.FormControl.FunctionCallsDesigner.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Web.FormControl.FunctionCallsDesigner.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Permissions.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Permissions.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.GeneratedTypes.ru-RU.xml" targetFilename="~\Composite/localization/Composite.GeneratedTypes.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.NameValidation.ru-RU.xml" targetFilename="~\Composite/localization/Composite.NameValidation.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.WebsiteFileElementProvider.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.WebsiteFileElementProvider.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.EntityTokenLocked.ru-RU.xml" targetFilename="~\Composite/localization/Composite.EntityTokenLocked.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.PackageElementProvider.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.PackageElementProvider.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.PackageSystem.PackageFragmentInstallers.ru-RU.xml" targetFilename="~\Composite/localization/Composite.PackageSystem.PackageFragmentInstallers.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.LocalizationElementProvider.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.LocalizationElementProvider.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.SEOAssistant.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Web.SEOAssistant.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.VisualEditor.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Web.VisualEditor.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.SourceEditor.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Web.SourceEditor.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.PageBrowser.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Web.PageBrowser.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.UserGroupElementProvider.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.UserGroupElementProvider.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.C1Console.Trees.ru-RU.xml" targetFilename="~\Composite/localization/Composite.C1Console.Trees.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Plugins.PageTypeElementProvider.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Plugins.PageTypeElementProvider.ru-RU.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Composite/localization/Composite.Web.UrlConfiguration.ru-RU.xml" targetFilename="~\Composite/localization/Composite.Web.UrlConfiguration.ru-RU.xml" allowOverwrite="false" />
-			</Files>
-			<Directories />
+			<Directories>
+				<Directory sourceDirectory="~\App_Data\Composite\LanguagePacks\ru-RU\" targetDirectory="~\App_Data\Composite\LanguagePacks\ru-RU\" allowOverwrite="true" deleteTargetDirectory="false"/>
+			</Directories>
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
 			<Types />
