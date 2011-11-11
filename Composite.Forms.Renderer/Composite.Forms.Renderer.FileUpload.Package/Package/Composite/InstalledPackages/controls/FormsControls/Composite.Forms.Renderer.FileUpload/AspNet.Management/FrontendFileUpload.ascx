@@ -1,6 +1,6 @@
-<%@ Control Language="C#" Inherits="Composite.StandardPlugins.Forms.WebChannel.UiControlFactories.TextInputTemplateUserControlBase" %>
-<%@ Import Namespace="Composite.StandardPlugins.Forms.WebChannel.UiControlFactories" %>
-<%@ Import Namespace="Composite.Forms.CoreUiControls" %>
+﻿<%@ Control Language="C#" Inherits="Composite.Plugins.Forms.WebChannel.UiControlFactories.TextInputTemplateUserControlBase" %>
+<%@ Import Namespace="Composite.Plugins.Forms.WebChannel.UiControlFactories" %>
+<%@ Import Namespace="Composite.C1Console.Forms.CoreUiControls" %>
 
 <script runat="server">
 	private string _currentStringValue = null;

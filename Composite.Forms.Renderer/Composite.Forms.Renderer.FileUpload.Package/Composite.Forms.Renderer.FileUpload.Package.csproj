@@ -57,11 +57,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="7za.exe" />
-    <Content Include="Dll\Composite.dll" />
-    <Content Include="Dll\Composite.Forms.Renderer.Lib.dll" />
-    <Content Include="Dll\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
-    <Content Include="Dll\Microsoft.Practices.ObjectBuilder.dll" />
     <Content Include="Package\App_Data\Xslt\Composite\Forms\FileUploadRenderer.xsl" />
     <Content Include="Package\Bin\Composite.Forms.Renderer.FileUpload.dll" />
     <Content Include="Package\Composite\InstalledPackages\controls\FormsControls\Composite.Forms.Renderer.FileUpload\AspNet.FormsRenderer\FrontendFileUpload.ascx" />
@@ -102,8 +97,9 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
-"$(ProjectDir)7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
-"$(ProjectDir)7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
+"$(ProjectDir)..\..\..\Public\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(ProjectDir)..\..\..\Public\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
+</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

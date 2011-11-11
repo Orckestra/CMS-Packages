@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Composite.Functions.Plugins.WidgetFunctionProvider;
+using System.Reflection;
 using Composite.Functions;
-
+using Composite.Functions.Plugins.WidgetFunctionProvider;
+using Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.Foundation;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ObjectBuilder;
 using Microsoft.Practices.ObjectBuilder;
-using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
-using System.Reflection;
-using Composite.StandardPlugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.Foundation;
 
 
 namespace Composite.Forms.Renderer.FileUpload
@@ -25,7 +22,7 @@ namespace Composite.Forms.Renderer.FileUpload
 		{
 			_entityTokenFactory = (EntityTokenFactory)Activator.CreateInstance(
 				typeof(EntityTokenFactory),
-				BindingFlags.NonPublic| BindingFlags.Instance,
+				BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance,
 				null,
 				new object[]{ providerName},
 				null);

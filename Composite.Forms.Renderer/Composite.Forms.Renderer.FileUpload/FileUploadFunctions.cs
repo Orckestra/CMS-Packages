@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Mail;
 using System.Reflection;
-using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Xml.Linq;
 using System.Xml.Xsl;
+using Composite.Core.Logging;
 using Composite.Data;
-using Composite.Logging;
-using Composite.Packages.FormsRenderer;
-using Composite.StandardPlugins.Functions.FunctionProviders.MethodBasedFunctionProvider;
+using Composite.Forms.Renderer;
+using Composite.Functions;
+using System.Text;
 
 namespace Composite.Forms.Renderer.FileUpload
 {
@@ -34,7 +33,15 @@ namespace Composite.Forms.Renderer.FileUpload
 				foreach (string fileName in page.Request.Files)
 				{
 					HttpPostedFile file = page.Request.Files[fileName];
-					attachments.Add(new Attachment(file.InputStream, file.FileName, file.ContentType));
+					var filename = file.FileName;
+					foreach(var pair in new Dictionary<char,char>{{'æ','e'}, {'ø','o'}, {'å','a'}, {'Æ','E'},{'Ø','O'},{'Å','A'}})
+					{
+						filename = filename.Replace(pair.Key, pair.Value);
+					};
+					attachments.Add(new Attachment(file.InputStream, filename, file.ContentType)
+					{ 
+						NameEncoding = Encoding.ASCII
+					});
 				}
 			}
 

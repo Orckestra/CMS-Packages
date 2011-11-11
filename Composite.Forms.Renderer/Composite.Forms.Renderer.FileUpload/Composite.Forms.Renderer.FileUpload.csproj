@@ -38,18 +38,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Composite">
-      <HintPath>..\Composite.Forms.Renderer.FileUpload.Package\Dll\Composite.dll</HintPath>
+      <HintPath>..\..\References\Composite\3.0\Composite.dll</HintPath>
     </Reference>
-    <Reference Include="Composite.Forms.Renderer.Lib">
-      <HintPath>..\Composite.Forms.Renderer.FileUpload.Package\Dll\Composite.Forms.Renderer.Lib.dll</HintPath>
+    <Reference Include="Composite.Forms.Renderer">
+      <HintPath>..\Composite.Forms.Renderer.Package\Package\Bin\Composite.Forms.Renderer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Composite.Forms.Renderer.FileUpload.Package\Dll\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Composite.Forms.Renderer.FileUpload.Package\Dll\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <HintPath>..\..\References\Composite\2.1.1\Microsoft.Practices.ObjectBuilder.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

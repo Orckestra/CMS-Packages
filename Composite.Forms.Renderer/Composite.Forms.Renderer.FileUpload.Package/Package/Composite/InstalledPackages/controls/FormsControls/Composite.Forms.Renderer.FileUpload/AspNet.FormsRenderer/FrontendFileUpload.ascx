@@ -1,4 +1,4 @@
-<%@ Control Language="C#" Inherits="Composite.StandardPlugins.Forms.WebChannel.UiControlFactories.TextInputTemplateUserControlBase" %>
+﻿<%@ Control Language="C#" Inherits="Composite.Plugins.Forms.WebChannel.UiControlFactories.TextInputTemplateUserControlBase" %>
 <%@ Import Namespace="System.Linq" %>
 <script runat="server">
 	protected override void BindStateToProperties()
