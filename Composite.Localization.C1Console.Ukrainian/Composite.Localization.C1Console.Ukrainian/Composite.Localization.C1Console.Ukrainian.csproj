@@ -17,6 +17,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,41 +55,45 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\Composite\localization\Composite.C1Console.Trees.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.C1Console.Users.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Cultures.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.EntityTokenLocked.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.GeneratedTypes.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Management.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.NameValidation.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.PackageSystem.PackageFragmentInstallers.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Permissions.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.AllFunctionsElementProvider.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.GeneratedDataTypesElementProvider.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.GenericPublishProcessController.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.LocalizationElementProvider.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.MethodBasedFunctionProviderElementProvider.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.PackageElementProvider.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.PageElementProvider.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.PageTemplateElementProvider.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.PageTypeElementProvider.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.SqlFunction.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.StandardFunctions.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.UserGroupElementProvider.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.VisualFunction.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.WebsiteFileElementProvider.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Plugins.XsltBasedFunction.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.FormControl.FunctionCallsDesigner.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.FormControl.FunctionParameterDesigner.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.FormControl.TypeFieldDesigner.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.PageBrowser.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.SEOAssistant.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.SourceEditor.uk-UA.xml" />
-    <Content Include="Package\Composite\localization\Composite.Web.VisualEditor.uk-UA.xml" />
-    <Content Include="Package\Config\Install.xsl" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.C1Console.Trees.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.C1Console.Users.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Cultures.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.EntityTokenLocked.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.GeneratedTypes.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Management.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.NameValidation.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.PackageSystem.PackageFragmentInstallers.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Permissions.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.AllFunctionsElementProvider.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.GeneratedDataTypesElementProvider.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.GenericPublishProcessController.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.LocalizationElementProvider.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.MethodBasedFunctionProviderElementProvider.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.PackageElementProvider.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.PageElementProvider.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.PageTemplateElementProvider.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.PageTypeElementProvider.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.SqlFunction.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.StandardFunctions.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.UserGroupElementProvider.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.VisualFunction.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.WebsiteFileElementProvider.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Plugins.XsltBasedFunction.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Web.FormControl.FunctionCallsDesigner.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Web.FormControl.FunctionParameterDesigner.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Web.FormControl.TypeFieldDesigner.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Web.PageBrowser.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Web.SEOAssistant.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Web.SourceEditor.uk-UA.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Web.VisualEditor.uk-UA.xml" />
+    <Content Include="Package\Config\Install.xsl">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Package\Config\Uninstall.xsl" />
     <Content Include="Package\install.xml" />
-    <Content Include="_PackageCreator\Composite.Localization.C1Console.Ukrainian.xml" />
+    <Content Include="_PackageCreator\Composite.Localization.C1Console.Ukrainian.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

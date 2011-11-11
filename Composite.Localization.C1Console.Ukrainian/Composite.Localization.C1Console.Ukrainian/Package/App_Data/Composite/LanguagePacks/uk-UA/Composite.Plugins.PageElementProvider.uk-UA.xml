@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="AddNewPageStep1.DialogLabel" value="Додати нову сторінку" />
+  <string key="GeneralSettings.FieldGroupLabel" value="Загальні настройки" />
+  <string key="PublicationSettings.FieldGroupLabel" value="Настройки публікації" />
+  <string key="AdvancedSettings.FieldGroupLabel" value="Розширені настройки" />
+  <string key="AddNewPageStep1.LabelTitle" value="Назва сторінки" />
+  <string key="AddNewPageStep1.LabelTitleHelp" value="Значення у цьому полі відображається в заголовку вікна браузера. Поле використовується пошуковими системами і в картах сайту." />
+  <string key="AddNewPageStep1.LabelAbstract" value="Опис" />
+  <string key="AddNewPageStep1.LabelAbstractHelp" value="Використовуйте це поле для короткого опису сторінки" />
+  <string key="AddNewPageStep1.LabelTemplate" value="Тип сторінок" />
+  <string key="AddNewPageStep1.HelpTemplate" value="Виберіть тип, на якому повинна базуватися ця сторінка." />
+  <string key="AddNewPageStep1.LabelPosition" value="Позиція" />
+  <string key="AddNewPageStep1.HelpPosition" value="Виберіть, де ви хочете розмістити сторінку в дереві контенту." />
+  <string key="AddNewPageStep1.LabelAddToTop" value="Вставити вгорі" />
+  <string key="AddNewPageStep1.LabelAddToBottom" value="Вставити внизу" />
+  <string key="AddNewPageStep1.LabelAddAlphabetic" value="Вставити за алфавітом" />
+  <string key="AddNewPageStep1.LabelAddBelowOtherPage" value="Вибрати позицію ..." />
+  <string key="AddNewPageStep2.LabelFieldGroup" value="Розширені настройки" />
+  <string key="AddNewPageStep2.LabelUrlTitle" value="Назва URL" />
+  <string key="AddNewPageStep2.HelpUrlTitle" value="Значення у цьому полі відображається в рядку адреси браузера. Поле використовується пошуковими системами." />
+  <string key="AddNewPageStep2.LabelMenuTitle" value="Заголовок меню" />
+  <string key="AddNewPageStep2.HelpMenuTitle" value="Значення у цьому полі може використовуватися для навігації по сайту." />
+  <string key="AddNewPageStep2.LabelPositionSelectorPanel" value="Виберіть точну позицію сторінки" />
+  <string key="AddNewPageStep2.LabelPositionSelector" value="Позиція нижче" />
+  <string key="AddNewPageStep2.HelpPositionSelector" value="" />
+  <string key="EditPage.LabelPaneSettings" value="Настройки" />
+  <string key="EditPage.LabelPublicationState" value="Статус" />
+  <string key="EditPage.HelpPublicationState" value="Дати сторінці інший статус" />
+  <string key="EditPage.LabelPageTitle" value="Назва сторінки" />
+  <string key="EditPage.LabelPageTitleHelp" value="Значення у цьому полі відображається в заголовку вікна браузера. Поле використовується пошуковими системами і картами сайту." />
+  <string key="EditPage.LabelMenuTitle" value="Заголовок меню" />
+  <string key="EditPage.HelpMenuTitle" value="Значення у цьому полі може використовуватися для навігації по сайту." />
+  <string key="EditPage.LabelUrlTitle" value="Назва для URL" />
+  <string key="EditPage.UrlTitleFormattedTitle" value="Назву для URL було змінено" />
+  <string key="EditPage.UrlTitleFormattedMessage" value="У відповідності до поточних правил заміни URL, назву для URL було змінено на '{0}'" />
+  <string key="EditPage.HelpUrlTitle" value="Значення у цьому полі відображається в адресному рядку браузера як частина URL-адреси. Поле використовується пошуковими системами." />
+  <string key="EditPage.LabelFriendlyUrl" value="Дружній URL" />
+  <string key="EditPage.HelpFriendlyUrl" value="Значення у цьому полі відображається в рядку адреси браузера і замінює URL, згенерований системою. Зверніть увагу на те, що сервер повинен бути налаштований, щоб підтримувати цю функцію" />
+  <string key="EditPage.LabelAbstract" value="Опис" />
+  <string key="EditPage.LabelAbstractHelp" value="Використовуйте це поле для короткого опису сторінки" />
+  <string key="EditPage.LabelPublishDate" value="Дата публікації" />
+  <string key="EditPage.HelpPublishDate" value="Вкажіть дату і час, коли потрібно опублікувати сторінку. У зазначений час сторінка буде автоматично опублікована на сайті." />
+  <string key="EditPage.LabelUnpublishDate" value="Дата скасування публікації" />
+  <string key="EditPage.HelpUnpublishDate" value="Вкажіть дату і час, коли потрібно скасувати публікацію сторінки. У зазначений час сторінка буде автоматично видалена з сайту." />
+  <string key="EditPage.LabelContent" value="Контент" />
+  <string key="EditPage.LabelPreview" value="Перегляд" />
+  <string key="EditPage.PageTypeSelectorLabel" value="Тип сторінок" />
+  <string key="EditPage.MaxLength" value="{0} символів максимум" />
+  <string key="DeletePage.LabelFieldGroup" value="Видалити сторінку?" />
+  <string key="DeletePageStep1.Title" value="Видалити сторінку і всі підсторінки" />
+  <string key="DeletePageStep1.Description" value="Всі підсторінки також будуть видалені. Продовжити?" />
+  <string key="DeletePageStep2.Text" value="Видалити сторінку &quot;{0}&quot;?" />
+  <string key="UrlTitleNotUniqueError" value="Інша сторінка використовує зазначену назву для URL. Назви для URL повинні бути унікальними у сторінок із загальною батьківською сторінкою." />
+  <string key="UrlTitleNotValidError" value="Зазначена назва URL містить неприпустимі символи. Через те, що це поле використовується для генерації веб-адреси сторінки, деякі спеціальні символи (наприклад, пробіл, знак питання, скісна риска і крапка) - неприпустимі. Можна використовувати літери, цифри та тире." />
+  <string key="UrlTitleTooLong" value="Вибраний URL занадто довгий. Зкоротіть його та повторіть спробу" />
+  <string key="FriendlyUrlNotUniqueError" value="Інша сторінка використовує зазначений дружній URL. Дружній URL повинен бути унікальним." />
+  <string key="TitleMissingError" value="Назва не може бути відсутньою." />
+  <string key="PageSaveValidationFailedTitle" value="Сторінка не збережена" />
+  <string key="PageSaveValidationFailedMessage" value="Сторінка не пройшла перевірку і не була збережена. Будь ласка, вивчіть повідомлення щодо полів." />
+  <string key="PageElementProvider.RootLabel" value="Веб-сайти" />
+  <string key="PageElementProvider.RootLabelToolTip" value="Веб-сайти" />
+  <string key="PageElementProvider.AddPageAtRoot" value="Додати веб-сайт ..." />
+  <string key="PageElementProvider.AddPageAtRootToolTip" value="Додати нову домашню сторінку сайту" />
+  <string key="PageElementProvider.ViewUnpublishedItems" value="Список неопублікованих сторінок" />
+  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="Список сторінок і даних з папок для сторінок, які не були досі опубліковані." />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-title" value="Неопублікований контент" />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-description" value="У наведеному нижче списку, показано сторінки і дані для сторінок, які в даний момент змінюються чи готові до затвердження / публікації." />
+  <string key="PageElementProvider.EditPage" value="Змінити сторінку" />
+  <string key="PageElementProvider.EditPageToolTip" value="Змінити вибрану сторінку" />
+  <string key="PageElementProvider.Delete" value="Видалити" />
+  <string key="PageElementProvider.DeleteToolTip" value="Видалити обрану сторінку" />
+  <string key="PageElementProvider.LocalizePage" value="Перекласти сторінку" />
+  <string key="PageElementProvider.LocalizePageToolTip" value="Перекласти вибрану сторінку" />
+  <string key="PageElementProvider.AddSubPage" value="Додати сторінку ..." />
+  <string key="PageElementProvider.AddSubPageToolTip" value="Додати нову сторінку під обраною сторінкою" />
+  <string key="PageElementProvider.ViewPublicPage" value="Показати опубліковану версію" />
+  <string key="PageElementProvider.ViewPublicToolTip" value="Показати останню опубліковану версію" />
+  <string key="PageElementProvider.ViewDraftPage" value="Показати неопубліковану версію" />
+  <string key="PageElementProvider.ViewDraftToolTip" value="Показати останні зміни" />
+  <string key="PageElementProvider.ManageHostNames" value="Керування ім'ям сервера" />
+  <string key="PageElementProvider.ManageHostNamesToolTip" value="Управляти зв'язками імені сервера на обраній сторінці" />
+  <string key="PageElementProvider.DisplayLocalOrderingLabel" value="Показати локальне сортування сторінок" />
+  <string key="PageElementProvider.DisplayLocalOrderingToolTip" value="Показати локальне сортування сторінок" />
+  <string key="PageElementProvider.DisabledPage" value="Ще не затверджена або опублікована" />
+  <string key="PageElementProvider.MissingTemplateTitle" value="Відсутній шаблон веб-сайту" />
+  <string key="PageElementProvider.MissingTemplateMessage" value="Для створення сторінки необхідний шаблон веб-сайту, але шаблони не створені. Шаблон можна створити в розділі &quot;Макет&quot;." />
+  <string key="PageElementProvider.MissingActiveLanguageTitle" value="Відсутня мова" />
+  <string key="PageElementProvider.MissingActiveLanguageMessage" value="Щоб додати сторінку, потрібно спочатку додати, принаймні, одну мову. Це можна зробити у розділі &quot;Система&quot;." />
+  <string key="PageElementProvider.NoPageTypesAvailableTitle" value="Немає доступних типів сторінок" />
+  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="Спочатку потрібно створити хоча б один тип сторінок" />
+  <string key="PageElementProvider.MissingPageTypeTitle" value="Відсутній тип сторінок" />
+  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="Для створення домашньої сторінки, необхідний тип сторінок без обмеження &quot;тільки підсторінки&quot;, але такі типи ще не додано. Можна додати тип сторінки в розділі &quot;Макет&quot;." />
+  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="Щоб створити підсторінку, необхідний тип сторінки без обмежень &quot;тільки домашні сторінки&quot;, але такі типи ще не додано. Можна додати тип сторінки в розділі &quot;Макет&quot;." />  
+  <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Не можна додати сторінку!" />
+  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="Правила, які визначають доступність для типів сторінок, забороняють додавати тут сторінку." />
+  <string key="ManageHostNames.Add.DialogLabel" value="Керувати ім'ям сервера" />
+  <string key="ManageHostNames.Add.HeadingTitle" value="Додати зв'язок імені сервера на сторінку" />
+  <string key="ManageHostNames.Add.HeadingDescription" value="Ви можете зв'язати ім'я сервера (або доменне ім'я) з сторінкою, вказавши його в поле, що знаходиться нижче. Зверніть увагу на те, що параметри DNS для зазначеного імені сервера також повинні бути налаштовані - поза цією системою." />
+  <string key="ManageHostNames.Add.FieldGroupLabel" value="Прив'язка імені сервера до сторінки" />
+  <string key="ManageHostNames.Add.HostNameTextBoxLabel" value="Ім'я сервера" />
+  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Вкажіть ім'я сервера (наприклад, &quot;www.composite.net&quot; або &quot;composite.net&quot;), які ви хочете пов'язати з цією сторінкою" />
+  <string key="ManageHostNames.Add.InvalidHostNameSyntaxError" value="Синтаксис імені сервера не допустимий" />
+  <string key="ManageHostNames.Add.HostNameNotUniqueError" value="Це ім'я сервера вже пов'язано з іншою сторінкою. Потрібно спочатку видалити існуючу прив'язку." />
+  <string key="ManageHostNames.Remove.DialogLabel" value="Керувати ім'ям сервера" />
+  <string key="ManageHostNames.Remove.FieldGroupLabel" value="Видалити прив'язку імені сервера до сторінки" />
+  <string key="ManageHostNames.Remove.MultiSelectorLabel" value="Імена серверів для видалення" />
+  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="Імена серверів, які ви вибрали, більше не будуть пов'язані зі цією сторінкою" />
+  <string key="Preview.PublishedPage.NotPublishedTitle" value="Обрана сторінка не опублікована" />
+  <string key="Preview.PublishedPage.NotPublishedMessage" value="Обрана сторінка не опублікована" />
+  <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="Будь ласка, підтвердіть видалення всіх підсторінок" />
+  <string key="DeletePageWorkflow.CascadeDeleteErrorTitle" value="Помилка каскадного видалення" />
+  <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="На цю сторінку посилається інший тип даних, який не допускає каскадне видалення. Виконання операції припинено." />
+  <string key="DeletePageWorkflow.HasCompositionsTitle" value="Не вдається видалити сторінку" />
+  <string key="DeletePageWorkflow.HasCompositionsMessage" value="У цієї сторінки є одна або декілька пов'язаних з нею папок даних або полів метаданих. Спочатку видаліть їх." />
+</strings>

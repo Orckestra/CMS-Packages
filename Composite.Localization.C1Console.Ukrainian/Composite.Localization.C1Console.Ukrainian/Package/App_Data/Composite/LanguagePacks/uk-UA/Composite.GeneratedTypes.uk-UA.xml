@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="TypesAreReferencing" value="Один або кілька типів посилаються на цей тип. Перейменування неможливо." />
+  <string key="TypeNameInNamespace" value="Ім'я типу '{0}' з'являється в просторі імен '{1}' - це не допускається" />
+  <string key="TypesNameClash" value="Тип з таким ім'ям вже існує" />
+	<string key="MissingFields" value="Поля не додано" />
+	<string key="TypeNameIsInvalidIdentifier" value="Ім'я типу '{0}' не є допустимим ідентифікатором" />
+	<string key="FieldNameCannotBeUsed" value="Ім'я поля '{0}' не може бути використано" />
+  <string key="NameSpaceIsTypeTypeName" value="Зазначене 'Простір імен типу &quot;вже використовується в якості' Ім'я типу '(простір імен ім'я). Рекомендується зміна ім'я '{0}' на '{0}. Item'." />
+	<string key="NamespaceIsReserved" value="Ім'я типу належить зарезервованому простору імен." />
+	<string key="CompileErrorWhileAddingType" value="Не можна додати тип даних, бо це призведе до помилок під час компіляції." />
+	<string key="CompileErrorWhileChangingType" value="Не можна змінити тип даних,  бо це призведе до помилок під час компіляції." />
+  <string key="FieldDoesNotHaveWidget" value="Для поля '{0}' не вказано віджет" />
+</strings>

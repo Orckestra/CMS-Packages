@@ -9,7 +9,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.StandardFunctions.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.StandardFunctions.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -17,7 +17,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Cultures.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Cultures.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -25,7 +25,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Management.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Management.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -33,7 +33,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.PageElementProvider.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.PageElementProvider.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -41,7 +41,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.AllFunctionsElementProvider.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.AllFunctionsElementProvider.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -49,7 +49,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.MethodBasedFunctionProviderElementProvider.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.MethodBasedFunctionProviderElementProvider.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -57,7 +57,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.XsltBasedFunction.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.XsltBasedFunction.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -65,7 +65,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.SecurityViolation.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.SecurityViolation.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -73,7 +73,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.C1Console.Users.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.C1Console.Users.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -81,7 +81,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.GenericPublishProcessController.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.GenericPublishProcessController.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -89,7 +89,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.GeneratedDataTypesElementProvider.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.GeneratedDataTypesElementProvider.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -97,7 +97,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Web.FormControl.TypeFieldDesigner.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Web.FormControl.TypeFieldDesigner.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -105,7 +105,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Web.FormControl.FunctionParameterDesigner.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Web.FormControl.FunctionParameterDesigner.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -113,7 +113,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.SqlFunction.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.SqlFunction.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -121,7 +121,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.VisualFunction.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.VisualFunction.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -129,7 +129,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.PageTemplateElementProvider.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.PageTemplateElementProvider.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -137,7 +137,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Web.FormControl.FunctionCallsDesigner.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Web.FormControl.FunctionCallsDesigner.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -145,7 +145,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Permissions.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Permissions.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -153,7 +153,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.GeneratedTypes.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.GeneratedTypes.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -161,7 +161,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.NameValidation.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.NameValidation.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -169,7 +169,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.WebsiteFileElementProvider.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.WebsiteFileElementProvider.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -177,7 +177,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.EntityTokenLocked.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.EntityTokenLocked.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -185,7 +185,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.PackageElementProvider.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.PackageElementProvider.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -193,7 +193,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.PackageSystem.PackageFragmentInstallers.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.PackageSystem.PackageFragmentInstallers.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -201,7 +201,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.LocalizationElementProvider.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.LocalizationElementProvider.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -209,7 +209,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Web.SEOAssistant.uk-UA.xml" monitorFileChanges="true" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Web.SEOAssistant.uk-UA.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -217,7 +217,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Web.VisualEditor.uk-UA.xml" monitorFileChanges="true" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Web.VisualEditor.uk-UA.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -225,7 +225,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Web.SourceEditor.uk-UA.xml" monitorFileChanges="true" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Web.SourceEditor.uk-UA.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -233,7 +233,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Web.PageBrowser.uk-UA.xml" monitorFileChanges="true" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Web.PageBrowser.uk-UA.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -241,7 +241,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.UserGroupElementProvider.uk-UA.xml" monitorFileChanges="true" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.UserGroupElementProvider.uk-UA.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -249,7 +249,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.C1Console.Trees.uk-UA.xml" monitorFileChanges="true" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.C1Console.Trees.uk-UA.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -257,7 +257,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Plugins.PageTypeElementProvider.uk-UA.xml" monitorFileChanges="true" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.PageTypeElementProvider.uk-UA.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -265,7 +265,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/Composite/localization/Composite.Web.UrlConfiguration.uk-UA.xml" monitorFileChanges="true" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Web.UrlConfiguration.uk-UA.xml" monitorFileChanges="true" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>

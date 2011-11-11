@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+  <!-- menus -->
+  <string key="Menu.ViewSource" value="HTML-код сторінки" />
+  <string key="ContextMenu.Back" value="Назад" />
+  <string key="ContextMenu.Forward" value="Вперед" />
+  <string key="ContextMenu.Refresh" value="Оновити" />
+  <string key="ContextMenu.ViewSource" value="Подивитися HTML-код сторінки" />
+
+
+  <!-- buttons -->
+	<string key="ToolBarButton.Back.ToolTip" value="Перейти на попередню сторінку" />
+	<string key="ToolBarButton.Forward.ToolTip" value="Перейти на наступну сторінку" />
+	<string key="ToolBarButton.Refresh.ToolTip" value="Оновити сторінку" />
+  <string key="ToolBarButton.Go.ToolTip" value="Перейти за адресою у рядку адреси" />
+  <string key="ToolBarButton.Home.ToolTip" value="Перейти на початкову сторінку" /> <!-- TODO: Show URL instead! -->
+	
+	<!-- URL errors -->
+	<string key="AddressBar.Invalid.DialogTitle.External" 		value="Доступ заборонений"/>
+	<string key="AddressBar.Invalid.DialogText.External" 		value="Не можна завантажити зовнішню URL-адресу."/>
+	<string key="AddressBar.Invalid.DialogTitle.BadRequest" 	value="Невірний URL"/>
+	<string key="AddressBar.Invalid.DialogText.BadRequest" 		value="URL-адреса є неприпустимим і не може бути завантажений."/>
+	<string key="AddressBar.Invalid.DialogTitle.Unauthorized" 	value="Немає прав на виконання операції"/>
+	<string key="AddressBar.Invalid.DialogText.Unauthorized" 	value="Ви не авторизовані для перегляду сторінки за вказаною URL-адресою."/>
+	<string key="AddressBar.Invalid.DialogTitle.NotFound" 		value="Сторінка не знайдена"/>
+	<string key="AddressBar.Invalid.DialogText.NotFound" 		value="Сторінка не знайдена за вказаною URL-адресою."/>
+	<string key="AddressBar.Invalid.DialogTitle.InternalError" 	value="Помилка сервера"/>
+	<string key="AddressBar.Invalid.DialogText.InternalError" 	value="Сервер повідомляє про помилку на вказаний URL. Сторінка не може бути завантажена."/>
+	<string key="AddressBar.Invalid.DialogTitle.Default" 		value="Сторінка не завантажена"/>
+	<string key="AddressBar.Invalid.DialogText.Default" 		value="Помилка перешкоджає завантаженню сторінки за URL-адресою."/>	
+	
+</strings>

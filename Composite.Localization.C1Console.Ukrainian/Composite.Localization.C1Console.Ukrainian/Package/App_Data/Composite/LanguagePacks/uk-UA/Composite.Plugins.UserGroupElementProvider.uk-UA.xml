@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+	<string key="UserGroupElementProvider.RootLabel" value="Групи користувачів"/>
+  <string key="UserGroupElementProvider.RootToolTip" value="Групи користувачів"/>
+  <string key="UserGroupElementProvider.AddNewUserGroupLabel" value="Додати групу користувачів ..."/>  
+  <string key="UserGroupElementProvider.AddNewUserGroupToolTip" value="Додати нову групу користувачів"/>
+  <string key="UserGroupElementProvider.EditUserGroupLabel" value="Змінити групу користувачів"/>
+  <string key="UserGroupElementProvider.EditUserGroupToolTip" value="Змінити групу користувачів"/>
+  <string key="UserGroupElementProvider.DeleteUserGroupLabel" value="Видалити групу користувачів"/>
+  <string key="UserGroupElementProvider.DeleteUserGroupToolTip" value="Видалити групу користувачів"/>
+
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.LabelFieldGroup" value="Додати групу користувачів"/>
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameLabel" value="Ім'я групи користувачів"/>
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameHelp" value="Ім'я нової групи користувачів"/>
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameAlreadyExists" value="Група користувачів з таким ім'ям вже існує"/>
+
+  <string key="EditUserGroup.EditUserGroupStep1.LabelFieldGroup" value="Змінити групу користувачів"/>
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameLabel" value="Ім'я групи користувачів"/>
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameHelp" value="Ім'я групи користувачів"/>
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameAlreadyExists" value="Група користувачів з таким ім'ям вже існує"/>
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveFieldLabel" value="Розділи" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectLabel" value="Розділи" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectHelp" value="Виберіть, до яких розділів користувач отримує доступ перегляду" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsFieldLabel" value="Глобальні дозволи"/>
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectLabel" value="Глобальні дозволи"/>
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectHelp" value="Дозвіл &quot;Адмініструвати&quot; надає доступ групі користувачів для керування дозволами групи користувачів і виконання інших адміністративних задач."/>
+
+
+  
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersTitle" value="У цій групі є користувачі"/>
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersMessage" value="Ви не можете видаляти групи, в яких є користувачі."/>
+  
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.LabelFieldGroup" value="Видалити групу користувачів"/>
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.Text" value="Видалити обрану групу користувачів?"/>
+</strings>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="DeleteStep1.FieldGroupLabel" value="Видалити візуальну функцію?" />
+  <string key="DeleteStep1.Text" value="Ви впевнені, що хочете видалити обрану функцію?" />
+  <string key="AddNew.DialogLabel" value="Додати візуальну функцію" />
+  <string key="AddNew.NoTypesExistsErrorTitle" value="Немає типів даних для візуалізації" />
+  <string key="AddNew.NoTypesExistsErrorMessage" value="Типи даних ще не були створені. Необхідно створити тип даних для візуалізації до створення візуалізації." />
+  <string key="AddNew.NoDataExistsErrorTitle" value="Немає даних для візуалізації та перегляду" />
+  <string key="AddNew.NoDataExistsErrorMessage" value="Повинні існувати дані до створення рендерингу. Додайте дані до цього типу і повторіть спробу." />
+  <string key="AddNew.NoPageTemplatesExistsErrorTitle" value="Немає шаблонів" />
+  <string key="AddNew.NoPageTemplatesExistsErrorMessage" value="Повинен існувати принаймні один шаблон до створення рендерингу. Створіть шаблон і повторіть спробу." />
+  <string key="AddNew.MissingActiveLanguageTitle" value="Відсутня мова" />
+  <string key="AddNew.MissingActiveLanguageMessage" value="Для створення візуальної функції, потрібна наявність мови, але мови ще не додані. Ви можете додати мову в розділі &quot;Система&quot;." />
+  <string key="AddNewStep1.FieldGroupLabel" value="Виберіть тип даних для візуалізації" />
+  <string key="AddNewStep1.TypeSelectorLabel" value="Тип даних" />
+  <string key="AddNewStep1.TypeSelectorHelp" value="" />
+  <string key="AddNewStep2.FieldGroupLabel" value="Назва візуальної функції" />
+  <string key="AddNewStep2.FuncitonNameLabel" value="Ім'я функції" />
+  <string key="AddNewStep2.FuncitonNameHelp" value="" />
+  <string key="AddNewStep2.FuncitonNamespaceLabel" value="Простір імен функції" />
+  <string key="AddNewStep2.FuncitonNamespaceHelp" value="" />
+  <string key="Edit.PlaceHolderLabel" value="Настройки візуальної функції" />
+  <string key="Edit.HeadingTitel" value="Візуальна функція" />
+  <string key="Edit.FieldGroupLabel" value="Настройки візуальної функції" />
+  <string key="Edit.FunctionNameLabel" value="Ім'я функції" />
+  <string key="Edit.FunctionNameHelp" value="Ім'я функції. Імена повинні бути унікальними, включаючи простір імен." />
+  <string key="Edit.FunctionNamespaceLabel" value="Простір імен функції" />
+  <string key="Edit.FunctionNamespaceHelp" value="Пакет, до якого ця функція належить." />
+  <string key="Edit.FunctionDescriptionLabel" value="Опис" />
+  <string key="Edit.FunctionDescriptionHelp" value="Опис функції, який може допомогти зрозуміти, що робить ця функція." />
+  <string key="Edit.ItemListLenghtLabel" value="Розмір списку елементів" />
+  <string key="Edit.ItemListLenghtHelp" value="Максимальна кількість елементів, що показуються." />
+  <string key="Edit.ItemSortingLabel" value="Сортування елементів" />
+  <string key="Edit.ItemSortingHelp" value="Виберіть поле для використання в сортуванні списку. Використовуйте варіант &quot;(випадковий вибір)&quot;, щоб вибирати елементи зі списку випадковим чином." />
+  <string key="Edit.ListSortingLabel" value="Порядок сортування списку" />
+  <string key="Edit.ListSortingTrueLabel" value="За зростанням" />
+  <string key="Edit.ListSortingFalseLabel" value="За спаданням" />
+  <string key="Edit.ListSortingHelp" value="Виберіть порядок сортування. За зростанням сортує за алфавітом, хронологічно. Це поле ігнорується, якщо активне сортування &quot;(випадковий вибір)&quot;." />
+  <string key="Edit.PreviewTemplateLabel" value="Перегляд шаблону" />
+  <string key="Edit.PreviewTemplateHelp" value="Ця інформація використовується лише під час перегляду функції." />
+  <string key="Edit.WYSIWYGLayoutLabel" value="Макет" />
+  <string key="Edit.LabelPreview" value="Перегляд" />
+  <string key="Edit.NoPageTemplatesExistsErrorTitle" value="Немає шаблонів" />
+  <string key="Edit.NoPageTemplatesExistsErrorMessage" value="Повинен існувати принаймні один шаблон до зміни рендерингу. Створіть шаблон і повторіть спробу." />
+  <string key="Edit.MissingActiveLanguageTitle" value="Відсутня мова" />
+  <string key="Edit.MissingActiveLanguageMessage" value="Для зміни візуальної функції, потрібна наявність мови, але мови ще не додані. Ви можете додати мову в розділі &quot;Система&quot;." />
+  <string key="Select.FieldGroupLabel" value="Виберіть візуальну функцію" />
+  <string key="Select.FunctionFunctionsLabel" value="Виберіть функцію" />
+  <string key="Select.FunctionFunctionsHelp" value="Виберіть візуальну функції для видалення або зміни" />
+  <string key="AddVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="Існує інша функція з таким же ім'ям. Імена повинні бути унікальними." />
+  <string key="EditVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="Існує інша функція з таким же ім'ям. Імена повинні бути унікальними." />
+  <string key="VisualFunctionElementProvider.RootFolderLabel" value="Візуальні функції" />
+  <string key="VisualFunctionElementProvider.RootFolderToolTip" value="Візуальні функції" />
+  <string key="VisualFunctionElementProvider.AddNewLabel" value="Додати візуальну функцію" />
+  <string key="VisualFunctionElementProvider.AddNewToolTip" value="Додати візуальну функцію" />
+  <string key="VisualFunctionElementProvider.EditLabel" value="Змінити візуальну функцію" />
+  <string key="VisualFunctionElementProvider.EditToolTip" value="Змінити візуальну функцію" />
+  <string key="VisualFunctionElementProvider.DeleteLabel" value="Видалити візуальну функцію" />
+  <string key="VisualFunctionElementProvider.DeleteToolTip" value="Видалити візуальну функцію" />
+  <string key="VisualFunctionElementProvider.FunctionNameNotUniqueError" value="Існує інша функція з таким же ім'ям. Імена повинні бути унікальними." />
+  <string key="VisualFunctionElementProviderHelper.AddNewLabel" value="Нова візуальна функція" />
+  <string key="VisualFunctionElementProviderHelper.AddNewToolTip" value="Нова візуальна функція" />
+  <string key="VisualFunctionElementProviderHelper.EditLabel" value="Змінити візуальну функцію" />
+  <string key="VisualFunctionElementProviderHelper.EditToolTip" value="Змінити візуальну функцію" />
+  <string key="VisualFunctionElementProviderHelper.DeleteLabel" value="Видалити візуальну функцію" />
+  <string key="VisualFunctionElementProviderHelper.DeleteToolTip" value="Видалити візуальну функцію" />
+</strings>

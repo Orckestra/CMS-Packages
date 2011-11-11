@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootFolderLabel" value="Пакети" />
+  <string key="RootFolderToolTip" value="Вибрати та керувати встановленими пакетами" />
+  <string key="AvailableAddOnsFolderLabel" value="Доступні пакети" />
+  <string key="AvailableAddOnsFolderToolTip" value="Доступні пакети" />
+  <string key="InstalledAddOnFolderLabel" value="Встановлені пакети" />
+  <string key="InstalledAddOnFolderToolTip" value="Встановлені пакети" />
+  <string key="LocalAddOnsFolderLabel" value="Локальні пакети" />
+  <string key="LocalAddOnsFolderToolTip" value="Локальні пакети" />
+  <string key="AddOnSourcesFolderLabel" value="Сервери пакетів" />
+  <string key="AddOnSourcesFolderToolTip" value="Сервери пакетів" />
+  <string key="ViewAvailableInformationLabel" value="Інформація про пакет" />
+  <string key="ViewAvailableInformationToolTip" value="Переглянути інформацію про пакет" />
+  <string key="ViewInstalledInformationLabel" value="Інформація про пакет" />
+  <string key="ViewInstalledInformationToolTip" value="Переглянути інформацію про пакет" />
+  <string key="InstallLocalAddOnLabel" value="Встановити локальний пакет ..." />
+  <string key="InstallLocalAddOnToolTip" value="Встановити пакет з локальної файлової системи" />
+  <string key="AddAddOnSourceLabel" value="Додати сервер пакетів" />
+  <string key="AddAddOnSourceToolTip" value="Додати сервер пакетів" />
+  <string key="DeleteAddOnSourceLabel" value="Видалити сервер пакетів" />
+  <string key="DeleteAddOnSourceToolTip" value="Видалити сервер пакетів" />
+  <string key="ClearServerCacheLabel" value="Очистити кеш" />
+  <string key="ClearServerCacheToolTip" value="Очистити кеш, щоб оновити список пакетів" />
+  <string key="ViewAvailableInformation.FieldGroupLabel" value="Інформація про пакет" />
+  <string key="ViewAvailableInformation.NameTextLabel" value="Назва" />
+  <string key="ViewAvailableInformation.DescriptionTextLabel" value="Опис" />
+  <string key="ViewAvailableInformation.AuthorTextLabel" value="Автор" />
+
+  <string key="ViewAvailableInformation.TrialInfoFieldGroupLabel" value="Інформація про безкоштовну ознайомлювальну версію" />
+  <string key="ViewAvailableInformation.TrialInformationLabel" value="Інформація про ознайомлювальну версію" />
+  <string key="ViewAvailableInformation.TrialInformationText" value="Це комерційний пакет, безкоштовний на термін дії ознайомлювального періоду. Коли завершиться термін дії ознайомлювального періоду, може бути вимкнено деяку функціональність, доки ви не придбаєте ліцензію." />
+  <string key="ViewAvailableInformation.TrialDaysLabel" value="Безкоштовний ознайомлювальній період (дні)" />
+
+
+  <string key="ViewAvailableInformation.InstallationInfoFieldGroupLabel" value="Інформація про встановлення пакету" />
+  <string key="ViewAvailableInformation.VersionTextLabel" value="Версія" />
+  <string key="ViewAvailableInformation.TechicalDescriptionTextLabel" value="Технічний опис" />
+  <string key="ViewAvailableInformation.AddOnSourceTextLabel" value="Сервер пакетів" />
+
+
+  <string key="ViewAvailableInformation.PriceTextLabel" value="Ціна (євро)" />
+  <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="Встановити" />
+  <string key="ViewAvailableInformation.Toolbar.ReadMoreLabel" value="Детальніше" />
+  <string key="ViewAvailableInformation.ShowError.MessageTitle" value="Вже встановлено" />
+  <string key="ViewAvailableInformation.ShowError.MessageMessage" value="Пакет вже встановлений. Обраний пакет не можна встановити." />
+  <string key="ViewAvailableInformation.ShowServerError.MessageTitle" value="Сервер пакетів не відповідає" />
+  <string key="ViewAvailableInformation.ShowServerError.MessageMessage" value="Сервер пакетів не відповідає. Повторіть спробу або зверніться до системного адміністратора" />
+  <string key="ViewInstalledInformation.FieldGroupLabel" value="Інформація про пакет" />
+  <string key="ViewInstalledInformation.NameTextLabel" value="Назва" />
+  <string key="ViewInstalledInformation.DateTextLabel" value="Дата встановлення" />
+  <string key="ViewInstalledInformation.UserTextLabel" value="Встановив(-ла)" />
+  <string key="ViewInstalledInformation.AuthorTextLabel" value="Автор" />
+  <string key="ViewInstalledInformation.VersionTextLabel" value="Версія" />
+  <string key="ViewInstalledInformation.TrialInfoFieldGroupLabel" value="Інформація про ознайомлювальну версію" />
+  <string key="ViewInstalledInformation.TrialInformationLabel" value="Інформація про ознайомлювальну версію" />
+  <string key="ViewInstalledInformation.TrialInformationText" value="Це комерційний пакет, безкоштовний на термін дії ознайомлювального періоду. Коли завершиться термін дії ознайомлювального періоду, може бути вимкнено деяку функціональність, доки ви не придбаєте ліцензію." />
+  <string key="ViewInstalledInformation.TrialExpireLabel" value="Дата завершення ознайомлювального періоду" />
+
+  <string key="ViewInstalledInformation.Toolbar.UninstallLabel" value="Видалити" />
+  <string key="ViewInstalledInformation.Toolbar.PurchaseLabel" value="Купити!" />
+  <string key="ViewInstalledInformation.ShowError.MessageTitle" value="Вже видалений" />
+  <string key="ViewInstalledInformation.ShowError.MessageMessage" value="Пакет вже видалений. Обраний пакет не можна видалити." />
+  <string key="InstallRemoteAddOn.Step1.LayoutLabel" value="Встановити пакет" />
+  <string key="InstallRemoteAddOn.Step1.HeadingTitle" value="Це ознайомлювальна версія пакету / платний пакет" />
+  <string key="InstallRemoteAddOn.Step1.HeadingDescription" value="Цей пакет є платним. Будь ласка, перегляньте ліцензійну угоду в наступному вікні майстра з докладною інформацією про ознайомлювальний період і умови оплати." />
+  <string key="InstallRemoteAddOn.Step2.LayoutLabel" value="Встановити пакет" />
+  <string key="InstallRemoteAddOn.Step2.HeadingTitle" value="Ліцензійна угода" />
+  <string key="InstallRemoteAddOn.Step2.HeadingDescription" value="Якщо ви приймаєте умови угоди, встановіть прапорець, що знаходиться нижче. Ви повинні прийняти угоду для установки." />
+  <string key="InstallRemoteAddOn.Step2.IAcceptItemLabel" value="Я приймаю умови ліцензійної угоди" />
+  <string key="InstallRemoteAddOn.Step2.AcceptMissing" value="Ви повинні прийняти умови ліцензійної угоди, щоб продовжити." />
+  <string key="InstallRemoteAddOn.Step3.LayoutLabel" value="Встановити пакет" />
+  <string key="InstallRemoteAddOn.Step3.HeadingTitle" value="Завантажити та перевірити пакет" />
+  <string key="InstallRemoteAddOn.Step3.HeadingDescription" value="Пакет буде завантажено та перевірено. Будь ласка, зверніть увагу на те, що це може зайняти декілька хвилин. Для продовження натисніть кнопку''Далі''." />
+  <string key="InstallRemoteAddOn.Step4.LayoutLabel" value="Встановити локальний пакет" />
+  <string key="InstallRemoteAddOn.Step4.HeadingTitle" value="Все готово до встановлення" />
+  <string key="InstallRemoteAddOn.Step4.HeadingDescription" value="Все готово до встановлення пакету. Зверніть увагу на те, що установка може зайняти кілька хвилин. Для продовження натисніть кнопку''Далі''." />
+  <string key="InstallRemoteAddOn.Step4.NonUninstallableHeadingTitle" value="Все готово до встановлення" />
+  <string key="InstallRemoteAddOn.Step4.NonUninstallableHeadingDescription" value="Все готово до встановлення пакетів. Зверніть увагу на те, що установка може зайняти декілька хвилин, а також те, що цей пакет не можна видалити. Для продовження натисніть кнопку''Далі''." />
+  <string key="InstallRemoteAddOn.Step5.LayoutLabel" value="Пакет встановлений" />
+  <string key="InstallRemoteAddOn.Step5.HeadingTitle" value="Пакет успішно встановлено" />
+  <string key="InstallRemoteAddOn.Step5.HeadingDescription" value="Пакет успішно встановлено." />
+  <string key="InstallRemoteAddOn.ShowError.LayoutLabel" value="Не вдалося встановити пакет" />
+  <string key="InstallRemoteAddOn.ShowError.InfoTableCaption" value="Не вдалося встановити пакет" />
+  <string key="InstallRemoteAddOn.ShowError.MessageTitle" value="Повідомлення" />
+  <string key="InstallRemoteAddOn.ShowWarning.LayoutLabel" value="Пакет не пройшов перевірку" />
+  <string key="InstallRemoteAddOn.ShowWarning.InfoTableCaption" value="Пакет не пройшов перевірку" />
+  <string key="InstallLocalAddOn.Step1.LayoutLabel" value="Встановити локальний пакет" />
+  <string key="InstallLocalAddOn.Step1.FieldGroupLabel" value="Локальний пакет" />
+  <string key="InstallLocalAddOn.Step1.FileUploadLabel" value="Файл пакету" />
+  <string key="InstallLocalAddOn.Step1.FileUploadHelp" value="Виберіть файл пакету" />
+  <string key="InstallLocalAddOn.Step2.LayoutLabel" value="Встановити локальний пакет" />
+  <string key="InstallLocalAddOn.Step2.HeadingTitle" value="Все готово до встановлення" />
+  <string key="InstallLocalAddOn.Step2.HeadingDescription" value="Все готово для встановлення пакету. Зверніть увагу на те, що установка може зайняти кілька хвилин. Для продовження натисніть кнопку ''Далі''." />
+  <string key="InstallLocalAddOn.Step3.LayoutLabel" value="Пакет встановлено" />
+  <string key="InstallLocalAddOn.Step3.HeadingTitle" value="Пакет успішно встановлено" />
+  <string key="InstallLocalAddOn.Step3.HeadingDescription" value="Пакет успішно встановлено." />
+  <string key="InstallLocalAddOn.ShowError.LayoutLabel" value="Не вдалося встановити пакет" />
+  <string key="InstallLocalAddOn.ShowError.InfoTableCaption" value="Не вдалося встановити пакет" />
+  <string key="InstallLocalAddOn.ShowError.MessageTitle" value="Повідомлення" />
+  <string key="InstallLocalAddOn.ShowWarning.LayoutLabel" value="Пакет не пройшов перевірку" />
+  <string key="InstallLocalAddOn.ShowWarning.InfoTableCaption" value="Пакет не пройшов перевірку" />
+  <string key="UninstallRemoteAddOn.Step1.LayoutLabel" value="Видалити пакет" />
+  <string key="UninstallRemoteAddOn.Step1.HeadingTitle" value="Все готово для перевірки процесу видалення" />
+  <string key="UninstallRemoteAddOn.Step1.HeadingDescription" value="Все готово для перевірки процесу видалення. Для продовження натисніть кнопку ''Далі''." />
+  <string key="UninstallRemoteAddOn.Step2.LayoutLabel" value="Видалити пакет" />
+  <string key="UninstallRemoteAddOn.Step2.HeadingTitle" value="Все готово до видалення" />
+  <string key="UninstallRemoteAddOn.Step2.HeadingDescription" value="Все готово до видалення пакета. Зверніть увагу на те, що установка може зайняти декілька хвилин. Для продовження натисніть кнопку ''Далі''." />
+  <string key="UninstallRemoteAddOn.Step3.LayoutLabel" value="Пакет видалений" />
+  <string key="UninstallRemoteAddOn.Step3.HeadingTitle" value="Пакет успішно видалено" />
+  <string key="UninstallRemoteAddOn.Step3.HeadingDescription" value="Пакет успішно видалено." />
+  <string key="UninstallRemoteAddOn.ShowError.LayoutLabel" value="Не вдалося видалити пакет" />
+  <string key="UninstallRemoteAddOn.ShowError.InfoTableCaption" value="Не вдалося видалити пакет" />
+  <string key="UninstallRemoteAddOn.ShowError.MessageTitle" value="Повідомлення" />
+  <string key="UninstallRemoteAddOn.ShowUnregistre.LayoutLabel" value="Видалити пакет" />
+  <string key="UninstallRemoteAddOn.ShowUnregistre.HeadingTitle" value="Не вдалося зареєструвати видалення" />
+  <string key="UninstallRemoteAddOn.ShowUnregistre.HeadingDescription" value="Не вдалося зареєструвати видалення. Зв'яжіться з постачальником пакета для ручного скасування реєстрації." />
+  <string key="UninstallLocalAddOn.Step1.LayoutLabel" value="Видалити локальний пакет" />
+  <string key="UninstallLocalAddOn.Step1.HeadingTitle" value="Все готово для перевірки процесу видалення" />
+  <string key="UninstallLocalAddOn.Step1.HeadingDescription" value="Все готово для перевірки процесу видалення пакета. Для продовження натисніть кнопку ''Далі''." />
+  <string key="UninstallLocalAddOn.Step2.LayoutLabel" value="Видалити локальний пакет" />
+  <string key="UninstallLocalAddOn.Step2.HeadingTitle" value="Все готово для видалення" />
+  <string key="UninstallLocalAddOn.Step2.HeadingDescription" value="Все готово для видалення пакета. Зверніть увагу на те, що установка може зайняти декілька хвилин. Для продовження натисніть кнопку &quot;Далі&quot;." />
+  <string key="UninstallLocalAddOn.Step3.LayoutLabel" value="Пакет видалений" />
+  <string key="UninstallLocalAddOn.Step3.HeadingTitle" value="Пакет успішно видалено" />
+  <string key="UninstallLocalAddOn.Step3.HeadingDescription" value="Пакет успішно видалено." />
+  <string key="UninstallLocalAddOn.ShowError.LayoutLabel" value="Не вдалося видалити пакет" />
+  <string key="UninstallLocalAddOn.ShowError.InfoTableCaption" value="Не вдалося видалити пакет" />
+  <string key="UninstallLocalAddOn.ShowError.MessageTitle" value="Повідомлення" />
+  <string key="AddAddOnSource.Step1.LayoutLabel" value="Новий сервер пакетів" />
+  <string key="AddAddOnSource.Step1.FieldGroupLabel" value="Дані про сервер пакетів" />
+  <string key="AddAddOnSource.Step1.UrlLabel" value="URL веб-служби пакету" />
+  <string key="AddAddOnSource.Step1.UrlHelp" value="Пакети можуть бути розміщені на віддалених серверах. URL веб-служби пакету буде перевірений у наступному кроці." />
+  <string key="AddAddOnSource.Step1.UrlNotValid" value="Введений текст не є допустимою URL-адресою" />
+  <string key="AddAddOnSource.Step1.UrlNonAddOnServer" value="Сервер не є сервером пакетів Composite C1" />
+  <string key="AddAddOnSource.Step2.LayoutLabel" value="Додати сервер пакетів" />
+  <string key="AddAddOnSource.Step2.HeadingTitle" value="URL сервера є допустимим" />
+  <string key="AddAddOnSource.Step2.HeadingNoHttpsDescription" value="Зверніть увагу на те, що для цього з'єднання використовується протокол HTTP. Це означає, що вся інформація буде відправлена в незашифрованому вигляді. Щоб додати сервера натисніть кнопку &quot;Готово&quot;." />
+  <string key="AddAddOnSource.Step2.HeadingWithHttpsDescription" value="Щоб додати сервера натисніть кнопку &quot;Готово&quot;." />
+  <string key="DeleteAddOnSource.Step1.LayoutLabel" value="Підтвердити видалення" />
+  <string key="DeleteAddOnSource.Step1.Text" value="Видалити вибраний сервер" />
+
+  <string key="ConfirmLicense.ExpiredTitle" value="Термін дії ознайомлювального періоду завершено." />
+  <string key="ConfirmLicense.ExpiredMessage" value="Термін дії ознайомлювального періоду для цього пакету завершено. Вам потрібен дійсний ліцензійний ключ." />
+</strings>

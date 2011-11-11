@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="ElementProvider.RootFolderLabel" value="Мови" />
+  <string key="ElementProvider.RootFolderToolTip" value="Керувати встановленими мовами" />
+  <string key="ElementProvider.DefaultLabel" value="За замовчуванням" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesTitle" value="Немає мов" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesMessage" value="Ви встановили всі можливі мови." />
+  <string key="AddSystemLocaleWorkflow.AddElementActionLabel" value="Додати мову" />
+  <string key="AddSystemLocaleWorkflow.AddElementActionToolTip" value="Додати нову мову" />
+  <string key="AddSystemLocaleWorkflow.Dialog.Label" value="Додати мову" />
+  <string key="AddSystemLocaleWorkflow.FieldGroup.Label" value="Вибрати мову" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Label" value="Мови" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Help" value="Список доступних, ще невстановлених мов. Для додаткових налаштувань можна встановити мовні пакети." />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Label" value="Код мови для URL" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Help" value="Цей рядок буде вставлено в URL сторінок, що опубліковані на цій мові. Для мови сайту &quot;за замовчуванням&quot; можна залишити це поле порожнім." />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Label" value="Доступ користувачів" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.ItemLabel" value="Надати доступ для всіх користувачів" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Help" value="Якщо опція включена, мова буде доступною всім зареєстрованим користувачам для перегляду та внесенню змін" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="Код мови для URL вже використовується" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionLabel" value="Змінити мову" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionToolTip" value="Змінити мову" />
+  <string key="EditSystemLocaleWorkflow.Dialog.Label" value="Змінити мову" />
+  <string key="EditSystemLocaleWorkflow.FieldGroup.Label" value="Властивості мови" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Label" value="Код мови для URL" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Help" value="Код мови для URL" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="Код мови для URL вже використовується" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionLabel" value="Встановити за замовчуванням" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionToolTip" value="Встановити як мову за замовчуванням" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionLabel" value="Видалити мову" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionToolTip" value="Видалити мову" />
+  <string key="RemoveSystemLocaleWorkflow.Dialog.Label" value="Видалити мову?" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Title" value="Не вдається видалити останню мову" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Description" value="Ви збираєтеся видалити мову, яка є єдиною мовою для одного або декількох користувачів. Будь ласка, додайте інші мови для цих користувачів і повторіть спробу." />
+  <string key="RemoveSystemLocaleWorkflow.Confirm.Description" value="Видалити цю мову?" />
+</strings>
