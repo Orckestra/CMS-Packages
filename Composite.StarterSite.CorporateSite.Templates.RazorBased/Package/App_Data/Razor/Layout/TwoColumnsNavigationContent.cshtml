@@ -1,0 +1,31 @@
+﻿@inherits CompositeC1Contrib.RazorFunctions.CompositeC1WebPage
+@using CompositeC1Contrib.RazorFunctions;
+@using Composite.Core.Xml;
+@functions {
+    // C1 Function parameters defined below...
+    [FunctionParameter("Content", "Content")]
+    public XhtmlDocument Content { get; set; }
+
+}
+@{
+    Layout = "~/App_Data/Razor/Layout/MasterLayout.cshtml";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @*you can add template specific head elements here*@
+</head>
+<body>
+    <div id="navigationcolumn" class="threecol">
+        <div class="contentbox">
+            @Html.C1().Function("Composite.Navigation.Distributed", new { Level = 2, Parent = false, Childs = true, Expand = false, NavigationId = "NavigationMenu" })
+        </div>
+    </div>
+    <div id="contentcolumn" class="ninecol last">
+        <div id="content">
+            <div class="contentbox">
+                @Html.Raw(Content.ToString())
+            </div>
+        </div>
+    </div>
+</body>
+</html>

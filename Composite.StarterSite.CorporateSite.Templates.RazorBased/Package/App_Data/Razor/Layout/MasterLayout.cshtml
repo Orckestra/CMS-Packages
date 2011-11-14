@@ -1,0 +1,52 @@
+﻿@inherits CompositeC1Contrib.RazorFunctions.CompositeC1WebPage
+@using CompositeC1Contrib.RazorFunctions;
+@{
+    var stylesFolder = "~/Frontend/Styles";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@CurrentPageNode.Title</title>
+    <!-- The 1140px Grid -->
+    <link rel="stylesheet" href="@Href(stylesFolder)/1140.css" type="text/css" media="screen" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="/Frontend/Styles/ie.css" type="text/css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="@Href(stylesFolder)/VisualEditor.common.css" type="text/css" media="screen" />
+    <!-- Type and image presets - NOT ESSENTIAL -->
+    <link rel="stylesheet" href="@Href(stylesFolder)/typeimg.css" type="text/css" media="screen" />
+    <!-- Make minor type adjustments for 1024 monitors -->
+    <link rel="stylesheet" href="@Href(stylesFolder)/smallerscreen.css" media="only screen and (max-width: 1023px)" />
+    <!-- Resets grid for mobile -->
+    <link rel="stylesheet" href="@Href(stylesFolder)/mobile.css" media="handheld, only screen and (max-width: 767px)" />
+    <!-- Put your layout here -->
+    <link rel="stylesheet" href="@Href(stylesFolder)/layout.css" type="text/css" media="screen" />
+    <meta name="Description" content="@CurrentPageNode.Description"/>
+    <f:function name="Composite.Web.Html.Template.CommonMetaTags">
+          <f:param name="Designer" value="Composite C1 starter site" />
+    </f:function>
+</head>
+<body>
+    <div class="container" id="wrapper">
+        <div class="row">
+            <div id="header" class="twelvecol last">
+                <div id="Logo">
+                    <a href="@HomePageNode.Url"></a>
+                </div>
+                @Html.C1().Function("Composite.Navigation.LanguageSwitcher", new { Mode = "TranslatedOrHomePages", ShowCurrent = false, Format = "NativeName" })
+                @Html.C1().Function("Layout.Navigation.TopLinks")
+                @Html.C1().Function("Layout.Navigation.Menu")
+                <div id="HeaderImage">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @RenderBody()
+        </div>
+        <div class="container" id="footer">
+            <div class="row">
+                <div class="twelvecol last">
+                    <a href="http://www.composite.net/">Powered by Composite C1, Free Open Source .NET CMS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿@inherits CompositeC1Contrib.RazorFunctions.CompositeC1WebPage
+@using CompositeC1Contrib.RazorFunctions;
+@using Composite.Core.Xml;
+@functions {
+	// C1 Function parameters defined below...
+	[FunctionParameter("Content", "Content")]
+	public XhtmlDocument Content { get; set; }
+
+	[FunctionParameter("Aside", "Aside", "")]
+	public XhtmlDocument Aside { get; set; }
+
+	}
+@{
+	Layout = "~/App_Data/Razor/Layout/MasterLayout.cshtml";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+@*you can add template specific head elements here*@
+</head>
+<body>
+<div id="contentcolumn" class="eightcol">
+	<div id="content">
+		<div class="contentbox">
+			@Html.Raw(Content.ToString())
+		</div>
+	</div>
+</div>
+<div id="asidecolumn" class="fourcol last">
+	<div id="aside">
+		<div class="contentbox">
+			@Html.Raw(Aside.ToString())
+		</div>
+	</div>
+</div>
+</body>
+</html>
