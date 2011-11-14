@@ -90,7 +90,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 
 			if (UserSettings.CultureInfo.Name != "en-US")
 			{
-				element.AddAction(new ElementAction(new ActionHandle(new CreatePackageWorkflowActionToken(string.Format("Composite.LanguagePack.{0}", new CultureInfo( UserSettings.CultureInfo.TwoLetterISOLanguageName).EnglishName), new PackageCreatorActionToken("Localizations", UserSettings.CultureInfo.Name))))
+				element.AddAction(new ElementAction(new ActionHandle(new CreatePackageWorkflowActionToken(string.Format("Composite.LanguagePack.{0}", new CultureInfo(UserSettings.CultureInfo.TwoLetterISOLanguageName).EnglishName), new AddLocalizationActionToken( UserSettings.CultureInfo.Name))))
 				{
 					VisualData = new ActionVisualizedData
 					{

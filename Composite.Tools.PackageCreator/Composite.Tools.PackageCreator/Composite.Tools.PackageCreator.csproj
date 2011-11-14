@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Action\AddLocalizationActionToken.cs" />
     <Compile Include="Action\PackageCreatorActionFacade.cs" />
     <Compile Include="Action\PackageCreatorActionToken.cs" />
     <Compile Include="Action\PackageCreatorElementActionProvider.cs" />

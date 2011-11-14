@@ -11,7 +11,7 @@ namespace Composite.Tools.PackageCreator.Workflow
 	public sealed class CreatePackageWorkflowActionToken : WorkflowActionToken
 	{
 
-		public CreatePackageWorkflowActionToken(string name, PackageCreatorActionToken actionToken) :
+		public CreatePackageWorkflowActionToken(string name, ActionToken actionToken) :
 			base(typeof(CreatePackageWorkflow), new PermissionType[] { PermissionType.Administrate })
 		{
 			StringBuilder sb = new StringBuilder();
