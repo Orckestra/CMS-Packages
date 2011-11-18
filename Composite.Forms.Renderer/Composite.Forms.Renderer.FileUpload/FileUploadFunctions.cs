@@ -34,7 +34,10 @@ namespace Composite.Forms.Renderer.FileUpload
 			{
 				foreach (string fileName in page.Request.Files)
 				{
-					HttpPostedFile file = page.Request.Files[fileName];
+					var file = page.Request.Files[fileName];
+
+					if (file.FileName == string.Empty) continue;
+
 					var filename = NormalizeFilename(file.FileName);
 
 					attachments.Add(new Attachment(file.InputStream, filename, file.ContentType)
