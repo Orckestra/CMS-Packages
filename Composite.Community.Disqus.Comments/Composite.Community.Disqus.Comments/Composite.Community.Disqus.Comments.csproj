@@ -55,11 +55,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Package\App_Data\Xslt\Composite\Community\Disqus\Comments\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Xslt\Composite\Community\Disqus\Comments\Comments.xsl" />
-    <Content Include="Package\App_Data\Xslt\Composite\Community\Disqus\Comments\List.xsl" />
+    <Content Include="Package\App_Data\Xslt\Composite\Community\Disqus\Comments.xsl" />
+    <Content Include="Package\App_Data\Xslt\Composite\Community\Disqus\FeaturedComments.xsl" />
     <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
     <Content Include="Package\install.xml" />

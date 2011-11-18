@@ -1,15 +1,15 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.Disqus.Comments" groupName="Composite.Community" version="1.0.2" author="Composite A/S" website="http://www.composite.net" id="20a15cb6-7e50-457c-b0bf-f433b58f8540" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Community.Disqus.Comments" groupName="Composite.Community" version="1.0.3" author="Composite A/S" website="http://www.composite.net" id="20a15cb6-7e50-457c-b0bf-f433b58f8540" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Adds to a website a Disqus-based feature-rich comment system complete with social network integration, advanced administration and moderation options, and other extensive community functions.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
-				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Disqus\Comments\Comments.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Disqus\Comments\Comments.xsl" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Disqus\Comments\List.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Disqus\Comments\List.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Disqus\Comments.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Disqus\Comments.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Disqus\FeaturedComments.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Disqus\FeaturedComments.xsl" allowOverwrite="false" />
 			</Files>
 			<Directories />
 		</mi:Add>
