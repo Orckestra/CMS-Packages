@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="Frontend\Composite\Navigation\LanguageSwitcher\" />
+	</pc:Directories>
+	<pc:Files>
+		<Add name="App_Data\Razor\Composite\Navigation\LanguageSwitcher.cshtml" />
+	</pc:Files>
+	<mi:PackageRequirements minimumCompositeVersion="3.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Navigation.LanguageSwitcher.Razor" groupName="Composite.Navigation" version="1.0.0" author="Composite" website="http://composite.net" id="e899e5e7-bbeb-40bd-b236-b77102718772" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Razor based language switcher</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
