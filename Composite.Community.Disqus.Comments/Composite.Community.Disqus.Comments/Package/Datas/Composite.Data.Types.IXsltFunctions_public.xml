@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data>
+  <Add Id="359183eb-5d76-41eb-8ee3-b827004399b3" Name="Comments" Namespace="Composite.Community.Disqus.Comments" Description="Adds a Disqus-based comment functionality to a page." OutputXmlSubType="XHTML" XslFilePath="\Composite\Community\Disqus\Comments\Comments.xsl" />
+  <Add Id="3a5c073d-dd00-4b1d-bda9-39f470a86690" Name="List" Namespace="Composite.Community.Disqus.Comments" Description="Lists Disqus-based comments in one of available modes : recent, popular, top, or the combination thereof." OutputXmlSubType="XHTML" XslFilePath="\Composite\Community\Disqus\Comments\List.xsl" />
+</Data>
