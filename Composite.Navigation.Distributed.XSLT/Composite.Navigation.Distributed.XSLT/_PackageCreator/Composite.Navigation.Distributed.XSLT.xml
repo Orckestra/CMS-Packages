@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="Frontend\Composite\Navigation\Distributed\" />
+	</pc:Directories>
+	<pc:XsltFunctions>
+		<Add name="Composite.Navigation.Distributed" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Navigation.Distributed.XSLT" groupName="Composite.Navigation" version="1.1.5" author="Composite A/S" website="http://www.composite.net" id="9c15dc7c-dd11-441a-a4c3-49313ad761f2" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<Description>Allows visitors to navigate the website via a left or right sidebar navigation menu.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

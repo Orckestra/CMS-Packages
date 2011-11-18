@@ -1,0 +1,33 @@
+div#NavigationSideBar {
+	margin-bottom:1em;
+}
+
+div#NavigationSideBar ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+div#NavigationSideBar ul li {
+	padding-top:2px;
+	display:block;
+}
+
+div#NavigationSideBar ul ul li {
+	padding-left:11px;
+}
+
+div#NavigationSideBar a {
+	padding-left:11px;
+	text-decoration:none;
+}
+
+div#NavigationSideBar a.NavigationOpen {
+	background-color:#FFFFFF;
+	color:#000000;
+}
+
+div#NavigationSideBar a.NavigationSelected {
+	background-color:#FFFFFF;
+	color:#D2232A;
+}
