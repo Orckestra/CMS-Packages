@@ -1,0 +1,77 @@
+﻿@inherits CompositeC1Contrib.RazorFunctions.CompositeC1WebPage
+@using CompositeC1Contrib.RazorFunctions;
+@using Composite.Data;
+@functions {
+	// C1 Function parameters defined below...
+	[FunctionParameter("Level", "Set from what level start to display items in Composite.Navigation.Distributed", 1)]
+	public int Level { get; set; }
+
+	[FunctionParameter("Include Parent Page", "Check the box if you want parent page to be displayed in navigation", false)]
+	public bool Parent { get; set; }
+
+	[FunctionParameter("Include Child Pages", "Check the box if you want child pages to be displayed in navigation", true)]
+	public bool Childs { get; set; }
+
+	[FunctionParameter("Expand All", "Check the box to expand child pages in Composite.Navigation.Distributed or not (works only if childs=true)", false)]
+	public bool Expand { get; set; }
+
+	[FunctionParameter("Navigation Id", "Attribute Id of DIV element", "NavigationSideBar")]
+	public string NavigationId { get; set; }
+
+	private IEnumerable<PageNode> OpenPages(PageNode selectedPageNode)
+	{
+		var openPages = new List<PageNode>();
+		var openPage = selectedPageNode;
+
+		while (openPage != null)
+		{
+			openPages.Add(openPage);
+			openPage = openPage.ParentPage; // crawl up
+		}
+
+		return openPages;
+	}
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/Distributed")/Styles.css" />
+</head>
+<body>
+<div id="@NavigationId">
+	@if (OpenPages(@CurrentPageNode).Where(p => p.Level == Level).Any())
+	{
+		var openLevelPage = OpenPages(@CurrentPageNode).Where(p => p.Level == Level).First();
+		@NavigationTree(openLevelPage);
+	}
+</div>
+</body>
+</html>
+@helper NavigationTree(PageNode parentPage)
+	{
+		var pages = parentPage.ChildPages;
+		var isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == parentPage.Id);
+		var isSelected = @CurrentPageNode.Id == parentPage.Id;
+	<ul>
+		@if (Parent && parentPage.Level == Level)
+		{
+			<li><a href="@(parentPage.Url)" class="@(isOpen ? " NavigationOpen" : " ") @(isSelected ? " NavigationSelected" : " ")">@parentPage.MenuTitle</a></li>
+		}
+		@if (pages.Any())
+		{
+			foreach (var subPage in pages)
+			{
+				if (!String.IsNullOrWhiteSpace(subPage.MenuTitle))
+				{
+					 isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == subPage.Id);
+					 isSelected = @CurrentPageNode.Id == subPage.Id;
+					<li><a href="@(subPage.Url)" class="@(isOpen ? " NavigationOpen" : " ") @(isSelected ? " NavigationSelected" : " ")">@subPage.MenuTitle</a>
+					@if (Childs && (isOpen || Expand))
+	 {
+						@NavigationTree(subPage);
+	 }
+					</li>
+				}
+			}
+		}
+	</ul>
+}

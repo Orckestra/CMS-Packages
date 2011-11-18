@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="3.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Navigation.Distributed.Razor" groupName="Composite.Navigation" version="1.0.0" author="Composite A/S" website="http://composite.net" id="8b5441b9-4622-4392-a413-5a8f79c17032" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<Description>Razor based navigation builder.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\Frontend\Composite\Navigation\Distributed\Styles.css" targetFilename="~\Frontend\Composite\Navigation\Distributed\Styles.css" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Razor\Composite\Navigation\Distributed.cshtml" targetFilename="~\App_Data\Razor\Composite\Navigation\Distributed.cshtml" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

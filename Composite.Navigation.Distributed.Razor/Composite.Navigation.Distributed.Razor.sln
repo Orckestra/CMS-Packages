@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Navigation.Distributed.Razor", "Composite.Navigation.Distributed.Razor.csproj", "{D079A657-7DA3-4230-B264-4DC37267F2A8}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.Navigation.Distributed.Razor.csproj
+		SccLocalPath1 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D079A657-7DA3-4230-B264-4DC37267F2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D079A657-7DA3-4230-B264-4DC37267F2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D079A657-7DA3-4230-B264-4DC37267F2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D079A657-7DA3-4230-B264-4DC37267F2A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
