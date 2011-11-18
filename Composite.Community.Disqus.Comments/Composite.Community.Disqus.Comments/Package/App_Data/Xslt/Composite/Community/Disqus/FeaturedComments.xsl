@@ -6,7 +6,7 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	exclude-result-prefixes="xsl in lang f">
 
-	<xsl:param name="siteShortname" select="/in:inputs/in:param[@name='S	iteShortname']" />
+	<xsl:param name="siteShortname" select="/in:inputs/in:param[@name='SiteShortname']" />
 	<xsl:param name="mode" select="/in:inputs/in:param[@name='Mode']" />
 	<xsl:param name="items" select="/in:inputs/in:param[@name='Items']" />
 	<xsl:param name="moderatorsRanking" select="/in:inputs/in:param[@name='ModeratorsRanking']" />
