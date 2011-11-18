@@ -1,0 +1,107 @@
+﻿@inherits CompositeC1Contrib.RazorFunctions.CompositeC1WebPage
+@using CompositeC1Contrib.RazorFunctions;
+@using Composite.Data;
+@functions {
+	// C1 Function parameters defined below...
+	[FunctionParameter("Starting Level", "Set from what level start to display items in navigation", 1)]
+	public int Level { get; set; }
+
+	[FunctionParameter("Subpages Depth", "Set the depth of subpages", 2)]
+	public int Depth { get; set; }
+
+	[FunctionParameter("Include Parent Page", "Check the box if you want parent page to be displayed in navigation", false)]
+	public bool Parent { get; set; }
+
+	[FunctionParameter("Navigation Id", "Attribute Id of DIV element", "LevelSitemap")]
+	public string NavigationId { get; set; }
+
+	private IEnumerable<PageNode> OpenPages(PageNode selectedPageNode)
+	{
+		var openPages = new List<PageNode>();
+		var openPage = selectedPageNode.ParentPage;
+
+		while (openPage != null)
+		{
+			openPages.Add(openPage);
+			openPage = openPage.ParentPage; // crawl up
+		}
+
+		return openPages;
+	}
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/LevelSitemap")/Styles.css" />
+</head>
+<body>
+<div id="@NavigationId">
+@{
+	Depth = Depth + Level;
+	if (Level == 0)
+	{
+		var list = new List<PageNode>();
+		list.Add(HomePageNode);
+		@NavigationTree((IEnumerable<PageNode>)list, Depth)
+	}
+	else if (Level == 1)
+	{
+		@NavigationTree(HomePageNode.ChildPages, Depth)
+	}
+	else
+	{
+		var openLevelPage = OpenPages(@CurrentPageNode).Where(p => p.Level == Level).FirstOrDefault();
+		if (openLevelPage != null)
+		{
+			@NavigationTree(openLevelPage.ChildPages, Depth);
+		}
+		else if (CurrentPageNode.ChildPages.Any() && CurrentPageNode.ChildPages.First().Level == Level + 1)
+		{
+			@NavigationTree(@CurrentPageNode.ChildPages, Depth);
+		}
+	}
+}
+</div>
+</body>
+</html>
+
+@helper NavigationTree(IEnumerable<PageNode> pages, int endRenderLevel)
+	{
+		if (pages.Any() && pages.First().Level <= endRenderLevel)
+		{
+			int levelClass = pages.First().Level - Level - 1;
+			var mainareaIndex = Parent ? 1 : 0;
+			<ul class ="level@(levelClass)">
+			@if (Parent && levelClass == 0 && pages.First().ParentPage != null)
+			{
+				<li class ="level@(levelClass) @(levelClass == 0 ? string.Format("mainarea{0}", mainareaIndex.ToString()) : "")">
+					<a href="@(pages.First().ParentPage.Url)" class=" @IsOpenCss(pages.First().ParentPage) @IsSelectedCss(pages.First().ParentPage)">@pages.First().ParentPage.MenuTitle</a>
+				</li>
+			}
+			@foreach (var subPage in pages)
+			{
+				if (!String.IsNullOrWhiteSpace(subPage.MenuTitle))
+				{
+					mainareaIndex = mainareaIndex + 1;
+					<li class ="level@(levelClass) @(levelClass == 0 ? string.Format("mainarea{0}", mainareaIndex.ToString()) : "")">
+						<a href="@(subPage.Url)" class="@IsOpenCss(subPage) @IsSelectedCss(subPage)">@subPage.MenuTitle</a>
+						@NavigationTree(subPage.ChildPages, endRenderLevel)
+					</li>
+				}
+			}
+			</ul>
+		}
+}
+@helper IsOpenCss(PageNode page)
+	{
+		if (OpenPages(@CurrentPageNode).Any(op => op.Id == page.Id))
+		{
+		<text>NavigationOpen</text>
+		}
+}
+@helper IsSelectedCss(PageNode page)
+	{
+		if (@CurrentPageNode.Id == page.Id)
+		{
+		<text>NavigationSelected</text>
+		}
+}
