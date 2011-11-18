@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29873" maximumCompositeVersion="9.9999.9999.9999">
+	</mi:PackageRequirements>
+	<mi:PackageInformation name="Composite.Navigation.LevelSitemap.XSLT" groupName="Composite.Navigation" version="1.1.6" author="Composite A/S" website="www.composite.net" id="BAB8E662-1CF0-46db-BD93-95BDD0E59B35" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<Description>Allows visitors to navigate the website via a horizontal navigation bar menu.</Description>
+	</mi:PackageInformation>
+	<XsltFunctions>
+		<Add fullName="Composite.Navigation.LevelSitemap">
+		</Add>
+	</XsltFunctions>
+	<Files>
+		<Add fileName="Frontend\Composite\Navigation\LevelSitemap\Styles.css" />
+	</Files>
+</mi:PackageInstaller>

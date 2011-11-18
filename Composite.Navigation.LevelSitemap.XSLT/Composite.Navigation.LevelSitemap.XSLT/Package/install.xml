@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29873" maximumCompositeVersion="9.9999.9999.9999">
+	</mi:PackageRequirements>
+	<mi:PackageInformation name="Composite.Navigation.LevelSitemap.XSLT" groupName="Composite.Navigation" version="1.1.6" author="Composite A/S" website="www.composite.net" id="BAB8E662-1CF0-46db-BD93-95BDD0E59B35" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<Description>Allows visitors to navigate the website via a horizontal navigation bar menu.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Composite\Navigation\LevelSitemap.xsl" targetFilename="~\App_Data\Xslt\Composite\Navigation\LevelSitemap.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Composite\Navigation\LevelSitemap\Styles.css" targetFilename="~\Frontend\Composite\Navigation\LevelSitemap\Styles.css" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IXsltFunction, Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IParameter, Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.INamedFunctionCall, Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
