@@ -6,7 +6,7 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	exclude-result-prefixes="xsl in lang f">
 
-	<xsl:param name="forumShortname" select="/in:inputs/in:param[@name='ForumShortname']" />
+	<xsl:param name="siteShortname" select="/in:inputs/in:param[@name='SiteShortname']" />
 
 	<xsl:template match="/">
 		<html>
@@ -15,7 +15,7 @@
 				<div id="disqus_thread"></div>
 				<script type="text/javascript">
 					/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-					var disqus_shortname = '<xsl:value-of select="$forumShortname" />'; // required: replace example with your forum shortname
+					var disqus_shortname = '<xsl:value-of select="$siteShortname" />'; // required: replace example with your forum shortname
 					<xsl:if test="/in:inputs/in:param[@name='Developer'] = 'True'">
 						var disqus_developer = 1; // developer mode
 					</xsl:if>
