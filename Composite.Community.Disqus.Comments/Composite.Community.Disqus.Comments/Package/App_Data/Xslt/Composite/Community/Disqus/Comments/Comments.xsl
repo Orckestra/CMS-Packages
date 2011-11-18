@@ -16,7 +16,7 @@
 				<script type="text/javascript">
 					/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 					var disqus_shortname = '<xsl:value-of select="$siteShortname" />'; // required: replace example with your forum shortname
-					<xsl:if test="/in:inputs/in:param[@name='Developer'] = 'True'">
+					<xsl:if test="/in:inputs/in:param[@name='Developer'] = 'true'">
 						var disqus_developer = 1; // developer mode
 					</xsl:if>
 					
