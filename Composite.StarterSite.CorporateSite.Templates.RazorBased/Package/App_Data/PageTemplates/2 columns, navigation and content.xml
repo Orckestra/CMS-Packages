@@ -4,8 +4,8 @@
 	<head></head>
 	<body>
 		<f:function name="Layout.TwoColumnsNavigationContent">
-      <!--This is a Razor function located here: ~\App_Data\Razor\Layout\TwoColumnsNavigationContent.cshtml -->
-      <f:param name="Content">
+			<!--This is a Razor function located here: ~\App_Data\Razor\Layout\TwoColumnsNavigationContent.cshtml -->
+			<f:param name="Content">
 				<rendering:placeholder id="content" title="Content" default="true" />
 			</f:param>
 		</f:function>

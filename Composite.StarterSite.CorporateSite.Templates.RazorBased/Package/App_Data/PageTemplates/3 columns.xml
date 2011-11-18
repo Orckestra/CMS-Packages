@@ -1,16 +1,16 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0" xmlns:lang="http://www.composite.net/ns/localization/1.0" xmlns:rendering="http://www.composite.net/ns/rendering/1.0" xmlns:asp="http://www.composite.net/ns/asp.net/controls">
-  <f:function name="Composite.Web.Html.Template.LangAttribute" />
-  <head></head>
-  <body>
-    <f:function name="Layout.ThreeColumns">
-      <!--This is a Razor function located here: ~\App_Data\Razor\Layout\ThreeColumns.cshtml -->
-      <f:param name="Content">
-        <rendering:placeholder id="content" title="Content" default="true" />
-      </f:param>
-      <f:param name="Aside">
-        <rendering:placeholder id="aside" title="Aside" default="false" />
-      </f:param>
-    </f:function>
-  </body>
+	<f:function name="Composite.Web.Html.Template.LangAttribute" />
+	<head></head>
+	<body>
+		<f:function name="Layout.ThreeColumns">
+			<!--This is a Razor function located here: ~\App_Data\Razor\Layout\ThreeColumns.cshtml -->
+			<f:param name="Content">
+				<rendering:placeholder id="content" title="Content" default="true" />
+			</f:param>
+			<f:param name="Aside">
+				<rendering:placeholder id="aside" title="Aside" default="false" />
+			</f:param>
+		</f:function>
+	</body>
 </html>

@@ -4,11 +4,11 @@
 	<head></head>
 	<body>
 		<f:function name="Layout.TwoColumnsContentAside">
-      <!--This is a Razor function located here: ~\App_Data\Razor\Layout\TwoColumnsContentAside.cshtml -->
-      <f:param name="Content">
+			<!--This is a Razor function located here: ~\App_Data\Razor\Layout\TwoColumnsContentAside.cshtml -->
+			<f:param name="Content">
 				<rendering:placeholder id="content" title="Content" default="true" />
 			</f:param>
-		    <f:param name="Aside">
+			<f:param name="Aside">
 				<rendering:placeholder id="aside" title="Aside" default="false" />
 			</f:param>
 		</f:function>
