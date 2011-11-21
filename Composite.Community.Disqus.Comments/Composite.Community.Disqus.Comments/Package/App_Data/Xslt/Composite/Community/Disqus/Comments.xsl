@@ -12,6 +12,11 @@
 		<html>
 			<head />
 			<body>
+				<style type="text/css">
+					div#disqus_thread h1, div#disqus_thread h2, div#disqus_thread h3, div#disqus_thread h4, div#disqus_thread h5, div#disqus_thread h6 {
+						line-height: 22px;
+					}
+				</style>
 				<div id="disqus_thread"></div>
 				<script type="text/javascript">
 					/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
