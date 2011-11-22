@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F6E5CEF-A603-4907-8675-37004A3F478E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.StarterSite.CorporateSite.SampleImages</RootNamespace>
+    <AssemblyName>Composite.StarterSite.CorporateSite.SampleImages</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Package\Datas\Composite.Data.Types.IMediaFileDatas_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IMediaFolderDatas_public.xml" />
+    <Content Include="Package\install.xml" />
+    <Content Include="_PackageCreator\Composite.StarterSite.CorporateSite.SampleImages.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package\App_Data\Media\3be14910-88d7-4303-af42-0a7758013bf7" />
+    <None Include="Package\App_Data\Media\5db69082-5f91-4de1-af64-d274dacb7c8a" />
+    <None Include="Package\App_Data\Media\6fb4c70b-12a6-4522-add6-1f40828c5452" />
+    <None Include="Package\App_Data\Media\8b665d4e-fe22-46e1-b7d1-189c092b5cab" />
+    <None Include="Package\App_Data\Media\906eedc1-3f2b-47c3-b665-c961fc481270" />
+    <None Include="Package\App_Data\Media\98a24351-74b8-4dc3-bf97-4d4ac33ae3b5" />
+    <None Include="Package\App_Data\Media\ce4a5c82-e727-44c5-9769-e890946a81fc" />
+    <None Include="Package\App_Data\Media\d4841393-2d8e-4998-bd73-6f1d4e3898d4" />
+    <None Include="Package\App_Data\Media\da01dd11-cf5a-4c68-8cb3-803918b93aeb" />
+    <None Include="Package\App_Data\Media\e43b0a0b-8194-407d-83ea-68deed8f9647" />
+    <Content Include="Release\Composite.StarterSite.CorporateSite.SampleImages.zip" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55924</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
+
+</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

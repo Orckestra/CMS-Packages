@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="3.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.SampleImages" groupName="Composite.StarterSite.CorporateSite" version="1.0.0" author="Composite A/S" website="http://composite.net" id="3ac4add7-aabe-400c-b6d0-907d35dd5545" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Sample images</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Media\3be14910-88d7-4303-af42-0a7758013bf7" targetFilename="~\App_Data\Media\3be14910-88d7-4303-af42-0a7758013bf7" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\5db69082-5f91-4de1-af64-d274dacb7c8a" targetFilename="~\App_Data\Media\5db69082-5f91-4de1-af64-d274dacb7c8a" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\6fb4c70b-12a6-4522-add6-1f40828c5452" targetFilename="~\App_Data\Media\6fb4c70b-12a6-4522-add6-1f40828c5452" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\8b665d4e-fe22-46e1-b7d1-189c092b5cab" targetFilename="~\App_Data\Media\8b665d4e-fe22-46e1-b7d1-189c092b5cab" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\906eedc1-3f2b-47c3-b665-c961fc481270" targetFilename="~\App_Data\Media\906eedc1-3f2b-47c3-b665-c961fc481270" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\98a24351-74b8-4dc3-bf97-4d4ac33ae3b5" targetFilename="~\App_Data\Media\98a24351-74b8-4dc3-bf97-4d4ac33ae3b5" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\ce4a5c82-e727-44c5-9769-e890946a81fc" targetFilename="~\App_Data\Media\ce4a5c82-e727-44c5-9769-e890946a81fc" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\d4841393-2d8e-4998-bd73-6f1d4e3898d4" targetFilename="~\App_Data\Media\d4841393-2d8e-4998-bd73-6f1d4e3898d4" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\da01dd11-cf5a-4c68-8cb3-803918b93aeb" targetFilename="~\App_Data\Media\da01dd11-cf5a-4c68-8cb3-803918b93aeb" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\e43b0a0b-8194-407d-83ea-68deed8f9647" targetFilename="~\App_Data\Media\e43b0a0b-8194-407d-83ea-68deed8f9647" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IMediaFileData,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMediaFileDatas_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IMediaFolderData,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMediaFolderDatas_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
