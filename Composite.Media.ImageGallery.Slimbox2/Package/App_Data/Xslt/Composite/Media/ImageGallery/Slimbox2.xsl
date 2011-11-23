@@ -8,6 +8,7 @@
 	<xsl:variable name="downloadOriginal" select="/in:inputs/in:param[@name='DownloadLinkText']" />
 	<xsl:variable name="appRoot" select="/in:inputs/in:result[@name='ApplicationPath']" />
 	<xsl:variable name="singleImage" select="/in:inputs/in:param[@name='MediaImage']" />
+	<xsl:variable name="groupName" select="/in:inputs/in:param[@name='GroupName']" />
 	<xsl:variable name="imageResizeAction">
 		<xsl:choose>
 			<xsl:when test="$isSquareSize = 'true'">crop</xsl:when>
@@ -23,7 +24,17 @@
 			</head>
 			<body>
 				<xsl:for-each select="/in:inputs/in:result[@name='GetIImageFileXml']/IImageFile">
-					<a rel="lightbox-{@FolderPath}" title="{@Description}" href="/Renderers/ShowMedia.ashx?id={@Id}&amp;mw={$imgWidth}&amp;mh={$imgHeight}">
+					<a title="{@Description}" href="/Renderers/ShowMedia.ashx?id={@Id}&amp;mw={$imgWidth}&amp;mh={$imgHeight}">
+						<xsl:attribute name="rel">
+							<xsl:choose>
+								<xsl:when test="$groupName = ' '">
+									<xsl:value-of select="concat('lightbox-', @FolderPath)" />
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:value-of select="concat('lightbox-', $groupName)" />
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:attribute>
 						<img src="/Renderers/ShowMedia.ashx?id={@Id}&amp;w={$thWidth}&amp;h={$thHeight}&amp;action={$imageResizeAction}" title="{@Description}" alt="{@Title}" />
 					</a>
 					<span style="display:none;">
