@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
   <mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="9.9999.9999.9999"></mi:PackageRequirements>
-  <mi:PackageInformation name="Composite.Tools.VerboseLogging" groupName="Composite.Tools" version="1.0.1" author="Composite A/S" website="www.composite.net" id="263f38b3-22dc-4807-a6fd-0d138a269fe4" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
+  <mi:PackageInformation name="Composite.Tools.VerboseLogging" groupName="Composite.Tools" version="1.0.2" author="Composite A/S" website="www.composite.net" id="263f38b3-22dc-4807-a6fd-0d138a269fe4" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
     <Description>Enables verbose logging using the C1 logger</Description>
   </mi:PackageInformation>
   <mi:PackageFragmentInstallerBinaries />
