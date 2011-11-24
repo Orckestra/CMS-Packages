@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="3.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Navigation.LevelSitemap.Razor" groupName="Composite.Navigation" version="1.0.0" author="Composite" website="http://composite.net" id="4956d27e-3b71-40a8-9f4f-f72a8caa1dfe" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Navigation.LevelSitemap.Razor" groupName="Composite.Navigation" version="1.0.1" author="Composite" website="http://composite.net" id="4956d27e-3b71-40a8-9f4f-f72a8caa1dfe" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Razor based level sitemap builder</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
