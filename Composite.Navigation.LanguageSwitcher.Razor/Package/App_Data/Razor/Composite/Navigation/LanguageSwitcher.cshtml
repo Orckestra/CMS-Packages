@@ -3,6 +3,8 @@
 @using System.Globalization;
 @using Composite.Data;
 @using Composite.Data.Types;
+
+@description A Razor-based function that displays a menu for switching between pages in multiple languages on localized websites.
 @functions {
 	//// C1 Function parameters defined below...
 	[FunctionParameter("Mode", "HomePages: always the link to the home page; TranslatedPages: only the link to the current page if translated; TranslatedOrHomePages:  the link to the translated page if it exists; otherwise, to the home page", WidgetMarkup = "<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector' label='' bindingsourcename=''><f:helpdefinition helptext='' /><f:param name='Options'><f:function name='Composite.Utils.String.Split'><f:param name='String' value='HomePages,TranslatedPages,TranslatedOrHomePages' /></f:function></f:param></f:widgetfunction>")]
