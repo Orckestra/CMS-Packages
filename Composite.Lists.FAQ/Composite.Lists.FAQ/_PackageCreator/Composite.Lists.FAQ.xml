@@ -1,26 +1,21 @@
-<?xml version="1.0" standalone="yes"?>
+<?xml version="1.0"?>
 <pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Lists.FAQ" groupName="Composite.Lists" version="1.1.3" author="Composite A/S" website="www.composite.net" id="59f6c759-4f9c-4bae-9220-d440825abfff" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
-		<Description>Allows visitors to browse useful information as a list of questions and answers (FAQ). Supports assigning each item a type and target audience.</Description>
-	</mi:PackageInformation>
-	<pc:PageTemplates />
-	<pc:XsltFunctions>
-		<Add fullName="Composite.Lists.FAQ.Detail" />
-		<Add fullName="Composite.Lists.FAQ.Latest" />
-	</pc:XsltFunctions>
-	<pc:CSharpFunctions />
-	<pc:VisualFunctions />
+	<pc:PageTypes>
+		<Add name="FAQ Page" />
+	</pc:PageTypes>
+	<pc:Files>
+		<Add name="Frontend\Composite\Lists\FAQ\Styles.css" />
+		<Add name="App_Data\Composite\DynamicTypeForms\Composite\Lists\FAQ.xml" />
+	</pc:Files>
 	<pc:DynamicDataTypes>
-		<Add fullName="Composite.Lists.FAQ" />
-		<Add fullName="Composite.Lists.FAQTarget" />
-		<Add fullName="Composite.Lists.FAQType" />
+		<Add name="Composite.Lists.FAQ" />
+		<Add name="Composite.Lists.FAQCategory" />
 	</pc:DynamicDataTypes>
-	<pc:DynamicDataTypesData />
-	<pc:Files />
-	<pc:FilesInDirectories />
-	<pc:Directories>
-		<Add path="Frontend\Composite\Lists\FAQ\" />
-	</pc:Directories>
-	<pc:Datas />
+	<pc:XsltFunctions>
+		<Add name="Composite.Lists.FAQ.LinksToDetails" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Lists.FAQ" groupName="Composite.Lists" version="1.2.0" author="Composite A/S" website="http://composite.net" id="59f6c759-4f9c-4bae-9220-d440825abfff" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Allows visitors to browse useful information as a list of questions and answers (FAQ)</Description>
+	</mi:PackageInformation>
 </pc:PackageCreator>

@@ -1,10 +1,11 @@
-.FAQ {
+﻿.FAQ {
 	margin-bottom: 10px;
 	padding: 0px;
 }
 
-.FAQ .type {
+.FAQ .category {
 	padding: 0px;
+	margin: 5px 0px;
 }
 
 .FAQ .heading {
@@ -15,28 +16,21 @@
 	padding: 0px;
 }
 
-.FAQ .date {
-	padding: 0px;
-}
-
 .FAQ .answer {
 	padding: 0px;
+	margin-bottom: 20px;
 }
 
-.FAQ ul.nav, .FAQ ul.nav li a {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.FAQ h4 a span {
-	color: #676767;
-}
-
-.FAQ h4 a:hover span {
-
-}
 
 .FAQ a {
 	text-decoration: none;
+}
+
+.FAQ hr { 
+	border: 0; 
+	height: 1px; 
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+	background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+	background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+	background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
 }

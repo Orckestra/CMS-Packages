@@ -69,9 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Composite\Lists\FAQ.xml" />
-    <Content Include="Package\App_Data\Xslt\Composite\Lists\FAQ\Detail.xsl" />
-    <Content Include="Package\App_Data\Xslt\Composite\Lists\FAQ\Latest.xsl" />
+    <Content Include="Package\App_Data\Xslt\Composite\Lists\FAQ\LinksToDetails.xsl" />
+    <Content Include="Package\Datas\Composite.Data.Types.IGeneratedTypeWhiteLists_administrated.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTypeDataFolderTypeLinks_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTypeDefaultPageContents_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
     <Content Include="Package\Frontend\Composite\Lists\FAQ\Styles.css" />

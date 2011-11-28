@@ -1,12 +1,13 @@
-<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0">
+﻿<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:ff="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
 	<cms:bindings>
-		<cms:binding name="Id" type="System.Guid" />
-		<cms:binding name="QuestionHeading" type="System.String" />
-		<cms:binding name="QuestionDetails" type="System.String" />
-		<cms:binding name="Answer" type="System.String" />
-		<cms:binding name="DateAdded" type="System.DateTime" />
-		<cms:binding name="QuestionType" type="System.Guid" />
-		<cms:binding name="QuestionTarget" type="System.Guid" />
+		<cms:binding name="QuestionHeading" type="System.String" optional="true" />
+		<cms:binding name="QuestionDetails" type="System.String" optional="true" />
+		<cms:binding name="Answer" type="System.String" optional="true" />
+		<cms:binding name="DateAdded" type="System.DateTime" optional="true" />
+		<cms:binding name="QuestionCategory" type="System.Guid" optional="true" />
+		<cms:binding name="PublicationStatus" type="System.String" optional="true" />
+		<cms:binding name="Id" type="System.Guid" optional="true" />
+		<cms:binding name="PageId" type="System.Guid" optional="true" />
 	</cms:bindings>
 	<cms:layout>
 		<cms:layout.label>
@@ -14,30 +15,22 @@
 		</cms:layout.label>
 		<TabPanels>
 			<FieldGroup Label="Settings">
-				<TextBox Label="Question Heading" Help="Question Heading">
+				<TextBox Label="Question Heading" Help="">
 					<TextBox.Text>
 						<cms:bind source="QuestionHeading" />
 					</TextBox.Text>
 				</TextBox>
-				<DateSelector Label="Date Added" Help="Date Added">
+				<DateSelector Label="Date Added" Help="">
 					<DateSelector.Date>
 						<cms:bind source="DateAdded" />
 					</DateSelector.Date>
 				</DateSelector>
-				<KeySelector Label="Question Type" Help="Question Type" OptionsKeyField="Key" OptionsLabelField="Label">
+				<KeySelector Label="QuestionCategory " Help="" OptionsKeyField="Key" OptionsLabelField="Label" Required="true">
 					<KeySelector.Selected>
-						<cms:bind source="QuestionType" />
+						<cms:bind source="QuestionCategory" />
 					</KeySelector.Selected>
 					<KeySelector.Options>
-						<f:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=2.1.4091.27373, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;DynamicType:Composite.Lists.FAQType&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" Method="GetOptions" Parameters="DynamicType:Composite.Lists.FAQType" />
-					</KeySelector.Options>
-				</KeySelector>
-				<KeySelector Label="Question Target" Help="Question Target" OptionsKeyField="Key" OptionsLabelField="Label">
-					<KeySelector.Selected>
-						<cms:bind source="QuestionTarget" />
-					</KeySelector.Selected>
-					<KeySelector.Options>
-						<f:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=2.1.4091.27373, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;DynamicType:Composite.Lists.FAQTarget&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" Method="GetOptions" Parameters="DynamicType:Composite.Lists.FAQTarget" />
+						<ff:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=3.0.4332.33416, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Lists.FAQCategory,Composite.Generated&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" Method="GetOptions" Parameters="Composite.Lists.FAQCategory,Composite.Generated" />
 					</KeySelector.Options>
 				</KeySelector>
 			</FieldGroup>
