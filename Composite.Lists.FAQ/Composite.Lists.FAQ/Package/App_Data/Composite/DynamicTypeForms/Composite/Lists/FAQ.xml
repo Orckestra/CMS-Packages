@@ -30,7 +30,7 @@
 						<cms:bind source="QuestionCategory" />
 					</KeySelector.Selected>
 					<KeySelector.Options>
-						<ff:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=3.0.4332.33416, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Lists.FAQCategory,Composite.Generated&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" Method="GetOptions" Parameters="Composite.Lists.FAQCategory,Composite.Generated" />
+						<ff:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=3.0.4332.33416, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Lists.FAQCategory&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" Method="GetOptions" Parameters="Composite.Lists.FAQCategory" />
 					</KeySelector.Options>
 				</KeySelector>
 			</FieldGroup>
