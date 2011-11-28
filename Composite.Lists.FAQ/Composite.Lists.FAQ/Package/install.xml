@@ -23,9 +23,6 @@
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
 			<Types>
-				<Type type="Composite.Data.Types.IGeneratedTypeWhiteList,Composite">
-					<Data dataScopeIdentifier="administrated" dataFilename="~\Datas\Composite.Data.Types.IGeneratedTypeWhiteLists_administrated.xml" />
-				</Type>
 				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
 					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
 				</Type>
