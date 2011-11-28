@@ -9,15 +9,13 @@
 	<asp:ContentPlaceHolder ID="phNavigationColumn" runat="server">
 		<div class="threecol" id="navigationcolumn">
 			<div class="contentbox">
-				<rendering:function id="fnNavColumn" runat="server">
-					<f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Composite.Navigation.Distributed">
-					  <f:param name="Level" value="2" />
-					  <f:param name="Parent" value="False" />
-					  <f:param name="Childs" value="True" />
-					  <f:param name="Expand" value="False" />
-					  <f:param name="NavigationId" value="NavigationMenu" />
-					</f:function>
-				 </rendering:function>
+				<f:function runat="server" name="Composite.Navigation.Distributed">
+					<f:param name="Level">2</f:param>
+					<f:param name="Parent">False</f:param>
+					<f:param name="Childs">True</f:param>
+					<f:param name="Expand">False</f:param>
+					<f:param name="NavigationId">NavigationMenu</f:param>
+				</f:function>
 			</div>
 		</div>
 	</asp:ContentPlaceHolder>

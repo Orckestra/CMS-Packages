@@ -1,8 +1,9 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Common.master.cs" Inherits="Common"
 	ClientIDMode="Static" %>
+
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<html xmlns="http://www.w3.org/1999/xhtml" id="html_tag" runat="server">
+<head id="Head1" runat="server">
 	<title>
 		<rendering:Title ID="title" runat="server" />
 	</title>
@@ -14,7 +15,8 @@
 	<!--[if lte IE 9]>
 	<link rel="stylesheet" href="/Frontend/Styles/ie.css" type="text/css" media="screen" />
 	<![endif]-->
-	<link rel="stylesheet" href="~/Frontend/Styles/VisualEditor.common.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="~/Frontend/Styles/VisualEditor.common.css" type="text/css"
+		media="screen" />
 	<!-- Type and image presets - NOT ESSENTIAL -->
 	<link rel="stylesheet" href="~/Frontend/Styles/typeimg.css" type="text/css" media="screen" />
 	<!-- Make minor type adjustments for 1024 monitors -->
@@ -27,28 +29,19 @@
 	</asp:ContentPlaceHolder>
 </head>
 <body>
-	<rendering:Function ID="fnLanguage" runat="server">
-		<f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Composite.Web.Html.Template.LangAttribute" />
-	</rendering:Function>
 	<div class="container" id="wrapper">
 		<div class="row">
 			<div id="header" class="twelvecol last">
 				<div id="Logo">
 					<asp:HyperLink ID="hlHomePage" runat="server"></asp:HyperLink>
 				</div>
-				<rendering:Function ID="fnLanguageSwitcher" runat="server">
-					<f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Composite.Navigation.LanguageSwitcher">
-						<f:param name="Mode" value="TranslatedOrHomePages" />
-						<f:param name="ShowCurrent" value="False" />
-						<f:param name="Format" value="NativeName" />
-					</f:function>
-				</rendering:Function>
-				<rendering:Function ID="fnTopLinks" runat="server">
-					<f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Layout.Navigation.TopLinks" />
-				</rendering:Function>
-				<rendering:Function ID="fnMenu" runat="server">
-					<f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Layout.Navigation.Menu" />
-				</rendering:Function>
+				<f:function runat="server" name="Composite.Navigation.LanguageSwitcher">
+					<f:param name="Mode">TranslatedOrHomePages</f:param> 
+					<f:param name="ShowCurrent">False</f:param> 
+					<f:param name="Format">NativeName</f:param> 
+				</f:function>
+				<f:function runat="server" name="Layout.Navigation.TopLinks" />
+				<f:function runat="server" name="Layout.Navigation.Menu" />
 				<div id="HeaderImage">
 				</div>
 			</div>
