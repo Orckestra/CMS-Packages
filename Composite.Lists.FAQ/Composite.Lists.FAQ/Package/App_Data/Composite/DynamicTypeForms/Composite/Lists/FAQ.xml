@@ -15,17 +15,17 @@
 		</cms:layout.label>
 		<TabPanels>
 			<FieldGroup Label="Settings">
-				<TextBox Label="Question Heading" Help="">
+				<TextBox Label="Question Heading" Help="The question that serves as a title of a FAQ item on a page an in an URL.">
 					<TextBox.Text>
 						<cms:bind source="QuestionHeading" />
 					</TextBox.Text>
 				</TextBox>
-				<DateSelector Label="Date Added" Help="">
+				<DateSelector Label="Date Added" Help="The date the FAQ item was added.">
 					<DateSelector.Date>
 						<cms:bind source="DateAdded" />
 					</DateSelector.Date>
 				</DateSelector>
-				<KeySelector Label="QuestionCategory " Help="" OptionsKeyField="Key" OptionsLabelField="Label" Required="true">
+				<KeySelector Label="QuestionCategory " Help="The category the FAQ item belong to." OptionsKeyField="Key" OptionsLabelField="Label" Required="true">
 					<KeySelector.Selected>
 						<cms:bind source="QuestionCategory" />
 					</KeySelector.Selected>

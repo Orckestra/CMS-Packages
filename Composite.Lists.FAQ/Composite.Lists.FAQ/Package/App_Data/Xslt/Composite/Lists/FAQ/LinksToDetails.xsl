@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:in="http://www.composite.net/ns/transformation/input/1.0" xmlns:lang="http://www.composite.net/ns/localization/1.0" xmlns:f="http://www.composite.net/ns/function/1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:mp="#MarkupParserExtensions" exclude-result-prefixes="xsl in lang f mp">
 	<xsl:variable name="q" select="/in:inputs/in:result[@name='SelectedQuestion']" />
-	<xsl:variable name="style" select="/in:inputs/in:param[@name='FAQStyle']" />
+	<xsl:variable name="style" select="/in:inputs/in:param[@name='Mode']" />
 	<xsl:variable name="faq" select="/in:inputs/in:result[@name='GetFAQXml']" />
 	<xsl:key name="by-Category" match="FAQ" use="@QuestionCategory.Name" />
 	<xsl:template match="/">
@@ -67,7 +67,7 @@
 			<xsl:copy-of select="mp:ParseXhtmlBodyFragment(@Answer)" />
 		</div>
 		<xsl:text>◄</xsl:text>
-		<a href="~/page({@PageId})" rel="previous">Back to FAQ</a>
+		<a href="/Renderers/Page.aspx?pageId={@PageId}" rel="previous">Back to FAQ</a>
 		</div>
 		<hr />
 	</xsl:template>
