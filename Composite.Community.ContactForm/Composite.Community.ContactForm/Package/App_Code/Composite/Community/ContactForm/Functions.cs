@@ -165,8 +165,11 @@ namespace Composite.Community.ContactForm
 			var properties = interfaceType.GetPropertiesRecursively();
 
 			List<DynamicTypeMarkupServices.FieldReferenceDefinition> references =
-				DynamicTypeMarkupServices.GetFieldReferenceDefinitions(document, TypeManager.SerializeType(interfaceType)).ToList();
-
+					DynamicTypeMarkupServices.GetFieldReferenceDefinitions(document, "Composite.Community.ContactFormData").ToList();
+			if (references.Count() == 0)
+			{
+				references = DynamicTypeMarkupServices.GetFieldReferenceDefinitions(document, "DynamicType:Composite.Community.ContactFormData").ToList();
+			}
 			foreach (DynamicTypeMarkupServices.FieldReferenceDefinition reference in references)
 			{
 				var pr = properties.Find(p => p.Name == reference.FieldName);
