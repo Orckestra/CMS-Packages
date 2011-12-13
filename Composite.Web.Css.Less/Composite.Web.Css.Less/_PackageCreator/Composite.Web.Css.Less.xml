@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Files>
+		<Add name="Bin\dotless.Core.dll" />
+	</pc:Files>
+	<pc:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite" Ordering="10">
+			<XslFiles>
+				<XslFile pathXml="~\Web.config" installXsl="~\Config\Install.xsl" uninstallXsl="~\Config\Uninstall.xsl" />
+			</XslFiles>
+		</mi:Add>
+	</pc:PackageFragmentInstallers>
+	<mi:PackageRequirements minimumCompositeVersion="3.0.4358.27711" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Web.Css.Less" groupName="Composite.Web" version="1.0.0" author="Composite A/S" website="http://composite.net" id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Package integrate .Less support (http://www.dotlesscss.org/)</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="3.0.4358.27711" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Web.Css.Less" groupName="Composite.Web" version="1.0.0" author="Composite A/S" website="http://composite.net" id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Package integrate .Less support (http://www.dotlesscss.org/)</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\Bin\dotless.Core.dll" targetFilename="~\Bin\dotless.Core.dll" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
+			<XslFiles>
+				<XslFile pathXml="~\Web.config" installXsl="~\Config\Install.xsl" uninstallXsl="~\Config\Uninstall.xsl" />
+			</XslFiles>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
