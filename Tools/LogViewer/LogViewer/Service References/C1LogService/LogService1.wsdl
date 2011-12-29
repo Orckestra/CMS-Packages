@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="LogService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://local/Composite/services/LogService/local_80/LogService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://local/Composite/services/LogService/local_80/LogService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://local/Composite/services/LogService/local_80/LogService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://local/Composite/services/LogService/local_80/LogService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Composite.Logging.WCF" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILogService_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLastStartupTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastStartupTime" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLastStartupTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastStartupTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetServerTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerTime" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetServerTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLoggingDates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggingDates" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLoggingDates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggingDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLogEntriesCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogEntriesCount" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLogEntriesCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogEntriesCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLogEntriesCountByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogEntriesCountByDate" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLogEntriesCountByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogEntriesCountByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLogEntries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogEntries" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLogEntries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLogEntriesFrom_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogEntriesFrom" />
+  </wsdl:message>
+  <wsdl:message name="ILogService_GetLogEntriesFrom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogEntriesFromResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILogService">
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogService/Authenticate" message="tns:ILogService_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogService/AuthenticateResponse" message="tns:ILogService_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastStartupTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogService/GetLastStartupTime" message="tns:ILogService_GetLastStartupTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogService/GetLastStartupTimeResponse" message="tns:ILogService_GetLastStartupTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogService/GetServerTime" message="tns:ILogService_GetServerTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogService/GetServerTimeResponse" message="tns:ILogService_GetServerTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggingDates">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogService/GetLoggingDates" message="tns:ILogService_GetLoggingDates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogService/GetLoggingDatesResponse" message="tns:ILogService_GetLoggingDates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogEntriesCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogService/GetLogEntriesCount" message="tns:ILogService_GetLogEntriesCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogService/GetLogEntriesCountResponse" message="tns:ILogService_GetLogEntriesCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogEntriesCountByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogService/GetLogEntriesCountByDate" message="tns:ILogService_GetLogEntriesCountByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogService/GetLogEntriesCountByDateResponse" message="tns:ILogService_GetLogEntriesCountByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogEntries">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogService/GetLogEntries" message="tns:ILogService_GetLogEntries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogService/GetLogEntriesResponse" message="tns:ILogService_GetLogEntries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogEntriesFrom">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogService/GetLogEntriesFrom" message="tns:ILogService_GetLogEntriesFrom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogService/GetLogEntriesFromResponse" message="tns:ILogService_GetLogEntriesFrom_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILogService" type="tns:ILogService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/ILogService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastStartupTime">
+      <soap:operation soapAction="http://tempuri.org/ILogService/GetLastStartupTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerTime">
+      <soap:operation soapAction="http://tempuri.org/ILogService/GetServerTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggingDates">
+      <soap:operation soapAction="http://tempuri.org/ILogService/GetLoggingDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogEntriesCount">
+      <soap:operation soapAction="http://tempuri.org/ILogService/GetLogEntriesCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogEntriesCountByDate">
+      <soap:operation soapAction="http://tempuri.org/ILogService/GetLogEntriesCountByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogEntries">
+      <soap:operation soapAction="http://tempuri.org/ILogService/GetLogEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogEntriesFrom">
+      <soap:operation soapAction="http://tempuri.org/ILogService/GetLogEntriesFrom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LogService">
+    <wsdl:port name="BasicHttpBinding_ILogService" binding="tns:BasicHttpBinding_ILogService">
+      <soap:address location="http://local/Composite/services/LogService/local_80/LogService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
