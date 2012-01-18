@@ -1,0 +1,35 @@
+﻿<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0">
+	<cms:bindings>
+		<cms:binding name="Id" type="System.Guid" optional="true" />
+		<cms:binding name="Template" type="System.String" optional="true" />
+		<cms:binding name="Subject" type="System.String" optional="true" />
+		<cms:binding name="Title" type="System.String" optional="true" />
+	</cms:bindings>
+	<cms:layout>
+		<cms:layout.label>
+			<cms:read source="Title" />
+		</cms:layout.label>
+		<TabPanels PreSelectedIndex="0">
+			<PlaceHolder Label="Template Info">
+				<FieldGroup>
+					<TextBox Label="Title" Help="The title of the email template.">
+						<TextBox.Text>
+							<cms:bind source="Title" />
+						</TextBox.Text>
+					</TextBox>
+					<TextBox Label="Subject" Help="The subject of the email based on this template.">
+						<TextBox.Text>
+							<cms:bind source="Subject" />
+						</TextBox.Text>
+					</TextBox>
+				</FieldGroup>
+			</PlaceHolder>
+			<XhtmlEditor Label="Content" Help="The content of the email template.">
+				<XhtmlEditor.EmbedableFieldsTypes>
+					<f:CompositeFunctionCall Name="Composite.Forms.ContactForm.Functions.GetEmbedableFieldsTypes" />
+				</XhtmlEditor.EmbedableFieldsTypes>
+				<cms:bind source="Template" />
+			</XhtmlEditor>
+		</TabPanels>
+	</cms:layout>
+</cms:formdefinition>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AllowedAttachments ApplicationName="ContactForm">
+		<DataType Type="Composite.Data.Types.IPage"/>
+	</ElementStructure.AllowedAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Label="Contact Form Data" Id="Root">
+				<Children>
+					<DataFolderElements Type="Composite.Forms.ContactFormData" DateFormat="yyyy MMMM" FieldGroupingName="Date" Display="Compact">
+						<Children>
+							<DataElements Type="Composite.Forms.ContactFormData" Label="${C1:Data:Composite.Forms.ContactFormData:Email} (${C1:Data:Composite.Forms.ContactFormData:Name})" Display="Auto">
+								<Actions>
+									<EditDataAction Label="Edit Data" />
+									<DeleteDataAction Label="Delete Data" />
+								</Actions>
+								<Filters>
+									<ParentIdFilter ParentType="Composite.Data.Types.IPage" ReferenceFieldName="PageId" />
+								</Filters>
+								<OrderBy>
+									<Field FieldName="Date" Direction="descending"></Field>
+								</OrderBy>
+							</DataElements>
+						</Children>
+					</DataFolderElements>
+				</Children>
+			</Element>
+		</Children>
+	</ElementRoot>
+</ElementStructure>

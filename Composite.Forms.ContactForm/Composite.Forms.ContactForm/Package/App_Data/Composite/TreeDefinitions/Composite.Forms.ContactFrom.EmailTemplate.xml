@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AutoAttachments>
+		<NamedParent Name="Content.WebsiteItems" Position="Bottom"/>
+	</ElementStructure.AutoAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Label="Contact Form Email Template" Id="ContactFormEmailTemplate">
+				<Actions>
+					<AddDataAction Type="Composite.Forms.ContactForm.EmailTemplate" Label="Add Template"/> 
+				</Actions>
+				<Children>
+
+					<DataElements Type="Composite.Forms.ContactForm.EmailTemplate" Label="${C1:Data:Composite.Forms.ContactForm.EmailTemplate:Title}" Display="Auto">
+						<Actions>
+							<EditDataAction Label="Edit template" />
+						</Actions>
+					</DataElements>
+				</Children>
+			</Element>
+		</Children>
+
+	</ElementRoot>
+</ElementStructure>
