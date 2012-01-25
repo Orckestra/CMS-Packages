@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Composite.Core.PackageSystem.Foundation;
 using Microsoft.Practices.EnterpriseLibrary.Validation.Validators;
 
 namespace Composite.Tools.PackageCreator
@@ -17,9 +13,13 @@ namespace Composite.Tools.PackageCreator
 		[NotNullValidator()]
 		public string Author { get; set; }
 		[NotNullValidator()]
+		public string ReadMoreUrl { get; set; }
+		[NotNullValidator()]
 		public string Website { get; set; }
 		[NotNullValidator()]
 		public string Description { get; set; }
+		[NotNullValidator()]
+		public string TechicalDetails { get; set; }
 		[NotNullValidator()]
 		public string Version { get; set; }
 		public bool CanBeUninstalled { get; set; }

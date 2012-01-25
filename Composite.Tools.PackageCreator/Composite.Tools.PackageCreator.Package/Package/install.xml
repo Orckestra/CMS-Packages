@@ -1,7 +1,8 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.PackageCreator" groupName="Composite.Tools" version="3.3.18" author="Composite A/S" website="www.composite.net" id="2264b427-9e2d-4247-8ef2-8646682f39e7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+	<mi:PackageInformation name="Composite.Tools.PackageCreator" groupName="Composite.Tools" version="3.3.19" author="Composite A/S" website="www.composite.net" id="2264b427-9e2d-4247-8ef2-8646682f39e7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true" readMoreUrl="http://docs.composite.net/Composite.Package.Creator">
+		<TechicalDetails>Allows users to export website data (pages, templates, page types, media files, functions, data types, data items, flat files, localizations) to packages and reuse them on other sites.</TechicalDetails>
 		<Description>Allows users to export website data (pages, templates, page types, media files, functions, data types, data items, flat files, localizations) to packages and reuse them on other sites.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries>
@@ -22,7 +23,6 @@
 				<Directory sourceDirectory="~\Composite\content\forms\InstalledPackages\Composite.Tools.PackageCreator\" targetDirectory="~\Composite\content\forms\InstalledPackages\Composite.Tools.PackageCreator\" allowOverwrite="true" deleteTargetDirectory="false" />
 			</Directories>
 		</mi:Add>
-		<mi:Add installerType="Composite.Tools.PackageCreator.PackageCreatorFragmentInstaller, Composite.Tools.PackageCreator" uninstallerType="Composite.Tools.PackageCreator.PackageCreatorFragmentUninstaller, Composite.Tools.PackageCreator" />
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
 			<Types />
 		</mi:Add>

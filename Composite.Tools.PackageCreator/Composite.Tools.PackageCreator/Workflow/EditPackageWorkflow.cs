@@ -1,29 +1,18 @@
 using System;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Collections;
-using System.Drawing;
 using System.Linq;
-using System.Workflow.ComponentModel.Compiler;
-using System.Workflow.ComponentModel.Serialization;
-using System.Workflow.ComponentModel;
-using System.Workflow.ComponentModel.Design;
-using System.Workflow.Runtime;
+using System.Web;
 using System.Workflow.Activities;
-using System.Workflow.Activities.Rules;
-using Composite.Core.PackageSystem;
 using Composite.C1Console.Actions;
 using Composite.Tools.PackageCreator.ElementProvider;
-using System.Web;
 
 namespace Composite.Tools.PackageCreator.Workflow
 {
 	public sealed partial class EditPackageWorkflow : Composite.C1Console.Workflow.Activities.FormsWorkflow
-    {
-        public EditPackageWorkflow()
-        {
-            InitializeComponent();
-        }
+	{
+		public EditPackageWorkflow()
+		{
+			InitializeComponent();
+		}
 
 		private void InitCodeActivity_ExecuteCode(object sender, EventArgs e)
 		{
@@ -38,7 +27,7 @@ namespace Composite.Tools.PackageCreator.Workflow
 				this.Bindings.Add("MinCompositeVersionSupported", package.MinCompositeVersionSupported.ToString());
 
 
-			var request = HttpContext.Current.Request; 
+			var request = HttpContext.Current.Request;
 			if (this.BindingExist("PackageUrl") == false)
 			{
 				var packageUrl = string.Format("{0}/Composite/InstalledPackages/services/Composite.Tools.PackageCreator/GetPackage.ashx?package={1}", request.ApplicationPath == "/" ? "" : request.ApplicationPath, this.EntityToken.Source);
@@ -84,6 +73,12 @@ namespace Composite.Tools.PackageCreator.Workflow
 				e.Result = false;
 			}
 
+			if (string.IsNullOrEmpty(package.TechicalDetails))
+			{
+				this.ShowFieldMessage("Package.TechicalDetails", PackageCreatorFacade.GetLocalization("Required"));
+				e.Result = false;
+			}
+
 			if (this.EntityToken.Source != package.Name && PackageCreatorFacade.GetPackageNames().Contains(package.Name.Trim()))
 			{
 				this.ShowFieldMessage("Package.Name", PackageCreatorFacade.GetLocalization("Error.PackageAlreadyExist"));
@@ -105,5 +100,5 @@ namespace Composite.Tools.PackageCreator.Workflow
 			this.SetSaveStatus(true);
 
 		}
-    }
+	}
 }

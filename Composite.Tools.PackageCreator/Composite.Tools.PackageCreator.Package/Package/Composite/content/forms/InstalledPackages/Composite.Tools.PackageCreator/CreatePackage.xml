@@ -20,8 +20,14 @@
 					<TextBox Label="${Composite.Tools.PackageCreator, Package.Website.Label}">
 						<cms:bind source="Package.Website" />
 					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.ReadMoreUrl.Label}">
+						<cms:bind source="Package.ReadMoreUrl" />
+					</TextBox>
 					<TextArea Label="${Composite.Tools.PackageCreator, Package.Description.Label}">
 						<cms:bind source="Package.Description" />
+					</TextArea>
+					<TextArea Label="${Composite.Tools.PackageCreator, Package.TechicalDetails.Label}">
+						<cms:bind source="Package.TechicalDetails" />
 					</TextArea>
 				</FieldGroup>
 	</cms:layout>

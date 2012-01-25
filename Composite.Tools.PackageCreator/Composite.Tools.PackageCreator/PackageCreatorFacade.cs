@@ -177,6 +177,7 @@ namespace Composite.Tools.PackageCreator
 				packageInformation.SetAttributeValue("version", package.Version);
 				packageInformation.SetAttributeValue("author", package.Author);
 				packageInformation.SetAttributeValue("website", package.Website);
+				packageInformation.SetAttributeValue("readMoreUrl", package.ReadMoreUrl);
 				packageInformation.SetAttributeValue("id", package.Id);
 				packageInformation.SetAttributeValue("canBeUninstalled", package.CanBeUninstalled);
 				packageInformation.SetAttributeValue("systemLocking", package.SystemLockingType);
@@ -186,6 +187,7 @@ namespace Composite.Tools.PackageCreator
 					packageInformation.SetAttributeValue("reloadConsoleOnCompletion", "true");
 				}
 				packageInformation.ForceElement("Description").Value = package.Description;
+				packageInformation.ForceElement("TechicalDetails").Value = package.TechicalDetails;
 
 				packageRequirements.SetAttributeValue("minimumCompositeVersion", package.MinCompositeVersionSupported.ToString());
 				packageRequirements.SetAttributeValue("maximumCompositeVersion", package.MaxCompositeVersionSupported.ToString());
@@ -215,13 +217,15 @@ namespace Composite.Tools.PackageCreator
 
 			package.Id = packageInformation.AttributeValue("id") != null ? new Guid(packageInformation.AttributeValue("id")) : Guid.NewGuid();
 
-			package.Author = packageInformation.AttributeValue("author") ?? "";
+			package.Author = packageInformation.AttributeValue("author") ?? string.Empty;
 			package.GroupName = packageInformation.AttributeValue("groupName") ?? UserSettings.LastSpecifiedNamespace;
 			package.Name = packageInformation.AttributeValue("name") ?? package.GroupName + ".NewPackage";
 			package.Version = packageInformation.AttributeValue("version") ?? "1.0.0";
 			var request = HttpContext.Current.Request;
 			package.Website = packageInformation.AttributeValue("website") ?? (new Uri(request.Url, request.ApplicationPath)).ToString();
+			package.ReadMoreUrl = packageInformation.AttributeValue("readMoreUrl") ?? string.Empty;
 			package.Description = string.IsNullOrEmpty(packageInformation.ForceElement("Description").Value) ? string.Empty : packageInformation.ForceElement("Description").Value;//string.Format("Created by {0}", package.Author) : packageInformation.ForceElement("Description").Value;
+			package.TechicalDetails = string.IsNullOrEmpty(packageInformation.ForceElement("TechicalDetails").Value) ? string.Empty : packageInformation.ForceElement("TechicalDetails").Value;
 
 			package.FlushOnCompletion = bool.Parse(packageInformation.AttributeValue("flushOnCompletion") ?? false.ToString());
 			package.CanBeUninstalled = bool.Parse(packageInformation.AttributeValue("canBeUninstalled") ?? true.ToString());

@@ -1,27 +1,13 @@
 using System;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Collections;
-using System.Drawing;
-using System.Linq;
-using System.Workflow.ComponentModel.Compiler;
-using System.Workflow.ComponentModel.Serialization;
-using System.Workflow.ComponentModel;
-using System.Workflow.ComponentModel.Design;
-using System.Workflow.Runtime;
-using System.Workflow.Activities;
-using System.Workflow.Activities.Rules;
-using Composite.Core.PackageSystem;
-using Composite.C1Console.Users;
-using System.Web;
-using Composite.Core.PackageSystem.Foundation;
-using System.IO;
-using Composite.C1Console.Actions;
-using Composite.Tools.PackageCreator.ElementProvider;
 using System.Collections.Generic;
-using Composite.Core.Serialization;
+using System.Linq;
+using System.Workflow.Activities;
+using System.Workflow.Runtime;
+using Composite.C1Console.Actions;
 using Composite.C1Console.Security;
 using Composite.C1Console.Workflow;
+using Composite.Core.Serialization;
+using Composite.Tools.PackageCreator.ElementProvider;
 
 namespace Composite.Tools.PackageCreator
 {
@@ -38,7 +24,7 @@ namespace Composite.Tools.PackageCreator
 			if (!string.IsNullOrEmpty(Payload))
 			{
 				Dictionary<string, string> dic = StringConversionServices.ParseKeyValueCollection(Payload);
-				if(dic.ContainsKey("Name"))
+				if (dic.ContainsKey("Name"))
 				{
 					var name = StringConversionServices.DeserializeValueString(dic["Name"]);
 					package.Name = name;
@@ -56,7 +42,7 @@ namespace Composite.Tools.PackageCreator
 			var package = this.GetBinding<PackageInformation>("Package");
 			PackageCreatorFacade.SavePackageInformation(package);
 
-			
+
 			if (!string.IsNullOrEmpty(Payload))
 			{
 

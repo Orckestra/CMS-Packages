@@ -196,28 +196,51 @@ namespace Composite.Tools.PackageCreator
 		#endregion
 
 		private EventDrivenActivity globalCancelEventDrivenActivity;
+
 		private StateActivity finalState;
-		private Composite.C1Console.Workflow.Activities.WizardFormActivity wizardFormActivity1;
+
+		private C1Console.Workflow.Activities.WizardFormActivity wizardFormActivity1;
+
 		private CodeActivity packageInfoCodeActivity;
+
 		private SetStateActivity setStateActivity2;
+
 		private StateInitializationActivity packageInfoInitialization;
+
 		private SetStateActivity setStateActivity1;
+
 		private StateInitializationActivity stateInitializationActivity;
+
 		private StateActivity packageInfoState;
+
 		private SetStateActivity setStateActivity4;
-		private Composite.C1Console.Workflow.Activities.CancelHandleExternalEventActivity cancelHandleExternalEventActivity1;
-		private Composite.C1Console.Workflow.Activities.NextHandleExternalEventActivity nextHandleExternalEventActivity2;
+
+		private C1Console.Workflow.Activities.CancelHandleExternalEventActivity cancelHandleExternalEventActivity1;
+
+		private C1Console.Workflow.Activities.NextHandleExternalEventActivity nextHandleExternalEventActivity2;
+
 		private EventDrivenActivity CancelDrivenActivity2;
+
 		private EventDrivenActivity NextDrivenActivity1;
-		private Composite.C1Console.Workflow.Activities.CancelHandleExternalEventActivity cancelHandleExternalEventActivity2;
+
+		private C1Console.Workflow.Activities.CancelHandleExternalEventActivity cancelHandleExternalEventActivity2;
+
 		private FaultHandlersActivity faultHandlersActivity1;
+
 		private SetStateActivity setStateActivity6;
+
 		private SetStateActivity setStateActivity5;
+
 		private CodeActivity savePackageCodeActivity;
+
 		private IfElseBranchActivity ifElseBranchActivity2;
+
 		private IfElseBranchActivity ifElseBranchActivity1;
+
 		private IfElseActivity ifElseActivity1;
+
 		private StateActivity initializationState;
+
 
 
 
