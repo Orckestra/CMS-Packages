@@ -7,7 +7,7 @@
 		<cms:binding name="PackageVersion" type="System.String" optional="true" />
 		<cms:binding name="Author" type="System.String" optional="true" />
 		<cms:binding name="Description" type="System.String" optional="true" />
-		<cms:binding name="TechicalDetails" type="System.String" optional="true" />
+		<cms:binding name="TechnicalDetails" type="System.String" optional="true" />
 		<cms:binding name="EULA" type="System.Guid" optional="true" />
 		<cms:binding name="ReadMoreUrl" type="System.String" optional="true" />
 		<cms:binding name="MinCompositeVersionSupported" type="System.String" optional="true" />
@@ -19,10 +19,10 @@
 			<cms:read source="Name" />
 		</cms:layout.label>
 		<TabPanels>
-			
+
 			<PlaceHolder Label="Package">
 				<FieldGroup>
-					<DataReferenceTreeSelector Label="PackageFile" Help="" Handle="Composite.Management.EmbeddableMediaSelectorDialog" SearchToken="Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider.MediaFileSearchToken,Composite|MimeTypes=null, Extensions=',\ \'zip\'', Folder=null, HideSubfolders='False', Keyword=null" DataType="Composite.Data.Types.IMediaFile,Composite" NullValueAllowed="false">
+					<DataReferenceTreeSelector Label="Package File" Help="" Handle="Composite.Management.EmbeddableMediaSelectorDialog" SearchToken="Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider.MediaFileSearchToken,Composite|MimeTypes=null, Extensions=',\ \'zip\'', Folder=null, HideSubfolders='False', Keyword=null" DataType="Composite.Data.Types.IMediaFile,Composite" NullValueAllowed="false">
 						<DataReferenceTreeSelector.Selected>
 							<cms:bind source="PackageFile" />
 						</DataReferenceTreeSelector.Selected>
@@ -39,23 +39,35 @@
 							</TextBox>
 						</f:NullCheck.WhenNotNull>
 					</f:NullCheck>
-							<f:NullCheck>
-								<f:NullCheck.CheckValue>
-									<cms:read source="Name" />
-								</f:NullCheck.CheckValue>
-								<f:NullCheck.WhenNotNull>
+					<f:NullCheck>
+						<f:NullCheck.CheckValue>
+							<cms:read source="Name" />
+						</f:NullCheck.CheckValue>
+						<f:NullCheck.WhenNotNull>
 							<TextBox Label="Group Name" Help="" Type="ReadOnly">
 								<TextBox.Text>
 									<cms:read source="GroupName" />
 								</TextBox.Text>
 							</TextBox>
-								</f:NullCheck.WhenNotNull>
-							</f:NullCheck>
-							<f:NullCheck>
-								<f:NullCheck.CheckValue>
-									<cms:read source="Name" />
-								</f:NullCheck.CheckValue>
-								<f:NullCheck.WhenNotNull>
+						</f:NullCheck.WhenNotNull>
+					</f:NullCheck>
+					<f:NullCheck>
+						<f:NullCheck.CheckValue>
+							<cms:read source="Name" />
+						</f:NullCheck.CheckValue>
+						<f:NullCheck.WhenNotNull>
+							<TextBox Label="Read More URL" Help="" Type="ReadOnly">
+								<TextBox.Text>
+									<cms:read source="ReadMoreUrl" />
+								</TextBox.Text>
+							</TextBox>
+						</f:NullCheck.WhenNotNull>
+					</f:NullCheck>
+					<f:NullCheck>
+						<f:NullCheck.CheckValue>
+							<cms:read source="Name" />
+						</f:NullCheck.CheckValue>
+						<f:NullCheck.WhenNotNull>
 							<TextArea Label="Description" Help="" Type="ReadOnly">
 								<TextArea.Text>
 									<cms:read source="Description" />
@@ -63,12 +75,19 @@
 							</TextArea>
 						</f:NullCheck.WhenNotNull>
 					</f:NullCheck>
+					<f:NullCheck>
+						<f:NullCheck.CheckValue>
+							<cms:read source="Name" />
+						</f:NullCheck.CheckValue>
+						<f:NullCheck.WhenNotNull>
+							<TextArea Label="Technical Details" Help="" Type="ReadOnly">
+								<TextArea.Text>
+									<cms:read source="TechnicalDetails" />
+								</TextArea.Text>
+							</TextArea>
+						</f:NullCheck.WhenNotNull>
+					</f:NullCheck>
 
-					<TextArea Label="Techical Details" Help="">
-						<TextArea.Text>
-							<cms:bind source="TechicalDetails" />
-						</TextArea.Text>
-					</TextArea>
 					<KeySelector Label="EULA" Help="" OptionsKeyField="Key" OptionsLabelField="Label" Required="true">
 						<KeySelector.Selected>
 							<cms:bind source="EULA" />
@@ -77,12 +96,7 @@
 							<f:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=2.0.3925.22817, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;DynamicType:Composite.Tools.PackageServer.EULA&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" Method="GetOptions" Parameters="DynamicType:Composite.Tools.PackageServer.EULA" />
 						</KeySelector.Options>
 					</KeySelector>
-					<TextBox Label="Read More Url" Help="">
-						<TextBox.Text>
-							<cms:bind source="ReadMoreUrl" />
-						</TextBox.Text>
-					</TextBox>
-				
+
 				</FieldGroup>
 			</PlaceHolder>
 			<f:NullCheck>

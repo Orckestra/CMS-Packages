@@ -32,7 +32,7 @@ namespace Composite.Tools.PackageServer
 						MaxCompositeVersionSupported = package.MaxCompositeVersionSupported,
 						Author = package.Author,
 						Description = package.Description,
-						TechicalDetails = package.TechicalDetails,
+						TechicalDetails = package.TechnicalDetails,
 						EulaId = package.EULA,
 						ReadMoreUrl = package.ReadMoreUrl,
 						IsFree = true,

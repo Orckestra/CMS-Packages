@@ -17,6 +17,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -74,7 +75,9 @@
   <ItemGroup>
     <Content Include="Dll\Composite.Generated.dll" />
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Composite\Tools\PackageServer\Package.xml" />
-    <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Tools.PackageServer.xml" />
+    <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Tools.PackageServer.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Package\install.xml" />
     <Content Include="Package\Packages.asmx" />
     <Content Include="_PackageCreator\Composite.Tools.PackageServer.xml" />
