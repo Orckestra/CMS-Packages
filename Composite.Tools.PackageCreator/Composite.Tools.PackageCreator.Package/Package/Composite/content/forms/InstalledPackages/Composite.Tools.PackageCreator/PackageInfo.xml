@@ -30,8 +30,8 @@
 					<TextArea Label="${Composite.Tools.PackageCreator, Package.Description.Label}">
 						<cms:bind source="Package.Description" />
 					</TextArea>
-					<TextArea Label="${Composite.Tools.PackageCreator, Package.TechicalDetails.Label}">
-						<cms:bind source="Package.TechicalDetails" />
+					<TextArea Label="${Composite.Tools.PackageCreator, Package.TechnicalDetails.Label}">
+						<cms:bind source="Package.TechnicalDetails" />
 					</TextArea>
 				</FieldGroup>
 			</PlaceHolder>

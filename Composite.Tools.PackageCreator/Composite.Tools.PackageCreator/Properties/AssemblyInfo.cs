@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Composite A/S")]
 [assembly: AssemblyProduct("Composite.Tools.PackageCreator")]
-[assembly: AssemblyCopyright("Copyright © Composite A/S 2011")]
+[assembly: AssemblyCopyright("Copyright © Composite A/S 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using '*'.
-[assembly: AssemblyVersion("3.3.18")]
+[assembly: AssemblyVersion("3.3.22")]
 [assembly: ComVisible(false)]
 
 
