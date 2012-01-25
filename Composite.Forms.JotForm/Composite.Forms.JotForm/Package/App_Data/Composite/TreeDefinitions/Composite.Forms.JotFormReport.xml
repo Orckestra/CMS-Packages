@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AutoAttachments>
+		<NamedParent Name="Content" Position="Bottom"/>
+	</ElementStructure.AutoAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Id="jotFormReports" Label="JotForm Reports" Icon="Report">
+				<Actions>
+					<AddDataAction Type="Composite.Forms.JotFormReport" Label="Add JotForm Report"/>
+				</Actions>
+				<Children>
+					<DataElements Type="Composite.Forms.JotFormReport" Icon="Page">
+						<Actions>
+							<CustomUrlAction Label="Grid Report" Icon="fields" Url="~/Composite/InstalledPackages/content/views/Composite.Forms.JotForm/Report.aspx?id=${C1:Data:Composite.Forms.JotFormReport:Id}&amp;type=grid" />
+							<CustomUrlAction Label="Table Report" Icon="fields" Url="~/Composite/InstalledPackages/content/views/Composite.Forms.JotForm/Report.aspx?id=${C1:Data:Composite.Forms.JotFormReport:Id}&amp;type=table" />
+							<CustomUrlAction Label="Visual Report" Icon="perspective-design" Url="~/Composite/InstalledPackages/content/views/Composite.Forms.JotForm/Report.aspx?id=${C1:Data:Composite.Forms.JotFormReport:Id}&amp;type=visual" />
+							<CustomUrlAction Label="Download Excel Report" ViewType="filedownload" Icon="mimetype-xls" Url="~/Composite/InstalledPackages/content/views/Composite.Forms.JotForm/Report.aspx?id=${C1:Data:Composite.Forms.JotFormReport:Id}&amp;type=excel" />
+							<CustomUrlAction Label="Download Csv Report" ViewType="filedownload" Icon="mimetype-txt" Url="~/Composite/InstalledPackages/content/views/Composite.Forms.JotForm/Report.aspx?id=${C1:Data:Composite.Forms.JotFormReport:Id}&amp;type=csv" />
+							<EditDataAction Label="Edit Report"/>
+							<DeleteDataAction Label="Delete Report"/>
+						</Actions>
+					</DataElements>
+				</Children>
+			</Element>
+		</Children>
+
+	</ElementRoot>
+</ElementStructure>
