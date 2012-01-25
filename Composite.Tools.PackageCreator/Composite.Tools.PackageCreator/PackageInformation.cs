@@ -19,7 +19,7 @@ namespace Composite.Tools.PackageCreator
 		[NotNullValidator()]
 		public string Description { get; set; }
 		[NotNullValidator()]
-		public string TechicalDetails { get; set; }
+		public string TechnicalDetails { get; set; }
 		[NotNullValidator()]
 		public string Version { get; set; }
 		public bool CanBeUninstalled { get; set; }

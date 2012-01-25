@@ -187,7 +187,7 @@ namespace Composite.Tools.PackageCreator
 					packageInformation.SetAttributeValue("reloadConsoleOnCompletion", "true");
 				}
 				packageInformation.ForceElement("Description").Value = package.Description;
-				packageInformation.ForceElement("TechicalDetails").Value = package.TechicalDetails;
+				packageInformation.ForceElement("TechnicalDetails").Value = package.TechnicalDetails;
 
 				packageRequirements.SetAttributeValue("minimumCompositeVersion", package.MinCompositeVersionSupported.ToString());
 				packageRequirements.SetAttributeValue("maximumCompositeVersion", package.MaxCompositeVersionSupported.ToString());
@@ -225,7 +225,7 @@ namespace Composite.Tools.PackageCreator
 			package.Website = packageInformation.AttributeValue("website") ?? (new Uri(request.Url, request.ApplicationPath)).ToString();
 			package.ReadMoreUrl = packageInformation.AttributeValue("readMoreUrl") ?? string.Empty;
 			package.Description = string.IsNullOrEmpty(packageInformation.ForceElement("Description").Value) ? string.Empty : packageInformation.ForceElement("Description").Value;//string.Format("Created by {0}", package.Author) : packageInformation.ForceElement("Description").Value;
-			package.TechicalDetails = string.IsNullOrEmpty(packageInformation.ForceElement("TechicalDetails").Value) ? string.Empty : packageInformation.ForceElement("TechicalDetails").Value;
+			package.TechnicalDetails = string.IsNullOrEmpty(packageInformation.ForceElement("TechnicalDetails").Value) ? string.Empty : packageInformation.ForceElement("TechnicalDetails").Value;
 
 			package.FlushOnCompletion = bool.Parse(packageInformation.AttributeValue("flushOnCompletion") ?? false.ToString());
 			package.CanBeUninstalled = bool.Parse(packageInformation.AttributeValue("canBeUninstalled") ?? true.ToString());

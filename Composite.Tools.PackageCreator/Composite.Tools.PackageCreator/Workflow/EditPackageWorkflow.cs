@@ -73,7 +73,7 @@ namespace Composite.Tools.PackageCreator.Workflow
 				e.Result = false;
 			}
 
-			if (string.IsNullOrEmpty(package.TechicalDetails))
+			if (string.IsNullOrEmpty(package.TechnicalDetails))
 			{
 				this.ShowFieldMessage("Package.TechicalDetails", PackageCreatorFacade.GetLocalization("Required"));
 				e.Result = false;
