@@ -50,10 +50,10 @@ namespace Composite.Tools.PackageServer
 									package.GroupName = packageInformation.AttributeValue("groupName");
 									package.PackageVersion = packageInformation.AttributeValue("version");
 									package.Author = packageInformation.AttributeValue("author");
-									package.ReadMoreUrl = packageInformation.AttributeValue("readMoreUrl");
+									package.ReadMoreUrl = packageInformation.AttributeValue("readMoreUrl") ?? string.Empty;
 									package.PackageId = new Guid(packageInformation.AttributeValue("id"));
 									package.Description = packageInformation.ElementValue("Description");
-									package.TechnicalDetails = packageInformation.ElementValue("TechnicalDetails");
+									package.TechnicalDetails = packageInformation.ElementValue("TechnicalDetails") ?? string.Empty;
 									package.MinCompositeVersionSupported = packageRequirements.AttributeValue("minimumCompositeVersion");
 									package.MaxCompositeVersionSupported = packageRequirements.AttributeValue("maximumCompositeVersion");
 								};
