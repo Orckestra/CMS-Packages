@@ -170,9 +170,14 @@ namespace Composite.Community.Blog
 			return url;
 		}
 
-		public static string GetBlogUrl(DateTime date, string title)
+		public static string GetBlogUrl(DateTime date, string title, string pageUrl = "")
 		{
-			return string.Format("{0}/{1}/{2}", GetCurrentPageUrl(), CustomDateFormat(date, "yyyy/MM/dd"), GetUrlFromTitle(title));
+			if (string.IsNullOrEmpty(pageUrl))
+			{
+				pageUrl = GetCurrentPageUrl();
+			}
+
+			return string.Format("{0}/{1}/{2}", pageUrl, CustomDateFormat(date, "yyyy/MM/dd"), GetUrlFromTitle(title));
 		}
 
 		public static string GetCurrentPageUrl()
@@ -181,6 +186,15 @@ namespace Composite.Community.Blog
 			{
 				var sitemapNavigator = new SitemapNavigator(dataConnection);
 				return sitemapNavigator.CurrentPageNode.Url;
+			}
+		}
+
+		public static string GetPageUrlById(Guid pageId)
+		{
+			using (var dataConnection = new DataConnection())
+			{
+				var sitemapNavigator = new SitemapNavigator(dataConnection);
+				return sitemapNavigator.GetPageNodeById(pageId).Url;
 			}
 		}
 

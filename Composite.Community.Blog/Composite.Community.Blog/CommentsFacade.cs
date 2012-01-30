@@ -93,12 +93,11 @@ namespace Composite.Community.Blog
 					DataFacade.AddNew(commentItem);
 
 					// Redirect to view newly added comment
-					string pageUrl;
-					bool found = PageStructureInfo.TryGetPageUrl(currentPageId, out pageUrl);
+					string pageUrl = BlogFacade.GetPageUrlById(currentPageId);
 
-					if (found)
+					if (!string.IsNullOrEmpty(pageUrl))
 					{
-						pageUrl = pageUrl + BlogFacade.GetBlogUrl(blog.blogDate, blog.blogTitle);
+						pageUrl = BlogFacade.GetBlogUrl(blog.blogDate, blog.blogTitle, pageUrl);
 
 						if (blog.NotifyOnNewComments)
 						{

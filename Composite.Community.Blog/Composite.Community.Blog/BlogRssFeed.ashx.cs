@@ -6,7 +6,6 @@ using System.Web;
 using System.Xml;
 using Composite.Data;
 using Composite.Data.Types;
-using Composite.Core.WebClient.Renderings.Page;
 
 namespace Composite.Community.Blog
 {
@@ -23,36 +22,30 @@ namespace Composite.Community.Blog
 				var cultureName = context.Request["cultureName"];
 				if (string.IsNullOrEmpty(cultureName))
 				{
-					cultureName = Composite.Data.DataLocalizationFacade.DefaultLocalizationCulture.Name;
+					cultureName = DataLocalizationFacade.DefaultLocalizationCulture.Name;
 				}
 				string cachedRssKey = string.Format(CacheRSSKeyTemplate, pageId, cultureName);
 				if (context.Cache[cachedRssKey] == null)
 				{
 					var cultureInfo = new CultureInfo(cultureName);
 					context.Response.ContentType = "text/xml";
-					using (new DataScope(DataScopeIdentifier.Public))
+
+					using (var conn = new DataConnection(cultureInfo))
 					{
-						using (new DataScope(cultureInfo))
+						string pageUrl = BlogFacade.GetPageUrlById(pageId);
+						if (!string.IsNullOrEmpty(pageUrl))
 						{
-							string pageUrl;
-							PageStructureInfo.TryGetPageUrl(pageId, out pageUrl);
-							if (!string.IsNullOrEmpty(pageUrl))
-							{
-								pageUrl = BlogFacade.GetFullPath(pageUrl);
-								string pageTitle = DataFacade.GetData<IPage>().Where(p => p.Id == pageId).Select(p => p.Title).Single();
-								var feed = new SyndicationFeed(pageTitle, "", new Uri(pageUrl));
-								var blogItems =
-									DataFacade.GetData<Entries>().Where(b => b.PageId == pageId).Select(
-										b => new { b.Id, b.Title, b.Date, b.Teaser, b.Tags }).OrderByDescending(b => b.Date).ToList();
+							pageUrl = BlogFacade.GetFullPath(pageUrl);
+							string pageTitle = conn.Get<IPage>().Where(p => p.Id == pageId).Select(p => p.Title).Single();
+							var feed = new SyndicationFeed(pageTitle, "", new Uri(pageUrl));
+							var blogItems =
+								conn.Get<Entries>().Where(b => b.PageId == pageId).Select(
+									b => new { b.Id, b.Title, b.Date, b.Teaser, b.Tags }).OrderByDescending(b => b.Date).ToList();
 
-								var items = (from blog in blogItems
-											 let blogUrl = pageUrl + BlogFacade.GetBlogUrl(blog.Date, blog.Title)
-											 select new SyndicationItem(blog.Title, blog.Teaser, new Uri(blogUrl), blog.Id.ToString(), blog.Date))
-									.ToList();
+							var items = (from blog in blogItems let blogUrl = BlogFacade.GetBlogUrl(blog.Date, blog.Title, pageUrl) select new SyndicationItem(blog.Title, blog.Teaser, new Uri(blogUrl), blog.Id.ToString(), blog.Date)).ToList();
 
-								feed.Items = items;
-								context.Cache[cachedRssKey] = feed;
-							}
+							feed.Items = items;
+							context.Cache[cachedRssKey] = feed;
 						}
 					}
 				}
