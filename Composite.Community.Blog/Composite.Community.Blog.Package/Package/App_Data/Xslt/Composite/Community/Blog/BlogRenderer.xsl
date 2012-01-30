@@ -69,11 +69,11 @@
 			<xsl:choose>
 				<xsl:when test="$displayMode = 'compact'">
 					<div class="BlogTitle">
-						<a href="~/Renderers/Page.aspx{be:GetBlogUrl(@Date, @Title)}?pageId={$pageId}" title="{@Title}">
+						<a href="{be:GetBlogUrl(@Date, @Title)}" title="{@Title}">
 							<xsl:value-of select="@Title" />
 						</a>
 						<xsl:if test="@DisplayComments = 'true'">
-							<a class="t-count" href="~/Renderers/Page.aspx{be:GetBlogUrl(@Date, @Title)}?pageId={$pageId}#newcomment">
+							<a class="t-count" href="{be:GetBlogUrl(@Date, @Title)}#newcomment">
 								<span>
 									<xsl:call-template name="CommentsCount" />
 								</span>
@@ -92,7 +92,7 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<div class="BlogTitle">
-						<a href="~/Renderers/Page.aspx{be:GetBlogUrl(@Date, @Title)}?pageId={$pageId}" title="{@Title}">
+						<a href="{be:GetBlogUrl(@Date, @Title)}" title="{@Title}">
 							<xsl:value-of select="@Title" />
 						</a>
 					</div>
@@ -114,7 +114,7 @@
 						</div>
 					</xsl:if>
 					<div class="BlogCommentsCount">
-						<a href="~/Renderers/Page.aspx{be:GetBlogUrl(@Date, @Title)}?pageId={$pageId}#newcomment">
+						<a href="{be:GetBlogUrl(@Date, @Title)}#newcomment">
 							<xsl:value-of select="be:GetLocalized('Blog','commentsText')" /> (<xsl:call-template name="CommentsCount" />)
 						</a> &#160;|&#160;
 						<a title="Blog Feed" href="/BlogRssFeed.ashx?bid={$pageId}&amp;cultureName={$currentCultureName}">RSS</a>
@@ -184,7 +184,7 @@
 				</span>
 			</xsl:if>
 			<xsl:if test="not($page = @CurrentPageNumber)">
-				<a href="~/Renderers/Page.aspx{be:GetCurrentPath()}?p={$page}&amp;pageId={$pageId}">
+				<a href="{be:GetCurrentPageUrl()}?p={$page}">
 					<xsl:value-of select="$page" />
 				</a>
 			</xsl:if>

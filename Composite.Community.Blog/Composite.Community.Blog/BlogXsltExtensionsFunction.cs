@@ -43,6 +43,11 @@ namespace Composite.Community.Blog
 			return BlogFacade.GetCurrentCultureName();
 		}
 
+		public string GetCurrentPageUrl()
+		{
+			return BlogFacade.GetCurrentPageUrl();
+		}
+
 		public string GetCurrentPath()
 		{
 			return BlogFacade.GetCurrentPath();

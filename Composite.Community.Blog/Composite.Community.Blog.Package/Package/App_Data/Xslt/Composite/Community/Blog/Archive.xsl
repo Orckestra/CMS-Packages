@@ -20,7 +20,7 @@
 							<xsl:for-each select="$blogArchive">
 								<xsl:sort select="@Date" order="descending" />
 								<li>
-									<a title="{be:CustomDateFormat(@Date, 'MMMM yyyy')}" href="~/Renderers/Page.aspx/{be:CustomDateFormat(@Date, 'yyyy/MM')}?pageId={/in:inputs/in:result[@name='GetPageId']}">
+									<a title="{be:CustomDateFormat(@Date, 'MMMM yyyy')}" href="{be:GetCurrentPageUrl()}/{be:CustomDateFormat(@Date, 'yyyy/MM')}">
 										<xsl:value-of select="be:CustomDateFormat(@Date, 'MMMM yyyy')" /> (<xsl:value-of select="@Count" />)
 									</a>
 								</li>

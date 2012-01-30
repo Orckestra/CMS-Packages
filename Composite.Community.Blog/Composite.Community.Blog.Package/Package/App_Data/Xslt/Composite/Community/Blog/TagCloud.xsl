@@ -15,7 +15,7 @@
 			<body>
 				<div id="TagCloud">
 					<xsl:for-each select="/in:inputs/in:result[@name='GetTagCloudXml']/Tags">
-						<a title="{@Tag}" style="font-size:{@FontSize}px;" href="~/Renderers/Page.aspx/{be:Encode(@Tag)}?pageId={/in:inputs/in:result[@name='GetPageId']}" rel="{@Rel}">
+						<a title="{@Tag}" style="font-size:{@FontSize}px;" href="{be:GetCurrentPageUrl()}/{be:Encode(@Tag)}" rel="{@Rel}">
 							<xsl:value-of select="@Tag" /> (<xsl:value-of select="@Rel" />)
 						</a>
 					</xsl:for-each>
