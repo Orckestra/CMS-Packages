@@ -150,7 +150,7 @@
 	</xsl:template>
 
 	<xsl:template mode="TagsList" match="*">
-		<a href="~/Renderers/Page.aspx/{be:Encode(string(.))}?pageId={$pageId}" title="{.}">
+		<a href="{be:GetCurrentPageUrl()}/{be:Encode(string(.))}" title="{.}">
 			<xsl:value-of select="." />
 		</a>
 	</xsl:template>
