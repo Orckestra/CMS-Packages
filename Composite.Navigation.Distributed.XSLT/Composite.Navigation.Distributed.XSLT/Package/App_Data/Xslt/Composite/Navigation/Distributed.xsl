@@ -4,6 +4,7 @@
 	<xsl:param name="parent" select="/in:inputs/in:param[@name='Parent']" />
 	<xsl:param name="childs" select="/in:inputs/in:param[@name='Childs']" />
 	<xsl:param name="expand" select="/in:inputs/in:param[@name='Expand']" />
+	<xsl:param name="level" select="/in:inputs/in:param[@name='Level']" />
 	<xsl:param name="startPage" select="/in:inputs/in:param[@name='StartPage']" />
 	<xsl:template match="/">
 		<html>
@@ -15,12 +16,12 @@
 					<xsl:choose>
 						<xsl:when test="$startPage = ''">
 							<xsl:apply-templates mode="Level" select="/in:inputs/in:result[@name='SitemapXml']">
-								<xsl:with-param name="level" select="/in:inputs/in:param[@name='Level']" />
+								<xsl:with-param name="level" select="$level" />
 							</xsl:apply-templates>
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:apply-templates mode="Level" select="/in:inputs/in:result[@name='SitemapXml']//Page[@Id=$startPage]">
-								<xsl:with-param name="level" select="/in:inputs/in:param[@name='Level']" />
+								<xsl:with-param name="level" select="$level - 1" />
 							</xsl:apply-templates>
 						</xsl:otherwise>
 					</xsl:choose>
