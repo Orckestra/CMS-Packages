@@ -1,0 +1,28 @@
+﻿.plnTitle {
+	background: silver;
+	color: Black;
+	font-weight: bold;
+	padding: 5px 10px;
+}
+.plnItemsContainer {
+	position: relative;
+}
+
+.plnScrollBox {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	border: solid 2px silver;
+}
+
+.plnContent {
+	position: absolute;
+	top: -40px;
+	padding: 10px;
+	font-size: 11px;
+	line-height: 13px;
+}
+
+.clear {
+	clear: both;
+}
