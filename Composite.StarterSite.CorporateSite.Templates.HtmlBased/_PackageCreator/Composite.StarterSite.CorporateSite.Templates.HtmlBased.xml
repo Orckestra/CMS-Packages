@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
 	<pc:InlineFunctions />
-	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Templates.HtmlBased" groupName="Composite.StarterSite.CorporateSite.Templates" version="1.0.8" author="Composite A/S" website="http://composite.net/" id="d73bef12-e605-4d98-a5d4-ea5ae24f8862" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Templates.HtmlBased" groupName="Composite.StarterSite.CorporateSite.Templates" version="1.0.9" author="Composite A/S" website="http://composite.net/" id="d73bef12-e605-4d98-a5d4-ea5ae24f8862" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>HTML based templates for Composite C1 Starter Site</Description>
 	</mi:PackageInformation>
 	<pc:PageTemplates>
