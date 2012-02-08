@@ -66,10 +66,7 @@
     <Compile Include="Package\App_Code\Composite\Search\MicrosoftSearchServer\QueryCacheValue.cs" />
     <Compile Include="Package\App_Code\Composite\Search\MicrosoftSearchServer\QueryService.cs" />
     <Compile Include="Package\App_Code\Composite\Search\MicrosoftSearchServer\RemapperHttpModule.cs" />
-    <Compile Include="Package\Frontend\Composite\Search\MicrosoftSearchServer\Page.aspx.cs">
-      <DependentUpon>Page.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    <Compile Include="Package\App_Code\Composite\Search\MicrosoftSearchServer\Utf8StringTransformationStream.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,7 +76,6 @@
     <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
-    <Content Include="Package\Frontend\Composite\Search\MicrosoftSearchServer\Page.aspx" />
     <Content Include="Package\Frontend\Composite\Search\MicrosoftSearchServer\Styles.css" />
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.Search.MicrosoftSearchServer.xml" />

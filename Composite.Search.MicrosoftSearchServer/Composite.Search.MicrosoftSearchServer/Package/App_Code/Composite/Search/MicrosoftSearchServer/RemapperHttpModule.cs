@@ -1,5 +1,12 @@
-﻿using System;
+﻿using System.Linq;
 using System.Web;
+using System.Web.UI;
+using System.Xml.Linq;
+using Composite.Core.WebClient;
+using System;
+using System.IO;
+using System.Text.RegularExpressions;
+using Composite.Core.Xml;
 
 namespace Composite.Search.MicrosoftSearchServer
 {
@@ -7,15 +14,20 @@ namespace Composite.Search.MicrosoftSearchServer
 	{
 		public void Init(HttpApplication context)
 		{
-			context.BeginRequest += new EventHandler(context_BeginRequest);
+			context.PostMapRequestHandler += new EventHandler(context_PostMapRequestHandler);
 		}
 
-		void context_BeginRequest(object sender, EventArgs e)
+		void context_PostMapRequestHandler(object sender, EventArgs e)
 		{
-			HttpApplication application = (HttpApplication)sender;
-			HttpContext context = application.Context;
-			if(IsBot(context) && context.Request.Path.Contains("Renderers/Page.aspx"))
-				context.RewritePath(context.Request.Path.Replace("Renderers/Page.aspx","/Frontend/Composite/Search/MicrosoftSearchServer/Page.aspx"));
+			var httpContext = HttpContext.Current;
+
+			if (IsBot(httpContext)
+				&& httpContext.Handler != null
+				&& httpContext.Handler is Page
+				&& !httpContext.Request.Url.PathAndQuery.StartsWith(UrlUtils.AdminRootPath))
+			{
+				httpContext.Response.Filter = new ReplacementStream(httpContext.Response.Filter);
+			}
 		}
 
 		public bool IsBot(HttpContext context)
@@ -30,12 +42,50 @@ namespace Composite.Search.MicrosoftSearchServer
 			}
 			if (context.Request.QueryString["MicrosoftSearchServer"] != null)
 				return true;
+
 			return false;
 		}
 
 		public void Dispose()
 		{
 
+		}
+
+		private class ReplacementStream : Utf8StringTransformationStream
+		{
+			public ReplacementStream(Stream innerStream) : base(innerStream) { }
+
+			public override string Process(string str)
+			{
+
+				var document = XDocument.Parse(Regex.Replace(str, @"xmlns:(\w*)=""http://www.w3.org/1999/xhtml""", ""));
+				//fix Media Urls
+				foreach (var a in document.Descendants(Namespaces.Xhtml + "a"))
+				{
+					if (a.Attribute("href") != null)
+					{
+						var href = a.Attribute("href").Value;
+						var re = new Regex(@"ShowMedia.ashx\?(.*)");
+						var match = re.Match(href);
+						if (match.Success)
+						{
+							try
+							{
+								var querystring = HttpUtility.ParseQueryString(match.Groups[1].Value);
+								a.SetAttributeValue("href", href.Replace("ShowMedia.ashx?", string.Format("ShowMedia.ashx/{0}?", Regex.Replace(MediaUrlHelper.GetFileFromQueryString(querystring).FileName, @"[^\w\d.]", ""))));
+							}
+							catch
+							{ }
+						}
+					}
+				};
+				//remove "noindex" elements
+				foreach (var el in document.Descendants().Where(d => d.Attribute("class") != null && d.Attribute("class").Value.ToLower().Contains("noindex")).Reverse())
+				{
+					el.Remove();
+				}
+				return document.ToString();
+			}
 		}
 	}
 }
