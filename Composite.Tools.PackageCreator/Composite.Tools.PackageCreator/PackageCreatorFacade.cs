@@ -227,9 +227,9 @@ namespace Composite.Tools.PackageCreator
 			package.Description = string.IsNullOrEmpty(packageInformation.ForceElement("Description").Value) ? string.Empty : packageInformation.ForceElement("Description").Value;//string.Format("Created by {0}", package.Author) : packageInformation.ForceElement("Description").Value;
 			package.TechnicalDetails = string.IsNullOrEmpty(packageInformation.ForceElement("TechnicalDetails").Value) ? string.Empty : packageInformation.ForceElement("TechnicalDetails").Value;
 
-			package.FlushOnCompletion = bool.Parse(packageInformation.AttributeValue("flushOnCompletion") ?? false.ToString());
+			package.FlushOnCompletion = bool.Parse(packageInformation.AttributeValue("flushOnCompletion") ?? true.ToString());
 			package.CanBeUninstalled = bool.Parse(packageInformation.AttributeValue("canBeUninstalled") ?? true.ToString());
-			package.SystemLockingType = packageInformation.AttributeValue("systemLocking")??"hard";
+			package.SystemLockingType = packageInformation.AttributeValue("systemLocking") ?? "hard";
 
 			package.ReloadConsoleOnCompletion = bool.Parse(packageInformation.AttributeValue("reloadConsoleOnCompletion") ?? false.ToString()); ;
 
