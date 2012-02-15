@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.IO;
+using System.Drawing.Printing;
 
 namespace LocalizationTool
 {
@@ -16,6 +17,7 @@ namespace LocalizationTool
         private string _selectedFileStem = null;
         private string _selectedStringKey = null;
         private string _progressLabelFormat = "{0}% done – {1} strings out of {2} missing translation.";
+        private PrintDocument _printDoc = new PrintDocument();
 
         #region Form Events
         public Form1()
@@ -28,8 +30,10 @@ namespace LocalizationTool
             //On startup – locate strings in the translation that has “file+key” that do not exist in the English version (i.e. unused keys). If any are found, dump them to a single “UnknownStrings.xml” file and do a message box “Strings with invalid keys was found and has been cleaned up. Strings have been moved to UnknownStrings.xml
             if (FileHandler.LocateUnknownFilesKeys())
             {
-                MessageBox.Show("Strings with invalid keys was found and has been cleaned up. Strings have been moved to " + Settings.UnknownStringsFilePath);
+                MessageBox.Show("The strings with invalid keys have been found and cleaned up. The strings have been moved to " + Settings.UnknownStringsFilePath);
             }
+
+            _printDoc.PrintPage += new PrintPageEventHandler(printDoc_PrintPage);
 
             sourceLanguageLabel.Text = Settings.SourceCulture.DisplayName;
             targetLanguageLabel.Text = Settings.TargetCulture.DisplayName;
@@ -71,7 +75,7 @@ namespace LocalizationTool
         {
             _selectedFileStem = (string)filesListBox.SelectedValue;
             PopulateStringKeysListBox();
-            FillProgressInfo();
+           
         }
 
         private void filesListBox_Click(object sender, EventArgs e)
@@ -107,6 +111,7 @@ namespace LocalizationTool
         {
             _selectedStringKey = (string)stringKeysListBox.SelectedValue;
             UpdateStringTextBoxes();
+            FillProgressInfo();
         }
 
         private void targetLanguageTextBox_TextChanged(object sender, EventArgs e)
@@ -144,6 +149,11 @@ namespace LocalizationTool
             PopulateFilesListBox();
             MoveToNextMissing();
             FillProgressInfo();
+        }
+
+        private void printForComparison_Click(object sender, EventArgs e)
+        {
+            Print();
         }
 
         #region Private Methods
@@ -245,10 +255,34 @@ namespace LocalizationTool
         {
             // There is an info area at the top, “Progress” with the text “NN% done – NNN1 strings out of NNN2 missing translation.” where NNN1 is number of strings in translation, NNN2 is number of strings in English.
             int totalCountOfMissingStrings = FileHandler.TotalCountOfMissingStrings();
-            int percentDone = 100 - (totalCountOfMissingStrings * 100) / FileHandler.TotalCountOfSourceTranstations;
-            progressValue.Text = String.Format(_progressLabelFormat, percentDone, FileHandler.TotalCountOfSourceTranstations - FileHandler.TotalCountOfMissingStrings(), FileHandler.TotalCountOfSourceTranstations);
+            double percentDone = 100.0 - (totalCountOfMissingStrings * 100.0) / FileHandler.TotalCountOfSourceTranstations;
+            progressValue.Text = String.Format(_progressLabelFormat, String.Format("{0:0.0}", percentDone), FileHandler.TotalCountOfSourceTranstations - FileHandler.TotalCountOfMissingStrings(), FileHandler.TotalCountOfSourceTranstations);
+        }
+
+        private void Print()
+        {
+            PrintPreviewDialog dlgPrintPreview = new PrintPreviewDialog();
+            dlgPrintPreview.Document = _printDoc;
+            dlgPrintPreview.ShowDialog();
+        }
+
+        void printDoc_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            var selectedFile = filesListBox.SelectedItem.ToString();
+            var paddingYStep = 20;
+            e.Graphics.DrawString(selectedFile, new Font("Arial", 14), Brushes.Black, 100, paddingYStep);
+            var sourceDocElements = FileHandler.SourceFilesBySterm[selectedFile].Root.Elements("string");
+            foreach (var el in sourceDocElements)
+            {
+                paddingYStep += 20;
+                e.Graphics.DrawString(el.Attribute("key").Value, new Font("Arial", 12), Brushes.Black, 100, paddingYStep);
+
+            }
+            e.Graphics.PageUnit = GraphicsUnit.Inch;
         }
 
         #endregion
+
+
     }
 }

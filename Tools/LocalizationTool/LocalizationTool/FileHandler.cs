@@ -183,8 +183,13 @@ namespace LocalizationTool
             if (File.Exists(filePath) == true)
             {
                 var targetDoc = XDocument.Load(filePath);
-                if (targetDoc.Root.Elements().Count() == copyOfSource.Root.Elements().Count())
+                var tKeys = targetDoc.Root.Elements().Attributes("key").Select(e => e.Value).ToList();
+                var sKeys = copyOfSource.Root.Elements().Attributes("key").Select(e => e.Value).ToList();
+
+                if (sKeys.Where(f => tKeys.Contains(f) == false).FirstOrDefault() == null)
+                {
                     return targetDoc;
+                }
                 else
                 {
                     var targetValues = targetDoc.Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
