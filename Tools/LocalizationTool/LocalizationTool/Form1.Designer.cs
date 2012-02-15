@@ -42,7 +42,6 @@
             this.enterSavesAndMovesCheckBox = new System.Windows.Forms.CheckBox();
             this.cbFromGoogleTranslate = new System.Windows.Forms.CheckBox();
             this.cbRegisterInCompositeConfig = new System.Windows.Forms.CheckBox();
-            this.refreshProgressInfo = new System.Windows.Forms.Button();
             this.progressLabel = new System.Windows.Forms.Label();
             this.progressValue = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
@@ -57,7 +56,6 @@
             this.filesListBox.TabIndex = 0;
             this.filesListBox.Click += new System.EventHandler(this.filesListBox_Click);
             this.filesListBox.SelectedIndexChanged += new System.EventHandler(this.filesListBox_SelectedIndexChanged);
-            this.filesListBox.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.filesListBox_Format);
             // 
             // label1
             // 
@@ -190,16 +188,6 @@
             this.cbRegisterInCompositeConfig.Text = "Automatically register updates in Composite.config";
             this.cbRegisterInCompositeConfig.UseVisualStyleBackColor = true;
             // 
-            // refreshProgressInfo
-            // 
-            this.refreshProgressInfo.Location = new System.Drawing.Point(508, 3);
-            this.refreshProgressInfo.Name = "refreshProgressInfo";
-            this.refreshProgressInfo.Size = new System.Drawing.Size(54, 22);
-            this.refreshProgressInfo.TabIndex = 16;
-            this.refreshProgressInfo.Text = "Refresh";
-            this.refreshProgressInfo.UseVisualStyleBackColor = true;
-            this.refreshProgressInfo.Click += new System.EventHandler(this.refreshProgressInfo_Click);
-            // 
             // progressLabel
             // 
             this.progressLabel.AutoSize = true;
@@ -224,7 +212,6 @@
             this.ClientSize = new System.Drawing.Size(575, 527);
             this.Controls.Add(this.progressValue);
             this.Controls.Add(this.progressLabel);
-            this.Controls.Add(this.refreshProgressInfo);
             this.Controls.Add(this.cbRegisterInCompositeConfig);
             this.Controls.Add(this.cbFromGoogleTranslate);
             this.Controls.Add(this.enterSavesAndMovesCheckBox);
@@ -263,8 +250,7 @@
         private System.Windows.Forms.Button findFirstMissing;
 		private System.Windows.Forms.CheckBox enterSavesAndMovesCheckBox;
 		private System.Windows.Forms.CheckBox cbFromGoogleTranslate;
-		private System.Windows.Forms.CheckBox cbRegisterInCompositeConfig;
-        private System.Windows.Forms.Button refreshProgressInfo;
+        private System.Windows.Forms.CheckBox cbRegisterInCompositeConfig;
         private System.Windows.Forms.Label progressLabel;
         private System.Windows.Forms.Label progressValue;
     }

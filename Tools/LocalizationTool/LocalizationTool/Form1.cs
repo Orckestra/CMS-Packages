@@ -18,6 +18,7 @@ namespace LocalizationTool
         private string _selectedStringKey = null;
         private string _progressLabelFormat = "{0}% done – {1} strings out of {2} missing translation.";
         private PrintDocument _printDoc = new PrintDocument();
+        private BindingList<FilesListItem> _filesListSource;
 
         #region Form Events
         public Form1()
@@ -73,9 +74,9 @@ namespace LocalizationTool
 
         private void filesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _selectedFileStem = (string)filesListBox.SelectedValue;
+            _selectedFileStem = ((FilesListItem)filesListBox.SelectedValue).Name;
             PopulateStringKeysListBox();
-           
+
         }
 
         private void filesListBox_Click(object sender, EventArgs e)
@@ -111,7 +112,7 @@ namespace LocalizationTool
         {
             _selectedStringKey = (string)stringKeysListBox.SelectedValue;
             UpdateStringTextBoxes();
-            FillProgressInfo();
+
         }
 
         private void targetLanguageTextBox_TextChanged(object sender, EventArgs e)
@@ -126,34 +127,6 @@ namespace LocalizationTool
         {
             MoveToNextMissing();
             targetLanguageTextBox.Focus();
-        }
-
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    SaveString();
-        //    this.Close();
-        //}
-
-        private void filesListBox_Format(object sender, ListControlConvertEventArgs e)
-        {
-            string value = e.ListItem as string;
-            int count = FileHandler.CountOfMissingStrings(value);
-            if (count != 0)
-            {
-                e.Value = String.Format("{0} ({1} strings missing)", value, count);
-            }
-        }
-
-        private void refreshProgressInfo_Click(object sender, EventArgs e)
-        {
-            PopulateFilesListBox();
-            MoveToNextMissing();
-            FillProgressInfo();
-        }
-
-        private void printForComparison_Click(object sender, EventArgs e)
-        {
-            Print();
         }
 
         #region Private Methods
@@ -176,7 +149,7 @@ namespace LocalizationTool
 
                     if (nextKey != null)
                     {
-                        filesListBox.SelectedItem = fileStem;
+                        filesListBox.SelectedItem = _filesListSource.Where(s => s.Name == fileStem).FirstOrDefault();
                         stringKeysListBox.SelectedItem = nextKey;
                         missingStringFound = true;
                         break;
@@ -223,6 +196,8 @@ namespace LocalizationTool
             {
                 FileHandler.RegisterInCompositeConfig(_selectedFileStem);
             }
+            FillProgressInfo();
+            _filesListSource.ResetBindings();
         }
 
         private void UpdateStringTextBoxes()
@@ -238,10 +213,16 @@ namespace LocalizationTool
 
         private void PopulateFilesListBox()
         {
-            List<string> filePaths = FileHandler.SourceFileStems.ToList();
-            filesListBox.DataSource = filePaths;
+            _filesListSource = new BindingList<FilesListItem>();
+            foreach (var name in FileHandler.SourceFileStems)
+            {
+                _filesListSource.Add(new FilesListItem(name));
+            }
 
-            _selectedFileStem = (string)filesListBox.SelectedValue;
+            filesListBox.DisplayMember = "Text";
+            filesListBox.DataSource = _filesListSource;
+
+            _selectedFileStem = ((FilesListItem)filesListBox.SelectedValue).Name;
         }
 
         private void PopulateStringKeysListBox()
@@ -256,7 +237,7 @@ namespace LocalizationTool
             // There is an info area at the top, “Progress” with the text “NN% done – NNN1 strings out of NNN2 missing translation.” where NNN1 is number of strings in translation, NNN2 is number of strings in English.
             int totalCountOfMissingStrings = FileHandler.TotalCountOfMissingStrings();
             double percentDone = 100.0 - (totalCountOfMissingStrings * 100.0) / FileHandler.TotalCountOfSourceTranstations;
-            progressValue.Text = String.Format(_progressLabelFormat, String.Format("{0:0.0}", percentDone),  FileHandler.TotalCountOfMissingStrings(), FileHandler.TotalCountOfSourceTranstations);
+            progressValue.Text = String.Format(_progressLabelFormat, String.Format("{0:0.0}", percentDone), FileHandler.TotalCountOfMissingStrings(), FileHandler.TotalCountOfSourceTranstations);
         }
 
         private void Print()
@@ -284,5 +265,31 @@ namespace LocalizationTool
         #endregion
 
 
+
+    }
+
+    public class FilesListItem
+    {
+        private string _text;
+        public FilesListItem() { }
+        public FilesListItem(string name)
+        {
+            Name = name;
+        }
+        public string Name { get; set; }
+        public string Text
+        {
+            get
+            {
+                int count = FileHandler.CountOfMissingStrings(Name);
+                _text = Name;
+                if (count != 0)
+                {
+                    _text = String.Format("{0} ({1} strings missing)", Name, count);
+                }
+                return _text;
+            }
+            set { _text = value; }
+        }
     }
 }
