@@ -256,7 +256,7 @@ namespace LocalizationTool
             // There is an info area at the top, “Progress” with the text “NN% done – NNN1 strings out of NNN2 missing translation.” where NNN1 is number of strings in translation, NNN2 is number of strings in English.
             int totalCountOfMissingStrings = FileHandler.TotalCountOfMissingStrings();
             double percentDone = 100.0 - (totalCountOfMissingStrings * 100.0) / FileHandler.TotalCountOfSourceTranstations;
-            progressValue.Text = String.Format(_progressLabelFormat, String.Format("{0:0.0}", percentDone), FileHandler.TotalCountOfSourceTranstations - FileHandler.TotalCountOfMissingStrings(), FileHandler.TotalCountOfSourceTranstations);
+            progressValue.Text = String.Format(_progressLabelFormat, String.Format("{0:0.0}", percentDone),  FileHandler.TotalCountOfMissingStrings(), FileHandler.TotalCountOfSourceTranstations);
         }
 
         private void Print()
