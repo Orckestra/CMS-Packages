@@ -16,7 +16,7 @@ namespace LocalizationTool
     {
         private string _selectedFileStem = null;
         private string _selectedStringKey = null;
-        private string _progressLabelFormat = "{0}% done – {1} strings out of {2} missing translation.";
+		private string _progressLabelFormat = "{0}% done – {1} out of {2} strings are missing translation.";
         private PrintDocument _printDoc = new PrintDocument();
         private BindingList<FilesListItem> _filesListSource;
 

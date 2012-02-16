@@ -186,7 +186,7 @@ namespace LocalizationTool
                 var tKeys = targetDoc.Root.Elements().Attributes("key").Select(e => e.Value).ToList();
                 var sKeys = copyOfSource.Root.Elements().Attributes("key").Select(e => e.Value).ToList();
 
-                if (sKeys.Where(f => tKeys.Contains(f) == false).FirstOrDefault() == null)
+				if (sKeys.Where(f => tKeys.Contains(f) == false).FirstOrDefault() == null && (targetDoc.Root.Elements().Count() == copyOfSource.Root.Elements().Count()))
                 {
                     return targetDoc;
                 }
