@@ -236,4 +236,31 @@
 		</xsl:copy>
 	</xsl:template>
 
+  <xsl:template match="configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures">
+    <xsl:copy>
+      <xsl:if test="count(add[@cultureName = 'nl-NL']) = 0">
+        <add cultureName="nl-NL" xmlFile="~/App_Data/Composite/LanguagePacks/nl-NL/Composite.C1Console.Trees.nl-NL.xml" monitorFileChanges="true" />
+      </xsl:if>
+      <xsl:apply-templates select="@* | node()" />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.PageTypeElementProvider']/Cultures">
+    <xsl:copy>
+      <xsl:if test="count(add[@cultureName = 'nl-NL']) = 0">
+        <add cultureName="nl-NL" xmlFile="~/App_Data/Composite/LanguagePacks/nl-NL/Composite.Plugins.PageTypeElementProvider.nl-NL.xml" monitorFileChanges="true" />
+      </xsl:if>
+      <xsl:apply-templates select="@* | node()" />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Web.VisualEditor']/Cultures">
+    <xsl:copy>
+      <xsl:if test="count(add[@cultureName = 'nl-NL']) = 0">
+        <add cultureName="nl-NL" xmlFile="~/App_Data/Composite/LanguagePacks/nl-NL/Composite.Web.VisualEditor.nl-NL.xml" monitorFileChanges="true" />
+      </xsl:if>
+      <xsl:apply-templates select="@* | node()" />
+    </xsl:copy>
+  </xsl:template>
+  
 </xsl:stylesheet>

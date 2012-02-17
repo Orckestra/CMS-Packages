@@ -12,13 +12,12 @@
   <string key="AddSystemLocaleWorkflow.CultureSelector.Label" value="Talen" />
   <string key="AddSystemLocaleWorkflow.CultureSelector.Help" value="De lijst van beschikbare niet geinstalleerde talen. Taal packages mogen worden geinstalleerd voor additionele keuzes" />
   <string key="AddSystemLocaleWorkflow.UrlMappingName.Label" value="Url mapping naam" />
-  <string key="RemoveSystemLocaleWorkflow.Confirm.Description" value="Taal verwijderen?" />
-  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Label" value="Gebruikers toegang" />
-  <string key="EditSystemLocaleWorkflow.EditElementActionLabel" value="Wijzig taal" />
   <string key="AddSystemLocaleWorkflow.UrlMappingName.Help" value="Deze string zal worden toegevoegd in de URL van pagina's in een aangegeven taal. De website (standaard taal) houdt deze toegang leeg" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Label" value="Gebruikers toegang" />
   <string key="AddSystemLocaleWorkflow.AllUsersAccess.ItemLabel" value="Geef alle gebruikers toegang" />
   <string key="AddSystemLocaleWorkflow.AllUsersAccess.Help" value="Na controle is de taal beschikbaar gemaakt aan alle geregistreerde gebruikers om te bekijken en te wijzigen" />
   <string key="AddSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="URL Mapping naam is al in gebruik" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionLabel" value="Wijzig taal" />
   <string key="EditSystemLocaleWorkflow.EditElementActionToolTip" value="Wijzig taal" />
   <string key="EditSystemLocaleWorkflow.Dialog.Label" value="Wijzig taal" />
   <string key="EditSystemLocaleWorkflow.FieldGroup.Label" value="Taal eigenschappen" />
@@ -32,4 +31,5 @@
   <string key="RemoveSystemLocaleWorkflow.Dialog.Label" value="Verwijder taal" />
   <string key="RemoveSystemLocaleWorkflow.Abort.Title" value="Kan de laatste taal niet verwijderen" />
   <string key="RemoveSystemLocaleWorkflow.Abort.Description" value="Je gaat een taal verwijderen dat de enige taal is om te gebruiken voor één of meer gebruikers. Voeg een andere taal toe voor deze gebruikers en probeer opnieuw" />
+  <string key="RemoveSystemLocaleWorkflow.Confirm.Description" value="Taal verwijderen?" />
 </strings>

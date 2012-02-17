@@ -31,6 +31,8 @@
   <string key="EditPage.LabelMenuTitle" value="Menu titel" />
   <string key="EditPage.HelpMenuTitle" value="De vermelding in dit veld kan worden gebruikt in de navigatie op de website" />
   <string key="EditPage.LabelUrlTitle" value="URL titel" />
+  <string key="EditPage.UrlTitleFormattedTitle" value="URL titel werd herschreven" />
+  <string key="EditPage.UrlTitleFormattedMessage" value="Volgens de huidige URL vervangings regels, is de URL titel veranderd in '{0}'" />
   <string key="EditPage.HelpUrlTitle" value="De tekst in dit veld wordt weergegeven in de adresbalk van het browservenster als onderdeel van de URL. Het veld wordt gebruikt door zoekmachines" />
   <string key="EditPage.LabelFriendlyUrl" value="Gebruikers vriendelijke URL" />
   <string key="EditPage.HelpFriendlyUrl" value="De tekst in dit veld is een verkorte versie van de echte pagina URL. De server zal de browser naar de echte URL doorsturen indien de verkorte wordt gebruikt door de browser. Let op dat sommige servers moeten worden geconfigureerd om deze functie te ondersteunen" />
@@ -42,10 +44,15 @@
   <string key="EditPage.HelpUnpublishDate" value="Geef aan op welke datum en tijdstip de pagina moet worden verwijderd. Op het opgegeven tijdstip zal de pagina automatisch worden verwijderd van de site" />
   <string key="EditPage.LabelContent" value="Content" />
   <string key="EditPage.LabelPreview" value="Preview (Voorbeschouwing)" />
+  <string key="EditPage.PageTypeSelectorLabel" value="Pagina type" />
+  <string key="EditPage.MaxLength" value="maximum aantal van {0} karakters" />
   <string key="DeletePage.LabelFieldGroup" value="Verwijder pagina?" />
+  <string key="DeletePageStep1.Title" value="Verwijder pagina en alle subpagina's" />
+  <string key="DeletePageStep1.Description" value="Ook alle subpagina's worden verwijderd. Doorgaan?" />
   <string key="DeletePageStep2.Text" value="Verwijder pagina '{0}'?" />
   <string key="UrlTitleNotUniqueError" value="Een andere pagina gebruikt de gespeficeerde URL Titel. URL titels moeten uniek zijn tussen pagina's in dezelfde map / met dezelfde ouder" />
   <string key="UrlTitleNotValidError" value="De opgegeven URL titel bevat ongeldige tekens. Aangezien dit veld wordt gebruikt voor het samenstellen van het web-adres van de pagina zijn bepaalde speciale tekens (zoals de spatie, vraagteken, en punten en streepjes) niet toegestaan. U kunt wel letters, cijfers en het koppelteken gebruiken" />
+  <string key="UrlTitleTooLong" value="De opgegeven URL titel is te lang. Maak deze korter en probeer het opnieuw" />
   <string key="FriendlyUrlNotUniqueError" value="Een ander pagina gebruikt de gespeficeerde gebruikersvriendelijke URL Titel. URL titels moeten uniek zijn" />
   <string key="TitleMissingError" value="Titel mag niet leeg zijn" />
   <string key="PageSaveValidationFailedTitle" value="Pagina niet opgeslagen" />
@@ -77,6 +84,13 @@
   <string key="PageElementProvider.MissingTemplateMessage" value="Om een pagina te maken is een layout template vereist, maar er zijn nog geen layout templates gemaakt. Je maakt een template in het Layout onderdeel" />
   <string key="PageElementProvider.MissingActiveLanguageTitle" value="Een taal is vereist" />
   <string key="PageElementProvider.MissingActiveLanguageMessage" value="Om een pagina te maken is een taal vereist, maar er zijn nog geen talen toegevoegd. Je kan er één toevoegen in het systeem onderdeel" />
+  <string key="PageElementProvider.NoPageTypesAvailableTitle" value="Geen pagina type beschikbaar" />
+  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="Je zou ten minste één pagina type aan moeten maken" />
+  <string key="PageElementProvider.MissingPageTypeTitle" value="Pagina type nodig" />
+  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="Om een ​​homepage te maken is er een pagina type zonder de &quot;alleen subpagina's&quot; beperking nodig, maar deze is nog niet toegevoegd. Je kunt deze aanmaken in het Layout onderdeel." />
+  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="Om een ​​subpagina te maken is er een pagina type zonder de &quot;alleen homepage's&quot; beperking nodig, maar deze is nog niet toegevoegd. Je kunt deze aanmaken in het Lay-out onderdeel." />
+  <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Niet in staat om een ​​pagina toe te voegen!" />
+  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="De regels die de beschikbaarheid definiëren voor pagina typen verbieden het toevoegen van een pagina hier." />
   <string key="ManageHostNames.Add.DialogLabel" value="Beheer host naam" />
   <string key="ManageHostNames.Add.HeadingTitle" value="Koppel een host naam aan een pagina" />
   <string key="ManageHostNames.Add.HeadingDescription" value="U kunt een host naam (of een domein naam) voor een pagina specificeren in het onderstaande veld. Houd er rekening mee dat de DNS-instellingen voor de opgegeven host naam ook moet worden geconfigureerd, dat gebeurt buiten dit systeem." />
@@ -96,18 +110,4 @@
   <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="Er wordt verwezen naar deze pagina door een ander type dat recursief verwijderen niet ondersteund. Deze operatie wordt stopgezet." />
   <string key="DeletePageWorkflow.HasCompositionsTitle" value="Kan pagina niet verwijderen" />
   <string key="DeletePageWorkflow.HasCompositionsMessage" value="Deze pagina heeft een of meer pagina mappen of metadata velden gedefinieerd. Verwijder deze eerst." />
-  <string key="EditPage.UrlTitleFormattedTitle" value="URL titel werd herschreven" />
-  <string key="EditPage.UrlTitleFormattedMessage" value="Volgens de huidige URL vervangings regels, is de URL titel veranderd in '{0}'" />
-  <string key="EditPage.PageTypeSelectorLabel" value="Pagina type" />
-  <string key="EditPage.MaxLength" value="maximum aantal van {0} karakters" />
-  <string key="DeletePageStep1.Title" value="Verwijder pagina en alle subpagina's" />
-  <string key="DeletePageStep1.Description" value="Ook alle subpagina's worden verwijderd. Doorgaan?" />
-  <string key="UrlTitleTooLong" value="De opgegeven URL titel is te lang. Maak deze korter en probeer het opnieuw" />
-  <string key="PageElementProvider.NoPageTypesAvailableTitle" value="Geen pagina type beschikbaar" />
-  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="Je zou ten minste één pagina type aan moeten maken" />
-  <string key="PageElementProvider.MissingPageTypeTitle" value="Pagina type nodig" />
-  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="Om een ​​homepage te maken is er een pagina type zonder de &quot;alleen subpagina's&quot; beperking nodig, maar deze is nog niet toegevoegd. Je kunt deze aanmaken in het Layout onderdeel." />
-  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="Om een ​​subpagina te maken is er een pagina type zonder de &quot;alleen homepage's&quot; beperking nodig, maar deze is nog niet toegevoegd. Je kunt deze aanmaken in het Lay-out onderdeel." />
-  <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Niet in staat om een ​​pagina toe te voegen!" />
-  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="De regels die de beschikbaarheid definiëren voor pagina typen verbieden het toevoegen van een pagina hier." />
 </strings>

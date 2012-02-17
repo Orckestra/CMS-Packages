@@ -1,8 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
 <strings>
+  
   <string key="AddNewButtonLabel" value="Nieuw toevoegen" />
   <string key="DeleteButtonLabel" value="Verwijder" />
+
   <string key="TreeRootNodeLabel" value="Lijst van invoer parameters" />
+
   <string key="ParameterNamingGroupLabel" value="Parameter naam en help" />
   <string key="Name" value="Parameter naam" />
   <string key="NameHelp" value="De naam van de parameter. De naam wordt gebruikt door het systeem voor het identificeren van deze parameter. Namen moet uniek zijn en mogen geen spaties en andere speciale tekens. Met namen als' Titel ',' Begindatum ',' LargeImage 'etc." />
@@ -10,6 +14,7 @@
   <string key="LabelHelp" value="De tekst die de gebruikers te zien krijgen bij het opgeven van een waarde voor deze parameter. Dit is de 'menselijke naam' voor de parameter." />
   <string key="Help" value="Help" />
   <string key="HelpHelp" value="Schrijf korte instructie voor gebruiker wat te doen bij de parameter" />
+
   <string key="ParameterTypeValueGroupLabel" value="Parameter type and waarde" />
   <string key="Type" value="Parameter type" />
   <string key="TypeHelp" value="Het type van deze parameter." />
@@ -18,11 +23,13 @@
   <string key="DefaultValueSpecify" value="Specificeer een standaard waarde" />
   <string key="DefaultValueEdit" value="Bewerk standaard waarde" />
   <string key="DefaultValueDialogLabel" value="Parameter standaard waarde configuratie" />
+  
   <string key="TestValue" value="Test waarde" />
   <string key="TestValueHelp" value="Dankzij preview  kun je testen met verschillende input-parameter waarden met behulp van dit gebied. Als deze leeg is, de standaard waarde zal worden gebruikt voor previews." />
   <string key="TestValueSpecify" value="Specificeer een test waarde" />
   <string key="TestValueEdit" value="Bewerkt test waarde" />
   <string key="TestValueDialogLabel" value="Parameter standaard waarde configuratie" />
+
   <string key="ParameterPresentationGroupLabel" value="Parameter presentatie" />
   <string key="Widget" value="Widget" />
   <string key="WidgetHelp" value="Je kan selecteren welk type van een invoer widget je wil gebruiken voor het specificeren van een parameter waarde. Widgets zijn alleen beschikbaar voor eenvoudige types" />
@@ -31,11 +38,19 @@
   <string key="Position" value="Positie" />
   <string key="PositionLast" value="Laatste" />
   <string key="PositionHelp" value="Parameter plaats. deze controleert de volgorde van parameters" />
+
   <string key="SpecifyWidgetTip" value="Herinner een widget te specificeren" />
-  <string key="NoWidgetsTip" value="Geen widgets zijn beschikbaar voor gespecificeerde type. Gebruikers moeten een functie call gebruiken om de parameter te specificeren" />
+
   <string key="FieldNameSyntaxInvalid" value="Gespecificeerde naam is niet geldig" />
   <string key="CannotSave" value="Kan niet bewaren... andere parameter heeft dezelfde naam. Verander de naam aub." />
+
   <string key="SpaceInNameError" value="Ongeldige naam. Parameter kan geen lege ruimtes bevatten. Je kan een naam schrijven in het labelveld hieronder" />
   <string key="NameEmptyError" value="Parameters namen kunnen niet leeg zijn. Specificeer een naam aub" />
   <string key="NameAlreadyInUseError" value="Een ander parameter gebruikt deze naam. Parameter namen moet uniek zijn" />
+
+
+
 </strings>
+
+
+

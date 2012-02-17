@@ -85,4 +85,14 @@
 
 	<xsl:template match="configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Web.SEOAssistant']/Cultures/add[@cultureName = 'nl-NL']">
 	</xsl:template>
+
+  <xsl:template match="configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures/add[@cultureName = 'nl-NL']">
+  </xsl:template>
+
+  <xsl:template match="configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.PageTypeElementProvider']/Cultures/add[@cultureName = 'nl-NL']">
+  </xsl:template>
+
+  <xsl:template match="configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Web.VisualEditor']/Cultures/add[@cultureName = 'nl-NL']">
+  </xsl:template>
+  
 </xsl:stylesheet>

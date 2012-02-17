@@ -10,6 +10,11 @@
   <string key="PageMetaDataFolderToolTip" value="Pagina meta type" />
   <string key="Add" value="Voeg datatype toe" />
   <string key="AddToolTip" value="Voeg nieuwe globale datatype toe" />
+  <string key="ViewUnpublishedItems" value="Lijst ongepubliceerde data" />
+  <string key="ViewUnpublishedItemsToolTip" value="Krijg een overzich van data dan nog niet is gepubliceerd" />
+  <string key="ViewUnpublishedItems-document-title" value="Ongepubliceerde data" />
+  <string key="ViewUnpublishedItems-document-description" value="Onderstaande lijst toont de data  items die op moment worden gewijzigd of klaar staan om te worden goedgekeurd/gepubliceerd" />
+  <string key="ViewUnpublishedItems-document-empty-label" value="Geen niet-gepubliceerde gegevens." />
   <string key="AddDataFolder" value="Voeg datatype toe" />
   <string key="AddDataFolderToolTip" value="Voeg nieuwe datamap toe" />
   <string key="AddMetaDataLabel" value="Toevoegen" />
@@ -28,62 +33,26 @@
   <string key="DeleteMetaDataTypeToolTip" value="Verwijder geselecteerde metadata" />
   <string key="EditFormMarkup" value="Bewerk vorm markup" />
   <string key="EditFormMarkupToolTip" value="Wijzigen van de lay-out van data met behulp van vorm markup" />
+  <string key="EnableLocalization" value="Localisatie inschakelen" />
+  <string key="EnableLocalizationToolTip" value="Localisatie inschakelen" />
+  <string key="DisableLocalization" value="Localisatie uitschakelen" />
+  <string key="DisableLocalizationToolTip" value="Localisatie uitschakelen" />
+  <string key="DisabledData" value="Nog niet goedgekeurd of gepubliceerd" />
+  <string key="UndefinedLabelTemplate" value="(onbepaald[{0}])" />
+  <string key="UndefinedDataLavelTemplate" value="(onbepaald)" />
+  <string key="ShowInContent" value="Toon in een content gedeelte" />
+  <string key="ShowInContentToolTip" value="Toon in een content gedeelte" />
   <string key="AddData" value="Voeg data toe" />
   <string key="AddDataToolTip" value="Voeg nieuwe data toe" />
   <string key="EditData" value="Bewerk data" />
   <string key="EditDataToolTip" value="Bewerk data" />
   <string key="DeleteData" value="Verwijder" />
   <string key="DeleteDataToolTip" value="Verwijder data" />
+  <string key="LocalizeData" value="Lokaliseer" />
+  <string key="LocalizeDataToolTip" value="Lokaliseer data" />
   <string key="LabelPublicationState" value="Publicatie status" />
   <string key="DraftTransition" value="Ontwerp" />
   <string key="AwaitingApprovalTransition" value="Wacht op goedkeuring" />
-  <string key="AddNewInterfaceTypeStep1.ErrorTitle" value="Fout" />
-  <string key="EditInterfaceTypeStep1.ErrorTitle" value="Fout" />
-  <string key="DeleteGeneratedDataStep1.LabelFieldGroup" value="Verwijder data?" />
-  <string key="DeleteGeneratedDataStep1.Text" value="Verwijder data?" />
-  <string key="DeleteGeneratedInterfaceStep1.LabelFieldGroup" value="Verwijder datatype" />
-  <string key="DeleteGeneratedInterfaceStep1.Text" value="Verwijder datatype" />
-  <string key="CascadeDeleteErrorTitle" value="Cascade verwijderingsfout" />
-  <string key="CascadeDeleteErrorMessage" value="Er wordt door een ander datatype verwezen naar dit datatype welke geen cascade verwijdering toestaat. Deze operatie wordt stopgezet." />
-  <string key="AddNewAggregationTypeWorkflow.ErrorTitle" value="Fout" />
-  <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="Verwijder datatype" />
-  <string key="DeleteAggregationTypeWorkflow.Text" value="Verwijder datatype" />
-  <string key="AddNewCompositionTypeWorkflow.ErrorTitle" value="Fout" />
-  <string key="EditCompositionTypeWorkflow.ErrorTitle" value="Fout" />
-  <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="Verwijder datatype" />
-  <string key="DeleteCompositionTypeWorkflow.Text" value="Verwijder datatype" />
-  <string key="ToXmlLabel" value="Naar Xml" />
-  <string key="ToXmlToolTip" value="Naar Xml" />
-  <string key="ViewUnpublishedItems" value="Lijst ongepubliceerde data" />
-  <string key="ViewUnpublishedItemsToolTip" value="Krijg een overzich van data dan nog niet is gepubliceerd" />
-  <string key="ViewUnpublishedItems-document-title" value="Ongepubliceerde data" />
-  <string key="ViewUnpublishedItems-document-description" value="Onderstaande lijst toont de data  items die op moment worden gewijzigd of klaar staan om te worden goedgekeurd/gepubliceerd" />
-  <string key="ViewUnpublishedItems-document-empty-label" value="Geen niet-gepubliceerde gegevens." />
-  <string key="EnableLocalization" value="Localisatie inschakelen" />
-  <string key="EnableLocalizationToolTip" value="Localisatie inschakelen" />
-  <string key="DisableLocalization" value="Localisatie uitschakelen" />
-  <string key="DisableLocalizationToolTip" value="Localisatie uitschakelen" />
-  <string key="DisabledData" value="Nog niet goedgekeurd of gepubliceerd" />
-  <string key="LocalizeData" value="Lokaliseer" />
-  <string key="LocalizeDataToolTip" value="Lokaliseer data" />
-  <string key="EnableTypeLocalizationWorkflow.Dialog.Label" value="Localisatie inschakelen" />
-  <string key="EnableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Localisatie inschakelen" />
-  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Lokales" />
-  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Lokales" />
-  <string key="EnableTypeLocalizationWorkflow.Step2.Title" value="Bevestiging" />
-  <string key="EnableTypeLocalizationWorkflow.Step2.Description" value="Alle open documenten zullen worden gesloten en de applicatie zal worden herstart. Klik eind om door te gaan" />
-  <string key="EnableTypeLocalizationWorkflow.Abort.Title" value="Mist actieve lokales" />
-  <string key="EnableTypeLocalizationWorkflow.Abort.Description" value="Er zijn geen toegevoegde actieve lokales. Voeg op zijn minst  één toe voordat de localisatie op de data wordt uitgevoerd" />
-  <string key="DisableTypeLocalizationWorkflow.Dialog.Label" value="Localisatie uitschakelen" />
-  <string key="DisableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Localisatie uitschakelen" />
-  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Lokales" />
-  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Lokales" />
-  <string key="DisableTypeLocalizationWorkflow.Step2.Title" value="Bevestiging" />
-  <string key="DisableTypeLocalizationWorkflow.Step2.Description" value="Alle open documenten zullen worden gesloten en de applicatie zal worden herstart. Klik einde om door te gaan" />
-  <string key="UndefinedLabelTemplate" value="(onbepaald[{0}])" />
-  <string key="UndefinedDataLavelTemplate" value="(onbepaald)" />
-  <string key="ShowInContent" value="Toon in een content gedeelte" />
-  <string key="ShowInContentToolTip" value="Toon in een content gedeelte" />
   <string key="AddNewInterfaceTypeStep1.DocumentTitle" value="Nieuw datatype" />
   <string key="AddNewCompositionTypeWorkflow.DocumentTitle" value="Nieuw pagina metatype" />
   <string key="AddNewAggregationTypeWorkflow.DocumentTitle" value="Nieuw pagina datafolder" />
@@ -101,12 +70,43 @@
   <string key="EditorCommon.ServicesLabel" value="Diensten" />
   <string key="EditorCommon.HasPublishing" value="Heeft publiceer" />
   <string key="EditorCommon.HasLocalization" value="Is te localiseren data" />
+  <string key="DeleteGeneratedDataStep1.LabelFieldGroup" value="Verwijder data?" />
+  <string key="DeleteGeneratedDataStep1.Text" value="Verwijder data?" />
   <string key="DeleteDataConfirmationText" value="Er wordt verwezen naar data welke ook  verwijderd zal worden, wilt u door gaan?" />
+  <string key="DeleteGeneratedInterfaceStep1.LabelFieldGroup" value="Verwijder datatype" />
+  <string key="DeleteGeneratedInterfaceStep1.Text" value="Verwijder datatype" />
+  <string key="CascadeDeleteErrorTitle" value="Cascade verwijderingsfout" />
+  <string key="CascadeDeleteErrorMessage" value="Er wordt door een ander datatype verwezen naar dit datatype welke geen cascade verwijdering toestaat. Deze operatie wordt stopgezet." />
+  <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="Verwijder datatype" />
+  <string key="DeleteAggregationTypeWorkflow.Text" value="Verwijder datatype" />
+  <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="Verwijder datatype" />
+  <string key="DeleteCompositionTypeWorkflow.Text" value="Verwijder datatype" />
   <string key="DeleteCompositionTypeWorkflow.ErrorTitle" value="Fout" />
+  <string key="ToXmlLabel" value="Naar Xml" />
+  <string key="ToXmlToolTip" value="Naar Xml" />
+  <string key="EnableTypeLocalizationWorkflow.Dialog.Label" value="Localisatie inschakelen" />
+  <string key="EnableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Localisatie inschakelen" />
+  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Lokales" />
+  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Lokales" />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Title" value="Bevestiging" />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Description" value="Alle open documenten zullen worden gesloten en de applicatie zal worden herstart. Klik eind om door te gaan" />
   <string key="EnableTypeLocalizationWorkflow.Step3.Title" value="Waarschuwing" />
   <string key="EnableTypeLocalizationWorkflow.Step3.Description" value="Er zijn datatypes die verwijzen naar een type. Dankzij het lokaliseren van de gegevens worden deze gekopieerd naar alle talen  om te voorkomen dat er gebroken referenties ontstaan" />
+  <string key="EnableTypeLocalizationWorkflow.Abort.Title" value="Mist actieve lokales" />
+  <string key="EnableTypeLocalizationWorkflow.Abort.Description" value="Er zijn geen toegevoegde actieve lokales. Voeg op zijn minst  één toe voordat de localisatie op de data wordt uitgevoerd" />
+  <string key="DisableTypeLocalizationWorkflow.Dialog.Label" value="Localisatie uitschakelen" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Localisatie uitschakelen" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Lokales" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Lokales" />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Title" value="Bevestiging" />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Description" value="Alle open documenten zullen worden gesloten en de applicatie zal worden herstart. Klik einde om door te gaan" />
   <string key="LocalizeDataWorkflow.ShowError.LayoutLabel" value="Het vertalen van data is mislukt" />
   <string key="LocalizeDataWorkflow.ShowError.InfoTableCaption" value="Vertaal fouten" />
   <string key="LocalizeDataWorkflow.ShowError.Description" value="De volgende velden hebben referenties naar een data type. Vertaal eerste deze data voordat je dit data item vertaalt" />
   <string key="LocalizeDataWorkflow.ShowError.FieldErrorFormat" value="Veld '{0}'verwijst naar data van type '{1}'met het label '{2}" />
+  <string key="AddNewInterfaceTypeStep1.ErrorTitle" value="Fout" />
+  <string key="EditInterfaceTypeStep1.ErrorTitle" value="Fout" />
+  <string key="AddNewCompositionTypeWorkflow.ErrorTitle" value="Fout" />
+  <string key="AddNewAggregationTypeWorkflow.ErrorTitle" value="Fout" />
+  <string key="EditCompositionTypeWorkflow.ErrorTitle" value="Fout" />
 </strings>

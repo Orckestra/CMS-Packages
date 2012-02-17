@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="KeyFacade.ErrorTreeNode.Label" value="Fout in de boom" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Label" value="Toon bericht" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.ToolTip" value="Toon Foutbericht" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Title" value="Foutmelding" />
+  <!-- Validation -->
+  <string key="TreeValidationError.Common.UnknownException" value="Onbekend uitzondering is gebeurd: '{0}'" />
+  <string key="TreeValidationError.Common.UnknownElement" value="Onbekend element '{0}'" />
+  <string key="TreeValidationError.Common.MissingAttribute" value="De benodigde attribuut '{0}' ontbreekt" />
+  <string key="TreeValidationError.Common.WrongAttributeValue" value="Het attribuut '{0}' heeft een waarde die niet is toegestaan" />
+  <string key="TreeValidationError.Common.MissingProperty" value="Het type '{0}' bevat geen attribuut genaamd '{1}'" />
+</strings>

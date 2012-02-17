@@ -5,8 +5,8 @@
   <string key="LabelDataTypeFields" value="Datatype velden" />
   <string key="FieldDetailsGroupLabel" value="Velddetails" />
   <string key="Name" value="Naam" />
-  <string key="Label" value="Label" />
   <string key="NameHelp" value="De naam van het veld wordt gebruikt door het systeem om velden te identificeren . Namen moet uniek zijn en mogen geen spaties en andere speciale tekens bevatten. Gebruik namen als' Titel ',' Begindatum ',' LargeImage 'etc." />
+  <string key="Label" value="Label" />
   <string key="LabelHelp" value="Label tekst wordt getoond aan gebruikers bij het toevoegen van een nieuw item op basis van het datatype." />
   <string key="Help" value="Help" />
   <string key="HelpHelp" value="Gebruik deze ingang voor een korte helptekst voor de gebruiker" />
@@ -30,16 +30,27 @@
   <string key="ValidationRulesAdd" value="Voeg validatie regels toe" />
   <string key="ValidationRulesEdit" value="Bewerk validatie regels" />
   <string key="ValidationRulesDialogLabel" value="Veld validatie regels configuratie" />
+  <string key="FieldValidationGroupLabel" value="Veld validatie" />
   <string key="FieldPresentationGroupLabel" value="Veld presentatie" />
+  <string key="FieldStructureGroupLabel" value="Structurele presentatie" />
   <string key="Widget" value="Widget" />
   <string key="WidgetHelp" value="Je kan selecteren welke invoer type je wilt gebruiken (zoals een textbox) bij het bewerken van dit veld" />
   <string key="WidgetDialogLabel" value="Veld widget configuratie" />
   <string key="Position" value="Positie" />
   <string key="PositionLast" value="Laatste" />
   <string key="PositionHelp" value="De positie van dit veld. Dit controleert de volgorde van de velden" />
+  <string key="GroupByPriority" value="Field grouping" />
+  <string key="GroupByPriorityNone" value="Geen groepering" />
+  <string key="GroupByPriorityFirst" value="Groepeer door dit veld" />
+  <string key="GroupByPriorityN" value="Groepeer als {0}. prioriteit heeft" />
+  <string key="GroupByPriorityHelp" value="U kunt opgeven dat een veld moet worden gebruikt om groepsgegevens - dit kan verbeterde leesbaarheid bij het bekijken van lange lijsten opleveren. Gebruik prioriteit wanneer meerdere velden worden gebruikt voor grouping.priority." />
   <string key="IsTitleField" value="Is titel veld" />
   <string key="IsTitleFieldHelp" value="Controleer of dit veld wilt gebruiken voor een titelveld. Titelvelden worden gebruikt voor list data, zoals de verkenner aan de linkerkant" />
   <string key="IsTitleFieldLabel" value="Gebruik dit voor titelveld in lijsten" />
+  <string key="DefaultValueGroupLabel" value="Standaard veld waarde" />
+  <string key="DefaultValue" value="Standaard waarde" />
+  <string key="DefaultValueHelp" value="Je kan een standaard definieren voor dit veld" />
+  <string key="DefaultValueDialogLabel" value="Veld standaard waarde configuratie" />
   <string key="StringMaximumLength" value="String maximum lengte" />
   <string key="16CharMax" value="16 karakter maximaal" />
   <string key="32CharMax" value="32 karakters maximaal" />
@@ -61,15 +72,4 @@
   <string key="NameEmptyError" value="Dataveldnamen kunnen niet leeg zijn. Specificeer een naam aub" />
   <string key="NameAlreadyInUseError" value="Een ander veld gebruikt deze naam. Dataveld namen moeten uniek zijn" />
   <string key="NotAnOptionalTypeError" value="Het geselecteerde type kan niet optioneel zijn" />
-  <string key="FieldValidationGroupLabel" value="Veld validatie" />
-  <string key="FieldStructureGroupLabel" value="Structurele presentatie" />
-  <string key="GroupByPriority" value="Field grouping" />
-  <string key="GroupByPriorityNone" value="Geen groepering" />
-  <string key="GroupByPriorityFirst" value="Groepeer door dit veld" />
-  <string key="GroupByPriorityN" value="Groepeer als {0}. prioriteit heeft" />
-  <string key="GroupByPriorityHelp" value="U kunt opgeven dat een veld moet worden gebruikt om groepsgegevens - dit kan verbeterde leesbaarheid bij het bekijken van lange lijsten opleveren. Gebruik prioriteit wanneer meerdere velden worden gebruikt voor grouping.priority." />
-  <string key="DefaultValueGroupLabel" value="Standaard veld waarde" />
-  <string key="DefaultValue" value="Standaard waarde" />
-  <string key="DefaultValueHelp" value="Je kan een standaard definieren voor dit veld" />
-  <string key="DefaultValueDialogLabel" value="Veld standaard waarde configuratie" />
 </strings>

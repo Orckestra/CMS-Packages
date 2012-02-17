@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="DeleteStep1.FieldGroupLabel" value="Verwijder visual functie?" />
   <string key="DeleteStep1.Text" value="Ben je zeker de geselecteerde functie te verwijderen?" />
@@ -9,14 +9,16 @@
   <string key="AddNew.NoDataExistsErrorMessage" value="Data moet bestaan voor het maken van een rendering. Voeg data toe aan type en probeer opnieuw" />
   <string key="AddNew.NoPageTemplatesExistsErrorTitle" value="Geen templates" />
   <string key="AddNew.NoPageTemplatesExistsErrorMessage" value="Op zijn minst moet 1 template bestaan voordat je een rendering kan maken. Maak een template en probeer opnieuw" />
+  <string key="AddNew.MissingActiveLanguageTitle" value="Een taal is vereist" />
+  <string key="AddNew.MissingActiveLanguageMessage" value="Om een visual functie te maken is een taal vereist, maar er zijn nog geen talen toegevoegd. Je kan een taal toevoegen in de system area" />
   <string key="AddNewStep1.FieldGroupLabel" value="Selecteer datatype voor visualisatie" />
   <string key="AddNewStep1.TypeSelectorLabel" value="Datatype" />
-  <string key="AddNewStep1.TypeSelectorHelp" value="-" />
+  <string key="AddNewStep1.TypeSelectorHelp" value="" />
   <string key="AddNewStep2.FieldGroupLabel" value="Visuele functie naam" />
   <string key="AddNewStep2.FuncitonNameLabel" value="Functienaam" />
-  <string key="AddNewStep2.FuncitonNameHelp" value="-" />
+  <string key="AddNewStep2.FuncitonNameHelp" value="" />
   <string key="AddNewStep2.FuncitonNamespaceLabel" value="Functie naamruimte" />
-  <string key="AddNewStep2.FuncitonNamespaceHelp" value="-" />
+  <string key="AddNewStep2.FuncitonNamespaceHelp" value="" />
   <string key="Edit.PlaceHolderLabel" value="Visuele functies instellingen" />
   <string key="Edit.HeadingTitel" value="Visuele functie" />
   <string key="Edit.FieldGroupLabel" value="Visuele functie instellingen" />
@@ -38,6 +40,10 @@
   <string key="Edit.PreviewTemplateHelp" value="Informatie wordt alleen gebruikt bij de preview van de functie" />
   <string key="Edit.WYSIWYGLayoutLabel" value="Visuele lay out" />
   <string key="Edit.LabelPreview" value="Preview" />
+  <string key="Edit.NoPageTemplatesExistsErrorTitle" value="Geen template" />
+  <string key="Edit.NoPageTemplatesExistsErrorMessage" value="Op zijn minst 1 template moet bestaan voordat je een rendering kan wijzigen. Maak een template en probeer het opnieuw" />
+  <string key="Edit.MissingActiveLanguageTitle" value="Een taal is vereist" />
+  <string key="Edit.MissingActiveLanguageMessage" value="Om een visual functie te wijzigen een taal is vereist, maar er zijn nog geen talen toegevoegd. Je kan een taal toevoegen in de system area" />
   <string key="Select.FieldGroupLabel" value="Selecteer een visual functie" />
   <string key="Select.FunctionFunctionsLabel" value="Selecteer een functie" />
   <string key="Select.FunctionFunctionsHelp" value="Selecteer visuele functie om te bewerken of te verwijderen" />
@@ -58,10 +64,4 @@
   <string key="VisualFunctionElementProviderHelper.EditToolTip" value="Bewerk visuele functie" />
   <string key="VisualFunctionElementProviderHelper.DeleteLabel" value="Verwijder visuele functie" />
   <string key="VisualFunctionElementProviderHelper.DeleteToolTip" value="Verwijder visuele functie" />
-  <string key="AddNew.MissingActiveLanguageTitle" value="Een taal is vereist" />
-  <string key="AddNew.MissingActiveLanguageMessage" value="Om een visual functie te maken is een taal vereist, maar er zijn nog geen talen toegevoegd. Je kan een taal toevoegen in de system area" />
-  <string key="Edit.NoPageTemplatesExistsErrorTitle" value="Geen template" />
-  <string key="Edit.NoPageTemplatesExistsErrorMessage" value="Op zijn minst 1 template moet bestaan voordat je een rendering kan wijzigen. Maak een template en probeer het opnieuw" />
-  <string key="Edit.MissingActiveLanguageTitle" value="Een taal is vereist" />
-  <string key="Edit.MissingActiveLanguageMessage" value="Om een visual functie te wijzigen een taal is vereist, maar er zijn nog geen talen toegevoegd. Je kan een taal toevoegen in de system area" />
 </strings>
