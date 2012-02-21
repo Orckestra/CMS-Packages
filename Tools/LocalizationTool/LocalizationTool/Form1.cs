@@ -46,11 +46,12 @@ namespace LocalizationTool
                 }
 
                 FileHandler.AutoTranslateEmptyStrings();
-               //re-save all target files to have the same structure as source files
-                ThreadPool.QueueUserWorkItem((_state) => {
+                //re-save all target files to have the same structure as source files
+                ThreadPool.QueueUserWorkItem((_state) =>
+                {
                     FileHandler.SaveTargetFilesStructureAsSource();
                 });
-       
+
 
                 sourceLanguageLabel.Text = Settings.SourceCulture.DisplayName;
                 targetLanguageLabel.Text = Settings.TargetCulture.DisplayName;
@@ -99,9 +100,10 @@ namespace LocalizationTool
 
         private void filesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _selectedFile = (FilesListItem)filesListBox.SelectedValue;
-            if (_selectedFile != null)
+            var newSelectedFile = (FilesListItem)filesListBox.SelectedValue;
+            if (newSelectedFile != null && newSelectedFile != _selectedFile)
             {
+                _selectedFile = newSelectedFile;
                 PopulateStringKeysListBox();
             }
         }
@@ -137,10 +139,13 @@ namespace LocalizationTool
 
         private void stringKeysListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _selectedKey = ((KeysListItem)keysListBox.SelectedValue);
-            UpdateStringTextBoxes();
-            UpdateFlagsUI();
-
+            var newSelectedKey = (KeysListItem)keysListBox.SelectedValue;
+            if (newSelectedKey != null && newSelectedKey != _selectedKey)
+            {
+                _selectedKey = newSelectedKey;
+                UpdateStringTextBoxes();
+                UpdateFlagsUI();
+            }
         }
 
         private void targetLanguageTextBox_TextChanged(object sender, EventArgs e)
@@ -174,25 +179,25 @@ namespace LocalizationTool
                    
                 </style>
                 </head><body>");
-          
-                var fileSterm = _selectedFile.Name;
-                print.AppendFormat("<h3>{0} ({1},{2})</h3>", fileSterm, Settings.SourceCulture, Settings.TargetCulture);
 
-                var sourcefileElements = FileHandler.SourceFilesBySterm[fileSterm].Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
-                var targetFileElements = new Dictionary<string, string>();
+            var fileSterm = _selectedFile.Name;
+            print.AppendFormat("<h3>{0} ({1},{2})</h3>", fileSterm, Settings.SourceCulture, Settings.TargetCulture);
 
-                var targetFile = FileHandler.GetTargetDocument(fileSterm);
-                if (targetFile != null)
-                    targetFileElements = targetFile.Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
-                foreach (var el in sourcefileElements)
-                {
-                    print.AppendFormat("<b>{0}</b>", el.Key);
-                    var targetValue = string.Empty;
-                    if (!targetFileElements.TryGetValue(el.Key, out targetValue))
-                        targetValue = "<br/>";
-                    print.AppendFormat("<table class='report'><tr><td class='first'>{0}</td><td>{1}</td></tr></table>", el.Value, targetValue).AppendLine();
-                }
-            
+            var sourcefileElements = FileHandler.SourceFilesBySterm[fileSterm].Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
+            var targetFileElements = new Dictionary<string, string>();
+
+            var targetFile = FileHandler.GetTargetDocument(fileSterm);
+            if (targetFile != null)
+                targetFileElements = targetFile.Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
+            foreach (var el in sourcefileElements)
+            {
+                print.AppendFormat("<b>{0}</b>", el.Key);
+                var targetValue = string.Empty;
+                if (!targetFileElements.TryGetValue(el.Key, out targetValue))
+                    targetValue = "<br/>";
+                print.AppendFormat("<table class='report'><tr><td class='first'>{0}</td><td>{1}</td></tr></table>", el.Value, targetValue).AppendLine();
+            }
+
             print.Append("</body></html>");
             if (!Directory.Exists(Settings.ReportsDirectory))
                 Directory.CreateDirectory(Settings.ReportsDirectory);
@@ -223,7 +228,7 @@ namespace LocalizationTool
             if (flagThis.ShowDialog(this) == DialogResult.OK && !string.IsNullOrEmpty(flagThis.FlagComment))
             {
                 FileHandler.AddFlag(_selectedFile.Name, _selectedKey.Name, flagThis.FlagComment);
-                RefreshKeysList();
+                RefreshKeysListSelectedItem();
                 UpdateFlagsUI();
             }
         }
@@ -250,14 +255,14 @@ namespace LocalizationTool
             {
                 FileHandler.UpdateFlag(_selectedFile.Name, _selectedKey.Name, flagThis.FlagComment);
             }
-            RefreshKeysList();
+            RefreshKeysListSelectedItem();
             UpdateFlagsUI();
 
         }
 
         private void chbShowFlaggedOnly_CheckedChanged(object sender, EventArgs e)
         {
-            FileHandler.FilterDataSource(txtSearch.Text,chbShowFlaggedOnly.Checked);
+            FileHandler.FilterDataSource(txtSearch.Text, chbShowFlaggedOnly.Checked);
             _filesListSource.Clear();
             foreach (var s in FileHandler.CurrentDataSourceKeysByFile)
             {
@@ -308,7 +313,7 @@ namespace LocalizationTool
             bool isSaved = false;
             toolStripStatusLabel1.Text = "Saving...";
             string targetString = targetLanguageTextBox.Text;
-          //  targetString = targetString.Replace("\n", "");
+            //  targetString = targetString.Replace("\n", "");
             //targetString = targetString.Replace("\r", "");
             targetString = targetString.Trim();
             if (string.IsNullOrEmpty(targetString) && !string.IsNullOrEmpty(sourceLanguageTextBox.Text))
@@ -333,7 +338,7 @@ namespace LocalizationTool
             {
                 toolStripStatusLabel1.Text = string.Format("Saved {0}, {1}", _selectedFile.Name, _selectedKey.Name);
                 FillProgressInfo();
-                RefreshFilesList();
+                RefreshFilesListSelectedItem();
                 if (cbRegisterInCompositeConfig.Checked)
                 {
                     FileHandler.RegisterInCompositeConfig(_selectedFile.Name);
@@ -364,27 +369,25 @@ namespace LocalizationTool
 
         private void PopulateFilesListBox()
         {
-            _filesListSource = new BindingList<FilesListItem>();
-            foreach (var name in FileHandler.SourceFileStems)
-            {
-                _filesListSource.Add(new FilesListItem(name));
-            }
-
+            _filesListSource = new BindingList<FilesListItem>(
+                FileHandler.SourceFileStems
+                .Select(name => new FilesListItem(name))
+                .ToList());
             filesListBox.DisplayMember = "Text";
             filesListBox.DataSource = _filesListSource;
 
             _selectedFile = (FilesListItem)filesListBox.SelectedValue;
-         }
+        }
 
         private void PopulateStringKeysListBox()
         {
             _keysListSource = new BindingList<KeysListItem>();
             if (_selectedFile != null)
             {
-                foreach (var key in FileHandler.CurrentDataSourceKeysByFile[_selectedFile.Name])
-                {
-                    _keysListSource.Add(new KeysListItem(_selectedFile.Name, key));
-                }
+                _keysListSource = new BindingList<KeysListItem>(
+                    FileHandler.CurrentDataSourceKeysByFile[_selectedFile.Name]
+                    .Select(key => new KeysListItem(_selectedFile.Name, key))
+                    .ToList());
             }
             keysListBox.DisplayMember = "Text";
             keysListBox.DataSource = _keysListSource;
@@ -401,18 +404,18 @@ namespace LocalizationTool
             progressValue.Text = String.Format(_progressLabelFormat, String.Format("{0:0.0}", percentDone), FileHandler.TotalCountOfMissingStrings(), FileHandler.TotalCountOfSourceTranstations);
         }
 
-        private void RefreshFilesList()
+        private void RefreshFilesListSelectedItem()
         {
-            int selected = filesListBox.SelectedIndex;
-            _filesListSource.ResetBindings();
-            filesListBox.SelectedIndex = selected;
+            var selectedItem = filesListBox.SelectedItem as ListItemNotificationObject;
+            if (selectedItem != null)
+                selectedItem.Refresh(); // making listbox reread the text of the item
         }
-        private void RefreshKeysList()
+
+        private void RefreshKeysListSelectedItem()
         {
-            int selected = keysListBox.SelectedIndex;
-            _keysListSource.ResetBindings();
-            keysListBox.SelectedIndex = selected;
-            _selectedKey = (KeysListItem)keysListBox.SelectedValue;
+            var selectedItem = keysListBox.SelectedItem as ListItemNotificationObject;
+            if (selectedItem != null)
+                selectedItem.Refresh(); // making listbox reread the text of the item
         }
 
         private void UpdateFlagsUI()
@@ -444,7 +447,20 @@ namespace LocalizationTool
 
     }
 
-    public class FilesListItem
+    public class ListItemNotificationObject : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void Refresh()
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs("Text"));
+            }
+        }
+    }
+
+    public class FilesListItem : ListItemNotificationObject
     {
         public FilesListItem() { }
         public FilesListItem(string name)
@@ -463,7 +479,7 @@ namespace LocalizationTool
         }
     }
 
-    public class KeysListItem
+    public class KeysListItem : ListItemNotificationObject
     {
         public KeysListItem() { }
         public KeysListItem(string file, string name)
