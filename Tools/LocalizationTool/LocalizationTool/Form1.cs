@@ -9,16 +9,19 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.IO;
 using System.Drawing.Printing;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
+using System.Threading;
 
 namespace LocalizationTool
 {
     public partial class Form1 : Form
     {
-        private string _selectedFileStem = null;
-        private string _selectedStringKey = null;
-		private string _progressLabelFormat = "{0}% done – {1} out of {2} strings are missing translation.";
-        private PrintDocument _printDoc = new PrintDocument();
+        private FilesListItem _selectedFile = null;
+        private KeysListItem _selectedKey = null;
+        private string _progressLabelFormat = "{0}% done – {1} out of {2} strings are missing translation.";
         private BindingList<FilesListItem> _filesListSource;
+        private BindingList<KeysListItem> _keysListSource;
 
         #region Form Events
         public Form1()
@@ -28,41 +31,61 @@ namespace LocalizationTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //On startup – locate strings in the translation that has “file+key” that do not exist in the English version (i.e. unused keys). If any are found, dump them to a single “UnknownStrings.xml” file and do a message box “Strings with invalid keys was found and has been cleaned up. Strings have been moved to UnknownStrings.xml
-            if (FileHandler.LocateUnknownFilesKeys())
-            {
-                MessageBox.Show("The strings with invalid keys have been found and cleaned up. The strings have been moved to " + Settings.UnknownStringsFilePath);
-            }
-
-            _printDoc.PrintPage += new PrintPageEventHandler(printDoc_PrintPage);
-
-            sourceLanguageLabel.Text = Settings.SourceCulture.DisplayName;
-            targetLanguageLabel.Text = Settings.TargetCulture.DisplayName;
 
             try
             {
-                FillProgressInfo();
-                PopulateFilesListBox();
+                //On startup – locate strings in the translation that has “file+key” that do not exist in the English version (i.e. unused keys). If any are found, dump them to a single “UnknownStrings.xml” file and do a message box “Strings with invalid keys was found and has been cleaned up. Strings have been moved to UnknownStrings.xml
+                if (FileHandler.LocateUnknownFilesKeys())
+                {
+                    MessageBox.Show("The strings with invalid keys have been found and cleaned up. The strings have been moved to " + Settings.UnknownStringsFilePath);
+                }
+
+                if (!Directory.Exists(Settings.TargetLocalizationDirectory))
+                {
+                    Directory.CreateDirectory(Settings.TargetLocalizationDirectory);
+                }
+
+                FileHandler.AutoTranslateEmptyStrings();
+               //re-save all target files to have the same structure as source files
+                ThreadPool.QueueUserWorkItem((_state) => {
+                    FileHandler.SaveTargetFilesStructureAsSource();
+                });
+       
+
+                sourceLanguageLabel.Text = Settings.SourceCulture.DisplayName;
+                targetLanguageLabel.Text = Settings.TargetCulture.DisplayName;
+
+                try
+                {
+                    PopulateFilesListBox();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to fetch source files - check .config file for this application. Error was: " + ex.Message, "Error locating files for translation....");
+                    this.Close();
+                    return;
+                }
+
+                if (filesListBox.Items.Count > 0)
+                {
+                    PopulateStringKeysListBox();
+
+                    MoveToNextMissing();
+
+                    FillProgressInfo();
+
+                    targetLanguageTextBox.Focus();
+                }
+                else
+                {
+                    MessageBox.Show(string.Format("No localization files ending with {0} found in {1}", FileHandler.SourceFileEnding, Settings.LocalizationDirectory));
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to fetch source files - check .config file for this application. Error was: " + ex.Message, "Error locating files for translation....");
-                this.Close();
-                return;
+                MessageBox.Show(string.Format("Error: {0}. Inner: {1}", ex.Message, ex.InnerException != null ? ex.InnerException.Message : ""));
             }
 
-            if (filesListBox.Items.Count > 0)
-            {
-                PopulateStringKeysListBox();
-
-                MoveToNextMissing();
-
-                targetLanguageTextBox.Focus();
-            }
-            else
-            {
-                MessageBox.Show(string.Format("No localization files ending with {0} found in {1}", FileHandler.SourceFileEnding, Settings.LocalizationDirectory));
-            }
         }
 
         void Form1_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
@@ -72,16 +95,20 @@ namespace LocalizationTool
 
         #endregion
 
+        #region Events
+
         private void filesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _selectedFileStem = ((FilesListItem)filesListBox.SelectedValue).Name;
-            PopulateStringKeysListBox();
-
+            _selectedFile = (FilesListItem)filesListBox.SelectedValue;
+            if (_selectedFile != null)
+            {
+                PopulateStringKeysListBox();
+            }
         }
 
         private void filesListBox_Click(object sender, EventArgs e)
         {
-            if (_selectedStringKey != null)
+            if (_selectedKey != null)
             {
                 SaveString();
             }
@@ -92,7 +119,7 @@ namespace LocalizationTool
             if (e.KeyValue == 13)
             {
                 e.Handled = true;
-                if (enterSavesAndMovesCheckBox.Checked == true && _selectedStringKey != null)
+                if (enterSavesAndMovesCheckBox.Checked == true && _selectedKey != null)
                 {
                     SaveString();
                     MoveToNextMissing();
@@ -102,7 +129,7 @@ namespace LocalizationTool
 
         private void stringKeysListBox_Click(object sender, EventArgs e)
         {
-            if (_selectedStringKey != null)
+            if (_selectedKey != null)
             {
                 SaveString();
             }
@@ -110,8 +137,9 @@ namespace LocalizationTool
 
         private void stringKeysListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _selectedStringKey = (string)stringKeysListBox.SelectedValue;
+            _selectedKey = ((KeysListItem)keysListBox.SelectedValue);
             UpdateStringTextBoxes();
+            UpdateFlagsUI();
 
         }
 
@@ -129,28 +157,140 @@ namespace LocalizationTool
             targetLanguageTextBox.Focus();
         }
 
+        private void printForComparison_Click(object sender, EventArgs e)
+        {
+            StringBuilder print = new StringBuilder();
+            print.Append(@"<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd""><html><head><title></title>
+                <style type='text/css'>
+                  body {font-size: 11px; font-family: Arial;}
+                  b {font-size: 11px; padding-left: 5px;}
+                  table.report {width:100%; border: solid 1px silver; margin-bottom: 10px; }
+                  table.report td {padding: 2px; width: 50%; font-size: 11px; font-family: Arial;}
+                  table.report td.first {border-right: solid 1px silver;}
+                
+                  table {page-break-after: auto; page-break-before: avoid;}
+                  tr, td { page-break-inside:avoid; page-break-after: avoid; page-break-before: avoid;}
+                  b      { page-break-before:auto; page-break-after:avoid; display:block;}
+                   
+                </style>
+                </head><body>");
+          
+                var fileSterm = _selectedFile.Name;
+                print.AppendFormat("<h3>{0} ({1},{2})</h3>", fileSterm, Settings.SourceCulture, Settings.TargetCulture);
+
+                var sourcefileElements = FileHandler.SourceFilesBySterm[fileSterm].Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
+                var targetFileElements = new Dictionary<string, string>();
+
+                var targetFile = FileHandler.GetTargetDocument(fileSterm);
+                if (targetFile != null)
+                    targetFileElements = targetFile.Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
+                foreach (var el in sourcefileElements)
+                {
+                    print.AppendFormat("<b>{0}</b>", el.Key);
+                    var targetValue = string.Empty;
+                    if (!targetFileElements.TryGetValue(el.Key, out targetValue))
+                        targetValue = "<br/>";
+                    print.AppendFormat("<table class='report'><tr><td class='first'>{0}</td><td>{1}</td></tr></table>", el.Value, targetValue).AppendLine();
+                }
+            
+            print.Append("</body></html>");
+            if (!Directory.Exists(Settings.ReportsDirectory))
+                Directory.CreateDirectory(Settings.ReportsDirectory);
+            var filePath = Path.Combine(Settings.ReportsDirectory, fileSterm + ".html");
+            File.WriteAllText(filePath, print.ToString(), Encoding.UTF8);
+            ProcessStartInfo sInfo = new ProcessStartInfo(filePath);
+            Process.Start(sInfo);
+            //PrintForm printForm = new PrintForm();
+            //printForm.Show();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            FileHandler.FilterDataSource(txtSearch.Text, chbShowFlaggedOnly.Checked);
+            _filesListSource.Clear();
+            foreach (var s in FileHandler.CurrentDataSourceKeysByFile)
+            {
+                _filesListSource.Add(new FilesListItem(s.Key));
+            }
+            _selectedFile = (FilesListItem)filesListBox.SelectedValue;
+            PopulateStringKeysListBox();
+        }
+
+        private void btnFlagThis_Click(object sender, EventArgs e)
+        {
+            FlagWindow flagThis = new FlagWindow();
+
+            if (flagThis.ShowDialog(this) == DialogResult.OK && !string.IsNullOrEmpty(flagThis.FlagComment))
+            {
+                FileHandler.AddFlag(_selectedFile.Name, _selectedKey.Name, flagThis.FlagComment);
+                RefreshKeysList();
+                UpdateFlagsUI();
+            }
+        }
+
+        private void btnEditRemoveFlag_Click(object sender, EventArgs e)
+        {
+            FlagWindow flagThis = new FlagWindow();
+            flagThis.FlagComment = _selectedKey.Comment;
+            flagThis.CancelButtonText = "Remove";
+            if (flagThis.ShowDialog(this) == DialogResult.Abort)
+            {
+                FileHandler.RemoveFlag(_selectedFile.Name, _selectedKey.Name, flagThis.FlagComment);
+                if (chbShowFlaggedOnly.Checked)
+                {
+                    var itemToRemove = _keysListSource.Where(k => k.File == _selectedFile.Name && k.Name == _selectedKey.Name).FirstOrDefault();
+                    _keysListSource.Remove(itemToRemove);
+                    if (_keysListSource.Count() == 0)
+                    {
+                        _filesListSource.Remove(_selectedFile);
+                    }
+                }
+            }
+            else
+            {
+                FileHandler.UpdateFlag(_selectedFile.Name, _selectedKey.Name, flagThis.FlagComment);
+            }
+            RefreshKeysList();
+            UpdateFlagsUI();
+
+        }
+
+        private void chbShowFlaggedOnly_CheckedChanged(object sender, EventArgs e)
+        {
+            FileHandler.FilterDataSource(txtSearch.Text,chbShowFlaggedOnly.Checked);
+            _filesListSource.Clear();
+            foreach (var s in FileHandler.CurrentDataSourceKeysByFile)
+            {
+                _filesListSource.Add(new FilesListItem(s.Key));
+            }
+            _selectedFile = (FilesListItem)filesListBox.SelectedValue;
+            PopulateStringKeysListBox();
+        }
+
+        #endregion
         #region Private Methods
         private void MoveToNextMissing()
         {
             bool missingStringFound = false;
 
-            string nextKey = FileHandler.FindNextMissingKey(_selectedFileStem);
+            string nextKey = FileHandler.FindNextMissingKey(_selectedFile.Name);
 
             if (nextKey != null)
             {
-                stringKeysListBox.SelectedItem = nextKey;
+
+                keysListBox.SelectedItem = _keysListSource.Where(it => it.Name == nextKey && it.File == _selectedFile.Name).FirstOrDefault();
                 missingStringFound = true;
             }
             else
             {
-                foreach (string fileStem in FileHandler.SourceFileStems)
+                foreach (string fileStem in FileHandler.CurrentDataSourceKeysByFile.Keys)
                 {
                     nextKey = FileHandler.FindNextMissingKey(fileStem);
 
                     if (nextKey != null)
                     {
                         filesListBox.SelectedItem = _filesListSource.Where(s => s.Name == fileStem).FirstOrDefault();
-                        stringKeysListBox.SelectedItem = nextKey;
+                        keysListBox.SelectedItem = _keysListSource.Where(it => it.Name == nextKey && it.File == _selectedFile.Name).FirstOrDefault();
                         missingStringFound = true;
                         break;
                     }
@@ -165,49 +305,60 @@ namespace LocalizationTool
 
         private void SaveString()
         {
+            bool isSaved = false;
             toolStripStatusLabel1.Text = "Saving...";
-
             string targetString = targetLanguageTextBox.Text;
-            targetString = targetString.Replace("\n", "");
-            targetString = targetString.Replace("\r", "");
+          //  targetString = targetString.Replace("\n", "");
+            //targetString = targetString.Replace("\r", "");
             targetString = targetString.Trim();
+            if (string.IsNullOrEmpty(targetString) && !string.IsNullOrEmpty(sourceLanguageTextBox.Text))
+            {
+                toolStripStatusLabel1.Text = string.Format("Empty string not saved: {0}, {1}", _selectedFile.Name, _selectedKey.Name);
+                return;
+            }
 
-            FileHandler.SetTargetString(_selectedFileStem, _selectedStringKey, targetString);
+            isSaved = FileHandler.SaveTargetString(_selectedFile.Name, _selectedKey.Name, targetString);
 
             //if a Source string gets translated, and this string exists for other keys, those keys gets automatically updated (saving the user time)
-            var keysWithTheSameText = FileHandler.SourceFilesBySterm[_selectedFileStem].Root.Elements("string").Where(e => e.Attribute("value").Value == sourceLanguageTextBox.Text).Select(e => e.Attribute("key").Value).ToList();
-            foreach (var key in keysWithTheSameText)
+            if (!string.IsNullOrEmpty(sourceLanguageTextBox.Text))
             {
-                FileHandler.SetTargetString(_selectedFileStem, key, targetString);
+                var keysWithTheSameText = FileHandler.SourceFilesBySterm[_selectedFile.Name].Root.Elements("string").Where(e => e.Attribute("value").Value == sourceLanguageTextBox.Text && e.Attribute("key").Value != _selectedKey.Name).Select(e => e.Attribute("key").Value).ToList();
+                keysWithTheSameText.ForEach(key =>
+                     {
+                         isSaved = FileHandler.SaveTargetString(_selectedFile.Name, key, targetString) || isSaved;
+                     });
             }
-            //
 
-            if (string.IsNullOrEmpty(targetString) == false)
+            if (isSaved)
             {
-                toolStripStatusLabel1.Text = string.Format("Saved {0}, {1}", _selectedFileStem, _selectedStringKey);
-
+                toolStripStatusLabel1.Text = string.Format("Saved {0}, {1}", _selectedFile.Name, _selectedKey.Name);
+                FillProgressInfo();
+                RefreshFilesList();
+                if (cbRegisterInCompositeConfig.Checked)
+                {
+                    FileHandler.RegisterInCompositeConfig(_selectedFile.Name);
+                }
             }
             else
-            {
-                toolStripStatusLabel1.Text = string.Format("Empty string not saved: {0}, {1}", _selectedFileStem, _selectedStringKey);
-            }
-
-            if (cbRegisterInCompositeConfig.Checked)
-            {
-                FileHandler.RegisterInCompositeConfig(_selectedFileStem);
-            }
-            FillProgressInfo();
-            _filesListSource.ResetBindings();
+                toolStripStatusLabel1.Text = string.Empty;
         }
 
         private void UpdateStringTextBoxes()
         {
-            sourceLanguageTextBox.Text = FileHandler.GetSourceString(_selectedFileStem, _selectedStringKey);
-            targetLanguageTextBox.Text = FileHandler.GetTargetString(_selectedFileStem, _selectedStringKey);
-            if ((string.IsNullOrEmpty(targetLanguageTextBox.Text) || targetLanguageTextBox.Text == Settings.NotTranslatedStringValue) && cbFromGoogleTranslate.Checked)
+            if (_selectedFile != null && _selectedKey != null)
             {
-                targetLanguageTextBox.Text = Translator.Translate(sourceLanguageTextBox.Text, Settings.SourceCulture, Settings.TargetCulture);
-                toolStripStatusLabel1.Text = string.Format("Translated with GoogleTranslate {0}", _selectedStringKey);
+                sourceLanguageTextBox.Text = FileHandler.GetSourceString(_selectedFile.Name, _selectedKey.Name);
+                targetLanguageTextBox.Text = FileHandler.GetTargetString(_selectedFile.Name, _selectedKey.Name);
+                if (string.IsNullOrEmpty(targetLanguageTextBox.Text) && cbFromGoogleTranslate.Checked)
+                {
+                    targetLanguageTextBox.Text = Translator.Translate(sourceLanguageTextBox.Text, Settings.SourceCulture, Settings.TargetCulture);
+                    toolStripStatusLabel1.Text = string.Format("Translated with GoogleTranslate {0}", _selectedKey.Name);
+                }
+            }
+            else
+            {
+                sourceLanguageTextBox.Text = string.Empty;
+                targetLanguageTextBox.Text = string.Empty;
             }
         }
 
@@ -222,14 +373,24 @@ namespace LocalizationTool
             filesListBox.DisplayMember = "Text";
             filesListBox.DataSource = _filesListSource;
 
-            _selectedFileStem = ((FilesListItem)filesListBox.SelectedValue).Name;
-        }
+            _selectedFile = (FilesListItem)filesListBox.SelectedValue;
+         }
 
         private void PopulateStringKeysListBox()
         {
-            List<string> stingKeys = FileHandler.GetStringKeys(_selectedFileStem).ToList();
-            stringKeysListBox.DataSource = stingKeys;
-            _selectedStringKey = (string)stringKeysListBox.SelectedValue;
+            _keysListSource = new BindingList<KeysListItem>();
+            if (_selectedFile != null)
+            {
+                foreach (var key in FileHandler.CurrentDataSourceKeysByFile[_selectedFile.Name])
+                {
+                    _keysListSource.Add(new KeysListItem(_selectedFile.Name, key));
+                }
+            }
+            keysListBox.DisplayMember = "Text";
+            keysListBox.DataSource = _keysListSource;
+
+            _selectedKey = (KeysListItem)keysListBox.SelectedValue;
+
         }
 
         private void FillProgressInfo()
@@ -240,37 +401,51 @@ namespace LocalizationTool
             progressValue.Text = String.Format(_progressLabelFormat, String.Format("{0:0.0}", percentDone), FileHandler.TotalCountOfMissingStrings(), FileHandler.TotalCountOfSourceTranstations);
         }
 
-        private void Print()
+        private void RefreshFilesList()
         {
-            PrintPreviewDialog dlgPrintPreview = new PrintPreviewDialog();
-            dlgPrintPreview.Document = _printDoc;
-            dlgPrintPreview.ShowDialog();
+            int selected = filesListBox.SelectedIndex;
+            _filesListSource.ResetBindings();
+            filesListBox.SelectedIndex = selected;
+        }
+        private void RefreshKeysList()
+        {
+            int selected = keysListBox.SelectedIndex;
+            _keysListSource.ResetBindings();
+            keysListBox.SelectedIndex = selected;
+            _selectedKey = (KeysListItem)keysListBox.SelectedValue;
         }
 
-        void printDoc_PrintPage(object sender, PrintPageEventArgs e)
+        private void UpdateFlagsUI()
         {
-            var selectedFile = filesListBox.SelectedItem.ToString();
-            var paddingYStep = 20;
-            e.Graphics.DrawString(selectedFile, new Font("Arial", 14), Brushes.Black, 100, paddingYStep);
-            var sourceDocElements = FileHandler.SourceFilesBySterm[selectedFile].Root.Elements("string");
-            foreach (var el in sourceDocElements)
+            if (_selectedKey == null)
             {
-                paddingYStep += 20;
-                e.Graphics.DrawString(el.Attribute("key").Value, new Font("Arial", 12), Brushes.Black, 100, paddingYStep);
-
+                tooltipFlaged.Active = false;
+                btnFlagThis.Visible = false;
+                btnEditRemoveFlag.Visible = false;
+                return;
             }
-            e.Graphics.PageUnit = GraphicsUnit.Inch;
+
+            if (_selectedKey.IsFlagged)
+            {
+                tooltipFlaged.SetToolTip(keysListBox, _selectedKey.Comment);
+                tooltipFlaged.Active = true;
+                btnFlagThis.Visible = false;
+                btnEditRemoveFlag.Visible = true;
+            }
+            else
+            {
+                btnFlagThis.Visible = true;
+                btnEditRemoveFlag.Visible = false;
+                tooltipFlaged.Active = false;
+            }
         }
 
         #endregion
-
-
 
     }
 
     public class FilesListItem
     {
-        private string _text;
         public FilesListItem() { }
         public FilesListItem(string name)
         {
@@ -282,14 +457,43 @@ namespace LocalizationTool
             get
             {
                 int count = FileHandler.CountOfMissingStrings(Name);
-                _text = Name;
-                if (count != 0)
-                {
-                    _text = String.Format("{0} ({1} strings missing)", Name, count);
-                }
-                return _text;
+                return count != 0 ? String.Format("{0} ({1} strings missing)", Name, count) : Name;
             }
-            set { _text = value; }
+
         }
+    }
+
+    public class KeysListItem
+    {
+        public KeysListItem() { }
+        public KeysListItem(string file, string name)
+        {
+            Name = name;
+            File = file;
+
+        }
+        public string File { get; set; }
+        public string Name { get; set; }
+        public string Text
+        {
+            get
+            {
+                XElement flag = FileHandler.GetFlag(File, Name);
+                if (flag != null)
+                {
+                    Comment = flag.Attribute("Comment").Value;
+                    IsFlagged = true;
+                    return String.Format("{0} (flagged)", Name);
+                }
+                else
+                {
+                    Comment = string.Empty;
+                    IsFlagged = false;
+                    return Name;
+                }
+            }
+        }
+        public string Comment { get; set; }
+        public bool IsFlagged { get; set; }
     }
 }

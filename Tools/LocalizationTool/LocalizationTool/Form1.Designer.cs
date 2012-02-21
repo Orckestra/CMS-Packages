@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.filesListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.stringKeysListBox = new System.Windows.Forms.ListBox();
+            this.keysListBox = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.sourceLanguageTextBox = new System.Windows.Forms.TextBox();
             this.sourceLanguageLabel = new System.Windows.Forms.Label();
@@ -44,13 +46,20 @@
             this.cbRegisterInCompositeConfig = new System.Windows.Forms.CheckBox();
             this.progressLabel = new System.Windows.Forms.Label();
             this.progressValue = new System.Windows.Forms.Label();
+            this.printForComparison = new System.Windows.Forms.Button();
+            this.lbSearch = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.tooltipFlaged = new System.Windows.Forms.ToolTip(this.components);
+            this.btnFlagThis = new System.Windows.Forms.Button();
+            this.btnEditRemoveFlag = new System.Windows.Forms.Button();
+            this.chbShowFlaggedOnly = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // filesListBox
             // 
             this.filesListBox.FormattingEnabled = true;
-            this.filesListBox.Location = new System.Drawing.Point(171, 30);
+            this.filesListBox.Location = new System.Drawing.Point(171, 71);
             this.filesListBox.Name = "filesListBox";
             this.filesListBox.Size = new System.Drawing.Size(391, 95);
             this.filesListBox.TabIndex = 0;
@@ -60,26 +69,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Location = new System.Drawing.Point(12, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Files";
             // 
-            // stringKeysListBox
+            // keysListBox
             // 
-            this.stringKeysListBox.FormattingEnabled = true;
-            this.stringKeysListBox.Location = new System.Drawing.Point(171, 132);
-            this.stringKeysListBox.Name = "stringKeysListBox";
-            this.stringKeysListBox.Size = new System.Drawing.Size(391, 95);
-            this.stringKeysListBox.TabIndex = 2;
-            this.stringKeysListBox.Click += new System.EventHandler(this.stringKeysListBox_Click);
-            this.stringKeysListBox.SelectedIndexChanged += new System.EventHandler(this.stringKeysListBox_SelectedIndexChanged);
+            this.keysListBox.FormattingEnabled = true;
+            this.keysListBox.Location = new System.Drawing.Point(171, 172);
+            this.keysListBox.Name = "keysListBox";
+            this.keysListBox.Size = new System.Drawing.Size(391, 95);
+            this.keysListBox.TabIndex = 2;
+            this.keysListBox.Click += new System.EventHandler(this.stringKeysListBox_Click);
+            this.keysListBox.SelectedIndexChanged += new System.EventHandler(this.stringKeysListBox_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 132);
+            this.label2.Location = new System.Drawing.Point(15, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 3;
@@ -88,7 +97,7 @@
             // sourceLanguageTextBox
             // 
             this.sourceLanguageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sourceLanguageTextBox.Location = new System.Drawing.Point(171, 260);
+            this.sourceLanguageTextBox.Location = new System.Drawing.Point(171, 302);
             this.sourceLanguageTextBox.Multiline = true;
             this.sourceLanguageTextBox.Name = "sourceLanguageTextBox";
             this.sourceLanguageTextBox.ReadOnly = true;
@@ -98,7 +107,7 @@
             // sourceLanguageLabel
             // 
             this.sourceLanguageLabel.AutoSize = true;
-            this.sourceLanguageLabel.Location = new System.Drawing.Point(12, 260);
+            this.sourceLanguageLabel.Location = new System.Drawing.Point(15, 302);
             this.sourceLanguageLabel.Name = "sourceLanguageLabel";
             this.sourceLanguageLabel.Size = new System.Drawing.Size(92, 13);
             this.sourceLanguageLabel.TabIndex = 5;
@@ -107,7 +116,7 @@
             // targetLanguageTextBox
             // 
             this.targetLanguageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.targetLanguageTextBox.Location = new System.Drawing.Point(171, 341);
+            this.targetLanguageTextBox.Location = new System.Drawing.Point(171, 381);
             this.targetLanguageTextBox.Multiline = true;
             this.targetLanguageTextBox.Name = "targetLanguageTextBox";
             this.targetLanguageTextBox.Size = new System.Drawing.Size(391, 73);
@@ -120,7 +129,7 @@
             this.targetLanguageLabel.AutoEllipsis = true;
             this.targetLanguageLabel.AutoSize = true;
             this.targetLanguageLabel.BackColor = System.Drawing.Color.Transparent;
-            this.targetLanguageLabel.Location = new System.Drawing.Point(15, 341);
+            this.targetLanguageLabel.Location = new System.Drawing.Point(15, 381);
             this.targetLanguageLabel.MaximumSize = new System.Drawing.Size(150, 0);
             this.targetLanguageLabel.Name = "targetLanguageLabel";
             this.targetLanguageLabel.Size = new System.Drawing.Size(89, 13);
@@ -131,9 +140,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 505);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 558);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(575, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(578, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -144,7 +153,7 @@
             // 
             // findFirstMissing
             // 
-            this.findFirstMissing.Location = new System.Drawing.Point(455, 230);
+            this.findFirstMissing.Location = new System.Drawing.Point(455, 273);
             this.findFirstMissing.Name = "findFirstMissing";
             this.findFirstMissing.Size = new System.Drawing.Size(107, 23);
             this.findFirstMissing.TabIndex = 9;
@@ -157,7 +166,7 @@
             this.enterSavesAndMovesCheckBox.AutoSize = true;
             this.enterSavesAndMovesCheckBox.Checked = true;
             this.enterSavesAndMovesCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.enterSavesAndMovesCheckBox.Location = new System.Drawing.Point(171, 422);
+            this.enterSavesAndMovesCheckBox.Location = new System.Drawing.Point(171, 481);
             this.enterSavesAndMovesCheckBox.Name = "enterSavesAndMovesCheckBox";
             this.enterSavesAndMovesCheckBox.Size = new System.Drawing.Size(222, 17);
             this.enterSavesAndMovesCheckBox.TabIndex = 10;
@@ -169,7 +178,7 @@
             this.cbFromGoogleTranslate.AutoSize = true;
             this.cbFromGoogleTranslate.Checked = true;
             this.cbFromGoogleTranslate.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbFromGoogleTranslate.Location = new System.Drawing.Point(171, 441);
+            this.cbFromGoogleTranslate.Location = new System.Drawing.Point(171, 504);
             this.cbFromGoogleTranslate.Name = "cbFromGoogleTranslate";
             this.cbFromGoogleTranslate.Size = new System.Drawing.Size(198, 17);
             this.cbFromGoogleTranslate.TabIndex = 14;
@@ -181,7 +190,7 @@
             this.cbRegisterInCompositeConfig.AutoSize = true;
             this.cbRegisterInCompositeConfig.Checked = true;
             this.cbRegisterInCompositeConfig.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbRegisterInCompositeConfig.Location = new System.Drawing.Point(171, 461);
+            this.cbRegisterInCompositeConfig.Location = new System.Drawing.Point(171, 527);
             this.cbRegisterInCompositeConfig.Name = "cbRegisterInCompositeConfig";
             this.cbRegisterInCompositeConfig.Size = new System.Drawing.Size(261, 17);
             this.cbRegisterInCompositeConfig.TabIndex = 15;
@@ -193,9 +202,9 @@
             this.progressLabel.AutoSize = true;
             this.progressLabel.Location = new System.Drawing.Point(12, 8);
             this.progressLabel.Name = "progressLabel";
-            this.progressLabel.Size = new System.Drawing.Size(54, 13);
+            this.progressLabel.Size = new System.Drawing.Size(48, 13);
             this.progressLabel.TabIndex = 17;
-            this.progressLabel.Text = "Progress: ";
+            this.progressLabel.Text = "Progress";
             // 
             // progressValue
             // 
@@ -205,11 +214,79 @@
             this.progressValue.Size = new System.Drawing.Size(0, 13);
             this.progressValue.TabIndex = 18;
             // 
+            // printForComparison
+            // 
+            this.printForComparison.Location = new System.Drawing.Point(340, 273);
+            this.printForComparison.Name = "printForComparison";
+            this.printForComparison.Size = new System.Drawing.Size(109, 23);
+            this.printForComparison.TabIndex = 19;
+            this.printForComparison.Text = "Print for comparison";
+            this.printForComparison.UseVisualStyleBackColor = true;
+            this.printForComparison.Click += new System.EventHandler(this.printForComparison_Click);
+            // 
+            // lbSearch
+            // 
+            this.lbSearch.AutoSize = true;
+            this.lbSearch.Location = new System.Drawing.Point(12, 25);
+            this.lbSearch.Name = "lbSearch";
+            this.lbSearch.Size = new System.Drawing.Size(78, 13);
+            this.lbSearch.TabIndex = 20;
+            this.lbSearch.Text = "Filter by search";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(171, 25);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(391, 20);
+            this.txtSearch.TabIndex = 21;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // tooltipFlaged
+            // 
+            this.tooltipFlaged.IsBalloon = true;
+            // 
+            // btnFlagThis
+            // 
+            this.btnFlagThis.Location = new System.Drawing.Point(487, 460);
+            this.btnFlagThis.Name = "btnFlagThis";
+            this.btnFlagThis.Size = new System.Drawing.Size(75, 23);
+            this.btnFlagThis.TabIndex = 22;
+            this.btnFlagThis.Text = "Flag this...";
+            this.btnFlagThis.UseVisualStyleBackColor = true;
+            this.btnFlagThis.Click += new System.EventHandler(this.btnFlagThis_Click);
+            // 
+            // btnEditRemoveFlag
+            // 
+            this.btnEditRemoveFlag.Location = new System.Drawing.Point(451, 460);
+            this.btnEditRemoveFlag.Name = "btnEditRemoveFlag";
+            this.btnEditRemoveFlag.Size = new System.Drawing.Size(111, 23);
+            this.btnEditRemoveFlag.TabIndex = 23;
+            this.btnEditRemoveFlag.Text = "Edit/remove flag";
+            this.btnEditRemoveFlag.UseVisualStyleBackColor = true;
+            this.btnEditRemoveFlag.Click += new System.EventHandler(this.btnEditRemoveFlag_Click);
+            // 
+            // chbShowFlaggedOnly
+            // 
+            this.chbShowFlaggedOnly.AutoSize = true;
+            this.chbShowFlaggedOnly.Location = new System.Drawing.Point(172, 50);
+            this.chbShowFlaggedOnly.Name = "chbShowFlaggedOnly";
+            this.chbShowFlaggedOnly.Size = new System.Drawing.Size(113, 17);
+            this.chbShowFlaggedOnly.TabIndex = 24;
+            this.chbShowFlaggedOnly.Text = "Show flagged only";
+            this.chbShowFlaggedOnly.UseVisualStyleBackColor = true;
+            this.chbShowFlaggedOnly.CheckedChanged += new System.EventHandler(this.chbShowFlaggedOnly_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 527);
+            this.ClientSize = new System.Drawing.Size(578, 580);
+            this.Controls.Add(this.chbShowFlaggedOnly);
+            this.Controls.Add(this.btnEditRemoveFlag);
+            this.Controls.Add(this.btnFlagThis);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.lbSearch);
+            this.Controls.Add(this.printForComparison);
             this.Controls.Add(this.progressValue);
             this.Controls.Add(this.progressLabel);
             this.Controls.Add(this.cbRegisterInCompositeConfig);
@@ -222,11 +299,12 @@
             this.Controls.Add(this.sourceLanguageLabel);
             this.Controls.Add(this.sourceLanguageTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.stringKeysListBox);
+            this.Controls.Add(this.keysListBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.filesListBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "C1 Localization Tool";
+            this.Text = "Composite C1 Localization Tool";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -239,7 +317,7 @@
 
         private System.Windows.Forms.ListBox filesListBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox stringKeysListBox;
+        private System.Windows.Forms.ListBox keysListBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox sourceLanguageTextBox;
         private System.Windows.Forms.Label sourceLanguageLabel;
@@ -253,6 +331,13 @@
         private System.Windows.Forms.CheckBox cbRegisterInCompositeConfig;
         private System.Windows.Forms.Label progressLabel;
         private System.Windows.Forms.Label progressValue;
+        private System.Windows.Forms.Button printForComparison;
+        private System.Windows.Forms.Label lbSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ToolTip tooltipFlaged;
+        private System.Windows.Forms.Button btnFlagThis;
+        private System.Windows.Forms.Button btnEditRemoveFlag;
+        private System.Windows.Forms.CheckBox chbShowFlaggedOnly;
     }
 }
 

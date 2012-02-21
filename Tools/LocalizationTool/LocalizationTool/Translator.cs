@@ -50,7 +50,7 @@ namespace LocalizationTool
 				foreach (Match m in maches)
 					result += m.Groups[2].ToString();
 
-				result = HttpUtility.HtmlDecode(result);
+				result = HttpUtility.HtmlDecode(result).Replace("\"", "");
 
 			}
 			catch (Exception ex)

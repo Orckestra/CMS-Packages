@@ -79,16 +79,26 @@ namespace LocalizationTool
             }
         }
 
-        public static string NotTranslatedStringValue
+        public static string ReportsDirectory
         {
-            get { return "*** NOT TRANSLATED ***"; }
+            get
+            {
+                return Path.Combine(TargetLocalizationDirectory, "reports");
+            }
         }
-
         public static string UnknownStringsFilePath
         {
             get
             {
                 return Path.Combine(TargetLocalizationDirectory, "UnknownStrings.xml");
+            }
+        }
+
+        public static string FlagsFilePath
+        {
+            get
+            {
+                return Path.Combine(TargetLocalizationDirectory, "Flags.xml");
             }
         }
 
