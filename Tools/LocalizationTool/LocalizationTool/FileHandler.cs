@@ -19,6 +19,8 @@ namespace LocalizationTool
 		private static IEnumerable<string> _sourceFileStems;
 		private static Dictionary<string, List<string>> _stringsCurrentDataSource;
 
+		private static List<string> _changedTargetFiles = new List<string>();
+
 
 		private static Dictionary<string, XDocument> _sourceFilesBySterm;
 		private static Dictionary<string, string> _sourceFilesAsStringsBySterm;
@@ -115,6 +117,39 @@ namespace LocalizationTool
 		}
 
 		public static bool SaveTargetString(string fileStem, string key, string newValue)
+		{
+			bool isNeedToSave = false;
+			var targetFilePath = GetTargetDocumentPath(fileStem);
+
+			XDocument targeDoc = File.Exists(targetFilePath) ? XDocument.Load(targetFilePath) : new XDocument(new XElement("strings"));
+			var targetValues = targeDoc.Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
+
+			if (targetValues.ContainsKey(key))
+			{
+				if (targetValues[key] != newValue)
+				{
+					var element = targeDoc.Root.Elements("string").Where(el => el.Attribute("key").Value == key).Single();
+					element.Attribute("value").Value = newValue;
+					isNeedToSave = true;
+				}
+			}
+			else
+			{
+				isNeedToSave = true;
+				targeDoc.Root.Add(new XElement("string", new XAttribute("key", key), new XAttribute("value", newValue)));
+			}
+
+			if (isNeedToSave)
+			{
+				targeDoc.Save(targetFilePath);
+				ResaveWebConfig();
+				if (!_changedTargetFiles.Contains(fileStem))
+					_changedTargetFiles.Add(fileStem);
+			}
+			return isNeedToSave;
+		}
+
+		public static bool SaveTargetStringOld(string fileStem, string key, string newValue)
 		{
 			bool isNeedToSave = false;
 			var targetFilePath = GetTargetDocumentPath(fileStem);
@@ -275,7 +310,7 @@ namespace LocalizationTool
 
 		public static void SaveTargetFilesStructureAsSource()
 		{
-			foreach (var file in GetTargetFileStems())
+			foreach (var file in _changedTargetFiles)
 			{
 				SaveTargetFileStructureAsSource(file);
 			}

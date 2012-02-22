@@ -48,12 +48,6 @@ namespace LocalizationTool
 
 				FileHandler.AutoTranslateEmptyStrings();
 
-				//re-save all target files to have the same structure as source files
-				ThreadPool.QueueUserWorkItem((_state) =>
-				{
-					FileHandler.SaveTargetFilesStructureAsSource();
-				});
-
 				try
 				{
 					PopulateFilesListBox();
@@ -87,6 +81,11 @@ namespace LocalizationTool
 		void Form1_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
 		{
 			SaveString();
+
+			//re-save all changed target files to have the same structure as source files
+
+			FileHandler.SaveTargetFilesStructureAsSource();
+
 		}
 
 		#endregion

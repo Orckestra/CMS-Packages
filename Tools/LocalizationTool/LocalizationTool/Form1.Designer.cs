@@ -328,6 +328,7 @@
 			this.MinimumSize = new System.Drawing.Size(594, 618);
 			this.Name = "Form1";
 			this.Text = "Composite C1 Localization Tool";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
