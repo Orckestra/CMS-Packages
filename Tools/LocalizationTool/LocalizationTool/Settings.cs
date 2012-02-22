@@ -10,97 +10,97 @@ using System.Globalization;
 
 namespace LocalizationTool
 {
-    public static class Settings
-    {
-        public static string ApplicationDirectory
-        {
-            get
-            {
-                return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            }
-        }
+	public static class Settings
+	{
+		public static string ApplicationDirectory
+		{
+			get
+			{
+				return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+			}
+		}
 
-        public static string LocalizationDirectory
-        {
-            get
-            {
-                return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\Composite\\localization");
-            }
-        }
+		public static string LocalizationDirectory
+		{
+			get
+			{
+				return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\Composite\\localization");
+			}
+		}
 
-        public static string TargetLocalizationDirectory
-        {
-            get
-            {
-                return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\App_Data\\Composite\\LanguagePacks", ConfigurationSettings.AppSettings["targetCultureName"]);
-            }
-        }
+		public static string TargetLocalizationDirectory
+		{
+			get
+			{
+				return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\App_Data\\Composite\\LanguagePacks", ConfigurationSettings.AppSettings["targetCultureName"]);
+			}
+		}
 
-        public static CultureInfo SourceCulture
-        {
-            get
-            {
-                string sourceCultureName = ConfigurationSettings.AppSettings["sourceCultureName"];
-                return CultureInfo.CreateSpecificCulture(sourceCultureName);
-            }
-        }
+		public static CultureInfo SourceCulture
+		{
+			get
+			{
+				string sourceCultureName = ConfigurationManager.AppSettings["sourceCultureName"];
+				return CultureInfo.CreateSpecificCulture(sourceCultureName);
+			}
+		}
 
-        public static CultureInfo TargetCulture
-        {
-            get
-            {
-                string targetCultureName = ConfigurationSettings.AppSettings["targetCultureName"];
-                return CultureInfo.CreateSpecificCulture(targetCultureName);
-            }
-        }
+		public static CultureInfo TargetCulture
+		{
+			get
+			{
+				string targetCultureName = ConfigurationManager.AppSettings["targetCultureName"];
+				return CultureInfo.CreateSpecificCulture(targetCultureName);
+			}
+		}
 
-        public static string CompositeConfigRelativePath
-        {
-            get
-            {
-                return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\App_Data\\Composite\\Composite.config");
-            }
-        }
+		public static string CompositeConfigRelativePath
+		{
+			get
+			{
+				return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\App_Data\\Composite\\Composite.config");
+			}
+		}
 
-        public static string WebConfigRelativePath
-        {
-            get
-            {
-                return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\web.config");
-            }
-        }
+		public static string WebConfigRelativePath
+		{
+			get
+			{
+				return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\web.config");
+			}
+		}
 
-        public static string CompositeSiteRelativePath
-        {
-            get
-            {
-                string sitePath = ConfigurationSettings.AppSettings["websitePath"];
-                return Path.Combine(Settings.ApplicationDirectory, sitePath);
-            }
-        }
+		public static string CompositeSiteRelativePath
+		{
+			get
+			{
+				string sitePath = ConfigurationManager.AppSettings["websitePath"];
+				return Path.Combine(Settings.ApplicationDirectory, sitePath);
+			}
+		}
 
-        public static string ReportsDirectory
-        {
-            get
-            {
-                return Path.Combine(TargetLocalizationDirectory, "reports");
-            }
-        }
-        public static string UnknownStringsFilePath
-        {
-            get
-            {
-                return Path.Combine(TargetLocalizationDirectory, "UnknownStrings.xml");
-            }
-        }
+		public static string ReportsDirectory
+		{
+			get
+			{
+				return Path.Combine(ApplicationDirectory, ConfigurationManager.AppSettings["targetCultureName"], "reports");
+			}
+		}
+	
+		public static string UnknownStringsFilePath
+		{
+			get
+			{
+				return Path.Combine(ApplicationDirectory, ConfigurationManager.AppSettings["targetCultureName"], "UnknownStrings.xml");
+			}
+		}
 
-        public static string FlagsFilePath
-        {
-            get
-            {
-                return Path.Combine(TargetLocalizationDirectory, "Flags.xml");
-            }
-        }
-
-    }
+		public static string FlagsFilePath
+		{
+			get
+			{
+				return Path.Combine(ApplicationDirectory, ConfigurationManager.AppSettings["targetCultureName"], "Flags.xml");
+			}
+		}
+	}
 }
