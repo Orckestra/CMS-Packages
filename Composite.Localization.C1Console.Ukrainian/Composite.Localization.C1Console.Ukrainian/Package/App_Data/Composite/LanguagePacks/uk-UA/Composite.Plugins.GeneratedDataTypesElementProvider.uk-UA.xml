@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="GlobalDataFolderLabel" value="Глобальні типи даних" />
   <string key="GlobalDataFolderToolTip" value="Глобальні типи даних" />
@@ -60,8 +60,8 @@
   <string key="EditorCommon.LabelTitleGroup" value="Назва типу" />
   <string key="EditorCommon.LabelProgrammaticNamingAndServices" value="Програмна назва та служби" />
   <string key="EditorCommon.LabelProgrammaticNaming" value="Програмна назва" />
-  <string key="EditorCommon.LabelTypeName" value="Ім'я типу" />
-  <string key="EditorCommon.HelpTypeName" value="Технічне ім'я типу даних (наприклад, Product). Використовується для ідентифікації цього типу в коді і не повинно змінюватися, якщо був хоча б один випадок зовнішнього використання." />
+  <string key="EditorCommon.LabelTypeName" value="Ім&#39;я типу" />
+  <string key="EditorCommon.HelpTypeName" value="Технічне ім&#39;я типу даних (наприклад, Product). Використовується для ідентифікації цього типу в коді і не повинно змінюватися, якщо був хоча б один випадок зовнішнього використання." />
   <string key="EditorCommon.LabelTypeNamespace" value="Простір імен типу" />
   <string key="EditorCommon.HelpTypeNamespace" value="Простір імен (модуль / назва категорії) типу. Використовується для ідентифікації цього типу в коді і не повинен змінюватися, якщо був хоча б один випадок зовнішнього використання." />
   <string key="EditorCommon.LabelTitle" value="Назва" />
@@ -81,12 +81,12 @@
   <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="Видалити тип даних" />
   <string key="DeleteAggregationTypeWorkflow.Text" value="Видалити тип даних" />
   <string key="DeleteAggregationTypeWorkflow.ErrorTitle" value="Помилка" />
-  <string key="DeleteAggregationTypeWorkflow.IsUsedByPageType" value="Не можна видалити тип '{0}', тому що він використовується типом сторінок." />  
+  <string key="DeleteAggregationTypeWorkflow.IsUsedByPageType" value="Не можна видалити тип &#39;{0}&#39;, тому що він використовується типом сторінок." />  
   <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="Видалити тип даних" />
   <string key="DeleteCompositionTypeWorkflow.Text" value="Видалити тип даних" />
   <string key="DeleteCompositionTypeWorkflow.ErrorTitle" value="Помилка" />
-  <string key="DeleteCompositionTypeWorkflow.TypeIsReferenced" value="Не можна видалити тип '{0}', тому що інші типи на нього посилаються." />
-  <string key="DeleteCompositionTypeWorkflow.IsUsedByPageType" value="Не можна видалити тип '{0}', тому що він використовується типом сторінок." />  
+  <string key="DeleteCompositionTypeWorkflow.TypeIsReferenced" value="Не можна видалити тип &#39;{0}&#39;, тому що інші типи на нього посилаються." />
+  <string key="DeleteCompositionTypeWorkflow.IsUsedByPageType" value="Не можна видалити тип &#39;{0}&#39;, тому що він використовується типом сторінок." />  
   <string key="ToXmlLabel" value="У XML" />
   <string key="ToXmlToolTip" value="У XML" />
   <string key="EnableTypeLocalizationWorkflow.Dialog.Label" value="Включити локалізацію" />
@@ -109,12 +109,14 @@
   <string key="LocalizeDataWorkflow.ShowError.InfoTableCaption" value="Помилки перекладу" />
   <string key="LocalizeDataWorkflow.ShowError.AlreadyTranslated" value="Ці дані вже були перекладені. Перекладений варіант належить до іншої групи." />
   <string key="LocalizeDataWorkflow.ShowError.Description" value="Наступні поля посилаються на певний тип даних. Ви повинні перекласти ці елементи даних, перш ніж переводити цей елемент даних" />
-  <string key="LocalizeDataWorkflow.ShowError.FieldErrorFormat" value="Поле '{0}' посилається на дані типу '{1}' з написом '{2}'" />
+  <string key="LocalizeDataWorkflow.ShowError.FieldErrorFormat" value="Поле &#39;{0}&#39; посилається на дані типу &#39;{1}&#39; з написом &#39;{2}&#39;" />
   <string key="AddNewInterfaceTypeStep1.ErrorTitle" value="Помилка" />
   <string key="EditInterfaceTypeStep1.ErrorTitle" value="Помилка" />
   <string key="AddNewCompositionTypeWorkflow.ErrorTitle" value="Помилка" />
   <string key="AddNewAggregationTypeWorkflow.ErrorTitle" value="Помилка" />
 
   <string key="EditCompositionTypeWorkflow.ErrorTitle" value="Помилка" />
+  <string key="EditAggregationTypeWorkflow.ErrorTitle" value="Помилка" />
+  
   <string key="DataTypeDescriptorToXmlLabel" value="XML-результат" />
 </strings>

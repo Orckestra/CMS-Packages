@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <!-- preload precaution -->
   <string key="Preload.Key" value="Отримано при запуску VisualEditorBinding, щоб переконатися, що рядки завантажуються:)" />
@@ -44,7 +44,6 @@
   <string key="ContextMenu.LabelTable" value="Таблицю ..." />
   <string key="ContextMenu.LabelTableManage" value="Керувати таблицею" />
   <string key="ContextMenu.LabelImage" value="Зображення ..." />
-  <string key="ContextMenu.LabelFromWord" value="З документа Word ..." />
   <string key="ContextMenu.LabelAsText" value="Як простий текст ..." />
   <string key="ContextMenu.LabelField" value="Поле" />
   <string key="ContextMenu.LabelFieldDelete" value="Видалити клітинку" />
@@ -159,7 +158,8 @@
   <string key="Image.MaxWidthToolTip" value="Якщо ширина зображення більше вказанного значення, її буде зменшено до вказанного значення." />
   <string key="Image.MaxHeight" value="Макс. висота" />
   <string key="Image.MaxHeightToolTip" value="Якщо висота зображення більше вказанного значення, її буде зменшено до вказанного значення." />
-  <!-- charmap -->
+
+	<!-- charmap -->
   <string key="CharMap.LabelSelectSpecialChar" value="Виберіть символ" />
   <string key="CharMap.LabelGeneral" value="Загальні" />
   <string key="CharMap.LabelAlphabetical" value="Букви" />
@@ -172,9 +172,6 @@
   <string key="CharMap.LabelMathAndLogic" value="Математичні і логічні" />
   <string key="CharMap.LabelSymbols" value="Символи" />
   <string key="CharMap.LabelArrows" value="Стрілки" />
-  <!-- word paste -->
-  <string key="WordPaste.Label" value="Вставити з документа Word" />
-  <string key="WordPaste.PasteHereContent" value="Вставте сюди зміст документа Word. Потім натисніть OK." />
   <!-- text paste -->
   <string key="TextPaste.Label" value="Вставити як простий текст" />
   <string key="TextPaste.PasteHereContent" value="Вставте текст сюди. Потім натисніть OK." />
