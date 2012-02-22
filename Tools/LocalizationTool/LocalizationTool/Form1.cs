@@ -22,7 +22,7 @@ namespace LocalizationTool
 		private KeysListItem _selectedKey = null;
 		private string _progressLabelFormat = "{0}% done – {1} out of {2} strings are missing translation.";
 		private BindingList<FilesListItem> _filesListSource;
-		private BindingList<KeysListItem> _keysListSource; 
+		private BindingList<KeysListItem> _keysListSource;
 		#endregion
 
 		#region Form Events
@@ -116,6 +116,8 @@ namespace LocalizationTool
 			if (_selectedKey != null)
 			{
 				SaveString();
+				if (_selectedKey.IsFlagged)
+					UpdateFlagsUI();
 			}
 		}
 
@@ -188,7 +190,7 @@ namespace LocalizationTool
 				var targetValue = "<br/>";
 				if (targetFileElements.ContainsKey(el.Key))
 					targetValue = targetFileElements[el.Key];
-				
+
 				print.AppendFormat("<table class='report'><tr><td class='first'>{0}</td><td>{1}</td></tr></table>", el.Value, targetValue).AppendLine();
 			}
 
@@ -217,7 +219,7 @@ namespace LocalizationTool
 		{
 			FlagWindow flagThis = new FlagWindow();
 
-			if (flagThis.ShowDialog(this) == DialogResult.OK && !string.IsNullOrEmpty(flagThis.FlagComment))
+			if (flagThis.ShowDialog(this) == DialogResult.OK)
 			{
 				FileHandler.AddFlag(_selectedFile.Name, _selectedKey.Name, flagThis.FlagComment);
 				RefreshKeysListSelectedItem();
@@ -423,6 +425,7 @@ namespace LocalizationTool
 			if (_selectedKey.IsFlagged)
 			{
 				tooltipFlaged.SetToolTip(keysListBox, _selectedKey.Comment);
+				toolStripStatusLabel1.Text = "Flag: " + _selectedKey.Comment;
 				tooltipFlaged.Active = true;
 				btnFlagThis.Visible = false;
 				btnEditRemoveFlag.Visible = true;
@@ -436,81 +439,6 @@ namespace LocalizationTool
 		}
 
 		#endregion
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label2_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void sourceLanguageTextBox_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void sourceLanguageLabel_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void targetLanguageLabel_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-		{
-
-		}
-
-		private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void enterSavesAndMovesCheckBox_CheckedChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void cbFromGoogleTranslate_CheckedChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void cbRegisterInCompositeConfig_CheckedChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void progressLabel_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void progressValue_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void lbSearch_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void tooltipFlaged_Popup(object sender, PopupEventArgs e)
-		{
-
-		}
-
-		private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
 
 	}
 
@@ -579,6 +507,6 @@ namespace LocalizationTool
 		}
 		public string Comment { get; set; }
 		public bool IsFlagged { get; set; }
-	} 
+	}
 	#endregion
 }
