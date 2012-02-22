@@ -2,7 +2,7 @@
 <strings>
 
 	<!-- preload precaution -->
-	<string key="Preload.Key" value="Получено при запуске SourceEditorBinding, чтобы убедиться, что строки загружаются :)"/>
+	<string key="Preload.Key" value="Получено при запуске SourceEditorBinding, чтобы убедиться, что строки загружаются :)" />
 	
 	<!-- validation messages -->
 	<string key="Invalid.HTML.DialogTitle" value="Недопустимый XHTML" />
@@ -11,28 +11,28 @@
 	<string key="Invalid.HTML.MissingBody" value="Отсутствует тег &lt;body&gt; ." />
 	<string key="Invalid.HTML.HeadBodyIndex" value="Тег &lt;head&gt; должен предшествовать &lt;body&gt;." />
 	<string key="Invalid.HTML.NamespaceURI" value="Корневое пространство имен неправильно." />
-	<string key="Invalid.HTML.MultipleBody" value="Только один тег &lt;body&gt; допускается."/>
-	<string key="Invalid.HTML.MultipleHead" value="Только один &lt;head&gt; тег допускается."/>
+	<string key="Invalid.HTML.MultipleBody" value="Только один тег &lt;body&gt; допускается." />
+	<string key="Invalid.HTML.MultipleHead" value="Только один &lt;head&gt; тег допускается." />
 	
-	<string key="Format.XML.ErrorDialog.Title" value="Форматирование кода прервано"/> 
-	<string key="Format.XML.ErrorDialog.Text" value="Форматирование XML кода требует правильно сформированной структуры документа."/>
+	<string key="Format.XML.ErrorDialog.Title" value="Форматирование кода прервано" /> 
+	<string key="Format.XML.ErrorDialog.Text" value="Форматирование XML кода требует правильно сформированной структуры документа." />
 	
 	<!-- plain/colored switch button -->
-	<string key="Switch.PlainEdit.Label" value="Простое редактирование"/>
-	<string key="Switch.PlainEdit.ToolTip" value="Без подсветки синтаксиса, большая производительность"/>
-	<string key="Switch.ColoredEdit.Label" value="Цветное редактирование"/>
-	<string key="Switch.ColoredEdit.ToolTip" value="Подсветка синтаксиса, меньшая производительность"/>
+	<string key="Switch.PlainEdit.Label" value="Простое редактирование" />
+	<string key="Switch.PlainEdit.ToolTip" value="Без подсветки синтаксиса, большая производительность" />
+	<string key="Switch.ColoredEdit.Label" value="Цветное редактирование" />
+	<string key="Switch.ColoredEdit.ToolTip" value="Подсветка синтаксиса, меньшая производительность" />
 
   <!-- toolbar menus -->
-  <string key="Toolbar.Insert.Label" value="Вставить"/>
-  <string key="Toolbar.Format.Label" value="Форматировать"/>
-  <string key="Toolbar.Format.ToolTip" value="Форматировать код XML"/>
+  <string key="Toolbar.Insert.Label" value="Вставить" />
+  <string key="Toolbar.Format.Label" value="Форматировать" />
+  <string key="Toolbar.Format.ToolTip" value="Форматировать код XML" />
   
   <!-- insert dropdown -->
-	<string key="Insert.PageURL.Label" value="URL страницы"/>
-	<string key="Insert.ImageURL.Label" value="URL изображения"/>
-	<string key="Insert.MediaURL.Label" value="URL медиа-файла"/>
-	<string key="Insert.FrontendURL.Label" value="Frontend URL"/>
-	<string key="Insert.FunctionMarkup.Label" value="Код функции"/>
+	<string key="Insert.PageURL.Label" value="URL страницы" />
+	<string key="Insert.ImageURL.Label" value="URL изображения" />
+	<string key="Insert.MediaURL.Label" value="URL медиа-файла" />
+	<string key="Insert.FrontendURL.Label" value="Frontend URL" />
+	<string key="Insert.FunctionMarkup.Label" value="Код функции" />
 	
 </strings>

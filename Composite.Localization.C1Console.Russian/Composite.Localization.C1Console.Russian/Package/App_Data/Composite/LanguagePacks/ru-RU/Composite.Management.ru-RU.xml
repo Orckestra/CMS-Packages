@@ -1,644 +1,643 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Изменить разрешения" />
-  <string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Изменить разрешения" />
-  <string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Глобальные разрешения" />
-  <string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Управлять разрешениями пользователя" />
-  <string key="LogElementProvider.RootLabel" value="Журнал" />
-  <string key="LogElementProvider.RootLabelToolTip" value="Системный журнал" />
-  <string key="LogElementProvider.ShowLogLabel" value="Показать журнал" />
-  <string key="LogElementProvider.ShowLogToolTip" value="Показать системный журнал" />
-  <string key="DataCompositionVisabilityFacade.DefaultContainerLabel" value="Метаданные" />
-  <string key="Website.Forms.Administrative.DeleteUserStep1.LabelFieldGroup" value="Удалить пользователя?" />
-  <string key="Website.Forms.Administrative.DeleteUserStep1.Text" value="Удалить выбранного пользователя?" />
-  <string key="DeleteUserWorkflow.CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
-  <string key="DeleteUserWorkflow.CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип, который не допускает каскадное удаление. Выполнение операции приостановлено." />
-  <string key="DeleteUserWorkflow.DeleteSelfTitle" value="Не удается удалить пользователя" />
-  <string key="DeleteUserWorkflow.DeleteSelfErrorMessage" value="Нельзя удалить учетную запись, с которой  вы вошли в систему." />
-  
-  <string key="Website.Function.SelectDialog.Title" value="Выбрать функцию" />
-  <string key="Website.Widget.SelectDialog.Title" value="Выбрать виджет" />
-  <string key="Website.ContentLink.SelectDialog.Title" value="Выбрать страницу или файл" />
-  <string key="Website.Page.SelectDialog.Title" value="Выбрать страницу" />
-  <string key="Website.FrontendFile.SelectDialog.Title" value="Выбрать Frontend файл" />
-  <string key="Website.Media.SelectDialog.Title" value="Выбрать медиа-файл" />
-  <string key="Website.Image.SelectDialog.Title" value="Выбрать изображение" />
+	<string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Изменить разрешения" />
+	<string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Изменить разрешения" />
+	<string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Глобальные разрешения" />
+	<string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Управлять разрешениями пользователя" />
+	<string key="LogElementProvider.RootLabel" value="Журнал" />
+	<string key="LogElementProvider.RootLabelToolTip" value="Системный журнал" />
+	<string key="LogElementProvider.ShowLogLabel" value="Показать журнал" />
+	<string key="LogElementProvider.ShowLogToolTip" value="Показать системный журнал" />
+	<string key="DataCompositionVisabilityFacade.DefaultContainerLabel" value="Метаданные" />
+	<string key="Website.Forms.Administrative.DeleteUserStep1.LabelFieldGroup" value="Удалить пользователя?" />
+	<string key="Website.Forms.Administrative.DeleteUserStep1.Text" value="Удалить выбранного пользователя?" />
+	<string key="DeleteUserWorkflow.CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
+	<string key="DeleteUserWorkflow.CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип, который не допускает каскадное удаление. Выполнение операции приостановлено." />
+	<string key="DeleteUserWorkflow.DeleteSelfTitle" value="Не удается удалить пользователя" />
+	<string key="DeleteUserWorkflow.DeleteSelfErrorMessage" value="Нельзя удалить учетную запись, с которой  вы вошли в систему." />
+
+	<string key="Website.Function.SelectDialog.Title" value="Выбрать функцию" />
+	<string key="Website.Widget.SelectDialog.Title" value="Выбрать виджет" />
+	<string key="Website.ContentLink.SelectDialog.Title" value="Выбрать страницу или файл" />
+	<string key="Website.Page.SelectDialog.Title" value="Выбрать страницу" />
+	<string key="Website.FrontendFile.SelectDialog.Title" value="Выбрать Frontend файл" />
+	<string key="Website.Media.SelectDialog.Title" value="Выбрать медиа-файл" />
+	<string key="Website.Image.SelectDialog.Title" value="Выбрать изображение" />
 
 
-  <string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Изменить пользователя" />
-  <string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Имя пользователя" />
-  <string key="Website.Forms.Administrative.EditUserStep1.UserNameHelp" value="Имена пользователей нельзя изменить. Это поле - только для чтения." />
-  <string key="Website.Forms.Administrative.EditUserStep1.PasswordLabel" value="Пароль" />
-  <string key="Website.Forms.Administrative.EditUserStep1.PasswordHelp" value="В пароле должно быть больше 6 символов." />
-  <string key="Website.Forms.Administrative.EditUserStep1.EmailLabel" value="Адрес эл. почты" />
-  <string key="Website.Forms.Administrative.EditUserStep1.EmailHelp" value="Адрес электронной почты  пользователя (необязательно)." />
-  <string key="Website.Forms.Administrative.EditUserStep1.GroupLabel" value="Папка" />
-  <string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Если вы введете имя папки, которое еще не существует, будет создана новая папка." />
-  <string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Региональные настройки" />
-  <string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="Чтобы изменить способ отображения чисел, времени и дат, выберите язык из списка. Записи, отмеченные звездочкой (*) уже переведены. Неотмеченные записи будут показаны на английском языке." />
-  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveFieldLabel" value="Разделы" />
-  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectLabel" value="Видимые разделы" />
-  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectHelp" value="Выберите, какие разделы должны быть видны, когда пользователь запускает консоль C1." />
-  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsFieldLabel" value="Глобальные разрешения" />
-  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectLabel" value="Глобальные разрешения" />
-  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectHelp" value="Разрешение &quot;Администрировать&quot; предоставляет пользователю доступ к управлению разрешениями пользователей и выполнению других административных задач." />
-  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissions.IgnoredOwnAdministrativeRemoval" value="Удаление вашего разрешения &quot;Администрировать&quot; проигнорировано. Вы сохранили свои административные привилегии." />
-  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesFieldLabel" value="Доступ к языку данных" />
-  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectLabel" value="Языки данных" />
-  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectHelp" value="Пользователь имеет доступ к управлению данными на выбранных языках." />
-  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleLabel" value="Текущий язык" />
-  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Текущий язык" />
-  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleNotChecked" value="Выбранный язык не отмечен в разделе данных языка." />
-  <string key="Website.Forms.Administrative.EditUserStep1.NoActiveLocaleSelected" value="Вы должны выбрать хотя бы один активный язык." />
-  <string key="Website.Forms.Administrative.EditUserStep1.GenerelTabLabel" value="Основные" />
-  <string key="Website.Forms.Administrative.EditUserStep1.PermissionsTabLabel" value="Разрешения" />
-  <string key="Website.Forms.Administrative.EditUserStep1.PerspectivesTabLabel" value="Разделы" />
-  <string key="Website.Forms.Administrative.EditUserStep1.UserGroupsFieldLabel" value="Группы пользователей" />
-  <string key="Website.Forms.Administrative.EditUserStep1.UserGroupsMultiSelectHelp" value="Выберите группы пользователей, членом которых должен быть выбранный пользователь." />
-  <string key="UserElementProvider.RootLabel" value="Пользователи" />
-  <string key="UserElementProvider.RootToolTip" value="Пользователи" />
-  <string key="UserElementProvider.AddUserLabel" value="Добавить пользователя ..." />
-  <string key="UserElementProvider.AddUserToolTip" value="Добавить нового пользователя" />
-  <string key="UserElementProvider.EditUserLabel" value="Изменить пользователя" />
-  <string key="UserElementProvider.EditUserToolTip" value="Изменить выбранного пользователя" />
-  <string key="UserElementProvider.DeleteUserLabel" value="Удалить пользователя" />
-  <string key="UserElementProvider.DeleteUserToolTip" value="Удалить выбранного пользователя" />
-  <string key="UserElementProvider.ChangeOtherActiveLocaleTitle" value="Предупреждение" />
-  <string key="UserElementProvider.ChangeOtherActiveLocaleMessage" value="Вы сменили текущий язык для пользователя, который уже вошел в систему.Консоль пользователя будет перезапущена и данные могут быть утеряны." />
-  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogTitle" value="Требуется очистка" />
-  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogText" value="Для этого требуется очистка. Активные редакторы будут сохранены и закрыты." />
-  <string key="AddNewUserWorkflow.UsernameDuplicateError" value="Пользователь с таким именем уже существует" />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.LabelFieldGroup" value="Добавить нового пользователя" />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.UserNameLabel" value="Имя пользователя" />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.UserNameHelp" value="После создания нового пользователя имя пользователя не может быть изменено" />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.PasswordLabel" value="Пароль" />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.PasswordHelp" value="В пароле должен быть больше 6 символов." />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.EmailLabel" value="Адрес эл. почты" />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.EmailHelp" value="Адрес электронной почты  пользователя (необязательно)." />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.GroupLabel" value="Папка" />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.GroupHelp" value="Если вы введете имя папки, которой еще не существует, будет создана новая папка." />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.CultureLabel" value="Региональные настройки" />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="Чтобы изменить способ отображения чисел, времени и дат, выберите язык из списка. Записи, отмеченные звездочкой (*) уже переведены. Неотмеченные записи  будут показаны на английском языке." />
-  <string key="UserElementProvider.MissingActiveLanguageTitle" value="Наличие языка обязательно" />
-  <string key="UserElementProvider.MissingActiveLanguageMessage" value="Для создания  пользователя требуется наличие языка, но ни один язык не был еще добавлен. Вы можете добавить язык  в разделе &quot;Система&quot;." />
-  <string key="UserElementProvider.UserLoginIsAlreadyUsed" value="Пользователь с таким  Логином  уже существует" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderTypeLabel" value="Добавить папку данных" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderTypeToolTip" value="Добавить папку данных" />
-  <string key="AssociatedDataElementProviderHelper.AddAssociatedDataLabel" value="Добавить данные" />
-  <string key="AssociatedDataElementProviderHelper.AddAssociatedDataToolTip" value="Добавить данные" />
-  <string key="AssociatedDataElementProviderHelper.EditAssociatedDataLabel" value="Изменить данные" />
-  <string key="AssociatedDataElementProviderHelper.EditAssociatedDataToolTip" value="Изменить данные" />
-  <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataLabel" value="Удалить данные" />
-  <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataToolTip" value="Удалить данные" />
-  <string key="AssociatedDataElementProviderHelper.LocalizeData" value="Локализовать" />
-  <string key="AssociatedDataElementProviderHelper.LocalizeDataToolTip" value="Локализовать данные" />
-  <string key="AssociatedDataElementProviderHelper.DisabledData" value="Еще не утверждены или опубликованы" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.FieldLabel" value="Добавить папку данных" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorLabel" value="Тип папки данных" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorHelp" value="Создайте новый тип данных или используйте уже существующий (если имеется)." />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelNewType" value="Настройки" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeName" value="Имя типа" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeName" value="Техническое имя типа данных (например, Product). Используется для идентификации этого типа в коде и не должно изменяться, если имелся хотя бы один случай внешнего использования." />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeNamespace" value="Пространство имен типа" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeNamespace" value="Пространство имен (модуль / название категории) типа. Используется для идентификации этого типа в коде и не должно изменяться." />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeTitle" value="Название" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeTitle" value="В этом поле нужно указать понятное для пользователя название типа. Вы можете изменять это поле, как вы хотите." />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelFields" value="Поля" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ServicesLabel" value="Службы" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasPublishing" value="Поддержка публикации" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasLocalization" value="Поддержка локализации" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesTitle" value="Не существует ни одной папки данных для страницы" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Ни одной папки данных для страницы еще не было создано. Вы можете создать папку данных для страницы  в разделе 'Данные'." />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesTitle" value="Не существуют неиспользованные папки данных для страницы" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Все доступные папки данных для страницы уже добавлены. Создать новую папку данных вы можете в разделе 'Данные'." />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ErrorTitle" value="Ошибка" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.FieldLabel" value="Выберите для добавления папку данных" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorLabel" value="Существующие типы папки данных" />
-  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorHelp" value="Выберите для добавления тип папки данных" />
-  <string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeLabel" value="Удалить поле метаданных" />
-  <string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeToolTip" value="Удалить поле метаданных" />
-  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.LabelFieldGroup" value="Удалить папку данных у страницы" />
-  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.FieldGroupLabel" value="Очистка данных" />
-  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataLabel" value="Удалить данные" />
-  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataCheckBoxLabel" value="Да, удалить данные из папки" />
-  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataHelp" value="Если вы хотите, чтоб данные из этой папки остались в базе данных, вы должны снять флажок с этой опции." />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.LayoutLabel" value="Добавить поле метаданных" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataTypeLabel" value="Добавить поле метаданных" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataTypeToolTip" value="Добавить поле метаданных" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.FieldLabel" value="Выберите для добавления существующий тип метаданных" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorLabel" value="Существующие типы метаданных" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorHelp" value="Выберите для добавления существующий тип метаданных" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesTitle" value="Не существует ни одного типа метаданных для страниц" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesMessage" value="Еще ни один тип метаданных для страниц не был создан. Вы можете создать тип метаданных для страниц  в разделе &quot;Данные&quot;." />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.NamingFieldLabel" value="Имя группы полей метаданных" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameLabel" value="Имя" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameHelp" value="Введите уникальное имя, идентифицирующее эту группу полей метаданных" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelLabel" value="Надпись" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelHelp" value="Введите понятную пользователю надпись для этой группы полей метаданных" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.VisabilityFieldLabel" value="Видимость группы полей метаданных" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorLabel" value="Вкладка" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorHelp" value="Выберите вкладку, на которой это поле метаданных должно отображаться" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorLabel" value="Отображать, начиная с" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorHelp" value="Отображать, начиная с" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorLabel" value="Наследовать отображение" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorHelp" value="Наследовать отображение" />
-  <string key="AssociatedDataElementProviderHelper.NoItems.Title" value="У группы полей метаданных нет элементов в этом диапазоне" />
-  <string key="AssociatedDataElementProviderHelper.NoItems.Description" value="В настоящее время нет элементов в указанном диапазоне отображения.  Нажмите 'Назад', чтоб изменить диапазон отображения или 'Готово', чтобы создать группу полей метаданных." />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption0" value="Этого элемента" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption1" value="Дочерних элементов" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption2" value="Потомков 2-го поколения" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption3" value="Потомков 3-го поколения" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption4" value="Потомков 4-го поколения" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption5" value="Потомков 5-го поколения" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption0" value="Не наследовать" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption1" value="Наследовать 1-ое поколение" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption2" value="Наследовать 2-ое поколение" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption3" value="Наследовать 3-ье поколение" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption4" value="Всегда наследовать" />
-  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.FieldGroupNameNotValid" value="Название группы полей уже используется" />
-  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectType.LayoutLabel" value="Удалить группу полей метаданных" />
-  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.FieldLabel" value="Выберите группу полей метаданных для удаления" />
-  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorLabel" value="Группа полей" />
-  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorHelp" value="Выберите группу полей метаданных для удаления" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataTypeLabel" value="Изменить поле метаданных" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataTypeToolTip" value="Изменить поле метаданных" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.Layout.Label" value="Изменить поле метаданных для страницы" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.FieldGroup.Label" value="Параметры поля метаданных для страницы" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Label" value="Надпись" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Help" value="Надпись поля метаданных. Используется при изменении страниц" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Label" value="Вкладка" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Help" value="Выберите вкладку, на которой эти метаданные должны отображаться" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorLabel" value="Отображать, начиная с" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorHelp" value="Отображать, начиная с" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorLabel" value="Наследовать отображение" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorHelp" value="Наследовать отображение" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Label" value="Поле метаданных" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Help" value="Выберите поле метаданных для изменения" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Title" value="Нет полей метаданных для изменения" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Message" value="Нет полей метаданных, определенных для этого элемента, для изменения" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataFieldNameAlreadyUsed" value="Тип метаданных используется в другом месте с тем же именем, но с другой надписью" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerChangeNotAllowed" value="Существует одно или более определений с тем же названием. Изменение содержащего элемента не допускается." />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Title" value="Нажмите &quot;Готово&quot;, чтобы сохранить" />
-  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Description" value="Вся необходимая информация была собрана. Нажмите &quot;Готово&quot; для обновления поля метаданных" />
-  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Title" value="Нет  полей метаданных для удаления" />
-  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Message" value="Нет полей метаданных, определенных для этого элемента, для удаления" />
-  <string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
-  <string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип, который не допускает каскадное  удаление. Выполнение операции приостановлено." />
-  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelNewType" value="Настройки" />
-  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeName" value="Имя типа" />
-  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeName" value="Имя нового типа, который вы создаете (например, Product)" />
-  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeNamespace" value="Пространство имен типа" />
-  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeNamespace" value="Имя модуля, категории или пространства имен, которые вы создаете" />
-  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeTitle" value="Название" />
-  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeTitle" value="В этом поле нужно указать понятное пользователю имя" />
-  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelFields" value="Поля" />
-  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.ServicesLabel" value="Службы" />
-  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasVersioning" value="Поддержка  версий" />
-  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasPublishing" value="Поддержка публикации" />
-  <string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.FieldGroupLabel" value="Удалить данные?" />
-  <string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.Text" value="Удалить данные?" />
-  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.FieldGroupLabel" value="Добавить данные страницы" />
-  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorLabel" value="Выберите для добавления тип данных" />
-  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorHelp" value="Выберите один из существующих типов для добавления данных" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeWorkflow.FieldGroupLabel" value="Добавить тип данных для страницы" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorLabel" value="Выберите тип для добавления" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorHelp" value="Выберите один из существующих типов в системе" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorLabel" value="Выберите внешний ключ" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorHelp" value="Выберите одно из полей из типа для использования в качестве внешнего ключа" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorLabel" value="Добавить" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorHelp" value="Создание нового типа или использование существующего типа" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorLabel" value="Выберите тип:" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorHelp" value="Обычные данные - это новый тип, который создается под страницей. Метаданные - это новое поле, которое создается на странице" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameLabel" value="Имя правила" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameHelp" value="Имя правила сохраняется вместе с метаданными и является частью ключа метаданных. Имя должно быть уникальным." />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleLabelLabel" value="Надпись правила" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleHelpHelp" value="Надпись правила используется как понятное пользователю название для объекта. Может быть локализована." />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorLabel" value="Выбрать контейнер для композиции" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorHelp" value="Выберите контейнер для нового правила." />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorLabel" value="Выбрать область видимости композиции" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorHelp" value="Выберите область видимости новой композиции" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsLabel" value="Уровни" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsHelp" value="Глубина подстраниц, на которой композиция будет видна" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeLabel" value="Подтвердите новый тип данных:" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeHelp" value="Метаданные - это новое поле, которое создается на странице" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Имя правила области видимости композиции" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameHelp" value="Имя правила сохраняется вместе с метаданными и является частью ключа метаданных. Имя должно быть уникальным." />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleLabelLabel" value="Надпись правила области видимости композиции" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleHelpHelp" value="Надпись правила используется как понятное пользователю имя объекта. Может быть локализована." />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeLabel" value="Область видимости композиции" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeHelp" value="Это область, в которой новая композиция будет видна при изменении страниц" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeLabel" value="Добавление типа" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeHelp" value="Создать новый тип или использовать существующий тип" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameLabel" value="Имя существующего типа" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameHelp" value="Имя выбранного существующего типа в системе для использования" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameLabel" value="Имя поля внешнего ключа" />
-  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameHelp" value="Имя поля существующего типа для использования в качестве внешнего ключа" />
-  <string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeLabel" value="Удалить папку данных" />
-  <string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeToolTip" value="Удалить папку данных" />
-  <string key="Website.Forms.Administrative.RemoveAssociatedType.FieldGroupLabel" value="Удалить тип данных для страниц" />
-  <string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.AssociationTypeLabel" value="Удалить тип данных для страниц" />
-  <string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Имя правила области видимости композиции" />
-  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorLabel" value="Выберите правило" />
-  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorHelp" value="Имя правила для удаления" />
-  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorLabel" value="Выберите тип данных страницы" />
-  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorHelp" value="" />
-  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorLabel" value="Выберите тип данных" />
-  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorHelp" value="Выберите один из существующих типов" />
-  <string key="VirtualElementProviderElementProvider.ID01" value="Виртуальный корневой элемент" />
-  <string key="VirtualElementProviderElementProvider.UserPerspective" value="Пользователи" />
-  <string key="VirtualElementProviderElementProvider.DeveloperApplicationPerspective" value="Приложения" />
-  <string key="VirtualElementProviderElementProvider.UserGroupPerspective" value="Группы пользователей" />
-  <string key="VirtualElementProviderElementProvider.SystemPerspective" value="Система" />
-  <string key="VirtualElementProviderElementProvider.ContentPerspective" value="Контент" />
-  <string key="VirtualElementProviderElementProvider.DatasPerspective" value="Данные" />
-  <string key="VirtualElementProviderElementProvider.DesignPerspective" value="Макет" />
-  <string key="VirtualElementProviderElementProvider.FunctionsPerspective" value="Функции" />
-  <string key="VirtualElementProviderElementProvider.MediaFilePerspective" value="Все медиа-файлы" />
-  <string key="VirtualElementProviderElementProvider.MediaPerspective" value="Мультимедиа" />
-  <string key="VirtualElementProviderElementProvider.ReadOnlyFunctionPerspective" value="Все функции" />
-  <string key="VirtualElementProviderElementProvider.ReadOnlyWidgetFunctionPerspective" value="Все виджет-функции" />
-  <string key="VirtualElementProviderElementProvider.SqlFunctionPerspective" value="SQL-функции" />
-  <string key="VirtualElementProviderElementProvider.XsltBasedFunctionPerspective" value="XSLT-функции" />
-  <string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogLabel" value="Журнал сервера" />
-  <string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogTooltip" value="Просмотреть последние события на сервере" />
-  <string key="VirtualElementProviderElementProvider.RootActions.SendMessageLabel" value="Отправить сообщение" />
-  <string key="VirtualElementProviderElementProvider.RootActions.SendMessageTooltip" value="Отправить сообщение во все запущенные консоли" />
-  <string key="VirtualElementProviderElementProvider.RootActions.RebuildAssemblyCacheLabel" value="Перестроить кэш сборок" />
-  <string key="VirtualElementProviderElementProvider.RootActions.RebuildAssemblyCacheTooltip" value="Перестроить кэш сборок" />
-  <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Перезапустить сервер" />
-  <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Перезапустить сервер" />
-  <string key="SendMessageToConsolesWorkflow.Layout.Label" value="Отправить сообщение во все консоли C1" />
-  <string key="SendMessageToConsolesWorkflow.FieldGroup.Label" value="Сообщение, которое будет отправлено" />
-  <string key="SendMessageToConsolesWorkflow.TitleTextBox.Label" value="Заголовок" />
-  <string key="SendMessageToConsolesWorkflow.TitleTextBox.Help" value="Заголовок диалогового окна сообщения" />
-  <string key="SendMessageToConsolesWorkflow.MessageTextArea.Label" value="Сообщение" />
-  <string key="SendMessageToConsolesWorkflow.MessageTextArea.Help" value="Сообщение, которое будет отправлено" />
-  <string key="LoginWebRequestHandler.Login" value="Войти" />
-  <string key="LoginWebRequestHandler.Header" value="Войти в {0}" />
-  <string key="LoginWebRequestHandler.LoginFailed" value="Неправильное имя пользователя или пароль" />
-  <string key="LoginWebRequestHandler.Password" value="Пароль" />
-  <string key="LoginWebRequestHandler.Username" value="Имя пользователя" />
-  <string key="LoginWebRequestHandler.LogInAsOtherUser" value="Войти как другой пользователь." />
-  <string key="LoginWebRequestHandler.WrongUserNameOrPassword" value="Неверное имя пользователя или пароль." />
-  <string key="LoginWebRequestHandler.UserNameNotRegistered" value="Данный Windows-логин {0} \ {1} не зарегистрирован в базе данных пользователей. Вы должны использовать другой логин." />
-  <string key="DataInterfaceValidator.TypeNotAnInterface" value="Тип {0} не является интерфейсом." />
-  <string key="DataInterfaceValidator.TypeDoesNotImplementInterface" value="Тип интерфейса {0} не реализует интерфейс {1}." />
-  <string key="DataInterfaceValidator.NotAcceptedType" value="Свойство {0} у типа интерфейса {1} не является допустимым типом." />
-  <string key="DataInterfaceValidator.NotValidIDataInterface" value="Интерфейс {0} не является допустимым интерфейсом типа IData." />
-  <string key="DeleteMediaFileWorkflow.CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
-  <string key="DeleteMediaFileWorkflow.CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип, который не допускает каскадное удаление. Выполнение операции приостановлено." />
-  <string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
-  <string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип, который не допускает каскадное удаление. Выполнение операции приостановлено." />
-  <string key="MediaFileProviderElementProvider.RootToolTip" value="Добавить папки и файлы в мультимедиа-архив" />
-  <string key="MediaFileProviderElementProvider.AddMediaFolder" value="Добавить папку" />
-  <string key="MediaFileProviderElementProvider.AddMediaFolderToolTip" value="Добавить новую медиа-папку" />
-  <string key="MediaFileProviderElementProvider.AddMediaFile" value="Загрузить файл" />
-  <string key="MediaFileProviderElementProvider.AddMediaFileToolTip" value="Добавить новый медиа-файл" />
-  <string key="MediaFileProviderElementProvider.DeleteMediaFile" value="Удалить файл" />
-  <string key="MediaFileProviderElementProvider.DeleteMediaFileToolTip" value="Удалить выбранный медиа-файл" />
-  <string key="MediaFileProviderElementProvider.DeleteMediaFolder" value="Удалить папку" />
-  <string key="MediaFileProviderElementProvider.DeleteMediaFolderToolTip" value="Удалить медиа-папку со всем содержимым." />
-  <string key="MediaFileProviderElementProvider.Download" value="Скачать" />
-  <string key="MediaFileProviderElementProvider.DownloadToolTip" value="Скачать файл" />
-  <string key="MediaFileProviderElementProvider.EditMediaFile" value="Свойства файла" />
-  <string key="MediaFileProviderElementProvider.EditMediaFileToolTip" value="Переименовать выбранный медиа-файл" />
-  <string key="MediaFileProviderElementProvider.EditMediaFileTextContent" value="Изменить текст" />
-  <string key="MediaFileProviderElementProvider.EditMediaFileTextContentToolTip" value="Изменить содержание текста" />
-  <string key="MediaFileProviderElementProvider.EditImage" value="Редактор изображений" />
-  <string key="MediaFileProviderElementProvider.EditImageToolTip" value="Открыть выбранный медиа-файл в редакторе изображений" />
-  <string key="MediaFileProviderElementProvider.EditMediaFolder" value="Свойства папки" />
-  <string key="MediaFileProviderElementProvider.EditMediaFolderToolTip" value="Изменить свойства медиа-папки" />
-  <string key="MediaFileProviderElementProvider.ChangeMediaFile" value="Заменить файл" />
-  <string key="MediaFileProviderElementProvider.ChangeMediaFileToolTip" value="Заменить выбранный файл другим медиа-файлом" />
-  <string key="MediaFileProviderElementProvider.UploadZipFile" value="Загрузить несколько файлов" />
-  <string key="MediaFileProviderElementProvider.UploadZipFileToolTip" value="Загрузить Zip-файл" />
-  <string key="MediaFileProviderElementProvider.MediaFileItemToolTip" value="Медиа-элемент" />
-  <string key="MediaFileProviderElementProvider.OrganizedFilesAndFoldersToolTip" value="Организовать папки и файлы" />
-  <string key="MediaFileProviderElementProvider.ErrorMessageTitle" value="Ошибка" />
-  <string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Файл '{0}' уже существует в папке '{1}'" />
-  <string key="UploadNewMediaFileWorkflow.UploadFailure" value="Сбой" />
-  <string key="UploadNewMediaFileWorkflow.UploadFailureMessage" value="Загружаемый файл должен быть того же типа, что и оригинал. Загружаемый вами файл имеет другой тип." />
-  <string key="RelationshipGraphActionExecutor.ShowGraph" value="Показать диаграмму" />
-  <string key="RelationshipGraphActionExecutor.ShowGraphToolTip" value="Показать диаграмму отношений" />
-  <string key="RelationshipGraphActionExecutor.ShowOrientedGraph" value="Показать ориентированную диаграмму" />
-  <string key="RelationshipGraphActionExecutor.ShowOrientedGraphToolTip" value="Показать ориентированную диаграмму отношений" />
-  <string key="ShowElementInformationActionExecutor.ShowElementInformation.Label" value="Показать информацию элемента" />
-  <string key="ShowElementInformationActionExecutor.ShowElementInformation.ToolTip" value="Показать информацию элемента" />
-  <string key="RelationshipGraphActionExecutor.Search" value="Искать элементы" />
-  <string key="RelationshipGraphActionExecutor.SearchToolTip" value="Искать элементы" />
-  <string key="RelationshipGraphActionExecutor.SearchElements" value="Искать элементы" />
-  <string key="RelationshipGraphActionExecutor.SearchElementsToolTip" value="Искать элементы" />
-  <!-- WEBSITE -->
-  <string key="Website.General.LabelVersionNumber" value="№ версии" />
-  <string key="Website.Application.DialogReload.Title" value="Перезапустить?" />
-  <string key="Website.Application.DialogReload.Text" value="Перезапустить Composite C1? Все несохраненные изменения будут утеряны." />
-  <string key="WebSite.Application.DialogSaveResource.Title" value="Сохранить ресурс?" />
-  <string key="WebSite.Application.DialogSaveResource.Text" value="&quot;${resourcename}&quot; был изменен. Сохранить изменения?" />
-  <string key="Website.Dialogs.SaveAll.LabelSaveResources" value="Сохранить ресурсы?" />
-  <string key="Website.Dialogs.SaveAll.LabelUnsavedResources" value="Несохраненные ресурсы" />
-  <string key="Website.Dialogs.LabelYes" value="Да" />
-  <string key="Website.Dialogs.LabelNo" value="Нет" />
-  <string key="Website.Dialogs.LabelAccept" value="ОК" />
-  <string key="Website.Dialogs.LabelCancel" value="Отмена" />
-  <string key="Website.Dialogs.LabelDisclosure" value="Подробнее" />
-  <string key="Website.Dialogs.About.Title" value="О Composite C1" />
-  <string key="Website.Dialogs.About.LabelCredits" value="Благодарности" />
-  <string key="Website.Dialogs.About.LabelBack" value="Назад" />
-  <string key="Website.Dialogs.About.LabelCredits2" value="Благодарности" />
-  
-  <string key="Website.Dialogs.NoAccessTitle" value="Нет доступа" />
-  <string key="Website.Dialogs.NoAccessText" value="Вам не предоставлены права доступа к системе. Пожалуйста, обратитесь к своему администратору." />
-  <string key="Website.Dialogs.ImageEditor.ScaleImage.Unit" value="Единица измерения" />
-  <string key="Website.Dialogs.ImageEditor.ScaleImage.Width" value="Ширина" />
-  <string key="Website.Dialogs.ImageEditor.ScaleImage.Height" value="Высота" />
-  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelScaleImage" value="Масштаб изображения" />
-  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelDimensions" value="Размеры" />
-  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelImageSize" value="Размер изображения" />
-  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFixedRatio" value="Пропорционально" />
-  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFreeResize" value="Независимо" />
-  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPixels" value="Пиксели" />
-  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPercent" value="Проценты" />
-  <string key="Website.Dialogs.Options.LoginScreen" value="Экран входа в систему" />
-  <string key="Website.Dialogs.Options.SoundEffects" value="Звуковые эффекты" />
-  <string key="Website.Dialogs.Options.LabelOptions" value="Параметры" />
-  <string key="Website.Dialogs.Options.LabelGeneral" value="Общие" />
-  <string key="Website.Dialogs.Options.LabelAdvanced" value="Расширенные" />
-  <string key="Website.Dialogs.Options.LabelLoginPreferences" value="Настройки входа в систему" />
-  <string key="Website.Dialogs.Options.LabelFakeLoginScreen" value="Псевдо-экран входа в систему" />
-  <string key="Website.Dialogs.Options.LabelNoLoginScreen" value="Без экрана входа в систему" />
-  <string key="Website.Dialogs.Options.LabelAudioPreferences" value="Аудио настройки" />
-  <string key="Website.Dialogs.Options.LabelSoundOn" value="Раздражающие звуковые эффекты" />
-  <string key="Website.Dialogs.Options.LabelSoundOff" value="Без звуковых эффектов" />
-  <string key="Website.Dialogs.WebServices.Error" value="Ошибка в методе веб-службы" />
-  <string key="Website.Dialogs.WebServices.LabelWebServiceError" value="Ошибка веб-службы" />
-  <string key="Website.Dialogs.SystemTree.DetailedPaste.Title" value="Вставить где?" />
-  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelPosition" value="Позиция" />
-  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertBefore" value="Вставить до" />
-  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertAfter" value="Вставить после" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTitle" value="Изменить изображение" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFile" value="Файл" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSave" value="Сохранить" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSaveAs" value="Сохранить как ..." />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRevert" value="Отменить изменения" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelView" value="Вид" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoom" value="Масштаб" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomIn" value="Увеличить" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomOut" value="Уменьшить" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label800" value="800%" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label400" value="400%" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label200" value="200%" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label100" value="100%" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label50" value="50%" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label25" value="25%" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label12" value="12%" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelImage" value="Изображение" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTransform" value="Преобразовать" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipHorizontal" value="Обратить по горизонтали" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipVertical" value="Обратить по вертикали" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CW" value="Повернуть на 90 градусов по часовой стрелке" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CCW" value="Повернуть на 90 градусов против часовой стрелки" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate180" value="Повернуть на 180 градусов" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelScale" value="Масштаб изображения..." />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelCrop" value="Обрезать изображение" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipSelect" value="Выбрать" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipZoom" value="Масштаб" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelSave" value="Сохранить" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelScale" value="Масштаб изображения" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelCrop" value="Обрезать изображение" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelUndo" value="Отменить" />
-  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelRedo" value="Вернуть" />
-  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTitle" value="Разрешения" />
-  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUsers" value="Пользователи" />
-  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUserGroups" value="Группы пользователей" />
-  <string key="Website.Content.Views.Editors.PermissionEditor.LabelButtonSave" value="Сохранить" />
-  <string key="Website.Content.Views.Help.ToolTipBack" value="Перейти на предыдущую страницу" />
-  <string key="Website.Content.Views.Help.ToolTipForward" value="Перейти на следующую страницу" />
-  <string key="Website.Content.Views.Help.ToolTipRefresh" value="Обновить страницу" />
-  <string key="Website.Content.Views.Help.LabelContents" value="Содержание" />
-  <string key="Website.Content.Views.Help.ToolTipContents" value="Содержание справки" />
-  <string key="Website.Content.Views.SystemView.ToolTipCollapseAll" value="Свернуть все" />
-  <string key="Website.Content.Views.SystemView.ToolTipLinkWithEditor" value="Связать с редактором" />
-  <string key="Website.Content.Views.Search.Search.LabelNewSearch" value="Новый поиск ..." />
-  <string key="Website.Content.Views.ViewSource.LabelFormatted" value="Форматировано" />
-  <string key="Website.Content.Views.ViewSource.LabelRaw" value="Без форматирования" />
-  <string key="ServerLog.LabelTitle" value="Журнал сервера" />
-  <string key="ServerLog.LabelButtonDeleteOld" value="Удалить старые" />
-  <string key="ServerLog.LabelButtonRefresh" value="Обновить" />
-  <string key="ServerLog.EmptyLabel" value="Данных журнала нет" />
-  <string key="ServerLog.LogEntry.DateLabel" value="Дата" />
-  <string key="ServerLog.LogEntry.MessageLabel" value="Сообщение" />
-  <string key="ServerLog.LogEntry.TitleLabel" value="Заголовок" />
-  <string key="ServerLog.LogEntry.EventTypeLabel" value="Тип события" />
-  <string key="FunctionDocumentation.LabelButtonRefresh" value="Обновить" />
-  <string key="FunctionDocumentation.LabelButtonPrint" value="Печать" />
-  <string key="Website.FlowUICompleted.ExecutionEndedTitle" value="Выполнение завершилось" />
-  <string key="Website.FlowUICompleted.ExecutionEndedMessage" value="Действие, выполняемое в этом окне, завершилось." />
-  <string key="Website.ServerError.ServerErrorTitle" value="Ошибка сервера" />
-  <string key="Website.ServerError.ServerErrorMessage" value="К сожалению, произошла ошибка." />
-  <string key="Website.ServerError.ServerErrorDetails" value="Подробно" />
-  <string key="Website.LicenseViolation.LicenseViolationTitle" value="Нарушение лицензии" />
-  <string key="Website.LicenseViolation.LicenseViolationMessage" value="Запрошенное действие нарушает вашу текущую лицензию." />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelFlashOptions" value="Параметры Flash" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelHigh" value="Высокое" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLow" value="Низкое" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutohigh" value="Высокое (автом.)" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutolow" value="Низкое (автом.)" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelBest" value="Лучшее" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelWindow" value="Окно" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelOpaque" value="Непрозрачное" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelTransparent" value="Прозрачное" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowall" value="Показать все" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelNoborder" value="Порядок" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelExactfit" value="Точное совпадение" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutoPlay" value="Играть автоматически" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLoop" value="Повторять" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowMenu" value="Показать меню" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelSWLiveConnect" value="SW Live Connect" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelQuickTimeOptions" value="Параметры Quicktime" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelLoop" value="Повторять" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelCache" value="Кеш" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelNoCorrection" value="Без коррекции" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelKioskMode" value="Режим киоска" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelPlayEveryFrame" value="Показывать каждый кадр" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoPlay" value="Играть автоматически" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelController" value="Контроллер" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelEnableJavaScript" value="Включите Javascript" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoHRef" value="Auto HREF" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelTargetCache" value="Целевой кеш" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShockWaveOptions" value="Параметры Shockwave" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelHigh" value="Высокое" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLow" value="Низкое" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoHigh" value="Высокое (автом.)" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoLow" value="Низкое (автом.)" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelBest" value="Лучшее" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelWindow" value="Окно" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelOpaque" value="Непрозрачное" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelTransparent" value="Прозрачное" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowAll" value="Показать все" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelNoBorder" value="Порядок" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelExactFit" value="Точное совпадение" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoPlay" value="Играть автоматически" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLoop" value="Повторять" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowMenu" value="Показать меню" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelSWLiveConnect" value="SW Live Connect" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelQuickTimeOptions" value="Параметры Quicktime" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelAutoStart" value="Автоматический запуск" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelShowMenu" value="Показать меню" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelInvokeURLs" value="Запускать из веб-адресов" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelStretchToFit" value="Растянуть по размеру экрана" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelEnabled" value="Включено" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelFullScreen" value="Во весь экран" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelMute" value="Отключить звук" />
-  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelWindowLessVideo" value="Видео без показа окна" />
-  <string key="Website.App.LabelSave" value="Сохранить" />
-  <string key="Website.App.LabelCloseTab" value="Закрыть вкладку" />
-  <string key="Website.App.LabelCloseOthers" value="Закрыть остальные" />
-  <string key="Website.App.LabelRefreshView" value="Обновить вид" />
-  <string key="Website.App.LabelMakeDirty" value="Пометить как &quot;грязный&quot;" />
-  <string key="Website.App.LabelViewSource" value="Просмотр HTML-кода" />
-  <string key="Website.App.LabelViewGenerated" value="Открыть сгенерированное" />
-  <string key="Website.App.LabelViewSerialized" value="Открыть сериализованное" />
-  <string key="Website.App.LabelClose" value="Закрыть" />
-  <string key="Website.App.LabelFile" value="Файл" />
-  <string key="Website.App.LabelFileClose" value="Закрыть" />
-  <string key="Website.App.LabelFileCloseAll" value="Закрыть все" />
-  <string key="Website.App.LabelFileSaveAll" value="Сохранить все..." />
-  <string key="Website.App.LabelFileExit" value="Выход" />
-  <string key="Website.App.LabelView" value="Вид" />
-  <string key="Website.App.LabelViewCompositeStart" value="Стартовая страница" />
-  <string key="Website.App.LabelSystemLog" value="Журнал системы" />
-  <string key="Website.App.LabelDeveloperPanel" value="Панель разработчика" />
-  <string key="Website.App.LabelTools" value="Инструменты" />
-  <string key="Website.App.LabelHelp" value="Справка" />
-  <string key="Website.App.LabelHelpContents" value="Содержание справки" />
-  <string key="Website.App.LabelFeedback" value="Написать отзыв..." />
-  <string key="Website.App.LabelAboutComposite" value="О Composite C1" />
-  <string key="Website.App.LabelCut" value="Вырезать" />
-  <string key="Website.App.LabelCopy" value="Копировать" />
-  <string key="Website.App.LabelPaste" value="Вставить" />
-  <string key="Website.App.LabelRefresh" value="Обновить" />
-  <string key="Website.App.LabelLoading" value="Загрузка ..." />
-  <string key="Website.App.LabelLoaded" value="Загружено" />
-  <string key="Website.App.LabelSaved" value="Сохранено" />
-  <string key="Website.App.ToolTipMinimize" value="Свернуть" />
-  <string key="Website.App.ToolTipMaximize" value="Развернуть" />
-  <string key="Website.App.ToolTipUnMaximize" value="Восстановить" />
-  <string key="Website.App.ToolTipUnMinimize" value="Восстановить" />
-  <string key="Website.App.ToolTipClose" value="Закрыть" />
-  <string key="Website.App.StatusBar.Opening" value="Открытие {0} ..." />
-  <string key="Website.App.StatusBar.Refreshing" value="Обновление {0} ..." />
-  <string key="Website.App.StatusBar.Loading" value="Загрузка {0} ..." />
-  <string key="Website.App.StatusBar.Error" value="Ошибка" />
-  <string key="Website.App.StatusBar.Warn" value="Предупреждение" />
-  <string key="Website.App.StatusBar.Busy" value="Выполняется ..." />
-  <string key="Website.App.StatusBar.Ready" value="Готово!" />
-  <string key="Website.App.StatusBar.ErrorInField" value="Ошибка в" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.Layout.Label" value="Добавить новый медиа-файл" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.FieldGroup.Label" value="Свойства медиа-файла" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Label" value="Имя файла" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Help" value="Выберите или введите имя файла для загрузки" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Label" value="Разрешить перезапись" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Help" value="Заменить существующий файл" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Label" value="Имя файла" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Help" value="Имя файла в библиотеке мультимедиа" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Label" value="Название" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Help" value="Используйте это поле для названия изображения" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Label" value="Описание" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Help" value="Используйте это поле для краткого описания изображения" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.MissingUploadedFile.Message" value="Пожалуйста, выберите файл для загрузки" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.FileExists.Message" value="Файл с таким именем уже существует. Включите &quot;Разрешить перезапись&quot; или изменить имя файла" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.TotalFilenameToLong.Message" value="Полное имя файла (папка и имя файла) слишком длинное" />
-  <string key="Website.Forms.Administrative.AddNewMediaFolder.Label.AddNewMediaFolder" value="Добавить новую медиа-папку" />
-  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelFolderName" value="Имя папки" />
-  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpFolderName" value="" />
-  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelTitle" value="Название" />
-  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpTitle" value="" />
-  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelDescription" value="Описание" />
-  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpDescription" value="" />
-  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameAlreadyUsed" value="Папка уже существует" />
-  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="Полное имя папки слишком длинное" />
-  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Имя папки не может быть только '/' или '\'" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Загрузка нескольких файлов с помощью Zip-файла" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFieldGroup" value="Выберите Zip-файл, содержащий файлы для извлечения" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Zip-файл" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpFile" value="Создайте  Zip-файл (щелкните правой кнопкой мыши на локальной папке и выберите Отправить -&gt; Сжатая папка) и выберите его, пользуясь кнопкой Обзор" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructure" value="Создать папки" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpRecreateStructure" value="При выборе этой опции будет скопирована полная структура папок из Zip-файла" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructureCheckBox" value="Извлечь папки из Zip-файла" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsisting" value="Перезаписать" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpOverwriteExsisting" value="При выборе этой опции будут перезаписаны существующие файлы в медиа-архиве при совпадении имен" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.Error.Title" value="Ошибка" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Перезаписать существующие файлы" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.MissingUploadedFile.Message" value="Пожалуйста, выберите файл для загрузки" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.CannotUploadDocxFile" value="Пожалуйста, используйте обычную загрузку на сервер для файлов .docx" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.WrongUploadedFile.Message" value="Выбранный файл не является правильным zip файлом" />
-  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelFunctionSearch" value="Поиск функции" />
-  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeyword" value="Ключевое слово" />
-  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeywordHelp" value="Напишите ключевое слово для поиска." />
-  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnType" value="Тип возвращаемого значения" />
-  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnTypeHelp" value="Выберите тип возвращаемого значения для поиска." />
-  <string key="Website.Forms.Administrative.DeleteMediaFile.LabelFieldGroup" value="Удалить этот файл?" />
-  <string key="Website.Forms.Administrative.DeleteMediaFile.Text" value="Удалить этот файл?" />
-  <string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationHeader" value="Удаление файлов" />
-  <string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationText" value="Некоторые зависимые данные также будут удалены. Вы хотите продолжить?" />
-  <string key="Website.Forms.Administrative.DeleteMediaFolder.LabelFieldGroup" value="Удалить эту папку?" />
-  <string key="Website.Forms.Administrative.DeleteMediaFolder.Text" value="Удалить эту папку?" />
-  <string key="Website.Forms.Administrative.DeleteMediaFolder.HasChildringText" value="Эта папка содержит один или несколько файлов или подпапок. Удаление этой папки приведет к удалению всех содержащихся файлов и подпапок. Удалить эту папку?" />
-  <string key="Website.Forms.Administrative.EditMediaFile.LabelFieldGroup" value="Свойства медиа-файла" />
-  <string key="Website.Forms.Administrative.EditMediaFile.LabelTitle" value="Название" />
-  <string key="Website.Forms.Administrative.EditMediaFile.HelpTitle" value="Используйте это поле для названия изображения" />
-  <string key="Website.Forms.Administrative.EditMediaFile.LabelFileName" value="Имя файла" />
-  <string key="Website.Forms.Administrative.EditMediaFile.HelpFileName" value="Значение, указанное в этом поле является частью идентификатора изображения" />
-  <string key="Website.Forms.Administrative.EditMediaFile.LabelDescription" value="Описание" />
-  <string key="Website.Forms.Administrative.EditMediaFile.HelpDescription" value="Используйте это поле для краткого описания изображения" />
-  <string key="Website.Forms.Administrative.EditMediaFile.TotalFilenameToLong.Message" value="Полное имя файла (папка и имя файла) слишком длинное" />
-  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFieldGroup" value="Свойства папки" />
-  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFolderName" value="Имя папки" />
-  <string key="Website.Forms.Administrative.EditMediaFolder.HelpFolderName" value="" />
-  <string key="Website.Forms.Administrative.EditMediaFolder.LabelTitle" value="Название" />
-  <string key="Website.Forms.Administrative.EditMediaFolder.HelpTitle" value="Используйте это поле для названия изображения" />
-  <string key="Website.Forms.Administrative.EditMediaFolder.LabelDescription" value="Описание" />
-  <string key="Website.Forms.Administrative.EditMediaFolder.HelpDescription" value="" />
-  <string key="Website.Forms.Administrative.EditMediaFolder.TotalFilenameToLong.Message" value="Папка содержит файл, в котором имя файла и имя новой папки вместе слишком длинное" />
-  <string key="Website.Forms.Administrative.EditPage.DraftTransition" value="Черновик" />
-  <string key="Website.Forms.Administrative.EditPage.AwaitingApprovalTransition" value="Ожидает утверждения" />
-  <string key="Website.Forms.Administrative.EditPage.AwaitingPublicationTransition" value="Ожидает публикации" />
-  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelFieldGroup" value="Поиск" />
-  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelKeyword" value="Ключевое слово" />
-  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelSearchKeyword" value="Напишите ключевое слово для поиска." />
-  <string key="Website.Forms.Administrative.UploadMediaFile.LabelFieldGroup" value="Загрузить новый медиа-файл" />
-  <string key="Website.Forms.Administrative.UploadMediaFile.LabelFile" value="Имя файла:" />
-  <string key="Website.Forms.Administrative.UploadMediaFile.HelpFile" value="" />
-  <string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorTitle" value="Файл отсутствует или пуст" />
-  <string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorMessage" value="Данные файла не получены. Пожалуйста, используйте кнопку &quot;Обзор&quot; и убедитесь, что выбранный файл не является пустым." />
-  <string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFieldGroup" value="Загрузить новый медиа-файл вместо существующего файла" />
-  <string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFile" value="Имя файла:" />
-  <string key="Website.Forms.Administrative.UploadNewMediaFile.HelpFile" value="" />
-  <string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSave" value="Сохранить" />
-  <string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSaveAs" value="Сохранить как ..." />
-  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelPrevious" value="Назад" />
-  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelNext" value="Далее" />
-  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelFinish" value="Готово" />
-  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelCancel" value="Отмена" />
-  <string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelOk" value="ОК" />
-  <string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelCancel" value="Отмена" />
-  <string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelOk" value="ОК" />
-  <string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelCancel" value="Отмена" />
-  <string key="Website.Misc.SourceCodeViewer.LabelInput" value="Ввод" />
-  <string key="Website.Misc.SourceCodeViewer.LabelOutput" value="Вывод" />
-  <string key="Website.Misc.Trees.DialogTitle.PasteNotAllowed" value="Недопустимо." />
-  <string key="Website.Misc.Trees.DialogText.PasteNotAllowed" value="Вставка недопустима в данном контексте." />
-  <string key="Website.Misc.Trees.DialogTitle.PasteTypeNotAllowed" value="Недопустимо" />
-  <string key="Website.Misc.Trees.DialogText.PasteTypeNotAllowed" value="Папка не принимает этот тип документа." />
-  <string key="Website.Misc.MultiSelector.LabelEditSelections" value="Изменить выбранное" />
-  <string key="GenericVersionProcessController.Version" value="Информация о версии" />
-  <string key="GenericVersionProcessController.VersionToolTip" value="Показать информацию о версии" />
-  <string key="AspNetUiControl.Selector.SelectValueLabel" value="Выберите значение ..." />
-  <string key="AspNetUiControl.Selector.BrokenReference" value="&lt;Неверная ссылка&gt; ..." />
-  <string key="AspNetUiControl.Selector.NoSelection" value="(не выбрано)" />
+	<string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Изменить пользователя" />
+	<string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Имя пользователя" />
+	<string key="Website.Forms.Administrative.EditUserStep1.UserNameHelp" value="Имена пользователей нельзя изменить. Это поле - только для чтения." />
+	<string key="Website.Forms.Administrative.EditUserStep1.PasswordLabel" value="Пароль" />
+	<string key="Website.Forms.Administrative.EditUserStep1.PasswordHelp" value="В пароле должно быть больше 6 символов." />
+	<string key="Website.Forms.Administrative.EditUserStep1.EmailLabel" value="Адрес эл. почты" />
+	<string key="Website.Forms.Administrative.EditUserStep1.EmailHelp" value="Адрес электронной почты  пользователя (необязательно)." />
+	<string key="Website.Forms.Administrative.EditUserStep1.GroupLabel" value="Папка" />
+	<string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Если вы введете имя папки, которое еще не существует, будет создана новая папка." />
+	<string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Региональные настройки" />
+	<string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="Чтобы изменить способ отображения чисел, времени и дат, выберите язык из списка. Записи, отмеченные звездочкой (*) уже переведены. Неотмеченные записи будут показаны на английском языке." />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveFieldLabel" value="Разделы" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectLabel" value="Видимые разделы" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectHelp" value="Выберите, какие разделы должны быть видны, когда пользователь запускает консоль C1." />
+	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsFieldLabel" value="Глобальные разрешения" />
+	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectLabel" value="Глобальные разрешения" />
+	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectHelp" value="Разрешение &quot;Администрировать&quot; предоставляет пользователю доступ к управлению разрешениями пользователей и выполнению других административных задач." />
+	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissions.IgnoredOwnAdministrativeRemoval" value="Удаление вашего разрешения &quot;Администрировать&quot; проигнорировано. Вы сохранили свои административные привилегии." />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesFieldLabel" value="Доступ к языку данных" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectLabel" value="Языки данных" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectHelp" value="Пользователь имеет доступ к управлению данными на выбранных языках." />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleLabel" value="Текущий язык" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Текущий язык" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleNotChecked" value="Выбранный язык не отмечен в разделе данных языка." />
+	<string key="Website.Forms.Administrative.EditUserStep1.NoActiveLocaleSelected" value="Вы должны выбрать хотя бы один активный язык." />
+	<string key="Website.Forms.Administrative.EditUserStep1.GenerelTabLabel" value="Основные" />
+	<string key="Website.Forms.Administrative.EditUserStep1.PermissionsTabLabel" value="Разрешения" />
+	<string key="Website.Forms.Administrative.EditUserStep1.PerspectivesTabLabel" value="Разделы" />
+	<string key="Website.Forms.Administrative.EditUserStep1.UserGroupsFieldLabel" value="Группы пользователей" />
+	<string key="Website.Forms.Administrative.EditUserStep1.UserGroupsMultiSelectHelp" value="Выберите группы пользователей, членом которых должен быть выбранный пользователь." />
+	<string key="EditUserWorkflow.EditErrorTitle" value="Ошибка" />
+	<string key="EditUserWorkflow.EditOwnAccessToUsersPerspective" value="Нельзя удалять свои собственные права доступа к разделу &quot;Пользователи&quot;." />
+	<string key="UserElementProvider.RootLabel" value="Пользователи" />
+	<string key="UserElementProvider.RootToolTip" value="Пользователи" />
+	<string key="UserElementProvider.AddUserLabel" value="Добавить пользователя ..." />
+	<string key="UserElementProvider.AddUserToolTip" value="Добавить нового пользователя" />
+	<string key="UserElementProvider.EditUserLabel" value="Изменить пользователя" />
+	<string key="UserElementProvider.EditUserToolTip" value="Изменить выбранного пользователя" />
+	<string key="UserElementProvider.DeleteUserLabel" value="Удалить пользователя" />
+	<string key="UserElementProvider.DeleteUserToolTip" value="Удалить выбранного пользователя" />
+	<string key="UserElementProvider.ChangeOtherActiveLocaleTitle" value="Предупреждение" />
+	<string key="UserElementProvider.ChangeOtherActiveLocaleMessage" value="Вы сменили текущий язык для пользователя, который уже вошел в систему.Консоль пользователя будет перезапущена и данные могут быть утеряны." />
+	<string key="UserElementProvider.ChangeOtherActiveLocaleDialogTitle" value="Требуется очистка" />
+	<string key="UserElementProvider.ChangeOtherActiveLocaleDialogText" value="Для этого требуется очистка. Активные редакторы будут сохранены и закрыты." />
+	<string key="AddNewUserWorkflow.UsernameDuplicateError" value="Пользователь с таким именем уже существует" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.LabelFieldGroup" value="Добавить нового пользователя" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.UserNameLabel" value="Имя пользователя" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.UserNameHelp" value="После создания нового пользователя имя пользователя не может быть изменено" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.PasswordLabel" value="Пароль" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.PasswordHelp" value="В пароле должен быть больше 6 символов." />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.EmailLabel" value="Адрес эл. почты" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.EmailHelp" value="Адрес электронной почты  пользователя (необязательно)." />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.GroupLabel" value="Папка" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.GroupHelp" value="Если вы введете имя папки, которой еще не существует, будет создана новая папка." />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureLabel" value="Региональные настройки" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="Чтобы изменить способ отображения чисел, времени и дат, выберите язык из списка. Записи, отмеченные звездочкой (*) уже переведены. Неотмеченные записи  будут показаны на английском языке." />
+	<string key="UserElementProvider.MissingActiveLanguageTitle" value="Наличие языка обязательно" />
+	<string key="UserElementProvider.MissingActiveLanguageMessage" value="Для создания  пользователя требуется наличие языка, но ни один язык не был еще добавлен. Вы можете добавить язык  в разделе &quot;Система&quot;." />
+	<string key="UserElementProvider.UserLoginIsAlreadyUsed" value="Пользователь с таким  Логином  уже существует" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderTypeLabel" value="Добавить папку данных" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderTypeToolTip" value="Добавить папку данных" />
+	<string key="AssociatedDataElementProviderHelper.AddAssociatedDataLabel" value="Добавить данные" />
+	<string key="AssociatedDataElementProviderHelper.AddAssociatedDataToolTip" value="Добавить данные" />
+	<string key="AssociatedDataElementProviderHelper.EditAssociatedDataLabel" value="Изменить данные" />
+	<string key="AssociatedDataElementProviderHelper.EditAssociatedDataToolTip" value="Изменить данные" />
+	<string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataLabel" value="Удалить данные" />
+	<string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataToolTip" value="Удалить данные" />
+	<string key="AssociatedDataElementProviderHelper.LocalizeData" value="Локализовать" />
+	<string key="AssociatedDataElementProviderHelper.LocalizeDataToolTip" value="Локализовать данные" />
+	<string key="AssociatedDataElementProviderHelper.DisabledData" value="Еще не утверждены или опубликованы" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.FieldLabel" value="Добавить папку данных" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorLabel" value="Тип папки данных" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorHelp" value="Создайте новый тип данных или используйте уже существующий (если имеется)." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelNewType" value="Настройки" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeName" value="Имя типа" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeName" value="Техническое имя типа данных (например, Product). Используется для идентификации этого типа в коде и не должно изменяться, если имелся хотя бы один случай внешнего использования." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeNamespace" value="Пространство имен типа" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeNamespace" value="Пространство имен (модуль / название категории) типа. Используется для идентификации этого типа в коде и не должно изменяться." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeTitle" value="Название" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeTitle" value="В этом поле нужно указать понятное для пользователя название типа. Вы можете изменять это поле, как вы хотите." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelFields" value="Поля" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ServicesLabel" value="Службы" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasPublishing" value="Поддержка публикации" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasLocalization" value="Поддержка локализации" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesTitle" value="Не существует ни одной папки данных для страницы" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Ни одной папки данных для страницы еще не было создано. Вы можете создать папку данных для страницы  в разделе &#39;Данные&#39;." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesTitle" value="Не существуют неиспользованные папки данных для страницы" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Все доступные папки данных для страницы уже добавлены. Создать новую папку данных вы можете в разделе &#39;Данные&#39;." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ErrorTitle" value="Ошибка" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.FieldLabel" value="Выберите для добавления папку данных" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorLabel" value="Существующие типы папки данных" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorHelp" value="Выберите для добавления тип папки данных" />
+	<string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeLabel" value="Удалить поле метаданных" />
+	<string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeToolTip" value="Удалить поле метаданных" />
+	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.LabelFieldGroup" value="Удалить папку данных у страницы" />
+	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.FieldGroupLabel" value="Очистка данных" />
+	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataLabel" value="Удалить данные" />
+	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataCheckBoxLabel" value="Да, удалить данные из папки" />
+	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataHelp" value="Если вы хотите, чтоб данные из этой папки остались в базе данных, вы должны снять флажок с этой опции." />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.LayoutLabel" value="Добавить поле метаданных" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataTypeLabel" value="Добавить поле метаданных" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataTypeToolTip" value="Добавить поле метаданных" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.FieldLabel" value="Выберите для добавления существующий тип метаданных" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorLabel" value="Существующие типы метаданных" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorHelp" value="Выберите для добавления существующий тип метаданных" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesTitle" value="Не существует ни одного типа метаданных для страниц" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesMessage" value="Еще ни один тип метаданных для страниц не был создан. Вы можете создать тип метаданных для страниц  в разделе &quot;Данные&quot;." />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.NamingFieldLabel" value="Имя группы полей метаданных" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameLabel" value="Имя" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameHelp" value="Введите уникальное имя, идентифицирующее эту группу полей метаданных" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelLabel" value="Надпись" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelHelp" value="Введите понятную пользователю надпись для этой группы полей метаданных" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.VisabilityFieldLabel" value="Видимость группы полей метаданных" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorLabel" value="Вкладка" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorHelp" value="Выберите вкладку, на которой это поле метаданных должно отображаться" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorLabel" value="Отображать, начиная с" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorHelp" value="Отображать, начиная с" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorLabel" value="Наследовать отображение" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorHelp" value="Наследовать отображение" />
+	<string key="AssociatedDataElementProviderHelper.NoItems.Title" value="У группы полей метаданных нет элементов в этом диапазоне" />
+	<string key="AssociatedDataElementProviderHelper.NoItems.Description" value="В настоящее время нет элементов в указанном диапазоне отображения.  Нажмите &#39;Назад&#39;, чтоб изменить диапазон отображения или &#39;Готово&#39;, чтобы создать группу полей метаданных." />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption0" value="Этого элемента" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption1" value="Дочерних элементов" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption2" value="Потомков 2-го поколения" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption3" value="Потомков 3-го поколения" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption4" value="Потомков 4-го поколения" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption5" value="Потомков 5-го поколения" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption0" value="Не наследовать" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption1" value="Наследовать 1-ое поколение" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption2" value="Наследовать 2-ое поколение" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption3" value="Наследовать 3-ье поколение" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption4" value="Всегда наследовать" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.FieldGroupNameNotValid" value="Название группы полей уже используется" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectType.LayoutLabel" value="Удалить группу полей метаданных" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.FieldLabel" value="Выберите группу полей метаданных для удаления" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorLabel" value="Группа полей" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorHelp" value="Выберите группу полей метаданных для удаления" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataTypeLabel" value="Изменить поле метаданных" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataTypeToolTip" value="Изменить поле метаданных" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.Layout.Label" value="Изменить поле метаданных для страницы" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.FieldGroup.Label" value="Параметры поля метаданных для страницы" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Label" value="Надпись" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Help" value="Надпись поля метаданных. Используется при изменении страниц" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Label" value="Вкладка" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Help" value="Выберите вкладку, на которой эти метаданные должны отображаться" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorLabel" value="Отображать, начиная с" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorHelp" value="Отображать, начиная с" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorLabel" value="Наследовать отображение" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorHelp" value="Наследовать отображение" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Label" value="Поле метаданных" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Help" value="Выберите поле метаданных для изменения" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Title" value="Нет полей метаданных для изменения" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Message" value="Нет полей метаданных, определенных для этого элемента, для изменения" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataFieldNameAlreadyUsed" value="Тип метаданных используется в другом месте с тем же именем, но с другой надписью" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerChangeNotAllowed" value="Существует одно или более определений с тем же названием. Изменение содержащего элемента не допускается." />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Title" value="Нажмите &quot;Готово&quot;, чтобы сохранить" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Description" value="Вся необходимая информация была собрана. Нажмите &quot;Готово&quot; для обновления поля метаданных" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Title" value="Нет  полей метаданных для удаления" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Message" value="Нет полей метаданных, определенных для этого элемента, для удаления" />
+	<string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
+	<string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип, который не допускает каскадное  удаление. Выполнение операции приостановлено." />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelNewType" value="Настройки" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeName" value="Имя типа" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeName" value="Имя нового типа, который вы создаете (например, Product)" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeNamespace" value="Пространство имен типа" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeNamespace" value="Имя модуля, категории или пространства имен, которые вы создаете" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeTitle" value="Название" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeTitle" value="В этом поле нужно указать понятное пользователю имя" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelFields" value="Поля" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.ServicesLabel" value="Службы" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasVersioning" value="Поддержка  версий" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasPublishing" value="Поддержка публикации" />
+	<string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.FieldGroupLabel" value="Удалить данные?" />
+	<string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.Text" value="Удалить данные?" />
+	<string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.FieldGroupLabel" value="Добавить данные страницы" />
+	<string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorLabel" value="Выберите для добавления тип данных" />
+	<string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorHelp" value="Выберите один из существующих типов для добавления данных" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeWorkflow.FieldGroupLabel" value="Добавить тип данных для страницы" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorLabel" value="Выберите тип для добавления" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorHelp" value="Выберите один из существующих типов в системе" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorLabel" value="Выберите внешний ключ" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorHelp" value="Выберите одно из полей из типа для использования в качестве внешнего ключа" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorLabel" value="Добавить" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorHelp" value="Создание нового типа или использование существующего типа" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorLabel" value="Выберите тип:" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorHelp" value="Обычные данные - это новый тип, который создается под страницей. Метаданные - это новое поле, которое создается на странице" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameLabel" value="Имя правила" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameHelp" value="Имя правила сохраняется вместе с метаданными и является частью ключа метаданных. Имя должно быть уникальным." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleLabelLabel" value="Надпись правила" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleHelpHelp" value="Надпись правила используется как понятное пользователю название для объекта. Может быть локализована." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorLabel" value="Выбрать контейнер для композиции" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorHelp" value="Выберите контейнер для нового правила." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorLabel" value="Выбрать область видимости композиции" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorHelp" value="Выберите область видимости новой композиции" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsLabel" value="Уровни" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsHelp" value="Глубина подстраниц, на которой композиция будет видна" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeLabel" value="Подтвердите новый тип данных:" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeHelp" value="Метаданные - это новое поле, которое создается на странице" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Имя правила области видимости композиции" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameHelp" value="Имя правила сохраняется вместе с метаданными и является частью ключа метаданных. Имя должно быть уникальным." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleLabelLabel" value="Надпись правила области видимости композиции" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleHelpHelp" value="Надпись правила используется как понятное пользователю имя объекта. Может быть локализована." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeLabel" value="Область видимости композиции" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeHelp" value="Это область, в которой новая композиция будет видна при изменении страниц" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeLabel" value="Добавление типа" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeHelp" value="Создать новый тип или использовать существующий тип" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameLabel" value="Имя существующего типа" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameHelp" value="Имя выбранного существующего типа в системе для использования" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameLabel" value="Имя поля внешнего ключа" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameHelp" value="Имя поля существующего типа для использования в качестве внешнего ключа" />
+	<string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeLabel" value="Удалить папку данных" />
+	<string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeToolTip" value="Удалить папку данных" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedType.FieldGroupLabel" value="Удалить тип данных для страниц" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.AssociationTypeLabel" value="Удалить тип данных для страниц" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Имя правила области видимости композиции" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorLabel" value="Выберите правило" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorHelp" value="Имя правила для удаления" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorLabel" value="Выберите тип данных страницы" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorHelp" value="" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorLabel" value="Выберите тип данных" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorHelp" value="Выберите один из существующих типов" />
+	<string key="VirtualElementProviderElementProvider.ID01" value="Виртуальный корневой элемент" />
+	<string key="VirtualElementProviderElementProvider.UserPerspective" value="Пользователи" />
+	<string key="VirtualElementProviderElementProvider.DeveloperApplicationPerspective" value="Приложения" />
+	<string key="VirtualElementProviderElementProvider.UserGroupPerspective" value="Группы пользователей" />
+	<string key="VirtualElementProviderElementProvider.SystemPerspective" value="Система" />
+	<string key="VirtualElementProviderElementProvider.ContentPerspective" value="Контент" />
+	<string key="VirtualElementProviderElementProvider.DatasPerspective" value="Данные" />
+	<string key="VirtualElementProviderElementProvider.DesignPerspective" value="Макет" />
+	<string key="VirtualElementProviderElementProvider.FunctionsPerspective" value="Функции" />
+	<string key="VirtualElementProviderElementProvider.MediaFilePerspective" value="Все медиа-файлы" />
+	<string key="VirtualElementProviderElementProvider.MediaPerspective" value="Мультимедиа" />
+	<string key="VirtualElementProviderElementProvider.ReadOnlyFunctionPerspective" value="Все функции" />
+	<string key="VirtualElementProviderElementProvider.ReadOnlyWidgetFunctionPerspective" value="Все виджет-функции" />
+	<string key="VirtualElementProviderElementProvider.SqlFunctionPerspective" value="SQL-функции" />
+	<string key="VirtualElementProviderElementProvider.XsltBasedFunctionPerspective" value="XSLT-функции" />
+	<string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogLabel" value="Журнал сервера" />
+	<string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogTooltip" value="Просмотреть последние события на сервере" />
+	<string key="VirtualElementProviderElementProvider.RootActions.SendMessageLabel" value="Отправить сообщение" />
+	<string key="VirtualElementProviderElementProvider.RootActions.SendMessageTooltip" value="Отправить сообщение во все запущенные консоли" />
+	<string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Перезапустить сервер" />
+	<string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Перезапустить сервер" />
+	<string key="SendMessageToConsolesWorkflow.Layout.Label" value="Отправить сообщение во все консоли C1" />
+	<string key="SendMessageToConsolesWorkflow.FieldGroup.Label" value="Сообщение, которое будет отправлено" />
+	<string key="SendMessageToConsolesWorkflow.TitleTextBox.Label" value="Заголовок" />
+	<string key="SendMessageToConsolesWorkflow.TitleTextBox.Help" value="Заголовок диалогового окна сообщения" />
+	<string key="SendMessageToConsolesWorkflow.MessageTextArea.Label" value="Сообщение" />
+	<string key="SendMessageToConsolesWorkflow.MessageTextArea.Help" value="Сообщение, которое будет отправлено" />
+	<string key="LoginWebRequestHandler.Login" value="Войти" />
+	<string key="LoginWebRequestHandler.Header" value="Войти в {0}" />
+	<string key="LoginWebRequestHandler.LoginFailed" value="Неправильное имя пользователя или пароль" />
+	<string key="LoginWebRequestHandler.Password" value="Пароль" />
+	<string key="LoginWebRequestHandler.Username" value="Имя пользователя" />
+	<string key="LoginWebRequestHandler.LogInAsOtherUser" value="Войти как другой пользователь." />
+	<string key="LoginWebRequestHandler.WrongUserNameOrPassword" value="Неверное имя пользователя или пароль." />
+	<string key="LoginWebRequestHandler.UserNameNotRegistered" value="Данный Windows-логин {0} \ {1} не зарегистрирован в базе данных пользователей. Вы должны использовать другой логин." />
+	<string key="DataInterfaceValidator.TypeNotAnInterface" value="Тип {0} не является интерфейсом." />
+	<string key="DataInterfaceValidator.TypeDoesNotImplementInterface" value="Тип интерфейса {0} не реализует интерфейс {1}." />
+	<string key="DataInterfaceValidator.NotAcceptedType" value="Свойство {0} у типа интерфейса {1} не является допустимым типом." />
+	<string key="DataInterfaceValidator.NotValidIDataInterface" value="Интерфейс {0} не является допустимым интерфейсом типа IData." />
+	<string key="DeleteMediaFileWorkflow.CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
+	<string key="DeleteMediaFileWorkflow.CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип, который не допускает каскадное удаление. Выполнение операции приостановлено." />
+	<string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorTitle" value="Ошибка каскадного удаления" />
+	<string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorMessage" value="На этот тип ссылается другой тип, который не допускает каскадное удаление. Выполнение операции приостановлено." />
+	<string key="MediaFileProviderElementProvider.RootToolTip" value="Добавить папки и файлы в мультимедиа-архив" />
+	<string key="MediaFileProviderElementProvider.AddMediaFolder" value="Добавить папку" />
+	<string key="MediaFileProviderElementProvider.AddMediaFolderToolTip" value="Добавить новую медиа-папку" />
+	<string key="MediaFileProviderElementProvider.AddMediaFile" value="Загрузить файл" />
+	<string key="MediaFileProviderElementProvider.AddMediaFileToolTip" value="Добавить новый медиа-файл" />
+	<string key="MediaFileProviderElementProvider.DeleteMediaFile" value="Удалить файл" />
+	<string key="MediaFileProviderElementProvider.DeleteMediaFileToolTip" value="Удалить выбранный медиа-файл" />
+	<string key="MediaFileProviderElementProvider.DeleteMediaFolder" value="Удалить папку" />
+	<string key="MediaFileProviderElementProvider.DeleteMediaFolderToolTip" value="Удалить медиа-папку со всем содержимым." />
+	<string key="MediaFileProviderElementProvider.Download" value="Скачать" />
+	<string key="MediaFileProviderElementProvider.DownloadToolTip" value="Скачать файл" />
+	<string key="MediaFileProviderElementProvider.EditMediaFile" value="Свойства файла" />
+	<string key="MediaFileProviderElementProvider.EditMediaFileToolTip" value="Переименовать выбранный медиа-файл" />
+	<string key="MediaFileProviderElementProvider.EditMediaFileTextContent" value="Изменить текст" />
+	<string key="MediaFileProviderElementProvider.EditMediaFileTextContentToolTip" value="Изменить содержание текста" />
+	<string key="MediaFileProviderElementProvider.EditImage" value="Редактор изображений" />
+	<string key="MediaFileProviderElementProvider.EditImageToolTip" value="Открыть выбранный медиа-файл в редакторе изображений" />
+	<string key="MediaFileProviderElementProvider.EditMediaFolder" value="Свойства папки" />
+	<string key="MediaFileProviderElementProvider.EditMediaFolderToolTip" value="Изменить свойства медиа-папки" />
+	<string key="MediaFileProviderElementProvider.ChangeMediaFile" value="Заменить файл" />
+	<string key="MediaFileProviderElementProvider.ChangeMediaFileToolTip" value="Заменить выбранный файл другим медиа-файлом" />
+	<string key="MediaFileProviderElementProvider.UploadZipFile" value="Загрузить несколько файлов" />
+	<string key="MediaFileProviderElementProvider.UploadZipFileToolTip" value="Загрузить Zip-файл" />
+	<string key="MediaFileProviderElementProvider.MediaFileItemToolTip" value="Медиа-элемент" />
+	<string key="MediaFileProviderElementProvider.OrganizedFilesAndFoldersToolTip" value="Организовать папки и файлы" />
+	<string key="MediaFileProviderElementProvider.ErrorMessageTitle" value="Ошибка" />
+	<string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Файл &#39;{0}&#39; уже существует в папке &#39;{1}&#39;" />
+	<string key="UploadNewMediaFileWorkflow.UploadFailure" value="Сбой" />
+	<string key="UploadNewMediaFileWorkflow.UploadFailureMessage" value="Загружаемый файл должен быть того же типа, что и оригинал. Загружаемый вами файл имеет другой тип." />
+	<string key="RelationshipGraphActionExecutor.ShowGraph" value="Показать диаграмму" />
+	<string key="RelationshipGraphActionExecutor.ShowGraphToolTip" value="Показать диаграмму отношений" />
+	<string key="RelationshipGraphActionExecutor.ShowOrientedGraph" value="Показать ориентированную диаграмму" />
+	<string key="RelationshipGraphActionExecutor.ShowOrientedGraphToolTip" value="Показать ориентированную диаграмму отношений" />
+	<string key="ShowElementInformationActionExecutor.ShowElementInformation.Label" value="Показать информацию элемента" />
+	<string key="ShowElementInformationActionExecutor.ShowElementInformation.ToolTip" value="Показать информацию элемента" />
+	<string key="RelationshipGraphActionExecutor.Search" value="Искать элементы" />
+	<string key="RelationshipGraphActionExecutor.SearchToolTip" value="Искать элементы" />
+	<string key="RelationshipGraphActionExecutor.SearchElements" value="Искать элементы" />
+	<string key="RelationshipGraphActionExecutor.SearchElementsToolTip" value="Искать элементы" />
+	<!-- WEBSITE -->
+	<string key="Website.General.LabelVersionNumber" value="№ версии" />
+	<string key="Website.Application.DialogReload.Title" value="Перезапустить?" />
+	<string key="Website.Application.DialogReload.Text" value="Перезапустить Composite C1? Все несохраненные изменения будут утеряны." />
+	<string key="WebSite.Application.DialogSaveResource.Title" value="Сохранить ресурс?" />
+	<string key="WebSite.Application.DialogSaveResource.Text" value="&quot;${resourcename}&quot; был изменен. Сохранить изменения?" />
+	<string key="Website.Dialogs.SaveAll.LabelSaveResources" value="Сохранить ресурсы?" />
+	<string key="Website.Dialogs.SaveAll.LabelUnsavedResources" value="Несохраненные ресурсы" />
+	<string key="Website.Dialogs.LabelYes" value="Да" />
+	<string key="Website.Dialogs.LabelNo" value="Нет" />
+	<string key="Website.Dialogs.LabelAccept" value="ОК" />
+	<string key="Website.Dialogs.LabelCancel" value="Отмена" />
+	<string key="Website.Dialogs.LabelDisclosure" value="Подробнее" />
+	<string key="Website.Dialogs.About.Title" value="О Composite C1" />
+	<string key="Website.Dialogs.About.LabelCredits" value="Благодарности" />
+	<string key="Website.Dialogs.About.LabelBack" value="Назад" />
+	<string key="Website.Dialogs.About.LabelCredits2" value="Благодарности" />
 
-  <string key="Validation.Decimal.SymbolsAfterPointAllowed" value="Только {0} цифр разрешено после запятой" />
-  <string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Только {0} цифр разрешено до запятой" />
-  <string key="Validation.Int32.Overflow" value="Указанное значение либо слишком большое, либо слишком маленькое. Диапазон допустимых значений от -2,147,483,648 до 2,147,483,647" />
+	<string key="Website.Dialogs.NoAccessTitle" value="Нет доступа" />
+	<string key="Website.Dialogs.NoAccessText" value="Вам не предоставлены права доступа к системе. Пожалуйста, обратитесь к своему администратору." />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.Unit" value="Единица измерения" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.Width" value="Ширина" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.Height" value="Высота" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelScaleImage" value="Масштаб изображения" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelDimensions" value="Размеры" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelImageSize" value="Размер изображения" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFixedRatio" value="Пропорционально" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFreeResize" value="Независимо" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPixels" value="Пиксели" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPercent" value="Проценты" />
+	<string key="Website.Dialogs.Options.LoginScreen" value="Экран входа в систему" />
+	<string key="Website.Dialogs.Options.SoundEffects" value="Звуковые эффекты" />
+	<string key="Website.Dialogs.Options.LabelOptions" value="Параметры" />
+	<string key="Website.Dialogs.Options.LabelGeneral" value="Общие" />
+	<string key="Website.Dialogs.Options.LabelAdvanced" value="Расширенные" />
+	<string key="Website.Dialogs.Options.LabelLoginPreferences" value="Настройки входа в систему" />
+	<string key="Website.Dialogs.Options.LabelFakeLoginScreen" value="Псевдо-экран входа в систему" />
+	<string key="Website.Dialogs.Options.LabelNoLoginScreen" value="Без экрана входа в систему" />
+	<string key="Website.Dialogs.Options.LabelAudioPreferences" value="Аудио настройки" />
+	<string key="Website.Dialogs.Options.LabelSoundOn" value="Раздражающие звуковые эффекты" />
+	<string key="Website.Dialogs.Options.LabelSoundOff" value="Без звуковых эффектов" />
+	<string key="Website.Dialogs.WebServices.Error" value="Ошибка в методе веб-службы" />
+	<string key="Website.Dialogs.WebServices.LabelWebServiceError" value="Ошибка веб-службы" />
+	<string key="Website.Dialogs.SystemTree.DetailedPaste.Title" value="Вставить где?" />
+	<string key="Website.Dialogs.SystemTree.DetailedPaste.LabelPosition" value="Позиция" />
+	<string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertBefore" value="Вставить до" />
+	<string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertAfter" value="Вставить после" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTitle" value="Изменить изображение" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFile" value="Файл" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSave" value="Сохранить" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSaveAs" value="Сохранить как ..." />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRevert" value="Отменить изменения" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelView" value="Вид" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoom" value="Масштаб" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomIn" value="Увеличить" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomOut" value="Уменьшить" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label800" value="800%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label400" value="400%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label200" value="200%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label100" value="100%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label50" value="50%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label25" value="25%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label12" value="12%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelImage" value="Изображение" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTransform" value="Преобразовать" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipHorizontal" value="Обратить по горизонтали" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipVertical" value="Обратить по вертикали" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CW" value="Повернуть на 90 градусов по часовой стрелке" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CCW" value="Повернуть на 90 градусов против часовой стрелки" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate180" value="Повернуть на 180 градусов" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelScale" value="Масштаб изображения..." />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelCrop" value="Обрезать изображение" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipSelect" value="Выбрать" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipZoom" value="Масштаб" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelSave" value="Сохранить" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelScale" value="Масштаб изображения" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelCrop" value="Обрезать изображение" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelUndo" value="Отменить" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelRedo" value="Вернуть" />
+	<string key="Website.Content.Views.Editors.PermissionEditor.LabelTitle" value="Разрешения" />
+	<string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUsers" value="Пользователи" />
+	<string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUserGroups" value="Группы пользователей" />
+	<string key="Website.Content.Views.Editors.PermissionEditor.LabelButtonSave" value="Сохранить" />
+	<string key="Website.Content.Views.Help.ToolTipBack" value="Перейти на предыдущую страницу" />
+	<string key="Website.Content.Views.Help.ToolTipForward" value="Перейти на следующую страницу" />
+	<string key="Website.Content.Views.Help.ToolTipRefresh" value="Обновить страницу" />
+	<string key="Website.Content.Views.Help.LabelContents" value="Содержание" />
+	<string key="Website.Content.Views.Help.ToolTipContents" value="Содержание справки" />
+	<string key="Website.Content.Views.SystemView.ToolTipCollapseAll" value="Свернуть все" />
+	<string key="Website.Content.Views.SystemView.ToolTipLinkWithEditor" value="Связать с редактором" />
+	<string key="Website.Content.Views.Search.Search.LabelNewSearch" value="Новый поиск ..." />
+	<string key="Website.Content.Views.ViewSource.LabelFormatted" value="Форматировано" />
+	<string key="Website.Content.Views.ViewSource.LabelRaw" value="Без форматирования" />
+	<string key="ServerLog.LabelTitle" value="Журнал сервера" />
+	<string key="ServerLog.LabelButtonDeleteOld" value="Удалить старые" />
+	<string key="ServerLog.LabelButtonRefresh" value="Обновить" />
+	<string key="ServerLog.EmptyLabel" value="Данных журнала нет" />
+	<string key="ServerLog.LogEntry.DateLabel" value="Дата" />
+	<string key="ServerLog.LogEntry.MessageLabel" value="Сообщение" />
+	<string key="ServerLog.LogEntry.TitleLabel" value="Заголовок" />
+	<string key="ServerLog.LogEntry.EventTypeLabel" value="Тип события" />
+	<string key="FunctionDocumentation.LabelButtonRefresh" value="Обновить" />
+	<string key="FunctionDocumentation.LabelButtonPrint" value="Печать" />
+	<string key="Website.FlowUICompleted.ExecutionEndedTitle" value="Выполнение завершилось" />
+	<string key="Website.FlowUICompleted.ExecutionEndedMessage" value="Действие, выполняемое в этом окне, завершилось." />
+	<string key="Website.ServerError.ServerErrorTitle" value="Ошибка сервера" />
+	<string key="Website.ServerError.ServerErrorMessage" value="К сожалению, произошла ошибка." />
+	<string key="Website.ServerError.ServerErrorDetails" value="Подробно" />
+	<string key="Website.LicenseViolation.LicenseViolationTitle" value="Нарушение лицензии" />
+	<string key="Website.LicenseViolation.LicenseViolationMessage" value="Запрошенное действие нарушает вашу текущую лицензию." />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelFlashOptions" value="Параметры Flash" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelHigh" value="Высокое" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLow" value="Низкое" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutohigh" value="Высокое (автом.)" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutolow" value="Низкое (автом.)" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelBest" value="Лучшее" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelWindow" value="Окно" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelOpaque" value="Непрозрачное" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelTransparent" value="Прозрачное" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowall" value="Показать все" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelNoborder" value="Порядок" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelExactfit" value="Точное совпадение" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutoPlay" value="Играть автоматически" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLoop" value="Повторять" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowMenu" value="Показать меню" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelSWLiveConnect" value="SW Live Connect" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelQuickTimeOptions" value="Параметры Quicktime" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelLoop" value="Повторять" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelCache" value="Кеш" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelNoCorrection" value="Без коррекции" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelKioskMode" value="Режим киоска" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelPlayEveryFrame" value="Показывать каждый кадр" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoPlay" value="Играть автоматически" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelController" value="Контроллер" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelEnableJavaScript" value="Включите Javascript" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoHRef" value="Auto HREF" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelTargetCache" value="Целевой кеш" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShockWaveOptions" value="Параметры Shockwave" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelHigh" value="Высокое" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLow" value="Низкое" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoHigh" value="Высокое (автом.)" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoLow" value="Низкое (автом.)" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelBest" value="Лучшее" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelWindow" value="Окно" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelOpaque" value="Непрозрачное" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelTransparent" value="Прозрачное" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowAll" value="Показать все" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelNoBorder" value="Порядок" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelExactFit" value="Точное совпадение" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoPlay" value="Играть автоматически" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLoop" value="Повторять" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowMenu" value="Показать меню" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelSWLiveConnect" value="SW Live Connect" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelQuickTimeOptions" value="Параметры Quicktime" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelAutoStart" value="Автоматический запуск" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelShowMenu" value="Показать меню" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelInvokeURLs" value="Запускать из веб-адресов" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelStretchToFit" value="Растянуть по размеру экрана" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelEnabled" value="Включено" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelFullScreen" value="Во весь экран" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelMute" value="Отключить звук" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelWindowLessVideo" value="Видео без показа окна" />
+	<string key="Website.App.LabelSave" value="Сохранить" />
+	<string key="Website.App.LabelCloseTab" value="Закрыть вкладку" />
+	<string key="Website.App.LabelCloseOthers" value="Закрыть остальные" />
+	<string key="Website.App.LabelRefreshView" value="Обновить вид" />
+	<string key="Website.App.LabelMakeDirty" value="Пометить как &quot;грязный&quot;" />
+	<string key="Website.App.LabelViewSource" value="Просмотр HTML-кода" />
+	<string key="Website.App.LabelViewGenerated" value="Открыть сгенерированное" />
+	<string key="Website.App.LabelViewSerialized" value="Открыть сериализованное" />
+	<string key="Website.App.LabelClose" value="Закрыть" />
+	<string key="Website.App.LabelFile" value="Файл" />
+	<string key="Website.App.LabelFileClose" value="Закрыть" />
+	<string key="Website.App.LabelFileCloseAll" value="Закрыть все" />
+	<string key="Website.App.LabelFileSaveAll" value="Сохранить все..." />
+	<string key="Website.App.LabelFileExit" value="Выход" />
+	<string key="Website.App.LabelView" value="Вид" />
+	<string key="Website.App.LabelViewCompositeStart" value="Стартовая страница" />
+	<string key="Website.App.LabelSystemLog" value="Журнал системы" />
+	<string key="Website.App.LabelDeveloperPanel" value="Панель разработчика" />
+	<string key="Website.App.LabelTools" value="Инструменты" />
+	<string key="Website.App.LabelHelp" value="Справка" />
+	<string key="Website.App.LabelHelpContents" value="Содержание справки" />
+	<string key="Website.App.LabelFeedback" value="Написать отзыв..." />
+	<string key="Website.App.LabelAboutComposite" value="О Composite C1" />
+	<string key="Website.App.LabelCut" value="Вырезать" />
+	<string key="Website.App.LabelCopy" value="Копировать" />
+	<string key="Website.App.LabelPaste" value="Вставить" />
+	<string key="Website.App.LabelRefresh" value="Обновить" />
+	<string key="Website.App.LabelLoading" value="Загрузка ..." />
+	<string key="Website.App.LabelLoaded" value="Загружено" />
+	<string key="Website.App.LabelSaved" value="Сохранено" />
+	<string key="Website.App.ToolTipMinimize" value="Свернуть" />
+	<string key="Website.App.ToolTipMaximize" value="Развернуть" />
+	<string key="Website.App.ToolTipUnMaximize" value="Восстановить" />
+	<string key="Website.App.ToolTipUnMinimize" value="Восстановить" />
+	<string key="Website.App.ToolTipClose" value="Закрыть" />
+	<string key="Website.App.StatusBar.Opening" value="Открытие {0} ..." />
+	<string key="Website.App.StatusBar.Refreshing" value="Обновление {0} ..." />
+	<string key="Website.App.StatusBar.Loading" value="Загрузка {0} ..." />
+	<string key="Website.App.StatusBar.Error" value="Ошибка" />
+	<string key="Website.App.StatusBar.Warn" value="Предупреждение" />
+	<string key="Website.App.StatusBar.Busy" value="Выполняется ..." />
+	<string key="Website.App.StatusBar.Ready" value="Готово!" />
+	<string key="Website.App.StatusBar.ErrorInField" value="Ошибка в" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.Layout.Label" value="Добавить новый медиа-файл" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FieldGroup.Label" value="Свойства медиа-файла" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Label" value="Имя файла" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Help" value="Выберите или введите имя файла для загрузки" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Label" value="Разрешить перезапись" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Help" value="Заменить существующий файл" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Label" value="Имя файла" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Help" value="Имя файла в библиотеке мультимедиа" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Label" value="Название" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Help" value="Используйте это поле для названия изображения" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Label" value="Описание" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Help" value="Используйте это поле для краткого описания изображения" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.MissingUploadedFile.Message" value="Пожалуйста, выберите файл для загрузки" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FileExists.Message" value="Файл с таким именем уже существует. Включите &quot;Разрешить перезапись&quot; или изменить имя файла" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.TotalFilenameToLong.Message" value="Полное имя файла (папка и имя файла) слишком длинное" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.Label.AddNewMediaFolder" value="Добавить новую медиа-папку" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelFolderName" value="Имя папки" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpFolderName" value="" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelTitle" value="Название" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpTitle" value="" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelDescription" value="Описание" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpDescription" value="" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameAlreadyUsed" value="Папка уже существует" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="Полное имя папки слишком длинное" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Имя папки не может быть только &#39;/&#39; или &#39;\&#39;" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Загрузка нескольких файлов с помощью Zip-файла" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFieldGroup" value="Выберите Zip-файл, содержащий файлы для извлечения" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Zip-файл" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.HelpFile" value="Создайте  Zip-файл (щелкните правой кнопкой мыши на локальной папке и выберите Отправить -&gt; Сжатая папка) и выберите его, пользуясь кнопкой Обзор" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructure" value="Создать папки" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.HelpRecreateStructure" value="При выборе этой опции будет скопирована полная структура папок из Zip-файла" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructureCheckBox" value="Извлечь папки из Zip-файла" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsisting" value="Перезаписать" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.HelpOverwriteExsisting" value="При выборе этой опции будут перезаписаны существующие файлы в медиа-архиве при совпадении имен" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.Error.Title" value="Ошибка" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Перезаписать существующие файлы" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.MissingUploadedFile.Message" value="Пожалуйста, выберите файл для загрузки" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.CannotUploadDocxFile" value="Пожалуйста, используйте обычную загрузку на сервер для файлов .docx" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.WrongUploadedFile.Message" value="Выбранный файл не является правильным zip файлом" />
+	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelFunctionSearch" value="Поиск функции" />
+	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeyword" value="Ключевое слово" />
+	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeywordHelp" value="Напишите ключевое слово для поиска." />
+	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnType" value="Тип возвращаемого значения" />
+	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnTypeHelp" value="Выберите тип возвращаемого значения для поиска." />
+	<string key="Website.Forms.Administrative.DeleteMediaFile.LabelFieldGroup" value="Удалить этот файл?" />
+	<string key="Website.Forms.Administrative.DeleteMediaFile.Text" value="Удалить этот файл?" />
+	<string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationHeader" value="Удаление файлов" />
+	<string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationText" value="Некоторые зависимые данные также будут удалены. Вы хотите продолжить?" />
+	<string key="Website.Forms.Administrative.DeleteMediaFolder.LabelFieldGroup" value="Удалить эту папку?" />
+	<string key="Website.Forms.Administrative.DeleteMediaFolder.Text" value="Удалить эту папку?" />
+	<string key="Website.Forms.Administrative.DeleteMediaFolder.HasChildringText" value="Эта папка содержит один или несколько файлов или подпапок. Удаление этой папки приведет к удалению всех содержащихся файлов и подпапок. Удалить эту папку?" />
+	<string key="Website.Forms.Administrative.EditMediaFile.LabelFieldGroup" value="Свойства медиа-файла" />
+	<string key="Website.Forms.Administrative.EditMediaFile.LabelTitle" value="Название" />
+	<string key="Website.Forms.Administrative.EditMediaFile.HelpTitle" value="Используйте это поле для названия изображения" />
+	<string key="Website.Forms.Administrative.EditMediaFile.LabelFileName" value="Имя файла" />
+	<string key="Website.Forms.Administrative.EditMediaFile.HelpFileName" value="Значение, указанное в этом поле является частью идентификатора изображения" />
+	<string key="Website.Forms.Administrative.EditMediaFile.LabelDescription" value="Описание" />
+	<string key="Website.Forms.Administrative.EditMediaFile.HelpDescription" value="Используйте это поле для краткого описания изображения" />
+	<string key="Website.Forms.Administrative.EditMediaFile.TotalFilenameToLong.Message" value="Полное имя файла (папка и имя файла) слишком длинное" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.LabelFieldGroup" value="Свойства папки" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.LabelFolderName" value="Имя папки" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.HelpFolderName" value="" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.LabelTitle" value="Название" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.HelpTitle" value="Используйте это поле для названия изображения" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.LabelDescription" value="Описание" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.HelpDescription" value="" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.TotalFilenameToLong.Message" value="Папка содержит файл, в котором имя файла и имя новой папки вместе слишком длинное" />
+	<string key="Website.Forms.Administrative.EditPage.DraftTransition" value="Черновик" />
+	<string key="Website.Forms.Administrative.EditPage.AwaitingApprovalTransition" value="Ожидает утверждения" />
+	<string key="Website.Forms.Administrative.EditPage.AwaitingPublicationTransition" value="Ожидает публикации" />
+	<string key="Website.Forms.Administrative.ElementKeywordSearch.LabelFieldGroup" value="Поиск" />
+	<string key="Website.Forms.Administrative.ElementKeywordSearch.LabelKeyword" value="Ключевое слово" />
+	<string key="Website.Forms.Administrative.ElementKeywordSearch.LabelSearchKeyword" value="Напишите ключевое слово для поиска." />
+	<string key="Website.Forms.Administrative.UploadMediaFile.LabelFieldGroup" value="Загрузить новый медиа-файл" />
+	<string key="Website.Forms.Administrative.UploadMediaFile.LabelFile" value="Имя файла:" />
+	<string key="Website.Forms.Administrative.UploadMediaFile.HelpFile" value="" />
+	<string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorTitle" value="Файл отсутствует или пуст" />
+	<string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorMessage" value="Данные файла не получены. Пожалуйста, используйте кнопку &quot;Обзор&quot; и убедитесь, что выбранный файл не является пустым." />
+	<string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFieldGroup" value="Загрузить новый медиа-файл вместо существующего файла" />
+	<string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFile" value="Имя файла:" />
+	<string key="Website.Forms.Administrative.UploadNewMediaFile.HelpFile" value="" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSave" value="Сохранить" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSaveAs" value="Сохранить как ..." />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelPrevious" value="Назад" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelNext" value="Далее" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelFinish" value="Готово" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelCancel" value="Отмена" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelOk" value="ОК" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelCancel" value="Отмена" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelOk" value="ОК" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelCancel" value="Отмена" />
+	<string key="Website.Misc.SourceCodeViewer.LabelInput" value="Ввод" />
+	<string key="Website.Misc.SourceCodeViewer.LabelOutput" value="Вывод" />
+	<string key="Website.Misc.Trees.DialogTitle.PasteNotAllowed" value="Недопустимо." />
+	<string key="Website.Misc.Trees.DialogText.PasteNotAllowed" value="Вставка недопустима в данном контексте." />
+	<string key="Website.Misc.Trees.DialogTitle.PasteTypeNotAllowed" value="Недопустимо" />
+	<string key="Website.Misc.Trees.DialogText.PasteTypeNotAllowed" value="Папка не принимает этот тип документа." />
+	<string key="Website.Misc.MultiSelector.LabelEditSelections" value="Изменить выбранное" />
+	<string key="GenericVersionProcessController.Version" value="Информация о версии" />
+	<string key="GenericVersionProcessController.VersionToolTip" value="Показать информацию о версии" />
+	<string key="AspNetUiControl.Selector.SelectValueLabel" value="Выберите значение ..." />
+	<string key="AspNetUiControl.Selector.BrokenReference" value="&lt;Неверная ссылка&gt; ..." />
+	<string key="AspNetUiControl.Selector.NoSelection" value="(не выбрано)" />
 
+	<string key="Validation.Decimal.SymbolsAfterPointAllowed" value="Только {0} цифр разрешено после запятой" />
+	<string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Только {0} цифр разрешено до запятой" />
+	<string key="Validation.Int32.Overflow" value="Указанное значение либо слишком большое, либо слишком маленькое. Диапазон допустимых значений от -2,147,483,648 до 2,147,483,647" />
 </strings>

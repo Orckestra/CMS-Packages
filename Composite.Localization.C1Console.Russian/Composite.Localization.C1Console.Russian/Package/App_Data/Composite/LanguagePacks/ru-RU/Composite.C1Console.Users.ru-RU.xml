@@ -1,39 +1,39 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <strings>
 	<!-- change password -->
-	<string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Изменить пароль ..."/>
-	<string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Измените свой пароль"/>
-	<string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Изменить пароль"/>
-	<string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="Измените свой пароль"/>
-	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Текущий пароль"/>
-	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="В целях безопасности, вы должны указать свой текущий пароль, перед тем как продолжить."/>
-	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Новый пароль"/>
-	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="Пароль, указанный в этом поле, должен совпадать с паролем указанным ниже."/>
-	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="Подтвердите новый пароль"/>
-	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="Пароль, указанный в этом поле, должен совпадать с паролем указанным выше"/>
+	<string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Изменить пароль ..." />
+	<string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Измените свой пароль" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Изменить пароль" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="Измените свой пароль" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Текущий пароль" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="В целях безопасности, вы должны указать свой текущий пароль, перед тем как продолжить." />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Новый пароль" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="Пароль, указанный в этом поле, должен совпадать с паролем указанным ниже." />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="Подтвердите новый пароль" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="Пароль, указанный в этом поле, должен совпадать с паролем указанным выше" />
 
 	<!-- change culture -->
-	<string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Региональные настройки ..."/>
-	<string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Установить отображение чисел, времени и дат"/>
-	<string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Региональные настройки и язык"/>
-	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Региональные настройки / Язык"/>
-	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="Чтобы изменить способ отображение чисел, времени и даты, выберите вариант из списка. Язык, указанный справа, является языком пользовательского интерфейса."/>
-  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="Изменить язык приложения"/>
-  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="Вы уверены, что  хотите изменить настройки? Приложение перезапустится и все несохраненные изменения будут утеряны."/>
-	<string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="Региональные настройки"/>
-	<string key="AdministratorAutoCreator.DefaultGroupName" value="Администраторы"/>
+	<string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Региональные настройки ..." />
+	<string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Установить отображение чисел, времени и дат" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Региональные настройки и язык" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Региональные настройки / Язык" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="Чтобы изменить способ отображение чисел, времени и даты, выберите вариант из списка. Язык, указанный справа, является языком пользовательского интерфейса." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="Изменить язык приложения" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="Вы уверены, что  хотите изменить настройки? Приложение перезапустится и все несохраненные изменения будут утеряны." />
+	<string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="Региональные настройки" />
+	<string key="AdministratorAutoCreator.DefaultGroupName" value="Администраторы" />
 
 	<!-- change own active and foreign locale -->
-	<string key="ChangeForeignLocaleWorkflow.ActionLabel" value="Перевод ..."/>
-	<string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="Изменить исходный язык"/>
-	<string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="Пусто"/>
-	<string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="Перевод"/>
-	<string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="Выберите язык, с которого будете переводить"/>
-	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="Не установлены другие языки"/>
-	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="Два языка или более должны быть установлены для поддержки перевода. Администраторы могут добавить языки в разделе &quot;Система&quot;."/>
-	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="Исходный язык"/>
-	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Страницы, созданные на исходном языке, будут обозначаться иконками в виде земного шара в дереве раздела &quot;Контент&quot;. Контекстная операция &quot;Перевести страницу&quot; импортирует страницу в текущий рабочий язык."/>
+	<string key="ChangeForeignLocaleWorkflow.ActionLabel" value="Перевод ..." />
+	<string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="Изменить исходный язык" />
+	<string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="Пусто" />
+	<string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="Перевод" />
+	<string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="Выберите язык, с которого будете переводить" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="Не установлены другие языки" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="Два языка или более должны быть установлены для поддержки перевода. Администраторы могут добавить языки в разделе &quot;Система&quot;." />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="Исходный язык" />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Страницы, созданные на исходном языке, будут обозначаться иконками в виде земного шара в дереве раздела &quot;Контент&quot;. Контекстная операция &quot;Перевести страницу&quot; импортирует страницу в текущий рабочий язык." />
 
 
-  <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="Текущий язык был изменен"/>
+  <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="Текущий язык был изменен" />
 </strings>

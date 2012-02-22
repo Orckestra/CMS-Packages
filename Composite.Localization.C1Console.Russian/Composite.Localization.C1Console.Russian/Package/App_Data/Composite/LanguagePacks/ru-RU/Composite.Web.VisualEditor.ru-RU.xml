@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <!-- preload precaution -->
   <string key="Preload.Key" value="Получено при запуске VisualEditorBinding, чтобы убедиться, что строки загружаются :)" />
@@ -44,7 +44,6 @@
   <string key="ContextMenu.LabelTable" value="Таблицу..." />
   <string key="ContextMenu.LabelTableManage" value="Управлять таблицей" />
   <string key="ContextMenu.LabelImage" value="Изображение..." />
-  <string key="ContextMenu.LabelFromWord" value="Из документа Word..." />
   <string key="ContextMenu.LabelAsText" value="Как простой текст ..." />
   <string key="ContextMenu.LabelField" value="Поле" />
   <string key="ContextMenu.LabelFieldDelete" value="Удалять поле" />
@@ -159,7 +158,8 @@
   <string key="Image.MaxWidthToolTip" value="Если ширина изображения больше указанного значения, она будет уменьшена до указанного значения." />
   <string key="Image.MaxHeight" value="Макс. высота" />
   <string key="Image.MaxHeightToolTip" value="Если высота изображения больше указанного значения, она будет уменьшена до указанного значения." />
-  <!-- charmap -->
+
+	<!-- charmap -->
   <string key="CharMap.LabelSelectSpecialChar" value="Выберите символ" />
   <string key="CharMap.LabelGeneral" value="Общие" />
   <string key="CharMap.LabelAlphabetical" value="Буквы" />
@@ -172,9 +172,6 @@
   <string key="CharMap.LabelMathAndLogic" value="Математические и логические" />
   <string key="CharMap.LabelSymbols" value="Символы" />
   <string key="CharMap.LabelArrows" value="Стрелки" />
-  <!-- word paste -->
-  <string key="WordPaste.Label" value="Вставить из документа Word" />
-  <string key="WordPaste.PasteHereContent" value="Вставьте сюда содержимое документа Word. Затем нажмите OK." />
   <!-- text paste -->
   <string key="TextPaste.Label" value="Вставить как простой текст" />
   <string key="TextPaste.PasteHereContent" value="Вставьте текст сюда. Затем нажмите OK." />
