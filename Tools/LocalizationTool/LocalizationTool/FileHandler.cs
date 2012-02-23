@@ -278,6 +278,8 @@ namespace LocalizationTool
 							elementToRemove.Remove();
 						});
 					targetFile.Save(targetFilePath);
+					if (!_changedTargetFiles.Contains(sterm))
+						_changedTargetFiles.Add(sterm);
 				}
 			}
 
@@ -305,6 +307,8 @@ namespace LocalizationTool
 						targetDoc.Root.Add(el);
 				});
 				targetDoc.Save(targetFilePath);
+				if (!_changedTargetFiles.Contains(fileSterm))
+					_changedTargetFiles.Add(fileSterm);
 			}
 		}
 
@@ -542,38 +546,36 @@ namespace LocalizationTool
 			return null;
 		}
 
-		private static string SaveTargetFileStructureAsSource(string fileStem)
+		private static void SaveTargetFileStructureAsSource(string fileStem)
 		{
 			string filePath = GetTargetDocumentPath(fileStem);
 			var copyOfsourceDocAsString = GetSourceDocumentAsString(fileStem);
 
 			if (!File.Exists(filePath))
 			{
-				copyOfsourceDocAsString = Regex.Replace(copyOfsourceDocAsString, _patternStringItem, Environment.NewLine);
+				copyOfsourceDocAsString = _regexString.Replace(copyOfsourceDocAsString, Environment.NewLine);
+				File.WriteAllText(filePath, copyOfsourceDocAsString);
+				return;
 			}
-			else
+
+			var targetValues = GetTargetDocument(fileStem).Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
+			var sourceMathes = Regex.Matches(copyOfsourceDocAsString, _patternStringItem);
+
+			var regexPattern = string.Empty;
+			string targetString;
+			var targetValue = string.Empty;
+			foreach (Match m in sourceMathes)
 			{
-				var targetFileText = File.ReadAllText(filePath);
-				var sourceMathes = Regex.Matches(copyOfsourceDocAsString, _patternStringItem);
-
-				var regexPattern = string.Empty;
-				var targetStringElement = "<string key=\"{0}\" value=\"{1}\" />";
-				foreach (Match m in sourceMathes)
+				var key = m.Groups[1].Value;
+				if (targetValues.TryGetValue(key, out targetValue))
 				{
-					var key = m.Groups[1].Value;
-					regexPattern = string.Format(_patternStringItemByKey, key);
-					if (Regex.IsMatch(targetFileText, regexPattern))
-					{
-						var targetMatch = Regex.Match(targetFileText, regexPattern);
-						copyOfsourceDocAsString = Regex.Replace(copyOfsourceDocAsString, regexPattern, string.Format(targetStringElement, key, targetMatch.Groups[1].Value));
-					}
-					else
-						copyOfsourceDocAsString = Regex.Replace(copyOfsourceDocAsString, regexPattern, Environment.NewLine);
+					targetString = string.Format("<string key=\"{0}\" value=\"{1}\" />", key, HttpUtility.HtmlEncode(targetValue));
+					copyOfsourceDocAsString = copyOfsourceDocAsString.Replace(m.Value, targetString);
 				}
+				else
+					copyOfsourceDocAsString = copyOfsourceDocAsString.Replace(m.Value, Environment.NewLine);
 			}
-
 			File.WriteAllText(filePath, copyOfsourceDocAsString);
-			return copyOfsourceDocAsString;
 		}
 
 		private static string GetSourceDocumentPath(string fileStem)

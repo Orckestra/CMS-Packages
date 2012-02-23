@@ -83,15 +83,15 @@ namespace LocalizationTool
 		{
 			get
 			{
-				return Path.Combine(ApplicationDirectory, ConfigurationManager.AppSettings["targetCultureName"], "reports");
+				return Path.Combine(ApplicationDirectory, "reports");
 			}
 		}
-	
+
 		public static string UnknownStringsFilePath
 		{
 			get
 			{
-				return Path.Combine(ApplicationDirectory, ConfigurationManager.AppSettings["targetCultureName"], "UnknownStrings.xml");
+				return Path.Combine(ApplicationDirectory, "UnknownStrings.xml");
 			}
 		}
 
@@ -99,7 +99,7 @@ namespace LocalizationTool
 		{
 			get
 			{
-				return Path.Combine(ApplicationDirectory, ConfigurationManager.AppSettings["targetCultureName"], "Flags.xml");
+				return Path.Combine(ApplicationDirectory, "Flags.xml");
 			}
 		}
 	}
