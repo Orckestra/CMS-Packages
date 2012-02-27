@@ -15,12 +15,8 @@
 		<html>
 			<head />
 			<body>
-				<object width="{$Width}" height="{$Height}">
-					<param name="movie" value="http://www.youtube.com/v/{$VideoId}{$FullScreenCode}" />
-					<param name="allowFullScreen" value="{$FullScreen}" />
-					<param name="allowscriptaccess" value="always" />
-					<embed src="http://www.youtube.com/v/{$VideoId}{$FullScreenCode}" width="{$Width}" height="{$Height}" movie="http://www.youtube.com/v/{$VideoId}" type="application/x-shockwave-flash" allowFullScreen="{$FullScreen}" allowscriptaccess="always" />
-				</object>
+				<iframe src="http://www.youtube.com/embed/{$VideoId}{$FullScreenCode}"
+					 width="{$Width}" height="{$Height}"></iframe>
 			</body>
 		</html>
 	</xsl:template>

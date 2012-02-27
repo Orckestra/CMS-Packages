@@ -4,7 +4,8 @@
 		<Add name="Composite.Media.YouTube" />
 	</pc:XsltFunctions>
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3894.16919" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Media.YouTube" groupName="Composite.Media" version="1.0.2" author="Composite A/S" website="www.composite.net" id="f19a2878-d14d-431c-8f3e-14367b553c82" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Media.YouTube" groupName="Composite.Media" version="2.0.0" author="Composite A/S" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Media.YouTube" id="f19a2878-d14d-431c-8f3e-14367b553c82" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Plays a YouTube video on your page using the specified video id</Description>
+		<TechnicalDetails>Plays a YouTube video on your page using the specified video id</TechnicalDetails>
 	</mi:PackageInformation>
 </pc:PackageCreator>

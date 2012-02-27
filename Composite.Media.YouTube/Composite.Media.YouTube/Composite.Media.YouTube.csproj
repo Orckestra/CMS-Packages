@@ -21,6 +21,7 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
     <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,7 +67,7 @@
     <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
     <Content Include="Package\install.xml" />
-    <Content Include="_PackageCreator\YouTube.xml" />
+    <Content Include="_PackageCreator\Composite.Media.YouTube.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Release\Composite.Media.YouTube.zip" />
