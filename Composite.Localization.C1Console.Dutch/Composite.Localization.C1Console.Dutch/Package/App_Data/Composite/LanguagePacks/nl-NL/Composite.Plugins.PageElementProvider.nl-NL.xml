@@ -5,43 +5,44 @@
   <string key="PublicationSettings.FieldGroupLabel" value="Publicatie instellingen" />
   <string key="AdvancedSettings.FieldGroupLabel" value="Geavanceerde instellingen" />
   <string key="AddNewPageStep1.LabelTitle" value="Pagina titel" />
-  <string key="AddNewPageStep1.LabelTitleHelp" value="De tekst in dit veld wordt weergegeven in de titelbalk van het browservenster. Het veld wordt gebruikt door zoekmachines en sitemaps" />
+  <string key="AddNewPageStep1.LabelTitleHelp" value="De tekst in dit veld wordt getoond in de titelbalk van het browservenster. Het veld wordt gebruikt door zoekmachines en sitemaps" />
   <string key="AddNewPageStep1.LabelAbstract" value="Abstract (omschrijving)" />
   <string key="AddNewPageStep1.LabelAbstractHelp" value="Gebruik dit veld voor een korte beschrijving van de pagina" />
   <string key="AddNewPageStep1.LabelTemplate" value="Pagina type" />
-  <string key="AddNewPageStep1.HelpTemplate" value="Selecteer welk pagina type je wilt gebruiken voor de basis van de pagina" />
+  <string key="AddNewPageStep1.HelpTemplate" value="Selecteer welk pagina type (template of sjabloon) je wilt gebruiken voor de basis van de pagina" />
   <string key="AddNewPageStep1.LabelPosition" value="Positie" />
-  <string key="AddNewPageStep1.HelpPosition" value="Select waar je de pagina in de structuur wilt plaatsen" />
-  <string key="AddNewPageStep1.LabelAddToTop" value="Plaats aan bovenkant" />
-  <string key="AddNewPageStep1.LabelAddToBottom" value="Plaats aan onderkant" />
-  <string key="AddNewPageStep1.LabelAddAlphabetic" value="Plaats alfabetisch" />
+  <string key="AddNewPageStep1.HelpPosition" value="Selecteer waar je de pagina in de structuur wilt plaatsen" />
+  <string key="AddNewPageStep1.LabelAddToTop" value="Voeg toe aan de bovenkant" />
+  <string key="AddNewPageStep1.LabelAddToBottom" value="Voeg toe aan de onderkant" />
+  <string key="AddNewPageStep1.LabelAddAlphabetic" value="Voeg alfabetisch toe" />
   <string key="AddNewPageStep1.LabelAddBelowOtherPage" value="Selecteer positie..." />
   <string key="AddNewPageStep2.LabelFieldGroup" value="Geavanceerde instellingen" />
   <string key="AddNewPageStep2.LabelUrlTitle" value="URL titel" />
-  <string key="AddNewPageStep2.HelpUrlTitle" value="De tekst in dit veld wordt weergegeven in de titelbalk van het browservenster. Het veld wordt gebruikt door zoekmachines" />
+  <string key="AddNewPageStep2.HelpUrlTitle" value="De tekst in dit veld wordt getoond in de adresbalk van het browservenster. Het veld wordt gebruikt door zoekmachines" />
   <string key="AddNewPageStep2.LabelMenuTitle" value="Menu titel" />
-  <string key="AddNewPageStep2.HelpMenuTitle" value="De vermelding in dit veld kan worden gebruikt in de navigatie op de website" />
+  <string key="AddNewPageStep2.HelpMenuTitle" value="De tekst in dit veld kan worden gebruikt in de navigatie op de website" />
   <string key="AddNewPageStep2.LabelPositionSelectorPanel" value="Selecteer gedetailleerde pagina positie" />
   <string key="AddNewPageStep2.LabelPositionSelector" value="Plaats onder" />
+  <string key="AddNewPageStep2.HelpPositionSelector" value="*** NOT TRANSLATED ***" />
   <string key="EditPage.LabelPaneSettings" value="Instellingen" />
   <string key="EditPage.LabelPublicationState" value="Status" />
-  <string key="EditPage.HelpPublicationState" value="Stuur de pagina naar een andere status" />
+  <string key="EditPage.HelpPublicationState" value="Zet de pagina op een andere status" />
   <string key="EditPage.LabelPageTitle" value="Pagina titel" />
-  <string key="EditPage.LabelPageTitleHelp" value="De tekst in dit veld wordt weergegeven in de titelbalk van het browservenster. Het veld wordt gebruikt door zoekmachines en sitemaps" />
+  <string key="EditPage.LabelPageTitleHelp" value="De tekst in dit veld wordt getoond in de titelbalk van het browservenster. Het veld wordt gebruikt door zoekmachines en sitemaps" />
   <string key="EditPage.LabelMenuTitle" value="Menu titel" />
-  <string key="EditPage.HelpMenuTitle" value="De vermelding in dit veld kan worden gebruikt in de navigatie op de website" />
+  <string key="EditPage.HelpMenuTitle" value="De tekst in dit veld kan worden gebruikt in de navigatie op de website" />
   <string key="EditPage.LabelUrlTitle" value="URL titel" />
   <string key="EditPage.UrlTitleFormattedTitle" value="URL titel werd herschreven" />
   <string key="EditPage.UrlTitleFormattedMessage" value="Volgens de huidige URL vervangings regels, is de URL titel veranderd in '{0}'" />
   <string key="EditPage.HelpUrlTitle" value="De tekst in dit veld wordt weergegeven in de adresbalk van het browservenster als onderdeel van de URL. Het veld wordt gebruikt door zoekmachines" />
   <string key="EditPage.LabelFriendlyUrl" value="Gebruikers vriendelijke URL" />
-  <string key="EditPage.HelpFriendlyUrl" value="De tekst in dit veld is een verkorte versie van de echte pagina URL. De server zal de browser naar de echte URL doorsturen indien de verkorte wordt gebruikt door de browser. Let op dat sommige servers moeten worden geconfigureerd om deze functie te ondersteunen" />
+  <string key="EditPage.HelpFriendlyUrl" value="De tekst in dit veld is een verkorte versie van de echte pagina URL. De server zal de browser naar de echte URL doorsturen indien deze verkorte URL wordt gebruikt door de browser. Let op dat sommige servers moeten worden geconfigureerd om deze functie te ondersteunen" />
   <string key="EditPage.LabelAbstract" value="Abstract (omschrijving)" />
-  <string key="EditPage.LabelAbstractHelp" value="Gebruik dit veld voor een korte omschrijving van de pagina" />
+  <string key="EditPage.LabelAbstractHelp" value="Gebruik dit veld voor een korte beschrijving van de pagina" />
   <string key="EditPage.LabelPublishDate" value="Publicatie datum" />
   <string key="EditPage.HelpPublishDate" value="Geef aan op welke datum en tijdstip de pagina moet worden gepubliceerd. Op het opgegeven tijdstip zal de pagina automatisch worden gepubliceerd op de site" />
   <string key="EditPage.LabelUnpublishDate" value="De-publicatie (verwijder) datum" />
-  <string key="EditPage.HelpUnpublishDate" value="Geef aan op welke datum en tijdstip de pagina moet worden verwijderd. Op het opgegeven tijdstip zal de pagina automatisch worden verwijderd van de site" />
+  <string key="EditPage.HelpUnpublishDate" value="Geef aan op welke datum en tijdstip de pagina moet worden verwijderd van de site. Op het opgegeven tijdstip zal de pagina automatisch worden verwijderd van de site" />
   <string key="EditPage.LabelContent" value="Content" />
   <string key="EditPage.LabelPreview" value="Preview (Voorbeschouwing)" />
   <string key="EditPage.PageTypeSelectorLabel" value="Pagina type" />
@@ -51,12 +52,12 @@
   <string key="DeletePageStep1.Description" value="Ook alle subpagina's worden verwijderd. Doorgaan?" />
   <string key="DeletePageStep2.Text" value="Verwijder pagina '{0}'?" />
   <string key="UrlTitleNotUniqueError" value="Een andere pagina gebruikt de gespeficeerde URL Titel. URL titels moeten uniek zijn tussen pagina's in dezelfde map / met dezelfde ouder" />
-  <string key="UrlTitleNotValidError" value="De opgegeven URL titel bevat ongeldige tekens. Aangezien dit veld wordt gebruikt voor het samenstellen van het web-adres van de pagina zijn bepaalde speciale tekens (zoals de spatie, vraagteken, en punten en streepjes) niet toegestaan. U kunt wel letters, cijfers en het koppelteken gebruiken" />
+  <string key="UrlTitleNotValidError" value="De opgegeven URL titel bevat ongeldige tekens. Aangezien dit veld wordt gebruikt voor het samenstellen van het web-adres van de pagina zijn bepaalde speciale tekens (zoals de spatie, vraagteken, en punten en streepjes) niet toegestaan. U kunt letters, cijfers en het koppelteken gebruiken" />
   <string key="UrlTitleTooLong" value="De opgegeven URL titel is te lang. Maak deze korter en probeer het opnieuw" />
-  <string key="FriendlyUrlNotUniqueError" value="Een ander pagina gebruikt de gespeficeerde gebruikersvriendelijke URL Titel. URL titels moeten uniek zijn" />
+  <string key="FriendlyUrlNotUniqueError" value="Een ander pagina gebruikt de deze gebruikersvriendelijke URL Titel. URL titels moeten uniek zijn" />
   <string key="TitleMissingError" value="Titel mag niet leeg zijn" />
   <string key="PageSaveValidationFailedTitle" value="Pagina niet opgeslagen" />
-  <string key="PageSaveValidationFailedMessage" value="Pagina is afgekeurd en niet opgeslagen. Onderzoek de berichten" />
+  <string key="PageSaveValidationFailedMessage" value="Pagina is afgekeurd en niet opgeslagen. Onderzoek de berichten per veld" />
   <string key="PageElementProvider.RootLabel" value="Content" />
   <string key="PageElementProvider.RootLabelToolTip" value="Content" />
   <string key="PageElementProvider.AddPageAtRoot" value="Voeg Homepage toe..." />
@@ -73,36 +74,36 @@
   <string key="PageElementProvider.LocalizePageToolTip" value="Vertaal geselecteerde pagina" />
   <string key="PageElementProvider.AddSubPage" value="Voeg pagina toe..." />
   <string key="PageElementProvider.AddSubPageToolTip" value="Voeg pagina toe onder de geselecteerde" />
-  <string key="PageElementProvider.ViewPublicPage" value="Bekijk gepubliceerd" />
+  <string key="PageElementProvider.ViewPublicPage" value="Bekijk gepubliceerde" />
   <string key="PageElementProvider.ViewPublicToolTip" value="Bekijk laatst gepubliceerde versie" />
   <string key="PageElementProvider.ViewDraftPage" value="Bekijk gede-publiceerde (verwijderde)" />
   <string key="PageElementProvider.ViewDraftToolTip" value="Bekijk recente veranderingen" />
   <string key="PageElementProvider.DisplayLocalOrderingLabel" value="Toon lokale pagina volgorde" />
   <string key="PageElementProvider.DisplayLocalOrderingToolTip" value="Toon lokale pagina volgorde" />
   <string key="PageElementProvider.DisabledPage" value="Nog niet goedgekeurd of gepubliceerd" />
-  <string key="PageElementProvider.MissingTemplateTitle" value="Een layout template is vereist" />
-  <string key="PageElementProvider.MissingTemplateMessage" value="Om een pagina te maken is een layout template vereist, maar er zijn nog geen layout templates gemaakt. Je maakt een template in het Layout onderdeel" />
+  <string key="PageElementProvider.MissingTemplateTitle" value="Een layout (template of sjabloon) is vereist" />
+  <string key="PageElementProvider.MissingTemplateMessage" value="Om een pagina te maken is een layout (template of sjabloon) vereist, maar er zijn nog geen layout templates gemaakt. Je maakt een template of sjabloon in het Layout onderdeel" />
   <string key="PageElementProvider.MissingActiveLanguageTitle" value="Een taal is vereist" />
   <string key="PageElementProvider.MissingActiveLanguageMessage" value="Om een pagina te maken is een taal vereist, maar er zijn nog geen talen toegevoegd. Je kan er één toevoegen in het systeem onderdeel" />
-  <string key="PageElementProvider.NoPageTypesAvailableTitle" value="Geen pagina type beschikbaar" />
-  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="Je zou ten minste één pagina type aan moeten maken" />
-  <string key="PageElementProvider.MissingPageTypeTitle" value="Pagina type nodig" />
-  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="Om een ​​homepage te maken is er een pagina type zonder de &quot;alleen subpagina's&quot; beperking nodig, maar deze is nog niet toegevoegd. Je kunt deze aanmaken in het Layout onderdeel." />
-  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="Om een ​​subpagina te maken is er een pagina type zonder de &quot;alleen homepage's&quot; beperking nodig, maar deze is nog niet toegevoegd. Je kunt deze aanmaken in het Lay-out onderdeel." />
+  <string key="PageElementProvider.NoPageTypesAvailableTitle" value="Geen pagina type (template of sjabloon) beschikbaar" />
+  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="Je zou ten minste één pagina type (template of sjabloon) aan moeten maken" />
+  <string key="PageElementProvider.MissingPageTypeTitle" value="Pagina type (template of sjabloon) nodig" />
+  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="Om een ​​homepage te maken is er een pagina type (template of sjabloon) zonder de &quot;alleen subpagina's&quot; beperking nodig, maar deze is nog niet toegevoegd. Je kunt deze aanmaken in het Layout onderdeel." />
+  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="Om een ​​subpagina te maken is er een pagina type (template of sjabloon) zonder de &quot;alleen homepage's&quot; beperking nodig, maar deze is nog niet toegevoegd. Je kunt deze aanmaken in het Layout onderdeel." />
   <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Niet in staat om een ​​pagina toe te voegen!" />
-  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="De regels die de beschikbaarheid definiëren voor pagina typen verbieden het toevoegen van een pagina hier." />
+  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="De regels die de beschikbaarheid definiëren voor pagina typen (template of sjabloon) verbieden het toevoegen van een pagina hier." />
   <string key="ManageHostNames.Add.DialogLabel" value="Beheer host naam" />
   <string key="ManageHostNames.Add.HeadingTitle" value="Koppel een host naam aan een pagina" />
   <string key="ManageHostNames.Add.HeadingDescription" value="U kunt een host naam (of een domein naam) voor een pagina specificeren in het onderstaande veld. Houd er rekening mee dat de DNS-instellingen voor de opgegeven host naam ook moet worden geconfigureerd, dat gebeurt buiten dit systeem." />
   <string key="ManageHostNames.Add.FieldGroupLabel" value="Host naam koppeling voor pagina." />
   <string key="ManageHostNames.Add.HostNameTextBoxLabel" value="Host naam" />
-  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Specificeer de host naam (zoals 'www.composite.net') waar je de pagina mee wilt koppelen" />
+  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Geef de host naam op (zoals 'www.composite.net') waar je de pagina mee wilt koppelen" />
   <string key="ManageHostNames.Add.InvalidHostNameSyntaxError" value="Spelling van de host naam is niet geldig" />
   <string key="ManageHostNames.Add.HostNameNotUniqueError" value="Deze host naam is al gekoppeld aan een pagina. U moet de bestaande koppeling eerst verwijderen" />
   <string key="ManageHostNames.Remove.DialogLabel" value="Beheer host naam" />
   <string key="ManageHostNames.Remove.FieldGroupLabel" value="Verwijder host naam koppeling van de pagina" />
   <string key="ManageHostNames.Remove.MultiSelectorLabel" value="Te verwijderen Host names" />
-  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="Host namen die zijn geselecteerd zijn niet langer gekoppeld aan de pagina" />
+  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="Host namen die zijn geselecteerd zullen niet langer gekoppeld zijn aan de pagina" />
   <string key="Preview.PublishedPage.NotPublishedTitle" value="Geselecteerde pagina is niet gepubliceerd" />
   <string key="Preview.PublishedPage.NotPublishedMessage" value="Geselecteerde pagina is niet gepubliceerd" />
   <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="Bevestig de verwijdering van alle subpagina's" />
