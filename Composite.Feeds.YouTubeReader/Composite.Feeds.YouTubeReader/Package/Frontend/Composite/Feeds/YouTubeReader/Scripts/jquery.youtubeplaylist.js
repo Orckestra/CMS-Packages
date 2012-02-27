@@ -2,7 +2,7 @@
 //                youtube playlist jquery plugin
 //-------------------------------------------------
 
-jQuery.fn.ytplaylist = function(_options) {
+jQuery.fn.ytplaylist = function (_options) {
 
 	// default settings
 	var options = jQuery.extend({
@@ -15,10 +15,10 @@ jQuery.fn.ytplaylist = function(_options) {
 		showRelated: true,
 		allowFullScreen: true
 	}, _options);
-	
+
 	var currentVideoHtml = "";
 
-	return this.each(function() {
+	return this.each(function () {
 
 		var selector = $(this);
 		//throw a youtube player in
@@ -31,10 +31,22 @@ jQuery.fn.ytplaylist = function(_options) {
 			if (options.allowFullScreen) fullScreen = "&fs=1";
 
 			var html = '';
-			html += '<iframe src="http://www.youtube.com/v/' + id + autoPlay + showRelated + fullScreen + '"';
-			html += ' height="' + options.playerHeight + '" width="' + options.playerWidth + '"></iframe>';
+
+			html += '<object height="' + options.playerHeight + '" width="' + options.playerWidth + '">';
+			html += '<param name="movie" value="http://www.youtube.com/v/' + id + autoPlay + showRelated + fullScreen + '"> </param>';
+			html += '<param name="wmode" value="transparent"> </param>';
+			if (options.allowFullScreen) {
+				html += '<param name="allowfullscreen" value="true"> </param>';
+			}
+			html += '<embed src="http://www.youtube.com/v/' + id + autoPlay + showRelated + fullScreen + '"';
+			if (options.allowFullScreen) {
+				html += ' allowfullscreen="true" ';
+			}
+			html += 'type="application/x-shockwave-flash" wmode="transparent"  height="' + options.playerHeight + '" width="' + options.playerWidth + '"></embed>';
+			html += '</object>';
 			window.location.hash = "#show" + id;
 			return html;
+
 		};
 
 
@@ -50,19 +62,18 @@ jQuery.fn.ytplaylist = function(_options) {
 		//$("#" + options.holderId + "").html(play(youtubeid(firstVid)));
 
 		//load video on request
-		selector.find(".video-link").click(function() {
+		selector.find(".video-link").click(function () {
 
 			if (options.showLightbox) {
 				$("div.currentvideo").removeClass("currentvideo");
 				showHtmlLightbox(this, {
-					          width: parseInt(options.playerWidth) + 30,
-					          height: parseInt(options.playerHeight) + 20,
-						  html: play(youtubeid($(this).attr("href"))) 
-						});
+					width: parseInt(options.playerWidth) + 20,
+					height: parseInt(options.playerHeight) + 20,
+					html: play(youtubeid($(this).attr("href")))
+				});
 				$(this).parents("div.video-list-item").addClass("currentvideo");
 			}
-			else
-			{		
+			else {
 				$("div.currentvideo").show();
 				$("div.currentvideo").next("object").remove();
 				$("div.currentvideo").removeClass("currentvideo");

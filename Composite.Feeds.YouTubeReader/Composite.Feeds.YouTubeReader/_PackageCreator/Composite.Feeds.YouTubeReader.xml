@@ -9,7 +9,7 @@
 	</pc:XsltFunctions>
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4241.27463" maximumCompositeVersion="9.9999.9999.9999">
 	</mi:PackageRequirements>
-	<mi:PackageInformation name="Composite.Feeds.YouTubeReader" groupName="Composite.Feeds" version="2.0.1" author="Composite A/S" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Feeds.RssReader" id="5a06f424-e058-402a-973b-9f8e6629438c" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Feeds.YouTubeReader" groupName="Composite.Feeds" version="2.0.2" author="Composite A/S" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Feeds.RssReader" id="5a06f424-e058-402a-973b-9f8e6629438c" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Turns a list of YouTube links into a playlist or a gallery</Description>
 		<TechnicalDetails>Implemented as an XSLT function. Allows you to control the RSS source and number of items to display through its parameters. RSS feeds are not cached.</TechnicalDetails>
 	</mi:PackageInformation>
