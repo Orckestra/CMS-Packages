@@ -31,22 +31,10 @@ jQuery.fn.ytplaylist = function(_options) {
 			if (options.allowFullScreen) fullScreen = "&fs=1";
 
 			var html = '';
-
-			html += '<object height="' + options.playerHeight + '" width="' + options.playerWidth + '">';
-			html += '<param name="movie" value="http://www.youtube.com/v/' + id + autoPlay + showRelated + fullScreen + '"> </param>';
-			html += '<param name="wmode" value="transparent"> </param>';
-			if (options.allowFullScreen) {
-				html += '<param name="allowfullscreen" value="true"> </param>';
-			}
-			html += '<embed src="http://www.youtube.com/v/' + id + autoPlay + showRelated + fullScreen + '"';
-			if (options.allowFullScreen) {
-				html += ' allowfullscreen="true" ';
-			}
-			html += 'type="application/x-shockwave-flash" wmode="transparent"  height="' + options.playerHeight + '" width="' + options.playerWidth + '"></embed>';
-			html += '</object>';
+			html += '<iframe src="http://www.youtube.com/v/' + id + autoPlay + showRelated + fullScreen + '"';
+			html += ' height="' + options.playerHeight + '" width="' + options.playerWidth + '"></iframe>';
 			window.location.hash = "#show" + id;
 			return html;
-
 		};
 
 
@@ -67,7 +55,7 @@ jQuery.fn.ytplaylist = function(_options) {
 			if (options.showLightbox) {
 				$("div.currentvideo").removeClass("currentvideo");
 				showHtmlLightbox(this, {
-					          width: parseInt(options.playerWidth) + 20,
+					          width: parseInt(options.playerWidth) + 30,
 					          height: parseInt(options.playerHeight) + 20,
 						  html: play(youtubeid($(this).attr("href"))) 
 						});
