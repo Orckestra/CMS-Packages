@@ -1,6 +1,7 @@
 ﻿@inherits CompositeC1Contrib.RazorFunctions.CompositeC1WebPage
 @using CompositeC1Contrib.RazorFunctions;
 @using Composite.Data;
+@using Composite.Data.Types;
 
 @description A Razor-based function that displays the hierarchy of pages as a tree-like menu.
 @functions {
@@ -20,6 +21,10 @@
 	[FunctionParameter("Navigation Id", "Attribute Id of DIV element", "NavigationSideBar")]
 	public string NavigationId { get; set; }
 
+	[FunctionParameter("StartPage", "The page to start displaying the menu from (the website's root page by default)", null)]
+	public NullableDataReference<IPage> StartPage { get; set; }
+
+	
 	private IEnumerable<PageNode> OpenPages(PageNode selectedPageNode)
 	{
 		var openPages = new List<PageNode>();
@@ -40,21 +45,27 @@
 </head>
 <body>
 <div id="@NavigationId">
-	@if (OpenPages(@CurrentPageNode).Where(p => p.Level == Level).Any())
+	Page
+	@if (@StartPage.IsSet)
+	{
+			var pageNode = @Sitemap.GetPageNodeById(StartPage.Data.Id);
+		@NavigationTree(pageNode, Parent);
+	}
+	else if (OpenPages(@CurrentPageNode).Where(p => p.Level == Level).Any())
 	{
 		var openLevelPage = OpenPages(@CurrentPageNode).Where(p => p.Level == Level).First();
-		@NavigationTree(openLevelPage);
+		@NavigationTree(openLevelPage, Parent);
 	}
 </div>
 </body>
 </html>
-@helper NavigationTree(PageNode parentPage)
+@helper NavigationTree(PageNode parentPage, bool includeParent = false)
 	{
 		var pages = parentPage.ChildPages;
 		var isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == parentPage.Id);
 		var isSelected = @CurrentPageNode.Id == parentPage.Id;
 	<ul>
-		@if (Parent && parentPage.Level == Level)
+		@if (includeParent)
 		{
 			<li><a href="@(parentPage.Url)" class="@(isOpen ? " NavigationOpen" : " ") @(isSelected ? " NavigationSelected" : " ")">@parentPage.MenuTitle</a></li>
 		}
@@ -64,13 +75,13 @@
 			{
 				if (!String.IsNullOrWhiteSpace(subPage.MenuTitle))
 				{
-					 isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == subPage.Id);
-					 isSelected = @CurrentPageNode.Id == subPage.Id;
+					isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == subPage.Id);
+					isSelected = @CurrentPageNode.Id == subPage.Id;
 					<li><a href="@(subPage.Url)" class="@(isOpen ? " NavigationOpen" : " ") @(isSelected ? " NavigationSelected" : " ")">@subPage.MenuTitle</a>
 					@if (Childs && (isOpen || Expand))
-	 {
+					{
 						@NavigationTree(subPage);
-	 }
+					}
 					</li>
 				}
 			}
