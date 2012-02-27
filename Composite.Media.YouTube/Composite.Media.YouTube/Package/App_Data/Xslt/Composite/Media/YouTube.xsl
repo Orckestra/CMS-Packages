@@ -8,14 +8,17 @@
 	<xsl:param name="Width" select="/in:inputs/in:param[@name='Width']" />
 	<xsl:param name="FullScreen" select="/in:inputs/in:param[@name='FullScreen']" />
 	<xsl:variable name="FullScreenCode">
-		<xsl:if test ="/in:inputs/in:param[@name='FullScreen'] = 'true'">?fs=1</xsl:if>
+		<xsl:choose>
+			<xsl:when test ="/in:inputs/in:param[@name='FullScreen'] = 'true'">1</xsl:when>
+			<xsl:otherwise>0</xsl:otherwise>
+		</xsl:choose>
 	</xsl:variable>
 
 	<xsl:template match="/">
 		<html>
 			<head />
 			<body>
-				<iframe src="http://www.youtube.com/embed/{$VideoId}{$FullScreenCode}"
+				<iframe src="http://www.youtube.com/embed/{$VideoId}?fs={$FullScreenCode}"
 					 width="{$Width}" height="{$Height}"></iframe>
 			</body>
 		</html>
