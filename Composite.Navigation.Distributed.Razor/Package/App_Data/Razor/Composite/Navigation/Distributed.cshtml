@@ -45,10 +45,9 @@
 </head>
 <body>
 <div id="@NavigationId">
-	Page
-	@if (@StartPage.IsSet)
+	@if (@StartPage != null && @StartPage.IsSet)
 	{
-			var pageNode = @Sitemap.GetPageNodeById(StartPage.Data.Id);
+		var pageNode = @Sitemap.GetPageNodeById(StartPage.Data.Id);
 		@NavigationTree(pageNode, Parent);
 	}
 	else if (OpenPages(@CurrentPageNode).Where(p => p.Level == Level).Any())
