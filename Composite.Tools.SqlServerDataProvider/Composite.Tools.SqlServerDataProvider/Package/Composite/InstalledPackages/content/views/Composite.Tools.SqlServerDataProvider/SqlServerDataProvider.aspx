@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SqlServerDataProvider.aspx.cs"Inherits="SqlServerDataProvider" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SqlServerDataProvider.aspx.cs"
+	Inherits="SqlServerDataProvider" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,20 +30,21 @@
 				<asp:Wizard ID="wzdSqlMigrator" runat="server" ActiveStepIndex="0" DisplaySideBar="False">
 					<WizardSteps>
 						<asp:WizardStep ID="WizardStepConnectionString" runat="server" Title="Step 1">
-							<div>Before you can migrate your data to SQL Server you need a database and a login which have DBO access to the database.</div>
-							<h4>Examples:</h4>
+							<div>
+								Before you can migrate your data to SQL Server you need a database and a login which
+								have DBO access to the database.</div>
+							<h4>
+								Examples:</h4>
 							<i>Standard Security:</i>
 							<div class="sourcebody">
-								<span class="kwrd">Data Source</span>=<span >myServerAddress;</span><span 
-									class="kwrd">Initial Catalog</span>=<span >myDataBase;</span><span 
-									class="kwrd">User Id</span>=<span>myUsername;</span><span 
-									class="kwrd">Password</span>=<span>myPassword;</span>
+								<span class="kwrd">Data Source</span>=<span>myServerAddress;</span><span class="kwrd">Initial
+									Catalog</span>=<span>myDataBase;</span><span class="kwrd">User Id</span>=<span>myUsername;</span><span
+										class="kwrd">Password</span>=<span>myPassword;</span>
 							</div>
 							<i>Trusted Connection:</i>
 							<div class="sourcebody">
-								<span class="kwrd">Data Source</span>=<span >myServerAddress;</span><span 
-									class="kwrd">Initial Catalog</span>=<span >myDataBase;</span><span 
-									class="kwrd">Integrated Security</span>=<span>SSPI;</span> 
+								<span class="kwrd">Data Source</span>=<span>myServerAddress;</span><span class="kwrd">Initial
+									Catalog</span>=<span>myDataBase;</span><span class="kwrd">Integrated Security</span>=<span>SSPI;</span>
 							</div>
 							<br />
 							Connection String:<br />
@@ -62,6 +64,16 @@
 								Display="Dynamic">
 							</asp:CustomValidator>
 							<asp:Label ID="SourceValidatorResults" runat="server" />
+							<script id="jquery-1-4-2" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"
+								type="text/javascript"></script>
+							<script id="Script1" src="js/jquery.blockUI.js" type="text/javascript"></script>
+							<script type="text/javascript" language="javascript">
+								$(document).ready(function () {
+									$('input[name$="FinishButton"]').click(function () {
+										$.blockUI();
+									});
+								});
+							</script>
 						</asp:WizardStep>
 						<asp:WizardStep ID="WizardStep3" runat="server" StepType="Complete">
 							<asp:Label ID="lblComplete" runat="server" Text="Data store migration completed"></asp:Label>
