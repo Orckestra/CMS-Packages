@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="TypesAreReferencing" value="一个或多个类型正在引用此类型,不能改名" />
+  <string key="TypeNameInNamespace" value="不允许类型名称'{0}'出现在命名空间'{1}'" />
+  <string key="TypesNameClash" value="一个具有相同名称的类型已经存在" />
+  <string key="MissingFields" value="没有添加字段" />
+  <string key="TypeNameIsInvalidIdentifier" value="类型名称'{0}'不是一个有效的标识符。" />
+  <string key="FieldNameCannotBeUsed" value="不能使用字段名称'{0}'" />
+  <string key="NameSpaceIsTypeTypeName" value="指定的'类型命名空间'已经作为一个'类型名称'（命名空间+名称）被使用。考虑改变名称'{0}'为'{0}.Item'后再试。" />
+  <string key="NamespaceIsReserved" value="键入的名称属于一个保留的命名空间。" />
+  <string key="CompileErrorWhileAddingType" value="不能添加一个数据类型，因为它会造成一些编译错误。" />
+  <string key="CompileErrorWhileChangingType" value="不能更改数据类型，因为它会造成一些编译错误。" />
+  <string key="FieldDoesNotHaveWidget" value="字段'{0}'没有提定一个UI界面控件提供者。" />
+</strings>

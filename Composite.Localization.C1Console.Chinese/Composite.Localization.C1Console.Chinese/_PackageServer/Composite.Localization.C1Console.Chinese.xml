@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="App_Data\Composite\LanguagePacks\zh-CN\" />
+	</pc:Directories>
+	<pc:Localizations>
+		<Add name="zh-CN" />
+	</pc:Localizations>
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Localization.C1Console.Chinese" groupName="Composite.Localization" version="1.0.2" author="Composite A/S" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Localization.C1Console" id="751ABEDE-E677-4906-97AE-73FAA096F4EF" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<Description>Chinese language pack for the console GUI</Description>
+		<TechnicalDetails>Chinese language pack for the console GUI</TechnicalDetails>
+	</mi:PackageInformation>
+</pc:PackageCreator>

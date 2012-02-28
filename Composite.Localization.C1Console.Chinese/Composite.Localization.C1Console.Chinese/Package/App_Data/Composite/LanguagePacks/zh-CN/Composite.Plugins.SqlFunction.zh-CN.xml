@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <!-- shared on add and edit -->
+  <string key="SqlFunctionElementProvider.RootLabel" value="SQL函数" />
+  <string key="SqlFunctionElementProvider.RootLabelToolTip" value="新增连接，然后查询连接" />
+  <string key="SqlFunctionElementProvider.AddConnection" value="新增SQL连接" />
+  <string key="SqlFunctionElementProvider.AddConnectionToolTip" value="添加新的SQL连接" />
+  <string key="SqlFunctionElementProvider.EditConnection" value="编辑" />
+  <string key="SqlFunctionElementProvider.EditConnectionToolTip" value="编辑SQL连接" />
+  <string key="SqlFunctionElementProvider.DeleteConnection" value="删除" />
+  <string key="SqlFunctionElementProvider.DeleteConnectionToolTip" value="删除SQL连接" />
+  <string key="SqlFunctionElementProvider.AddQuery" value="添加新的SQL查询" />
+  <string key="SqlFunctionElementProvider.AddQueryToolTip" value="添加一个新的SQL XML提供者" />
+  <string key="SqlFunctionElementProvider.EditQuery" value="编辑" />
+  <string key="SqlFunctionElementProvider.EditQueryToolTip" value="编辑SQL查询" />
+  <string key="SqlFunctionElementProvider.DeleteQuery" value="删除" />
+  <string key="SqlFunctionElementProvider.DeleteQueryToolTip" value="删除SQL查询" />
+  <string key="AddNewSqlFunction.LabelDialog" value="添加新的SQL查询" />
+  <string key="AddNewSqlFunction.LabelNamingPanel" value="函数命名" />
+  <string key="AddNewSqlFunction.LabelName" value="名称" />
+  <string key="AddNewSqlFunction.HelpName" value="-" />
+  <string key="AddNewSqlFunction.LabelNamespace" value="命名空间" />
+  <string key="AddNewSqlFunction.HelpNamespace" value="-" />
+  <string key="AddNewSqlFunction.LabelQueryCOmmand" value="SQL命令文本" />
+  <string key="AddNewSqlFunction.HelpQueryCOmmand" value="-" />
+  <string key="AddEditSqlFunction.LabelIsStoredProcedure" value="是存储过程" />
+  <string key="AddEditSqlFunction.LabelIsStoredProcedureCheckBox" value="是的，此命令是一个存储过程" />
+  <string key="AddEditSqlFunction.LabelReturnsXml" value="返回结果为XML" />
+  <string key="AddEditSqlFunction.LabelReturnsXmlCheckBox" value="是的，该命令返回XML" />
+  <string key="AddEditSqlFunction.LabelIsQuery" value="是一个查询" />
+  <string key="AddEditSqlFunction.LabelIsQueryCheckBox" value="是的，该命令返回数据" />
+  <string key="AddEditSqlFunction.LabelCommandBehaviour" value="SQL命令行为" />
+  <string key="AddEditSqlFunctionConnection.LabelFieldGroup" value="SQL连接设置" />
+  <string key="AddEditSqlFunction.LabelSqlEditor" value="SQL命令" />
+  <string key="AddNewSqlFunctionConnection.LabelDialog" value="添加新的SQL连接" />
+  <string key="AddNewSqlFunctionConnection.LabelName" value="名称" />
+  <string key="AddNewSqlFunctionConnection.HelpName" value="-" />
+  <string key="AddNewSqlFunctionConnection.LabelConnectionString" value="连接字符串" />
+  <string key="AddNewSqlFunctionConnection.HelpConnectionString" value="-" />
+  <string key="AddNewSqlFunctionConnection.LabelIsMSSQL" value="MS SQL Server数据库" />
+  <string key="AddNewSqlFunctionConnection.LabelIsMSSQLCheckBox" value="数据库是MS SQL Server的" />
+  <string key="EditSqlFunction.LabelInputParameters" value="输入参数" />
+  <string key="EditSqlFunction.LabelSettings" value="设置" />
+  <string key="EditSqlFunction.LabelNamingAndDescription" value="函数名称和描述" />
+  <string key="EditSqlFunction.LabelName" value="名称" />
+  <string key="EditSqlFunction.HelpName" value="-" />
+  <string key="EditSqlFunction.LabelNamespace" value="命名空间" />
+  <string key="EditSqlFunction.HelpNamespace" value="-" />
+  <string key="EditSqlFunction.LabelDescription" value="说明" />
+  <string key="EditSqlFunction.HelpDescription" value="-" />
+  <string key="EditSqlFunction.LabelPreview" value="预览" />
+  <string key="EditSqlFunctionConnection.LabelName" value="名称" />
+  <string key="EditSqlFunctionConnection.HelpName" value="-" />
+  <string key="EditSqlFunctionConnection.LabelConnectionString" value="连接字符串" />
+  <string key="EditSqlFunctionConnection.HelpConnectionString" value="-" />
+  <string key="EditSqlFunctionConnection.LabelIsMSSQL" value="MS SQL Server数据库" />
+  <string key="EditSqlFunctionConnection.LabelIsMSSQLCheckBox" value="数据库是MS SQL Server的" />
+  <string key="DeleteSqlConnection.LabelFieldGroup" value="删除此SQL连接？" />
+  <string key="DeleteSqlConnection.Text" value="删除此SQL连接？" />
+  <string key="DeleteSqlFunction.LabelFieldGroup" value="删除此SQL函数？" />
+  <string key="DeleteSqlFunction.Text" value="删除此SQL函数？" />
+  <string key="CascadeDeleteErrorTitle" value="级联删除错误" />
+  <string key="CascadeDeleteErrorMessage" value="此类型被另一个类型所引用，不允许级联删除。此操作被取消" />
+</strings>

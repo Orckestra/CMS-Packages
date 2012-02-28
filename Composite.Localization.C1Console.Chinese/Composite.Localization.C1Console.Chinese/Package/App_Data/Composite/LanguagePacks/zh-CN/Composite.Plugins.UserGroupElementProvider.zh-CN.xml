@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="UserGroupElementProvider.RootLabel" value="用户组" />
+  <string key="UserGroupElementProvider.RootToolTip" value="用户组" />
+  <string key="UserGroupElementProvider.AddNewUserGroupLabel" value="新增用户组..." />
+  <string key="UserGroupElementProvider.AddNewUserGroupToolTip" value="添加新用户组" />
+  <string key="UserGroupElementProvider.EditUserGroupLabel" value="编辑用户组" />
+  <string key="UserGroupElementProvider.EditUserGroupToolTip" value="编辑用户组" />
+  <string key="UserGroupElementProvider.DeleteUserGroupLabel" value="删除用户组" />
+  <string key="UserGroupElementProvider.DeleteUserGroupToolTip" value="删除用户组" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.LabelFieldGroup" value="新增用户组" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameLabel" value="用户组名" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameHelp" value="新用户组的名称" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameAlreadyExists" value="具有相同名称的用户组已经存在" />
+  <string key="EditUserGroup.EditUserGroupStep1.LabelFieldGroup" value="编辑用户组" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameLabel" value="用户组名" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameHelp" value="该用户组的名称" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameAlreadyExists" value="具有相同名称的用户组已经存在" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveFieldLabel" value="操作台" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectLabel" value="操作台" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectHelp" value="选择用户将获得进入查看哪个操作台的权限" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsFieldLabel" value="全局权限" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectLabel" value="全局权限" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectHelp" value="此管理权限授予用户组能访问并管理用户组信息，并不能执行其它管理任务。" />
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersTitle" value="用户组有用户" />
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersMessage" value="您不能删除一个已经使用的用户组。" />
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.LabelFieldGroup" value="删除用户组" />
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.Text" value="删除选定的用户组？" />
+</strings>

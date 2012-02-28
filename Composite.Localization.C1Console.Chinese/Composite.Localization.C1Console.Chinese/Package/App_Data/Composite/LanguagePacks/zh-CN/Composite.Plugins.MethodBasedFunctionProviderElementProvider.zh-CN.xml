@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootFolderLabel" value="C#函数" />
+  <string key="RootFolderToolTip" value="方法函数" />
+  <string key="DeleteFunction.LabelFieldGroup" value="删除此函数" />
+  <string key="DeleteFunction.Text" value="删除此函数" />
+  <string key="Add" value="添加外部C#函数" />
+  <string key="AddToolTip" value="添加一个外部的基于方法的C#函数" />
+  <string key="Create" value="添加内联C#函数" />
+  <string key="CreateToolTip" value="添加一个内联的基于方法的C#函数" />
+  <string key="Edit" value="编辑" />
+  <string key="EditToolTip" value="编辑函数。" />
+  <string key="Delete" value="删除" />
+  <string key="DeleteToolTip" value="删除函数。" />
+  <string key="AddNewMethodBasedFunction.LabelFieldGroup" value="新增 基于方法的函数" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelType" value="类型" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="该类型包含有问题的方法" />
+  <string key="AddNewMethodBasedFunctionStep2.LabelMethodName" value="方法名称" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelMethodName" value="方法名称" />
+  <string key="AddNewMethodBasedFunctionStep2.HelpMethodName" value="-" />
+  <string key="AddNewMethodBasedFunctionStep3.HelpMethodName" value="-" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelNamespaceName" value="命名空间名称" />
+  <string key="AddNewMethodBasedFunctionStep3.HelpNamespaceName" value="-" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelError" value="错误" />
+  <string key="CascadeDeleteErrorTitle" value="级联删除错误" />
+  <string key="CascadeDeleteErrorMessage" value="此类型被另一类型所引用，不允许级联删除。此操作被取消。" />
+  <string key="AddFunction.CouldNotFindType" value="找不到类型" />
+  <string key="AddFunction.TypeHasNoValidMethod" value="该类型不包含任何有效的方法" />
+  <string key="AddFunction.TypeIsAbstractOrStatic" value="该类型标记为抽象(abstract)的或静态(static)的。不支持调用抽象方法或静态类型。" />
+  <string key="AddFunction.TypeMustNotHaveOverloads" value="该类型必须没有重载" />
+  <string key="AddFunction.MethodNameIsEmpty" value="方法名必须是非空" />
+  <string key="AddFunction.InvalidNamespace" value="命名空间必须类似于A.B.C ，并且不能以&quot;.&quot;结束。" />
+  <string key="EditMethodBasedFunction.LabelFieldGroup" value="基于查询编辑方法" />
+  <string key="EditMethodBasedFunction.LabelMethodName" value="方法名称" />
+  <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="该函数的名称应该如下" />
+  <string key="EditMethodBasedFunction.LabelNamespaceName" value="命名空间名称" />
+  <string key="EditMethodBasedFunction.LabelNamespaceNameHelp" value="在命名空间下放置方法。" />
+  <string key="EditMethodBasedFunction.LabelType" value="类型" />
+  <string key="EditMethodBasedFunction.LabelTypeHelp" value="该类型包含有问题的方法。" />
+  <string key="EditMethodBasedFunction.LabelMethod" value="方法" />
+  <string key="EditMethodBasedFunction.LabelMethodHelp" value="在此类型上要调用的方法。" />
+  <string key="EditMethodBasedFunction.LabelError" value="错误" />
+  <string key="EditFunction.MethodNameEmpty" value="方法名必须是非空" />
+  <string key="EditFunction.InvalidNamespace" value="命名空间必须不能以&quot;.&quot;开始或结束。 正确示例( A.B.C)" />
+  <string key="EditFunction.TypeNotFound" value="找不到类型" />
+  <string key="EditFunction.MethodNotInType" value="类型不包含方法" />
+  <string key="EditFunction.NoValidMethod" value="该类型不包含任何有效的方法" />
+  <string key="EditFunction.MethodOverloadsNotAllowed" value="该类型必须没有重载" />
+  <string key="AddInlineFunctionWorkflow.FieldGroup.Label" value="设置" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Label" value="名称" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Help" value="想要创建的方法名称" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Label" value="命名空间" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Help" value="想要创建的方法的命名空间" />
+  <string key="AddInlineFunctionWorkflow.MethodDescription.Label" value="说明" />
+  <string key="AddInlineFunctionWorkflow.MethodDescription.Help" value="该函数的简短描述" />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Label" value="模板" />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Help" value="为新方法选择想要使用的模板。" />
+  <string key="EditInlineFunctionWorkflow.FieldGroup.Label" value="设置" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Label" value="名称" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Help" value="想要创建的方法名称" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Label" value="命名空间" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Help" value="想要创建的方法的命名空间" />
+  <string key="EditInlineFunctionWorkflow.MethodDescription.Label" value="说明" />
+  <string key="EditInlineFunctionWorkflow.MethodDescription.Help" value="该函数的简短描述" />
+  <string key="EditInlineFunctionWorkflow.DebugFieldGroup.Label" value="调试" />
+  <string key="EditInlineFunctionWorkflow.DebugPage.Label" value="页面" />
+  <string key="EditInlineFunctionWorkflow.DebugPage.Help" value="调试时，本页面作为当前页" />
+  <string key="EditInlineFunctionWorkflow.DebugPageDataScope.Label" value="数据范围" />
+  <string key="EditInlineFunctionWorkflow.DebugPageDataScope.Help" value="调试时，作为现有数据范围" />
+  <string key="EditInlineFunctionWorkflow.DebugActiveLocale.Label" value="语言" />
+  <string key="EditInlineFunctionWorkflow.DebugActiveLocale.Help" value="调试时，用来作为当前语言" />
+  <string key="EditInlineFunctionWorkflow.Code.Label" value="源码" />
+  <string key="EditInlineFunctionWorkflow.AssembliesFieldGroup.Label" value="程序集引用" />
+  <string key="EditInlineFunctionWorkflow.Preview.Label" value="预览" />
+  <string key="EditInlineFunctionWorkflow.ParameterFieldGroup.Label" value="输入参数" />
+  <string key="EditInlineFunctionWorkflow.AdminitrativeScope.Label" value="管理" />
+  <string key="EditInlineFunctionWorkflow.PublicScope.Label" value="公共" />
+  <string key="InlineFunctionMethodTemplate.Clean" value="空方法" />
+  <string key="InlineFunctionMethodTemplate.WithParameters" value="带参数的方法" />
+  <string key="InlineFunctionMethodTemplate.DataConnection" value="使用数据连接的方法" />
+  <string key="CSharpInlineFunction.OnMissingContainerType" value="代码中缺少一个名为{0}的公共静态类，此类应包含函数方法。" />
+  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="代码中的命名空间'{0}'不匹配给定的函数命名空间'{1}'。" />
+  <string key="CSharpInlineFunction.OnMissionMethod" value="在类的静态'{1}'中给定函数名称'{0}'未找到或未公开。" />
+  <string key="CSharpInlineFunction.MissingParameterDefinition" value="参数'{0}'并没有被加入到'输入参数' - 要调用你的函数你需要添加“输入参数“，并给其指定一个测试值或默认值。" />
+  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="参数'{0}'期待的测试值类型为'{1}'，得到的类型值却为'{2}'。" />
+  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="当你的函数能够被执行之前，必须为在'输入参数'中定义的参数'{0}'指定一个测试值或默认值。" />
+</strings>

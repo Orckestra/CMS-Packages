@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="ElementProvider.RootFolderLabel" value="语言" />
+  <string key="ElementProvider.RootFolderToolTip" value="浏览与管理已安装的语言" />
+  <string key="ElementProvider.DefaultLabel" value="默认" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesTitle" value="没有语言版本" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesMessage" value="您已安装了所有可用的语言。" />
+  <string key="AddSystemLocaleWorkflow.AddElementActionLabel" value="新增语言" />
+  <string key="AddSystemLocaleWorkflow.AddElementActionToolTip" value="添加新的语言" />
+  <string key="AddSystemLocaleWorkflow.Dialog.Label" value="新增语言" />
+  <string key="AddSystemLocaleWorkflow.FieldGroup.Label" value="选择语言" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Label" value="语言" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Help" value="可用的已卸载语言列表。语言包可以安装为额外的附加选项。" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Label" value="URL映射名称" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Help" value="该字符串会插入到网页的某已发布语言版的网址URL中，(如somesite.com/CN/default.aspx中的CN)，网站的默认语言不会插入此字符串。" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Label" value="用户访问" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.ItemLabel" value="给所有用户访问" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Help" value="如果选中，该语言将提供给所有注册用户浏览和编辑" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="URL映射的名字已被使用" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionLabel" value="编辑语言" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionToolTip" value="编辑语言" />
+  <string key="EditSystemLocaleWorkflow.Dialog.Label" value="编辑语言" />
+  <string key="EditSystemLocaleWorkflow.FieldGroup.Label" value="语言特性" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Label" value="URL映射名称" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Help" value="URL映射名称" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="URL映射的名字已被使用" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionLabel" value="设置为默认" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionToolTip" value="设置为默认语言" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionLabel" value="移除语言" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionToolTip" value="移除语言" />
+  <string key="RemoveSystemLocaleWorkflow.Dialog.Label" value="移除语言？" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Title" value="无法移除最后的语言" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Description" value="您将要删除的语言是某个用户的正在使用的唯一语言。请向这些用户添加其他语言，然后再试一次。" />
+  <string key="RemoveSystemLocaleWorkflow.Confirm.Description" value="移除此语言？" />
+</strings>

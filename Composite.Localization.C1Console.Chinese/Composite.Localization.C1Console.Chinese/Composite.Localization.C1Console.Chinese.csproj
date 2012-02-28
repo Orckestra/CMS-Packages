@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D285567F-D93E-4C42-89CF-4F341391BADF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.Localization.C1Console.Chinese</RootNamespace>
+    <AssemblyName>Composite.Localization.C1Console.Chinese</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.C1Console.Trees.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.C1Console.Users.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Cultures.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.EntityTokenLocked.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.GeneratedTypes.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Management.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.NameValidation.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.PackageSystem.PackageFragmentInstallers.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Permissions.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.AllFunctionsElementProvider.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.GeneratedDataTypesElementProvider.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.GenericPublishProcessController.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.LocalizationElementProvider.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.MethodBasedFunctionProviderElementProvider.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.PackageElementProvider.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.PageElementProvider.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.PageTemplateElementProvider.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.PageTypeElementProvider.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.SqlFunction.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.StandardFunctions.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.UserGroupElementProvider.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.VisualFunction.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.WebsiteFileElementProvider.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Plugins.XsltBasedFunction.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Web.FormControl.FunctionCallsDesigner.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Web.FormControl.FunctionParameterDesigner.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Web.FormControl.TypeFieldDesigner.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Web.PageBrowser.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Web.SEOAssistant.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Web.SourceEditor.zh-CN.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\zh-CN\Composite.Web.VisualEditor.zh-CN.xml" />
+    <Content Include="Package\Config\Install.xsl" />
+    <Content Include="Package\Config\Uninstall.xsl" />
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_PackageServer\Composite.Localization.C1Console.Chinese.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Release\Composite.Localization.C1Console.Chinese.zip" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\..\Public\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\..\Public\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

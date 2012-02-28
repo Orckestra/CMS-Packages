@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="AddNewButtonLabel" value="新增" />
+  <string key="DeleteButtonLabel" value="删除" />
+  <string key="TreeRootNodeLabel" value="输入参数列表" />
+  <string key="ParameterNamingGroupLabel" value="命名参数和帮助" />
+  <string key="Name" value="参数名称" />
+  <string key="NameHelp" value="参数的名称。使用该名称由系统来标识此参数。名称必须是唯一的，不能有空格和其他特殊字符。例如'Title'，'StartDate'，'LargeImage'等等。" />
+  <string key="Label" value="标签" />
+  <string key="LabelHelp" value="用户将看到指定此参数的文本值。这是参数的'人工手动名称'。" />
+  <string key="Help" value="帮助" />
+  <string key="HelpHelp" value="写一个简短的文字，告诉用户如何处理参数。" />
+  <string key="ParameterTypeValueGroupLabel" value="参数类型和值" />
+  <string key="Type" value="参数类型" />
+  <string key="TypeHelp" value="这个参数的类型。" />
+  <string key="DefaultValue" value="默认值" />
+  <string key="DefaultValueHelp" value="您可以指定此参数的默认值。如果参数有一个默认值，当调用该函数时用户无需指定它。" />
+  <string key="DefaultValueSpecify" value="指定默认值" />
+  <string key="DefaultValueEdit" value="编辑默认值" />
+  <string key="DefaultValueDialogLabel" value="参数的默认值" />
+  <string key="TestValue" value="测试值" />
+  <string key="TestValueHelp" value="当预览时你可以对此字段用不同的输入参数值测试。如果留空，将使用默认值预览。" />
+  <string key="TestValueSpecify" value="指定测试值" />
+  <string key="TestValueEdit" value="编辑测试值" />
+  <string key="TestValueDialogLabel" value="参数的测试值" />
+  <string key="ParameterPresentationGroupLabel" value="参数介绍" />
+  <string key="Widget" value="小工具" />
+  <string key="WidgetHelp" value="您可以使用此参数指定值选择哪一种输入控件（如文本框）的类型。 Widget只适用于简单类型。" />
+  <string key="NoWidgetSpecifiedLabel" value="（无指定widget）" />
+  <string key="WidgetDialogLabel" value="参数部件" />
+  <string key="Position" value="位置" />
+  <string key="PositionLast" value="最后" />
+  <string key="PositionHelp" value="参数的位置。控制参数的顺序。" />
+  <string key="SpecifyWidgetTip" value="记住要指定一个操作件..." />
+  <string key="NoWidgetsTip" value="没有此特定类型的可用操作件。用户必须使用一个函数调用来指定此参数。" />
+  <string key="FieldNameSyntaxInvalid" value="指定的名称无效。" />
+  <string key="CannotSave" value="无法保存...另一个参数具有相同的名称。请更改名称。" />
+  <string key="SpaceInNameError" value="无效的名称。参数名称不能包含空格。你可以在下面的标签字段下写一个可读的名称。" />
+  <string key="NameEmptyError" value="参数名称不能为空。请指定一个名称。" />
+  <string key="NameAlreadyInUseError" value="另一个参数使用这个名称。参数名称必须是唯一的。" />
+</strings>

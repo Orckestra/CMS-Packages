@@ -1,0 +1,56 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Localization.C1Console.Chinese" groupName="Composite.Localization" version="1.0.2" author="Composite A/S" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Localization.C1Console" id="751ABEDE-E677-4906-97AE-73FAA096F4EF" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<Description>Chinese language pack for the console GUI</Description>
+		<TechnicalDetails>Chinese language pack for the console GUI</TechnicalDetails>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
+			<Install xsltFilePath="~\Config\Install.xsl" />
+			<Uninstall xsltFilePath="~\Config\Uninstall.xsl" />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.StandardFunctions.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.StandardFunctions.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Cultures.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Cultures.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Management.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Management.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.PageElementProvider.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.PageElementProvider.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.AllFunctionsElementProvider.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.AllFunctionsElementProvider.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.MethodBasedFunctionProviderElementProvider.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.MethodBasedFunctionProviderElementProvider.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.XsltBasedFunction.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.XsltBasedFunction.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.C1Console.Users.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.C1Console.Users.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.GenericPublishProcessController.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.GenericPublishProcessController.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.GeneratedDataTypesElementProvider.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.GeneratedDataTypesElementProvider.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.FormControl.TypeFieldDesigner.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.FormControl.TypeFieldDesigner.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.FormControl.FunctionParameterDesigner.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.FormControl.FunctionParameterDesigner.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.SqlFunction.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.SqlFunction.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.VisualFunction.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.VisualFunction.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.PageTemplateElementProvider.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.PageTemplateElementProvider.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.FormControl.FunctionCallsDesigner.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.FormControl.FunctionCallsDesigner.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Permissions.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Permissions.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.GeneratedTypes.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.GeneratedTypes.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.NameValidation.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.NameValidation.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.WebsiteFileElementProvider.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.WebsiteFileElementProvider.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.EntityTokenLocked.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.EntityTokenLocked.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.PackageElementProvider.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.PackageElementProvider.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.PackageSystem.PackageFragmentInstallers.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.PackageSystem.PackageFragmentInstallers.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.LocalizationElementProvider.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.LocalizationElementProvider.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.SEOAssistant.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.SEOAssistant.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.VisualEditor.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.VisualEditor.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.SourceEditor.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.SourceEditor.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.PageBrowser.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Web.PageBrowser.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.UserGroupElementProvider.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.UserGroupElementProvider.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.C1Console.Trees.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.C1Console.Trees.zh-CN.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.PageTypeElementProvider.zh-CN.xml" targetFilename="~\App_Data/Composite/LanguagePacks/zh-CN/Composite.Plugins.PageTypeElementProvider.zh-CN.xml" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\App_Data\Composite\LanguagePacks\zh-CN\" targetDirectory="~\App_Data\Composite\LanguagePacks\zh-CN\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

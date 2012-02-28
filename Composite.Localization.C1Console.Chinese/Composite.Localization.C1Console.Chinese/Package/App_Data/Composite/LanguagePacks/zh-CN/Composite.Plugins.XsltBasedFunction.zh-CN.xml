@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderLabel" value="XSLT函数" />
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderToolTip" value="XSLT函数" />
+  <string key="AddNewXsltFunctionWorkflow.DuplicateName" value="具有相同名称的XSLT函数已经存在。" />
+  <string key="AddNewXsltFunctionWorkflow.MethodEmpty" value="方法名必须是非空" />
+  <string key="AddNewXsltFunctionWorkflow.NamespaceEmpty" value="命名空间必须非空" />
+  <string key="AddNewXsltFunctionWorkflow.InvalidNamespace" value="命名空间必须类似于A.B.C - 而不是以字符&quot;.&quot;开始和结束。" />
+  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageTitle" value="需要一种语言" />
+  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageMessage" value="一种语言是要创建一个XSLT的函数时所必需的，但还没有添加语言。您可以在&quot;系统&quot;控制台增加。" />
+  <string key="AddNewXsltFunctionWorkflow.MissingPageTitle" value="需要一个页面" />
+  <string key="AddNewXsltFunctionWorkflow.MissingPageMessage" value="要创建一个XSLT函数至少有一个页面已经被添加。" />
+  <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteTitle" value="删除XSLT？" />
+  <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteMessage" value="删除选定的XSLT？" />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorTitle" value="级联删除错误" />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorMessage" value="此类型被另一类型所引用，不允许级联删除。此操作被取消。" />
+  <string key="EditXsltFunctionWorkflow.EmptyMethodName" value="方法名必须是非空" />
+  <string key="EditXsltFunctionWorkflow.InvalidNamespace" value="命名空间必须类似于&quot;A.B.C&quot;- 而不是以字符&quot;.&quot;开始和结束。" />
+  <string key="EditXsltFunctionWorkflow.InvalidFileName" value="XslFilePath必须以&quot;\&quot;或&quot;/&quot;开始" />
+  <string key="EditXsltFunctionWorkflow.InvalidName" value="无效的函数名称" />
+  <string key="EditXsltFunctionWorkflow.CannotRenameFileExists" value="不能重命名函数，文件'{0}'已经存在。" />
+  <string key="XsltBasedFunctionProviderElementProvider.Add" value="添加XSLT函数" />
+  <string key="XsltBasedFunctionProviderElementProvider.AddToolTip" value="添加新的XSLT函数" />
+  <string key="XsltBasedFunctionProviderElementProvider.Edit" value="编辑" />
+  <string key="XsltBasedFunctionProviderElementProvider.EditToolTip" value="编辑XSLT函数" />
+  <string key="XsltBasedFunctionProviderElementProvider.Delete" value="删除" />
+  <string key="XsltBasedFunctionProviderElementProvider.DeleteToolTip" value="删除XSLT函数" />
+  <string key="AddNewXsltFunctionStep1.LabelDialog" value="添加新的XSLT函数" />
+  <string key="AddNewXsltFunctionStep1.LabelFieldGroup" value="命名和输出类型" />
+  <string key="AddNewXsltFunctionStep1.LabelName" value="名称" />
+  <string key="AddNewXsltFunctionStep1.HelpName" value="-" />
+  <string key="AddNewXsltFunctionStep1.LabelNamespace" value="命名空间" />
+  <string key="AddNewXsltFunctionStep1.HelpNamespace" value="-" />
+  <string key="AddNewXsltFunctionStep1.LabelOutputType" value="输出类型" />
+  <string key="EditXsltFunction.LabelSettings" value="设置" />
+  <string key="EditXsltFunction.LabelName" value="名称" />
+  <string key="EditXsltFunction.HelpName" value="-" />
+  <string key="EditXsltFunction.LabelNamespace" value="命名空间" />
+  <string key="EditXsltFunction.HelpNamespace" value="-" />
+  <string key="EditXsltFunction.LabelDescription" value="说明" />
+  <string key="EditXsltFunction.HelpDescription" value="-" />
+  <string key="EditXsltFunction.LabelDebug" value="调试" />
+  <string key="EditXsltFunction.LabelPage" value="页面" />
+  <string key="EditXsltFunction.HelpPage" value="调试时，这个页面是用来作为显示的当前上下文。" />
+  <string key="EditXsltFunction.LabelAdminitrativeScope" value="Adminitrative" />
+  <string key="EditXsltFunction.LabelPublicScope" value="公共" />
+  <string key="EditXsltFunction.LabelPageDataScope" value="数据范围" />
+  <string key="EditXsltFunction.HelpPageDataScope" value="为显示上下文选择“公共”或“开发”版本。" />
+  <string key="EditXsltFunction.LabelActiveLocales" value="语言" />
+  <string key="EditXsltFunction.HelpActiveLocales" value="选择调试函数时要使用的语言。" />
+  <string key="EditXsltFunction.OutputType" value="输出类型" />
+  <string key="EditXsltFunction.LabelInputParameters" value="输入参数" />
+  <string key="EditXsltFunction.LabelFunctionCalls" value="函数调用" />
+  <string key="EditXsltFunction.LabelTemplate" value="模板" />
+  <string key="EditXsltFunction.LabelPreview" value="预览" />
+  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageTitle" value="需要一种语言" />
+  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageMessage" value="要编辑一个XSLT的函数时需要一种语言，但没有任何语言被添加。您可以添加在&quot;系统&quot;控制台增加。" />
+  <string key="EditXsltFunctionWorkflow.MissingPageTitle" value="需要一个页面" />
+  <string key="EditXsltFunctionWorkflow.MissingPageMessage" value="编辑XSLT函数时至少要有一个页面已经被添加。" />
+</strings>
