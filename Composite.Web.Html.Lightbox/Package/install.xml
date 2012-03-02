@@ -1,7 +1,8 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Web.Html.Lightbox" groupName="Composite.Web" version="1.0.3" author="Composite " website="http://composite.net" id="8936697a-92f8-4d9e-a7d0-0c61ebe82d19" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Web.Html.Lightbox" groupName="Composite.Web" readMoreUrl="http://docs.composite.net/Composite.Web.Html.Lightbox" version="1.0.4" author="Composite " website="http://composite.net" id="8936697a-92f8-4d9e-a7d0-0c61ebe82d19" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<TechnicalDetails>Allows you to display HTML content in a lightbox popup by clicking a teaser on a page.</TechnicalDetails>
 		<Description>Allows you to display HTML content in a lightbox popup by clicking a teaser on a page.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
