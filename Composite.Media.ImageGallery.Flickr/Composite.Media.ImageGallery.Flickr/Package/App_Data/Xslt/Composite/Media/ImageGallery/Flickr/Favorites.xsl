@@ -5,9 +5,9 @@
 		<html>
 			<head>
 				<script id="jquery-1-4-2" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
-				<script id="slimbox2-js" src="/Frontend/Composite/Media/ImageGallery/Slimbox-2.04/js/slimbox2.js" type="text/javascript"></script>
-				<link id="slimbox-2.04" media="screen" type="text/css" href="/Frontend/Composite/Media/ImageGallery/Slimbox-2.04/css/slimbox2.css" rel="stylesheet" />
-				<link id="flickr-styles" rel="stylesheet" type="text/css" href="/Frontend/Composite/Media/ImageGallery/Flickr/Styles/Styles.css" />
+				<script id="slimbox2-js" src="~/Frontend/Composite/Media/ImageGallery/Slimbox-2.04/js/slimbox2.js" type="text/javascript"></script>
+				<link id="slimbox-2.04" media="screen" type="text/css" href="~/Frontend/Composite/Media/ImageGallery/Slimbox-2.04/css/slimbox2.css" rel="stylesheet" />
+				<link id="flickr-styles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Media/ImageGallery/Flickr/Styles/Styles.css" />
 			</head>
 			<body>
 				<xsl:choose>

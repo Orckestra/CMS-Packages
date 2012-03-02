@@ -6,7 +6,7 @@
   <xsl:template match="/">
     <html>
       <head>
-        <link id="flickr-styles" rel="stylesheet" type="text/css" href="/Frontend/Composite/Media/ImageGallery/Flickr/Styles/Styles.css" />
+        <link id="flickr-styles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Media/ImageGallery/Flickr/Styles/Styles.css" />
       </head>
       <body>
         <xsl:choose>
