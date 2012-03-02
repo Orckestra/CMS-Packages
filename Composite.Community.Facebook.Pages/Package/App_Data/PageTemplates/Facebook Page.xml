@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0" xmlns:lang="http://www.composite.net/ns/localization/1.0" xmlns:rendering="http://www.composite.net/ns/rendering/1.0" xmlns:asp="http://www.composite.net/ns/asp.net/controls">
+	<f:function name="Composite.Web.Html.Template.LangAttribute" />
+	<head>
+		<title>
+			<rendering:page.title />
+		</title>
+		<f:function name="Composite.Web.Html.Template.CommonMetaTags" />
+		<rendering:page.metatag.description />
+		<link rel="stylesheet" type="text/css" href="/Frontend/Composite/Community/Facebook/Pages/Styles.css" />
+	</head>
+	<body>
+		<div class="fbbody">
+			<h1>
+				<rendering:page.title />
+			</h1>
+			<h2>
+				<rendering:page.description />
+			</h2>
+			<div id="main">
+				<rendering:placeholder id="content" title="Content" default="true" />
+			</div>
+			<div class="fbinfobox">To customize the design of this page edit the Page Template (“Facebook Page”) and CSS styles (~\Frontend\Composite\Community\Facebook\Pages\Styles.css)</div>
+			<!-- *** Examples 
+			* Common Blue Box 
+			<div class="fbbluebox">  
+    			Recognize this common blue box?  
+			</div> 
+			
+			* Error Box  
+			<div class="fberrorbox">  
+       			 Recognize this error box?  
+    		</div>  
+			
+			* Facebook Tabs
+			<a href="#" class="fbtab">Facebook Tab #1</a>  
+			<a href="#" class="fbtab">Facebook Tab #2</a>  
+			<a href="#" class="fbtab">Facebook Tab #3</a>  
+			-->
+		</div>
+	</body>
+</html>
