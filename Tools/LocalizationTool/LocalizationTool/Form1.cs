@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.IO;
-using System.Drawing.Printing;
-using System.Text.RegularExpressions;
 using System.Diagnostics;
-using System.Threading;
 
 namespace LocalizationTool
 {
@@ -38,7 +33,7 @@ namespace LocalizationTool
 				//On startup – locate strings in the translation that has “file+key” that do not exist in the English version (i.e. unused keys). If any are found, dump them to a single “UnknownStrings.xml” file and do a message box “Strings with invalid keys was found and has been cleaned up. Strings have been moved to UnknownStrings.xml
 				if (FileHandler.CleanUnknownStrings())
 				{
-					MessageBox.Show("The strings with invalid keys have been found and cleaned up. The strings have been moved to " + Settings.UnknownStringsFilePath);
+					MessageBox.Show(string.Format("The strings with invalid keys have been found and cleaned up. The strings have been moved to {0}", Settings.UnknownStringsFilePath));
 				}
 
 				if (!Directory.Exists(Settings.TargetLocalizationDirectory))
@@ -158,9 +153,9 @@ namespace LocalizationTool
 			targetLanguageTextBox.Focus();
 		}
 
-		private void printForComparison_Click(object sender, EventArgs e)
+		private void PrintForComparisonClick(object sender, EventArgs e)
 		{
-			StringBuilder print = new StringBuilder();
+			var print = new StringBuilder();
 			print.Append(@"<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd""><html><head><title></title>
                 <style type='text/css'>
                   body {font-size: 11px; font-family: Arial;}
@@ -198,11 +193,11 @@ namespace LocalizationTool
 				Directory.CreateDirectory(Settings.ReportsDirectory);
 			var filePath = Path.Combine(Settings.ReportsDirectory, fileSterm + ".html");
 			File.WriteAllText(filePath, print.ToString(), Encoding.UTF8);
-			ProcessStartInfo sInfo = new ProcessStartInfo(filePath);
+			var sInfo = new ProcessStartInfo(filePath);
 			Process.Start(sInfo);
 		}
 
-		private void txtSearch_TextChanged(object sender, EventArgs e)
+		private void TxtSearchTextChanged(object sender, EventArgs e)
 		{
 			FileHandler.FilterDataSource(txtSearch.Text, chbShowFlaggedOnly.Checked);
 			_filesListSource.Clear();
@@ -214,9 +209,9 @@ namespace LocalizationTool
 			PopulateStringKeysListBox();
 		}
 
-		private void btnFlagThis_Click(object sender, EventArgs e)
+		private void BtnFlagThisClick(object sender, EventArgs e)
 		{
-			FlagWindow flagThis = new FlagWindow();
+			var flagThis = new FlagWindow();
 
 			if (flagThis.ShowDialog(this) == DialogResult.OK)
 			{
@@ -226,20 +221,20 @@ namespace LocalizationTool
 			}
 		}
 
-		private void btnEditRemoveFlag_Click(object sender, EventArgs e)
+		protected void BtnEditRemoveFlagClick(object sender, EventArgs e)
 		{
-			FlagWindow flagThis = new FlagWindow();
-			flagThis.FlagComment = _selectedKey.Comment;
-			flagThis.CancelButtonText = "Remove";
+			var flagThis = new FlagWindow { FlagComment = _selectedKey.Comment, CancelButtonText = "Remove" };
 			if (flagThis.ShowDialog(this) == DialogResult.Abort)
 			{
 				FileHandler.RemoveFlag(_selectedFile.Name, _selectedKey.Name, flagThis.FlagComment);
 				if (chbShowFlaggedOnly.Checked)
 				{
-					var itemToRemove = _keysListSource.Where(k => k.File == _selectedFile.Name && k.Name == _selectedKey.Name).FirstOrDefault();
+					var itemToRemove = _keysListSource.FirstOrDefault(k => k.File == _selectedFile.Name && k.Name == _selectedKey.Name);
 					_keysListSource.Remove(itemToRemove);
-					if (_keysListSource.Count() == 0)
+					FileHandler.StringsCurrentDataSource[_selectedFile.Name].Remove(_selectedKey.Name);
+					if (!_keysListSource.Any())
 					{
+						FileHandler.StringsCurrentDataSource.Remove(_selectedFile.Name);
 						_filesListSource.Remove(_selectedFile);
 					}
 				}
@@ -250,10 +245,9 @@ namespace LocalizationTool
 			}
 			RefreshKeysListSelectedItem();
 			UpdateFlagsUI();
-
 		}
 
-		private void chbShowFlaggedOnly_CheckedChanged(object sender, EventArgs e)
+		private void ChbShowFlaggedOnlyCheckedChanged(object sender, EventArgs e)
 		{
 			FileHandler.FilterDataSource(txtSearch.Text, chbShowFlaggedOnly.Checked);
 			_filesListSource.Clear();
@@ -276,19 +270,19 @@ namespace LocalizationTool
 
 			if (nextKey != null)
 			{
-				keysListBox.SelectedItem = _keysListSource.Where(item => item.Name == nextKey && item.File == _selectedFile.Name).FirstOrDefault();
+				keysListBox.SelectedItem = _keysListSource.FirstOrDefault(item => item.Name == nextKey && item.File == _selectedFile.Name);
 				missingStringFound = true;
 			}
 			else
 			{
-				foreach (string fileStem in FileHandler.StringsCurrentDataSource.Keys)
+				foreach (var fileStem in FileHandler.StringsCurrentDataSource.Keys)
 				{
 					nextKey = FileHandler.FindNextMissingKey(fileStem);
 
 					if (nextKey != null)
 					{
-						filesListBox.SelectedItem = _filesListSource.Where(s => s.Name == fileStem).FirstOrDefault();
-						keysListBox.SelectedItem = _keysListSource.Where(it => it.Name == nextKey && it.File == _selectedFile.Name).FirstOrDefault();
+						filesListBox.SelectedItem = _filesListSource.FirstOrDefault(s => s.Name == fileStem);
+						keysListBox.SelectedItem = _keysListSource.FirstOrDefault(it => it.Name == nextKey && it.File == _selectedFile.Name);
 						missingStringFound = true;
 						break;
 					}
@@ -392,7 +386,7 @@ namespace LocalizationTool
 		private void FillProgressInfo()
 		{
 			// There is an info area at the top, “Progress” with the text “NN% done – NNN1 strings out of NNN2 missing translation.” where NNN1 is number of strings in translation, NNN2 is number of strings in English.
-			int totalCountOfMissingStrings = FileHandler.TotalCountOfMissingStrings();
+			var totalCountOfMissingStrings = FileHandler.TotalCountOfMissingStrings();
 			double percentDone = 100.0 - (totalCountOfMissingStrings * 100.0) / FileHandler.TotalCountOfSourceTranstations;
 			progressValue.Text = String.Format(_progressLabelFormat, String.Format("{0:0.0}", percentDone), totalCountOfMissingStrings, FileHandler.TotalCountOfSourceTranstations);
 		}
@@ -424,7 +418,7 @@ namespace LocalizationTool
 			if (_selectedKey.IsFlagged)
 			{
 				tooltipFlaged.SetToolTip(keysListBox, _selectedKey.Comment);
-				toolStripStatusLabel1.Text = "Flag: " + _selectedKey.Comment;
+				toolStripStatusLabel1.Text = string.Format("Flag: {0}", _selectedKey.Comment);
 				tooltipFlaged.Active = true;
 				btnFlagThis.Visible = false;
 				btnEditRemoveFlag.Visible = true;
@@ -467,7 +461,7 @@ namespace LocalizationTool
 		{
 			get
 			{
-				int count = FileHandler.CountOfMissingStrings(Name);
+				var count = FileHandler.CountOfMissingStrings(Name);
 				return count != 0 ? String.Format("{0} ({1} strings missing)", Name, count) : Name;
 			}
 
@@ -476,6 +470,7 @@ namespace LocalizationTool
 
 	public class KeysListItem : ListItemNotificationObject
 	{
+		private string _text;
 		public KeysListItem() { }
 		public KeysListItem(string file, string name)
 		{
@@ -489,19 +484,22 @@ namespace LocalizationTool
 		{
 			get
 			{
-				XElement flag = FileHandler.GetFlag(File, Name);
-				if (flag != null)
+				Comment = string.Empty;
+				IsFlagged = false;
+				_text = Name;
+				if (System.IO.File.Exists(Settings.FlagsFilePath))
 				{
-					Comment = flag.Attribute("Comment").Value;
-					IsFlagged = true;
-					return String.Format("{0} (flagged)", Name);
+					var flagDoc = XDocument.Load(Settings.FlagsFilePath);
+					var flag = FileHandler.GetFlag(flagDoc, File, Name);
+					if (flag != null)
+					{
+						var commentAttr = flag.Attribute("Comment");
+						if (commentAttr != null) Comment = commentAttr.Value;
+						IsFlagged = true;
+						_text = String.Format("{0} (flagged)", Name);
+					}
 				}
-				else
-				{
-					Comment = string.Empty;
-					IsFlagged = false;
-					return Name;
-				}
+				return _text;
 			}
 		}
 		public string Comment { get; set; }

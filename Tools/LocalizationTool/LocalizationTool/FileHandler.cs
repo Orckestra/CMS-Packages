@@ -1,33 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.IO;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
-using System.Threading;
-using System.Diagnostics;
 
 namespace LocalizationTool
 {
 	public static class FileHandler
 	{
 		#region Variables
-		private readonly static string _sourceFileEnding = string.Format(".{0}.xml", Settings.SourceCulture.Name);
-		private readonly static string _targetFileEnding = string.Format(".{0}.xml", Settings.TargetCulture.Name);
+
 		private static IEnumerable<string> _sourceFileStems;
 		private static Dictionary<string, List<string>> _stringsCurrentDataSource;
-
 		private static List<string> _changedTargetFiles = new List<string>();
-
-
 		private static Dictionary<string, XDocument> _sourceFilesBySterm;
 		private static Dictionary<string, string> _sourceFilesAsStringsBySterm;
 		private static int _totalCountOfSourceTranstations;
-		private static string _patternStringItemByKey = "<string\\s*key\\s*=\\s*\"({0})\"\\s*value\\s*=\\s*\"(?<1>[^\"]*)\"\\s*/>";
-		private static string _patternStringItem = "<string\\s*key\\s*=\\s*\"(?<1>[^\"]*)\"\\s*value\\s*=\\s*\"(?<2>[^\"]*)\"\\s*/>";
-		private static Regex _regexString = new Regex(_patternStringItem, RegexOptions.Compiled);
+
+		private const string PatternStringItemByKey = "<string\\s*key\\s*=\\s*\"({0})\"\\s*value\\s*=\\s*\"(?<1>[^\"]*)\"\\s*/>";
+		private const string PatternStringItem = "<string\\s*key\\s*=\\s*\"(?<1>[^\"]*)\"\\s*value\\s*=\\s*\"(?<2>[^\"]*)\"\\s*/>";
+		private static readonly Regex RegexString = new Regex(PatternStringItem, RegexOptions.Compiled);
+
 		#endregion
 
 		#region Static Constructor
@@ -47,29 +42,14 @@ namespace LocalizationTool
 				_sourceFilesAsStringsBySterm.Add(sterm, GetSourceDocumentAsString(sterm));
 				_totalCountOfSourceTranstations += sourceDoc.Root.Elements("string").Count();
 				_stringsCurrentDataSource.Add(sterm, GetStringKeys(sterm).ToList());
-
 			}
-
 		}
 
 		#endregion
 
 		#region Public Static Properties
-		public static string SourceFileEnding
-		{
-			get
-			{
-				return _sourceFileEnding;
-			}
-		}
-
-		public static string TargetFileEnding
-		{
-			get
-			{
-				return _targetFileEnding;
-			}
-		}
+		public static readonly string SourceFileEnding = string.Format(".{0}.xml", Settings.SourceCulture.Name);
+		public static readonly string TargetFileEnding = string.Format(".{0}.xml", Settings.TargetCulture.Name);
 
 		public static Dictionary<string, List<string>> StringsCurrentDataSource
 		{
@@ -107,13 +87,18 @@ namespace LocalizationTool
 
 		public static string GetSourceString(string fileStem, string stringKey)
 		{
-			return SourceFilesBySterm[fileStem].Descendants("string").Where(f => f.Attribute("key").Value == stringKey).Select(f => f.Attribute("value").Value).First();
+			return
+				SourceFilesBySterm[fileStem].Descendants("string").Where(f => f.Attribute("key").Value == stringKey).Select(
+					f => f.Attribute("value").Value).First();
 		}
 
 		public static string GetTargetString(string fileStem, string stringKey)
 		{
-			XDocument localizationDocument = GetTargetDocument(fileStem);
-			return localizationDocument != null ? localizationDocument.Descendants("string").Where(f => f.Attribute("key").Value == stringKey).Select(f => f.Attribute("value").Value).FirstOrDefault() : "";
+			var localizationDocument = GetTargetDocument(fileStem);
+			return localizationDocument != null
+					? localizationDocument.Descendants("string").Where(f => f.Attribute("key").Value == stringKey).Select(
+						f => f.Attribute("value").Value).FirstOrDefault()
+					: "";
 		}
 
 		public static bool SaveTargetString(string fileStem, string key, string newValue)
@@ -121,8 +106,11 @@ namespace LocalizationTool
 			bool isNeedToSave = false;
 			var targetFilePath = GetTargetDocumentPath(fileStem);
 
-			XDocument targeDoc = File.Exists(targetFilePath) ? XDocument.Load(targetFilePath) : new XDocument(new XElement("strings"));
-			var targetValues = targeDoc.Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
+			XDocument targeDoc = File.Exists(targetFilePath)
+									? XDocument.Load(targetFilePath)
+									: new XDocument(new XElement("strings"));
+			var targetValues = targeDoc.Root.Elements("string").ToDictionary(k => k.Attribute("key").Value,
+																			 v => v.Attribute("value").Value);
 
 			if (targetValues.ContainsKey(key))
 			{
@@ -156,7 +144,8 @@ namespace LocalizationTool
 
 			var targetValues = new Dictionary<string, string>();
 			if (File.Exists(targetFilePath))
-				targetValues = GetTargetDocument(fileStem).Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
+				targetValues = GetTargetDocument(fileStem).Root.Elements("string").ToDictionary(k => k.Attribute("key").Value,
+																								v => v.Attribute("value").Value);
 
 			var sourceFileContentCopy = SourceFilesAsStringsByStem[fileStem];
 			var targetFileContent = string.Empty;
@@ -168,7 +157,7 @@ namespace LocalizationTool
 				{
 					isNeedToSave = true;
 					targetFileContent = File.ReadAllText(targetFilePath);
-					var regexPattern = string.Format(_patternStringItemByKey, key);
+					var regexPattern = string.Format(PatternStringItemByKey, key);
 					targetFileContent = Regex.Replace(targetFileContent, regexPattern, newTargetString);
 				}
 			}
@@ -178,7 +167,7 @@ namespace LocalizationTool
 				// adding a new value to the values dictionary
 				targetValues.Add(key, newValue);
 				//take a copy of the source file and re-save it as a target file
-				var sourceMathes = _regexString.Matches(sourceFileContentCopy);
+				var sourceMathes = RegexString.Matches(sourceFileContentCopy);
 				var targetValue = string.Empty;
 
 				foreach (Match m in sourceMathes)
@@ -232,12 +221,7 @@ namespace LocalizationTool
 
 		public static int TotalCountOfMissingStrings()
 		{
-			int total = 0;
-			foreach (var fileSterm in SourceFileStems)
-			{
-				total += CountOfMissingStrings(fileSterm);
-			}
-			return total;
+			return SourceFileStems.Sum(fileSterm => CountOfMissingStrings(fileSterm));
 		}
 
 		public static bool CleanUnknownStrings()
@@ -257,7 +241,7 @@ namespace LocalizationTool
 				if (!SourceFileStems.Contains(sterm))
 				{
 					unknownStringsDoc.Root.Add(new XComment(sterm));
-					unknownStringsDoc.Root.Add(targetFile.Root.Elements());
+					if (targetFile.Root != null) unknownStringsDoc.Root.Add(targetFile.Root.Elements());
 					File.Delete(targetFilePath);
 					unknownStringsDoc.Save(Settings.UnknownStringsFilePath);
 					return true;
@@ -272,11 +256,12 @@ namespace LocalizationTool
 					needToSaveUnknownStringsDoc = true;
 					unknownStringsDoc.Root.Add(new XComment(sterm));
 					unknownKeys.ForEach(key =>
-						{
-							var elementToRemove = targetFile.Root.Elements("string").FirstOrDefault(e => e.Attribute("key").Value == key);
-							unknownStringsDoc.Root.Add(elementToRemove);
-							elementToRemove.Remove();
-						});
+											{
+												var elementToRemove =
+													targetFile.Root.Elements("string").FirstOrDefault(e => e.Attribute("key").Value == key);
+												unknownStringsDoc.Root.Add(elementToRemove);
+												elementToRemove.Remove();
+											});
 					targetFile.Save(targetFilePath);
 					if (!_changedTargetFiles.Contains(sterm))
 						_changedTargetFiles.Add(sterm);
@@ -294,18 +279,22 @@ namespace LocalizationTool
 			foreach (var fileSterm in SourceFileStems)
 			{
 				var sourceDoc = GetSourceDocument(fileSterm);
-				var sourceEmptyStrings = sourceDoc.Root.Elements("string").Where(el => string.IsNullOrEmpty(el.Attribute("value").Value)).ToList();
+				var sourceEmptyStrings =
+					sourceDoc.Root.Elements("string").Where(el => string.IsNullOrEmpty(el.Attribute("value").Value)).ToList();
 				if (sourceEmptyStrings.Count == 0)
 					continue;
 
 				var targetFilePath = GetTargetDocumentPath(fileSterm);
-				var targetDoc = !File.Exists(targetFilePath) ? new XDocument(new XElement("strings")) : XDocument.Load(targetFilePath);
-				var targetValues = targetDoc.Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
+				var targetDoc = !File.Exists(targetFilePath)
+									? new XDocument(new XElement("strings"))
+									: XDocument.Load(targetFilePath);
+				var targetValues = targetDoc.Root.Elements("string").ToDictionary(k => k.Attribute("key").Value,
+																				  v => v.Attribute("value").Value);
 				sourceEmptyStrings.ForEach(el =>
-				{
-					if (!targetValues.ContainsKey(el.Attribute("key").Value))
-						targetDoc.Root.Add(el);
-				});
+											{
+												if (!targetValues.ContainsKey(el.Attribute("key").Value))
+													targetDoc.Root.Add(el);
+											});
 				targetDoc.Save(targetFilePath);
 				if (!_changedTargetFiles.Contains(fileSterm))
 					_changedTargetFiles.Add(fileSterm);
@@ -335,7 +324,6 @@ namespace LocalizationTool
 				return;
 			}
 
-
 			if (isFlaged)
 			{
 				//filter by Flags
@@ -344,9 +332,11 @@ namespace LocalizationTool
 				{
 					var file = el.Attribute("File").Value;
 					if (!SourceFileStems.Contains(file)) continue;
+					
 					var key = el.Attribute("Key").Value;
 					if (!GetStringKeys(file).Contains(key)) continue;
-					List<string> keys = new List<string>();
+					
+					List<string> keys;
 					if (!_stringsCurrentDataSource.TryGetValue(file, out keys))
 					{
 						_stringsCurrentDataSource[file] = new List<string>();
@@ -370,7 +360,7 @@ namespace LocalizationTool
 									_stringsCurrentDataSource[file].Remove(key);
 							}
 						}
-						if (_stringsCurrentDataSource[file].Count() == 0)
+						if (!_stringsCurrentDataSource[file].Any())
 						{
 							_stringsCurrentDataSource.Remove(file);
 						}
@@ -378,33 +368,33 @@ namespace LocalizationTool
 				}
 				return;
 			}
-			if (!isFlaged)
+			//filter only by Search term
+			foreach (var file in SourceFileStems)
 			{
-				//filter only by Search term
-				foreach (var file in SourceFileStems)
+				var sourceFile = SourceFilesBySterm[file];
+				var targetFile = GetTargetDocument(file);
+				var sourceElements =
+					sourceFile.Root.Elements("string").Where(
+						el =>
+						el.Attribute("key").Value.ToLower().Contains(search) || el.Attribute("value").Value.ToLower().Contains(search)).
+						Select(el => el.Attribute("key").Value).ToList();
+				if (targetFile != null)
 				{
-					var sourceFile = SourceFilesBySterm[file];
-					var targetFile = GetTargetDocument(file);
-					var sourceElements = sourceFile.Root.Elements("string").Where(el => el.Attribute("key").Value.ToLower().Contains(search) || el.Attribute("value").Value.ToLower().Contains(search)).Select(el => el.Attribute("key").Value).ToList();
-					if (targetFile != null)
-					{
-						var targetValues = targetFile.Root.Elements("string").Where(el => el.Attribute("value").Value.ToLower().Contains(search)).Select(el => el.Attribute("key").Value).ToList();
-						sourceElements = targetValues.Except(sourceElements).Union(sourceElements).ToList();
-					}
-					if (sourceElements.Count() == 0) continue;
-
-					_stringsCurrentDataSource[file] = new List<string>();
-					sourceElements.ForEach(el =>
-					{
-						_stringsCurrentDataSource[file].Add(el);
-					});
+					var targetValues =
+						targetFile.Root.Elements("string").Where(el => el.Attribute("value").Value.ToLower().Contains(search)).Select(
+							el => el.Attribute("key").Value).ToList();
+					sourceElements = targetValues.Except(sourceElements).Union(sourceElements).ToList();
 				}
-				return;
+				if (!sourceElements.Any()) continue;
 
+				_stringsCurrentDataSource[file] = new List<string>();
+				sourceElements.ForEach(el => _stringsCurrentDataSource[file].Add(el));
 			}
+			return;
 		}
 
 		#region Flags methods
+
 		public static XDocument GetFlagsDocument()
 		{
 			if (!File.Exists(Settings.FlagsFilePath))
@@ -413,57 +403,66 @@ namespace LocalizationTool
 				newFile.Save(Settings.FlagsFilePath);
 				return newFile;
 			}
-
 			return XDocument.Load(Settings.FlagsFilePath);
 		}
 
 		public static void AddFlag(string file, string key, string comment)
 		{
-			XDocument flagsDoc = GetFlagsDocument();
-			XElement flag = new XElement("Flag", new XAttribute("File", file), new XAttribute("Key", key), new XAttribute("Comment", comment));
-			flagsDoc.Root.Add(flag);
+			var flagsDoc = GetFlagsDocument();
+			var flag = new XElement("Flag", new XAttribute("File", file), new XAttribute("Key", key),
+										 new XAttribute("Comment", comment));
+			if (flagsDoc.Root != null) flagsDoc.Root.Add(flag);
 			flagsDoc.Save(Settings.FlagsFilePath);
 		}
 
-		public static XElement GetFlag(string file, string key)
+		public static XElement GetFlag(XDocument flagsDoc, string file, string key)
 		{
-			if (!File.Exists(Settings.FlagsFilePath)) return null;
-
-			XDocument flagsDoc = GetFlagsDocument();
-			return flagsDoc.Root.Elements("Flag").Where(el => el.Attribute("File").Value == file && el.Attribute("Key").Value == key).FirstOrDefault();
+			return
+				flagsDoc.Root.Elements("Flag").FirstOrDefault(el =>
+																{
+																	var fileAttr = el.Attribute("File");
+																	var keyAttr = el.Attribute("Key");
+																	return keyAttr != null && fileAttr != null && fileAttr.Value == file && keyAttr.Value == key;
+																});
 		}
 
 		public static void UpdateFlag(string file, string key, string comment)
 		{
-			XDocument flagsDoc = GetFlagsDocument();
-			XElement flag = flagsDoc.Root.Elements("Flag").Where(el => el.Attribute("File").Value == file && el.Attribute("Key").Value == key).FirstOrDefault();
-			flag.Attribute("Comment").Value = comment;
+			var flagsDoc = GetFlagsDocument();
+			var flag = GetFlag(flagsDoc, file, key);
+			if (flag == null) return;
+
+			var commentAttr = flag.Attribute("Comment");
+			if (commentAttr != null) commentAttr.Value = comment;
+			else
+			{
+				flag.Add(new XAttribute("Comment", comment));
+			}
 			flagsDoc.Save(Settings.FlagsFilePath);
 		}
 
 		public static void RemoveFlag(string file, string key, string comment)
 		{
-			XDocument flagsDoc = GetFlagsDocument();
-			XElement flag = flagsDoc.Root.Elements("Flag").Where(el => el.Attribute("File").Value == file && el.Attribute("Key").Value == key).FirstOrDefault();
-			if (flag != null)
-			{
-				flag.Remove();
-				flagsDoc.Save(Settings.FlagsFilePath);
-			}
+			var flagsDoc = GetFlagsDocument();
+			var flag = GetFlag(flagsDoc, file, key);
+			if (flag == null) return;
+			flag.Remove();
+			flagsDoc.Save(Settings.FlagsFilePath);
 		}
 
 		#endregion
 
 		#region .config methods
+
 		public static void RegisterInCompositeConfig(string fileStem)
 		{
-			string targetCulture = Settings.TargetCulture.Name;
-			string defaultCulture = "en-US";
+			var targetCulture = Settings.TargetCulture.Name;
+			const string defaultCulture = "en-US";
 
-			XDocument config = XDocument.Load(Settings.CompositeConfigRelativePath);
+			var config = XDocument.Load(Settings.CompositeConfigRelativePath);
 			var fileNameCultureResource = (from xml2 in config.Root.Descendants("ResourceProviderPlugins").Elements("add")
-										   where xml2.Attribute("type").Value == "Composite.Plugins.ResourceSystem.XmlStringResourceProvider.XmlStringResourceProvider, Composite"
-										   select xml2).Elements("Cultures").Elements("add").Where(a => a.Attribute("xmlFile").Value.Contains(fileStem)).ToList();
+											where xml2.Attribute("type").Value == "Composite.Plugins.ResourceSystem.XmlStringResourceProvider.XmlStringResourceProvider, Composite"
+											select xml2).Elements("Cultures").Elements("add").Where(a => a.Attribute("xmlFile").Value.Contains(fileStem)).ToList();
 
 			var targetCultureNode = fileNameCultureResource.Find(a => a.Attribute("cultureName").Value == targetCulture);
 
@@ -478,13 +477,13 @@ namespace LocalizationTool
 					var culturesNode = defaultCultureNode.Parent;
 					targetCultureNode = new XElement(defaultCultureNode);
 					targetCultureNode.Attribute("cultureName").Value = targetCulture;
-					targetCultureNode.Attribute("xmlFile").Value = string.Format("~/App_Data/Composite/LanguagePacks/{0}/{1}", targetCulture, Path.GetFileName(targetCultureNode.Attribute("xmlFile").Value.Replace(defaultCulture.ToLower(), targetCulture)));
+					targetCultureNode.Attribute("xmlFile").Value = string.Format("~/App_Data/Composite/LanguagePacks/{0}/{1}",targetCulture,Path.GetFileName(targetCultureNode.Attribute("xmlFile").Value.Replace(defaultCulture.ToLower(), targetCulture)));
 					culturesNode.Add(targetCultureNode);
 
 					// check if applicationCultureNames contains target culture
 					var applicationCultureNames = (from xml2 in config.Root.Descendants("GlobalSettingsProviderPlugins").Elements("add")
-												   where xml2.Attribute("type").Value == "Composite.Plugins.GlobalSettings.GlobalSettingsProviders.ConfigBasedGlobalSettingsProvider, Composite"
-												   select xml2).SingleOrDefault().Attribute("applicationCultureNames");
+													where xml2.Attribute("type").Value == "Composite.Plugins.GlobalSettings.GlobalSettingsProviders.ConfigBasedGlobalSettingsProvider, Composite"
+													select xml2).SingleOrDefault().Attribute("applicationCultureNames");
 					if (applicationCultureNames.Value.IndexOf(targetCulture) < 0)
 					{
 						applicationCultureNames.Value += "," + targetCulture;
@@ -498,13 +497,16 @@ namespace LocalizationTool
 		public static void ResaveWebConfig()
 		{
 			//re-save web.config
-			XDocument webconfig = XDocument.Load(Settings.WebConfigRelativePath);
+			var webconfig = XDocument.Load(Settings.WebConfigRelativePath);
 			webconfig.Save(Settings.WebConfigRelativePath);
 		}
+
 		#endregion
+
 		#endregion
 
 		#region Private methods
+
 		private static IEnumerable<string> GetSourceFileStems()
 		{
 			string sourceFileNamePattern = string.Format("*{0}", FileHandler.SourceFileEnding);
@@ -553,13 +555,14 @@ namespace LocalizationTool
 
 			if (!File.Exists(filePath))
 			{
-				copyOfsourceDocAsString = _regexString.Replace(copyOfsourceDocAsString, Environment.NewLine);
+				copyOfsourceDocAsString = RegexString.Replace(copyOfsourceDocAsString, Environment.NewLine);
 				File.WriteAllText(filePath, copyOfsourceDocAsString);
 				return;
 			}
 
-			var targetValues = GetTargetDocument(fileStem).Root.Elements("string").ToDictionary(k => k.Attribute("key").Value, v => v.Attribute("value").Value);
-			var sourceMathes = Regex.Matches(copyOfsourceDocAsString, _patternStringItem);
+			var targetValues = GetTargetDocument(fileStem).Root.Elements("string").ToDictionary(k => k.Attribute("key").Value,
+																								v => v.Attribute("value").Value);
+			var sourceMathes = Regex.Matches(copyOfsourceDocAsString, PatternStringItem);
 
 			var regexPattern = string.Empty;
 			string targetString;
@@ -593,7 +596,7 @@ namespace LocalizationTool
 
 			return filePath;
 		}
-		#endregion
 
+		#endregion
 	}
 }

@@ -239,7 +239,7 @@
 			this.printForComparison.TabIndex = 19;
 			this.printForComparison.Text = "Generate comparison report";
 			this.printForComparison.UseVisualStyleBackColor = true;
-			this.printForComparison.Click += new System.EventHandler(this.printForComparison_Click);
+			this.printForComparison.Click += new System.EventHandler(this.PrintForComparisonClick);
 			// 
 			// lbSearch
 			// 
@@ -258,7 +258,7 @@
 			this.txtSearch.Name = "txtSearch";
 			this.txtSearch.Size = new System.Drawing.Size(394, 20);
 			this.txtSearch.TabIndex = 21;
-			this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+			this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearchTextChanged);
 			// 
 			// tooltipFlaged
 			// 
@@ -273,7 +273,7 @@
 			this.btnFlagThis.TabIndex = 22;
 			this.btnFlagThis.Text = "Flag this...";
 			this.btnFlagThis.UseVisualStyleBackColor = true;
-			this.btnFlagThis.Click += new System.EventHandler(this.btnFlagThis_Click);
+			this.btnFlagThis.Click += new System.EventHandler(this.BtnFlagThisClick);
 			// 
 			// btnEditRemoveFlag
 			// 
@@ -284,7 +284,7 @@
 			this.btnEditRemoveFlag.TabIndex = 23;
 			this.btnEditRemoveFlag.Text = "Edit/remove flag";
 			this.btnEditRemoveFlag.UseVisualStyleBackColor = true;
-			this.btnEditRemoveFlag.Click += new System.EventHandler(this.btnEditRemoveFlag_Click);
+			this.btnEditRemoveFlag.Click += new System.EventHandler(this.BtnEditRemoveFlagClick);
 			// 
 			// chbShowFlaggedOnly
 			// 
@@ -295,7 +295,7 @@
 			this.chbShowFlaggedOnly.TabIndex = 24;
 			this.chbShowFlaggedOnly.Text = "Show flagged only";
 			this.chbShowFlaggedOnly.UseVisualStyleBackColor = true;
-			this.chbShowFlaggedOnly.CheckedChanged += new System.EventHandler(this.chbShowFlaggedOnly_CheckedChanged);
+			this.chbShowFlaggedOnly.CheckedChanged += new System.EventHandler(this.ChbShowFlaggedOnlyCheckedChanged);
 			// 
 			// Form1
 			// 

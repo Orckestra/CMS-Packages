@@ -14,25 +14,21 @@ namespace LocalizationTool
 	{
 		public static string ApplicationDirectory
 		{
-			get
-			{
-				return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-			}
+			get { return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); }
 		}
 
 		public static string LocalizationDirectory
 		{
-			get
-			{
-				return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\Composite\\localization");
-			}
+			get { return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\Composite\\localization"); }
 		}
 
 		public static string TargetLocalizationDirectory
 		{
 			get
 			{
-				return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\App_Data\\Composite\\LanguagePacks", ConfigurationSettings.AppSettings["targetCultureName"]);
+				return Path.Combine(Settings.ApplicationDirectory,
+									Settings.CompositeSiteRelativePath + "\\App_Data\\Composite\\LanguagePacks",
+									ConfigurationManager.AppSettings["targetCultureName"]);
 			}
 		}
 
@@ -40,7 +36,7 @@ namespace LocalizationTool
 		{
 			get
 			{
-				string sourceCultureName = ConfigurationManager.AppSettings["sourceCultureName"];
+				var sourceCultureName = ConfigurationManager.AppSettings["sourceCultureName"];
 				return CultureInfo.CreateSpecificCulture(sourceCultureName);
 			}
 		}
@@ -49,7 +45,7 @@ namespace LocalizationTool
 		{
 			get
 			{
-				string targetCultureName = ConfigurationManager.AppSettings["targetCultureName"];
+				var targetCultureName = ConfigurationManager.AppSettings["targetCultureName"];
 				return CultureInfo.CreateSpecificCulture(targetCultureName);
 			}
 		}
@@ -58,49 +54,38 @@ namespace LocalizationTool
 		{
 			get
 			{
-				return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\App_Data\\Composite\\Composite.config");
+				return Path.Combine(Settings.ApplicationDirectory,
+									Settings.CompositeSiteRelativePath + "\\App_Data\\Composite\\Composite.config");
 			}
 		}
 
 		public static string WebConfigRelativePath
 		{
-			get
-			{
-				return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\web.config");
-			}
+			get { return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\web.config"); }
 		}
 
 		public static string CompositeSiteRelativePath
 		{
 			get
 			{
-				string sitePath = ConfigurationManager.AppSettings["websitePath"];
+				var sitePath = ConfigurationManager.AppSettings["websitePath"];
 				return Path.Combine(Settings.ApplicationDirectory, sitePath);
 			}
 		}
 
 		public static string ReportsDirectory
 		{
-			get
-			{
-				return Path.Combine(ApplicationDirectory, "reports");
-			}
+			get { return Path.Combine(ApplicationDirectory, "reports"); }
 		}
 
 		public static string UnknownStringsFilePath
 		{
-			get
-			{
-				return Path.Combine(ApplicationDirectory, "UnknownStrings.xml");
-			}
+			get { return Path.Combine(ApplicationDirectory, "UnknownStrings.xml"); }
 		}
 
 		public static string FlagsFilePath
 		{
-			get
-			{
-				return Path.Combine(ApplicationDirectory, "Flags.xml");
-			}
+			get { return Path.Combine(ApplicationDirectory, "Flags.xml"); }
 		}
 	}
 }
