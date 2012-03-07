@@ -17,6 +17,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +59,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Package\App_Data\Composite\DynamicTypeForms\Layout\Navigation\TopLink.xml" />
     <Content Include="Package\App_Data\Xslt\Layout\CommonHtmlHead.xsl" />
     <Content Include="Package\App_Data\Xslt\Layout\Navigation\Menu.xsl" />
     <Content Include="Package\App_Data\Xslt\Layout\Navigation\TopLinks.xsl" />
