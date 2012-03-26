@@ -88,14 +88,15 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 				}
 			});
 
-			if (UserSettings.CultureInfo.Name != "en-US")
+			//if (UserSettings.CultureInfo.Name != "en-US")
+			if (UserSettings.C1ConsoleUiLanguage.Name != "en-US")
 			{
-				element.AddAction(new ElementAction(new ActionHandle(new CreatePackageWorkflowActionToken(string.Format("Composite.LanguagePack.{0}", new CultureInfo(UserSettings.CultureInfo.TwoLetterISOLanguageName).EnglishName), new AddLocalizationActionToken( UserSettings.CultureInfo.Name))))
+				element.AddAction(new ElementAction(new ActionHandle(new CreatePackageWorkflowActionToken(string.Format("Composite.LanguagePack.{0}", new CultureInfo(UserSettings.C1ConsoleUiLanguage.TwoLetterISOLanguageName).EnglishName), new AddLocalizationActionToken(UserSettings.C1ConsoleUiLanguage.Name))))
 				{
 					VisualData = new ActionVisualizedData
 					{
-						Label = string.Format(PackageCreatorFacade.GetLocalization("CreateLocalizationPackage.Label"), StringResourceSystemFacade.GetString("Composite.Cultures", UserSettings.CultureInfo.Name)),
-						ToolTip = string.Format(PackageCreatorFacade.GetLocalization("CreateLocalizationPackage.ToolTip"), StringResourceSystemFacade.GetString("Composite.Cultures", UserSettings.CultureInfo.Name)),
+						Label = string.Format(PackageCreatorFacade.GetLocalization("CreateLocalizationPackage.Label"), StringResourceSystemFacade.GetString("Composite.Cultures", UserSettings.C1ConsoleUiLanguage.Name)),
+						ToolTip = string.Format(PackageCreatorFacade.GetLocalization("CreateLocalizationPackage.ToolTip"), StringResourceSystemFacade.GetString("Composite.Cultures", UserSettings.C1ConsoleUiLanguage.Name)),
 						Icon = new ResourceHandle("Composite.Icons", "package-element-closed-availableitem"),
 						ActionLocation = new ActionLocation
 						{

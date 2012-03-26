@@ -39,8 +39,9 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Composite">
-      <HintPath>..\..\References\Composite\2.1.1\Composite.dll</HintPath>
+    <Reference Include="Composite, Version=2.1.4113.99, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Composite\3.2\Composite.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\References\Composite\2.1.1\ICSharpCode.SharpZipLib.dll</HintPath>
