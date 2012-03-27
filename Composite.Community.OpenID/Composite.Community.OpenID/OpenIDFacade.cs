@@ -180,7 +180,7 @@ namespace Composite.Community.OpenID
 		{
 			if (IsAuthenticated())
 			{
-				var userId = new Guid(HttpContext.Current.User.Identity.Name);
+				var userId = GetCurrentUserGuid();
 				return GetUserDetails(userId);
 			}
 			else

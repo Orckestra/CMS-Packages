@@ -41,7 +41,8 @@
     <Reference Include="Composite.Generated">
       <HintPath>..\Composite.Community.OpenID.Package\Dll\Composite.Generated.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetOpenAuth">
+    <Reference Include="DotNetOpenAuth, Version=3.4.5.10202, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Composite.Community.OpenID.Package\Package\Bin\DotNetOpenAuth.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">

@@ -37,7 +37,7 @@
 		</mi:Add>
 	</pc:PackageFragmentInstallers>
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.OpenID" groupName="Composite.Community" version="1.1.9" author="Composite A/S" website="http://www.composite.net" id="ffc347e1-bbf2-4006-8683-ecac6df245c7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Community.OpenID" groupName="Composite.Community" version="1.2.0" author="Composite A/S" website="http://www.composite.net" id="ffc347e1-bbf2-4006-8683-ecac6df245c7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Requires visitors sign in with an OpenID (including that provided by Google, Yahoo etc) to view protected pages or content on pages. Redirects unauthorized visitors to the sign-in page.</Description>
 	</mi:PackageInformation>
 </pc:PackageCreator>
