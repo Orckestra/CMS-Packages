@@ -1,8 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Media.NivoSlider" groupName="Composite.Media" version="1.0.3" author="Composite A/S" website="http://composite.net" id="48493797-75c7-43d6-97ad-e097dc5f21f3" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Media.NivoSlider" groupName="Composite.Media" version="1.0.4" readMoreUrl="http://docs.composite.net/Composite.Media.NivoSlider" author="Composite A/S" website="http://composite.net" id="48493797-75c7-43d6-97ad-e097dc5f21f3" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Displays an image slider on a page using Nivo Silder (http://nivo.dev7studios.com) , a highly customizable plugin for jQuery.</Description>
+		<TechnicalDetails>	Composite.Media.NivoSlider displays images in a slider on a page using Nivo Silder, a highly customizable slider plugin for jQuery.</TechnicalDetails>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>

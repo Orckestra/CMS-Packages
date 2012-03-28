@@ -10,10 +10,10 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				<link id="slider-theme-{$theme}" rel="stylesheet" href="/Frontend/Composite/Media/NivoSlider/themes/{$theme}/{$theme}.css" type="text/css" media="screen" />
-				<link id="slider-css" rel="stylesheet" href="/Frontend/Composite/Media/NivoSlider/nivo-slider.css" type="text/css" media="screen" />
+				<link id="slider-theme-{$theme}" rel="stylesheet" href="~/Frontend/Composite/Media/NivoSlider/themes/{$theme}/{$theme}.css" type="text/css" media="screen" />
+				<link id="slider-css" rel="stylesheet" href="~/Frontend/Composite/Media/NivoSlider/nivo-slider.css" type="text/css" media="screen" />
 				<script id="jquery-1-4-2" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-				<script id="jquery-slider" src="/Frontend/Composite/Media/NivoSlider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+				<script id="jquery-slider" src="~/Frontend/Composite/Media/NivoSlider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
 				<script id="slider-settings" type="text/javascript">
 					$(window).load(function() {
 					$('#slider').nivoSlider({
@@ -72,12 +72,12 @@
 							<!--Demo example or put here your markup-->
 							<div class="ribbon"></div>
 							<div id="slider" class="nivoSlider">
-								<img src="/Frontend/Composite/Media/NivoSlider/demo/images/toystory.jpg" alt="" />
+								<img src="~/Frontend/Composite/Media/NivoSlider/demo/images/toystory.jpg" alt="" />
 								<a href="http://dev7studios.com">
-									<img src="/Frontend/Composite/Media/NivoSlider/demo/images/up.jpg" alt="" title="This is an example of a caption" />
+									<img src="~/Frontend/Composite/Media/NivoSlider/demo/images/up.jpg" alt="" title="This is an example of a caption" />
 								</a>
-								<img src="/Frontend/Composite/Media/NivoSlider/demo/images/walle.jpg" alt="" />
-								<img src="/Frontend/Composite/Media/NivoSlider/demo/images/nemo.jpg" alt="" title="#htmlcaption" />
+								<img src="~/Frontend/Composite/Media/NivoSlider/demo/images/walle.jpg" alt="" />
+								<img src="~/Frontend/Composite/Media/NivoSlider/demo/images/nemo.jpg" alt="" title="#htmlcaption" />
 							</div>
 							<div id="htmlcaption" class="nivo-html-caption">
 								<strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
