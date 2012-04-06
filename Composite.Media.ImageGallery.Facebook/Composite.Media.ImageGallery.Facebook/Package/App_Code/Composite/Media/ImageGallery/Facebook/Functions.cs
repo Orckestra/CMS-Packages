@@ -24,7 +24,7 @@ namespace Composite.Media.ImageGallery.Facebook
 			List<XElement> albums = new List<XElement>();
 			try
 			{
-				dynamic result = fb.Get(objectUniqueID + "/albums");
+				dynamic result = fb.Get(objectUniqueID + "/albums?limit=1000&offset=0");
 				foreach (var album in result.data)
 				{
 					try
@@ -59,7 +59,7 @@ namespace Composite.Media.ImageGallery.Facebook
 			List<XElement> albums = new List<XElement>();
 			try
 			{
-				dynamic result = fb.Get(albumID + "/photos");
+				dynamic result = fb.Get(albumID + "/photos?limit=1000&offset=0");
 				foreach (var photo in result.data)
 				{
 					try
