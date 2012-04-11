@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Send404MailSettings>
+	<SendEveryNHours value="1"/>
+	<FromEmail value="no-reply@mydomain.com" />
+	<RecipientEmails>
+		<!-- Use 'add' tag to add values. Example 
+		<add value="recipient@mydomain.net" />-->
+	</RecipientEmails>
+	<IPBlackList>
+		<!-- Use 'add' tag to add values. Example 
+		<add value="82.210.155.21" />-->
+	</IPBlackList>
+	<RefererBlackList>
+		<!-- Use 'add' tag to add values. Example 
+		<add value="http://webmail.sol.dk" />
+		<add value="http://nymail.jubii.dk" />-->
+	</RefererBlackList>
+	<UserAgentBlackList>
+		<!-- Use 'add' tag to add values. Example 
+		<add value="heritrix" />
+		<add value="BlackBerry" />-->
+	</UserAgentBlackList>
+</Send404MailSettings>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AutoAttachments>
+		<NamedParent Name="Content" Position="Bottom"/>
+	</ElementStructure.AutoAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Id="brokenLinks" Label="Broken Links" Icon="Report">
+				<Actions>
+				</Actions>
+				<Children>
+					<DataFolderElements  FieldGroupingName="IP"  Display="Compact" Icon="Earth" Type="Composite.Tools.LegacyUrlHandler.BrokenLink">
+						
+						<Children>
+							<DataElements Type="Composite.Tools.LegacyUrlHandler.BrokenLink" Icon="link">
+								<Actions>
+									<CustomUrlAction Label="Fix Broken Link" Icon="feedback" Url="~/FixBrokenLink.aspx?badURL=${C1:Data:Composite.Tools.LegacyUrlHandler.BrokenLink:BadURL}" />
+									<EditDataAction Label="Edit Broken Link" />
+									<DeleteDataAction Label="Delete Broken Link"/>
+								</Actions>
+							</DataElements>
+						</Children>
+					</DataFolderElements>
+				</Children>
+			</Element>
+		</Children>
+
+	</ElementRoot>
+</ElementStructure>

@@ -17,6 +17,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,8 +62,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DLL\Composite.Generated.dll" />
+    <Content Include="Package\App_Data\Composite.Tools.LegacyUrlHandler\Config.xml" />
+    <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Tools.LegacyUrlHandler.BrokenLink.xml" />
     <Content Include="Package\Bin\Composite.Tools.LegacyUrlHandler.dll" />
     <Content Include="Package\Config\Install.xsl" />
+    <Content Include="Package\Config\Uninstall.xsl" />
+    <Content Include="Package\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
+    <Content Include="Package\FixBrokenLink.aspx" />
     <Content Include="Package\Frontend\Composite\Tools\LegacyUrlHandler\Images\bottom.png" />
     <Content Include="Package\Frontend\Composite\Tools\LegacyUrlHandler\Images\bottomleft.png" />
     <Content Include="Package\Frontend\Composite\Tools\LegacyUrlHandler\Images\bottomright.png" />

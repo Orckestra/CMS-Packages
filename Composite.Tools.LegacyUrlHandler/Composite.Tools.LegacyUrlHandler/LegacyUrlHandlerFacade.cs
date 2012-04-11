@@ -29,15 +29,45 @@ namespace Composite.Tools.LegacyUrlHandler
 
 			//TODO: use XmlWriterUtils.Create() when it's will be public. Now it's internal.
 			var writer = new XmlTextWriter(XmlFileName, null)
-			             	{
-			             		Formatting = Formatting.Indented,
-			             		Indentation = 1,
-			             		IndentChar = '\t'
-			             	};
+							{
+								Formatting = Formatting.Indented,
+								Indentation = 1,
+								IndentChar = '\t'
+							};
 
 			doc.Save(writer);
 			writer.Close();
 		}
+
+		public static void WriteXmlElement(string key, string value)
+		{
+			if (!C1File.Exists(XmlFileName))
+				WriteXml(new Dictionary<string, string>() { { key, value } });
+			else
+			{
+				var doc = XDocument.Load(XmlFileName);
+				var root = doc.Root;
+				if (root != null)
+				{
+					var element = root.Elements("Mapping").FirstOrDefault(el =>
+																			{
+																				var oldPathAttr = el.Attribute("OldPath");
+																				return oldPathAttr != null && oldPathAttr.Value == key;
+																			});
+					if (element != null)
+					{
+						var newPathAttr = element.Attribute("NewPath");
+						if (newPathAttr != null) newPathAttr.Value = value;
+					}
+					else
+					{
+						root.Add(new XElement("Mapping", new XAttribute("OldPath", key), new XAttribute("NewPath", value)));
+					}
+					doc.Save(XmlFileName);
+				}
+			}
+		}
+
 
 		public static Dictionary<string, string> GetMappingsFromXml()
 		{

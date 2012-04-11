@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
+using Composite.Core;
 using Composite.Core.Logging;
 using Composite.Core.WebClient;
 
@@ -19,6 +20,27 @@ namespace Composite.Tools.LegacyUrlHandler
 		public void Init(HttpApplication context)
 		{
 			context.BeginRequest += context_BeginRequest;
+			context.Error += new EventHandler(ErrorHandler);
+			
+		}
+
+		private void ErrorHandler(object sender, EventArgs eventArgs)
+		{
+			var application = (HttpApplication)sender;
+			try
+			{
+				// Gather information
+				var currentException = application.Server.GetLastError();
+				var httpException = currentException as HttpException;
+				if (httpException != null && httpException.GetHttpCode() == 404)
+				{
+					//BrokenLinks.Functions.SaveBrokenLink();
+				}
+			}
+			catch (Exception ex)
+			{
+				Log.LogInformation("Composite.Tools.LegacyUrlHandler.ErrorHandler", ex.Message);
+			}
 		}
 
 		void context_BeginRequest(object sender, EventArgs e)
@@ -45,33 +67,37 @@ namespace Composite.Tools.LegacyUrlHandler
 				Cache.Add(cacheKey, legacyUrlMappings, LegacyUrlHandlerFacade.XmlFileName);
 			}
 
-			if (legacyUrlMappings.ContainsKey(requestPath))
+			if (!legacyUrlMappings.ContainsKey(requestPath))
 			{
-				var mappingPath = legacyUrlMappings[requestPath];
-				if (PageUrlHelper.IsInternalUrl(mappingPath) || PageUrlHelper.IsPublicUrl(mappingPath))
+				return;
+			}
+
+			var mappingPath = legacyUrlMappings[requestPath];
+			if (PageUrlHelper.IsInternalUrl(mappingPath) || PageUrlHelper.IsPublicUrl(mappingPath))
+			{
+				var pageUrlOptions = PageUrlHelper.ParseUrl(mappingPath);
+				if (pageUrlOptions != null)
 				{
-					var pageUrlOptions = PageUrlHelper.ParseUrl(mappingPath);
-					if (pageUrlOptions != null)
+					var publicUrl = PageUrlHelper.BuildUrl(UrlType.Public, pageUrlOptions).ToString();
+					if (publicUrl != requestPath)
 					{
-						var publicUrl = PageUrlHelper.BuildUrl(UrlType.Public, pageUrlOptions).ToString();
-						if (publicUrl != requestPath)
-						{
-							if (string.IsNullOrEmpty(requestPathInfo) == false)
-								publicUrl = string.Format("{0}{1}", publicUrl, requestPathInfo);
+						if (string.IsNullOrEmpty(requestPathInfo) == false)
+							publicUrl = string.Format("{0}{1}", publicUrl, requestPathInfo);
 
-							var queryString = context.Request.QueryString;
-							if (queryString.Count > 0)
-								publicUrl = string.Format("{0}{1}?{2}", publicUrl, requestPathInfo, queryString);
+						var queryString = context.Request.QueryString;
+						if (queryString.Count > 0)
+							publicUrl = string.Format("{0}{1}?{2}", publicUrl, requestPathInfo, queryString);
 
-							context.Response.RedirectPermanent(publicUrl, true);
-						}
+						context.Response.RedirectPermanent(publicUrl, true);
 					}
 				}
-				else
-				{
-					context.Response.RedirectPermanent(mappingPath, true);
-				}
+			}
+			else
+			{
+				context.Response.RedirectPermanent(mappingPath, true);
 			}
 		}
+
+		
 	}
 }
