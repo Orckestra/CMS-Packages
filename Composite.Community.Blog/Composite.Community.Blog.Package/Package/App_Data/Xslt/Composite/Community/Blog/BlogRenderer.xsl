@@ -163,9 +163,21 @@
 		<xsl:value-of select="$Count" />
 	</xsl:template>
 	<xsl:template name="AddThis">
-		<a class="AddThis" href="http://www.addthis.com/bookmark.php?v=250&amp;url={be:GetFullBlogUrl(@Date, @Title)}&amp;title={@Title}">
-			<img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0" />
-		</a>
+		<div class="AddThis">
+			<!--a class="AddThis" href="http://www.addthis.com/bookmark.php?v=250&amp;url={be:GetFullBlogUrl(@Date, @Title)}&amp;title={@Title}">
+				<img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0" />
+			</a-->
+			<!-- AddThis Button BEGIN -->
+			<div class="addthis_toolbox addthis_default_style" addthis:url="{be:GetFullBlogUrl(@Date, @Title)}" addthis:title="{@Title}" xmlns:addthis="http://www.addthis.com">
+				<a class="addthis_button_preferred_1"></a>
+				<a class="addthis_button_preferred_2"></a>
+				<a class="addthis_button_preferred_3"></a>
+				<a class="addthis_button_compact"></a>
+				<!--a class="addthis_counter addthis_bubble_style"></a-->
+			</div>
+			<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f86b27a69737a92"></script>
+			<!-- AddThis Button END -->
+		</div>
 	</xsl:template>
 	<xsl:template match="PagingInfo">
 		<xsl:param name="page" select="1" />
