@@ -16,7 +16,7 @@
 							<DataElements Type="Composite.Tools.LegacyUrlHandler.BrokenLink" Icon="link">
 								<Actions>
 									<CustomUrlAction Label="Fix Broken Link" Icon="feedback" Url="~/FixBrokenLink.aspx?badURL=${C1:Data:Composite.Tools.LegacyUrlHandler.BrokenLink:BadURL}" />
-									<EditDataAction Label="Edit Broken Link" />
+									<EditDataAction Label="View Broken Link" />
 									<DeleteDataAction Label="Delete Broken Link"/>
 								</Actions>
 							</DataElements>

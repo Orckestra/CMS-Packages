@@ -1,0 +1,48 @@
+﻿<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:ff="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<cms:bindings>
+		<cms:binding name="Id" type="System.Guid" optional="true" />
+		<cms:binding name="BadURL" type="System.String" optional="true" />
+		<cms:binding name="Referer" type="System.String" optional="true" />
+		<cms:binding name="UserAgent" type="System.String" optional="true" />
+		<cms:binding name="IP" type="System.String" optional="true" />
+		<cms:binding name="Date" type="System.DateTime" optional="true" />
+		<cms:binding name="IsNotified" type="System.Boolean" optional="true" />
+	</cms:bindings>
+	<cms:layout>
+		<cms:layout.label>
+			<cms:read source="BadURL" />
+		</cms:layout.label>
+		<FieldGroup>
+			<TextBox Label="Bad URL" Help="" Type="ReadOnly">
+				<TextBox.Text>
+					<cms:bind source="BadURL" />
+				</TextBox.Text>
+			</TextBox>
+			<TextArea Label="Referer" Help="" Type="ReadOnly">
+				<TextArea.Text>
+					<cms:bind source="Referer" />
+				</TextArea.Text>
+			</TextArea>
+			<TextArea Label="User Agent" Help=""  Type="ReadOnly">
+				<TextArea.Text>
+					<cms:bind source="UserAgent" />
+				</TextArea.Text>
+			</TextArea>
+			<TextBox Label="IP address of the requester" Help=""  Type="ReadOnly">
+				<TextBox.Text>
+					<cms:bind source="IP" />
+				</TextBox.Text>
+			</TextBox>
+			<DateTimeSelector Label="Date" Help="">
+				<DateTimeSelector.Date>
+					<cms:bind source="Date" />
+				</DateTimeSelector.Date>
+			</DateTimeSelector>
+			<!--CheckBox Label="IsNotified" Help="">
+        <CheckBox.Checked>
+          <cms:bind source="IsNotified" />
+        </CheckBox.Checked>
+      </CheckBox-->
+		</FieldGroup>
+	</cms:layout>
+</cms:formdefinition>
