@@ -1,4 +1,13 @@
-﻿<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:in="http://www.composite.net/ns/transformation/input/1.0" xmlns:lang="http://www.composite.net/ns/localization/1.0" xmlns:f="http://www.composite.net/ns/function/1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:c1="http://c1.composite.net/StandardFunctions" xmlns:mp="#MarkupParserExtensions" xmlns:be="#BlogXsltExtensionsFunction" xmlns:addthis="http://addthis.com/plugins" exclude-result-prefixes="xsl in lang f c1 mp be">
+﻿<xsl:stylesheet version="1.0" 
+				xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+				xmlns:in="http://www.composite.net/ns/transformation/input/1.0" 
+				xmlns:lang="http://www.composite.net/ns/localization/1.0" 
+				xmlns:f="http://www.composite.net/ns/function/1.0" 
+				xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:c1="http://c1.composite.net/StandardFunctions" 
+				xmlns:mp="#MarkupParserExtensions" 
+				xmlns:be="#BlogXsltExtensionsFunction" 
+				exclude-result-prefixes="xsl in lang f c1 mp be">
 	<xsl:param name="pageId" select="/in:inputs/in:result[@name='GetPageId']" />
 	<xsl:param name="pagingInfo" select="/in:inputs/in:result[@name='GetEntriesXml']/PagingInfo" />
 	<xsl:variable name="isBlogItem" select="be:IsBlogList()" />
@@ -28,7 +37,9 @@
 								<xsl:apply-templates mode="BlogItem" select=".">
 									<xsl:with-param name="options" select="$blogListOptions" />
 								</xsl:apply-templates>
-								<div class="line-separator"></div>
+								<xsl:if test="position() != last()">
+									<div class="line-separator"></div>
+								</xsl:if>
 							</xsl:for-each>
 							<xsl:if test="$pagingInfo/@TotalPageCount &gt; 1">
 								<div class="BlogPaging">

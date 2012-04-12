@@ -20,9 +20,9 @@ namespace Composite.Community.Blog
 {
 	public class BlogFacade
 	{
-		public static IEnumerable<XElement> GetTagCloudXml(double minFontSize, double maxFontSize)
+		public static IEnumerable<XElement> GetTagCloudXml(double minFontSize, double maxFontSize, DataReference<IPage> blogPage)
 		{
-			Guid currentPageId = PageRenderer.CurrentPageId;
+			var currentPageId = blogPage.Data.Id;
 			var blog = DataFacade.GetData<Entries>().Where(b => b.PageId == currentPageId).Select(b => b.Tags).ToList();
 			var dcTags = new Dictionary<string, int>();
 
@@ -53,7 +53,7 @@ namespace Composite.Community.Blog
 
 		public static IEnumerable<XElement> GetArchiveXml(DataReference<IPage> blogPage)
 		{
-			var currentPageId = new Guid(blogPage.Data.Id.ToString()); ;
+			var currentPageId = blogPage.Data.Id;
 			return DataFacade.GetData<Entries>().Where(c => c.PageId == currentPageId).GroupBy(c => new { c.Date.Year, c.Date.Month }).Select(
 					b =>
 					new XElement("BlogEntries",

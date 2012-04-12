@@ -6,7 +6,7 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:be="#BlogXsltExtensionsFunction"
 	exclude-result-prefixes="xsl in lang f be">
-
+	<xsl:variable name="blogPage" select="/in:inputs/in:param[@name='BlogPage']" />
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -15,7 +15,7 @@
 			<body>
 				<div id="TagCloud">
 					<xsl:for-each select="/in:inputs/in:result[@name='GetTagCloudXml']/Tags">
-						<a title="{@Tag}" style="font-size:{@FontSize}px;" href="{be:GetCurrentPageUrl()}/{be:Encode(@Tag)}" rel="{@Rel}">
+						<a title="{@Tag}" style="font-size:{@FontSize}px;" href="~/page({$blogPage})/{be:Encode(@Tag)}" rel="{@Rel}">
 							<xsl:value-of select="@Tag" /> (<xsl:value-of select="@Rel" />)
 						</a>
 					</xsl:for-each>
