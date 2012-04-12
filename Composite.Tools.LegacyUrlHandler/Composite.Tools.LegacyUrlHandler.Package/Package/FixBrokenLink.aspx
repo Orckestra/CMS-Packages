@@ -28,7 +28,7 @@
 					<img src="/Frontend/Composite/Tools/LegacyUrlHandler/Images/CompositeC1.png" alt="Composite C1" />
 					Legacy Url Handler: Fix Broken Link</div>
 				<h4>
-					Using this page, you can fix broken link.</h4>
+					Using this page, you can fix a broken link.</h4>
 				<fieldset>
 					<table width="100%">
 						<tr>
