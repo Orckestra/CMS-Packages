@@ -33,7 +33,7 @@
 					<cms:bind source="IP" />
 				</TextBox.Text>
 			</TextBox>
-			<DateTimeSelector Label="Date" Help="">
+			<DateTimeSelector Label="Date" Help="" ReadOnly="true">
 				<DateTimeSelector.Date>
 					<cms:bind source="Date" />
 				</DateTimeSelector.Date>
