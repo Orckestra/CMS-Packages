@@ -25,7 +25,7 @@
               <xsl:value-of select="concat(@Title, ' (comment to ',$blogPost/@Title,')')" />
             </title>
             <link>
-              <xsl:value-of select="concat('http://', /in:inputs/in:result[@name='ServerVariableHTTPHOST'], /in:inputs/in:result[@name='SitemapXml']//Page[@Id=$blogPost/@PageId]/@URL,be:GetBlogUrl($blogPost/@Date, $blogPost/@Title),'#newcomment')" />
+              <xsl:value-of select="concat('http://', /in:inputs/in:result[@name='ServerVariableHTTPHOST'], /in:inputs/in:result[@name='SitemapXml']//Page[@Id=$blogPost/@PageId]/@URL,be:GetBlogPath($blogPost/@Date, $blogPost/@Title),'#newcomment')" />
             </link>
             <pubDate>
               <xsl:value-of select="date:Format(@Date,'r')" />

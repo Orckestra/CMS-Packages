@@ -20,6 +20,7 @@
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,10 +60,13 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Package\App_Data\Xslt\Composite\Community\Blog\CommentsRss.xsl" />
+    <Content Include="Package\App_Data\Xslt\Composite\Community\Blog\Latest.xsl" />
     <Content Include="Package\App_Data\Xslt\Composite\Community\Blog\TagCloud.xsl" />
     <Content Include="Package\Bin\Composite.Community.Blog.dll" />
     <Content Include="Package\Bin\CookComputing.XmlRpcV2.dll" />
-    <Content Include="Package\Config\Install.xsl" />
+    <Content Include="Package\Config\Install.xsl">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Package\Datas\Composite.Community.Blog.Authorss_public.xml" />
     <Content Include="Package\Datas\Composite.Community.Blog.Tagss_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />

@@ -4,6 +4,7 @@ using System.Xml.Linq;
 using System.Xml.XPath;
 using Composite.Community.Blog.Localization;
 using System.Web;
+using Composite.Data;
 
 namespace Composite.Community.Blog
 {
@@ -19,9 +20,26 @@ namespace Composite.Community.Blog
 			return BlogFacade.GetBlogUrl(date, title);
 		}
 
+		public string GetBlogPath(DateTime date, string title)
+		{
+			return BlogFacade.GetBlogPath(date, title);
+		}
+
+		public string GetFullBlogUrl(DateTime date, string title)
+		{
+			string pageUrl = BlogFacade.GetPageUrlById(SitemapNavigator.CurrentPageId);
+			pageUrl = BlogFacade.GetFullPath(pageUrl);
+			return BlogFacade.GetBlogUrl(date, title, pageUrl);
+		}
+
 		public string CustomDateFormat(DateTime date, string dateFormat)
 		{
 			return BlogFacade.CustomDateFormat(date, dateFormat);
+		}
+
+		public string CustomDateFormat(DateTime date, string dateFormat, string cultureName)
+		{
+			return BlogFacade.CustomDateFormat(date, dateFormat, cultureName);
 		}
 
 		public static XPathNavigator GetBlogTags(string tags)

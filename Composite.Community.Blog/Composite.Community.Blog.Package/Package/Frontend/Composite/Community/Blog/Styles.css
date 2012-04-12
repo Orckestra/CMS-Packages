@@ -1,15 +1,14 @@
+﻿.Blog .line-separator {
+	height: 1px;
+	background: #8C8B8B;
+	border-bottom: 1px solid silver;
+	margin-bottom: 35px;
+}
+
 .BlogImage {
 	display: block;
 }
-.BlogItem {
-	margin-bottom: 22px;
-}
 
-.BlogTitle a {
-	font-size: larger;
-	font-weight: bold;
-	text-transform: uppercase;
-}
 
 .BlogTitle a.t-count, .t-count span {
 	font-size: 12px;
@@ -43,27 +42,24 @@
 	background-position: right -21px;
 }
 
-.BlogTitle h1 {
-	text-transform: uppercase;
-	margin: 0px;
-}
-
 .BlogAuthorPicture {
 	float: left;
 	width: 52px;
 	padding-right: 10px;
 }
 
-.BlogAuthorDate {
-	text-transform: uppercase;
-	padding: 0px 0px 10px 0px;
+.BlogAuthor span, .BlogDate span, .BlogTags span {
+	font-weight: bold;
 }
-
-.BlogTeaser {
+.BlogTeaser, .BlogContent {
 	display: block;
 	clear: both;
+	border-top: silver 1px solid;
+	padding: 15px 0px;
 }
-
+.BlogTeaser {
+	font-style: italic;
+}
 .BlogTags a {
 	padding-left: 8px;
 }
@@ -76,13 +72,8 @@
 	padding: 0 4px 0 4px;
 }
 
-.BlogContent {
-	display: block;
-	clear: both;
-}
-
-.BlogPaging a {
-	padding: 2px;
+.BlogPaging a, .BlogPaging span {
+	padding: 2px 5px;
 }
 
 #CommentsList li, #CommentsForm li {
@@ -94,7 +85,7 @@
 }
 
 #BlogComments fieldset {
-	/*border: solid 1px #ccc; */
+	border: none;
 }
 
 #BlogComments fieldset legend, #BlogComments fieldset legend {
@@ -171,3 +162,5 @@
 #BlogArchive li {
 	list-style: none;
 }
+
+.BlogLatest li {}

@@ -14,6 +14,7 @@ using Composite.Core.Logging;
 using Composite.Core.WebClient.Renderings.Page;
 using Composite.Core.Xml;
 using Composite.Data;
+using Composite.Data.Types;
 
 namespace Composite.Community.Blog
 {
@@ -50,9 +51,9 @@ namespace Composite.Community.Blog
 					);
 		}
 
-		public static IEnumerable<XElement> GetArchiveXml()
+		public static IEnumerable<XElement> GetArchiveXml(DataReference<IPage> blogPage)
 		{
-			Guid currentPageId = PageRenderer.CurrentPageId;
+			var currentPageId = new Guid(blogPage.Data.Id.ToString()); ;
 			return DataFacade.GetData<Entries>().Where(c => c.PageId == currentPageId).GroupBy(c => new { c.Date.Year, c.Date.Month }).Select(
 					b =>
 					new XElement("BlogEntries",
@@ -177,7 +178,12 @@ namespace Composite.Community.Blog
 				pageUrl = GetCurrentPageUrl();
 			}
 
-			return string.Format("{0}/{1}/{2}", pageUrl, CustomDateFormat(date, "yyyy/MM/dd"), GetUrlFromTitle(title));
+			return string.Format("{0}{1}", pageUrl, GetBlogPath(date, title));
+		}
+
+		public static string GetBlogPath(DateTime date, string title)
+		{
+			return string.Format("/{0}/{1}", CustomDateFormat(date, "yyyy/MM/dd", "en-US"), GetUrlFromTitle(title));
 		}
 
 		public static string GetCurrentPageUrl()
@@ -248,7 +254,12 @@ namespace Composite.Community.Blog
 
 		public static string CustomDateFormat(DateTime date, string dateFormat)
 		{
-			return date.ToString(dateFormat, CultureInfo.GetCultureInfo("en-US").DateTimeFormat);
+			return date.ToString(dateFormat, CultureInfo.CurrentCulture);
+		}
+
+		public static string CustomDateFormat(DateTime date, string dateFormat, string cultureName)
+		{
+			return date.ToString(dateFormat, CultureInfo.CreateSpecificCulture(cultureName));
 		}
 
 		public static bool Validate(string regularExpression, object value, bool isRequired)
