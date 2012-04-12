@@ -15,7 +15,7 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 		public Functions()
 		{
 		}
-		
+
 		public static XhtmlDocument SaveBrokenLink()
 		{
 			var request = HttpContext.Current.Request;
@@ -28,6 +28,12 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 				return null;
 			}
 			var url = "http://" + request.Url.Host + request.RawUrl;
+			using (var dataConnection = new DataConnection())
+			{
+				var sitemapNavigator = new SitemapNavigator(dataConnection);
+				if (request.RawUrl.Equals(sitemapNavigator.CurrentPageNode.Url))
+					return null;
+			}
 			var referer = (request.UrlReferrer == null) ? "" : request.UrlReferrer.ToString();
 			var userAgent = request.UserAgent ?? string.Empty;
 			var ipAddress = GetIPAddress(request);

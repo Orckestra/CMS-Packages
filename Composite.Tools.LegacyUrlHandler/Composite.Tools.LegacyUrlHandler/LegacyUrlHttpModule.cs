@@ -34,7 +34,7 @@ namespace Composite.Tools.LegacyUrlHandler
 				var httpException = currentException as HttpException;
 				if (httpException != null && httpException.GetHttpCode() == 404)
 				{
-					//BrokenLinks.Functions.SaveBrokenLink();
+					BrokenLinks.Functions.SaveBrokenLink();
 				}
 			}
 			catch (Exception ex)
