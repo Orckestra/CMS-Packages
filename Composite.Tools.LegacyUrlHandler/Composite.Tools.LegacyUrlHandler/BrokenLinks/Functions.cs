@@ -95,8 +95,8 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 																				emailBody.AppendFormat("BAD URL: {0}<br/>", link.BadURL);
 																				emailBody.AppendFormat("REFERER: {0}<br/>", link.Referer);
 																				emailBody.AppendFormat("USER AGENT: {0}<br/>", link.UserAgent);
-																				emailBody.AppendFormat("<br/><a href='http://{0}/FixBrokenLink.aspx?badURL={1}'>FIX THIS URL >></a>", siteHostName, link.BadURL);
-																				emailBody.Append("<br/></li>");
+																				emailBody.AppendFormat("<a href='http://{0}/FixBrokenLink.aspx?badURL={1}'>FIX THIS URL >></a>", siteHostName, link.BadURL);
+																				emailBody.Append("<br/><br/></li>");
 																				link.IsNotified = true;
 																			});
 					emailBody.Append("</ol>");

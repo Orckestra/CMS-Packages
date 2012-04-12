@@ -22,7 +22,9 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 		{
 			if (!UserValidationFacade.IsLoggedIn())
 				Response.Redirect("~/Composite/Login.aspx?ReturnUrl=" + Request.RawUrl);
-
+		
+			if (HttpContext.Current.Request.QueryString["badURL"] == null) return;
+			
 			_badURL = HttpContext.Current.Request.QueryString["badURL"].ToString(CultureInfo.InvariantCulture);
 
 			if (!Page.IsPostBack && HttpContext.Current.Request.QueryString["badURL"] != null && txtBadURL != null)
