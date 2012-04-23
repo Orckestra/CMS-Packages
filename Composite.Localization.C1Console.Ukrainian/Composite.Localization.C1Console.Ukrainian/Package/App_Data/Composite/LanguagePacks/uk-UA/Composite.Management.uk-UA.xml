@@ -25,18 +25,21 @@
 	<string key="Website.Image.SelectDialog.Title" value="Вибрати зображення" />
 
 
-	<string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Змінити користувача" />
-	<string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Ім&#39;я користувача" />
+	<string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Загальні настройки" />
+	<string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Ім'я користувача" />
 	<string key="Website.Forms.Administrative.EditUserStep1.UserNameHelp" value="Імена користувачів не можна змінити. Це поле - тільки для читання." />
 	<string key="Website.Forms.Administrative.EditUserStep1.PasswordLabel" value="Пароль" />
 	<string key="Website.Forms.Administrative.EditUserStep1.PasswordHelp" value="У паролі повинно бути більше ніж 6 символів." />
 	<string key="Website.Forms.Administrative.EditUserStep1.EmailLabel" value="Адреса ел. пошти" />
-	<string key="Website.Forms.Administrative.EditUserStep1.EmailHelp" value="Адреса електронної пошти користувача (необов&#39;язково)." />
+	<string key="Website.Forms.Administrative.EditUserStep1.EmailHelp" value="Адреса електронної пошти користувача (необов'язково)." />
 	<string key="Website.Forms.Administrative.EditUserStep1.GroupLabel" value="Папка" />
-	<string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Якщо ви введете ім&#39;я папки, що ще не існує, буде створена нова папка." />
-	<string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Регіональні настройки" />
-	<string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="Щоб змінити спосіб відображення чисел, дат і часу, виберіть мову зі списку. Записи, позначені зірочкою (*) вже перекладені. Непозначені записи буде показано англійською мовою." />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveFieldLabel" value="Розділи" />
+	<string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Якщо ви введете ім'я папки, що ще не існує, буде створена нова папка." />
+  <string key="Website.Forms.Administrative.EditUserStep1.LabelLocalizationFieldGroup" value="Локалізація &#xD;консолі C1" />
+  <string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Регіональні настройки" />
+	<string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="Щоб змінити спосіб відображення чисел, дат і часу, виберіть варіант зі списку." />
+  <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageLabel" value="Мова консолі C1" />
+  <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageHelp" value="Виберіть мову, яка буде використовуватися для міток, текстів довідки, діалогів і т.і. Наявні тут варіанти  обмежені встановленими мовами. Можна встановити додаткові мови через систему пакетів, див. Composite.Localization." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveFieldLabel" value="Розділи" />
 	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectLabel" value="Видимі розділи" />
 	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectHelp" value="Виберіть, які розділи мають бути видимими, коли користувач запускає консоль C1." />
 	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsFieldLabel" value="Глобальні дозволи" />
@@ -47,7 +50,7 @@
 	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectLabel" value="Мови даних" />
 	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectHelp" value="Користувач має доступ до керування даними на вибраних мовах." />
 	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleLabel" value="Поточна мова" />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Поточна мова" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Мова контенту, редагованого користувачем." />
 	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleNotChecked" value="Вибрана мова не зазначена у розділі даних мови." />
 	<string key="Website.Forms.Administrative.EditUserStep1.NoActiveLocaleSelected" value="Ви повинні вибрати хоча б одну активну мову." />
 	<string key="Website.Forms.Administrative.EditUserStep1.GenerelTabLabel" value="Стандартні" />
@@ -69,21 +72,23 @@
 	<string key="UserElementProvider.ChangeOtherActiveLocaleMessage" value="Ви змінили поточну мову для користувача, який вже увійшов у систему. Консоль користувача буде перезапущена і дані можуть бути втрачені." />
 	<string key="UserElementProvider.ChangeOtherActiveLocaleDialogTitle" value="Потрібне очищення" />
 	<string key="UserElementProvider.ChangeOtherActiveLocaleDialogText" value="Для цього потрібне очищення. Активні редактори будуть збережені і закриті." />
-	<string key="AddNewUserWorkflow.UsernameDuplicateError" value="Користувач з таким ім&#39;ям вже існує" />
+	<string key="AddNewUserWorkflow.UsernameDuplicateError" value="Користувач з таким ім'ям вже існує" />
 	<string key="Website.Forms.Administrative.AddNewUserStep1.LabelFieldGroup" value="Додати нового користувача" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.UserNameLabel" value="Ім&#39;я користувача" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.UserNameHelp" value="Після створення нового користувача ім&#39;я користувача не може бути змінено" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.UserNameLabel" value="Ім'я користувача" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.UserNameHelp" value="Після створення нового користувача ім'я користувача не може бути змінено" />
 	<string key="Website.Forms.Administrative.AddNewUserStep1.PasswordLabel" value="Пароль" />
 	<string key="Website.Forms.Administrative.AddNewUserStep1.PasswordHelp" value="У паролі повинно бути більше ніж 6 символів." />
 	<string key="Website.Forms.Administrative.AddNewUserStep1.EmailLabel" value="Адреса ел. пошти" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.EmailHelp" value="Адреса електронної пошти користувача (необов&#39;язково)." />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.EmailHelp" value="Адреса електронної пошти користувача (необов'язково)." />
 	<string key="Website.Forms.Administrative.AddNewUserStep1.GroupLabel" value="Папка" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.GroupHelp" value="Якщо ви введете ім&#39;я папки, якої ще не існує, буде створена нова папка." />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.GroupHelp" value="Якщо ви введете ім'я папки, якої ще не існує, буде створена нова папка." />
 	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureLabel" value="Регіональні настройки" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="Щоб змінити спосіб відображення чисел, дат і часу, виберіть мову зі списку. Записи, позначені зірочкою (*) вже переведені. Непозначені записи буде показано англійською мовою." />
-	<string key="UserElementProvider.MissingActiveLanguageTitle" value="Наявність мови обов&#39;язково" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="Щоб змінити спосіб відображення чисел, дат і часу, виберіть варіант зі списку." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.C1ConsoleLanguageLabel" value="Мова консолі C1" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.C1ConsoleLanguageHelp" value="Виберіть мову, яка буде використовуватися для міток, текстів довідки, діалогів і т.і. Наявні тут варіанти  обмежені встановленими мовами. Можна встановити додаткові мови через систему пакетів, див. Composite.Localization." />
+  <string key="UserElementProvider.MissingActiveLanguageTitle" value="Наявність мови обов'язково" />
 	<string key="UserElementProvider.MissingActiveLanguageMessage" value="Для створення користувача потрібна наявність мови, але жодна мова ще додана. Ви можете додати мову в розділі &quot;Система&quot;." />
-	<string key="UserElementProvider.UserLoginIsAlreadyUsed" value="Користувач з таким ім&#39;ям вже існує" />
+	<string key="UserElementProvider.UserLoginIsAlreadyUsed" value="Користувач з таким ім'ям вже існує" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderTypeLabel" value="Додати папку даних" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderTypeToolTip" value="Додати папку даних" />
 	<string key="AssociatedDataElementProviderHelper.AddAssociatedDataLabel" value="Додати дані" />
@@ -99,8 +104,8 @@
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorLabel" value="Тип папки даних" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorHelp" value="Створіть новий тип даних або використовуйте вже існуючий (якщо є)." />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelNewType" value="Настройки" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeName" value="Ім&#39;я типу" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeName" value="Технічне ім&#39;я типу даних (наприклад, Product). Використовується для ідентифікації цього типу в коді і не повинно змінюватися, якщо був хоча б один випадок зовнішнього використання." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeName" value="Ім'я типу" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeName" value="Технічне ім'я типу даних (наприклад, Product). Використовується для ідентифікації цього типу в коді і не повинно змінюватися, якщо був хоча б один випадок зовнішнього використання." />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeNamespace" value="Простір імен типу" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeNamespace" value="Простір імен (модуль / назва категорії) типу. Використовується для ідентифікації цього типу в коді і не повинно змінюватися." />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeTitle" value="Назва" />
@@ -132,9 +137,9 @@
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorHelp" value="Виберіть існуючий тип метаданих, щоб додати" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesTitle" value="Не існує жодного типу метаданих для сторінок" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesMessage" value="Жоден тип метаданих для сторінок ще не був створений. Ви можете створити тип метаданих для сторінок в розділі &quot;Дані&quot;." />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.NamingFieldLabel" value="Ім&#39;я групи полів метаданих" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameLabel" value="Ім&#39;я" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameHelp" value="Введіть унікальне ім&#39;я, що ідентифікує цю групу полів метаданих" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.NamingFieldLabel" value="Ім'я групи полів метаданих" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameLabel" value="Ім'я" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameHelp" value="Введіть унікальне ім'я, що ідентифікує цю групу полів метаданих" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelLabel" value="Напис" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelHelp" value="Введіть зрозумілий користувачу напис для цієї групи полів метаданих" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.VisabilityFieldLabel" value="Видимість групи полів метаданих" />
@@ -145,7 +150,7 @@
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorLabel" value="Успадковувати відображення" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorHelp" value="Успадковувати відображення" />
 	<string key="AssociatedDataElementProviderHelper.NoItems.Title" value="У групи полів метаданих немає елементів у цьому діапазоні" />
-	<string key="AssociatedDataElementProviderHelper.NoItems.Description" value="В даний час немає елементів у вказаному діапазоні відображення. Натисніть &#39;Назад&#39;, щоб змінити діапазон відображення або &#39;Готово&#39;, щоб створити групу полів метаданих." />
+	<string key="AssociatedDataElementProviderHelper.NoItems.Description" value="В даний час немає елементів у вказаному діапазоні відображення. Натисніть 'Назад', щоб змінити діапазон відображення або 'Готово', щоб створити групу полів метаданих." />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption0" value="Цього елемента" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption1" value="Дочірніх елементів" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption2" value="Нащадків 2-го покоління" />
@@ -178,7 +183,7 @@
 	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Help" value="Виберіть поле метаданих для зміни" />
 	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Title" value="Немає полів метаданих для зміни" />
 	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Message" value="Немає полів метаданих, визначених для цього елемента, для зміни" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataFieldNameAlreadyUsed" value="Тип метаданих використовується в іншому місці з тим же ім&#39;ям, але з іншим написом" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataFieldNameAlreadyUsed" value="Тип метаданих використовується в іншому місці з тим же ім'ям, але з іншим написом" />
 	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerChangeNotAllowed" value="Існує одне або більше визначень з тією ж назвою. Зміна елемента, що містить, не допускається." />
 	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Title" value="Натисніть &quot;Готово&quot;, щоб зберегти" />
 	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Description" value="Вся необхідна інформація була зібрана. Натисніть &quot;Готово&quot; для оновлення поля метаданих" />
@@ -187,12 +192,12 @@
 	<string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorTitle" value="Помилка каскадного видалення" />
 	<string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorMessage" value="На цей тип посилається інший тип, який не допускає каскадне видалення. Виконання операції припинено." />
 	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelNewType" value="Настройки" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeName" value="Ім&#39;я типу" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeName" value="Ім&#39;я нового типу, який ви створюєте (наприклад, Product)" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeName" value="Ім'я типу" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeName" value="Ім'я нового типу, який ви створюєте (наприклад, Product)" />
 	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeNamespace" value="Простір імен типу" />
 	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeNamespace" value="Назва модуля, категорії або простору імен, які ви створюєте" />
 	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeTitle" value="Назва" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeTitle" value="У цьому полі потрібно вказати зрозуміле користувачу ім&#39;я" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeTitle" value="У цьому полі потрібно вказати зрозуміле користувачу ім'я" />
 	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelFields" value="Поля" />
 	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.ServicesLabel" value="Служби" />
 	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasVersioning" value="Підтримка версій" />
@@ -211,10 +216,10 @@
 	<string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorHelp" value="Створення нового типу або використання існуючого типу" />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorLabel" value="Виберіть тип:" />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorHelp" value="Звичайні дані - це новий тип, який створюється під сторінкою. Метадані - це нове поле, яке створюється на сторінці" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameLabel" value="Ім&#39;я правила" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameHelp" value="Ім&#39;я правила зберігається разом з метаданими і є частиною ключа метаданих. Ім&#39;я повинно бути унікальним." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameLabel" value="Ім'я правила" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameHelp" value="Ім'я правила зберігається разом з метаданими і є частиною ключа метаданих. Ім'я повинно бути унікальним." />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleLabelLabel" value="Напис правила" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleHelpHelp" value="Напис правила використовується як зрозуміла користувачу назва для об&#39;єкта. Може бути локалізована." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleHelpHelp" value="Напис правила використовується як зрозуміла користувачу назва для об'єкта. Може бути локалізована." />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorLabel" value="Вибрати контейнер для композиції" />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorHelp" value="Виберіть контейнер для нового правила." />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorLabel" value="Вибрати область видимості композиції" />
@@ -223,25 +228,25 @@
 	<string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsHelp" value="Глибина підсторінок, на якій композицію буде видно" />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeLabel" value="Підтвердіть новий тип даних:" />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeHelp" value="Метадані - це нове поле, яке створюється на сторінці" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Ім&#39;я правила області видимості композиції" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameHelp" value="Ім&#39;я правила зберігається разом з метаданими і є частиною ключа метаданих. Ім&#39;я повинно бути унікальним." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Ім'я правила області видимості композиції" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameHelp" value="Ім'я правила зберігається разом з метаданими і є частиною ключа метаданих. Ім'я повинно бути унікальним." />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleLabelLabel" value="Напис правила області видимості композиції" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleHelpHelp" value="Напис правила використовується як зрозуміле користувачу ім&#39;я об&#39;єкта. Може бути локалізований." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleHelpHelp" value="Напис правила використовується як зрозуміле користувачу ім'я об'єкта. Може бути локалізований." />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeLabel" value="Область видимості композиції" />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeHelp" value="Це - область, в якій нову композицію буде видно при змінюванні сторінок" />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeLabel" value="Додавання типу" />
 	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeHelp" value="Створити новий тип або використовувати існуючий тип" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameLabel" value="Ім&#39;я існуючого типу" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameHelp" value="Ім&#39;я вибраного існуючого типу в системі для використання" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameLabel" value="Ім&#39;я поля зовнішнього ключа" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameHelp" value="Ім&#39;я поля існуючого типу для використання в якості зовнішнього ключа" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameLabel" value="Ім'я існуючого типу" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameHelp" value="Ім'я вибраного існуючого типу в системі для використання" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameLabel" value="Ім'я поля зовнішнього ключа" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameHelp" value="Ім'я поля існуючого типу для використання в якості зовнішнього ключа" />
 	<string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeLabel" value="Видалити папку даних" />
 	<string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeToolTip" value="Видалити папку даних" />
 	<string key="Website.Forms.Administrative.RemoveAssociatedType.FieldGroupLabel" value="Видалити тип даних для сторінок" />
 	<string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.AssociationTypeLabel" value="Видалити тип даних для сторінок" />
-	<string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Ім&#39;я правила області видимості композиції" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Ім'я правила області видимості композиції" />
 	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorLabel" value="Виберіть правило" />
-	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorHelp" value="Ім&#39;я правила для видалення" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorHelp" value="Ім'я правила для видалення" />
 	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorLabel" value="Виберіть тип даних сторінки" />
 	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorHelp" value="" />
 	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorLabel" value="Виберіть тип даних" />
@@ -275,11 +280,11 @@
 	<string key="SendMessageToConsolesWorkflow.MessageTextArea.Help" value="Повідомлення, яке буде відправлено" />
 	<string key="LoginWebRequestHandler.Login" value="Увійти" />
 	<string key="LoginWebRequestHandler.Header" value="Увійти в {0}" />
-	<string key="LoginWebRequestHandler.LoginFailed" value="Неправильне ім&#39;я користувача або пароль" />
+	<string key="LoginWebRequestHandler.LoginFailed" value="Неправильне ім'я користувача або пароль" />
 	<string key="LoginWebRequestHandler.Password" value="Пароль" />
-	<string key="LoginWebRequestHandler.Username" value="Ім&#39;я користувача" />
+	<string key="LoginWebRequestHandler.Username" value="Ім'я користувача" />
 	<string key="LoginWebRequestHandler.LogInAsOtherUser" value="Увійти як інший користувач." />
-	<string key="LoginWebRequestHandler.WrongUserNameOrPassword" value="Неправильне ім&#39;я користувача або пароль." />
+	<string key="LoginWebRequestHandler.WrongUserNameOrPassword" value="Неправильне ім'я користувача або пароль." />
 	<string key="LoginWebRequestHandler.UserNameNotRegistered" value="Даний Windows-логін {0} \ {1} не зареєстрований в базі даних користувачів. Ви повинні використовувати інший логін." />
 	<string key="DataInterfaceValidator.TypeNotAnInterface" value="Тип {0} не є інтерфейсом." />
 	<string key="DataInterfaceValidator.TypeDoesNotImplementInterface" value="Тип інтерфейсу {0} не реалізує інтерфейс {1}." />
@@ -315,7 +320,7 @@
 	<string key="MediaFileProviderElementProvider.MediaFileItemToolTip" value="Медіа-елемент" />
 	<string key="MediaFileProviderElementProvider.OrganizedFilesAndFoldersToolTip" value="Організувати папки та файли" />
 	<string key="MediaFileProviderElementProvider.ErrorMessageTitle" value="Помилка" />
-	<string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Файл &#39;{0}&#39; вже існує в папці &#39;{1}&#39;" />
+	<string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Файл '{0}' вже існує в папці '{1}'" />
 	<string key="UploadNewMediaFileWorkflow.UploadFailure" value="Збій" />
 	<string key="UploadNewMediaFileWorkflow.UploadFailureMessage" value="Файл, повинен бути того ж типу, що й оригінал. Файл, який ви надсилаєте, має інший тип." />
 	<string key="RelationshipGraphActionExecutor.ShowGraph" value="Показати діаграму" />
@@ -417,7 +422,7 @@
 	<string key="Website.Content.Views.Help.LabelContents" value="Зміст" />
 	<string key="Website.Content.Views.Help.ToolTipContents" value="Зміст довідки" />
 	<string key="Website.Content.Views.SystemView.ToolTipCollapseAll" value="Згорнути все" />
-	<string key="Website.Content.Views.SystemView.ToolTipLinkWithEditor" value="Зв&#39;язати з редактором" />
+	<string key="Website.Content.Views.SystemView.ToolTipLinkWithEditor" value="Зв'язати з редактором" />
 	<string key="Website.Content.Views.Search.Search.LabelNewSearch" value="Новий пошук..." />
 	<string key="Website.Content.Views.ViewSource.LabelFormatted" value="Форматовано" />
 	<string key="Website.Content.Views.ViewSource.LabelRaw" value="Без форматування" />
@@ -491,6 +496,7 @@
 	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelMute" value="Вимкнути звук" />
 	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelWindowLessVideo" value="Відео без показу вікна" />
 	<string key="Website.App.LabelSave" value="Зберегти" />
+	<string key="Website.App.LabelSaveAndPublish" value="Зберегти та опублікувати" />
 	<string key="Website.App.LabelCloseTab" value="Закрити вкладку" />
 	<string key="Website.App.LabelCloseOthers" value="Закрити решту" />
 	<string key="Website.App.LabelRefreshView" value="Оновити вигляд" />
@@ -536,28 +542,28 @@
 	<string key="Website.Forms.Administrative.AddNewMediaFile.Layout.Label" value="Додати новий медіа-файл" />
 	<string key="Website.Forms.Administrative.AddNewMediaFile.FieldGroup.Label" value="Властивості медіа-файлу" />
 	<string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Label" value="Назва файлу" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Help" value="Виберіть або введіть ім&#39;я файлу для надсилання" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Help" value="Виберіть або введіть ім'я файлу для надсилання" />
 	<string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Label" value="Дозволити перезапис" />
 	<string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Help" value="Замінити існуючий файл" />
 	<string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Label" value="Назва файлу" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Help" value="Ім&#39;я файлу в бібліотеці мультимедіа" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Help" value="Ім'я файлу в бібліотеці мультимедіа" />
 	<string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Label" value="Назва" />
 	<string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Help" value="Використовуйте це поле для назви зображення" />
 	<string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Label" value="Опис" />
 	<string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Help" value="Використовуйте це поле для короткого опису зображення" />
 	<string key="Website.Forms.Administrative.AddNewMediaFile.MissingUploadedFile.Message" value="Будь ласка, виберіть файл для надсилання" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.FileExists.Message" value="Файл з такою назвою вже існує. Поставьте прапорець у опції  &quot;Дозволити перезапис&quot; або змініть ім&#39;я файлу" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.TotalFilenameToLong.Message" value="Повне ім&#39;я файлу (папка та ім&#39;я файлу) занадто довге" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FileExists.Message" value="Файл з такою назвою вже існує. Поставьте прапорець у опції  &quot;Дозволити перезапис&quot; або змініть ім'я файлу" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.TotalFilenameToLong.Message" value="Повне ім'я файлу (папка та ім'я файлу) занадто довге" />
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.Label.AddNewMediaFolder" value="Додати нову медіа-папку" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelFolderName" value="Ім&#39;я папки" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelFolderName" value="Ім'я папки" />
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpFolderName" value="" />
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelTitle" value="Назва" />
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpTitle" value="" />
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelDescription" value="Опис" />
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpDescription" value="" />
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameAlreadyUsed" value="Папка вже існує" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="Повне ім&#39;я папки задовге" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Ім&#39;я папки не може бути лише &#39;/&#39; або &#39;\&#39;" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="Повне ім'я папки задовге" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Ім'я папки не може бути лише '/' або '\'" />
 	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Надсилання декількох файлів за допомогою Zip-файлу" />
 	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFieldGroup" value="Виберіть Zip-файл, що містить файли для вилучення" />
 	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Zip-файл" />
@@ -591,15 +597,16 @@
 	<string key="Website.Forms.Administrative.EditMediaFile.HelpFileName" value="Значення, зазначене в цьому полі, є частиною ідентифікатора зображення" />
 	<string key="Website.Forms.Administrative.EditMediaFile.LabelDescription" value="Опис" />
 	<string key="Website.Forms.Administrative.EditMediaFile.HelpDescription" value="Використовуйте це поле для короткого опису зображення" />
-	<string key="Website.Forms.Administrative.EditMediaFile.TotalFilenameToLong.Message" value="Повне ім&#39;я файлу (папка та ім&#39;я файлу) занадто довге" />
-	<string key="Website.Forms.Administrative.EditMediaFolder.LabelFieldGroup" value="Властивості папки" />
-	<string key="Website.Forms.Administrative.EditMediaFolder.LabelFolderName" value="Ім&#39;я папки" />
+	<string key="Website.Forms.Administrative.EditMediaFile.TotalFilenameToLong.Message" value="Повне ім'я файлу (папка та ім'я файлу) занадто довге" />
+  <string key="Website.Forms.Administrative.EditMediaFile.FileExists.Message" value="Файл з такою назвою вже існує в цій папці." />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFieldGroup" value="Властивості папки" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.LabelFolderName" value="Ім'я папки" />
 	<string key="Website.Forms.Administrative.EditMediaFolder.HelpFolderName" value="" />
 	<string key="Website.Forms.Administrative.EditMediaFolder.LabelTitle" value="Назва" />
 	<string key="Website.Forms.Administrative.EditMediaFolder.HelpTitle" value="Використовуйте це поле для назви зображення" />
 	<string key="Website.Forms.Administrative.EditMediaFolder.LabelDescription" value="Опис" />
 	<string key="Website.Forms.Administrative.EditMediaFolder.HelpDescription" value="" />
-	<string key="Website.Forms.Administrative.EditMediaFolder.TotalFilenameToLong.Message" value="Папка містить файл, в якому ім&#39;я файлу та ім&#39;я нової папки разом занадто довге" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.TotalFilenameToLong.Message" value="Папка містить файл, в якому ім'я файлу та ім'я нової папки разом занадто довге" />
 	<string key="Website.Forms.Administrative.EditPage.DraftTransition" value="Чернетка" />
 	<string key="Website.Forms.Administrative.EditPage.AwaitingApprovalTransition" value="Очікує затвердження" />
 	<string key="Website.Forms.Administrative.EditPage.AwaitingPublicationTransition" value="Чекає публікації" />
@@ -607,12 +614,12 @@
 	<string key="Website.Forms.Administrative.ElementKeywordSearch.LabelKeyword" value="Ключове слово" />
 	<string key="Website.Forms.Administrative.ElementKeywordSearch.LabelSearchKeyword" value="Напишіть ключове слово для пошуку." />
 	<string key="Website.Forms.Administrative.UploadMediaFile.LabelFieldGroup" value="Надіслати новий медіа-файл" />
-	<string key="Website.Forms.Administrative.UploadMediaFile.LabelFile" value="Ім&#39;я файлу:" />
+	<string key="Website.Forms.Administrative.UploadMediaFile.LabelFile" value="Ім'я файлу:" />
 	<string key="Website.Forms.Administrative.UploadMediaFile.HelpFile" value="" />
 	<string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorTitle" value="Файл відсутній або порожній" />
 	<string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorMessage" value="Дані файлу не отримані. Будь ласка, скористуйтеся кнопкою &quot;Огляд&quot; і переконайтеся, що обраний файл не є порожнім." />
 	<string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFieldGroup" value="Надіслати новий медіа-файл замість існуючого файлу" />
-	<string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFile" value="Ім&#39;я файлу:" />
+	<string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFile" value="Ім'я файлу:" />
 	<string key="Website.Forms.Administrative.UploadNewMediaFile.HelpFile" value="" />
 	<string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSave" value="Зберегти" />
 	<string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSaveAs" value="Зберегти як ..." />

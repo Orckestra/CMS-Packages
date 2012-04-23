@@ -43,7 +43,7 @@
   <string key="PageType.EditPageTypeWorkflow.PageTemplatePlaceHolder.Label" value="Макет" />
   <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionFieldGroup.Label" value="Макет" />
   <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Label" value="Обмеження шаблонів" />
-  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Help" value="Обмеження шаблонів" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Help" value="Виберіть, які саме шаблони будуть доступні під час редагування сторінок цього типу. Якщо нічого не вибрано (за замовчанням), будуть доступні всі шаблони." />
   <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Label" value="Шаблон за замовчуванням" />
   <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Help" value="Виберіть шаблон за замовчуванням для сторінок, створених за допомогою цього типу" />
   <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.NoneSelectedLabel" value="[Немає]" />
@@ -66,9 +66,9 @@
   <string key="PageType.EditPageTypeWorkflow.ValidationError.DefaultTemplateNotInRestrictions" value="Шаблон за замовчуванням не вибрано в обмеженнях шаблонів" />
   <string key="PageType.EditPageTypeWorkflow.ValidationError.HomepageRelationConflictsWithParentRestrictions" value="Обмеження батьківського типу сторінок неприпустимий, якщо обрані &quot;Тільки домашні сторінки&quot;." />
   <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Label" value="Видалити цей тип сторінок?" />
-  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Messeage" value="Видалити шаблон сторінки {0}?" />
-  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Label" value="Шаблон сторінки використовується" />
-  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Message" value="Шаблон сторінки {0} вже використовується, і його не можна видалити" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Messeage" value="Видалити тип сторінки {0}?" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Label" value="Тип сторінки використовується" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Message" value="Тип сторінки {0} вже використовується, і його не можна видалити" />
   <string key="PageType.AddPageTypeDefaultPageContentWorkflow.Layout.Label" value="Додати контент за замовчуванням" />
   <string key="PageType.AddPageTypeDefaultPageContentWorkflow.FieldGroup.Label" value="Виберіть заповнювач" />
   <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Ідентифікатор заповнювача" />
