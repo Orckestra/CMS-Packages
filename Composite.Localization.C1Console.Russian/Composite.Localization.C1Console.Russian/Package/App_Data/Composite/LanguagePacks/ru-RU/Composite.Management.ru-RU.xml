@@ -25,7 +25,7 @@
 	<string key="Website.Image.SelectDialog.Title" value="Выбрать изображение" />
 
 
-	<string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Изменить пользователя" />
+	<string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Основные настройки" />
 	<string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Имя пользователя" />
 	<string key="Website.Forms.Administrative.EditUserStep1.UserNameHelp" value="Имена пользователей нельзя изменить. Это поле - только для чтения." />
 	<string key="Website.Forms.Administrative.EditUserStep1.PasswordLabel" value="Пароль" />
@@ -34,9 +34,12 @@
 	<string key="Website.Forms.Administrative.EditUserStep1.EmailHelp" value="Адрес электронной почты  пользователя (необязательно)." />
 	<string key="Website.Forms.Administrative.EditUserStep1.GroupLabel" value="Папка" />
 	<string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Если вы введете имя папки, которое еще не существует, будет создана новая папка." />
-	<string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Региональные настройки" />
-	<string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="Чтобы изменить способ отображения чисел, времени и дат, выберите язык из списка. Записи, отмеченные звездочкой (*) уже переведены. Неотмеченные записи будут показаны на английском языке." />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveFieldLabel" value="Разделы" />
+  <string key="Website.Forms.Administrative.EditUserStep1.LabelLocalizationFieldGroup" value="Локализация &#xD;консоли C1" />
+  <string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Региональные настройки" />
+	<string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="Чтобы изменить способ отображения чисел, времени и дат, выберите вариант из списка." />
+  <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageLabel" value="Язык консоли C1" />
+  <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageHelp" value="Выберите язык, который будет использоваться для надписей, текстов справки, диалогов и т.п. Имеющиеся  здесь варианты ограничены установленными языками. Можно установить дополнительные языки через систему пакетов, см. Composite.Localization." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveFieldLabel" value="Разделы" />
 	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectLabel" value="Видимые разделы" />
 	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectHelp" value="Выберите, какие разделы должны быть видны, когда пользователь запускает консоль C1." />
 	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsFieldLabel" value="Глобальные разрешения" />
@@ -47,7 +50,7 @@
 	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectLabel" value="Языки данных" />
 	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectHelp" value="Пользователь имеет доступ к управлению данными на выбранных языках." />
 	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleLabel" value="Текущий язык" />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Текущий язык" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Язык конента, редактируемый пользователем." />
 	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleNotChecked" value="Выбранный язык не отмечен в разделе данных языка." />
 	<string key="Website.Forms.Administrative.EditUserStep1.NoActiveLocaleSelected" value="Вы должны выбрать хотя бы один активный язык." />
 	<string key="Website.Forms.Administrative.EditUserStep1.GenerelTabLabel" value="Основные" />
@@ -80,8 +83,10 @@
 	<string key="Website.Forms.Administrative.AddNewUserStep1.GroupLabel" value="Папка" />
 	<string key="Website.Forms.Administrative.AddNewUserStep1.GroupHelp" value="Если вы введете имя папки, которой еще не существует, будет создана новая папка." />
 	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureLabel" value="Региональные настройки" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="Чтобы изменить способ отображения чисел, времени и дат, выберите язык из списка. Записи, отмеченные звездочкой (*) уже переведены. Неотмеченные записи  будут показаны на английском языке." />
-	<string key="UserElementProvider.MissingActiveLanguageTitle" value="Наличие языка обязательно" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="Чтобы изменить способ отображения чисел, времени и дат, выберите вариант из списка." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.C1ConsoleLanguageLabel" value="Язык консоли C1" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.C1ConsoleLanguageHelp" value="Выберите язык, который будет использоваться для надписей, текстов справки, диалогов и т.п. Имеющиеся  здесь варианты ограничены установленными языками. Можно установить дополнительные языки через систему пакетов, см. Composite.Localization." />
+  <string key="UserElementProvider.MissingActiveLanguageTitle" value="Наличие языка обязательно" />
 	<string key="UserElementProvider.MissingActiveLanguageMessage" value="Для создания  пользователя требуется наличие языка, но ни один язык не был еще добавлен. Вы можете добавить язык  в разделе &quot;Система&quot;." />
 	<string key="UserElementProvider.UserLoginIsAlreadyUsed" value="Пользователь с таким  Логином  уже существует" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderTypeLabel" value="Добавить папку данных" />
@@ -110,9 +115,9 @@
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasPublishing" value="Поддержка публикации" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasLocalization" value="Поддержка локализации" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesTitle" value="Не существует ни одной папки данных для страницы" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Ни одной папки данных для страницы еще не было создано. Вы можете создать папку данных для страницы  в разделе &#39;Данные&#39;." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Ни одной папки данных для страницы еще не было создано. Вы можете создать папку данных для страницы  в разделе 'Данные'." />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesTitle" value="Не существуют неиспользованные папки данных для страницы" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Все доступные папки данных для страницы уже добавлены. Создать новую папку данных вы можете в разделе &#39;Данные&#39;." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Все доступные папки данных для страницы уже добавлены. Создать новую папку данных вы можете в разделе 'Данные'." />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ErrorTitle" value="Ошибка" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.FieldLabel" value="Выберите для добавления папку данных" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorLabel" value="Существующие типы папки данных" />
@@ -145,7 +150,7 @@
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorLabel" value="Наследовать отображение" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorHelp" value="Наследовать отображение" />
 	<string key="AssociatedDataElementProviderHelper.NoItems.Title" value="У группы полей метаданных нет элементов в этом диапазоне" />
-	<string key="AssociatedDataElementProviderHelper.NoItems.Description" value="В настоящее время нет элементов в указанном диапазоне отображения.  Нажмите &#39;Назад&#39;, чтоб изменить диапазон отображения или &#39;Готово&#39;, чтобы создать группу полей метаданных." />
+	<string key="AssociatedDataElementProviderHelper.NoItems.Description" value="В настоящее время нет элементов в указанном диапазоне отображения.  Нажмите 'Назад', чтоб изменить диапазон отображения или 'Готово', чтобы создать группу полей метаданных." />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption0" value="Этого элемента" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption1" value="Дочерних элементов" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption2" value="Потомков 2-го поколения" />
@@ -315,7 +320,7 @@
 	<string key="MediaFileProviderElementProvider.MediaFileItemToolTip" value="Медиа-элемент" />
 	<string key="MediaFileProviderElementProvider.OrganizedFilesAndFoldersToolTip" value="Организовать папки и файлы" />
 	<string key="MediaFileProviderElementProvider.ErrorMessageTitle" value="Ошибка" />
-	<string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Файл &#39;{0}&#39; уже существует в папке &#39;{1}&#39;" />
+	<string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Файл '{0}' уже существует в папке '{1}'" />
 	<string key="UploadNewMediaFileWorkflow.UploadFailure" value="Сбой" />
 	<string key="UploadNewMediaFileWorkflow.UploadFailureMessage" value="Загружаемый файл должен быть того же типа, что и оригинал. Загружаемый вами файл имеет другой тип." />
 	<string key="RelationshipGraphActionExecutor.ShowGraph" value="Показать диаграмму" />
@@ -491,6 +496,7 @@
 	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelMute" value="Отключить звук" />
 	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelWindowLessVideo" value="Видео без показа окна" />
 	<string key="Website.App.LabelSave" value="Сохранить" />
+	<string key="Website.App.LabelSaveAndPublish" value="Сохранить и опубликовать" />
 	<string key="Website.App.LabelCloseTab" value="Закрыть вкладку" />
 	<string key="Website.App.LabelCloseOthers" value="Закрыть остальные" />
 	<string key="Website.App.LabelRefreshView" value="Обновить вид" />
@@ -557,7 +563,7 @@
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpDescription" value="" />
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameAlreadyUsed" value="Папка уже существует" />
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="Полное имя папки слишком длинное" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Имя папки не может быть только &#39;/&#39; или &#39;\&#39;" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Имя папки не может быть только '/' или '\'" />
 	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Загрузка нескольких файлов с помощью Zip-файла" />
 	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFieldGroup" value="Выберите Zip-файл, содержащий файлы для извлечения" />
 	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Zip-файл" />
@@ -592,7 +598,8 @@
 	<string key="Website.Forms.Administrative.EditMediaFile.LabelDescription" value="Описание" />
 	<string key="Website.Forms.Administrative.EditMediaFile.HelpDescription" value="Используйте это поле для краткого описания изображения" />
 	<string key="Website.Forms.Administrative.EditMediaFile.TotalFilenameToLong.Message" value="Полное имя файла (папка и имя файла) слишком длинное" />
-	<string key="Website.Forms.Administrative.EditMediaFolder.LabelFieldGroup" value="Свойства папки" />
+  <string key="Website.Forms.Administrative.EditMediaFile.FileExists.Message" value="Файл с таким именем уже существует в этой папке." />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFieldGroup" value="Свойства папки" />
 	<string key="Website.Forms.Administrative.EditMediaFolder.LabelFolderName" value="Имя папки" />
 	<string key="Website.Forms.Administrative.EditMediaFolder.HelpFolderName" value="" />
 	<string key="Website.Forms.Administrative.EditMediaFolder.LabelTitle" value="Название" />

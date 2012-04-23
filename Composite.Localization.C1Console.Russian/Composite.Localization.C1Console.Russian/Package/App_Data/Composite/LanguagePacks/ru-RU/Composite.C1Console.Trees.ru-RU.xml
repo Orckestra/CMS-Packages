@@ -25,6 +25,8 @@
   <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPosition" value="Позиция присоединения  '{0}' неизвестна" />
   <string key="TreeValidationError.DataAttachments.NoElementsAllowed" value="Не допускаются элементы в деревьях, которые используют с деревьями с присоединенными данными" />
 
+  <string key="TreeValidationError.ElementRoot.ShareRootElementByIdNotAllowed" value="ShareRootElementById разрешен только, если дерево имеет одну именованную точку подключения." />
+
   <string key="TreeValidationError.SimpleElement.WrongIdValue" value="Значение ID недопустимо. ID  не должен быть пустым,  не может начинаться  с NodeAutoId_ и быть RootTreeNode" />
   <string key="TreeValidationError.SimpleElement.AlreadyUsedId" value="Значение '{0}' поля ID уже используется  в этом дереве" />
 
@@ -48,6 +50,7 @@
   <string key="TreeValidationError.FieldFilter.ValueCouldNotBeConverted" value="Строковое значение '{0}' не преобразовано в тип '{1}'" />
   <string key="TreeValidationError.FieldFilter.OperatorNotSupportedForType" value="Оператор '{0}' не поддерживается для типа '{1}'" />
 
+  <string key="TreeValidationError.FunctionFilter.MissingFunctionMarkup" value="Отсутствует XML-код функции" />
   <string key="TreeValidationError.FunctionFilter.WrongFunctionMarkup" value="Функция не может быть создана для данной разметки" />
   <string key="TreeValidationError.FunctionFilter.WrongReturnValue" value="Функция не возвращает значение типа '{0}'" />
   <string key="TreeValidationError.FunctionFilter.WrongFunctionReturnType" value="Тип выражения, возвращенный функцией - '{0}', Ожидался тип  '{1}'" />

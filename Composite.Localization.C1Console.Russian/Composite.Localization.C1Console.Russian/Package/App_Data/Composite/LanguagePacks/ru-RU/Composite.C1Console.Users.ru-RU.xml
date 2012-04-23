@@ -14,10 +14,12 @@
 
 	<!-- change culture -->
 	<string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Региональные настройки ..." />
-	<string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Установить отображение чисел, времени и дат" />
+	<string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Выбрать язык консоли C1 и формат чисел, времени и дат" />
 	<string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Региональные настройки и язык" />
-	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Региональные настройки / Язык" />
-	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="Чтобы изменить способ отображение чисел, времени и даты, выберите вариант из списка. Язык, указанный справа, является языком пользовательского интерфейса." />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Региональные настройки" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="Чтобы изменить способ отображение чисел, времени и даты, выберите вариант из списка." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Label" value="Язык консоли C1" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Help" value="Выберите язык, который будет использоваться для надписей, текстов справки, диалогов и т.п. Имеющиеся здесь варианты ограничены установленными языками. Можно установить дополнительные языки через систему пакетов,  см. Composite.Localization." />
   <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="Изменить язык приложения" />
   <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="Вы уверены, что  хотите изменить настройки? Приложение перезапустится и все несохраненные изменения будут утеряны." />
 	<string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="Региональные настройки" />

@@ -43,7 +43,7 @@
   <string key="PageType.EditPageTypeWorkflow.PageTemplatePlaceHolder.Label" value="Макет" />
   <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionFieldGroup.Label" value="Макет" />
   <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Label" value="Ограничения шаблонов" />
-  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Help" value="Ограничения шаблонов" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Help" value="Выберите, какие именно шаблоны будут доступны при редактировании страниц этого типа. Если ничего не выбрано (по умолчанию), будут доступны все шаблоны." />
   <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Label" value="Шаблон по умолчанию" />
   <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Help" value="Выберите шаблон по умолчанию для страниц, созданных при помощи этого типа" />
   <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.NoneSelectedLabel" value="[Нет]" />
@@ -66,9 +66,9 @@
   <string key="PageType.EditPageTypeWorkflow.ValidationError.DefaultTemplateNotInRestrictions" value="Шаблон по умолчанию не выбран в ограничениях шаблонов" />
   <string key="PageType.EditPageTypeWorkflow.ValidationError.HomepageRelationConflictsWithParentRestrictions" value="Ограничения родительского типа страниц недопустим, если выбраны &quot;Только домашние страницы&quot;." />
   <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Label" value="Удалить этот тип страниц?" />
-  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Messeage" value="Удалить шаблон страницы {0}?" />
-  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Label" value="Шаблон страницы используется" />
-  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Message" value="Шаблон страницы {0} уже используется, и его нельзя удалить" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Messeage" value="Удалить тип страницы {0}?" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Label" value="Тип страницы используется" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Message" value="Тип страницы {0} уже используется, и его нельзя удалить" />
   <string key="PageType.AddPageTypeDefaultPageContentWorkflow.Layout.Label" value="Добавить контент по умолчанию" />
   <string key="PageType.AddPageTypeDefaultPageContentWorkflow.FieldGroup.Label" value="Выберите заполнитель" />
   <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Идентификатор заполнителя" />
