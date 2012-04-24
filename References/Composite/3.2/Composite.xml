@@ -303,6 +303,73 @@
             <param name="entityToken">EntityToken to get permissions for.</param>
             <returns>Allowed permission types</returns>
         </member>
+        <member name="T:Composite.C1Console.Security.EntityToken">
+            <summary>
+            When subclassing this class and adding properties that have an impack when identity (equiallity)
+            of the subclass, remember to overload Equal and GetHashCode!
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.IsValid">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.Serialize">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.DoSerialize(System.Text.StringBuilder)">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.DoSerialize">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.DoDeserialize(System.String,System.String@,System.String@,System.String@)">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.DoDeserialize(System.String,System.String@,System.String@,System.String@,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.GetPrettyHtml(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.OnGetTypePrettyHtml">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.OnGetSourcePrettyHtml">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.OnGetIdPrettyHtml">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.OnGetExtraPrettyHtml">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.OnGetPrettyHtml(Composite.C1Console.Security.EntityTokenHtmlPrettyfier)">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.Equals(System.Object)">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.Equals(Composite.C1Console.Security.EntityToken)">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.GetHashCode">
+            <exclude />
+        </member>
+        <member name="M:Composite.C1Console.Security.EntityToken.ToString">
+            <exclude />
+        </member>
+        <member name="P:Composite.C1Console.Security.EntityToken.Type">
+            <exclude />
+        </member>
+        <member name="P:Composite.C1Console.Security.EntityToken.Source">
+            <exclude />
+        </member>
+        <member name="P:Composite.C1Console.Security.EntityToken.Id">
+            <exclude />
+        </member>
+        <member name="P:Composite.C1Console.Security.EntityToken.HashCode">
+            <exclude />
+        </member>
         <member name="T:Composite.Core.Application.GlobalFileLocker">
             <summary>
             This class enables cross app domain/process locking using a file.
@@ -6241,6 +6308,28 @@
         <member name="M:Composite.Core.PackageSystem.PackageFragmentInstallers.RebootingConsoleFragmentUninstaller.Uninstall">
             <exclude />
         </member>
+        <member name="T:Composite.Core.PackageSystem.PackageFragmentInstallers.XmlFileMergePackageFragmentInstaller">
+            <summary>
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Composite.Core.PackageSystem.PackageFragmentInstallers.XmlFileMergePackageFragmentInstaller.Install">
+            <exclude />
+        </member>
+        <member name="M:Composite.Core.PackageSystem.PackageFragmentInstallers.XmlFileMergePackageFragmentInstaller.Validate">
+            <exclude />
+        </member>
+        <member name="T:Composite.Core.PackageSystem.PackageFragmentInstallers.XmlFileMergePackageFragmentUninstaller">
+            <summary>
+            </summary>
+            <exclude />
+        </member>
+        <member name="M:Composite.Core.PackageSystem.PackageFragmentInstallers.XmlFileMergePackageFragmentUninstaller.Uninstall">
+            <exclude />
+        </member>
+        <member name="M:Composite.Core.PackageSystem.PackageFragmentInstallers.XmlFileMergePackageFragmentUninstaller.Validate">
+            <exclude />
+        </member>
         <member name="T:Composite.Core.PackageSystem.PackageLicenseDefinition">
             <summary>
             A package license key definition
@@ -7295,6 +7384,11 @@
             <param name="targetImageFormat">The target image format.</param>
             <returns>A full file path to a resized image; null if there's no need to resize the image</returns>
         </member>
+        <member name="M:Composite.Core.WebClient.Media.ImageResizer.DrawWithoutBlending(System.Drawing.Graphics,System.Drawing.Bitmap,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Draws a bitmap without background blending on first row and first column
+            </summary>
+        </member>
         <member name="T:Composite.Core.WebClient.Media.ImageResizer.SupportedImageFormats">
             <exclude />
         </member>
@@ -7634,6 +7728,30 @@
             <param name="element"></param>
             <param name="attributeName">The name of the attribute to (try to) get</param>
             <returns>The value of the attribute or null if the attribute does not exist.</returns>
+        </member>
+        <member name="M:Composite.Core.Xml.XElementUtils.GetAttributeValue(System.Xml.Linq.XElement,System.Xml.Linq.XName)">
+            <summary>
+            Returns the value of the XElement attribute with the specified name. 
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName">The name of the attribute to (try to) get</param>
+            <returns>The value of the attribute or null if the attribute does not exist.</returns>
+        </member>
+        <member name="M:Composite.Core.Xml.XElementUtils.ImportSubtree(System.Xml.Linq.XElement,System.Xml.Linq.XElement)">
+            <summary>
+            Merge in elements and attributes. New child elements and new attibutes are imported to the source. Conflicts are ignored (not merged).
+            </summary>
+            <param name="source">the structure to add new elements and attributes to</param>
+            <param name="toBeImported">what to import</param>
+            <returns>The modified source.</returns>
+        </member>
+        <member name="M:Composite.Core.Xml.XElementUtils.RemoveMatches(System.Xml.Linq.XElement,System.Xml.Linq.XElement)">
+            <summary>
+            Removes atributes and child elements from source which match ditto 100% in tatoBeExcludedget. Elements in source which has other child elements or attributes are not removed.
+            </summary>
+            <param name="source">XElement to modify</param>
+            <param name="toBeExcluded">what to locate and remove</param>
+            <returns>The modified source.</returns>
         </member>
         <member name="T:Composite.Core.Xml.XhtmlWriterExtensions">
             <summary>
@@ -10451,73 +10569,6 @@
             </summary>
             <exclude />
         </member>
-        <member name="T:Composite.C1Console.Security.EntityToken">
-            <summary>
-            When subclassing this class and adding properties that have an impack when identity (equiallity)
-            of the subclass, remember to overload Equal and GetHashCode!
-            </summary>
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.IsValid">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.Serialize">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.DoSerialize(System.Text.StringBuilder)">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.DoSerialize">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.DoDeserialize(System.String,System.String@,System.String@,System.String@)">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.DoDeserialize(System.String,System.String@,System.String@,System.String@,System.Collections.Generic.Dictionary{System.String,System.String}@)">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.GetPrettyHtml(System.Collections.Generic.Dictionary{System.String,System.String})">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.OnGetTypePrettyHtml">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.OnGetSourcePrettyHtml">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.OnGetIdPrettyHtml">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.OnGetExtraPrettyHtml">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.OnGetPrettyHtml(Composite.C1Console.Security.EntityTokenHtmlPrettyfier)">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.Equals(System.Object)">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.Equals(Composite.C1Console.Security.EntityToken)">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.GetHashCode">
-            <exclude />
-        </member>
-        <member name="M:Composite.C1Console.Security.EntityToken.ToString">
-            <exclude />
-        </member>
-        <member name="P:Composite.C1Console.Security.EntityToken.Type">
-            <exclude />
-        </member>
-        <member name="P:Composite.C1Console.Security.EntityToken.Source">
-            <exclude />
-        </member>
-        <member name="P:Composite.C1Console.Security.EntityToken.Id">
-            <exclude />
-        </member>
-        <member name="P:Composite.C1Console.Security.EntityToken.HashCode">
-            <exclude />
-        </member>
         <member name="M:Composite.C1Console.Actions.Workflows.EntityTokenLockedEntityToken.#ctor(System.String,System.String,System.String)">
             <exclude />
         </member>
@@ -10767,6 +10818,45 @@
         </member>
         <member name="P:Composite.Data.Validation.Validators.NullIntegerRangeValidatorAttribute.UpperBound">
             <exclude />
+        </member>
+        <member name="T:Composite.Functions.FunctionAttribute">
+            <summary>
+            Adds a desctiotion about a C1 Function.
+            
+            Different C1 Function providers let developers create new C1 Functions by creating artifacts like static funtions in C#,
+            Razor Web Pages, User Controls etc. These C1 Functions can have descriptions and this attribute let you control this
+            description.
+            
+            The use of this attribute is relative to the C1 Function provider being used.
+            </summary>
+            <example>
+            Here is an example of how to use <see cref="T:Composite.Functions.FunctionAttribute"/>:
+            <code>
+            [Function(Description="The description goes here")]
+            public static int GetItemCount() 
+            { 
+                // more code here
+            }
+            </code>
+            </example>
+            <example>
+            Here is an example of how to use <see cref="T:Composite.Functions.FunctionAttribute"/> to annotate a class:
+            <code>
+            [FunctionParameter(Label="Item count", DefaultValue=10)]
+            public int ItemCount { get; set; } 
+            </code>
+            Note that <see cref="P:Composite.Functions.FunctionParameterAttribute.Name"/> is not expected when <see cref="T:Composite.Functions.FunctionParameterAttribute"/> is used this way.
+            </example>
+        </member>
+        <member name="M:Composite.Functions.FunctionAttribute.#ctor">
+            <summary>
+            Describe a function for use in the C1 Function system. 
+            </summary>
+        </member>
+        <member name="P:Composite.Functions.FunctionAttribute.Description">
+            <summary>
+            The description of the function.
+            </summary>
         </member>
         <member name="T:Composite.Functions.FunctionParameterAttribute">
             <summary>
@@ -16494,12 +16584,14 @@
         </member>
         <member name="M:Composite.Data.DynamicTypes.DynamicTypeManager.EnsureCreateStore(System.Type)">
             <summary>
+            For internal use only!!!
             This method will create the store if the interfaceType has not been configured.
             </summary>
             <param name="interfaceType"></param>
         </member>
         <member name="M:Composite.Data.DynamicTypes.DynamicTypeManager.EnsureCreateStore(System.Type,System.String)">
             <summary>
+            For internal use only!!!
             This method will create the store if the interfaceType has not been configured.
             </summary>
             <param name="interfaceType"></param>
@@ -21649,6 +21741,9 @@
         <member name="P:Composite.Plugins.Forms.WebChannel.UiControlFactories.DateTimeSelectorTemplateUserControlBase.ReadOnly">
             <exclude />
         </member>
+        <member name="P:Composite.Plugins.Forms.WebChannel.UiControlFactories.DateTimeSelectorTemplateUserControlBase.ShowHours">
+            <exclude />
+        </member>
         <member name="P:Composite.Plugins.Forms.WebChannel.UiControlFactories.DateTimeSelectorTemplateUserControlBase.FormControlLabel">
             <exclude />
         </member>
@@ -23887,30 +23982,60 @@
             <exclude />
         </member>
         <member name="T:Composite.Core.Xml.XhtmlDocument">
-            <summary>    
+            <summary>
+            Represents an XHTML Document inside Composite C1. 
+            
+            This structure can contain both head elements and body elements (content) and XhtmlDocuments that are being rendered
+            can be nested within each other. The Composite C1 core will normalize such a nested structure when rendering a page, ensuring head elementsa flow to the top level
+            document and body content is left, ultimately yielding one complete and correctly structured xhtml page.
             </summary>
-            <exclude />
         </member>
         <member name="M:Composite.Core.Xml.XhtmlDocument.#ctor">
-            <exclude />
+            <summary>
+            Constructs an empty XhtmlDocument
+            </summary>
         </member>
         <member name="M:Composite.Core.Xml.XhtmlDocument.#ctor(System.Xml.Linq.XElement)">
-            <exclude />
+            <summary>
+            Constructs a XhtmlDocument based on an existing html element
+            </summary>
+            <param name="htmlElement">Existing html element the XhtmlDocument should be cloned from</param>
         </member>
         <member name="M:Composite.Core.Xml.XhtmlDocument.#ctor(System.Xml.Linq.XDocument)">
-            <exclude />
+            <summary>
+            Constructs a XhtmlDocument based on an existing XDocument
+            </summary>
+            <param name="other">Existing XDocument instance the XhtmlDocument should be cloned from</param>
         </member>
         <member name="M:Composite.Core.Xml.XhtmlDocument.Parse(System.String)">
-            <exclude />
+            <summary>
+            Parses a serialized xhtml document and returns XhtmlDocument.
+            </summary>
+            <param name="xhtml">xhtml to parse.</param>
+            <returns>XhtmlDocument representing the supplied string</returns>
         </member>
         <member name="M:Composite.Core.Xml.XhtmlDocument.Parse(System.String,System.Xml.Linq.LoadOptions)">
-            <exclude />
+            <summary>
+            Parses a serialized xhtml document and returns XhtmlDocument.
+            </summary>
+            <param name="xhtml">xhtml to parse.</param>
+            <param name="options">This parameter is here for informative purposes - only LoadOptions.None is accepted, since anything else is a change to the DOM and a breeding ground for bugs</param>
+            <returns>XhtmlDocument representing the supplied string</returns>
         </member>
         <member name="P:Composite.Core.Xml.XhtmlDocument.Head">
-            <exclude />
+            <summary>
+            The head element for the XHTML Document
+            </summary>
         </member>
         <member name="P:Composite.Core.Xml.XhtmlDocument.Body">
-            <exclude />
+            <summary>
+            The body element for the XHTML Document
+            </summary>
+        </member>
+        <member name="P:Composite.Core.Xml.XhtmlDocument.IsEmpty">
+            <summary>
+            Returns true if the XhtmlDocument has empty head and body sections.
+            </summary>
         </member>
         <member name="T:Composite.Functions.BaseParameterRuntimeTreeNode">
             <summary>    
