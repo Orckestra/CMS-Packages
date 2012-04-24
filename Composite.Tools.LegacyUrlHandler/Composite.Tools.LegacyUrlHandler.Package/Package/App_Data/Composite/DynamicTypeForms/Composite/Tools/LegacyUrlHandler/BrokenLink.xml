@@ -13,11 +13,11 @@
 			<cms:read source="BadURL" />
 		</cms:layout.label>
 		<FieldGroup>
-			<TextBox Label="Bad URL" Help="" Type="ReadOnly">
-				<TextBox.Text>
+			<TextArea Label="Bad URL" Help="" Type="ReadOnly">
+				<TextArea.Text>
 					<cms:bind source="BadURL" />
-				</TextBox.Text>
-			</TextBox>
+				</TextArea.Text>
+			</TextArea>
 			<TextArea Label="Referer" Help="" Type="ReadOnly">
 				<TextArea.Text>
 					<cms:bind source="Referer" />

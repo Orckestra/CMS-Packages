@@ -27,6 +27,7 @@ namespace Composite.Tools.LegacyUrlHandler
 		private void ErrorHandler(object sender, EventArgs eventArgs)
 		{
 			var application = (HttpApplication)sender;
+
 			try
 			{
 				// Gather information

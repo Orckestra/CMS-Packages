@@ -18,6 +18,7 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 
 		public static XhtmlDocument SaveBrokenLink()
 		{
+
 			var request = HttpContext.Current.Request;
 
 			// ignore if referer is empty
@@ -31,7 +32,7 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 			using (var dataConnection = new DataConnection())
 			{
 				var sitemapNavigator = new SitemapNavigator(dataConnection);
-				if (request.RawUrl.Equals(sitemapNavigator.CurrentPageNode.Url))
+				if (sitemapNavigator.CurrentPageNode != null && request.RawUrl.Equals(sitemapNavigator.CurrentPageNode.Url))
 					return null;
 			}
 			var referer = (request.UrlReferrer == null) ? "" : request.UrlReferrer.ToString();
@@ -73,6 +74,7 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 					conn.Update<BrokenLink>(item);
 				}
 			}
+
 			return null;
 		}
 
