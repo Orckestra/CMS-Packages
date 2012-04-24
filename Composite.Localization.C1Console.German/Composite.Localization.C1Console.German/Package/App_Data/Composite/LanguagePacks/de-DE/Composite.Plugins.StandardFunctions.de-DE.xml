@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<string key="Composite.AspNet.LoadUserControl.description" value="Lädt ein ASP.NET User Control" />
+	
+
+	<string key="Composite.AspNet.LoadUserControl.param.Path.label" value="Weg" />
+	<string key="Composite.Constant.Boolean.description" value="Hiermit können Sie festlegen konstant boolean Wert" />
+	<string key="Composite.Constant.Boolean.param.Constant.help" value="" />
+	
+
+	
+
+	<string key="Composite.Constant.DateTime.param.Constant.help" value="" />
+	
+
+	
+
+	<string key="Composite.Constant.Decimal.param.Constant.help" value="" />
+	
+
+	
+
+	<string key="Composite.Constant.Guid.param.Constant.help" value="" />
+	
+
+	
+
+	<string key="Composite.Constant.Integer.param.Constant.help" value="" />
+	
+
+	
+
+	<string key="Composite.Constant.String.param.Constant.help" value="" />
+	
+
+	
+
+	<string key="Composite.Constant.XhtmlDocument.param.Constant.help" value="" />
+	
+
+
+	
+
+	
+
+	<string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.help" value="" />
+	
+
+	
+
+	<string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.label" value="Daten Reference" />
+	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Hiermit können Sie Daten basierend auf den Verweis auf das aktuell gerenderte Seite." />
+	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.help" value="Wählen Sie, was gegenüber der aktuellen Seite müssen mit den Daten die Sie abrufen möchten haben." />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.IDataGenerated.GetXml.param.ElementNamespace.label" value="Element-Namensraum" />
+	<string key="Composite.IDataGenerated.GetXml.param.Filter.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	<string key="Composite.Utils.Compare.AreEqual.param.ValueB.help" value="" />
+	
+
+	<string key="Composite.Utils.Compare.IsLessThan.description" value="" />
+	<string key="Composite.Utils.Compare.IsLessThan.param.ValueA.help" value="" />
+	
+
+	<string key="Composite.Utils.Compare.IsLessThan.param.ValueB.help" value="" />
+	
+
+	<string key="Composite.Utils.Configuration.AppSettingsValue.description" value="Liest einen String aus der Konfigurationsdatei der Anwendung (web.config oder app.config)" />
+	<string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.help" value="" />
+	<string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.label" value="Key Name" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Utils.Integer.Sum.param.Ints.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.BoolEquals.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.DecimalEquals.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.GuidEquals.param.Value.help" value="" />
+	
+
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	<string key="Composite.Utils.Predicates.IntegerEquals.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.StringContains.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.StringEndsWith.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.StringEquals.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.StringStartsWith.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.help" value="" />
+	
+
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.help" value="" />
+	
+
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.help" value="" />
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.help" value="" />
+	
+
+	
+
+	
+
+	<string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.help" value="" />
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Utils.Validation.DateTimeNotNullValidation.description" value="" />
+	<string key="Composite.Utils.Validation.DecimalNotNullValidation.description" value="" />
+	
+
+	
+
+	
+
+	<string key="Composite.Utils.Validation.GuidNotNullValidation.description" value="" />
+	<string key="Composite.Utils.Validation.Int32NotNullValidation.description" value="" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Utils.Validation.StringLengthValidation.param.max.help" value="" />
+	
+
+	<string key="Composite.Utils.Validation.StringLengthValidation.param.min.help" value="" />
+	
+
+	<string key="Composite.Utils.Validation.StringNotNullValidation.description" value="" />
+	<string key="Composite.Web.Client.BrowserPlatform.description" value="" />
+	<string key="Composite.Web.Client.BrowserString.description" value="" />
+	<string key="Composite.Web.Client.BrowserType.description" value="" />
+	<string key="Composite.Web.Client.BrowserVersion.description" value="" />
+	<string key="Composite.Web.Client.EcmaScriptVersion.description" value="" />
+	<string key="Composite.Web.Client.IsCrawler.description" value="True, wenn die aktuelle Anforderung identifiziert wird, als von einem Crawler (Suchmaschinen)." />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.help" value="" />
+	
+
+	<string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	<string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.help" value="" />
+	
+
+	<string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	<string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.help" value="" />
+	
+
+	<string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	<string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.help" value="" />
+	
+
+	<string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	<string key="Composite.Web.Request.FormPostValue.param.FallbackValue.help" value="" />
+	
+
+	<string key="Composite.Web.Request.FormPostValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	<string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.help" value="" />
+	
+
+	<string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	<string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.help" value="" />
+	
+
+	<string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	<string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.help" value="" />
+	
+
+	<string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	<string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.help" value="" />
+	
+
+	<string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	<string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.help" value="" />
+	
+
+	<string key="Composite.Web.Request.QueryStringValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Web.Request.PathInfo.param.FallbackValue.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Web.Request.SessionVariable.param.VariableName.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+
+	
+
+	<string key="Composite.Web.Response.SetSessionVariable.param.Value.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Web.Server.ApplicationVariable.param.VariableName.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<string key="Composite.Xml.LoadUrl.param.Url.help" value="" />
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</strings>

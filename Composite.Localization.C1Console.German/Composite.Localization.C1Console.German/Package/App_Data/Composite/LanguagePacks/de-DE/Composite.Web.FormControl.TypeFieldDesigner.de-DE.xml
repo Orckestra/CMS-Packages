@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<strings>
+  <string key="BasicTabLabel" value="Standard" />
+  <string key="AdvancedTabLabel" value="Erweitert" />
+
+  <string key="AddNewButtonLabel" value="Hinzufügen" />
+  <string key="DeleteButtonLabel" value="Löschen" />
+  <string key="LabelDataTypeFields" value="Datentypfelder" />
+  
+  <string key="FieldDetailsGroupLabel" value="Feldeigenschaften" />
+  <string key="Name" value="Name" />
+  <string key="NameHelp" value="Der Name des Feldes wird durch das System verwendet, um dieses zu identifizieren. Namen müssen eindeutig sein und dürfen keine Leerzeichen und andere Sonderzeichen enthalten. Verwenden Sie Namen wie 'Titel', 'StartDate', 'LargeImage' usw." />
+  <string key="Label" value="Bezeichnung" />
+  <string key="LabelHelp" value="DieBezeichnung wird den Nutzern beim Hinzufügen eines auf diesem Datentyp basierenden Elements angezeigt." />
+  <string key="Help" value="Hilfe" />
+  <string key="HelpHelp" value="Verwenden Sie diesen Eintrag für einen kurzen Hilfetext." />
+
+  <string key="FieldTypeGroupLabel" value="Feldtyp und Anforderungen" />
+  <string key="FieldType" value="Feldtyp" />
+  <string key="FieldTypeHelp" value="Wählen Sie einen Datentyp für das Feld. Der Datentyp bestimmt, welche Daten das Feld enthalten kann." />
+  <string key="System.String" value="String" />
+  <string key="System.Int32" value="Ganze Zahl" />
+  <string key="System.Decimal" value="Dezimalzahl" />
+  <string key="System.DateTime" value="Datum &amp; Uhrzeit" />
+  <string key="System.Boolean" value="Boolean" />
+  <string key="System.Guid" value="Eindeutiger Bezeichner (GUID)" />
+  <string key="Reference" value="Datenreferenz" />
+  <string key="TypeDetailsHelp" value="Verwenden Sie dieses Feld für die weitere Konfiguration Ihres gewählten Typs." />
+  <string key="Optional" value="Optional" />
+  <string key="OptionalHelp" value="Optionale Felder können leer gelassen werden." />
+  <string key="OptionalFalseLabel" value="Nein" />
+  <string key="OptionalTrueLabel" value="Ja" />
+  <string key="ValidationRules" value="Validierungsregeln" />
+  <string key="ValidationRulesHelp" value="Sie können strenge Regeln für die Daten, die in dieses Feld eingegeben werden, definieren. Beispiel:  &quot;mindestens 5 Zeichen lang&quot;, &quot;muss eine gültige E-Mail-Adresse sein&quot;, &quot;muss ein Datum in der Vergangenheit sein&quot;, etc." />
+  <string key="ValidationRulesAdd" value="Validierungsregeln hinzufügen..." />
+  <string key="ValidationRulesEdit" value="Validierungsregeln bearbeiten" />
+  <string key="ValidationRulesDialogLabel" value="Konfiguration der Feldvalidierungsregeln" />
+
+  
+  <string key="FieldValidationGroupLabel" value="Feldvalidierung" />
+  <string key="FieldPresentationGroupLabel" value="Formularfelddarstellung" />
+  <string key="FieldStructureGroupLabel" value="Strukturelle Darstellung" />
+  
+  <string key="Widget" value="Widget-Typ" />
+  <string key="WidgetHelp" value="Sie können auswählen, welche Art von Eingabe-Widgets (wie eine Textbox) beim Bearbeiten dieses Feldes verwendet werden soll." />
+  <string key="WidgetDialogLabel" value="Feld-Widget-Konfiguration" />
+  <string key="Position" value="Position" />
+  <string key="PositionLast" value="Letzte" />
+  <string key="PositionHelp" value="Die Position des Feldes. Dies steuert die Reihenfolge der Felder." />
+  <string key="GroupByPriority" value="Gruppierung von Feldern" />
+  <string key="GroupByPriorityNone" value="Keine Gruppierung" />
+  <string key="GroupByPriorityFirst" value="Nach diesem Feld gruppieren" />
+  <string key="GroupByPriorityN" value="Gruppieren als {0}. Priorität" />
+  <string key="GroupByPriorityHelp" value="Sie können angeben, dass ein Feld zum Gruppieren von Daten verwendet werden soll - dies kann die Lesbarkeit bei der Anzeige von langen Listen verbessern. Verwenden Sie Priorität, wenn mehrere Felder zur Gruppierung benutzt werden." />
+  <string key="IsTitleField" value="Ist Titelfeld" />
+  <string key="IsTitleFieldHelp" value="Aktivieren Sie diese Option, wenn Sie dieses Feld als Titelfeld verwenden möchten. Titelfelder werden beim Auflisten von Daten verwendet, wie in der Baumstruktur auf der linken Seite." />
+  <string key="IsTitleFieldLabel" value="Verwenden Sie dies als Titelfeld in Listen" />
+
+  
+  <string key="DefaultValueGroupLabel" value="Standardwert des Feldes" />
+  <string key="DefaultValue" value="Standardwert" />
+  <string key="DefaultValueHelp" value="Sie können einen Standardwert für dieses Feld definieren." />
+  <string key="DefaultValueDialogLabel" value="Standardwert-Konfiguration für das Feld" />
+
+  <string key="StringMaximumLength" value="Maximale Länge des Strings" />
+  <string key="16CharMax" value="Maximal 16 Zeichen" />
+  <string key="32CharMax" value="Maximal 32 Zeichen" />
+  <string key="64CharMax" value="Maximal 64 Zeichen" />
+  <string key="128CharMax" value="Maximal 128 Zeichen" />
+  <string key="256CharMax" value="Maximal 256 Zeichen" />
+  <string key="512CharMax" value="Maximal 512 Zeichen" />
+  <string key="1024CharMax" value="Maximal 1024 Zeichen" />
+  <string key="Unlimited" value="Unbegrenzte Länge" />
+  
+  <string key="DecimalNumberFormat" value="Dezimalzahlformat" />
+  <string key="1DecimalPlace" value="1 Dezimalstelle" />
+  <string key="2DecimalPlace" value="2 Dezimalstellen" />
+  <string key="3DecimalPlace" value="3 Dezimalstellen" />
+  <string key="4DecimalPlace" value="4 Dezimalstelle" />
+  
+  <string key="ReferenceType" value="Referenztyp" />
+  
+  <string key="FieldNameSyntaxInvalid" value="Der angegebene Name ist ungültig." />
+  <string key="CannotSave" value="Kann nicht gespeichert werden ... Ein anderes Feld hat den gleichen Namen. Bitte den Namen ändern." />
+
+  <string key="SpaceInNameError" value="Ungültiger Name. Datenfeld-Namen dürfen keine Leerzeichen enthalten. Sie können einen lesbaren Namen in das Feld Bezeichnung unten eingeben." />
+  <string key="NameEmptyError" value="Datenfeld-Namen können nicht leer sein. Bitte geben Sie einen Namen ein." />
+  <string key="NameAlreadyInUseError" value="Ein anderes Feld verwendet diesen Namen. Datenfeld-Namen müssen eindeutig sein." />
+  <string key="NotAnOptionalTypeError" value="Der ausgewählte Typ darf nicht optional sein." />
+  <string key="NoWidgetSelected" value="Denken Sie daran, ein Widget zu definieren ..." />
+  <string key="NoWidgetSelectedLabel" value="(Kein Widget angegeben)" />
+</strings>
+
+
+

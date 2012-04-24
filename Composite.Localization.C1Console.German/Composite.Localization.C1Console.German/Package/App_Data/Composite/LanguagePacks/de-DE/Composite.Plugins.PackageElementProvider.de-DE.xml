@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootFolderLabel" value="Pakete" />
+  <string key="RootFolderToolTip" value="Verwalten installierter Pakete" />
+  <string key="AvailablePackagesFolderLabel" value="Verfügbare Pakete" />
+  <string key="AvailablePackagesFolderToolTip" value="Verfügbare Pakete" />
+  <string key="InstalledPackageFolderLabel" value="Installierte Pakete" />
+  <string key="InstalledPackageFolderToolTip" value="Installierte Pakete" />
+  <string key="LocalPackagesFolderLabel" value="Lokale Pakete" />
+  <string key="LocalPackagesFolderToolTip" value="Lokale Pakete" />
+  <string key="PackageSourcesFolderLabel" value="Paketquellen" />
+  <string key="PackageSourcesFolderToolTip" value="Paketquellen" />
+  <string key="ViewAvailableInformationLabel" value="Paketinformationen" />
+  <string key="ViewAvailableInformationToolTip" value="Paketinformationen anzeigen" />
+  <string key="ViewInstalledInformationLabel" value="Paketinformationen" />
+  <string key="ViewInstalledInformationToolTip" value="Paketinformationen anzeigen" />
+  <string key="InstallLocalPackageLabel" value="Lokales Paket installieren" />
+  <string key="InstallLocalPackageToolTip" value="Paket aus dem lokalen Dateisystem installieren" />
+  <string key="AddPackageSourceLabel" value="Paketquelle hinzufügen" />
+  <string key="AddPackageSourceToolTip" value="Paketquelle hinzufügen" />
+  <string key="DeletePackageSourceLabel" value="Paketquelle löschen" />
+  <string key="DeletePackageSourceToolTip" value="Paketquelle löschen" />
+  <string key="ClearServerCacheLabel" value="Cache löschen" />
+  <string key="ClearServerCacheToolTip" value="Cache löschen, um die neuesten Pakete zu erhalten" />
+  <string key="ViewAvailableInformation.FieldGroupLabel" value="Paketinformationen" />
+  <string key="ViewAvailableInformation.NameTextLabel" value="Name" />
+  <string key="ViewAvailableInformation.DescriptionTextLabel" value="Beschreibung" />
+  <string key="ViewAvailableInformation.AuthorTextLabel" value="Autor" />
+
+  <string key="ViewAvailableInformation.TrialInfoFieldGroupLabel" value="Kostenlose Testversion (Informationen)" />
+  <string key="ViewAvailableInformation.TrialInformationLabel" value="Testversion (Informationen)" />
+  <string key="ViewAvailableInformation.TrialInformationText" value="Dies ist ein kommerzielles Paket, das Sie kostenlos während der Probezeit ausprobieren können. Wenn die Probezeit abgelaufen ist, wird die Funktionalität eingeschränkt, bis Sie eine Lizenz erwerben." />
+  <string key="ViewAvailableInformation.TrialDaysLabel" value="Kostenlose Probezeit (Tage)" />
+
+
+  <string key="ViewAvailableInformation.InstallationInfoFieldGroupLabel" value="Installationsinformationen" />
+  <string key="ViewAvailableInformation.VersionTextLabel" value="Version" />
+  <string key="ViewAvailableInformation.TechicalDescriptionTextLabel" value="Technische Beschreibung" />
+  <string key="ViewAvailableInformation.PackageSourceTextLabel" value="Quelle" />
+
+
+  <string key="ViewAvailableInformation.PriceTextLabel" value="Preis (USD)" />
+  <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="Installieren" />
+  <string key="ViewAvailableInformation.Toolbar.ReadMoreLabel" value="Lesen Sie mehr" />
+  <string key="ViewAvailableInformation.ShowError.MessageTitle" value="Bereits installiert" />
+  <string key="ViewAvailableInformation.ShowError.MessageMessage" value="Das Paket ist bereits installiert - ausgewähltes Paket kann nicht installiert werden." />
+  <string key="ViewAvailableInformation.ShowServerError.MessageTitle" value="Paketserver antwortet nicht" />
+  <string key="ViewAvailableInformation.ShowServerError.MessageMessage" value="Das Paketserver reagierte nicht - versuchen Sie es erneut oder kontaktieren Sie den Systemadministrator" />
+  <string key="ViewInstalledInformation.FieldGroupLabel" value="Paketinformationen" />
+  <string key="ViewInstalledInformation.NameTextLabel" value="Name" />
+  <string key="ViewInstalledInformation.DateTextLabel" value="Installationsdatum" />
+  <string key="ViewInstalledInformation.UserTextLabel" value="Installiert von" />
+  <string key="ViewInstalledInformation.AuthorTextLabel" value="Autor" />
+  <string key="ViewInstalledInformation.VersionTextLabel" value="Version" />
+  <string key="ViewInstalledInformation.TrialInfoFieldGroupLabel" value="Testversion (Informationen)" />
+  <string key="ViewInstalledInformation.TrialInformationLabel" value="Testversion (Informationen)" />
+  <string key="ViewInstalledInformation.TrialInformationText" value="Dies ist ein kommerzielles Paket, das Sie kostenlos während der Probezeit ausprobieren können. Wenn die Probezeit abgelaufen ist, wird die Funktionalität eingeschränkt, bis Sie eine Lizenz erwerben." />
+  <string key="ViewInstalledInformation.TrialExpireLabel" value="Ablaufdatum der Testversion" />
+
+  <string key="ViewInstalledInformation.Toolbar.UninstallLabel" value="Deinstallieren" />
+  <string key="ViewInstalledInformation.Toolbar.PurchaseLabel" value="Kaufen!" />
+  <string key="ViewInstalledInformation.ShowError.MessageTitle" value="Bereits deinstalliert" />
+  <string key="ViewInstalledInformation.ShowError.MessageMessage" value="Das Paket ist bereits deinstalliert - das ausgewählte Paket kann nicht deinstalliert werden" />
+  <string key="InstallRemotePackage.Step1.LayoutLabel" value="Paket installieren" />
+  <string key="InstallRemotePackage.Step1.HeadingTitle" value="Dies ist eine Testversion" />
+  <string key="InstallRemotePackage.Step1.HeadingDescription" value="Dieses Paket ist kostenpflichtig - bitte prüfen Sie die EULA auf der nächsten Seite hinsichtlich Details zur Probezeit und Zahlungsbedingungen." />
+  <string key="InstallRemotePackage.Step2.LayoutLabel" value="Paket installieren" />
+  <string key="InstallRemotePackage.Step2.HeadingTitle" value="Lizenzvereinbarung" />
+  <string key="InstallRemotePackage.Step2.HeadingDescription" value="Wenn Sie die Bedingungen der Vereinbarung akzeptieren, klicken Sie auf das Kontrollkästchen unten. Sie müssen den Vertrag akzeptieren, um zu installieren." />
+  <string key="InstallRemotePackage.Step2.IAcceptItemLabel" value="Ich akzeptiere die Lizenzvereinbarung" />
+  <string key="InstallRemotePackage.Step2.AcceptMissing" value="Sie müssen die Bedingungen der Lizenzvereinbarung akzeptieren, bevor Sie fortfahren können." />
+  <string key="InstallRemotePackage.Step3.LayoutLabel" value="Paket installieren" />
+  <string key="InstallRemotePackage.Step3.HeadingTitle" value="Paket herunterladen und überprüfen" />
+  <string key="InstallRemotePackage.Step3.HeadingDescription" value="Das Paket wird heruntergeladen und überprüft. Bitte beachten Sie, dass dies einige Minuten dauern kann. Klicken Sie auf Weiter, um fortzufahren." />
+  <string key="InstallRemotePackage.Step4.LayoutLabel" value="Lokales Paket installieren" />
+  <string key="InstallRemotePackage.Step4.HeadingTitle" value="Bereit zur Installation" />
+  <string key="InstallRemotePackage.Step4.HeadingDescription" value="Bereit, das Paket zu installieren. Bitte beachten Sie, dass die Installation einige Minuten dauern kann. Klicken Sie auf Weiter, um fortzufahren." />
+  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingTitle" value="Bereit zur Installation" />
+  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingDescription" value="Bereit, das Paket zu installieren. Bitte beachten Sie, dass die Installation einige Minuten dauern kann. Beachten Sie auch, dass dieses Paket nicht deinstalliert werden kann. Klicken Sie auf Weiter, um fortzufahren." />
+  <string key="InstallRemotePackage.Step5.LayoutLabel" value="Paket installiert" />
+  <string key="InstallRemotePackage.Step5.HeadingTitle" value="Paket erfolgreich installiert" />
+  <string key="InstallRemotePackage.Step5.HeadingDescription" value="Paket erfolgreich installiert." />
+  <string key="InstallRemotePackage.ShowError.LayoutLabel" value="Paketinstallation fehlgeschlagen" />
+  <string key="InstallRemotePackage.ShowError.InfoTableCaption" value="Paketinstallation fehlgeschlagen" />
+  <string key="InstallRemotePackage.ShowError.MessageTitle" value="Nachricht" />
+  <string key="InstallRemotePackage.ShowWarning.LayoutLabel" value="Das Paket konnte nicht überprüft werden" />
+  <string key="InstallRemotePackage.ShowWarning.InfoTableCaption" value="Das Paket konnte nicht überprüft werden" />
+  <string key="InstallLocalPackage.Step1.LayoutLabel" value="Lokales Paket installieren" />
+  <string key="InstallLocalPackage.Step1.FieldGroupLabel" value="Pfad des lokalen Pakets" />
+  <string key="InstallLocalPackage.Step1.FileUploadLabel" value="Paketdatei" />
+  <string key="InstallLocalPackage.Step1.FileUploadHelp" value="Durchsuchen und wählen der lokalen Paketdatei" />
+  <string key="InstallLocalPackage.Step2.LayoutLabel" value="Lokales Paket installieren" />
+  <string key="InstallLocalPackage.Step2.HeadingTitle" value="Bereit zur Installation" />
+  <string key="InstallLocalPackage.Step2.HeadingDescription" value="Bereit, das Paket zu installieren. Bitte beachten Sie, dass die Installation einige Minuten dauern kann. Klicken Sie auf Weiter, um fortzufahren." />
+  <string key="InstallLocalPackage.Step3.LayoutLabel" value="Paket installiert" />
+  <string key="InstallLocalPackage.Step3.HeadingTitle" value="Paket erfolgreich installiert" />
+  <string key="InstallLocalPackage.Step3.HeadingDescription" value="Paket erfolgreich installiert." />
+  <string key="InstallLocalPackage.ShowError.LayoutLabel" value="Paketinstallation fehlgeschlagen" />
+  <string key="InstallLocalPackage.ShowError.InfoTableCaption" value="Paketinstallation fehlgeschlagen" />
+  <string key="InstallLocalPackage.ShowError.MessageTitle" value="Nachricht" />
+  <string key="InstallLocalPackage.ShowWarning.LayoutLabel" value="Das Paket konnte nicht überprüft werden" />
+  <string key="InstallLocalPackage.ShowWarning.InfoTableCaption" value="Das Paket konnte nicht überprüft werden" />
+  <string key="UninstallRemotePackage.Step1.LayoutLabel" value="Paket deinstallieren" />
+  <string key="UninstallRemotePackage.Step1.HeadingTitle" value="Bereit, um den Deinstallationsprozess zu prüfen" />
+  <string key="UninstallRemotePackage.Step1.HeadingDescription" value="Bereit, um die Deinstallation des Pakets zu überprüfen. Klicken Sie auf Weiter, um fortzufahren." />
+  <string key="UninstallRemotePackage.Step2.LayoutLabel" value="Paket deinstallieren" />
+  <string key="UninstallRemotePackage.Step2.HeadingTitle" value="Bereit zur Deinstallation" />
+  <string key="UninstallRemotePackage.Step2.HeadingDescription" value="Bereit, um das Paket zu deinstallieren. Bitte beachten Sie, dass die Deinstallation einige Minuten dauern kann. Klicken Sie auf Weiter, um fortzufahren." />
+  <string key="UninstallRemotePackage.Step3.LayoutLabel" value="Paket deinstalliert" />
+  <string key="UninstallRemotePackage.Step3.HeadingTitle" value="Paket erfolgreich deinstalliert" />
+  <string key="UninstallRemotePackage.Step3.HeadingDescription" value="Paket erfolgreich deinstalliert." />
+  <string key="UninstallRemotePackage.ShowError.LayoutLabel" value="Deinstallation des Pakets fehlgeschlagen" />
+  <string key="UninstallRemotePackage.ShowError.InfoTableCaption" value="Deinstallation des Pakets fehlgeschlagen" />
+  <string key="UninstallRemotePackage.ShowError.MessageTitle" value="Nachricht" />
+  <string key="UninstallRemotePackage.ShowUnregistre.LayoutLabel" value="Paket deinstallieren" />
+  <string key="UninstallRemotePackage.ShowUnregistre.HeadingTitle" value="Registrierung der Deinstallation fehlgeschlagen" />
+  <string key="UninstallRemotePackage.ShowUnregistre.HeadingDescription" value="Die Registrierung der Deinstallation ist fehlgeschlagen. Kontaktieren Sie den Hersteller des Pakets für die manuelle Aufhebung der Registrierung des Pakets." />
+  <string key="UninstallLocalPackage.Step1.LayoutLabel" value="Lokales Paket deinstallieren" />
+  <string key="UninstallLocalPackage.Step1.HeadingTitle" value="Bereit, um den Deinstallationsprozess zu prüfen" />
+  <string key="UninstallLocalPackage.Step1.HeadingDescription" value="Bereit, um die Deinstallation des Pakets zu überprüfen. Klicken Sie auf Weiter, um fortzufahren." />
+  <string key="UninstallLocalPackage.Step2.LayoutLabel" value="Lokales Paket deinstallieren" />
+  <string key="UninstallLocalPackage.Step2.HeadingTitle" value="Bereit zur Deinstallation" />
+  <string key="UninstallLocalPackage.Step2.HeadingDescription" value="Bereit, um das Paket zu deinstallieren. Bitte beachten Sie, dass die Deinstallation einige Minuten dauern kann. Klicken Sie auf Weiter, um fortzufahren." />
+  <string key="UninstallLocalPackage.Step3.LayoutLabel" value="Paket deinstalliert" />
+  <string key="UninstallLocalPackage.Step3.HeadingTitle" value="Paket erfolgreich deinstalliert" />
+  <string key="UninstallLocalPackage.Step3.HeadingDescription" value="Paket erfolgreich deinstalliert." />
+  <string key="UninstallLocalPackage.ShowError.LayoutLabel" value="Deinstallation des Pakets fehlgeschlagen" />
+  <string key="UninstallLocalPackage.ShowError.InfoTableCaption" value="Deinstallation des Pakets fehlgeschlagen" />
+  <string key="UninstallLocalPackage.ShowError.MessageTitle" value="Nachricht" />
+  <string key="AddPackageSource.Step1.LayoutLabel" value="Neue Paketquelle" />
+  <string key="AddPackageSource.Step1.FieldGroupLabel" value="Daten der Paketquelle" />
+  <string key="AddPackageSource.Step1.UrlLabel" value="Webservice-URL der Paketquelle" />
+  <string key="AddPackageSource.Step1.UrlHelp" value="Pakete können auf Remote-Servern gehostet werden. Die Webservice-URL wird im nächsten Schritt überprüft." />
+  <string key="AddPackageSource.Step1.UrlNotValid" value="Der eingegebene Text war keine gültige URL" />
+  <string key="AddPackageSource.Step1.UrlNonPackageServer" value="Der Server ist kein Composite-C1 Paketserver" />
+  <string key="AddPackageSource.Step2.LayoutLabel" value="Paketserverquelle hinzufügen" />
+  <string key="AddPackageSource.Step2.HeadingTitle" value="Server-URL ist gültig" />
+  <string key="AddPackageSource.Step2.HeadingNoHttpsDescription" value="Beachten Sie, dass das HTTP-Protokoll für diese Verbindung verwendet wird. Dies impliziert, dass alle Informationen unverschlüsselt gesendet werden. Klicken Sie auf Fertigstellen, um die Quelle hinzuzufügen." />
+  <string key="AddPackageSource.Step2.HeadingWithHttpsDescription" value="Klicken Sie auf Fertigstellen, um die Quelle hinzuzufügen." />
+  <string key="DeletePackageSource.Step1.LayoutLabel" value="Löschen bestätigen" />
+  <string key="DeletePackageSource.Step1.Text" value="Löschen Sie die ausgewählte Serverquelle" />
+
+  <string key="ConfirmLicense.ExpiredTitle" value="Probezeit ist abgelaufen" />
+  <string key="ConfirmLicense.ExpiredMessage" value="Die Probezeit des Pakets ist abgelaufen. Sie müssen eine gültige Lizenz zu erwerben." />
+</strings>

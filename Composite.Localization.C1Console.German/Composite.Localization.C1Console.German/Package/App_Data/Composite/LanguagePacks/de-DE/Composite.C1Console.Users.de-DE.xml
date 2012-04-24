@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+	<!-- change password -->
+	<string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Passwort ändern..." />
+	<string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Ändern Sie Ihr Passwort" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Passwort ändern" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="Ändern Sie Ihr Passwort" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Bestehendes Passwort" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="Aus Sicherheitsgründen müssen Sie zunächst Ihr altes Kennwort eingeben, bevor Sie fortfahren können." />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Neues Passwort" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="Das Passwort und die Passwortbestätigung müssen übereinstimmen." />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="Bestätigen Sie das neue Passwort" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="Das Passwort und die Passwortbestätigung müssen übereinstimmen." />
+
+	<!-- change culture -->
+	<string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Ländereinstellungen..." />
+	<string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Einstellen von Zahlenformat, Uhrzeit und Datum" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Länder- und Spracheinstellungen" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Länder- und Spracheinstellungen" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="Um die Anzeige von Zahlenformat, Uhrzeit und Datum zu ändern, wählen Sie einen Eintrag aus der Liste. Die Angabe auf der rechten Seite ist die Sprache der Benutzeroberfläche." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Label" value="C1-Konsole Sprache" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Help" value="Wählen Sie die Sprache für Etiketten verwendet werden, Hilfetexte, Dialoge etc. Die verfügbaren Optionen sind hier, um Sprachen installiert begrenzt. Sie können mehr Sprachen über das Package-System zu installieren, siehe Composite.Localization." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="Anwendungssprache ändern" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="Sind Sie sicher, dass Sie die Einstellungen ändern möchten? Die Anwendung wird neu gestartet und alle nicht gespeicherten Änderungen gehen verloren." />
+	<string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="Länder- und Spracheinstellungen" />
+	<string key="AdministratorAutoCreator.DefaultGroupName" value="Administratoren" />
+
+	<!-- change own active and foreign locale -->
+	<string key="ChangeForeignLocaleWorkflow.ActionLabel" value="Übersetzung ..." />
+	<string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="Quellsprache ändern" />
+	<string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="None" />
+	<string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="Übersetzung" />
+	<string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="Wählen Sie die Sprache, aus der Sie übersetzen wollen" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="Mehrere Sprachen sind nicht installiert" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="Zwei oder mehr Sprachen müssen installiert sein, um Übersetzungen zu unterstützen. Administratoren können weitere Sprachen in der 'System' Ansicht hinzuzufügen." />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="Ausgangssprache" />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Seiten, die in der Ausgangssprache erstellt wurden, werden durch Globus-Symbole markiert. Die zugehörige &quot;Seite übersetzen&quot; Aktion importiert die Seite in die aktuelle Arbeitssprache." />
+
+
+  <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="Die aktive Sprache wurde geändert" />
+</strings>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+	<string key="UserGroupElementProvider.RootLabel" value="Benutzergruppen" />
+  <string key="UserGroupElementProvider.RootToolTip" value="Benutzergruppen" />
+  <string key="UserGroupElementProvider.AddNewUserGroupLabel" value="Benutzergruppe hinzufügen..." />  
+  <string key="UserGroupElementProvider.AddNewUserGroupToolTip" value="Neue Benutzergruppe hinzufügen" />
+  <string key="UserGroupElementProvider.EditUserGroupLabel" value="Benutzergruppe bearbeiten" />
+  <string key="UserGroupElementProvider.EditUserGroupToolTip" value="Benutzergruppe bearbeiten" />
+  <string key="UserGroupElementProvider.DeleteUserGroupLabel" value="Benutzergruppe löschen" />
+  <string key="UserGroupElementProvider.DeleteUserGroupToolTip" value="Benutzergruppe löschen" />
+
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.LabelFieldGroup" value="Benutzergruppe hinzufügen" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameLabel" value="Name der Benutzergruppe" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameHelp" value="Der Name der neuen Benutzergruppe" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameAlreadyExists" value="Eine Benutzergruppe mit dem gleichen Namen ist bereits vorhanden" />
+
+  <string key="EditUserGroup.EditUserGroupStep1.LabelFieldGroup" value="Benutzergruppe bearbeiten" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameLabel" value="Name der Benutzergruppe" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameHelp" value="Der Name der Benutzergruppe" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameAlreadyExists" value="Eine Benutzergruppe mit dem gleichen Namen ist bereits vorhanden" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveFieldLabel" value="Ansichten" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectLabel" value="Ansichten" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectHelp" value="Wählen Sie, welche Ansichten der Benutzer sehen darf" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsFieldLabel" value="Globale Berechtigungen" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectLabel" value="Globale Berechtigungen" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectHelp" value="Die administrative Berechtigung gewährt dem Benutzer Zugriff auf die Verwaltung von Gruppenberechtigungen und andere administrative Aufgaben" />
+
+
+  
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersTitle" value="Benutzergruppe enthält Benutzer" />
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersMessage" value="Sie keine Benutzergruppe löschen, die Benutzer enthält" />
+  
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.LabelFieldGroup" value="Benutzergruppe löschen" />
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.Text" value="Ausgewählte Benutzergruppe löschen?" />
+</strings>

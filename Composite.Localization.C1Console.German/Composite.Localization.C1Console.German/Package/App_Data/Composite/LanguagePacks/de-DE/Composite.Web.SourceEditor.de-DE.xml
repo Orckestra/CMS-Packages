@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+	<!-- preload precaution -->
+	<string key="Preload.Key" value="Abgerufen am SourceEditorBinding Start, um sicherzustellen, dass die Strings geladen sind :)" />
+	
+	<!-- validation messages -->
+	<string key="Invalid.HTML.DialogTitle" value="Ungültiges XHTML" />
+	<string key="Invalid.HTML.MissingHtml" value="Der Root &lt;html&gt; Tag fehlt." />
+	<string key="Invalid.HTML.MissingHead" value="Der &lt;head&gt; Tag fehlt." />
+	<string key="Invalid.HTML.MissingBody" value="Der &lt;body&gt; Tag fehlt." />
+	<string key="Invalid.HTML.HeadBodyIndex" value="Der &lt;head&gt; Tag muss vor dem &lt;body&gt; Tag positioniert werden." />
+	<string key="Invalid.HTML.NamespaceURI" value="Der Root-Namespace ist falsch." />
+	<string key="Invalid.HTML.MultipleBody" value="Nur ein &lt;body&gt; Tag erlaubt." />
+	<string key="Invalid.HTML.MultipleHead" value="Nur ein &lt;head&gt; Tag erlaubt." />
+	
+	<string key="Format.XML.ErrorDialog.Title" value="Quell-Format abgebrochen" /> 
+	<string key="Format.XML.ErrorDialog.Text" value="XML Quellformatierung erfordert eine wohlgeformtes Dokumentstruktur." />
+	
+	<!-- plain/colored switch button -->
+	<string key="Switch.PlainEdit.Label" value="Plaintext Bearbeiten" />
+	<string key="Switch.PlainEdit.ToolTip" value="Kein Syntax-Highlightning, schnellere Leistung" />
+	<string key="Switch.ColoredEdit.Label" value="Farbig Bearbeiten" />
+	<string key="Switch.ColoredEdit.ToolTip" value="Syntax-Highlightning, langsamere Leistung" />
+
+  <!-- toolbar menus -->
+  <string key="Toolbar.Insert.Label" value="Einfügen" />
+  <string key="Toolbar.Format.Label" value="Format" />
+  <string key="Toolbar.Format.ToolTip" value="XML-Quelle formatieren" />
+  
+  <!-- insert dropdown -->
+	<string key="Insert.PageURL.Label" value="Seiten-URL" />
+	<string key="Insert.ImageURL.Label" value="Bild-URL" />
+	<string key="Insert.MediaURL.Label" value="Medien-URL" />
+	<string key="Insert.FrontendURL.Label" value="Frontend-URL" />
+	<string key="Insert.FunctionMarkup.Label" value="Funktions-Markup" />
+	
+</strings>

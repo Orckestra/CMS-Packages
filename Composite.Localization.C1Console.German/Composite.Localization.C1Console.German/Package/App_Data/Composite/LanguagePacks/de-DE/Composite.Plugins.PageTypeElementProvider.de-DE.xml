@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="PageType.Tree.Root.Label" value="Seitentypen" />
+  <string key="PageType.Tree.DefaultContentElement.Label" value="Standardinhalte (Platzhalter)" />
+  <string key="PageType.Tree.MetaDataFieldsElement.Label" value="Metadatenfelder" />
+  <string key="PageType.Tree.AddNewPageType.Label" value="Seitentyp hinzufügen" />
+  <string key="PageType.Tree.AddNewPageType.ToolTip" value="Neuen Seitentyp erstellen" />
+  <string key="PageType.Tree.EditPageType.Label" value="Seitentyp bearbeiten" />
+  <string key="PageType.Tree.EditPageType.ToolTip" value="Ausgewählten Seitentyp bearbeiten" />
+  <string key="PageType.Tree.DeletePageType.Label" value="Seitentyp löschen" />
+  <string key="PageType.Tree.DeletePageType.ToolTip" value="Ausgewählten Seitentyp löschen" />
+  <string key="PageType.Tree.AddDefaultPageContent.Label" value="Standardinhalt hinzufügen" />
+  <string key="PageType.Tree.AddDefaultPageContent.ToolTip" value="Hinzufügen des Standardinhalts für den Platzhalter" />
+  <string key="PageType.Tree.EditDefaultPageContent.Label" value="Standardinhalt bearbeiten" />
+  <string key="PageType.Tree.EditDefaultPageContent.ToolTip" value="Standardinhalt des Platzhalters bearbeiten" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.Label" value="Standardinhalt löschen" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.ToolTip" value="Standardinhalt löschen" />
+  <string key="PageType.Tree.AddMetaDataField.Label" value="Metadatenfeld hinzufügen" />
+  <string key="PageType.Tree.AddMetaDataField.ToolTip" value="Neues Metadatenfeld hinzufügen" />
+  <string key="PageType.Tree.EditMetaDataField.Label" value="Metadatenfeld bearbeiten" />
+  <string key="PageType.Tree.EditMetaDataField.ToolTip" value="Ausgewähltes Metadatenfeld bearbeiten" />
+  <string key="PageType.Tree.DeleteMetaDataField.Label" value="Metadatenfeld bearbeiten" />
+  <string key="PageType.Tree.DeleteMetaDataField.ToolTip" value="Ausgewähltes Metadatenfeld bearbeiten" />
+  <string key="PageType.AddNewPageTypeWorkflow.Layout.Label" value="Neuen Seitentyp hinzufügen" />
+  <string key="PageType.AddNewPageTypeWorkflow.FieldGroup.Label" value="Neue Seitentypeinstellung" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Label" value="Name" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Help" value="Der Name des neuen Seitentyps" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Label" value="Beschreibung" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Help" value="Die Beschreibung des neuen Seitentyps" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsPlaceHolder.Label" value="Einstellungen" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsFieldGroup.Label" value="Seitentypeinstellungen" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Label" value="Name" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Help" value="Der Name des Seitentyps" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Label" value="Beschreibung" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Help" value="Die Beschreibung des Seitentyps" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Label" value="Verfügbar" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Help" value="Wenn Sie dies deaktivieren, wird diese Seite auf keiner anderen Seite auswählbar sein" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Label" value="Voreinstellung Menütitel" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Help" value="Wenn diese Option aktivieren, wird ein Standardwert für den Menütitel auf Seiten voreingestellt" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Label" value="Standard Kind-Seitentyp" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Help" value="Wählen Sie einen Seitetyp als Standard für Kind-Seiten, die mit diesem Seitentyp erstellt werden" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.NoneSelectedLabel" value="[Keine]" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplatePlaceHolder.Label" value="Layout" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionFieldGroup.Label" value="Layout" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Label" value="Layout-Beschränkungen" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Help" value="Wählen Sie die Layouts, die bei der Bearbeitung von Seiten dieses Seitentyps zur Verfügung stehen sollen. Werden keine Layouts ausgewählt (Standard), werden alle zur Verfügung stehenden verwendet." />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Label" value="Standardlayout" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Help" value="Wählen Sie ein Standardlayout für Seiten, die basierend auf diesem Seitentyp erstellt werden" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.NoneSelectedLabel" value="[Keine]" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityPlaceHolder.Label" value="Verfügbarkeit" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityFieldGroup.Label" value="Verfügbarkeit" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Label" value="Homepage-Beziehung" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Help" value="Homepage-Beziehung" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.NoRestrictionLabel" value="Keine Einschränkungen" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlySubPagesLabel" value="Nur Unterseiten" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlyHomePagesLabel" value="Nur Homepages" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Label" value="Seitentyp Eltern-Beschränkung" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Help" value="Erlauben Sie nur diesen Seitentyp für Kind-Seiten mit den ausgewählten Seitentypen" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderApplicationPlaceHolder.Label" value="Datenordner / Anwendungen" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderFieldGroup.Label" value="Datenordner" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Label" value="Datenordner" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Help" value="Wählen Sie die Datenordner, die automatisch zu Seiten dieses Seitentyps hinzugefügt werden sollen" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationFieldGroup.Label" value="Anwendungen" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Label" value="Anwendungen" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Help" value="Wählen Sie die Anwendungen, die automatisch auf Seiten dieses Seitentyps hinzugefügt werden sollen" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.DefaultTemplateNotInRestrictions" value="Das Standardlayout ist keines der ausgewählten beschränkten Layouts" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.HomepageRelationConflictsWithParentRestrictions" value="Seitentyp-Eltern-Beschränkungen sind nicht nur für Homepages erlaubt" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Label" value="Diesen Seitentyp löschen?" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Messeage" value="Seitentyp {0} löschen?" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Label" value="Seitentyp in Verwendung" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Message" value="Der Seitentyp {0} ist in Verwendung und kann nicht gelöscht werden" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.Layout.Label" value="Standardinhalt hinzufügen" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.FieldGroup.Label" value="Platzhalter wählen" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Platzhalter-ID" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="Die ID des Platzhalters. Sie können eine nicht vorhandene ID verwenden und den Platzhalter später erstellen (durch Bearbeitung des Markups der Seitenvorlage)." />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Title" value="Keine Vorlagen mit {0}" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Message" value="Bitte beachten Sie, dass die Platzhalter-ID, die Sie angegeben haben '{0}' gegenwärtig in keiner Vorlage verwendet wird." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.Layout.Label" value="Standardinhalt bearbeiten" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsPlaceHolder.Label" value="Einstellungen" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsFieldGroup.Label" value="Platzhalter-Info" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Platzhalter-ID" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="Die ID des Platzhalters. Sie können eine nicht vorhandene ID verwenden und den Platzhalter später erstellen (durch Bearbeitung des Markups der Seitenvorlage)." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.ContentXhtmlEditor.Label" value="Inhalt" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.Layout.Label" value="Metadatenfeld hinzufügen" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="" />
+  <!-- "Metadata settings" - but too much text! -->
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Programmatischer Name" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="Der eindeutige Name des Metadatenfelds. Dieses kann später nicht mehr geändert werden!" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Mit Bezeichnung anzeigen" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Die Bezeichnung des Metadatenfelds. Wird in der UI verwendet." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Label" value="Metadaten-Typ" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Help" value="Der Metadaten-Typ" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Auf der Registerkarte anzeigen" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="Wählen Sie die Registerkarte, auf der die Metadaten angezeigt werden sollen, wenn Sie eine Seite bearbeiten." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.AddingDefaultMetaData.Title" value="Metadaten-Standardwerte hinzufügen" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Der Name des Feldes wird mit einem anderen Typ bereits verwendet." />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Label" value="Dieses Metadatenfeld löschen?" />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Message" value="Metadatenfeld {0} löschen? Warnung: alle bestehenden Metadaten-Elemente werden ebenfalls gelöscht" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.Layout.Label" value="Metadatenfeld bearbeiten" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="Metadatenfeld-Einstellungen" />
+  <!--<string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Name" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="The uniqueue name of the Metadata field" />-->
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Bezeichnung" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Die Bezeichnung des Metadatenfelds. Wird in der UI verwendet" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Registerkarte" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="Wählen Sie die Registerkarte, auf der die Metadaten beim Bearbeiten einer Seite angezeigt werden" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Der Metadatentyp wird an einem anderen Ort mit dem gleichen Namen aber einer anderen Bezeichnung verwendet" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataContainerChangeNotAllowed" value="Es existieren eine oder mehrere Definitionen mit dem gleichen Namen - ein Wechsel des Containers ist nicht erlaubt" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Title" value="Metadatentyp wurde gelöscht" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Message" value="Der Metadatentyp wurde aus dem System gelöscht und kann nicht länger Seitentypen hinzugefügt werden" />
+</strings>

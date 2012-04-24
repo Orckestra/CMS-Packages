@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="ElementProvider.RootFolderLabel" value="Sprachen" />
+  <string key="ElementProvider.RootFolderToolTip" value="Verwalten installierter Sprachen" />
+  <string key="ElementProvider.DefaultLabel" value="Default" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesTitle" value="Keine Sprachen verfügbar" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesMessage" value="Sie haben alle möglichen Sprachen installiert." />
+  <string key="AddSystemLocaleWorkflow.AddElementActionLabel" value="Sprache hinzufügen" />
+  <string key="AddSystemLocaleWorkflow.AddElementActionToolTip" value="Neue Sprache hinzufügen" />
+  <string key="AddSystemLocaleWorkflow.Dialog.Label" value="Sprache hinzufügen" />
+  <string key="AddSystemLocaleWorkflow.FieldGroup.Label" value="Wählen Sie eine Sprache" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Label" value="Sprachen" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Help" value="Liste der verfügbaren, nicht installierten Sprachen. Sprachpakete können für zusätzliche Optionen eingebaut werden." />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Label" value="URL-Mapping-Name" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Help" value="Dieser String wird in der URL von Seiten, die in einer bestimmten Sprache veröffentlicht wurden, eingefügt. Die Standardsprache der Website wird diesen Eintrag leer lassen." />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Label" value="Benutzerberechtigung" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.ItemLabel" value="Allen Benutzern Zugriff gewähren" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Help" value="Wenn aktiviert, wird die Sprache allen registrierten Benutzern zur Ansicht und Bearbeitung zur Verfügung gestellt werden" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="URL-Mapping-Name wird bereits verwendet" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionLabel" value="Sprache bearbeiten" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionToolTip" value="Sprache bearbeiten" />
+  <string key="EditSystemLocaleWorkflow.Dialog.Label" value="Sprache bearbeiten" />
+  <string key="EditSystemLocaleWorkflow.FieldGroup.Label" value="Eigenschaften der Sprache" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Label" value="URL-Mapping-Name" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Help" value="URL-Mapping-Name" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="URL-Mapping-Name wird bereits verwendet" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionLabel" value="Als Standard festlegen" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionToolTip" value="Als Standardsprache festlegen" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionLabel" value="Sprache entfernen" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionToolTip" value="Sprache entfernen" />
+  <string key="RemoveSystemLocaleWorkflow.Dialog.Label" value="Sprache entfernen?" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Title" value="Die letzte Sprache kann nicht entfernt werden" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Description" value="Sie sind dabei, eine Sprache zu entfernen, welche die einzige Sprache für einen oder mehrere Benutzer ist. Bitte fügen Sie weitere Sprachen für diese Benutzer hinzu und versuchen Sie es erneut." />
+  <string key="RemoveSystemLocaleWorkflow.Confirm.Description" value="Diese Sprache entfernen?" />
+</strings>

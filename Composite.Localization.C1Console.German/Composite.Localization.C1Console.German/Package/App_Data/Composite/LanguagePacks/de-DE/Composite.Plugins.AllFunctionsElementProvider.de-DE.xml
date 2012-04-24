@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderLabel" value="Alle Funktionen" />
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderToolTip" value="Alle Funktionen" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderLabel" value="Alle Widget Funktionen" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderToolTip" value="Alle Widget Funktionen" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentation" value="Dokumentation generieren" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentationTooltip" value="Dokumentation für alle Funktionen unterhalb dieses Ordners generieren" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformation" value="Information" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformationTooltip" value="Informationen über die Funktion anzeigen" />
+
+  <string key="FunctionTesterWorkflow.Layout.Label" value="Test: {0}" />
+  <string key="FunctionTesterWorkflow.FunctionCalls.Label" value="Funktionen" />  
+  <string key="FunctionTesterWorkflow.Preview.Label" value="Ergebnisse" />
+  <string key="FunctionTesterWorkflow.Runtime.FieldGroup.Label" value="Laufzeit" />
+  <string key="FunctionTesterWorkflow.DebugFieldGroup.Label" value="Einstellungen" />
+  <string key="FunctionTesterWorkflow.DebugPage.Label" value="Seite" />
+  <string key="FunctionTesterWorkflow.DebugPage.Help" value="Beim Ausführen der Funktion wird diese Seite als aktuellen Seite verwendet" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Label" value="Datascope" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Help" value="Beim Ausführen der Funktion wird dies als aktueller Datascope genutzt" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Label" value="Sprache" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Help" value="Beim Ausführen der Funktion wird dies als aktuelle Sprache verwendet" />
+  <string key="FunctionTesterWorkflow.AdminitrativeScope.Label" value="Administrativ" />
+  <string key="FunctionTesterWorkflow.PublicScope.Label" value="Öffentlich" />
+  
+
+  <string key="AllFunctionsElementProvider.FunctionTester.Label" value="Funktion testen" />
+  <string key="AllFunctionsElementProvider.FunctionTester.ToolTip" value="Funktion testen" />
+</strings>

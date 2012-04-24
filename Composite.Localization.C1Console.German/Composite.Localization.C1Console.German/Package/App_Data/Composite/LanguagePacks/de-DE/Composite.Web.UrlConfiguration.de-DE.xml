@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<!-- Element tree -->
+	<string key="Tree.ConfigurationElementLabel" value="URL-Konfiguration" />
+	<string key="Tree.ConfigurationElementEditLabel" value="URL-Konfiguration bearbeien" />
+	<string key="Tree.ConfigurationElementToolTip" value="Dieser Abschnitt ermöglicht die Konfiguration kürzer und freundlicher URLs" />
+	<string key="Tree.HostnamesFolderLabel" value="Hostnamen" />
+	<string key="Tree.HostnamesFolderToolTip" value="Hier können Sie einen Hostnamen einer Seite zuweisen" />
+	<string key="Tree.AddHostnameLabel" value="Hostnamen hinzufügen" />
+	<string key="Tree.UrlConfigurationLabel" value="URL-Konfiguration" />
+
+	<!-- Url configuration -->
+	<string key="UrlConfiguration.Title" value="URL-Konfiguration" />
+	<string key="UrlConfiguration.PageUrlSuffix.Label" value="Seiten-URL-Erweiterung" />
+	<string key="UrlConfiguration.PageUrlSuffix.Help" value="Eine Zeichenfolge, die für alle Seiten-URLs angehängt wird, z.B. .aspx oder .html. Wenn Sie dieses Feld leer lassen, werden erweiterunglose URLs erstellt." />
+
+	<!-- Hostname binding editing -->
+	<string key="HostnameBinding.AddNewHostnameTitle" value="Neuer Hostname" />
+	<string key="HostnameBinding.Hostname.Label" value="Hostname" />
+	<string key="HostnameBinding.Hostname.Help" value="Hostname, auf den die aktuellen URL-Regeln angewendet werden" />
+	<string key="HostnameBinding.Page.Label" value="Seite" />
+	<string key="HostnameBinding.Page.Help" value="Wurzel-Seite, welche die Standard-Seite für den aktuellen Hostnamen sein wird" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Label" value="URL" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.ItemLabel" value="Homepage-URL Titel einbeziehen" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Help" value="Legt fest, ob der Titel der Wurzel-Seite ein Teil der URL sein soll. Wenn Sie dies nicht auswählen, werden kürzere URLs erstellt." />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.ItemLabel" value="Ländercode-URL-Zuordnung einbeziehen" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.Help" value="Bestimmt, ob Ländercode sollte ein Teil einer URL sein soll" />
+	<string key="HostnameBinding.Custom404Page.Label" value="Benutzerdefinierte 404-Seite" />
+	<string key="HostnameBinding.Custom404Page.Help" value="URL, an welche die Anfragen weitergeleitet werden, die eine nicht existierende Seite anfordern" />
+	<string key="HostnameBinding.Aliases.Label" value="Alias-Hostnamen" />
+	<string key="HostnameBinding.Aliases.Help" value="Hostnamen aus denen alle Zugriffe auf die aktuellen Hostnamen umgeleitet werden." />
+</strings>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+  <!-- menus -->
+  <string key="Menu.ViewSource" value="Quelltext der Seite" />
+  <string key="ContextMenu.Back" value="Zurück" />
+  <string key="ContextMenu.Forward" value="Vor" />
+  <string key="ContextMenu.Refresh" value="Aktualisieren" />
+  <string key="ContextMenu.ViewSource" value="Seitenquelltext anzeigen" />
+
+
+  <!-- buttons -->
+	<string key="ToolBarButton.Back.ToolTip" value="Eine Seite zurück" />
+	<string key="ToolBarButton.Forward.ToolTip" value="Eine Seite vor" />
+	<string key="ToolBarButton.Refresh.ToolTip" value="Seite aktualisieren" />
+  <string key="ToolBarButton.Go.ToolTip" value="Gehen Sie auf die Adresse in der Adressleiste" />
+  <string key="ToolBarButton.Home.ToolTip" value="Gehen Sie zur Startseite" /> <!-- TODO: Show URL instead! -->
+	
+	<!-- URL errors -->
+	<string key="AddressBar.Invalid.DialogTitle.External" value="Zugriff verweigert" />
+	<string key="AddressBar.Invalid.DialogText.External" value="Externe URL kann nicht geladen werden." />
+	<string key="AddressBar.Invalid.DialogTitle.BadRequest" value="Ungültige URL" />
+	<string key="AddressBar.Invalid.DialogText.BadRequest" value="Die URL ist ungültig und kann nicht geladen werden." />
+	<string key="AddressBar.Invalid.DialogTitle.Unauthorized" value="Nicht autorisiert" />
+	<string key="AddressBar.Invalid.DialogText.Unauthorized" value="Sie sind nicht berechtigt, die Seite auf der angegebenen URL anzuzeigen." />
+	<string key="AddressBar.Invalid.DialogTitle.NotFound" value="Seite nicht gefunden" />
+	<string key="AddressBar.Invalid.DialogText.NotFound" value="Seite auf der angegebenen URL nicht gefunden." />
+	<string key="AddressBar.Invalid.DialogTitle.InternalError" value="Serverfehler" />
+	<string key="AddressBar.Invalid.DialogText.InternalError" value="Der Server hat einen Fehler auf der angegebenen URLgemeldet. Die Seite kann nicht geladen werden." />
+	<string key="AddressBar.Invalid.DialogTitle.Default" value="Seite nicht geladen" />
+	<string key="AddressBar.Invalid.DialogText.Default" value="Ein Fehler verhindert, dass die URL geladen werden kann." />	
+	
+</strings>
