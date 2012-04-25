@@ -87,10 +87,17 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 					conn.Get<BrokenLink>().Where(link => link.IsNotified == false).ToList();
 				var brokenLinksIPs = brokenLinks.Select(bl => bl.IP).Distinct().ToList();
 				if (!brokenLinksIPs.Any()) return;
+				if (!Config.RecipientEmails.Any())
+				{
+					Log.LogInformation("Composite.Tools.LegacyUrlHandler.Send404Mails", "There are no recipients. Check out Config.xml file.");
+					return;
+				}
 				var emailBody = new StringBuilder();
 				var siteHostName = new System.Uri(brokenLinks.First().BadURL).Host;
 				var emailSubject = string.Format("Broken links report at {0}", siteHostName);
+
 				var emailRecipients = Config.RecipientEmails.Aggregate((i, j) => i + ";" + j);
+
 				emailBody.AppendFormat(@"<h2>{0}</h2> <h3>BAD URLs grouped by IP:</h3>", emailSubject);
 
 				brokenLinksIPs.ForEach(ip =>
