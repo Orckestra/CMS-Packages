@@ -96,7 +96,7 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 				var siteHostName = new System.Uri(brokenLinks.First().BadURL).Host;
 				var emailSubject = string.Format("Broken links report at {0}", siteHostName);
 
-				var emailRecipients = Config.RecipientEmails.Aggregate((i, j) => i + ";" + j);
+				var emailRecipients = Config.RecipientEmails.Aggregate((i, j) => i + "; " + j);
 
 				emailBody.AppendFormat(@"<h2>{0}</h2> <h3>BAD URLs grouped by IP:</h3>", emailSubject);
 
@@ -118,7 +118,10 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 					emailBody.Append("</li></ul>");
 				});
 				emailBody.AppendFormat(@"<p style='font-size: 12px; color: silver;'>Email was sent to: {0}</p>", emailRecipients);
-				SendMail(emailRecipients, Config.FromEmail, emailSubject, emailBody.ToString());
+				Config.RecipientEmails.ForEach(recipient =>
+				{
+					SendMail(recipient, Config.FromEmail, emailSubject, emailBody.ToString());
+				});
 				conn.Update<BrokenLink>(brokenLinks);
 				Log.LogInformation("Composite.Tools.LegacyUrlHandler", "Broken URLs report was sent to " + emailRecipients);
 			}
