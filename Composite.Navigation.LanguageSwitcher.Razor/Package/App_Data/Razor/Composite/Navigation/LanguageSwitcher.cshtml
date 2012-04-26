@@ -1,5 +1,5 @@
-﻿@inherits CompositeC1Contrib.RazorFunctions.CompositeC1WebPage
-@using CompositeC1Contrib.RazorFunctions;
+﻿@inherits CompositeC1WebPage
+
 @using System.Globalization;
 @using Composite.Data;
 @using Composite.Data.Types;
@@ -7,22 +7,22 @@
 @description A Razor-based function that displays a menu for switching between pages in multiple languages on localized websites.
 @functions {
 	//// C1 Function parameters defined below...
-	[FunctionParameter("Mode", "HomePages: always the link to the home page; TranslatedPages: only the link to the current page if translated; TranslatedOrHomePages:  the link to the translated page if it exists; otherwise, to the home page", WidgetMarkup = "<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector' label='' bindingsourcename=''><f:helpdefinition helptext='' /><f:param name='Options'><f:function name='Composite.Utils.String.Split'><f:param name='String' value='HomePages,TranslatedPages,TranslatedOrHomePages' /></f:function></f:param></f:widgetfunction>")]
+	[FunctionParameter(Label="Mode", Help="HomePages: always the link to the home page; TranslatedPages: only the link to the current page if translated; TranslatedOrHomePages:  the link to the translated page if it exists; otherwise, to the home page", WidgetMarkup = "<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector' label='' bindingsourcename=''><f:helpdefinition helptext='' /><f:param name='Options'><f:function name='Composite.Utils.String.Split'><f:param name='String' value='HomePages,TranslatedPages,TranslatedOrHomePages' /></f:function></f:param></f:widgetfunction>")]
 	public string Mode { get; set; }
 
-	[FunctionParameter("Show Current", "Show the link to the current page (default)", true)]
+	[FunctionParameter(Label="Show Current", Help="Show the link to the current page (default)", DefaultValue=true)]
 	public bool ShowCurrent { get; set; }
 
-	[FunctionParameter("Navigation Id", "Attribute Id of DIV element", "LanguageSwitcher")]
+	[FunctionParameter(Label="Navigation Id", Help="Attribute Id of DIV element", DefaultValue="LanguageSwitcher")]
 	public string NavigationId { get; set; }
 
-	[FunctionParameter("Description", "This text will be displayed next to the menu links if any exists (blank, by default)", " ")]
+	[FunctionParameter(Label="Description", Help="This text will be displayed next to the menu links if any exists (blank, by default)", DefaultValue=" ")]
 	public string Description { get; set; }
 
-	[FunctionParameter("Format", "Select Format", "TwoLetterISOLanguageName", WidgetMarkup = "<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector' label='' bindingsourcename=''><f:helpdefinition helptext='' /><f:param name='Options'><f:function name='Composite.Utils.String.Split'><f:param name='String' value='DisplayName,EnglishName,Name,NativeName,ThreeLetterISOLanguageName,ThreeLetterWindowsLanguageName,TwoLetterISOLanguageName,Image,Empty' /></f:function></f:param></f:widgetfunction>")]
+	[FunctionParameter(Label="Format", Help="Select Format", DefaultValue="TwoLetterISOLanguageName", WidgetMarkup = "<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector' label='' bindingsourcename=''><f:helpdefinition helptext='' /><f:param name='Options'><f:function name='Composite.Utils.String.Split'><f:param name='String' value='DisplayName,EnglishName,Name,NativeName,ThreeLetterISOLanguageName,ThreeLetterWindowsLanguageName,TwoLetterISOLanguageName,Image,Empty' /></f:function></f:param></f:widgetfunction>")]
 	public string Format { get; set; }
 
-	[FunctionParameter("Include query in URL", "When true, path and query parts of the original URL will be included in the URL to other language versions. This is on by default.", true)]
+	[FunctionParameter(Label="Include query in URL", Help="When true, path and query parts of the original URL will be included in the URL to other language versions. This is on by default.", DefaultValue=true)]
 	public bool IncludeQuery { get; set; }
 
 	public enum SwitcherMode
