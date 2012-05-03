@@ -21,6 +21,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -68,6 +69,7 @@
     <Content Include="Dll\Composite.Generated.dll" />
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Composite\News\NewsItem.xml" />
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.News.xml" />
+    <Content Include="Package\App_Data\Xslt\Composite\News\ListToDetails.xsl" />
     <Content Include="Package\Bin\Composite.News.dll" />
     <Content Include="Package\Config\Install.xsl" />
     <Content Include="Package\Config\Uninstall.xsl" />
@@ -78,7 +80,6 @@
     <Content Include="_PackageCreator\Composite.News.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Package\App_Data\Xslt\Composite\News\Archive.xsl" />
     <Content Include="Package\App_Data\Xslt\Composite\News\Latest.xsl" />
     <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
