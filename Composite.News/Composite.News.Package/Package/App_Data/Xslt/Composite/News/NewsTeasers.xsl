@@ -6,12 +6,12 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-			<link rel="alternate" type="application/rss+xml" title="News Feed" href="~/NewsRssFeed.ashx/{$currentCulture}" />
-			<style type="text/css">
-          		.News .Date {font-size: 80%;}
-         		.News a.Title {font-weight: bold;}
-				.News .separator {height: 1px; clear: both;}
-       		 </style>
+				<link rel="alternate" type="application/rss+xml" title="News Feed" href="~/NewsRssFeed.ashx/{$currentCulture}" />
+				<style type="text/css">
+					.News .Date {font-size: 80%;}
+					.News a.Title {font-weight: bold;}
+					.News .separator {height: 1px; clear: both;}
+				</style>
 			</head>
 			<body>
 				<div class="News">
@@ -47,9 +47,11 @@
 					</xsl:choose>
 				</div>
 			</xsl:if>
-				<xsl:if test="contains($options, 'Show teaser')">
+			<xsl:if test="contains($options, 'Show teaser')">
 				<div class="Teaser">
-					<p><xsl:value-of select="@Teaser" /></p>
+					<p>
+						<xsl:value-of select="@Teaser" />
+					</p>
 				</div>
 			</xsl:if>
 			<div class="separator">&#160;</div>

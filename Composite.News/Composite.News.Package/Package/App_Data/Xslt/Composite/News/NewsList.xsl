@@ -15,11 +15,11 @@
 					</title>
 				</xsl:if>
 				<style type="text/css">
-				.News .First h1 {margin-top: 0px;}
-          		.News .Date {font-size: 80%;}
-				.News .Paging, .News .RSS, .News .BackToAll {margin-top: 20px;}
-           		.News .Paging a {padding: 5px;}
-        	</style>
+					.News .First h1 {margin-top: 0px;}
+					.News .Date {font-size: 80%;}
+					.News .Paging, .News .RSS, .News .BackToAll {margin-top: 20px;}
+					.News .Paging a {padding: 5px;}
+				</style>
 			</head>
 			<body>
 				<div class="News">
