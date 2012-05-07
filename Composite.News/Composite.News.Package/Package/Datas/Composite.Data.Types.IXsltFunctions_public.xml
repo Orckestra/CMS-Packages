@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Data>
-  <Add Id="435542f4-4749-44e4-8417-330845b5b187" Name="Latest" Namespace="Composite.News" Description="Shows the latest news on a page" OutputXmlSubType="XHTML" XslFilePath="\Composite\News\Latest.xsl" />
-  <Add Id="c3a4bc4a-7f1a-4bbd-aa41-81ab4e91d934" Name="ListToDetails" Namespace="Composite.News" Description="Shows all the news (archive) or the details of a selected news item (details)" OutputXmlSubType="XHTML" XslFilePath="\Composite\News\ListToDetails.xsl" />
+  <Add Id="c3a4bc4a-7f1a-4bbd-aa41-81ab4e91d934" Name="NewsList" Namespace="Composite.News" Description="List the news or shows the full content of a single news item when selected." OutputXmlSubType="XHTML" XslFilePath="\Composite\News\NewsList.xsl" />
+  <Add Id="435542f4-4749-44e4-8417-330845b5b187" Name="NewsTeasers" Namespace="Composite.News" Description="Shows the latest news as a list of news teasers." OutputXmlSubType="XHTML" XslFilePath="\Composite\News\NewsTeasers.xsl" />
 </Data>

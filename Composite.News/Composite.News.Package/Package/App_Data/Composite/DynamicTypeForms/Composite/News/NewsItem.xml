@@ -30,7 +30,7 @@
 					</TextArea>
 				</FieldGroup>
 			</PlaceHolder>
-			<XhtmlEditor Label="Description" Help="Description" ClassConfigurationName="common">
+			<XhtmlEditor Label="News Story" Help="News Story" ClassConfigurationName="common">
 				<XhtmlEditor.Xhtml>
 					<cms:bind source="Description" />
 				</XhtmlEditor.Xhtml>

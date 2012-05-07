@@ -69,7 +69,8 @@
     <Content Include="Dll\Composite.Generated.dll" />
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Composite\News\NewsItem.xml" />
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.News.xml" />
-    <Content Include="Package\App_Data\Xslt\Composite\News\ListToDetails.xsl" />
+    <Content Include="Package\App_Data\Xslt\Composite\News\NewsList.xsl" />
+    <Content Include="Package\App_Data\Xslt\Composite\News\NewsTeasers.xsl" />
     <Content Include="Package\Bin\Composite.News.dll" />
     <Content Include="Package\Config\Install.xsl" />
     <Content Include="Package\Config\Uninstall.xsl" />
@@ -80,7 +81,6 @@
     <Content Include="_PackageCreator\Composite.News.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Package\App_Data\Xslt\Composite\News\Latest.xsl" />
     <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
@@ -93,6 +93,10 @@
   <ItemGroup>
     <Content Include="Package\NewsRssFeed.ashx" />
     <None Include="Release\Composite.News.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Package\App_GlobalResources\Composite\News\News.resx" />
+    <EmbeddedResource Include="Package\App_GlobalResources\Composite\News\News.ru-ru.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
