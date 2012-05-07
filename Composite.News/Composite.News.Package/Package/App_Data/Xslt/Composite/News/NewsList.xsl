@@ -15,11 +15,11 @@
 					</title>
 				</xsl:if>
 				<style type="text/css">
-					.News .First h1 {margin-top: 0px;}
-					.News .Date {font-size: 80%;}
-					.News .Paging, .News .RSS, .News .BackToAll {margin-top: 20px;}
-					.News .Paging a {padding: 5px;}
-				</style>
+				.News .First h1 {margin-top: 0px;}
+          		.News .Date {font-size: 80%;}
+				.News .Paging, .News .RSS, .News .BackToAll {margin-top: 20px;}
+           		.News .Paging a {padding: 5px;}
+        	</style>
 			</head>
 			<body>
 				<div class="News">
@@ -93,7 +93,7 @@
 					</p>
 				</div>
 			</xsl:if>
-			<xsl:if test="contains($options, 'Show description')">
+			<xsl:if test="contains($options, 'Show news story')">
 				<div class="Description">
 					<xsl:copy-of select="mp:ParseXhtmlBodyFragment(@Description)" />
 				</div>
