@@ -10,13 +10,13 @@
   <string key="AddressBar.Invalid.DialogTitle.External" value="访问被拒绝" />
   <string key="AddressBar.Invalid.DialogText.External" value="外部网址不能加载。" />
   <string key="AddressBar.Invalid.DialogTitle.BadRequest" value="错误网址" />
-  <string key="AddressBar.Invalid.DialogText.BadRequest" value="网址是无效的，不能被加载。" />
+  <string key="AddressBar.Invalid.DialogText.BadRequest" value="网址无效，不能加载。" />
   <string key="AddressBar.Invalid.DialogTitle.Unauthorized" value="未授权" />
-  <string key="AddressBar.Invalid.DialogText.Unauthorized" value="您没有被授权指定的网址上查看页面。" />
+  <string key="AddressBar.Invalid.DialogText.Unauthorized" value="您没有被授权查看指定的网址。" />
   <string key="AddressBar.Invalid.DialogTitle.NotFound" value="找不到网页" />
   <string key="AddressBar.Invalid.DialogText.NotFound" value="网页上找不到指定的URL。" />
   <string key="AddressBar.Invalid.DialogTitle.InternalError" value="服务器错误" />
-  <string key="AddressBar.Invalid.DialogText.InternalError" value="该服务器已报告在指定的网址错误。该网页无法加载。" />
+  <string key="AddressBar.Invalid.DialogText.InternalError" value="该服务器报告一个指定的网址错误。该网页无法加载。" />
   <string key="AddressBar.Invalid.DialogTitle.Default" value="页面未加载" />
   <string key="AddressBar.Invalid.DialogText.Default" value="一个错误阻止了被加载的URL。" />
 </strings>

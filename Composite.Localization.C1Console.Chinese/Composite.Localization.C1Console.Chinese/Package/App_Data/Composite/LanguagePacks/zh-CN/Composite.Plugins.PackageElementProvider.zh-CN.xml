@@ -2,24 +2,24 @@
 <strings>
   <string key="RootFolderLabel" value="软件包" />
   <string key="RootFolderToolTip" value="浏览和管理已安装的软件包" />
-  <string key="AvailablePackagesFolderLabel" value="可用的软件包" />
-  <string key="AvailablePackagesFolderToolTip" value="可用的软件包" />
-  <string key="InstalledPackageFolderLabel" value="已安装的软件包" />
-  <string key="InstalledPackageFolderToolTip" value="已安装的软件包" />
-  <string key="LocalPackagesFolderLabel" value="本地软件包" />
-  <string key="LocalPackagesFolderToolTip" value="本地软件包" />
-  <string key="PackageSourcesFolderLabel" value="软件包来源" />
-  <string key="PackageSourcesFolderToolTip" value="软件包来源" />
+  <string key="AvailableAddOnsFolderLabel" value="可用的软件包" />
+  <string key="AvailableAddOnsFolderToolTip" value="可用的软件包" />
+  <string key="InstalledAddOnFolderLabel" value="已安装的软件包" />
+  <string key="InstalledAddOnFolderToolTip" value="已安装的软件包" />
+  <string key="LocalAddOnsFolderLabel" value="本地软件包" />
+  <string key="LocalAddOnsFolderToolTip" value="本地软件包" />
+  <string key="AddOnSourcesFolderLabel" value="软件包来源" />
+  <string key="AddOnSourcesFolderToolTip" value="软件包来源" />
   <string key="ViewAvailableInformationLabel" value="软件包信息" />
   <string key="ViewAvailableInformationToolTip" value="查看软件包信息" />
   <string key="ViewInstalledInformationLabel" value="软件包信息" />
   <string key="ViewInstalledInformationToolTip" value="查看软件包信息" />
-  <string key="InstallLocalPackageLabel" value="安装本地包..." />
-  <string key="InstallLocalPackageToolTip" value="从本地文件系统安装包" />
-  <string key="AddPackageSourceLabel" value="新增软件包来源" />
-  <string key="AddPackageSourceToolTip" value="新增软件包来源" />
-  <string key="DeletePackageSourceLabel" value="删除软件包源" />
-  <string key="DeletePackageSourceToolTip" value="删除软件包源" />
+  <string key="InstallLocalAddOnLabel" value="安装本地包..." />
+  <string key="InstallLocalAddOnToolTip" value="从本地文件系统安装包" />
+  <string key="AddAddOnSourceLabel" value="新增软件包来源" />
+  <string key="AddAddOnSourceToolTip" value="新增软件包来源" />
+  <string key="DeleteAddOnSourceLabel" value="删除软件包源" />
+  <string key="DeleteAddOnSourceToolTip" value="删除软件包源" />
   <string key="ClearServerCacheLabel" value="清除缓存" />
   <string key="ClearServerCacheToolTip" value="清除缓存以获得最新的软件包" />
   <string key="ViewAvailableInformation.FieldGroupLabel" value="软件包信息" />
@@ -35,8 +35,8 @@
   <string key="ViewAvailableInformation.AuthorTextHelp" value="软件包的作者姓名" />
   <string key="ViewAvailableInformation.PriceTextLabel" value="价格（欧元）" />
   <string key="ViewAvailableInformation.PriceTextHelp" value="软件包的价格" />
-  <string key="ViewAvailableInformation.PackageSourceTextLabel" value="PackageSource" />
-  <string key="ViewAvailableInformation.PackageSourceTextHelp" value="软件包的源" />
+  <string key="ViewAvailableInformation.AddOnSourceTextLabel" value="AddOnSource" />
+  <string key="ViewAvailableInformation.AddOnSourceTextHelp" value="软件包的源" />
   <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="安装" />
   <string key="ViewAvailableInformation.Toolbar.ReadMoreLabel" value="了解更多" />
   <string key="ViewAvailableInformation.ShowError.MessageTitle" value="已安装" />
@@ -52,78 +52,78 @@
   <string key="ViewInstalledInformation.Toolbar.UninstallLabel" value="卸载" />
   <string key="ViewInstalledInformation.ShowError.MessageTitle" value="已卸载" />
   <string key="ViewInstalledInformation.ShowError.MessageMessage" value="软件包已经被卸载，不能卸载选定的软件包。" />
-  <string key="InstallRemotePackage.Step1.LayoutLabel" value="安装包" />
-  <string key="InstallRemotePackage.Step1.HeadingTitle" value="这是一个试用版软件包" />
-  <string key="InstallRemotePackage.Step1.HeadingDescription" value="这个软件包收费使用的 - 请检查有关的“最终用户协议”，相关的条款与细节在下一屏显示。" />
-  <string key="InstallRemotePackage.Step2.LayoutLabel" value="安装包" />
-  <string key="InstallRemotePackage.Step2.HeadingTitle" value="许可协议" />
-  <string key="InstallRemotePackage.Step2.HeadingDescription" value="如果您接受该协议的条款,请点击下面的复选框。您必须接受协议才能安装。" />
-  <string key="InstallRemotePackage.Step2.IAcceptItemLabel" value="我接受许可协议" />
-  <string key="InstallRemotePackage.Step2.AcceptMissing" value="您必须接受许可协议中的条款，才能继续进行。" />
-  <string key="InstallRemotePackage.Step3.LayoutLabel" value="安装包" />
-  <string key="InstallRemotePackage.Step3.HeadingTitle" value="下载和验证包" />
-  <string key="InstallRemotePackage.Step3.HeadingDescription" value="该包将被下载和验证。请注意，这可能需要几分钟。点击下一步继续。" />
-  <string key="InstallRemotePackage.Step4.LayoutLabel" value="安装本地包" />
-  <string key="InstallRemotePackage.Step4.HeadingTitle" value="准备安装" />
-  <string key="InstallRemotePackage.Step4.HeadingDescription" value="准备安装包。请注意，安装过程可能需要几分钟。点击下一步继续。" />
-  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingTitle" value="准备安装" />
-  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingDescription" value="准备安装包。请注意，安装过程可能需要几分钟。另外请注意，此包无法卸载。点击下一步继续。" />
-  <string key="InstallRemotePackage.Step5.LayoutLabel" value="软件包已安装" />
-  <string key="InstallRemotePackage.Step5.HeadingTitle" value="软件包已安装成功" />
-  <string key="InstallRemotePackage.Step5.HeadingDescription" value="软件包已安装成功。" />
-  <string key="InstallRemotePackage.ShowError.LayoutLabel" value="软件包安装失败" />
-  <string key="InstallRemotePackage.ShowError.InfoTableCaption" value="软件包安装失败" />
-  <string key="InstallRemotePackage.ShowError.MessageTitle" value="消息" />
-  <string key="InstallLocalPackage.Step1.LayoutLabel" value="安装本地包" />
-  <string key="InstallLocalPackage.Step1.FieldGroupLabel" value="已安装本地包" />
-  <string key="InstallLocalPackage.Step1.FileUploadLabel" value="包文件" />
-  <string key="InstallLocalPackage.Step1.FileUploadHelp" value="浏览到软件安装包文件" />
-  <string key="InstallLocalPackage.Step2.LayoutLabel" value="安装本地包" />
-  <string key="InstallLocalPackage.Step2.HeadingTitle" value="准备安装" />
-  <string key="InstallLocalPackage.Step2.HeadingDescription" value="准备安装包。请注意，安装过程可能需要几分钟。点击下一步继续。" />
-  <string key="InstallLocalPackage.Step3.LayoutLabel" value="软件包已安装" />
-  <string key="InstallLocalPackage.Step3.HeadingTitle" value="软件包已安装成功" />
-  <string key="InstallLocalPackage.Step3.HeadingDescription" value="包安装成功。" />
-  <string key="InstallLocalPackage.ShowError.LayoutLabel" value="软件包安装失败" />
-  <string key="InstallLocalPackage.ShowError.InfoTableCaption" value="软件包安装失败" />
-  <string key="InstallLocalPackage.ShowError.MessageTitle" value="消息" />
-  <string key="UninstallRemotePackage.Step1.LayoutLabel" value="卸载软件包" />
-  <string key="UninstallRemotePackage.Step1.HeadingTitle" value="准备检查卸载过程" />
-  <string key="UninstallRemotePackage.Step1.HeadingDescription" value="准备检查卸载包的过程。点击下一步继续。" />
-  <string key="UninstallRemotePackage.Step2.LayoutLabel" value="卸载包" />
-  <string key="UninstallRemotePackage.Step2.HeadingTitle" value="准备卸载" />
-  <string key="UninstallRemotePackage.Step2.HeadingDescription" value="准备卸载包。请注意，安装过程可能需要几分钟。点击下一步继续。" />
-  <string key="UninstallRemotePackage.Step3.LayoutLabel" value="软件包已卸载" />
-  <string key="UninstallRemotePackage.Step3.HeadingTitle" value="软件包已卸载成功" />
-  <string key="UninstallRemotePackage.Step3.HeadingDescription" value="软件包已成功卸载。" />
-  <string key="UninstallRemotePackage.ShowError.LayoutLabel" value="软件包卸载失败" />
-  <string key="UninstallRemotePackage.ShowError.InfoTableCaption" value="软件包卸载失败" />
-  <string key="UninstallRemotePackage.ShowError.MessageTitle" value="消息" />
-  <string key="UninstallRemotePackage.ShowUnregistre.LayoutLabel" value="卸载软件包" />
-  <string key="UninstallRemotePackage.ShowUnregistre.HeadingTitle" value="卸载失败中的注册" />
-  <string key="UninstallRemotePackage.ShowUnregistre.HeadingDescription" value="卸载注册失败。请联系软件包供应商以手动清除注册。" />
-  <string key="UninstallLocalPackage.Step1.LayoutLabel" value="卸载本地软件包" />
-  <string key="UninstallLocalPackage.Step1.HeadingTitle" value="准备检查卸载过程" />
-  <string key="UninstallLocalPackage.Step1.HeadingDescription" value="准备检查卸载包的过程。点击下一步继续。" />
-  <string key="UninstallLocalPackage.Step2.LayoutLabel" value="卸载本地包" />
-  <string key="UninstallLocalPackage.Step2.HeadingTitle" value="准备卸载" />
-  <string key="UninstallLocalPackage.Step2.HeadingDescription" value="准备卸载包。请注意，安装过程可能需要几分钟。点击下一步继续。" />
-  <string key="UninstallLocalPackage.Step3.LayoutLabel" value="软件包已卸载" />
-  <string key="UninstallLocalPackage.Step3.HeadingTitle" value="软件包卸载成功" />
-  <string key="UninstallLocalPackage.Step3.HeadingDescription" value="软件包卸载成功。" />
-  <string key="UninstallLocalPackage.ShowError.LayoutLabel" value="软件包卸载失败" />
-  <string key="UninstallLocalPackage.ShowError.InfoTableCaption" value="软件包卸载失败" />
-  <string key="UninstallLocalPackage.ShowError.MessageTitle" value="消息" />
-  <string key="AddPackageSource.Step1.LayoutLabel" value="新软件包来源" />
-  <string key="AddPackageSource.Step1.FieldGroupLabel" value="数据包源数据" />
-  <string key="AddPackageSource.Step1.UrlLabel" value="软件包Webservice的URL" />
-  <string key="AddPackageSource.Step1.UrlHelp" value="软件包可以驻留在远程服务器上。该软件包web服务的URL将被验证的下一个步骤。" />
-  <string key="AddPackageSource.Step1.UrlNotValid" value="输入的文本不是一个有效的URL" />
-  <string key="AddPackageSource.Step1.UrlNonPackageServer" value="该服务器是不是一个Composite C1的软件包服务器" />
-  <string key="AddPackageSource.Step2.LayoutLabel" value="添加软件包服务器来源" />
-  <string key="AddPackageSource.Step2.HeadingTitle" value="服务器URL是有效的" />
-  <string key="AddPackageSource.Step2.HeadingNoHttpsDescription" value="请注意，在此连接中是使用HTTP协议。这意味着，所有信息将被发送时未加密。点击&quot;完成&quot;添加源。" />
-  <string key="AddPackageSource.Step2.HeadingWithHttpsDescription" value="点击&quot;完成&quot;添加源。" />
-  <string key="DeletePackageSource.Step1.LayoutLabel" value="删除确认" />
-  <string key="DeletePackageSource.Step1.Text" value="删除选定的服务器源" />
+  <string key="InstallRemoteAddOn.Step1.LayoutLabel" value="安装包" />
+  <string key="InstallRemoteAddOn.Step1.HeadingTitle" value="这是一个试用版软件包" />
+  <string key="InstallRemoteAddOn.Step1.HeadingDescription" value="这个软件包收费使用的 - 请检查有关的“最终用户协议”，相关的条款与细节在下一屏显示。" />
+  <string key="InstallRemoteAddOn.Step2.LayoutLabel" value="安装包" />
+  <string key="InstallRemoteAddOn.Step2.HeadingTitle" value="许可协议" />
+  <string key="InstallRemoteAddOn.Step2.HeadingDescription" value="如果您接受该协议的条款,请点击下面的复选框。您必须接受协议才能安装。" />
+  <string key="InstallRemoteAddOn.Step2.IAcceptItemLabel" value="我接受许可协议" />
+  <string key="InstallRemoteAddOn.Step2.AcceptMissing" value="您必须接受许可协议中的条款，才能继续进行。" />
+  <string key="InstallRemoteAddOn.Step3.LayoutLabel" value="安装包" />
+  <string key="InstallRemoteAddOn.Step3.HeadingTitle" value="下载和验证包" />
+  <string key="InstallRemoteAddOn.Step3.HeadingDescription" value="该包将被下载和验证。请注意，这可能需要几分钟。点击下一步继续。" />
+  <string key="InstallRemoteAddOn.Step4.LayoutLabel" value="安装本地包" />
+  <string key="InstallRemoteAddOn.Step4.HeadingTitle" value="准备安装" />
+  <string key="InstallRemoteAddOn.Step4.HeadingDescription" value="准备安装包。请注意，安装过程可能需要几分钟。点击下一步继续。" />
+  <string key="InstallRemoteAddOn.Step4.NonUninstallableHeadingTitle" value="准备安装" />
+  <string key="InstallRemoteAddOn.Step4.NonUninstallableHeadingDescription" value="准备安装包。请注意，安装过程可能需要几分钟。另外请注意，此包无法卸载。点击下一步继续。" />
+  <string key="InstallRemoteAddOn.Step5.LayoutLabel" value="软件包已安装" />
+  <string key="InstallRemoteAddOn.Step5.HeadingTitle" value="软件包已安装成功" />
+  <string key="InstallRemoteAddOn.Step5.HeadingDescription" value="软件包已安装成功。" />
+  <string key="InstallRemoteAddOn.ShowError.LayoutLabel" value="软件包安装失败" />
+  <string key="InstallRemoteAddOn.ShowError.InfoTableCaption" value="软件包安装失败" />
+  <string key="InstallRemoteAddOn.ShowError.MessageTitle" value="消息" />
+  <string key="InstallLocalAddOn.Step1.LayoutLabel" value="安装本地包" />
+  <string key="InstallLocalAddOn.Step1.FieldGroupLabel" value="已安装本地包" />
+  <string key="InstallLocalAddOn.Step1.FileUploadLabel" value="包文件" />
+  <string key="InstallLocalAddOn.Step1.FileUploadHelp" value="浏览到软件安装包文件" />
+  <string key="InstallLocalAddOn.Step2.LayoutLabel" value="安装本地包" />
+  <string key="InstallLocalAddOn.Step2.HeadingTitle" value="准备安装" />
+  <string key="InstallLocalAddOn.Step2.HeadingDescription" value="准备安装包。请注意，安装过程可能需要几分钟。点击下一步继续。" />
+  <string key="InstallLocalAddOn.Step3.LayoutLabel" value="软件包已安装" />
+  <string key="InstallLocalAddOn.Step3.HeadingTitle" value="软件包已安装成功" />
+  <string key="InstallLocalAddOn.Step3.HeadingDescription" value="包安装成功。" />
+  <string key="InstallLocalAddOn.ShowError.LayoutLabel" value="软件包安装失败" />
+  <string key="InstallLocalAddOn.ShowError.InfoTableCaption" value="软件包安装失败" />
+  <string key="InstallLocalAddOn.ShowError.MessageTitle" value="消息" />
+  <string key="UninstallRemoteAddOn.Step1.LayoutLabel" value="卸载软件包" />
+  <string key="UninstallRemoteAddOn.Step1.HeadingTitle" value="准备检查卸载过程" />
+  <string key="UninstallRemoteAddOn.Step1.HeadingDescription" value="准备检查卸载包的过程。点击下一步继续。" />
+  <string key="UninstallRemoteAddOn.Step2.LayoutLabel" value="卸载包" />
+  <string key="UninstallRemoteAddOn.Step2.HeadingTitle" value="准备卸载" />
+  <string key="UninstallRemoteAddOn.Step2.HeadingDescription" value="准备卸载包。请注意，安装过程可能需要几分钟。点击下一步继续。" />
+  <string key="UninstallRemoteAddOn.Step3.LayoutLabel" value="软件包已卸载" />
+  <string key="UninstallRemoteAddOn.Step3.HeadingTitle" value="软件包已卸载成功" />
+  <string key="UninstallRemoteAddOn.Step3.HeadingDescription" value="软件包已成功卸载。" />
+  <string key="UninstallRemoteAddOn.ShowError.LayoutLabel" value="软件包卸载失败" />
+  <string key="UninstallRemoteAddOn.ShowError.InfoTableCaption" value="软件包卸载失败" />
+  <string key="UninstallRemoteAddOn.ShowError.MessageTitle" value="消息" />
+  <string key="UninstallRemoteAddOn.ShowUnregistre.LayoutLabel" value="卸载软件包" />
+  <string key="UninstallRemoteAddOn.ShowUnregistre.HeadingTitle" value="卸载失败中的注册" />
+  <string key="UninstallRemoteAddOn.ShowUnregistre.HeadingDescription" value="卸载注册失败。请联系软件包供应商以手动清除注册。" />
+  <string key="UninstallLocalAddOn.Step1.LayoutLabel" value="卸载本地软件包" />
+  <string key="UninstallLocalAddOn.Step1.HeadingTitle" value="准备检查卸载过程" />
+  <string key="UninstallLocalAddOn.Step1.HeadingDescription" value="准备检查卸载包的过程。点击下一步继续。" />
+  <string key="UninstallLocalAddOn.Step2.LayoutLabel" value="卸载本地包" />
+  <string key="UninstallLocalAddOn.Step2.HeadingTitle" value="准备卸载" />
+  <string key="UninstallLocalAddOn.Step2.HeadingDescription" value="准备卸载包。请注意，安装过程可能需要几分钟。点击下一步继续。" />
+  <string key="UninstallLocalAddOn.Step3.LayoutLabel" value="软件包已卸载" />
+  <string key="UninstallLocalAddOn.Step3.HeadingTitle" value="软件包卸载成功" />
+  <string key="UninstallLocalAddOn.Step3.HeadingDescription" value="软件包卸载成功。" />
+  <string key="UninstallLocalAddOn.ShowError.LayoutLabel" value="软件包卸载失败" />
+  <string key="UninstallLocalAddOn.ShowError.InfoTableCaption" value="软件包卸载失败" />
+  <string key="UninstallLocalAddOn.ShowError.MessageTitle" value="消息" />
+  <string key="AddAddOnSource.Step1.LayoutLabel" value="新软件包来源" />
+  <string key="AddAddOnSource.Step1.FieldGroupLabel" value="数据包源数据" />
+  <string key="AddAddOnSource.Step1.UrlLabel" value="软件包Webservice的URL" />
+  <string key="AddAddOnSource.Step1.UrlHelp" value="软件包可以驻留在远程服务器上。该软件包web服务的URL将被验证的下一个步骤。" />
+  <string key="AddAddOnSource.Step1.UrlNotValid" value="输入的文本不是一个有效的URL" />
+  <string key="AddAddOnSource.Step1.UrlNonAddOnServer" value="该服务器是不是一个Composite C1的软件包服务器" />
+  <string key="AddAddOnSource.Step2.LayoutLabel" value="添加软件包服务器来源" />
+  <string key="AddAddOnSource.Step2.HeadingTitle" value="服务器URL是有效的" />
+  <string key="AddAddOnSource.Step2.HeadingNoHttpsDescription" value="请注意，在此连接中是使用HTTP协议。这意味着，所有信息将被发送时未加密。点击&quot;完成&quot;添加源。" />
+  <string key="AddAddOnSource.Step2.HeadingWithHttpsDescription" value="点击&quot;完成&quot;添加源。" />
+  <string key="DeleteAddOnSource.Step1.LayoutLabel" value="删除确认" />
+  <string key="DeleteAddOnSource.Step1.Text" value="删除选定的服务器源" />
 </strings>

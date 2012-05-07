@@ -64,7 +64,7 @@
   <string key="TreeValidationError.Range.WrongFormat" value="错误的值范围" />
   <string key="TreeValidationError.Range.UnsupportedType" value="类型'{1}' 的属性'{0}'并不支持值范围" />
   <string key="TreeValidationError.Range.MinMaxError" value="第一个值（{0}）应大于第二个（{1}）值" />
-  <string key="TreeValidationError.Range.NextRangeError" value="The max value of a range should be less than the min value of the succeeding range" />
+  <string key="TreeValidationError.Range.NextRangeError" value="此范围的最大值应小于随后范围的最小值" />
   <string key="TreeRanges.IntRange.Closed" value="从{0}到{1}" />
   <string key="TreeRanges.IntRange.MinOpenEnded" value="{0}或更少" />
   <string key="TreeRanges.IntRange.MaxOpenEnded" value="{0}或更多" />

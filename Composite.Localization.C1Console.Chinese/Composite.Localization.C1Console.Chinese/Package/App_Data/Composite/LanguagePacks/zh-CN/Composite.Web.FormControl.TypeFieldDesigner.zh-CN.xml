@@ -34,7 +34,7 @@
   <string key="FieldPresentationGroupLabel" value="表单字段显示" />
   <string key="FieldStructureGroupLabel" value="结构显示" />
   <string key="Widget" value="操作件类型" />
-  <string key="WidgetHelp" value="您可以选择当编辑此字段时使用哪种类型的输入操作件(例如一个文本框)" />
+  <string key="WidgetHelp" value="您可以选择当编辑此字段时使用哪种类型的输入控件(例如一个文本框)" />
   <string key="WidgetDialogLabel" value="字段操作件配置" />
   <string key="Position" value="位置" />
   <string key="PositionLast" value="最后" />
@@ -73,5 +73,5 @@
   <string key="NameAlreadyInUseError" value="另一字段使用这个名字。数据字段名称必须是唯一的。" />
   <string key="NotAnOptionalTypeError" value="所选类型不能是可选的。" />
   <string key="NoWidgetSelected" value="记住要指定一个操作件..." />
-  <string key="NoWidgetSelectedLabel" value="（没有指定操作件）" />
+  <string key="NoWidgetSelectedLabel" value="（没有指定控件）" />
 </strings>

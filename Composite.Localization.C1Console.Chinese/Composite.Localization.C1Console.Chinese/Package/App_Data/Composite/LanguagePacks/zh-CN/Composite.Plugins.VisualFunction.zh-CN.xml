@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <string key="DeleteStep1.FieldGroupLabel" value="删除视觉功能？" />
+  <string key="DeleteStep1.FieldGroupLabel" value="删除可视化函数？" />
   <string key="DeleteStep1.Text" value="你确定要删除所选的函数？" />
   <string key="AddNew.DialogLabel" value="添加可视化函数" />
   <string key="AddNew.NoTypesExistsErrorTitle" value="没有可视化的数据类型" />
@@ -8,7 +8,7 @@
   <string key="AddNew.NoDataExistsErrorTitle" value="没有数据可视化与预览" />
   <string key="AddNew.NoDataExistsErrorMessage" value="必须存在数据才能创建一个渲染。添加一些这种类型的数据，然后再试一次。" />
   <string key="AddNew.NoPageTemplatesExistsErrorTitle" value="没有模板" />
-  <string key="AddNew.NoPageTemplatesExistsErrorMessage" value="必须至少有一个模板存在才能创建一个渲染。创建一个模板，然后再试一次。" />
+  <string key="AddNew.NoPageTemplatesExistsErrorMessage" value="必须至少有一个模板存在才能创建函数。请先创建一个模板，然后再试一次。" />
   <string key="AddNew.MissingActiveLanguageTitle" value="需要一个语言" />
   <string key="AddNew.MissingActiveLanguageMessage" value="要创建一个可视化函数，必须要一个语言，但还没有增加一个语言。您可以&quot;系统&quot;控制台增加一个。" />
   <string key="AddNewStep1.FieldGroupLabel" value="选择数据类型来可视化" />
@@ -41,7 +41,7 @@
   <string key="Edit.WYSIWYGLayoutLabel" value="可视化布局" />
   <string key="Edit.LabelPreview" value="预览" />
   <string key="Edit.NoPageTemplatesExistsErrorTitle" value="没有模板" />
-  <string key="Edit.NoPageTemplatesExistsErrorMessage" value="必须至少有一个模板存在，才能编辑渲染。创建一个模板，然后再试一次。" />
+  <string key="Edit.NoPageTemplatesExistsErrorMessage" value="必须至少有一个模板存在，才能编辑函数。请先创建一个模板，然后再试一次。" />
   <string key="Edit.MissingActiveLanguageTitle" value="需要一个语言" />
   <string key="Edit.MissingActiveLanguageMessage" value="编辑可视化函数时必需要一种语言，但还没有增加任何语言。您可以添加在&quot;系统&quot;控制台增加一个然后再试。" />
   <string key="Select.FieldGroupLabel" value="选择可视化函数" />
