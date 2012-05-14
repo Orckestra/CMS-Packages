@@ -10,8 +10,9 @@
 		<mi:Add path="~\Bin\Composite.News.dll" />
 	</mi:PackageFragmentInstallerBinaries>
 	<mi:PackageRequirements minimumCompositeVersion="3.2.4497.34793" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.News" groupName="Composite.News" version="2.1.6" author="Composite A/S" website="www.composite.net" id="8c2dfc2d-1fcb-47c6-9faa-de80c384a66f" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.News" groupName="Composite.News" version="2.1.7" readMoreUrl="http://docs.composite.net/Composite.News" author="Composite A/S" website="www.composite.net" id="8c2dfc2d-1fcb-47c6-9faa-de80c384a66f" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<Description>Allows visitors to read the latest news on a website. Supports a news archive and export to RSS.</Description>
+		<TechnicalDetails>Stores news items in a page data folder added to a page via the News application. Implements news teasers and news list as XSLT functions. The news list function presents  all the news (list) or the content of a selected news item (details).</TechnicalDetails>
 	</mi:PackageInformation>
 	<pc:PageTemplates />
 	<pc:XsltFunctions>
@@ -34,7 +35,6 @@
 	</pc:Files>
 	<pc:FilesInDirectories />
 	<pc:Directories>
-    <!--Add path="Frontend\Composite\News\" /-->
 	</pc:Directories>
 	<pc:Datas />
 </pc:PackageCreator>
