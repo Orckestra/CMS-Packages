@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -325,7 +326,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 
 				if (element != null)
 				{
-
+				    var xmlElements = new List<Element>();
 					foreach (XElement item in element.Elements())
 					{
 						string position = string.Empty;
@@ -344,8 +345,16 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 						}
 
 						string description = item.IndexAttributeValue();
-						yield return GetXmlNodeElement(string.Format("{0}/{1}{2}", xpath, name, position), name + (string.IsNullOrEmpty(description) ? string.Empty : string.Format("({0})", description)));
+
+                        xmlElements.Add(GetXmlNodeElement(string.Format("{0}/{1}{2}", xpath, name, position), name + (string.IsNullOrEmpty(description) ? string.Empty : string.Format("({0})", description))));
 					}
+
+                    xmlElements.Sort((a, b) => string.Compare(a.VisualData.Label, 
+                                                              b.VisualData.Label, 
+                                                              StringComparison.InvariantCulture));
+
+                    foreach (var e in xmlElements) yield return e;
+
 					var elementPath = Regex.Replace(xpath, @"\[[^\]]*\]$","" );
 					foreach (var attribute in element.Attributes())
 					{

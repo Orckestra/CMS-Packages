@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using Composite.Tools.PackageCreator.Types;
 using Composite.C1Console.Security;
 using Composite.Core.Types;
@@ -11,19 +10,27 @@ namespace Composite.Tools.PackageCreator
 {
 	public static class PackageCreatorActionFacade
 	{
-		private static Dictionary<PCCategoryAttribute, Type> _categoryTypes;
+		private volatile static Dictionary<PCCategoryAttribute, Type> _categoryTypes;
 		private static readonly object _categoryTypesLock = new Object();
+
 		public static Dictionary<PCCategoryAttribute, Type> CategoryTypes
 		{
 			get
 			{
 				lock(_categoryTypesLock)
 				{
-					if (_categoryTypes == null)
+                    var result = _categoryTypes;
+
+                    if (result == null)
 					{
-						_categoryTypes = new Dictionary<PCCategoryAttribute, Type>();
+                        result = new Dictionary<PCCategoryAttribute, Type>();
 						foreach (Assembly assembly in new[] { Assembly.GetExecutingAssembly(), AssemblyFacade.GetAppCodeAssembly() })
 						{
+                            if(assembly == null)
+                            {
+                                // A website may not have App_Code
+                                continue;
+                            }
 
 							foreach (var type in assembly.GetTypes())
 							{
@@ -33,15 +40,22 @@ namespace Composite.Tools.PackageCreator
 									var category = type.GetCategoryAtribute();
 									if (category == null)
 										continue;
-									if (_categoryTypes.Where(d => d.Key.Name == category.Name).Any()) throw new InvalidOperationException(string.Format("Category {0} already exist", category.Name));
 
-									_categoryTypes.Add(category, type);
+                                    if (result.Any(d => d.Key.Name == category.Name))
+                                    {
+                                        throw new InvalidOperationException(string.Format("Category {0} already exist", category.Name));
+                                    }
+
+                                    result.Add(category, type);
 
 								}
 							}
 						}
+
+                        _categoryTypes = result;
 					}
-					return _categoryTypes;
+
+                    return result;
 				}
 				
 			}
