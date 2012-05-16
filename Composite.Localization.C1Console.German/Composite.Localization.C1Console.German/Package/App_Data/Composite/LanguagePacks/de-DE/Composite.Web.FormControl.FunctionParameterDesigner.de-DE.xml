@@ -2,86 +2,51 @@
 
 <strings>
   
-  <string key="AddNewButtonLabel" value="Add New" />
+  <string key="AddNewButtonLabel" value="Hinzufügen" />
+  <string key="DeleteButtonLabel" value="Löschen" />
+
+  <string key="TreeRootNodeLabel" value="Liste der Eingabeparameter" />
+
+  <string key="ParameterNamingGroupLabel" value="Parameterbenennung und Hilfe" />
+  <string key="Name" value="Parametername" />
+  <string key="NameHelp" value="Der Name des Parameters. Der Name wird vom System verwendet, um diesen Parameter zu identifizieren. Namen müssen eindeutig sein und dürfen keine Leerzeichen und andere Sonderzeichen enthalten. Verwenden Sie Namen wie 'Titel', 'StartDatum', 'GrossesBild' usw." />
+  <string key="Label" value="Bezeichnung" />
+  <string key="LabelHelp" value="Der Text, den alle Nutzer sehen, wenn Sie einen Wert für diesen Parameter eingeben. Dies ist der &quot;freundliche&quot; Name für den Parameter" />
+  <string key="Help" value="Hilfe" />
+  <string key="HelpHelp" value="Schreiben Sie einen kurzen Text, der dem Benutzer erklärt, welche Funktion der Parameter hat." />
+
+  <string key="ParameterTypeValueGroupLabel" value="Parametertyp und Werte" />
+  <string key="Type" value="Parametertyp" />
+  <string key="TypeHelp" value="Der Typ dieses Parameters." />
+  <string key="DefaultValue" value="Standardwert" />
+  <string key="DefaultValueHelp" value="Sie können einen Standardwert für diesen Parameter definieren. Wenn ein Parameter einen Standardwert besitzt, werden die Benutzer nicht aufgefordert, einen Wert einzugeben, wenn sie die Funktion aufrufen." />
+  <string key="DefaultValueSpecify" value="Definieren sie einen Standardwert" />
+  <string key="DefaultValueEdit" value="Standardwert bearbeiten" />
+  <string key="DefaultValueDialogLabel" value="Standardwert des Parameters" />
   
+  <string key="TestValue" value="Testwert" />
+  <string key="TestValueHelp" value="Mit diesem Feld können Sie verschiedene Parameterwerte in der Vorschau testen. Wenn Sie das Feld leer lassen, wird der Standardwert verwendet." />
+  <string key="TestValueSpecify" value="Testwert definieren" />
+  <string key="TestValueEdit" value="Testwert bearbeiten" />
+  <string key="TestValueDialogLabel" value="Parameter-Testwert" />
 
+  <string key="ParameterPresentationGroupLabel" value="Parameter-Darstellung" />
+  <string key="Widget" value="Widget" />
+  <string key="WidgetHelp" value="Sie können wählen, welches Widget  (z.B. eine Textbox) für die Eingabe verwendet werden soll, wenn Sie einen entsprechenden Wert in diesem Parameter definieren. Widgets sind nur für einfache Typen verfügbar." />
+  <string key="NoWidgetSpecifiedLabel" value="(Kein Widget angegeben)" />
+  <string key="WidgetDialogLabel" value="Parameter-Widget" />
+  <string key="Position" value="Position" />
+  <string key="PositionLast" value="Zuletzt" />
+  <string key="PositionHelp" value="Die Position des Parameters. Dies steuert die Reihenfolge der Parameter." />
 
-  
+  <string key="SpecifyWidgetTip" value="Denken Sie daran, ein Widget zu definieren..." />
 
+  <string key="FieldNameSyntaxInvalid" value="Der angegebene Name ist ungültig." />
+  <string key="CannotSave" value="Fehler beim Speichern... Ein weiterer Parameter verwendet den gleichen Namen. Bitte ändern Sie den Namen." />
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  <string key="TestValueHelp" value="Bei der Vorschau können Sie mit verschiedenen Input-Parameter-Werte mit Hilfe dieses Feld zu testen. Wenn diese leer ist, wird der Standardwert für die Vorschau verwendet werden." />
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
+  <string key="SpaceInNameError" value="Ungültiger Name. Parameternamen dürfen keine Leerzeichen enthalten. Einen lesbaren Namen können Sie im Feld 'Bezeichnung' unten definieren." />
+  <string key="NameEmptyError" value="Parameternamen dürfen nicht leer sein. Bitte geben Sie einen Namen ein." />
+  <string key="NameAlreadyInUseError" value="Ein weiterer Parameter verwendet diesen Namen. Parameternamen müssen eindeutig sein." />
 
 
 

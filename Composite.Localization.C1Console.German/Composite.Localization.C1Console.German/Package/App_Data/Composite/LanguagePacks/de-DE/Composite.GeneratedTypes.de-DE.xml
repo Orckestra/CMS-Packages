@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <string key="TypesAreReferencing" value="Ein oder mehrere Typen verweisen auf diesen Typ. Umbenennen ist nicht möglich" />
-  <string key="TypeNameInNamespace" value="Der Typ mit dem Namen '{0}' ist im Namespace '{1}' enthalten - das ist nicht erlaubt" />
+	<string key="TypesAreReferencing" value="Ein oder mehrere Typen verweisen auf diesen Typ. Umbenennen ist nicht möglich" />
+  <string key="TypeNameInNamespace" value="Der Typ mit dem Namen '{0}' ist im Namensraum '{1}' enthalten - das ist nicht erlaubt" />
   <string key="TypesNameClash" value="Ein Typ mit dem gleichen Namen ist bereits vorhanden" />
-  <string key="MissingFields" value="Keine Felder hinzugefügt" />
-  <string key="TypeNameIsInvalidIdentifier" value="Der Typ mit dem Namen '{0}' ist kein gültiger Bezeichner." />
-  <string key="FieldNameCannotBeUsed" value="Der Feldname '{0}' kann nicht verwendet werden" />
-  <string key="NameSpaceIsTypeTypeName" value="Das angegebene 'Type Namespace' wird bereits als &quot;Type Name '(Namespace + Name) verwendet. Ändern Sie den Namen '{0}' nach '{0}. Item'." />
-  <string key="NamespaceIsReserved" value="Der Name des Typs gehört zu einem reservierten Namespace." />
-  <string key="CompileErrorWhileAddingType" value="Datentyp kann nicht hinzugefügt werden, da Kompilierungsfehler verursacht werden" />
-  <string key="CompileErrorWhileChangingType" value="Datentyp kann nicht geändert werden, da Kompilierungsfehler verursacht werden." />
+	<string key="MissingFields" value="Keine Felder hinzugefügt" />
+	<string key="TypeNameIsInvalidIdentifier" value="Der Typ mit dem Namen '{0}' ist kein gültiger Bezeichner." />
+	<string key="FieldNameCannotBeUsed" value="Der Feldname '{0}' kann nicht verwendet werden" />
+  <string key="NameSpaceIsTypeTypeName" value="Das angegebene 'Typ Namensraum' wird bereits als &quot;Typ Name '(Namensraum + Name) verwendet. Ändern Sie den Namen '{0}' nach '{0}. Item'." />
+	<string key="NamespaceIsReserved" value="Der Name des Typs gehört zu einem reservierten Namensraum." />
+	<string key="CompileErrorWhileAddingType" value="Datentyp kann nicht hinzugefügt werden, da Kompilierungsfehler verursacht werden" />
+	<string key="CompileErrorWhileChangingType" value="Datentyp kann nicht geändert werden, da Kompilierungsfehler verursacht werden." />
   <string key="FieldDoesNotHaveWidget" value="Für Feld '{0}' wurde kein Widget-Anbieter angegeben." />
 </strings>
