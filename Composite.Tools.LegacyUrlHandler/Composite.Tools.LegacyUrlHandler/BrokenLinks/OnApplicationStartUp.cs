@@ -31,6 +31,8 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 
 			_timer = new Timer(Run, null, 60000, 900000);
 			GlobalEventSystemFacade.SubscribeToPrepareForShutDownEvent(RunOnShutDown);
+			
+			Functions.DeleteOldBrokenLinks();
 		}
 
 		public static void Run(object data)
@@ -64,14 +66,14 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 			var checkLastRunTimeFilePath = HostingEnvironment.MapPath(_lastRunDateTimeFilePath) ?? string.Empty;
 			if (!C1File.Exists(checkLastRunTimeFilePath))
 			{
-				File.WriteAllText(checkLastRunTimeFilePath, DateTime.Now.ToString(CultureInfo.InvariantCulture));
+				C1File.WriteAllText(checkLastRunTimeFilePath, DateTime.Now.ToString(CultureInfo.InvariantCulture));
 				return true;
 			}
 			var lastrunDateTime = DateTime.Parse(File.ReadAllText(checkLastRunTimeFilePath));
 			var now = DateTime.Now;
 			if (lastrunDateTime.AddHours(double.Parse(Config.SendEveryNHours)) < now)
 			{
-				File.WriteAllText(checkLastRunTimeFilePath, DateTime.Now.ToString(CultureInfo.InvariantCulture));
+				C1File.WriteAllText(checkLastRunTimeFilePath, DateTime.Now.ToString(CultureInfo.InvariantCulture));
 				return true;
 			}
 			return false;

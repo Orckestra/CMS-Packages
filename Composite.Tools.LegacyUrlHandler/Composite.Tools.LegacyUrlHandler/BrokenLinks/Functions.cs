@@ -60,22 +60,24 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 					newItem.Date = DateTime.Now;
 					conn.Add<BrokenLink>(newItem);
 				}
-				else
+			}
+			return null;
+		}
+		/// <summary>
+		/// Delete old broken links
+		/// </summary>
+		public static void DeleteOldBrokenLinks()
+		{
+			using (var conn = new DataConnection())
+			{
+				var items = conn.Get<BrokenLink>().Where(el => el.Date.Value.AddDays(15) < DateTime.Now).ToList();
+				if (items.Any())
 				{
-					var now = DateTime.Now;
-					var itemDate = item.Date.Value.Date;
-					if (itemDate.Year == now.Year && itemDate.Month == now.Month && itemDate.Day == now.Day)
-						return null;
-					item.Date = DateTime.Now;
-					item.Referer = referer;
-					item.UserAgent = userAgent;
-					item.IP = ipAddress;
-					item.IsNotified = false;
-					conn.Update<BrokenLink>(item);
+					Log.LogInformation("Composite.Tools.LegacyUrlHandler.DeleteOldBrokenLinks", String.Format("Deleted {0} items", items.Count));
+					conn.Delete<BrokenLink>(items);
+
 				}
 			}
-
-			return null;
 		}
 
 		public static void Send404MailReport()
