@@ -23,7 +23,7 @@ namespace Composite.Tools.LegacyUrlHandler
 			{
 				var pageId = m.Value;
 				var oldPath = m.Key;
-				var newPath = string.Format("~/Renderers/Page.aspx?pageId={0}", pageId);
+				var newPath = string.Format("~/page({0})", pageId);
 
 				if (!mappings.ContainsKey(oldPath))
 				{
