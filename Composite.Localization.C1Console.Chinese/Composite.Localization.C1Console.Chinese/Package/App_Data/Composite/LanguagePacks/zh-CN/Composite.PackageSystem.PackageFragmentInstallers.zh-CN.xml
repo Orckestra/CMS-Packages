@@ -1,7 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="PackageManager.CompositeVersionMisMatch" value="该软件包版本与当前系统版本不匹配" />
-  <string key="PackageManager.NewerVersionInstlled" value="已经安装了较新版本" />
+  <string key="PackageManager.PackageAlreadyInstalled" value="包已经安装" />
+  <string key="PackageManager.NewerVersionInstalled" value="已经安装了一个较新版本的软件包" />	
   <string key="PackageManager.MissingPackageDirectory" value="找不到包目录路径'{0}'" />
   <string key="PackageManager.Uninstallable" value="该安装包被标记为 &quot;non uninstallable&quot;" />
   <string key="PackageManager.MissingZipFile" value="找不到包压缩文件路径'{0}'" />
@@ -61,7 +62,7 @@
   <string key="FilePackageFragmentInstaller.WrongAttributeBoolFormat" value="错误的属性值格式,预期为bool值" />
   <string key="FilePackageFragmentInstaller.MissingFile" value="安装压缩文件不包含文件'{0}'" />
   <string key="FilePackageFragmentInstaller.FileExists" value="该文件'{0}'已经存在" />
-  <string key="FilePackageFragmentInstaller.FileReadOnly" value="文件'{0}'标记为'只读'，因此不能被覆盖。" />
+  <string key="FilePackageFragmentInstaller.FileReadOnly" value="文件“{0}”标记为“只读”，因此不能被覆盖。" />
   <string key="FilePackageFragmentInstaller.AssemblyLoadNotAllowed" value="'assemblyLoad'特性只能用于文件，不是目录" />
   <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowed" value="'onlyUpdate' 特性只能用于文件，不是目录" />
   <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowedWithLoadAssemlby" value="不允许'onlyUpdate'特性与'loadAssembly'属性结合使用" />
@@ -75,6 +76,9 @@
   <string key="VirtualElementProviderNodePackageFragmentUninstaller.MissingAttribute" value="配置中缺失{0}特性" />
   <string key="FileXslTransformationPackageFragmentInstaller.MissingAttribute" value="在配置中缺失{0}特性" />
   <string key="FileXslTransformationPackageFragmentInstaller.FileNotFound" value="文件'{0}'不存在" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnly" value="文件“{0}”标记为“只读”，因此不能被覆盖。" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnlyOverride" value="文件“{0}”标记为“只读”。将此文件的“只读”属性去除以便能更新。" />
+
   <string key="PackageVersionBumberFragmentInstaller.OnlyOneElement" value="只允许有一个'PackageVersions'元素" />
   <string key="PackageVersionBumberFragmentInstaller.MissingAttribute" value="配置中缺失{0}特性" />
   <string key="PackageVersionBumberFragmentInstaller.WrongAttributeGuidFormat" value="错误的属性值的格式，预期为Guid值" />
@@ -85,4 +89,13 @@
   <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeGuidFormat" value="错误的属性值的格式，预期为Guid值" />
   <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="安装包的标识符重复：'{0}'" />
   <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeVersionFormat" value="错误的属性值的格式，预期为&quot;Version&quot;类型值(x.y.z)" />
+  <string key="PackageLicenseFragmentInstaller.MissingPublicKeyElement" value="在程序包配置中的RSA公共密钥丢失" />
+
+  <string key="License.InvalidKeyTitle" value="无效的许可证密钥" />
+  <string key="License.InvalidKeyMessage" value="许可证密钥是无效的。你必须获得一个有效的许可证密钥。" />
+  <string key="License.ExpiredTitle" value="试用期已过" />
+  <string key="License.ExpiredMessage" value="包的试用期已经过期。你需要获得一个有效的许可证。" />
+  <string key="License.Failed" value="未能获得许可证的信息。产品编号：{0}" />
+
+  <string key="NotEnoughNtfsPermissions" value="本C1实例运行的Windows用户账户不具有写文件或文件夹'{0}'的权限。" />
 </strings>

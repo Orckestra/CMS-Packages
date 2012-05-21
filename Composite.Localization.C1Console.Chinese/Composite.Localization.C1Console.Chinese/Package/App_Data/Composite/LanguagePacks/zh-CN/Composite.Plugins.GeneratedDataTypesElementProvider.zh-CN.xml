@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="GlobalDataFolderLabel" value="全局数据类型" />
-  <string key="PageDataFolderDataFolderLabel" value="页面数据文件夹" />
   <string key="GlobalDataFolderToolTip" value="全局数据类型" />
   <string key="GlobalDataFolderLabel_OnlyGlobalData" value="网站项目" />
   <string key="GlobalDataFolderToolTip_OnlyGlobalData" value="网站项目（数据）" />
+  <string key="PageDataFolderDataFolderLabel" value="页面数据文件夹" />
   <string key="PageDataFolderDataFolderToolTip" value="数据文件夹页" />
   <string key="PageMetaDataFolderLabel" value="元数据类型页" />
   <string key="PageMetaDataFolderToolTip" value="元数据类型页" />
@@ -80,9 +80,13 @@
   <string key="CascadeDeleteErrorMessage" value="此类型被其它的类型所引用，不允许级联删除。此操作被取消" />
   <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="删除数据类型" />
   <string key="DeleteAggregationTypeWorkflow.Text" value="删除数据类型" />
+  <string key="DeleteAggregationTypeWorkflow.ErrorTitle" value="错误" />
+  <string key="DeleteAggregationTypeWorkflow.IsUsedByPageType" value="不能删除类型'{0}“，因为它被某个页面类型正在使用。" />  
   <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="删除数据类型" />
   <string key="DeleteCompositionTypeWorkflow.Text" value="删除数据类型" />
   <string key="DeleteCompositionTypeWorkflow.ErrorTitle" value="错误" />
+  <string key="DeleteCompositionTypeWorkflow.TypeIsReferenced" value="不能删除类型“{0}”，因为某个类型正在引用它。" />
+  <string key="DeleteCompositionTypeWorkflow.IsUsedByPageType" value="不能删除类型'{0}“，因为它被某个页面类型正在使用。" />  
   <string key="ToXmlLabel" value="为xml" />
   <string key="ToXmlToolTip" value="为xml" />
   <string key="EnableTypeLocalizationWorkflow.Dialog.Label" value="启用本地化" />
@@ -110,6 +114,9 @@
   <string key="EditInterfaceTypeStep1.ErrorTitle" value="错误" />
   <string key="AddNewCompositionTypeWorkflow.ErrorTitle" value="错误" />
   <string key="AddNewAggregationTypeWorkflow.ErrorTitle" value="错误" />
+
   <string key="EditCompositionTypeWorkflow.ErrorTitle" value="错误" />
+  <string key="EditAggregationTypeWorkflow.ErrorTitle" value="错误" />
+  
   <string key="DataTypeDescriptorToXmlLabel" value="XML结果" />
 </strings>

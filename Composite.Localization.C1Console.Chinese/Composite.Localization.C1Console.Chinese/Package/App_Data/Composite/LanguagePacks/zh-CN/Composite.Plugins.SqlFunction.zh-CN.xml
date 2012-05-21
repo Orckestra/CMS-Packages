@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <!-- shared on add and edit -->
   <string key="SqlFunctionElementProvider.RootLabel" value="SQL函数" />
   <string key="SqlFunctionElementProvider.RootLabelToolTip" value="新增连接，然后查询连接" />
   <string key="SqlFunctionElementProvider.AddConnection" value="新增SQL连接" />
@@ -23,6 +22,7 @@
   <string key="AddNewSqlFunction.HelpNamespace" value="-" />
   <string key="AddNewSqlFunction.LabelQueryCOmmand" value="SQL命令文本" />
   <string key="AddNewSqlFunction.HelpQueryCOmmand" value="-" />
+  <!-- shared on add and edit -->
   <string key="AddEditSqlFunction.LabelIsStoredProcedure" value="是存储过程" />
   <string key="AddEditSqlFunction.LabelIsStoredProcedureCheckBox" value="是的，此命令是一个存储过程" />
   <string key="AddEditSqlFunction.LabelReturnsXml" value="返回结果为XML" />

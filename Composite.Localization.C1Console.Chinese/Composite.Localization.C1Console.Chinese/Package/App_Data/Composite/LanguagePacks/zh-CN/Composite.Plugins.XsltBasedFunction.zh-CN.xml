@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderLabel" value="XSLT函数" />
   <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderToolTip" value="XSLT函数" />
-  <string key="AddNewXsltFunctionWorkflow.DuplicateName" value="具有相同名称的XSLT函数已经存在。" />
+  <string key="AddNewXsltFunctionWorkflow.DuplicateName" value="XSLT函数已存在相同的名称。" />
   <string key="AddNewXsltFunctionWorkflow.MethodEmpty" value="方法名必须是非空" />
   <string key="AddNewXsltFunctionWorkflow.NamespaceEmpty" value="命名空间必须非空" />
   <string key="AddNewXsltFunctionWorkflow.InvalidNamespace" value="命名空间必须类似于A.B.C - 而不是以字符&quot;.&quot;开始和结束。" />
@@ -10,15 +10,23 @@
   <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageMessage" value="一种语言是要创建一个XSLT的函数时所必需的，但还没有添加语言。您可以在&quot;系统&quot;控制台增加。" />
   <string key="AddNewXsltFunctionWorkflow.MissingPageTitle" value="需要一个页面" />
   <string key="AddNewXsltFunctionWorkflow.MissingPageMessage" value="要创建一个XSLT函数至少有一个页面已经被添加。" />
+  <string key="AddNewXsltFunctionWorkflow.TotalNameTooLang" value="The total length of the name and the namespace is too long (used to name the XSL file)." />
   <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteTitle" value="删除XSLT？" />
   <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteMessage" value="删除选定的XSLT？" />
   <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorTitle" value="级联删除错误" />
   <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorMessage" value="此类型被另一类型所引用，不允许级联删除。此操作被取消。" />
+  <string key="EditXsltFunctionWorkflow.DuplicateName" value="XSLT函数已存在相同的名称。" />
   <string key="EditXsltFunctionWorkflow.EmptyMethodName" value="方法名必须是非空" />
+  <string key="EditXsltFunctionWorkflow.NamespaceEmpty" value="命名空间必须非空" />
   <string key="EditXsltFunctionWorkflow.InvalidNamespace" value="命名空间必须类似于&quot;A.B.C&quot;- 而不是以字符&quot;.&quot;开始和结束。" />
   <string key="EditXsltFunctionWorkflow.InvalidFileName" value="XslFilePath必须以&quot;\&quot;或&quot;/&quot;开始" />
   <string key="EditXsltFunctionWorkflow.InvalidName" value="无效的函数名称" />
   <string key="EditXsltFunctionWorkflow.CannotRenameFileExists" value="不能重命名函数，文件'{0}'已经存在。" />
+  <string key="EditXsltFunctionWorkflow.TotalNameTooLang" value="The total length of the name and the namespace is too long (used to name the XSL file)." />
+
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashTitle" value="重复的本地函数名" />
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashMessage" value="两个或两个以上的函数调用具有相同的本地名称。更改名称，使其所有不同。" />
+  
   <string key="XsltBasedFunctionProviderElementProvider.Add" value="添加XSLT函数" />
   <string key="XsltBasedFunctionProviderElementProvider.AddToolTip" value="添加新的XSLT函数" />
   <string key="XsltBasedFunctionProviderElementProvider.Edit" value="编辑" />

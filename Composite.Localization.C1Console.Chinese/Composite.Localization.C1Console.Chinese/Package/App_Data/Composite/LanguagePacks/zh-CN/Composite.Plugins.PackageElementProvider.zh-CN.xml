@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="RootFolderLabel" value="软件包" />
   <string key="RootFolderToolTip" value="浏览和管理已安装的软件包" />
@@ -24,19 +24,22 @@
   <string key="ClearServerCacheToolTip" value="清除缓存以获得最新的软件包" />
   <string key="ViewAvailableInformation.FieldGroupLabel" value="软件包信息" />
   <string key="ViewAvailableInformation.NameTextLabel" value="名称" />
-  <string key="ViewAvailableInformation.NameTextHelp" value="软件包的名称" />
-  <string key="ViewAvailableInformation.VersionTextLabel" value="版本" />
-  <string key="ViewAvailableInformation.VersionTextHelp" value="软件包的版本" />
   <string key="ViewAvailableInformation.DescriptionTextLabel" value="说明" />
-  <string key="ViewAvailableInformation.DescriptionTextHelp" value="软件包的描述" />
-  <string key="ViewAvailableInformation.TechicalDescriptionTextLabel" value="技术信息" />
-  <string key="ViewAvailableInformation.TechicalDescriptionTextHelp" value="软件包的技术信息" />
   <string key="ViewAvailableInformation.AuthorTextLabel" value="作者" />
-  <string key="ViewAvailableInformation.AuthorTextHelp" value="软件包的作者姓名" />
-  <string key="ViewAvailableInformation.PriceTextLabel" value="价格（欧元）" />
-  <string key="ViewAvailableInformation.PriceTextHelp" value="软件包的价格" />
+
+  <string key="ViewAvailableInformation.TrialInfoFieldGroupLabel" value="免费试用信息" />
+  <string key="ViewAvailableInformation.TrialInformationLabel" value="试用信息" />
+  <string key="ViewAvailableInformation.TrialInformationText" value="这是一个商业软件包，可在试用期内免费。当试用期过期时它的功能可能会无法使用，除非你选择购买正式许可证。" />
+  <string key="ViewAvailableInformation.TrialDaysLabel" value="免费试用期限（天）" />
+
+
+  <string key="ViewAvailableInformation.InstallationInfoFieldGroupLabel" value="安装信息" />
+  <string key="ViewAvailableInformation.VersionTextLabel" value="版本" />
+  <string key="ViewAvailableInformation.TechicalDescriptionTextLabel" value="技术信息" />
   <string key="ViewAvailableInformation.PackageSourceTextLabel" value="PackageSource" />
-  <string key="ViewAvailableInformation.PackageSourceTextHelp" value="软件包的源" />
+
+
+  <string key="ViewAvailableInformation.PriceTextLabel" value="价格（欧元）" />
   <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="安装" />
   <string key="ViewAvailableInformation.Toolbar.ReadMoreLabel" value="了解更多" />
   <string key="ViewAvailableInformation.ShowError.MessageTitle" value="已安装" />
@@ -49,7 +52,13 @@
   <string key="ViewInstalledInformation.UserTextLabel" value="安装" />
   <string key="ViewInstalledInformation.AuthorTextLabel" value="作者" />
   <string key="ViewInstalledInformation.VersionTextLabel" value="版本" />
+  <string key="ViewInstalledInformation.TrialInfoFieldGroupLabel" value="试用信息" />
+  <string key="ViewInstalledInformation.TrialInformationLabel" value="试用信息" />
+  <string key="ViewInstalledInformation.TrialInformationText" value="这是一个商业软件包，可在试用期内免费。当试用期过期时它的功能可能会无法使用，除非你选择购买正式许可证。" />
+  <string key="ViewInstalledInformation.TrialExpireLabel" value="过期日期" />
+
   <string key="ViewInstalledInformation.Toolbar.UninstallLabel" value="卸载" />
+  <string key="ViewInstalledInformation.Toolbar.PurchaseLabel" value="购买！" />
   <string key="ViewInstalledInformation.ShowError.MessageTitle" value="已卸载" />
   <string key="ViewInstalledInformation.ShowError.MessageMessage" value="软件包已经被卸载，不能卸载选定的软件包。" />
   <string key="InstallRemotePackage.Step1.LayoutLabel" value="安装包" />
@@ -74,6 +83,8 @@
   <string key="InstallRemotePackage.ShowError.LayoutLabel" value="软件包安装失败" />
   <string key="InstallRemotePackage.ShowError.InfoTableCaption" value="软件包安装失败" />
   <string key="InstallRemotePackage.ShowError.MessageTitle" value="消息" />
+  <string key="InstallRemotePackage.ShowWarning.LayoutLabel" value="包没有验证" />
+  <string key="InstallRemotePackage.ShowWarning.InfoTableCaption" value="包没有验证" />
   <string key="InstallLocalPackage.Step1.LayoutLabel" value="安装本地包" />
   <string key="InstallLocalPackage.Step1.FieldGroupLabel" value="已安装本地包" />
   <string key="InstallLocalPackage.Step1.FileUploadLabel" value="包文件" />
@@ -87,6 +98,8 @@
   <string key="InstallLocalPackage.ShowError.LayoutLabel" value="软件包安装失败" />
   <string key="InstallLocalPackage.ShowError.InfoTableCaption" value="软件包安装失败" />
   <string key="InstallLocalPackage.ShowError.MessageTitle" value="消息" />
+  <string key="InstallLocalPackage.ShowWarning.LayoutLabel" value="包没有验证" />
+  <string key="InstallLocalPackage.ShowWarning.InfoTableCaption" value="包没有验证" />
   <string key="UninstallRemotePackage.Step1.LayoutLabel" value="卸载软件包" />
   <string key="UninstallRemotePackage.Step1.HeadingTitle" value="准备检查卸载过程" />
   <string key="UninstallRemotePackage.Step1.HeadingDescription" value="准备检查卸载包的过程。点击下一步继续。" />
@@ -126,4 +139,7 @@
   <string key="AddPackageSource.Step2.HeadingWithHttpsDescription" value="点击&quot;完成&quot;添加源。" />
   <string key="DeletePackageSource.Step1.LayoutLabel" value="删除确认" />
   <string key="DeletePackageSource.Step1.Text" value="删除选定的服务器源" />
+
+  <string key="ConfirmLicense.ExpiredTitle" value="试用期已过" />
+  <string key="ConfirmLicense.ExpiredMessage" value="包的试用期已经过期。你需要获得一个有效的许可证。" />
 </strings>

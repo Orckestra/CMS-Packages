@@ -1,23 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <!-- preload precaution -->
-  <!-- simple toolbar -->
-  <!-- format selector -->
-  <!-- classname selector -->
-  <!-- contextmenu (duplicated in toolbar) -->
-  <!-- error dialog -->
-  <!-- template selector -->
-  <!-- PLUGINS ............................................................... -->
-  <!-- general -->
-  <!-- link -->
-  <!-- table -->
-  <!-- image -->
-  <!-- charmap -->
   <string key="Preload.Key" value="Retrieved on VisualEditorBinding startup to make sure strings are loaded :)" />
+  <!-- simple toolbar -->
   <string key="ToolBar.ToolTipStrong" value="粗体文本" />
   <string key="ToolBar.ToolTipEmphasize" value="突出文本" />
   <string key="ToolBar.ToolTipUnderline" value="下划线文本" />
   <string key="ToolBar.ToolTipStrike" value="突出文本" />
+  <string key="ToolBar.ToolTipAlignLeft" value="左对齐" />
+  <string key="ToolBar.ToolTipAlignRight" value="右对齐" />
   <string key="ToolBar.ToolTipJustifyLeft" value="左对齐" />
   <string key="ToolBar.ToolTipJustifyRight" value="右对齐" />
   <string key="ToolBar.ToolTipJustifyCenter" value="对齐中心" />
@@ -31,6 +22,7 @@
   <string key="ToolBar.ToolTipRedo" value="重做" />
   <string key="ToolBar.LabelSource" value="源码视图" />
   <string key="ToolBar.LabelWysiwyg" value="可视化视图" />
+  <!-- format selector -->
   <string key="FormatSelector.LabelParagraph" value="段落" />
   <string key="FormatSelector.LabelAddress" value="地址" />
   <string key="FormatSelector.LabelBlockQuote" value="引用文字" />
@@ -41,16 +33,20 @@
   <string key="FormatSelector.LabelHeading4" value="标题4" />
   <string key="FormatSelector.LabelHeading5" value="标题5" />
   <string key="FormatSelector.LabelHeading6" value="标题6" />
+  <!-- classname selector -->
   <string key="ClassSelector.LabelNone" value="（无）" />
+  <!-- contextmenu (duplicated in toolbar) -->
   <string key="ContextMenu.LabelInsert" value="插入" />
   <string key="ContextMenu.LabelPaste" value="粘贴" />
   <string key="ContextMenu.LabelLink" value="链接" />
   <string key="ContextMenu.LabelUnLink" value="取消链接" />
+  <string key="ContextMenu.LabelLinkProperties" value="链接属性" />
   <string key="ContextMenu.LabelTable" value="表..." />
+  <string key="ContextMenu.LabelTableManage" value="管理表" />
   <string key="ContextMenu.LabelImage" value="图片..." />
-  <string key="ContextMenu.LabelFromWord" value="从Wrod..." />
   <string key="ContextMenu.LabelAsText" value="作为简单文本..." />
   <string key="ContextMenu.LabelField" value="字段" />
+  <string key="ContextMenu.LabelFieldDelete" value="删除字段" />
   <string key="ContextMenu.LabelRendering" value="函数..." />
   <string key="ContextMenu.LabelCharacter" value="字符..." />
   <string key="ContextMenu.LabelImageProperties" value="图片属性..." />
@@ -70,9 +66,17 @@
   <string key="ContextMenu.LabelMergeTableCells" value="合并表格单元格" />
   <string key="ContextMenu.LabelSplitMergedCells" value="拆分合并的单元格" />
   <string key="ContextMenu.LabelDeleteTable" value="删除表" />
+  <string key="ContextMenu.LabelAlignImage" value="对齐图像" />
+  <string key="ContextMenu.LabelAlignImageRight" value="右" />
+  <string key="ContextMenu.LabelAlignImageLeft" value="左" />
+  <string key="ContextMenu.LabelAlignImageNone" value="无" />
+  <!-- error dialog -->
   <string key="ContentError.DialogTitle" value="源代码中的错误" />
   <string key="ContentError.DialogText" value="源代码中的错误：" />
+  <!-- template selector -->
   <string key="TemplateTree.NoTemplateWarning" value="在模板中没有placeholder（占位符）。" />
+  <!-- PLUGINS ............................................................... -->
+  <!-- general -->
   <string key="LabelTabBasic" value="基本" />
   <string key="LabelTabAdvanced" value="高级" />
   <string key="LabelPresentation" value="介绍" />
@@ -82,6 +86,9 @@
   <string key="HelpId" value="id属性可以使用JavaScript或CSS来使一个元素的变化。" />
   <string key="MozSecurityNote.LabelSecurityStuff" value="剪贴板已禁用" />
   <string key="MozSecurityNote.TextSecurityStuff" value="出于安全原因，访问剪贴板被您的浏览器拦截。请使用标准键盘快捷键。如何配置浏览器与Composite C1一起使用，按“更多信息”按钮获取技术说明。" />
+  <!-- link -->
+  <string key="Link.LabelInsertLink" value="插入链接" />
+  <string key="Link.LabelLinkProperties" value="链接属性" />
   <string key="Link.LinkDestination" value="网址" />
   <string key="Link.LinkRole" value="角色" />
   <string key="Link.TitleText" value="标题" />
@@ -89,6 +96,7 @@
   <string key="Link.LinkTarget.LabelCheckBox" value="在新窗口中打开" />
   <string key="Link.TitleTextToolTip" value="当鼠标悬停在链接上时标题文本呈现为一个提示信息。这可以用来让你的访客知道该链接的信息。" />
   <string key="Link.LabelLink" value="链接属性" />
+  <!-- table -->
   <string key="Tables.Cell.CellType" value="单元格类型" />
   <string key="Tables.Cell.LabelWidth" value="单元格宽度" />
   <string key="Tables.Cell.HorizontalAlignment" value="水平对齐" />
@@ -137,12 +145,21 @@
   <string key="Tables.Table.SummaryHelp" value="说明表的内容和结构的摘要信息，使人们使用非可视化浏览器（如盲人）可以更好地理解它。这是特别重要的无标题表。" />
   <string key="Tables.Table.LabelLayout" value="表格布局" />
   <string key="Tables.Table.LabelMeta" value="表说明" />
+  <!-- image -->
   <string key="Image.Source" value="源文件" />
   <string key="Image.AlternativeText" value="替代文字" />
   <string key="Image.AlternativeTextToolTip" value="图片无法正常显示时显示的替代文字。这可能是手机浏览器和浏览器的视障人士的特殊情况。 ALT标签应该清楚地描述图像的内容。" />
   <string key="Image.TitleText" value="标题文本" />
   <string key="Image.TitleTextToolTip" value="标题文本呈现为当鼠标悬停在图像上时的一个提示。" />
   <string key="Image.LabelImage" value="图像属性" />
+  <string key="Image.LabelInsertImage" value="插入图片" />
+  <string key="Image.LabelImageProperties" value="图像属性" />
+  <string key="Image.MaxWidth" value="最大宽度" />
+  <string key="Image.MaxWidthToolTip" value="如果图像的宽度大于此特定值，它将会被精简到此值。" />
+  <string key="Image.MaxHeight" value="最大高度" />
+  <string key="Image.MaxHeightToolTip" value="如果图像的高度大于给定值，则缩减到该值。" />
+
+	<!-- charmap -->
   <string key="CharMap.LabelSelectSpecialChar" value="选择字符" />
   <string key="CharMap.LabelGeneral" value="一般" />
   <string key="CharMap.LabelAlphabetical" value="按字母顺序排列" />
@@ -155,4 +172,13 @@
   <string key="CharMap.LabelMathAndLogic" value="数学与逻辑" />
   <string key="CharMap.LabelSymbols" value="符号" />
   <string key="CharMap.LabelArrows" value="箭头" />
+  <!-- text paste -->
+  <string key="TextPaste.Label" value="作为文本粘贴" />
+  <string key="TextPaste.PasteHereContent" value="在&#xD;这里粘贴内容。然后按OK。" />
+
+  <!-- spellcheck-->
+  <string key="SpellCheck.InfoLabel" value="如何拼写检查..." />
+  <string key="SpellCheck.InfoCaption" value="如何在可视化编辑器中拼写检查" />
+  <string key="SpellCheck.InfoText" value="为了得到一个拼写错误的单词的建议，&#xD;当你调用上下文菜单时按住SHIFT健。" />
+
 </strings>

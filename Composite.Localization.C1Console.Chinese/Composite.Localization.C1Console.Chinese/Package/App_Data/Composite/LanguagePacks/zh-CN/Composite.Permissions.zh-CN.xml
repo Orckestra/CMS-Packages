@@ -1,11 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <string key="ReadLabel" value="阅读" />
-  <string key="EditLabel" value="编辑" />
-  <string key="AddLabel" value="新增" />
-  <string key="DeleteLabel" value="删除" />
-  <string key="ApproveLabel" value="批准" />
-  <string key="PublishLabel" value="发布" />
-  <string key="AdministrateLabel" value="管理" />
-  <string key="ClearPermissionsLabel" value="清除权限" />
+	<string key="ReadLabel" value="阅读" />
+	<string key="EditLabel" value="编辑" />
+	<string key="AddLabel" value="新增" />
+	<string key="DeleteLabel" value="删除" />
+	<string key="ApproveLabel" value="批准" />
+	<string key="PublishLabel" value="发布" />
+	<string key="AdministrateLabel" value="管理" />
+	<string key="ClearPermissionsLabel" value="清除权限" />
+	<string key="AdminLockoutMessage" value="此操作会从该实体中删除管理权限。您无法删除自己的管理权限。" />
 </strings>

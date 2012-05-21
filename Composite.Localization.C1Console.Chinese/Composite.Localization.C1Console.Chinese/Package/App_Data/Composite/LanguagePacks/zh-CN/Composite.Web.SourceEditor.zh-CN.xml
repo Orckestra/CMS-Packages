@@ -1,27 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <strings>
-  <!-- preload precaution -->
-  <!-- validation messages -->
-  <!-- plain/colored switch button -->
+
+	<!-- preload precaution -->
+	<string key="Preload.Key" value="Retrieved on SourceEditorBinding startup to make sure strings are loaded :)" />
+	
+	<!-- validation messages -->
+	<string key="Invalid.HTML.DialogTitle" value="无效的XHTML" />
+	<string key="Invalid.HTML.MissingHtml" value="根&lt;html&gt;标记丢失。" />
+	<string key="Invalid.HTML.MissingHead" value="&lt;HEAD&gt;标记丢失。" />
+	<string key="Invalid.HTML.MissingBody" value="&lt;body&gt;标记丢失。" />
+	<string key="Invalid.HTML.HeadBodyIndex" value="&lt;head&gt;标签必须在&lt;body&gt;标签之前。" />
+	<string key="Invalid.HTML.NamespaceURI" value="根命名空间错误。" />
+	<string key="Invalid.HTML.MultipleBody" value="只允许一个&lt;body&gt;标签。" />
+	<string key="Invalid.HTML.MultipleHead" value="只允许一个&lt;head&gt;标签。" />
+	
+	<string key="Format.XML.ErrorDialog.Title" value="中止源格式" /> 
+	<string key="Format.XML.ErrorDialog.Text" value="XML源格式化时需要良好的文档结构。" />
+	
+	<!-- plain/colored switch button -->
+	<string key="Switch.PlainEdit.Label" value="纯文本编辑" />
+	<string key="Switch.PlainEdit.ToolTip" value="没有语法高亮显示，更快的性能。" />
+	<string key="Switch.ColoredEdit.Label" value="彩色编辑" />
+	<string key="Switch.ColoredEdit.ToolTip" value="语法高亮，较慢的性能" />
+
+  <!-- toolbar menus -->
+  <string key="Toolbar.Insert.Label" value="插入" />
+  <string key="Toolbar.Format.Label" value="格式" />
+  <string key="Toolbar.Format.ToolTip" value="格式化XML源" />
+  
   <!-- insert dropdown -->
-  <string key="Preload.Key" value="Retrieved on SourceEditorBinding startup to make sure strings are loaded :)" />
-  <string key="Invalid.HTML.DialogTitle" value="无效的XHTML" />
-  <string key="Invalid.HTML.MissingHtml" value="根&lt;html&gt;标记丢失。" />
-  <string key="Invalid.HTML.MissingHead" value="&lt;HEAD&gt;标记丢失。" />
-  <string key="Invalid.HTML.MissingBody" value="&lt;body&gt;标记丢失。" />
-  <string key="Invalid.HTML.HeadBodyIndex" value="&lt;head&gt;标签必须在&lt;body&gt;标签之前。" />
-  <string key="Invalid.HTML.NamespaceURI" value="根命名空间错误。" />
-  <string key="Invalid.HTML.MultipleBody" value="只允许一个&lt;body&gt;标签。" />
-  <string key="Invalid.HTML.MultipleHead" value="只允许一个&lt;head&gt;标签。" />
-  <string key="Format.XML.ErrorDialog.Title" value="中止源格式" />
-  <string key="Format.XML.ErrorDialog.Text" value="XML源格式化时需要良好的文档结构。" />
-  <string key="Switch.PlainEdit.Label" value="纯文本编辑" />
-  <string key="Switch.PlainEdit.ToolTip" value="没有语法高亮显示，更快的性能。" />
-  <string key="Switch.ColoredEdit.Label" value="彩色编辑" />
-  <string key="Switch.ColoredEdit.ToolTip" value="语法高亮，较慢的性能" />
-  <string key="Insert.PageURL.Label" value="网页网址" />
-  <string key="Insert.ImageURL.Label" value="图片网址" />
-  <string key="Insert.MediaURL.Label" value="媒体URL" />
-  <string key="Insert.FrontendURL.Label" value="前台网址" />
-  <string key="Insert.FunctionMarkup.Label" value="函数标签" />
+	<string key="Insert.PageURL.Label" value="网页网址" />
+	<string key="Insert.ImageURL.Label" value="图片网址" />
+	<string key="Insert.MediaURL.Label" value="媒体URL" />
+	<string key="Insert.FrontendURL.Label" value="前台网址" />
+	<string key="Insert.FunctionMarkup.Label" value="函数标签" />
+	
 </strings>

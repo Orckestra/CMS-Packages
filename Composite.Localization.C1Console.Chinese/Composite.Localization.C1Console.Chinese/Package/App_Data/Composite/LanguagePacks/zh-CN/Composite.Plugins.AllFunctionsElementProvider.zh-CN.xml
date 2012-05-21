@@ -1,9 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderLabel" value="所有功能" />
-  <string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderToolTip" value="所有函数" />
-  <string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderLabel" value="所有小部件函数" />
-  <string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderToolTip" value="所有小部件函数" />
-  <string key="AllFunctionsElementProvider.GenerateDocumentation" value="生成文档" />
-  <string key="AllFunctionsElementProvider.GenerateDocumentationTooltip" value="在此文件夹下为所有的函数生成文档" />
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderLabel" value="所有功能" />
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderToolTip" value="所有函数" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderLabel" value="所有小部件函数" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderToolTip" value="所有小部件函数" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentation" value="生成文档" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentationTooltip" value="在此文件夹下为所有的函数生成文档" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformation" value="信息" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformationTooltip" value="查看函数的详细信息" />
+
+  <string key="FunctionTesterWorkflow.Layout.Label" value="测试：{0}" />
+  <string key="FunctionTesterWorkflow.FunctionCalls.Label" value="函数" />  
+  <string key="FunctionTesterWorkflow.Preview.Label" value="结果" />
+  <string key="FunctionTesterWorkflow.Runtime.FieldGroup.Label" value="运行时" />
+  <string key="FunctionTesterWorkflow.DebugFieldGroup.Label" value="设置" />
+  <string key="FunctionTesterWorkflow.DebugPage.Label" value="页面" />
+  <string key="FunctionTesterWorkflow.DebugPage.Help" value="运行函数时，此页被用作当前页" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Label" value="数据范围" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Help" value="当执行函数时，用来作为当前数据范围" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Label" value="语言" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Help" value="当执行函数时，用来作为当前语言" />
+  <string key="FunctionTesterWorkflow.AdminitrativeScope.Label" value="管理" />
+  <string key="FunctionTesterWorkflow.PublicScope.Label" value="公共" />
+  
+
+  <string key="AllFunctionsElementProvider.FunctionTester.Label" value="测试函数" />
+  <string key="AllFunctionsElementProvider.FunctionTester.ToolTip" value="测试函数" />
 </strings>

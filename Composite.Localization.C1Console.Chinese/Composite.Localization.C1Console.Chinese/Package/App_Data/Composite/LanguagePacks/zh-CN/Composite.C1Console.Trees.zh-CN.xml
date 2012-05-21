@@ -1,16 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <!-- Validation -->
-  <!-- Ranges -->
-  <!-- Other -->
   <string key="KeyFacade.ErrorTreeNode.Label" value="树中的错误" />
   <string key="KeyFacade.ErrorTreeNode.ShowMessage.Label" value="显示消息" />
   <string key="KeyFacade.ErrorTreeNode.ShowMessage.ToolTip" value="显示错误信息" />
   <string key="KeyFacade.ErrorTreeNode.ShowMessage.Title" value="错误信息" />
+  
+  <!-- Validation -->
   <string key="TreeValidationError.Common.UnknownException" value="发生了未知的异常：'{0}'" />
   <string key="TreeValidationError.Common.UnknownElement" value="未知元素'{0}'" />
   <string key="TreeValidationError.Common.MissingAttribute" value="需要的属性'{0}'不存在" />
-  <string key="TreeValidationError.Common.WrongAttributeValue" value="属性'{0}'具有一个不允许的值" />
+  <string key="TreeValidationError.Common.WrongAttributeValue" value="属性'{0}'具有一个不允许的值" />  
   <string key="TreeValidationError.Common.MissingProperty" value="类型'{0}'不包含一个名为'{1}'的属性" />
   <string key="TreeValidationError.Common.UnkownInterfaceType" value="找不到类型'{0}'" />
   <string key="TreeValidationError.Common.NotImplementingIData" value="类型'{0}'没有实现接口'{1}'" />
@@ -18,16 +17,23 @@
   <string key="TreeValidationError.Common.WrongLocationValue" value="值'{0}不能作为一个位置信息值" />
   <string key="TreeValidationError.Common.MissingFunctionMarkup" value="没有作为子元素的函数脚本" />
   <string key="TreeValidationError.Common.WrongFunctionMarkup" value="不能为proved函数标签创建此函数" />
+
   <string key="TreeValidationError.Markup.NoRootElement" value="树标签代码中缺少根元素" />
   <string key="TreeValidationError.Markup.SchemaError" value="语法错误：{0} {1}行位置{2}" />
+  
   <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPoint" value="不可知的'{0}'附加入口" />
   <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPosition" value="不可知的'{0}'附加位置" />
   <string key="TreeValidationError.DataAttachments.NoElementsAllowed" value="与数据关联的树结构中不允许任何元素" />
+
+  <string key="TreeValidationError.ElementRoot.ShareRootElementByIdNotAllowed" value="只允许ShareRootElementById如果树有一个命名的附着点" />
+
   <string key="TreeValidationError.SimpleElement.WrongIdValue" value="不允许该ID值。该标识应当是不以&quot;NodeAutoId_&quot;开头的非空值，并且Id不能为&quot;RootTreeNode&quot;" />
   <string key="TreeValidationError.SimpleElement.AlreadyUsedId" value="在此树结构中本id值'{0}'已被使用" />
+
   <string key="TreeValidationError.DataElementsTreeNode.SameInterfaceUsedTwice" value="在相同的父元素中，此数据接口'{0}'作为子元素已出现了至少两次；这是不允许的。" />
   <string key="TreeValidationError.DataElementsTreeNode.SameParentFilterInterfaceUsedTwice" value="同样的接口'{0}'已被作为父类与父过滤器，这是不允许的" />
   <string key="TreeValidationError.DataElementsTreeNode.MoreThanOnParentFilterIsPointingToMe" value="多个父过滤器指向接口'{0}'。显示值更改为LAZY" />
+
   <string key="TreeValidationError.DataFolderElements.MissingInterfaceType" value="丢失Type属性" />
   <string key="TreeValidationError.DataFolderElements.WrongInterfaceType" value="接口类型'{0}'不匹配父元素的接口类型'{1}'" />
   <string key="TreeValidationError.DataFolderElements.DateFormetNotAllowed" value="DateFormat特性需要的属性'{0}'应该是类型'{1}'，但当前却为类型'{2}'" />
@@ -38,15 +44,19 @@
   <string key="TreeValidationError.DataFolderElements.InterfaceTypeSwitchNotAllowed" value="不允许在相同的文件夹分组中将接口类型'{0}'切换为另一个不同的接口类型'{1}'" />
   <string key="TreeValidationError.DataFolderElements.SameFieldUsedTwice" value="不允许在相同的分组树结构中使用了两次字段名称&quot;{0}&quot;" />
   <string key="TreeValidationError.DataFolderElements.TooManyParentIdFilters" value="在数据元素分组时使用的父筛选器节点最大ID" />
+
   <string key="TreeValidationError.ParentIdFilterNode.TypeIsNotInParentTree" value="类型'{0}'不在此节点中的parant树结构或者不是一个指定的附加点类型" />
   <string key="TreeValidationError.FieldFilter.UnknownOperatorName" value="未知或不支持的操作符'{0}'" />
   <string key="TreeValidationError.FieldFilter.ValueCouldNotBeConverted" value="此字符串值'{0}'无法转换为类型'{1}'" />
   <string key="TreeValidationError.FieldFilter.OperatorNotSupportedForType" value="操作符'{0}'不支持类型'{1}'" />
+
+  <string key="TreeValidationError.FunctionFilter.MissingFunctionMarkup" value="缺少功能标记" />
   <string key="TreeValidationError.FunctionFilter.WrongFunctionMarkup" value="无法为provied函数标签创建该函数" />
   <string key="TreeValidationError.FunctionFilter.WrongReturnValue" value="该函数不返回类型为'{0}'的值" />
   <string key="TreeValidationError.FunctionFilter.WrongFunctionReturnType" value="此函数返回的表达式类型为'{0}','{1}'并非预期类型." />
   <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterCount" value="此函数的返回表达式参数个数为'{0}" />
   <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterType" value="此函数的返回表达式参数类型为'{0}'而不是'{1}'" />
+  
   <string key="TreeValidationError.ReportFunctionAction.WrongReturnValue" value="该函数不返回类型为'{0}'的值" />
   <string key="TreeValidationError.GenericAddDataAction.MissingMarkupFile" value="该文件'{0}'不存在" />
   <string key="TreeValidationError.GenericAddDataAction.BadMarkupPath" value="错误的自定义标记路径格式'{0}'。用〜/ Dir1/Dir2/File.xml" />
@@ -57,33 +67,51 @@
   <string key="TreeValidationError.MessageBoxAction.UnknownDialogType" value="不支持对话框类型'{0}'" />
   <string key="TreeValidationError.CustomUrlAction.TooManyPostParameterElements" value="太多的'{0}'元素，仅允许一个" />
   <string key="TreeValidationError.CustomUrlAction.UnknownViewType" value="不支持该视图类型'{0}'" />
+
   <string key="TreeValidationError.FieldOrderBy.UnknownDirection" value="错误的方向值'{0}'，应该为'ascending'或'descending'" />
   <string key="TreeValidationError.FieldOrderBy.UnknownField" value="类型'{0}'并不包含一个名为'{1}'的字段" />
+
   <string key="TreeValidationError.DataFieldValueHelper.WrongFormat" value="'{0}'是错误的格式，请使用格式：{1}" />
   <string key="TreeValidationError.DataFieldValueHelper.InterfaceNotInParentTree" value="当前元素或其任何父元素中都不包含接口'{0}'" />
+
   <string key="TreeValidationError.Range.WrongFormat" value="错误的值范围" />
   <string key="TreeValidationError.Range.UnsupportedType" value="类型'{1}' 的属性'{0}'并不支持值范围" />
+
   <string key="TreeValidationError.Range.MinMaxError" value="第一个值（{0}）应大于第二个（{1}）值" />
   <string key="TreeValidationError.Range.NextRangeError" value="此范围的最大值应小于随后范围的最小值" />
+
+  
+  <!-- Ranges -->
+  
   <string key="TreeRanges.IntRange.Closed" value="从{0}到{1}" />
   <string key="TreeRanges.IntRange.MinOpenEnded" value="{0}或更少" />
   <string key="TreeRanges.IntRange.MaxOpenEnded" value="{0}或更多" />
   <string key="TreeRanges.IntRange.Other" value="其他" />
+
   <string key="TreeRanges.StringRange.Closed" value="从{0}到{1}" />
   <string key="TreeRanges.StringRange.MinOpenEnded" value="{0}与之前" />
   <string key="TreeRanges.StringRange.MaxOpenEnded" value="{0}与之后" />
   <string key="TreeRanges.StringRange.Other" value="其他" />
+
+  
+  <!-- Other -->
   <string key="GenericAddDataAction.DefaultLabel" value="新增" />
   <string key="GenericEditDataAction.DefaultLabel" value="编辑" />
   <string key="GenericDeleteDataAction.DefaultLabel" value="删除" />
+  
+  
   <string key="TreeGenericDelete.CascadeDeleteErrorTitle" value="级联删除错误" />
   <string key="TreeGenericDelete.CascadeDeleteErrorMessage" value="此类型被另一个类型引用，不允许级联删除。此操作被取消" />
+  
   <string key="TreeGenericDeleteConfirm.LabelFieldGroup" value="删除数据？" />
   <string key="TreeGenericDeleteConfirm.Text" value="删除" />
+  
   <string key="TreeGenericDeleteConfirmDeletingRelatedData.LabelFieldGroup" value="删除数据？" />
   <string key="TreeGenericDeleteConfirmDeletingRelatedData.ConfirmationText" value="此操作会导致一些被引用的数据也被删除，你要继续吗？" />
+
+
   <string key="TreeAddTreeDefinitionWorkflow.AddNew.Label" value="新增" />
-  <string key="TreeAddTreeDefinitionWorkflow.AddNew.ToolTip" value="添加新的树定义" />
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.ToolTip" value="添加新的树定义" />           
   <string key="TreeAddTreeDefinition.Layout.Label" value="添加新的树定义" />
   <string key="TreeAddTreeDefinition.FieldGroup.Label" value="添加新的树定义" />
   <string key="TreeAddTreeDefinition.NameTextBox.Label" value="定义名称" />
@@ -92,13 +120,16 @@
   <string key="TreeAddTreeDefinition.TemplateSelector.Help" value="选择一个模板来开始" />
   <string key="TreeAddTreeDefinition.PositionSelector.Label" value="位置" />
   <string key="TreeAddTreeDefinition.PositionSelector.Help" value="位置" />
+
   <string key="TreeDeleteTreeDefinitionWorkflow.Delete.Label" value="删除" />
   <string key="TreeDeleteTreeDefinitionWorkflow.Delete.ToolTip" value="删除树的定义" />
   <string key="TreeDeleteTreeDefinition.Layout.Label" value="删除树的定义" />
   <string key="TreeDeleteTreeDefinition.Title" value="删除选定的树定义" />
   <string key="TreeDeleteTreeDefinition.Description" value="删除选定的树定义？" />
+
   <string key="TreeDeleteTreeDefinitionWorkflow.Edit.Label" value="编辑" />
   <string key="TreeDeleteTreeDefinitionWorkflow.Edit.ToolTip" value="编辑树定义" />
+
   <string key="AddApplicationWorkflow.AddApplication.Label" value="添加应用程序" />
   <string key="AddApplicationWorkflow.AddApplication.ToolTip" value="添加新的应用程序" />
   <string key="AddApplication.Layout.Label" value="添加应用程序" />
@@ -109,6 +140,7 @@
   <string key="AddApplication.PositionSelector.Help" value="在此位置中插入此应用程序" />
   <string key="AddApplication.NoTrees.Title" value="没有应用程序" />
   <string key="AddApplication.NoTrees.Message" value="您已添加完所有可用的应用程序" />
+
   <string key="RemoveApplicationWorkflow.RemoveApplication.Label" value="删除应用程序" />
   <string key="RemoveApplicationWorkflow.RemoveApplication.ToolTip" value="删除现有的应用程序" />
   <string key="RemoveApplication.Layout.Label" value="删除应用程序" />
@@ -117,11 +149,12 @@
   <string key="RemoveApplication.TreeIdSelector.Help" value="选择您想要删除的应用程序" />
   <string key="RemoveApplication.NoTrees.Title" value="没有应用程序" />
   <string key="RemoveApplication.NoTrees.Message" value="您已删除了所有可用的应用程序" />
+
   <string key="LocalizeDataWorkflow.LocalizeDataLabel" value="翻译数据资料" />
   <string key="LocalizeDataWorkflow.LocalizeDataToolTip" value="翻译资料" />
   <string key="LocalizeDataWorkflow.DisabledData" value="尚未批准或发布" />
   <string key="LocalizeData.ShowError.Layout.Label" value="数据转换失败" />
-  <string key="LocalizeData.ShowError.InfoTable.Caption" value="翻译错误" />
+  <string key="LocalizeData.ShowError.InfoTable.Caption" value="翻译错误" />  
   <string key="LocalizeData.ShowError.Description" value="以下字段都有一个数据类型的引用。您应该翻译这些被引用的数据项，然后才可以翻译本数据项." />
   <string key="LocalizeData.ShowError.FieldErrorFormat" value="字段'{0}'正使用标签'{2}'来引用数据类型'{1}'" />
   <string key="LocalizeData.ShowError.AlreadyTranslated" value="本数据已经被翻译。翻译版本属于不同的组。" />

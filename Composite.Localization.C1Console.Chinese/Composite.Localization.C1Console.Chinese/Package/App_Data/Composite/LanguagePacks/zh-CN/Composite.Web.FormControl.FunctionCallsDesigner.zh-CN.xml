@@ -1,14 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
+  <string key="DialogTitle" value="函数的性质" />
   <string key="FunctionLocalNameGroupLabel" value="函数结果的局部名称" />
   <string key="FunctionLocalNameLabel" value="局部名称" />
   <string key="FunctionLocalNameHelp" value="如果您包括了某函数多次，此字段以它们的局部名称帮助你分辩出它们单独的结果。" />
   <string key="ParameterValueLabel" value="参数值" />
   <string key="AddNewFunctionDialogLabel" value="选择函数" />
   <string key="ComplexFunctionCallDialogLabel" value="参数值'{0}'" />
+  <string key="ParameterTypeLabel" value="参数类型" />
+  <string key="ParameterNameLabel" value="参数名称" />
   <string key="ReturnTypeLabel" value="返回类型" />
   <string key="ValidationFailedAlertTitle" value="验证失败" />
   <string key="FunctionNotFound" value="函数'{0}'不存在。" />
   <string key="RequiredParameterNotDefined" value="需要的参数'{0}'并没有被定义。" />
   <string key="IncorrectTypeCast" value="不正确的类型转换。参数名：'{0}'，函数名：'{1}'。" />
+  <string key="ParameterTypeDefaultLabel" value="默认" />
+  <string key="ParameterTypeConstantLabel" value="常数" />
+  <string key="ParameterTypeInputParameterLabel" value="输入参数" />
+  <string key="ParameterTypeFunctionLabel" value="函数" />
+  <string key="AddNewButtonLabel" value="新增" />
+  <string key="DeleteButtonLabel" value="删除" />
+  <string key="ToolBar.LabelSource" value="源" />
+  <string key="ToolBar.LabelDesign" value="设计" />
 </strings>

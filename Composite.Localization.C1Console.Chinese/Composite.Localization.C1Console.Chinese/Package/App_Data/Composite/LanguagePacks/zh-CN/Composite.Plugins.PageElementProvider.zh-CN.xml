@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="AddNewPageStep1.DialogLabel" value="添加新页" />
   <string key="GeneralSettings.FieldGroupLabel" value="常规设置" />
@@ -32,6 +32,8 @@
   <string key="EditPage.LabelMenuTitle" value="菜单标题" />
   <string key="EditPage.HelpMenuTitle" value="在这一字段中指定的条目被用于网站上的导航" />
   <string key="EditPage.LabelUrlTitle" value="网址标题" />
+  <string key="EditPage.UrlTitleFormattedTitle" value="网址标题被改写" />	
+  <string key="EditPage.UrlTitleFormattedMessage" value="根据当前的URL替换规则，网址标题改为“{0}”" />
   <string key="EditPage.HelpUrlTitle" value="在此字段中指定的条目被作为网址URL的一部分显示在浏览器的地址栏，该字段被搜索引擎使用。" />
   <string key="EditPage.LabelFriendlyUrl" value="用户友好的URL" />
   <string key="EditPage.HelpFriendlyUrl" value="在此字段中指定的条目被替换为系统自动生成的URL并显示在浏览器地址栏中。请注意，服务器必须配置为支持此功能" />
@@ -51,6 +53,7 @@
   <string key="DeletePageStep2.Text" value="删除页面'{0}'？" />
   <string key="UrlTitleNotUniqueError" value="该指定的URL标题已被另一页已使用，具有相同父页的页面标题必须是唯一的。" />
   <string key="UrlTitleNotValidError" value="指定的网址名称包含无效字符。一旦用本字段来建立网页的网址，某些特殊字符（如空格，问号，斜线和点）都是不允许的。你可以使用字母，数字和破折号。" />
+  <string key="UrlTitleTooLong" value="所指定的URL的标题太长。将其缩短并再次尝试" />
   <string key="FriendlyUrlNotUniqueError" value="指定的用户友好URL网址已被另一页使用，用户友好的URL网址必须是唯一的。" />
   <string key="TitleMissingError" value="标题不能为空。" />
   <string key="PageSaveValidationFailedTitle" value="没有保存页" />
@@ -75,8 +78,6 @@
   <string key="PageElementProvider.ViewPublicToolTip" value="查看最近发布的版本" />
   <string key="PageElementProvider.ViewDraftPage" value="查看未发布" />
   <string key="PageElementProvider.ViewDraftToolTip" value="查看最近修改" />
-  <string key="PageElementProvider.ManageHostNames" value="管理主机名" />
-  <string key="PageElementProvider.ManageHostNamesToolTip" value="在选定的页面上管理主机名" />
   <string key="PageElementProvider.DisplayLocalOrderingLabel" value="显示页面的本地排序" />
   <string key="PageElementProvider.DisplayLocalOrderingToolTip" value="显示页面的本地排序" />
   <string key="PageElementProvider.DisabledPage" value="尚未审批或发布" />
@@ -84,10 +85,13 @@
   <string key="PageElementProvider.MissingTemplateMessage" value="建立一个网页需要一个网站模板，但还没有任何模板。你可以在“布局”操控台创建一个新的布局模板。" />
   <string key="PageElementProvider.MissingActiveLanguageTitle" value="语言要求" />
   <string key="PageElementProvider.MissingActiveLanguageMessage" value="要添加一个页面，至少先添加一种语言。这可以在“系统”控制台进行操作。" />
+  <string key="PageElementProvider.NoPageTypesAvailableTitle" value="没有可用的页面类型" />
+  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="您必须先创建一个页面类型" />
   <string key="PageElementProvider.MissingPageTypeTitle" value="页类型是必须的" />
   <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="要创建一个首页，需要一个没有“仅子页”限制的页类型。您可以在“布局”控制台添加。" />
-  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="要创建一个子页面，需要一个没有”仅首页“限制的页类型。目前还没有该页类型，可以“布局”控制台添加一个。" />
-  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="您必须先创建一个页面类型" />
+  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="要创建一个子页面，需要一个没有”仅首页“限制的页类型。目前还没有该页类型，可以“布局”控制台添加一个。" />  
+  <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="无法添加页面！" />
+  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="为页面类型禁止添加页面而定义可用性规则。" />
   <string key="ManageHostNames.Add.DialogLabel" value="管理主机名" />
   <string key="ManageHostNames.Add.HeadingTitle" value="为关联页面添加主机名" />
   <string key="ManageHostNames.Add.HeadingDescription" value="你可以通过下列指定字段为一个页面指定关联的主机名（或域名）。请注意，指定主机名的域名配置必须也要被配置，但域名配置是在本系统之外进行的。" />

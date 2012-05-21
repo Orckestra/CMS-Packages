@@ -1,34 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <strings>
-  <!-- change password -->
-  <!-- change culture -->
-  <!-- change own active and foreign locale -->
-  <string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="更改密码..." />
-  <string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="更改您的密码" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="更改密码" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="更改您的密码" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="现有的密码" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="出于安全原因，你必须提示现有的密码，然后才能继续。" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="新密码" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="在本字段中指定的密码必须符合以下确认信息。" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="确认新密码" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="在本字段中指定的密码必须符合上述提定的人。" />
-  <string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="区域设置..." />
-  <string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="设置数字，时间显示，日期" />
-  <string key="ChangeOwnCultureWorkflow.Dialog.Label" value="区域设置和语言" />
-  <string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="区域设置/语言" />
-  <string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="要更改数字，时间和日期的显示方式，从列表中选择一个条目。最右边的语言是用户界面的语言。" />
+	<!-- change password -->
+	<string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="更改密码..." />
+	<string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="更改您的密码" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="更改密码" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="更改您的密码" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="现有的密码" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="出于安全原因，你必须提示现有的密码，然后才能继续。" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="新密码" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="在本字段中指定的密码必须符合以下确认信息。" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="确认新密码" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="在本字段中指定的密码必须符合上述提定的人。" />
+
+	<!-- change culture -->
+	<string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="区域设置..." />
+	<string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="设置数字，时间显示，日期" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.Label" value="区域设置和语言" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="区域设置/语言" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="要更改数字，时间和日期的显示方式，从列表中选择一个条目。最右边的语言是用户界面的语言。" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Label" value="C1控制台语言" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Help" value="选择要使用的语言为标签，帮助文本，对话等，这里提供的选项是有限的语言安装。您可以通过封装系统安装更多的语言，看到Composite.Localization“。" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="更改应用程序的语言" />
   <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="您确定要更改当前的设置？该应用程序将重新启动，所有未保存的更改将会丢失。" />
-  <string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="区域设置" />
-  <string key="AdministratorAutoCreator.DefaultGroupName" value="管理员" />
-  <string key="ChangeForeignLocaleWorkflow.ActionLabel" value="翻译..." />
-  <string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="更改源语言" />
-  <string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="无" />
-  <string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="翻译" />
-  <string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="选择源语言" />
-  <string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="没有安装多国语言" />
-  <string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="要支持翻译功能，必须安装两个或更多的语言。管理员可以在'系统'操作台中添加更多的语言。" />
-  <string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="从语言" />
-  <string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="在内容树结构中由&quot;源语言&quot;撰写的网页将显示为Globe图标。相关的“翻译网页”操作将源页内容导入到当前的工作语言页面。" />
+	<string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="区域设置/语言" />
+	<string key="AdministratorAutoCreator.DefaultGroupName" value="管理员" />
+
+	<!-- change own active and foreign locale -->
+	<string key="ChangeForeignLocaleWorkflow.ActionLabel" value="翻译..." />
+	<string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="更改源语言" />
+	<string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="无" />
+	<string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="翻译" />
+	<string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="选择源语言" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="没有安装多国语言" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="要支持翻译功能，必须安装两个或更多的语言。管理员可以在'系统'操作台中添加更多的语言。" />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="从语言" />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="在内容树结构中由&quot;源语言&quot;撰写的网页将显示为Globe图标。相关的“翻译网页”操作将源页内容导入到当前的工作语言页面。" />
+
+
   <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="当前活动语言已改动" />
 </strings>

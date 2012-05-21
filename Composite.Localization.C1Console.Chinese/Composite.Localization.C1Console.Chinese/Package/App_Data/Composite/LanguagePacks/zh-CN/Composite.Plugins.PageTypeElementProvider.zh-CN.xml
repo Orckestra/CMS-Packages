@@ -1,8 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <!-- "Metadata settings" - but too much text! -->
-  <!--<string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Name" />
-  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="The uniqueue name of the Metadata field" />-->
   <string key="PageType.Tree.Root.Label" value="网页类型" />
   <string key="PageType.Tree.DefaultContentElement.Label" value="占位符的内容" />
   <string key="PageType.Tree.MetaDataFieldsElement.Label" value="元数据字段" />
@@ -86,6 +83,7 @@
   <string key="PageType.EditPageTypeDefaultPageContentWorkflow.ContentXhtmlEditor.Label" value="内容" />
   <string key="PageType.AddPageTypeMetaDataFieldWorkflow.Layout.Label" value="添加元数据字段" />
   <string key="PageType.AddPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="-" />
+  <!-- "Metadata settings" - but too much text! -->
   <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="编程名称" />
   <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="元数据字段的唯一名称。指定以后不能更改！" />
   <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="显示标签" />
@@ -100,6 +98,8 @@
   <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Message" value="删除元数据字段{0}？警告：所有现有的元数据项也将被删除" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.Layout.Label" value="编辑元数据字段" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="元数据字段设置" />
+  <!--<string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Name" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="The uniqueue name of the Metadata field" />-->
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="标签" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="元数据字段的标签。用于用户界面" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="标签" />

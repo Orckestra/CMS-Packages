@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="RootFolderLabel" value="C#函数" />
   <string key="RootFolderToolTip" value="方法函数" />
@@ -16,8 +16,8 @@
   <string key="AddNewMethodBasedFunctionStep1.LabelType" value="类型" />
   <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="该类型包含有问题的方法" />
   <string key="AddNewMethodBasedFunctionStep2.LabelMethodName" value="方法名称" />
-  <string key="AddNewMethodBasedFunctionStep3.LabelMethodName" value="方法名称" />
   <string key="AddNewMethodBasedFunctionStep2.HelpMethodName" value="-" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelMethodName" value="方法名称" />
   <string key="AddNewMethodBasedFunctionStep3.HelpMethodName" value="-" />
   <string key="AddNewMethodBasedFunctionStep3.LabelNamespaceName" value="命名空间名称" />
   <string key="AddNewMethodBasedFunctionStep3.HelpNamespaceName" value="-" />
@@ -30,6 +30,7 @@
   <string key="AddFunction.TypeMustNotHaveOverloads" value="该类型必须没有重载" />
   <string key="AddFunction.MethodNameIsEmpty" value="方法名必须是非空" />
   <string key="AddFunction.InvalidNamespace" value="命名空间必须类似于A.B.C ，并且不能以&quot;.&quot;结束。" />
+  <string key="AddFunction.NameAlreadyUsed" value="函数的名称'{0}“已被使用" />
   <string key="EditMethodBasedFunction.LabelFieldGroup" value="基于查询编辑方法" />
   <string key="EditMethodBasedFunction.LabelMethodName" value="方法名称" />
   <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="该函数的名称应该如下" />

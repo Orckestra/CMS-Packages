@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <strings>
   <string key="PageTemplateElementProvider.RootLabel" value="页面模板" />
   <string key="PageTemplateElementProvider.RootLabelToolTip" value="你能在这找到XHTML模板网站" />
@@ -6,8 +6,9 @@
   <string key="PageTemplateElementProvider.AddTemplateToolTip" value="添加新模板" />
   <string key="PageTemplateElementProvider.EditTemplate" value="编辑模板" />
   <string key="PageTemplateElementProvider.EditTemplateToolTip" value="编辑选取的模板" />
-  <string key="PageTemplateElementProvider.DeleteTemplate" value="删除" />
-  <string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="删除此项目" />
+	<string key="PageTemplateElementProvider.DeleteTemplate" value="删除" />
+	<string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="删除此项目" />
+	
   <string key="AddNewPageTemplateStep1.LabelDialog" value="添加新的网站模板" />
   <string key="AddNewPageTemplateStep1.LabelFieldGroup" value="网站模板" />
   <string key="AddNewPageTemplateStep1.LabelTemplateTitle" value="模板的标题" />
@@ -16,16 +17,21 @@
   <string key="AddNewPageTemplateStep1.LabelCopyFromHelp" value="您可以通过选取列表中的另一个模板来复制它的“标签”代码。" />
   <string key="AddNewPageTemplateStep1.LabelCopyFromEmptyOption" value="（新模板）" />
   <string key="AddNewPageTemplateStep1.TitleInUseTitle" value="标题已经被使用" />
+  <string key="AddNewPageTemplateStep1.TitleTooLong" value="标题过长（作为XML文件名的一部分）。" />
+
   <string key="EditPageTemplate.LabelMarkUpCode" value="标签代码" />
   <string key="EditPageTemplate.LabelTemplateIdentification" value="模板简介" />
   <string key="EditPageTemplate.LabelTemplateTitle" value="模板的标题" />
   <string key="EditPageTemplate.LabelTemplateTitleHelp" value="标题用于标识列表中的模板。考虑选择一个简短而含义精准的名称。" />
+
   <string key="EditPageTemplateWorkflow.InvalidXmlTitle" value="无法保存页面" />
   <string key="EditPageTemplateWorkflow.InvalidXmlMessage" value="没有验证该网页模板标记。 {0}" />
   <string key="EditPageTemplateWorkflow.CannotRenameFileExists" value="不能重命名模板 - 名称'{0}'已经存在。" />
   <string key="EditPageTemplateWorkflow.TitleInUseTitle" value="标题已经被使用" />
+
   <string key="DeletePageTemplateStep1.LabelFieldGroup" value="删除这个页面模板吗？" />
-  <string key="DeletePageTemplateStep1.Text" value="删除网页模板？" />
-  <string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="级联删除错误" />
-  <string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="此类型被另一类型所引用，不允许级联删除。操作被取消" />
+	<string key="DeletePageTemplateStep1.Text" value="删除网页模板？" />
+	
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="级联删除错误" />
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="此类型被另一类型所引用，不允许级联删除。操作被取消" />
 </strings>
