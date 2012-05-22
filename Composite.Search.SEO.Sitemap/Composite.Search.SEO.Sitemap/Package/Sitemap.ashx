@@ -4,6 +4,7 @@ using System;
 using System.Globalization;
 using System.Text;
 using System.Web;
+using Composite.Core.Routing;
 using Composite.Data;
 using Composite.Data.Types;
 
@@ -24,14 +25,17 @@ public class Sitemap : IHttpHandler
 		{
 			using (new DataScope(cultureInfo))
 			{
+			    var urlSpace = new UrlSpace();
+                
 				var pages = DataFacade.GetData<IPage>();
 				foreach (var page in pages)
 				{
-					var url = new PageUrl(PublicationScope.Published, cultureInfo, page.Id).Build(PageUrlType.Published);
-
+					var pageUrlData = new PageUrlData(page.Id, PublicationScope.Published, cultureInfo);
+                    string url = PageUrls.BuildUrl(pageUrlData, UrlKind.Public, urlSpace );
+                    
 					if (url != null)
 					{
-						var pageUrl = GetFullPath(url.ToString());
+						var pageUrl = GetFullPath(url);
 						xml.Append("<url>");
 						xml.AppendFormat("<loc>{0}</loc>", pageUrl);
 						xml.AppendFormat("<lastmod>{0}</lastmod>", page.ChangeDate.ToString("yyyy-MM-dd"));
