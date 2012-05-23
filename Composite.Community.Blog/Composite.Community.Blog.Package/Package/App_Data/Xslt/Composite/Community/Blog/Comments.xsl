@@ -77,21 +77,26 @@
 			<legend>
 				<xsl:value-of select="be:GetLocalized('Blog','commentsTitleText')" />
 			</legend>
-			<xsl:if test="$Submitted = 'true'">
-				<div id="ErrorBox">
-					<xsl:if test="count($SaveActionErrors)>0">
-						<h4>
-							<xsl:value-of select="be:GetLocalized('Blog','correctErrorsText')" />
-						</h4>
-						<ul>
-							<xsl:for-each select="$SaveActionErrors">
-								<li>
-									<xsl:value-of select="@ErrorDescription" />
-								</li>
-							</xsl:for-each>
-						</ul>
-					</xsl:if>
-				</div>
+      <xsl:if test="$Submitted = 'true'">
+        <div id="ErrorBox">
+          <xsl:choose>
+            <xsl:when test="count($SaveActionErrors)>0">
+              <h4>
+                <xsl:value-of select="be:GetLocalized('Blog','correctErrorsText')" />
+              </h4>
+              <ul>
+                <xsl:for-each select="$SaveActionErrors">
+                  <li>
+                    <xsl:value-of select="@ErrorDescription" />
+                  </li>
+                </xsl:for-each>
+              </ul>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="captcha:RegisterUsage($captchaEncryptedValue)" />
+            </xsl:otherwise>
+          </xsl:choose>
+        </div>
 			</xsl:if>
 
 			<ul id="CommentsForm">
