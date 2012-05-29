@@ -45,6 +45,9 @@
 						<p>
 							<lang:string key="Resource, Resources.ContactForm.ResponseText" />
 						</p>
+						<xsl:if test="$useCaptcha = 'true'">
+							<xsl:value-of select="captcha:RegisterUsage($captchaEncryptedValue)" />
+						</xsl:if>
 					</xsl:when>
 					<xsl:otherwise>
 						<p>
