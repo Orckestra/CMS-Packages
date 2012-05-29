@@ -13,7 +13,7 @@
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Directories>
-				<Directory sourceDirectory="~\App_Data\Composite\LanguagePacks\zh-CN\" targetDirectory="~\App_Data\Composite\LanguagePacks\sv-SE\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\App_Data\Composite\LanguagePacks\sv-SE\" targetDirectory="~\App_Data\Composite\LanguagePacks\sv-SE\" allowOverwrite="true" deleteTargetDirectory="false" />
 			</Directories>
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
