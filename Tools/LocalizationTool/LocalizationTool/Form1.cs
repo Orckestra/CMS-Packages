@@ -314,11 +314,15 @@ namespace LocalizationTool
 			//if a Source string gets translated, and this string exists for other keys, those keys gets automatically updated (saving the user time)
 			if (!string.IsNullOrEmpty(sourceLanguageTextBox.Text))
 			{
-				var keysWithTheSameText = FileHandler.SourceFilesBySterm[_selectedFile.Name].Root.Elements("string").Where(e => e.Attribute("value").Value == sourceLanguageTextBox.Text && e.Attribute("key").Value != _selectedKey.Name).Select(e => e.Attribute("key").Value).ToList();
-				keysWithTheSameText.ForEach(key =>
-					 {
-						 isSaved = FileHandler.SaveTargetString(_selectedFile.Name, key, targetString) || isSaved;
-					 });
+				foreach (var sourceFile in FileHandler.SourceFilesBySterm)
+				{
+					var keysWithTheSameText = sourceFile.Value.Root.Elements("string").Where(e => e.Attribute("value").Value == sourceLanguageTextBox.Text).Select(e => e.Attribute("key").Value).ToList();
+					keysWithTheSameText.ForEach(key =>
+					{
+						if (!(sourceFile.Key == _selectedFile.Name && key == _selectedKey.Name))
+							FileHandler.SaveTargetString(sourceFile.Key, key, targetString);
+					});
+				}
 			}
 
 			if (isSaved)
