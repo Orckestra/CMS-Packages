@@ -83,18 +83,23 @@
 			</legend>
 			<xsl:if test="$Submitted = 'true'">
 				<div class="ErrorBox">
-					<xsl:if test="count($SaveActionErrors)>0">
-						<h4>
-							Please correct the errors below:
-						</h4>
-						<ul>
-							<xsl:for-each select="$SaveActionErrors">
-								<li>
-									<xsl:value-of select="@ErrorDescription" />
-								</li>
-							</xsl:for-each>
-						</ul>
-					</xsl:if>
+					<xsl:choose>
+						<xsl:when test="count($SaveActionErrors)&gt;0">
+							<h4>
+								Please correct the errors below:
+							</h4>
+							<ul>
+								<xsl:for-each select="$SaveActionErrors">
+									<li>
+										<xsl:value-of select="@ErrorDescription" />
+									</li>
+								</xsl:for-each>
+							</ul>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="captcha:RegisterUsage($captchaEncryptedValue)" />
+						</xsl:otherwise>
+					</xsl:choose>
 				</div>
 			</xsl:if>
 

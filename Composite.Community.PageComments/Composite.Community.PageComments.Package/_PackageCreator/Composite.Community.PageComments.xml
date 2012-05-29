@@ -16,7 +16,8 @@
 		<Add name="Composite.Community.PageComments" />
 	</pc:XsltFunctions>
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.PageComments" groupName="Composite.Community" version="1.4.9" author="Composite A/S" website="http://composite.net" id="c06828d4-fbb3-4101-b002-5ae6d6f20b61" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Community.PageComments" groupName="Composite.Community" version="1.5.0" author="Composite A/S" readMoreUrl="http://docs.composite.net/Composite.Community.PageComments" website="http://composite.net" id="c06828d4-fbb3-4101-b002-5ae6d6f20b61" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows visitors to post comments on a page using a form and displays these comments. Uses CAPTCHA for protection from abuse.</Description>
+		<TechnicalDetails>	Allows visitors to post comments on a page using a form and displays these comments. Uses CAPTCHA for protection from abuse.</TechnicalDetails>
 	</mi:PackageInformation>
 </pc:PackageCreator>
