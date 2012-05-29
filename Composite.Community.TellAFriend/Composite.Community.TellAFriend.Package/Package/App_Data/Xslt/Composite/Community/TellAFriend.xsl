@@ -72,6 +72,7 @@
 		<xsl:choose>
 			<xsl:when test="count($SaveActionErrors) = 0 and $Submitted = 'true'">
 				<xsl:value-of select="taf:GetLocalized('TellAFriend','thankYou')" />
+				<xsl:value-of select="captcha:RegisterUsage($captchaEncryptedValue)" />
 			</xsl:when>
 			<xsl:otherwise>
 				<div id="TellAFriend">
