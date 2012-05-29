@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+  <!-- menus -->
+  <string key="Menu.ViewSource" value="Sidkälla" />
+  <string key="ContextMenu.Back" value="Tillbaka" />
+  <string key="ContextMenu.Forward" value="Framåt" />
+  <string key="ContextMenu.Refresh" value="Uppdatera" />
+  <string key="ContextMenu.ViewSource" value="Visa Sidkälla" />
+
+
+  <!-- buttons -->
+	<string key="ToolBarButton.Back.ToolTip" value="Gå tillbaka en sida" />
+	<string key="ToolBarButton.Forward.ToolTip" value="Gå framåt en sida" />
+	<string key="ToolBarButton.Refresh.ToolTip" value="Uppdatera sidan" />
+  <string key="ToolBarButton.Go.ToolTip" value="Gå till adressen i adressfältet" />
+  <string key="ToolBarButton.Home.ToolTip" value="Gå till Startsidan" /> <!-- TODO: Show URL instead! -->
+	
+	<!-- URL errors -->
+	<string key="AddressBar.Invalid.DialogTitle.External" value="Åtkomst nekad" />
+	<string key="AddressBar.Invalid.DialogText.External" value="Extern URL kan inte laddas." />
+	<string key="AddressBar.Invalid.DialogTitle.BadRequest" value="Felaktig URL" />
+	<string key="AddressBar.Invalid.DialogText.BadRequest" value="URL:en är ogiltig och kan inte laddas." />
+	<string key="AddressBar.Invalid.DialogTitle.Unauthorized" value="Ej behörig" />
+	<string key="AddressBar.Invalid.DialogText.Unauthorized" value="Du har inte behörighet att se sidan på angiven URL." />
+	<string key="AddressBar.Invalid.DialogTitle.NotFound" value="Sidan kunde inte hittas" />
+	<string key="AddressBar.Invalid.DialogText.NotFound" value="Sidan hittades inte på den angivna URL:en." />
+	<string key="AddressBar.Invalid.DialogTitle.InternalError" value="Serverfel" />
+	<string key="AddressBar.Invalid.DialogText.InternalError" value="Servern har rapporterat ett fel på den angivna URL:en. Sidan kan inte laddas." />
+	<string key="AddressBar.Invalid.DialogTitle.Default" value="Sidan kunde inte laddas" />
+	<string key="AddressBar.Invalid.DialogText.Default" value="Ett fel hindrar URL:en från att laddas." />	
+	
+</strings>

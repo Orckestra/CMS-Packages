@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="PageTemplateElementProvider.RootLabel" value="Sidmallar" />
+  <string key="PageTemplateElementProvider.RootLabelToolTip" value="Du hittar sitens XHTML-mallar här" />
+  <string key="PageTemplateElementProvider.AddTemplate" value="Lägg till Mall" />
+  <string key="PageTemplateElementProvider.AddTemplateToolTip" value="Lägg till ny mall" />
+  <string key="PageTemplateElementProvider.EditTemplate" value="Redigera Mall" />
+  <string key="PageTemplateElementProvider.EditTemplateToolTip" value="Redigera vald mall" />
+	<string key="PageTemplateElementProvider.DeleteTemplate" value="Ta bort" />
+	<string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="Ta bort denna post" />
+	
+  <string key="AddNewPageTemplateStep1.LabelDialog" value="Lägg till Ny Webbsidemall" />
+  <string key="AddNewPageTemplateStep1.LabelFieldGroup" value="Webbsidemall" />
+  <string key="AddNewPageTemplateStep1.LabelTemplateTitle" value="Malltitel" />
+  <string key="AddNewPageTemplateStep1.LabelTemplateTitleHelp" value="Titeln visas för att identifiera den här mallen i listor. Tänk på att välja ett kort men beskrivande namn." />
+  <string key="AddNewPageTemplateStep1.LabelCopyFrom" value="Kopiera från" />
+  <string key="AddNewPageTemplateStep1.LabelCopyFromHelp" value="Du kan kopiera uppmärkningen från en annan Layoutmall genom att välja den i listan." />
+  <string key="AddNewPageTemplateStep1.LabelCopyFromEmptyOption" value="(Ny mall)" />
+  <string key="AddNewPageTemplateStep1.TitleInUseTitle" value="Titel används redan" />
+  <string key="AddNewPageTemplateStep1.TitleTooLong" value="Titeln är för lång (används som en del av XML-filnamnet)." />
+
+  <string key="EditPageTemplate.LabelMarkUpCode" value="Uppmärkningskod" />
+  <string key="EditPageTemplate.LabelTemplateIdentification" value="Mallinformation" />
+  <string key="EditPageTemplate.LabelTemplateTitle" value="Malltitel" />
+  <string key="EditPageTemplate.LabelTemplateTitleHelp" value="Titeln visas för att identifiera den här mallen i listor. Tänk på att välja ett kort men beskrivande namn." />
+
+  <string key="EditPageTemplateWorkflow.InvalidXmlTitle" value="Kunde inte Spara Mall" />
+  <string key="EditPageTemplateWorkflow.InvalidXmlMessage" value="Sidmallens uppmärkning godkändes inte. {0}" />
+  <string key="EditPageTemplateWorkflow.CannotRenameFileExists" value="Kan inte byta namn på en mall - en fil med namnet '{0}' finns redan." />
+  <string key="EditPageTemplateWorkflow.TitleInUseTitle" value="Titel används redan" />
+
+  <string key="DeletePageTemplateStep1.LabelFieldGroup" value="Ta bort Denna Sidmall?" />
+	<string key="DeletePageTemplateStep1.Text" value="Ta bort sidmall?" />
+	
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="Fel vid sammanhängande borttagning" />
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="Typen refereras av en annan typ som inte tillåter sammanhängande borttagning. Operationen stoppades" />
+</strings>

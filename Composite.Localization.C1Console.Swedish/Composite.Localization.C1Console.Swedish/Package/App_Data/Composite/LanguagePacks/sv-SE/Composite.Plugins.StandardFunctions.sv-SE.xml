@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<string key="Composite.AspNet.LoadUserControl.description" value="Laddar en ASP.NET-användarkontroll" />
+	<string key="Composite.AspNet.LoadUserControl.param.Path.help" value="Sökvägen till Användarkontrollens .ascx-fil, t.ex. &quot;~/ Controls / MyControl.ascx&quot;" />
+	<string key="Composite.AspNet.LoadUserControl.param.Path.label" value="Sökväg" />
+	<string key="Composite.Constant.Boolean.description" value="Låter dig ange ett konstant booleskt värde" />
+	<string key="Composite.Constant.Boolean.param.Constant.help" value="" />
+	<string key="Composite.Constant.Boolean.param.Constant.label" value="Värde" />
+	<string key="Composite.Constant.DateTime.description" value="Låter dig ange ett konstant datum- och tidsvärde" />
+	<string key="Composite.Constant.DateTime.param.Constant.help" value="" />
+	<string key="Composite.Constant.DateTime.param.Constant.label" value="Värde" />
+	<string key="Composite.Constant.Decimal.description" value="Låter dig ange ett konstant decimalvärde" />
+	<string key="Composite.Constant.Decimal.param.Constant.help" value="" />
+	<string key="Composite.Constant.Decimal.param.Constant.label" value="Värde" />
+	<string key="Composite.Constant.Guid.description" value="Låter dig ange ett konstant GUID-värde" />
+	<string key="Composite.Constant.Guid.param.Constant.help" value="" />
+	<string key="Composite.Constant.Guid.param.Constant.label" value="Värde" />
+	<string key="Composite.Constant.Integer.description" value="Låter dig ange ett konstant heltals-värde" />
+	<string key="Composite.Constant.Integer.param.Constant.help" value="" />
+	<string key="Composite.Constant.Integer.param.Constant.label" value="Värde" />
+	<string key="Composite.Constant.String.description" value="Låter dig ange ett konstant strängvärde" />
+	<string key="Composite.Constant.String.param.Constant.help" value="" />
+	<string key="Composite.Constant.String.param.Constant.label" value="Värde" />
+	<string key="Composite.Constant.XhtmlDocument.description" value="Låter dig visuellt ange en XHTML-dokumentkonstant" />
+	<string key="Composite.Constant.XhtmlDocument.param.Constant.help" value="" />
+	<string key="Composite.Constant.XhtmlDocument.param.Constant.label" value="Värde" />
+
+	<string key="Composite.IDataGenerated.AddDataInstance.description" value="Lägger till en ny instans av den givna typen." />
+	<string key="Composite.IDataGenerated.UpdateDataInstance.description" value="Uppdaterar instans(er) med de givna värdena." />
+	<string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.help" value="" />
+	<string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.label" value="Filter" />
+	<string key="Composite.IDataGenerated.DeleteDataInstance.description" value="Tar bort instans(er) med det givna filtret." />
+	<string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.help" value="" />
+	<string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.label" value="Filter" />
+	<string key="Composite.IDataGenerated.GetDataReference.description" value="Skapar en DataReference baserat på ett nyckelvärde." />
+	<string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.help" value="Nyckelvärdet för datan som ska refereras." />
+	<string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.label" value="Nyckelvärde" />
+	<string key="Composite.IDataGenerated.GetNullableDataReference.description" value="Skapar en NullableDataReference baserad på et nyckelvärde. Standardvärdet är 'null', ingen referens." />
+	<string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.help" value="Nyckelvärdet för datan som ska refereras." />
+	<string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.label" value="Nyckelvärde" />
+
+	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.description" value="Konverterar en DataReference till ett singelelementfilter. Detta filter kommer att välja högst ett objekt." />
+	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.help" value="Datareferensen som ska användas när man väljer data." />
+	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.label" value="Datareferens" />
+	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Låter dig välja data baserat på dess referens till den för närvarande renderade sidan." />
+	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.help" value="Välj vilken relation den aktuella sidan måste ha med de data du vill hämta." />
+	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.label" value="Sidomfattning" />
+	<string key="Composite.IDataGenerated.Filter.CompoundFilter.description" value="Definierar en &quot;och&quot;- eller &quot;eller&quot;-fråga, genom att kombinera två andra filter." />
+	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.label" value="Och- / eller-filter" />
+	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.help" value="Om du väljer &quot;Och&quot; kommer båda filtren tillämpas på datan. Att välja &quot;Eller&quot; kommer ge data som matchar bara en av filtren." />
+	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.help" value="Ett av de två filtren (det som ska köras först)" />
+	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.label" value="Filter till vänster" />
+	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.help" value="Ett av de två filtren (det som ska köras sist)" />
+	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.label" value="Filter till höger" />
+	<string key="Composite.IDataGenerated.Filter.FieldPredicatesFilter.description" value="Låter dig ange ett filter på data genom att ange krav för de enskilda fälten. Om du ställer krav på flera fält, kommer de alla verkställas (och-fråga)." />
+	<string key="Composite.IDataGenerated.GetXml.description" value="Hämtar en XML-representation av datan." />
+	<string key="Composite.IDataGenerated.GetXml.param.ElementName.label" value="Elementnamn" />
+	<string key="Composite.IDataGenerated.GetXml.param.ElementNamespace.label" value="Element-namnrymd" />
+	<string key="Composite.IDataGenerated.GetXml.param.Filter.help" value="" />
+	<string key="Composite.IDataGenerated.GetXml.param.Filter.label" value="Filter" />
+	<string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.help" value="När valt kommer data-XML:en att inledas med ett &lt;PagingInfo /&gt; element som anger antal sidor, objekt och mycket mer." />
+	<string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.label" value="Innefatta sidhanteringsinformation" />
+	<string key="Composite.IDataGenerated.GetXml.param.OrderByField.help" value="Fältet som datan ska sorteras efter" />
+	<string key="Composite.IDataGenerated.GetXml.param.OrderByField.label" value="Sortera efter" />
+	<string key="Composite.IDataGenerated.GetXml.param.OrderAscending.help" value="När satt till sant levereras resultat i stigande ordning, annars används fallande. Stigande ordning är standard." />
+	<string key="Composite.IDataGenerated.GetXml.param.OrderAscending.label" value="Sortera stigande" />
+	<string key="Composite.IDataGenerated.GetXml.param.PageNumber.help" value="Om antalet dataelement överstiger sidstorleken kan du använda paginering för att växla till de andra sidorna. Se parametern Sidstorlek." />
+	<string key="Composite.IDataGenerated.GetXml.param.PageNumber.label" value="Antal sidor" />
+	<string key="Composite.IDataGenerated.GetXml.param.PageSize.help" value="Antalet objekt som visas på en sida - det maximala antalet element som returneras." />
+	<string key="Composite.IDataGenerated.GetXml.param.PageSize.label" value="Sidstorlek" />
+	<string key="Composite.IDataGenerated.GetXml.param.PropertyNames.help" value="Datafälten som ska matas ut i XML:en. Färre fält kan ge snabbare renderingar." />
+	<string key="Composite.IDataGenerated.GetXml.param.PropertyNames.label" value="Utvalda fält" />
+	<string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.help" value="Om du inkluderar referensdata i inställningen 'Utvalda egenskaper' kan du använda det här alternativet för att styra hur refererade data inkluderas. 'Infogat' är enkelt att använda, men kan svälla storleken på XML-dokumentet." />
+	<string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.label" value="Visa referensdata infogat" />
+	<string key="Composite.IDataGenerated.GetXml.param.Randomized.help" value="När vald kan data sorteras slumpmässigt. Ange antal slumpmässiga resultat som du vill ha ut genom att ställa in 'Sidstorlek'. Om ett filter är angivet, kommer detta appliceras innan det slumpmässiga urvalet. Om du anger ett 'Sortera efter'-värde, bör du ange en låg 'Sidstorlek' annars blir randomiseringen ogiltig." />
+	<string key="Composite.IDataGenerated.GetXml.param.Randomized.label" value="Randomiserad" />
+	<string key="Composite.IDataGenerated.GetXml.param.CachePriority.help" value="Avgör om den resulterande XML:en måste cachas, och vilken prioritet dessa cacheregister bör ha" />
+	<string key="Composite.IDataGenerated.GetXml.param.CachePriority.label" value="Cacheprioritet" />
+	<string key="Composite.Pages.GetPageId.description" value="Hämtar ID för den aktuella sidan eller en sida relaterad till den aktuella sidan." />
+	<string key="Composite.Pages.GetPageId.param.SitemapScope.help" value="Den sida ID ska hämtas från. Standardinställningen är den aktuella sidan." />
+	<string key="Composite.Pages.GetPageId.param.SitemapScope.label" value="Sidanslutning" />
+	<string key="Composite.Pages.QuickSitemap.description" value="Snabb och obehandlad sajtkarts-xhtml." />
+	<string key="Composite.Pages.SitemapXml.description" value="Returnerar en hierarkisk XML-struktur av sidor. När exekvering sker som en del av en sidrendering kommer XML-element som representerar den nuvarande sidan och dess överordnade sidor att få attributen isopen=&quot;true&quot; och iscurrent=&quot;true&quot;" />
+	<string key="Composite.Pages.SitemapXml.param.SourcePage.label" value="Källsida" />
+	<string key="Composite.Pages.SitemapXml.param.SourcePage.help" value="Som standard är källsidan den sida som för närvarande renderas. Ange ett värde om du vill få sajkart-information relaterat till en annan sida. Källsidan styr hur sidelement är kommenterade med 'isopen' och 'iscurrent' och är utgångspunkten vid beräkning av sidomfånget." />
+	<string key="Composite.Pages.SitemapXml.param.SitemapScope.label" value="Sidomfattning" />
+	<string key="Composite.Pages.SitemapXml.param.SitemapScope.help" value="Omfattningen av sidor som ska extraheras ur sajtkartan. Standardinställningen är 'alla sidor'. Du kan använda denna parameter för att extrahera den struktur du behöver för att slutföra din uppgift." />
+	<string key="Composite.Pages.GetForeignPageInfo.description" value="Hämtar information om aktuell sida på alla språk." />
+
+	<string key="Composite.Utils.Caching.PageObjectCache.description" value="Definierar en 'cache zon' runt ett funktionsanrop eller en funktionsuppmärkning (som vanligtvis innehåller funktionsanrop). Denna funktion kan användas för att förbättra sidrenderingsprestandan genom att cacha delar av en webbsida. Värdet 'Objektcache-ID' bör vara unikt för innehållet som cachas." />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.label" value="Objekt att cacha" />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.help" value="Vad du vill cacha - detta kan vara ett singelfunktionsanrop eller en del av uppmärkning som innehåller en eller flera funktionsanrop." />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.label" value="Unikt cache-ID" />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.help" value="Ange ett ID som är unikt för innehållet som cachas. Detta värde används - tillsammans med Sidomfånget  - för att definiera en unik cache-nyckel." />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.label" value="Sidomfattning" />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.help" value="Sidomfattningen den cachade datan ska delas på. Som standard är sidomfattningen 'denna webbplats', men du kan ändra det till sid-specifik cachning och mycket mer." />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.label" value="Cache-tid (sekunder)" />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.help" value="Antalet sekunder det cachade objektet bör återanvändas. Standard är 1 minut (60 sekunder)." />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.label" value="Språkspecifikt" />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.help" value="Välj om det cachade objektet ska cachas unikt per webbplatsspråk eller delas mellan språken." />
+
+	<string key="Composite.Utils.Compare.AreEqual.description" value="AreEqual" />
+	<string key="Composite.Utils.Compare.AreEqual.param.ValueA.help" value="Jämför likhet mellan två objekt. Returnerar sant om de två objekten är lika." />
+	<string key="Composite.Utils.Compare.AreEqual.param.ValueA.label" value="Värde A att jämföra." />
+	<string key="Composite.Utils.Compare.AreEqual.param.ValueB.help" value="" />
+	<string key="Composite.Utils.Compare.AreEqual.param.ValueB.label" value="Värde B att jämföra." />
+	<string key="Composite.Utils.Compare.IsLessThan.description" value="" />
+	<string key="Composite.Utils.Compare.IsLessThan.param.ValueA.help" value="" />
+	<string key="Composite.Utils.Compare.IsLessThan.param.ValueA.label" value="Värde A att jämföra." />
+	<string key="Composite.Utils.Compare.IsLessThan.param.ValueB.help" value="" />
+	<string key="Composite.Utils.Compare.IsLessThan.param.ValueB.label" value="Värde B att jämföra." />
+	<string key="Composite.Utils.Configuration.AppSettingsValue.description" value="Läser en sträng från konfigurationsfilen (web.config eller app.config)" />
+	<string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.help" value="" />
+	<string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.label" value="Nyckelnamn" />
+	<string key="Composite.Utils.Date.AddDays.description" value="Lägg till ett antal dagar till dagens datum och få det resulterande datumet tillbaka." />
+	<string key="Composite.Utils.Date.AddDays.param.DaysToAdd.help" value="Ange ett negativt eller positivt antal dagar att lägga till dagens datum." />
+	<string key="Composite.Utils.Date.AddDays.param.DaysToAdd.label" value="Dagar att lägga till" />
+	<string key="Composite.Utils.Date.Now.description" value="Aktuellt datum och tid" />
+	<string key="Composite.Utils.GetInputParameter.description" value="Returnerar en indataparameter från exekvering av funktionescontexten. Använd denna under utveckling för att kopiera ett ingångsvärde till ett nytt funktionsanrop." />
+	<string key="Composite.Utils.GetInputParameter.param.InputParameterName.help" value="Ange namnet på den indataparameter vars värde du vill använda här." />
+	<string key="Composite.Utils.GetInputParameter.param.InputParameterName.label" value="Parameternamn" />
+
+	<string key="Composite.Utils.ParseStringToObject.description" value="Parsar en sträng till ett objekt. Objektets typ beror på mottagaren. Används funktionen för att leverera ett värde till en DateTime-parameter kommer systemet tolka strängen som DateTime etc." />
+	<string key="Composite.Utils.ParseStringToObject.param.StringToParse.help" value="Ange strängen som ska parsas. Observera att strängen måste formateras på ett sätt som kan omvandlas till den typ av objekt som förväntas." />
+	<string key="Composite.Utils.ParseStringToObject.param.StringToParse.label" value="Sträng som ska parsas" />
+
+	<string key="Composite.Utils.Guid.NewGuid.description" value="Returnerar en ny slumpgenererad GUID." />
+	<string key="Composite.Utils.Globalization.AllCultures.description" value="En lista över alla språk" />
+	<string key="Composite.Utils.Globalization.CurrentCulture.description" value="Språket för den aktuella användaren / begäran." />
+	<string key="Composite.Utils.Integer.Sum.description" value="Returnerar summan från en lista av heltal" />
+	<string key="Composite.Utils.Integer.Sum.param.Ints.help" value="" />
+	<string key="Composite.Utils.Integer.Sum.param.Ints.label" value="Heltalslista" />
+	<string key="Composite.Utils.Predicates.BoolEquals.description" value="Kontrollera om ett booleskt värde är sant eller falskt." />
+	<string key="Composite.Utils.Predicates.BoolEquals.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.BoolEquals.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.DateTimeEquals.description" value="Kontrollera om ett datum är lika med ett visst värde" />
+	<string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.DateTimeGreaterThan.description" value="Kontrollera om ett datum är större än ett visst värde" />
+	<string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.DateTimeLessThan.description" value="Kontrollera om ett datum är mindre än ett visst värde" />
+	<string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.DecimalEquals.description" value="Kontrollera om ett decimaltal har ett visst värde" />
+	<string key="Composite.Utils.Predicates.DecimalEquals.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.DecimalEquals.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.DecimalGreaterThan.description" value="Kontrollera om ett decimaltal är större än ett visst värde" />
+	<string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.DecimalLessThan.description" value="Kontrollera om ett decimaltal är mindre än ett visst värde" />
+	<string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.GuidEquals.description" value="Kontrollera om ett GUID motsvarar ett visst värde" />
+	<string key="Composite.Utils.Predicates.GuidEquals.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.GuidEquals.param.Value.label" value="Värdet att jämföra med" />
+
+	<string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.description" value="Kontrollera om ett GUID finns i en kommaseparerad stränglista" />
+	<string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.label" value="Lista över GUID" />
+	<string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.help" value="En sträng som innehåller noll eller flera GUID separerade med kommatecken" />
+
+	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.description" value="Kontrollera om ett strängfält matchar något av villkoren i en kommaseparerad stränglista" />
+	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.label" value="Söktermer" />
+	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="En sträng som innehåller sökord separerade med kommatecken, t.ex. 'c1,cms,linq'" />
+	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.label" value="Ignorera skiftläge" />
+	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.help" value="När satt till 'falskt' måste skiftläget matcha exakt. Standard är 'sant', skiftlägesokänslig sökning" />
+
+	<string key="Composite.Utils.Predicates.StringInList.description" value="Kontrollera om ett strängfält matchar en av strängarna i den tillhandahållna listan" />
+	<string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.label" value="Söktermer" />
+	<string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.help" value="En lista av strängar att matcha mot det sökta strängfältet." />
+	<string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.label" value="Ignorera skiftläge" />
+	<string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.help" value="När satt till 'falskt' måste skiftläget matcha exakt. Standard är 'sant', skiftlägesokänslig sökning" />
+
+
+	<string key="Composite.Utils.Predicates.IntegerEquals.description" value="Kontrollera om ett heltal motsvarar ett visst värde" />
+	<string key="Composite.Utils.Predicates.IntegerEquals.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.IntegerEquals.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.IntegerGreaterThan.description" value="Kontrollera om ett heltal är större än ett visst värde" />
+	<string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.IntegerLessThan.description" value="Kontrollera om ett heltal är mindre än ett visst värde" />
+	<string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.StringContains.description" value="Kontrollera om en sträng innehåller ett visst värde" />
+	<string key="Composite.Utils.Predicates.StringContains.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.StringContains.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.StringEndsWith.description" value="Kontrollera om en sträng slutar med ett visst värde" />
+	<string key="Composite.Utils.Predicates.StringEndsWith.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.StringEndsWith.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.StringEquals.description" value="Kontrollera om en sträng är lika med ett visst värde" />
+	<string key="Composite.Utils.Predicates.StringEquals.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.StringEquals.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.StringStartsWith.description" value="Kontrollera om en sträng börjar med ett visst värde" />
+	<string key="Composite.Utils.Predicates.StringStartsWith.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.StringStartsWith.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.NullableGuidEquals.description" value="Kontrollera om ett GUID motsvarar ett visst värde" />
+	<string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.NullableGuidNoValue.description" value="Kontrollera om ett GUID som kan anta värdet null inte har något värde" />
+	<string key="Composite.Utils.Predicates.NullableIntegerEquals.description" value="Kontrollera om ett heltal motsvarar ett visst värde" />
+	<string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.NullableIntegerNoValue.description" value="Kontrollera om ett heltal som kan anta värdet null inte har något värde" />
+	<string key="Composite.Utils.Predicates.StringNoValue.description" value="Kontrollera om en sträng inte har något värde" />
+	<string key="Composite.Utils.Predicates.NullableBoolEquals.description" value="Kontrollera om ett booleskt värde är sant eller falskt." />
+	<string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.NullableBoolNoValue.description" value="Kontrollera om en boolesk som kan anta värdet null inte har något värde" />
+	<string key="Composite.Utils.Predicates.NullableDateTimeEquals.description" value="Kontrollera om ett datum är lika med ett visst värde" />
+	<string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.description" value="Kontrollera om ett datum är större än ett visst värde" />
+	<string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.NullableDateTimeLessThan.description" value="Kontrollera om ett datum är mindre än ett visst värde" />
+	<string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.NullableDateTimeNoValue.description" value="Kontrollera om ett datum som kan anta värdet null inte har något värde" />
+	<string key="Composite.Utils.Predicates.NullableDecimalEquals.description" value="Kontrollera om ett decimaltal har ett visst värde" />
+	<string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.help" value="" />
+	<string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.label" value="Värdet att jämföra med" />
+	<string key="Composite.Utils.Predicates.NullableDecimalNoValue.description" value="Kontrollera om en decimal som kan anta värdet null inte har något värde" />
+
+	<string key="Composite.Utils.String.Join.description" value="Sammanfogar en lista av strängar till en enda sträng" />
+	<string key="Composite.Utils.String.Join.param.Separator.help" value="Separatorn som ska infogas mellan strängar." />
+	<string key="Composite.Utils.String.Join.param.Separator.label" value="Separator" />
+	<string key="Composite.Utils.String.Join.param.Strings.help" value="Listan med strängar som ska sammanfogas" />
+	<string key="Composite.Utils.String.Join.param.Strings.label" value="Strängar som ska sammanfogas" />
+	<string key="Composite.Utils.String.JoinTwo.description" value="Sammanfogar två strängar till en enkel sträng" />
+	<string key="Composite.Utils.String.JoinTwo.param.StringA.help" value="Strängen som ska infogas först" />
+	<string key="Composite.Utils.String.JoinTwo.param.StringA.label" value="Sträng A" />
+	<string key="Composite.Utils.String.JoinTwo.param.StringB.help" value="Strängen som ska infogas sist" />
+	<string key="Composite.Utils.String.JoinTwo.param.StringB.label" value="Sträng B" />
+	<string key="Composite.Utils.String.JoinTwo.param.Separator.help" value="En sträng att infoga mellan Sträng A och Sträng B. Standard är ingen separator" />
+	<string key="Composite.Utils.String.JoinTwo.param.Separator.label" value="Separator" />
+	<string key="Composite.Utils.String.Split.description" value="Delar en sträng till en lista med strängar." />
+	<string key="Composite.Utils.String.Split.param.Separator.help" value="Separatorn som ska användas när strängen delas. Standardvärdet är kommatecken (&quot;,&quot;)" />
+	<string key="Composite.Utils.String.Split.param.Separator.label" value="Separator" />
+	<string key="Composite.Utils.String.Split.param.String.help" value="Strängen som du vill ska delas upp i en lista." />
+	<string key="Composite.Utils.String.Split.param.String.label" value="Sträng att dela" />
+	<string key="Composite.Utils.Validation.DateTimeNotNullValidation.description" value="" />
+	<string key="Composite.Utils.Validation.DecimalNotNullValidation.description" value="" />
+	<string key="Composite.Utils.Validation.DecimalPrecisionValidation.description" value="Validerar precisionen av siffror (antalet decimaler som användaren har specificerat)" />
+	<string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.help" value="Det maximala antalet siffror som ska tillåtas för decimalen" />
+	<string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.label" value="Max antal decimaler" />
+	<string key="Composite.Utils.Validation.GuidNotNullValidation.description" value="" />
+	<string key="Composite.Utils.Validation.Int32NotNullValidation.description" value="" />
+	<string key="Composite.Utils.Validation.IntegerRangeValidation.description" value="Validerar att ett heltal ligger inom ett visst intervall." />
+	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.help" value="Det maximala värdet tillåtet i detta fält." />
+	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.label" value="Maximalt värde" />
+	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.help" value="Det minsta värdet tillåtet i detta fält." />
+	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.label" value="Minsta värde" />
+	<string key="Composite.Utils.Validation.RegularExpressionValidation.description" value="Validerar att en sträng överensstämmer med det angivna reguljära uttrycket" />
+	<string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.help" value="Den reguljära uttrycksmall som ska användas" />
+	<string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.label" value="RegEx-mall" />
+	<string key="Composite.Utils.Validation.StringLengthValidation.description" value="Validerar att en strängs längd är inom det specificerade intervallet" />
+	<string key="Composite.Utils.Validation.StringLengthValidation.param.max.help" value="" />
+	<string key="Composite.Utils.Validation.StringLengthValidation.param.max.label" value="Maximal längd" />
+	<string key="Composite.Utils.Validation.StringLengthValidation.param.min.help" value="" />
+	<string key="Composite.Utils.Validation.StringLengthValidation.param.min.label" value="Minsta längd" />
+	<string key="Composite.Utils.Validation.StringNotNullValidation.description" value="" />
+	<string key="Composite.Web.Client.BrowserPlatform.description" value="" />
+	<string key="Composite.Web.Client.BrowserString.description" value="" />
+	<string key="Composite.Web.Client.BrowserType.description" value="" />
+	<string key="Composite.Web.Client.BrowserVersion.description" value="" />
+	<string key="Composite.Web.Client.EcmaScriptVersion.description" value="" />
+	<string key="Composite.Web.Client.IsCrawler.description" value="Sann om aktuell begäran identifieras som kommande från en sökrobot (sökmotor)." />
+	<string key="Composite.Web.Client.IsMobileDevice.description" value="Sann om aktuell begäran identifieras som kommande från en mobil enhet." />
+	<string key="Composite.Web.Html.Template.CommonMetaTags.description" value="Vanliga HTML-metataggar du förmodligen vill ha i html-huvudet" />
+	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.label" value="Content-Type" />
+	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="Standardvärde för denna är 'text/html; charset=utf-8'. Om du vill använda något annat bör du skriva över detta." />
+	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.label" value="Designer" />
+	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Vem har utformat denna webbplats? Visa det i 'Designer'-metataggen. Standard är att inte använda denna metatagg." />
+	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.label" value="Visa generator" />
+	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.help" value="Visa världen att du stöder Composite C1 - fri öppen källkod!" />
+	<string key="Composite.Web.Html.Template.LangAttribute.description" value="Lägger till ett lang='(språkkod)'-attribut till det överordnade elementet, vilket återspeglar språket för den aktuella sidan. Du kan sätta detta precis under &lt;html /&gt; taggen." />
+	<string key="Composite.Web.Request.CookieValue.description" value="Hämtar ett värde från nuvarande användares samling av cookies." />
+	<string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
+	<string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Cookienamn" />
+	<string key="Composite.Web.Request.CookieValue.param.FallbackValue.help" value="Om användaren inte har denna cookie använd detta fält för att ange värdet som ska vara standard." />
+	<string key="Composite.Web.Request.CookieValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.FormPostBoolValue.description" value="Hämtar ett booleskt värde från en formulärpostning (HTTP POST)" />
+	<string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.FormPostDecimalValue.description" value="Hämtar ett decimalvärde från en formulärpostning (HTTP POST)" />
+	<string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.FormPostGuidValue.description" value="Hämtar ett GUID-värde från en formulärpostning (HTTP POST)" />
+	<string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.FormPostIntegerValue.description" value="Hämtar ett heltalsvärde från en formulärpostning (HTTP POST)" />
+	<string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.FormPostValue.description" value="Hämtar ett strängvärde från en formulärpostning (HTTP POST)" />
+	<string key="Composite.Web.Request.FormPostValue.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.FormPostValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.FormPostValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.FormPostValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.description" value="Hämtar ett datum- och tidvärde från en formulärpostning (HTTP POST). Den inkommande datumsträngen förväntas vara XML-formaterad (t.ex. &quot;2003-09-26T13:30:00&quot;)" />
+	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.help" value="Det värde som ska användas om posten inte innehöll det angivna parameternamnet." />
+	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.QueryStringBoolValue.description" value="Hämtar ett booleskt värde från en URL-parameter (HTTP GET)" />
+	<string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.QueryStringDecimalValue.description" value="Hämtar ett decimalvärde från en URL-parameter (HTTP GET)" />
+	<string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.QueryStringGuidValue.description" value="Hämtar ett GUID-värde från en URL-parameter (HTTP GET)" />
+	<string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.QueryStringIntegerValue.description" value="Hämtar ett heltalsvärde från en URL-parameter (HTTP GET)" />
+	<string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.QueryStringValue.description" value="Hämtar ett strängvärde från en URL-parameter (HTTP GET)" />
+	<string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.QueryStringValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.QueryStringValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.description" value="Hämtar ett datum- och tidvärde från en URL-parameter (HTTP GET). Den inkommande datumsträngen förväntas vara XML-formaterad (t.ex. &quot;2003-09-26T13:30:00&quot;)" />
+	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.help" value="Det värde som ska användas om URL:en inte innehöll det angivna parameternamnet." />
+	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameternamn" />
+	<string key="Composite.Web.Request.PathInfo.description" value="Returnerar ytterligare information skickad i en URL tillsammans med sidlänken." />
+	<string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Segmentet som ska hämtas i sökvägsinformationen, i formatet '/(0)/(1)/(2)/...'. Ange -1 för att hämta hela strängen." />
+	<string key="Composite.Web.Request.PathInfo.param.Segment.label" value="Segment" />
+	<string key="Composite.Web.Request.PathInfo.param.AutoApprove.help" value="När satt till sant, kommer Composite C1 instrueras att acceptera alla sökvägsinformationssträngar. Standardvärdet är sant." />
+	<string key="Composite.Web.Request.PathInfo.param.AutoApprove.label" value="AutoApprove" />
+	<string key="Composite.Web.Request.PathInfo.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.PathInfo.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.PathInfoInt.description" value="Extraherar ett heltalsvärde från ett PathInfo-segment." />
+	<string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Segmentet som ska hämtas i sökvägsinformationen, i formatet '/(0)/(1)/(2)/...'." />
+	<string key="Composite.Web.Request.PathInfoInt.param.Segment.label" value="Segment" />
+	<string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.help" value="När satt till sant, kommer Composite C1 instrueras att acceptera alla sökvägsinformationssträngar. Standardvärdet är sant." />
+	<string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.label" value="AutoApprove" />
+	<string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.PathInfoGuid.description" value="Extraherar ett GUID från ett PathInfo-segment." />
+	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Segmentet som ska hämtas i sökvägsinformationen, i formatet '/(0)/(1)/(2)/...'." />
+	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.label" value="Segment" />
+	<string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.help" value="När satt till sant, kommer Composite C1 instrueras att acceptera alla sökvägsinformationssträngar. Standardvärdet är sant." />
+	<string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.label" value="AutoApprove" />
+	<string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.help" value="" />
+	<string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Meddelar systemet om den PathInfo som används, så att förfrågan inte omdirigeras till 'Sidan kunde inte hittas'-sidan." />
+	<string key="Composite.Web.Request.SessionVariable.description" value="Hämtar en variabel som en sträng från nuvarande användares session." />
+	<string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="Det värde som ska användas om sessionsvariabeln inte hittades" />
+	<string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Request.SessionVariable.param.VariableName.help" value="" />
+	<string key="Composite.Web.Request.SessionVariable.param.VariableName.label" value="Variabelnamn" />
+	<string key="Composite.Web.Response.Redirect.description" value="Omdirigerar webbplatsbesökaren till en annan URL. URL-omdirigeringar stoppas när denna funktion körs inne i C1 konsolen." />
+	<string key="Composite.Web.Response.Redirect.param.Url.help" value="URL:en användaren ska omdirigeras till, antingen absolut (http://contoso.com/default.aspx) eller relativ (/ Login.aspx))." />
+	<string key="Composite.Web.Response.Redirect.param.Url.label" value="URL" />
+	<string key="Composite.Web.Response.SetCookieValue.description" value="Sätter ett cookie-värde för den aktuella användaren" />
+	<string key="Composite.Web.Response.SetCookieValue.param.CookieName.help" value="Namnet på cookien som ska sättas värde för / skrivas över" />
+	<string key="Composite.Web.Response.SetCookieValue.param.CookieName.label" value="Cookienamn" />
+	<string key="Composite.Web.Response.SetCookieValue.param.Value.help" value="Värdet som ska lagras i en cookie" />
+	<string key="Composite.Web.Response.SetCookieValue.param.Value.label" value="Cookie-värde" />
+	<string key="Composite.Web.Response.SetCookieValue.param.Expires.help" value="När cookien ska löpa ut (sluta att existera). Standardvärdet är 'session' när användaren stänger webbläsaren." />
+	<string key="Composite.Web.Response.SetCookieValue.param.Expires.label" value="Utgångsdatum" />
+
+	<string key="Composite.Web.Response.SetServerPageCacheDuration.description" value="Ställer in det maximala antalet sekunder den aktuella sidan ska vara offentligt cachad på servern. För att säkerställa att sidresponsen inte är cachad ställ in 'Max antal sekunder' till &quot;0&quot;. Om flera källor anger varaktigheten för servercachen används det minsta antalet. Observera att filen &quot;~/Renderers/Page.aspx&quot; innehåller ett standardvärde för cachevaraktighet - du kan redigera den här filen för att ändra standardvärdet." />
+	<string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.help" value="Det maximala antalet sekunder sidan som för närvarande renderas bör vara offentligt cachad. Ett högt värde ger bra prestanda, ett lågt värde gör att ändringar syns snabbare. Ett värde satt till '0' ser till att alla besökare får en unik respons." />
+	<string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.label" value="Max antal sekunder" />
+
+	<string key="Composite.Web.Response.SetSessionVariable.description" value="Sätter en sessionsvariabel för den aktuella användaren" />
+	<string key="Composite.Web.Response.SetSessionVariable.param.Value.help" value="" />
+	<string key="Composite.Web.Response.SetSessionVariable.param.Value.label" value="Värde" />
+	<string key="Composite.Web.Response.SetSessionVariable.param.VariableName.help" value="Namnet på den sessionsvariabel som ska sättas." />
+	<string key="Composite.Web.Response.SetSessionVariable.param.VariableName.label" value="Variabelnamn" />
+	<string key="Composite.Web.Server.ApplicationPath.description" value="Hämtar webbapplikationens virtuella sökväg. Normalt är denna '' - en tom sträng, när körd på webbplatsroten, men om Composite C1 körs i en undermapp kan den vara '/MySubfolder'. Du kan använda detta värde för att prefigera URL:er så att de fungerar oavsett om Composite C1 körs i en undermapp eller inte. Exempel på XSLT-användning: &lt;img src=&quot;{/in:inputs/in:result[@name='ApplicationPath']}/images/myImage.png&quot; /&gt;" />
+	<string key="Composite.Web.Server.ApplicationVariable.description" value="Hämtar en IIS-applikationsvariabel" />
+	<string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.help" value="Värdet som ska användas om applikationsvariabeln inte hittades" />
+	<string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.label" value="Reserv-värde" />
+	<string key="Composite.Web.Server.ApplicationVariable.param.VariableName.help" value="" />
+	<string key="Composite.Web.Server.ApplicationVariable.param.VariableName.label" value="Variabelnamn" />
+	<string key="Composite.Web.Server.ServerVariable.description" value="Hämtar värdet av en IIS-servervariabel" />
+	<string key="Composite.Web.Server.ServerVariable.param.VariableName.help" value="IIS-servervariabeln som ska hämtas." />
+	<string key="Composite.Web.Server.ServerVariable.param.VariableName.label" value="Variabelnamn" />
+	<string key="Composite.Xml.LoadFile.description" value="Laddar en lokal XML-fil given en relativ sökväg" />
+	<string key="Composite.Xml.LoadFile.param.RelativePath.help" value="Den relativa sökvägen till XML-filen som ska laddas" />
+	<string key="Composite.Xml.LoadFile.param.RelativePath.label" value="Relativ sökväg" />
+	<string key="Composite.Xml.LoadXhtmlFile.description" value="Laddar en lokal XHTML-fil given en relativ sökväg" />
+	<string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.help" value="Den relativa sökvägen till XHTML-filen som ska laddas" />
+	<string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.label" value="Relativ sökväg" />
+	<string key="Composite.Xml.LoadUrl.description" value="Laddar en fjärrliggande XML-fil given en URL" />
+	<string key="Composite.Xml.LoadUrl.param.Url.help" value="" />
+	<string key="Composite.Xml.LoadUrl.param.Url.label" value="URL" />
+	<string key="Composite.Xml.LoadUrl.param.CacheTime.help" value="Tidsperiod i sekunder för vilken resultatet ska cachas. Standard är 0 (ingen cache)." />
+	<string key="Composite.Xml.LoadUrl.param.CacheTime.label" value="Sekunder att cacha" />
+	<string key="Composite.Xslt.Extensions.DateFormatting.description" value="Tillhandahåller lokaliserade datumformateringsfunktioner för XSLT-användning." />
+	<string key="Composite.Xslt.Extensions.Globalization.description" value="Tillhandahåller globaliseringsfunktioner för XSLT-användning." />
+	<string key="Composite.Xslt.Extensions.MarkupParser.description" value="Tillhandahåller funktioner som parsar kodade XML-dokument eller XHTML-fragment till noder. Använd detta tilläggsprogram när du har XML eller XHTML som en sträng och behöver kopiera den till utdatan eller göra förändringar på den." />
+
+	<string key="Composite.Mail.SendMail.description" value="Skickar ett e-postmeddelande. Kom ihåg att konfigurera SMTP-serveranslutningen i web.config-filen." />
+	<string key="Composite.Mail.SendMail.param.From.label" value="Från" />
+	<string key="Composite.Mail.SendMail.param.From.help" value="Avsändarens adress." />
+	<string key="Composite.Mail.SendMail.param.To.label" value="Till" />
+	<string key="Composite.Mail.SendMail.param.To.help" value="Mottagare. En lista med kommaseparerade e-postadresser." />
+	<string key="Composite.Mail.SendMail.param.Subject.label" value="Ämne" />
+	<string key="Composite.Mail.SendMail.param.Subject.help" value="Emailämne." />
+	<string key="Composite.Mail.SendMail.param.Body.label" value="Meddelande" />
+	<string key="Composite.Mail.SendMail.param.Body.help" value="E-postmeddelandet." />
+	<string key="Composite.Mail.SendMail.param.IsHtml.label" value="Är HTML" />
+	<string key="Composite.Mail.SendMail.param.IsHtml.help" value="Anger om meddelandet ska skickas som ett HTML-meddelande eller som ett textmeddelande." />
+	<string key="Composite.Mail.SendMail.param.CC.label" value="Kopia" />
+	<string key="Composite.Mail.SendMail.param.CC.help" value="En lista med kommaseparerade e-postadresser som är sekundära mottagare av ett meddelande." />
+	<string key="Composite.Mail.SendMail.param.ReplyTo.label" value="Svar Till" />
+	<string key="Composite.Mail.SendMail.param.ReplyTo.help" value="Adress som ska användas för att svara på meddelandet." />
+	<string key="Composite.Mail.SendMail.param.BCC.label" value="Hemlig kopia" />
+	<string key="Composite.Mail.SendMail.param.BCC.help" value="En lista över mottagare som kommer att få ett mail, men deras individuella e-postadresser kommer att döljas från den fullständiga listan över mottagare." />
+	<string key="Composite.Mail.SendMail.param.Attachment.label" value="Bilagor" />
+	<string key="Composite.Mail.SendMail.param.Attachment.help" value="Lista över bifogade filer. \n Formatera enligt följande [{namn}=]{sökväg}[,{mime-typ] [ |.... ]. \n Sökväg kan vara antingen relativ eller absolut t.ex. &quot;C:\någonbild.jpg&quot; eller &quot;/coolbild.jpg&quot; \n Om sökväg börjar med &quot;Composite/&quot; kommer det att tolkas som en sökväg till ett Compositemedia, t.ex. 'Composite/MediaArchive:någonBild.gif' \n      \n     Exempel:  \n        /bilaga.jpg \n       bild.jpg=/bilaga.jpg \n       bild.jpg=/bilaga.jpg,bild/jpg \n       bild1.jpg=/bilaga1.jpg,bild/jpg|bild2.jpg=/bilaga2.jpg,bild/jpg" />
+
+	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="Bilaga Från Media" />
+	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.help" value="En fil från mediebiblioteket som skall bifogas." />
+
+	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.description" value="Filtrerar bilder genom deras mappsökväg" />
+	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.label" value="Mediamapp" />
+	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.help" value="En referens till en mediamapp" />
+	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Inkludera Undermappar" />
+	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Avgör om bilder från undermappar bör ingå." />
+
+	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.description" value="Filtrerar bilder genom deras mappsökväg" />
+	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.label" value="Mediamapp" />
+	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.help" value="En referens till en mediamapp" />
+	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Inkludera Undermappar" />
+	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Avgör om mediefiler från undermappar bör ingå." />
+
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Konverterar en enumerabel av XElement till en Dictionary genom att använda namngivna attribut för nycklar och värden." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.label" value="XElement" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.help" value="En enumerabel av XElement som kommer att användas för att skapa en Dictionary." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.label" value="Nyckelattributnamn" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Namnet på attributet på varje XElement vars värde ska användas för nycklar i Dictionaryn." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.label" value="Värdesattributnamn" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Namnet på attributet på varje XElement vars värde ska användas för värden i Dictionaryn." />
+
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Konverterar en enumerabel av objekt till en Dictionary genom att använda namngivna egenskapsnamn för nycklar och värden." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.label" value="Objekt" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.help" value="En enumerabel av objekt som kommer att användas för att skapa en Dictionary." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.label" value="Egenskapsnamn för nyckel" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Namnet på den egenskap på varje objekt vars värde ska användas för nycklar i Dictionaryn." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.label" value="Egenskapsnamn för värden" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Namnet på den egenskap på varje objekt vars värde ska användas för värden i Dictionaryn." />
+</strings>

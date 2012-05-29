@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="PackageManager.CompositeVersionMisMatch" value="Paketets composite-versionskrav matchar inte den aktuella composite-versionen" />
+  <string key="PackageManager.PackageAlreadyInstalled" value="Paketet är redan installerat" />
+  <string key="PackageManager.NewerVersionInstalled" value="En nyare version av paketet är redan installerat" />	
+  <string key="PackageManager.MissingPackageDirectory" value="Kunde inte hitta paketets katalogsökväg '{0}'" />
+  <string key="PackageManager.Uninstallable" value="Paketet är märkt som icke avinstallerbart" />
+  <string key="PackageManager.MissingZipFile" value="Kunde inte hitta paketets zip-filssökväg '{0}'" />
+  <string key="PackageManager.MissingUninstallFile" value="Kunde inte hitta paketets avinstallationssökväg '{0}'" />
+  <string key="PackageManager.MissingElement" value="Elementet '{0}' saknas." />
+  <string key="PackageManager.MissingAttribute" value="Attributet '{0}' saknas." />
+  <string key="PackageManager.InvalidAttributeValue" value="Värdet för attributet '{0}' är inte ett giltigt värde." />
+  <string key="PackageManager.InvalidElementValue" value="Värdet för elementet '{0}' är inte ett giltigt värde" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.ExpectedExactlyTwoElements" value="Exakt två element förväntades, '{0}' och '{1}'" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingElement" value="Elementet '{0}' saknas." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingAttribute" value="Attributet '{0}' saknas." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.PathDoesNotExist" value="Sökvägen '{0}' finns inte i ZIP-filen." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.UnableToParsXslt" value="Det går inte att parsa den zippade XSLT-filen '{0}'. {1}" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.XsltWillGeneratedInvalid" value="XSLT-filen '{0}' kommer att generera en ogiltig Konfigurationsfil. {1}" />
+  <string key="DataPackageFragmentInstaller.OnlyOneElement" value="Endast ett 'Types'-element tillåts" />
+  <string key="DataPackageFragmentInstaller.MissingElement" value="'Types'-element saknas" />
+  <string key="DataPackageFragmentInstaller.MissingAttribute" value="Attributet {0} saknas i konfigurationen" />
+  <string key="DataPackageFragmentInstaller.WrongDataScopeIdentifier" value="Fel DataScopeIdentifier-namn ({0}) i konfigurationen" />
+  <string key="DataPackageFragmentInstaller.WrongLocale" value="Fel språknamn ({0}) i konfigurationen" />
+  <string key="DataPackageFragmentInstaller.MissingFile" value="Fil '{0}' saknas i ZIP-paketet" />
+  <string key="DataPackageFragmentInstaller.TypeNotConfigured" value="Datagränssnittstypen '{0}' har inte konfigurerats i systemet" />
+  <string key="DataPackageFragmentInstaller.TypeNotInheriting" value="Datagränssnittstypen '{0}' ärver inte gränssnittet '{1}'" />
+  <string key="DataPackageFragmentInstaller.MissingProperty" value="Det finns ingen egenskap med namnet '{1}' för datagränssnittstypen '{0}'" />
+  <string key="DataPackageFragmentInstaller.MissingWritableProperty" value="Det finns ingen skrivbar egenskap med namnet '{1}' för datagränssnittstypen '{0}'" />
+  <string key="DataPackageFragmentInstaller.ConversionFailed" value="Kunde inte konvertera värdet '{0}' till typen '{1}'" />
+  <string key="DataPackageFragmentInstaller.MissingPropertyVaule" value="Gränssnittet '{1}' saknar ett värde för egenskapen '{0}'." />
+  <string key="DataPackageFragmentInstaller.DataExists" value="En datapost av datagränssnittstypen '{0}' existerar redan" />
+  <string key="DataPackageFragmentInstaller.MissingTypeDescriptor" value="Typen {0} saknar datatypdeskriptor" />
+  <string key="DataPackageFragmentInstaller.TypeNonLocalizedWithLocale" value="Datatypen '{0}' är inte lokaliserad men ett språk anges i konfigurationen" />
+  <string key="DataPackageFragmentInstaller.TypeLocalizedWithoutLocale" value="Datatypen '{0}' är lokaliserad men inga språk anges i konfigurationen" />
+  <string key="DataPackageFragmentUninstaller.OnlyOneElement" value="Endast ett 'Types'-element tillåts" />
+  <string key="DataPackageFragmentUninstaller.MissingAttribute" value="Attributet {0} saknas i konfigurationen" />
+  <string key="DataPackageFragmentUninstaller.MissingKeyProperty" value="Datatypen '{0}' har ingen nyckelegenskap med namnet '{1}'" />
+  <string key="DataTypePackageFragmentInstaller.OnlyOneElement" value="Endast ett 'Types'-element tillåts" />
+  <string key="DataTypePackageFragmentInstaller.MissingElement" value="'Types'-element saknas" />
+  <string key="DataTypePackageFragmentInstaller.MissingAttribute" value="Attributet {0} saknas i konfigurationen" />
+  <string key="DataTypePackageFragmentInstaller.TypeNotConfigured" value="Datagränssnittstypen '{0}' har inte konfigurerats i systemet" />
+  <string key="DataTypePackageFragmentInstaller.TypeNotInheriting" value="Datagränssnittstypen '{0}' ärver inte gränssnittet '{1}'" />
+  <string key="DataTypePackageFragmentInstaller.TypeExists" value="Gränssnittstypen '{0}' finns redan i systemet" />
+  <string key="DataTypePackageFragmentInstaller.InterfaceCodeError" value="Gränssnittstypen '{0}' inte är kodad på rätt sätt" />
+  <string key="DataTypePackageFragmentUninstaller.OnlyOneElement" value="Endast ett 'Types'-element tillåts" />
+  <string key="DataTypePackageFragmentUninstaller.MissingAttribute" value="Attributet {0} saknas i konfigurationen" />
+  <string key="DataTypePackageFragmentUninstaller.WrongAttributeFormat" value="Fel attributformat i konfigurationen" />
+  <string key="DynamicDataTypePackageFragmentInstaller.OnlyOneElement" value="Endast ett 'Types'-element tillåts" />
+  <string key="DynamicDataTypePackageFragmentInstaller.MissingElement" value="'Types'-element saknas" />
+  <string key="DynamicDataTypePackageFragmentInstaller.DataTypeDescriptorParseError" value="Fel vid xml-parsning av dataTypeDescriptor-attributet" />
+  <string key="DynamicDataTypePackageFragmentInstaller.DataTypeDescriptorDeserializeError" value="Fel vid avserialisering av en Datatyp. Feltext: {0}." />
+  <string key="DynamicDataTypePackageFragmentInstaller.MissingReferencedType" value="Kan inte hitta en refererad typ '{0}'." />
+  <string key="DynamicDataTypePackageFragmentInstaller.TypeExists" value="Gränssnittstypen '{0}' finns redan i systemet" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.OnlyOneElement" value="Endast ett 'Types'-element tillåts" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.MissingAttribute" value="Attributet {0} saknas i konfigurationen" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.WrongAttributeFormat" value="Fel attributformat i konfigurationen" />
+  <string key="FilePackageFragmentInstaller.OnlyOneFilesElement" value="Endast ett 'Files'-element tillåts" />
+  <string key="FilePackageFragmentInstaller.OnlyOneDirectoriesElement" value="Endast ett 'Directories'-element tillåts" />
+  <string key="FilePackageFragmentInstaller.MissingAttribute" value="Attributet {0} saknas i konfigurationen" />
+  <string key="FilePackageFragmentInstaller.DeleteTargetDirectoryNotAllowed" value="Attributet 'deleteTargetDirectory' kan endast användas för kataloger, inte filer" />
+  <string key="FilePackageFragmentInstaller.WrongAttributeBoolFormat" value="Felaktigt format för attributvärde, ett bool-värde förväntades" />
+  <string key="FilePackageFragmentInstaller.MissingFile" value="Installationszip-filen innehåller inte filen '{0}'" />
+  <string key="FilePackageFragmentInstaller.FileExists" value="Filen '{0}' finns redan" />
+  <string key="FilePackageFragmentInstaller.FileReadOnly" value="Filen '{0}' är markerad som skrivskyddad och kan därför inte skrivas över." />
+  <string key="FilePackageFragmentInstaller.AssemblyLoadNotAllowed" value="Attributet assemblyLoad kan endast användas för filer, inte kataloger" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowed" value="Attributet 'onlyUpdate' kan endast användas för filer, inte kataloger" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowedWithLoadAssemlby" value="Attributet 'onlyUpdate' är inte tillåtet i kombination med attributet 'loadAssembly'" />
+  <string key="FilePackageFragmentInstaller.MissingDirectory" value="Installationszip-filen innehåller inte katalogen '{0}'" />
+  <string key="FilePackageFragmentInstaller.WrongBasePath" value="Uninstall.xml innehåller filsökvägar bundna till den ursprungliga webbplatsen, och paketet kan därför inte avinstalleras på ett säkert sätt." />
+  <string key="FilePackageFragmentUninstaller.OnlyOneFilesElement" value="Endast ett 'Files'-element tillåts" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.OnlyOneElement" value="Endast ett 'Areas'-element tillåts" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingType" value="Kunde inte hitta typen '{0}'" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingIcon" value="Kunde inte hitta ikonen '{0}'" />
+  <string key="VirtualElementProviderNodePackageFragmentUninstaller.OnlyOneElement" value="Endast ett 'Areas'-element tillåts" />
+  <string key="VirtualElementProviderNodePackageFragmentUninstaller.MissingAttribute" value="Attributet {0} saknas i konfigurationen" />
+  <string key="FileXslTransformationPackageFragmentInstaller.MissingAttribute" value="Attributet {0} saknas i konfigurationen" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileNotFound" value="Filen '{0}' hittades inte" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnly" value="Filen '{0}' är markerad som skrivskyddad och kan därför inte skrivas över." />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnlyOverride" value="Filen '{0}' var markerad som skrivskyddad. Detta filattribut togs explicit bort och filen uppdaterades normalt." />
+
+  <string key="PackageVersionBumberFragmentInstaller.OnlyOneElement" value="Endast ett 'PackageVersions'-element tillåts" />
+  <string key="PackageVersionBumberFragmentInstaller.MissingAttribute" value="Attributet {0} saknas i konfigurationen" />
+  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeGuidFormat" value="Felaktigt format för attributvärde, GUID-värde förväntades" />
+  <string key="PackageVersionBumberFragmentInstaller.PackageIdDuplicate" value="Paketets ID-kopia: '{0}'" />
+  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeVersionFormat" value="Felaktigt format för attributvärde, versions-värde förväntades (x.y.z)" />
+  <string key="PackageVersionBumberFragmentUninstaller.OnlyOneElement" value="Endast ett 'PackageVersions'-element tillåts" />
+  <string key="PackageVersionBumberFragmentUninstaller.MissingAttribute" value="Attributet {0} saknas i konfigurationen" />
+  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeGuidFormat" value="Felaktigt format för attributvärde, GUID-värde förväntades" />
+  <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="Paketets ID-kopia: '{0}'" />
+  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeVersionFormat" value="Felaktigt format för attributvärde, versions-värde förväntades (x.y.z)" />
+  <string key="PackageLicenseFragmentInstaller.MissingPublicKeyElement" value="En publik RSA-nyckel saknas i paketkonfigurationen" />
+
+  <string key="License.InvalidKeyTitle" value="Ogiltig licensnyckel" />
+  <string key="License.InvalidKeyMessage" value="Licensnyckeln är ogiltig. Du måste erhålla en giltig licensnyckel." />
+  <string key="License.ExpiredTitle" value="Testperioden har löpt ut" />
+  <string key="License.ExpiredMessage" value="Testperioden för paketet har gått ut. Du måste erhålla en giltig licens." />
+  <string key="License.Failed" value="Misslyckades med att få licensinformation. ProductId: {0}" />
+
+  <string key="NotEnoughNtfsPermissions" value="Den Windows-användare under vilken denna C1-instans körs har inte skrivbehörighet till filen eller mappen '{0}'." />
+</strings>

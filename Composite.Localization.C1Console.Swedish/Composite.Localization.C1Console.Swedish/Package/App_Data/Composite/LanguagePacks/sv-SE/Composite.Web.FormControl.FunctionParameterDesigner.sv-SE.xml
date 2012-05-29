@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<strings>
+  
+  <string key="AddNewButtonLabel" value="Lägg till Ny" />
+  <string key="DeleteButtonLabel" value="Ta bort" />
+
+  <string key="TreeRootNodeLabel" value="Lista över indataparametrar" />
+
+  <string key="ParameterNamingGroupLabel" value="Parameternamngivning och hjälp" />
+  <string key="Name" value="Parameternamn" />
+  <string key="NameHelp" value="Namnet på parametern. Namnet används av systemet för att identifiera denna parameter. Namn måste vara unika och får inte innehålla mellanslag och andra specialtecken. Använd namn som 'Title', 'StartDate', 'LargeImage' etc." />
+  <string key="Label" value="Etikett" />
+  <string key="LabelHelp" value="Den text som användarna ska se när de anger ett värde för denna parameter. Detta är användarvänliga namnet för parametern." />
+  <string key="Help" value="Hjälp" />
+  <string key="HelpHelp" value="Skriv en kort text som talar om för användaren vad som ska göras med parametern." />
+
+  <string key="ParameterTypeValueGroupLabel" value="Parametertyp och värden" />
+  <string key="Type" value="Parametertyp" />
+  <string key="TypeHelp" value="Parameterns typ." />
+  <string key="DefaultValue" value="Standardvärde" />
+  <string key="DefaultValueHelp" value="Du kan ange ett standardvärde för denna parameter. Om en parameter har ett standardvärde, behöver användarna inte ange det när funktionen anropas." />
+  <string key="DefaultValueSpecify" value="Ange standardvärdet" />
+  <string key="DefaultValueEdit" value="Redigera standardvärde" />
+  <string key="DefaultValueDialogLabel" value="Parameterns Standardvärde" />
+  
+  <string key="TestValue" value="Testvärde" />
+  <string key="TestValueHelp" value="När du förhandsgranskar kan du testa med olika indataparameter-värden med hjälp detta fält. Om detta lämnas tomt kommer standardvärdet användas för förhandsvisningar." />
+  <string key="TestValueSpecify" value="Ange testvärde" />
+  <string key="TestValueEdit" value="Redigera testvärde" />
+  <string key="TestValueDialogLabel" value="Parameterns Testvärde" />
+
+  <string key="ParameterPresentationGroupLabel" value="Parameterpresentation" />
+  <string key="Widget" value="Widget" />
+  <string key="WidgetHelp" value="Du kan välja vilken typ av indatawidget (t.ex. en textruta) som ska användas när ett värde anges för denna parameter. Widgets är endast tillgängliga för enkla typer." />
+  <string key="NoWidgetSpecifiedLabel" value="(Ingen widget angiven)" />
+  <string key="WidgetDialogLabel" value="Parameterwidget" />
+  <string key="Position" value="Position" />
+  <string key="PositionLast" value="Sist" />
+  <string key="PositionHelp" value="Parameterns position. Detta styr parametrarnas sorteringsordningen." />
+
+  <string key="SpecifyWidgetTip" value="Kom ihåg att ange en widget..." />
+
+  <string key="FieldNameSyntaxInvalid" value="Det angivna namnet är ogiltigt." />
+  <string key="CannotSave" value="Kan inte spara... En annan parameter har samma namn. Vänligen ändra namnet." />
+
+  <string key="SpaceInNameError" value="Ogiltigt namn. Parameternamn kan inte innehålla mellanslag. Du kan skriva ett läsbart namn i fältet Etikett nedan." />
+  <string key="NameEmptyError" value="Parameternamn kan inte vara tomt. Vänligen ange ett namn." />
+  <string key="NameAlreadyInUseError" value="En annan parameter använder detta namn. Parameternamn måste vara unika." />
+
+
+
+</strings>
+
+
+

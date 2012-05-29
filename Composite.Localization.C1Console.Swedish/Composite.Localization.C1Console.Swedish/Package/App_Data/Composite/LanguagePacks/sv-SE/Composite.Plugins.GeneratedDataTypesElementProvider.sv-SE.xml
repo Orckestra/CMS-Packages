@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="GlobalDataFolderLabel" value="Globala Datatyper" />
+  <string key="GlobalDataFolderToolTip" value="Globala datatyper" />
+  <string key="GlobalDataFolderLabel_OnlyGlobalData" value="Webbplatsobjekt" />
+  <string key="GlobalDataFolderToolTip_OnlyGlobalData" value="Webbplatsobjekt (Data)" />
+  <string key="PageDataFolderDataFolderLabel" value="Sidspecifika Datamappar" />
+  <string key="PageDataFolderDataFolderToolTip" value="Sidspecifika Datamappar" />
+  <string key="PageMetaDataFolderLabel" value="Sidspecifika Metatyper" />
+  <string key="PageMetaDataFolderToolTip" value="Sidspecifika Metatyper" />
+  <string key="Add" value="Lägg till Datatyp" />
+  <string key="AddToolTip" value="Lägg till ny global datatyp" />
+  <string key="ViewUnpublishedItems" value="Lista Opublicerad Data" />
+  <string key="ViewUnpublishedItemsToolTip" value="Få en översikt av data som inte har publicerats ännu" />
+  <string key="ViewUnpublishedItems-document-title" value="Opublicerad data" />
+  <string key="ViewUnpublishedItems-document-description" value="Listan nedan visar dataposter som för närvarande redigeras eller är färdiga att godkännas / publiceras." />
+  <string key="ViewUnpublishedItems-document-empty-label" value="Ingen opublicerad data." />
+  <string key="AddDataFolder" value="Lägg till Datamapp" />
+  <string key="AddDataFolderToolTip" value="Lägg till ny datamapp" />
+  <string key="AddMetaDataLabel" value="Lägg till Metatyp" />
+  <string key="AddMetaDataToolTip" value="Lägg till metatyp" />
+  <string key="Edit" value="Redigera Datatyp" />
+  <string key="EditToolTip" value="Redigera vald datatyp" />
+  <string key="EditDataFolderTypeLabel" value="Redigera" />
+  <string key="EditDataFolderTypeToolTip" value="Redigera vald datamapp" />
+  <string key="EditMetaDataTypeLabel" value="Redigera" />
+  <string key="EditMetaDataTypeToolTip" value="Redigera vald metadata" />
+  <string key="Delete" value="Ta bort Datatyp" />
+  <string key="DeleteToolTip" value="Ta bort vald datatyp" />
+  <string key="DeleteDataFolderTypeLabel" value="Ta bort" />
+  <string key="DeleteDataFolderTypeToolTip" value="Ta bort vald datamapp" />
+  <string key="DeleteMetaDataTypeLabel" value="Ta bort" />
+  <string key="DeleteMetaDataTypeToolTip" value="Ta bort vald metadata" />
+  <string key="EditFormMarkup" value="Redigera Formuläruppmärkning" />
+  <string key="EditFormMarkupToolTip" value="Använd uppmärkning för att ändra layout för dataformulär" />
+  <string key="EnableLocalization" value="Aktivera Lokalisering" />
+  <string key="EnableLocalizationToolTip" value="Aktivera lokalisering" />
+  <string key="DisableLocalization" value="Inaktivera Lokalisering" />
+  <string key="DisableLocalizationToolTip" value="Inaktivera lokalisering" />
+  <string key="DisabledData" value="Har ännu inte godkänts eller publicerats" />
+  <string key="UndefinedLabelTemplate" value="(odefinierad [{0}])" />
+  <string key="UndefinedDataLavelTemplate" value="(odefinierad)" />
+  <string key="ShowInContent" value="Visa i perspektivet Innehåll" />
+  <string key="ShowInContentToolTip" value="Visa i perspektivet Innehåll" />
+  <string key="AddData" value="Lägg till Data" />
+  <string key="AddDataToolTip" value="Lägg till ny data" />
+  <string key="EditData" value="Redigera Data" />
+  <string key="EditDataToolTip" value="Redigera markerad data" />
+  <string key="DeleteData" value="Ta bort Data" />
+  <string key="DeleteDataToolTip" value="Ta bort markerad data" />
+  <string key="LocalizeData" value="Översätt Data" />
+  <string key="LocalizeDataToolTip" value="Översätt markerad data" />
+  <string key="LabelPublicationState" value="Publiceringsstatus" />
+  <string key="DraftTransition" value="Utkast" />
+  <string key="AwaitingApprovalTransition" value="Väntar på Godkännande" />
+  <string key="AddNewInterfaceTypeStep1.DocumentTitle" value="Ny Datatyp" />
+  <string key="AddNewCompositionTypeWorkflow.DocumentTitle" value="Ny Sid-metatyp" />
+  <string key="AddNewAggregationTypeWorkflow.DocumentTitle" value="Ny Sid-datamapp" />
+  <string key="EditorCommon.SettingsTab" value="Inställningar" />
+  <string key="EditorCommon.LabelTitleGroup" value="Typtitel" />
+  <string key="EditorCommon.LabelProgrammaticNamingAndServices" value="Programmatisk namngivning och tjänster" />
+  <string key="EditorCommon.LabelProgrammaticNaming" value="Programmatisk namngivning" />
+  <string key="EditorCommon.LabelTypeName" value="Typnamn" />
+  <string key="EditorCommon.HelpTypeName" value="Det tekniska namnet på datatypen (ex. Produkt). Detta används för att identifiera denna typ i koden och ska inte ändras när den används externt." />
+  <string key="EditorCommon.LabelTypeNamespace" value="Typ-namnrymd" />
+  <string key="EditorCommon.HelpTypeNamespace" value="Namnrymden (modul- / kategorinamn) för typen. Denna används för att identifiera denna typ i koden och ska inte ändras när den används externt." />
+  <string key="EditorCommon.LabelTitle" value="Rubrik" />
+  <string key="EditorCommon.HelpTitle" value="Använd denna post för att ange ett användarvänligt namn. Detta namn används i de flesta användargränssnitten." />
+  <string key="EditorCommon.LabelFields" value="Fält" />
+  <string key="EditorCommon.ServicesLabel" value="Tjänster" />
+  <string key="EditorCommon.HasCaching" value="Använder cachelagring" />
+  <string key="EditorCommon.HasPublishing" value="Använder publicering" />
+  <string key="EditorCommon.HasLocalization" value="Är lokaliserbar data" />
+  <string key="DeleteGeneratedDataStep1.LabelFieldGroup" value="Ta bort Data?" />
+  <string key="DeleteGeneratedDataStep1.Text" value="Ta bort data?" />
+  <string key="DeleteDataConfirmationText" value="Det finns viss refererad data som också kommer tas bort, vill du fortsätta?" />
+  <string key="DeleteGeneratedInterfaceStep1.LabelFieldGroup" value="Ta bort Datatyp" />
+  <string key="DeleteGeneratedInterfaceStep1.Text" value="Ta bort datatypen" />
+  <string key="CascadeDeleteErrorTitle" value="Fel vid sammanhängande radering" />
+  <string key="CascadeDeleteErrorMessage" value="Typen refereras av en annan typ som inte tillåter sammanhängande radering. Operationen stoppades" />
+  <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="Ta bort Datatyp" />
+  <string key="DeleteAggregationTypeWorkflow.Text" value="Ta bort datatypen" />
+  <string key="DeleteAggregationTypeWorkflow.ErrorTitle" value="Fel" />
+  <string key="DeleteAggregationTypeWorkflow.IsUsedByPageType" value="Kan inte ta bort typen '{0}' eftersom den används av en sidtyp." />  
+  <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="Ta bort Datatyp" />
+  <string key="DeleteCompositionTypeWorkflow.Text" value="Ta bort datatypen" />
+  <string key="DeleteCompositionTypeWorkflow.ErrorTitle" value="Fel" />
+  <string key="DeleteCompositionTypeWorkflow.TypeIsReferenced" value="Kan inte ta bort typen '{0}' eftersom det finns typer som refererar till den." />
+  <string key="DeleteCompositionTypeWorkflow.IsUsedByPageType" value="Kan inte ta bort typen '{0}' eftersom den används av en sidtyp." />  
+  <string key="ToXmlLabel" value="Till XML" />
+  <string key="ToXmlToolTip" value="Till XML" />
+  <string key="EnableTypeLocalizationWorkflow.Dialog.Label" value="Aktivera Lokalisering" />
+  <string key="EnableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Aktivera lokalisering" />
+  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Flytta befintlig data till..." />
+  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="När lokalisering aktiveras på en datatyp måste alla uppgifter tillhöra ett språk. Välj språk befintlig data ska flyttas till." />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Title" value="Bekräftelse" />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Description" value="Datatyp kommer lokaliseras och data kopieras till valt språk. Klicka på Slutför för att fortsätta." />
+  <string key="EnableTypeLocalizationWorkflow.Step3.Title" value="Varning" />
+  <string key="EnableTypeLocalizationWorkflow.Step3.Description" value="Det finns datatyper som har referenser till typen. Vid lokalisering kommer datan att kopieras till alla språk för att förhindra uppkomst av trasiga referenser." />
+  <string key="EnableTypeLocalizationWorkflow.Abort.Title" value="Saknar aktiva språkinställningar" />
+  <string key="EnableTypeLocalizationWorkflow.Abort.Description" value="Det finns inga tillagda verksamma språkinställningar. Lägg till minst en innan den här datatypen lokaliseras." />
+  <string key="DisableTypeLocalizationWorkflow.Dialog.Label" value="Inaktivera Lokalisering" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Inaktivera lokalisering" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Behåll data från..." />
+  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="När lokalisering inaktiveras på en datatyp kan bara en översättning behållas. Data från andra språk kommer att gå förlorade." />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Title" value="Bekräftelse" />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Description" value="All data från andra språk än det valda kommer att gå förlorade. Klicka på Slutför för att fortsätta." />
+  <string key="LocalizeDataWorkflow.ShowError.LayoutLabel" value="Det gick inte att översätta data" />
+  <string key="LocalizeDataWorkflow.ShowError.InfoTableCaption" value="Översättningsfel" />
+  <string key="LocalizeDataWorkflow.ShowError.AlreadyTranslated" value="Dessa data har redan översatts. Den översatta versionen tillhör en annan grupp." />
+  <string key="LocalizeDataWorkflow.ShowError.Description" value="Följande fält har en referens till en datatyp. Du bör översätta dessa dataposter innan du kan översätta denna datapost" />
+  <string key="LocalizeDataWorkflow.ShowError.FieldErrorFormat" value="Fältet '{0}' refererar till data av typ '{1}' med etiketten '{2}'" />
+  <string key="AddNewInterfaceTypeStep1.ErrorTitle" value="Fel" />
+  <string key="EditInterfaceTypeStep1.ErrorTitle" value="Fel" />
+  <string key="AddNewCompositionTypeWorkflow.ErrorTitle" value="Fel" />
+  <string key="AddNewAggregationTypeWorkflow.ErrorTitle" value="Fel" />
+
+  <string key="EditCompositionTypeWorkflow.ErrorTitle" value="Fel" />
+  <string key="EditAggregationTypeWorkflow.ErrorTitle" value="Fel" />
+  
+  <string key="DataTypeDescriptorToXmlLabel" value="XML-resultat" />
+</strings>

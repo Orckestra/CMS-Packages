@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="AddNewPageStep1.DialogLabel" value="Lägg till Ny Sida" />
+  <string key="GeneralSettings.FieldGroupLabel" value="Allmänna inställningar" />
+  <string key="PublicationSettings.FieldGroupLabel" value="Publiceringsinställningar" />
+  <string key="AdvancedSettings.FieldGroupLabel" value="Avancerade inställningar" />
+  <string key="AddNewPageStep1.LabelTitle" value="Sidrubrik" />
+  <string key="AddNewPageStep1.LabelTitleHelp" value="Posten som anges i detta fält visas i webbläsarfönstrets namnlist. Fältet används av sökmotorer och sajtkartor" />
+  <string key="AddNewPageStep1.LabelAbstract" value="Beskrivning" />
+  <string key="AddNewPageStep1.LabelAbstractHelp" value="Använd detta fält för en kort beskrivning av sidan" />
+  <string key="AddNewPageStep1.LabelTemplate" value="Sidtyp" />
+  <string key="AddNewPageStep1.HelpTemplate" value="Välj vilken sidtyp du vill att sidan ska baseras på." />
+  <string key="AddNewPageStep1.LabelPosition" value="Position" />
+  <string key="AddNewPageStep1.HelpPosition" value="Välj var i innehållsträdet du vill att sidan ska placeras." />
+  <string key="AddNewPageStep1.LabelAddToTop" value="Infoga längst upp" />
+  <string key="AddNewPageStep1.LabelAddToBottom" value="Infoga längst ner" />
+  <string key="AddNewPageStep1.LabelAddAlphabetic" value="Infoga alfabetiskt" />
+  <string key="AddNewPageStep1.LabelAddBelowOtherPage" value="Välj position..." />
+  <string key="AddNewPageStep2.LabelFieldGroup" value="Avancerade inställningar" />
+  <string key="AddNewPageStep2.LabelUrlTitle" value="URL-rubrik" />
+  <string key="AddNewPageStep2.HelpUrlTitle" value="Posten som anges i detta fält visas i webbläsarens adressfält. Fältet används av sökmotorer" />
+  <string key="AddNewPageStep2.LabelMenuTitle" value="Menytitel" />
+  <string key="AddNewPageStep2.HelpMenuTitle" value="Posten som anges i detta område kan användas i navigeringen på webbplatsen" />
+  <string key="AddNewPageStep2.LabelPositionSelectorPanel" value="Välj definierad sidposition" />
+  <string key="AddNewPageStep2.LabelPositionSelector" value="Infoga under" />
+  <string key="AddNewPageStep2.HelpPositionSelector" value="" />
+  <string key="EditPage.LabelPaneSettings" value="Inställningar" />
+  <string key="EditPage.LabelPublicationState" value="Status" />
+  <string key="EditPage.HelpPublicationState" value="Ange en annan status för sidan" />
+  <string key="EditPage.LabelPageTitle" value="Sidrubrik" />
+  <string key="EditPage.LabelPageTitleHelp" value="Posten som anges i detta fält visas i webbläsarfönstrets namnlist. Fältet används av sökmotorer och sajtkartor" />
+  <string key="EditPage.LabelMenuTitle" value="Menytitel" />
+  <string key="EditPage.HelpMenuTitle" value="Posten som anges i detta område kan användas i navigeringen på webbplatsen" />
+  <string key="EditPage.LabelUrlTitle" value="URL-rubrik" />
+  <string key="EditPage.UrlTitleFormattedTitle" value="URL-rubriken skrevs om" />	
+  <string key="EditPage.UrlTitleFormattedMessage" value="Enligt de nuvarande ersättninsreglerna för URL:er ändrades URL-rubrik till '{0}'" />
+  <string key="EditPage.HelpUrlTitle" value="Posten som anges i detta fält visas i webbläsarens adressfält som en del av URL:en. Fältet används av sökmotorer" />
+  <string key="EditPage.LabelFriendlyUrl" value="Användarvänlig URL" />
+  <string key="EditPage.HelpFriendlyUrl" value="Posten som anges i detta område är en kortare version av den faktiska URL:en för sidan och omdirigerar till sidan när den skrivs in i webbläsarens adressfält. Observera att vissa servrar kan behöva konfigureras för att stödja den här funktionen." />
+  <string key="EditPage.LabelAbstract" value="Beskrivning" />
+  <string key="EditPage.LabelAbstractHelp" value="Använd detta fält för en kort beskrivning av sidan" />
+  <string key="EditPage.LabelPublishDate" value="Publiceringsdatum" />
+  <string key="EditPage.HelpPublishDate" value="Ange datum och tid då sidan ska publiceras. Sidan kommer automatiskt att publiceras på webbplatsen vid den angivna tidpunkten" />
+  <string key="EditPage.LabelUnpublishDate" value="Avpubliceringsdatum" />
+  <string key="EditPage.HelpUnpublishDate" value="Ange datum och tid då sidan ska avpubliceras. Sidan kommer automatiskt tas bort från webbplatsen vid den angivna tidpunkten" />
+  <string key="EditPage.LabelContent" value="Innehåll" />
+  <string key="EditPage.LabelPreview" value="Förhandsgranska" />
+  <string key="EditPage.PageTypeSelectorLabel" value="Sidtyp" />
+  <string key="EditPage.MaxLength" value="Maximalt &#xD;{0} tecken" />
+  <string key="DeletePage.LabelFieldGroup" value="Ta bort sida?" />
+  <string key="DeletePageStep1.Title" value="Radera sida och alla undersidor" />
+  <string key="DeletePageStep1.Description" value="Alla undersidor kommer också att raderas. Fortsätt?" />
+  <string key="DeletePageStep2.Text" value="Radera sida '{0}'?" />
+  <string key="UrlTitleNotUniqueError" value="En annan sida använder den angivna URL-rubriken. URL-rubriker måste vara unika bland sidor med samma överordnade sidelement." />
+  <string key="UrlTitleNotValidError" value="Den angivna URL-rubriken innehåller ogiltiga tecken. Eftersom det här fältet används för att bygga webbadressen för sidan, är vissa specialtecken (som frågetecken, snedstreck och punkter) inte tillåtna. Du kan använda bokstäver, siffror och bindestreck." />
+  <string key="UrlTitleTooLong" value="Den angivna URL-rubriken är för lång. Gör den kortare och försök igen" />
+  <string key="FriendlyUrlNotUniqueError" value="En annan sida använder den angivna Användarvänliga URL:en. Användarvänliga URL:er måste vara unika." />
+  <string key="TitleMissingError" value="Rubriken kan inte vara tom." />
+  <string key="PageSaveValidationFailedTitle" value="Sidan kunde inte sparas" />
+  <string key="PageSaveValidationFailedMessage" value="Sidan godkändes inte och har inte sparats. Vänligen granska fältmeddelanden." />
+  <string key="PageElementProvider.RootLabel" value="Webbplatser" />
+  <string key="PageElementProvider.RootLabelToolTip" value="Webbplatser" />
+  <string key="PageElementProvider.AddPageAtRoot" value="Lägg till Webbplats..." />
+  <string key="PageElementProvider.AddPageAtRootToolTip" value="Lägg till ny startsida" />
+  <string key="PageElementProvider.ViewUnpublishedItems" value="Lista Opublicerade Sidor" />
+  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="Få en överblick över sidor och sidmappdata som inte har publicerats ännu." />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-title" value="Opublicerat innehåll" />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-description" value="Listan nedan visar sidor och siddata som för närvarande redigeras eller är färdiga att godkännas / publiceras." />
+  <string key="PageElementProvider.EditPage" value="Redigera Sida" />
+  <string key="PageElementProvider.EditPageToolTip" value="Redigera vald sida" />
+  <string key="PageElementProvider.Delete" value="Ta bort" />
+  <string key="PageElementProvider.DeleteToolTip" value="Ta bort den valda sidan" />
+  <string key="PageElementProvider.LocalizePage" value="Översätt Sida" />
+  <string key="PageElementProvider.LocalizePageToolTip" value="Översätt vald sida" />
+  <string key="PageElementProvider.AddSubPage" value="Lägg till Sida..." />
+  <string key="PageElementProvider.AddSubPageToolTip" value="Lägg till ny sida under den valda sidan" />
+  <string key="PageElementProvider.ViewPublicPage" value="Granska Publicerad Sida" />
+  <string key="PageElementProvider.ViewPublicToolTip" value="Visa senast publicerade versionen" />
+  <string key="PageElementProvider.ViewDraftPage" value="Granska Sparad Sida" />
+  <string key="PageElementProvider.ViewDraftToolTip" value="Visa de senaste ändringarna" />
+  <string key="PageElementProvider.DisplayLocalOrderingLabel" value="Visa sidas lokala sortering" />
+  <string key="PageElementProvider.DisplayLocalOrderingToolTip" value="Visa sidas lokala sortering" />
+  <string key="PageElementProvider.DisabledPage" value="Ännu ej godkänd eller publicerad" />
+  <string key="PageElementProvider.MissingTemplateTitle" value="Webbsidmall krävs" />
+  <string key="PageElementProvider.MissingTemplateMessage" value="För att skapa en sida behövs en webbsidmall, men ingen har skapats ännu. Du kan skapa en under perspektivet Layout." />
+  <string key="PageElementProvider.MissingActiveLanguageTitle" value="Språk krävs" />
+  <string key="PageElementProvider.MissingActiveLanguageMessage" value="För att lägga till en sida måste du först lägga till minst ett språk. Det kan göras i perspektivet System." />
+  <string key="PageElementProvider.NoPageTypesAvailableTitle" value="Ingen sidtyp tillgänglig" />
+  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="Du måste skapa minst en sidtyp först" />
+  <string key="PageElementProvider.MissingPageTypeTitle" value="Sidtyp krävs" />
+  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="För att skapa en startsida, behövs en sidtyp utan &quot;bara undersidor&quot;-restriktionen, men ingen har lagts till ännu. Du kan lägga till en under perspektivet Layout." />
+  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="För att skapa en undersida, behövs en sidtyp utan &quot;bara startsidor&quot;-restriktionen, men ingen har lagts till ännu. Du kan lägga till en under perspektivet Layout." />  
+  <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Kunde inte lägga till en sida!" />
+  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="De regler som definierar tillgänglighet för Sidtyper förbjuder att en sida läggs till här." />
+  <string key="ManageHostNames.Add.DialogLabel" value="Hantera värdnamnet" />
+  <string key="ManageHostNames.Add.HeadingTitle" value="Lägg till värdnamnsförbindelse på sidan" />
+  <string key="ManageHostNames.Add.HeadingDescription" value="Du kan associera ett värdnamn (eller ett domännamn) med en sida genom att ange det i fältet nedan. Observera att DNS-inställningarna för det angivna värdnamnet också måste konfigureras, vilket sker utanför detta system." />
+  <string key="ManageHostNames.Add.FieldGroupLabel" value="Värdnamnsförbindelse till sidan" />
+  <string key="ManageHostNames.Add.HostNameTextBoxLabel" value="Värdnamn" />
+  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Ange det värdnamn (t.ex. 'www.composite.net' eller 'composite.net') som du vill associera med den här sidan" />
+  <string key="ManageHostNames.Add.InvalidHostNameSyntaxError" value="Syntaxen för värdnamnet inte är giltigt" />
+  <string key="ManageHostNames.Add.HostNameNotUniqueError" value="Detta värdnamn är redan bundet till en sida. Du måste ta bort den befintliga förbindelsen först." />
+  <string key="ManageHostNames.Remove.DialogLabel" value="Hantera värdnamnet" />
+  <string key="ManageHostNames.Remove.FieldGroupLabel" value="Ta bort värdnamnsförbindelsen från sidan" />
+  <string key="ManageHostNames.Remove.MultiSelectorLabel" value="Värdnamn att ta bort" />
+  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="De värdnamn du väljer kommer inte längre förknippas med sidan" />
+  <string key="Preview.PublishedPage.NotPublishedTitle" value="Den valda sidan är inte publicerad" />
+  <string key="Preview.PublishedPage.NotPublishedMessage" value="Den valda sidan är inte publicerad" />
+  <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="Vänligen bekräfta borttagning av alla undersidor" />
+  <string key="DeletePageWorkflow.CascadeDeleteErrorTitle" value="Fel vid sammanhängande borttagning" />
+  <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="Sidan refereras av en annan typ som inte tillåter sammanhängande borttagning. Operationen stoppades" />
+  <string key="DeletePageWorkflow.HasCompositionsTitle" value="Kan inte ta bort sidan" />
+  <string key="DeletePageWorkflow.HasCompositionsMessage" value="Denna sida har en eller flera sidmappar eller metadatafält definierade. Ta bort dessa först." />
+</strings>

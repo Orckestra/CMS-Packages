@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="TypesAreReferencing" value="En eller flera typer refererar denna typ. Att byta namn är inte möjligt" />
+  <string key="TypeNameInNamespace" value="Typnamnet '{0}' förekommer i namnrymden '{1}' - detta är inte tillåtet" />
+  <string key="TypesNameClash" value="En typ med samma namn finns redan" />
+	<string key="MissingFields" value="Inga fält skapades" />
+	<string key="TypeNameIsInvalidIdentifier" value="Typnamnet '{0}' är inte en giltig identifierare." />
+	<string key="FieldNameCannotBeUsed" value="Fältnamnet '{0}' får inte användas" />
+  <string key="NameSpaceIsTypeTypeName" value="Den angivna 'Typnamnrymden' används redan som ett 'Typnamn' (namnrymd + namn). Överväg att ändra namnet '{0}' till '{0}.Objekt'." />
+	<string key="NamespaceIsReserved" value="Typnamnet tillhör en reserverad namnrymd." />
+	<string key="CompileErrorWhileAddingType" value="Kan inte lägga till datatypen eftersom det kommer att orsaka kompileringsfel." />
+	<string key="CompileErrorWhileChangingType" value="Det går inte att ändra datatypen eftersom det kommer att orsaka kompileringsfel." />
+  <string key="FieldDoesNotHaveWidget" value="Fältet&#xD; '{0}' har ingen widget-provider angiven." />
+</strings>

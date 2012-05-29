@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="PageType.Tree.Root.Label" value="Sidtyper" />
+  <string key="PageType.Tree.DefaultContentElement.Label" value="Innehåll för Platshållare" />
+  <string key="PageType.Tree.MetaDataFieldsElement.Label" value="Metadatafält" />
+  <string key="PageType.Tree.AddNewPageType.Label" value="Lägg till Sidtyp" />
+  <string key="PageType.Tree.AddNewPageType.ToolTip" value="Lägg till ny sidtyp" />
+  <string key="PageType.Tree.EditPageType.Label" value="Redigera Sidtyp" />
+  <string key="PageType.Tree.EditPageType.ToolTip" value="Redigera vald sidtyp" />
+  <string key="PageType.Tree.DeletePageType.Label" value="Ta bort Sidtyp" />
+  <string key="PageType.Tree.DeletePageType.ToolTip" value="Ta bort vald sidtyp" />
+  <string key="PageType.Tree.AddDefaultPageContent.Label" value="Lägg till Standardinnehåll" />
+  <string key="PageType.Tree.AddDefaultPageContent.ToolTip" value="Lägg till standardinnehåll för platshållare" />
+  <string key="PageType.Tree.EditDefaultPageContent.Label" value="Redigera Standardinnehåll" />
+  <string key="PageType.Tree.EditDefaultPageContent.ToolTip" value="Redigera standardinnehåll för platshållare" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.Label" value="Ta bort Standardinnehåll" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.ToolTip" value="Ta bort standardinnehåll" />
+  <string key="PageType.Tree.AddMetaDataField.Label" value="Lägg till Metadatafält" />
+  <string key="PageType.Tree.AddMetaDataField.ToolTip" value="Lägg till nytt Metadatafält" />
+  <string key="PageType.Tree.EditMetaDataField.Label" value="Redigera Metadatafält" />
+  <string key="PageType.Tree.EditMetaDataField.ToolTip" value="Redigera markerat Metadatafält" />
+  <string key="PageType.Tree.DeleteMetaDataField.Label" value="Ta bort Metadatafält" />
+  <string key="PageType.Tree.DeleteMetaDataField.ToolTip" value="Ta bort markerat Metadatafält" />
+  <string key="PageType.AddNewPageTypeWorkflow.Layout.Label" value="Lägg till Ny Sidtyp" />
+  <string key="PageType.AddNewPageTypeWorkflow.FieldGroup.Label" value="Inställningar för &#xD;ny sidtyp" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Label" value="Namn" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Help" value="Den nya sidtypens namn" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Label" value="Beskrivning" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Help" value="Beskrivning av den nya sidtypen" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsPlaceHolder.Label" value="Inställningar" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsFieldGroup.Label" value="Sidtypsinställningar" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Label" value="Namn" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Help" value="Sidtypens namn" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Label" value="Beskrivning" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Help" value="Beskrivning av sidtypen" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Label" value="Tillgänglig" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Help" value="Avmarkering av detta alternativ kommer att göra denna sida icke valbar på alla sidor" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Label" value="Förinställd menytitel" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Help" value="Om detta alternativ är markerat är ett standardvärde för menytitel på sidor förinställt" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Label" value="Standardvärde för underordnad sidtyp" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Help" value="Välj en sidtyp som ska vara standardsidtyp för underordnade sidor som skapas med den här sidtypen" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.NoneSelectedLabel" value="[Ingen]" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplatePlaceHolder.Label" value="Layout" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionFieldGroup.Label" value="Layout" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Label" value="Layout-begränsningar" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Help" value="Välj layouter som ska vara tillgängliga när sidor av denna sidtyp redigeras. Om ingen är valt (standard), kommer alla att vara tillgängliga." />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Label" value="Standardlayout" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Help" value="Välj en layout som ska vara standardlayout för sidor som skapas med den här sidtypen" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.NoneSelectedLabel" value="[Ingen]" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityPlaceHolder.Label" value="Tillgänglighet" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityFieldGroup.Label" value="Tillgänglighet" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Label" value="Relation till startsida" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Help" value="Relation till startsida" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.NoRestrictionLabel" value="Inga begränsningar" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlySubPagesLabel" value="Endast undersidor" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlyHomePagesLabel" value="Endast startsidor" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Label" value="Begränsning för överordnad sidtyp" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Help" value="Tillåt endast den här sidtypen för underordnade sidor med de valda sidtyperna" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderApplicationPlaceHolder.Label" value="DataMappar / Applikationer" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderFieldGroup.Label" value="Datamappar" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Label" value="Datamappar" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Help" value="Markera de datamappar som automatiskt ska läggas till sidor med den här sidtypen" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationFieldGroup.Label" value="Applikationer" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Label" value="Applikationer" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Help" value="Välj de applikationer som automatiskt ska läggas till sidor med den här sidtypen" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.DefaultTemplateNotInRestrictions" value="Standardlayouten är inte en av de valda begränsade layouterna" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.HomepageRelationConflictsWithParentRestrictions" value="Sidtypens överordnade element-restriktioner är inte tillåtna med enbart startsidor" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Label" value="Ta bort Denna Sidtyp?" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Messeage" value="Ta bort sidtypen {0}?" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Label" value="Sidtypen Används" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Message" value="Sidtypen {0} används och det är inte möjligt att ta bort den" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.Layout.Label" value="Lägg till Standardinnehåll" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.FieldGroup.Label" value="Välj platshållare" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Platshållar-ID" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="ID för platshållaren. Du kan skriva ett icke-existerande ID och skapa platshållare efteråt (genom att redigera sidmallens uppmärkning)." />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Title" value="Inga mallar med {0}" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Message" value="Observera att det Platshållar-ID som du har angett '{0}' för närvarande inte finns i någon Layoutmall." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.Layout.Label" value="Redigera standardinnehåll" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsPlaceHolder.Label" value="Inställningar" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsFieldGroup.Label" value="Platshållarinformation" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Platshållar-ID" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="ID för platshållaren. Du kan skriva ett icke-existerande ID och skapa platshållare efteråt (redigera sidmallens uppmärkning)." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.ContentXhtmlEditor.Label" value="Innehåll" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.Layout.Label" value="Lägg till Metadatafält" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="" />
+  <!-- "Metadata settings" - but too much text! -->
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Programmatiskt namn" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="Den unika namnet för Metadatafältet. Detta kan inte ändras senare!" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Visa med etikett" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Metadatafältets etikett. Används för användargränssnittet." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Label" value="Metadatatyp" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Help" value="Metadatatypen" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Visa på flik" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="Välj fliken där Metadatan ska visas när en sida redigeras." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.AddingDefaultMetaData.Title" value="Lägg till förvalda Metadatavärden" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Fältnamnet med en annan typ används redan." />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Label" value="Ta bort Detta Metadatafält?" />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Message" value="Ta bort Metadatafältet {0}? Varning: alla dess befintliga Metadataposter kommer också tas bort" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.Layout.Label" value="Redigera Metadatafält" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="Metadatafältinställningar" />
+  <!--
+
+  
+-->
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Etikett" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Metadatafältets etikett. Används för användargränssnittet" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Flik" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="Välj fliken där Metadatan ska ligga när en sida redigeras" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Metadatatypen används på en annan plats med samma namn men annan etikett" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataContainerChangeNotAllowed" value="Det finns en eller flera definitioner med samma namn, byte av behållare är inte tillåtet" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Title" value="Metadatatypen har tagits bort" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Message" value="Metadatatypen har tagits bort från systemet och kan inte längre läggas till sidtyper" />
+</strings>

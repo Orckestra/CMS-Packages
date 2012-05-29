@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+	<string key="UserGroupElementProvider.RootLabel" value="Användargrupper" />
+  <string key="UserGroupElementProvider.RootToolTip" value="Användargrupper" />
+  <string key="UserGroupElementProvider.AddNewUserGroupLabel" value="Lägg till Användargrupp..." />  
+  <string key="UserGroupElementProvider.AddNewUserGroupToolTip" value="Lägg till ny Användargrupp" />
+  <string key="UserGroupElementProvider.EditUserGroupLabel" value="Redigera Användargrupp" />
+  <string key="UserGroupElementProvider.EditUserGroupToolTip" value="Redigera Användargrupp" />
+  <string key="UserGroupElementProvider.DeleteUserGroupLabel" value="Ta bort Användargrupp" />
+  <string key="UserGroupElementProvider.DeleteUserGroupToolTip" value="Ta bort Användargrupp" />
+
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.LabelFieldGroup" value="Lägg till Användargrupp" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameLabel" value="Användargrupp-namn" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameHelp" value="Namnet på den nya användargruppen" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameAlreadyExists" value="En användargrupp med samma namn finns redan" />
+
+  <string key="EditUserGroup.EditUserGroupStep1.LabelFieldGroup" value="Redigera Användargrupp" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameLabel" value="Användargrupp-namn" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameHelp" value="Namnet på användargruppen" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameAlreadyExists" value="En användargrupp med samma namn finns redan" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveFieldLabel" value="Perspektiv" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectLabel" value="Perspektiv" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectHelp" value="Välj vilka perspektiv användaren får tillåtelse att se" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsFieldLabel" value="Globala behörigheter" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectLabel" value="Globala behörigheter" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectHelp" value="Behörigheten Administrera beviljar användargruppen tillåtelse att hantera behörigheter för användargrupper och utföra andra administrativa uppgifter." />
+
+
+  
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersTitle" value="Användargruppen Har Användare" />
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersMessage" value="Du kan inte radera en grupp som har användare." />
+  
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.LabelFieldGroup" value="Ta bort Användargrupp" />
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.Text" value="Ta bort den valda användargruppen?" />
+</strings>

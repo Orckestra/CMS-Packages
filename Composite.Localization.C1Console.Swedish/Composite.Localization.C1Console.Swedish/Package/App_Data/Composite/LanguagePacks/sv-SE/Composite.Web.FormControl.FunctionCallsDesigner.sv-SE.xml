@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="DialogTitle" value="Funktionsinställningar" />
+  <string key="FunctionLocalNameGroupLabel" value="Funktionsresultatets lokala namn" />
+  <string key="FunctionLocalNameLabel" value="Lokalt namn" />
+  <string key="FunctionLocalNameHelp" value="Om du inkluderar en funktion flera gånger kan detta fält hjälpa dig att skilja de olika resultaten genom deras lokala namn." />
+  <string key="ParameterValueLabel" value="Parametervärde" />
+  <string key="AddNewFunctionDialogLabel" value="Välj Funktion" />
+  <string key="ComplexFunctionCallDialogLabel" value="Värdet för parameter '{0}'" />
+  <string key="ParameterTypeLabel" value="Parametertyp" />
+  <string key="ParameterNameLabel" value="Parameternamn" />
+  <string key="ReturnTypeLabel" value="Returtyp" />
+  <string key="ValidationFailedAlertTitle" value="Validering misslyckades" />
+  <string key="FunctionNotFound" value="Funktionen '{0}' finns inte." />
+  <string key="RequiredParameterNotDefined" value="Erfordrad parameter '{0}' inte har definierats." />
+  <string key="IncorrectTypeCast" value="Felaktig typtilldelning. Parameternamn: '{0}', funktionsnamn: '{1}'." />
+  <string key="ParameterTypeDefaultLabel" value="Standard" />
+  <string key="ParameterTypeConstantLabel" value="Konstant" />
+  <string key="ParameterTypeInputParameterLabel" value="Indataparameter" />
+  <string key="ParameterTypeFunctionLabel" value="Funktion" />
+  <string key="AddNewButtonLabel" value="Lägg till Ny" />
+  <string key="DeleteButtonLabel" value="Ta bort" />
+  <string key="ToolBar.LabelSource" value="Källa" />
+  <string key="ToolBar.LabelDesign" value="Design" />
+</strings>

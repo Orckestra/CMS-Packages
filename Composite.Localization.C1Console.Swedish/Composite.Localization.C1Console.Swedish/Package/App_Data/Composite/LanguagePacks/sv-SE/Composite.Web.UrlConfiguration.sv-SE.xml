@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<!-- Element tree -->
+	<string key="Tree.ConfigurationElementLabel" value="URL-konfiguration" />
+	<string key="Tree.ConfigurationElementEditLabel" value="Redigera URL-konfiguration" />
+	<string key="Tree.ConfigurationElementToolTip" value="Den här sektionen tillåter konfigurering av kortare och användarvänligare URL:er" />
+	<string key="Tree.HostnamesFolderLabel" value="Värdnamn" />
+	<string key="Tree.HostnamesFolderToolTip" value="Här kan du mappa ett värdnamn till en webbplats" />
+	<string key="Tree.AddHostnameLabel" value="Lägg till Värdnamn" />
+	<string key="Tree.UrlConfigurationLabel" value="UrlConfiguration" />
+
+	<!-- Url configuration -->
+	<string key="UrlConfiguration.Title" value="URL-konfiguration" />
+	<string key="UrlConfiguration.PageUrlSuffix.Label" value="URL-suffix för sidor" />
+	<string key="UrlConfiguration.PageUrlSuffix.Help" value="En sträng som ska läggas till alla sidors URL:er. T.ex. .aspx eller .html, lämnas detta fält tomt kommer URL:erna renderas utan filnamnstillägg" />
+
+	<!-- Hostname binding editing -->
+	<string key="HostnameBinding.AddNewHostnameTitle" value="Nytt Värdnamn" />
+	<string key="HostnameBinding.Hostname.Label" value="Värdnamn" />
+	<string key="HostnameBinding.Hostname.Help" value="Värdnamn för vilket nuvarande regler för skapande av URL:er kommer att tillämpas" />
+	<string key="HostnameBinding.Page.Label" value="Sida" />
+	<string key="HostnameBinding.Page.Help" value="Rot-sida som kommer att vara standardsida för det aktuella värdnamnet" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Label" value="URL" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.ItemLabel" value="Inkludera startsidans URL-rubrik" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Help" value="Avgör om rootsidans titel bör vara en del av URL:en. Att inte välja detta resulterar i kortare URL:er" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.ItemLabel" value="Inkludera URL-mappning för språk" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.Help" value="Avgör om språk-koden ska vara en del av en URL:en" />
+	<string key="HostnameBinding.Custom404Page.Label" value="Anpassad 404-sida" />
+	<string key="HostnameBinding.Custom404Page.Help" value="URL:en som begäran kommer att omdirigeras till i det fall det finns en begäran till en icke-existerande c1-sida" />
+	<string key="HostnameBinding.Aliases.Label" value="Aliasvärdnamn" />
+	<string key="HostnameBinding.Aliases.Help" value="Värdnamn från vilka alla förfrågningar kommer att omdirigeras till det aktuella värdnamnet" />
+</strings>

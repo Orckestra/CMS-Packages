@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <!-- preload precaution -->
+  <string key="Preload.Key" value="Hämtad under VisualEditorBinding-startup för att se till att strängar laddas :)" />
+  <!-- simple toolbar -->
+  <string key="ToolBar.ToolTipStrong" value="Fet text" />
+  <string key="ToolBar.ToolTipEmphasize" value="Betonad text" />
+  <string key="ToolBar.ToolTipUnderline" value="Understruken text" />
+  <string key="ToolBar.ToolTipStrike" value="Överstruken text" />
+  <string key="ToolBar.ToolTipAlignLeft" value="Vänsterställd" />
+  <string key="ToolBar.ToolTipAlignRight" value="Högerställd" />
+  <string key="ToolBar.ToolTipJustifyLeft" value="Vänsterjustera" />
+  <string key="ToolBar.ToolTipJustifyRight" value="Högerjustera" />
+  <string key="ToolBar.ToolTipJustifyCenter" value="Centrera" />
+  <string key="ToolBar.ToolTipJustifyFull" value="Justera" />
+  <string key="ToolBar.ToolTipUnorderedList" value="Icke numrerad lista" />
+  <string key="ToolBar.ToolTipOrderedList" value="Numrerad lista" />
+  <string key="ToolBar.ToolTipLink" value="Länk" />
+  <string key="ToolBar.ToolTipDeleteLink" value="Ta bort länken" />
+  <string key="ToolBar.ToolTipCleanup" value="Rensa rörig kod" />
+  <string key="ToolBar.ToolTipUndo" value="Ångra" />
+  <string key="ToolBar.ToolTipRedo" value="Gör om" />
+  <string key="ToolBar.LabelSource" value="Källa" />
+  <string key="ToolBar.LabelWysiwyg" value="Visuell" />
+  <!-- format selector -->
+  <string key="FormatSelector.LabelParagraph" value="Paragraf" />
+  <string key="FormatSelector.LabelAddress" value="Adress" />
+  <string key="FormatSelector.LabelBlockQuote" value="Citat" />
+  <string key="FormatSelector.LabelDivision" value="Division" />
+  <string key="FormatSelector.LabelHeading1" value="Rubrik 1" />
+  <string key="FormatSelector.LabelHeading2" value="Rubrik 2" />
+  <string key="FormatSelector.LabelHeading3" value="Rubrik 3" />
+  <string key="FormatSelector.LabelHeading4" value="Rubrik 4" />
+  <string key="FormatSelector.LabelHeading5" value="Rubrik 5" />
+  <string key="FormatSelector.LabelHeading6" value="Rubrik 6" />
+  <!-- classname selector -->
+  <string key="ClassSelector.LabelNone" value="(Ingen)" />
+  <!-- contextmenu (duplicated in toolbar) -->
+  <string key="ContextMenu.LabelInsert" value="Infoga" />
+  <string key="ContextMenu.LabelPaste" value="Klistra in" />
+  <string key="ContextMenu.LabelLink" value="Länk" />
+  <string key="ContextMenu.LabelUnLink" value="Avlänka" />
+  <string key="ContextMenu.LabelLinkProperties" value="Länkinställningar" />
+  <string key="ContextMenu.LabelTable" value="Tabell..." />
+  <string key="ContextMenu.LabelTableManage" value="Hantera Tabell" />
+  <string key="ContextMenu.LabelImage" value="Bild..." />
+  <string key="ContextMenu.LabelAsText" value="Som Ren Text..." />
+  <string key="ContextMenu.LabelField" value="Fält" />
+  <string key="ContextMenu.LabelFieldDelete" value="Radera Fält" />
+  <string key="ContextMenu.LabelRendering" value="Funktion..." />
+  <string key="ContextMenu.LabelCharacter" value="Tecken..." />
+  <string key="ContextMenu.LabelImageProperties" value="Bildinställningar..." />
+  <string key="ContextMenu.LabelRenderingProperties" value="Funktionsinställningar..." />
+  <string key="ContextMenu.LabelCutRow" value="Klipp ut Rad" />
+  <string key="ContextMenu.LabelCopyRow" value="Kopiera Rad" />
+  <string key="ContextMenu.LabelPasteRow" value="Klistra in Rad" />
+  <string key="ContextMenu.LabelBefore" value="Före" />
+  <string key="ContextMenu.LabelAfter" value="Efter" />
+  <string key="ContextMenu.LabelTableProperties" value="Tabellinställningar" />
+  <string key="ContextMenu.LabelCellProperties" value="Cellinställningar" />
+  <string key="ContextMenu.LabelRowProperties" value="Radinställningar" />
+  <string key="ContextMenu.LabelInsertRow" value="Infoga Rad" />
+  <string key="ContextMenu.LabelDeleteRow" value="Ta bort Rad" />
+  <string key="ContextMenu.LabelInsertcolumn" value="Infoga Kolumn" />
+  <string key="ContextMenu.LabelDeleteColumn" value="Ta bort Kolumn" />
+  <string key="ContextMenu.LabelMergeTableCells" value="Sammanfoga Tabellceller" />
+  <string key="ContextMenu.LabelSplitMergedCells" value="Dela Sammanslagna Celler" />
+  <string key="ContextMenu.LabelDeleteTable" value="Ta bort Tabell" />
+  <string key="ContextMenu.LabelAlignImage" value="Arrangera bild" />
+  <string key="ContextMenu.LabelAlignImageRight" value="Höger" />
+  <string key="ContextMenu.LabelAlignImageLeft" value="Vänster" />
+  <string key="ContextMenu.LabelAlignImageNone" value="Ingen" />
+  <!-- error dialog -->
+  <string key="ContentError.DialogTitle" value="Fel i källkod" />
+  <string key="ContentError.DialogText" value="Fel i källkoden:" />
+  <!-- template selector -->
+  <string key="TemplateTree.NoTemplateWarning" value="Inga platshållare i mallen." />
+  <!-- PLUGINS............................................................... -->
+  <!-- general -->
+  <string key="LabelTabBasic" value="Grundläggande" />
+  <string key="LabelTabAdvanced" value="Avancerad" />
+  <string key="LabelPresentation" value="Presentation" />
+  <string key="LabelClass" value="Klass" />
+  <string key="HelpClass" value="Klassattributet anger ett CSS-klassnamn för ett element." />
+  <string key="LabelId" value="ID" />
+  <string key="HelpId" value="ID-attributet kan användas av JavaScript eller CSS för att ändra ett element." />
+  <string key="MozSecurityNote.LabelSecurityStuff" value="Urklipp inaktiverat" />
+  <string key="MozSecurityNote.TextSecurityStuff" value="Av säkerhetsskäl har tillgång till urklipp blockerats av din webbläsare. Använd standard kortkommandon. För en teknisk beskrivning av hur du konfigurerar din webbläsare för användning med Composite C1, tryck på &quot;Mer info&quot;-knappen." />
+  <!-- link -->
+  <string key="Link.LabelInsertLink" value="Infoga Länk" />
+  <string key="Link.LabelLinkProperties" value="Länkinställningar" />
+  <string key="Link.LinkDestination" value="URL" />
+  <string key="Link.LinkRole" value="Roll" />
+  <string key="Link.TitleText" value="Titel" />
+  <string key="Link.LinkTarget" value="Målram" />
+  <string key="Link.LinkTarget.LabelCheckBox" value="Öppna i nytt fönster" />
+  <string key="Link.TitleTextToolTip" value="Titeltexten återges som en knappbeskrivning när musen hovrar över länken. Detta kan användas för att låta dina kunder veta var länken går utan att störa textflödet." />
+  <string key="Link.LabelLink" value="Länkegenskaper" />
+  <!-- table -->
+  <string key="Tables.Cell.CellType" value="Celltyp" />
+  <string key="Tables.Cell.LabelWidth" value="Cellbredd" />
+  <string key="Tables.Cell.HorizontalAlignment" value="Horisontell justering" />
+  <string key="Tables.Cell.VerticalAlignment" value="Vertikal justering" />
+  <string key="Tables.Cell.ApplyTo" value="Tillämpa ändringar för" />
+  <string key="Tables.Cell.LabelCellProperties" value="Cellinställningar" />
+  <string key="Tables.Cell.LabelLayout" value="Layout" />
+  <string key="Tables.Cell.LabelDataCell" value="Datacell" />
+  <string key="Tables.Cell.LabelHeaderCell" value="Rubrikcell" />
+  <string key="Tables.Cell.LabelLeft" value="Vänster" />
+  <string key="Tables.Cell.LabelRight" value="Höger" />
+  <string key="Tables.Cell.LabelTop" value="Topp" />
+  <string key="Tables.Cell.LabelCenter" value="Mitten" />
+  <string key="Tables.Cell.LabelBottom" value="Botten" />
+  <string key="Tables.Cell.LabelScope" value="Omfattning" />
+  <string key="Tables.Cell.LabelCurrentCell" value="Aktuell cell" />
+  <string key="Tables.Cell.LabelAllRowCells" value="Alla celler i raden" />
+  <string key="Tables.Cell.LabelAllTableCells" value="Alla celler i tabellen" />
+  <string key="Tables.Merge.Columns" value="Kolumner" />
+  <string key="Tables.Merge.Rows" value="Rader" />
+  <string key="Tables.Merge.LabelMergeCells" value="Sammanfoga Tabellceller" />
+  <string key="Tables.Row.Rows" value="Rad i tabelldel" />
+  <string key="Tables.Row.HorizontalAlignment" value="Horisontell Justering" />
+  <string key="Tables.Row.VerticalAlignment" value="Vertikal Justering" />
+  <string key="Tables.Row.ApplyTo" value="Tillämpa ändringar för" />
+  <string key="Tables.Row.LabelRowProperties" value="Radinställningar" />
+  <string key="Tables.Row.LabelLayout" value="Layout" />
+  <string key="Tables.Row.LabelTableHead" value="Tabellhuvud" />
+  <string key="Tables.Row.LabelTableBody" value="Tabellkropp" />
+  <string key="Tables.Row.LabelTableFoot" value="Tabellfot" />
+  <string key="Tables.Row.LabelLeft" value="Vänster" />
+  <string key="Tables.Row.LabelCenter" value="Mitten" />
+  <string key="Tables.Row.LabelRight" value="Höger" />
+  <string key="Tables.Row.LabelTop" value="Topp" />
+  <string key="Tables.Row.LabelBottom" value="Botten" />
+  <string key="Tables.Row.LabelScope" value="Omfattning" />
+  <string key="Tables.Row.LabelCurrentRow" value="Aktuell rad" />
+  <string key="Tables.Row.LabelOddRows" value="Udda rader i tabellen" />
+  <string key="Tables.Row.LabelEvenRows" value="Jämna rader i tabellen" />
+  <string key="Tables.Row.LabelAllRows" value="Alla rader i tabellen" />
+  <string key="Tables.Table.TitleInsert" value="Infoga tabell" />
+  <string key="Tables.Table.TitleUpdate" value="Tabellinställningar" />
+  <string key="Tables.Table.Columns" value="Kolumner" />
+  <string key="Tables.Table.Rows" value="Rader" />
+  <string key="Tables.Table.Summary" value="Sammanfattning" />
+  <string key="Tables.Table.SummaryHelp" value="Sammanfattningen förklarar tabellens innehåll och struktur så att personer med icke-visuella webbläsare (t.ex. blinda människor) förstår lättare. Detta är särskilt viktigt för tabeller utan överskrifter." />
+  <string key="Tables.Table.LabelLayout" value="Tabell-layout" />
+  <string key="Tables.Table.LabelMeta" value="Tabellbeskrivning" />
+  <!-- image -->
+  <string key="Image.Source" value="Källa" />
+  <string key="Image.AlternativeText" value="Alternativ text" />
+  <string key="Image.AlternativeTextToolTip" value="Den alternativa texten visas som synlig text i webbläsare där bilder inte kan renderas normalt. Detta kan gälla för webbläsare i mobiltelefoner och speciella webbläsare för synskadade. Alt-attributet bör tydligt beskriva innehållet i bilden." />
+  <string key="Image.TitleText" value="Titeltext" />
+  <string key="Image.TitleTextToolTip" value="Titeltexten återges som en knappbeskrivning när musen hovrar över bilden. En bild som kan vara förvirrande för besökaren kan omedelbart förklaras genom en titel." />
+  <string key="Image.LabelImage" value="Bildinställningar" />
+  <string key="Image.LabelInsertImage" value="Infoga Bild" />
+  <string key="Image.LabelImageProperties" value="Bildinställningar" />
+  <string key="Image.MaxWidth" value="Maximal Bredd" />
+  <string key="Image.MaxWidthToolTip" value="Om bilden är bredare än det angivna värdet, kommer den att skalas ner till angivet värde." />
+  <string key="Image.MaxHeight" value="Maximal Höjd" />
+  <string key="Image.MaxHeightToolTip" value="Om bilden är högre än det angivna värdet, kommer den att skalas ner till det angivna värdet." />
+
+	<!-- charmap -->
+  <string key="CharMap.LabelSelectSpecialChar" value="Välj Tecken" />
+  <string key="CharMap.LabelGeneral" value="Allmän" />
+  <string key="CharMap.LabelAlphabetical" value="Alfabetisk" />
+  <string key="CharMap.LabelMathSymbols" value="Matematik &amp; Symboler" />
+  <string key="CharMap.LabelCommon" value="Allmän" />
+  <string key="CharMap.LabelQuotation" value="Citat" />
+  <string key="CharMap.LabelCurrency" value="Valuta" />
+  <string key="CharMap.LabelLatin" value="Latin" />
+  <string key="CharMap.LabelGreek" value="Grekiska" />
+  <string key="CharMap.LabelMathAndLogic" value="Matematik och Logik" />
+  <string key="CharMap.LabelSymbols" value="Symboler" />
+  <string key="CharMap.LabelArrows" value="Pilar" />
+  <!-- text paste -->
+  <string key="TextPaste.Label" value="Klistra in som Text" />
+  <string key="TextPaste.PasteHereContent" value="Klistra in innehållet här. Tryck sedan på OK." />
+
+  <!-- spellcheck-->
+  <string key="SpellCheck.InfoLabel" value="Hur man gör stavningskontroll..." />
+  <string key="SpellCheck.InfoCaption" value="Hur man gör stavningskontroll i den Visuella Editorn" />
+  <string key="SpellCheck.InfoText" value="För att få förslag för ett felstavat ord, håll in&#xD; SKIFT-tangenten när du anropar snabbmenyn." />
+
+</strings>

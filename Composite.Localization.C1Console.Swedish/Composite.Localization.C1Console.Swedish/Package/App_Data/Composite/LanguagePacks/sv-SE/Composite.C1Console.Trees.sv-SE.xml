@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="KeyFacade.ErrorTreeNode.Label" value="Fel i träd" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Label" value="Visa Meddelande" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.ToolTip" value="Visa Felmeddelande" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Title" value="Felmeddelande" />
+  
+  <!-- Validation -->
+  <string key="TreeValidationError.Common.UnknownException" value="Okänt undantag har inträffat: '{0}'" />
+  <string key="TreeValidationError.Common.UnknownElement" value="Okänt element '{0}'" />
+  <string key="TreeValidationError.Common.MissingAttribute" value="Attributet '{0}' som krävs saknas" />
+  <string key="TreeValidationError.Common.WrongAttributeValue" value="Attributet '{0}' har ett värde som inte är tillåtet" />  
+  <string key="TreeValidationError.Common.MissingProperty" value="Typen '{0}' har ingen egenskap med namnet '{1}'" />
+  <string key="TreeValidationError.Common.UnkownInterfaceType" value="Typen '{0}' kunde inte hittas" />
+  <string key="TreeValidationError.Common.NotImplementingIData" value="Typen '{0}' implementerar inte gränssnittet '{1} '" />
+  <string key="TreeValidationError.Common.WrongPermissinValue" value="Värdet '{0}' är inte tillåtet som ett värde för behörighetstyp" />
+  <string key="TreeValidationError.Common.WrongLocationValue" value="Värdet '{0}' är inte tillåtet som ett positioneringsvärde" />
+  <string key="TreeValidationError.Common.MissingFunctionMarkup" value="Ingen funktionsuppmärkning är tillhandahållen som underordnat element" />
+  <string key="TreeValidationError.Common.WrongFunctionMarkup" value="Funktionen kan inte skapas för den angivna funktionsuppmärkningen" />
+
+  <string key="TreeValidationError.Markup.NoRootElement" value="Rotelement i träduppmärkning saknas" />
+  <string key="TreeValidationError.Markup.SchemaError" value="Syntaxfel: {0} på rad {1} position {2}" />
+  
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPoint" value="Fästpunkten '{0}' är okänd" />
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPosition" value="Fästpositionen '{0} 'är okänd" />
+  <string key="TreeValidationError.DataAttachments.NoElementsAllowed" value="Inga element tillåts i träd som används med data-&#xD;anknutna träd" />
+
+  <string key="TreeValidationError.ElementRoot.ShareRootElementByIdNotAllowed" value="ShareRootElementById tillåts endast om trädet har en enda namngiven fästpunkt" />
+
+  <string key="TreeValidationError.SimpleElement.WrongIdValue" value="Detta IDs värde är inte tillåtet. Värdet får inte vara tomt, inte börja med NodeAutoId_ och inte vara RootTreeNode" />
+  <string key="TreeValidationError.SimpleElement.AlreadyUsedId" value="Värdet '{0}' har redan använts för ett ID i detta träd" />
+
+  <string key="TreeValidationError.DataElementsTreeNode.SameInterfaceUsedTwice" value="Datagränssnittet '{0}' används mer än en gång som underordnat element under samma överordnade element och detta är inte tillåtet" />
+  <string key="TreeValidationError.DataElementsTreeNode.SameParentFilterInterfaceUsedTwice" value="Samma gränssnitt '{0}' används som föräldertyp och förälderfilter och detta är inte tillåtet" />
+  <string key="TreeValidationError.DataElementsTreeNode.MoreThanOnParentFilterIsPointingToMe" value="Mer än ett förälderfilter pekar till gränssnittet '{0}'. Ändra Displayvärdet till Lazy" />
+
+  <string key="TreeValidationError.DataFolderElements.MissingInterfaceType" value="Typattribut saknas" />
+  <string key="TreeValidationError.DataFolderElements.WrongInterfaceType" value="Gränssnittstypen '{0}' matchar inte det överordnade elementets gränssnittstyp '{1}'" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetNotAllowed" value="DateFormat-attributet kräver att egenskapen '{0}' är av typen '{1}' men är av typen '{2}'" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetIsMissing" value="Egenskapen '{0}' är av typen Date och detta kräver att ett DateFormat attribut finns" />
+  <string key="TreeValidationError.DataFolderElements.RangesAndFirstLetterOnlyNotAllowed" value="Ranges och first-letter-only tillåts inte samtidigt" />
+  <string key="TreeValidationError.DataFolderElements.WrongFirstLetterOnlyPropertyType" value="First-letter-only kräver att egenskapen '{0}' är av typen '{1}' men är av typen '{2}'" />
+  <string key="TreeValidationError.DataFolderElements.WrongDateChildInterfaceType" value="Endast underordnade dataelement med samma gränssnittstyp som kataloggrupperingen ('{0}') tillåts" />
+  <string key="TreeValidationError.DataFolderElements.InterfaceTypeSwitchNotAllowed" value="Växling från gränssnittstypen '{0}' till en annan gränssnittstyp '{1}' är inte tillåtet i samma kataloggruppering" />
+  <string key="TreeValidationError.DataFolderElements.SameFieldUsedTwice" value="Användning av fältnamnet '{0}' två gånger i samma grupperingsträd tillåts inte" />
+  <string key="TreeValidationError.DataFolderElements.TooManyParentIdFilters" value="Max en förälderidfilter-nod kan användas på dataelement som används i grupperingar" />
+
+  <string key="TreeValidationError.ParentIdFilterNode.TypeIsNotInParentTree" value="Typen '{0}' finns inte i denna nods förälderträd och är inte specificerad som en fästpunktstyp" />
+  <string key="TreeValidationError.FieldFilter.UnknownOperatorName" value="Operatorn '{0}' är okänd eller stöds inte" />
+  <string key="TreeValidationError.FieldFilter.ValueCouldNotBeConverted" value="Strängvärdet '{0}' inte kunde omvandlas till typen '{1}'" />
+  <string key="TreeValidationError.FieldFilter.OperatorNotSupportedForType" value="Operatorn '{0}' stöds inte för typen '{1}'" />
+
+  <string key="TreeValidationError.FunctionFilter.MissingFunctionMarkup" value="Funktionsuppmärkning saknas" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionMarkup" value="Funktionen kan inte skapas för den angivna funktionsuppmärkningen" />
+  <string key="TreeValidationError.FunctionFilter.WrongReturnValue" value="Funktionen returnerar inte ett värde av typen '{0}'" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionReturnType" value="Uttryckets returtyp som returnerades av funktionen är '{0}', '{1}' förväntades" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterCount" value="Uttryckets parameterantal som returnerades av funktionen är '{0}', 1 förväntades" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterType" value="Uttryckets parametertyp som returnerades av funktionen är '{0}', '{1}' förväntades" />
+  
+  <string key="TreeValidationError.ReportFunctionAction.WrongReturnValue" value="Funktionen returnerar inte ett värde av typen '{0}'" />
+  <string key="TreeValidationError.GenericAddDataAction.MissingMarkupFile" value="Filen '{0}' finns inte" />
+  <string key="TreeValidationError.GenericAddDataAction.BadMarkupPath" value="Den anpassade sökvägen '{0}' är felaktigt formaterad. Använd ~ / Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericEditDataAction.OwnerIsNotDataNode" value="Åtgärden redigera data gäller endast element som producerar dataelement" />
+  <string key="TreeValidationError.GenericEditDataAction.MissingMarkupFile" value="Filen '{0}' finns inte" />
+  <string key="TreeValidationError.GenericEditDataAction.BadMarkupPath" value="Den anpassade sökvägen '{0}' är felaktigt formaterad. Använd ~ / Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericDeleteDataAction.OwnerIsNotDataNode" value="Åtgärden ta bort data gäller endast element som producerar dataelement" />
+  <string key="TreeValidationError.MessageBoxAction.UnknownDialogType" value="Dialogtypen '{0}' stöds inte" />
+  <string key="TreeValidationError.CustomUrlAction.TooManyPostParameterElements" value="För många '{0}' element, endast ett är tillåtet" />
+  <string key="TreeValidationError.CustomUrlAction.UnknownViewType" value="Vytypen '{0}' stöds inte" />
+
+  <string key="TreeValidationError.FieldOrderBy.UnknownDirection" value="Riktningsvärdet '{0}' är fel, ska vara antingen 'stigande' eller 'fallande'" />
+  <string key="TreeValidationError.FieldOrderBy.UnknownField" value="Typen '{0}' har inte ett fält med namnet '{1}'" />
+
+  <string key="TreeValidationError.DataFieldValueHelper.WrongFormat" value="'{0}' är i fel format, använd formatet: {1}" />
+  <string key="TreeValidationError.DataFieldValueHelper.InterfaceNotInParentTree" value="Gränssnittet '{0}' finns inte i det aktuella elementet eller någon av dess föräldrar" />
+
+  <string key="TreeValidationError.Range.WrongFormat" value="Intervallvärdet är felaktigt formaterat" />
+  <string key="TreeValidationError.Range.UnsupportedType" value="Egenskapen '{0}' är av typen '{1}' som inte stödjer intervall" />
+
+  <string key="TreeValidationError.Range.MinMaxError" value="Det första värdet ({0}) i ett intervall ska vara mindre än det andra värdet ({1})" />
+  <string key="TreeValidationError.Range.NextRangeError" value="MAX-värdet av ett intervall ska vara mindre än min värdet av det efterföljande intervallet" />
+
+  
+  <!-- Ranges -->
+  
+  <string key="TreeRanges.IntRange.Closed" value="Från {0} till {1}" />
+  <string key="TreeRanges.IntRange.MinOpenEnded" value="{0} eller mindre" />
+  <string key="TreeRanges.IntRange.MaxOpenEnded" value="{0} eller högre" />
+  <string key="TreeRanges.IntRange.Other" value="Andra" />
+
+  <string key="TreeRanges.StringRange.Closed" value="Från {0} till {1}" />
+  <string key="TreeRanges.StringRange.MinOpenEnded" value="{0} och före" />
+  <string key="TreeRanges.StringRange.MaxOpenEnded" value="{0} och efter" />
+  <string key="TreeRanges.StringRange.Other" value="Andra" />
+
+  
+  <!-- Other -->
+  <string key="GenericAddDataAction.DefaultLabel" value="Lägg till" />
+  <string key="GenericEditDataAction.DefaultLabel" value="Redigera" />
+  <string key="GenericDeleteDataAction.DefaultLabel" value="Ta bort" />
+  
+  
+  <string key="TreeGenericDelete.CascadeDeleteErrorTitle" value="Fel vid sammanhängande radering" />
+  <string key="TreeGenericDelete.CascadeDeleteErrorMessage" value="Typen refereras av en annan typ som inte tillåter sammanhängande radering. Operationen stoppades" />
+  
+  <string key="TreeGenericDeleteConfirm.LabelFieldGroup" value="Ta bort Data?" />
+  <string key="TreeGenericDeleteConfirm.Text" value="Ta bort" />
+  
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.LabelFieldGroup" value="Ta bort data?" />
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.ConfirmationText" value="Det finns refererad data som också kommer tas bort, vill du fortsätta?" />
+
+
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.Label" value="Lägg till" />
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.ToolTip" value="Lägg till ny träddefinition" />           
+  <string key="TreeAddTreeDefinition.Layout.Label" value="Lägg till ny träddefinition" />
+  <string key="TreeAddTreeDefinition.FieldGroup.Label" value="Lägg till ny träddefinition" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Label" value="Definitionens namn" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Help" value="Definitionens namn" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Label" value="Mall" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Help" value="Välj en mall att utgå från" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Label" value="Position" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Help" value="Position" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.Label" value="Ta bort" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.ToolTip" value="Ta bort träddefinition" />
+  <string key="TreeDeleteTreeDefinition.Layout.Label" value="Ta bort träddefinition" />
+  <string key="TreeDeleteTreeDefinition.Title" value="Ta bort markerad träddefinition" />
+  <string key="TreeDeleteTreeDefinition.Description" value="Ta bort markerad träddefinition?" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.Label" value="Redigera" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.ToolTip" value="Redigera träddefinition" />
+
+  <string key="AddApplicationWorkflow.AddApplication.Label" value="Lägg till Program" />
+  <string key="AddApplicationWorkflow.AddApplication.ToolTip" value="Lägg till nytt program" />
+  <string key="AddApplication.Layout.Label" value="Lägg till program" />
+  <string key="AddApplication.FieldGroup.Label" value="Välj program" />
+  <string key="AddApplication.TreeIdSelector.Label" value="Program" />
+  <string key="AddApplication.TreeIdSelector.Help" value="Välj det program som du vill lägga till" />
+  <string key="AddApplication.PositionSelector.Label" value="Position" />
+  <string key="AddApplication.PositionSelector.Help" value="Positionen i vilken detta program infogas" />
+  <string key="AddApplication.NoTrees.Title" value="Inga program" />
+  <string key="AddApplication.NoTrees.Message" value="Du har lagt alla tillgängliga program" />
+
+  <string key="RemoveApplicationWorkflow.RemoveApplication.Label" value="Ta bort Program" />
+  <string key="RemoveApplicationWorkflow.RemoveApplication.ToolTip" value="Ta bort befintligt program" />
+  <string key="RemoveApplication.Layout.Label" value="Ta bort program" />
+  <string key="RemoveApplication.FieldGroup.Label" value="Ta bort program" />
+  <string key="RemoveApplication.TreeIdSelector.Label" value="Program" />
+  <string key="RemoveApplication.TreeIdSelector.Help" value="Välj det program som du vill ta bort" />
+  <string key="RemoveApplication.NoTrees.Title" value="Inga program" />
+  <string key="RemoveApplication.NoTrees.Message" value="Du har tagit bort alla tillgängliga program" />
+
+  <string key="LocalizeDataWorkflow.LocalizeDataLabel" value="Översätt data" />
+  <string key="LocalizeDataWorkflow.LocalizeDataToolTip" value="Översätt data" />
+  <string key="LocalizeDataWorkflow.DisabledData" value="Ännu ej godkänd eller publicerad" />
+  <string key="LocalizeData.ShowError.Layout.Label" value="Det gick inte att översätta data" />
+  <string key="LocalizeData.ShowError.InfoTable.Caption" value="Översättningsfel" />  
+  <string key="LocalizeData.ShowError.Description" value="Följande fält har en referens till en datatyp. Du måste översätta dessa dataposter innan du kan översätta detta dataelement" />
+  <string key="LocalizeData.ShowError.FieldErrorFormat" value="Fältet '{0}' refererar till data av typen '{1}' med etiketten '{2}'" />
+  <string key="LocalizeData.ShowError.AlreadyTranslated" value="Dessa uppgifter har redan översatts. Den översatta versionen tillhör en annan grupp." />
+</strings>

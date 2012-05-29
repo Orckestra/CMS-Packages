@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+	<!-- preload precaution -->
+	<string key="Preload.Key" value="Hämtad under SourceEditorBinding-startup för att se till att strängar laddas :)" />
+	
+	<!-- validation messages -->
+	<string key="Invalid.HTML.DialogTitle" value="Ogiltig XHTML" />
+	<string key="Invalid.HTML.MissingHtml" value="Rot &lt;html&gt; taggen saknas." />
+	<string key="Invalid.HTML.MissingHead" value="&lt;head&gt; taggen saknas." />
+	<string key="Invalid.HTML.MissingBody" value="&lt;body&gt; taggen saknas." />
+	<string key="Invalid.HTML.HeadBodyIndex" value="&lt;head&gt; taggen måste placeras före &lt;body&gt;." />
+	<string key="Invalid.HTML.NamespaceURI" value="Rotens namnrymd är fel." />
+	<string key="Invalid.HTML.MultipleBody" value="Endast en &lt;body&gt; tagg tillåten." />
+	<string key="Invalid.HTML.MultipleHead" value="Endast en &lt;head&gt; tagg tillåten." />
+	
+	<string key="Format.XML.ErrorDialog.Title" value="Källformatering avbruten" /> 
+	<string key="Format.XML.ErrorDialog.Text" value="XML-källformatering kräver en välformad dokumentstruktur." />
+	
+	<!-- plain/colored switch button -->
+	<string key="Switch.PlainEdit.Label" value="Enkel Redigering" />
+	<string key="Switch.PlainEdit.ToolTip" value="Ingen syntaxmarkering, snabbare prestanda" />
+	<string key="Switch.ColoredEdit.Label" value="Färgad Redigering" />
+	<string key="Switch.ColoredEdit.ToolTip" value="Syntaxmarkering, långsammare prestanda" />
+
+  <!-- toolbar menus -->
+  <string key="Toolbar.Insert.Label" value="Infoga" />
+  <string key="Toolbar.Format.Label" value="Formatera" />
+  <string key="Toolbar.Format.ToolTip" value="Formatera XML-källa" />
+  
+  <!-- insert dropdown -->
+	<string key="Insert.PageURL.Label" value="Sid-&#xD;URL" />
+	<string key="Insert.ImageURL.Label" value="Bild-URL" />
+	<string key="Insert.MediaURL.Label" value="Medie-URL" />
+	<string key="Insert.FrontendURL.Label" value="Gränssnitts-URL" />
+	<string key="Insert.FunctionMarkup.Label" value="Funktionsuppmärkning" />
+	
+</strings>

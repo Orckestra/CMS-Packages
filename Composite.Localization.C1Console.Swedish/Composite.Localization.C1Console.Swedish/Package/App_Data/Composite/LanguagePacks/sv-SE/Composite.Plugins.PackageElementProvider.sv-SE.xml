@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootFolderLabel" value="Paket" />
+  <string key="RootFolderToolTip" value="Utforska och hantera installerade paket" />
+  <string key="AvailablePackagesFolderLabel" value="Tillgängliga Paket" />
+  <string key="AvailablePackagesFolderToolTip" value="Tillgängliga paket" />
+  <string key="InstalledPackageFolderLabel" value="Installerade Paket" />
+  <string key="InstalledPackageFolderToolTip" value="Installerade paket" />
+  <string key="LocalPackagesFolderLabel" value="Lokala Paket" />
+  <string key="LocalPackagesFolderToolTip" value="Lokala paket" />
+  <string key="PackageSourcesFolderLabel" value="Paketkällor" />
+  <string key="PackageSourcesFolderToolTip" value="Paketkällor" />
+  <string key="ViewAvailableInformationLabel" value="Paketinformation" />
+  <string key="ViewAvailableInformationToolTip" value="Visa paketinformation" />
+  <string key="ViewInstalledInformationLabel" value="Paketinformation" />
+  <string key="ViewInstalledInformationToolTip" value="Visa paketinformation" />
+  <string key="InstallLocalPackageLabel" value="Installera Lokalt Paket..." />
+  <string key="InstallLocalPackageToolTip" value="Installera paket från det lokala filsystemet" />
+  <string key="AddPackageSourceLabel" value="Lägg till Paketkälla" />
+  <string key="AddPackageSourceToolTip" value="Lägg till paketkälla" />
+  <string key="DeletePackageSourceLabel" value="Ta bort Paketk&#xD;älla" />
+  <string key="DeletePackageSourceToolTip" value="Ta bort paketkälla" />
+  <string key="ClearServerCacheLabel" value="Rensa Cacheminnet" />
+  <string key="ClearServerCacheToolTip" value="Töm cacheminnet för att hämta de nyaste paketen" />
+  <string key="ViewAvailableInformation.FieldGroupLabel" value="Paketinformation" />
+  <string key="ViewAvailableInformation.NameTextLabel" value="Namn" />
+  <string key="ViewAvailableInformation.DescriptionTextLabel" value="Beskrivning" />
+  <string key="ViewAvailableInformation.AuthorTextLabel" value="Författare" />
+
+  <string key="ViewAvailableInformation.TrialInfoFieldGroupLabel" value="Info Gratis Testversion" />
+  <string key="ViewAvailableInformation.TrialInformationLabel" value="Testversionsinformation" />
+  <string key="ViewAvailableInformation.TrialInformationText" value="Detta är ett kommersiellt paket som finns tillgängligt utan kostnad under testperioden. När testperioden har löpt ut kan funktionaliteten försämras, om du inte väljer att köpa en licens." />
+  <string key="ViewAvailableInformation.TrialDaysLabel" value="Gratis testperiod (dagar)" />
+
+
+  <string key="ViewAvailableInformation.InstallationInfoFieldGroupLabel" value="Installationsinformation" />
+  <string key="ViewAvailableInformation.VersionTextLabel" value="Version" />
+  <string key="ViewAvailableInformation.TechicalDescriptionTextLabel" value="Teknisk Beskrivning" />
+  <string key="ViewAvailableInformation.PackageSourceTextLabel" value="Källa" />
+
+
+  <string key="ViewAvailableInformation.PriceTextLabel" value="Pris (USD)" />
+  <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="Installera" />
+  <string key="ViewAvailableInformation.Toolbar.ReadMoreLabel" value="Läs mer" />
+  <string key="ViewAvailableInformation.ShowError.MessageTitle" value="Redan Installerad" />
+  <string key="ViewAvailableInformation.ShowError.MessageMessage" value="Paketet är redan installerat, kan inte installera det valda paketet." />
+  <string key="ViewAvailableInformation.ShowServerError.MessageTitle" value="Paketservern svarade inte" />
+  <string key="ViewAvailableInformation.ShowServerError.MessageMessage" value="Paketservern svarade inte, försök igen eller kontakta systemadministratören" />
+  <string key="ViewInstalledInformation.FieldGroupLabel" value="Paketinformation" />
+  <string key="ViewInstalledInformation.NameTextLabel" value="Namn" />
+  <string key="ViewInstalledInformation.DateTextLabel" value="Installationsdatum" />
+  <string key="ViewInstalledInformation.UserTextLabel" value="Installerad av" />
+  <string key="ViewInstalledInformation.AuthorTextLabel" value="Författare" />
+  <string key="ViewInstalledInformation.VersionTextLabel" value="Version" />
+  <string key="ViewInstalledInformation.TrialInfoFieldGroupLabel" value="Testversionsinformation" />
+  <string key="ViewInstalledInformation.TrialInformationLabel" value="Testversionsinformation" />
+  <string key="ViewInstalledInformation.TrialInformationText" value="Detta är ett kommersiellt paket som finns tillgängligt utan kostnad under testperioden. När testperioden har löpt ut kan funktionaliteten försämras, om du inte väljer att köpa en licens." />
+  <string key="ViewInstalledInformation.TrialExpireLabel" value="Testversionens utgångsdatum" />
+
+  <string key="ViewInstalledInformation.Toolbar.UninstallLabel" value="Avinstallera" />
+  <string key="ViewInstalledInformation.Toolbar.PurchaseLabel" value="Köp!" />
+  <string key="ViewInstalledInformation.ShowError.MessageTitle" value="Redan Avinstallerad" />
+  <string key="ViewInstalledInformation.ShowError.MessageMessage" value="Paketet är redan avinstallerat, kan inte avinstallera det valda paketet." />
+  <string key="InstallRemotePackage.Step1.LayoutLabel" value="Installera Paket" />
+  <string key="InstallRemotePackage.Step1.HeadingTitle" value="Detta är ett testversions- / betalpaket" />
+  <string key="InstallRemotePackage.Step1.HeadingDescription" value="Detta paket är belagt med en avgift - vänligen granska licensavtalet på nästa ruta för information om testperiod och betalningsvillkor." />
+  <string key="InstallRemotePackage.Step2.LayoutLabel" value="Installera Paket" />
+  <string key="InstallRemotePackage.Step2.HeadingTitle" value="Licensavtal" />
+  <string key="InstallRemotePackage.Step2.HeadingDescription" value="Om du accepterar villkoren i avtalet klicka på kryssrutan nedan. Du måste acceptera avtalet för att installera." />
+  <string key="InstallRemotePackage.Step2.IAcceptItemLabel" value="Jag accepterar licensavtalet" />
+  <string key="InstallRemotePackage.Step2.AcceptMissing" value="Du måste acceptera villkoren i licensavtalet innan du kan fortsätta." />
+  <string key="InstallRemotePackage.Step3.LayoutLabel" value="Installera Paket" />
+  <string key="InstallRemotePackage.Step3.HeadingTitle" value="Ladda ner och validera paket" />
+  <string key="InstallRemotePackage.Step3.HeadingDescription" value="Paketet kommer hämtas och valideras. Observera att detta kan ta flera minuter. Klicka på Nästa för att fortsätta." />
+  <string key="InstallRemotePackage.Step4.LayoutLabel" value="Installera Lokalt Paket" />
+  <string key="InstallRemotePackage.Step4.HeadingTitle" value="Redo att installera" />
+  <string key="InstallRemotePackage.Step4.HeadingDescription" value="Redo att installera paketet. Observera att installationen kan ta flera minuter. Klicka på Nästa för att fortsätta." />
+  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingTitle" value="Redo att installera" />
+  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingDescription" value="Redo att installera paketet. Observera att installationen kan ta flera minuter. Observera också att detta paket inte kan avinstalleras. Klicka på Nästa för att fortsätta." />
+  <string key="InstallRemotePackage.Step5.LayoutLabel" value="Paket &#xD;Installerat" />
+  <string key="InstallRemotePackage.Step5.HeadingTitle" value="Paketinstallationen lyckades" />
+  <string key="InstallRemotePackage.Step5.HeadingDescription" value="Paketinstallationen lyckades." />
+  <string key="InstallRemotePackage.ShowError.LayoutLabel" value="Paketinstallationen misslyckades" />
+  <string key="InstallRemotePackage.ShowError.InfoTableCaption" value="Paketinstallationen Misslyckades" />
+  <string key="InstallRemotePackage.ShowError.MessageTitle" value="Meddelande" />
+  <string key="InstallRemotePackage.ShowWarning.LayoutLabel" value="Paketet Godkändes Inte" />
+  <string key="InstallRemotePackage.ShowWarning.InfoTableCaption" value="Paketet godkändes inte" />
+  <string key="InstallLocalPackage.Step1.LayoutLabel" value="Installera Lokalt Paket" />
+  <string key="InstallLocalPackage.Step1.FieldGroupLabel" value="Sökväg till det lokala paketet" />
+  <string key="InstallLocalPackage.Step1.FileUploadLabel" value="Paketfil" />
+  <string key="InstallLocalPackage.Step1.FileUploadHelp" value="Bläddra till och välj den lokala paketfilen" />
+  <string key="InstallLocalPackage.Step2.LayoutLabel" value="Installera Lokalt Paket" />
+  <string key="InstallLocalPackage.Step2.HeadingTitle" value="Redo att installera" />
+  <string key="InstallLocalPackage.Step2.HeadingDescription" value="Redo att installera paketet. Observera att installationen kan ta flera minuter. Klicka på Nästa för att fortsätta." />
+  <string key="InstallLocalPackage.Step3.LayoutLabel" value="Paket &#xD;Installerat" />
+  <string key="InstallLocalPackage.Step3.HeadingTitle" value="Paketinstallationen lyckades" />
+  <string key="InstallLocalPackage.Step3.HeadingDescription" value="Paketinstallationen lyckades." />
+  <string key="InstallLocalPackage.ShowError.LayoutLabel" value="Paketinstallationen Misslyckades" />
+  <string key="InstallLocalPackage.ShowError.InfoTableCaption" value="Paketinstallationen misslyckades" />
+  <string key="InstallLocalPackage.ShowError.MessageTitle" value="Meddelande" />
+  <string key="InstallLocalPackage.ShowWarning.LayoutLabel" value="Paketet Godkändes Inte" />
+  <string key="InstallLocalPackage.ShowWarning.InfoTableCaption" value="Paketet godkändes inte" />
+  <string key="UninstallRemotePackage.Step1.LayoutLabel" value="Avinstallera Paket" />
+  <string key="UninstallRemotePackage.Step1.HeadingTitle" value="Redo att kontrollera avinstallationen" />
+  <string key="UninstallRemotePackage.Step1.HeadingDescription" value="Redo att kontrollera avinstallationen av paketet. Klicka på Nästa för att fortsätta." />
+  <string key="UninstallRemotePackage.Step2.LayoutLabel" value="Avinstallera Paket" />
+  <string key="UninstallRemotePackage.Step2.HeadingTitle" value="Redo att avinstallera" />
+  <string key="UninstallRemotePackage.Step2.HeadingDescription" value="Redo att avinstallera paketet. Observera att avinstallationen kan ta flera minuter. Klicka på Nästa för att fortsätta." />
+  <string key="UninstallRemotePackage.Step3.LayoutLabel" value="Paketet Avinstallerat" />
+  <string key="UninstallRemotePackage.Step3.HeadingTitle" value="Paketet avinstallerades utan missöden" />
+  <string key="UninstallRemotePackage.Step3.HeadingDescription" value="Paket avinstallerades utan missöden." />
+  <string key="UninstallRemotePackage.ShowError.LayoutLabel" value="Avinstallationen av Paketet Misslyckades" />
+  <string key="UninstallRemotePackage.ShowError.InfoTableCaption" value="Avinstallationen av paketet misslyckades" />
+  <string key="UninstallRemotePackage.ShowError.MessageTitle" value="Meddelande" />
+  <string key="UninstallRemotePackage.ShowUnregistre.LayoutLabel" value="Avinstallera Paket" />
+  <string key="UninstallRemotePackage.ShowUnregistre.HeadingTitle" value="Registrering av avinstallation misslyckades" />
+  <string key="UninstallRemotePackage.ShowUnregistre.HeadingDescription" value="Registreringen av avinstallationen misslyckades. Kontakta paketleverantören för manuell avanmälan." />
+  <string key="UninstallLocalPackage.Step1.LayoutLabel" value="Avinstallera Lokalt Paket" />
+  <string key="UninstallLocalPackage.Step1.HeadingTitle" value="Redo att kontrollera avinstallationen" />
+  <string key="UninstallLocalPackage.Step1.HeadingDescription" value="Redo att kontrollera avinstallationen av paketet. Klicka på Nästa för att fortsätta." />
+  <string key="UninstallLocalPackage.Step2.LayoutLabel" value="Avinstallera Lokalt Paket" />
+  <string key="UninstallLocalPackage.Step2.HeadingTitle" value="Redo att avinstallera" />
+  <string key="UninstallLocalPackage.Step2.HeadingDescription" value="Redo att avinstallera paketet. Observera att avinstallationen kan ta flera minuter. Klicka på Nästa för att fortsätta." />
+  <string key="UninstallLocalPackage.Step3.LayoutLabel" value="Paketet Avinstallerat" />
+  <string key="UninstallLocalPackage.Step3.HeadingTitle" value="Paketet avinstallerades utan missöden" />
+  <string key="UninstallLocalPackage.Step3.HeadingDescription" value="Paket avinstallerades utan missöden." />
+  <string key="UninstallLocalPackage.ShowError.LayoutLabel" value="Avinstallationen av Paketet Misslyckades" />
+  <string key="UninstallLocalPackage.ShowError.InfoTableCaption" value="Avinstallationen av paketet misslyckades" />
+  <string key="UninstallLocalPackage.ShowError.MessageTitle" value="Meddelande" />
+  <string key="AddPackageSource.Step1.LayoutLabel" value="Ny Paketkälla" />
+  <string key="AddPackageSource.Step1.FieldGroupLabel" value="Paketkälldata" />
+  <string key="AddPackageSource.Step1.UrlLabel" value="URL för &#xD;Paket-webbtjänst" />
+  <string key="AddPackageSource.Step1.UrlHelp" value="Paket kan finnas på fjärrservrar. URL:en för paketwebbtjänsten kommer att valideras i nästa steg." />
+  <string key="AddPackageSource.Step1.UrlNotValid" value="Den angivna texten var inte en giltig URL" />
+  <string key="AddPackageSource.Step1.UrlNonPackageServer" value="Servern är inte en Composite C1-paketserver" />
+  <string key="AddPackageSource.Step2.LayoutLabel" value="Lägg till Paketserverkälla" />
+  <string key="AddPackageSource.Step2.HeadingTitle" value="Serverns URL är giltig" />
+  <string key="AddPackageSource.Step2.HeadingNoHttpsDescription" value="Notera att HTTP-protokollet används på denna förbindelse. Detta innebär att all information kommer att skickas okrypterad. Klicka på Slutför för att lägga till källan." />
+  <string key="AddPackageSource.Step2.HeadingWithHttpsDescription" value="Klicka på Slutför för att lägga till källan." />
+  <string key="DeletePackageSource.Step1.LayoutLabel" value="Ta bort Bekräftelse" />
+  <string key="DeletePackageSource.Step1.Text" value="Ta bort den valda serverkällan" />
+
+  <string key="ConfirmLicense.ExpiredTitle" value="Testperiod Har Löpt ut" />
+  <string key="ConfirmLicense.ExpiredMessage" value="Testsperioden för paketet har gått ut. Du måste erhålla en giltig licens." />
+</strings>

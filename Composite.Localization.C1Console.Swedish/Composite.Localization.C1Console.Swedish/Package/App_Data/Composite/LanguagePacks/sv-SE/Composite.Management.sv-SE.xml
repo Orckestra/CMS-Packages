@@ -1,0 +1,650 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Redigera Behörigheter" />
+	<string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Redigera Behörigheter" />
+	<string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Globala Behörigheter" />
+	<string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Hantera användarbehörigheter" />
+	<string key="LogElementProvider.RootLabel" value="Logg" />
+	<string key="LogElementProvider.RootLabelToolTip" value="Systemlogg" />
+	<string key="LogElementProvider.ShowLogLabel" value="Visa loggen" />
+	<string key="LogElementProvider.ShowLogToolTip" value="Visa systemloggen" />
+	<string key="DataCompositionVisabilityFacade.DefaultContainerLabel" value="Metadata" />
+	<string key="Website.Forms.Administrative.DeleteUserStep1.LabelFieldGroup" value="Ta bort Användare?" />
+	<string key="Website.Forms.Administrative.DeleteUserStep1.Text" value="Ta bort den markerade användaren?" />
+	<string key="DeleteUserWorkflow.CascadeDeleteErrorTitle" value="Fel vid sammanhängande borttagning" />
+	<string key="DeleteUserWorkflow.CascadeDeleteErrorMessage" value="Typen refereras av en annan typ som inte tillåter sammanhängande borttagning. Operationen stoppades" />
+	<string key="DeleteUserWorkflow.DeleteSelfTitle" value="Kan inte radera en användare" />
+	<string key="DeleteUserWorkflow.DeleteSelfErrorMessage" value="Du kan inte radera ett konto du är inloggad på." />
+
+	<string key="Website.Function.SelectDialog.Title" value="Välj Funktion" />
+	<string key="Website.Widget.SelectDialog.Title" value="Välj Widget" />
+	<string key="Website.ContentLink.SelectDialog.Title" value="Välj Sida eller Fil" />
+	<string key="Website.Page.SelectDialog.Title" value="Välj Sida" />
+	<string key="Website.FrontendFile.SelectDialog.Title" value="Välj Frontendfil" />
+	<string key="Website.Media.SelectDialog.Title" value="Välj Media" />
+	<string key="Website.Image.SelectDialog.Title" value="Välj Bild" />
+
+
+	<string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Allmänna inställningar" />
+	<string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Användarnamn" />
+	<string key="Website.Forms.Administrative.EditUserStep1.UserNameHelp" value="Användarnamn kan inte ändras. Detta är ett skrivskyddat fält." />
+	<string key="Website.Forms.Administrative.EditUserStep1.PasswordLabel" value="Lösenord" />
+	<string key="Website.Forms.Administrative.EditUserStep1.PasswordHelp" value="Lösenordet måste vara längre än 6 tecken." />
+	<string key="Website.Forms.Administrative.EditUserStep1.EmailLabel" value="E-post" />
+	<string key="Website.Forms.Administrative.EditUserStep1.EmailHelp" value="Användarens e-postadress (ej obligatorisk)." />
+	<string key="Website.Forms.Administrative.EditUserStep1.GroupLabel" value="Mapp" />
+	<string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Om du anger ett mappnamn som inte redan finns kommer en ny mapp skapas." />
+  <string key="Website.Forms.Administrative.EditUserStep1.LabelLocalizationFieldGroup" value="C1-konsol Lokalisering" />
+  <string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Nationella inställningar" />
+	<string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="För att ändra hur nummer, datum och timmar visas välj en post i listan." />
+  <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageLabel" value="Språk för &#xD;C1-konsolen" />
+  <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageHelp" value="Välj det språk som ska användas för etiketter, hjälptexter, dialoger etc. De tillgängliga alternativen här är begränsade till installerade språk. Du kan installera fler språk via Pakethanteraren, se Composite.Localization." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveFieldLabel" value="Perspektiv" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectLabel" value="Synliga perspektiv" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectHelp" value="Välj vilket perspektiv som ska synas när användaren startar C1 konsolen." />
+	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsFieldLabel" value="Globala behörigheter" />
+	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectLabel" value="Globala behörigheter" />
+	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectHelp" value="Behörigheten Administrera ger användaren tillåtelse att hantera användarbehörigheter och utföra andra administrativa uppgifter." />
+	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissions.IgnoredOwnAdministrativeRemoval" value="Avlägsnandet av din egen administrativa behörighet har ignorerats. Du har fortfarande administratörsbehörighet." />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesFieldLabel" value="Åtkomst för dataspråk" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectLabel" value="Dataspråk" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectHelp" value="Användaren har behörighet att hantera data för de valda språken." />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleLabel" value="Språk för aktivt innehåll" />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Språket  för innehåll här användaren kommer redigera." />
+	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleNotChecked" value="Det valda språket är inte markerat i dataspråkssektionen." />
+	<string key="Website.Forms.Administrative.EditUserStep1.NoActiveLocaleSelected" value="Du måste välja minst ett aktivt språk." />
+	<string key="Website.Forms.Administrative.EditUserStep1.GenerelTabLabel" value="Allmänt" />
+	<string key="Website.Forms.Administrative.EditUserStep1.PermissionsTabLabel" value="Behörigheter" />
+	<string key="Website.Forms.Administrative.EditUserStep1.PerspectivesTabLabel" value="Perspektiv" />
+	<string key="Website.Forms.Administrative.EditUserStep1.UserGroupsFieldLabel" value="Användargrupper" />
+	<string key="Website.Forms.Administrative.EditUserStep1.UserGroupsMultiSelectHelp" value="Välj de användargrupper som den valda användaren ska tillhöra." />
+	<string key="EditUserWorkflow.EditErrorTitle" value="Fel" />
+	<string key="EditUserWorkflow.EditOwnAccessToUsersPerspective" value="Du kan inte ta bort din egen åtkomst till perspektivet 'Användare'" />
+	<string key="UserElementProvider.RootLabel" value="Användare" />
+	<string key="UserElementProvider.RootToolTip" value="Användare" />
+	<string key="UserElementProvider.AddUserLabel" value="Lägg till Användare..." />
+	<string key="UserElementProvider.AddUserToolTip" value="Lägg till ny användare" />
+	<string key="UserElementProvider.EditUserLabel" value="Redigera Användare" />
+	<string key="UserElementProvider.EditUserToolTip" value="Redigera vald användare" />
+	<string key="UserElementProvider.DeleteUserLabel" value="Ta bort Användare" />
+	<string key="UserElementProvider.DeleteUserToolTip" value="Ta bort den markerade användaren" />
+	<string key="UserElementProvider.ChangeOtherActiveLocaleTitle" value="Varning" />
+	<string key="UserElementProvider.ChangeOtherActiveLocaleMessage" value="Du har ändrat det aktiva språket för en användare som för närvarande är inloggad. Användarens konsol kommer att laddas om och data kan gå förlorad." />
+	<string key="UserElementProvider.ChangeOtherActiveLocaleDialogTitle" value="Upprensning Krävs" />
+	<string key="UserElementProvider.ChangeOtherActiveLocaleDialogText" value="Detta kräver en rensning av scenen. Aktiva editorer kommer att sparas och stängas." />
+	<string key="AddNewUserWorkflow.UsernameDuplicateError" value="En användare med samma namn finns redan" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.LabelFieldGroup" value="Lägg till Ny Användare" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.UserNameLabel" value="Användarnamn" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.UserNameHelp" value="När du har skapat en ny användare kan användarnamnet inte ändras" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.PasswordLabel" value="Lösenord" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.PasswordHelp" value="Lösenordet måste vara längre än 6 tecken." />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.EmailLabel" value="E-postadress" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.EmailHelp" value="Användarens e-postadress (ej obligatorisk)." />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.GroupLabel" value="Mapp" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.GroupHelp" value="Om du anger ett mappnamn som inte redan finns kommer en ny mapp skapas." />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureLabel" value="Nationella inställningar" />
+	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="För att ändra hur nummer, datum och timmar visas välj en post i listan." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.C1ConsoleLanguageLabel" value="Språk för &#xD;C1-konsolen" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.C1ConsoleLanguageHelp" value="Välj det språk som ska användas för etiketter, hjälptexter, dialoger etc. De tillgängliga alternativen här är begränsade till installerade språk. Du kan installera fler språk via Pakethanteraren, se Composite.Localization." />
+  <string key="UserElementProvider.MissingActiveLanguageTitle" value="Ett språk krävs" />
+	<string key="UserElementProvider.MissingActiveLanguageMessage" value="För att skapa en användare krävs ett språk, men inga språk har lagts till ännu. Du kan lägga till ett under perspektivet System." />
+	<string key="UserElementProvider.UserLoginIsAlreadyUsed" value="En användare med samma inloggning finns redan" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderTypeLabel" value="Lägg till Datamapp" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderTypeToolTip" value="Lägg till datamapp" />
+	<string key="AssociatedDataElementProviderHelper.AddAssociatedDataLabel" value="Lägg till Data" />
+	<string key="AssociatedDataElementProviderHelper.AddAssociatedDataToolTip" value="Lägg till data" />
+	<string key="AssociatedDataElementProviderHelper.EditAssociatedDataLabel" value="Redigera Data" />
+	<string key="AssociatedDataElementProviderHelper.EditAssociatedDataToolTip" value="Redigera data" />
+	<string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataLabel" value="Ta bort Data" />
+	<string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataToolTip" value="Ta bort data" />
+	<string key="AssociatedDataElementProviderHelper.LocalizeData" value="Lokalisera" />
+	<string key="AssociatedDataElementProviderHelper.LocalizeDataToolTip" value="Lokalisera data" />
+	<string key="AssociatedDataElementProviderHelper.DisabledData" value="Ännu ej godkänd eller publicerad" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.FieldLabel" value="Lägg till Datamapp" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorLabel" value="Datamapp-typ" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorHelp" value="Skapa ny datatyp eller använd en existerande datatyp (om sådan finns)." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelNewType" value="Inställningar" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeName" value="Typnamn" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeName" value="Det tekniska namnet på datatypen (ex. Produkt). Detta används för att identifiera typen i koden och ska inte ändras när den används externt." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeNamespace" value="Namnrymd för typ" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeNamespace" value="Namnrymden (modul- / kategorinamn) för typen. Detta används för att identifiera typen i koden och bör inte ändras." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeTitle" value="Rubrik" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeTitle" value="Använd denna post för att ange ett användarvänlig namn. Du kan ändra det här fältet som du vill." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelFields" value="Fält" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ServicesLabel" value="Tjänster" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasPublishing" value="Har publicering" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasLocalization" value="Har lokalisering" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesTitle" value="Inga sidspecifika datamappar existerar" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Inga sidspecifika datamappar har skapats ännu. Du kan skapa en sid-datamapp i perspektivet Data." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesTitle" value="Inga Oanvända Sidspecifika Datamappar Finns" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Alla tillgängliga sidspecifika datamappar har redan lagts till. För att skapa en ny sid-datamapp gå till perspektivet Data." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ErrorTitle" value="Fel" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.FieldLabel" value="Välj den befintliga datamappen du vill lägga till" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorLabel" value="Befintliga typer för datamappar" />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorHelp" value="Välj den befintliga datamappen du vill lägga till" />
+	<string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeLabel" value="Ta bort Metadatafält" />
+	<string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeToolTip" value="Ta bort metadatafält" />
+	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.LabelFieldGroup" value="Ta bort Datamapp från Sida" />
+	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.FieldGroupLabel" value="Datarensning" />
+	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataLabel" value="Ta bort data" />
+	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataCheckBoxLabel" value="Ja, ta bort mappdata" />
+	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataHelp" value="Om du vill att data i den här mappen ska vara kvar i databasen bör du avmarkera detta alternativ." />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.LayoutLabel" value="Lägg till Metadatafält" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataTypeLabel" value="Lägg till Metadatafält" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataTypeToolTip" value="Lägg till metadatafält" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.FieldLabel" value="Välj den befintliga metadatatyp du vill lägga till" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorLabel" value="Existerande metadatatyper" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorHelp" value="Välj den befintliga metadatatyp du vill lägga till" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesTitle" value="Inga sid-metadatatyper existerar" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesMessage" value="Inga sidspecifika metatyper har skapats ännu. Du kan skapa en sid-metatyp i perspektivet Data." />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.NamingFieldLabel" value="Namngivning för metadatafältgrupp" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameLabel" value="Namn" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameHelp" value="Ange ett unikt namn som identifierar denna metadatafältgrupp" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelLabel" value="Etikett" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelHelp" value="Ange en användarvänlig etikett för denna metadatafältgrupp" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.VisabilityFieldLabel" value="Synlighet för metadatafältgrupp" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorLabel" value="Flik" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorHelp" value="Välj den flik denna metadata bör finnas i" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorLabel" value="Starta visning från" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorHelp" value="Starta visning från" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorLabel" value="Ärv visning" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorHelp" value="Ärv visning" />
+	<string key="AssociatedDataElementProviderHelper.NoItems.Title" value="Metadatafältgruppen har inga poster i omfånget" />
+	<string key="AssociatedDataElementProviderHelper.NoItems.Description" value="Det finns för närvarande inga poster inom det angivna visningsintervallet. Tryck på Föregående för att ändra visningsintervallet eller Slutför för att skapa metadatafältgruppen." />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption0" value="Denna post" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption1" value="Underordnade objekt" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption2" value="2:a nivån underordnade noder" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption3" value="3:e nivån underordnade noder" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption4" value="4:e nivån underordnade noder" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption5" value="5: e nivån underordnade noder" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption0" value="Ärv inte" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption1" value="Ärv en nivå" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption2" value="Ärv 2 nivåer" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption3" value="Ärv 3 nivåer" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption4" value="Ärv alltid" />
+	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.FieldGroupNameNotValid" value="Fältgruppnamnet används redan" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectType.LayoutLabel" value="Ta bort Metadatafältgruppen" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.FieldLabel" value="Välj en metadatafältgrupp att ta bort" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorLabel" value="Fältgrupp" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorHelp" value="Välj en metadatafältgrupp att ta bort" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataTypeLabel" value="Redigera Metadatafält" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataTypeToolTip" value="Redigera metadatafält" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.Layout.Label" value="Redigera Sidmetadatafält" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.FieldGroup.Label" value="Inställningar för sidmetadatafält" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Label" value="Etikett" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Help" value="Metadatafältets etikett. Används vid redigering av sidor" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Label" value="Flik" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Help" value="Välj den flik denna metadata bör finnas i" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorLabel" value="Starta visning från" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorHelp" value="Starta visning från" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorLabel" value="Ärv visning" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorHelp" value="Ärv visning" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Label" value="Metadatafält" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Help" value="Välj det metadatafält som ska redigeras" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Title" value="Inga Metadatafält att Redigera" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Message" value="Det finns inga metadatafält definierade att editera på denna post" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataFieldNameAlreadyUsed" value="Metadatatypen används på en annan plats med samma namn men annan etikett" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerChangeNotAllowed" value="Det finns en eller flera definitioner med samma namn, ändring av behållaren är inte tillåtet" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Title" value="Tryck slutför för att spara" />
+	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Description" value="All erforderlig information har samlats in. Tryck Slutför för att uppdatera metadatafältet" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Title" value="Inga Metadatafält att Ta bort" />
+	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Message" value="Det finns inga metadatafält definierade att ta bort på denna post" />
+	<string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorTitle" value="Fel vid sammanhängande borttagning" />
+	<string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorMessage" value="Typen refereras av en annan typ som inte tillåter sammanhängande borttagning. Operationen stoppades" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelNewType" value="Inställningar" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeName" value="Typnamn" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeName" value="Namnet på den nya typ som du skapar (ex. produkt)" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeNamespace" value="Namnrymd för typ" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeNamespace" value="Namnet på modulen, kategorin eller namnutrymmet som du skapar" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeTitle" value="Rubrik" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeTitle" value="Använd detta fält för att ange ett användarvänligt namn" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelFields" value="Fält" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.ServicesLabel" value="Tjänster" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasVersioning" value="Har versionshantering" />
+	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasPublishing" value="Har publicering" />
+	<string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.FieldGroupLabel" value="Ta bort Data?" />
+	<string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.Text" value="Ta bort data?" />
+	<string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.FieldGroupLabel" value="Lägg till siddata" />
+	<string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorLabel" value="Välj en datatyp att lägga till" />
+	<string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorHelp" value="Välj en av de befintliga typerna att lägga till data till" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeWorkflow.FieldGroupLabel" value="Lägg till datatyp för sida" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorLabel" value="Välj typ att lägga till" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorHelp" value="Välj en av de befintliga typerna i systemet" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorLabel" value="Välj en främmande nyckel" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorHelp" value="Välj ett av fälten från typen att använda som främmande nyckel" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorLabel" value="Lägg till ett/en" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorHelp" value="Skapa en ny typ eller använd en befintlig typ" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorLabel" value="Välj typ:" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorHelp" value="Ordinär data är en ny typ som skapas under en sida. Metadata är ett nytt fält som skapas på en sida" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameLabel" value="Regelnamn" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameHelp" value="Regelnamn sparas med metadatan och är en del av metadatanyckeln. Namnet måste vara unikt." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleLabelLabel" value="Regeletikett" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleHelpHelp" value="Regeletikett används som ett användarvänligt namn för instansen. Kan lokaliseras" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorLabel" value="Välj kompositionsbehållare" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorHelp" value="Välj behållare för den nya regeln." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorLabel" value="Välja defionitonsområde för kompositionen" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorHelp" value="Välj defininitionsområde för den nya kompositionen" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsLabel" value="Nivåer" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsHelp" value="Djupet för undersidor i vilken kompositionen kommer att vara synlig" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeLabel" value="Bekräfta ny datatyp:" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeHelp" value="Metadata är ett nytt fält som skapas på en sida" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Regelnamn för kompositionsområdet" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameHelp" value="Regelnamn sparas med metadatan och är en del av metadatanyckeln. Namnet måste vara unikt." />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleLabelLabel" value="Regeletikett för kompositionsområdet" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleHelpHelp" value="Regeletikett används som ett användarvänligt namn för instansen. Kan lokaliseras" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeLabel" value="Kompositionsomfattning" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeHelp" value="Detta är den omfattningen i vilken den nya kompositionen kommer att vara synlig när du redigerar sidor" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeLabel" value="Lägga till typ" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeHelp" value="Skapa en ny typ eller använd en befintlig typ" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameLabel" value="Befintligt typnamn" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameHelp" value="Namnet på den valda befintliga typen att använda i systemet" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameLabel" value="Fältnamn för främmande nyckel" />
+	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameHelp" value="Namnet på fältet för den befintliga typ som ska användas som en främmande nyckel" />
+	<string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeLabel" value="Ta bort Datamapp" />
+	<string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeToolTip" value="Ta bort datamapp" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedType.FieldGroupLabel" value="Ta bort siddatatyp" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.AssociationTypeLabel" value="Ta bort siddatatyp" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Regelnamn för kompositionsområdet" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorLabel" value="Välj en regel" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorHelp" value="Namnet på regeln som ska tas bort" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorLabel" value="Välj siddatatyp" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorHelp" value="" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorLabel" value="Välj datatyp" />
+	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorHelp" value="Välj en av de befintliga typerna" />
+	<string key="VirtualElementProviderElementProvider.ID01" value="Virtuell root" />
+	<string key="VirtualElementProviderElementProvider.UserPerspective" value="Användare" />
+	<string key="VirtualElementProviderElementProvider.DeveloperApplicationPerspective" value="Utvecklarappar" />
+	<string key="VirtualElementProviderElementProvider.UserGroupPerspective" value="Användargrupper" />
+	<string key="VirtualElementProviderElementProvider.SystemPerspective" value="System" />
+	<string key="VirtualElementProviderElementProvider.ContentPerspective" value="Innehåll" />
+	<string key="VirtualElementProviderElementProvider.DatasPerspective" value="Data" />
+	<string key="VirtualElementProviderElementProvider.DesignPerspective" value="Layout" />
+	<string key="VirtualElementProviderElementProvider.FunctionsPerspective" value="Funktioner" />
+	<string key="VirtualElementProviderElementProvider.MediaFilePerspective" value="Alla Mediafiler" />
+	<string key="VirtualElementProviderElementProvider.MediaPerspective" value="Media" />
+	<string key="VirtualElementProviderElementProvider.ReadOnlyFunctionPerspective" value="Alla Funktioner" />
+	<string key="VirtualElementProviderElementProvider.ReadOnlyWidgetFunctionPerspective" value="Alla Widgetfunktioner" />
+	<string key="VirtualElementProviderElementProvider.SqlFunctionPerspective" value="SQL-funktioner" />
+	<string key="VirtualElementProviderElementProvider.XsltBasedFunctionPerspective" value="XSLT-baserade funktioner" />
+	<string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogLabel" value="Serverlogg" />
+	<string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogTooltip" value="Visa senaste serverhändelser" />
+	<string key="VirtualElementProviderElementProvider.RootActions.SendMessageLabel" value="Sänd Meddelande" />
+	<string key="VirtualElementProviderElementProvider.RootActions.SendMessageTooltip" value="Skicka ett meddelande till alla aktiva konsoler" />
+	<string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Starta om server" />
+	<string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Starta om servern" />
+	<string key="SendMessageToConsolesWorkflow.Layout.Label" value="Sänd Meddelande till Alla C1-konsoler" />
+	<string key="SendMessageToConsolesWorkflow.FieldGroup.Label" value="Meddelande att sända" />
+	<string key="SendMessageToConsolesWorkflow.TitleTextBox.Label" value="Rubrik" />
+	<string key="SendMessageToConsolesWorkflow.TitleTextBox.Help" value="Meddelandets dialogrubrik" />
+	<string key="SendMessageToConsolesWorkflow.MessageTextArea.Label" value="Meddelande" />
+	<string key="SendMessageToConsolesWorkflow.MessageTextArea.Help" value="Meddelandet att sända" />
+	<string key="LoginWebRequestHandler.Login" value="Inloggning" />
+	<string key="LoginWebRequestHandler.Header" value="Logga in i {0}" />
+	<string key="LoginWebRequestHandler.LoginFailed" value="Felaktigt användarnamn eller lösenord" />
+	<string key="LoginWebRequestHandler.Password" value="Lösenord" />
+	<string key="LoginWebRequestHandler.Username" value="Användarnamn" />
+	<string key="LoginWebRequestHandler.LogInAsOtherUser" value="Logga in som en annan användare." />
+	<string key="LoginWebRequestHandler.WrongUserNameOrPassword" value="Fel användarnamn eller lösenord." />
+	<string key="LoginWebRequestHandler.UserNameNotRegistered" value="Den medföljande Windows-inloggningen, {0} \ {1} är inte registrerad i användardatabasen. Du måste använda en annan inloggning." />
+	<string key="DataInterfaceValidator.TypeNotAnInterface" value="Typen {0} är inte ett gränssnitt." />
+	<string key="DataInterfaceValidator.TypeDoesNotImplementInterface" value="Gränssnittstypen {0} implementerar inte gränssnittet {1}." />
+	<string key="DataInterfaceValidator.NotAcceptedType" value="Egenskapen {0} är inte en accepterad typ för gränssnittstypen {1} ." />
+	<string key="DataInterfaceValidator.NotValidIDataInterface" value="Gränssnittet {0} är inte ett giltigt IData-gränssnitt." />
+	<string key="DeleteMediaFileWorkflow.CascadeDeleteErrorTitle" value="Fel vid sammanhängande borttagning" />
+	<string key="DeleteMediaFileWorkflow.CascadeDeleteErrorMessage" value="Typen refereras av en annan typ som inte tillåter sammanhängande borttagning. Operationen stoppades" />
+	<string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorTitle" value="Fel vid sammanhängande borttagning" />
+	<string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorMessage" value="Typen refereras av en annan typ som inte tillåter sammanhängande borttagning. Operationen stoppades" />
+	<string key="MediaFileProviderElementProvider.RootToolTip" value="Lägg till mappar och filer till mediearkivet" />
+	<string key="MediaFileProviderElementProvider.AddMediaFolder" value="Lägg till Mapp" />
+	<string key="MediaFileProviderElementProvider.AddMediaFolderToolTip" value="Lägg till ny mediemapp" />
+	<string key="MediaFileProviderElementProvider.AddMediaFile" value="Ladda upp Fil" />
+	<string key="MediaFileProviderElementProvider.AddMediaFileToolTip" value="Lägg till ny mediefil" />
+	<string key="MediaFileProviderElementProvider.DeleteMediaFile" value="Ta bort Fil" />
+	<string key="MediaFileProviderElementProvider.DeleteMediaFileToolTip" value="Ta bort den markerade mediefilen" />
+	<string key="MediaFileProviderElementProvider.DeleteMediaFolder" value="Ta bort Mapp" />
+	<string key="MediaFileProviderElementProvider.DeleteMediaFolderToolTip" value="Ta bort mediemappen och alla objekt under den." />
+	<string key="MediaFileProviderElementProvider.Download" value="Ladda ner" />
+	<string key="MediaFileProviderElementProvider.DownloadToolTip" value="Ladda ner fil" />
+	<string key="MediaFileProviderElementProvider.EditMediaFile" value="Filegenskaper" />
+	<string key="MediaFileProviderElementProvider.EditMediaFileToolTip" value="Byt namn på vald mediefil" />
+	<string key="MediaFileProviderElementProvider.EditMediaFileTextContent" value="Redigera text" />
+	<string key="MediaFileProviderElementProvider.EditMediaFileTextContentToolTip" value="Redigera textinnehållet" />
+	<string key="MediaFileProviderElementProvider.EditImage" value="Bildredigerare" />
+	<string key="MediaFileProviderElementProvider.EditImageToolTip" value="Öppna den markerade mediefilen i bildredigeraren" />
+	<string key="MediaFileProviderElementProvider.EditMediaFolder" value="Mappegenskaper" />
+	<string key="MediaFileProviderElementProvider.EditMediaFolderToolTip" value="Redigera mediamapp-egenskaperna" />
+	<string key="MediaFileProviderElementProvider.ChangeMediaFile" value="Ersätt Fil" />
+	<string key="MediaFileProviderElementProvider.ChangeMediaFileToolTip" value="Ersätt den markerade filen med en annan mediefil" />
+	<string key="MediaFileProviderElementProvider.UploadZipFile" value="Ladda upp Flera" />
+	<string key="MediaFileProviderElementProvider.UploadZipFileToolTip" value="Ladda upp ZIP-fil" />
+	<string key="MediaFileProviderElementProvider.MediaFileItemToolTip" value="Medieobjekt" />
+	<string key="MediaFileProviderElementProvider.OrganizedFilesAndFoldersToolTip" value="Organisera mappar och filer" />
+	<string key="MediaFileProviderElementProvider.ErrorMessageTitle" value="Fel" />
+	<string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Filen '{0}' finns redan i mappen '{1}'" />
+	<string key="UploadNewMediaFileWorkflow.UploadFailure" value="Misslyckande" />
+	<string key="UploadNewMediaFileWorkflow.UploadFailureMessage" value="Den uppladdade filen måste vara av samma typ som originalet. Filen du laddade upp är av en annan typ." />
+	<string key="RelationshipGraphActionExecutor.ShowGraph" value="Visa Diagram" />
+	<string key="RelationshipGraphActionExecutor.ShowGraphToolTip" value="Visa relationsdiagram" />
+	<string key="RelationshipGraphActionExecutor.ShowOrientedGraph" value="Visa Orienterat Diagram" />
+	<string key="RelationshipGraphActionExecutor.ShowOrientedGraphToolTip" value="Visar Orienterat Relationsdiagram" />
+	<string key="ShowElementInformationActionExecutor.ShowElementInformation.Label" value="Visa Information för Element" />
+	<string key="ShowElementInformationActionExecutor.ShowElementInformation.ToolTip" value="Visa Information för Element" />
+	<string key="RelationshipGraphActionExecutor.Search" value="Sök element" />
+	<string key="RelationshipGraphActionExecutor.SearchToolTip" value="Sök efter element" />
+	<string key="RelationshipGraphActionExecutor.SearchElements" value="Sök element" />
+	<string key="RelationshipGraphActionExecutor.SearchElementsToolTip" value="Sök efter element" />
+	<!-- WEBSITE -->
+	<string key="Website.General.LabelVersionNumber" value="Versionsnr" />
+	<string key="Website.Application.DialogReload.Title" value="Starta om?" />
+	<string key="Website.Application.DialogReload.Text" value="Starta om Composite C1? Alla osparade ändringar kommer att förloras." />
+	<string key="WebSite.Application.DialogSaveResource.Title" value="Spara Resurs?" />
+	<string key="WebSite.Application.DialogSaveResource.Text" value="&quot;${resourcename}&quot; har ändrats. Spara ändringar?" />
+	<string key="Website.Dialogs.SaveAll.LabelSaveResources" value="Spara Resurser?" />
+	<string key="Website.Dialogs.SaveAll.LabelUnsavedResources" value="Osparade resurser" />
+	<string key="Website.Dialogs.LabelYes" value="Ja" />
+	<string key="Website.Dialogs.LabelNo" value="Nej" />
+	<string key="Website.Dialogs.LabelAccept" value="OK" />
+	<string key="Website.Dialogs.LabelCancel" value="Avbryt" />
+	<string key="Website.Dialogs.LabelDisclosure" value="Mer Information" />
+	<string key="Website.Dialogs.About.Title" value="Om Composite C1" />
+	<string key="Website.Dialogs.About.LabelCredits" value="Credits" />
+	<string key="Website.Dialogs.About.LabelBack" value="Tillbaka" />
+	<string key="Website.Dialogs.About.LabelCredits2" value="Credits" />
+
+	<string key="Website.Dialogs.NoAccessTitle" value="Ingen åtkomst" />
+	<string key="Website.Dialogs.NoAccessText" value="Du har inte fått behörighet till systemet. Vänligen kontakta din administratör." />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.Unit" value="Enhet" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.Width" value="Bredd" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.Height" value="Höjd" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelScaleImage" value="Skala Bild" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelDimensions" value="Dimensioner" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelImageSize" value="Bildstorlek" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFixedRatio" value="Fast Förhållande" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFreeResize" value="Fri Storleksanpassning" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPixels" value="Pixlar" />
+	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPercent" value="Procent" />
+	<string key="Website.Dialogs.Options.LoginScreen" value="Inloggningsskärm" />
+	<string key="Website.Dialogs.Options.SoundEffects" value="Ljudeffekter" />
+	<string key="Website.Dialogs.Options.LabelOptions" value="Alternativ" />
+	<string key="Website.Dialogs.Options.LabelGeneral" value="Allmänt" />
+	<string key="Website.Dialogs.Options.LabelAdvanced" value="Avancerat" />
+	<string key="Website.Dialogs.Options.LabelLoginPreferences" value="Inställningar för Inloggning" />
+	<string key="Website.Dialogs.Options.LabelFakeLoginScreen" value="Falsk inloggningsskärm" />
+	<string key="Website.Dialogs.Options.LabelNoLoginScreen" value="Ingen inloggningsskärm" />
+	<string key="Website.Dialogs.Options.LabelAudioPreferences" value="Inställningar för Ljud" />
+	<string key="Website.Dialogs.Options.LabelSoundOn" value="Irriterande ljudeffekter" />
+	<string key="Website.Dialogs.Options.LabelSoundOff" value="Inga ljudeffekter" />
+	<string key="Website.Dialogs.WebServices.Error" value="Fel i webbtjänstmetod" />
+	<string key="Website.Dialogs.WebServices.LabelWebServiceError" value="Fel i Webbtjänsten" />
+	<string key="Website.Dialogs.SystemTree.DetailedPaste.Title" value="Infoga Var?" />
+	<string key="Website.Dialogs.SystemTree.DetailedPaste.LabelPosition" value="Position" />
+	<string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertBefore" value="Infoga före" />
+	<string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertAfter" value="Infoga efter" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTitle" value="Redigera bild" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFile" value="Fil" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSave" value="Spara" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSaveAs" value="Spara Som..." />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRevert" value="Återgå" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelView" value="Visa" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoom" value="Zooma" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomIn" value="Zooma In" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomOut" value="Zooma Ut" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label800" value="800%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label400" value="400%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label200" value="200%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label100" value="100%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label50" value="50%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label25" value="25%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label12" value="12%" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelImage" value="Bild" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTransform" value="Förvandla" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipHorizontal" value="Vänd Vågrätt" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipVertical" value="Vänd Lodrätt" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CW" value="Rotera 90 Grader Medurs" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CCW" value="Rotera 90 Grader Moturs" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate180" value="Rotera 180 Grader" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelScale" value="Skala Bild..." />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelCrop" value="Beskär Bild" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipSelect" value="Välj" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipZoom" value="Zooma" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelSave" value="Spara" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelScale" value="Skala bild" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelCrop" value="Beskär bild" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelUndo" value="Ångra" />
+	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelRedo" value="Gör om" />
+	<string key="Website.Content.Views.Editors.PermissionEditor.LabelTitle" value="Behörigheter" />
+	<string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUsers" value="Användare" />
+	<string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUserGroups" value="Användargrupper" />
+	<string key="Website.Content.Views.Editors.PermissionEditor.LabelButtonSave" value="Spara" />
+	<string key="Website.Content.Views.Help.ToolTipBack" value="Gå tillbaka en sida" />
+	<string key="Website.Content.Views.Help.ToolTipForward" value="Gå framåt en sida" />
+	<string key="Website.Content.Views.Help.ToolTipRefresh" value="Uppdatera sidan" />
+	<string key="Website.Content.Views.Help.LabelContents" value="Innehåll" />
+	<string key="Website.Content.Views.Help.ToolTipContents" value="Hjälpinnehåll" />
+	<string key="Website.Content.Views.SystemView.ToolTipCollapseAll" value="Komprimera Alla" />
+	<string key="Website.Content.Views.SystemView.ToolTipLinkWithEditor" value="Koppling till Editor" />
+	<string key="Website.Content.Views.Search.Search.LabelNewSearch" value="Ny Sökning..." />
+	<string key="Website.Content.Views.ViewSource.LabelFormatted" value="Formaterad" />
+	<string key="Website.Content.Views.ViewSource.LabelRaw" value="Obehandlad" />
+	<string key="ServerLog.LabelTitle" value="Serverlogg" />
+	<string key="ServerLog.LabelButtonDeleteOld" value="Ta bort gamla" />
+	<string key="ServerLog.LabelButtonRefresh" value="Uppdatera" />
+	<string key="ServerLog.EmptyLabel" value="Ingen loggdata tillgänglig..." />
+	<string key="ServerLog.LogEntry.DateLabel" value="Datum" />
+	<string key="ServerLog.LogEntry.MessageLabel" value="Meddelande" />
+	<string key="ServerLog.LogEntry.TitleLabel" value="Rubrik" />
+	<string key="ServerLog.LogEntry.EventTypeLabel" value="EventType" />
+	<string key="FunctionDocumentation.LabelButtonRefresh" value="Uppdatera" />
+	<string key="FunctionDocumentation.LabelButtonPrint" value="Skriv ut" />
+	<string key="Website.FlowUICompleted.ExecutionEndedTitle" value="Exekvering Avslutades" />
+	<string key="Website.FlowUICompleted.ExecutionEndedMessage" value="Den åtgärd som utförts i detta fönster har upphört." />
+	<string key="Website.ServerError.ServerErrorTitle" value="Serverfel" />
+	<string key="Website.ServerError.ServerErrorMessage" value="En olyckligt fel har uppstått." />
+	<string key="Website.ServerError.ServerErrorDetails" value="Detaljer" />
+	<string key="Website.LicenseViolation.LicenseViolationTitle" value="Licensbrott" />
+	<string key="Website.LicenseViolation.LicenseViolationMessage" value="Den begärda åtgärden är i konflikt med din nuvarande licens." />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelFlashOptions" value="Flashalternativ" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelHigh" value="Hög" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLow" value="Låg" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutohigh" value="Autohög" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutolow" value="Autolåg" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelBest" value="Bäst" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelWindow" value="Fönster" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelOpaque" value="Ogenomskinlig" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelTransparent" value="Transparent" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowall" value="Visaalla" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelNoborder" value="Ingenram" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelExactfit" value="Exaktpassform" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutoPlay" value="Autouppspelning" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLoop" value="Slinga" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowMenu" value="Visa menyn" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelSWLiveConnect" value="SWLiveConnect" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelQuickTimeOptions" value="Quicktime-alternativ" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelLoop" value="Slinga" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelCache" value="Cache" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelNoCorrection" value="Ingen korrigering" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelKioskMode" value="Kiosk mode" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelPlayEveryFrame" value="Spela varje bildruta" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoPlay" value="Autouppspelning" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelController" value="Styrenhet" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelEnableJavaScript" value="Aktivera Javascript" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoHRef" value="AutoHREF" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelTargetCache" value="Mål-cache" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShockWaveOptions" value="Shockwave-alternativ" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelHigh" value="Hög" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLow" value="Låg" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoHigh" value="Autohög" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoLow" value="Autolåg" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelBest" value="Bäst" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelWindow" value="Fönster" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelOpaque" value="Ogenomskinlig" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelTransparent" value="Transparent" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowAll" value="Visaalla" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelNoBorder" value="Ingenram" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelExactFit" value="Exaktpassform" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoPlay" value="Autouppspelning" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLoop" value="Slinga" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowMenu" value="Visa menyn" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelSWLiveConnect" value="SWLiveConnect" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelQuickTimeOptions" value="Quicktime-alternativ" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelAutoStart" value="Autostart" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelShowMenu" value="Visa menyn" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelInvokeURLs" value="Anropa URL:er" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelStretchToFit" value="Sträck ut för att anpassa" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelEnabled" value="Aktiverad" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelFullScreen" value="Fullskärm" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelMute" value="Tysta" />
+	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelWindowLessVideo" value="Fönsterlös video" />
+	<string key="Website.App.LabelSave" value="Spara" />
+	<string key="Website.App.LabelSaveAndPublish" value="Spara och Publicera" />
+	<string key="Website.App.LabelCloseTab" value="Stäng Flik" />
+	<string key="Website.App.LabelCloseOthers" value="Stäng Övriga" />
+	<string key="Website.App.LabelRefreshView" value="Uppdatera Visningen" />
+	<string key="Website.App.LabelMakeDirty" value="Make Dirty" />
+	<string key="Website.App.LabelViewSource" value="Visa Källa" />
+	<string key="Website.App.LabelViewGenerated" value="Visa Genererad" />
+	<string key="Website.App.LabelViewSerialized" value="Visa Serialiserad" />
+	<string key="Website.App.LabelClose" value="Stäng" />
+	<string key="Website.App.LabelFile" value="Fil" />
+	<string key="Website.App.LabelFileClose" value="Stäng" />
+	<string key="Website.App.LabelFileCloseAll" value="Stäng Alla" />
+	<string key="Website.App.LabelFileSaveAll" value="Spara Alla..." />
+	<string key="Website.App.LabelFileExit" value="Avsluta" />
+	<string key="Website.App.LabelView" value="Visa" />
+	<string key="Website.App.LabelViewCompositeStart" value="Composite Start" />
+	<string key="Website.App.LabelSystemLog" value="Systemlogg" />
+	<string key="Website.App.LabelDeveloperPanel" value="Utvecklarpanel" />
+	<string key="Website.App.LabelTools" value="Verktyg" />
+	<string key="Website.App.LabelHelp" value="Hjälp" />
+	<string key="Website.App.LabelHelpContents" value="Hjälpinnehåll" />
+	<string key="Website.App.LabelFeedback" value="Ge Feedback..." />
+	<string key="Website.App.LabelAboutComposite" value="Om Composite C1" />
+	<string key="Website.App.LabelCut" value="Beskär" />
+	<string key="Website.App.LabelCopy" value="Kopiera" />
+	<string key="Website.App.LabelPaste" value="Klistra in" />
+	<string key="Website.App.LabelRefresh" value="Uppdatera" />
+	<string key="Website.App.LabelLoading" value="Laddar..." />
+	<string key="Website.App.LabelLoaded" value="Laddad" />
+	<string key="Website.App.LabelSaved" value="Sparad" />
+	<string key="Website.App.ToolTipMinimize" value="Minimera" />
+	<string key="Website.App.ToolTipMaximize" value="Maximera" />
+	<string key="Website.App.ToolTipUnMaximize" value="Återställ" />
+	<string key="Website.App.ToolTipUnMinimize" value="Återställ" />
+	<string key="Website.App.ToolTipClose" value="Stäng" />
+	<string key="Website.App.StatusBar.Opening" value="Öppnar {0}..." />
+	<string key="Website.App.StatusBar.Refreshing" value="Laddar om {0}..." />
+	<string key="Website.App.StatusBar.Loading" value="Laddar {0}..." />
+	<string key="Website.App.StatusBar.Error" value="Fel" />
+	<string key="Website.App.StatusBar.Warn" value="Varning" />
+	<string key="Website.App.StatusBar.Busy" value="Arbetar..." />
+	<string key="Website.App.StatusBar.Ready" value="Klar!" />
+	<string key="Website.App.StatusBar.ErrorInField" value="Fel i" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.Layout.Label" value="Lägg till Ny Mediefil" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FieldGroup.Label" value="Medieinställningar" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Label" value="Filnamn" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Help" value="Välj / ange filnamnet att ladda upp" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Label" value="Tillåt överskrivning" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Help" value="Ersätt befintlig fil" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Label" value="Filnamn" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Help" value="Namnet på filen i mediebiblioteket" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Label" value="Rubrik" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Help" value="Använd detta fält för en bildtitel" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Label" value="Beskrivning" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Help" value="Använd detta fält för en kort beskrivning av bilden" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.MissingUploadedFile.Message" value="Välj en fil att ladda upp" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.FileExists.Message" value="En fil med samma namn finns redan. Markera tillåt överskrivning eller ändra filnamnet" />
+	<string key="Website.Forms.Administrative.AddNewMediaFile.TotalFilenameToLong.Message" value="Den totala längden på filnamnet (mapp och filnamn) är för långt" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.Label.AddNewMediaFolder" value="Lägg till Ny Mediemapp" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelFolderName" value="Mappnamn" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpFolderName" value="" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelTitle" value="Rubrik" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpTitle" value="" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelDescription" value="Beskrivning" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpDescription" value="" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameAlreadyUsed" value="Mappen finns redan" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="Den totala längden på mappnamnet är för långt" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Mappnamnet kan inte bara vara '/' eller '\'" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Ladda upp flera filer via en ZIP-fil" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFieldGroup" value="Välj den ZIP-fil som innehåller filerna som ska extraheras" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="ZIP-fil" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.HelpFile" value="Skapa en ZIP-fil (högerklicka på lokal mapp och välj Skicka till -&gt; Komprimerad mapp) och välj den med knappen Bläddra" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructure" value="Skapa mappar" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.HelpRecreateStructure" value="Att välja det här alternativet innebär att kopiera den exakta mappstrukturen från din ZIP-fil" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructureCheckBox" value="Extrahera mappar från ZIP-fil" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsisting" value="Skriv över befintliga" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.HelpOverwriteExsisting" value="Att välja det här alternativet innebär att alla befintliga filer med matchande filnamn i mediearkivet kommer skrivas över" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.Error.Title" value="Fel" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Skriv över befintliga filer" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.MissingUploadedFile.Message" value="Välj en fil att ladda upp" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.CannotUploadDocxFile" value="Använd det normala uppladdningskommandot för att ladda upp .docx-filer" />
+	<string key="Website.Forms.Administrative.AddZipMediaFile.WrongUploadedFile.Message" value="Den valda filen var inte en korrekt ZIP-fil" />
+	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelFunctionSearch" value="Funktionssökning" />
+	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeyword" value="Nyckelord" />
+	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeywordHelp" value="Skriv ett nyckelord att söka efter." />
+	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnType" value="Returtypen" />
+	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnTypeHelp" value="Välj en returtyp att söka efter." />
+	<string key="Website.Forms.Administrative.DeleteMediaFile.LabelFieldGroup" value="Ta bort Denna Fil?" />
+	<string key="Website.Forms.Administrative.DeleteMediaFile.Text" value="Ta bort denna fil?" />
+	<string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationHeader" value="Tar bort en fil" />
+	<string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationText" value="Det finns viss refererad data som också kommer tas bort, vill du fortsätta?" />
+	<string key="Website.Forms.Administrative.DeleteMediaFolder.LabelFieldGroup" value="Ta bort Denna Mapp?" />
+	<string key="Website.Forms.Administrative.DeleteMediaFolder.Text" value="Ta bort denna mapp?" />
+	<string key="Website.Forms.Administrative.DeleteMediaFolder.HasChildringText" value="Den här mappen innehåller en eller flera filer eller undermappar. Att ta bort denna mapp innebär att all sub-filer och mappar också tas bort. Ta bort denna mapp?" />
+	<string key="Website.Forms.Administrative.EditMediaFile.LabelFieldGroup" value="Medieinställningar" />
+	<string key="Website.Forms.Administrative.EditMediaFile.LabelTitle" value="Rubrik" />
+	<string key="Website.Forms.Administrative.EditMediaFile.HelpTitle" value="Använd detta fält för en bildtitel" />
+	<string key="Website.Forms.Administrative.EditMediaFile.LabelFileName" value="Filnamn" />
+	<string key="Website.Forms.Administrative.EditMediaFile.HelpFileName" value="Posten som anges i detta fält är en del av bildens ID" />
+	<string key="Website.Forms.Administrative.EditMediaFile.LabelDescription" value="Beskrivning" />
+	<string key="Website.Forms.Administrative.EditMediaFile.HelpDescription" value="Använd detta fält för en kort beskrivning av bilden" />
+	<string key="Website.Forms.Administrative.EditMediaFile.TotalFilenameToLong.Message" value="Den totala längden på filnamnet (mapp och filnamn) är för långt" />
+  <string key="Website.Forms.Administrative.EditMediaFile.FileExists.Message" value="En fil med samma namn finns redan i denna mapp." />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFieldGroup" value="Mappegenskaper" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.LabelFolderName" value="Mappnamn" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.HelpFolderName" value="" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.LabelTitle" value="Rubrik" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.HelpTitle" value="Använd detta fält för en mapprubrik" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.LabelDescription" value="Beskrivning" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.HelpDescription" value="" />
+	<string key="Website.Forms.Administrative.EditMediaFolder.TotalFilenameToLong.Message" value="Mappen innehåller en fil där den totala längden på filnamn och den nya mappnamnet är för långt" />
+	<string key="Website.Forms.Administrative.EditPage.DraftTransition" value="Utkast" />
+	<string key="Website.Forms.Administrative.EditPage.AwaitingApprovalTransition" value="Väntar på Godkännande" />
+	<string key="Website.Forms.Administrative.EditPage.AwaitingPublicationTransition" value="Väntar på Publikation" />
+	<string key="Website.Forms.Administrative.ElementKeywordSearch.LabelFieldGroup" value="Sök" />
+	<string key="Website.Forms.Administrative.ElementKeywordSearch.LabelKeyword" value="Nyckelord" />
+	<string key="Website.Forms.Administrative.ElementKeywordSearch.LabelSearchKeyword" value="Skriv ett nyckelord att söka efter." />
+	<string key="Website.Forms.Administrative.UploadMediaFile.LabelFieldGroup" value="Ladda upp Ny Mediefil" />
+	<string key="Website.Forms.Administrative.UploadMediaFile.LabelFile" value="Filenamn:" />
+	<string key="Website.Forms.Administrative.UploadMediaFile.HelpFile" value="" />
+	<string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorTitle" value="Fil saknas eller är tom" />
+	<string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorMessage" value="Ingen fildata togs emot. Använd knappen Bläddra och se till att den valda filen inte är tom." />
+	<string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFieldGroup" value="Ladda upp Ny Mediefil till Befintlig Fil" />
+	<string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFile" value="Filenamn:" />
+	<string key="Website.Forms.Administrative.UploadNewMediaFile.HelpFile" value="" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSave" value="Spara" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSaveAs" value="Spara Som..." />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelPrevious" value="Föregående" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelNext" value="Nästa" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelFinish" value="Avsluta" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelCancel" value="Avbryt" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelOk" value="OK" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelCancel" value="Avbryt" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelOk" value="OK" />
+	<string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelCancel" value="Avbryt" />
+	<string key="Website.Misc.SourceCodeViewer.LabelInput" value="Inmatning" />
+	<string key="Website.Misc.SourceCodeViewer.LabelOutput" value="Utdata" />
+	<string key="Website.Misc.Trees.DialogTitle.PasteNotAllowed" value="Inte tillåtet." />
+	<string key="Website.Misc.Trees.DialogText.PasteNotAllowed" value="Klistra in tillåts inte i detta sammanhang." />
+	<string key="Website.Misc.Trees.DialogTitle.PasteTypeNotAllowed" value="Inte tillåtet" />
+	<string key="Website.Misc.Trees.DialogText.PasteTypeNotAllowed" value="Mappen accepterar inte dokumenttypen." />
+	<string key="Website.Misc.MultiSelector.LabelEditSelections" value="Redigera Val" />
+	<string key="GenericVersionProcessController.Version" value="Versionsinformation" />
+	<string key="GenericVersionProcessController.VersionToolTip" value="Visa versionsinformation" />
+	<string key="AspNetUiControl.Selector.SelectValueLabel" value="Välj ett värde..." />
+	<string key="AspNetUiControl.Selector.BrokenReference" value="&lt;bruten referens&gt;..." />
+	<string key="AspNetUiControl.Selector.NoSelection" value="(Inget val)" />
+
+	<string key="Validation.Decimal.SymbolsAfterPointAllowed" value="Endast {0} siffra(or) är tillåtet efter decimalkommat" />
+	<string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Endast {0} siffra(or) tillåtet före decimalkommat" />
+	<string key="Validation.Int32.Overflow" value="Det angivna värdet är antingen för stort eller för litet. Det godtagbara intervallet är från -2 147 483 648 till 2 147 483 647" />
+</strings>

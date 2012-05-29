@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<strings>
+  <string key="BasicTabLabel" value="Grundläggande" />
+  <string key="AdvancedTabLabel" value="Avancerad" />
+
+  <string key="AddNewButtonLabel" value="Lägg till Ny" />
+  <string key="DeleteButtonLabel" value="Ta bort" />
+  <string key="LabelDataTypeFields" value="Datatypfält" />
+  
+  <string key="FieldDetailsGroupLabel" value="Fältegenskaper" />
+  <string key="Name" value="Namn" />
+  <string key="NameHelp" value="Fältets namn används av systemet för att identifiera detta fält. Namn måste vara unika och får inte innehålla mellanslag och andra specialtecken. Använd namn som 'Titel', 'StartDatum', 'StorBild' etc." />
+  <string key="Label" value="Etikett" />
+  <string key="LabelHelp" value="Etikettens text visas för användarna när de lägger till ett nytt objekt baserat på datatypen." />
+  <string key="Help" value="Hjälp" />
+  <string key="HelpHelp" value="Använd denna post för en kort hjälptext för användaren." />
+
+  <string key="FieldTypeGroupLabel" value="Fälttyp och krav" />
+  <string key="FieldType" value="Fälttyp" />
+  <string key="FieldTypeHelp" value="Välj en datatyp för fältet. Typ avgör vilken typ av data som fältet kan innehålla." />
+  <string key="System.String" value="Sträng" />
+  <string key="System.Int32" value="Heltal" />
+  <string key="System.Decimal" value="Decimaltal" />
+  <string key="System.DateTime" value="Datum" />
+  <string key="System.Boolean" value="Boolesk" />
+  <string key="System.Guid" value="Unik identifierare (GUID)" />
+  <string key="Reference" value="Datareferens" />
+  <string key="TypeDetailsHelp" value="Använd det här fältet för att ytterligare konfigurera din valda typ." />
+  <string key="Optional" value="Valfritt" />
+  <string key="OptionalHelp" value="Valfria fält kan lämnas tomma." />
+  <string key="OptionalFalseLabel" value="Nej" />
+  <string key="OptionalTrueLabel" value="Ja" />
+  <string key="ValidationRules" value="Valideringsregler" />
+  <string key="ValidationRulesHelp" value="Du kan ange strikta regler för de data som anges i fältet, det vill säga &quot;måste vara minst 5 tecken långt&quot;, &quot;måste vara en giltig e-postadress&quot;, &quot;måste vara ett datum i det förflutna&quot; etc." />
+  <string key="ValidationRulesAdd" value="Lägg till valideringsregler..." />
+  <string key="ValidationRulesEdit" value="Redigera valideringsregler" />
+  <string key="ValidationRulesDialogLabel" value="Konfiguration för Fältvalideringsregler" />
+
+  
+  <string key="FieldValidationGroupLabel" value="Fältvalidering" />
+  <string key="FieldPresentationGroupLabel" value="Formulärfältspresentation" />
+  <string key="FieldStructureGroupLabel" value="Strukturell presentation" />
+  
+  <string key="Widget" value="Widgettyp" />
+  <string key="WidgetHelp" value="Du kan välja vilken typ av indata-widget (t.ex. en textruta) som ska användas vid redigering av detta fält." />
+  <string key="WidgetDialogLabel" value="Fältwidget-konfiguration" />
+  <string key="Position" value="Position" />
+  <string key="PositionLast" value="Sist" />
+  <string key="PositionHelp" value="Positionen för fältet. Detta styr fältens sorteringsordning." />
+  <string key="GroupByPriority" value="Fältgruppering" />
+  <string key="GroupByPriorityNone" value="Ingen gruppering" />
+  <string key="GroupByPriorityFirst" value="Gruppera efter detta fält" />
+  <string key="GroupByPriorityN" value="Gruppera som {0}. prioritet" />
+  <string key="GroupByPriorityHelp" value="Du kan ange att ett fält ska användas för att gruppera data - detta kan förbättra läsbarheten när långa listor visas. Använd prioritering när flera fält används för gruppering." />
+  <string key="IsTitleField" value="Är titelfält" />
+  <string key="IsTitleFieldHelp" value="Markera denna om du vill att detta fält ska användas som titelfält. Titelfält används vid listning av data, som i trädet till vänster." />
+  <string key="IsTitleFieldLabel" value="Använd denna som titelfält i listor" />
+
+  
+  <string key="DefaultValueGroupLabel" value="Fältets standardvärde" />
+  <string key="DefaultValue" value="Standardvärde" />
+  <string key="DefaultValueHelp" value="Du kan definiera ett standardvärde för detta fält." />
+  <string key="DefaultValueDialogLabel" value="Konfiguration för fältets standardvärde" />
+
+  <string key="StringMaximumLength" value="Strängens maximala längd" />
+  <string key="16CharMax" value="Max 16 tecken" />
+  <string key="32CharMax" value="Max &#xD;32 tecken" />
+  <string key="64CharMax" value="Max &#xD;64 tecken" />
+  <string key="128CharMax" value="Max &#xD;128 tecken" />
+  <string key="256CharMax" value="Max &#xD;256 tecken" />
+  <string key="512CharMax" value="Max &#xD;512 tecken" />
+  <string key="1024CharMax" value="Max &#xD;1024 tecken" />
+  <string key="Unlimited" value="Obegränsad längd" />
+  
+  <string key="DecimalNumberFormat" value="Decimaltalsformat" />
+  <string key="1DecimalPlace" value="1 decimal" />
+  <string key="2DecimalPlace" value="2 decimaler" />
+  <string key="3DecimalPlace" value="3 decimaler" />
+  <string key="4DecimalPlace" value="4 decimaler" />
+  
+  <string key="ReferenceType" value="Referenstyp" />
+  
+  <string key="FieldNameSyntaxInvalid" value="Det angivna namnet är ogiltigt." />
+  <string key="CannotSave" value="Kan inte spara... Ett annat fält har samma namn. Vänligen ändra namnet." />
+
+  <string key="SpaceInNameError" value="Ogiltigt namn. Datafältnamn kan inte innehålla mellanslag. Du kan skriva ett läsbart namn i fältet Etikett nedan." />
+  <string key="NameEmptyError" value="Datafältnamn kan inte vara tomt. Vänligen ange ett namn." />
+  <string key="NameAlreadyInUseError" value="Ett annat fält använder detta namn. Datafältnamn måste vara unika." />
+  <string key="NotAnOptionalTypeError" value="Den valda typen kan inte vara valfri." />
+  <string key="NoWidgetSelected" value="Kom ihåg att ange en widget..." />
+  <string key="NoWidgetSelectedLabel" value="(Ingen widget angiven)" />
+</strings>
+
+
+

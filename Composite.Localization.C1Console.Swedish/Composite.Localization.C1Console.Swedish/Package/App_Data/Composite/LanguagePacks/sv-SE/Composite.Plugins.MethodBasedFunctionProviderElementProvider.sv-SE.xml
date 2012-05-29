@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootFolderLabel" value="C#-Funktioner" />
+  <string key="RootFolderToolTip" value="Metodfunktioner" />
+  <string key="DeleteFunction.LabelFieldGroup" value="Ta bort Denna Funktion" />
+  <string key="DeleteFunction.Text" value="Ta bort denna funktion" />
+  <string key="Add" value="Lägg till Extern C#-funktion" />
+  <string key="AddToolTip" value="Lägg till en extern metodbaserad&#xD; C#-funktion" />
+  <string key="Create" value="Lägg till &#xD;Infogad C#-funktion" />
+  <string key="CreateToolTip" value="Lägg till en infogad metodbaserad C#-funktion" />
+  <string key="Edit" value="Redigera" />
+  <string key="EditToolTip" value="Redigera Funktion." />
+  <string key="Delete" value="Ta bort" />
+  <string key="DeleteToolTip" value="Ta bort Funktion." />
+  <string key="AddNewMethodBasedFunction.LabelFieldGroup" value="Lägg till ny metodbaserad funktion" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelType" value="Typ" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="Den typ som innehåller den aktuella metoden" />
+  <string key="AddNewMethodBasedFunctionStep2.LabelMethodName" value="Metodnamn" />
+  <string key="AddNewMethodBasedFunctionStep2.HelpMethodName" value="" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelMethodName" value="Metodnamn" />
+  <string key="AddNewMethodBasedFunctionStep3.HelpMethodName" value="" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelNamespaceName" value="Namnrymnd-namn" />
+  <string key="AddNewMethodBasedFunctionStep3.HelpNamespaceName" value="" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelError" value="Fel" />
+  <string key="CascadeDeleteErrorTitle" value="Fel vid sammanhängande borttagning" />
+  <string key="CascadeDeleteErrorMessage" value="Typen refereras av en annan typ som inte tillåter sammanhängande borttagning. Operationen stoppades" />
+  <string key="AddFunction.CouldNotFindType" value="Kunde inte hitta typ" />
+  <string key="AddFunction.TypeHasNoValidMethod" value="Typen innehåller inte någon giltig metod" />
+  <string key="AddFunction.TypeIsAbstractOrStatic" value="Typen är markerad som antingen abstrakt eller statisk. Anrop av metoder för abstrakta eller statisk typer stöds inte." />
+  <string key="AddFunction.TypeMustNotHaveOverloads" value="Typen får inte ha överlagringar" />
+  <string key="AddFunction.MethodNameIsEmpty" value="Metodnamn får inte vara tomt" />
+  <string key="AddFunction.InvalidNamespace" value="Namnrymden måste vara i formatet A.B.C - inte börja och sluta med ." />
+  <string key="AddFunction.NameAlreadyUsed" value="Funktionsnamnet '{0}' används redan" />
+  <string key="EditMethodBasedFunction.LabelFieldGroup" value="Redigera Metodbaserad Fråga" />
+  <string key="EditMethodBasedFunction.LabelMethodName" value="Metodnamn" />
+  <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="Det namn som funktionen ska vara känd under." />
+  <string key="EditMethodBasedFunction.LabelNamespaceName" value="Namnrymnd-namn" />
+  <string key="EditMethodBasedFunction.LabelNamespaceNameHelp" value="Namnrymden att placera metoden under." />
+  <string key="EditMethodBasedFunction.LabelType" value="Typ" />
+  <string key="EditMethodBasedFunction.LabelTypeHelp" value="Den typ som innehåller den aktuella metoden." />
+  <string key="EditMethodBasedFunction.LabelMethod" value="Metod" />
+  <string key="EditMethodBasedFunction.LabelMethodHelp" value="Metoden att åberopa på typen." />
+  <string key="EditMethodBasedFunction.LabelError" value="Fel" />
+  <string key="EditFunction.MethodNameEmpty" value="Metodnamn får inte vara tomt" />
+  <string key="EditFunction.InvalidNamespace" value="Namnrymd får inte starta och sluta med . - Exempel A.B.C" />
+  <string key="EditFunction.TypeNotFound" value="Kunde inte hitta typ" />
+  <string key="EditFunction.MethodNotInType" value="Typen innehåller inte metoden" />
+  <string key="EditFunction.NoValidMethod" value="Typen innehåller inte någon giltig metod" />
+  <string key="EditFunction.MethodOverloadsNotAllowed" value="Typen får inte ha överlagringar" />
+  <string key="AddInlineFunctionWorkflow.FieldGroup.Label" value="Inställningar" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Label" value="Namn" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Help" value="Namnet på den metod du vill skapa" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Label" value="Namnrymd" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Help" value="Namnrymden för den metod du vill skapa" />
+  <string key="AddInlineFunctionWorkflow.MethodDescription.Label" value="Beskrivning" />
+  <string key="AddInlineFunctionWorkflow.MethodDescription.Help" value="En kort beskrivning av funktionen" />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Label" value="Mall" />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Help" value="Välj den mall som du vill använda för den nya metoden." />
+  <string key="EditInlineFunctionWorkflow.FieldGroup.Label" value="Inställningar" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Label" value="Namn" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Help" value="Namnet på den metod du vill skapa" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Label" value="Namnrymd" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Help" value="Namnrymden för den metod du vill skapa" />
+  <string key="EditInlineFunctionWorkflow.MethodDescription.Label" value="Beskrivning" />
+  <string key="EditInlineFunctionWorkflow.MethodDescription.Help" value="En kort beskrivning av funktionen" />
+  <string key="EditInlineFunctionWorkflow.DebugFieldGroup.Label" value="Felsök" />
+  <string key="EditInlineFunctionWorkflow.DebugPage.Label" value="Sida" />
+  <string key="EditInlineFunctionWorkflow.DebugPage.Help" value="När du felsöker används denna sida som aktuell sida" />
+  <string key="EditInlineFunctionWorkflow.DebugPageDataScope.Label" value="Dataomfattning" />
+  <string key="EditInlineFunctionWorkflow.DebugPageDataScope.Help" value="Vid felsökning används detta som aktuell dataomfattning" />
+  <string key="EditInlineFunctionWorkflow.DebugActiveLocale.Label" value="Språk" />
+  <string key="EditInlineFunctionWorkflow.DebugActiveLocale.Help" value="Vid felsökning används detta som aktuellt språk" />
+  <string key="EditInlineFunctionWorkflow.Code.Label" value="Källa" />
+  <string key="EditInlineFunctionWorkflow.AssembliesFieldGroup.Label" value="Assemblyreferenser" />
+  <string key="EditInlineFunctionWorkflow.Preview.Label" value="Förhandsgranska" />
+  <string key="EditInlineFunctionWorkflow.ParameterFieldGroup.Label" value="Inmatningsparametrar" />
+  <string key="EditInlineFunctionWorkflow.AdminitrativeScope.Label" value="Administrativ" />
+  <string key="EditInlineFunctionWorkflow.PublicScope.Label" value="Publik" />
+  <string key="InlineFunctionMethodTemplate.Clean" value="Töm metod" />
+  <string key="InlineFunctionMethodTemplate.WithParameters" value="Metod med parametrar" />
+  <string key="InlineFunctionMethodTemplate.DataConnection" value="Metod som använder dataanslutning" />
+  <string key="CSharpInlineFunction.OnMissingContainerType" value="En publik statisk klass med namnet {0} saknas i koden. Denna klass bör innehålla funktionsmetoden." />
+  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="Namnrymden i koden '{0}' matchar inte given funktions namnrymd '{1}'." />
+  <string key="CSharpInlineFunction.OnMissionMethod" value="Det angivna funktionsnamnet '{0}' hittades inte eller är inte publik och statisk i klassen '{1}' ." />
+  <string key="CSharpInlineFunction.MissingParameterDefinition" value="Parametern '{0}' har inte lagts till i 'Input Parameters' - för att anropa funktionen måste parametern läggas till och ges antingen ett test- eller standardvärde." />
+  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="Parametern '{0}' väntar sig testvärde av typen '{1}', men fick ett värde av typen '{2}' ." />
+  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="Parametern '{0}' som är definierad i 'Input Parameters' måste ha ett test- eller standardvärde innan funktionen kan utvärderas." />
+</strings>

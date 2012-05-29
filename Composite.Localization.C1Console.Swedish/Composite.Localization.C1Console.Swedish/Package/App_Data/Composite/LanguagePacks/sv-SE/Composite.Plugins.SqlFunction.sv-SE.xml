@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="SqlFunctionElementProvider.RootLabel" value="SQL-funktioner" />
+  <string key="SqlFunctionElementProvider.RootLabelToolTip" value="Lägg till Anslutningar och sedan frågor till anslutningar" />
+  <string key="SqlFunctionElementProvider.AddConnection" value="Lägg till SQL-anslutning" />
+  <string key="SqlFunctionElementProvider.AddConnectionToolTip" value="Lägg till ny SQL-anslutning" />
+  <string key="SqlFunctionElementProvider.EditConnection" value="Redigera" />
+  <string key="SqlFunctionElementProvider.EditConnectionToolTip" value="Redigera SQL-anslutning" />
+  <string key="SqlFunctionElementProvider.DeleteConnection" value="Ta bort" />
+  <string key="SqlFunctionElementProvider.DeleteConnectionToolTip" value="Ta bort SQL-anslutning" />
+  <string key="SqlFunctionElementProvider.AddQuery" value="Lägg till Ny SQL-fråga" />
+  <string key="SqlFunctionElementProvider.AddQueryToolTip" value="Lägg till en ny SQL XML-provider" />
+  <string key="SqlFunctionElementProvider.EditQuery" value="Redigera" />
+  <string key="SqlFunctionElementProvider.EditQueryToolTip" value="Redigera SQL-query" />
+  <string key="SqlFunctionElementProvider.DeleteQuery" value="Ta bort" />
+  <string key="SqlFunctionElementProvider.DeleteQueryToolTip" value="Ta bort SQL-query" />
+  <string key="AddNewSqlFunction.LabelDialog" value="Lägg till Ny SQL-fråga" />
+  <string key="AddNewSqlFunction.LabelNamingPanel" value="Funktionsnamngivning" />
+  <string key="AddNewSqlFunction.LabelName" value="Namn" />
+  <string key="AddNewSqlFunction.HelpName" value="" />
+  <string key="AddNewSqlFunction.LabelNamespace" value="Namnrymd" />
+  <string key="AddNewSqlFunction.HelpNamespace" value="" />
+  <string key="AddNewSqlFunction.LabelQueryCOmmand" value="SQL-kommandotext" />
+  <string key="AddNewSqlFunction.HelpQueryCOmmand" value="" />
+  <!-- shared on add and edit -->
+  <string key="AddEditSqlFunction.LabelIsStoredProcedure" value="Är en Lagrad Procedur" />
+  <string key="AddEditSqlFunction.LabelIsStoredProcedureCheckBox" value="Ja, kommandot är en procedur" />
+  <string key="AddEditSqlFunction.LabelReturnsXml" value="Returnerar resultat som XML" />
+  <string key="AddEditSqlFunction.LabelReturnsXmlCheckBox" value="Ja, kommandot returnerar XML" />
+  <string key="AddEditSqlFunction.LabelIsQuery" value="Är en fråga" />
+  <string key="AddEditSqlFunction.LabelIsQueryCheckBox" value="Ja, kommandot returnerar data" />
+  <string key="AddEditSqlFunction.LabelCommandBehaviour" value="SQL-kommandots beteende" />
+  <string key="AddEditSqlFunctionConnection.LabelFieldGroup" value="SQL Anslutningsinställningar" />
+  <string key="AddEditSqlFunction.LabelSqlEditor" value="SQL-kommando" />
+  <string key="AddNewSqlFunctionConnection.LabelDialog" value="Lägg till Ny SQL-anslutning" />
+  <string key="AddNewSqlFunctionConnection.LabelName" value="Namn" />
+  <string key="AddNewSqlFunctionConnection.HelpName" value="" />
+  <string key="AddNewSqlFunctionConnection.LabelConnectionString" value="Anslutningssträng" />
+  <string key="AddNewSqlFunctionConnection.HelpConnectionString" value="" />
+  <string key="AddNewSqlFunctionConnection.LabelIsMSSQL" value="MS SQL Server" />
+  <string key="AddNewSqlFunctionConnection.LabelIsMSSQLCheckBox" value="Databasen är en MS SQL Server" />
+  <string key="EditSqlFunction.LabelInputParameters" value="Indataparametrar" />
+  <string key="EditSqlFunction.LabelSettings" value="Inställningar" />
+  <string key="EditSqlFunction.LabelNamingAndDescription" value="Funktionsnamn och beskrivning" />
+  <string key="EditSqlFunction.LabelName" value="Namn" />
+  <string key="EditSqlFunction.HelpName" value="" />
+  <string key="EditSqlFunction.LabelNamespace" value="Namnrymd" />
+  <string key="EditSqlFunction.HelpNamespace" value="" />
+  <string key="EditSqlFunction.LabelDescription" value="Beskrivning" />
+  <string key="EditSqlFunction.HelpDescription" value="" />
+  <string key="EditSqlFunction.LabelPreview" value="Förhandsgranska" />
+  <string key="EditSqlFunctionConnection.LabelName" value="Namn" />
+  <string key="EditSqlFunctionConnection.HelpName" value="" />
+  <string key="EditSqlFunctionConnection.LabelConnectionString" value="Anslutningssträng" />
+  <string key="EditSqlFunctionConnection.HelpConnectionString" value="" />
+  <string key="EditSqlFunctionConnection.LabelIsMSSQL" value="MS SQL Server" />
+  <string key="EditSqlFunctionConnection.LabelIsMSSQLCheckBox" value="Databasen är en MS SQL Server" />
+  <string key="DeleteSqlConnection.LabelFieldGroup" value="Ta bort denna SQL-anslutning?" />
+  <string key="DeleteSqlConnection.Text" value="Ta bort den här SQL-anslutningen?" />
+  <string key="DeleteSqlFunction.LabelFieldGroup" value="Ta bort denna SQL-funktion?" />
+  <string key="DeleteSqlFunction.Text" value="Ta bort den här SQL-funktionen?" />
+  <string key="CascadeDeleteErrorTitle" value="Fel vid sammanhängande borttagning" />
+  <string key="CascadeDeleteErrorMessage" value="Typen refereras av en annan typ som inte tillåter sammanhängande borttagning. Operationen stoppades" />
+</strings>

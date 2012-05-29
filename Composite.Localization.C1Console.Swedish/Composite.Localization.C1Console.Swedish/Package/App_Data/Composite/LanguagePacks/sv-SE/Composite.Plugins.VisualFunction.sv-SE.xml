@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="DeleteStep1.FieldGroupLabel" value="Ta bort Visuell Funktion?" />
+  <string key="DeleteStep1.Text" value="Är du säker på att du vill ta bort den valda funktionen?" />
+  <string key="AddNew.DialogLabel" value="Lägg till Visuell Funktion" />
+  <string key="AddNew.NoTypesExistsErrorTitle" value="Inga Datatyper att Visualisera" />
+  <string key="AddNew.NoTypesExistsErrorMessage" value="Inga datatyper har skapats ännu. Du måste först skapa en datatyp som ska visualiseras innan du kan skapa en visualisering." />
+  <string key="AddNew.NoDataExistsErrorTitle" value="Ingen Data att Visualisera och Förhandsgranska" />
+  <string key="AddNew.NoDataExistsErrorMessage" value="Data måste finnas innan du kan skapa en rendering. Lägg till data till den här typen och försök igen." />
+  <string key="AddNew.NoPageTemplatesExistsErrorTitle" value="Inga Mallar" />
+  <string key="AddNew.NoPageTemplatesExistsErrorMessage" value="Minst en mall måste finnas innan du kan skapa en rendering. Skapa en mall och försök igen." />
+  <string key="AddNew.MissingActiveLanguageTitle" value="Ett Språk Krävs" />
+  <string key="AddNew.MissingActiveLanguageMessage" value="För att skapa en visuell funktion krävs ett språk, men inga språk har lagts till ännu. Du kan lägga till ett under perspektivet System." />
+  <string key="AddNewStep1.FieldGroupLabel" value="Välja datatyp som ska visualiseras" />
+  <string key="AddNewStep1.TypeSelectorLabel" value="Datatyp" />
+  <string key="AddNewStep1.TypeSelectorHelp" value="" />
+  <string key="AddNewStep2.FieldGroupLabel" value="Visuell funktionsnamngivning" />
+  <string key="AddNewStep2.FuncitonNameLabel" value="Funktionsnamn" />
+  <string key="AddNewStep2.FuncitonNameHelp" value="" />
+  <string key="AddNewStep2.FuncitonNamespaceLabel" value="Funktionsnamnrymd" />
+  <string key="AddNewStep2.FuncitonNamespaceHelp" value="" />
+  <string key="Edit.PlaceHolderLabel" value="Inställningar för &#xD;Visuell Funktion" />
+  <string key="Edit.HeadingTitel" value="Visuell funktion" />
+  <string key="Edit.FieldGroupLabel" value="Inställningar för &#xD;visuell funktion" />
+  <string key="Edit.FunctionNameLabel" value="Funktionsnamn" />
+  <string key="Edit.FunctionNameHelp" value="Namnet på funktionen. Namn måste vara unikt med en namnrymd." />
+  <string key="Edit.FunctionNamespaceLabel" value="Funktionsnamnrymd" />
+  <string key="Edit.FunctionNamespaceHelp" value="'Paketet' denna funktion tillhör." />
+  <string key="Edit.FunctionDescriptionLabel" value="Beskrivning" />
+  <string key="Edit.FunctionDescriptionHelp" value="En beskrivning av funktionen som kan hjälpa människor att förstå vad den gör." />
+  <string key="Edit.ItemListLenghtLabel" value="Objektlistans längd" />
+  <string key="Edit.ItemListLenghtHelp" value="Det maximala antalet objekt att visa." />
+  <string key="Edit.ItemSortingLabel" value="Objektsortering" />
+  <string key="Edit.ItemSortingHelp" value="Välj vilket fält som ska användas vid sortering av listan. Använd slumpmässig för att plocka slumpmässigt från listan." />
+  <string key="Edit.ListSortingLabel" value="Listans sorteringsordning" />
+  <string key="Edit.ListSortingTrueLabel" value="Stigande" />
+  <string key="Edit.ListSortingFalseLabel" value="Fallande" />
+  <string key="Edit.ListSortingHelp" value="Välj sorteringsordning. Stigande ordning är alfabetiskt kronologiskt. Detta fält ignoreras när slumpmässig sortering är aktiv." />
+  <string key="Edit.PreviewTemplateLabel" value="Förhandsgranska mall" />
+  <string key="Edit.PreviewTemplateHelp" value="Denna information används endast när du förhandsgranskar funktionen." />
+  <string key="Edit.WYSIWYGLayoutLabel" value="Visuell Layout" />
+  <string key="Edit.LabelPreview" value="Förhandsgranska" />
+  <string key="Edit.NoPageTemplatesExistsErrorTitle" value="Inga mallar" />
+  <string key="Edit.NoPageTemplatesExistsErrorMessage" value="Minst en mall måste finnas innan du kan redigera en rendering. Skapa en mall och försök igen." />
+  <string key="Edit.MissingActiveLanguageTitle" value="Ett språk krävs" />
+  <string key="Edit.MissingActiveLanguageMessage" value="För att redigera en visuell funktion krävs ett språk, men inga språk har lagts till ännu. Du kan lägga till ett under perspektivet System." />
+  <string key="Select.FieldGroupLabel" value="Välj en visuell funktion" />
+  <string key="Select.FunctionFunctionsLabel" value="Välj en funktion" />
+  <string key="Select.FunctionFunctionsHelp" value="Välj en visuell funktion som ska redigeras eller raderas" />
+  <string key="AddVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="En annan funktion med detta namn finns. Namn måste vara unika." />
+  <string key="EditVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="En annan funktion med detta namn finns. Namn måste vara unika." />
+  <string key="VisualFunctionElementProvider.RootFolderLabel" value="Visuella funktioner" />
+  <string key="VisualFunctionElementProvider.RootFolderToolTip" value="Visuella funktioner" />
+  <string key="VisualFunctionElementProvider.AddNewLabel" value="Lägg till Visuell Funktion" />
+  <string key="VisualFunctionElementProvider.AddNewToolTip" value="Lägg till ny visuell funktion" />
+  <string key="VisualFunctionElementProvider.EditLabel" value="Redigera Visuell Funktion" />
+  <string key="VisualFunctionElementProvider.EditToolTip" value="Redigera visuell funktion" />
+  <string key="VisualFunctionElementProvider.DeleteLabel" value="Ta bort Visuell Funktion" />
+  <string key="VisualFunctionElementProvider.DeleteToolTip" value="Ta bort visuell funktion" />
+  <string key="VisualFunctionElementProvider.FunctionNameNotUniqueError" value="En annan funktion med detta namn finns. Namn måste vara unika." />
+  <string key="VisualFunctionElementProviderHelper.AddNewLabel" value="Ny visuell funktion" />
+  <string key="VisualFunctionElementProviderHelper.AddNewToolTip" value="Ny visuell funktion" />
+  <string key="VisualFunctionElementProviderHelper.EditLabel" value="Redigera visuell funktion" />
+  <string key="VisualFunctionElementProviderHelper.EditToolTip" value="Redigera visuell funktion" />
+  <string key="VisualFunctionElementProviderHelper.DeleteLabel" value="Ta bort visuell funktion" />
+  <string key="VisualFunctionElementProviderHelper.DeleteToolTip" value="Ta bort visuell funktion" />
+</strings>

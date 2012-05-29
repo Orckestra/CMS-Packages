@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="WebsiteFilesRootElement.Label" value="/" />
+	<string key="LayoutResourcesRootElement.Label" value="/" /> <!-- Layout Resources -->
+	<string key="LayoutResourcesKeyNameLabel" value="Layout" />
+	
+	<string key="DeleteFile.LabelFieldGroup" value="Ta bort Fil?" />
+	<string key="DeleteFile.Text" value="Ta bort fil?" />
+	<string key="DeleteFolder.LabelFieldGroup" value="Ta bort Mapp?" />
+	<string key="DeleteFolder.Text" value="Ta bort mapp?" />
+	<string key="AddNewFolder.LabelFieldGroup" value="Lägg till Ny Mapp" />
+	<string key="AddNewFolder.Text" value="Mappnamn" />
+	<string key="AddNewFolder.Help" value="Skriv in namnet på den nya mappen" />
+	<string key="AddNewFolder.Error.FolderExist" value="En mapp med samma namn finns redan" />
+	<string key="AddNewFile.LabelFieldGroup" value="Lägg till Ny Fil" />
+	<string key="AddNewFile.Text" value="Filnamn" />
+	<string key="AddNewFile.Help" value="Ange namnet på den nya filen" />
+	<string key="AddNewFile.Error.FileExist" value="En fil med samma namn finns redan" />
+	<string key="UploadNewWebsiteFile.LabelFieldGroup" value="Ladda upp Fil" />
+	<string key="UploadNewWebsiteFile.LabelFile" value="Välj fil" />
+	<string key="UploadNewWebsiteFile.HelpFile" value="Välj fil att ladda upp" />
+  <string key="UploadNewWebsiteFile.ConfirmOverwriteTitle" value="Skriv över befintlig fil" />
+  <string key="UploadNewWebsiteFile.ConfirmOverwriteDescription" value="En fil med samma namn finns redan, skriv över?" />
+	<string key="UploadFile.Error.WrongTypeTitle" value="Fel Filtyp" />
+	<string key="UploadFile.Error.WrongTypeMessage" value="Fel filtyp" />
+	
+
+	<string key="AddWebsiteFolderTitle" value="Ny Mapp" />
+	<string key="AddWebsiteFolderToolTip" value="Lägg till ny mapp" />
+	<string key="AddWebsiteFileTitle" value="Ny Fil" />
+	<string key="AddWebsiteFileToolTip" value="Skapa ny fil" />
+	<string key="DeleteWebsiteFileTitle" value="Ta bort Fil" />
+	<string key="DeleteWebsiteFileToolTip" value="Ta bort fil" />
+  <string key="DownloadFileTitle" value="Ladda ner" />
+  <string key="DownloadFileToolTip" value="Ladda ner fil" />
+  <string key="DeleteWebsiteFolderTitle" value="Ta bort Mapp" />
+	<string key="DeleteWebsiteFolderToolTip" value="Ta bort mapp" />
+	<string key="EditWebsiteFileTitle" value="Redigera Fil" />
+	<string key="EditWebsiteFileToolTip" value="Redigera fil" />
+	<string key="UploadWebsiteFileTitle" value="Ladda upp Fil" />
+	<string key="UploadWebsiteFileToolTip" value="Ladda upp fil" />
+	<string key="AddFolderToWhiteListTitle" value="Visa i &quot;{0}&quot;" />
+	<string key="AddFolderToWhiteListToolTip" value="Kontrollera om mappen ska vara synlig i &quot;{0}&quot;" />
+	<string key="RemoveFolderFromWhiteListTitle" value="Visa i &quot;{0}&quot;" />
+	<string key="RemoveFolderFromWhiteListToolTip" value="Kontrollera om mappen ska vara synlig i &quot;{0}&quot;" />
+
+	<string key="DeleteWebsiteFileWorkflow.DeleteErrorTitle" value="Fel" />
+	<string key="DeleteWebsiteFileWorkflow.DeleteErrorMessage" value="Kunde inte radera filen" />
+	<string key="DeleteWebsiteFolderWorkflow.DeleteErrorTitle" value="Fel" />
+	<string key="DeleteWebsiteFolderWorkflow.DeleteErrorMessage" value="Kunde inte ta bort mappen" />
+</strings>

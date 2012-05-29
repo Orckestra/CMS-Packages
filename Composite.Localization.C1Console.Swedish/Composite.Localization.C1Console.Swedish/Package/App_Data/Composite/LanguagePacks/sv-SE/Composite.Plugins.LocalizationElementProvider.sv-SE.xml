@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="ElementProvider.RootFolderLabel" value="Språk" />
+  <string key="ElementProvider.RootFolderToolTip" value="Utforska och hantera installerade språk" />
+  <string key="ElementProvider.DefaultLabel" value="Standardinställning" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesTitle" value="Inga Språk Tillgängliga" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesMessage" value="Du har installerat alla språk möjliga." />
+  <string key="AddSystemLocaleWorkflow.AddElementActionLabel" value="Lägg till Språk" />
+  <string key="AddSystemLocaleWorkflow.AddElementActionToolTip" value="Lägg till nytt språk" />
+  <string key="AddSystemLocaleWorkflow.Dialog.Label" value="Lägg till Språk" />
+  <string key="AddSystemLocaleWorkflow.FieldGroup.Label" value="Välj språk" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Label" value="Språk" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Help" value="Listan över tillgängliga, oinstallerade språk. Språkpaket kan installeras för ytterligare alternativ." />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Label" value="URL-mappningsnamn" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Help" value="Denna sträng kommer att användas i URL.en för sidor som publicerats på ett givet språk. För webbplatsens förinställda språk kan denna post lämnas tom." />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Label" value="Användaråtkomst" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.ItemLabel" value="Ge åtkomst till alla användare" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Help" value="Om markerad, kommer språket göras tillgängligt  för visning och redigering för alla registrerade användare" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="URL-mappningsnamn är redan i bruk" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionLabel" value="Redigera Språk" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionToolTip" value="Redigera språk" />
+  <string key="EditSystemLocaleWorkflow.Dialog.Label" value="Redigera Språk" />
+  <string key="EditSystemLocaleWorkflow.FieldGroup.Label" value="Språkinställningar" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Label" value="URL-mappningsnamn" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Help" value="URL-mappningsnamn" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="URL-mappningsnamn är redan i bruk" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionLabel" value="Ange som standardinställning" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionToolTip" value="Ange som standardspråk" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionLabel" value="Ta bort Språk" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionToolTip" value="Ta bort språk" />
+  <string key="RemoveSystemLocaleWorkflow.Dialog.Label" value="Ta bort Språk?" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Title" value="Kan inte Ta bort Senaste Språket" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Description" value="Du är på väg att ta bort ett språk som är det enda språket för en eller flera användare. Lägg till andra språk för dessa användare och försök igen." />
+  <string key="RemoveSystemLocaleWorkflow.Confirm.Description" value="Ta bort detta språk?" />
+</strings>

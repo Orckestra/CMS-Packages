@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+	<!-- change password -->
+	<string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Ändra lösenord..." />
+	<string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Ändra ditt lösenord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Ändra lösenord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="Ändra ditt lösenord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Befintligt lösenord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="Av säkerhetsskäl måste du skriva in ditt befintliga lösenord innan du kan fortsätta." />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Nytt lösenord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="Lösenordet som anges i detta fält måste matcha bekräftelsen nedan." />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="Bekräfta nytt lösenord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="Lösenordet som anges i detta fält måste matcha det som anges ovan." />
+
+	<!-- change culture -->
+	<string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Nationella Inställningar..." />
+	<string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Ställ in språk för C1-konsolen samt formatering av siffror, tider och datum" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Nationella Inställningar och Språk" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Nationella inställningar" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="För att ändra hur nummer, datum och timmar visas välj en post i listan." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Label" value="Språk för &#xD;C1-konsolen" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Help" value="Välj det språk som ska användas för etiketter, hjälptexter, dialoger etc. De tillgängliga alternativen här är begränsade till installerade språk. Du kan installera fler språk via Pakethanteraren, se Composite.Localization." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="Ändra programspråket" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="Är du säker på att du vill ändra inställningarna? Programmet kommer att startas om och alla dina osparade ändringar kommer att förloras." />
+	<string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="Nationella inställningar" />
+	<string key="AdministratorAutoCreator.DefaultGroupName" value="Administratörer" />
+
+	<!-- change own active and foreign locale -->
+	<string key="ChangeForeignLocaleWorkflow.ActionLabel" value="Översättning..." />
+	<string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="Ändra källspråk" />
+	<string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="Ingen" />
+	<string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="Översättning" />
+	<string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="Välj språk att översätta från" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="Flera än ett språk inte installerat" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="Två eller flera språk måste installeras för att stödja översättningar. Administratörer kan lägga till fler språk i 'System'-perspektivet." />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="Från språk" />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Sidor skrivna i från-språket kommer att markeras med globikoner i Innehållsträdet. Den förbundna åtgärden &quot;Översätt sida&quot; importerar sidan till det aktuella arbetsspråket." />
+
+
+  <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="Det aktiva språket har ändrats" />
+</strings>
