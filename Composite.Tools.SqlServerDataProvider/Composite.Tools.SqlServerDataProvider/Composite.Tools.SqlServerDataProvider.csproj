@@ -83,7 +83,9 @@
     </Content>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\web.config" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Release\Composite.Tools.SqlServerDataProvider.zip" />
   </ItemGroup>

@@ -8,7 +8,7 @@
 		<Add name="Bin\Composite.MSSqlServer.dll" />
 	</pc:Files>
 	<mi:PackageRequirements minimumCompositeVersion="3.0.4301.29449" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.SqlServerDataProvider" groupName="Composite.Tools" version="1.0.11" author="Composite A/S" website="http://composite.net/" id="c2ab3d31-d7c4-4ce2-9710-954ff6da903e" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+	<mi:PackageInformation name="Composite.Tools.SqlServerDataProvider" groupName="Composite.Tools" version="1.0.12" author="Composite A/S" website="http://composite.net/" id="c2ab3d31-d7c4-4ce2-9710-954ff6da903e" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
 		<Description>Migrates a website’s data store from XML files to an SQL Server database.</Description>
 	</mi:PackageInformation>
 </pc:PackageCreator>
