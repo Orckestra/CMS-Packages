@@ -58,13 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\PageTemplates\1 column, full width.xml" />
-    <Content Include="Package\App_Data\PageTemplates\2 columns, content and aside.xml" />
-    <Content Include="Package\App_Data\PageTemplates\2 columns, navigation and content.xml" />
-    <Content Include="Package\App_Data\PageTemplates\3 columns.xml" />
-    <Content Include="Package\App_Data\PageTemplates\Frontpage.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IFolderWhiteList_administrated.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IPageTemplates_public.xml" />
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.StarterSite.CorporateSite.Templates.RazorBased.xml" />
   </ItemGroup>
@@ -72,12 +65,15 @@
     <Content Include="Release\Composite.StarterSite.CorporateSite.Templates.RazorBased.zip" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Razor\Layout\Frontpage.cshtml" />
-    <Content Include="Package\App_Data\Razor\Layout\MasterLayout.cshtml" />
-    <Content Include="Package\App_Data\Razor\Layout\OneColumnFullWidth.cshtml" />
-    <Content Include="Package\App_Data\Razor\Layout\ThreeColumns.cshtml" />
-    <Content Include="Package\App_Data\Razor\Layout\TwoColumnsContentAside.cshtml" />
-    <Content Include="Package\App_Data\Razor\Layout\TwoColumnsNavigationContent.cshtml" />
+    <Content Include="Package\App_Data\PageTemplates\Frontpage.cshtml" />
+    <Content Include="Package\App_Data\PageTemplates\MasterLayout.cshtml" />
+    <Content Include="Package\App_Data\PageTemplates\OneColumnFullWidth.cshtml" />
+    <Content Include="Package\App_Data\PageTemplates\ThreeColumns.cshtml" />
+    <Content Include="Package\App_Data\PageTemplates\TwoColumnsContentAside.cshtml" />
+    <Content Include="Package\App_Data\PageTemplates\TwoColumnsNavigationContent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Package\App_Data\Razor\Layout\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

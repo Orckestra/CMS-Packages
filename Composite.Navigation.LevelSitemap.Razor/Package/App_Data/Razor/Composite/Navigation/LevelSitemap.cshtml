@@ -1,20 +1,30 @@
-﻿@inherits CompositeC1WebPage
+﻿@inherits RazorFunction
 
-@using Composite.Data;
-
-@description A Razor-based function that displays a menu as a horizontal navigation bar.
 @functions {
+    override public string FunctionDescription
+    {
+        get { return "A function that displays a menu as a horizontal navigation bar."; }
+    }
+
 	// C1 Function parameters defined below...
-	[FunctionParameter(Label="Starting Level", Help="Set from what level start to display items in navigation", DefaultValue=1)]
+	[FunctionParameter(Label = "Starting Level", 
+                       Help = "Set from what level start to display items in navigation", 
+                       DefaultValue = 1)]
 	public int Level { get; set; }
 
-	[FunctionParameter(Label="Subpages Depth", Help="Set the depth of subpages", DefaultValue = 2)]
+	[FunctionParameter(Label = "Subpages Depth", 
+                       Help = "Set the depth of subpages", 
+                       DefaultValue = 2)]
 	public int Depth { get; set; }
 
-	[FunctionParameter(Label="Include Parent Page", Help="Check the box if you want parent page to be displayed in navigation", DefaultValue = false)]
+	[FunctionParameter(Label = "Include Parent Page", 
+                       Help = "Check the box if you want parent page to be displayed in navigation", 
+                       DefaultValue = false)]
 	public bool Parent { get; set; }
 
-	[FunctionParameter(Label="Navigation Id", Help="Attribute Id of DIV element", DefaultValue = "LevelSitemap")]
+	[FunctionParameter(Label = "Navigation Id", 
+                       Help = "Attribute Id of DIV element", 
+                       DefaultValue = "LevelSitemap")]
 	public string NavigationId { get; set; }
 
 	private IEnumerable<PageNode> OpenPages(PageNode selectedPageNode)
@@ -62,6 +72,7 @@
 		}
 	}
 }
+
 </div>
 </body>
 </html>

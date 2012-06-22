@@ -1,15 +1,24 @@
-﻿@inherits CompositeC1Contrib.RazorFunctions.CompositeC1WebPage
-@using CompositeC1Contrib.RazorFunctions;
-@using Composite.Core.Xml;
+﻿@inherits RazorPageTemplate
+
 @functions {
-    // C1 Function parameters defined below...
-    [FunctionParameter("Content", "Content")]
+    public override Guid TemplateId
+    {
+        get { return new Guid("ea2ca748-efbf-4d94-8e2a-11ce49b71cd5"); }
+    }
+
+    public override string TemplateTitle
+    {
+        get { return "3 columns"; }
+    }
+
+    [Placeholder(Id = "content", IsDefault = true)]
     public XhtmlDocument Content { get; set; }
-    [FunctionParameter("Aside", "Aside", "")]
+
+    [Placeholder(Id = "aside")]
     public XhtmlDocument Aside { get; set; }
 }
 @{
-    Layout = "~/App_Data/Razor/Layout/MasterLayout.cshtml";
+    Layout = "MasterLayout.cshtml";
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -24,14 +33,14 @@
     <div id="contentcolumn" class="sixcol">
         <div id="content">
             <div class="contentbox">
-                @Html.Raw(Content.ToString())
+                @Placeholder(Content)
             </div>
         </div>
     </div>
     <div id="asidecolumn" class="threecol last">
         <div id="aside">
             <div class="contentbox">
-                @Html.Raw(Aside.ToString())
+                @Placeholder(Aside)
             </div>
         </div>
     </div>

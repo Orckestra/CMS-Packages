@@ -1,32 +1,20 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="3.0.4328.28967" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Templates.RazorBased" groupName="Composite.StarterSite.CorporateSite" version="1.0.7" author="Composite A/S" website="http://composite.net" id="6b8de726-0faf-49a4-96c1-0c8514637d9b" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="4.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Templates.RazorBased" groupName="Composite.StarterSite.CorporateSite" version="1.0.8" author="Composite A/S" website="http://composite.net" id="6b8de726-0faf-49a4-96c1-0c8514637d9b" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>Starter site Razor based template</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
-				<File sourceFilename="~\App_Data\PageTemplates\1 column, full width.xml" targetFilename="~\App_Data\PageTemplates\1 column, full width.xml" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\PageTemplates\2 columns, content and aside.xml" targetFilename="~\App_Data\PageTemplates\2 columns, content and aside.xml" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\PageTemplates\2 columns, navigation and content.xml" targetFilename="~\App_Data\PageTemplates\2 columns, navigation and content.xml" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\PageTemplates\3 columns.xml" targetFilename="~\App_Data\PageTemplates\3 columns.xml" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\PageTemplates\Frontpage.xml" targetFilename="~\App_Data\PageTemplates\Frontpage.xml" allowOverwrite="false" />
-			</Files>
-			<Directories>
-				<Directory sourceDirectory="~\App_Data\Razor\Layout\" targetDirectory="~\App_Data\Razor\Layout\" allowOverwrite="true" deleteTargetDirectory="false" />
-			</Directories>
-		</mi:Add>
-		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
-			<Types>
-				<Type type="Composite.Data.Types.IPageTemplate,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTemplates_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IFolderWhiteList,Composite">
-					<Data dataScopeIdentifier="administrated" dataFilename="~\Datas\Composite.Data.Types.IFolderWhiteList_administrated.xml" />
-				</Type>
-			</Types>
+        <File sourceFilename="~\App_Data\PageTemplates\Frontpage.cshtml" targetFilename="~\App_Data\PageTemplates\Frontpage.cshtml" allowOverwrite="false" />
+        <File sourceFilename="~\App_Data\PageTemplates\MasterLayout.cshtml" targetFilename="~\App_Data\PageTemplates\MasterLayout.cshtml" allowOverwrite="false" />
+        <File sourceFilename="~\App_Data\PageTemplates\OneColumnFullWidth.cshtml" targetFilename="~\App_Data\PageTemplates\OneColumnFullWidth.cshtml" allowOverwrite="false" />
+        <File sourceFilename="~\App_Data\PageTemplates\ThreeColumns.cshtml" targetFilename="~\App_Data\PageTemplates\ThreeColumns.cshtml" allowOverwrite="false" />
+        <File sourceFilename="~\App_Data\PageTemplates\TwoColumnsContentAside.cshtml" targetFilename="~\App_Data\PageTemplates\TwoColumnsContentAside.cshtml" allowOverwrite="false" />
+        <File sourceFilename="~\App_Data\PageTemplates\TwoColumnsNavigationContent.cshtml" targetFilename="~\App_Data\PageTemplates\TwoColumnsNavigationContent.cshtml" allowOverwrite="false" />
+      </Files>
 		</mi:Add>
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>

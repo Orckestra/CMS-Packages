@@ -1,27 +1,40 @@
-﻿@inherits CompositeC1WebPage
+﻿@inherits RazorFunction
 
-@using Composite.Data;
-@using Composite.Data.Types;
-
-@description A Razor-based function that displays the hierarchy of pages as a tree-like menu.
 @functions {
+
+    override public string FunctionDescription
+    {
+        get { return "A Razor-based function that displays the hierarchy of pages as a tree-like menu."; }
+    }
+
+
 	// C1 Function parameters defined below...
-	[FunctionParameter(Label="Level", Help="Set from what level start to display items in Composite.Navigation.Distributed", DefaultValue=1)]
+	[FunctionParameter(Help = "Set from what level start to display items in Composite.Navigation.Distributed", 
+                       DefaultValue = 1)]
 	public int Level { get; set; }
 
-	[FunctionParameter(Label="Include Parent Page",  Help="Check the box if you want parent page to be displayed in navigation", DefaultValue=false)]
+	[FunctionParameter(Label = "Include Parent Page", 
+                       Help = "Check the box if you want parent page to be displayed in navigation", 
+                       DefaultValue = false)]
 	public bool Parent { get; set; }
 
-	[FunctionParameter(Label="Include Child Pages",  Help="Check the box if you want child pages to be displayed in navigation", DefaultValue=true)]
+	[FunctionParameter(Label = "Include Child Pages", 
+                       Help = "Check the box if you want child pages to be displayed in navigation", 
+                       DefaultValue = true)]
 	public bool Childs { get; set; }
 
-	[FunctionParameter(Label="Expand All",  Help="Check the box to expand child pages in Composite.Navigation.Distributed or not (works only if childs=true)", DefaultValue=false)]
+	[FunctionParameter(Label = "Expand All", 
+                       Help = "Check the box to expand child pages in Composite.Navigation.Distributed or not (works only if childs=true)", 
+                       DefaultValue = false)]
 	public bool Expand { get; set; }
 
-	[FunctionParameter(Label="Navigation Id",  Help="Attribute Id of DIV element", DefaultValue="NavigationSideBar")]
+	[FunctionParameter(Label = "Navigation Id", 
+                       Help = "Attribute Id of DIV element", 
+                       DefaultValue = "NavigationSideBar")]
 	public string NavigationId { get; set; }
 
-	[FunctionParameter(Label="StartPage",  Help="The page to start displaying the menu from (the website's root page by default)", DefaultValue=null)]
+	[FunctionParameter(Help = "The page to start displaying the menu from (the website's root page by default)", 
+                       DefaultValue = null)]
 	public NullableDataReference<IPage> StartPage { get; set; }
 
 	
