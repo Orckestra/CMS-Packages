@@ -17,6 +17,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Composite">
-      <HintPath>..\References\Composite\2.1.1\Composite.dll</HintPath>
+      <HintPath>..\References\Composite\4.0\Composite.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
@@ -59,27 +60,22 @@
   <ItemGroup>
     <Compile Include="Package\App_Data\PageTemplates\1 column, full width.master.cs">
       <DependentUpon>1 column, full width.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Package\App_Data\PageTemplates\2 columns, content and aside.master.cs">
       <DependentUpon>2 columns, content and aside.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Package\App_Data\PageTemplates\2 columns, navigation and content.master.cs">
       <DependentUpon>2 columns, navigation and content.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Package\App_Data\PageTemplates\3 columns.master.cs">
       <DependentUpon>3 columns.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Package\App_Data\PageTemplates\Common.master.cs">
+    <Content Include="Package\App_Data\PageTemplates\Common.master.cs">
       <DependentUpon>Common.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    </Content>
     <Compile Include="Package\App_Data\PageTemplates\Frontpage.master.cs">
       <DependentUpon>Frontpage.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Package\App_Data\PageTemplates\NavigationColumn.master.cs">
       <DependentUpon>NavigationColumn.master</DependentUpon>
@@ -87,14 +83,10 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Package\App_Data\PageTemplates\1 column, full width.xml" />
-    <Content Include="Package\App_Data\PageTemplates\2 columns, content and aside.xml" />
-    <Content Include="Package\App_Data\PageTemplates\2 columns, navigation and content.xml" />
-    <Content Include="Package\App_Data\PageTemplates\3 columns.xml" />
-    <Content Include="Package\App_Data\PageTemplates\Frontpage.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IPageTemplates_public.xml" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.StarterSite.CorporateSite.Templates.MasterBased.xml" />
   </ItemGroup>

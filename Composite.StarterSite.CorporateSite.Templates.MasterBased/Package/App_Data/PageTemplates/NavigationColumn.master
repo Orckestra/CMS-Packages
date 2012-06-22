@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/App_Data/PageTemplates/Common.master"
+﻿<%@ Master Language="C#" MasterPageFile="Common.master"
 	AutoEventWireup="true" CodeFile="NavigationColumn.master.cs" Inherits="NavigationColumn" %>
 
 <asp:Content ID="cHead" ContentPlaceHolderID="phHead" runat="Server">

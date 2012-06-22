@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/App_Data/PageTemplates/Common.master"
+﻿<%@ Master Language="C#" MasterPageFile="Common.master"
 	AutoEventWireup="true" CodeFile="2 columns, content and aside.master.cs" Inherits="_2_columns__content_and_aside" %>
 
 <asp:Content ID="cHead" ContentPlaceHolderID="phHead" runat="Server">
@@ -6,12 +6,12 @@
 <asp:Content ID="cContent" ContentPlaceHolderID="phContent" runat="Server">
 	<div id="contentcolumn" class="eightcol">
 		<div class="contentbox">
-			<rendering:Placeholder ID="content" Title="Content" Default="true" runat="server" />
+			<c1:Placeholder ID="content" Content="<%# Content %>" runat="server" />
 		</div>
 	</div>
 	<div id="asidecolumn" class="fourcol last">
 		<div class="contentbox">
-			<rendering:Placeholder ID="aside" Title="Aside" runat="server" />
+			<c1:Placeholder ID="aside" Content="<%# Aside %>" runat="server" />
 		</div>
 	</div>
 </asp:Content>

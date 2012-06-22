@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/App_Data/PageTemplates/NavigationColumn.master"
+﻿<%@ Master Language="C#" MasterPageFile="NavigationColumn.master"
 	AutoEventWireup="true" CodeFile="3 columns.master.cs" Inherits="_3_columns" %>
 
 <asp:Content ID="cHead" ContentPlaceHolderID="phHead" runat="Server">
@@ -6,12 +6,12 @@
 <asp:Content ID="cContentColumns" ContentPlaceHolderID="phContentColumns" runat="Server">
 	<div id="contentcolumn" class="sixcol">
 		<div class="contentbox">
-			<rendering:Placeholder ID="content" Title="Content" Default="true" runat="server" />
+			<c1:Placeholder Content="<%# Content %>" ID="content" runat="server" />
 		</div>
 	</div>
 	<div class="threecol last" id="asidecolumn">
 		<div class="contentbox">
-			<rendering:Placeholder ID="aside" Title="Aside" runat="server" />
+			<c1:Placeholder ID="aside" Content="<%# Aside %>" runat="server" />
 		</div>
 	</div>
 </asp:Content>
