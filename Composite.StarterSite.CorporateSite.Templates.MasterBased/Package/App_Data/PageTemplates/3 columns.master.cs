@@ -15,6 +15,11 @@ public partial class _3_columns : MasterPagePageTemplate
         get { return new Guid("ea2ca748-efbf-4d94-8e2a-11ce49b71cd5"); }
     }
 
+    public override string TemplateTitle
+    {
+        get { return "3 columns"; }
+    }
+
     [Placeholder(Id = "content", IsDefault = true)]
     public XhtmlDocument Content { get; set; }
 

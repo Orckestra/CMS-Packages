@@ -15,6 +15,11 @@ public partial class Frontpage : MasterPagePageTemplate
         get { return new Guid("a270f819-0b5c-4f7e-9194-4b554043e4ab"); }
     }
 
+    public override string TemplateTitle
+    {
+        get { return "Frontpage"; }
+    }
+
     [Placeholder(Id = "content", IsDefault = true)]
     public XhtmlDocument Content { get; set; }
 
