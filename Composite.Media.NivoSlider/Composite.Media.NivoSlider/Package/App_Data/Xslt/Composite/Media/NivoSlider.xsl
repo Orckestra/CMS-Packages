@@ -7,6 +7,7 @@
 	<xsl:variable name="width" select="/in:inputs/in:param[@name='Width']" />
 	<xsl:variable name="height" select="/in:inputs/in:param[@name='Height']" />
 	<xsl:variable name="navigation" select="/in:inputs/in:param[@name='Navigation']" />
+	<xsl:variable name="repeat" select="/in:inputs/in:param[@name='Repeat']" />
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -21,11 +22,11 @@
 					slices: 15, /* For slice animations*/
 					boxCols: 8, /* For box animations */
 					boxRows: 4, /* For box animations */
-					animSpeed: 500, /* Slide transition speed*/
-					pauseTime: 3000, /* How long each slide will show*/
+					animSpeed: <xsl:value-of select="/in:inputs/in:param[@name='AnimSpeed'" />, /* Slide transition speed*/
+					pauseTime: <xsl:value-of select="/in:inputs/in:param[@name='PauseTime'" />, /* How long each slide will show*/
 					startSlide: 0, /* Set starting Slide (0 index)*/
-					directionNav: true, /* Next and  Prev navigation*/
-					directionNavHide: true, /* Only show on hover*/
+					directionNav: <xsl:value-of select="/in:inputs/in:param[@name='DirectionNav'" />, /* Next and  Prev navigation*/
+					directionNavHide: <xsl:value-of select="/in:inputs/in:param[@name='DirectionNavHide'" />, /* Only show on hover*/
 					controlNav: <xsl:value-of select="$navigation" />, /* 1,2,3... navigation*/
 					controlNavThumbs: false, /* Use thumbnails for Control Nav*/
 					controlNavThumbsFromRel: false, /* Use image rel for thumbs*/
@@ -40,7 +41,9 @@
 					beforeChange: function(){}, /* Triggers before a slide transition*/
 					afterChange: function(){}, /* Triggers after a slide transition*/
 					slideshowEnd: function(){}, /* Triggers after all slides have been shown*/
-					lastSlide: function(){}, /* Triggers when last slide is shown*/
+					lastSlide: function(){
+						<xsl:if test="$repeat='false'"> primary.vars.stop = true;</xsl:if>
+					}, /* Triggers when last slide is shown*/
 					afterLoad: function(){} /* Triggers when slider has loaded*/
 					});
 					});
