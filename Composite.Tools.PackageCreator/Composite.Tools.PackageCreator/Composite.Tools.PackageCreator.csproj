@@ -39,9 +39,9 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Composite, Version=2.1.4113.99, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Composite, Version=4.0.4556.19521, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\References\Composite\3.2\Composite.dll</HintPath>
+      <HintPath>..\..\References\Composite\4.0\Composite.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\References\Composite\2.1.1\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -135,6 +135,7 @@
     <Compile Include="Types\PCVisualFunction.cs" />
     <Compile Include="Types\PCXsltFunction.cs" />
     <Compile Include="Types\SimplePackageCreatorItem.cs" />
+    <Compile Include="Properties\AssemblyFileVersion.cs" />
     <Compile Include="Workflow\ConfirmPackageWorkflow.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -178,7 +179,21 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.-->
+  <Target Name="BeforeBuild">
+    <PropertyGroup>
+      <InstallXml>$([System.IO.File]::ReadAllText("$(SolutionDir)/$(SolutionName).Package/Package/install.xml"))</InstallXml>
+      <PackageVersion>$([System.Text.RegularExpressions.Regex]::Match($(InstallXml),"PackageInformation[^&gt;]+version=.([0-9\.]+).").Groups[1].Value)</PackageVersion>
+      <AssemblyFileVersionAttribute>[assembly:System.Reflection.AssemblyFileVersion("$(PackageVersion)")]</AssemblyFileVersionAttribute>
+    </PropertyGroup>
+    <Exec Command="&quot;$(DevEnvDir)\TF.exe&quot; checkout /lock:none  &quot;$(ProjectDir)Properties\AssemblyFileVersion.cs&quot;" IgnoreExitCode="true" />
+    <WriteLinesToFile File="Properties\AssemblyFileVersion.cs" Lines="$(AssemblyFileVersionAttribute)" Overwrite="true">
+    </WriteLinesToFile>
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
   <PropertyGroup>
     <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(SolutionDir)$(SolutionName).Package\Package\Bin\$(TargetFileName)"
 copy "$(TargetPath)" "$(SolutionDir)$(SolutionName).Package\Package\Bin\"</PostBuildEvent>

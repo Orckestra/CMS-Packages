@@ -10,31 +10,32 @@ using Composite.Core.ResourceSystem;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-	[PCCategory("PageTemplates")]
-	internal class PCPageTemplate : SimplePackageCreatorItem
-	{
-		public PCPageTemplate(string name)
-			: base(name)
-		{
-		}
+	#warning temaplates disabled
+	//[PCCategory("PageTemplates")]
+	//internal class PCPageTemplate : SimplePackageCreatorItem
+	//{
+	//    public PCPageTemplate(string name)
+	//        : base(name)
+	//    {
+	//    }
 
-		public override ResourceHandle ItemIcon
-		{
-			get { return new ResourceHandle("Composite.Icons", "page-template-template"); }
-		}
+	//    public override ResourceHandle ItemIcon
+	//    {
+	//        get { return new ResourceHandle("Composite.Icons", "page-template-template"); }
+	//    }
 
-		public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
-		{
-			if (entityToken is DataEntityToken)
-			{
-				DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
-				if (dataEntityToken.Data is IPageTemplate)
-				{
-					IPageTemplate data = (IPageTemplate)dataEntityToken.Data;
-					yield return new PCPageTemplate(data.Title);
-				}
-			}
-		}
+	//    public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+	//    {
+	//        if (entityToken is DataEntityToken)
+	//        {
+	//            DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
+	//            if (dataEntityToken.Data is IPageTemplate)
+	//            {
+	//                IPageTemplate data = (IPageTemplate)dataEntityToken.Data;
+	//                yield return new PCPageTemplate(data.Title);
+	//            }
+	//        }
+	//    }
 
-	}
+	//}
 }

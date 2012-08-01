@@ -275,27 +275,28 @@ namespace Composite.Tools.PackageCreator
 				}
 				#endregion
 
-				#region PageTemplates
-				XElement PageTemplates = config.Descendants(pc + "PageTemplates").FirstOrDefault();
-				if (PageTemplates != null)
-				{
-					foreach (XElement item in PageTemplates.Elements("Add"))
-					{
-						var pageTemplate = (from i in DataFacade.GetData<IPageTemplate>()
-											where i.Title == item.IndexAttributeValue()
-											select i).First();
+#warning templates disabled
+				//#region PageTemplates
+				//XElement PageTemplates = config.Descendants(pc + "PageTemplates").FirstOrDefault();
+				//if (PageTemplates != null)
+				//{
+				//    foreach (XElement item in PageTemplates.Elements("Add"))
+				//    {
+				//        var pageTemplate = (from i in DataFacade.GetData<IPageTemplate>()
+				//                            where i.Title == item.IndexAttributeValue()
+				//                            select i).First();
 
-						var newPageTemplateFilePath = "\\" + pageTemplate.Title + ".xml";
+				//        var newPageTemplateFilePath = "\\" + pageTemplate.Title + ".xml";
 
-						AddFile("App_Data\\PageTemplates" + pageTemplate.PageTemplateFilePath, "App_Data\\PageTemplates" + newPageTemplateFilePath);
-						pageTemplate.PageTemplateFilePath = newPageTemplateFilePath;
-						//AddData(pageTemplate, "Composite.Data.Types.IPageTemplate" + ", Composite");
-						AddData(pageTemplate);
+				//        AddFile("App_Data\\PageTemplates" + pageTemplate.PageTemplateFilePath, "App_Data\\PageTemplates" + newPageTemplateFilePath);
+				//        pageTemplate.PageTemplateFilePath = newPageTemplateFilePath;
+				//        //AddData(pageTemplate, "Composite.Data.Types.IPageTemplate" + ", Composite");
+				//        AddData(pageTemplate);
 
-					}
-				}
+				//    }
+				//}
 
-				#endregion
+				//#endregion
 
 				#region Files
 				XElement InstallFiles = config.Descendants(pc + "Files").FirstOrDefault();
