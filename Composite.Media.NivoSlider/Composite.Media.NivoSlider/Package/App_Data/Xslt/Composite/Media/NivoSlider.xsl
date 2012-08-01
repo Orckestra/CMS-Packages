@@ -22,11 +22,11 @@
 					slices: 15, /* For slice animations*/
 					boxCols: 8, /* For box animations */
 					boxRows: 4, /* For box animations */
-					animSpeed: <xsl:value-of select="/in:inputs/in:param[@name='AnimSpeed'" />, /* Slide transition speed*/
-					pauseTime: <xsl:value-of select="/in:inputs/in:param[@name='PauseTime'" />, /* How long each slide will show*/
+					animSpeed: <xsl:value-of select="/in:inputs/in:param[@name='AnimSpeed']" />, /* Slide transition speed*/
+					pauseTime: <xsl:value-of select="/in:inputs/in:param[@name='PauseTime']" />, /* How long each slide will show*/
 					startSlide: 0, /* Set starting Slide (0 index)*/
-					directionNav: <xsl:value-of select="/in:inputs/in:param[@name='DirectionNav'" />, /* Next and  Prev navigation*/
-					directionNavHide: <xsl:value-of select="/in:inputs/in:param[@name='DirectionNavHide'" />, /* Only show on hover*/
+					directionNav: <xsl:value-of select="/in:inputs/in:param[@name='DirectionNav']" />, /* Next and  Prev navigation*/
+					directionNavHide: <xsl:value-of select="/in:inputs/in:param[@name='DirectionNavHide']" />, /* Only show on hover*/
 					controlNav: <xsl:value-of select="$navigation" />, /* 1,2,3... navigation*/
 					controlNavThumbs: false, /* Use thumbnails for Control Nav*/
 					controlNavThumbsFromRel: false, /* Use image rel for thumbs*/
