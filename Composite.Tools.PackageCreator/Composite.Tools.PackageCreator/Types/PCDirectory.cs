@@ -6,8 +6,8 @@ using Composite.Core.ResourceSystem;
 using Composite.C1Console.Security;
 using Composite.Plugins.Elements.ElementProviders.WebsiteFileElementProvider;
 using Composite.Data;
-using System.IO;
 using Composite.Core.IO;
+using System.Text.RegularExpressions;
 
 namespace Composite.Tools.PackageCreator.Types
 {
@@ -25,9 +25,9 @@ namespace Composite.Tools.PackageCreator.Types
 			if (entityToken is WebsiteFileElementProviderEntityToken)
 			{
 				WebsiteFileElementProviderEntityToken token = (WebsiteFileElementProviderEntityToken)entityToken;
-				if (Directory.Exists(token.Id))
+				if (C1Directory.Exists(token.Path))
 				{
-					yield return new PCDirectory(token.Id.Replace(token.GetProperty("RootPath")+"\\","")+"\\");
+					yield return new PCDirectory(Regex.Replace(token.Id, @"^\\", "") + "\\");
 					yield break;
 				}
 			}

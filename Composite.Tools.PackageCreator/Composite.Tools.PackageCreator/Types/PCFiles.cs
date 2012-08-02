@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using Composite.Plugins.Elements.ElementProviders.WebsiteFileElementProvider;
 using Composite.C1Console.Security;
-using System.IO;
+using System.Text.RegularExpressions;
+using Composite.Core.IO;
 
 namespace Composite.Tools.PackageCreator.Types
 {
@@ -21,9 +22,9 @@ namespace Composite.Tools.PackageCreator.Types
 			if (entityToken is WebsiteFileElementProviderEntityToken)
 			{
 				WebsiteFileElementProviderEntityToken token = (WebsiteFileElementProviderEntityToken)entityToken;
-				if (File.Exists(token.Id))
+				if (C1File.Exists(token.Path))
 				{
-					yield return new PCFile(token.Id.Replace(token.GetProperty("RootPath") + "\\", ""));
+					yield return new PCFile(Regex.Replace(token.Id, @"^\\", ""));
 				}
 			};
 		}
