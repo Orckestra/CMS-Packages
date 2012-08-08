@@ -6,12 +6,12 @@
 <asp:Content ID="cContentColumns" ContentPlaceHolderID="phContentColumns" runat="Server">
 	<div id="contentcolumn" class="sixcol">
 		<div class="contentbox">
-			<c1:Placeholder Content="<%# Content %>" ID="content" runat="server" />
+			<c1:Render Markup="<%# Content %>" ID="content" runat="server" />
 		</div>
 	</div>
 	<div class="threecol last" id="asidecolumn">
 		<div class="contentbox">
-			<c1:Placeholder ID="aside" Content="<%# Aside %>" runat="server" />
+			<c1:Render Markup="<%# Aside %>" ID="aside" runat="server" />
 		</div>
 	</div>
 </asp:Content>

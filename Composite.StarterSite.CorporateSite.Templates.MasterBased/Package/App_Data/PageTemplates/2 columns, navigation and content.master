@@ -7,7 +7,7 @@
 <asp:Content ID="cContentColumns" ContentPlaceHolderID="phContentColumns" runat="Server">
 	<div id="contentcolumn" class="ninecol last">
 		<div class="contentbox">
-			<c1:Placeholder Content="<%# Content %>" ID="content" runat="server" />
+			<c1:Render Markup="<%# Content %>" ID="content" runat="server" />
 		</div>
 	</div>
 </asp:Content>
