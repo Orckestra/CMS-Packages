@@ -13,15 +13,15 @@
 		<html>
 			<head>
 				<xsl:choose>
-					<xsl:when test="$graph/@Title = ''">
-						<meta property="og:title" content="{$currentPage/@Title}" />
+					<xsl:when test="string-length($graph/@Title) > 0">
+						<meta property="og:title" content="{$graph/@Title}" />
 					</xsl:when>
 					<xsl:otherwise>
-						<meta property="og:title" content="{$graph/@Title}" />
+						<meta property="og:title" content="{$currentPage/@Title}" />
 					</xsl:otherwise>
 				</xsl:choose>
 				<xsl:choose>
-					<xsl:when test="$graph/@Type != ''">
+					<xsl:when test="string-length($graph/@Type) > 0">
 						<meta property="og:type" content="{$graph/@Type}" />
 					</xsl:when>
 				</xsl:choose>
@@ -30,22 +30,22 @@
 					<xsl:with-param name="id" select="$currentPage/@Id" />
 				</xsl:call-template>
 				<xsl:choose>
-					<xsl:when test="$graph/@Description != ''">
+					<xsl:when test="string-length($graph/@Description) > 0">
 						<meta property="og:description" content="{$graph/@Description}" />
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:if test="$currentPage/@Description != ''">
+						<xsl:if test="string-length($currentPage/@Description) > 0">
 							<meta property="og:description" content="{$currentPage/@Description}" />
 						</xsl:if>
 					</xsl:otherwise>
 				</xsl:choose>
-				<xsl:if test="$sitename != ''">
+				<xsl:if test="string-length($sitename) > 0">
 					<meta property="og:site_name" content="{$sitename}" />
 				</xsl:if>
-				<xsl:if test="$admins != ''">
+				<xsl:if test="string-length($admins) > 0">
 					<meta property="fb:admins" content="{$admins}" xmlns:fb="http://www.facebook.com/2008/fbml" />
 				</xsl:if>
-				<xsl:if test="$appids != ''">
+				<xsl:if test="string-length($appids) > 0">
 					<meta property="fb:app_id" content="{$appids}" xmlns:fb="http://www.facebook.com/2008/fbml" />
 				</xsl:if>
 			</head>
@@ -56,12 +56,12 @@
 		<xsl:param name="id" />
 		<xsl:param name="graph1" select="/in:inputs/in:result[@name='GetOpenGraphProtocolXml']/OpenGraphProtocol[@PageId=$id]" />
 		<xsl:choose>
-			<xsl:when test="$graph1/@Image != ''">
+			<xsl:when test="string-length($graph1/@Image) > 0">
 				<meta property="og:image" content="http://{$host}{$appPath}/media({$graph1/@Image})" />
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:variable name="parentId" select="/in:inputs/in:result[@name='SitemapXml']//Page[Page[@Id = $id]]/@Id" />
-				<xsl:if test="$parentId != ''">
+				<xsl:if test="string-length($parentId) > 0">
 					<xsl:call-template name="Image">
 						<xsl:with-param name="id" select="$parentId" />
 					</xsl:call-template>
