@@ -44,9 +44,9 @@ namespace Composite.Navigation.LanguageSwitcher
 			return Enum.GetNames(typeof(SwitcherFormat)).AsEnumerable();
 		}
 
-		[FunctionParameterDescription("mode", "Mode", "")]
-		[FunctionParameterDescription("format", "Format", "")]
-		[FunctionParameterDescription("includeQuery", "IncludeQuery", "")]
+		[FunctionParameter(Name="mode", Label = "Mode")]
+		[FunctionParameter(Name="format", Label="Format")]
+		[FunctionParameter(Name="includeQuery", Label="IncludeQuery")]
 		public static IEnumerable<XElement> GetPagesInfo(string mode, string format, bool includeQuery)
 		{
 			var switcherMode = (SwitcherMode)(Enum.Parse(typeof(SwitcherMode), mode, true));
