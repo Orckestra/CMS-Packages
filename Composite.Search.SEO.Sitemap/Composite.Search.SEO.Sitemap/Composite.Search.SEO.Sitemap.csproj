@@ -17,6 +17,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Composite">
-      <HintPath>..\..\References\Composite\3.0\Composite.dll</HintPath>
+      <HintPath>..\..\References\Composite\3.2\Composite.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
@@ -67,7 +68,7 @@
     <Content Include="Package\Sitemap.ashx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Sitemap.ashx" />
+    <Compile Include="Sitemap.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Release\Composite.Search.SEO.Sitemap.zip" />

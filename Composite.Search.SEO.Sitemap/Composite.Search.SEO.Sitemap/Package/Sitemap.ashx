@@ -1,12 +1,11 @@
 ﻿<%@ WebHandler Language="C#" Class="Sitemap" %>
-
 using System;
 using System.Globalization;
 using System.Text;
 using System.Web;
-using Composite.Core.Routing;
 using Composite.Data;
 using Composite.Data.Types;
+using Composite.Core.Routing;
 
 public class Sitemap : IHttpHandler
 {
@@ -21,18 +20,15 @@ public class Sitemap : IHttpHandler
 		xml.Append("<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">");
 
 		var cultures = DataLocalizationFacade.IsLocalized(typeof(IPage)) ? DataLocalizationFacade.ActiveLocalizationCultures : new[] { CultureInfo.InvariantCulture };
+
 		foreach (var cultureInfo in cultures)
 		{
-			using (new DataScope(cultureInfo))
+			using (var conn = new DataConnection(PublicationScope.Published, cultureInfo))
 			{
-			    var urlSpace = new UrlSpace();
-                
-				var pages = DataFacade.GetData<IPage>();
+				var pages = conn.Get<IPage>();
 				foreach (var page in pages)
 				{
-					var pageUrlData = new PageUrlData(page.Id, PublicationScope.Published, cultureInfo);
-                    string url = PageUrls.BuildUrl(pageUrlData, UrlKind.Public, urlSpace );
-                    
+					var url = PageUrls.BuildUrl(new PageUrlData(page), UrlKind.Public, new UrlSpace());
 					if (url != null)
 					{
 						var pageUrl = GetFullPath(url);
@@ -46,7 +42,6 @@ public class Sitemap : IHttpHandler
 				}
 			}
 		}
-
 		xml.Append("</urlset> ");
 		context.Response.Write(xml);
 	}
