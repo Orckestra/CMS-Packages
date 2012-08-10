@@ -8,12 +8,6 @@
         <div id="Logo">
           <a href="{$homeUrl}"></a>
         </div>
-        <f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Composite.Navigation.LanguageSwitcher">
-          <f:param name="Mode" value="TranslatedOrHomePages" />
-          <f:param name="ShowCurrent" value="False" />
-          <f:param name="Format" value="NativeName" />
-        </f:function>
-        <f:function name="Layout.Navigation.TopLinks" />
         <f:function name="Layout.Navigation.Menu" />
         <div id="HeaderImage"></div>
       </body>
