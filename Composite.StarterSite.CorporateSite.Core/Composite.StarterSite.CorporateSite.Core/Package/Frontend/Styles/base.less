@@ -1,0 +1,73 @@
+﻿/******************************************
+*	 Base Rules 
+******************************************/
+
+html, body {
+	height: 100%;
+	background-color: @body-bg-color;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	background-image: @body-bg-image-url;
+	background-repeat: @body-bg-repeat;
+	color: @text-color;
+	font-family: @font-family;
+	font-size: @font-size;
+	line-height: 24px; /* Changing this will break the baseline grid. */
+	-webkit-text-size-adjust: none; /* Stops the iPhone scalling type up */
+}
+
+a {
+	color: @highlight-text-color;
+	&:hover {
+		color: @text-color;
+	}
+	img {
+		display: block; /* Stops image links getting text link styles */
+	}
+}
+
+img, object, embed, p, ul, ol, blockquote, h1, h2, h3, table {
+	margin-bottom: 24px; /* Changing this will break the baseline grid. */
+}
+
+ul, ol{
+	padding-left: 20px;
+}
+
+li {
+	margin-bottom: 6px;
+}
+
+blockquote {
+	border-left: 1px solid #c1c1c1;
+	color: @text-color;
+	padding-left: 15px;
+	margin-left: -15px;
+}
+
+h1, h2, h3 {
+	color: @highlight-text-color;
+	font-weight: lighter;
+}
+
+h1 {
+	font-size: @h1-font-size;
+	color:@h1-color;
+	font-family: @h1-font-family;
+	line-height: 36px; /* Changing this will break the baseline grid. */
+}
+
+h2 {
+	font-size: @h1-font-size - 6;
+	font-family: @h1-font-family;
+}
+
+h3 {
+	font-size: @h1-font-size - 10;
+	font-weight: bold;
+}

@@ -1,0 +1,172 @@
+﻿/******************************************
+*	Layout Rules 						
+******************************************/
+.row {
+	max-width: @page-max-width + 20 + 20; /* left and right paddings */
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: @page-bg-color;
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin-bottom: -@footer-height;
+}
+
+#top-links {
+	padding: 10px 0px;
+	font-size: @font-size - 1;
+	line-height: 36px;
+	text-transform: lowercase;
+	ul {
+			margin: 0px;
+			list-style: none;
+			li {
+				display: inline;
+			}
+		}
+		a {
+		    margin: 0 10px;
+			text-decoration: none;
+			color: @text-color;
+			&:hover {
+				color: @highlight-text-color;
+			}
+		}
+}
+
+#LanguageSwitcher, #TopLinks {
+		float: right;
+}
+/*	Header	*/
+#header {
+	#Logo {
+		width: 300px;
+		margin-bottom: 15px;
+		background: @logo-image-url no-repeat left bottom;
+		float: left;
+		a { 
+			display:block;
+			height: @logo-height;
+			width: 300px;
+		}
+	}
+	
+	#Menu {
+		clear: right;
+		float: right;
+		margin-top: 11px;
+		a {
+			margin: 0 15px;
+			line-height: 28px;
+			font-size: @font-size + 2;
+			display: block;
+			float: left;
+			color: @text-color;
+			text-decoration: none;
+			white-space: nowrap;
+			&:hover,  &.NavigationOpen{
+				border-bottom: 6px solid @highlight-text-color;
+				color: @highlight-text-color;
+			}
+		}
+	}
+	#HeaderImage {
+		clear: both;
+		background: @header-image-url no-repeat;
+		height: @header-height;
+	}
+}
+
+/*	Footer	*/
+
+#footer, #push {
+	height: @footer-height;
+}
+#footer, #footer .row {
+	background-color: @footer-bg-color;
+}
+#footer {
+	color: @footer-text-color;
+	line-height: @footer-height;
+	text-align: center;
+	a {
+		color: @footer-text-color;
+		text-decoration: none;
+	}
+}
+
+
+/*	Columns */
+#contentcolumn, #asidecolumn, #navigationcolumn {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	.contentbox > :first-child {
+		margin-top: 0;
+	}
+	
+}
+
+#NavigationMenu
+{
+	margin-left: 20px;
+	a {
+		text-decoration: none;
+		&.NavigationSelected {
+				font-weight: bold;
+			}
+	}
+	ul {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		li {
+			font-size: @font-size + 2;
+			line-height: 22px;
+		}
+		ul li {
+			font-size: @font-size - 1;
+			line-height: 20px;
+			background: url(../Images/Skins/Default/arrow.png) no-repeat 0px 3px;
+			padding-left: 12px;
+			margin-bottom: 0px;
+			a {
+				color: @text-color;
+				line-height: 20px;
+			}
+		}
+		ul ul {
+			margin-left: 3px;
+		}
+	}
+}
+
+/*	For mobile version */
+@media handheld, only screen and (max-width: 767px) {
+body {
+		font-size: 16px;
+		line-height: 24px;
+	}
+}
+
+/*	Make minor type adjustments for 1024 monitors	*/
+@media only screen and (max-width: 1023px) {
+	body {
+		font-size: 0.8em; /* Makes type a bit smaller at 1024 so layout doesn't look unbalanced */
+		line-height: 1.5em;	/* As above */
+	}
+}
+
+/* Provide higher res assets for iPhone 4 */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+    /* An example of how to override an image with one twice the size for iPhone 4. Specify the original pixel size with background-size.
+            .download {
+            background: url(../img/downarrow@2x.png) no-repeat;
+            background-size: 27px 28px;
+            }
+    */
+}
+

@@ -5,5 +5,5 @@
 			<xsl:apply-templates select="@* | node()" />
 		</xsl:copy>
 	</xsl:template>
-	<xsl:template match="/visualeditor/style[@file='../../styles/typeimg.css']" />
+	<xsl:template match="/visualeditor/style[@file='../../styles/visualeditor.common.less']" />
 </xsl:stylesheet>

@@ -1,10 +1,12 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4266.16056" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Core" groupName="Composite.StarterSite.CorporateSite" version="1.0.11" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="f5e8484a-8c90-4b68-a263-3f1f174d42a5" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Core" groupName="Composite.StarterSite.CorporateSite" version="1.0.12" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="f5e8484a-8c90-4b68-a263-3f1f174d42a5" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>StarterSite xslt based template</Description>
 	</mi:PackageInformation>
-	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallerBinaries >
+		<mi:Add path="~\Bin\FileDeleterPackage.dll" />
+	</mi:PackageFragmentInstallerBinaries>
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
@@ -12,13 +14,19 @@
 				<File sourceFilename="~\App_Data\Xslt\Layout\Navigation\Menu.xsl" targetFilename="~\App_Data\Xslt\Layout\Navigation\Menu.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Xslt\Layout\Navigation\TopLinks.xsl" targetFilename="~\App_Data\Xslt\Layout\Navigation\TopLinks.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Composite\DynamicTypeForms\Layout\Navigation\TopLink.xml" targetFilename="~\App_Data\Composite\DynamicTypeForms\Layout\Navigation\TopLink.xml" allowOverwrite="false" />
-				<File sourceFilename="~\Frontend\Styles\typeimg.css" targetFilename="~\Frontend\Styles\typeimg.css" allowOverwrite="false" />
-				<File sourceFilename="~\Frontend\Styles\smallerscreen.css" targetFilename="~\Frontend\Styles\smallerscreen.css" allowOverwrite="false" />
-				<File sourceFilename="~\Frontend\Styles\mobile.css" targetFilename="~\Frontend\Styles\mobile.css" allowOverwrite="false" />
-				<File sourceFilename="~\Frontend\Styles\ie.css" targetFilename="~\Frontend\Styles\ie.css" allowOverwrite="false" />
-				<File sourceFilename="~\Frontend\Styles\1140.css" targetFilename="~\Frontend\Styles\1140.css" allowOverwrite="false" />
-				<File sourceFilename="~\Frontend\Styles\layout.css" targetFilename="~\Frontend\Styles\layout.css" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\Skins\Default.less" targetFilename="~\Frontend\Styles\Skins\Default.less" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\Skins\Simple.less" targetFilename="~\Frontend\Styles\Skins\Simple.less" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\Skins\Brown.less" targetFilename="~\Frontend\Styles\Skins\Brown.less" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\Skins\FreshGreen.less" targetFilename="~\Frontend\Styles\Skins\FreshGreen.less" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\Core\ie.css" targetFilename="~\Frontend\Styles\Core\ie.css" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\Core\1140.css" targetFilename="~\Frontend\Styles\Core\1140.css" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\base.less" targetFilename="~\Frontend\Styles\base.less" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\layout.less" targetFilename="~\Frontend\Styles\layout.less" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\modules.less" targetFilename="~\Frontend\Styles\modules.less" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\styles.less" targetFilename="~\Frontend\Styles\styles.less" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Styles\VisualEditor.common.less" targetFilename="~\Frontend\Styles\VisualEditor.common.less" allowOverwrite="true" />
 				<File sourceFilename="~\favicon.ico" targetFilename="~\favicon.ico" allowOverwrite="false" />
+
 			</Files>
 			<Directories>
 				<Directory sourceDirectory="~\Frontend\Images\" targetDirectory="~\Frontend\Images\" allowOverwrite="true" deleteTargetDirectory="false" />
@@ -73,6 +81,11 @@
 			<XslFiles>
 				<XslFile pathXml="~\Frontend\Config\VisualEditor\common.xml" installXsl="~\VisualEditor.config\Install.xsl" uninstallXsl="~\VisualEditor.config\Uninstall.xsl" overrideReadOnly="true" />
 			</XslFiles>
+		</mi:Add>
+		<mi:Add installerType="UpgradeFragmentInstallers.FileDeleterPackageFragmentInstaller, FileDeleterPackage" uninstallerType="UpgradeFragmentInstallers.FileDeleterPackageFragmentUninstaller, FileDeleterPackage" >
+			<RemoveFiles>
+				<RemoveFile filename="~\Frontend\Styles\VisualEditor.common.css"/>
+			</RemoveFiles>
 		</mi:Add>
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>

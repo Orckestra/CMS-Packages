@@ -8,9 +8,10 @@
 	<xsl:template match="/visualeditor/styles">
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
-			<xsl:if test="count(add[@file='../../styles/typeimg.css'])=0">
-				<style file="../../styles/typeimg.css" />
+			<xsl:if test="count(add[@file='../../styles/visualeditor.common.less'])=0">
+				<style file="../../styles/visualeditor.common.less" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
+	<xsl:template match="/visualeditor/styles/style[@file='../../styles/visualeditor.common.css']" />
 </xsl:stylesheet>

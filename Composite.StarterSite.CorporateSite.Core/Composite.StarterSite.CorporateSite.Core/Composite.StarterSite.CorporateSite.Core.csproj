@@ -57,12 +57,23 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Package\Frontend\Styles\base.less" />
+    <None Include="Package\Frontend\Styles\layout.less" />
+    <None Include="Package\Frontend\Styles\modules.less" />
+    <None Include="Package\Frontend\Styles\Skins\Brown.less" />
+    <None Include="Package\Frontend\Styles\Skins\Default.less" />
+    <None Include="Package\Frontend\Styles\Skins\FreshGreen.less" />
+    <None Include="Package\Frontend\Styles\Skins\Simple.less" />
+    <None Include="Package\Frontend\Styles\styles.less" />
+    <None Include="Package\Frontend\Styles\VisualEditor.common.less" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Layout\Navigation\TopLink.xml" />
     <Content Include="Package\App_Data\Xslt\Layout\CommonHtmlHead.xsl" />
     <Content Include="Package\App_Data\Xslt\Layout\Navigation\Menu.xsl" />
     <Content Include="Package\App_Data\Xslt\Layout\Navigation\TopLinks.xsl" />
+    <Content Include="Package\Bin\FileDeleterPackage.dll" />
     <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageFolderDefinitions_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPagePlaceholderContents_administrated.xml" />
@@ -77,16 +88,19 @@
     <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
     <Content Include="Package\Datas\Layout.Navigation.TopLinks_public.xml" />
     <Content Include="Package\favicon.ico" />
-    <Content Include="Package\Frontend\Images\arrow.png" />
-    <Content Include="Package\Frontend\Images\background.png" />
-    <Content Include="Package\Frontend\Images\header.jpg" />
-    <Content Include="Package\Frontend\Images\headerlogo.png" />
-    <Content Include="Package\Frontend\Styles\1140.css" />
-    <Content Include="Package\Frontend\Styles\ie.css" />
-    <Content Include="Package\Frontend\Styles\layout.css" />
-    <Content Include="Package\Frontend\Styles\mobile.css" />
-    <Content Include="Package\Frontend\Styles\smallerscreen.css" />
-    <Content Include="Package\Frontend\Styles\typeimg.css" />
+    <Content Include="Package\Frontend\Images\Skins\Brown\bg.png" />
+    <Content Include="Package\Frontend\Images\Skins\Brown\headerimage.jpg" />
+    <Content Include="Package\Frontend\Images\Skins\Brown\logo.png" />
+    <Content Include="Package\Frontend\Images\Skins\Default\arrow.png" />
+    <Content Include="Package\Frontend\Images\Skins\Default\background.png" />
+    <Content Include="Package\Frontend\Images\Skins\Default\header.jpg" />
+    <Content Include="Package\Frontend\Images\Skins\Default\headerlogo.png" />
+    <Content Include="Package\Frontend\Images\Skins\FreshGreen\header.jpg" />
+    <Content Include="Package\Frontend\Images\Skins\FreshGreen\logo.png" />
+    <Content Include="Package\Frontend\Images\Skins\Simple\bg.png" />
+    <Content Include="Package\Frontend\Images\Skins\Simple\logo.png" />
+    <Content Include="Package\Frontend\Styles\Core\1140.css" />
+    <Content Include="Package\Frontend\Styles\Core\ie.css" />
     <Content Include="Package\install.xml" />
     <Content Include="Package\VisualEditor.config\Install.xsl" />
     <Content Include="Package\VisualEditor.config\Uninstall.xsl" />
