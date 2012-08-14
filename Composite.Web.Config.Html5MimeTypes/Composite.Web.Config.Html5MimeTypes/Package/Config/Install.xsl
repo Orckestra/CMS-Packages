@@ -22,6 +22,7 @@
 				<add:mimeMap add:key="fileExtension" fileExtension=".otf" mimeType="font/otf" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".woff" mimeType="font/x-woff" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".appcache" mimeType="text/cache-manifest" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".less" mimeType="text/css" />
 			</staticContent>
 		</system.webServer>
 	</xsl:variable>

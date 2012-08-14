@@ -19,4 +19,5 @@
 	<xsl:template match="/configuration/system.webServer/staticContent/mimeMap[@fileExtension='.otf']" />
 	<xsl:template match="/configuration/system.webServer/staticContent/mimeMap[@fileExtension='.woff']" />
 	<xsl:template match="/configuration/system.webServer/staticContent/mimeMap[@fileExtension='.appcache']" />
+	<xsl:template match="/configuration/system.webServer/staticContent/mimeMap[@fileExtension='.less']" />
 </xsl:stylesheet>
