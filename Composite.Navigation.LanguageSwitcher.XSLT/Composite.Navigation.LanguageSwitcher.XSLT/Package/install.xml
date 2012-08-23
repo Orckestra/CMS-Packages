@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="3.2.4485.9196" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Navigation.LanguageSwitcher.XSLT" groupName="Composite.Navigation" version="1.4.1" readMoreUrl="http://docs.composite.net/Composite.Navigation.LanguageSwitcher" author="Composite A/S" website="http://www.composite.met" id="06c320f5-b068-46c2-8433-597d4d56f67e" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Navigation.LanguageSwitcher.XSLT" groupName="Composite.Navigation" version="1.4.2" readMoreUrl="http://docs.composite.net/Composite.Navigation.LanguageSwitcher" author="Composite A/S" website="http://www.composite.met" id="06c320f5-b068-46c2-8433-597d4d56f67e" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>Allows visitors to switch between different language versions of the same website.</Description>
 		<TechnicalDetails>Allows visitors to switch between different language versions of the same website.</TechnicalDetails>
 	</mi:PackageInformation>
@@ -11,10 +11,8 @@
 			<Files>
 				<File sourceFilename="~\App_Data\Xslt\Composite\Navigation\LanguageSwitcher.xsl" targetFilename="~\App_Data\Xslt\Composite\Navigation\LanguageSwitcher.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Code\Composite\Navigation\LanguageSwitcher\Functions.cs" targetFilename="~\App_Code\Composite\Navigation\LanguageSwitcher\Functions.cs" allowOverwrite="false" />
+				<File sourceFilename="~\Frontend\Composite\Navigation\LanguageSwitcher\Styles.css" targetFilename="~\Frontend\Composite\Navigation\LanguageSwitcher\Styles.css" allowOverwrite="false" />
 			</Files>
-			<Directories>
-				<Directory sourceDirectory="~\Frontend\Composite\Navigation\LanguageSwitcher\" targetDirectory="~\Frontend\Composite\Navigation\LanguageSwitcher\" allowOverwrite="true" deleteTargetDirectory="false" />
-			</Directories>
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
 			<Types>
