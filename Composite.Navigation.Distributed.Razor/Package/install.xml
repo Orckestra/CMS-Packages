@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Navigation.Distributed.Razor" groupName="Composite.Navigation" version="1.0.7" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Navigation.Distributed" id="8b5441b9-4622-4392-a413-5a8f79c17032" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Navigation.Distributed.Razor" groupName="Composite.Navigation" version="1.0.8" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Navigation.Distributed" id="8b5441b9-4622-4392-a413-5a8f79c17032" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>Allows visitors to navigate the website via a left or right sidebar navigation menu.</Description>
 		<TechnicalDetails>Implements a sidebar navigation menu as an Razor function. Highly customizable via parameters and CSS.</TechnicalDetails>
 	</mi:PackageInformation>
@@ -12,7 +12,6 @@
 				<File sourceFilename="~\Frontend\Composite\Navigation\Distributed\Styles.css" targetFilename="~\Frontend\Composite\Navigation\Distributed\Styles.css" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Razor\Composite\Navigation\Distributed.cshtml" targetFilename="~\App_Data\Razor\Composite\Navigation\Distributed.cshtml" allowOverwrite="false" />
 			</Files>
-			<Directories />
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
 			<Types />
