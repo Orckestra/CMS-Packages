@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7192BB4D-A622-4929-94C0-357B011B33E3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.Navigation.LanguageSwitcher.Flags</RootNamespace>
+    <AssemblyName>Composite.Navigation.LanguageSwitcher.Flags</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images.css" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\af-ZA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-AE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-BH.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-DZ.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-EG.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-IQ.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-JO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-KW.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-LB.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-LY.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-MA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-OM.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-QA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-SA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-SY.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-TN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ar-YE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\arn-CL.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\az-Cyrl-AZ.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\az-Latn-AZ.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\be-BY.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\bg-BG.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\bs-Cyrl-BA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\bs-Latn-BA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ca-ES.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\cs-CZ.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\cy-GB.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\da-DK.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\de-AT.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\de-CH.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\de-DE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\de-LI.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\de-LU.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\dv-MV.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\el-GR.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-AU.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-BZ.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-CA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-GB.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-IE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-JM.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-NZ.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-PH.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-TT.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-US.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-ZA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\en-ZW.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-AR.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-BO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-CL.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-CO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-CR.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-DO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-EC.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-ES.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-GT.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-HN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-MX.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-NI.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-PA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-PE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-PR.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-PY.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-SV.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-UY.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\es-VE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\et-EE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\eu-ES.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\fa-IR.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\fi-FI.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\fil-PH.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\fo-FO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\fr-BE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\fr-CA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\fr-CH.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\fr-FR.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\fr-LU.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\fr-MC.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\fy-NL.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ga-IE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\gl-ES.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\gu-IN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\he-IL.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\hi-IN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\hr-BA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\hr-HR.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\hu-HU.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\hy-AM.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\id-ID.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\is-IS.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\it-CH.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\it-IT.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\iu-Latn-CA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ja-JP.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ka-GE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\kk-KZ.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\kn-IN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ko-KR.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\kok-IN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ky-KG.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\lb-LU.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\lt-LT.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\lv-LV.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\mi-NZ.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\mk-MK.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\mn-MN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\moh-CA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\mr-IN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ms-BN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ms-MY.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\mt-MT.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\nb-NO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\nl-BE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\nl-NL.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\nn-NO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ns-ZA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\pa-IN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\pl-PL.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\pt-BR.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\pt-PT.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\quz-BO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\quz-EC.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\quz-PE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\rm-CH.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ro-RO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ru-RU.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sa-IN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\se-FI.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\se-NO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\se-SE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sk-SK.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sl-SI.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sma-NO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sma-SE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\smj-NO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\smj-SE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\smn-FI.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sms-FI.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sq-AL.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sr-Cyrl-BA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sr-Cyrl-CS.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sr-Latn-BA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sr-Latn-CS.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sv-FI.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sv-SE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\sw-KE.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\syr-SY.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ta-IN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\te-IN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\th-TH.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\tn-ZA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\tr-TR.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\tt-RU.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\uk-UA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\ur-PK.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\uz-Cyrl-UZ.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\uz-Latn-UZ.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\vi-VN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\xh-ZA.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\zh-CN.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\zh-HK.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\zh-MO.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\zh-SG.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\zh-TW.png" />
+    <Content Include="Package\Frontend\Composite\Navigation\LanguageSwitcher\Images\zu-ZA.png" />
+    <Content Include="Package\install.xml" />
+    <Content Include="_PackageCreator\Composite.Navigation.LanguageSwitcher.Flags.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Release\Composite.Navigation.LanguageSwitcher.Flags.zip" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
+</PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54142</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
