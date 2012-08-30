@@ -24,6 +24,7 @@ namespace LogViewer
 
 		private string _title = "C1 Log Viewer v1.0";
 
+        private AboutBox _aboutBox = new AboutBox();
 		private ConnectionForm _connectionForm = new ConnectionForm();
 		private C1Connection _connection;
 
@@ -811,5 +812,10 @@ namespace LogViewer
 		{
 			RefreshGrid();
 		}
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _aboutBox.ShowDialog();
+        }
 	}
 }

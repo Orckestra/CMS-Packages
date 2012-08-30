@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tb_Search = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblMode = new System.Windows.Forms.Label();
             this.btnShowByDate = new System.Windows.Forms.Button();
@@ -83,8 +85,7 @@
             this.refreshTimer = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.tb_Search = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -114,6 +115,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(942, 60);
             this.panel1.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(393, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Filter";
+            // 
+            // tb_Search
+            // 
+            this.tb_Search.Location = new System.Drawing.Point(428, 33);
+            this.tb_Search.Name = "tb_Search";
+            this.tb_Search.Size = new System.Drawing.Size(217, 20);
+            this.tb_Search.TabIndex = 13;
+            this.tb_Search.TextChanged += new System.EventHandler(this.tb_Search_TextChanged);
             // 
             // btnClear
             // 
@@ -213,7 +231,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.connectToolStripMenuItem});
+            this.connectToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(942, 24);
@@ -234,26 +253,26 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(108, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(97, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -651,22 +670,12 @@
             // 
             this.saveFileDialog1.Filter = "(*.txt)|*.txt|All Files|*.*";
             // 
-            // tb_Search
+            // aboutToolStripMenuItem
             // 
-            this.tb_Search.Location = new System.Drawing.Point(428, 33);
-            this.tb_Search.Name = "tb_Search";
-            this.tb_Search.Size = new System.Drawing.Size(217, 20);
-            this.tb_Search.TabIndex = 13;
-            this.tb_Search.TextChanged += new System.EventHandler(this.tb_Search_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(393, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Filter";
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -757,6 +766,7 @@
         private System.Windows.Forms.CheckBox cbxStayConnected;
         private System.Windows.Forms.TextBox tb_Search;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 
     }
 }

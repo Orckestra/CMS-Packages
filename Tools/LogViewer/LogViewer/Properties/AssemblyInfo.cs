@@ -6,11 +6,17 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("LogViewer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription(@"Tool for viewing Composite C1 logs over http[s] protocol.
+
+Compatible with Composite C1 v1.2 and newer
+
+For more details visit http://docs.composite.net/Console/Logging
+Source code available at https://c1packages.codeplex.com/")]
 [assembly: AssemblyConfiguration("")]
+
 [assembly: AssemblyCompany("Composite A/S")]
-[assembly: AssemblyProduct("LogViewer")]
-[assembly: AssemblyCopyright("Copyright © Composite A/S 2011")]
+[assembly: AssemblyProduct("Composite C1 LogViewer")]
+[assembly: AssemblyCopyright("© 2012 Composite A/S ")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +38,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.2.0.0")]
+[assembly: AssemblyFileVersion("1.2.0.0")]
