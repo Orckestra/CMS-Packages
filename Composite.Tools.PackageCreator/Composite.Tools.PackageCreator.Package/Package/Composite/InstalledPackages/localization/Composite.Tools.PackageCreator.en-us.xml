@@ -1,19 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
-	<string key="Composite.Tools.PackageCreator.CSharpFunctions.Label" value="C# Functions" />
-	<string key="Composite.Tools.PackageCreator.InlineFunctions.Label" value="Inline Functions" />
 	<string key="Composite.Tools.PackageCreator.Directories.Label" value="Directories" />
 	<string key="Composite.Tools.PackageCreator.DynamicDataTypes.Label" value="Datatypes" />
 	<string key="Composite.Tools.PackageCreator.DynamicDataTypesData.Label" value="Datatype Items" />
 	<string key="Composite.Tools.PackageCreator.Files.Label" value="Files" />
 	<string key="Composite.Tools.PackageCreator.FilesInDirectories.Label" value="Files in Directories" />
 	<string key="Composite.Tools.PackageCreator.PageTemplates.Label" value="Layouts" />
-	<string key="Composite.Tools.PackageCreator.VisualFunctions.Label" value="Visual Functions" />
-	<string key="Composite.Tools.PackageCreator.XsltFunctions.Label" value="Xslt Functions" />
 	<string key="Composite.Tools.PackageCreator.Content.Label" value="Content" />
 	<string key="Composite.Tools.PackageCreator.FileXslTransformation.Label" value="File Xsl Transformation" />
 	<string key="Composite.Tools.PackageCreator.PageTypes.Label" value="Page Types" />
 	<string key="Composite.Tools.PackageCreator.Localizations.Label" value="Localizations" />
+	<string key="Composite.Tools.PackageCreator.Functions.Label" value="Functions" />
+
 
 	<string key="Composite.Tools.PackageCreator.NoPackages.Title" value="A package is required" />
 	<string key="Composite.Tools.PackageCreator.NoPackages.Message" value="Cannot add data because there are no definded packages. You can define one in the 'Package Creator' perspective." />

@@ -19,12 +19,12 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public override string ActionLabel
 		{
-			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.GetCategoryNameAtribute())); }
+			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName)); }
 		}
 
 		public override string ActionToolTip
 		{
-			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.ToolTip", this.GetCategoryNameAtribute())); }
+			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.ToolTip", this.CategoryName)); }
 		}
 
 		protected override XNamespace ns
@@ -45,7 +45,7 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public override void AddToConfiguration(XElement config)
 		{
-			var category = config.ForceElement(ns + this.GetCategoryNameAtribute());
+			var category = config.ForceElement(ns + this.CategoryName);
 			if (category.Elements(itemName).Where(x => x.AttributeValue("path") == this.Name).Count() == 0)
 			{
 				category.Add(
@@ -67,7 +67,7 @@ namespace Composite.Tools.PackageCreator.Types
 			{
 				var token = (PackageCreatorItemElementProviderEntityToken)entityToken;
 
-				if (token.Type == typeof(PCFile).GetCategoryNameAtribute())
+				if (token.Type == typeof(PCFile).GetCategoryName())
 				{
 					if (Path.GetExtension(token.Id).ToLower() == ".dll")
 					{

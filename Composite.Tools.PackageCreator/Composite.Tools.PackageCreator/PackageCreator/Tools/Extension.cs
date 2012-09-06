@@ -26,6 +26,8 @@ namespace Composite.Tools.PackageCreator
 			return categoryTypes.Where(d => d.Key.Name == name).Select(d => d.Value).First();
 		}
 
+		
+
 		public static PCCategoryAttribute GetCategoryAtribute(this Type type)
 		{
 			object[] attributes = type.GetCustomAttributes(typeof(PCCategoryAttribute), true);
@@ -37,15 +39,50 @@ namespace Composite.Tools.PackageCreator
 			
 		}
 
-		public static string GetCategoryNameAtribute(this Type type)
+		//public static PCCategoryAttribute GetCategoryAtribute(this IPackageCreatorItem item)
+		//{
+		//    item.GetType().GetCategoryAtribute();
+		//}
+
+		//public static IEnumerable<string> GetCategoryNamesAtribute(this Type type)
+		//{
+		//    var categoryAttribute = type.GetCategoryAtribute();
+		//    if(!string.IsNullOrWhiteSpace(categoryAttribute.CommonName))
+		//    {
+		//        categoryAttribute.CommonName;
+		//    }
+		//    yield return categoryAttribute.Name;
+		//}
+
+
+		//public static IEnumerable<string> GetCategoryNamesAtribute(this IPackageCreatorItem item)
+		//{
+		//    return item.GetType().GetCategoryNamesAtribute();
+		//}
+
+		public static string GetCategoryName(this Type type)
 		{
-			return type.GetCategoryAtribute().Name;
+			var categoryAttribute = type.GetCategoryAtribute();
+			return categoryAttribute.Name;
 		}
 
-
-		public static string GetCategoryNameAtribute(this IPackageCreatorItem item)
+		public static string GetCategoryName2(this IPackageCreatorItem item)
 		{
-			return item.GetType().GetCategoryNameAtribute();
+			return item.GetType().GetCategoryName();
+		}
+
+		public static string[] GetCategoryAllNames(this Type type)
+		{
+			var categoryAttribute = type.GetCategoryAtribute();
+			if (categoryAttribute.AliasNames == null)
+				return new string[] { categoryAttribute.Name };
+			else
+				return new string[] { categoryAttribute.Name }.Concat(categoryAttribute.AliasNames).ToArray();
+		}
+
+		public static string[] GetCategoryAllNames2(this IPackageCreatorItem item)
+		{
+			return item.GetType().GetCategoryAllNames();
 		}
 
 		public static string GetProperty(this object o, string propertyName)

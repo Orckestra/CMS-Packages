@@ -21,7 +21,7 @@ namespace Composite.Tools.PackageCreator
 	public static class PackageCreatorFacade
 	{
 		private static readonly string _packageCreatorPath = "App_Data/PackageCreator";
-		private static readonly string _providerName = "Composite.Tools.PackageCreator";
+		//private static readonly string _providerName = "Composite.Tools.PackageCreator";
 		private static readonly string _activeFilePath = "ActivePackage";
 		private static string _activePackageName;
 		private static XNamespace pc = PackageCreator.pc;
@@ -30,14 +30,9 @@ namespace Composite.Tools.PackageCreator
 
 		private static object _lockEditPackage = new object();
 
-		public static string ProviderName
-		{
-			get
-			{
-				return _providerName;
-			}
-		}
-
+		public static string ProviderName { get { return "Composite.Tools.PackageCreator"; } }
+		public static string RazorFunctionProviderName { get { return "RazorFunctionProvider"; } }
+		public static string UserControlFunctionProviderName { get { return "UserControlFunctionProvider"; } }
 
 		public static string ActivePackageName
 		{

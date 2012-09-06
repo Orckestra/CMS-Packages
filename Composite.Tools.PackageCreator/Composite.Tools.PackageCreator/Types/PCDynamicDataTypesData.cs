@@ -35,12 +35,12 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public override string ActionLabel
 		{
-			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", typeof(PCDynamicDataTypesData).GetCategoryNameAtribute())); }
+			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName)); }
 		}
 
 		public override string ActionToolTip
 		{
-			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.ToolTip", typeof(PCDynamicDataTypesData).GetCategoryNameAtribute())); }
+			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.ToolTip", this.CategoryName)); }
 		}
 
 		public PCDynamicDataTypesData(EntityToken entityToken)

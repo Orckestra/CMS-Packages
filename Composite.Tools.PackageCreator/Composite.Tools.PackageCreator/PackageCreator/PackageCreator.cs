@@ -181,71 +181,13 @@ namespace Composite.Tools.PackageCreator
 
 				#endregion
 
-				#region XsltFunctions
-				XElement XsltFunctions = config.Descendants(PackageCreator.pc + "XsltFunctions").FirstOrDefault();
-				if (XsltFunctions != null)
-				{
-					foreach (XElement item in XsltFunctions.Elements("Add").OrderBy(d => d.IndexAttributeValue()))
-					{
-						IXsltFunction xsltFunction;
-						try
-						{
-							xsltFunction = (from i in DataFacade.GetData<IXsltFunction>()
-											where i.Namespace + "." + i.Name == item.IndexAttributeValue()
-											select i).First();
-						}
-						catch (Exception)
-						{
-							throw new ArgumentException(string.Format(@"XSLT Function '{0}' doesn't exists", item.IndexAttributeValue()));
-						}
-
-						var newXslFilePath = "\\" + xsltFunction.Namespace.Replace(".", "\\") + "\\" + xsltFunction.Name + ".xsl";
-
-
-						AddFile("App_Data\\Xslt" + xsltFunction.XslFilePath, "App_Data\\Xslt" + newXslFilePath);
-						xsltFunction.XslFilePath = newXslFilePath;
-						//AddData(xsltFunction, "Composite.Data.Types.IXsltFunction" + ", Composite");
-						AddData(xsltFunction);
-
-						var parameters = from i in DataFacade.GetData<IParameter>()
-										 where i.OwnerId == xsltFunction.Id
-										 orderby i.Position
-										 select i;
-						//foreach (var parameter in parameters) AddData(parameter, "Composite.Data.Types.IParameter" + ", Composite");
-						foreach (var parameter in parameters) AddData(parameter);
-
-						var namedFunctionCalls = from i in DataFacade.GetData<INamedFunctionCall>()
-												 where i.XsltFunctionId == xsltFunction.Id
-												 orderby i.Name
-												 select i;
-
-						foreach (var namedFunctionCall in namedFunctionCalls) AddData(namedFunctionCall);
-
-					}
-				}
-
-
-				#endregion
-
 				#region CSharpFunctions
 				XElement CSharpFunctions = config.Descendants(pc + "CSharpFunctions").FirstOrDefault();
 				if (CSharpFunctions != null)
 				{
 					foreach (XElement item in CSharpFunctions.Elements("Add"))
 					{
-						IMethodBasedFunctionInfo csharpFunction;
-						try
-						{
-							csharpFunction = (from i in DataFacade.GetData<IMethodBasedFunctionInfo>()
-											  where i.Namespace + "." + i.UserMethodName == item.IndexAttributeValue()
-											  select i).First();
-						}
-						catch (Exception)
-						{
-							throw new ArgumentException(string.Format(@"C# Function '{0}' doesn't exists", item.IndexAttributeValue()));
-						}
-
-						AddData(csharpFunction);
+						
 
 					}
 				}
@@ -257,24 +199,10 @@ namespace Composite.Tools.PackageCreator
 				{
 					foreach (XElement item in VisualFunctions.Elements("Add"))
 					{
-						IVisualFunction visualFunction;
-						try
-						{
-							visualFunction = (from i in DataFacade.GetData<IVisualFunction>()
-											  where i.Namespace + "." + i.Name == item.IndexAttributeValue()
-											  select i).First();
-						}
-						catch (Exception)
-						{
-							throw new ArgumentException(string.Format(@"Visual Function '{0}' doesn't exists", item.IndexAttributeValue()));
-						}
-
-						//AddData(visualFunction, "Composite.Data.Types.IVisualFunction" + ", Composite");
-						AddData(visualFunction);
+						
 					}
 				}
 				#endregion
-
 
 				#region PageTemplates
 				XElement PageTemplates = config.Descendants(pc + "PageTemplates").FirstOrDefault();

@@ -77,20 +77,21 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public virtual void AddToConfiguration(XElement config)
 		{
-			var category = config.ForceElement(ns + this.GetCategoryNameAtribute());
-			if (category.Elements(itemName).Where(x => x.IndexAttributeValue() == this.Name).Count() == 0)
-			{
-				category.Add(
-					new XElement(itemName,
-						new XAttribute(category.IndexAttributeName(), this.Name)
-					)
-				);
-			}
+			RemoveFromConfiguration(config);
+			var category = config.ForceElement(ns + this.CategoryName);
+			category.Add(
+				new XElement(itemName,
+					new XAttribute(category.IndexAttributeName(), this.Name)
+				)
+			);
+
 		}
 		public void RemoveFromConfiguration(XElement config)
 		{
-			var category = config.ForceElement(ns + this.GetCategoryNameAtribute());
-			category.Elements(itemName).Where(x => x.IndexAttributeValue() == this.Name).Remove();
+			foreach (var name in this.CategoryAllNames)
+			{
+				config.Elements(ns + name).Elements(itemName).Where(x => x.IndexAttributeValue() == this.Name).Remove();
+			}
 		}
 
 		public static IEnumerable<IPackageCreatorItem> GetItems(Type type, XElement config)
@@ -100,21 +101,26 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public static IEnumerable<IPackageCreatorItem> GetItems(Type type, XElement config, XNamespace ns, XName itemName)
 		{
-			var category = type.GetCategoryNameAtribute();
-			
-			if (category != null)
+			foreach (var category in type.GetCategoryAllNames())
 			{
-				var categoryXml = config.ForceElement(ns+ category);
-				foreach (var add in categoryXml.Elements(itemName))
+				foreach (var name in config.Elements(ns + category).Elements(itemName).Select(d => d.IndexAttributeValue()).Where(d => d != null))
 				{
-					var name = add.IndexAttributeValue();
-					if(name != null)
-					{
-						object item = Activator.CreateInstance(type, new object[]{ name });
-						yield return (IPackageCreatorItem)item;
-					}
+					object item = Activator.CreateInstance(type, new object[] { name });
+					yield return (IPackageCreatorItem)item;
 				}
 			}
 		}
+
+
+		public string CategoryName
+		{
+			get { return this.GetCategoryName2(); }
+		}
+
+		public string[] CategoryAllNames
+		{
+			get { return this.GetCategoryAllNames2(); }
+		}
+
 	}
 }

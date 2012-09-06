@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-	[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
+	[AttributeUsage(AttributeTargets.Class| AttributeTargets.Struct, AllowMultiple = false, Inherited = true)]
 	public sealed class PCCategoryAttribute : Attribute
 	{
 		internal PCCategoryAttribute(string name){
@@ -25,6 +25,18 @@ namespace Composite.Tools.PackageCreator.Types
 		}
 
 		private string Label
+		{
+			get;
+			set;
+		}
+
+		public string CommonName
+		{
+			get;
+			set;
+		}
+
+		public string[] AliasNames
 		{
 			get;
 			set;

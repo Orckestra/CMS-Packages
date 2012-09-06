@@ -45,7 +45,7 @@ namespace Composite.Tools.PackageCreator
 				
 				foreach (var item in PackageCreatorActionFacade.GetPackageCreatorItems(entityToken))
 				{
-					if (item.GetCategoryNameAtribute() == token.CategoryName)
+					if (item.CategoryName == token.CategoryName)
 					{
 						//if diffent item for one category and entitytoken
 						var itemActionToken = item as IPackageCreatorItemActionToken;

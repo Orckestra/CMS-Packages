@@ -25,12 +25,12 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public override string ActionLabel
 		{
-			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.{1}.Add.Label", typeof(PCContent).GetCategoryNameAtribute(), _name)); }
+			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.{1}.Add.Label", this.CategoryName, _name)); }
 		}
 
 		public override string ActionToolTip
 		{
-			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.{1}.Add.ToolTip", typeof(PCContent).GetCategoryNameAtribute(), _name)); }
+			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.{1}.Add.ToolTip", this.CategoryName, _name)); }
 		}
 
 		public override ResourceHandle ItemIcon

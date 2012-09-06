@@ -26,9 +26,9 @@ namespace Composite.Tools.PackageCreator
 			{
 				ActionToken actionToken;
 				if (item is IPackageCreatorItemActionToken)
-					actionToken = new PackageCreatorActionToken(item.GetCategoryNameAtribute(), (item as IPackageCreatorItemActionToken).ActionTokenName);
+					actionToken = new PackageCreatorActionToken(item.CategoryName, (item as IPackageCreatorItemActionToken).ActionTokenName);
 				else
-					actionToken = new PackageCreatorActionToken(item.GetCategoryNameAtribute());
+					actionToken = new PackageCreatorActionToken(item.CategoryName);
 				
 
 				yield return new ElementAction(new ActionHandle(actionToken))

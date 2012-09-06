@@ -35,6 +35,10 @@ namespace Composite.Tools.PackageCreator.Types
 			get;
 		}
 
+		string CategoryName { get; }
+
+		string[] CategoryAllNames { get; }
+
 		string GetLabel();
 
 		void AddToConfiguration(XElement config);
