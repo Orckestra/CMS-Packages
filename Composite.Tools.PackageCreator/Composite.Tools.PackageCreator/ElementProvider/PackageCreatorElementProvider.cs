@@ -290,7 +290,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 					{
 						VisualData = new ElementVisualizedData()
 						{
-							Label = item.Name,
+							Label = item.GetLabel(),
 							ToolTip = item.Name,
 							HasChildren = false,
 							Icon = item.ItemIcon,
