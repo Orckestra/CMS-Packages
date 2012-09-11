@@ -20,6 +20,16 @@ namespace Composite.Tools.PackageCreator.Types
 		{
 		}
 
+		public override string ActionLabel
+		{
+			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName)); }
+		}
+
+		public override string ActionToolTip
+		{
+			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.ToolTip", this.CategoryName)); }
+		}
+
 		public override string GetLabel()
 		{
 			return PageManager.GetPageById(new Guid(Name), true).Title;
@@ -45,6 +55,7 @@ namespace Composite.Tools.PackageCreator.Types
 			var pageStructure = DataFacade.BuildNew<IPageStructure>();
 			pageStructure.Id = pageId;
 			pageStructure.ParentId = Guid.Empty;
+			pageStructure.LocalOrdering = PageManager.GetLocalOrdering(pageId);
 			pc.AddData(pageStructure);
 		}
 
