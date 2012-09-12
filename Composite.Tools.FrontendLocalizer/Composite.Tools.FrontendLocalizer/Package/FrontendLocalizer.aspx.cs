@@ -47,7 +47,7 @@ namespace Frontend
 				using (new Backuper(NewBackupFilePath))
 				{
 
-					foreach (var layout in DataFacade.GetData<IPageTemplate>())
+					foreach (var layout in DataFacade.GetData<IXmlPageTemplate>())
 					{
 						string templatePath = layout.PageTemplateFilePath;
 						resourceFile.LocalizeFile<IPageTemplateFile>(templatePath);
