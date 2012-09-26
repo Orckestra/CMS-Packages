@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.DemoSites.OmniCorp", "Composite.DemoSites.OmniCorp\Composite.DemoSites.OmniCorp.csproj", "{F09A34D1-01AB-484F-8B90-E54726C7EB9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixUserSettingsPackageFragmentInstaller", "FixUserSettingsPackageFragmentInstaller\FixUserSettingsPackageFragmentInstaller.csproj", "{913924A3-CFAC-4D67-B109-04BFF965D99E}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
+		SccNumberOfProjects = 3
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = Composite.DemoSites.OmniCorp\\Composite.DemoSites.OmniCorp.csproj
 		SccProjectName1 = Composite.DemoSites.OmniCorp
 		SccLocalPath1 = Composite.DemoSites.OmniCorp
+		SccProjectUniqueName2 = FixUserSettingsPackageFragmentInstaller\\FixUserSettingsPackageFragmentInstaller.csproj
+		SccProjectName2 = FixUserSettingsPackageFragmentInstaller
+		SccLocalPath2 = FixUserSettingsPackageFragmentInstaller
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +27,10 @@ Global
 		{F09A34D1-01AB-484F-8B90-E54726C7EB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F09A34D1-01AB-484F-8B90-E54726C7EB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F09A34D1-01AB-484F-8B90-E54726C7EB9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{913924A3-CFAC-4D67-B109-04BFF965D99E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{913924A3-CFAC-4D67-B109-04BFF965D99E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{913924A3-CFAC-4D67-B109-04BFF965D99E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{913924A3-CFAC-4D67-B109-04BFF965D99E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
