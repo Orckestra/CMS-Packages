@@ -66,6 +66,7 @@
     <Compile Include="Utils.cs" />
     <Compile Include="Validators\RegExp.cs" />
     <Compile Include="Validators\RegExpLib.cs" />
+    <Compile Include="Properties\VersionInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -75,10 +76,18 @@
     <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(SolutionDir)\$(SolutionName).Package\Package\Bin\$(TargetFileName)"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
+       Other similar extension points exist, see Microsoft.Common.targets. -->
   <Target Name="BeforeBuild">
+		<PropertyGroup>
+			<InstallXml>$([System.IO.File]::ReadAllText("$(SolutionDir)/$(SolutionName).Package/Package/install.xml"))</InstallXml>
+			<PackageVersion>$([System.Text.RegularExpressions.Regex]::Match($(InstallXml),"PackageInformation[^>]+version=.([0-9\.]+).").Groups[1].Value)</PackageVersion>
+			<AssemblyFileVersionAttribute>[assembly:System.Reflection.AssemblyFileVersion("$(PackageVersion)")]</AssemblyFileVersionAttribute>
+		</PropertyGroup>
+		<Exec Command="&quot;$(DevEnvDir)\TF.exe&quot; checkout /lock:none  &quot;$(ProjectDir)Properties\VersionInfo.cs&quot;" IgnoreExitCode="true"/>
+		<WriteLinesToFile File="Properties\VersionInfo.cs" Lines="$(AssemblyFileVersionAttribute)" Overwrite="true">
+		</WriteLinesToFile>
   </Target>
-  <Target Name="AfterBuild">
+ <!-- <Target Name="AfterBuild">
   </Target>
   -->
 </Project>

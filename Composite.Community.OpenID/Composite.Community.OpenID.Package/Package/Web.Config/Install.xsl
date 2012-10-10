@@ -8,7 +8,7 @@
 
 	<xsl:variable name="structure">
 		<configSections>
-			<section name="dotNetOpenAuth" type="DotNetOpenAuth.Configuration.DotNetOpenAuthSection" requirePermission="false" allowLocation="true"/>
+			<add:section name="dotNetOpenAuth" type="DotNetOpenAuth.Configuration.DotNetOpenAuthSection" requirePermission="false" allowLocation="true"/>
 		</configSections>
 		<system.web>
 			<authentication mode="Forms">
