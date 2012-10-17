@@ -8,14 +8,7 @@
 	<xsl:variable name="height" select="/in:inputs/in:param[@name='Height']" />
 	<xsl:variable name="navigation" select="/in:inputs/in:param[@name='Navigation']" />
 	<xsl:variable name="repeat" select="/in:inputs/in:param[@name='Repeat']" />
-	<xsl:variable name="imageCropString">
-		<xsl:if test="string-length($height) > 0 and $height != ' '">
-			?action=crop&amp;h=<xsl:value-of select="$height" />
-		</xsl:if>
-		<xsl:if test="string-length($width) > 0 and $width != ' '">
-			&amp;w=<xsl:value-of select="$width" />
-		</xsl:if>
-	</xsl:variable>
+
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -75,7 +68,7 @@
 						<xsl:when test="$folder !=''">
 							<div id="slider" class="nivoSlider">
 								<xsl:for-each select="$images">
-									<img src="~/media({@Id}){$imageCropString}" data-thumb="~/media({@Id})?h=50&amp;w=70" alt="{@Title}" title="{@Title}" />
+									<img src="~/media({@Id})" data-thumb="~/media({@Id})?h=50&amp;w=70" alt="{@Title}" title="{@Title}" />
 								</xsl:for-each>
 							</div>
 						</xsl:when>
