@@ -54,11 +54,13 @@
 					</xsl:if>
 				</xsl:variable>
 				<style type="text/css">
-					.nivoSlider, #slider  {
+					#slider  {
 					<xsl:value-of select="$widthStyleString" /> /* Change this to your images width */
 					<xsl:value-of select="$heightStyleString" /> /* Change this to your images height */
 					}
+					.theme-dark #slider {overflow: hidden;}
 					.nivo-controlNav { <xsl:value-of select="$widthStyleString" /> }
+					.slider-wrapper {<xsl:value-of select="$widthStyleString" /> }
 				</style>
 
 			</head>
