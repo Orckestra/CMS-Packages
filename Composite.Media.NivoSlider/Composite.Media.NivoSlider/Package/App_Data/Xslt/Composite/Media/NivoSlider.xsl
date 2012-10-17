@@ -8,12 +8,20 @@
 	<xsl:variable name="height" select="/in:inputs/in:param[@name='Height']" />
 	<xsl:variable name="navigation" select="/in:inputs/in:param[@name='Navigation']" />
 	<xsl:variable name="repeat" select="/in:inputs/in:param[@name='Repeat']" />
+	<xsl:variable name="imageCropString">
+		<xsl:if test="string-length($height) > 0 and $height != ' '">
+			?action=crop&amp;h=<xsl:value-of select="$height" />
+		</xsl:if>
+		<xsl:if test="string-length($width) > 0 and $width != ' '">
+			&amp;w=<xsl:value-of select="$width" />
+		</xsl:if>
+	</xsl:variable>
 	<xsl:template match="/">
 		<html>
 			<head>
 				<link id="slider-theme-{$theme}" rel="stylesheet" href="~/Frontend/Composite/Media/NivoSlider/themes/{$theme}/{$theme}.css" type="text/css" media="screen" />
 				<link id="slider-css" rel="stylesheet" href="~/Frontend/Composite/Media/NivoSlider/nivo-slider.css" type="text/css" media="screen" />
-				<script id="jquery-1-4-2" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+				<script id="jquery-1-7-1" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 				<script id="jquery-slider" src="~/Frontend/Composite/Media/NivoSlider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
 				<script id="slider-settings" type="text/javascript">
 					$(window).load(function() {
@@ -28,7 +36,7 @@
 					directionNav: <xsl:value-of select="/in:inputs/in:param[@name='DirectionNav']" />, /* Next and  Prev navigation*/
 					directionNavHide: <xsl:value-of select="/in:inputs/in:param[@name='DirectionNavHide']" />, /* Only show on hover*/
 					controlNav: <xsl:value-of select="$navigation" />, /* 1,2,3... navigation*/
-					controlNavThumbs: false, /* Use thumbnails for Control Nav*/
+					controlNavThumbs: <xsl:value-of select="/in:inputs/in:param[@name='ControlNavThumbs']" />, /* Use thumbnails for Control Nav*/
 					controlNavThumbsFromRel: false, /* Use image rel for thumbs*/
 					controlNavThumbsSearch: '.jpg', /* Replace this with...*/
 					controlNavThumbsReplace: '_thumb.jpg', /*...this in thumb Image src*/
@@ -42,24 +50,30 @@
 					afterChange: function(){}, /* Triggers after a slide transition*/
 					slideshowEnd: function(){}, /* Triggers after all slides have been shown*/
 					lastSlide: function(){
-						<xsl:if test="$repeat='false'"> primary.vars.stop = true;</xsl:if>
+					<xsl:if test="$repeat='false'"> primary.vars.stop = true;</xsl:if>
 					}, /* Triggers when last slide is shown*/
 					afterLoad: function(){} /* Triggers when slider has loaded*/
 					});
 					});
 				</script>
+				<xsl:variable name="widthStyleString">
+					<xsl:if test="string-length($width) > 0 and $width != ' '">
+						width:<xsl:value-of select="$width" />px !important;
+					</xsl:if>
+				</xsl:variable>
+				<xsl:variable name="heightStyleString">
+					<xsl:if test="string-length($height) > 0 and $height != ' '">
+						height:<xsl:value-of select="$height" />px !important;
+					</xsl:if>
+				</xsl:variable>
 				<style type="text/css">
-					.theme-default .nivoSlider {
-					width:<xsl:value-of select="$width" />px !important; /* Change this to your images width */
-					height:<xsl:value-of select="$height" />px !important; /* Change this to your images height */
+					.nivoSlider, #slider  {
+					<xsl:value-of select="$widthStyleString" /> /* Change this to your images width */
+					<xsl:value-of select="$heightStyleString" /> /* Change this to your images height */
 					}
-					.theme-default #slider {
-					margin:10px auto 15px auto;
-					width: <xsl:value-of select="$width" />px !important; /* Make sure your images are the same size */
-					height: <xsl:value-of select="$height" />px !important;/* Make sure your images are the same size */
-					}
-					.clear {clear: both;}
+					.nivo-controlNav { <xsl:value-of select="$widthStyleString" /> }
 				</style>
+
 			</head>
 			<body>
 				<div class="slider-wrapper theme-{$theme}">
@@ -67,7 +81,7 @@
 						<xsl:when test="$folder !=''">
 							<div id="slider" class="nivoSlider">
 								<xsl:for-each select="$images">
-									<img src="/Renderers/ShowMedia.ashx?id={@Id}&amp;w={$width}&amp;h={$height}" alt="" title="{@Title}" />
+									<img src="~/media({@Id}){$imageCropString}" data-thumb="~/media({@Id})?h=50&amp;w=70" alt="{@Title}" title="{@Title}" />
 								</xsl:for-each>
 							</div>
 						</xsl:when>
@@ -87,7 +101,6 @@
 							</div>
 						</xsl:otherwise>
 					</xsl:choose>
-					<br class="clear"/>
 				</div>
 			</body>
 		</html>
