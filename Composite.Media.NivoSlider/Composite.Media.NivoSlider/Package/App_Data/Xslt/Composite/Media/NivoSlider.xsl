@@ -34,16 +34,10 @@
 					pauseTime: <xsl:value-of select="/in:inputs/in:param[@name='PauseTime']" />, /* How long each slide will show*/
 					startSlide: 0, /* Set starting Slide (0 index)*/
 					directionNav: <xsl:value-of select="/in:inputs/in:param[@name='DirectionNav']" />, /* Next and  Prev navigation*/
-					directionNavHide: <xsl:value-of select="/in:inputs/in:param[@name='DirectionNavHide']" />, /* Only show on hover*/
 					controlNav: <xsl:value-of select="$navigation" />, /* 1,2,3... navigation*/
 					controlNavThumbs: <xsl:value-of select="/in:inputs/in:param[@name='ControlNavThumbs']" />, /* Use thumbnails for Control Nav*/
-					controlNavThumbsFromRel: false, /* Use image rel for thumbs*/
-					controlNavThumbsSearch: '.jpg', /* Replace this with...*/
-					controlNavThumbsReplace: '_thumb.jpg', /*...this in thumb Image src*/
-					keyboardNav: true, /* Use left and right arrows*/
 					pauseOnHover: true, /* Stop animation while hovering*/
 					manualAdvance: false, /* Force manual transitions*/
-					captionOpacity: 0.8, /* Universal caption opacity*/
 					prevText: 'Prev', /* Prev directionNav text*/
 					nextText: 'Next', /* Next directionNav text*/
 					beforeChange: function(){}, /* Triggers before a slide transition*/
