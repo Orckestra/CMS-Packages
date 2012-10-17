@@ -59,6 +59,7 @@
 					<xsl:value-of select="$heightStyleString" /> /* Change this to your images height */
 					}
 					.theme-dark #slider {overflow: hidden;}
+					.theme-light #slider img {<xsl:value-of select="$heightStyleString" />}
 					.nivo-controlNav { <xsl:value-of select="$widthStyleString" /> }
 					.slider-wrapper {<xsl:value-of select="$widthStyleString" /> }
 				</style>
