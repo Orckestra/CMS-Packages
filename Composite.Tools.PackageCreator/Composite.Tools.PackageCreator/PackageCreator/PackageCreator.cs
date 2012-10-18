@@ -28,7 +28,7 @@ namespace Composite.Tools.PackageCreator
 		
 		public static string InstallFilename { get { return "install.xml"; } }
 
-		public static readonly string configDirectoryName = "Config";
+		//public static readonly string configDirectoryName = "Config";
 		public static readonly string configInstallFileName = "Install.xsl";
 		public static readonly string configUninstallFileName = "Uninstall.xsl";
 
@@ -41,8 +41,8 @@ namespace Composite.Tools.PackageCreator
 		private List<XElement> Files = new List<XElement>();
 		private List<XElement> Directories = new List<XElement>();
 		private List<XElement> XslFiles = new List<XElement>();
-		private HashSet<string> ConfigurationXPaths = new HashSet<string>();
-		private List<XElement> ConfigurationInstallXsltTemplates =new List<XElement>();
+		private Dictionary<string, HashSet<string>> ConfigurationXPaths = new Dictionary<string,HashSet<string>>();
+		private Dictionary<string, List<XElement>> ConfigurationTemplates = new Dictionary<string,List<XElement>>();
 
 		private Dictionary<string, XElement> Datas = new Dictionary<string, XElement>();
 		private DataFileDictionary DataFiles = new DataFileDictionary();
@@ -348,36 +348,6 @@ namespace Composite.Tools.PackageCreator
 				}
 				#endregion
 
-				#region Configuration
-
-				XElement ConfigurationTransformationPackageFragmentInstaller = null;
-
-				blockElement = rootConfigElement.Element(pc + "Configuration");
-				if (blockElement != null)
-				{
-					if (blockElement.Elements("Add").Count() > 0)
-					{
-
-
-						XDocument installXsl = XDocument.Parse(blankXsl);
-						XDocument uninstallXsl = XDocument.Parse(blankXsl);
-
-						var nodes = new Dictionary<string, Dictionary<string, XElement>>();
-
-
-						foreach (XElement item in blockElement.Elements("Add"))
-						{
-							string xpath = item.IndexAttributeValue();
-							AddConfigurationXPath(xpath);
-						}
-					}
-				}
-
-
-
-				#endregion
-
-
 #warning TODO: Datatypes data format depends from datatype exists in package or not, thats why list of dtatype must created before adding data
 
 				#region DynamicDataTypes
@@ -452,17 +422,28 @@ namespace Composite.Tools.PackageCreator
 				}
 					#endregion
 
-				#region ConfigurationTransformationPackageFragmentInstaller
-				if (ConfigurationXPaths.Count > 0 || ConfigurationInstallXsltTemplates.Count > 0)
-				{
-					{
-						XDocument installXsl = XDocument.Parse(blankXsl);
-						XDocument uninstallXsl = XDocument.Parse(blankXsl);
+				#region TransformationPackageFragmentInstallers
 
+				XElement ConfigurationTransformationPackageFragmentInstallers = null;
+
+				var sources = new HashSet<string>();
+				sources.UnionWith(ConfigurationXPaths.Keys);
+				sources.UnionWith(ConfigurationTemplates.Keys);
+
+				foreach(var source in sources)
+				{
+
+					XDocument installXsl = XDocument.Parse(blankXsl);
+					XDocument uninstallXsl = XDocument.Parse(blankXsl);
+
+					
+					HashSet<string> xpaths;
+					if(ConfigurationXPaths.TryGetValue(source, out xpaths))
+					{
 						var nodes = new Dictionary<string, Dictionary<string, XElement>>();
-						foreach (string xpath in ConfigurationXPaths)
+						foreach (string xpath in xpaths)
 						{
-							var configuration = PackageCreatorFacade.GetConfigurationDocument();
+							var configuration = PackageCreatorFacade.GetConfigurationDocument(source);
 							var element = configuration.XPathSelectElement(xpath);
 							Regex re = new Regex(@"^(.*?)/([^/]*(\[[^\]]*\])?)$");
 							Match match = re.Match(xpath);
@@ -494,76 +475,57 @@ namespace Composite.Tools.PackageCreator
 												new XAttribute("test", string.Format("count({0})=0", e.Key)),
 												e.Value
 											)
-
 										)
-
 									)
 								);
 						}
-						installXsl.Root.Add(ConfigurationInstallXsltTemplates);
+					}
 
-						var configDirectory = Path.Combine(packageDirectoryPath, configDirectoryName);
-						if (!Directory.Exists(configDirectory))
-							Directory.CreateDirectory(configDirectory);
-						installXsl.SaveTabbed(Path.Combine(configDirectory, configInstallFileName));
-						uninstallXsl.SaveTabbed(Path.Combine(configDirectory, configUninstallFileName));
+					List<XElement> templates;
+					if (ConfigurationTemplates.TryGetValue(source, out templates))
+					{
+						installXsl.Root.Add(templates);
+					}
 
+					var configDirectory = Path.Combine(packageDirectoryPath, source);
+					if (!Directory.Exists(configDirectory))
+						Directory.CreateDirectory(configDirectory);
+					installXsl.SaveTabbed(Path.Combine(configDirectory, configInstallFileName));
+					uninstallXsl.SaveTabbed(Path.Combine(configDirectory, configUninstallFileName));
 
-
-						ConfigurationTransformationPackageFragmentInstaller =
+					if(PCCompositeConfig.Source == source)
+					{
+						ConfigurationTransformationPackageFragmentInstallers =
 							new XElement(mi + "Add",
 								new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite"),
 								new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite"),
 								new XElement("Install",
-									new XAttribute("xsltFilePath", string.Format(@"~\{0}\{1}", configDirectoryName, configInstallFileName))
+									new XAttribute("xsltFilePath", string.Format(@"~\{0}\{1}", source, configInstallFileName))
 								),
 								new XElement("Uninstall",
-									new XAttribute("xsltFilePath", string.Format(@"~\{0}\{1}", configDirectoryName, configUninstallFileName))
+									new XAttribute("xsltFilePath", string.Format(@"~\{0}\{1}", source, configUninstallFileName))
 								)
 							);
-
-
+					
+					}else
+					{
+						
+						XslFiles.Add(
+							new XElement("XsltFile",
+								new XAttribute("pathXml", PackageCreatorFacade.GetConfigurationPath(source)),
+								new XAttribute("installXsl", string.Format(@"~\{0}\{1}", source, configInstallFileName)),
+								new XAttribute("uninstallXsl", string.Format(@"~\{0}\{1}", source, configUninstallFileName))
+							)
+						);
 					}
 				}
 				#endregion
 
-				#region FilePackageFragmentInstaller
-				XElement FilePackageFragmentInstaller = new XElement(mi + "Add",
-				new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite"),
-				new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite"),
-				new XElement("Files"
-					, Files.OrderBy(d => ReferencedAssemblies.AssemblyPosition(d))
-					),
-				new XElement("Directories"
-					, Directories
-					)
-				);
+				
 
-				#endregion
+				
 
-				#region FileXslTransformationPackageFragmentInstaller
-				XElement FileXslTransformationPackageFragmentInstaller = new XElement(mi + "Add",
-				new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite"),
-				new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite"),
-				new XElement("XslFiles"
-					, XslFiles
-					)
-				);
-				#endregion
-
-				#region DataPackageFragmentInstaller
-
-				var DataPackageFragmentInstaller = new XElement(mi + "Add",
-						new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite"),
-						new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite"),
-						new XElement("Types",
-							from t in Datas
-							orderby t.Key
-							orderby DataPosition(t.Value.AttributeValue("type"))
-							select t.Value
-							)
-						);
-				#endregion
+				
 
 				XElement XPackageFragments = config.Descendants(pc + "PackageFragmentInstallers").FirstOrDefault();
 				if (XPackageFragments != null)
@@ -572,10 +534,59 @@ namespace Composite.Tools.PackageCreator
 				}
 
 
-				XPackageFragmentInstallers.Add(ConfigurationTransformationPackageFragmentInstaller);
-				XPackageFragmentInstallers.Add(FilePackageFragmentInstaller);
+				XPackageFragmentInstallers.Add(ConfigurationTransformationPackageFragmentInstallers);
+
+				#region FilePackageFragmentInstaller
+				if (Files.Count + Directories.Count > 0)
+				{
+					XElement FilePackageFragmentInstaller = new XElement(mi + "Add",
+						new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite"),
+						new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite"),
+						Files.Count == 0 ? null : new XElement("Files"
+													, Files.OrderBy(d => ReferencedAssemblies.AssemblyPosition(d))
+													),
+						Directories.Count == 0 ? null : new XElement("Directories"
+													, Directories
+													)
+					);
+					XPackageFragmentInstallers.Add(FilePackageFragmentInstaller);
+				}
+				#endregion
+				
+
+				#region FileXslTransformationPackageFragmentInstaller
+				if (XslFiles.Count > 0)
+				{
+					XPackageFragmentInstallers.Add(new XElement(mi + "Add",
+						new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite"),
+						new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite"),
+						new XElement("XslFiles"
+							, XslFiles
+							)
+						)
+					);
+				}
+				#endregion
+
 				XPackageFragmentInstallers.Add(DynamicDataTypePackageFragmentInstaller);
-				XPackageFragmentInstallers.Add(DataPackageFragmentInstaller);
+
+				#region DataPackageFragmentInstaller
+				if (Datas.Count > 0)
+				{
+					var DataPackageFragmentInstaller = new XElement(mi + "Add",
+							new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite"),
+							new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite"),
+							new XElement("Types",
+								from t in Datas
+								orderby t.Key
+								orderby DataPosition(t.Value.AttributeValue("type"))
+								select t.Value
+								)
+							);
+					XPackageFragmentInstallers.Add(DataPackageFragmentInstaller);
+				}
+				#endregion
+				
 				DataFiles.Save();
 
 				XPackageFragmentInstallers.ReplaceNodes(XPackageFragmentInstallers.Elements().OrderBy(FragmentPosition).Select(DeleteOrderingMark));
@@ -788,14 +799,14 @@ namespace Composite.Tools.PackageCreator
 		}
 
 		#region XsltConfigiration
-		public void AddConfigurationXPath(string xpath)
+		public void AddConfigurationXPath(string source, string xpath)
 		{
-			ConfigurationXPaths.Add(xpath);
+			ConfigurationXPaths.Add(source, xpath);
 		}
 
-		public void AddConfigurationInstallTemplate(XElement template)
+		public void AddConfigurationInstallTemplate(string source, XElement template)
 		{
-			ConfigurationInstallXsltTemplates.Add(template);
+			ConfigurationTemplates.Add(source, template);
 		}
 		#endregion
 
@@ -1071,7 +1082,6 @@ namespace Composite.Tools.PackageCreator
 
 
 		#endregion
-
 
 
 

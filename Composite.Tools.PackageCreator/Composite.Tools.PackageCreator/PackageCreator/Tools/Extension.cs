@@ -119,6 +119,13 @@ namespace Composite.Tools.PackageCreator
 			dictionary[key].Add(value);
 		}
 
+		public static void Add<TKey, TValue>(this Dictionary<TKey, List<TValue>> dictionary, TKey key, TValue value)
+		{
+			if (!dictionary.ContainsKey(key))
+				dictionary[key] = new List<TValue>();
+			dictionary[key].Add(value);
+		}
+
 		public static bool IsBinFolder(this Assembly assembly)
 		{
 			return !assembly.IsDynamic && Path.GetFileName(Path.GetDirectoryName(assembly.CodeBase)).ToLower().Equals("bin");

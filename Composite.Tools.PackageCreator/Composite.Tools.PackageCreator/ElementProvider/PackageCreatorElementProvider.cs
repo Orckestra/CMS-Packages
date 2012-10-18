@@ -112,18 +112,14 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 
 			yield return element;
 
-			var configuration = PackageCreatorFacade.GetConfigurationDocument();
-			var root = configuration.Root;
-
-			element = GetXmlNodeElement("/"+root.Name.ToString(), root.Name.ToString());
-			yield return element;
-
+			yield return GetXmlNodeElement(PCCompositeConfig.Source, string.Empty, PCCompositeConfig.Source);
+			yield return GetXmlNodeElement(PCWebConfig.Source, string.Empty, PCWebConfig.Source);
 		}
 
-		private Element GetXmlNodeElement(string xpath, string name)
+		private Element GetXmlNodeElement(string source, string xpath, string name)
 		{
 			
-			return new Element(_context.CreateElementHandle(new XmlNodeElementProviderEntityToken(xpath)))
+			return new Element(_context.CreateElementHandle(new XmlNodeElementProviderEntityToken(xpath,source)))
 			{
 				VisualData = new ElementVisualizedData()
 				{
@@ -136,10 +132,10 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 			};
 		}
 
-		private Element GetXmlAttributeElement(string xpath, string name)
+		private Element GetXmlAttributeElement(string source, string xpath, string name)
 		{
 
-			return new Element(_context.CreateElementHandle(new XmlNodeAttributeProviderEntityToken(xpath)))
+			var element = new Element(_context.CreateElementHandle(new XmlNodeAttributeProviderEntityToken(xpath,source)))
 			{
 				VisualData = new ElementVisualizedData()
 				{
@@ -150,6 +146,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 					OpenedIcon = new ResourceHandle("Composite.Icons", "data")
 				}
 			};
+			return element;
 		}
 
 		
@@ -318,16 +315,17 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 			}
 			else if (entityToken is XmlNodeElementProviderEntityToken)
 			{
-				var configuration = PackageCreatorFacade.GetConfigurationDocument();
+				var configuration = PackageCreatorFacade.GetConfigurationDocument(entityToken.Source);
 				var xpath = (entityToken as XmlNodeElementProviderEntityToken).XPath;
-				var element = configuration.XPathSelectElement(xpath);
+				XContainer container = xpath == string.Empty ? configuration as XContainer : configuration.XPathSelectElement(xpath) as XContainer;
+				var element = container as XElement;
 				var counter = new Dictionary<string, int>();
 
 
-				if (element != null)
+				if (container != null)
 				{
 				    var xmlElements = new List<Element>();
-					foreach (XElement item in element.Elements())
+					foreach (XElement item in container.Elements())
 					{
 						string position = string.Empty;
 						string name = item.Name.ToString();
@@ -346,7 +344,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 
 						string description = item.IndexAttributeValue();
 
-                        xmlElements.Add(GetXmlNodeElement(string.Format("{0}/{1}{2}", xpath, name, position), name + (string.IsNullOrEmpty(description) ? string.Empty : string.Format("({0})", description))));
+						xmlElements.Add(GetXmlNodeElement(entityToken.Source, string.Format("{0}/{1}{2}", xpath, name, position), name + (string.IsNullOrEmpty(description) ? string.Empty : string.Format("({0})", description))));
 					}
 
                     xmlElements.Sort((a, b) => string.Compare(a.VisualData.Label, 
@@ -354,12 +352,15 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                                                               StringComparison.InvariantCulture));
 
                     foreach (var e in xmlElements) yield return e;
+				}
 
-					var elementPath = Regex.Replace(xpath, @"\[[^\]]*\]$","" );
+				if (element != null)
+				{
+					var elementPath = Regex.Replace(xpath, @"\[[^\]]*\]$", "");
 					foreach (var attribute in element.Attributes())
 					{
 						string name = attribute.Name.ToString();
-						yield return GetXmlAttributeElement(string.Format("{0}[@{1}='{2}']", elementPath, name, attribute.Value), string.Format("{0}={1}", name, attribute.Value));
+						yield return GetXmlAttributeElement(entityToken.Source, string.Format("{0}[@{1}='{2}']", elementPath, name, attribute.Value), string.Format("{0}={1}", name, attribute.Value));
 					}
 				}
 			}

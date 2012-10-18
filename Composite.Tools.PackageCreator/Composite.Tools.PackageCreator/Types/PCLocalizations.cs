@@ -46,7 +46,7 @@ namespace Composite.Tools.PackageCreator.Types
 		public void Pack(PackageCreator creator)
 		{
 
-			var configuration = PackageCreatorFacade.GetConfigurationDocument();	
+			var configuration = PackageCreatorFacade.GetConfigurationDocument(PCCompositeConfig.Source);	
 			
 			foreach (var add in configuration.XPathSelectElements("/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add"))
 			{
@@ -59,7 +59,7 @@ namespace Composite.Tools.PackageCreator.Types
 					{
 						var xmlFile = addCulture.AttributeValue("xmlFile");
 						creator.AddFile(xmlFile);
-						creator.AddConfigurationXPath(string.Format(
+						creator.AddConfigurationXPath(PCCompositeConfig.Source, string.Format(
 							@"/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='{0}']/Cultures/add[@cultureName='{1}']", name, this.Name));
 					}
 					
@@ -67,7 +67,7 @@ namespace Composite.Tools.PackageCreator.Types
 			
 			}
 
-			creator.AddConfigurationInstallTemplate(new XElement(xsl + "template",
+			creator.AddConfigurationInstallTemplate(PCCompositeConfig.Source, new XElement(xsl + "template",
 									new XAttribute("match", "configuration/Composite.Core.Configuration.Plugins.GlobalSettingsProviderConfiguration/GlobalSettingsProviderPlugins/add"),
 									new XElement(xsl + "copy",
 										new XElement(xsl + "apply-templates",

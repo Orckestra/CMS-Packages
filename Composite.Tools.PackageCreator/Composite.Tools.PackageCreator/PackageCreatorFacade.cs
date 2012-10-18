@@ -427,11 +427,29 @@ namespace Composite.Tools.PackageCreator
 			return StringResourceSystemFacade.GetString(ProviderName, string.Format("{0}.{1}", ProviderName, part));
 		}
 
-		internal static XDocument GetConfigurationDocument()
+		internal static XDocument GetConfigurationDocument(string source)
 		{
-			var configurationPath = PathUtil.Resolve("~/App_Data/Composite/Composite.config");
-			var configuration = XDocument.Load(configurationPath);
-			return configuration;
+			string configurationPath = GetConfigurationPath(source);
+			if(configurationPath != null)
+			{
+				configurationPath = PathUtil.Resolve(configurationPath);
+				return XDocument.Load(configurationPath);
+			}
+			return null;
+		}
+
+		internal static string GetConfigurationPath(string source)
+		{
+			switch (source)
+			{
+				case PCCompositeConfig.Source:
+					return PCCompositeConfig.Path;
+					break;
+				case PCWebConfig.Source:
+					return PCWebConfig.Path;
+					break;
+			}
+			return null;
 		}
 
 		internal static void AddConfig(UploadedFile uploadedFile)
