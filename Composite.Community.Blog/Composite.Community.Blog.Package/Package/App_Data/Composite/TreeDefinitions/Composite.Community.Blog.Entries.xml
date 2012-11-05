@@ -23,24 +23,6 @@
 								<OrderBy>
 									<Field FieldName="Date" Direction="descending"></Field>
 								</OrderBy>
-								<Children>
-									<Element Label="Comments" Id="Comments">
-										<Children>
-											<DataElements Type="Composite.Community.Blog.Comments" Label="${C1:Data:Composite.Community.Blog.Comments:Title}" Display="Compact">
-												<Actions>
-													<EditDataAction Label="Edit Comment" />
-													<DeleteDataAction Label="Delete Comment" />
-												</Actions>
-												<Filters>
-													<ParentIdFilter ParentType="Composite.Community.Blog.Entries" ReferenceFieldName="BlogEntry" />
-												</Filters>
-												<OrderBy>
-													<Field FieldName="Date" Direction="descending"></Field>
-												</OrderBy>
-											</DataElements>
-										</Children>
-									</Element>
-								</Children>
 							</DataElements>
 						</Children>
 					</DataFolderElements>

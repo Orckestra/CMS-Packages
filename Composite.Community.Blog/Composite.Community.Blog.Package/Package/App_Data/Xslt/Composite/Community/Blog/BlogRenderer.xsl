@@ -1,12 +1,12 @@
-﻿<xsl:stylesheet version="1.0" 
-				xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-				xmlns:in="http://www.composite.net/ns/transformation/input/1.0" 
-				xmlns:lang="http://www.composite.net/ns/localization/1.0" 
-				xmlns:f="http://www.composite.net/ns/function/1.0" 
-				xmlns="http://www.w3.org/1999/xhtml" 
-				xmlns:c1="http://c1.composite.net/StandardFunctions" 
-				xmlns:mp="#MarkupParserExtensions" 
-				xmlns:be="#BlogXsltExtensionsFunction" 
+﻿<xsl:stylesheet version="1.0"
+				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+				xmlns:in="http://www.composite.net/ns/transformation/input/1.0"
+				xmlns:lang="http://www.composite.net/ns/localization/1.0"
+				xmlns:f="http://www.composite.net/ns/function/1.0"
+				xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:c1="http://c1.composite.net/StandardFunctions"
+				xmlns:mp="#MarkupParserExtensions"
+				xmlns:be="#BlogXsltExtensionsFunction"
 				exclude-result-prefixes="xsl in lang f c1 mp be">
 	<xsl:param name="pageId" select="/in:inputs/in:result[@name='GetPageId']" />
 	<xsl:param name="pagingInfo" select="/in:inputs/in:result[@name='GetEntriesXml']/PagingInfo" />
@@ -14,6 +14,7 @@
 	<xsl:variable name="currentCultureName" select="be:GetCurrentCultureName()" />
 	<xsl:variable name="blogListOptions" select="/in:inputs/in:param[@name='BlogListOptions']" />
 	<xsl:variable name="blogItemOptions" select="/in:inputs/in:param[@name='BlogItemOptions']" />
+	<xsl:variable name="commentsServiceKey" select="/in:inputs/in:param[@name='CommentsServiceKey']" />
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -49,14 +50,27 @@
 							<xsl:if test="contains($blogListOptions, 'Show RSS')">
 								<div class="BlogRSS">
 									<a title="Blog Feed" href="~/BlogRssFeed.ashx?bid={$pageId}&amp;cultureName={$currentCultureName}">Blog RSS</a>
-									&#160;|&#160;
-									<a title="Blog Comments Feed" href="~/BlogCommentsRssFeed.ashx">Comments RSS</a>
 								</div>
+							</xsl:if>
+							<xsl:if test="contains($blogListOptions, 'Show Comments Count')">
+								<script type="text/javascript">
+									/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+									var disqus_shortname = '<xsl:value-of select="$commentsServiceKey" />'; // required: replace example with your forum shortname
+
+									/* * * DON'T EDIT BELOW THIS LINE * * */
+									(function () {
+									var s = document.createElement('script'); s.async = true;
+									s.type = 'text/javascript';
+									s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+									(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+									}());
+								</script>
 							</xsl:if>
 						</xsl:otherwise>
 					</xsl:choose>
 					<xsl:value-of select="be:SetNoCache()" />
 				</div>
+
 			</body>
 		</html>
 	</xsl:template>
@@ -73,12 +87,11 @@
 							<a href="{be:GetBlogUrl(@Date, @Title)}" title="{@Title}">
 								<xsl:value-of select="@Title" />
 							</a>
-							<xsl:if test="@DisplayComments = 'true'">
-								<a class="t-count" href="{be:GetBlogUrl(@Date, @Title)}#newcomment">
-									<span>
-										<xsl:call-template name="CommentsCount" />
-									</span>
-								</a>
+							<xsl:if test="@DisplayComments = 'true' and contains($options, 'Show Comments Count')">
+								<span class="t-count">
+									<a  href="{be:GetFullBlogUrl(@Date, @Title)}#disqus_thread">
+									</a>
+								</span>
 							</xsl:if>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -117,13 +130,9 @@
 			</xsl:if>
 			<xsl:if test="$isBlogItem='true'">
 				<xsl:if test="@DisplayComments = 'true'">
-					<xsl:variable name="blogComments">
-						<f:function name="Composite.Community.Blog.Comments">
-							<f:param name="BlogEntryGuid" value="{@Id}" />
-							<f:param name="AllowNewComments" value="{@AllowNewComments}" />
-						</f:function>
-					</xsl:variable>
-					<xsl:copy-of select="c1:CallFunction($blogComments)" />
+					<f:function name="Composite.Community.Blog.Comments">
+						<f:param name="CommentsServiceKey" value="{/in:inputs/in:param[@name='CommentsServiceKey']}" />
+					</f:function>
 				</xsl:if>
 			</xsl:if>
 		</div>
@@ -161,30 +170,13 @@
 			<xsl:value-of select="." />
 		</a>
 	</xsl:template>
-	<xsl:template name="CommentsCount">
-		<xsl:variable name="commentsCount" select="/in:inputs/in:result[@name='GetCommentsCount']/Comment[@Id=current()/@Id]/@Count" />
-		<xsl:variable name="Count">
-			<xsl:choose>
-				<xsl:when test="$commentsCount">
-					<xsl:value-of select="$commentsCount" />
-				</xsl:when>
-				<xsl:otherwise>0</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-		<xsl:value-of select="$Count" />
-	</xsl:template>
 	<xsl:template name="AddThis">
 		<div class="AddThis">
-			<!--a class="AddThis" href="http://www.addthis.com/bookmark.php?v=250&amp;url={be:GetFullBlogUrl(@Date, @Title)}&amp;title={@Title}">
-				<img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0" />
-			</a-->
 			<!-- AddThis Button BEGIN -->
 			<div class="addthis_toolbox addthis_default_style" addthis:url="{be:GetFullBlogUrl(@Date, @Title)}" addthis:title="{@Title}" xmlns:addthis="http://www.addthis.com">
-				<a class="addthis_button_preferred_1"></a>
-				<a class="addthis_button_preferred_2"></a>
-				<a class="addthis_button_preferred_3"></a>
-				<a class="addthis_button_compact"></a>
-				<!--a class="addthis_counter addthis_bubble_style"></a-->
+				<a class="addthis_button_facebook_like"></a>
+				<a class="addthis_button_tweet"></a>
+				<a class="addthis_counter addthis_pill_style addthis_nonzero"></a>
 			</div>
 			<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f86b27a69737a92"></script>
 			<!-- AddThis Button END -->

@@ -9,8 +9,7 @@
 	display: block;
 }
 
-
-.BlogTitle a.t-count, .t-count span {
+.BlogTitle span.t-count, span.t-count a {
 	font-size: 12px;
 	background: url(comment_bulb.png) no-repeat;
 	height: 20px;
@@ -22,7 +21,7 @@
 	text-decoration: none;
 }
 
-.BlogTitle a.t-count {
+.BlogTitle span.t-count {
 	background-position: 0px 0px;
 	display: inline-block;
 	margin-left: 4px;
@@ -30,7 +29,7 @@
 	text-decoration: none;
 }
 
-.BlogTitle a.t-count span {
+.BlogTitle span.t-count a {
 	background-position: right 0px;
 	float: left;
 	padding: 0px 8px 0px 4px;
@@ -38,10 +37,11 @@
 	cursor: pointer;
 }
 
-.BlogTitle a.t-count:hover {
+.BlogTitle span.t-count:hover {
 	background-position: 0px -21px;
 }
-.BlogTitle a.t-count:hover span {
+
+.BlogTitle span.t-count a:hover {
 	background-position: right -21px;
 }
 
@@ -63,6 +63,9 @@
 .BlogTeaser {
 	font-style: italic;
 }
+.BlogContent {
+	padding-bottom: 0px;
+}
 .BlogTags a {
 	padding-left: 8px;
 }
@@ -72,86 +75,13 @@
 }
 
 .AddThis {
-	margin: 10px 0px;
+	margin: 0px 0px 20px 0px;
 }
 
 .BlogPaging a, .BlogPaging span {
 	padding: 2px 5px;
 }
 
-#CommentsList li, #CommentsForm li {
-	list-style: none;
-}
-
-#BlogComments {
-	display: block;
-}
-
-#BlogComments fieldset {
-	border: none;
-}
-
-#BlogComments fieldset legend, #BlogComments fieldset legend {
-	font-weight: bold;
-	padding: 0px;
-}
-
-#CommentsList li {
-	margin-bottom: 12px;
-}
-
-#CommentsList .Title {
-	font-weight: bold;
-}
-
-#CommentsList .Author {
-	font-size: smaller;
-	float: left;
-	padding-right: 22px;
-}
-
-#CommentsList .Date {
-	font-size: smaller;
-	font-style: italic;
-}
-
-#CommentsList .Comment {
-	font-size: normal;
-	clear: both;
-}
-
-#ErrorBox h4, #ErrorBox ul li {
-	color: Red;
-	list-style: square;
-	padding-bottom: 4px;
-}
-
-#CommentsList, #CommentsForm #ErrorBox ul {
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-
-#CommentsList, #CommentsForm, #ErrorBox h4 {
-	margin: 0px;
-	padding: 0px;
-}
-
-#CommentsList li, #CommentsForm li {
-	padding-bottom: 4px;
-}
-
-#CommentsForm li label, #CommentsForm li img {
-	display: block;
-}
-
-#CommentsForm li img {
-	margin-bottom: 4px;
-	border: solid 1px #000;
-}
-
-#CommentsForm .FieldError input, #CommentsForm .FieldError textarea {
-	border: solid 1px red;
-}
 
 #TagCloud a {
 	margin: 2px;
@@ -165,5 +95,3 @@
 #BlogArchive li {
 	list-style: none;
 }
-
-.BlogLatest li {}

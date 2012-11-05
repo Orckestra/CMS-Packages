@@ -10,8 +10,6 @@
 		<cms:binding name="Content" type="System.String" optional="true" />
 		<cms:binding name="PageId" type="System.Guid" optional="true" />
 		<cms:binding name="DisplayComments" type="System.Boolean" optional="true" />
-		<cms:binding name="AllowNewComments" type="System.Boolean" optional="true" />
-		<cms:binding name="NotifyOnNewComments" type="System.Boolean" optional="true" />
 	</cms:bindings>
 	<cms:layout>
 		<cms:layout.label>
@@ -50,16 +48,6 @@
 				<CheckBox Label="Display comments" Help="If this option is selected, the comments to blog entries will be displayed.">
 					<CheckBox.Checked>
 						<cms:bind source="DisplayComments" />
-					</CheckBox.Checked>
-				</CheckBox>
-				<CheckBox Label="Allow new comments" Help="If this option is selected, adding new comments to blog entries will be allowed.">
-					<CheckBox.Checked>
-						<cms:bind source="AllowNewComments" />
-					</CheckBox.Checked>
-				</CheckBox>
-				<CheckBox Label="Notify on new comments" Help="If this option is selected, the author of the blog entry will receive a notification by email when a new comment is added.">
-					<CheckBox.Checked>
-						<cms:bind source="NotifyOnNewComments" />
 					</CheckBox.Checked>
 				</CheckBox>
 			</FieldGroup>

@@ -116,46 +116,7 @@ namespace Composite.Community.Blog
 			return filter;
 		}
 
-		public static Expression<Func<Comments, bool>> GetCommentsFilterFromUrl()
-		{
-			Guid currentPageId = PageRenderer.CurrentPageId;
-			Expression<Func<Comments, bool>> filter = f => true;
-
-			var pathInfoParts = GetPathInfoParts();
-			if (pathInfoParts != null)
-			{
-				if (pathInfoParts.Length > 4)
-				{
-					int year = Int32.Parse(pathInfoParts[1]);
-					int month = Int32.Parse(pathInfoParts[2]);
-					int day = Int32.Parse(pathInfoParts[3]);
-					DateTime blogDate = new DateTime(year, month, day);
-
-					string urlTitle = pathInfoParts[4];
-					Guid blogId =
-						(DataFacade.GetData<Entries>().Where(
-							b => b.PageId == currentPageId && b.Date.Date == blogDate && b.TitleUrl == urlTitle).Select(
-								b => b.Id)).First();
-
-					filter = f => f.BlogEntry == blogId;
-				}
-			}
-
-			return filter;
-		}
-
-		public static IEnumerable<XElement> GetCommentsCount()
-		{
-			return DataFacade.GetData<Comments>().GroupBy(c => c.BlogEntry).Select(
-					b =>
-					new XElement("Comment",
-									new XAttribute("Id", b.Key),
-									new XAttribute("Count", b.Select(x => x.BlogEntry).Count())
-								)
-				);
-
-		}
-
+	
 		public static string GetUrlFromTitle(string title)
 		{
 			const string autoRemoveChars = @",./\?#!""@+'`´*():;$%&=¦§";
