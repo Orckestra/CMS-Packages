@@ -58,6 +58,7 @@ public class GetPackage : IHttpHandler
 		if (File.Exists(fullpath))
 		{
 			context.Response.AddHeader("Content-Disposition", "attachment;filename=" + Path.GetFileName(fullpath));
+            context.Response.ContentType = "application/zip";
 			context.Response.WriteFile(fullpath);
 		}
 		else
