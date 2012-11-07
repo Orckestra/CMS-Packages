@@ -3,9 +3,6 @@
   <Add Id="9b961d7c-ef4a-41d4-a156-9e6d4c5a31a4" Type="Composite.Community.Blog.TagValidatorContainer" MethodName="TagValidator" Namespace="Composite.Community.Blog.TagValidatorContainer" UserMethodName="TagValidator" />
   <Add Id="eca2a7e6-6ae7-44e0-bc95-50d878397d6f" Type="Composite.Community.Blog.BlogFacade" MethodName="GetArchiveXml" Namespace="Composite.Community.Blog" UserMethodName="GetArchiveXml" />
   <Add Id="c996422c-9a11-4f80-b5a3-69b818227f90" Type="Composite.Community.Blog.BlogFacade" MethodName="GetBlogFilterFromUrl" Namespace="Composite.Community.Blog" UserMethodName="GetBlogFilterFromUrl" />
-  <Add Id="48ea7493-9437-4d86-bed0-9d01b003b232" Type="Composite.Community.Blog.BlogFacade" MethodName="GetCommentsCount" Namespace="Composite.Community.Blog" UserMethodName="GetCommentsCount" />
-  <Add Id="a8fa2971-d4ea-4610-a03b-ee911192c390" Type="Composite.Community.Blog.BlogFacade" MethodName="GetCommentsFilterFromUrl" Namespace="Composite.Community.Blog" UserMethodName="GetCommentsFilterFromUrl" />
   <Add Id="96706948-0435-4ac9-8589-76ba08430f0f" Type="Composite.Community.Blog.BlogFacade" MethodName="GetTagCloudXml" Namespace="Composite.Community.Blog" UserMethodName="GetTagCloudXml" />
-  <Add Id="949dd003-0ed9-4459-8325-3181845d1cc8" Type="Composite.Community.Blog.CommentsFacade" MethodName="SaveComment" Namespace="Composite.Community.Blog" UserMethodName="SaveComment" />
   <Add Id="8d104c5b-f821-4d33-8cba-e63d75003c91" Type="Composite.Community.Blog.BlogFacade" MethodName="XsltExtensions" Namespace="Composite.Community.Blog" UserMethodName="XsltExtensions" />
 </Data>

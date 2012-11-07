@@ -2,7 +2,7 @@
 	height: 1px;
 	background: #8C8B8B;
 	border-bottom: 1px solid silver;
-	margin-bottom: 35px;
+	margin-bottom: 10px;
 }
 
 .BlogImage {
@@ -54,24 +54,24 @@
 .BlogAuthor span, .BlogDate span, .BlogTags span {
 	font-weight: bold;
 }
+
 .BlogTeaser, .BlogContent {
 	display: block;
 	clear: both;
 	border-top: silver 1px solid;
 	padding: 15px 0px;
 }
+
 .BlogTeaser {
 	font-style: italic;
 }
+
 .BlogContent {
 	padding-bottom: 0px;
 }
+
 .BlogTags a {
 	padding-left: 8px;
-}
-
-.BlogCommentsCount {
-	text-transform: uppercase;
 }
 
 .AddThis {
@@ -82,14 +82,13 @@
 	padding: 2px 5px;
 }
 
+#BlogArchive, #TagCloud {
+	padding: 0px;
+	margin-bottom: 20px;
+}
 
 #TagCloud a {
 	margin: 2px;
-}
-
-#BlogArchive {
-	margin: 0px;
-	padding: 0px;
 }
 
 #BlogArchive li {
