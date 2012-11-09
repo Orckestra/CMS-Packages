@@ -1,8 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Navigation.DropDown" groupName="Composite.Navigation" version="2.1.3" author="Composite A/S" website="www.composite.net" id="0a777a0d-01c9-4dcf-ad62-81da8acbb558" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.Navigation.DropDown" groupName="Composite.Navigation" version="2.1.4" author="Composite A/S" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Navigation.DropDown" id="0a777a0d-01c9-4dcf-ad62-81da8acbb558" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
 		<Description>Allows visitors to navigate the website via a dropdown menu.</Description>
+		<TechnicalDetails>Implements a dropdown navigation menu as an XSLT function. Highly customizable via parameters and CSS.</TechnicalDetails>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
