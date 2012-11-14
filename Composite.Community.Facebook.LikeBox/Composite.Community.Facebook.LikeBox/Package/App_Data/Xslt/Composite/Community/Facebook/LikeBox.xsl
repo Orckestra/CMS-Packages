@@ -18,12 +18,20 @@
 	<xsl:param name="header" select="/in:inputs/in:param[@name='Header']"/>
 	<xsl:param name="colorscheme" select="/in:inputs/in:param[@name='ColorScheme']"/>
 	<xsl:param name="force_wall" select="/in:inputs/in:param[@name='ForceWall']"/>
-	<xsl:param name="culture" select="/in:inputs/in:result[@name='CurrentCulture']" />
-	<xsl:variable name="cultureForLikeBox" select="csharp:FixCurrentCultureString($culture)" />
+	<xsl:param name="culture" select="csharp:FixCurrentCultureString(/in:inputs/in:result[@name='CurrentCulture'])" />
+	<xsl:variable name="isCultureSupported" select="/in:inputs/in:result[@name='LoadUrl']/locales//*[.=$culture]" />
+	<xsl:variable name="facebookLocale">
+		<xsl:choose>
+			<xsl:when test="$isCultureSupported">
+				<xsl:value-of select="$culture" />
+			</xsl:when>
+			<xsl:otherwise>en_US</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
 	<xsl:template match="/">
 		<html>
 			<head>
-				<script id="facebook-all-js" src="http://connect.facebook.net/{$cultureForLikeBox}/all.js#xfbml=1"></script>
+				<script id="facebook-all-js" src="http://connect.facebook.net/{$facebookLocale}/all.js#xfbml=1"></script>
 			</head>
 			<body>
 				<div id="fb-root">
