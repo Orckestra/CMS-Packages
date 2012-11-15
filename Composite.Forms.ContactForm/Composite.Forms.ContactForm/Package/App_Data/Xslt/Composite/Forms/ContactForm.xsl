@@ -33,7 +33,7 @@
 		<html>
 			<head>
 				<link rel="stylesheet" type="text/css" href="~/Frontend/Composite/Forms/ContactForm/Styles.css" />
-				<script id="jquery-1-4-2" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
+				<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 				<script src="~/Frontend/Composite/Forms/ContactForm/Scripts/contactform_validation.js" type="text/javascript"></script>
 			</head>
 			<body>
