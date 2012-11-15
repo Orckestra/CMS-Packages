@@ -127,7 +127,11 @@
     <Content Include="Package\App_Data\Xslt\Omnicorp\Navigation\Sub.xsl" />
     <Content Include="Package\App_Data\Xslt\Omnicorp\Navigation\Top.xsl" />
     <Content Include="Package\bin\FixUserSettingsPackageFragmentInstaller.dll" />
+    <Content Include="Package\Datas\Composite.Community.Blog.Entriess_administrated.xml" />
+    <Content Include="Package\Datas\Composite.Community.Blog.Entriess_public.xml" />
+    <Content Include="Package\Datas\Composite.Community.Blog.Tagss_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.ICompositionContainers_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IDataItemTreeAttachmentPoints_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IGeneratedTypeWhiteLists_administrated.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IMediaFileDatas_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IMediaFolderDatas_public.xml" />
@@ -140,7 +144,9 @@
     <Content Include="Package\Datas\Composite.Data.Types.IPages_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTemplates_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Package\Datas\Composite.Data.Types.IUserActiveLocale_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IUserActivePerspective_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IUserSettings_public.xml" />
