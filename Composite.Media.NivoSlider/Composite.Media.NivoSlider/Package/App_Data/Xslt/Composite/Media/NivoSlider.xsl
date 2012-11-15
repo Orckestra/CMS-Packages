@@ -14,7 +14,7 @@
 			<head>
 				<link id="slider-theme-{$theme}" rel="stylesheet" href="~/Frontend/Composite/Media/NivoSlider/themes/{$theme}/{$theme}.css" type="text/css" media="screen" />
 				<link id="slider-css" rel="stylesheet" href="~/Frontend/Composite/Media/NivoSlider/nivo-slider.css" type="text/css" media="screen" />
-				<script id="jquery-1-7-1" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+				<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 				<script id="jquery-slider" src="~/Frontend/Composite/Media/NivoSlider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
 				<script id="slider-settings" type="text/javascript">
 					$(window).load(function() {
