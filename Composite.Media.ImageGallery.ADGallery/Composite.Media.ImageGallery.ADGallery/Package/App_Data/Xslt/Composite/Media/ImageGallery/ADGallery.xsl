@@ -5,7 +5,7 @@
 		<html>
 			<head>
 				<link rel="stylesheet" type="text/css" href="~/Frontend/Composite/Media/ImageGallery/ADGallery/jquery.ad-gallery.css" />
-				<script id="jquery-1-4-2" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
+				<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 				<script type="text/javascript" src="~/Frontend/Composite/Media/ImageGallery/ADGallery/jquery.ad-gallery.pack.js"></script>
 				<script type="text/javascript">
 					$(function() {
