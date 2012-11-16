@@ -29,7 +29,7 @@
 						z-index:9;
 						}
 					</style>
-					<script id="jquery-1-4-2" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+					<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 					<script type="text/javascript">
 						function slideSwitch() {
 						var $active = $('#ImageRotator IMG.active');
