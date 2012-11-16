@@ -17,11 +17,11 @@ exclude-result-prefixes="xsl in lang f csharp msxsl">
     <html>
       <head>
         <xsl:if test="$editingEnabled='true'">
-          <link id="simplewili-css" media="screen" type="text/css" href="/Frontend/Composite/Community/Wiki/SimpleWiki/Styles/Styles.css" rel="stylesheet" />
-          <script id="jquery-1-4-2" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
-          <script id="tiny_mce-js" type="text/javascript" src="/Frontend/Composite/Community/Wiki/SimpleWiki/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
-          <script id="simplewiki-js" type="text/javascript" src="/Frontend/Composite/Community/Wiki/SimpleWiki/Scripts/simplewiki.js"></script>
-          <script id="init-simplewiki" type="text/javascript">
+		<link id="simplewili-css" media="screen" type="text/css" href="/Frontend/Composite/Community/Wiki/SimpleWiki/Styles/Styles.css" rel="stylesheet" />
+		<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script id="tiny_mce-js" type="text/javascript" src="/Frontend/Composite/Community/Wiki/SimpleWiki/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+		<script id="simplewiki-js" type="text/javascript" src="/Frontend/Composite/Community/Wiki/SimpleWiki/Scripts/simplewiki.js"></script>
+		<script id="init-simplewiki" type="text/javascript">
             $().ready(function() {
             init('<xsl:value-of select="$contentCss"/>');
             })
