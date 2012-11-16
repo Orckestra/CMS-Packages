@@ -8,7 +8,7 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				<script id="jquery-1-4-2" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
+				<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 				<script id="web-html-scroller-js" src="~/Frontend/Composite/Web/Html/Scroller/Scroller.js" type="text/javascript"></script>
 				<script id="jquery-mousewheel" src="~/Frontend/Composite/Web/Html/Scroller/jquery.mousewheel.min.js" type="text/javascript"></script>
 				<link id="web-html-scroller-css" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Web/Html/Scroller/Styles.css" />
