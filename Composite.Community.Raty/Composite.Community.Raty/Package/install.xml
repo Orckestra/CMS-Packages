@@ -1,8 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4113.99" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.Raty" groupName="Composite.Community" version="1.0.4" author="Composite A/S" website="http://composite.net" id="6698db23-f413-46bd-8798-d9fe48c692c0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Community.Raty" groupName="Composite.Community" version="1.0.5" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Community.Raty" id="6698db23-f413-46bd-8798-d9fe48c692c0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows people visiting a website to rate pages, images and other content. Based on  Raty http://www.wbotelhos.com/raty/, a jQuery plugin that generates a customizable star rating automatically.</Description>
+		<TechnicalDetails>Allows people visiting a website to rate pages, images and other content. Based on Raty http://www.wbotelhos.com/raty/, a jQuery plugin that generates a customizable star rating automatically</TechnicalDetails>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>

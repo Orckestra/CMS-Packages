@@ -19,7 +19,7 @@ exclude-result-prefixes="xsl in lang f msxsl csharp">
 	<xsl:template match="/">
 		<html>
 			<head>
-				<script id="jquery-1-4-2" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
+				<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 				<script id="json2" src="/Frontend/Composite/Community/Raty/Scripts/json2.js" type="text/javascript"></script>
 				<script id="jquery-raty-1-4-0" type="text/javascript" src="/Frontend/Composite/Community/Raty/Scripts/jquery.raty.min.js"></script>
 				<link rel="stylesheet" type="text/css" href="/Frontend/Composite/Community/Raty/Styles/Raty.css" />
