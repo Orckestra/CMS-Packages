@@ -14,7 +14,7 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				<script id="jquery-1-4-2" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
+				<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 				<script id="html-lightbox-js" src="~/Frontend/Composite/Web/Html/Lightbox/js/jquery.html-lightbox.js" type="text/javascript"></script>
 				<link id="html-lightbox-css" media="screen" type="text/css" href="~/Frontend/Composite/Web/Html/Lightbox/css/html-lightbox.css" rel="stylesheet" />
 				<script type="text/javascript">
