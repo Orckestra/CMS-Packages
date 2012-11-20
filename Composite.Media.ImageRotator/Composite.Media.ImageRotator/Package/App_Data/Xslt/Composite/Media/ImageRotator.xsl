@@ -4,29 +4,25 @@
 	<xsl:param name="images" select="/in:inputs/in:result[@name='GetIImageFileXml']/IImageFile" />
 	<xsl:template match="/">
 		<html>
-			<head></head>
-			<body>
-				<div id="ImageRotator">
-					<xsl:apply-templates select="$images" />
-				</div>
+			<head>
 				<xsl:if test="$useAnimation = 'true'">
 					<style type="text/css">
 						#ImageRotator {
-						position:relative;
-						height: 350px;
-						/*overflow: hidden;*/
+							position:relative;
+							height: 350px;
+							overflow: hidden;
 						}
 						#ImageRotator img {
-						position:absolute;
-						top:0;
-						left:0;
-						z-index:8;
+							position:absolute;
+							top:0;
+							left:0;
+							z-index:8;
 						}
 						#ImageRotator img.active {
-						z-index:10;
+							z-index:10;
 						}
 						#ImageRotator img.last-active {
-						z-index:9;
+							z-index:9;
 						}
 					</style>
 					<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -53,6 +49,11 @@
 						});
 					</script>
 				</xsl:if>
+			</head>
+			<body>
+				<div id="ImageRotator">
+					<xsl:apply-templates select="$images" />
+				</div>
 			</body>
 		</html>
 	</xsl:template>
