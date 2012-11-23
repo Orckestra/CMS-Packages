@@ -1,14 +1,11 @@
 ﻿@inherits RazorPageTemplate
 
 @functions {
-    public override Guid TemplateId
+    public override void Configure()
     {
-        get { return new Guid("9f096519-d21c-435e-b334-62224fde2ab3"); }
-    }
-
-    public override string TemplateTitle
-    {
-        get { return "2 columns, content and aside"; }
+        TemplateId = new Guid("9f096519-d21c-435e-b334-62224fde2ab3");
+        TemplateTitle = "2 columns, content and aside";
+        Layout = "MasterLayout.cshtml";
     }
 
     [Placeholder(Id = "content", IsDefault = true)]
@@ -16,29 +13,25 @@
 
     [Placeholder(Id = "aside")]
     public XhtmlDocument Aside { get; set; }
-
-	}
-@{
-	Layout = "MasterLayout.cshtml";
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-@*you can add template specific head elements here*@
-</head>
-<body>
-<div id="contentcolumn" class="eightcol">
-	<div id="content">
-		<div class="contentbox">
-			@Placeholder(Content)
-		</div>
-	</div>
-</div>
-<div id="asidecolumn" class="fourcol last">
-	<div id="aside">
-		<div class="contentbox">
-			@Placeholder(Aside)
-		</div>
-	</div>
-</div>
-</body>
+    <head>
+        @*you can add template specific head elements here*@
+    </head>
+    <body>
+        <div id="contentcolumn" class="eightcol">
+	        <div id="content">
+		        <div class="contentbox">
+			        @Markup(Content)
+		        </div>
+	        </div>
+        </div>
+        <div id="asidecolumn" class="fourcol last">
+	        <div id="aside">
+		        <div class="contentbox">
+			        @Markup(Aside)
+		        </div>
+	        </div>
+        </div>
+    </body>
 </html>
