@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3947.24461" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.AspNet.MvcPlayer" groupName="Composite.AspNet" version="1.2.17" readMoreUrl="http://docs.composite.net/Composite.AspNet.MvcPlayer" author="Composite A/S" website="http://www.composite.net" id="7fbb67a8-dc12-4693-b653-80c5f155ff7a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="4.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.AspNet.MvcPlayer" groupName="Composite.AspNet" version="1.2.18" readMoreUrl="http://docs.composite.net/Composite.AspNet.MvcPlayer" author="Composite A/S" website="http://www.composite.net" id="7fbb67a8-dc12-4693-b653-80c5f155ff7a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows you to integrate an ASP.NET MVC solution on a C1 website.</Description>
 		<TechnicalDetails>Implemented as an MVC solution 'player'. Supports the Razor syntax.</TechnicalDetails>
 	</mi:PackageInformation>

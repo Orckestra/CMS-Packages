@@ -1,7 +1,8 @@
-﻿using System.Web;
-using System.Web.Routing;
+﻿using System.Web.Routing;
 using System.Web.Mvc;
+using Composite.Core;
 using Composite.Core.Application;
+using Composite.Core.Routing;
 
 namespace Composite.AspNet.MvcPlayer
 {
@@ -14,26 +15,32 @@ namespace Composite.AspNet.MvcPlayer
 
 		public static void OnBeforeInitialize()
 		{
-			RegisterRoutes(RouteTable.Routes);
-			RegisterRoutes(MvcPlayerRouteTable.Routes);
+            Routes.OnAfterPageRouteAdded += RegisterRoutes;
+            RegisterRoutes(MvcPlayerRouteTable.Routes);
 		}
 
 		public static void OnInitialized()
 		{
-
 		}
 
 		private static void RegisterRoutes(RouteCollection routes)
 		{
-			routes.IgnoreRoute("Composite/{*pathInfo}");
+            if (routes["Default"] != null)
+            {
+                Log.LogWarning(typeof (MvcPlayerRoutes).Name, "The 'Default' route has already been defined.");
+                return;
+            }
+
+		    routes.IgnoreRoute("Composite/{*pathInfo}");
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-			routes.MapRoute(
-					"Default",
-					"{controller}/{action}/{id}",
-					new { action = "Index", id = "" }
-			);
+            routes.MapRoute(
+                "Default",
+                "{controller}/{action}/{id}",
+                new {action = "Index", id = ""}
+                );
 		}
+
 	}
 
 	public static class MvcPlayerRouteTable
