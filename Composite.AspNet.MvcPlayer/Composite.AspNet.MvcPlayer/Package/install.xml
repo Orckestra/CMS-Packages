@@ -36,7 +36,7 @@
 			</XslFiles>
 		</mi:Add>
 		<mi:Add installerType="Composite.PackageFragmentInstaller.CheckAssembly.CheckAssemblyPackageFragmentInstaller, Composite.PackageFragmentInstaller.CheckAssembly" uninstallerType="Composite.PackageFragmentInstaller.CheckAssembly.CheckAssemblyPackageFragmentUninstaller, Composite.PackageFragmentInstaller.CheckAssembly">
-			<Check assembly="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" message="ASP.NET MVC 3 have not been installed on this webserver. Download and install this from Microsoft website" />
+			<Check assembly="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" message="ASP.NET MVC 4 have not been installed on this webserver. Download and install this from Microsoft website" />
 		</mi:Add>
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>
