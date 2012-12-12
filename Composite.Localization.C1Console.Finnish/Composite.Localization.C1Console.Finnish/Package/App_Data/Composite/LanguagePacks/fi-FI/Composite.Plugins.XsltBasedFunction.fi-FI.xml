@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderLabel" value="XSLT funktiot" />
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderToolTip" value="XSLT funktiot" />
+  <string key="AddNewXsltFunctionWorkflow.DuplicateName" value="Samanniminen XSLT funktio on jo olemassa." />
+  <string key="AddNewXsltFunctionWorkflow.MethodEmpty" value="Metodin nimi ei saa olla tyhjä" />
+  <string key="AddNewXsltFunctionWorkflow.NamespaceEmpty" value="Nimiavaruus ei saa olla tyhjä" />
+  <string key="AddNewXsltFunctionWorkflow.InvalidNamespace" value="Nimiavaruuden pitää olla muodossa A.B.C - ei saa alkaa ja päättyä pisteeseen" />
+  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageTitle" value="Kieltä tarvitaan" />
+  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Jotta voit luoda XSLT funktion kieltä tarvitaan, mutta yhtään kieltä ei ole lisätty vielä. Voit lisätä kielen System näkymässä." />
+  <string key="AddNewXsltFunctionWorkflow.MissingPageTitle" value="Sivu vaaditaan" />
+  <string key="AddNewXsltFunctionWorkflow.MissingPageMessage" value="Voit luoda XSLT funktion vasta kun vähintään yksi sivu on lisätty." />
+  <string key="AddNewXsltFunctionWorkflow.TotalNameTooLang" value="Nimen ja nimiavaruuden kokonaispituus on liian pitkä (nimeä käytetään XSL tiedostossa)." />
+  <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteTitle" value="Poista XSLT Funktio?" />
+  <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteMessage" value="Poista valittu XSLT?" />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorTitle" value="Periytyvän poiston virhe" />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorMessage" value="Tyyppi viittaa toiseen tyyppiin, joka ei salli perityvää poistoa. Tämä operaatio on pysäytetty" />
+  <string key="EditXsltFunctionWorkflow.DuplicateName" value="Samanniminen XSLT funktio on jo olemassa." />
+  <string key="EditXsltFunctionWorkflow.EmptyMethodName" value="Menetelmän nimi ei saa olla tyhjä" />
+  <string key="EditXsltFunctionWorkflow.NamespaceEmpty" value="Nimiavaruus ei saa olla tyhjä" />
+  <string key="EditXsltFunctionWorkflow.InvalidNamespace" value="Nimiavaruuden tulee olla kuten A.B.C - ei ala ja päätty pisteeseen" />
+  <string key="EditXsltFunctionWorkflow.InvalidFileName" value="XslFilePath on aloitettava \ tai /" />
+  <string key="EditXsltFunctionWorkflow.InvalidName" value="Virheellinen funktion nimi" />
+  <string key="EditXsltFunctionWorkflow.CannotRenameFileExists" value="Ei voi nimetä funktiota, Tiedosto {0} on jo olemassa." />
+  <string key="EditXsltFunctionWorkflow.TotalNameTooLang" value="Nimen ja nimiavaruuden kokonaispituus on liian pitkä (nimeä käytetään XSL tiedostossa)." />
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashTitle" value="Monista paikallisten funktioden nimet" />
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashMessage" value="Kahdessai tai useammassa funktiokutsussa on sama paikallinen nimi. Muuta nimiä niin, että kaikki ovat erilaisia." />
+  <string key="XsltBasedFunctionProviderElementProvider.Add" value="Lisää XSLT funktio" />
+  <string key="XsltBasedFunctionProviderElementProvider.AddToolTip" value="Lisää uusi XSLT-funktio" />
+  <string key="XsltBasedFunctionProviderElementProvider.Edit" value="Muokkaa" />
+  <string key="XsltBasedFunctionProviderElementProvider.EditToolTip" value="Muokkaa XSLT-funktiota" />
+  <string key="XsltBasedFunctionProviderElementProvider.Delete" value="Poista" />
+  <string key="XsltBasedFunctionProviderElementProvider.DeleteToolTip" value="Poista XSLT-funktio" />
+  <string key="AddNewXsltFunctionStep1.LabelDialog" value="Lisää uusi XSLT Funktio" />
+  <string key="AddNewXsltFunctionStep1.LabelFieldGroup" value="Nimeäminen ja tuloksen tyyppi" />
+  <string key="AddNewXsltFunctionStep1.LabelName" value="Nimi" />
+  <string key="AddNewXsltFunctionStep1.HelpName" value="" />
+  <string key="AddNewXsltFunctionStep1.LabelNamespace" value="Nimiavaruus" />
+  <string key="AddNewXsltFunctionStep1.HelpNamespace" value="" />
+  <string key="AddNewXsltFunctionStep1.LabelOutputType" value="Tuloksen tyyppi" />
+  <string key="EditXsltFunction.LabelSettings" value="Asetukset" />
+  <string key="EditXsltFunction.LabelName" value="Nimi" />
+  <string key="EditXsltFunction.HelpName" value="" />
+  <string key="EditXsltFunction.LabelNamespace" value="Nimiavaruus" />
+  <string key="EditXsltFunction.HelpNamespace" value="" />
+  <string key="EditXsltFunction.LabelDescription" value="Kuvaus" />
+  <string key="EditXsltFunction.HelpDescription" value="" />
+  <string key="EditXsltFunction.LabelDebug" value="Debug" />
+  <string key="EditXsltFunction.LabelPage" value="Sivu" />
+  <string key="EditXsltFunction.HelpPage" value="Kun virheenkorjaus on käytössä, tämä sivu on käytössä kontekstina." />
+  <string key="EditXsltFunction.LabelAdminitrativeScope" value="Hallinnollinen" />
+  <string key="EditXsltFunction.LabelPublicScope" value="Julkinen" />
+  <string key="EditXsltFunction.LabelPageDataScope" value="Tietojen laajuus" />
+  <string key="EditXsltFunction.HelpPageDataScope" value="Valitse julkinen tai kehitysversio josta konteksti tekeytyy." />
+  <string key="EditXsltFunction.LabelActiveLocales" value="Kieli" />
+  <string key="EditXsltFunction.HelpActiveLocales" value="Valitse käytettävä kieli virheenkorjaus funktiossa." />
+  <string key="EditXsltFunction.OutputType" value="Tuloksen tyyppi" />
+  <string key="EditXsltFunction.LabelInputParameters" value="Tuloparametrit" />
+  <string key="EditXsltFunction.LabelFunctionCalls" value="Funktiokutsut" />
+  <string key="EditXsltFunction.LabelTemplate" value="Malli" />
+  <string key="EditXsltFunction.LabelPreview" value="Esikatselu" />
+  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageTitle" value="Kieli on pakollinen" />
+  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Voit muokata XSLT:tä, mutta funktion kieltä tarvitaan, Yhtään ei kieltä ei ole lisätty vielä. Voit lisätä kielen Systeemi näkymässä." />
+  <string key="EditXsltFunctionWorkflow.MissingPageTitle" value="Sivu vaaditaan" />
+  <string key="EditXsltFunctionWorkflow.MissingPageMessage" value="Voit muokata XSLT funktiota vasta kun vähintään yksi sivu on lisätty." />
+</strings>

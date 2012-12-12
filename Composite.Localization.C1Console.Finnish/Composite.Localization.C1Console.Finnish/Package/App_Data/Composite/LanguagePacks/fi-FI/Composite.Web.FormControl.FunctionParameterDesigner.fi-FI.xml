@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<strings>
+  
+  <string key="AddNewButtonLabel" value="Lis&#228;&#228; uusi" />
+  <string key="DeleteButtonLabel" value="Poista" />
+
+  <string key="TreeRootNodeLabel" value="Luettelo tuloparametreist&#228;" />
+
+  <string key="ParameterNamingGroupLabel" value="Parametrin nime&#228;minen ja apua" />
+  <string key="Name" value="Parametrin nimi" />
+  <string key="NameHelp" value="Parametrin nimi. Nime&#228; k&#228;ytet&#228;&#228;n j&#228;rjestelm&#228;ss&#228; tunnistamaan t&#228;m&#228; parametri. Nimen on oltava yksil&#246;llinen, ja se ei saa sis&#228;lt&#228;&#228; v&#228;lily&#246;ntej&#228; tai muita erikoismerkkej&#228;. K&#228;yt&#228; nimi&#228; kuten Osasto, StartDate, LargeImage jne." />
+  <string key="Label" value="Etiketti" />
+  <string key="LabelHelp" value="Teksti joka k&#228;ytt&#228;jien pit&#228;isi n&#228;hd&#228; kun he m&#228;&#228;ritt&#228;v&#228;t t&#228;m&#228;n parametrin arvoa. T&#228;m&#228; on luettava nimi parametrille." />
+  <string key="Help" value="Apua" />
+  <string key="HelpHelp" value="Kirjoita lyhyt teksti, joka kertoo k&#228;ytt&#228;j&#228;lle, mit&#228; tehd&#228; parametrilla." />
+
+  <string key="ParameterTypeValueGroupLabel" value="Parametrin tyyppi ja arvot" />
+  <string key="Type" value="Parametrin tyyppi" />
+  <string key="TypeHelp" value="T&#228;m&#228;n parametrin tyyppi." />
+  <string key="DefaultValue" value="Oletusarvo" />
+  <string key="DefaultValueHelp" value="Voit m&#228;&#228;ritt&#228;&#228; oletusarvo parametrin. Jos parametrilla on oletusarvo, k&#228;ytt&#228;jien ei tarvitse m&#228;&#228;ritt&#228;&#228; sit&#228;, kun kutsutaan funktiota." />
+  <string key="DefaultValueSpecify" value="M&#228;&#228;rit&#228; oletusarvo" />
+  <string key="DefaultValueEdit" value="Muokkaa oletusarvo" />
+  <string key="DefaultValueDialogLabel" value="Parametrin oletusarvo" />
+  
+  <string key="TestValue" value="Testiarvo" />
+  <string key="TestValueHelp" value="Kun esikatselet voit testata eri tuloparametriarvot t&#228;ll&#228; kent&#228;ll&#228;. Jos t&#228;m&#228; j&#228;tet&#228;&#228;n tyhj&#228;ksi, oletusarvoa k&#228;ytet&#228;&#228;n esikatselussa." />
+  <string key="TestValueSpecify" value="M&#228;&#228;rit&#228; testiarvo" />
+  <string key="TestValueEdit" value="Muokkaa testiarvoa" />
+  <string key="TestValueDialogLabel" value="Parametrin testiarvo" />
+
+  <string key="ParameterPresentationGroupLabel" value="Parametrin esitys" />
+  <string key="Widget" value="Widget" />
+  <string key="WidgetHelp" value="Voit valita mink&#228; tyyppist&#228; tulo widget (kuten tekstilaatikko) k&#228;ytt&#228;&#228; kun m&#228;&#228;rit&#228;t t&#228;m&#228;n parametrin. Widgetit ovat saatavilla vain yksinkertaisille ​​tyypeille." />
+  <string key="NoWidgetSpecifiedLabel" value="(Ei widget ti&#228; m&#228;&#228;ritelty)" />
+  <string key="WidgetDialogLabel" value="Parametri Widget" />
+  <string key="Position" value="Kohta" />
+  <string key="PositionLast" value="Viimeinen" />
+  <string key="PositionHelp" value="Parametrin. kohta T&#228;m&#228; ohjaa parametrit j&#228;rjestyksess&#228;." />
+
+  <string key="SpecifyWidgetTip" value="Muista m&#228;&#228;ritt&#228;&#228; widget ..." />
+
+  <string key="FieldNameSyntaxInvalid" value="M&#228;&#228;ritetty nimi ei ole kelvollinen." />
+  <string key="CannotSave" value="Ei voi tallentaa ... Toinen parametri on saman niminen. Muuta nime&#228;." />
+
+  <string key="SpaceInNameError" value="Virheellinen nimi. Parametri nimet eiv&#228;t voi sis&#228;lt&#228;&#228; v&#228;lily&#246;ntej&#228;. Voit kirjoittaa luettavissa olevan nimen alla olevaan etiketti kentt&#228;&#228;n." />
+  <string key="NameEmptyError" value="Parametrin nimi ei voi olla tyhj&#228;. Ilmoitathan nimen." />
+  <string key="NameAlreadyInUseError" value="Toinen parametri k&#228;ytt&#228;&#228; t&#228;t&#228; nime&#228;. Parametrien nimien on oltava yksil&#246;llisi&#228;." />
+
+
+
+</strings>
+
+
+

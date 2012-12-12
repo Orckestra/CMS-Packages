@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="WebsiteFilesRootElement.Label" value="/" />
+	<string key="LayoutResourcesRootElement.Label" value="/" /> <!-- Layout Resources -->
+	<string key="LayoutResourcesKeyNameLabel" value="Layout" />
+	
+	<string key="DeleteFile.LabelFieldGroup" value="Poista tiedosto?" />
+	<string key="DeleteFile.Text" value="Poista tiedosto?" />
+	<string key="DeleteFolder.LabelFieldGroup" value="Poista kansio?" />
+	<string key="DeleteFolder.Text" value="Poista kansio?" />
+	<string key="AddNewFolder.LabelFieldGroup" value="Lis&#228;&#228; uusi kansio" />
+	<string key="AddNewFolder.Text" value="Kansion nimi" />
+	<string key="AddNewFolder.Help" value="Anna nimi uudelle kansiolle" />
+	<string key="AddNewFolder.Error.FolderExist" value="Samanniminen kansio on jo olemassa" />
+	<string key="AddNewFile.LabelFieldGroup" value="Lis&#228;&#228; uusi tiedosto" />
+	<string key="AddNewFile.Text" value="Tiedostonnimi" />
+	<string key="AddNewFile.Help" value="Kirjoita uuden tiedoston nimi" />
+	<string key="AddNewFile.Error.FileExist" value="Tiedosto samalla nimell&#228; on jo olemassa" />
+	<string key="UploadNewWebsiteFile.LabelFieldGroup" value="Lataa tiedosto" />
+	<string key="UploadNewWebsiteFile.LabelFile" value="Valitse tiedosto" />
+	<string key="UploadNewWebsiteFile.HelpFile" value="Valitse ladattava tiedosto" />
+  <string key="UploadNewWebsiteFile.ConfirmOverwriteTitle" value="Korvataanko olemassa oleva tiedosto" />
+  <string key="UploadNewWebsiteFile.ConfirmOverwriteDescription" value="Tiedosto samalla nimell&#228; on jo olemassa, korvataanko?" />
+	<string key="UploadFile.Error.WrongTypeTitle" value="V&#228;&#228;r&#228; tiedostotyyppi" />
+	<string key="UploadFile.Error.WrongTypeMessage" value="V&#228;&#228;r&#228; tiedostotyyppi" />
+	
+
+	<string key="AddWebsiteFolderTitle" value="Uusi kansio" />
+	<string key="AddWebsiteFolderToolTip" value="Lis&#228;&#228; uusi kansio" />
+	<string key="AddWebsiteFileTitle" value="Uusi tiedosto" />
+	<string key="AddWebsiteFileToolTip" value="Luo uusi tiedosto" />
+	<string key="DeleteWebsiteFileTitle" value="Poista tiedosto" />
+	<string key="DeleteWebsiteFileToolTip" value="Poista tiedosto" />
+  <string key="DownloadFileTitle" value="Lataa" />
+  <string key="DownloadFileToolTip" value="Lataa tiedosto" />
+  <string key="DeleteWebsiteFolderTitle" value="Poista kansio" />
+	<string key="DeleteWebsiteFolderToolTip" value="Poista kansio" />
+	<string key="EditWebsiteFileTitle" value="Muokkaa tiedosto" />
+	<string key="EditWebsiteFileToolTip" value="Muokkaa tiedostoa" />
+	<string key="UploadWebsiteFileTitle" value="Lataa tiedosto" />
+	<string key="UploadWebsiteFileToolTip" value="Lataa tiedosto" />
+	<string key="AddFolderToWhiteListTitle" value="N&#228;yt&#228; {0}" />
+	<string key="AddFolderToWhiteListToolTip" value="Aseta pit&#228;isik&#246; t&#228;m&#228; kansio n&#228;ky&#228; {0}" />
+	<string key="RemoveFolderFromWhiteListTitle" value="N&#228;yt&#228; {0}" />
+	<string key="RemoveFolderFromWhiteListToolTip" value="Aseta pit&#228;isik&#246; t&#228;m&#228; kansio n&#228;ky&#228; {0}" />
+
+	<string key="DeleteWebsiteFileWorkflow.DeleteErrorTitle" value="Virhe" />
+	<string key="DeleteWebsiteFileWorkflow.DeleteErrorMessage" value="Ei voitu poistaa tiedostoa" />
+	<string key="DeleteWebsiteFolderWorkflow.DeleteErrorTitle" value="Virhe" />
+	<string key="DeleteWebsiteFolderWorkflow.DeleteErrorMessage" value="Ei voitu poistaa kansiota" />
+</strings>

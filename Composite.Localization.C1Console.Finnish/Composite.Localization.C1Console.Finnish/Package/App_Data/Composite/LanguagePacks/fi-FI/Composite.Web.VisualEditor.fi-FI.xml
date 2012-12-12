@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <!-- preload precaution -->
+  <string key="Preload.Key" value="Viitattu VisualEditorBinding:ssa k&#228;ynnistyksess&#228; varmistamaan ett&#228; merkkijonoja ladataan :)" />
+  <!-- simple toolbar -->
+  <string key="ToolBar.ToolTipStrong" value="Vahva teksti" />
+  <string key="ToolBar.ToolTipEmphasize" value="Korosta teksti&#228;" />
+  <string key="ToolBar.ToolTipUnderline" value="Alleviivaa teksti" />
+  <string key="ToolBar.ToolTipStrike" value="Yliviivaa teksti" />
+  <string key="ToolBar.ToolTipAlignLeft" value="Tasaa vasemalle" />
+  <string key="ToolBar.ToolTipAlignRight" value="Tasaa oikealle" />
+  <string key="ToolBar.ToolTipJustifyLeft" value="Aseta vasemmalle" />
+  <string key="ToolBar.ToolTipJustifyRight" value="Aseta oikealle" />
+  <string key="ToolBar.ToolTipJustifyCenter" value="Aseta keskelle" />
+  <string key="ToolBar.ToolTipJustifyFull" value="Aseta t&#228;ytt&#246;" />
+  <string key="ToolBar.ToolTipUnorderedList" value="J&#228;rjest&#228;m&#228;t&#246;n lista" />
+  <string key="ToolBar.ToolTipOrderedList" value="J&#228;rjestetty lista" />
+  <string key="ToolBar.ToolTipLink" value="Linkki" />
+  <string key="ToolBar.ToolTipDeleteLink" value="Poista linkki" />
+  <string key="ToolBar.ToolTipCleanup" value="Siivoa sotkuinen koodi" />
+  <string key="ToolBar.ToolTipUndo" value="Peruuta" />
+  <string key="ToolBar.ToolTipRedo" value="Tee uudelleen" />
+  <string key="ToolBar.LabelSource" value="L&#228;hde" />
+  <string key="ToolBar.LabelWysiwyg" value="Visuaalinen" />
+  <!-- format selector -->
+  <string key="FormatSelector.LabelParagraph" value="Kappale" />
+  <string key="FormatSelector.LabelAddress" value="Osoite" />
+  <string key="FormatSelector.LabelBlockQuote" value="Lainaa" />
+  <string key="FormatSelector.LabelDivision" value="Jako" />
+  <string key="FormatSelector.LabelHeading1" value="Otsake 1" />
+  <string key="FormatSelector.LabelHeading2" value="Otsake 2" />
+  <string key="FormatSelector.LabelHeading3" value="Otsake 3" />
+  <string key="FormatSelector.LabelHeading4" value="Otsake 4" />
+  <string key="FormatSelector.LabelHeading5" value="Otsake 5" />
+  <string key="FormatSelector.LabelHeading6" value="Otsake 6" />
+  <!-- classname selector -->
+  <string key="ClassSelector.LabelNone" value="(Ei mit&#228;&#228;n)" />
+  <!-- contextmenu (duplicated in toolbar) -->
+  <string key="ContextMenu.LabelInsert" value="Lis&#228;&#228;" />
+  <string key="ContextMenu.LabelPaste" value="Liit&#228;" />
+  <string key="ContextMenu.LabelLink" value="Linkki" />
+  <string key="ContextMenu.LabelUnLink" value="Poista linkitys" />
+  <string key="ContextMenu.LabelLinkProperties" value="Linkin ominaisuudet" />
+  <string key="ContextMenu.LabelTable" value="Taulukko ..." />
+  <string key="ContextMenu.LabelTableManage" value="Hallitse Taulukko" />
+  <string key="ContextMenu.LabelImage" value="Kuva ..." />
+  <string key="ContextMenu.LabelAsText" value="Pelkk&#228;n&#228; tekstin&#228; ..." />
+  <string key="ContextMenu.LabelField" value="Kentt&#228;" />
+  <string key="ContextMenu.LabelFieldDelete" value="Poista kentt&#228;" />
+  <string key="ContextMenu.LabelRendering" value="Funktio..." />
+  <string key="ContextMenu.LabelCharacter" value="Merkki ..." />
+  <string key="ContextMenu.LabelImageProperties" value="Kuvan ominaisuudet ..." />
+  <string key="ContextMenu.LabelRenderingProperties" value="Funktion ominaisuudet ..." />
+  <string key="ContextMenu.LabelCutRow" value="Leikkaa rivi" />
+  <string key="ContextMenu.LabelCopyRow" value="Kopioi rivi" />
+  <string key="ContextMenu.LabelPasteRow" value="Liit&#228; rivi" />
+  <string key="ContextMenu.LabelBefore" value="Ennen" />
+  <string key="ContextMenu.LabelAfter" value="J&#228;lkeen" />
+  <string key="ContextMenu.LabelTableProperties" value="Taulukon ominaisuudet" />
+  <string key="ContextMenu.LabelCellProperties" value="Solun ominaisuudet" />
+  <string key="ContextMenu.LabelRowProperties" value="Rivin ominaisuudet" />
+  <string key="ContextMenu.LabelInsertRow" value="Lis&#228;&#228; rivi" />
+  <string key="ContextMenu.LabelDeleteRow" value="Poista rivi" />
+  <string key="ContextMenu.LabelInsertcolumn" value="Lis&#228;&#228; sarake" />
+  <string key="ContextMenu.LabelDeleteColumn" value="Poista sarake" />
+  <string key="ContextMenu.LabelMergeTableCells" value="Yhdist&#228; taulukon solut" />
+  <string key="ContextMenu.LabelSplitMergedCells" value="Halkaise yhdistetyt solut" />
+  <string key="ContextMenu.LabelDeleteTable" value="Poista taulukko" />
+  <string key="ContextMenu.LabelAlignImage" value="Kohdista kuva" />
+  <string key="ContextMenu.LabelAlignImageRight" value="Oikea" />
+  <string key="ContextMenu.LabelAlignImageLeft" value="Vasen" />
+  <string key="ContextMenu.LabelAlignImageNone" value="Ei mit&#228;&#228;n" />
+  <!-- error dialog -->
+  <string key="ContentError.DialogTitle" value="L&#228;hdekoodin virhe" />
+  <string key="ContentError.DialogText" value="Virhe l&#228;hdekoodissa:" />
+  <!-- template selector -->
+  <string key="TemplateTree.NoTemplateWarning" value="Ei paikkamerkkej&#228; mallissa." />
+  <!-- PLUGINS ............................................................... -->
+  <!-- general -->
+  <string key="LabelTabBasic" value="Perustiedot" />
+  <string key="LabelTabAdvanced" value="Lis&#228;tiedot" />
+  <string key="LabelPresentation" value="Esitys" />
+  <string key="LabelClass" value="Luokka" />
+  <string key="HelpClass" value="Luokan attribuutti m&#228;&#228;ritt&#228;&#228; CSS luokan nimen elementti&#228; varten." />
+  <string key="LabelId" value="Tunnus" />
+  <string key="HelpId" value="Id attribuuttia voidaan k&#228;ytt&#228;&#228; JavaScript-tai CSS:ss&#228; teht&#228;ess&#228; muutoksia elementtiin." />
+  <string key="MozSecurityNote.LabelSecurityStuff" value="Leikep&#246;yt&#228; pois k&#228;yt&#246;st&#228;" />
+  <string key="MozSecurityNote.TextSecurityStuff" value="Turvallisuussyist&#228;, selain esti p&#228;&#228;syn leikep&#246;yd&#228;lle. K&#228;yt&#228; standardia pikan&#228;pp&#228;imi&#228;. Saat teknisen kuvauksen, miten m&#228;&#228;ritt&#228;&#228; selain k&#228;ytt&#228;m&#228;&#228;n Composite C1, painamalla Lis&#228;tietoja-painiketta." />
+  <!-- link -->
+  <string key="Link.LabelInsertLink" value="Lis&#228;&#228; linkki" />
+  <string key="Link.LabelLinkProperties" value="Linkin ominaisuudet" />
+  <string key="Link.LinkDestination" value="URL" />
+  <string key="Link.LinkRole" value="Rooli" />
+  <string key="Link.TitleText" value="Otsikko" />
+  <string key="Link.LinkTarget" value="Kohde" />
+  <string key="Link.LinkTarget.LabelCheckBox" value="Avaa udessa ikkunassa" />
+  <string key="Link.TitleTextToolTip" value="Otsikkoteksti asetetaan tooltipiksi kun hiiri siirret&#228;&#228;n linkin p&#228;&#228;le. T&#228;t&#228; voidaan k&#228;ytt&#228;&#228; kertomaan k&#228;ytt&#228;j&#228;lle mihin linkki johtaa h&#228;iritsem&#228;tt&#228; tekstin esityst&#228;." />
+  <string key="Link.LabelLink" value="Linkin ominaisuudet" />
+  <!-- table -->
+  <string key="Tables.Cell.CellType" value="Solutyyppi" />
+  <string key="Tables.Cell.LabelWidth" value="Solun leveys" />
+  <string key="Tables.Cell.HorizontalAlignment" value="Vaakasuora kohdistus" />
+  <string key="Tables.Cell.VerticalAlignment" value="Pystysuora kohdistus" />
+  <string key="Tables.Cell.ApplyTo" value="Tallenna muutokset" />
+  <string key="Tables.Cell.LabelCellProperties" value="Solun ominaisuudet" />
+  <string key="Tables.Cell.LabelLayout" value="Layout" />
+  <string key="Tables.Cell.LabelDataCell" value="Tietosolu" />
+  <string key="Tables.Cell.LabelHeaderCell" value="Otsikkosolu" />
+  <string key="Tables.Cell.LabelLeft" value="Vasen" />
+  <string key="Tables.Cell.LabelRight" value="Oikea" />
+  <string key="Tables.Cell.LabelTop" value="Yl&#246;s" />
+  <string key="Tables.Cell.LabelCenter" value="Keskitetty" />
+  <string key="Tables.Cell.LabelBottom" value="Alas" />
+  <string key="Tables.Cell.LabelScope" value="Laajuus" />
+  <string key="Tables.Cell.LabelCurrentCell" value="Nykyisess&#228; solussa" />
+  <string key="Tables.Cell.LabelAllRowCells" value="Kaikki solut rivill&#228;" />
+  <string key="Tables.Cell.LabelAllTableCells" value="Kaikki solut taulukossa" />
+  <string key="Tables.Merge.Columns" value="Sarakkeet" />
+  <string key="Tables.Merge.Rows" value="Rivit" />
+  <string key="Tables.Merge.LabelMergeCells" value="Yhdist&#228; taulukon solut" />
+  <string key="Tables.Row.Rows" value="Rivi taulukon osassa" />
+  <string key="Tables.Row.HorizontalAlignment" value="Vaakasuunnan tasus" />
+  <string key="Tables.Row.VerticalAlignment" value="Pystysuunnan tasaus" />
+  <string key="Tables.Row.ApplyTo" value="Tallenna muutokset" />
+  <string key="Tables.Row.LabelRowProperties" value="Rivin ominaisuudet" />
+  <string key="Tables.Row.LabelLayout" value="Layout" />
+  <string key="Tables.Row.LabelTableHead" value="Taulukon yl&#228;osa" />
+  <string key="Tables.Row.LabelTableBody" value="Taulukon runko" />
+  <string key="Tables.Row.LabelTableFoot" value="Taulukon alaosa" />
+  <string key="Tables.Row.LabelLeft" value="Vasen" />
+  <string key="Tables.Row.LabelCenter" value="Keskitetty" />
+  <string key="Tables.Row.LabelRight" value="Oikea" />
+  <string key="Tables.Row.LabelTop" value="Yl&#246;s" />
+  <string key="Tables.Row.LabelBottom" value="Alas" />
+  <string key="Tables.Row.LabelScope" value="Laajuus" />
+  <string key="Tables.Row.LabelCurrentRow" value="Nykyinen rivi" />
+  <string key="Tables.Row.LabelOddRows" value="Omituisia rivej&#228; taulukossa" />
+  <string key="Tables.Row.LabelEvenRows" value="Parillisia rivej&#228; taulukossa" />
+  <string key="Tables.Row.LabelAllRows" value="Kaikki rivit taulukossa" />
+  <string key="Tables.Table.TitleInsert" value="Lis&#228;&#228; taulukko" />
+  <string key="Tables.Table.TitleUpdate" value="Taulukon ominaisuudet" />
+  <string key="Tables.Table.Columns" value="Sarakkeet" />
+  <string key="Tables.Table.Rows" value="Rivit" />
+  <string key="Tables.Table.Summary" value="Yhteenveto" />
+  <string key="Tables.Table.SummaryHelp" value="Yhteenveto selitt&#228;&#228; taulukon sis&#228;lt&#246;&#228; ja rakennetta, jotta ihmiset jotka k&#228;ytt&#228;v&#228;t ei-visuaalisia selaimia (esim. n&#228;k&#246;vammaiset) voivat paremmin ymm&#228;rt&#228;&#228; sit&#228;. T&#228;m&#228; on erityisen t&#228;rke&#228;&#228; taulukoissa joissa ei ole otsikoita." />
+  <string key="Tables.Table.LabelLayout" value="Taulukon layout" />
+  <string key="Tables.Table.LabelMeta" value="Taulukon kuvaus" />
+  <!-- image -->
+  <string key="Image.Source" value="L&#228;hde" />
+  <string key="Image.AlternativeText" value="Vaihtoehtoinen teksti" />
+  <string key="Image.AlternativeTextToolTip" value="Vaihtoehtoinen teksti n&#228;kyy teksti selaimissa, joissa kuvia ei voi n&#228;ytt&#228;&#228; normaalisti. T&#228;m&#228; voi koskea esimerkiksi matkapuhelimen selaimia ja erityisi&#228; selaimia n&#228;k&#246;vammaisille. Alt attribuutin pit&#228;isi selke&#228;sti kuvattava kuvan sis&#228;lt&#246;&#228;." />
+  <string key="Image.TitleText" value="Otsikkoteksti" />
+  <string key="Image.TitleTextToolTip" value="Otsikon teksti n&#228;ytet&#228;&#228;n tooltippin&#228; kun hiiri siirtyy kuvan p&#228;&#228;lle. Katsojaa h&#228;mment&#228;v&#228;&#228; kuvaa voidaan selvent&#228;&#228; otsikolla." />
+  <string key="Image.LabelImage" value="Kuvan ominaisuudet" />
+  <string key="Image.LabelInsertImage" value="Lis&#228;&#228; kuva" />
+  <string key="Image.LabelImageProperties" value="Kuvan ominaisuudet" />
+  <string key="Image.MaxWidth" value="Suurin leveys" />
+  <string key="Image.MaxWidthToolTip" value="Jos kuvan leveys on suurempi, kuin m&#228;&#228;ritetty arvo, se supistetaan m&#228;&#228;ritettyyn arvoon." />
+  <string key="Image.MaxHeight" value="Suurin korkeus" />
+  <string key="Image.MaxHeightToolTip" value="Jos kuvan korkeus on suurempi, kuin m&#228;&#228;ritetty arvo, se supistetaan m&#228;&#228;ritettyyn arvoon." />
+
+	<!-- charmap -->
+  <string key="CharMap.LabelSelectSpecialChar" value="Valitse merkki" />
+  <string key="CharMap.LabelGeneral" value="Yleinen" />
+  <string key="CharMap.LabelAlphabetical" value="Aakkosellinen" />
+  <string key="CharMap.LabelMathSymbols" value="Matematiikka ja symboolit" />
+  <string key="CharMap.LabelCommon" value="Yhteinen" />
+  <string key="CharMap.LabelQuotation" value="Lainaus" />
+  <string key="CharMap.LabelCurrency" value="Valuutta" />
+  <string key="CharMap.LabelLatin" value="Latinalainen" />
+  <string key="CharMap.LabelGreek" value="Kreikkalainen" />
+  <string key="CharMap.LabelMathAndLogic" value="Matematiikka ja logiikka" />
+  <string key="CharMap.LabelSymbols" value="Symbolit" />
+  <string key="CharMap.LabelArrows" value="Nuolet" />
+  <!-- text paste -->
+  <string key="TextPaste.Label" value="Liit&#228; tekstin&#228;" />
+  <string key="TextPaste.PasteHereContent" value="Liit&#228; sis&#228;lt&#246; t&#228;h&#228;n. Paina sitten OK." />
+
+  <!-- spellcheck-->
+  <string key="SpellCheck.InfoLabel" value="Miten tarkistan oikeinkirjoituksen..." />
+  <string key="SpellCheck.InfoCaption" value="Miten tarkistan oikeinkirjoituksen Visual Editorissa" />
+  <string key="SpellCheck.InfoText" value="Saadaksesi ehdotuksia kirjoitusvirheisiin, paina SHIFT-n&#228;pp&#228;in pohjaan, kun avaat pikavalikon." />
+
+</strings>

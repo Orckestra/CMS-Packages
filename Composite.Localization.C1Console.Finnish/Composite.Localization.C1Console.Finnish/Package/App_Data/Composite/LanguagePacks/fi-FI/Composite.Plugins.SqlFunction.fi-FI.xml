@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="SqlFunctionElementProvider.RootLabel" value="SQL funktiot" />
+  <string key="SqlFunctionElementProvider.RootLabelToolTip" value="Lisää yhteydet ja sitten kyselyihin yhteydet" />
+  <string key="SqlFunctionElementProvider.AddConnection" value="Lisää SQL yhteys" />
+  <string key="SqlFunctionElementProvider.AddConnectionToolTip" value="Lisää uusi SQL yhteys" />
+  <string key="SqlFunctionElementProvider.EditConnection" value="Muokkaa" />
+  <string key="SqlFunctionElementProvider.EditConnectionToolTip" value="Muokkaa SQL-yhteyttä" />
+  <string key="SqlFunctionElementProvider.DeleteConnection" value="Poista" />
+  <string key="SqlFunctionElementProvider.DeleteConnectionToolTip" value="Poista SQL yhteys" />
+  <string key="SqlFunctionElementProvider.AddQuery" value="Lisää uusi SQL kysely" />
+  <string key="SqlFunctionElementProvider.AddQueryToolTip" value="Lisää uusi SQL XML Provider" />
+  <string key="SqlFunctionElementProvider.EditQuery" value="Muokkaa" />
+  <string key="SqlFunctionElementProvider.EditQueryToolTip" value="Muokkaa SQL kyselyä" />
+  <string key="SqlFunctionElementProvider.DeleteQuery" value="Poista" />
+  <string key="SqlFunctionElementProvider.DeleteQueryToolTip" value="Poista SQL kysely" />
+  <string key="AddNewSqlFunction.LabelDialog" value="Lisää uusi SQL kysely" />
+  <string key="AddNewSqlFunction.LabelNamingPanel" value="Funktion nimeäminen" />
+  <string key="AddNewSqlFunction.LabelName" value="Nimi" />
+  <string key="AddNewSqlFunction.HelpName" value="" />
+  <string key="AddNewSqlFunction.LabelNamespace" value="Nimiavaruus" />
+  <string key="AddNewSqlFunction.HelpNamespace" value="" />
+  <string key="AddNewSqlFunction.LabelQueryCOmmand" value="SQL-komennon teksti" />
+  <string key="AddNewSqlFunction.HelpQueryCOmmand" value="" />
+  <!-- shared on add and edit -->
+  <string key="AddEditSqlFunction.LabelIsStoredProcedure" value="Onko Stored Procedure" />
+  <string key="AddEditSqlFunction.LabelIsStoredProcedureCheckBox" value="Kyllä, komento on proseduuri" />
+  <string key="AddEditSqlFunction.LabelReturnsXml" value="Palauttaa tuloksen XML:nä" />
+  <string key="AddEditSqlFunction.LabelReturnsXmlCheckBox" value="Kyllä, komento palauttaa XML:ää" />
+  <string key="AddEditSqlFunction.LabelIsQuery" value="On kysely" />
+  <string key="AddEditSqlFunction.LabelIsQueryCheckBox" value="Kyllä, komento palauttaa tiedot" />
+  <string key="AddEditSqlFunction.LabelCommandBehaviour" value="SQL-komennon käyttäytyminen" />
+  <string key="AddEditSqlFunctionConnection.LabelFieldGroup" value="SQL Yhteysasetukset" />
+  <string key="AddEditSqlFunction.LabelSqlEditor" value="SQL-komento" />
+  <string key="AddNewSqlFunctionConnection.LabelDialog" value="Lisää uusi SQL yhteys" />
+  <string key="AddNewSqlFunctionConnection.LabelName" value="Nimi" />
+  <string key="AddNewSqlFunctionConnection.HelpName" value="" />
+  <string key="AddNewSqlFunctionConnection.LabelConnectionString" value="Yhteystiedot" />
+  <string key="AddNewSqlFunctionConnection.HelpConnectionString" value="" />
+  <string key="AddNewSqlFunctionConnection.LabelIsMSSQL" value="MS SQL Server" />
+  <string key="AddNewSqlFunctionConnection.LabelIsMSSQLCheckBox" value="Tietokanta on MS SQL Server" />
+  <string key="EditSqlFunction.LabelInputParameters" value="Tuloparametrit" />
+  <string key="EditSqlFunction.LabelSettings" value="Asetukset" />
+  <string key="EditSqlFunction.LabelNamingAndDescription" value="Toiminnon nimi ja kuvaus" />
+  <string key="EditSqlFunction.LabelName" value="Nimi" />
+  <string key="EditSqlFunction.HelpName" value="" />
+  <string key="EditSqlFunction.LabelNamespace" value="Nimiavaruus" />
+  <string key="EditSqlFunction.HelpNamespace" value="" />
+  <string key="EditSqlFunction.LabelDescription" value="Kuvaus" />
+  <string key="EditSqlFunction.HelpDescription" value="" />
+  <string key="EditSqlFunction.LabelPreview" value="Esikatselu" />
+  <string key="EditSqlFunctionConnection.LabelName" value="Nimi" />
+  <string key="EditSqlFunctionConnection.HelpName" value="" />
+  <string key="EditSqlFunctionConnection.LabelConnectionString" value="Yhteystiedot" />
+  <string key="EditSqlFunctionConnection.HelpConnectionString" value="" />
+  <string key="EditSqlFunctionConnection.LabelIsMSSQL" value="MS SQL Server" />
+  <string key="EditSqlFunctionConnection.LabelIsMSSQLCheckBox" value="Tietokanta on MS SQL Server" />
+  <string key="DeleteSqlConnection.LabelFieldGroup" value="Poista tämä SQL yhteys?" />
+  <string key="DeleteSqlConnection.Text" value="Poista tämä SQL yhteys?" />
+  <string key="DeleteSqlFunction.LabelFieldGroup" value="Poista tämä SQL-funktio?" />
+  <string key="DeleteSqlFunction.Text" value="Poista tämä SQL-funktio?" />
+  <string key="CascadeDeleteErrorTitle" value="Periytyvän poiston virhe" />
+  <string key="CascadeDeleteErrorMessage" value="Tyyppi viittaa toiseen tyyppiin, joka ei salli perityvää poistoa. Tämä operaatio on pysäytetty" />
+</strings>

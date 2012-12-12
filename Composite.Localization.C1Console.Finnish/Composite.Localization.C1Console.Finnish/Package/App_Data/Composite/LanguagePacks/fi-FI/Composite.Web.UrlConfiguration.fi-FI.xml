@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<!-- Element tree -->
+	<string key="Tree.ConfigurationElementLabel" value="URL m&#228;&#228;ritykset" />
+	<string key="Tree.ConfigurationElementEditLabel" value="Muokkaa URL-m&#228;&#228;ritykset" />
+	<string key="Tree.ConfigurationElementToolTip" value="T&#228;ss&#228; osiossa konfiguroidaan lyhyempi&#228; ja yst&#228;v&#228;llisempi&#228; url:ja" />
+	<string key="Tree.HostnamesFolderLabel" value="Is&#228;nt&#228;nimet" />
+	<string key="Tree.HostnamesFolderToolTip" value="T&#228;&#228;ll&#228; voit asettaa is&#228;nt&#228;nimen sivustolle" />
+	<string key="Tree.AddHostnameLabel" value="Lis&#228;&#228; is&#228;nt&#228;nimi" />
+	<string key="Tree.UrlConfigurationLabel" value="UrlConfiguration" />
+
+	<!-- Url configuration -->
+	<string key="UrlConfiguration.Title" value="URL m&#228;&#228;ritykset" />
+	<string key="UrlConfiguration.PageUrlSuffix.Label" value="Sivun URL p&#228;&#228;tte" />
+	<string key="UrlConfiguration.PageUrlSuffix.Help" value="Merkkijono, joka lis&#228;t&#228;&#228;n kaikkiin URL-osoitteisiin esim. &quot;.aspx&quot; tai . &quot;html&quot;,  Tyhj&#228;ksi j&#228;tt&#228;minen tuottaa p&#228;&#228;tteett&#246;m&#228;n URL:n" />
+
+	<!-- Hostname binding editing -->
+	<string key="HostnameBinding.AddNewHostnameTitle" value="Uusi is&#228;nt&#228;nimi" />
+	<string key="HostnameBinding.Hostname.Label" value="Is&#228;nt&#228;nimi" />
+	<string key="HostnameBinding.Hostname.Help" value="Is&#228;nt&#228;nimi johon nykyiset url:n rakennuss&#228;&#228;n&#246;t sovelletaan" />
+	<string key="HostnameBinding.Page.Label" value="Sivu" />
+	<string key="HostnameBinding.Page.Help" value="Alkusivu, joka on oletussivu nykyisell&#228; is&#228;nt&#228;nimell&#228;" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Label" value="URL" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.ItemLabel" value="Sis&#228;llyt&#228; kotisivun URL otsikkossa" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Help" value="M&#228;&#228;rittelee pit&#228;isik&#246; yl&#228;tason sivun otsikko olla osa url:ia. Jos ei ole, tuottaa lyhyemm&#228;n URL:n" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.ItemLabel" value="Sis&#228;llyt&#228; kieli URL kartoituksessa" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.Help" value="M&#228;&#228;ritt&#228;&#228; pit&#228;isik&#246; kielikoodi olla osa url:&#228;&#228;" />
+	<string key="HostnameBinding.Custom404Page.Label" value="Muokattu 404 sivu" />
+	<string key="HostnameBinding.Custom404Page.Help" value="Url johon pyynt&#246; ohjataan jos pyynn&#246;ss&#228; olevaa C1 sivua ei l&#246;ydy" />
+	<string key="HostnameBinding.Aliases.Label" value="Alias ​​is&#228;nt&#228;nimi&#228;" />
+	<string key="HostnameBinding.Aliases.Help" value="Is&#228;nt&#228;nimet joista kaikki pyynn&#246;t ohjataan nykyiseen is&#228;nt&#228;nimeen" />
+</strings>

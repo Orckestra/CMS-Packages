@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<strings>
+  <string key="BasicTabLabel" value="Perustiedot" />
+  <string key="AdvancedTabLabel" value="Lis&#228;tiedot" />
+
+  <string key="AddNewButtonLabel" value="Lis&#228;&#228; uusi" />
+  <string key="DeleteButtonLabel" value="Poista" />
+  <string key="LabelDataTypeFields" value="Tietotyyppi kent&#228;t" />
+  
+  <string key="FieldDetailsGroupLabel" value="Kent&#228;n ominaisuudet" />
+  <string key="Name" value="Nimi" />
+  <string key="NameHelp" value="Kent&#228;n nime&#228; k&#228;ytet&#228;&#228;n j&#228;rjestelm&#228;ss&#228; tunnistamaan t&#228;m&#228; kentt&#228;. Nimen on oltava yksil&#246;llinen, ja siin&#228; ei voi olla v&#228;lily&#246;ntej&#228; ja muita erikoismerkkej&#228;. K&#228;yt&#228; nimi&#228; kuten Osasto, StartDate &#39;,&#39; LargeImage jne." />
+  <string key="Label" value="Etiketti" />
+  <string key="LabelHelp" value="Etiketin teksti n&#228;ytet&#228;&#228;n k&#228;ytt&#228;jille, kun lis&#228;t&#228;&#228;n uutta kohteeseen perustuvaa tietotyyppi&#228;." />
+  <string key="Help" value="Apua" />
+  <string key="HelpHelp" value="K&#228;yt&#228; t&#228;t&#228; lyhyen&#228; ohjetekstin&#228; k&#228;ytt&#228;j&#228;lle." />
+
+  <string key="FieldTypeGroupLabel" value="Kent&#228;n tyyppi ja vaatimukset" />
+  <string key="FieldType" value="Kent&#228;n tyyppi" />
+  <string key="FieldTypeHelp" value="Valitse kent&#228;n tietotyyppi. Tyyppi m&#228;&#228;ritt&#228;&#228;, millaisia ​​tietoja kentt&#228;&#228;n voidaan asettaa." />
+  <string key="System.String" value="Merkkijono" />
+  <string key="System.Int32" value="Kokonaisluku" />
+  <string key="System.Decimal" value="Desimaaliluku" />
+  <string key="System.DateTime" value="P&#228;iv&#228;m&#228;&#228;r&#228;" />
+  <string key="System.Boolean" value="Boolean" />
+  <string key="System.Guid" value="Unique Identifier (GUID)" />
+  <string key="Reference" value="Tietojen viite" />
+  <string key="TypeDetailsHelp" value="K&#228;yt&#228; t&#228;t&#228; kentt&#228;&#228; viel&#228; m&#228;&#228;ritt&#228;&#228;ksesi lis&#228;&#228; valitua tyyppi&#228;." />
+  <string key="Optional" value="Valinnainen" />
+  <string key="OptionalHelp" value="Valinnaiset kent&#228;t voi j&#228;tt&#228;&#228; tyhj&#228;ksi." />
+  <string key="OptionalFalseLabel" value="Ei" />
+  <string key="OptionalTrueLabel" value="Kyll&#228;" />
+  <string key="ValidationRules" value="Kelpoisuuss&#228;&#228;nn&#246;t" />
+  <string key="ValidationRulesHelp" value="Voit m&#228;&#228;ritt&#228;&#228; kentt&#228;&#228;n asetetuille tiedoille tiukat s&#228;&#228;nn&#246;t, esim. pit&#228;&#228; olla v&#228;hint&#228;&#228;n 5 merkki&#228; pitk&#228;, t&#228;ytyy olla kelvollinen s&#228;hk&#246;postiosoite, on oltava edelt&#228;v&#228; p&#228;iv&#228;m&#228;&#228;r&#228; jne." />
+  <string key="ValidationRulesAdd" value="Lis&#228;&#228; kelpoisuuss&#228;&#228;nn&#246;t ..." />
+  <string key="ValidationRulesEdit" value="Muokkaa kelpoisuuss&#228;&#228;nt&#246;j&#228;" />
+  <string key="ValidationRulesDialogLabel" value="Kent&#228;n kelpoisuuss&#228;&#228;nt&#246;jen asettaminen" />
+
+  
+  <string key="FieldValidationGroupLabel" value="Kentt&#228;validointia" />
+  <string key="FieldPresentationGroupLabel" value="Lomakekent&#228;n esitys" />
+  <string key="FieldStructureGroupLabel" value="Rakenteellinen esittely" />
+  
+  <string key="Widget" value="Widgetin tyyppi" />
+  <string key="WidgetHelp" value="Voit valita mink&#228; tyyppist&#228; tulo widgetti&#228; (kuten tekstilaatikko) muokkauksessa k&#228;ytet&#228;&#228;n t&#228;ss&#228; kent&#228;ss&#228;." />
+  <string key="WidgetDialogLabel" value="Kentt&#228; Widgetin asetukset" />
+  <string key="Position" value="Kohta" />
+  <string key="PositionLast" value="Viimeinen" />
+  <string key="PositionHelp" value="Kent&#228;n sijainti. T&#228;m&#228; ohjaa kenttien j&#228;rjestyst&#228;." />
+  <string key="GroupByPriority" value="Kent&#228;n ryhmittely" />
+  <string key="GroupByPriorityNone" value="Ei ryhmittely&#228;" />
+  <string key="GroupByPriorityFirst" value="Ryhmit&#228; t&#228;m&#228;n kent&#228;n mukaan" />
+  <string key="GroupByPriorityN" value="Ryhmit&#228; {0}. prioriteetti" />
+  <string key="GroupByPriorityHelp" value="Voit m&#228;&#228;ritt&#228;&#228;, ett&#228; kent&#228;n pit&#228;isi k&#228;ytt&#228;&#228; ryhm&#228;n tietoja - t&#228;m&#228; voi parantaa luettavuutta katsottaessa pitki&#228; luetteloita. K&#228;yt&#228; prioriteetti&#228; kun useita kentti&#228; k&#228;ytet&#228;&#228;n ryhmittelyyn." />
+  <string key="IsTitleField" value="Onko otsikkokentt&#228;" />
+  <string key="IsTitleFieldHelp" value="Valitse t&#228;m&#228; jos haluat t&#228;m&#228;n kent&#228;n k&#228;ytett&#228;v&#228;ksi otsikko kentt&#228;n&#228;. Otsikon kentti&#228; k&#228;ytet&#228;&#228;n silloin, kun listataan tietoja, kuten puu n&#228;kym&#228;&#228;." />
+  <string key="IsTitleFieldLabel" value="K&#228;yt&#228; t&#228;t&#228; otsikkokentt&#228;&#228; luetteloissa" />
+
+  
+  <string key="DefaultValueGroupLabel" value="Kent&#228;n oletusarvo" />
+  <string key="DefaultValue" value="Oletusarvo" />
+  <string key="DefaultValueHelp" value="Voit m&#228;&#228;ritt&#228;&#228; oletusarvon t&#228;ll&#228; kent&#228;ll&#228;." />
+  <string key="DefaultValueDialogLabel" value="Kent&#228;n oletusarvon asetukset" />
+
+  <string key="StringMaximumLength" value="Merkkijonon maksimipituus" />
+  <string key="16CharMax" value="16 merkin maksimi" />
+  <string key="32CharMax" value="32 merkin maksimi" />
+  <string key="64CharMax" value="64 merkin maksimi" />
+  <string key="128CharMax" value="128 merkin maksimi" />
+  <string key="256CharMax" value="256 merkin maksimi" />
+  <string key="512CharMax" value="512 merkin maksimi" />
+  <string key="1024CharMax" value="1024 merkin maksimi" />
+  <string key="Unlimited" value="Rajoittamaton pituus" />
+  
+  <string key="DecimalNumberFormat" value="Desimaaliluvun muodossa" />
+  <string key="1DecimalPlace" value="1 desimaali" />
+  <string key="2DecimalPlace" value="2 desimaalin tarkkuudella" />
+  <string key="3DecimalPlace" value="3 desimaalin tarkkuudella" />
+  <string key="4DecimalPlace" value="4 desimaalin tarkkuudella" />
+  
+  <string key="ReferenceType" value="Viite Tyyppi" />
+  
+  <string key="FieldNameSyntaxInvalid" value="M&#228;&#228;ritetty nimi ei ole kelvollinen." />
+  <string key="CannotSave" value="Ei voi tallentaa ... Toinen kentt&#228; on saman niminen. Muuta nime&#228;." />
+
+  <string key="SpaceInNameError" value="Virheellinen nimi. Tietokent&#228;n nimet eiv&#228;t voi sis&#228;lt&#228;&#228; v&#228;lily&#246;ntej&#228;. Voit kirjoittaa luettavan nimen alla olevaan kentt&#228;&#228;n etiketti kentt&#228;&#228;n." />
+  <string key="NameEmptyError" value="Tietokent&#228;n nimi ei voi olla tyhj&#228;. Ilmoitathan nimen." />
+  <string key="NameAlreadyInUseError" value="Toinen kentt&#228; k&#228;ytt&#228;&#228; t&#228;t&#228; nime&#228;. Tietokent&#228;n nimien on oltava yksil&#246;llisi&#228;." />
+  <string key="NotAnOptionalTypeError" value="Valittu tyyppi ei voi olla valinnainen." />
+  <string key="NoWidgetSelected" value="Muista m&#228;&#228;ritt&#228;&#228; widget ..." />
+  <string key="NoWidgetSelectedLabel" value="(Ei widget ti&#228; m&#228;&#228;ritelty)" />
+</strings>
+
+
+

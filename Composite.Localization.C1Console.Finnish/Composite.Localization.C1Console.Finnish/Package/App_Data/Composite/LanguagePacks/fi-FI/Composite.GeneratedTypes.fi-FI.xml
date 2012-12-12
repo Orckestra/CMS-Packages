@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="TypesAreReferencing" value="Yksi tai useampi tyyppi viittaa t&#228;h&#228;n tyyppiin. Nime&#228;minen ei ole mahdollista" />
+  <string key="TypeNameInNamespace" value="Tyypin nimi {0} n&#228;kyy nimiavaruudessa &#39;{1}&#39; - t&#228;m&#228; ei ole sallittua" />
+  <string key="TypesNameClash" value="Samanniminen tyyppi on jo olemassa" />
+	<string key="MissingFields" value="Ei lis&#228;ttyj&#228; kentti&#228;" />
+	<string key="TypeNameIsInvalidIdentifier" value="Tyypin nimi {0} ei ole kelvollinen tunniste." />
+	<string key="FieldNameCannotBeUsed" value="Kent&#228;n nime&#228; &#39;{0}&#39; ei voida k&#228;ytt&#228;&#228;" />
+  <string key="NameSpaceIsTypeTypeName" value="M&#228;&#228;ritetty tyypin nimiavaruus on jo k&#228;yt&#246;ss&#228; tyypin nimi (nimiavaruuden nimi). Harkitse nimen {0} muuttamista muotoon {0}." />
+	<string key="NamespaceIsReserved" value="Tyyppi nimi kuuluu varattuun nimiavaruuteen." />
+	<string key="CompileErrorWhileAddingType" value="Tietotyyppi&#228; ei voi lis&#228;t&#228;, koska se aiheuttaa k&#228;&#228;nn&#246;svirheen." />
+	<string key="CompileErrorWhileChangingType" value="Ei voi muuttaa tietotyyppi&#228;, koska se aiheuttaa k&#228;&#228;nn&#246;svirheen." />
+  <string key="FieldDoesNotHaveWidget" value="Kentt&#228;ll&#228; {0} ei ole widget tarjoajaa m&#228;&#228;ritetty." />
+</strings>

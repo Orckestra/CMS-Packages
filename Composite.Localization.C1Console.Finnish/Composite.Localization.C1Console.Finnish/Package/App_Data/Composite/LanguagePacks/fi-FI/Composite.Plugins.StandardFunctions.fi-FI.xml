@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="Composite.AspNet.LoadUserControl.description" value="Lataa ASP.NET User Control" />
+  <string key="Composite.AspNet.LoadUserControl.param.Path.help" value="Polku kontrolliin. ascx tiedostoon, kuten ~ / Controls / MyControl.ascx" />
+  <string key="Composite.AspNet.LoadUserControl.param.Path.label" value="Polku" />
+  <string key="Composite.Constant.Boolean.description" value="Voit määrittää vakio boolean arvon" />
+  <string key="Composite.Constant.Boolean.param.Constant.help" value="" />
+  <string key="Composite.Constant.Boolean.param.Constant.label" value="Arvo" />
+  <string key="Composite.Constant.DateTime.description" value="Voit määrittää vakio päivämäärä ja aika-arvon" />
+  <string key="Composite.Constant.DateTime.param.Constant.help" value="" />
+  <string key="Composite.Constant.DateTime.param.Constant.label" value="Arvo" />
+  <string key="Composite.Constant.Decimal.description" value="Voit määrittää vakio desimaaliarvon" />
+  <string key="Composite.Constant.Decimal.param.Constant.help" value="" />
+  <string key="Composite.Constant.Decimal.param.Constant.label" value="Arvo" />
+  <string key="Composite.Constant.Guid.description" value="Voit määrittää vakio GUID-arvon" />
+  <string key="Composite.Constant.Guid.param.Constant.help" value="" />
+  <string key="Composite.Constant.Guid.param.Constant.label" value="Arvo" />
+  <string key="Composite.Constant.Integer.description" value="Voit määrittää vakio kokonaisluvun" />
+  <string key="Composite.Constant.Integer.param.Constant.help" value="" />
+  <string key="Composite.Constant.Integer.param.Constant.label" value="Arvo" />
+  <string key="Composite.Constant.String.description" value="Voit määrittää vakio merkkijonoarvon" />
+  <string key="Composite.Constant.String.param.Constant.help" value="" />
+  <string key="Composite.Constant.String.param.Constant.label" value="Arvo" />
+  <string key="Composite.Constant.XhtmlDocument.description" value="Voit visuaalisesti määrittää Xhtml asiakirja vakion" />
+  <string key="Composite.Constant.XhtmlDocument.param.Constant.help" value="" />
+  <string key="Composite.Constant.XhtmlDocument.param.Constant.label" value="Arvo" />
+  <string key="Composite.IDataGenerated.AddDataInstance.description" value="Lisää tietyn tyypin uuden esiintymän." />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.description" value="Päivittää instanssi(t) annetuilla arvoilla." />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.label" value="Suodata" />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.description" value="Poistaa instanssi(t) annetulla suodattimella." />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.label" value="Suodata" />
+  <string key="Composite.IDataGenerated.GetDataReference.description" value="Luo DataReference:n joka perustuu avainarvoon." />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.help" value="Viitattavan tiedon avainarvo." />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.label" value="Avainarvo" />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.description" value="Luo NullableDataReference:n joka perustuu avainarvoon. Oletusarvo on null, ei viittausta." />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.help" value="Viitattavan tiedon avainarvo." />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.label" value="Avainarvo" />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.description" value="Muuntaa DataReference:n yhdeksi elementin suodattimeksi. Tämä suodatin valitsee enintään yhden kohteen." />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.help" value="Data Reference jota käytetään valittaessa tietoja." />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.label" value="Data Reference" />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Voit valita tiedot jotka perustuvat sen nykyisin suoritetulle sivulle." />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.help" value="Valitse missä suhteessa nykyisen sivun on oltava tietoihin, jotka haluat hakea." />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.label" value="Sivun soveltamisala" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.description" value="Määritellään &quot;and&quot; tai &quot;or&quot; kysely, yhdistämällä kaksi muuta suodatinta." />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.label" value="Ja / tai suodatin" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.help" value="Jos valitset &quot;And&quot; molemmat suodattimet sovelletaan tietoihin. Valitsemalla &quot;Or&quot; antaa sinulle tiedon, joka vastaa vain yhtä suodatinta." />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.help" value="Yksi kahdesta suodattimesta (joka suoritetaan ensin)" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.label" value="Vasen suodatin" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.help" value="Yksi kahdesta suodattimesta (joka suoritetaan viimeksi)" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.label" value="Oikea suodatin" />
+  <string key="Composite.IDataGenerated.Filter.FieldPredicatesFilter.description" value="Voit määrittää suodattimen tietoja määrittelemällä vaatimukset yksittäisille kentille. Jos asetat vaatimuksia useampiin kenttiin, ne kaikki käytetään (ja kysely)." />
+  <string key="Composite.IDataGenerated.GetXml.description" value="Noutaa XML-esitystä tiedoista." />
+  <string key="Composite.IDataGenerated.GetXml.param.ElementName.label" value="Elementin nimi" />
+  <string key="Composite.IDataGenerated.GetXml.param.ElementNamespace.label" value="Elementin nimiavaruus" />
+  <string key="Composite.IDataGenerated.GetXml.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.GetXml.param.Filter.label" value="Suodata" />
+  <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.help" value="Kun valittu, XML tiedot sisältää &lt;PagingInfo /&gt; elementin jossa on sivumäärä, kohteita ja enemmän." />
+  <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.label" value="Sisällytä sivutustieto" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderByField.help" value="Kenttä tietojen tilaamiseen" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderByField.label" value="Järjestä" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.help" value="Kun asetus on true tulokset toimitetaan nousevassa järjestyksessä, muuten alenevassa järjestyksessä. Oletus on nousevassa järjestyksessä." />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.label" value="Nouseva järjestys" />
+  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.help" value="Jos dataelementtien määrä ylittää sivukoon voit sivuttaa tietoa useille sivuille. Katso Sivukoko parametri." />
+  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.label" value="Sivunumero" />
+  <string key="Composite.IDataGenerated.GetXml.param.PageSize.help" value="Kohteiden näytettävä määrä yhdellä sivulla - enimmäismäärä elementtejä palautetaan." />
+  <string key="Composite.IDataGenerated.GetXml.param.PageSize.label" value="Sivun koko" />
+  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.help" value="Tietokenttiä XML tuotokseen. Vähemmän kenttiä tuottaa nopeamman avauksen." />
+  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.label" value="Valitut kentät" />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.help" value="Jos lisäät viitetietoja &quot;Valitut ominaisuudet&quot; -asetuksissa, voit käyttää tätä vaihtoehtoa hallitsemaan kuinka viitatut tiedot sisältyvät. &quot;Inline&quot; on helppo käyttää, mutta se voi suurentaa XML-asiakirjan kokoa." />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.label" value="Näytä vertailutiedot" />
+  <string key="Composite.IDataGenerated.GetXml.param.Randomized.help" value="Kun todellisia tietoja voidaan tilata satunnaisesti. Määritä satunnaisten tulosten määrä asettamalla &quot;Sivun koko&quot;. Jos suodatin on määritetty, se asetetaan ennen satunnaisvalintaa. Jos määrität Järjestys arvon, sinun pitäisi määrittää pieni Sivukoko tai satunnaistaminen raukeaa." />
+  <string key="Composite.IDataGenerated.GetXml.param.Randomized.label" value="Satunnaistettu" />
+  <string key="Composite.IDataGenerated.GetXml.param.CachePriority.help" value="Määrittää, onko XML tulos oltava välimuistissa, ja millä prioriteetillä välimuistin tiedot olisi oltava" />
+  <string key="Composite.IDataGenerated.GetXml.param.CachePriority.label" value="Välimuistin prioriteetti" />
+  <string key="Composite.Pages.GetPageId.description" value="Hakee nykyisen sivun tunnuksen  tai sivun suhteessa nykyisen sivuun." />
+  <string key="Composite.Pages.GetPageId.param.SitemapScope.help" value="Mistä sivusta saadaan tunnus. Oletuksena on nykyiseltä sivulta." />
+  <string key="Composite.Pages.GetPageId.param.SitemapScope.label" value="Sivun yhteys" />
+  <string key="Composite.Pages.QuickSitemap.description" value="Nopea ja raaka XHTML." />
+  <string key="Composite.Pages.SitemapXml.description" value="Palauttaa hierarkisen XML rakenteen sivuista. Kun suoritetaan osana sivun avaamista, XML-elementit jotka edustavat nykyistä ja esi-sivuja liitetään määritteisiin isopen = ture ja iscurrent = true" />
+  <string key="Composite.Pages.SitemapXml.param.SourcePage.label" value="Lähdesivu" />
+  <string key="Composite.Pages.SitemapXml.param.SourcePage.help" value="Oletuksena lähde on sivu parhaillaan avattu. Määritä arvo, jos haluat saada sivukartta tietoa suhteessa toiselle sivulle. Lähdesivu kontrolloi kuinka sivu elementit on selvennettävä isopen ja iscurrent ja on lähtökohtana laskettaessa sivun soveltamisalaa." />
+  <string key="Composite.Pages.SitemapXml.param.SitemapScope.label" value="Sivun soveltamisala" />
+  <string key="Composite.Pages.SitemapXml.param.SitemapScope.help" value="Sivukartan sivujen laajuus. Oletuksena on kaikki sivut. Voit käyttää tätä parametria poimiaksesi rakenteeseen joka sinun on täytettävä tehtäväsäsi." />
+  <string key="Composite.Pages.GetForeignPageInfo.description" value="Saa tietoa nykyisestä sivusta kaikilla kielillä." />
+  <string key="Composite.Utils.Caching.PageObjectCache.description" value="Määrittää 'välimuistivyöhykkeen' funktion kutsun ympärillä tai merkinnät  (tyypillisesti sisältää funktiokutsut). Tätä toimintoa voidaan käyttää tehostamaan sivun tuottamisen suorituskykyä tallentamalla sivun osia välimuistiin . &quot;Object Cache Id&quot; arvon tulisi olla yksilöllinen välimuistin sisällössä." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.label" value="Objekti välimuistiin" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.help" value="Mitä haluat välimuistiin - tämä voi olla yksi funktion kutsu tai osa merkintöjä jotka sisältävät yhden tai useampia funktiokutsuja." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.label" value="Ainutlaatuinen välimuistin id" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.help" value="Määritä tunnus ainutlaatuista sisältöä varten välimuistissa. Tätä arvoa käytetään - yhdessä Sivun soveltamisala - määritelläkseen yksilöllinen välimuistin avain." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.label" value="Sivun soveltamisala" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.help" value="Sivua soveltamisala välimuistissa tiedot olisi jaettava. Oletuksena sivu soveltamisala on tällä sivustolla, mutta voit vaihtaa sen sivulle erityisiä välimuistin ja enemmän." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.label" value="Välimuistin kesto (sekuntia)" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.help" value="Monta sekuntia välimuistissa kohde on käytettävävissä uudelleen. Oletus on 1 minuutti (60 sekuntia)." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.label" value="Kielelle erityisiä" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.help" value="Valitse tallennetaanko objekti välimuistissa per kieli vai yleisesti jaettuna kaikkien kielien kanssa." />
+  <string key="Composite.Utils.Compare.AreEqual.description" value="AreEqual" />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueA.help" value="Vertaa kahden objektin samanlaisuutta. Palauttaa true jos kaksi objektia ovat samoja." />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueA.label" value="Arvo A vertailtavaksi." />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueB.help" value="" />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueB.label" value="Arvo B vertailtavaksi." />
+  <string key="Composite.Utils.Compare.IsLessThan.description" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueA.help" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueA.label" value="Arvo A vertailtavaksi." />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueB.help" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueB.label" value="Arvo B vertailtavaksi." />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.description" value="Lukee merkkijonon sovelluksen asetustiedosta (web.config tai app.config)" />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.help" value="" />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.label" value="Avaimen nimi" />
+  <string key="Composite.Utils.Date.AddDays.description" value="Lisää useita päiviä päivämäärään ja palauttaa tuloksena päivämäärän." />
+  <string key="Composite.Utils.Date.AddDays.param.DaysToAdd.help" value="Määritä negatiivinen tai positiivinen päivien määrä lisättäväksi nykyisen päivämäärän." />
+  <string key="Composite.Utils.Date.AddDays.param.DaysToAdd.label" value="Lisättävät päivät" />
+  <string key="Composite.Utils.Date.Now.description" value="Nykyinen päivämäärä ja kellonaika" />
+  <string key="Composite.Utils.GetInputParameter.description" value="Palauttaa syöttöparametrin funktion toteuttamasta suorituksesta. Käytä tätä kehittämisessä kopioidaksesi tuloarvon uuteen funktion kutsuun." />
+  <string key="Composite.Utils.GetInputParameter.param.InputParameterName.help" value="Määritä syöttöparametrin nimi , jonka arvoa haluat käyttää täällä." />
+  <string key="Composite.Utils.GetInputParameter.param.InputParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Utils.ParseStringToObject.description" value="Jäsentää merkkijonon objektiksi. Objektin tyyppi riippuu vastaanottajasta. Tämän toiminnon avulla voit antaa arvon DateTime merkkijonon parametrina ja järjestelmä jäsentää merkkijonon DateTime jne." />
+  <string key="Composite.Utils.ParseStringToObject.param.StringToParse.help" value="Määritä jäsennettävä merkkijono. Huomaa, että merkkijono täytyy olla muotoiltu siten, että se voidaan muuntaa objektin odotettuun tyyppiin." />
+  <string key="Composite.Utils.ParseStringToObject.param.StringToParse.label" value="Jäsenettävä merkkijono" />
+  <string key="Composite.Utils.Guid.NewGuid.description" value="Palauttaa uuden satunnainen Guidin." />
+  <string key="Composite.Utils.Globalization.AllCultures.description" value="Luettelo kaikista kulttuureista" />
+  <string key="Composite.Utils.Globalization.CurrentCulture.description" value="Kulttuuri nykyiselle käyttäjälle / pyyntö." />
+  <string key="Composite.Utils.Integer.Sum.description" value="Palauttaa summan kokonaislukujen listasta" />
+  <string key="Composite.Utils.Integer.Sum.param.Ints.help" value="" />
+  <string key="Composite.Utils.Integer.Sum.param.Ints.label" value="Kokonaislukujen lista" />
+  <string key="Composite.Utils.Predicates.BoolEquals.description" value="Tarkista onko boolean arvo tosi vai epätosi." />
+  <string key="Composite.Utils.Predicates.BoolEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.BoolEquals.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.description" value="Tarkista, että päivämäärä vastaa tiettyä arvoa" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.description" value="Tarkista, onko ajankohta suurempi kuin tietty arvo" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.description" value="Tarkista, onko ajankohta pienempi kuin tietty arvo" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.description" value="Tarkista onko desimaaliluku tietty arvo" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.description" value="Tarkista, onko desimaaliluku suurempi kuin tietty arvo" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.description" value="Tarkista, onko desimaaliluku pienempi kuin tietty arvo" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.GuidEquals.description" value="Tarkista, että Guid vastaa tiettyä arvoa" />
+  <string key="Composite.Utils.Predicates.GuidEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.GuidEquals.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.description" value="Tarkista, että Guid on olemassa pilkulla erotettussa merkkijono listassa" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.label" value="Luettelo Guideista" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.help" value="Merkkijono sisältää nolla tai useampia GUID:eja pilkulla erotettuna" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.description" value="Tarkista, löytyykö merkkijono pilkulla erotettusta merkkijono listasta" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.label" value="Hakuehdot" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="Merkkijono sisältää hakutermit pilkuilla erotettuina, kuten &quot;c1, cms, LINQ&quot;" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.label" value="Ohita tapaus" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.help" value="Kun epätosi, sanojen kirjainkoon on oltava täsmälleen sama. Oletus on totta, kirjainkoko haku" />
+  <string key="Composite.Utils.Predicates.StringInList.description" value="Tarkista, onko merkkijono mukana annetussa luettelossa" />
+  <string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.label" value="Hakuehdot" />
+  <string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.help" value="Merkkijonolista vastaamaan etsittävää merkkijono kenttää." />
+  <string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.label" value="Ohita tapaus" />
+  <string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.help" value="Kun epätosi, sanojen kirjainkoon on oltava täsmälleen sama. Oletus on totta, kirjainkoko haku" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.description" value="Tarkista, että kokonaisluku vastaa tiettyä arvoa" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.description" value="Tarkista, onko kokonaisluku suurempi kuin tietty arvo" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.description" value="Tarkista, onko kokonaisluku pienempi kuin tietty arvo" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.StringContains.description" value="Tarkista, sisältääkö merkkijono tietyn arvon" />
+  <string key="Composite.Utils.Predicates.StringContains.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringContains.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.description" value="Tarkista, päättyykö merkkijono tiettyyn arvoon" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.StringEquals.description" value="Tarkista, vastaako merkkijono tiettyä arvoa" />
+  <string key="Composite.Utils.Predicates.StringEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringEquals.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.description" value="Tarkista, alkaako merkkijono tiettyllä arvolla" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.description" value="Tarkista, että Guid vastaa tiettyä arvoa" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.NullableGuidNoValue.description" value="Tarkista, nollattavissa olevassa Guidissa ei ole arvoa" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.description" value="Tarkista, että kokonaisluku vastaa tiettyä arvoa" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.NullableIntegerNoValue.description" value="Tarkista, että nollattavissa olevassa kokonaisluvussa ei ole arvoa" />
+  <string key="Composite.Utils.Predicates.StringNoValue.description" value="Tarkista, onko merkkijonossa arvoa" />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.description" value="Tarkista onko boolean arvo tosi vai epätosi." />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.NullableBoolNoValue.description" value="Tarkista, että nollattavissa olevassa boolean ei ole arvoa" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.description" value="Tarkista, että päivämäärä vastaa tiettyä arvoa" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.description" value="Tarkista, onko ajankohta suurempi kuin tietty arvo" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.description" value="Tarkista, onko ajankohta pienempi kuin tietty arvo" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeNoValue.description" value="Tarkista, että nollattavissa olevassa päivämäärässä ei ole arvoa" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.description" value="Tarkista onko desimaaliluku tietty arvo" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.label" value="Verrattava arvo" />
+  <string key="Composite.Utils.Predicates.NullableDecimalNoValue.description" value="Tarkista onko nollattavissa olevassa desimaaliluvussa arvoa" />
+  <string key="Composite.Utils.String.Join.description" value="Liittää merkkijonolistan yhteen merkkijonoon" />
+  <string key="Composite.Utils.String.Join.param.Separator.help" value="Merkkijonojen väliin lisättävä erotin." />
+  <string key="Composite.Utils.String.Join.param.Separator.label" value="Erotin" />
+  <string key="Composite.Utils.String.Join.param.Strings.help" value="Liitettävä merkkijonolista" />
+  <string key="Composite.Utils.String.Join.param.Strings.label" value="Liitettävät merkkijonot" />
+  <string key="Composite.Utils.String.JoinTwo.description" value="Yhdistää kaksi merkkijonoa yksinkertaiseksi merkkijonoksi" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringA.help" value="Merkkijono asetetaan etusijalle" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringA.label" value="Merkkijono A" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringB.help" value="Merkkijono joka laitetaan loppuun" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringB.label" value="Merkkijono B" />
+  <string key="Composite.Utils.String.JoinTwo.param.Separator.help" value="Merkkijono joka lisätään merkkijonojen A  ja B väliin. Oletuksena ei erotinta" />
+  <string key="Composite.Utils.String.JoinTwo.param.Separator.label" value="Erotin" />
+  <string key="Composite.Utils.String.Split.description" value="Jakaa merkkijonon merkkijono lstaksi." />
+  <string key="Composite.Utils.String.Split.param.Separator.help" value="Erotin jota käytetään, kun merkkijono pilkotaan . Oletus on pilkku (,)" />
+  <string key="Composite.Utils.String.Split.param.Separator.label" value="Erotin" />
+  <string key="Composite.Utils.String.Split.param.String.help" value="Merkkijono jonka haluat jakaa listaan." />
+  <string key="Composite.Utils.String.Split.param.String.label" value="Jaettava merkkijono" />
+  <string key="Composite.Utils.Validation.DateTimeNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.DecimalNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.description" value="Validoi numeroiden tarkkuus (käyttäjän antama desimaalien lukumäärä)" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.help" value="Desimaalien enimmäismäärä" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.label" value="Max desimaalien määrä" />
+  <string key="Composite.Utils.Validation.GuidNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.Int32NotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.description" value="Validoi että kokonaisluku on tietyn vaihteluvälin sisällä." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.help" value="Sallittu enimmäismäärä on tässä kentässä." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.label" value="Enimmäismäärä" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.help" value="Vähimmäismäärä tässä kentässä." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.label" value="Vähimmäismäärä" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.description" value="Validoi, että merkkijono vastaa määritettyä säännöllistä lauseketta" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.help" value="Käytettävä säännöllinen lauseke" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.label" value="Lausekkeella" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.description" value="Validoi, että merkkijonon pituus on määritetyllä alueella" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.max.help" value="" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.max.label" value="Suurin pituus" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.min.help" value="" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.min.label" value="Pienin pituus" />
+  <string key="Composite.Utils.Validation.StringNotNullValidation.description" value="" />
+  <string key="Composite.Web.Client.BrowserPlatform.description" value="" />
+  <string key="Composite.Web.Client.BrowserString.description" value="" />
+  <string key="Composite.Web.Client.BrowserType.description" value="" />
+  <string key="Composite.Web.Client.BrowserVersion.description" value="" />
+  <string key="Composite.Web.Client.EcmaScriptVersion.description" value="" />
+  <string key="Composite.Web.Client.IsCrawler.description" value="Tosi, jos nykyinen pyyntö on tunnistettu olevan peräisin crawlerista (hakukone)." />
+  <string key="Composite.Web.Client.IsMobileDevice.description" value="Totta, jos nykyinen pyyntö tunnistetaan olevan peräisin mobiililaitteelta." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.description" value="Yhteinen HTML sisällönkuvauskenttä jonka haluat html koodin head osaan" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.label" value="Content-Type" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="Oletuksena tämä on text / html; charset = utf-8. Jos palvelet jotain muuta, pitäisi tämä muuttaa." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.label" value="Suunnittelija" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Kuka suunnitteli tämän sivuston? Näytä se Designer sisällönkuvauskenttässä. Oletuksena ei käytössä." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.label" value="Näytä generaattori" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.help" value="Näytä maailmalle että tuet Composite C1:tä - ilmainen avoimen lähdekoodin tuote!" />
+  <string key="Composite.Web.Html.Template.LangAttribute.description" value="Liittää lang = '(kielikoodi) attribuutin emoelementtiin kertoakseen sivun kielen. Voit laittaa tämän &lt;html /&gt; tagin alapuolella." />
+  <string key="Composite.Web.Request.CookieValue.description" value="Saa arvon nykyisen käyttäjän eväste kokoelmasta." />
+  <string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
+  <string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Evästeen nimi" />
+  <string key="Composite.Web.Request.CookieValue.param.FallbackValue.help" value="Jos käyttäjällä ei ole tätä evästettä, käytä tätä kenttää määräämään mitä tehdään oletuksena." />
+  <string key="Composite.Web.Request.CookieValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.FormPostBoolValue.description" value="Saa boolean arvon lomakkeelta post metodilla (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.description" value="Saa desimaaliarvon lomakkeelta post metodilla (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.FormPostGuidValue.description" value="Saa Guid arvo lomakkeen post metodilla (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.description" value="Saa kokonaisluku arvon lomakkeen post metodilta (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.FormPostValue.description" value="Saa merkkijonon arvon lomakkeen post metodilta (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.FormPostValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.description" value="Saa päivämäärä ja aika-arvon lomakkeen post metodilta  (HTTP POST). Tulevan päivämäärän merkkijonon odotetaan olevan XML alustettu (kuten 2003-09-26T13: 30:00)" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.help" value="Arvo jota käytetään, jos viesti ei sisällä määritettyä parametriä." />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.description" value="Saa boolean arvon URL-parametrinä (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.description" value="Saa desimaaliarvo URL-parametrinä (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.description" value="Saa Guid arvo URL-parametrinä (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.description" value="Saa kokonaisluku arvo URL-parametrinä (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.QueryStringValue.description" value="Saa merkkijonon arvon URL-parametrinä (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.QueryStringValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.description" value="Tuo päivämäärä ja aika-arvon URL-parametrinä (HTTP GET). Tuleva päivämäärän merkkijono odotetaan olevan XML alustettu (kuten 2003-09-26T13: 30:00)" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.help" value="Arvo jota käytetään, jos Url ei sisällä määritettyä parametriä." />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Parametrin nimi" />
+  <string key="Composite.Web.Request.PathInfo.description" value="Palauttaa lisätiedot jotka annettin URL:n yhdessä sekä sivun linkin." />
+  <string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Polun segmentin info käyttäen muotoa / (0) / (1) / (2) / .... Määritä -1 saadaksesi koko merkkijono." />
+  <string key="Composite.Web.Request.PathInfo.param.Segment.label" value="Segmentti" />
+  <string key="Composite.Web.Request.PathInfo.param.AutoApprove.help" value="Kun tosi, Composite C1 neuvotaan hyväksymään mikä tahansa polkuinfo merkkijono. Oletus on tosi." />
+  <string key="Composite.Web.Request.PathInfo.param.AutoApprove.label" value="AutoApprove" />
+  <string key="Composite.Web.Request.PathInfo.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfo.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.PathInfoInt.description" value="Poimii kokonaisluvun PathInfo segmentistä." />
+  <string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Polun segmentti info haetaan käyttäen muotoa / (0) / (1) / (2) / ...." />
+  <string key="Composite.Web.Request.PathInfoInt.param.Segment.label" value="Segmentti" />
+  <string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.help" value="Kun tosi, Composite C1 neuvotaan hyväksymään mikä tahansa polkuinfo merkkijono. Oletus on tosi." />
+  <string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.label" value="AutoApprove" />
+  <string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.PathInfoGuid.description" value="Poimii GUIDin PathInfo segmentistä." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Polun segmentti info haetaan käyttäen muotoa / (0) / (1) / (2) / ...." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.Segment.label" value="Segmentti" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.help" value="Kun tosi, Composite C1 neuvotaan hyväksymään mikä tahansa polkuinfo merkkijono. Oletus on tosi." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.label" value="AutoApprove" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Ilmoittaa järjestelmälle että PathInfo on käytössä, joten pyyntöä ei ohjata &quot;Page not found&quot; sivulle." />
+  <string key="Composite.Web.Request.SessionVariable.description" value="Hakee muuttujaa nykyisen käyttäjän istunnon merkkijonoista." />
+  <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="Arvo jota käytetään, jos istunnon muuttujaa ei löytynyt" />
+  <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Request.SessionVariable.param.VariableName.help" value="" />
+  <string key="Composite.Web.Request.SessionVariable.param.VariableName.label" value="Muuttujan nimi" />
+  <string key="Composite.Web.Response.Redirect.description" value="Ohjaa verkkosivuilla kävijä toiseen URL:n. URL uudelleenohjaus ohitetaan kun tämä toiminto suoritetaan C1 konsolin sisällä." />
+  <string key="Composite.Web.Response.Redirect.param.Url.help" value="URL johon käyttäjä tulisi ohjata, joko absoluuttinen (http://contoso.com/default.aspx) tai suhteellinen (/Login.aspx))." />
+  <string key="Composite.Web.Response.Redirect.param.Url.label" value="URL" />
+  <string key="Composite.Web.Response.SetCookieValue.description" value="Asettaa evästeen arvon nykyiselle käyttäjälle" />
+  <string key="Composite.Web.Response.SetCookieValue.param.CookieName.help" value="Asetettava / korvatavan evästeen nimi" />
+  <string key="Composite.Web.Response.SetCookieValue.param.CookieName.label" value="Evästeen nimi" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Value.help" value="Evästeen tallennettava arvo" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Value.label" value="Evästeen arvo" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Expires.help" value="Kun evästeellä on päättymispäivä (lakkaa olemasta). Oletusarvo on istunto, kun käyttäjä sulkee selaimen." />
+  <string key="Composite.Web.Response.SetCookieValue.param.Expires.label" value="Päättyminen" />
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.description" value="Asettaa sivulle maksimi sekunttimäärän jonka se tulee olla julkisesti välimuistissa palvelimelle. Varmistaksesi, että sivu ei ole välimuistissa aseta &quot;Maksimi sekuntia&quot; arvoksi 0. Jos useampi lähde asettaa palvelimen välimuistin keston, pienin numero on käytössä. Huomaa, että tiedosto &quot;~ /Renderers/Page.aspx&quot; sisältää oletusarvon välimuistin kestolle - Voit muokata tätä tiedostoa muuttaaksesi oletuksena." />
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.help" value="Enimmäismäärä sekuntteja sivun pitäisi olla julkisesti välimuistissa. Korkea arvo tuottaa hyvän suorituskyvyn, alhaisella arvolla muutokset näkyävät nopeammin. '0 ' takoittaa, että kaikki kävijät saavat ainutkertaisen vastauksen." />
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.label" value="Maksimi sekuntia" />
+  <string key="Composite.Web.Response.SetSessionVariable.description" value="Määrittää istunnon muuttujan nykyiselle käyttäjälle" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.Value.help" value="" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.Value.label" value="Arvo" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.VariableName.help" value="Istunnon muuttujan nimi." />
+  <string key="Composite.Web.Response.SetSessionVariable.param.VariableName.label" value="Muuttujan nimi" />
+  <string key="Composite.Web.Server.ApplicationPath.description" value="Web-sovelluksen virtuaalinen polku. Yleensä tämä on '' - tyhjä merkkijono, kun spvellus on käynnissä palvelimen root kansiossa, mutta jos Composite C1 on käynnissä alikansiossa tämä voi olla /MySubfolder. Voit käyttää tätä arvoa asettaaksesi etuliiteen URL:iin niin ei ole väliä missä on Composite C1 on käynnissä. Esimerkki XSLT käyttö: &lt;img src={/in:inputs/in:result[@name='ApplicationPath']}/images/myImage.png /&gt;" />
+  <string key="Composite.Web.Server.ApplicationVariable.description" value="Saa IIS sovelluksen muuttujan" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.help" value="Käytettävä arvo, jos sovelluksen muuttujaa ei löydy" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.label" value="Fallback arvo" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.VariableName.help" value="" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.VariableName.label" value="Muuttujan nimi" />
+  <string key="Composite.Web.Server.ServerVariable.description" value="Saa arvon IIS Server muuttujasta" />
+  <string key="Composite.Web.Server.ServerVariable.param.VariableName.help" value="Haettava IIS Server muuttuja." />
+  <string key="Composite.Web.Server.ServerVariable.param.VariableName.label" value="Muuttujan nimi" />
+  <string key="Composite.Xml.LoadFile.description" value="Lataa paikallisen XML-tiedoston suhteellisesta polusta" />
+  <string key="Composite.Xml.LoadFile.param.RelativePath.help" value="Suhteellinen polku XML-tiedoston lataamiseen" />
+  <string key="Composite.Xml.LoadFile.param.RelativePath.label" value="Suhteellinen polku" />
+  <string key="Composite.Xml.LoadXhtmlFile.description" value="Lataa paikallisen XHTML-tiedoston suhteellisesta polusta" />
+  <string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.help" value="Suhteellinen polku XHTML-tiedoston lataamiseen" />
+  <string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.label" value="Suhteellinen polku" />
+  <string key="Composite.Xml.LoadUrl.description" value="Lataa XML-tiedoston etäpalvelimelta annetusta Url:sta" />
+  <string key="Composite.Xml.LoadUrl.param.Url.help" value="" />
+  <string key="Composite.Xml.LoadUrl.param.Url.label" value="Url" />
+  <string key="Composite.Xml.LoadUrl.param.CacheTime.help" value="Aika sekunteina, kauanko sivua pitäisi pitää välimuistissa. Oletus on 0 (ei välimuistia)." />
+  <string key="Composite.Xml.LoadUrl.param.CacheTime.label" value="Sekuntia välimuistissa" />
+  <string key="Composite.Xslt.Extensions.DateFormatting.description" value="Tarjoaa paikallisen päivämäärän muotoilun funktioita  XSLT käyttöön." />
+  <string key="Composite.Xslt.Extensions.Globalization.description" value="Tarjoaa globalisaatio funktioita XSLT käyttöön." />
+  <string key="Composite.Xslt.Extensions.MarkupParser.description" value="Tarjoaa parsimisfunktioita koodattun XML-dokumentiin tai XHTML osiin. Käytä tätä laajennusta kun sinulla on XML tai XHTML merkkijonon ja täytyy kopioida se näytettäväksi tai tehdä muutoksia siihen." />
+  <string key="Composite.Mail.SendMail.description" value="Lähettää sähköpostiviestin. Muista määrittää SMTP-yhteydet web.config tiedostossa." />
+  <string key="Composite.Mail.SendMail.param.From.label" value="Alkaen" />
+  <string key="Composite.Mail.SendMail.param.From.help" value="Lähettäjän osoite." />
+  <string key="Composite.Mail.SendMail.param.To.label" value="Vastaanottaja" />
+  <string key="Composite.Mail.SendMail.param.To.help" value="Vastaanottaja. Luettelo pilkulla erotetuista sähköpostiosoitteista." />
+  <string key="Composite.Mail.SendMail.param.Subject.label" value="Aihe" />
+  <string key="Composite.Mail.SendMail.param.Subject.help" value="Sähköpostin aihe." />
+  <string key="Composite.Mail.SendMail.param.Body.label" value="Runko" />
+  <string key="Composite.Mail.SendMail.param.Body.help" value="Sähköpostin runko" />
+  <string key="Composite.Mail.SendMail.param.IsHtml.label" value="IsHtml" />
+  <string key="Composite.Mail.SendMail.param.IsHtml.help" value="Määrittää lähetetäänkö sähköposti  HTML muodossa vai tekstimuodossa." />
+  <string key="Composite.Mail.SendMail.param.CC.label" value="CC" />
+  <string key="Composite.Mail.SendMail.param.CC.help" value="Carbon Copy. Luettelo pilkulla erotettuista sähköpostiosoitteista, jotka ovat toissijaisia ​​vastaanottajia viestille." />
+  <string key="Composite.Mail.SendMail.param.ReplyTo.label" value="Vastaa" />
+  <string key="Composite.Mail.SendMail.param.ReplyTo.help" value="Osoite, jota olisi käytettävä vastatakseen viestiin." />
+  <string key="Composite.Mail.SendMail.param.BCC.label" value="BCC" />
+  <string key="Composite.Mail.SendMail.param.BCC.help" value="Blind Carbon Copy. Vastaanottajien luettelon, joka saa postia, mutta joiden sähköpostiosoitteet eivät näy vastaanottajien luettelossa." />
+  <string key="Composite.Mail.SendMail.param.Attachment.label" value="Liite" />
+  <string key="Composite.Mail.SendMail.param.Attachment.help" value="Luettelo liitetiedostoista. \n Muoto on seuraava [{name}=] {filepath} [, {mime-type] [| .... ]. \n Tiedoston polku voi olla joko suhteellinen tai absoluuttinen polku esim.C:\ someimage.jpg tai /coolpicture.jpg \n Jos tiedoston polku alkaa &quot;Composite/&quot; se tunnistetaan poluksi Composite mediassa, esim. &quot;Composite/ MediaArchive:someImage.gif &quot;\n\n Esimerkkejä: \n /attachment.jpg \nimage.jpg = /attachment.jpg \ n image.jpg = /attachment.jpg, image/jpg \n image1.jpg = /attachment1.jpg, image/jpg | image2.jpg = /attachment2.jpg, image/jpg" />
+  <string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="AttachmentFromMedia" />
+  <string key="Composite.Mail.SendMail.param.AttachmentFromMedia.help" value="Mediakirjastosta liitettävä tiedosto." />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.description" value="Suodattaa kuvat sen kansion polun mukaan" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.label" value="Media-kansio" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.help" value="Viittaus media kansioon" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Sisällytä alikansiot" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Määrittelee pitäisikö kuvat alikansioista sisällyttää." />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.description" value="Suodattaa kuvat sen kansion polun mukaan" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.label" value="Media-kansio" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.help" value="Viittaus media kansioon" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Sisällytä alikansiot" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Määrittelee pitäisikö mediatiedostoja alikansioista sisällyttää." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Muuntaa taulukkomuotoisen XElements:n sanakirja muotoon käyttäen nimettyjä määritteitä avaimina ja arvoina." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.label" value="XElements" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.help" value="Taulukkomuotoinen  XElements, jota käytetään luomaan sanasto." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.label" value="Avain ominaisuuden nimi" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Attribuutin nimi XElement :ssä minkä arvoa käytetään avaimena sanakirjassa." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.label" value="Arvo ominaisuuden nimi" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Attribuutin nimi XElement :ssä jonka arvoa käytetään arvona sanakirjassa." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Muuntaa taulukkomuotoisen XElements:n sanakirja muotoon käyttäen nimettyjä määritteitä avaimina ja arvoina." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.label" value="Objektit" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.help" value="Objekti taulukko, joita käytetään luomaan sanasto." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.label" value="Avain ominaisuuden nimi" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Ominaisuuden nimi objektissa, jonka arvoa käytetään avaimena sanakirjassa." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.label" value="Ominaisuuden nimi" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Ominaisuuden nimi objektissa, jonka arvoa käytetään arvona sanakirjassa." />
+</strings>

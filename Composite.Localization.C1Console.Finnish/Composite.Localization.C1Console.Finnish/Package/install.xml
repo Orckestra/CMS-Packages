@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.1.4055.27225" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Localization.C1Console.Finnish" groupName="Composite.Localization" version="1.0.2" author="Jari Kaipio" website="http://www.kaipio.com/apps/composite" readMoreUrl="http://docs.composite.net/Composite.Localization.C1Console" id="6f9bebd2-2279-4268-9251-fb652d2a7008" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<TechnicalDetails>Finnish language pack for the console GUI</TechnicalDetails>
+		<Description>Finnish language pack for the console GUI</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
+			<Install xsltFilePath="~\Config\Install.xsl" />
+			<Uninstall xsltFilePath="~\Config\Uninstall.xsl" />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Directories>
+				<Directory sourceDirectory="~\App_Data\Composite\LanguagePacks\fi-FI\" targetDirectory="~\App_Data\Composite\LanguagePacks\fi-FI\" allowOverwrite="true" deleteTargetDirectory="false"/>
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

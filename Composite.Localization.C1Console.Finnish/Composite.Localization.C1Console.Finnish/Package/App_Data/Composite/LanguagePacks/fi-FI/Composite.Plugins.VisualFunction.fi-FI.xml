@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="DeleteStep1.FieldGroupLabel" value="Poista näkyvä funktio?" />
+  <string key="DeleteStep1.Text" value="Oletko varma, että haluat poistaa valitun funktion?" />
+  <string key="AddNew.DialogLabel" value="Lisää visuaalinen funktio" />
+  <string key="AddNew.NoTypesExistsErrorTitle" value="Ei visualisoitavia tietotyyppejä" />
+  <string key="AddNew.NoTypesExistsErrorMessage" value="Yhtään tietotyyppiä ei ole vielä luotu. Sinun on ensin luotava visualisoitava tietotyyppi ennen kuin voit luoda visualisoinnin." />
+  <string key="AddNew.NoDataExistsErrorTitle" value="Ei tietoja visualisoitavaksi ja esikatseluun" />
+  <string key="AddNew.NoDataExistsErrorMessage" value="Tietojen on oltava olemassa ennen kuin voit luoda renderoinnin. Lisää joitakin tietoja tähän tyyppiin ja yritä uudelleen." />
+  <string key="AddNew.NoPageTemplatesExistsErrorTitle" value="Ei malleja" />
+  <string key="AddNew.NoPageTemplatesExistsErrorMessage" value="Ainakin yksi malli on oltava olemassa, ennen kuin voit luoda renderoinnin. Luo yksi malli ja yritä uudelleen." />
+  <string key="AddNew.MissingActiveLanguageTitle" value="Kieli on pakollinen" />
+  <string key="AddNew.MissingActiveLanguageMessage" value="Tarvitaan kieli ennekuin voit luoda visuaalisen funktion, mutta yhtään kieltä ei ole lisätty vielä. Voit lisätä kielen System näkymässä." />
+  <string key="AddNewStep1.FieldGroupLabel" value="Valitse visualisoitava tietotyyppi" />
+  <string key="AddNewStep1.TypeSelectorLabel" value="Tietotyyppi" />
+  <string key="AddNewStep1.TypeSelectorHelp" value="" />
+  <string key="AddNewStep2.FieldGroupLabel" value="Visuaalisen funktion nimeäminen" />
+  <string key="AddNewStep2.FuncitonNameLabel" value="Funktion nimi" />
+  <string key="AddNewStep2.FuncitonNameHelp" value="" />
+  <string key="AddNewStep2.FuncitonNamespaceLabel" value="Funktion nimiavaruus" />
+  <string key="AddNewStep2.FuncitonNamespaceHelp" value="" />
+  <string key="Edit.PlaceHolderLabel" value="Visuaalisen funktion asetukset" />
+  <string key="Edit.HeadingTitel" value="Visuaalinen funktio" />
+  <string key="Edit.FieldGroupLabel" value="Visuaalisen funktion asetukset" />
+  <string key="Edit.FunctionNameLabel" value="Funktion nimi" />
+  <string key="Edit.FunctionNameHelp" value="Toiminnon nimi. Nimet on oltava ainutlaatuisia nimiavaruudessa." />
+  <string key="Edit.FunctionNamespaceLabel" value="Funktion nimiavaruus" />
+  <string key="Edit.FunctionNamespaceHelp" value="Paketti johon tämän funktio kuuluu." />
+  <string key="Edit.FunctionDescriptionLabel" value="Kuvaus" />
+  <string key="Edit.FunctionDescriptionHelp" value="Funktion kuvaus, joka auttaa ihmisiä ymmärtämään, mitä se tekee." />
+  <string key="Edit.ItemListLenghtLabel" value="Tietolistan pituus" />
+  <string key="Edit.ItemListLenghtHelp" value="Enimmäismäärä näytettäviä kohteita." />
+  <string key="Edit.ItemSortingLabel" value="Kohteen lajittelu" />
+  <string key="Edit.ItemSortingHelp" value="Valitse mikä kenttä lajittelee luetteloa. Käytä '(random) poimiaksesi satunnaisesti listasta." />
+  <string key="Edit.ListSortingLabel" value="Luettelon lajittelujärjestys" />
+  <string key="Edit.ListSortingTrueLabel" value="Nouseva" />
+  <string key="Edit.ListSortingFalseLabel" value="Laskeva" />
+  <string key="Edit.ListSortingHelp" value="Valitse lajiteltun järjestys. Nouseva järjestys on aakkosjärjestyksessä, aikajärjestyksessä. Tämä kenttä jätetään huomiotta, kun (random) lajittelu on käytössä." />
+  <string key="Edit.PreviewTemplateLabel" value="Esikatsele mallia" />
+  <string key="Edit.PreviewTemplateHelp" value="Näitä tietoja käytetään vain silloin, kun esikatsellaan funktiota." />
+  <string key="Edit.WYSIWYGLayoutLabel" value="Visuaalinen ulkoasu" />
+  <string key="Edit.LabelPreview" value="Esikatselu" />
+  <string key="Edit.NoPageTemplatesExistsErrorTitle" value="Ei malleja" />
+  <string key="Edit.NoPageTemplatesExistsErrorMessage" value="Ainakin yksi malli on oltava olemassa, ennen kuin voit muokata renderointia. Luo yksi malli ja yritä uudelleen." />
+  <string key="Edit.MissingActiveLanguageTitle" value="Kieltä tarvitaan" />
+  <string key="Edit.MissingActiveLanguageMessage" value="Voit muokata visuaalisen funktion kieltä, mutta yhtään kieltä ei ole lisätty vielä. Voit lisätä kielen Systeemi näkymässä." />
+  <string key="Select.FieldGroupLabel" value="Valitse visuaalinen funktio" />
+  <string key="Select.FunctionFunctionsLabel" value="Valitse funktio" />
+  <string key="Select.FunctionFunctionsHelp" value="Valitse muokattava tai poistettava visuaalinen funktio" />
+  <string key="AddVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="Toinen funktio tällä nimellä on jo olemassa. Nimien on oltava yksilöllisiä." />
+  <string key="EditVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="Toinen funktio tällä nimellä on jo olemassa. Nimien on oltava yksilöllisiä." />
+  <string key="VisualFunctionElementProvider.RootFolderLabel" value="Visuaaliset funktiot" />
+  <string key="VisualFunctionElementProvider.RootFolderToolTip" value="Visuaaliset funktiot" />
+  <string key="VisualFunctionElementProvider.AddNewLabel" value="Lisää visuaalinen funktio" />
+  <string key="VisualFunctionElementProvider.AddNewToolTip" value="Lisää uusi visuaalinen funktio" />
+  <string key="VisualFunctionElementProvider.EditLabel" value="Muokkaa visuaalista funktiota" />
+  <string key="VisualFunctionElementProvider.EditToolTip" value="Muokkaa visuaalista funktiota" />
+  <string key="VisualFunctionElementProvider.DeleteLabel" value="Poista visuaalinen funktio" />
+  <string key="VisualFunctionElementProvider.DeleteToolTip" value="Poista visuaalinen funktio" />
+  <string key="VisualFunctionElementProvider.FunctionNameNotUniqueError" value="Toinen funktio tällä nimellä on jo olemassa. Nimien on oltava yksilöllisiä." />
+  <string key="VisualFunctionElementProviderHelper.AddNewLabel" value="Uusi visuaalinen funktio" />
+  <string key="VisualFunctionElementProviderHelper.AddNewToolTip" value="Uusi visuaalinen funktio" />
+  <string key="VisualFunctionElementProviderHelper.EditLabel" value="Muokkaa visuaalista funktiota" />
+  <string key="VisualFunctionElementProviderHelper.EditToolTip" value="Muokkaa visuaalista funktiota" />
+  <string key="VisualFunctionElementProviderHelper.DeleteLabel" value="Poista visuaalinen funktio" />
+  <string key="VisualFunctionElementProviderHelper.DeleteToolTip" value="Poista visuaalinen funktio" />
+</strings>

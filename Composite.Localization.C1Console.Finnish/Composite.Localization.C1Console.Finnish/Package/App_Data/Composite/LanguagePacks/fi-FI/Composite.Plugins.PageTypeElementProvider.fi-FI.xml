@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="PageType.Tree.Root.Label" value="Sivutyypit" />
+  <string key="PageType.Tree.DefaultContentElement.Label" value="Sijainnin sisältö" />
+  <string key="PageType.Tree.MetaDataFieldsElement.Label" value="Metatietokentät" />
+  <string key="PageType.Tree.AddNewPageType.Label" value="Lisää sivutyyppi" />
+  <string key="PageType.Tree.AddNewPageType.ToolTip" value="Lisää uusi sivutyyppi" />
+  <string key="PageType.Tree.EditPageType.Label" value="Sivutyypin muokkaus" />
+  <string key="PageType.Tree.EditPageType.ToolTip" value="Muokkaa valittua sivun tyyppiä" />
+  <string key="PageType.Tree.DeletePageType.Label" value="Poista sivutyyppi" />
+  <string key="PageType.Tree.DeletePageType.ToolTip" value="Poista valittu sivun tyyppi" />
+  <string key="PageType.Tree.AddDefaultPageContent.Label" value="Lisää oletussisältö" />
+  <string key="PageType.Tree.AddDefaultPageContent.ToolTip" value="Lisää oletussisältö" />
+  <string key="PageType.Tree.EditDefaultPageContent.Label" value="Muokkaa Oletussisältöä" />
+  <string key="PageType.Tree.EditDefaultPageContent.ToolTip" value="Muokkaa oletussisältö" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.Label" value="Poista Oletussisältö" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.ToolTip" value="Poista oletussisältö" />
+  <string key="PageType.Tree.AddMetaDataField.Label" value="Lisää metatietokenttä" />
+  <string key="PageType.Tree.AddMetaDataField.ToolTip" value="Lisää uusi metatietokenttä" />
+  <string key="PageType.Tree.EditMetaDataField.Label" value="Muokkaa metatietokenttää" />
+  <string key="PageType.Tree.EditMetaDataField.ToolTip" value="Muokkaa valittua metatietokenttää" />
+  <string key="PageType.Tree.DeleteMetaDataField.Label" value="Poista metatietokenttä" />
+  <string key="PageType.Tree.DeleteMetaDataField.ToolTip" value="Poista valittu metatietokenttä" />
+  <string key="PageType.AddNewPageTypeWorkflow.Layout.Label" value="Lisää uusi sivutyyppi" />
+  <string key="PageType.AddNewPageTypeWorkflow.FieldGroup.Label" value="Uuden sivutyypin asetukset" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Label" value="Nimi" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Help" value="Uuden sivutyypin nimi" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Label" value="Kuvaus" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Help" value="Uuden sivutyyppi kuvaus" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsPlaceHolder.Label" value="Asetukset" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsFieldGroup.Label" value="Sivutyypin asetukset" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Label" value="Nimi" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Help" value="Sivutyypin nimi" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Label" value="Kuvaus" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Help" value="Sivutyypin kuvaus" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Label" value="Saatavissa" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Help" value="Sivu ei ole valittavissa millään sivulla, jos tämä valinta poistetaan" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Label" value="Esitäytetty valikon otsikko" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Help" value="Jos tämä on valittuna oletusarvoinen valikon otsikko sivuilla on esiasetettu" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Label" value="Oletus lapsisivun sivutyyppi" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Help" value="Valitse sivutyyppi, jta käytetään oletuksena alasivujen luonnissa tällä sivutyypillä luoduissa sivuissa" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.NoneSelectedLabel" value="[Ei mitään]" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplatePlaceHolder.Label" value="Layout" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionFieldGroup.Label" value="Layout" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Label" value="Layout rajoitukset" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Help" value="Valitse asettelut jotka ovat käytettävissä vain, kun muokkaat tämän sivun tyyppiä olevia sivuja . Jos valitaan EI MITÄÄN (oletus), kaikki on saatavilla." />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Label" value="Oletusasettelu" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Help" value="Valitse layout joka on oletusasettelu sivuilla, jotka on luotu tällä sivutyypillä" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.NoneSelectedLabel" value="[Ei mitään]" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityPlaceHolder.Label" value="Saatavuus" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityFieldGroup.Label" value="Saatavuus" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Label" value="Kotisivun suhde" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Help" value="Kotisivun suhde" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.NoRestrictionLabel" value="Ei rajoituksia" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlySubPagesLabel" value="Vain alasivut" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlyHomePagesLabel" value="Vain kotisivut" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Label" value="Sivutyypin vanhemman rajoitus" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Help" value="Salli vain tämän sivutyypin sivu lapsi sivuksi valitun sivutyypin sivuille" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderApplicationPlaceHolder.Label" value="Tietokansiot / Ohjelmat" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderFieldGroup.Label" value="Tietokansiot" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Label" value="Tietokansiot" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Help" value="Valitse tietokansiot jotka pitäisi automaattisesti lisätä sivuille kun käytetään tätä sivutyyppiä" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationFieldGroup.Label" value="Sovellukset" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Label" value="Sovellukset" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Help" value="Valitse sovellukset jotka pitäisi automaattisesti lisätä sivuille jotka käyttävät tätä sivutyyppiä" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.DefaultTemplateNotInRestrictions" value="Oletusasettelu ei ole yksi valituista rajoitetetuista asetteluista" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.HomepageRelationConflictsWithParentRestrictions" value="Sivutyypin vanhemman rajoitukset on sallittu vain kotisivuilla" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Label" value="Poista tämä sivutyyppi?" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Messeage" value="Poista sivutyyppi {0}?" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Label" value="Käytössä oleva sivutyyppi" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Message" value="Sivutyyppiä {0} ei voi poistaa, koska se on käytössä" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.Layout.Label" value="Lisää oletussisältö" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.FieldGroup.Label" value="Valitse paikkamerkki" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Paikkamerkin tunnus" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="Paikkamerkin tunnus . Voit kirjoittaa myös olematon ID:n ja luoda paikkamerkin jälkeenpäin (muokkaamalla Sivun mallipohjan merkintää)." />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Title" value="Ei malleja {0}" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Message" value="Huomaathan että Placeholder ID:llä {0}, ei tällä hetkellä ole mitään layout mallia." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.Layout.Label" value="Muokkaa oletussisältö" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsPlaceHolder.Label" value="Asetukset" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsFieldGroup.Label" value="Paikkamerkin tiedot" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Paikkamerkin tunnus" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="Paikkamerkin.tunnus Voit kirjoittaa olematon ID:n ja luoda paikkamerkin jälkeenpäin (Sivun mallipohjan muokkaus merkintä)." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.ContentXhtmlEditor.Label" value="Sisältö" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.Layout.Label" value="Lisää metatietokenttä" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="" />
+  <!-- "Metadata settings" - but too much text! -->
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Ohjelmallinen nimi" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="Ainutlaatuinen metatietokentän nimi. Tätä ei voi muuttaa myöhemmin!" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Näytä etiketti" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Metatietokentän nimen etiketti. Käytetään UI:ssa." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Label" value="Metatiedon tyyppi" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Help" value="Metatiedon tyyppi" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Näytä välilehdellä" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="Valitse välilehti, jolla metatiedot näytetään kun sivua muokataan." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.AddingDefaultMetaData.Title" value="Lisää metatietojen oletusarvot" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Kentän nimi on jo käytössä toisessa tyypissä." />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Label" value="Poista tämä Metadata kenttä?" />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Message" value="Poista metatietokenttä {0}? Varoitus: kaikki sen nykyiset metatietokohteet poistetaan myös" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.Layout.Label" value="Muokkaa metatietokenttää" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="Metatietokentän asetukset" />
+  <!--
+
+  
+-->
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Etiketti" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Metatietokentän etiketti . Käytetään UI:ssa" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Välilehti" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="Valitse välilehti johon laitetaan metatiedot kun sivua muokataan" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Metatietotyyppiä käytetään toisessa paikassa samalla nimellä mutta eri etiketillä" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataContainerChangeNotAllowed" value="On olemassa yksi tai useampia samannimisiä määritelmiä, muuttaminen ei ole mahdollista" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Title" value="Metatietotyyppi on poistettu" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Message" value="Metatietotyyppi on poistettu järjestelmästä ja sitä ei voi enää lisätä mihinkään sivutyyppiin" />
+</strings>

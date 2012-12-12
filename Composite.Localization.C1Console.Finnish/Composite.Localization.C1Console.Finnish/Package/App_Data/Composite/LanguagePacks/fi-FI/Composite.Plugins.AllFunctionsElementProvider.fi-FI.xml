@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderLabel" value="Kaikki funktiot" />
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderToolTip" value="Kaikki funktiot" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderLabel" value="Kaikki Widget funktiot" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderToolTip" value="Kaikki widget funktiot" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentation" value="Tuota dokumentointi" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentationTooltip" value="Luo kaikkien funktioiden dokumentointi t&#228;m&#228;n kansion alle" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformation" value="Tiedot" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformationTooltip" value="Katso funktion tiedot" />
+
+  <string key="FunctionTesterWorkflow.Layout.Label" value="Testi: {0}" />
+  <string key="FunctionTesterWorkflow.FunctionCalls.Label" value="Funktiot" />  
+  <string key="FunctionTesterWorkflow.Preview.Label" value="Tulokset" />
+  <string key="FunctionTesterWorkflow.Runtime.FieldGroup.Label" value="Kestoaika" />
+  <string key="FunctionTesterWorkflow.DebugFieldGroup.Label" value="Asetukset" />
+  <string key="FunctionTesterWorkflow.DebugPage.Label" value="Sivu" />
+  <string key="FunctionTesterWorkflow.DebugPage.Help" value="T&#228;t&#228; sivua k&#228;ytet&#228;&#228;n nykyisen&#228; sivuna, kun suoritat toiminnon." />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Label" value="Tietojen laajuus" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Help" value="T&#228;t&#228; k&#228;ytet&#228;&#228;n nykyisen&#228; tietoalueena, kun suoritat toiminnon." />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Label" value="Kieli" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Help" value="T&#228;t&#228; k&#228;ytet&#228;&#228;n nykyisen&#228; kielen&#228;, kun suoritat toiminnon." />
+  <string key="FunctionTesterWorkflow.AdminitrativeScope.Label" value="Hallinnollinen" />
+  <string key="FunctionTesterWorkflow.PublicScope.Label" value="Julkinen" />
+  
+
+  <string key="AllFunctionsElementProvider.FunctionTester.Label" value="Testifunktio" />
+  <string key="AllFunctionsElementProvider.FunctionTester.ToolTip" value="Testifunktio" />
+</strings>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootFolderLabel" value="C# funktiot" />
+  <string key="RootFolderToolTip" value="Metodi funktiot" />
+  <string key="DeleteFunction.LabelFieldGroup" value="Poista tämä funktio" />
+  <string key="DeleteFunction.Text" value="Poista tämä funktio" />
+  <string key="Add" value="Lisää ulkopuolinen C# funktio" />
+  <string key="AddToolTip" value="Lisää ulkopuolinen C# metodipohjainen funktio" />
+  <string key="Create" value="Lisää sisäinen C# funktio" />
+  <string key="CreateToolTip" value="Lisää sisäinen C# metodi pohjainen funktio" />
+  <string key="Edit" value="Muokkaa" />
+  <string key="EditToolTip" value="Muokkaa funktiota." />
+  <string key="Delete" value="Poista" />
+  <string key="DeleteToolTip" value="Poista funktio" />
+  <string key="AddNewMethodBasedFunction.LabelFieldGroup" value="Lisää uusi metodiin perustuva funktio" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelType" value="Tyyppi" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="Tyyppi, joka sisältää kyseisen metodin" />
+  <string key="AddNewMethodBasedFunctionStep2.LabelMethodName" value="Metodin nimi" />
+  <string key="AddNewMethodBasedFunctionStep2.HelpMethodName" value="" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelMethodName" value="Metodin nimi" />
+  <string key="AddNewMethodBasedFunctionStep3.HelpMethodName" value="" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelNamespaceName" value="Nimiavaruuden nimi" />
+  <string key="AddNewMethodBasedFunctionStep3.HelpNamespaceName" value="" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelError" value="Virhe" />
+  <string key="CascadeDeleteErrorTitle" value="Poistamisen virhe" />
+  <string key="CascadeDeleteErrorMessage" value="Tyyppi viittaa toiseen tyyppiin, joka ei salli perityvää poistoa. Tämä operaatio on pysäytetty" />
+  <string key="AddFunction.CouldNotFindType" value="Tyyppiä ei löytynyt" />
+  <string key="AddFunction.TypeHasNoValidMethod" value="Tyyppi ei sisällä mitään pätevää metodia" />
+  <string key="AddFunction.TypeIsAbstractOrStatic" value="Tyyppi on merkitty joko abstraktiksi tai staattiseksi. Abstrakteissa tai staattisissa tyyppeissä olevia metodeja ei tueta." />
+  <string key="AddFunction.TypeMustNotHaveOverloads" value="Tyyppi ei saa olla ylikuormitettu" />
+  <string key="AddFunction.MethodNameIsEmpty" value="Metodin nimi ei saa olla tyhjä" />
+  <string key="AddFunction.InvalidNamespace" value="Nimiavaruuden pitää olla muodossa A.B.C - ei saa alkaa ja päättyä pisteeseen" />
+  <string key="AddFunction.NameAlreadyUsed" value="Funktion nimi {0} on jo käytetty" />
+  <string key="EditMethodBasedFunction.LabelFieldGroup" value="Muokkaa menetelmään perustuvaa kyselyä" />
+  <string key="EditMethodBasedFunction.LabelMethodName" value="Metodin nimi" />
+  <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="Nimi, jonka alla funktio pitäisi olla." />
+  <string key="EditMethodBasedFunction.LabelNamespaceName" value="Nimiavaruuden nimi" />
+  <string key="EditMethodBasedFunction.LabelNamespaceNameHelp" value="Nimiavaruus, jonka alle metodi pitäisi asettaa." />
+  <string key="EditMethodBasedFunction.LabelType" value="Tyyppi" />
+  <string key="EditMethodBasedFunction.LabelTypeHelp" value="Tyyppi, joka sisältää kyseisen metodin." />
+  <string key="EditMethodBasedFunction.LabelMethod" value="Metodi" />
+  <string key="EditMethodBasedFunction.LabelMethodHelp" value="Metodi, jota kutsutaan tyypistä." />
+  <string key="EditMethodBasedFunction.LabelError" value="Virhe" />
+  <string key="EditFunction.MethodNameEmpty" value="Metodin nimi ei saa olla tyhjä" />
+  <string key="EditFunction.InvalidNamespace" value="Nimiavaruus saa alkaa ja päättyä pisteeseen. - Esimerkiksi A.B.C" />
+  <string key="EditFunction.TypeNotFound" value="Tyyppiä ei löytynyt" />
+  <string key="EditFunction.MethodNotInType" value="Tyyppi ei sisällä metodia" />
+  <string key="EditFunction.NoValidMethod" value="Tyyppi ei sisällä mitään pätevää metodia" />
+  <string key="EditFunction.MethodOverloadsNotAllowed" value="Tyyppi ei saa olla ylikuormitettu" />
+  <string key="AddInlineFunctionWorkflow.FieldGroup.Label" value="Asetukset" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Label" value="Nimi" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Help" value="Luotavan metodin nimi" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Label" value="Nimiavaruus" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Help" value="Luotavan metodin nimiavaruus" />
+  <string key="AddInlineFunctionWorkflow.MethodDescription.Label" value="Kuvaus" />
+  <string key="AddInlineFunctionWorkflow.MethodDescription.Help" value="Funktion lyhyt kuvaus" />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Label" value="Malli" />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Help" value="Valitse malli, jota haluat käyttää uudessa metodissa." />
+  <string key="EditInlineFunctionWorkflow.FieldGroup.Label" value="Asetukset" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Label" value="Nimi" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Help" value="Luotavan metodin nimi" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Label" value="Nimiavaruus" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Help" value="Luotavan metodin nimiavaruus" />
+  <string key="EditInlineFunctionWorkflow.MethodDescription.Label" value="Kuvaus" />
+  <string key="EditInlineFunctionWorkflow.MethodDescription.Help" value="Funktion lyhyt kuvaus" />
+  <string key="EditInlineFunctionWorkflow.DebugFieldGroup.Label" value="Debug" />
+  <string key="EditInlineFunctionWorkflow.DebugPage.Label" value="Sivu" />
+  <string key="EditInlineFunctionWorkflow.DebugPage.Help" value="Kun virheenkorjaus on käytössä, tätä sivu aon käytetään nykyisenä sivuna" />
+  <string key="EditInlineFunctionWorkflow.DebugPageDataScope.Label" value="Tietojen laajuus" />
+  <string key="EditInlineFunctionWorkflow.DebugPageDataScope.Help" value="Kun virheenkorjaus on käytössä, tätä käytetään nykyisenä tietojen laajuutena" />
+  <string key="EditInlineFunctionWorkflow.DebugActiveLocale.Label" value="Kieli" />
+  <string key="EditInlineFunctionWorkflow.DebugActiveLocale.Help" value="Kun virheenkorjaus on käytössä, tätä käytetään nykyisenä kielenä" />
+  <string key="EditInlineFunctionWorkflow.Code.Label" value="Lähde" />
+  <string key="EditInlineFunctionWorkflow.AssembliesFieldGroup.Label" value="Assembly Referenssit" />
+  <string key="EditInlineFunctionWorkflow.Preview.Label" value="Esikatselu" />
+  <string key="EditInlineFunctionWorkflow.ParameterFieldGroup.Label" value="Tuloparametrit" />
+  <string key="EditInlineFunctionWorkflow.AdminitrativeScope.Label" value="Hallinnollinen" />
+  <string key="EditInlineFunctionWorkflow.PublicScope.Label" value="Julkinen" />
+  <string key="InlineFunctionMethodTemplate.Clean" value="Tyhjä metodi" />
+  <string key="InlineFunctionMethodTemplate.WithParameters" value="Metodi parametreillä" />
+  <string key="InlineFunctionMethodTemplate.DataConnection" value="Metodi, jossa käytetään datayhteyttä" />
+  <string key="CSharpInlineFunction.OnMissingContainerType" value="Julkinen staattinen luokka nimeltä {0} puuttuu koodista. Tämän luokan tulisi sisältää metodin." />
+  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="Nimiavaruus koodilla '{0}' ei vastaa annetun funktion nimiavaruutta '{1}'." />
+  <string key="CSharpInlineFunction.OnMissionMethod" value="Annettua funktion nimeä '{0}' ei löytynyt tai se ei ole public static luokassa '{1}'." />
+  <string key="CSharpInlineFunction.MissingParameterDefinition" value="Parametriä {0} ei ole annettu parametriksi - kutsuaksesi funktiota sinun täytyy lisätä parametri ja antaa sille joko testi-tai oletusarvo." />
+  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="Parametri {0} odottaa testiarvon tyyppiä '{1}', sai arvon tyyppiä '{2} ." />
+  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="Parametrillä {0} määritelty tuloparametreissä täytyy olla testi tai oletusarvo ennen toimintoa voidaan arvioida." />
+</strings>

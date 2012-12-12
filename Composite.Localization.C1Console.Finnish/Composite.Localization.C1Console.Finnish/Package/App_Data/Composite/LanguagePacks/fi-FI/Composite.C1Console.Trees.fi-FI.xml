@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="KeyFacade.ErrorTreeNode.Label" value="Virhe puussa" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Label" value="N&#228;yt&#228; viesti" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.ToolTip" value="N&#228;yt&#228; virheilmoitus" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Title" value="Virheilmoitus" />
+  
+  <!-- Validation -->
+  <string key="TreeValidationError.Common.UnknownException" value="Tuntematon poikkeus tapahtui: {0}" />
+  <string key="TreeValidationError.Common.UnknownElement" value="Tuntematon elementti {0}" />
+  <string key="TreeValidationError.Common.MissingAttribute" value="Pakollinen m&#228;&#228;rite &#39;{0}&#39; puuttuu" />
+  <string key="TreeValidationError.Common.WrongAttributeValue" value="Attribuutissa &#39;{0}&#39; on arvo, joka ei ole sallittu" />  
+  <string key="TreeValidationError.Common.MissingProperty" value="Tyyppi &#39;{0}&#39; ei sis&#228;ll&#228; ominaisuutta nimelt&#228; &#39;{1}&#39;" />
+  <string key="TreeValidationError.Common.UnkownInterfaceType" value="Tyyppi&#228; &#39;{0}&#39; ei l&#246;ytynyt" />
+  <string key="TreeValidationError.Common.NotImplementingIData" value="Tyyppi &#39;{0}&#39; ei toteuta rajapintaa {1}" />
+  <string key="TreeValidationError.Common.WrongPermissinValue" value="Arvo &#39;{0} ei ole sallittu oikeustyypin tyypin arvo" />
+  <string key="TreeValidationError.Common.WrongLocationValue" value="Arvo &#39;{0} ei ole sallittu sijainti arvo" />
+  <string key="TreeValidationError.Common.MissingFunctionMarkup" value="Alielementille ei ole annettu toimintomerkint&#228;&#228;" />
+  <string key="TreeValidationError.Common.WrongFunctionMarkup" value="Toimintoa ei voitu luoda annetulla tekstill&#228;" />
+
+  <string key="TreeValidationError.Markup.NoRootElement" value="Puun merkinn&#228;st&#228; puuttuu root elementti" />
+  <string key="TreeValidationError.Markup.SchemaError" value="Syntaksivirhe: {0} rivill&#228; {1} kohdassa {2}" />
+  
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPoint" value="Kiinnityspiste &#39;{0}&#39; on tuntematon" />
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPosition" value="Kiinnityskohta &#39;{0}&#39; on tuntematon" />
+  <string key="TreeValidationError.DataAttachments.NoElementsAllowed" value="Tietoja sis&#228;lt&#228;viss&#228; puissa ei sallita elementtej&#228;" />
+
+  <string key="TreeValidationError.ElementRoot.ShareRootElementByIdNotAllowed" value="ShareRootElementById on sallittu vain, jos puussa on yksi nimetty kiinnityskohdan" />
+
+  <string key="TreeValidationError.SimpleElement.WrongIdValue" value="Id arvo ei ole sallittu. Id ei saa olla tyhj&#228;, eik&#228; alkaa NodeAutoId_ tai olla RootTreeNode" />
+  <string key="TreeValidationError.SimpleElement.AlreadyUsedId" value="Id arvo &#39;{0}&#39; on jo k&#228;ytetty t&#228;ss&#228; puussa" />
+
+  <string key="TreeValidationError.DataElementsTreeNode.SameInterfaceUsedTwice" value="Dataliit&#228;nt&#228;&#228; &#39;{0}&#39; on k&#228;ytetty enemm&#228;n kuin kerran lapsena samassa emoelementiss&#228; ja t&#228;m&#228; ei ole sallittua" />
+  <string key="TreeValidationError.DataElementsTreeNode.SameParentFilterInterfaceUsedTwice" value="Samaa liittym&#228;&#228; &#39;{0}&#39; k&#228;ytet&#228;&#228;n ylemm&#228;n tason suodatuksessa ja t&#228;m&#228; ei ole sallittua" />
+  <string key="TreeValidationError.DataElementsTreeNode.MoreThanOnParentFilterIsPointingToMe" value="Enemm&#228;n kuin yksi ylemm&#228;n tason suodatin osoittaa liittym&#228;&#228; {0}. Muuta n&#228;yt&#246;n arvoksi Lazy" />
+
+  <string key="TreeValidationError.DataFolderElements.MissingInterfaceType" value="Tyypin attribuutti puuttuu" />
+  <string key="TreeValidationError.DataFolderElements.WrongInterfaceType" value="Liit&#228;nt&#228;tyyppi &#39;{0}&#39; ei vastaa emon elementien liittym&#228;n tyyppi&#228; &#39;{1}&#39;" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetNotAllowed" value="DateFormat attribuutti edellytt&#228;&#228;, ett&#228; ominaisuus &#39;{0}&#39; tulee olla tyyppi&#228; {1}, mutta on tyyppi&#228; {2}" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetIsMissing" value="Omaisuus &#39;{0}&#39; on tyyppi&#228; P&#228;iv&#228;m&#228;&#228;r&#228; ja t&#228;m&#228; edellytt&#228;&#228; DateFormat m&#228;&#228;rittett&#228;" />
+  <string key="TreeValidationError.DataFolderElements.RangesAndFirstLetterOnlyNotAllowed" value="Alueet ja vain ensimm&#228;inen kirjain ei sallittu samanaikaisesti" />
+  <string key="TreeValidationError.DataFolderElements.WrongFirstLetterOnlyPropertyType" value="Vain ensimm&#228;inen kirjain edellytt&#228;&#228;, ett&#228; omaisuus &#39;{0}&#39; tulee olla tyyppi&#228; {1}, mutta on tyyppi&#228; {2}" />
+  <string key="TreeValidationError.DataFolderElements.WrongDateChildInterfaceType" value="Vain saman tyyppiset lapsielementit kuin kansio ryhmittym&#228; (&#39;{0}&#39;) ovat sallittuja" />
+  <string key="TreeValidationError.DataFolderElements.InterfaceTypeSwitchNotAllowed" value="Littym&#228;n tyypin &#39;{0}&#39; vaihtaminen liittym&#228;tyypiksi &#39;{1}&#39; ei ole sallittu samaan kansion ryhmittely ryhm&#228;&#228;n" />
+  <string key="TreeValidationError.DataFolderElements.SameFieldUsedTwice" value="Kent&#228;n nimi {0} kahdesti samaan ryhmittym&#228;&#228;n ei ole sallittua" />
+  <string key="TreeValidationError.DataFolderElements.TooManyParentIdFilters" value="Suodattimena voidaan k&#228;ytt&#228;&#228; enint&#228;&#228;n yhden yl&#228;tason id.t&#228; tietojen ryhmitt&#228;miseen" />
+
+  <string key="TreeValidationError.ParentIdFilterNode.TypeIsNotInParentTree" value="Tyyppi &#39;{0}&#39; ei ole t&#228;m&#228;n haaran yl&#228;tason puu  tai m&#228;&#228;ritelty kiinnityspiste tyyppiksi" />
+  <string key="TreeValidationError.FieldFilter.UnknownOperatorName" value="Operaattori {0} on tuntematon tai ei tuettu" />
+  <string key="TreeValidationError.FieldFilter.ValueCouldNotBeConverted" value="Merkkijono arvoa {0} ei voitu muuntaa tyypiksi {1}" />
+  <string key="TreeValidationError.FieldFilter.OperatorNotSupportedForType" value="Operaattoria {0} ei tueta tyyppiksi &#39;{1}&#39;" />
+
+  <string key="TreeValidationError.FunctionFilter.MissingFunctionMarkup" value="Toiminnon teksti puuttuu" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionMarkup" value="Toimintoa ei voitu luoda annetulla tekstill&#228;" />
+  <string key="TreeValidationError.FunctionFilter.WrongReturnValue" value="Funktio ei palauta arvoa &#39;{0}&#39; tyyppisen&#228;" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionReturnType" value="Funktioi palauttaa tyyppi&#228;&#39;{0}&#39;, vaikka &#39;{1}&#39; oli odotettavissa" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterCount" value="Funktion parametri count palauttaa &#39;{0}&#39;, Arvoa 1 odotettiin" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterType" value="Funktion tyypiksi palauttama arvo &#39;{0}&#39;, &#39;{1}&#39; oli odotettavissa" />
+  
+  <string key="TreeValidationError.ReportFunctionAction.WrongReturnValue" value="Funktio ei palauta arvoa &#39;{0}&#39; tyyppisen&#228;" />
+  <string key="TreeValidationError.GenericAddDataAction.MissingMarkupFile" value="Tiedostoa &#39;{0}&#39; ei ole olemassa" />
+  <string key="TreeValidationError.GenericAddDataAction.BadMarkupPath" value="Muokatun merkist&#246;n polku {0} on v&#228;&#228;rin muotoiltu. K&#228;yt&#228; ~ / Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericEditDataAction.OwnerIsNotDataNode" value="Muokkaa tietoja tominto koskee vain osia, jotka tuottavat tietoelementtej&#228;" />
+  <string key="TreeValidationError.GenericEditDataAction.MissingMarkupFile" value="Tiedostoa &#39;{0}&#39; ei ole olemassa" />
+  <string key="TreeValidationError.GenericEditDataAction.BadMarkupPath" value="Muokatun merkist&#246;n polku {0} on v&#228;&#228;rin muotoiltu. K&#228;yt&#228; ~ / Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericDeleteDataAction.OwnerIsNotDataNode" value="Poista tiedot toiminto koskee vain osia, jotka tuottavat tietoelementtej&#228;" />
+  <string key="TreeValidationError.MessageBoxAction.UnknownDialogType" value="Ikkunan tyyppi&#228; &#39;{0}&#39; ei tueta" />
+  <string key="TreeValidationError.CustomUrlAction.TooManyPostParameterElements" value="Liian monta {0} elementtej&#228;, vain yksi on sallittu" />
+  <string key="TreeValidationError.CustomUrlAction.UnknownViewType" value="N&#228;kym&#228;n tyyppi&#228; &#39;{0}&#39; ei tueta" />
+
+  <string key="TreeValidationError.FieldOrderBy.UnknownDirection" value="Suunta arvo &#39;{0}&#39; on v&#228;&#228;rin, pit&#228;isi olla joko nouseva tai laskeva" />
+  <string key="TreeValidationError.FieldOrderBy.UnknownField" value="Tyyppi &#39;{0}&#39; ei sis&#228;ll&#228; kentt&#228;&#228; nimelt&#228; &#39;{1}&#39;" />
+
+  <string key="TreeValidationError.DataFieldValueHelper.WrongFormat" value="{0} on v&#228;&#228;r&#228;ss&#228; muodossa, k&#228;yt&#228; muotoa: {1}" />
+  <string key="TreeValidationError.DataFieldValueHelper.InterfaceNotInParentTree" value="Rajapinta &#39;{0}&#39; ei sis&#228;lly nykyiseen elementiin tai sen yl&#228;tasolle" />
+
+  <string key="TreeValidationError.Range.WrongFormat" value="Alue-arvo on v&#228;&#228;rin muotoiltu" />
+  <string key="TreeValidationError.Range.UnsupportedType" value="Omaisuus &#39;{0}&#39; on tyyppi&#228; &#39;{1}&#39;, joka ei tue alueita" />
+
+  <string key="TreeValidationError.Range.MinMaxError" value="Arvon ensimm&#228;inen arvo ({0}) tulisi olla pienempi kuin toinen arvo ({1})" />
+  <string key="TreeValidationError.Range.NextRangeError" value="Enimm&#228;isarvo-alueen tulisi olla pienempi kuin min arvo sit&#228; seuraavalla tasolla" />
+
+  
+  <!-- Ranges -->
+  
+  <string key="TreeRanges.IntRange.Closed" value="{0}:sta {1} :een" />
+  <string key="TreeRanges.IntRange.MinOpenEnded" value="{0} tai v&#228;hemm&#228;n" />
+  <string key="TreeRanges.IntRange.MaxOpenEnded" value="{0} tai enemm&#228;n" />
+  <string key="TreeRanges.IntRange.Other" value="Muut" />
+
+  <string key="TreeRanges.StringRange.Closed" value="{0}:sta {1} :een" />
+  <string key="TreeRanges.StringRange.MinOpenEnded" value="{0} ja ennen" />
+  <string key="TreeRanges.StringRange.MaxOpenEnded" value="{0} ja sen j&#228;lkeen" />
+  <string key="TreeRanges.StringRange.Other" value="Muut" />
+
+  
+  <!-- Other -->
+  <string key="GenericAddDataAction.DefaultLabel" value="Lis&#228;ys" />
+  <string key="GenericEditDataAction.DefaultLabel" value="Muokkaa" />
+  <string key="GenericDeleteDataAction.DefaultLabel" value="Poista" />
+  
+  
+  <string key="TreeGenericDelete.CascadeDeleteErrorTitle" value="Poistamisen virhe" />
+  <string key="TreeGenericDelete.CascadeDeleteErrorMessage" value="Tyyppi viittaa toiseen tyyppiin, joka ei salli perityv&#228;&#228; poistoa. T&#228;m&#228; operaatio on pys&#228;ytetty" />
+  
+  <string key="TreeGenericDeleteConfirm.LabelFieldGroup" value="Poista tieto?" />
+  <string key="TreeGenericDeleteConfirm.Text" value="Poista" />
+  
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.LabelFieldGroup" value="Poista tietoja?" />
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.ConfirmationText" value="On olemassa viittauksia muihin tietoihin, jotka poistetaan my&#246;s, haluatko jatkaa?" />
+
+
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.Label" value="Lis&#228;ys" />
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.ToolTip" value="Lis&#228;&#228; uusi puun m&#228;&#228;ritelm&#228;" />           
+  <string key="TreeAddTreeDefinition.Layout.Label" value="Lis&#228;&#228; uusi puun m&#228;&#228;ritelm&#228;" />
+  <string key="TreeAddTreeDefinition.FieldGroup.Label" value="Lis&#228;&#228; uusi puun m&#228;&#228;ritelm&#228;" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Label" value="M&#228;&#228;ritelm&#228;n nimi" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Help" value="M&#228;&#228;ritelm&#228;n nimi" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Label" value="Malli" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Help" value="Valitse aloituspohja" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Label" value="Kohta" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Help" value="Kohta" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.Label" value="Poista" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.ToolTip" value="Poista puun m&#228;&#228;ritelm&#228;" />
+  <string key="TreeDeleteTreeDefinition.Layout.Label" value="Poista puun m&#228;&#228;ritelm&#228;" />
+  <string key="TreeDeleteTreeDefinition.Title" value="Poista valitut puun m&#228;&#228;ritelm&#228;t" />
+  <string key="TreeDeleteTreeDefinition.Description" value="Poista valitut puun m&#228;&#228;ritelm&#228;t?" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.Label" value="Muokkaa" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.ToolTip" value="Muokkaa puun m&#228;&#228;ritelm&#228;&#228;" />
+
+  <string key="AddApplicationWorkflow.AddApplication.Label" value="Lis&#228;&#228; sovellus" />
+  <string key="AddApplicationWorkflow.AddApplication.ToolTip" value="Lis&#228;&#228; uusi sovellus" />
+  <string key="AddApplication.Layout.Label" value="Lis&#228;&#228; sovellus" />
+  <string key="AddApplication.FieldGroup.Label" value="Valitse sovellus" />
+  <string key="AddApplication.TreeIdSelector.Label" value="Sovellus" />
+  <string key="AddApplication.TreeIdSelector.Help" value="Valitse sovellus, jonka haluat lis&#228;t&#228;" />
+  <string key="AddApplication.PositionSelector.Label" value="Kohta" />
+  <string key="AddApplication.PositionSelector.Help" value="Kohta johon lis&#228;t&#228; t&#228;m&#228; sovellus" />
+  <string key="AddApplication.NoTrees.Title" value="Ei sovelluksia" />
+  <string key="AddApplication.NoTrees.Message" value="Olet lis&#228;nnyt kaikki k&#228;ytett&#228;viss&#228; olevat sovellukset" />
+
+  <string key="RemoveApplicationWorkflow.RemoveApplication.Label" value="Poista sovellus" />
+  <string key="RemoveApplicationWorkflow.RemoveApplication.ToolTip" value="Poista olemassa oleva sovellus" />
+  <string key="RemoveApplication.Layout.Label" value="Poista sovellus" />
+  <string key="RemoveApplication.FieldGroup.Label" value="Poista sovellus" />
+  <string key="RemoveApplication.TreeIdSelector.Label" value="Sovellus" />
+  <string key="RemoveApplication.TreeIdSelector.Help" value="Valitse sovellus, jonka haluat poistaa" />
+  <string key="RemoveApplication.NoTrees.Title" value="Ei sovelluksia" />
+  <string key="RemoveApplication.NoTrees.Message" value="Olet poistanut kaikki k&#228;ytett&#228;viss&#228; olevat sovellukset" />
+
+  <string key="LocalizeDataWorkflow.LocalizeDataLabel" value="K&#228;&#228;nn&#228; tietoja" />
+  <string key="LocalizeDataWorkflow.LocalizeDataToolTip" value="K&#228;&#228;nn&#228; tietoja" />
+  <string key="LocalizeDataWorkflow.DisabledData" value="Ei ole viel&#228; hyv&#228;ksytty tai julkaistu" />
+  <string key="LocalizeData.ShowError.Layout.Label" value="Tietojen k&#228;&#228;nt&#228;minen ep&#228;onnistui" />
+  <string key="LocalizeData.ShowError.InfoTable.Caption" value="K&#228;&#228;nn&#246;svirheit&#228;" />  
+  <string key="LocalizeData.ShowError.Description" value="Seuraavissa kentiss&#228; on viittauksia tietotyyppiin. Sinun pit&#228;isi k&#228;&#228;nt&#228;&#228; ne ennen kuin voit k&#228;&#228;nt&#228;&#228; t&#228;m&#228;n tietotyypin" />
+  <string key="LocalizeData.ShowError.FieldErrorFormat" value="Kentt&#228; &#39;{0}&#39; vittaa tietotyyppiin &#39;{1}&#39; jonka etiketti on &#39;{2}&#39;" />
+  <string key="LocalizeData.ShowError.AlreadyTranslated" value="T&#228;m&#228; tieto on jo k&#228;&#228;nnetty. K&#228;&#228;nnetty versio kuuluu eri ryhm&#228;&#228;n." />
+</strings>

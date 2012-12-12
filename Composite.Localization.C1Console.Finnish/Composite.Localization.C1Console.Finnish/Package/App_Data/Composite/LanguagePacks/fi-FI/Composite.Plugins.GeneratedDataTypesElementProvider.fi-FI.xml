@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="GlobalDataFolderLabel" value="Globaalit tietotyypit" />
+  <string key="GlobalDataFolderToolTip" value="Globaalit tietotyypit" />
+  <string key="GlobalDataFolderLabel_OnlyGlobalData" value="Sivuston osat" />
+  <string key="GlobalDataFolderToolTip_OnlyGlobalData" value="Sivuston osat (Data)" />
+  <string key="PageDataFolderDataFolderLabel" value="Sivun tietokansiot" />
+  <string key="PageDataFolderDataFolderToolTip" value="Sivun tietokansiot" />
+  <string key="PageMetaDataFolderLabel" value="Sivun metatyypit" />
+  <string key="PageMetaDataFolderToolTip" value="Sivun metatyypit" />
+  <string key="Add" value="Lis&#228;&#228; tietotyyppi" />
+  <string key="AddToolTip" value="Lis&#228;&#228; uusi globaali tietotyyppi" />
+  <string key="ViewUnpublishedItems" value="Luettele julkaisemattomat tiedot" />
+  <string key="ViewUnpublishedItemsToolTip" value="Hanki yleiskatsaus tiedoista, joita ei ole viel&#228; julkaistu" />
+  <string key="ViewUnpublishedItems-document-title" value="Julkaisematon tieto" />
+  <string key="ViewUnpublishedItems-document-description" value="Alla oleva lista n&#228;ytt&#228;&#228; tietoja, joita muokataan parhaillaan tai on valmiina hyv&#228;ksytt&#228;v&#228;ksi / julkaistavaksi." />
+  <string key="ViewUnpublishedItems-document-empty-label" value="Ei julkaisemattomia tietoja." />
+  <string key="AddDataFolder" value="Lis&#228;&#228; tietokansio" />
+  <string key="AddDataFolderToolTip" value="Lis&#228;&#228; uusi tietokansio" />
+  <string key="AddMetaDataLabel" value="Lis&#228;&#228; metatyyppi" />
+  <string key="AddMetaDataToolTip" value="Lis&#228;&#228; metatyyppi" />
+  <string key="Edit" value="Muokkaa tietotyyppi&#228;" />
+  <string key="EditToolTip" value="Muokkaa valittuja tietotyyppej&#228;" />
+  <string key="EditDataFolderTypeLabel" value="Muokkaa" />
+  <string key="EditDataFolderTypeToolTip" value="Muokkaa valittuja tietokansioita" />
+  <string key="EditMetaDataTypeLabel" value="Muokkaa" />
+  <string key="EditMetaDataTypeToolTip" value="Muokkaa valittuja metatietoja" />
+  <string key="Delete" value="Poista Tietotyyppi" />
+  <string key="DeleteToolTip" value="Poista valitut tietotyypit" />
+  <string key="DeleteDataFolderTypeLabel" value="Poista" />
+  <string key="DeleteDataFolderTypeToolTip" value="Poista valitut tietokansiot" />
+  <string key="DeleteMetaDataTypeLabel" value="Poista" />
+  <string key="DeleteMetaDataTypeToolTip" value="Poista valitut metatiedot" />
+  <string key="EditFormMarkup" value="Muokkaa lomakkeen koodia" />
+  <string key="EditFormMarkupToolTip" value="Muokkaa lomakkeen asettelua koodin avulla" />
+  <string key="EnableLocalization" value="Ota k&#228;ytt&#246;&#246;n lokalisointi" />
+  <string key="EnableLocalizationToolTip" value="Ota k&#228;ytt&#246;&#246;n lokalisointi" />
+  <string key="DisableLocalization" value="Poista k&#228;yt&#246;st&#228; lokalisointi" />
+  <string key="DisableLocalizationToolTip" value="Poista lokalisointi k&#228;yt&#246;st&#228;" />
+  <string key="DisabledData" value="Ei ole viel&#228; hyv&#228;ksytty tai julkaistu" />
+  <string key="UndefinedLabelTemplate" value="(M&#228;&#228;rittelem&#228;t&#246;n [{0}])" />
+  <string key="UndefinedDataLavelTemplate" value="(M&#228;&#228;rittelem&#228;t&#246;n)" />
+  <string key="ShowInContent" value="N&#228;yt&#228; sis&#228;ll&#246;n n&#228;k&#246;kulmasta" />
+  <string key="ShowInContentToolTip" value="N&#228;yt&#228; sis&#228;ll&#246;n n&#228;k&#246;kulmasta" />
+  <string key="AddData" value="Lis&#228;&#228; tietoja" />
+  <string key="AddDataToolTip" value="Lis&#228;&#228; uusi tieto" />
+  <string key="EditData" value="Muokkaa tietoja" />
+  <string key="EditDataToolTip" value="Muokkaa valittuja tietoja" />
+  <string key="DeleteData" value="Poista tiedot" />
+  <string key="DeleteDataToolTip" value="Poista valitut tiedot" />
+  <string key="LocalizeData" value="K&#228;&#228;nn&#228; tieto" />
+  <string key="LocalizeDataToolTip" value="K&#228;&#228;nn&#228; valitut tiedot" />
+  <string key="LabelPublicationState" value="Julkaisun tila" />
+  <string key="DraftTransition" value="Luonnos" />
+  <string key="AwaitingApprovalTransition" value="Odottaa hyv&#228;ksynt&#228;&#228;" />
+  <string key="AddNewInterfaceTypeStep1.DocumentTitle" value="Uusi Tietotyyppi" />
+  <string key="AddNewCompositionTypeWorkflow.DocumentTitle" value="Uusi sivun metatyyppi" />
+  <string key="AddNewAggregationTypeWorkflow.DocumentTitle" value="Uusi sivun tietokansio" />
+  <string key="EditorCommon.SettingsTab" value="Asetukset" />
+  <string key="EditorCommon.LabelTitleGroup" value="Tyypin otsikko" />
+  <string key="EditorCommon.LabelProgrammaticNamingAndServices" value="Ohjelmalliset nime&#228;miset ja palvelut" />
+  <string key="EditorCommon.LabelProgrammaticNaming" value="Ohjelmalliset nime&#228;miset" />
+  <string key="EditorCommon.LabelTypeName" value="Tyypin nimi" />
+  <string key="EditorCommon.HelpTypeName" value="Tietotyypin tekninen nimi (esim. tuote). T&#228;t&#228; k&#228;ytet&#228;&#228;n tunnistamaan t&#228;m&#228; tyyppi koodissa ja sit&#228; ei pid&#228; muuttaa ulkoisen k&#228;ytt&#246;&#246;noton j&#228;lkeen." />
+  <string key="EditorCommon.LabelTypeNamespace" value="Tyypin nimiavaruus" />
+  <string key="EditorCommon.HelpTypeNamespace" value="Nimiavaruus (moduuli / luokka nimi) tyyppi&#228;. T&#228;m&#228;n k&#228;ytet&#228;&#228;n tunnistamaan t&#228;m&#228;n tyyppist&#228; koodia ja sit&#228; ei pid&#228; muuttaa, kun on k&#228;ytetty ulkoisesti." />
+  <string key="EditorCommon.LabelTitle" value="Otsikko" />
+  <string key="EditorCommon.HelpTitle" value="K&#228;yt&#228; t&#228;t&#228; merkint&#228;&#228; m&#228;&#228;ritt&#228;&#228;ksesi k&#228;ytt&#228;j&#228;yst&#228;v&#228;llinen nimi. T&#228;t&#228; nime&#228; k&#228;ytet&#228;&#228;n useimmissa k&#228;ytt&#246;liittymiss&#228;." />
+  <string key="EditorCommon.LabelFields" value="Kent&#228;t" />
+  <string key="EditorCommon.ServicesLabel" value="Palvelut" />
+  <string key="EditorCommon.HasCaching" value="Onko v&#228;limuistissa" />
+  <string key="EditorCommon.HasPublishing" value="Onko julkaistava" />
+  <string key="EditorCommon.HasLocalization" value="Onko lokalisoitava tieto" />
+  <string key="DeleteGeneratedDataStep1.LabelFieldGroup" value="Poista tieto?" />
+  <string key="DeleteGeneratedDataStep1.Text" value="Poista tietoja?" />
+  <string key="DeleteDataConfirmationText" value="On olemassa viittauksia muihin tietoihin, jotka poistetaan my&#246;s, haluatko jatkaa?" />
+  <string key="DeleteGeneratedInterfaceStep1.LabelFieldGroup" value="Poista Tietotyyppi" />
+  <string key="DeleteGeneratedInterfaceStep1.Text" value="Poista tietotyyppi" />
+  <string key="CascadeDeleteErrorTitle" value="Poistamisen virhe" />
+  <string key="CascadeDeleteErrorMessage" value="Tyyppi viittaa toiseen tyyppiin, joka ei salli perityv&#228;&#228; poistoa. T&#228;m&#228; operaatio on pys&#228;ytetty" />
+  <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="Poista Tietotyyppi" />
+  <string key="DeleteAggregationTypeWorkflow.Text" value="Poista tietotyyppi" />
+  <string key="DeleteAggregationTypeWorkflow.ErrorTitle" value="Virhe" />
+  <string key="DeleteAggregationTypeWorkflow.IsUsedByPageType" value="Ei voi poistaa tyyppi&#228; {0}, koska sit&#228; k&#228;ytet&#228;&#228;n sivutyyppin&#228;." />  
+  <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="Poista Tietotyyppi" />
+  <string key="DeleteCompositionTypeWorkflow.Text" value="Poista tietotyyppi" />
+  <string key="DeleteCompositionTypeWorkflow.ErrorTitle" value="Virhe" />
+  <string key="DeleteCompositionTypeWorkflow.TypeIsReferenced" value="Ei voi poistaa tyyppi&#228; {0} koska on olemassa tyyppej&#228; jotka viittaavat siihen." />
+  <string key="DeleteCompositionTypeWorkflow.IsUsedByPageType" value="Ei voi poistaa tyyppi&#228; {0}, koska sit&#228; k&#228;ytet&#228;&#228;n sivutyyppin&#228;." />  
+  <string key="ToXmlLabel" value="XML:ksi" />
+  <string key="ToXmlToolTip" value="XML:ksi" />
+  <string key="EnableTypeLocalizationWorkflow.Dialog.Label" value="Ota k&#228;ytt&#246;&#246;n lokalisointi" />
+  <string key="EnableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Ota k&#228;ytt&#246;&#246;n lokalisointi" />
+  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Siirr&#228; nykyiset tiedot ..." />
+  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Kun otat tietotyyppiss&#228; k&#228;ytt&#246;&#246;n lokalisoinnin, kaikki tiedot on kuuluttava kielelle. Valitse kieli johon tiedot pit&#228;isi nyt siirt&#228;&#228;." />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Title" value="Vahvistus" />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Description" value="Tietotyyppi lokalisoidaan tietoja kopioidaan valittuun maahan. Klikkaa Valmis jatkaaksesi." />
+  <string key="EnableTypeLocalizationWorkflow.Step3.Title" value="Varoitus" />
+  <string key="EnableTypeLocalizationWorkflow.Step3.Description" value="On joitakin tietotyyppej&#228;, joissa on viittauksia t&#228;h&#228;n tyyppiin. Lokalisoinnin tiedot kopioidaan kaikille kielille viittauksien rikkoutumisen est&#228;miseksi." />
+  <string key="EnableTypeLocalizationWorkflow.Abort.Title" value="Puuttuva aktiivinen lokaali" />
+  <string key="EnableTypeLocalizationWorkflow.Abort.Description" value="Ei lis&#228;tty aktiivisia lokaaleja. Lis&#228;&#228; v&#228;hint&#228;&#228;n yksi ennen t&#228;m&#228;n tietotyypin lokalisointia." />
+  <string key="DisableTypeLocalizationWorkflow.Dialog.Label" value="Poista k&#228;yt&#246;st&#228; lokalisointi" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Poista lokalisointi k&#228;yt&#246;st&#228;" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Pid&#228; tiedot ..." />
+  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Kun tietotyypin lokalisointi on pois k&#228;yt&#246;st&#228; vain yksi k&#228;&#228;nn&#246;s voidaan pit&#228;&#228;. Tiedot muista kielist&#228; katoaa." />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Title" value="Vahvistus" />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Description" value="Kaikki tiedot muista lokaaleista kuin valitusta menetet&#228;&#228;n. Klikkaa Valmis jatkaaksesi." />
+  <string key="LocalizeDataWorkflow.ShowError.LayoutLabel" value="Tietojen k&#228;&#228;nt&#228;minen ep&#228;onnistui" />
+  <string key="LocalizeDataWorkflow.ShowError.InfoTableCaption" value="K&#228;&#228;nn&#246;svirheit&#228;" />
+  <string key="LocalizeDataWorkflow.ShowError.AlreadyTranslated" value="T&#228;m&#228; tieto on jo k&#228;&#228;nnetty. K&#228;&#228;nnetty versio kuuluu eri ryhm&#228;&#228;n." />
+  <string key="LocalizeDataWorkflow.ShowError.Description" value="Seuraavissa kentiss&#228; on viittauksia tietotyyppiin. Sinun pit&#228;isi k&#228;&#228;nt&#228;&#228; ne ennen kuin voit k&#228;&#228;nt&#228;&#228; t&#228;m&#228;n tietotyypin" />
+  <string key="LocalizeDataWorkflow.ShowError.FieldErrorFormat" value="Kentt&#228; &#39;{0}&#39; vittaa tietotyyppiin &#39;{1}&#39; jonka etiketti on &#39;{2}&#39;" />
+  <string key="AddNewInterfaceTypeStep1.ErrorTitle" value="Virhe" />
+  <string key="EditInterfaceTypeStep1.ErrorTitle" value="Virhe" />
+  <string key="AddNewCompositionTypeWorkflow.ErrorTitle" value="Virhe" />
+  <string key="AddNewAggregationTypeWorkflow.ErrorTitle" value="Virhe" />
+
+  <string key="EditCompositionTypeWorkflow.ErrorTitle" value="Virhe" />
+  <string key="EditAggregationTypeWorkflow.ErrorTitle" value="Virhe" />
+  
+  <string key="DataTypeDescriptorToXmlLabel" value="XML tulos" />
+</strings>

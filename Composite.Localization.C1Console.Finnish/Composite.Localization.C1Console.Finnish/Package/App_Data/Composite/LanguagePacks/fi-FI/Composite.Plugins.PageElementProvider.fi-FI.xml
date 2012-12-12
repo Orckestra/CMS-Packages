@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="AddNewPageStep1.DialogLabel" value="Lisää uusi sivu" />
+  <string key="GeneralSettings.FieldGroupLabel" value="Yleiset asetukset" />
+  <string key="PublicationSettings.FieldGroupLabel" value="Julkaisu asetukset" />
+  <string key="AdvancedSettings.FieldGroupLabel" value="Lisäasetukset" />
+  <string key="AddNewPageStep1.LabelTitle" value="Sivun otsikko" />
+  <string key="AddNewPageStep1.LabelTitleHelp" value="Merkintä joka on määritelty tässä kentässä näkyy selaimen ikkunan otsikkopalkissa. Kenttää käyttää myös hakukoneet ja sivustokartat" />
+  <string key="AddNewPageStep1.LabelAbstract" value="Kuvaus" />
+  <string key="AddNewPageStep1.LabelAbstractHelp" value="Käytä tätä kenttää sivun lyhyeen kuvaukseen" />
+  <string key="AddNewPageStep1.LabelTemplate" value="Sivun tyyppi" />
+  <string key="AddNewPageStep1.HelpTemplate" value="Valitse mihin sivutyyppiin haluat sivun perustuvan." />
+  <string key="AddNewPageStep1.LabelPosition" value="Kohta" />
+  <string key="AddNewPageStep1.HelpPosition" value="Valitse mihin kohtaan sisältöpuussa haluat sivun sijoitettavan." />
+  <string key="AddNewPageStep1.LabelAddToTop" value="Aseta ylimmäiseksi" />
+  <string key="AddNewPageStep1.LabelAddToBottom" value="Aseta alimmaiseksi" />
+  <string key="AddNewPageStep1.LabelAddAlphabetic" value="Aseta aakkosjärjestyksessä" />
+  <string key="AddNewPageStep1.LabelAddBelowOtherPage" value="Valitse sijainti..." />
+  <string key="AddNewPageStep2.LabelFieldGroup" value="Lisäasetukset" />
+  <string key="AddNewPageStep2.LabelUrlTitle" value="URL otsikko" />
+  <string key="AddNewPageStep2.HelpUrlTitle" value="Merkintä joka on määritelty tässä kentässä näkyy selaimen osoiterivillä. Kenttää käyttää myös hakukoneet" />
+  <string key="AddNewPageStep2.LabelMenuTitle" value="Valikon otsikko" />
+  <string key="AddNewPageStep2.HelpMenuTitle" value="Merkintää joka on määritelty tässä kentässä voidaan käyttää sivuston navigointiin" />
+  <string key="AddNewPageStep2.LabelPositionSelectorPanel" value="Valitse yksityiskohtainen sivun sijainti" />
+  <string key="AddNewPageStep2.LabelPositionSelector" value="Sijainti alla" />
+  <string key="AddNewPageStep2.HelpPositionSelector" value="" />
+  <string key="EditPage.LabelPaneSettings" value="Asetukset" />
+  <string key="EditPage.LabelPublicationState" value="Tila" />
+  <string key="EditPage.HelpPublicationState" value="Lähetä sivu toiseen tilaan" />
+  <string key="EditPage.LabelPageTitle" value="Sivun otsikko" />
+  <string key="EditPage.LabelPageTitleHelp" value="Merkintä joka on määritelty tässä kentässä näkyy selaimen ikkunan otsikkopalkissa. Kenttää käyttää myös hakukoneet ja sivustokartat" />
+  <string key="EditPage.LabelMenuTitle" value="Valikon otsikko" />
+  <string key="EditPage.HelpMenuTitle" value="Merkintää joka on määritelty tässä kentässä voidaan käyttää sivuston navigointiin" />
+  <string key="EditPage.LabelUrlTitle" value="URL otsikko" />
+  <string key="EditPage.UrlTitleFormattedTitle" value="URL otsikko uusittiin" />
+  <string key="EditPage.UrlTitleFormattedMessage" value="URL otsikko muutettiin muotoon {0} nykyisten URL korvaussääntöjen mukaan" />
+  <string key="EditPage.HelpUrlTitle" value="Merkintä joka on määritelty tässä kentässä näkyy selaimen osoiterivillä osana URL-osoittetta. Kenttää käyttää myös hakukoneet" />
+  <string key="EditPage.LabelFriendlyUrl" value="Ystävällinen URL" />
+  <string key="EditPage.HelpFriendlyUrl" value="Merkintä joka on määritelty tässä kentässä on lyhyempi versio todellisen sivun URL:stä ja uudelleenohjaus siihen, kun osoite annetaan selaimen osoiteriville. Huomaa, että jotkut palvelimet voidaan joutua konfiguroimaan tukemaan tätä ominaisuutta." />
+  <string key="EditPage.LabelAbstract" value="Kuvaus" />
+  <string key="EditPage.LabelAbstractHelp" value="Käytä tätä kenttää sivun lyhyeen kuvaukseen" />
+  <string key="EditPage.LabelPublishDate" value="Julkaisu päivämäärä" />
+  <string key="EditPage.HelpPublishDate" value="Määritä päivämäärä ja aika, jolloin haluat sivun että julkaistaan. Sivu julkaistaan automaattisesti ​​sivustolla tällä päivämäärällä" />
+  <string key="EditPage.LabelUnpublishDate" value="Poistamisen päivämäärä" />
+  <string key="EditPage.HelpUnpublishDate" value="Määritä päivämäärä ja aika, jolloin haluat sivun poistuvan julkisesta sivustosta. Sivu poistetaan automaattisesti ​​sivustolta tällä päivämäärällä" />
+  <string key="EditPage.LabelContent" value="Sisältö" />
+  <string key="EditPage.LabelPreview" value="Esikatselu" />
+  <string key="EditPage.PageTypeSelectorLabel" value="Sivun tyyppi" />
+  <string key="EditPage.MaxLength" value="Enintään {0} merkkiä" />
+  <string key="DeletePage.LabelFieldGroup" value="Poista sivun?" />
+  <string key="DeletePageStep1.Title" value="Poista sivu ja kaikki alisivut" />
+  <string key="DeletePageStep1.Description" value="Kaikki alasivut poistetaan myös. Jatka?" />
+  <string key="DeletePageStep2.Text" value="Poista sivu '{0}'?" />
+  <string key="UrlTitleNotUniqueError" value="Toinen sivu käyttää määritettyä URL otsikkoa. URL otsikot pitää olla yksilöllisiä sivuston samalla tasolla." />
+  <string key="UrlTitleNotValidError" value="Määritetty URL otsikko sisältää virheellisiä merkkejä. Koska tällä kentällä on tarkoitus rakentaa Web sivun osoite, tietyt erikoismerkit (kuten kysymysmerkki, kauttaviiva ja piste) eivät ole sallittuja. Voit käyttää kirjaimia, numeroita ja viivoja." />
+  <string key="UrlTitleTooLong" value="Määritetty URL otsikko on liian pitkä. Tee siitä lyhyempi ja yritä uudelleen" />
+  <string key="FriendlyUrlNotUniqueError" value="Toinen sivu käyttää määritettyä ystävällistä URL:ää. Ystävällisen URL: n pitää olla yksilöllinen." />
+  <string key="TitleMissingError" value="Otsikko ei voi olla tyhjä." />
+  <string key="PageSaveValidationFailedTitle" value="Sivua ei tallennettu" />
+  <string key="PageSaveValidationFailedMessage" value="Sivua ei validoitu eikä sitä ole tallennettu. Tarkista kentän viestit." />
+  <string key="PageElementProvider.RootLabel" value="Sivustot" />
+  <string key="PageElementProvider.RootLabelToolTip" value="Sivustot" />
+  <string key="PageElementProvider.AddPageAtRoot" value="Lisää sivusto ..." />
+  <string key="PageElementProvider.AddPageAtRootToolTip" value="Lisää uusi kotisivu" />
+  <string key="PageElementProvider.ViewUnpublishedItems" value="Luettele Julkaisemattomat sivut" />
+  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="Luo yleiskatsaus sivuista ja sivujen kansiden tiedoista, joita ei ole vielä julkaistu." />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-title" value="Julkaisematon sisältö" />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-description" value="Alla oleva lista näyttää sivut ja sivun tiedot, joita muokataan parhaillaan tai on valmiina hyväksyttäväksi / julkaistavaksi." />
+  <string key="PageElementProvider.EditPage" value="Sivun muokkaus" />
+  <string key="PageElementProvider.EditPageToolTip" value="Muokkaa valittua sivua" />
+  <string key="PageElementProvider.Delete" value="Poista" />
+  <string key="PageElementProvider.DeleteToolTip" value="Poista valittu sivu" />
+  <string key="PageElementProvider.LocalizePage" value="Käännä sivu" />
+  <string key="PageElementProvider.LocalizePageToolTip" value="Käännä valittu sivu" />
+  <string key="PageElementProvider.AddSubPage" value="Lisää sivu ..." />
+  <string key="PageElementProvider.AddSubPageToolTip" value="Lisää uusi sivu valitun alle" />
+  <string key="PageElementProvider.ViewPublicPage" value="Selaa julkaistua sivua" />
+  <string key="PageElementProvider.ViewPublicToolTip" value="Katso viimeisin julkaistu versio" />
+  <string key="PageElementProvider.ViewDraftPage" value="Selaa tallennettua sivua" />
+  <string key="PageElementProvider.ViewDraftToolTip" value="Näytä viimeisimmät muutokset" />
+  <string key="PageElementProvider.DisplayLocalOrderingLabel" value="Näytä sivun paikalliset järjestelyt" />
+  <string key="PageElementProvider.DisplayLocalOrderingToolTip" value="Näytä sivun paikalliset järjestelyt" />
+  <string key="PageElementProvider.DisabledPage" value="Ei ole vielä hyväksytty tai julkaistu" />
+  <string key="PageElementProvider.MissingTemplateTitle" value="Sivuston sivupohja vaaditaan" />
+  <string key="PageElementProvider.MissingTemplateMessage" value="Vaaditaan sivuston pohja, ennenkuin voit luoda uuden sivun. Yhtään pohjaa ei ole vielä luotu. Voit luoda pohjan Layout näkymässä." />
+  <string key="PageElementProvider.MissingActiveLanguageTitle" value="Kieli vaaditaan" />
+  <string key="PageElementProvider.MissingActiveLanguageMessage" value="Vaaditaan sivuston kieli, ennenkuin voit luoda uuden sivun. Yhtään kieltä ei ole vielä luotu. Voit luoda kielen Järjestelmä näkymässä." />
+  <string key="PageElementProvider.NoPageTypesAvailableTitle" value="Sivutyyppiä ei ole saatavilla" />
+  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="Sinun pitäisi luoda ainakin yksi sivutyyppi" />
+  <string key="PageElementProvider.MissingPageTypeTitle" value="Sivutyyppi tarvitaan" />
+  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="Vaaditaan sivuston pohja joka ei ole  tyyppiä &quot;vain alisivut&quot;, ennenkuin voit luoda uuden kotisivun. Yhtään sellaista pohjaa ei ole vielä luotu. Voit luoda pohjan Layout näkymässä." />
+  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="Vaaditaan sivuston pohja joka ei ole  tyyppiä &quot;vain kotisivut&quot;, ennenkuin voit luoda uuden alasivun. Yhtään sellaista pohjaa ei ole vielä luotu. Voit luoda pohjan Layout näkymässä." />
+  <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Sivua ei voitu lisätä!" />
+  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="Sivutyyppisääntö kieltää sivun lisäämisen tänne" />
+  <string key="ManageHostNames.Add.DialogLabel" value="Hallitse palvelimen nimeä" />
+  <string key="ManageHostNames.Add.HeadingTitle" value="Lisää palvelimen nimi sivulle" />
+  <string key="ManageHostNames.Add.HeadingDescription" value="Voit liittää isäntänimen (tai verkkotunnuksen) sivuun määrittämällä sen alla olevaan kenttään. Huomaathan, että DNS-asetuksissa määritetty isännän nimi on myös määritettävä, mikä tapahtuu tämän järjestelmän ulkopuolella." />
+  <string key="ManageHostNames.Add.FieldGroupLabel" value="Isäntänimen liitos sivulle" />
+  <string key="ManageHostNames.Add.HostNameTextBoxLabel" value="Isäntänimi" />
+  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Määritä isäntänimi (kuten 'www.composite.net tai composite.net) jonka haluat liittää tähän sivuun" />
+  <string key="ManageHostNames.Add.InvalidHostNameSyntaxError" value="Isäntänimen syntaksi ei kelpaa" />
+  <string key="ManageHostNames.Add.HostNameNotUniqueError" value="Tämä palvelimen nimi on jo liitetty sivulle. Sinun on ensin poistettava nykyiset liitokset." />
+  <string key="ManageHostNames.Remove.DialogLabel" value="Hallitse palvelimen nimeä" />
+  <string key="ManageHostNames.Remove.FieldGroupLabel" value="Poista isäntänimen liitos sivulta" />
+  <string key="ManageHostNames.Remove.MultiSelectorLabel" value="Poistettavat isäntänimet" />
+  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="Valitsemasi isäntänimet eivät enää liitty sivuun" />
+  <string key="Preview.PublishedPage.NotPublishedTitle" value="Valittu sivu ei ole julkaistu" />
+  <string key="Preview.PublishedPage.NotPublishedMessage" value="Valittu sivu ei ole julkaistu" />
+  <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="Vahvista kaikkien alasivujen poisto" />
+  <string key="DeletePageWorkflow.CascadeDeleteErrorTitle" value="Poistamisen virhe" />
+  <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="Sivulla viitataan toiseen tyyppiin joka ei salli periytyvää poistoa. Tämä operaatio on pysähtynyt" />
+  <string key="DeletePageWorkflow.HasCompositionsTitle" value="Sivua ei voi poistaa" />
+  <string key="DeletePageWorkflow.HasCompositionsMessage" value="Tällä sivulla on määriteltynä yksi tai useampi sivun kansio tai metatietokenttä. Poista ne ensin." />
+</strings>

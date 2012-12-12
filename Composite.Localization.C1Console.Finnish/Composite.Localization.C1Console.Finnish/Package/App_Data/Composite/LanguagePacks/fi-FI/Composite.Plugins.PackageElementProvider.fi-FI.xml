@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootFolderLabel" value="Paketit" />
+  <string key="RootFolderToolTip" value="Tarkastele ja hallitse asennettuja paketteja" />
+  <string key="AvailablePackagesFolderLabel" value="Saatavilla olevat paketit" />
+  <string key="AvailablePackagesFolderToolTip" value="Saatavilla olevat paketit" />
+  <string key="InstalledPackageFolderLabel" value="Asennetut paketit" />
+  <string key="InstalledPackageFolderToolTip" value="Asennetut paketit" />
+  <string key="LocalPackagesFolderLabel" value="Paikalliset paketit" />
+  <string key="LocalPackagesFolderToolTip" value="Paikalliset paketit" />
+  <string key="PackageSourcesFolderLabel" value="Pakettien l&#228;hteet" />
+  <string key="PackageSourcesFolderToolTip" value="Pakettien l&#228;hteet" />
+  <string key="ViewAvailableInformationLabel" value="Paketin tiedot" />
+  <string key="ViewAvailableInformationToolTip" value="N&#228;yt&#228; paketin tiedot" />
+  <string key="ViewInstalledInformationLabel" value="Paketin tiedot" />
+  <string key="ViewInstalledInformationToolTip" value="N&#228;yt&#228; paketin tiedot" />
+  <string key="InstallLocalPackageLabel" value="Asenna paikallinen paketti ..." />
+  <string key="InstallLocalPackageToolTip" value="Asenna paketti paikallisesta tiedostoj&#228;rjestelm&#228;st&#228;" />
+  <string key="AddPackageSourceLabel" value="Lis&#228;&#228; paketin l&#228;hde" />
+  <string key="AddPackageSourceToolTip" value="Lis&#228;&#228; paketin l&#228;hde" />
+  <string key="DeletePackageSourceLabel" value="Poista paketin l&#228;hde" />
+  <string key="DeletePackageSourceToolTip" value="Poista paketin l&#228;hde" />
+  <string key="ClearServerCacheLabel" value="Tyhjenn&#228; v&#228;limuisti" />
+  <string key="ClearServerCacheToolTip" value="Tyhjenn&#228; v&#228;limuisti saadaksesi uusimmat paketit" />
+  <string key="ViewAvailableInformation.FieldGroupLabel" value="Paketin tiedot" />
+  <string key="ViewAvailableInformation.NameTextLabel" value="Nimi" />
+  <string key="ViewAvailableInformation.DescriptionTextLabel" value="Kuvaus" />
+  <string key="ViewAvailableInformation.AuthorTextLabel" value="Tekij&#228;" />
+
+  <string key="ViewAvailableInformation.TrialInfoFieldGroupLabel" value="Ilmaisen koeversion tiedot" />
+  <string key="ViewAvailableInformation.TrialInformationLabel" value="Koeversion tiedot" />
+  <string key="ViewAvailableInformation.TrialInformationText" value="T&#228;m&#228; on kaupallinen paketti, saatavilla ilmaiseksi koeajaksi. Kun koeaika on p&#228;&#228;ttynyt toiminnot voivat heikenty&#228;, ellet p&#228;&#228;t&#228; ostaa lisenssi&#228;." />
+  <string key="ViewAvailableInformation.TrialDaysLabel" value="Ilmainen kokeiluaika (p&#228;iv&#228;&#228;)" />
+
+
+  <string key="ViewAvailableInformation.InstallationInfoFieldGroupLabel" value="AsennusInfo" />
+  <string key="ViewAvailableInformation.VersionTextLabel" value="Versio" />
+  <string key="ViewAvailableInformation.TechicalDescriptionTextLabel" value="Tekninen kuvaus" />
+  <string key="ViewAvailableInformation.PackageSourceTextLabel" value="L&#228;hde" />
+
+
+  <string key="ViewAvailableInformation.PriceTextLabel" value="Hinta (USD)" />
+  <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="Asenna" />
+  <string key="ViewAvailableInformation.Toolbar.ReadMoreLabel" value="Lue lis&#228;&#228;" />
+  <string key="ViewAvailableInformation.ShowError.MessageTitle" value="Jo asennettuna" />
+  <string key="ViewAvailableInformation.ShowError.MessageMessage" value="Paketti on jo asennettu, ei voi asentaa valittua paketia." />
+  <string key="ViewAvailableInformation.ShowServerError.MessageTitle" value="Paketti-palvelin ei vastannut" />
+  <string key="ViewAvailableInformation.ShowServerError.MessageMessage" value="Paketti-palvelin ei vastaa, yrit&#228; uudelleen tai ota yhteytt&#228; j&#228;rjestelm&#228;nvalvojaan" />
+  <string key="ViewInstalledInformation.FieldGroupLabel" value="Paketin tiedot" />
+  <string key="ViewInstalledInformation.NameTextLabel" value="Nimi" />
+  <string key="ViewInstalledInformation.DateTextLabel" value="Asennus p&#228;iv&#228;m&#228;&#228;r&#228;" />
+  <string key="ViewInstalledInformation.UserTextLabel" value="Asentaja" />
+  <string key="ViewInstalledInformation.AuthorTextLabel" value="Tekij&#228;" />
+  <string key="ViewInstalledInformation.VersionTextLabel" value="Versio" />
+  <string key="ViewInstalledInformation.TrialInfoFieldGroupLabel" value="Koeversion tiedot" />
+  <string key="ViewInstalledInformation.TrialInformationLabel" value="Koeversion tiedot" />
+  <string key="ViewInstalledInformation.TrialInformationText" value="T&#228;m&#228; on kaupallinen paketti, saatavilla ilmaiseksi koeajaksi. Kun koeaika on p&#228;&#228;ttynyt toiminnot voivat heikenty&#228;, ellet p&#228;&#228;t&#228; ostaa lisenssi&#228;." />
+  <string key="ViewInstalledInformation.TrialExpireLabel" value="Viimeinen kokeilup&#228;iv&#228;" />
+
+  <string key="ViewInstalledInformation.Toolbar.UninstallLabel" value="Poista" />
+  <string key="ViewInstalledInformation.Toolbar.PurchaseLabel" value="Osta t&#228;m&#228;!" />
+  <string key="ViewInstalledInformation.ShowError.MessageTitle" value="Jo poistettu" />
+  <string key="ViewInstalledInformation.ShowError.MessageMessage" value="Paketti on jo poistettu, ei voi poistaa valitua pakettia." />
+  <string key="InstallRemotePackage.Step1.LayoutLabel" value="Asenna paketti" />
+  <string key="InstallRemotePackage.Step1.HeadingTitle" value="T&#228;m&#228; on kokeilu / maksullinen paketti" />
+  <string key="InstallRemotePackage.Step1.HeadingDescription" value="T&#228;m&#228; paketti on maksettava - Lue EULA seuraavalla n&#228;yt&#246;ll&#228; saadaksesi lis&#228;tietoja koeajasta ja maksuehdoista." />
+  <string key="InstallRemotePackage.Step2.LayoutLabel" value="Asenna paketti" />
+  <string key="InstallRemotePackage.Step2.HeadingTitle" value="K&#228;ytt&#246;oikeussopimus" />
+  <string key="InstallRemotePackage.Step2.HeadingDescription" value="Jos hyv&#228;ksyt sopimuksen ehdot, klikkaa valintaruutua alla. Sinun t&#228;ytyy hyv&#228;ksy&#228; sopimus ennen asentamista." />
+  <string key="InstallRemotePackage.Step2.IAcceptItemLabel" value="Hyv&#228;ksyn lisenssisopimuksen" />
+  <string key="InstallRemotePackage.Step2.AcceptMissing" value="Sinun t&#228;ytyy hyv&#228;ksy&#228; lisenssisopimuksen ehdot ennen kuin voit jatkaa." />
+  <string key="InstallRemotePackage.Step3.LayoutLabel" value="Asenna paketti" />
+  <string key="InstallRemotePackage.Step3.HeadingTitle" value="Lataa ja validoi paketti" />
+  <string key="InstallRemotePackage.Step3.HeadingDescription" value="Paketti ladataan ja valitoidaan. Huomaa, ett&#228; t&#228;m&#228; voi kest&#228;&#228; useita minuutteja. Valitse Seuraava jatkaaksesi." />
+  <string key="InstallRemotePackage.Step4.LayoutLabel" value="Asenna paikallinen paketti" />
+  <string key="InstallRemotePackage.Step4.HeadingTitle" value="Valmis asentamaan" />
+  <string key="InstallRemotePackage.Step4.HeadingDescription" value="Valmis asentamaan pakettia. Huomaa, ett&#228; asennus voi kest&#228;&#228; useita minuutteja. Valitse Seuraava jatkaaksesi." />
+  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingTitle" value="Valmis asentamaan" />
+  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingDescription" value="Valmis asentamaan pakettia. Huomaa, ett&#228; asennus voi kest&#228;&#228; useita minuutteja. Huomaa my&#246;s, ett&#228; t&#228;m&#228; pakettia ei voi poistaa. Valitse Seuraava jatkaaksesi." />
+  <string key="InstallRemotePackage.Step5.LayoutLabel" value="Paketti asennettu" />
+  <string key="InstallRemotePackage.Step5.HeadingTitle" value="Paketti asennettu onnistuneesti" />
+  <string key="InstallRemotePackage.Step5.HeadingDescription" value="Paketti asennettu onnistuneesti." />
+  <string key="InstallRemotePackage.ShowError.LayoutLabel" value="Paketin asennus ep&#228;onnistui" />
+  <string key="InstallRemotePackage.ShowError.InfoTableCaption" value="Paketin asennus ep&#228;onnistui" />
+  <string key="InstallRemotePackage.ShowError.MessageTitle" value="Viesti" />
+  <string key="InstallRemotePackage.ShowWarning.LayoutLabel" value="Paketin validointi ei onnistunut" />
+  <string key="InstallRemotePackage.ShowWarning.InfoTableCaption" value="Paketin validointi ei onnistunut" />
+  <string key="InstallLocalPackage.Step1.LayoutLabel" value="Asenna paikallinen paketti" />
+  <string key="InstallLocalPackage.Step1.FieldGroupLabel" value="Polku paikalliseen pakettiin" />
+  <string key="InstallLocalPackage.Step1.FileUploadLabel" value="Pakettitiedosto" />
+  <string key="InstallLocalPackage.Step1.FileUploadHelp" value="Selaa ja valitse paikallinen pakettitiedosto" />
+  <string key="InstallLocalPackage.Step2.LayoutLabel" value="Asenna paikallinen paketti" />
+  <string key="InstallLocalPackage.Step2.HeadingTitle" value="Valmis asentamaan" />
+  <string key="InstallLocalPackage.Step2.HeadingDescription" value="Valmis asentamaan pakettia. Huomaa, ett&#228; asennus voi kest&#228;&#228; useita minuutteja. Valitse Seuraava jatkaaksesi." />
+  <string key="InstallLocalPackage.Step3.LayoutLabel" value="Paketti asennettu" />
+  <string key="InstallLocalPackage.Step3.HeadingTitle" value="Paketti asennettu onnistuneesti" />
+  <string key="InstallLocalPackage.Step3.HeadingDescription" value="Paketti asennettu onnistuneesti." />
+  <string key="InstallLocalPackage.ShowError.LayoutLabel" value="Paketin asennus ep&#228;onnistui" />
+  <string key="InstallLocalPackage.ShowError.InfoTableCaption" value="Paketin asennus ep&#228;onnistui" />
+  <string key="InstallLocalPackage.ShowError.MessageTitle" value="Viesti" />
+  <string key="InstallLocalPackage.ShowWarning.LayoutLabel" value="Paketin validointi ei onnistunut" />
+  <string key="InstallLocalPackage.ShowWarning.InfoTableCaption" value="Paketin validointi ei onnistunut" />
+  <string key="UninstallRemotePackage.Step1.LayoutLabel" value="Poista Paketti" />
+  <string key="UninstallRemotePackage.Step1.HeadingTitle" value="Valmiina tarkistamaan asennuksen poistaminen" />
+  <string key="UninstallRemotePackage.Step1.HeadingDescription" value="Valmiina tarkistamaan asennuksen poistaminen. Valitse Seuraava jatkaaksesi." />
+  <string key="UninstallRemotePackage.Step2.LayoutLabel" value="Poista Paketti" />
+  <string key="UninstallRemotePackage.Step2.HeadingTitle" value="Valmis poistamaan" />
+  <string key="UninstallRemotePackage.Step2.HeadingDescription" value="Valmis poistamaan paketin. Huomaa, ett&#228; asennus voi kest&#228;&#228; useita minuutteja. Valitse Seuraava jatkaaksesi." />
+  <string key="UninstallRemotePackage.Step3.LayoutLabel" value="Paketti Poistettu" />
+  <string key="UninstallRemotePackage.Step3.HeadingTitle" value="Paketti poistettu onnistuneesti" />
+  <string key="UninstallRemotePackage.Step3.HeadingDescription" value="Paketti poistettu onnistuneesti." />
+  <string key="UninstallRemotePackage.ShowError.LayoutLabel" value="Paketin poisto ep&#228;onnistui" />
+  <string key="UninstallRemotePackage.ShowError.InfoTableCaption" value="Paketin poisto ep&#228;onnistui" />
+  <string key="UninstallRemotePackage.ShowError.MessageTitle" value="Viesti" />
+  <string key="UninstallRemotePackage.ShowUnregistre.LayoutLabel" value="Poista Paketti" />
+  <string key="UninstallRemotePackage.ShowUnregistre.HeadingTitle" value="Asennuksen rekister&#246;inti ep&#228;onnistui" />
+  <string key="UninstallRemotePackage.ShowUnregistre.HeadingDescription" value="Asennuksen poistamisen rekister&#246;inti ep&#228;onnistui. Ota yhteytt&#228; paketin toimittajaan saadaksesi ohjeet manuaaliseen poistoon." />
+  <string key="UninstallLocalPackage.Step1.LayoutLabel" value="Poista paikallinen paketti" />
+  <string key="UninstallLocalPackage.Step1.HeadingTitle" value="Valmiina tarkistamaan asennuksen poistaminen" />
+  <string key="UninstallLocalPackage.Step1.HeadingDescription" value="Valmiina tarkistamaan asennuksen poistaminen. Valitse Seuraava jatkaaksesi." />
+  <string key="UninstallLocalPackage.Step2.LayoutLabel" value="Poista paikallinen paketti" />
+  <string key="UninstallLocalPackage.Step2.HeadingTitle" value="Valmis poistamaan" />
+  <string key="UninstallLocalPackage.Step2.HeadingDescription" value="Valmis poistamaan paketin. Huomaa, ett&#228; asennus voi kest&#228;&#228; useita minuutteja. Valitse Seuraava jatkaaksesi." />
+  <string key="UninstallLocalPackage.Step3.LayoutLabel" value="Paketti Poistettu" />
+  <string key="UninstallLocalPackage.Step3.HeadingTitle" value="Paketti poistettu onnistuneesti" />
+  <string key="UninstallLocalPackage.Step3.HeadingDescription" value="Paketti poistettu onnistuneesti." />
+  <string key="UninstallLocalPackage.ShowError.LayoutLabel" value="Paketin poisto ep&#228;onnistui" />
+  <string key="UninstallLocalPackage.ShowError.InfoTableCaption" value="Paketin poisto ep&#228;onnistui" />
+  <string key="UninstallLocalPackage.ShowError.MessageTitle" value="Viesti" />
+  <string key="AddPackageSource.Step1.LayoutLabel" value="Uusi paketin l&#228;hde" />
+  <string key="AddPackageSource.Step1.FieldGroupLabel" value="Paketin l&#228;hteen tietoja" />
+  <string key="AddPackageSource.Step1.UrlLabel" value="Paketin verkkopalvelun URL" />
+  <string key="AddPackageSource.Step1.UrlHelp" value="Paketteja voidaan yll&#228;pit&#228;&#228; et&#228;palvelimella. Paketin verkkopalvelun URL valitoidaan seuraavassa vaiheessa." />
+  <string key="AddPackageSource.Step1.UrlNotValid" value="Annettu teksti ei ollut kelvollinen URL" />
+  <string key="AddPackageSource.Step1.UrlNonPackageServer" value="Palvelin ei ole Composite C1 paketti palvelin" />
+  <string key="AddPackageSource.Step2.LayoutLabel" value="Lis&#228;&#228; Paketti palvelimen l&#228;hde" />
+  <string key="AddPackageSource.Step2.HeadingTitle" value="Palvelimen URL on voimassa" />
+  <string key="AddPackageSource.Step2.HeadingNoHttpsDescription" value="Huomaa, ett&#228; HTTP-protokollaa k&#228;ytet&#228;&#228;n t&#228;ss&#228; yhteydess&#228;. T&#228;m&#228; merkitsee sit&#228;, ett&#228; kaikki tieto l&#228;hetet&#228;&#228;n salaamattomina. Klikkaa Valmis lis&#228;t&#228;ksesi l&#228;hteen." />
+  <string key="AddPackageSource.Step2.HeadingWithHttpsDescription" value="Klikkaa Valmis lis&#228;t&#228;ksesi l&#228;hteen." />
+  <string key="DeletePackageSource.Step1.LayoutLabel" value="Poista vahvistus" />
+  <string key="DeletePackageSource.Step1.Text" value="Poista valitun palvelin l&#228;hde" />
+
+  <string key="ConfirmLicense.ExpiredTitle" value="Koeaika on p&#228;&#228;ttynyt" />
+  <string key="ConfirmLicense.ExpiredMessage" value="Paketin koeaika on p&#228;&#228;ttynyt. Sinun t&#228;ytyy hankkia voimassa oleva lisenssi." />
+</strings>

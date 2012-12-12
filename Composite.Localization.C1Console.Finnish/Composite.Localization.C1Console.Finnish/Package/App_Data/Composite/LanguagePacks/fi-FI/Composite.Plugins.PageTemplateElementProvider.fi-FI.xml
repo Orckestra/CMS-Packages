@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="PageTemplateElementProvider.RootLabel" value="Sivupohjat" />
+  <string key="PageTemplateElementProvider.RootLabelToolTip" value="L&#246;yd&#228;t sivuston XHTML malleja t&#228;&#228;lt&#228;" />
+  <string key="PageTemplateElementProvider.AddTemplate" value="Lis&#228;&#228; mallipohja" />
+  <string key="PageTemplateElementProvider.AddTemplateToolTip" value="Lis&#228;&#228; uusi mallipohja" />
+  <string key="PageTemplateElementProvider.EditTemplate" value="Muokkaa mallipohjaa" />
+  <string key="PageTemplateElementProvider.EditTemplateToolTip" value="Muokkaa valittua mallipohjaa" />
+	<string key="PageTemplateElementProvider.DeleteTemplate" value="Poista" />
+	<string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="Poista t&#228;m&#228;" />
+	
+  <string key="AddNewPageTemplateStep1.LabelDialog" value="Lis&#228;&#228; uusi sivuston mallipohja" />
+  <string key="AddNewPageTemplateStep1.LabelFieldGroup" value="Sivuston mallipohja" />
+  <string key="AddNewPageTemplateStep1.LabelTemplateTitle" value="Mallipohjan otsikko" />
+  <string key="AddNewPageTemplateStep1.LabelTemplateTitleHelp" value="T&#228;m&#228;n mallin tunnistaa luetteloissa otsikolla. Harkitse lyhyt, mutta kuvaava nimi." />
+  <string key="AddNewPageTemplateStep1.LabelCopyFrom" value="Kopioi" />
+  <string key="AddNewPageTemplateStep1.LabelCopyFromHelp" value="Voit kopioida merkinn&#228;t toisesta layout mallista valitsemalla se t&#228;ss&#228; luettelossa." />
+  <string key="AddNewPageTemplateStep1.LabelCopyFromEmptyOption" value="(Uusi malli)" />
+  <string key="AddNewPageTemplateStep1.TitleInUseTitle" value="Otsikko on jo k&#228;yt&#246;ss&#228;" />
+  <string key="AddNewPageTemplateStep1.TitleTooLong" value="Otsikko on liian pitk&#228; (k&#228;ytet&#228;&#228;n osana xml tiedostonime&#228;)." />
+
+  <string key="EditPageTemplate.LabelMarkUpCode" value="Merkinn&#228;n koodi" />
+  <string key="EditPageTemplate.LabelTemplateIdentification" value="Mallipohjan tiedot" />
+  <string key="EditPageTemplate.LabelTemplateTitle" value="Mallipohjan otsikko" />
+  <string key="EditPageTemplate.LabelTemplateTitleHelp" value="T&#228;m&#228;n mallin tunnistaa luetteloissa otsikolla. Harkitse lyhyt, mutta kuvaava nimi." />
+
+  <string key="EditPageTemplateWorkflow.InvalidXmlTitle" value="Mallipohjaa ei voitu tallentaa" />
+  <string key="EditPageTemplateWorkflow.InvalidXmlMessage" value="Sivun mallipohjan merkinn&#228;t ei valitoidu.{0}" />
+  <string key="EditPageTemplateWorkflow.CannotRenameFileExists" value="Mallipohjan tiedostoa ei voi nimet&#228; - tiedosto &#39;{0}&#39; on jo olemassa." />
+  <string key="EditPageTemplateWorkflow.TitleInUseTitle" value="Otsikko on jo k&#228;yt&#246;ss&#228;" />
+
+  <string key="DeletePageTemplateStep1.LabelFieldGroup" value="Poista t&#228;m&#228;n sivun mallipohja?" />
+	<string key="DeletePageTemplateStep1.Text" value="Poista sivupohja?" />
+	
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="Periytyv&#228;n poiston virhe" />
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="Tyyppi viittaa toiseen tyyppiin, joka ei salli perityv&#228;&#228; poistoa. T&#228;m&#228; operaatio on pys&#228;ytetty" />
+</strings>

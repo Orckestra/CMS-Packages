@@ -1,0 +1,645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Muokkaa  käyttöoikeuksia" />
+  <string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Muokkaa  käyttöoikeuksia" />
+  <string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Yleiset oikeudet" />
+  <string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Hallitse käyttöoikeuksia" />
+  <string key="LogElementProvider.RootLabel" value="Loki" />
+  <string key="LogElementProvider.RootLabelToolTip" value="Järjestelmän loki" />
+  <string key="LogElementProvider.ShowLogLabel" value="Näytä loki" />
+  <string key="LogElementProvider.ShowLogToolTip" value="Näytä järjestelmän loki" />
+  <string key="DataCompositionVisabilityFacade.DefaultContainerLabel" value="Metadata" />
+  <string key="Website.Forms.Administrative.DeleteUserStep1.LabelFieldGroup" value="Poista käyttäjä?" />
+  <string key="Website.Forms.Administrative.DeleteUserStep1.Text" value="Poista valitut käyttäjät?" />
+  <string key="DeleteUserWorkflow.CascadeDeleteErrorTitle" value="Poistamisen virhe" />
+  <string key="DeleteUserWorkflow.CascadeDeleteErrorMessage" value="Tyyppi viittaa toiseen tyyppiin, joka ei salli perityvää poistoa. Tämä operaatio on pysäytetty" />
+  <string key="DeleteUserWorkflow.DeleteSelfTitle" value="Ei voi poistaa käyttäjää" />
+  <string key="DeleteUserWorkflow.DeleteSelfErrorMessage" value="Et voi poistaa tiliä jolla olet kirjautunut sisään." />
+  <string key="Website.Function.SelectDialog.Title" value="Valitse toiminto" />
+  <string key="Website.Widget.SelectDialog.Title" value="Valitse Widget" />
+  <string key="Website.ContentLink.SelectDialog.Title" value="Valitse sivu tai tiedosto" />
+  <string key="Website.Page.SelectDialog.Title" value="Valitse sivu" />
+  <string key="Website.FrontendFile.SelectDialog.Title" value="Valitse Frontend tiedosto" />
+  <string key="Website.Media.SelectDialog.Title" value="Valitse Media" />
+  <string key="Website.Image.SelectDialog.Title" value="Valitse kuva" />
+  <string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Yleiset asetukset" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Käyttäjätunnus" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserNameHelp" value="Käyttäjä nimiä ei voi muuttaa. Tämä on vain luku-kenttä." />
+  <string key="Website.Forms.Administrative.EditUserStep1.PasswordLabel" value="Salasana" />
+  <string key="Website.Forms.Administrative.EditUserStep1.PasswordHelp" value="Salasanan on oltava vähintään 6 merkkiä pitkä." />
+  <string key="Website.Forms.Administrative.EditUserStep1.EmailLabel" value="Sähköposti" />
+  <string key="Website.Forms.Administrative.EditUserStep1.EmailHelp" value="Käyttäjän sähköposti (ei pakollinen)." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GroupLabel" value="Kansio" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Jos annat kansion nimen, jota ei ole, uusi kansio luodaan." />
+  <string key="Website.Forms.Administrative.EditUserStep1.LabelLocalizationFieldGroup" value="C1 Console paikallistaminen" />
+  <string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Alueelliset asetukset" />
+  <string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="Jos haluat muuttaa numeroiden, päivämäärien ja tuntien esitystapaa, valitse kulttuuri luettelosta." />
+  <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageLabel" value="C1 Consolen kieli" />
+  <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageHelp" value="Valitse etikettien, ohjetekstin, valintaikkunoiden jne. käytettävä kieli. Valittavana on vain asennetut kielet. Voit asentaa lisää kieliä pakettien kautta, katso Compositen paikallistaminen." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveFieldLabel" value="Näkymät" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectLabel" value="Näkyvät näkymät" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectHelp" value="Valitse mikä näkymä tulisi olla näkyvissä, kun käyttäjä käynnistää C1 Console." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsFieldLabel" value="Globaalit käyttöoikeudet" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectLabel" value="Globaalit käyttöoikeudet" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectHelp" value="Hallinnointi lupa myöntää käyttäjälle oikeuden hallita käyttöoikeuksia ja suorittaa muita hallinnollisia tehtäväviä." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissions.IgnoredOwnAdministrativeRemoval" value="Oman hallinnollisen luvan poistaminen on jätetty huomiotta. Sinulla on edelleen järjestelmänvalvojan oikeudet." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesFieldLabel" value="Tietojen kieliin pääsy" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectLabel" value="Tietojen kielet" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectHelp" value="Käyttäjällä on oikeus hallita tietoja tietyillä kielillä." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleLabel" value="Aktiivinen sisällön kieli" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Kieli jolla tämän käyttäjän tulee muokata." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleNotChecked" value="Valittua kieltä ei tarkasteta tietojen kieliosastolla." />
+  <string key="Website.Forms.Administrative.EditUserStep1.NoActiveLocaleSelected" value="Sinun on valittava vähintään yksi aktiivinen kieli." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GenerelTabLabel" value="Yleinen" />
+  <string key="Website.Forms.Administrative.EditUserStep1.PermissionsTabLabel" value="Oikeudet" />
+  <string key="Website.Forms.Administrative.EditUserStep1.PerspectivesTabLabel" value="Näkymät" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserGroupsFieldLabel" value="Käyttäjäryhmät" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserGroupsMultiSelectHelp" value="Valitse käyttäjäryhmät joissa valitun käyttäjän tulisi olla jäsen." />
+  <string key="EditUserWorkflow.EditErrorTitle" value="Virhe" />
+  <string key="EditUserWorkflow.EditOwnAccessToUsersPerspective" value="Et voi poistaa omia käyttöoikeuksia käyttäjän näkökulmasta." />
+  <string key="UserElementProvider.RootLabel" value="Käyttäjät" />
+  <string key="UserElementProvider.RootToolTip" value="Käyttäjät" />
+  <string key="UserElementProvider.AddUserLabel" value="Lisää käyttäjä ..." />
+  <string key="UserElementProvider.AddUserToolTip" value="Lisää uusi käyttäjä" />
+  <string key="UserElementProvider.EditUserLabel" value="Muokkaa käyttäjää" />
+  <string key="UserElementProvider.EditUserToolTip" value="Muokkaa valitua käyttäjää" />
+  <string key="UserElementProvider.DeleteUserLabel" value="Poista käyttäjä" />
+  <string key="UserElementProvider.DeleteUserToolTip" value="Poista valittu käyttäjä" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleTitle" value="Varoitus" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleMessage" value="Olet vaihtanut aktiivisen, kirjautuneena olevan käyttäjän kielen,. Käyttäjän konsoli avataan uudelleen ja tietoa voi kadota." />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogTitle" value="Siivous pakollinen" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogText" value="Tämä edellyttää tilan siivousta. Aktiiviset editorit tallennetaan ja suljetaan." />
+  <string key="AddNewUserWorkflow.UsernameDuplicateError" value="Samanniminen käyttäjä on jo olemassa" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.LabelFieldGroup" value="Lisää uusi käyttäjä" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.UserNameLabel" value="Käyttäjätunnus" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.UserNameHelp" value="Kun olet luonut uuden käyttäjän käyttäjänimeä ei voi muuttaa" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.PasswordLabel" value="Salasana" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.PasswordHelp" value="Salasanan on oltava vähintään 6 merkkiä pitkä." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.EmailLabel" value="Sähköpostiosoite" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.EmailHelp" value="Käyttäjän sähköposti (ei pakollinen)." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.GroupLabel" value="Kansio" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.GroupHelp" value="Jos annat kansion nimen, jota ei ole, uusi kansio luodaan." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.CultureLabel" value="Alueelliset asetukset" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="Jos haluat muuttaa numeroiden, päivämäärien ja tuntien esitystapaa, valitse kulttuuri luettelosta." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.C1ConsoleLanguageLabel" value="C1 Consolen kieli" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.C1ConsoleLanguageHelp" value="Valitse etikettien, ohjetekstin, valintaikkunoiden jne. käytettävä kieli. Valittavana on vain asennetut kielet. Voit asentaa lisää kieliä pakettien kautta, katso Compositen paikallistaminen." />
+  <string key="UserElementProvider.MissingActiveLanguageTitle" value="Kieltä tarvitaan" />
+  <string key="UserElementProvider.MissingActiveLanguageMessage" value="Ennen käyttäjän lisäämistä pitää olla ainakin yksi kieli. Voit lisätä kielen System näkymästä." />
+  <string key="UserElementProvider.UserLoginIsAlreadyUsed" value="Samalla tunnuksella oleva käyttäjä on jo olemassa" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderTypeLabel" value="Lisää tietokansio" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderTypeToolTip" value="Lisää tietokansio" />
+  <string key="AssociatedDataElementProviderHelper.AddAssociatedDataLabel" value="Lisää tietoja" />
+  <string key="AssociatedDataElementProviderHelper.AddAssociatedDataToolTip" value="Lisää tietoja" />
+  <string key="AssociatedDataElementProviderHelper.EditAssociatedDataLabel" value="Muokkaa tietoja" />
+  <string key="AssociatedDataElementProviderHelper.EditAssociatedDataToolTip" value="Muokkaa tietoja" />
+  <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataLabel" value="Poista tiedot" />
+  <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataToolTip" value="Poista tiedot" />
+  <string key="AssociatedDataElementProviderHelper.LocalizeData" value="Paikallista" />
+  <string key="AssociatedDataElementProviderHelper.LocalizeDataToolTip" value="Paikallista tiedot" />
+  <string key="AssociatedDataElementProviderHelper.DisabledData" value="Ei ole vielä hyväksytty tai julkaistu" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.FieldLabel" value="Lisää tietokansio" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorLabel" value="Tietokansion tyyppi" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorHelp" value="Luo uusi tietotyyppi tai käyttä olemassa olevaa tietotyyppiä (jos läsnä)." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelNewType" value="Asetukset" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeName" value="Tyypin nimi" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeName" value="Tietotyypin tekninen nimi (esim. tuote). Tätä käytetään tunnistamaan tämä tyyppi koodissa ja sitä ei pidä muuttaa ulkoisen käyttöönoton jälkeen." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeNamespace" value="Tyypin nimiavaruus" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeNamespace" value="Nimiavaruus (moduuli / luokka nimi) tyyppiä. Tätä käytetään tunnistamaan tämä tyyppi koodissa ja sitä ei pidä muuttaa." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeTitle" value="Otsikko" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeTitle" value="Käytä tätä kenttää määrittääksesi käyttäjäystävällinen nimi. Nimi voi olla mitä tahansa." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelFields" value="Kentät" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ServicesLabel" value="Palvelut" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasPublishing" value="Onko julkaistava" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasLocalization" value="Onko lokalisoitu" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesTitle" value="Yhtään sivujen tietokansiota ei ole olemassa" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Yhtään sivujen tietokansiota ei ole vielä luotu. Voit luoda sivun tietokansion Tieto näkymässä." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesTitle" value="Yhtään käyttämätöntä sivujen tietokansiota ei ole" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Kaikki käytettävissä olevat sivujen tietokansiot on lisätty jo. Voit luoda uuden sivun tietokansion  Tieto näkymässä." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ErrorTitle" value="Virhe" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.FieldLabel" value="Valitse lisättäväksi olemassaoleva tietokansion tyyppi" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorLabel" value="Olemassa olevien tietojen kansioiden tyypit" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorHelp" value="Valitse lisättäväksi olemassaoleva tietokansion tyyppi" />
+  <string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeLabel" value="Poista Metadata kenttä" />
+  <string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeToolTip" value="Poista metatietokenttä" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.LabelFieldGroup" value="Poista tietokansio sivulta" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.FieldGroupLabel" value="Tietojen siivous" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataLabel" value="Poista tiedot" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataCheckBoxLabel" value="Kyllä, poista kansion tiedot" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataHelp" value="Jos haluat tämän kansion tietojen pysyän tietokannassa, sinun pitäisi poistaa tämä vaihtoehto." />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.LayoutLabel" value="Lisää metatietokenttä" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataTypeLabel" value="Lisää metatietokenttä" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataTypeToolTip" value="Lisää metatietokenttä" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.FieldLabel" value="Valitse olemassa oleva metatietotyyppi lisättäväksi" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorLabel" value="Nykyiset metatietojen tyypit" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorHelp" value="Valitse olemassa oleva metatietotyyppi lisättäväksi" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesTitle" value="Ei sivun metatietotyyppejä olemassa" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesMessage" value="Sivun metatietotyyppejä ei ole vielä luotu. Voit luoda sivun metatietotyyppejä Tieto näkymässä." />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.NamingFieldLabel" value="Metadata kentän ryhmän nimeäminen" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameLabel" value="Nimi" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameHelp" value="Anna yksilöllinen nimi tunnistamaan tämä metatietokentän ryhmä" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelLabel" value="Etiketti" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelHelp" value="Syötä käyttäjäystävällinen etiketti tämän metadatan kentän ryhmään" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.VisabilityFieldLabel" value="Metadata kentän ryhmän näkyvyys" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorLabel" value="Välilehti" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorHelp" value="Valitse välilehti, jolla tämä metadata kuuluu olla" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorLabel" value="Aloita näyttämään" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorHelp" value="Aloita näyttämään" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorLabel" value="Peri näyttö" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorHelp" value="Peri näyttö" />
+  <string key="AssociatedDataElementProviderHelper.NoItems.Title" value="Metatiedot kentän ryhmällä ei ole yhtään tietoa tälä alueella" />
+  <string key="AssociatedDataElementProviderHelper.NoItems.Description" value="Tällä hetkellä ei kohteita määritetyn näytön välillä. Paina Edellinen vaihtaaksesi näytön välillä tai Valmis luodaksesi metatiedot kenttään ryhmä." />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption0" value="Tämä erä" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption1" value="Lapset" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption2" value="2. sukupolvi jälkeläisiä" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption3" value="3. sukupolvi jälkeläisiä" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption4" value="4. sukupolvi jälkeläisiä" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption5" value="5. sukupolven jälkeläiset" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption0" value="Älä peri" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption1" value="Peri 1 sukupolvi" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption2" value="Peri 2 sukupolvea" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption3" value="Peri 3 sukupolvea" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption4" value="Peri aina" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.FieldGroupNameNotValid" value="Kenttän ryhmän nimi on käytössä" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectType.LayoutLabel" value="Poista Metadata kentän ryhmä" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.FieldLabel" value="Valitse poistettava metatiedot kentän ryhmä" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorLabel" value="Kenttäryhmä" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorHelp" value="Valitse poistettava metatiedot kentän ryhmä" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataTypeLabel" value="Muokkaa metatietokenttää" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataTypeToolTip" value="Muokkaa metatietokenttää" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.Layout.Label" value="Sivun muokkaus Metadata kenttä" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.FieldGroup.Label" value="Sivun metatietokentän asetukset" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Label" value="Etiketti" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Help" value="Metatietokentän etiketti. Käytetään sivujen muokkauksessa" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Label" value="Välilehti" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Help" value="Valitse välilehti, jolla tämä metadata kuuluu olla" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorLabel" value="Aloita näyttämään" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorHelp" value="Aloita näyttämään" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorLabel" value="Peri näyttö" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorHelp" value="Peri näyttö" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Label" value="Metadata kenttä" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Help" value="Valitse muokattava metatietokenttä" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Title" value="Ei muokattavia metatietokenttiä" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Message" value="Kohteella ei ole määriteltyjä muokattavia metatietokenttiä" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataFieldNameAlreadyUsed" value="Metatiedot tyyppiä käytetään toisessa paikassa samalla nimellä, mutta eri etikettillä" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerChangeNotAllowed" value="On olemassa yksi tai useampia samannimisiä määritelmiä, muuttaminen ei ole mahdollista" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Title" value="Paina lopuksi Tallenna" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Description" value="Kaikki tarvittavat tiedot on kerätty. Paina Valmis päivittääksesi metatiedot" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Title" value="Ei poistettavia metatietokenttiä" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Message" value="Kohteella ei ole määriteltyjä poistettavia metatietokenttiä" />
+  <string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorTitle" value="Poistamisen virhe" />
+  <string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorMessage" value="Tyyppi viittaa toiseen tyyppiin, joka ei salli perityvää poistoa. Tämä operaatio on pysäytetty" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelNewType" value="Asetukset" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeName" value="Tyypin nimi" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeName" value="Uuden luotavan tyypin nimi  (esim. tuote)" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeNamespace" value="Tyypin nimiavaruus" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeNamespace" value="Uuden moduulin, luokan tai nimiavaruuden nimi." />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeTitle" value="Otsikko" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeTitle" value="Määritä käyttäjäystävällinen nimi" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelFields" value="Kentät" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.ServicesLabel" value="Palvelut" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasVersioning" value="Onko versiotietoja" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasPublishing" value="Onko julkaistava" />
+  <string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.FieldGroupLabel" value="Poista tieto?" />
+  <string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.Text" value="Poista tietoja?" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.FieldGroupLabel" value="Lisää sivun tiedot" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorLabel" value="Valitse lisättävä tietotyyppi" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorHelp" value="Valitse jokin olemassa oleva tyyppi johon lisätä tietoja" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeWorkflow.FieldGroupLabel" value="Lisää sivun tietotyyppi" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorLabel" value="Valitse lisättävä tyyppi" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorHelp" value="Valitse jokin järjestelmän olemassa oleva tyyppi" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorLabel" value="Valitse viiteavain" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorHelp" value="Valitse jokin kenttien tyyppi käytettäväksi viiteavaimena" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorLabel" value="Lisää" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorHelp" value="Luomassa uudentyyppistä tai käyttämässä olemassa olevaa tyyppiä" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorLabel" value="Valitse tyyppi:" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorHelp" value="Säännöllinen tieto on uusi tyyppi, joka luodaan sivun alaisuuteen. Metatiedot on uusi kenttä, joka on luotu sivulle" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameLabel" value="Säännön nimi" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameHelp" value="Säännön nimi tallennetaan metatietoineen ja on osa metatietojen avainta. Nimen on oltava yksilöllinen." />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleLabelLabel" value="Sääntö etiketti" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleHelpHelp" value="Säännön etikettiä käytetään käyttäjäystävällisenä nimenä instassissa. Voidaan paikallistaa" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorLabel" value="Valitse koostumuksen säiliö" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorHelp" value="Valitse säiliö uudelle säännölle." />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorLabel" value="Valitse koostumuksen soveltamisalue" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorHelp" value="Valitse kattavuus uudelle koostumukselle" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsLabel" value="Tasot" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsHelp" value="Alasivujen syvyys, jossa koostumus on näkyvissä" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeLabel" value="Vahvista uusi tietotyyppi:" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeHelp" value="Metatiedot on uusi kenttä, joka on luotu sivulla" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Kokoonpanon soveltamisalan säännön nimi" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameHelp" value="Säännön nimi tallennetaan metatietoineen ja on osa metatietojen avainta. Nimen on oltava yksilöllinen." />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleLabelLabel" value="Kokoonpanon soveltamisalan säännön etiketti" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleHelpHelp" value="Säännön etikettiä käytetään käyttäjäystävällisenä nimenä instassissa. Voidaan paikallistaa" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeLabel" value="Koostumuksen soveltamisala" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeHelp" value="Tämä on laajuus, jolla uusi kokoonpano tulee näkyviin, kun muokkaat sivua" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeLabel" value="Lisätään  tyyppi" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeHelp" value="Luo uusi tyyppi tai käytä nykyistä tyyppiä" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameLabel" value="Nykyisen tyypin nimi" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameHelp" value="Järjestelmässä olevan valitun tyypin nimi" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameLabel" value="Viiteavainkentän nimi" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameHelp" value="Viiteavaimena käytettävän olemassaolevan kentän nimi" />
+  <string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeLabel" value="Poista tietokansio" />
+  <string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeToolTip" value="Poista tietokansio" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedType.FieldGroupLabel" value="Poista sivun tietotyyppi" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.AssociationTypeLabel" value="Poista sivun tietotyyppi" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Kokoonpanon soveltamisalan säännön nimi" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorLabel" value="Valitse sääntö" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorHelp" value="poistettavan säännön nimi" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorLabel" value="Valitse sivun tietotyyppi" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorHelp" value="" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorLabel" value="Valitse tietotyyppi" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorHelp" value="Valitse jokin olemassa oleva tyyppi" />
+  <string key="VirtualElementProviderElementProvider.ID01" value="Näennäispääkansio" />
+  <string key="VirtualElementProviderElementProvider.UserPerspective" value="Käyttäjät" />
+  <string key="VirtualElementProviderElementProvider.DeveloperApplicationPerspective" value="Kehittäjän ohjelmat" />
+  <string key="VirtualElementProviderElementProvider.UserGroupPerspective" value="Käyttäjäryhmät" />
+  <string key="VirtualElementProviderElementProvider.SystemPerspective" value="Järjestelmä" />
+  <string key="VirtualElementProviderElementProvider.ContentPerspective" value="Sisältö" />
+  <string key="VirtualElementProviderElementProvider.DatasPerspective" value="Tiedot" />
+  <string key="VirtualElementProviderElementProvider.DesignPerspective" value="Layout" />
+  <string key="VirtualElementProviderElementProvider.FunctionsPerspective" value="Funktiot" />
+  <string key="VirtualElementProviderElementProvider.MediaFilePerspective" value="Kaikki mediatiedostot" />
+  <string key="VirtualElementProviderElementProvider.MediaPerspective" value="Media" />
+  <string key="VirtualElementProviderElementProvider.ReadOnlyFunctionPerspective" value="Kaikki funktiot" />
+  <string key="VirtualElementProviderElementProvider.ReadOnlyWidgetFunctionPerspective" value="Kaikki Widget funktiot" />
+  <string key="VirtualElementProviderElementProvider.SqlFunctionPerspective" value="SQL funktiot" />
+  <string key="VirtualElementProviderElementProvider.XsltBasedFunctionPerspective" value="XSLT:n perustuvat funktiot" />
+  <string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogLabel" value="Palvelimen loki" />
+  <string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogTooltip" value="Näytä uusimmat palvelimen tapahtumat" />
+  <string key="VirtualElementProviderElementProvider.RootActions.SendMessageLabel" value="Kuuluta viesti" />
+  <string key="VirtualElementProviderElementProvider.RootActions.SendMessageTooltip" value="Lähetä viesti kaikille käynnissä oleville konsoleille" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Käynnistä palvelin uudelleen" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Käynnistä palvelin uudelleen" />
+  <string key="SendMessageToConsolesWorkflow.Layout.Label" value="Yleislähetysviesti kaikkille C1 konsoleille" />
+  <string key="SendMessageToConsolesWorkflow.FieldGroup.Label" value="Lähetettävä viesti" />
+  <string key="SendMessageToConsolesWorkflow.TitleTextBox.Label" value="Otsikko" />
+  <string key="SendMessageToConsolesWorkflow.TitleTextBox.Help" value="Lähetettävän viestin ikkunan otsikkoteksti" />
+  <string key="SendMessageToConsolesWorkflow.MessageTextArea.Label" value="Viesti" />
+  <string key="SendMessageToConsolesWorkflow.MessageTextArea.Help" value="Lähetettävä viesti" />
+  <string key="LoginWebRequestHandler.Login" value="Kirjaudu" />
+  <string key="LoginWebRequestHandler.Header" value="Kirjaudu {0}" />
+  <string key="LoginWebRequestHandler.LoginFailed" value="Väärä käyttäjätunnus tai salasana" />
+  <string key="LoginWebRequestHandler.Password" value="Salasana" />
+  <string key="LoginWebRequestHandler.Username" value="Käyttäjätunnus" />
+  <string key="LoginWebRequestHandler.LogInAsOtherUser" value="Kirjaudu sisään toisena käyttäjänä." />
+  <string key="LoginWebRequestHandler.WrongUserNameOrPassword" value="Väärä käyttäjätunnus tai salasana." />
+  <string key="LoginWebRequestHandler.UserNameNotRegistered" value="Annettu Windows login, {0} \ {1} ei ole rekisteröity käyttäjä tietokantaan. Sinun on käytettävä eri tunnusta." />
+  <string key="DataInterfaceValidator.TypeNotAnInterface" value="Tyyppi {0} ei ole liittymä." />
+  <string key="DataInterfaceValidator.TypeDoesNotImplementInterface" value="Liitäntätyyppi {0} ei toteuta rajapintaa {1}." />
+  <string key="DataInterfaceValidator.NotAcceptedType" value="Liittymän tyypin {1} Ominaisuus {0} ei ole hyväksyttyä tyyppiä." />
+  <string key="DataInterfaceValidator.NotValidIDataInterface" value="Liittymä {0} ei ole kelvollinen IData liittymä." />
+  <string key="DeleteMediaFileWorkflow.CascadeDeleteErrorTitle" value="Poistamisen virhe" />
+  <string key="DeleteMediaFileWorkflow.CascadeDeleteErrorMessage" value="Tyyppi viittaa toiseen tyyppiin, joka ei salli perityvää poistoa. Tämä operaatio on pysäytetty" />
+  <string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorTitle" value="Poistamisen virhe" />
+  <string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorMessage" value="Tyyppi viittaa toiseen tyyppiin, joka ei salli perityvää poistoa. Tämä operaatio on pysäytetty" />
+  <string key="MediaFileProviderElementProvider.RootToolTip" value="Lisää kansioita ja tiedostoja media-arkistoon" />
+  <string key="MediaFileProviderElementProvider.AddMediaFolder" value="Lisää kansio" />
+  <string key="MediaFileProviderElementProvider.AddMediaFolderToolTip" value="Lisää uusi mediakansio" />
+  <string key="MediaFileProviderElementProvider.AddMediaFile" value="Lataa tiedosto" />
+  <string key="MediaFileProviderElementProvider.AddMediaFileToolTip" value="Lisää uusi mediatiedosto" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFile" value="Poista tiedosto" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFileToolTip" value="Poista valittu mediatiedosto" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFolder" value="Poista kansio" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFolderToolTip" value="Poista mediakansio ja kaikki sen sisältävät kohtet." />
+  <string key="MediaFileProviderElementProvider.Download" value="Lataa" />
+  <string key="MediaFileProviderElementProvider.DownloadToolTip" value="Lataa tiedosto" />
+  <string key="MediaFileProviderElementProvider.EditMediaFile" value="Tiedoston ominaisuudet" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileToolTip" value="Nimeä mediatiedoston" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileTextContent" value="Muokkaa tekstiä" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileTextContentToolTip" value="Muokkaa tekstin sisältöä" />
+  <string key="MediaFileProviderElementProvider.EditImage" value="Kuvankäsittelyohjelma" />
+  <string key="MediaFileProviderElementProvider.EditImageToolTip" value="Avaa valittu mediatiedosto kuvankäsittelyohjelmassa" />
+  <string key="MediaFileProviderElementProvider.EditMediaFolder" value="Kansion ominaisuudet" />
+  <string key="MediaFileProviderElementProvider.EditMediaFolderToolTip" value="Muokkaa mediakansion ominaisuuksia" />
+  <string key="MediaFileProviderElementProvider.ChangeMediaFile" value="Korvaa tiedosto" />
+  <string key="MediaFileProviderElementProvider.ChangeMediaFileToolTip" value="Korvaa valittu tiedosto toisella mediatiedostolla" />
+  <string key="MediaFileProviderElementProvider.UploadZipFile" value="Lataa useita" />
+  <string key="MediaFileProviderElementProvider.UploadZipFileToolTip" value="Lataa Zip-tiedosto" />
+  <string key="MediaFileProviderElementProvider.MediaFileItemToolTip" value="Mediayksikkö" />
+  <string key="MediaFileProviderElementProvider.OrganizedFilesAndFoldersToolTip" value="Järjestele kansiota ja tiedostoja" />
+  <string key="MediaFileProviderElementProvider.ErrorMessageTitle" value="Virhe" />
+  <string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Tiedosto {0} on jo olemassa kansiossa {1}" />
+  <string key="UploadNewMediaFileWorkflow.UploadFailure" value="Epäonnistuminen" />
+  <string key="UploadNewMediaFileWorkflow.UploadFailureMessage" value="Ladattu tiedosto on oltava samaa tyyppiä kuin alkuperäinen. Lähettämäsi tiedosto on eri tyyppiä." />
+  <string key="RelationshipGraphActionExecutor.ShowGraph" value="Näytä kaavio" />
+  <string key="RelationshipGraphActionExecutor.ShowGraphToolTip" value="Näytä suhteen kaavio" />
+  <string key="RelationshipGraphActionExecutor.ShowOrientedGraph" value="Näytä asetettu kaavio" />
+  <string key="RelationshipGraphActionExecutor.ShowOrientedGraphToolTip" value="Näytä asetettu suhdekaavio" />
+  <string key="ShowElementInformationActionExecutor.ShowElementInformation.Label" value="Näytä elementin tiedot" />
+  <string key="ShowElementInformationActionExecutor.ShowElementInformation.ToolTip" value="Näytä elementin tiedot" />
+  <string key="RelationshipGraphActionExecutor.Search" value="Etsi elementtejä" />
+  <string key="RelationshipGraphActionExecutor.SearchToolTip" value="Etsi elementtejä" />
+  <string key="RelationshipGraphActionExecutor.SearchElements" value="Etsi elementtejä" />
+  <string key="RelationshipGraphActionExecutor.SearchElementsToolTip" value="Etsi elementtejä" />
+  <!-- WEBSITE -->
+  <string key="Website.General.LabelVersionNumber" value="Versionumero" />
+  <string key="Website.Application.DialogReload.Title" value="Käynnistä uudelleen?" />
+  <string key="Website.Application.DialogReload.Text" value="Käynnistä Komposiitti C1 uudelleen? Kaikki tallentamattomat muutokset menetetään." />
+  <string key="WebSite.Application.DialogSaveResource.Title" value="Tallenna resurssi?" />
+  <string key="WebSite.Application.DialogSaveResource.Text" value="Resurssia &quot;${resourcename}&quot; on muutettu. Tallenetaanko muutokset?" />
+  <string key="Website.Dialogs.SaveAll.LabelSaveResources" value="Tallenna resurssit?" />
+  <string key="Website.Dialogs.SaveAll.LabelUnsavedResources" value="Tallentamattomat resurssit" />
+  <string key="Website.Dialogs.LabelYes" value="Kyllä" />
+  <string key="Website.Dialogs.LabelNo" value="Ei" />
+  <string key="Website.Dialogs.LabelAccept" value="OK" />
+  <string key="Website.Dialogs.LabelCancel" value="Peruuta" />
+  <string key="Website.Dialogs.LabelDisclosure" value="Lisätietoja" />
+  <string key="Website.Dialogs.About.Title" value="Tietoja Composite C1:stä" />
+  <string key="Website.Dialogs.About.LabelCredits" value="Tekijät" />
+  <string key="Website.Dialogs.About.LabelBack" value="Takaisin" />
+  <string key="Website.Dialogs.About.LabelCredits2" value="Tekijät" />
+  <string key="Website.Dialogs.NoAccessTitle" value="Ei pääsyä" />
+  <string key="Website.Dialogs.NoAccessText" value="Sinulla ei ole käyttöoikeuksia järjestelmään. Ota yhteyttä järjestelmänvalvojaan." />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Unit" value="Yksikkö" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Width" value="Leveys" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Height" value="Korkeus" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelScaleImage" value="Skaalaa kuva" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelDimensions" value="Mitat" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelImageSize" value="Kuvan koko" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFixedRatio" value="Kiinteä suhde" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFreeResize" value="Vapaa koonmuutos" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPixels" value="Pikselit" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPercent" value="Prosentti" />
+  <string key="Website.Dialogs.Options.LoginScreen" value="Kirjautumisnäyttö" />
+  <string key="Website.Dialogs.Options.SoundEffects" value="Äänitehosteet" />
+  <string key="Website.Dialogs.Options.LabelOptions" value="Valinnat" />
+  <string key="Website.Dialogs.Options.LabelGeneral" value="Yleinen" />
+  <string key="Website.Dialogs.Options.LabelAdvanced" value="Lisätiedot" />
+  <string key="Website.Dialogs.Options.LabelLoginPreferences" value="Kirjautumisen asetukset" />
+  <string key="Website.Dialogs.Options.LabelFakeLoginScreen" value="Feikki kirjautumisnäyttö" />
+  <string key="Website.Dialogs.Options.LabelNoLoginScreen" value="Ei kirjautumisnäyttöä" />
+  <string key="Website.Dialogs.Options.LabelAudioPreferences" value="Ääniasetukset" />
+  <string key="Website.Dialogs.Options.LabelSoundOn" value="Häiritsevät äänitehosteet" />
+  <string key="Website.Dialogs.Options.LabelSoundOff" value="Ei äänitehosteita" />
+  <string key="Website.Dialogs.WebServices.Error" value="Virhe verkkopalvelun metodissa" />
+  <string key="Website.Dialogs.WebServices.LabelWebServiceError" value="Web Service Virhe" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.Title" value="Aseta Minne?" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelPosition" value="Kohta" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertBefore" value="Aseta ennen" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertAfter" value="Aseta jälkeen" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTitle" value="Muokkaa kuvaa" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFile" value="Tiedosto" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSave" value="Tallenna" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSaveAs" value="Tallenna nimellä ..." />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRevert" value="Palautua" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelView" value="Näytä" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoom" value="Zoomaus" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomIn" value="Isommaksi" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomOut" value="Pienemmäksi" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label800" value="800%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label400" value="400%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label200" value="200%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label100" value="100%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label50" value="50%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label25" value="25%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label12" value="12%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelImage" value="Kuva" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTransform" value="Muuta" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipHorizontal" value="Käännä vaakasuunnassa" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipVertical" value="Käännä pystysuunnassa" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CW" value="Kierrä 90 astetta myötäpäivään" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CCW" value="Kierrä 90 astetta vastapäivään" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate180" value="Kierrä 180 astetta" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelScale" value="Skaalaa kuva..." />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelCrop" value="Leikkaa kuvasta" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipSelect" value="Valitse" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipZoom" value="Zoomaus" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelSave" value="Tallenna" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelScale" value="Skaalaa kuvaa" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelCrop" value="Rajaa kuva" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelUndo" value="Peruuta" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelRedo" value="Tee uudelleen" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTitle" value="Oikeudet" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUsers" value="Käyttäjät" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUserGroups" value="Käyttäjäryhmät" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelButtonSave" value="Tallenna" />
+  <string key="Website.Content.Views.Help.ToolTipBack" value="Siirry edelliselle sivulle" />
+  <string key="Website.Content.Views.Help.ToolTipForward" value="Mene eteenpäin yksi sivu" />
+  <string key="Website.Content.Views.Help.ToolTipRefresh" value="Päivitä sivu" />
+  <string key="Website.Content.Views.Help.LabelContents" value="Sisältö" />
+  <string key="Website.Content.Views.Help.ToolTipContents" value="Ohjeen sisältö" />
+  <string key="Website.Content.Views.SystemView.ToolTipCollapseAll" value="Tiivistä kaikki" />
+  <string key="Website.Content.Views.SystemView.ToolTipLinkWithEditor" value="Linkitä editoriin" />
+  <string key="Website.Content.Views.Search.Search.LabelNewSearch" value="Uusi haku ..." />
+  <string key="Website.Content.Views.ViewSource.LabelFormatted" value="Muotoiltu" />
+  <string key="Website.Content.Views.ViewSource.LabelRaw" value="Raaka" />
+  <string key="ServerLog.LabelTitle" value="Palvelimen loki" />
+  <string key="ServerLog.LabelButtonDeleteOld" value="Poista vanha" />
+  <string key="ServerLog.LabelButtonRefresh" value="Päivitä" />
+  <string key="ServerLog.EmptyLabel" value="Ei lokitietoja saatavilla ..." />
+  <string key="ServerLog.LogEntry.DateLabel" value="Päivämäärä" />
+  <string key="ServerLog.LogEntry.MessageLabel" value="Viesti" />
+  <string key="ServerLog.LogEntry.TitleLabel" value="Otsikko" />
+  <string key="ServerLog.LogEntry.EventTypeLabel" value="Tapahtuman tyyppi" />
+  <string key="FunctionDocumentation.LabelButtonRefresh" value="Päivitä" />
+  <string key="FunctionDocumentation.LabelButtonPrint" value="Tulosta" />
+  <string key="Website.FlowUICompleted.ExecutionEndedTitle" value="Suoritus päättyi" />
+  <string key="Website.FlowUICompleted.ExecutionEndedMessage" value="Tässä ikkunassa ollut toiminto on päättynyt." />
+  <string key="Website.ServerError.ServerErrorTitle" value="Palvelimen virhe" />
+  <string key="Website.ServerError.ServerErrorMessage" value="Valitettava virhe on tapahtunut." />
+  <string key="Website.ServerError.ServerErrorDetails" value="Tarkemmat tiedot" />
+  <string key="Website.LicenseViolation.LicenseViolationTitle" value="Lisenssin loukkaaminen" />
+  <string key="Website.LicenseViolation.LicenseViolationMessage" value="Pyydetty toiminto on ristiriidassa nykyinen lisenssinne kanssa." />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelFlashOptions" value="Flash asetukset" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelHigh" value="Korkea" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLow" value="Matala" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutohigh" value="Autohigh" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutolow" value="Autolow" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelBest" value="Paras" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelWindow" value="Ikkuna" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelOpaque" value="Läpikuultamaton" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelTransparent" value="Läpinäkyvä" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowall" value="Näytä kaikki" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelNoborder" value="Ei reunaa" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelExactfit" value="Sovita" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutoPlay" value="Automaattinen toisto" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLoop" value="Silmukka" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowMenu" value="Näytä valikko" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelSWLiveConnect" value="SWLiveConnect" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelQuickTimeOptions" value="Quicktime valinnat" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelLoop" value="Silmukka" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelCache" value="Väliaikaissäiliö" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelNoCorrection" value="Ei korjausta" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelKioskMode" value="Kioski-tila" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelPlayEveryFrame" value="Toista jokainen frame" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoPlay" value="Automaattinen toisto" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelController" value="Kontrolleri" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelEnableJavaScript" value="Javascript käyttöön" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoHRef" value="AutoHREF" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelTargetCache" value="Kohteen väliaikaistila" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShockWaveOptions" value="Shockwave optiot" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelHigh" value="Korkea" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLow" value="Matala" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoHigh" value="Autohigh" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoLow" value="Autolow" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelBest" value="Paras" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelWindow" value="Ikkuna" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelOpaque" value="Läpikuultamaton" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelTransparent" value="Läpinäkyvä" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowAll" value="Näytä kaikki" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelNoBorder" value="Ei reunaa" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelExactFit" value="Sovita" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoPlay" value="Automaattinen toisto" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLoop" value="Silmukka" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowMenu" value="Näytä valikko" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelSWLiveConnect" value="SWLiveConnect" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelQuickTimeOptions" value="Quicktime valinnat" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelAutoStart" value="Auto Start" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelShowMenu" value="Näytä valikko" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelInvokeURLs" value="Avaa URL" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelStretchToFit" value="Sovita" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelEnabled" value="Käytössä" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelFullScreen" value="Kokonäyttö" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelMute" value="Mykistä" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelWindowLessVideo" value="Ikkunaton video" />
+  <string key="Website.App.LabelSave" value="Tallenna" />
+  <string key="Website.App.LabelSaveAndPublish" value="Tallenna ja julkaise" />
+  <string key="Website.App.LabelCloseTab" value="Sulje välilehti" />
+  <string key="Website.App.LabelCloseOthers" value="Sulje Muut" />
+  <string key="Website.App.LabelRefreshView" value="Päivitä näkymä" />
+  <string key="Website.App.LabelMakeDirty" value="Tuhoa" />
+  <string key="Website.App.LabelViewSource" value="Näytä lähdekoodi" />
+  <string key="Website.App.LabelViewGenerated" value="Näytä luontitiedot" />
+  <string key="Website.App.LabelViewSerialized" value="Näytä serialisointi" />
+  <string key="Website.App.LabelClose" value="Sulje" />
+  <string key="Website.App.LabelFile" value="Tiedosto" />
+  <string key="Website.App.LabelFileClose" value="Sulje" />
+  <string key="Website.App.LabelFileCloseAll" value="Sulje kaikki" />
+  <string key="Website.App.LabelFileSaveAll" value="Tallenna kaikki ..." />
+  <string key="Website.App.LabelFileExit" value="Poistu" />
+  <string key="Website.App.LabelView" value="Näytä" />
+  <string key="Website.App.LabelViewCompositeStart" value="Composite Aloitus" />
+  <string key="Website.App.LabelSystemLog" value="Järjestelmäloki" />
+  <string key="Website.App.LabelDeveloperPanel" value="Kehittäjän Paneeli" />
+  <string key="Website.App.LabelTools" value="Työkalut" />
+  <string key="Website.App.LabelHelp" value="Apua" />
+  <string key="Website.App.LabelHelpContents" value="Ohjeen sisältö" />
+  <string key="Website.App.LabelFeedback" value="Anna palautetta ..." />
+  <string key="Website.App.LabelAboutComposite" value="Tietoja Composite C1:stä" />
+  <string key="Website.App.LabelCut" value="Leikkaa" />
+  <string key="Website.App.LabelCopy" value="Kopioi" />
+  <string key="Website.App.LabelPaste" value="Liitä" />
+  <string key="Website.App.LabelRefresh" value="Päivitä" />
+  <string key="Website.App.LabelLoading" value="Ladataan ..." />
+  <string key="Website.App.LabelLoaded" value="Ladattu" />
+  <string key="Website.App.LabelSaved" value="Tallennettu" />
+  <string key="Website.App.ToolTipMinimize" value="Minimoi" />
+  <string key="Website.App.ToolTipMaximize" value="Maksimoi" />
+  <string key="Website.App.ToolTipUnMaximize" value="Palauta" />
+  <string key="Website.App.ToolTipUnMinimize" value="Palauta" />
+  <string key="Website.App.ToolTipClose" value="Sulje" />
+  <string key="Website.App.StatusBar.Opening" value="Avataan {0} ..." />
+  <string key="Website.App.StatusBar.Refreshing" value="Päivitetään {0} ..." />
+  <string key="Website.App.StatusBar.Loading" value="Ladataan {0} ..." />
+  <string key="Website.App.StatusBar.Error" value="Virhe" />
+  <string key="Website.App.StatusBar.Warn" value="Varoitus" />
+  <string key="Website.App.StatusBar.Busy" value="Suoritetaan ..." />
+  <string key="Website.App.StatusBar.Ready" value="Valmis!" />
+  <string key="Website.App.StatusBar.ErrorInField" value="Virhe" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.Layout.Label" value="Lisää uusi mediatiedosto" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FieldGroup.Label" value="Median Ominaisuudet" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Label" value="Tiedostonimi" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Help" value="Valitse / kirjoita ladattava tiedostonimi" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Label" value="Salli korvaus" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Help" value="Korvaa olemassa oleva tiedosto" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Label" value="Tiedostonimi" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Help" value="Tiedoston nimi mediakirjastossa" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Label" value="Otsikko" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Help" value="Käytä tätä kenttää kuvan otsikkoon" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Label" value="Kuvaus" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Help" value="Käytä tätä kenttää kuvan luhyeen kuvaukseen" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.MissingUploadedFile.Message" value="Valitse lähetettävä tiedosto" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FileExists.Message" value="Samanniminen tiedosto on jo olemassa. Valitse salli korvaus tai muuta tiedostonimi" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.TotalFilenameToLong.Message" value="Tiedostonimen kokonaispituus (kansio ja tiedostonimi) on liian pitkä" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.Label.AddNewMediaFolder" value="Lisää uusi media kansio" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelFolderName" value="Kansion nimi" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpFolderName" value="" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelTitle" value="Otsikko" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpTitle" value="" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelDescription" value="Kuvaus" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpDescription" value="" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameAlreadyUsed" value="Kansio on jo olemassa" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="Kansion nimen kokonaispituus on liian pitkä" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Kansion nimi ei voi olla vain / tai \" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Lähetä useita tiedostoja Zip-tiedostona" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFieldGroup" value="Valitse purettava Zip-tiedosto" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Zip-tiedosto" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpFile" value="Luo Zip-tiedosto (klikkaa oikealla paikalliseen kansioon ja valitse Lähetä -&gt; Pakattu kansio) ja valitse se käyttämällä Selaa-painiketta" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructure" value="Luo kansioita" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpRecreateStructure" value="Tämän vaihtoehdon valitseminen kopioi tarkan kansiorakenteen Zip paketistasi" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructureCheckBox" value="Pura kansiot ZIP-tiedostosta" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsisting" value="Korvataan olemassa olevat" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpOverwriteExsisting" value="Tämän vaihtoehdon valinta korvaa olemassaolevat tiedostot media-arkistossa vastaavilla tiedostonimillä" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.Error.Title" value="Virhe" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Korvaa olemassaolevat tiedostot" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.MissingUploadedFile.Message" value="Valitse lähetettävä tiedosto" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.CannotUploadDocxFile" value="Käytä normaalia Lähetä-komentoa ladataksesi. Docx tiedostoja" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.WrongUploadedFile.Message" value="Valittu tiedosto ei ole oikea zip-tiedosto" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelFunctionSearch" value="Funktio haku" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeyword" value="Avainsana" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeywordHelp" value="Kirjoita hakusana hakuun." />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnType" value="Palautustyyppi" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnTypeHelp" value="Valitse haettava palautustyyppi." />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.LabelFieldGroup" value="Poista tämä tiedosto?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.Text" value="Poista tämä tiedosto?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationHeader" value="Tiedostoa poistetaan" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationText" value="On olemassa viittauksia muihin tietoihin, jotka poistetaan myös, haluatko jatkaa?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.LabelFieldGroup" value="Poista tämä kansio?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.Text" value="Poista tämä kansio?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.HasChildringText" value="Tämä kansio sisältää yhden tai useampia tiedostoja tai alikansioita. Tämän kansion poistaminen poistaa myös kaikki sisältävät tiedostot ja kansiot. Poista tämä kansio?" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelFieldGroup" value="Median Ominaisuudet" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelTitle" value="Otsikko" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpTitle" value="Käytä tätä kenttää kuvan otsikkoon" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelFileName" value="Tiedoston nimi" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpFileName" value="Merkintä on määritelty tässä kentässä on osa kuvan ID:tä" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelDescription" value="Kuvaus" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpDescription" value="Käytä tätä kenttä kuvan lyhyeen kuvaukseen" />
+  <string key="Website.Forms.Administrative.EditMediaFile.TotalFilenameToLong.Message" value="Tiedostonimen kokonaispituus (kansio ja tiedostonimi) on liian pitkä" />
+  <string key="Website.Forms.Administrative.EditMediaFile.FileExists.Message" value="Tiedosto samalla nimellä on jo olemassa tässä kansiossa." />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFieldGroup" value="Kansion ominaisuudet" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFolderName" value="Kansion nimi" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpFolderName" value="" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelTitle" value="Otsikko" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpTitle" value="Käytä tätä kenttää kansion otsikkoon" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelDescription" value="Kuvaus" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpDescription" value="" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.TotalFilenameToLong.Message" value="Kansio sisältää tiedoston, jossa kokonaispituus tiedostonimi ja uusi kansion nimi on liian pitkä" />
+  <string key="Website.Forms.Administrative.EditPage.DraftTransition" value="Luonnos" />
+  <string key="Website.Forms.Administrative.EditPage.AwaitingApprovalTransition" value="Odottaa hyväksyntää" />
+  <string key="Website.Forms.Administrative.EditPage.AwaitingPublicationTransition" value="Odottaa julkaisemista" />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelFieldGroup" value="Etsi" />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelKeyword" value="Avainsana" />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelSearchKeyword" value="Kirjoita hakusana hakuun." />
+  <string key="Website.Forms.Administrative.UploadMediaFile.LabelFieldGroup" value="Lähetä uusi mediatiedosto" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.LabelFile" value="Tiedosto:" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.HelpFile" value="" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorTitle" value="Tiedosto puuttuu tai on tyhjä" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorMessage" value="Tiedoston tietoja ei saatu. Käytä Selaa-painiketta ja varmistaa, että valittu tiedosto ei ole tyhjä." />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFieldGroup" value="Lähetä uusi mediatiedosto luotuun tiedostoon" />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFile" value="Tiedosto:" />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.HelpFile" value="" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSave" value="Tallenna" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSaveAs" value="Tallenna nimellä ..." />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelPrevious" value="Edellinen" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelNext" value="Seuraava" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelFinish" value="Valmis" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelCancel" value="Peruuta" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelOk" value="OK" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelCancel" value="Peruuta" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelOk" value="OK" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelCancel" value="Peruuta" />
+  <string key="Website.Misc.SourceCodeViewer.LabelInput" value="Syöttö" />
+  <string key="Website.Misc.SourceCodeViewer.LabelOutput" value="Ulostulo" />
+  <string key="Website.Misc.Trees.DialogTitle.PasteNotAllowed" value="Ei sallittu." />
+  <string key="Website.Misc.Trees.DialogText.PasteNotAllowed" value="LIITÄ ei ole sallittu tässä yhteydessä." />
+  <string key="Website.Misc.Trees.DialogTitle.PasteTypeNotAllowed" value="Ei sallittu" />
+  <string key="Website.Misc.Trees.DialogText.PasteTypeNotAllowed" value="Kansio ei hyväksy asiakirjatyyppiä." />
+  <string key="Website.Misc.MultiSelector.LabelEditSelections" value="Muokkaa valinnat" />
+  <string key="GenericVersionProcessController.Version" value="Versiotiedot" />
+  <string key="GenericVersionProcessController.VersionToolTip" value="Näytä versiotiedot" />
+  <string key="AspNetUiControl.Selector.SelectValueLabel" value="Valitse arvo ..." />
+  <string key="AspNetUiControl.Selector.BrokenReference" value="&lt;rikkinäinen viite&gt; ..." />
+  <string key="AspNetUiControl.Selector.NoSelection" value="(Ei valintaa)" />
+  <string key="Validation.Decimal.SymbolsAfterPointAllowed" value="Vain {0} numero(a) sallittu desimaalipilkun jälkeen" />
+  <string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Vain {0} numero(a) sallittu ennen desimaalipilkua" />
+  <string key="Validation.Int32.Overflow" value="Määritetty arvo on joko liian suuri tai liian pieni. Hyväksyttävä alue on -2147483648 ja 2147483647" />
+</strings>

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F58A92B-2A85-49FF-933E-AA34864E68D9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.Localization.C1Console.Finnish</RootNamespace>
+    <AssemblyName>Composite.Localization.C1Console.Finnish</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.C1Console.Trees.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.C1Console.Users.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Cultures.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.EntityTokenLocked.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.GeneratedTypes.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Management.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.NameValidation.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.PackageSystem.PackageFragmentInstallers.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Permissions.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.AllFunctionsElementProvider.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.GeneratedDataTypesElementProvider.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.GenericPublishProcessController.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.LocalizationElementProvider.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.MethodBasedFunctionProviderElementProvider.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.PackageElementProvider.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.PageElementProvider.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.PageTemplateElementProvider.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.PageTypeElementProvider.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.SqlFunction.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.StandardFunctions.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.UserGroupElementProvider.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.VisualFunction.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.WebsiteFileElementProvider.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Plugins.XsltBasedFunction.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.SecurityViolation.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Web.FormControl.FunctionCallsDesigner.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Web.FormControl.FunctionParameterDesigner.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Web.FormControl.TypeFieldDesigner.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Web.PageBrowser.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Web.SEOAssistant.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Web.SourceEditor.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Web.UrlConfiguration.fi-FI.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Web.VisualEditor.fi-FI.xml" />
+    <Content Include="Package\Config\Install.xsl" />
+    <Content Include="Package\Config\Uninstall.xsl" />
+    <Content Include="Package\install.xml" />
+    <Content Include="Release\Composite.Localization.C1Console.Finnish.zip" />
+    <Content Include="_PackageCreator\Composite.Localization.C1Console.Finnish.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59859</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>"$(DevEnvDir)TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\..\Public\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\..\Public\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

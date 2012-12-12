@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <!-- change password -->
+  <string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Vaihda salasana ..." />
+  <string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Vaihda salasana" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Muuta salasana" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="Vaihda salasana" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Nykyinen salasana" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="Turvallisuussyistä sinun tulee antaa olemassa oleva salasana ennen kuin voit jatkaa." />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Uusi salasana" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="Salasana joka on määritelty tässä kentässä täytyy vastata alla olevaa." />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="Vahvista uusi salasana" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="Salasana joka on määritelty tässä kentässä täytyy vastata yllä olevaa." />
+  <!-- change culture -->
+  <string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Maakohtaiset asetukset ..." />
+  <string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Aseta C1 Console kieli ja numeroiden, aikojen ja päivämäärien mutoilu" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Alueelliset asetukset ja kieli" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Alueelliset asetukset" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="Jos haluat muuttaa numeroiden, päivämäärien ja tuntien esitystapaa, valitse kulttuuri luettelosta." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Label" value="C1 Consolen kieli" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Help" value="Valitse etikettien, ohjetekstin, valintaikkunoiden jne. käytettävä kieli. Valittavana on vain asennetut kielet. Voit asentaa lisää kieliä pakettien kautta, katso Compositen paikallistaminen." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="Muuta Sovelluksen kieli" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="Haluatko varmasti muuttaa asetuksia? Sovellus käynnistyy uudelleen ja kaikki tallentamattomat muutokset menetetään." />
+  <string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="Alueelliset asetukset" />
+  <string key="AdministratorAutoCreator.DefaultGroupName" value="Ylläpitäjät" />
+  <!-- change own active and foreign locale -->
+  <string key="ChangeForeignLocaleWorkflow.ActionLabel" value="Kääntäminen ..." />
+  <string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="Vaihda lähdekieli" />
+  <string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="Ei mitään" />
+  <string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="Käännös" />
+  <string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="Valitse kieli, josta käännetään" />
+  <string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="Useita kieliä ei ole asennettu" />
+  <string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="Kaksi tai useampia kieliä on asennettava käännöksien tukemiseksi. Järjestelmänvalvojat voivat lisätä kieliä System näkymästä." />
+  <string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="Lähdekieli" />
+  <string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Sivut jotka on kirjoitettu lähde-kielellä merkitään maapallokuvakkeella Sisältö puussa. &quot;Käännä sivu&quot; valinta Sisältö puussa tuo sivun nykyiseen työkieleen." />
+  <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="Aktiivinen kieli on muuttunut" />
+</strings>

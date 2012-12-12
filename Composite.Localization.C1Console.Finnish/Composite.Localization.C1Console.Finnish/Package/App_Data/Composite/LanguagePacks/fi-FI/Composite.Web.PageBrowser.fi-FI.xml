@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+  <!-- menus -->
+  <string key="Menu.ViewSource" value="Sivun koodi" />
+  <string key="ContextMenu.Back" value="Takaisin" />
+  <string key="ContextMenu.Forward" value="Eteenp&#228;in" />
+  <string key="ContextMenu.Refresh" value="P&#228;ivit&#228;" />
+  <string key="ContextMenu.ViewSource" value="N&#228;yt&#228; sivun l&#228;hdekoodi" />
+
+
+  <!-- buttons -->
+	<string key="ToolBarButton.Back.ToolTip" value="Siirry edelliselle sivulle" />
+	<string key="ToolBarButton.Forward.ToolTip" value="Mene eteenp&#228;in yksi sivu" />
+	<string key="ToolBarButton.Refresh.ToolTip" value="P&#228;ivit&#228; sivu" />
+  <string key="ToolBarButton.Go.ToolTip" value="Mene sijaintirivin osoitteeseen" />
+  <string key="ToolBarButton.Home.ToolTip" value="Siirry Etusivulle" /> <!-- TODO: Show URL instead! -->
+	
+	<!-- URL errors -->
+	<string key="AddressBar.Invalid.DialogTitle.External" value="K&#228;ytt&#246; estetty" />
+	<string key="AddressBar.Invalid.DialogText.External" value="Ei voi ladata ulkoista URL:&#228;&#228;" />
+	<string key="AddressBar.Invalid.DialogTitle.BadRequest" value="Virheellinen URL" />
+	<string key="AddressBar.Invalid.DialogText.BadRequest" value="URL on virheellinen, eik&#228; sit&#228; voida ladata." />
+	<string key="AddressBar.Invalid.DialogTitle.Unauthorized" value="Ei sallittu" />
+	<string key="AddressBar.Invalid.DialogText.Unauthorized" value="Sinulla ei ole oikeuksia katsoa m&#228;&#228;ritelty&#228; URL:&#228;&#228;." />
+	<string key="AddressBar.Invalid.DialogTitle.NotFound" value="Sivua ei l&#246;ydy" />
+	<string key="AddressBar.Invalid.DialogText.NotFound" value="Siivua ei l&#246;ytynyt m&#228;&#228;ritetyst&#228; URL:st&#228;" />
+	<string key="AddressBar.Invalid.DialogTitle.InternalError" value="Palvelinvirhe" />
+	<string key="AddressBar.Invalid.DialogText.InternalError" value="Palvelin on raportoinut virheen m&#228;&#228;ritetyss&#228; URL:ssa. Sivua ei voi ladata." />
+	<string key="AddressBar.Invalid.DialogTitle.Default" value="Sivua ei ladattu" />
+	<string key="AddressBar.Invalid.DialogText.Default" value="Virhe est&#228;&#228; URL:n lataamisen." />	
+	
+</strings>

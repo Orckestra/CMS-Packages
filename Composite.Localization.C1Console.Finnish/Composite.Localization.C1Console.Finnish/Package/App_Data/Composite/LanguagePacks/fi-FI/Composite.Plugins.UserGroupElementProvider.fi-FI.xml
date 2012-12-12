@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+	<string key="UserGroupElementProvider.RootLabel" value="K&#228;ytt&#228;j&#228;ryhm&#228;t" />
+  <string key="UserGroupElementProvider.RootToolTip" value="K&#228;ytt&#228;j&#228;ryhm&#228;t" />
+  <string key="UserGroupElementProvider.AddNewUserGroupLabel" value="Lis&#228;&#228; k&#228;ytt&#228;j&#228;ryhm&#228; ..." />  
+  <string key="UserGroupElementProvider.AddNewUserGroupToolTip" value="Lis&#228;&#228; uusi k&#228;ytt&#228;j&#228;ryhm&#228;" />
+  <string key="UserGroupElementProvider.EditUserGroupLabel" value="Muokkaa k&#228;ytt&#228;j&#228;ryhm&#228;&#228;" />
+  <string key="UserGroupElementProvider.EditUserGroupToolTip" value="Muokkaa k&#228;ytt&#228;j&#228;ryhm&#228;&#228;" />
+  <string key="UserGroupElementProvider.DeleteUserGroupLabel" value="Poista k&#228;ytt&#228;j&#228;ryhm&#228;" />
+  <string key="UserGroupElementProvider.DeleteUserGroupToolTip" value="Poista k&#228;ytt&#228;j&#228;ryhm&#228;" />
+
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.LabelFieldGroup" value="Lis&#228;&#228; k&#228;ytt&#228;j&#228;ryhm&#228;" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameLabel" value="K&#228;ytt&#228;j&#228;ryhm&#228;n nimi" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameHelp" value="Uuden k&#228;ytt&#228;j&#228;ryhm&#228;n nimi" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameAlreadyExists" value="K&#228;ytt&#228;j&#228;ryhm&#228; on jo olemassa" />
+
+  <string key="EditUserGroup.EditUserGroupStep1.LabelFieldGroup" value="Muokkaa k&#228;ytt&#228;j&#228;ryhm&#228;&#228;" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameLabel" value="K&#228;ytt&#228;j&#228;ryhm&#228;n nimi" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameHelp" value="K&#228;ytt&#228;j&#228;ryhm&#228;n nimi" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameAlreadyExists" value="K&#228;ytt&#228;j&#228;ryhm&#228; on jo olemassa" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveFieldLabel" value="N&#228;kym&#228;t" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectLabel" value="N&#228;kym&#228;t" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectHelp" value="Valitse mit&#228; n&#228;k&#246;kulmia k&#228;ytt&#228;j&#228; saa katsella" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsFieldLabel" value="Globaalit k&#228;ytt&#246;oikeudet" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectLabel" value="Globaalit k&#228;ytt&#246;oikeudet" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectHelp" value="Hallinnointi lupa my&#246;nt&#228;&#228; k&#228;ytt&#228;j&#228;ryhm&#228;lle oikeuden hallita k&#228;ytt&#228;j&#228;ryhmien valtuuksia ja suorittaa muita hallinnollisia teht&#228;v&#228;i&#228;." />
+
+
+  
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersTitle" value="K&#228;ytt&#228;j&#228;ryhm&#228;ss&#228; on k&#228;ytt&#228;ji&#228;" />
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersMessage" value="Et voi poistaa k&#228;ytt&#228;j&#228;ryhm&#228;&#228;, jossa on k&#228;ytt&#228;ji&#228;." />
+  
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.LabelFieldGroup" value="Poista k&#228;ytt&#228;j&#228;ryhm&#228;" />
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.Text" value="Poista valittu k&#228;ytt&#228;j&#228;ryhm&#228;?" />
+</strings>

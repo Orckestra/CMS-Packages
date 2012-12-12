@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="PackageManager.CompositeVersionMisMatch" value="Paketin komposiitti version vaatimukset ei vastaa nykyist&#228; komposiitti versiota" />
+  <string key="PackageManager.PackageAlreadyInstalled" value="Paketti on jo asennettu" />
+  <string key="PackageManager.NewerVersionInstalled" value="Uudempi versio paketista on jo asennettu" />	
+  <string key="PackageManager.MissingPackageDirectory" value="Paketin hakemistopolkua &#39;{0}&#39; ei l&#246;ytynyt" />
+  <string key="PackageManager.Uninstallable" value="Pakkaus on merkitty ei poistettavaksi" />
+  <string key="PackageManager.MissingZipFile" value="Ei voitu paikantaa paketin zip-tiedoston polkua {0}" />
+  <string key="PackageManager.MissingUninstallFile" value="Ei voitu paikantaa paketin poistotiedoston polkua {0}" />
+  <string key="PackageManager.MissingElement" value="Puutuva elementti {0} ." />
+  <string key="PackageManager.MissingAttribute" value="Puuttuva attribuutti {0}." />
+  <string key="PackageManager.InvalidAttributeValue" value="Attribuutin {0} arvo ei ole kelvollinen arvo." />
+  <string key="PackageManager.InvalidElementValue" value="Elementin {0} arvo ei ole kelvollinen arvo" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.ExpectedExactlyTwoElements" value="Odotettiin tasan kaksi elementti&#228;, &#39;{0}&#39; ja &#39;{1}&#39;" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingElement" value="Puutuva elementti {0} ." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingAttribute" value="Puuttuva attribuutti {0}." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.PathDoesNotExist" value="Polku {0} ei ole olemassa ZIP:ss&#228;." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.UnableToParsXslt" value="Ei voida j&#228;sent&#228;&#228; pakattua XSLT tiedostoa &#39;{0}&#39;. {1}" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.XsltWillGeneratedInvalid" value="XSLT-tiedosto &#39;{0}&#39; tuottaa virheellisen asetustiedoston. {1}" />
+  <string key="DataPackageFragmentInstaller.OnlyOneElement" value="Vain yksi Tyypit elementti sallittu" />
+  <string key="DataPackageFragmentInstaller.MissingElement" value="Puuttuva tyypit elementti" />
+  <string key="DataPackageFragmentInstaller.MissingAttribute" value="Puuttuva attribuutti {0} asetuksissa" />
+  <string key="DataPackageFragmentInstaller.WrongDataScopeIdentifier" value="V&#228;&#228;r&#228; DataScopeIdentifierin nimi ({0}) asetuksissa" />
+  <string key="DataPackageFragmentInstaller.WrongLocale" value="V&#228;&#228;r&#228; kulttuurin ({0}) nimi asetuksissa" />
+  <string key="DataPackageFragmentInstaller.MissingFile" value="Puuttuva tiedosto &#39;{0}&#39; zip-paketissa" />
+  <string key="DataPackageFragmentInstaller.TypeNotConfigured" value="Liit&#228;nt&#228;&#228; tyyppi&#228; &#39;{0}&#39; ei ole m&#228;&#228;ritetty j&#228;rjestelm&#228;&#228;n" />
+  <string key="DataPackageFragmentInstaller.TypeNotInheriting" value="Liit&#228;nt&#228; tyyppi&#228; &#39;{0}&#39; ei peri rajapinta &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingProperty" value="Liit&#228;n&#228;ll&#228; tyyppi&#228; &#39;{0}&#39; ei ole ominaisuutta nimelt&#228; &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingWritableProperty" value="Liit&#228;nn&#228;ll&#228; tyyppi&#228; &#39;{0}&#39; ei ole muutettavaa ominaisuutta nimelt&#228; &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.ConversionFailed" value="Ei voitu muuntaa arvoa &#39;{0}&#39; tyyppiksi &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingPropertyVaule" value="Liittym&#228;st&#228; &#39;{1}&#39; puuttuu omaisuuden &#39;{0}&#39; arvo." />
+  <string key="DataPackageFragmentInstaller.DataExists" value="Liit&#228;nn&#228;n tyypin {0} tietoalkion tieto on jo olemassa" />
+  <string key="DataPackageFragmentInstaller.MissingTypeDescriptor" value="Tyypilt&#228; {0} puuttuu tietotyyppin avainsana" />
+  <string key="DataPackageFragmentInstaller.TypeNonLocalizedWithLocale" value="Tietotyyppi&#228; &#39;{0}&#39; ei ole lokalisoitu, vaikka maa on m&#228;&#228;ritelty asetuksissa" />
+  <string key="DataPackageFragmentInstaller.TypeLocalizedWithoutLocale" value="Tietotyyppi &#39;{0}&#39; on paikallistettu, mutta maata ei ole m&#228;&#228;ritelty asetksissa" />
+  <string key="DataPackageFragmentUninstaller.OnlyOneElement" value="Vain yksi Tyypit elementti sallittu" />
+  <string key="DataPackageFragmentUninstaller.MissingAttribute" value="Puuttuva attribuutti {0} asetuksissa" />
+  <string key="DataPackageFragmentUninstaller.MissingKeyProperty" value="Tietotyyppi &#39;{0}&#39; ei sis&#228;ll&#228; avain ominaisuutta nimelt&#228; &#39;{1}" />
+  <string key="DataTypePackageFragmentInstaller.OnlyOneElement" value="Vain yksi Tyypit elementti sallittu" />
+  <string key="DataTypePackageFragmentInstaller.MissingElement" value="Puuttuva tyypit elementti" />
+  <string key="DataTypePackageFragmentInstaller.MissingAttribute" value="Puuttuva attribuutti {0} asetuksissa" />
+  <string key="DataTypePackageFragmentInstaller.TypeNotConfigured" value="Liit&#228;nt&#228;&#228; tyyppi&#228; &#39;{0}&#39; ei ole m&#228;&#228;ritetty j&#228;rjestelm&#228;&#228;n" />
+  <string key="DataTypePackageFragmentInstaller.TypeNotInheriting" value="Liit&#228;nt&#228; tyyppi&#228; &#39;{0}&#39; ei peri rajapinta &#39;{1}&#39;" />
+  <string key="DataTypePackageFragmentInstaller.TypeExists" value="Liit&#228;nt&#228;tyyppi &#39;{0}&#39; on jo olemassa j&#228;rjestelm&#228;ss&#228;" />
+  <string key="DataTypePackageFragmentInstaller.InterfaceCodeError" value="Liit&#228;nt&#228;tyyppi &#39;{0}&#39; ei ole koodattu oikein" />
+  <string key="DataTypePackageFragmentUninstaller.OnlyOneElement" value="Vain yksi Tyypit elementti sallittu" />
+  <string key="DataTypePackageFragmentUninstaller.MissingAttribute" value="Puuttuva attribuutti {0} asetuksissa" />
+  <string key="DataTypePackageFragmentUninstaller.WrongAttributeFormat" value="V&#228;&#228;r&#228; attribuutin muoto asetuksissa" />
+  <string key="DynamicDataTypePackageFragmentInstaller.OnlyOneElement" value="Vain yksi Tyypit elementti sallittu" />
+  <string key="DynamicDataTypePackageFragmentInstaller.MissingElement" value="Puuttuva tyypit elementti" />
+  <string key="DynamicDataTypePackageFragmentInstaller.DataTypeDescriptorParseError" value="Virhe XML-parsinnassa attribuutissa dataTypeDescriptor" />
+  <string key="DynamicDataTypePackageFragmentInstaller.DataTypeDescriptorDeserializeError" value="Virhe deserialisoitaessa tietotyyppi&#228;. Virhe teksti: {0}." />
+  <string key="DynamicDataTypePackageFragmentInstaller.MissingReferencedType" value="Ei l&#246;yd&#228; viitattua tyyppi&#228; &#39;{0}&#39;." />
+  <string key="DynamicDataTypePackageFragmentInstaller.TypeExists" value="Liit&#228;nt&#228;tyyppi &#39;{0}&#39; on jo olemassa j&#228;rjestelm&#228;ss&#228;" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.OnlyOneElement" value="Vain yksi Tyypit elementti sallittu" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.MissingAttribute" value="Puuttuva attribuutti {0} asetuksissa" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.WrongAttributeFormat" value="V&#228;&#228;r&#228; attribuutin muoto asetuksissa" />
+  <string key="FilePackageFragmentInstaller.OnlyOneFilesElement" value="Vain yksi Files elementti sallittu" />
+  <string key="FilePackageFragmentInstaller.OnlyOneDirectoriesElement" value="Vain yksi Hakemistot elementti sallittu" />
+  <string key="FilePackageFragmentInstaller.MissingAttribute" value="Puuttuva attribuutti {0} asetuksissa" />
+  <string key="FilePackageFragmentInstaller.DeleteTargetDirectoryNotAllowed" value="Poista TargetDirectory attribuuttia voidaan soveltaa hakemistoihin, ei tiedostoihin" />
+  <string key="FilePackageFragmentInstaller.WrongAttributeBoolFormat" value="V&#228;&#228;r&#228;n tyyppinen m&#228;&#228;ritteen arvo, bool-arvoa odotetaan" />
+  <string key="FilePackageFragmentInstaller.MissingFile" value="Asennus zip-tiedosto ei sis&#228;ll&#228; tiedostoa {0}" />
+  <string key="FilePackageFragmentInstaller.FileExists" value="Tiedosto &#39;{0}&#39; on jo olemassa" />
+  <string key="FilePackageFragmentInstaller.FileReadOnly" value="Tiedosto {0} on merkitty Vain luku ja siksi ei voi korvata." />
+  <string key="FilePackageFragmentInstaller.AssemblyLoadNotAllowed" value="AssemblyLoad attribuuttia voidaan soveltaa vain tiedostoihin, ei hakemistoihin" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowed" value="OnlyUpdate attribuuttia voidaan soveltaa vain tiedostoihin, ei hakemistoihin" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowedWithLoadAssemlby" value="OnlyUpdate &#39;attribuutti ei ole sallittu yhdess&#228; loadAssembly attribuutin kanssa" />
+  <string key="FilePackageFragmentInstaller.MissingDirectory" value="Asennus zip-tiedosto ei sis&#228;ll&#228; hakemistoa &#39;{0}&#39;" />
+  <string key="FilePackageFragmentInstaller.WrongBasePath" value="Uninstall.xml sis&#228;lt&#228;&#228; tiedoston korjauspaketteja, sidottuna alkuper&#228;iseen sivuston sijaintiin, ja sen vuoksi pakettia ei voi poistaa turvallisesti." />
+  <string key="FilePackageFragmentUninstaller.OnlyOneFilesElement" value="Vain yksi Files elementti sallittu" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.OnlyOneElement" value="Vain yksi Areas elementti sallittu" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingType" value="Ei l&#246;yt&#228;nyt tyyppi&#228; {0}" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingIcon" value="Ei l&#246;yt&#228;nyt kuvaketta &#39;{0}&#39;" />
+  <string key="VirtualElementProviderNodePackageFragmentUninstaller.OnlyOneElement" value="Vain yksi Areas elementti sallittu" />
+  <string key="VirtualElementProviderNodePackageFragmentUninstaller.MissingAttribute" value="Puuttuva attribuutti {0} asetuksissa" />
+  <string key="FileXslTransformationPackageFragmentInstaller.MissingAttribute" value="Puuttuva attribuutti {0} asetuksissa" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileNotFound" value="Tiedosto {0} ei l&#246;ytynyt" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnly" value="Tiedosto {0} on merkitty Vain luku ja siksi ei voi korvata." />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnlyOverride" value="Tiedosto {0} on merkitty Vain luku. T&#228;m&#228; m&#228;&#228;rite poistettiin ja tiedosto on p&#228;ivitetty normaalisti." />
+
+  <string key="PackageVersionBumberFragmentInstaller.OnlyOneElement" value="Vain yksi PackageVersions elementti on sallittu" />
+  <string key="PackageVersionBumberFragmentInstaller.MissingAttribute" value="Puuttuva attribuutti {0} asetuksissa" />
+  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeGuidFormat" value="V&#228;&#228;r&#228;n muotoinen attribuutin arvo, GUID-arvo vaaditaan" />
+  <string key="PackageVersionBumberFragmentInstaller.PackageIdDuplicate" value="Paketti id kaksoiskappale: {0}" />
+  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeVersionFormat" value="V&#228;&#228;r&#228;n muotoinen attribuutin arvo, versio arvoa odotettu (x.y.z)" />
+  <string key="PackageVersionBumberFragmentUninstaller.OnlyOneElement" value="Vain yksi PackageVersions elementti on sallittu" />
+  <string key="PackageVersionBumberFragmentUninstaller.MissingAttribute" value="Puuttuva attribuutti {0} asetuksissa" />
+  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeGuidFormat" value="V&#228;&#228;r&#228;n muotoinen attribuutin arvo, GUID-arvo vaaditaan" />
+  <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="Paketti id kaksoiskappale: {0}" />
+  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeVersionFormat" value="V&#228;&#228;r&#228;n muotoinen attribuutin arvo, versio arvoa odotettu (x.y.z)" />
+  <string key="PackageLicenseFragmentInstaller.MissingPublicKeyElement" value="Julkinen RSA-avain puuttuu pakettien asetuksista" />
+
+  <string key="License.InvalidKeyTitle" value="Virheellinen lisenssiavain" />
+  <string key="License.InvalidKeyMessage" value="Lisenssiavain on virheellinen. Sinun t&#228;ytyy hankkia kelvollinen lisenssiavain." />
+  <string key="License.ExpiredTitle" value="Koeaika on p&#228;&#228;ttynyt" />
+  <string key="License.ExpiredMessage" value="Paketin koeaika on p&#228;&#228;ttynyt. Sinun t&#228;ytyy hankkia voimassa oleva lisenssi." />
+  <string key="License.Failed" value="Lisenssin tietoa ei saatu. Tuotetunnus: {0}" />
+
+  <string key="NotEnoughNtfsPermissions" value="Windows-k&#228;ytt&#228;j&#228;ll&#228;, jolla t&#228;m&#228; C1 instanssi on k&#228;ynniss&#228; ei ole kirjoitusoikeuksia tiedostoon tai kansioon {0}." />
+</strings>

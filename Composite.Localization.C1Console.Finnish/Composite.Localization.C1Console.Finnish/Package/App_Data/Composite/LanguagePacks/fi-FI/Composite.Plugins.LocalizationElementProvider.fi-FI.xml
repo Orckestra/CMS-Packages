@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="ElementProvider.RootFolderLabel" value="Kielet" />
+  <string key="ElementProvider.RootFolderToolTip" value="Tutki ja hallitse asennetuja kieli&#228;" />
+  <string key="ElementProvider.DefaultLabel" value="Oletusarvo" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesTitle" value="Ei kielivalikoimaa" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesMessage" value="Olet asentanut kaikki mahdolliset kielet." />
+  <string key="AddSystemLocaleWorkflow.AddElementActionLabel" value="Lis&#228;&#228; kieli" />
+  <string key="AddSystemLocaleWorkflow.AddElementActionToolTip" value="Lis&#228;&#228; uusi kieli" />
+  <string key="AddSystemLocaleWorkflow.Dialog.Label" value="Lis&#228;&#228; kieli" />
+  <string key="AddSystemLocaleWorkflow.FieldGroup.Label" value="Valitse kieli" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Label" value="Kielet" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Help" value="Luettelo k&#228;ytett&#228;viss&#228; olevista, poistetuista kielist&#228;. Kielipaketit voidaan asentaa lis&#228;vaihtoehtona." />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Label" value="URL kartoituksen nimi" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Help" value="T&#228;m&#228; merkkijono lis&#228;t&#228;&#228;n julkaistujen sivujen URL:&#228;&#228;n annetulla kielell&#228;. Sivuston oletuskieli voi j&#228;tt&#228;&#228; t&#228;m&#228;n merkinn&#228;n tyhj&#228;ksi." />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Label" value="K&#228;ytt&#228;j&#228;tasot" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.ItemLabel" value="Anna p&#228;&#228;sy kaikille k&#228;ytt&#228;jille" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Help" value="Jos valittuna, kieli on k&#228;ytett&#228;viss&#228; kaikille rekister&#246;ityneille k&#228;ytt&#228;jille katselua ja muokkausta varten" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="URL kartoituksen nimi on jo k&#228;yt&#246;ss&#228;" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionLabel" value="Muokkaa kielt&#228;" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionToolTip" value="Muokkaa kielt&#228;" />
+  <string key="EditSystemLocaleWorkflow.Dialog.Label" value="Muokkaa kielt&#228;" />
+  <string key="EditSystemLocaleWorkflow.FieldGroup.Label" value="Kielen ominaisuudet" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Label" value="URL kartoituksen nimi" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Help" value="URL kartoituksen nimi" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="URL kartoituksen nimi on jo k&#228;yt&#246;ss&#228;" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionLabel" value="Aseta oletukseksi" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionToolTip" value="Aseta oletuskieleksi" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionLabel" value="Poista kieli" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionToolTip" value="Poista kieli" />
+  <string key="RemoveSystemLocaleWorkflow.Dialog.Label" value="Poistetaanko kieli?" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Title" value="Viimeist&#228; kielt&#228; ei voi poistaa" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Description" value="Olet poistamassa kielt&#228;, joka on ainoa kieli yhdelle tai useammalle k&#228;ytt&#228;j&#228;lle. Lis&#228;&#228; muita kieli&#228; n&#228;ille k&#228;ytt&#228;jille ja yrit&#228; uudelleen." />
+  <string key="RemoveSystemLocaleWorkflow.Confirm.Description" value="Poista t&#228;m&#228; kieli?" />
+</strings>

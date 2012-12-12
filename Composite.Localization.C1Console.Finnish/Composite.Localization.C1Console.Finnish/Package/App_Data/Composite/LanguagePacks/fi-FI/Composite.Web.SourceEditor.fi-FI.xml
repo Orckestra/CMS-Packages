@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+	<!-- preload precaution -->
+	<string key="Preload.Key" value="Viitattu SourceEditorBinding:ssa k&#228;ynnistyksess&#228; varmistamaan ett&#228; merkkijonoja ladataan :)" />
+	
+	<!-- validation messages -->
+	<string key="Invalid.HTML.DialogTitle" value="Virheellinen XHTML" />
+	<string key="Invalid.HTML.MissingHtml" value="Root &lt;html&gt; merkint&#228; puuttuu." />
+	<string key="Invalid.HTML.MissingHead" value="&lt;head&gt; Merkint&#228; puuttuu." />
+	<string key="Invalid.HTML.MissingBody" value="&lt;body&gt; Merkint&#228; puuttuu." />
+	<string key="Invalid.HTML.HeadBodyIndex" value="&lt;head&gt; Tunnisteen on oltava ennen &lt;body&gt; merkint&#228;&#228;." />
+	<string key="Invalid.HTML.NamespaceURI" value="Root nimiavaruus on v&#228;&#228;r&#228;." />
+	<string key="Invalid.HTML.MultipleBody" value="Vain yksi &lt;body&gt; tagi on sallittu." />
+	<string key="Invalid.HTML.MultipleHead" value="Vain yksi &lt;head&gt; tagi on sallittu." />
+	
+	<string key="Format.XML.ErrorDialog.Title" value="L&#228;hdteen muodostaminen keskeytetty" /> 
+	<string key="Format.XML.ErrorDialog.Text" value="XML l&#228;hteen muotoilu edellytt&#228;&#228; hyvin muodostettua dokumentin rakennetta." />
+	
+	<!-- plain/colored switch button -->
+	<string key="Switch.PlainEdit.Label" value="Pelkk&#228; muokkaus" />
+	<string key="Switch.PlainEdit.ToolTip" value="Ei syntaksinkorostusta, nopeampi suorituskyky" />
+	<string key="Switch.ColoredEdit.Label" value="V&#228;rillinen muokkaus" />
+	<string key="Switch.ColoredEdit.ToolTip" value="Syntaksinkorostus, hitaampi" />
+
+  <!-- toolbar menus -->
+  <string key="Toolbar.Insert.Label" value="Lis&#228;&#228;" />
+  <string key="Toolbar.Format.Label" value="Muotoile" />
+  <string key="Toolbar.Format.ToolTip" value="Muotoile XML l&#228;hde" />
+  
+  <!-- insert dropdown -->
+	<string key="Insert.PageURL.Label" value="Sivun URL" />
+	<string key="Insert.ImageURL.Label" value="Kuvan URL" />
+	<string key="Insert.MediaURL.Label" value="Median URL" />
+	<string key="Insert.FrontendURL.Label" value="Edustan URL" />
+	<string key="Insert.FunctionMarkup.Label" value="Funktion merkint&#228;" />
+	
+</strings>
