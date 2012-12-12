@@ -5,7 +5,9 @@
 		<TechnicalDetails>Finnish language pack for the console GUI</TechnicalDetails>
 		<Description>Finnish language pack for the console GUI</Description>
 	</mi:PackageInformation>
-	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Composite.Localization.C1Console.FragmentInstaller.dll" />
+</mi:PackageFragmentInstallerBinaries>
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
 			<Install xsltFilePath="~\Config\Install.xsl" />
@@ -19,5 +21,7 @@
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
 			<Types />
 		</mi:Add>
+		<mi:Add installerType="Composite.Localization.C1Console.FragmentInstaller.C1ConsoleFragmentInstaller, Composite.Localization.C1Console.FragmentInstaller" uninstallerType="Composite.Localization.C1Console.FragmentInstaller.C1ConsoleFragmentUninstaller, Composite.Localization.C1Console.FragmentInstaller" />
+
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>

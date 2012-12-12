@@ -92,9 +92,12 @@
     <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Web.SourceEditor.fi-FI.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Web.UrlConfiguration.fi-FI.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\fi-FI\Composite.Web.VisualEditor.fi-FI.xml" />
+    <Content Include="Package\Bin\Composite.Localization.C1Console.FragmentInstaller.dll" />
     <Content Include="Package\Config\Install.xsl" />
     <Content Include="Package\Config\Uninstall.xsl" />
-    <Content Include="Package\install.xml" />
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Release\Composite.Localization.C1Console.Finnish.zip" />
     <Content Include="_PackageCreator\Composite.Localization.C1Console.Finnish.xml" />
   </ItemGroup>
@@ -121,6 +124,8 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>"$(DevEnvDir)TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(DevEnvDir)TF.exe" checkout /lock:none  "$(ProjectDir)Package\Bin\Composite.Localization.C1Console.FragmentInstaller.dll"
+copy "$(SolutionDir)\..\Composite.Localization.C1Console.FragmentInstaller\Composite.Localization.C1Console.FragmentInstaller\bin\Debug\Composite.Localization.C1Console.FragmentInstaller.dll" "$(SolutionDir)$(SolutionName).Package\Package\Bin\
 "$(SolutionDir)..\..\Public\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
 "$(SolutionDir)..\..\Public\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PostBuildEvent>
   </PropertyGroup>

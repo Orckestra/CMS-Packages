@@ -2,16 +2,24 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Localization.C1Console.Finnish", "Composite.Localization.C1Console.Finnish\Composite.Localization.C1Console.Finnish.csproj", "{3F58A92B-2A85-49FF-933E-AA34864E68D9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{92723EA2-91CF-4080-B332-AAA1D7BE5019} = {92723EA2-91CF-4080-B332-AAA1D7BE5019}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Localization.C1Console.FragmentInstaller", "..\Composite.Localization.C1Console.FragmentInstaller\Composite.Localization.C1Console.FragmentInstaller\Composite.Localization.C1Console.FragmentInstaller.csproj", "{92723EA2-91CF-4080-B332-AAA1D7BE5019}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
+		SccNumberOfProjects = 3
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = Composite.Localization.C1Console.Finnish\\Composite.Localization.C1Console.Finnish.csproj
 		SccProjectName1 = Composite.Localization.C1Console.Finnish
 		SccLocalPath1 = Composite.Localization.C1Console.Finnish
+		SccProjectUniqueName2 = ..\\Composite.Localization.C1Console.FragmentInstaller\\Composite.Localization.C1Console.FragmentInstaller\\Composite.Localization.C1Console.FragmentInstaller.csproj
+		SccProjectName2 = ../Composite.Localization.C1Console.FragmentInstaller/Composite.Localization.C1Console.FragmentInstaller
+		SccLocalPath2 = ..\\Composite.Localization.C1Console.FragmentInstaller\\Composite.Localization.C1Console.FragmentInstaller
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +30,10 @@ Global
 		{3F58A92B-2A85-49FF-933E-AA34864E68D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F58A92B-2A85-49FF-933E-AA34864E68D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F58A92B-2A85-49FF-933E-AA34864E68D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92723EA2-91CF-4080-B332-AAA1D7BE5019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92723EA2-91CF-4080-B332-AAA1D7BE5019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92723EA2-91CF-4080-B332-AAA1D7BE5019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92723EA2-91CF-4080-B332-AAA1D7BE5019}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
