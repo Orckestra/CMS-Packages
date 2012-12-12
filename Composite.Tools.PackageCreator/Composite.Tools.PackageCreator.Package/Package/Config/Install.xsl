@@ -29,7 +29,20 @@
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
-	<xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins">
+  <xsl:template match="/configuration/Composite.C1Console.Elements.Plugins.ElementProviderConfiguration/ElementProviderPlugins/add[@name='VirtualElementProvider']/Perspectives">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@name='Composite.Tools.PackageCreator'])=0">
+        <add name="Composite.Tools.PackageCreator" label="Package Creator" closeFolderIconName="Composite.Icons.tools" type="Composite.Plugins.Elements.ElementProviders.VirtualElementProvider.SimpleVirtualElement, Composite">
+          <Elements>
+            <add providerName="Composite.Tools.PackageCreator" name="Composite.Tools.PackageCreator" type="Composite.Plugins.Elements.ElementProviders.VirtualElementProvider.AttachProviderVirtualElement, Composite" />
+          </Elements>
+        </add>
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins">
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@name='Composite.Tools.PackageCreator'])=0">
