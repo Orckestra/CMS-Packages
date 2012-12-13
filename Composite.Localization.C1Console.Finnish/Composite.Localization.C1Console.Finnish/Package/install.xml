@@ -1,13 +1,11 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4055.27225" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Localization.C1Console.Finnish" groupName="Composite.Localization" version="1.0.2" author="Jari Kaipio" website="http://www.kaipio.com/apps/composite" readMoreUrl="http://docs.composite.net/Composite.Localization.C1Console" id="6f9bebd2-2279-4268-9251-fb652d2a7008" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Localization.C1Console.Finnish" groupName="Composite.Localization" version="1.0.3" author="Jari Kaipio" website="http://www.kaipio.com/apps/composite" readMoreUrl="http://docs.composite.net/Composite.Localization.C1Console" id="6f9bebd2-2279-4268-9251-fb652d2a7008" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<TechnicalDetails>Finnish language pack for the console GUI</TechnicalDetails>
 		<Description>Finnish language pack for the console GUI</Description>
 	</mi:PackageInformation>
-	<mi:PackageFragmentInstallerBinaries>
-		<mi:Add path="~\Bin\Composite.Localization.C1Console.FragmentInstaller.dll" />
-</mi:PackageFragmentInstallerBinaries>
+	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
 			<Install xsltFilePath="~\Config\Install.xsl" />
@@ -21,7 +19,5 @@
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
 			<Types />
 		</mi:Add>
-		<mi:Add installerType="Composite.Localization.C1Console.FragmentInstaller.C1ConsoleFragmentInstaller, Composite.Localization.C1Console.FragmentInstaller" uninstallerType="Composite.Localization.C1Console.FragmentInstaller.C1ConsoleFragmentUninstaller, Composite.Localization.C1Console.FragmentInstaller" />
-
-	</mi:PackageFragmentInstallers>
+		</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>
