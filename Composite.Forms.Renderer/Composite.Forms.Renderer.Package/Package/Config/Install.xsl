@@ -38,7 +38,7 @@
 			<xsl:if test="count(add[@name='Composite.Plugins.FormsRenderer'])=0">
 				<add name="Composite.Plugins.FormsRenderer" defaultCultureName="en-US" type="Composite.Plugins.ResourceSystem.XmlStringResourceProvider.XmlStringResourceProvider, Composite">
 					<Cultures>
-						<add cultureName="en-US" xmlFile="~/Frontend/Composite/Forms/Renderer/Localization/Composite.FormsRenderer.en-us.xml" monitorFileChanges="true" />
+						<add cultureName="en-US" xmlFile="~/Composite/InstalledPackageslocalization/Composite.Media.ImageCrop.en-us.xml" monitorFileChanges="true" />
 					</Cultures>
 				</add>
 			</xsl:if>

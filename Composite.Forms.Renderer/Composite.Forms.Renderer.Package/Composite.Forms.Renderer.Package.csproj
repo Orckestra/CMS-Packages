@@ -88,7 +88,7 @@
     <Content Include="Package\Config\Uninstall.xsl" />
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Controls\FormsRender.ascx" />
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Images\calendar.gif" />
-    <Content Include="Package\Frontend\Composite\Forms\Renderer\Localization\Composite.FormsRenderer.en-us.xml" />
+    <Content Include="Package\Composite\InstalledPackages\localization\Composite.FormsRenderer.en-us.xml" />
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Styles.css" />
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Widgets\BoolSelectors\BoolSelector.ascx" />
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Widgets\BoolSelectors\CheckBox.ascx" />
@@ -100,6 +100,9 @@
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Widgets\TextInput\TextBox.ascx" />
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Xslt\MailBody.xslt" />
     <Content Include="Package\install.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Package\Frontend\Composite\Forms\Renderer\Localization\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

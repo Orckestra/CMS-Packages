@@ -2,12 +2,13 @@
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="3.2.4491.36737" maximumCompositeVersion="9.9999.9999.9999">
 	</mi:PackageRequirements>
-	<mi:PackageInformation name="Composite.Forms.Renderer" groupName="Composite.Forms" version="1.5.5" author="Composite A/S" website="www.composite.net" id="6fe2ef97-15e6-4aca-a1e3-588d770b435b" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false"  readMoreUrl="http://docs.composite.net/Composite.Forms.Renderer">
+	<mi:PackageInformation name="Composite.Forms.Renderer" groupName="Composite.Forms" version="1.5.6" author="Composite A/S" website="www.composite.net" id="6fe2ef97-15e6-4aca-a1e3-588d770b435b" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false"  readMoreUrl="http://docs.composite.net/Composite.Forms.Renderer">
 		<Description>Allows you to build input forms on pages to collect date from visitors. Supports email notifications. Uses CAPTCHA for protection from abuse.</Description>
 		<TechnicalDetails>Allows you to build input forms on pages to collect date from visitors. Supports email notifications. Uses CAPTCHA for protection from abuse.</TechnicalDetails>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries>
 		<mi:Add path="~\Bin\Composite.Forms.Renderer.dll" />
+		<mi:Add path="~\Bin\Composite.Localization.C1Console.FragmentInstaller.dll" />
 	</mi:PackageFragmentInstallerBinaries>
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
@@ -23,11 +24,13 @@
 				<File sourceFilename="~\Bin\Composite.Forms.Renderer.dll" targetFilename="~\Bin\Composite.Forms.Renderer.dll" allowOverwrite="true" />
 			</Files>
 			<Directories>
+				<Directory sourceDirectory="~\Composite\" targetDirectory="~\Composite\" allowOverwrite="true" deleteTargetDirectory="false" />
 				<Directory sourceDirectory="~\Frontend\Composite\Forms\Renderer\" targetDirectory="~\Frontend\Composite\Forms\Renderer\" allowOverwrite="true" deleteTargetDirectory="false" />
 			</Directories>
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
 			<Types />
 		</mi:Add>
+		<mi:Add installerType="Composite.Localization.C1Console.FragmentInstaller.C1ConsoleFragmentInstaller, Composite.Localization.C1Console.FragmentInstaller" uninstallerType="Composite.Localization.C1Console.FragmentInstaller.C1ConsoleFragmentUninstaller, Composite.Localization.C1Console.FragmentInstaller" />
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>
