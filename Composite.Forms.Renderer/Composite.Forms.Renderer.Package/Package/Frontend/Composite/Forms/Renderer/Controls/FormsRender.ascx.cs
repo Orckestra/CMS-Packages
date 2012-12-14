@@ -36,7 +36,7 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
 	{
 		IntroText.Text = parameters.GetParameter<string>("IntroText");
 		useCaptcha = parameters.GetParameter<bool>("UseCaptcha");
-		ValidationSummary.HeaderText = FormsRenderer.GetFrontendString("Composite.Forms.Renderer", "Composite.Forms.ValidationSummary.HeaderText");
+		ValidationSummary.HeaderText = StringResourceSystemFacade.GetString("Composite.Forms.Renderer", "Composite.Forms.ValidationSummary.HeaderText");
 		var sendButtonLabel = parameters.GetParameter<string>("SendButtonLabel");
 		if (sendButtonLabel != string.Empty)
 			Send.Text = GetLocalized(sendButtonLabel);
@@ -107,7 +107,7 @@ $(document).ready(function() {
 		if (useCaptcha)
 		{
 			var encryptedValue = Composite.Core.WebClient.Captcha.Captcha.CreateEncryptedValue(); ;
-			CaptchaText.Text = FormsRenderer.GetFrontendString("Composite.Forms.Renderer", "Composite.Forms.Captcha.CaptchaText.label");
+			CaptchaText.Text = StringResourceSystemFacade.GetString("Composite.Forms.Renderer", "Composite.Forms.Captcha.CaptchaText.label");
 			CaptchaImage.ImageUrl = GetCaptchaImageUrl(encryptedValue);
 			CaptchaInput.Text = "";
 			Session["FormsRendererCaptcha"] = encryptedValue;

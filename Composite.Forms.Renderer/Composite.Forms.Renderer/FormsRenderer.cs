@@ -207,7 +207,7 @@ namespace Composite.Forms.Renderer
 				var Session = HttpContext.Current.Session;
 				if (Session["FormsRendererCaptcha"] == null || !Captcha.IsValid(captchaText, Session["FormsRendererCaptcha"].ToString()))
 				{
-					ErrorSummary.AddError(GetFrontendString("Composite.Forms.Renderer", "Composite.Forms.Captcha.CaptchaText.error"));
+					ErrorSummary.AddError(StringResourceSystemFacade.GetString("Composite.Forms.Renderer", "Composite.Forms.Captcha.CaptchaText.error"));
 					isValid = false;
 				}
 			}
@@ -417,17 +417,6 @@ namespace Composite.Forms.Renderer
 			}
 			return clientValidationRules[controlId].Where(d => d is NotNullClientValidationRule).Any();
 			
-		}
-
-		public static string GetFrontendString(string providerName, string stringId)
-		{
-
-			Verify.ArgumentNotNullOrEmpty(providerName, "providerName");
-			Verify.ArgumentNotNullOrEmpty(stringId, "stringId");
-
-			var provider = Reflection.CallStaticMethod<object>("Composite.Core.ResourceSystem.Foundation.PluginFacades.ResourceProviderPluginFacade", "GetResourceProvider", providerName);
-
-			return provider.CallMethod<string>("GetStringValue", stringId, LocalizationScopeManager.CurrentLocalizationScope);
 		}
 	}
 
