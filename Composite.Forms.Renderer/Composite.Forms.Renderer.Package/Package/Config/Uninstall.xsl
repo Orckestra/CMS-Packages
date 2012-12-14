@@ -6,6 +6,6 @@
 		</xsl:copy>
 	</xsl:template>
 	<xsl:template match="/configuration/Composite.C1Console.Forms.Plugins.UiControlFactoryConfiguration/Channels/Channel[@name='AspNet.FormsRenderer']" />
-	<xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.FormsRenderer']" />
+	<xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Forms.Renderer']" />
 	<xsl:template match="/configuration/Composite.Functions.Plugins.FunctionProviderConfiguration/FunctionProviderPlugins/add[@name='FormsRendererFunctionProvider']" />
 </xsl:stylesheet>

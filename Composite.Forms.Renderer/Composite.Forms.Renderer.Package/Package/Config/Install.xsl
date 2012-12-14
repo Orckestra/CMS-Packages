@@ -35,10 +35,10 @@
 	<xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins">
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
-			<xsl:if test="count(add[@name='Composite.Plugins.FormsRenderer'])=0">
-				<add name="Composite.Plugins.FormsRenderer" defaultCultureName="en-US" type="Composite.Plugins.ResourceSystem.XmlStringResourceProvider.XmlStringResourceProvider, Composite">
+			<xsl:if test="count(add[@name='Composite.Forms.Renderer'])=0">
+				<add name="Composite.Forms.Renderer" defaultCultureName="en-US" type="Composite.Plugins.ResourceSystem.XmlStringResourceProvider.XmlStringResourceProvider, Composite">
 					<Cultures>
-						<add cultureName="en-US" xmlFile="~/Composite/InstalledPackageslocalization/Composite.Media.ImageCrop.en-us.xml" monitorFileChanges="true" />
+						<add cultureName="en-US" xmlFile="~/Composite/InstalledPackages/localization/Composite.Forms.Renderer.en-us.xml" monitorFileChanges="true" />
 					</Cultures>
 				</add>
 			</xsl:if>
