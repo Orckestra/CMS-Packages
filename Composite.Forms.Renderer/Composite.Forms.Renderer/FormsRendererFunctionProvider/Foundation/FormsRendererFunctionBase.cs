@@ -93,7 +93,7 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider.Foundation
 
 		private string LocalizationToken(string functionLocalPart)
 		{
-			return string.Format("${{Composite.Plugins.FormsRenderer,{0}.{1}}}", this.ResourceHandleNameStem, functionLocalPart); 
+			return string.Format("${{Composite.Forms.Renderer,{0}.{1}}}", this.ResourceHandleNameStem, functionLocalPart); 
 		}
 
 		public string ResourceHandleNameStem {get; protected set; }

@@ -207,7 +207,7 @@ namespace Composite.Forms.Renderer
 				var Session = HttpContext.Current.Session;
 				if (Session["FormsRendererCaptcha"] == null || !Captcha.IsValid(captchaText, Session["FormsRendererCaptcha"].ToString()))
 				{
-					ErrorSummary.AddError(GetFrontendString("Composite.Plugins.FormsRenderer", "Composite.Forms.Captcha.CaptchaText.error"));
+					ErrorSummary.AddError(GetFrontendString("Composite.Forms.Renderer", "Composite.Forms.Captcha.CaptchaText.error"));
 					isValid = false;
 				}
 			}
