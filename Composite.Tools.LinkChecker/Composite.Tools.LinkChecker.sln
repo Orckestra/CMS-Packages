@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Tools.LinkChecker", "Composite.Tools.LinkChecker\Composite.Tools.LinkChecker.csproj", "{29044C12-D7A0-43C3-9BB1-74F9ECEE6FDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Tools.LinkChecker.Package", "Composite.Tools.LinkChecker.Package\Composite.Tools.LinkChecker.Package.csproj", "{077C73CB-17D7-418A-8065-50241E190C96}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.Tools.LinkChecker\\Composite.Tools.LinkChecker.csproj
+		SccProjectName1 = Composite.Tools.LinkChecker
+		SccLocalPath1 = Composite.Tools.LinkChecker
+		SccProjectUniqueName2 = Composite.Tools.LinkChecker.Package\\Composite.Tools.LinkChecker.Package.csproj
+		SccProjectName2 = Composite.Tools.LinkChecker.Package
+		SccLocalPath2 = Composite.Tools.LinkChecker.Package
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29044C12-D7A0-43C3-9BB1-74F9ECEE6FDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29044C12-D7A0-43C3-9BB1-74F9ECEE6FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29044C12-D7A0-43C3-9BB1-74F9ECEE6FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29044C12-D7A0-43C3-9BB1-74F9ECEE6FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{077C73CB-17D7-418A-8065-50241E190C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{077C73CB-17D7-418A-8065-50241E190C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{077C73CB-17D7-418A-8065-50241E190C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{077C73CB-17D7-418A-8065-50241E190C96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

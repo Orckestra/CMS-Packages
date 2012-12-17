@@ -1,0 +1,50 @@
+﻿/* Autor: JamBo - nu.Faqtz.com */
+@namespace url("http://www.w3.org/1999/xhtml");
+@namespace ui url("http://www.w3.org/1999/xhtml");
+
+ui|pagehead, div#emptylabel 
+{
+    padding: 1em;
+    border-top: 1px solid $(color:threedhighlight);
+}
+
+ui|pagehead 
+{
+    border-bottom: 1px solid $(color:threedlightshadow);
+}
+
+ui|tree 
+{
+    border-top: 1px solid $(color:threedhighlight);
+}
+
+ui|treebody 
+{
+    background-color: $(color:threedface);
+    #alphabackdrop: url("${root}/images/ui/lighten.png");
+}
+
+tree.focused treenode labelbox.focused labeltext
+{
+    background-color: transparent !important;	
+    color: #000;
+}
+
+.linkCheckInvalid 
+{
+    clear: both;
+    float: left;
+    margin-top: .1em;
+}
+
+.invalidLink 
+{
+    color: Blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.errorType 
+{
+    color: Red;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="Composite\InstalledPackages\content\views\Composite.Tools.LinkChecker\" />
+	</pc:Directories>
+	<pc:Files>
+		<Add name="Bin\Composite.Tools.LinkChecker.dll" />
+	</pc:Files>
+	<pc:Composite.config>
+		<Add name="/configuration/Composite.C1Console.Elements.Plugins.ElementActionProviderConfiguration/ElementActionProviderPlugins/add[@name='Composite.Tools.LinkChecker']" />
+	</pc:Composite.config>
+	<mi:PackageRequirements minimumCompositeVersion="4.0.4731.23472" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Tools.LinkChecker" groupName="Composite.Tools" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Tools.LinksChecker" id="eb94930c-4bdf-478b-b779-6ef617f3aec2" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>A tool for checking broken links in C1 page content</TechnicalDetails>
+		<Description>A tool for checking broken links in C1 page content</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
