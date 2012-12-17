@@ -212,8 +212,8 @@ public partial class ListBrokenLinks : System.Web.UI.Page
 
                 string urlStr = a.Attribute("href").Value;
 
-                var href = HttpUtility.UrlDecode(urlStr);
-                if (href.StartsWith("javascript:", StringComparison.InvariantCultureIgnoreCase))
+                var href = HttpUtility.UrlDecode(urlStr).Trim();
+                if (NotHttpLink(href))
                 {
                     return;
                 }
@@ -257,6 +257,21 @@ public partial class ListBrokenLinks : System.Web.UI.Page
         BuildReportTreeRec(infoDocumentRoot, Guid.Empty, reportElements);
 
         return noInvalidLinksFound;
+    }
+
+    private bool NotHttpLink(string link)
+    {
+        if (string.IsNullOrEmpty(link) || link.StartsWith("#")) return true;
+
+        if (link.StartsWith("/")
+            || link.StartsWith("http://")
+            || link.StartsWith("https://"))
+        {
+            return false;
+        }
+
+        string[] parts = link.Split('/');
+        return parts[0].Contains(":");
     }
 
     private XElement GetErrorNode(string errorText)

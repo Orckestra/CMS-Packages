@@ -1,10 +1,14 @@
 <?xml version="1.0"?>
 <pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Composite.Tools.LinkChecker.dll" />
+	</mi:PackageFragmentInstallerBinaries>
 	<pc:Directories>
 		<Add name="Composite\InstalledPackages\content\views\Composite.Tools.LinkChecker\" />
 	</pc:Directories>
 	<pc:Files>
 		<Add name="Bin\Composite.Tools.LinkChecker.dll" />
+		<Add name="Composite\InstalledPackages\localization\Composite.Tools.LinkChecker.en-us.xml" />
 	</pc:Files>
 	<pc:Composite.config>
 		<Add name="/configuration/Composite.C1Console.Elements.Plugins.ElementActionProviderConfiguration/ElementActionProviderPlugins/add[@name='Composite.Tools.LinkChecker']" />
