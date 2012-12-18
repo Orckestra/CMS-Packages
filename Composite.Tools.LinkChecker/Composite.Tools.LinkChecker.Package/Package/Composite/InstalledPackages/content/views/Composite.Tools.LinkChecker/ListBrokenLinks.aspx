@@ -5,11 +5,11 @@
     <head>
         <control:styleloader runat="server" />
         <control:scriptloader type="sub" runat="server" />
-        <title><%= Request["title"] %></title>
+        <title><%= GetResourceString("LinkCheckerActionToken.Label") %></title>
         <link rel="stylesheet" type="text/css" href="ListBrokenLinks.css.aspx"/>
     </head>
     <body>
-        <ui:page label="Link checker" image="${icon:page-list-unpublished-items}">
+        <ui:page label="Link checker" image="${icon:link}">
             <ui:toolbar id="toolbar">
                 <ui:toolbarbody>
                     <ui:toolbargroup>
@@ -19,7 +19,7 @@
             </ui:toolbar>
             <asp:PlaceHolder runat="server" ID="visualOutput" />
             <asp:PlaceHolder runat="server" ID="emptyLabelPlaceHolder" Visible="false">
-                <div id="emptylabel"><%= Request["emptyLabel"] %></div>
+                <div id="emptylabel"><%= GetResourceString("BrokenLinkReport.NoBrokenLinksFound") %></div>
             </asp:PlaceHolder>
         </ui:page>
     </body>

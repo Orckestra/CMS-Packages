@@ -13,64 +13,61 @@
     </xsl:template>
     
     <xsl:template match="Page">
-        <ui:treenode open="true">
-          <xsl:if test="count(descendant::invalidContent) = 0">
-            <xsl:attribute name="open">false</xsl:attribute>
-          </xsl:if>
-          
-            <xsl:variable name="iconname">
-                <xsl:choose>
-                    <xsl:when test="@Status='published'">page</xsl:when>
-                    <xsl:when test="@Status='awaitingApproval'">page-awaiting-approval</xsl:when>
-                    <xsl:when test="@Status='awaitingPublication'">page-awaiting-publication</xsl:when>
-                    <xsl:when test="@Status='draft'">page-draft</xsl:when>
-                </xsl:choose>
-            </xsl:variable>
-            <xsl:attribute name="label">
-                <xsl:value-of select="@Title"/>
-            </xsl:attribute>
-            <xsl:attribute name="image">
-                <xsl:text>${icon:</xsl:text>
-                <xsl:value-of select="$iconname"/>
-                <xsl:text>}</xsl:text>
-            </xsl:attribute>
-            <xsl:if test="invalidContent">
-                <ui:ul class="linkCheckInvalid">
-                    <xsl:apply-templates mode="Render" select="invalidContent" />
-                </ui:ul>
-            </xsl:if>
-            <xsl:if test="PageFolder">
-                <xsl:apply-templates select="PageFolder"/>
-            </xsl:if>
-            <xsl:if test="Page">
-                <xsl:apply-templates select="Page"/>
-            </xsl:if>
-        </ui:treenode>
-    </xsl:template>
-    
-    <xsl:template match="PageFolder">
-        <ui:treenode open="true" label="{@Title}">
-            <xsl:attribute name="image">${icon:generated-interface-open}</xsl:attribute>
+      
+      <xsl:variable name="iconname">
+        <xsl:choose>
+          <xsl:when test="@Status='published'">page</xsl:when>
+          <xsl:when test="@Status='awaitingApproval'">page-awaiting-approval</xsl:when>
+          <xsl:when test="@Status='awaitingPublication'">page-awaiting-publication</xsl:when>
+          <xsl:when test="@Status='draft'">page-draft</xsl:when>
+        </xsl:choose>
+      </xsl:variable>
+
+      <ui:treenode open="true" label="{@Title}" image="${{icon:{$iconname}}}">
+        <xsl:if test="count(descendant::invalidContent|renderingError) = 0">
+          <xsl:attribute name="open">false</xsl:attribute>
+        </xsl:if>
+
+        <xsl:if test="invalidContent">
+
+
+          <xsl:for-each select="invalidContent">
+            <ui:treenode image="${{icon:unlink}}" >
+              <xsl:attribute name="label">
+                <xsl:value-of select="@originalText" />
+                
+                <xsl:if test="@errorType != ''">
+                  ( <xsl:value-of select="@errorType" /> )
+                </xsl:if>
+
+              </xsl:attribute>
+
+            </ui:treenode>
+
+          </xsl:for-each>
+
+        </xsl:if>
+
+        <xsl:if test="renderingError">
+          <ui:treenode label="{renderingError/@message}" image="${{icon:warning}}" />
+        </xsl:if>
+
+        <xsl:if test="Page">
+          <xsl:apply-templates select="Page"/>
+        </xsl:if>
         </ui:treenode>
     </xsl:template>
 
-    <xsl:template mode="Render" match="*">
+  <!--xsl:template mode="Render" match="*">
         <ui:li class="invalidContent">
-            <span class="previousNode">
+          <img src="../../../../services/Icon/GetIcon.ashx?resourceNamespace=Composite.Icons&amp;resourceName=unlink" />
+
+          <span class="previousNode">
                 <xsl:value-of select="@previousNode"/>
             </span>
-            <xsl:element name="a">
-                <xsl:attribute name="href">
-                    <xsl:text>#</xsl:text>
-                </xsl:attribute>
-                <xsl:attribute name="title">
-                    <xsl:value-of select="@originalLink"/>
-                </xsl:attribute>
-                <xsl:attribute name="class">
-                    <xsl:text>invalidLink</xsl:text>
-                </xsl:attribute>
-                <xsl:value-of select="@originalText"/>
-            </xsl:element>
+            <a href="{@originalLink}" target="blank" title="{@originalLink}" class="invalidLink">
+              <xsl:value-of select="@originalText"/>
+            </a>
             <span class="nextNode">
                 <xsl:value-of select="@nextNode"/>
             </span>
@@ -78,6 +75,6 @@
                 (<xsl:value-of select="@errorType"/>)
             </span>
         </ui:li>
-    </xsl:template>
+    </xsl:template-->
 
 </xsl:stylesheet>

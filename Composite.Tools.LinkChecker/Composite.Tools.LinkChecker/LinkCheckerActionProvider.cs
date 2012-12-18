@@ -19,7 +19,7 @@ namespace Composite.Tools.LinkChecker
 
         private static readonly List<ElementAction> EmptyActionList = new List<ElementAction>();
         private static readonly ActionGroup ViewActionGroup = new ActionGroup("View", ActionGroupPriority.PrimaryLow);
-        public static ResourceHandle ListUnpublishedItemsIcon = GetIconHandle("page-list-unpublished-items");
+        public static ResourceHandle LinkIcon = GetIconHandle("link");
 
         public IEnumerable<ElementAction> GetActions(EntityToken entityToken)
         {
@@ -34,7 +34,7 @@ namespace Composite.Tools.LinkChecker
                 {
                     Label = GetResourceString("LinkCheckerActionToken.Label"),
                     ToolTip = GetResourceString("LinkCheckerActionToken.ToolTip"),
-                    Icon = ListUnpublishedItemsIcon,
+                    Icon = LinkIcon,
                     Disabled = false,
                     ActionLocation = new ActionLocation
                     {

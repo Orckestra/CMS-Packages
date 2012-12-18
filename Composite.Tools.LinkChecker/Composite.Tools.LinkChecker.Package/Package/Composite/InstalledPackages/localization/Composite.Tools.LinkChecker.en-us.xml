@@ -3,7 +3,7 @@
 	<string key="LinkCheckerActionToken.Label" value="Link Checker" />
 	<string key="LinkCheckerActionToken.ToolTip" value="List Pages with invalid links to internal pages, media and external links." />
 
-  <string key="BrokenLink.External" value="external link is broken" />
+  <string key="BrokenLink.External" value="" />
   <string key="BrokenLink.MediaLibrary" value="media file does not exist" />
   <string key="BrokenLink.Page" value="page does not exist" />
   <string key="BrokenLink.PageNotPublished" value="page is not published" />
@@ -11,4 +11,5 @@
 
   <string key="BrokenLinkReport.NotValidXhml" value="The page is not a valid Xhtml document, failed to extract links." />
   <string key="BrokenLinkReport.HttpStatus" value="Response code is {0}" />
+  <string key="BrokenLinkReport.NoBrokenLinksFound" value="No broken links found" />
 </strings>
