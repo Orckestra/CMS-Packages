@@ -25,7 +25,7 @@ using Composite.Data.Types;
 using Composite.Core.Routing;
 
 /// <summary>
-/// Linkchecker. Searches for broken links within the composite system
+/// Linkchecker. Searches for broken links within the Composite C1 
 /// Based on contribution by JamBo - nu.Faqtz.com
 /// </summary>
 public partial class ListBrokenLinks : System.Web.UI.Page
@@ -193,22 +193,13 @@ public partial class ListBrokenLinks : System.Web.UI.Page
             IPage page = PageManager.GetPageById(pageId);
             Verify.IsNotNull(page, "Failed to get the page");
 
-            string publicationStatus;
-
-            using(new DataScope(PublicationScope.Unpublished))
-            {
-                var unpublishedPage = PageManager.GetPageById(pageId);
-                publicationStatus = unpublishedPage != null ? unpublishedPage.PublicationStatus : "published";
-            }
-
             string pageTitle = pageElement.Attribute("MenuTitle") != null
                                 ? pageElement.Attribute("MenuTitle").Value
                                 : pageElement.Attribute("Title").Value;
  
             XElement resultPageElement = new XElement(PageElementName,
                                                new XAttribute("Id", pageId),
-                                               new XAttribute("Title", pageTitle),
-                                               new XAttribute("Status", publicationStatus));
+                                               new XAttribute("Title", pageTitle));
 
             lock (reportElements)
             {

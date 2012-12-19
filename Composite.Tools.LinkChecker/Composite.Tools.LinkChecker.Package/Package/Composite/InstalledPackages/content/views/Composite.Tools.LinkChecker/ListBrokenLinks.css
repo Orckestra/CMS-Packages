@@ -1,5 +1,4 @@
-﻿/* Autor: JamBo - nu.Faqtz.com */
-@namespace url("http://www.w3.org/1999/xhtml");
+﻿@namespace url("http://www.w3.org/1999/xhtml");
 @namespace ui url("http://www.w3.org/1999/xhtml");
 
 ui|pagehead, div#emptylabel 
@@ -28,23 +27,4 @@ tree.focused treenode labelbox.focused labeltext
 {
     background-color: transparent !important;	
     color: #000;
-}
-
-.linkCheckInvalid 
-{
-    clear: both;
-    float: left;
-    margin-top: .1em;
-}
-
-.invalidLink 
-{
-    color: Blue;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.errorType 
-{
-    color: Red;
 }

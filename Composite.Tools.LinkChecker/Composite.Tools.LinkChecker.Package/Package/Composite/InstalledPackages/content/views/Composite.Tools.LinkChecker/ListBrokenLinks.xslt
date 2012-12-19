@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ui="http://www.w3.org/1999/xhtml">
 
-    <!-- Autor: JamBo - nu.Faqtz.com -->
     <xsl:template match="/">
         <ui:tree focusable="false">
             <ui:treebody>
@@ -14,16 +13,7 @@
     
     <xsl:template match="Page">
       
-      <xsl:variable name="iconname">
-        <xsl:choose>
-          <xsl:when test="@Status='published'">page</xsl:when>
-          <xsl:when test="@Status='awaitingApproval'">page-awaiting-approval</xsl:when>
-          <xsl:when test="@Status='awaitingPublication'">page-awaiting-publication</xsl:when>
-          <xsl:when test="@Status='draft'">page-draft</xsl:when>
-        </xsl:choose>
-      </xsl:variable>
-
-      <ui:treenode open="true" label="{@Title}" image="${{icon:{$iconname}}}">
+      <ui:treenode open="true" label="{@Title}" image="${{icon:page}}">
         <xsl:if test="count(descendant::invalidContent|renderingError) = 0">
           <xsl:attribute name="open">false</xsl:attribute>
         </xsl:if>
@@ -57,24 +47,5 @@
         </xsl:if>
         </ui:treenode>
     </xsl:template>
-
-  <!--xsl:template mode="Render" match="*">
-        <ui:li class="invalidContent">
-          <img src="../../../../services/Icon/GetIcon.ashx?resourceNamespace=Composite.Icons&amp;resourceName=unlink" />
-
-          <span class="previousNode">
-                <xsl:value-of select="@previousNode"/>
-            </span>
-            <a href="{@originalLink}" target="blank" title="{@originalLink}" class="invalidLink">
-              <xsl:value-of select="@originalText"/>
-            </a>
-            <span class="nextNode">
-                <xsl:value-of select="@nextNode"/>
-            </span>
-            <span class="errorType">
-                (<xsl:value-of select="@errorType"/>)
-            </span>
-        </ui:li>
-    </xsl:template-->
 
 </xsl:stylesheet>
