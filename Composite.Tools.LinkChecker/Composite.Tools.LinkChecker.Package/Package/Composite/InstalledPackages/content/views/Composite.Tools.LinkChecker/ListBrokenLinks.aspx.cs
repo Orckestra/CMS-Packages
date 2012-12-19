@@ -201,9 +201,13 @@ public partial class ListBrokenLinks : System.Web.UI.Page
                 publicationStatus = unpublishedPage != null ? unpublishedPage.PublicationStatus : "published";
             }
 
+            string pageTitle = pageElement.Attribute("MenuTitle") != null
+                                ? pageElement.Attribute("MenuTitle").Value
+                                : pageElement.Attribute("Title").Value;
+ 
             XElement resultPageElement = new XElement(PageElementName,
                                                new XAttribute("Id", pageId),
-                                               new XAttribute("Title", pageElement.Attribute("Title").Value),
+                                               new XAttribute("Title", pageTitle),
                                                new XAttribute("Status", publicationStatus));
 
             lock (reportElements)
