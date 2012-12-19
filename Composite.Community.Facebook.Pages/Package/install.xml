@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="3.0.4358.29126" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.Facebook.Pages" groupName="Composite.Community" version="1.0.0" author="Composite A/S" website="http://composite.net/" readMoreUrl="http://docs.composite.net/Composite.Community.Facebook.Pages" id="70344009-a5a0-4610-a73f-ac782dec0c78" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="3.0.4358.29126" maximumCompositeVersion="3.2.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.Facebook.Pages" groupName="Composite.Community" version="1.0.1" author="Composite A/S" website="http://composite.net/" readMoreUrl="http://docs.composite.net/Composite.Community.Facebook.Pages" id="70344009-a5a0-4610-a73f-ac782dec0c78" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
     <TechnicalDetails>Provides a necessary layout template and styles for a Composite C1 page  to be properly displayed as a Facebook page. The page will be installed as a Page Tab App.</TechnicalDetails>
 		<Description>Provides a necessary layout template and styles for a Composite C1 page  to be properly displayed as a Facebook page.</Description>
 	</mi:PackageInformation>
