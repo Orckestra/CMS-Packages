@@ -73,7 +73,8 @@ public partial class ListBrokenLinks : System.Web.UI.Page
     {
         Failed = 0,
         Successful = 1,
-        Redirect = 2
+        Redirect = 2,
+        NotFound = 3
     }
 
     private PageRenderingResult RenderPage(string url, out string responseBody, out string errorMessage)
@@ -81,6 +82,12 @@ public partial class ListBrokenLinks : System.Web.UI.Page
         if(!url.StartsWith("http"))
         {
             url = UrlUtils.Combine(ServerUrl, url);
+        }
+
+        // Marking the link as valid, so it won't be shown multiple places and there won't be any additional requests
+        lock(_brokenLinks)
+        {
+            _brokenLinks[url] = BrokenLinkType.None;
         }
 
         try
@@ -103,11 +110,6 @@ public partial class ListBrokenLinks : System.Web.UI.Page
                     responseBody = new StreamReader(responseStream).ReadToEnd();
                 }
                 errorMessage = null;
-
-                lock(_brokenLinks)
-                {
-                    _brokenLinks[url] = BrokenLinkType.None;
-                }
                 return PageRenderingResult.Successful;
             }
 
@@ -125,18 +127,22 @@ public partial class ListBrokenLinks : System.Web.UI.Page
             var webResponse = ex.Response as HttpWebResponse;
             if (webResponse != null && webResponse.StatusCode != HttpStatusCode.OK)
             {
+                if(webResponse.StatusCode == HttpStatusCode.NotFound)
+                {
+                    lock(_brokenLinks)
+                    {
+                        _brokenLinks[url] = BrokenLinkType.Relative;
+                    }
+
+                    errorMessage = responseBody = null;
+                    return PageRenderingResult.NotFound;
+                }
                 errorMessage = string.Format(GetResourceString("BrokenLinkReport.HttpStatus"), (int)webResponse.StatusCode + " " + webResponse.StatusCode);
             }
             else
             {
                 errorMessage = ex.ToString();
             }
-        }
-
-        // Marking the link as valid, so it won't be shown multiple places and there won't be any additional requests
-        lock (_brokenLinks)
-        {
-            _brokenLinks[url] = BrokenLinkType.None;
         }
 
         responseBody = null;
@@ -223,7 +229,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
                 continue;
             }
 
-            if (result == PageRenderingResult.Redirect)
+            if (result == PageRenderingResult.Redirect || result == PageRenderingResult.NotFound)
             {
                 continue;
             }

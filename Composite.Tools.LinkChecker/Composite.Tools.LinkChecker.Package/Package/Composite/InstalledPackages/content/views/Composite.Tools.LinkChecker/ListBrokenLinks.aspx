@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="ListBrokenLinks.css.aspx"/>
     </head>
     <body>
-        <ui:page label="Link checker" image="${icon:link}">
+        <ui:page label="<%= GetResourceString("BrokenLinkReport.Title") %>" image="${icon:link}">
             <ui:toolbar id="toolbar">
                 <ui:toolbarbody>
                     <ui:toolbargroup>
