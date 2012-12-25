@@ -52,48 +52,57 @@
 		Empty
 	}
 }
+@{
+    var isLanguages = ShowCurrent || (!ShowCurrent && DataLocalizationFacade.ActiveLocalizationCultures.Count() > 1); 
+}
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/LanguageSwitcher")/Styles.css" />
+@if (isLanguages)
+{
+    <link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/LanguageSwitcher")/Styles.css" />
+}
 </head>
 <body>
-	<div id="@NavigationId">
-	@if (!string.IsNullOrWhiteSpace(Description))
- {
-	<span class="description">@Description</span>
- }
-		@{
-			var currentHomeID = HomePageNode.Id;
-			var currentPageID = CurrentPageNode.Id;
-			var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
-			SwitcherMode mode = (SwitcherMode)Enum.Parse(typeof(SwitcherMode), Mode);
-			foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
-			{
-				if (ShowCurrent || (!ShowCurrent && !culture.Equals(currentCulture)))
-				{
-					using (DataConnection conn = new DataConnection(culture))
-					{
-						var homeNode = conn.SitemapNavigator.GetPageNodeById(currentHomeID);
-						var pageNode = conn.SitemapNavigator.GetPageNodeById(currentPageID);
-						var url = string.Empty;
+@if (isLanguages)
+{
+    <div id="@NavigationId">
+    @if (!string.IsNullOrWhiteSpace(Description))
+     {
+	    <span class="description">@Description</span>
+     }
+    @{
+        var currentHomeID = HomePageNode.Id;
+        var currentPageID = CurrentPageNode.Id;
+        var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
+        SwitcherMode mode = (SwitcherMode)Enum.Parse(typeof(SwitcherMode), Mode);
+        foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
+        {
+            if (ShowCurrent || (!ShowCurrent && !culture.Equals(currentCulture)))
+            {
+                using (DataConnection conn = new DataConnection(culture))
+                {
+                    var homeNode = conn.SitemapNavigator.GetPageNodeById(currentHomeID);
+                    var pageNode = conn.SitemapNavigator.GetPageNodeById(currentPageID);
+                    var url = string.Empty;
 
-						if (pageNode != null && (mode == SwitcherMode.TranslatedPages || mode == SwitcherMode.TranslatedOrHomePages))
-						{
-							url = (IncludeQuery && Request.QueryString.Count > 0) ? string.Format("{0}{1}", pageNode.Url, Request.Url.Query) : pageNode.Url;
-						}
-						else if (homeNode != null && (mode == SwitcherMode.HomePages || mode == SwitcherMode.TranslatedOrHomePages))
-						{
-							url = homeNode.Url;
-						}
-						if (!string.IsNullOrEmpty(url))
-						{
-							@LinkElement(culture, url)
-						}
-					}
-				}
-			}
-		}
-	</div>
+                    if (pageNode != null && (mode == SwitcherMode.TranslatedPages || mode == SwitcherMode.TranslatedOrHomePages))
+                    {
+                         url = (IncludeQuery && Request.QueryString.Count > 0) ? string.Format("{0}{1}", pageNode.Url, Request.Url.Query) : pageNode.Url;
+                    }
+                    else if (homeNode != null && (mode == SwitcherMode.HomePages || mode == SwitcherMode.TranslatedOrHomePages))
+                    {
+                        url = homeNode.Url;
+                    }
+                    if (!string.IsNullOrEmpty(url))
+                    {
+					    @LinkElement(culture, url)
+                    }
+                }
+            }
+        }
+    }
+</div>
+}
 </body>
 </html>
 @helper LinkElement(CultureInfo c, string url)
