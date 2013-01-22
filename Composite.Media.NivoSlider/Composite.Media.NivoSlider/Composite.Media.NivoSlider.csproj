@@ -65,7 +65,7 @@
     <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\images\toystory.jpg" />
     <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\images\up.jpg" />
     <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\images\walle.jpg" />
-    <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\scripts\jquery-1.7.1.min.js" />
+    <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\scripts\jquery-1.9.0.min.js" />
     <Content Include="Package\Frontend\Composite\Media\NivoSlider\demo\style.css" />
     <Content Include="Package\Frontend\Composite\Media\NivoSlider\jquery.nivo.slider.js" />
     <Content Include="Package\Frontend\Composite\Media\NivoSlider\jquery.nivo.slider.pack.js" />
@@ -97,7 +97,6 @@
   <ItemGroup>
     <None Include="Package\Frontend\Composite\Media\NivoSlider\README" />
     <Content Include="Release\Composite.Media.NivoSlider.zip" />
-    <None Include="Package\Frontend\Composite\Media\NivoSlider\themes\dark\.DS_Store" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
