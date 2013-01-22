@@ -37,12 +37,27 @@
 			])[0]
 		)[0];
 
+/*
+    Fix problem caused by upgrade from jQuery 1.4 to jQuery 1.9
 		bottom = $('<div id="lbBottom" />').appendTo(bottomContainer).append([
 			$('<a id="lbCloseLink" href="#" />').add(overlay).click(close)[0],
 			caption = $('<div id="lbCaption" />')[0],
 			number = $('<div id="lbNumber" />')[0],
 			$('<div style="clear: both;" />')[0]
 		])[0];
+*/
+
+		bottom = $('<div id="lbBottom" />').appendTo(bottomContainer).append([
+			$('<a id="lbCloseLink" href="#" />').click(close)[0],
+			caption = $('<div id="lbCaption" />')[0],
+			number = $('<div id="lbNumber" />')[0],
+			$('<div style="clear: both;" />')[0]
+		])[0];
+
+		$(overlay).click(close);
+/*
+    End problem fix
+*/
 	});
 
 
