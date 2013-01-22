@@ -54,6 +54,9 @@
 					</xsl:if>
 				</xsl:variable>
 				<style type="text/css">
+					#slider img {
+					margin:0;
+					}
 					#slider  {
 					<xsl:value-of select="$widthStyleString" /> /* Change this to your images width */
 					<xsl:value-of select="$heightStyleString" /> /* Change this to your images height */
