@@ -82,7 +82,7 @@ namespace Composite.Tools.StaticDataTypeCreator
 namespace {1}
 {{{2}}}*";
 
-			content = Environment.NewLine + "    #region Properties for Composite C1 Data Type" + content;
+            content = Environment.NewLine + "    #region Composite C1 data type attributes" + content;
 			content = string.Format(markup, usingsToAdd, typeNamespace, content);
 			content = content.Replace("    }*", "}");
 
@@ -90,7 +90,7 @@ namespace {1}
 			content = content.Replace("public interface", "#endregion" + Environment.NewLine + "    public interface");
 
 			//wrap field properties with #region Field properties and get set in one line
-			content = content.Replace("[ImmutableFieldId", "#region Field properties" + Environment.NewLine + "        [ImmutableFieldId");
+			content = content.Replace("[ImmutableFieldId", "#region Data field attributes" + Environment.NewLine + "        [ImmutableFieldId");
 			content = Regex.Replace(content, @"(])(\s+\w+\s+\w+)(\s+\{\s+get;\s+set;\s+\})", "$1" + Environment.NewLine + "        #endregion$2 { get; set; }");
 
 			content = content.Replace("Attribute(", "(");
