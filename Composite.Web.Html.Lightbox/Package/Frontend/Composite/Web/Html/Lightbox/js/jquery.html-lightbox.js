@@ -106,10 +106,12 @@ $(document).ready(function () {
 		)[0];
 
 	bottom = $('<div id="htmlBottom" />').appendTo(bottomContainer).append([
-			$('<a id="htmlCloseLink" href="#" />').add(overlay).click(close)[0],
+			$('<a id="htmlCloseLink" href="#" />').click(close)[0],
 			caption = $('<div id="htmlCaption" />')[0],
 			number = $('<div id="htmlNumber" />')[0],
 			$('<div style="clear: both;" />')[0]
 		])[0];
+
+	$(overlay).click(close);
 
 });
