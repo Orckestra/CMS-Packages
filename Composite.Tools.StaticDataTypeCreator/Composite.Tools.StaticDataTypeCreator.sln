@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Tools.StaticDataTypeCreator", "Composite.Tools.StaticDataTypeCreator\Composite.Tools.StaticDataTypeCreator.csproj", "{F8D5C90D-3795-4157-ABFA-994267C95C51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Tools.StaticDataTypeCreator.Package", "Composite.Tools.StaticDataTypeCreator.Package\Composite.Tools.StaticDataTypeCreator.Package.csproj", "{E9C9F94D-FF50-4D11-AF8F-619977348987}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F8D5C90D-3795-4157-ABFA-994267C95C51} = {F8D5C90D-3795-4157-ABFA-994267C95C51}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.Tools.StaticDataTypeCreator\\Composite.Tools.StaticDataTypeCreator.csproj
+		SccProjectName1 = Composite.Tools.StaticDataTypeCreator
+		SccLocalPath1 = Composite.Tools.StaticDataTypeCreator
+		SccProjectUniqueName2 = Composite.Tools.StaticDataTypeCreator.Package\\Composite.Tools.StaticDataTypeCreator.Package.csproj
+		SccProjectName2 = Composite.Tools.StaticDataTypeCreator.Package
+		SccLocalPath2 = Composite.Tools.StaticDataTypeCreator.Package
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8D5C90D-3795-4157-ABFA-994267C95C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D5C90D-3795-4157-ABFA-994267C95C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D5C90D-3795-4157-ABFA-994267C95C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D5C90D-3795-4157-ABFA-994267C95C51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9C9F94D-FF50-4D11-AF8F-619977348987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9C9F94D-FF50-4D11-AF8F-619977348987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9C9F94D-FF50-4D11-AF8F-619977348987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9C9F94D-FF50-4D11-AF8F-619977348987}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
