@@ -91,8 +91,7 @@ namespace {1}
 
 			//wrap field properties with #region Field properties and get set in one line
 			content = content.Replace("[ImmutableFieldId", "#region Data field attributes" + Environment.NewLine + "        [ImmutableFieldId");
-			content = Regex.Replace(content, @"(])(\s+\w+\s+\w+)(\s+\{\s+get;\s+set;\s+\})", "$1" + Environment.NewLine + "        #endregion$2 { get; set; }");
-
+			content = Regex.Replace(content, @"(])(\s+[\w<>]+\s+\w+)(\s+\{\s+get;\s+set;\s+\})", "$1" + Environment.NewLine + "        #endregion$2 { get; set; }");
 			content = content.Replace("Attribute(", "(");
 
 			return content;
