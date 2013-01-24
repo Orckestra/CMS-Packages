@@ -1,5 +1,4 @@
-﻿using System.Web;
-using Composite.Community.TellAFriend.Localization;
+﻿using Composite.Community.TellAFriend.Localization;
 
 namespace Composite.Community.TellAFriend
 {
@@ -9,7 +8,7 @@ namespace Composite.Community.TellAFriend
 		{
 			return Resource.GetLocalized(resourceName, key);
 		}
-		
+
 		public string GetUrl()
 		{
 			return TellAFriendFacade.GetUrl();
@@ -20,9 +19,9 @@ namespace Composite.Community.TellAFriend
 			return TellAFriendFacade.GetWebsite();
 		}
 
-        public string GetCurrentCulture()
-        {
-            return System.Threading.Thread.CurrentThread.CurrentCulture.ToString();
-        }
+		public string GetCurrentCulture()
+		{
+			return System.Threading.Thread.CurrentThread.CurrentCulture.ToString();
+		}
 	}
 }

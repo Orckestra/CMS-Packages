@@ -12,9 +12,9 @@ namespace Composite.Community.TellAFriend
 {
 	public class TellAFriendFacade
 	{
-		public static IEnumerable<XElement> Send(string fromName, string fromEmail, string toName, string toEmail, string description, string captcha, string captchaEncryptedValue, string website, string url)
+		public static IEnumerable<XElement> Send(string fromName, string fromEmail, string toName, string toEmail, string description, string captcha, string captchaEncryptedValue, bool useCaptcha, string website, string url)
 		{
-			var catpchaIsValid = Captcha.IsValid(captcha, captchaEncryptedValue);
+			var catpchaIsValid = !useCaptcha || Captcha.IsValid(captcha, captchaEncryptedValue);
 
 			yield return new XElement("SubmittedData",
 				new XAttribute("Fieldname", "fromName"),
@@ -79,8 +79,8 @@ namespace Composite.Community.TellAFriend
 				url = url.Replace("&TellAFriend=1", "").Replace("?TellAFriend=1", "");
 				var subject = string.Format("{0} {1}", Resource.GetLocalized("TellAFriend", "emailSubject"), website);
 				//var body = string.Format("{0}<br />{1}: {2}", description, Resource.GetLocalized("TellAFriend", "emailBody"),  url);
-                var emailBody = Resource.GetLocalized("TellAFriend", "emailBody");
-                var body = string.Format(emailBody, description.Replace("\n", "<br />"), url);
+				var emailBody = Resource.GetLocalized("TellAFriend", "emailBody");
+				var body = string.Format(emailBody, description.Replace("\n", "<br />"), url);
 
 				Email.Send(from, to, from, null, subject, body, true, MailPriority.Normal);
 			}

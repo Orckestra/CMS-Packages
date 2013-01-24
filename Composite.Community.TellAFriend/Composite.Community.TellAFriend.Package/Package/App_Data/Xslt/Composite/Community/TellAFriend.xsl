@@ -13,6 +13,8 @@
 	<xsl:variable name="website" select="taf:GetWebsite()" />
 	<xsl:variable name="url" select="taf:GetUrl()" />
 	<xsl:variable name="culture" select="taf:GetCurrentCulture()" />
+	<xsl:param name="useCaptcha" select="/in:inputs/in:param[@name='UseCaptcha']" />
+
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -61,6 +63,7 @@
 				<f:param name="description" value="{c1:GetFormData('description')}" />
 				<f:param name="captcha" value="{$captcha}" />
 				<f:param name="captchaEncryptedValue" value="{$captchaEncryptedValue}" />
+				<f:param name="useCaptcha" value="{$useCaptcha}" />
 				<f:param name="website" value="{$website}" />
 				<f:param name="url" value="{$url}" />
 			</f:function>
@@ -155,7 +158,8 @@
 								<xsl:value-of select="$SaveActionData[@Fieldname = 'description']/@Value" />
 							</textarea>
 						</li>
-						<li>
+						<xsl:if test="$useCaptcha = 'true'">
+							<li>
 							<label for="CaptchaUserInput">
 								<xsl:value-of select="taf:GetLocalized('TellAFriend','captcha')" />
 							</label>
@@ -169,6 +173,7 @@
 								</xsl:if>
 							</input>
 						</li>
+						</xsl:if>
 						<li>
 							<input type="submit" name="submitTellAFriend" id="submitTellAFriend" value="{taf:GetLocalized('TellAFriend','submit')}" />
 						</li>

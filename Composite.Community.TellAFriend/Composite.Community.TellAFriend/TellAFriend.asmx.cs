@@ -13,11 +13,11 @@ namespace Composite.Community.TellAFriend
 	{
 		[WebMethod]
 		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-		public XmlNode Send(string fromName, string fromEmail, string toName, string toEmail, string description, string captcha, string captchaEncryptedValue, string website, string url, string culture)
+		public XmlNode Send(string fromName, string fromEmail, string toName, string toEmail, string description, string captcha, string captchaEncryptedValue, bool useCaptcha, string website, string url, string culture)
 		{
-            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(culture);
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(culture);
-			var send = TellAFriendFacade.Send(fromName, fromEmail, toName, toEmail, description, captcha, captchaEncryptedValue, website, url);
+			System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(culture);
+			System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(culture);
+			var send = TellAFriendFacade.Send(fromName, fromEmail, toName, toEmail, description, captcha, captchaEncryptedValue, useCaptcha, website, url);
 			return GetXmlNode(new XElement("TellAFriend", send));
 		}
 
