@@ -11,7 +11,7 @@
 
 	$('#submitTellAFriend').click(function () {
 
-		$.post("/TellAFriend.asmx/Send", { 'fromName': $('#fromName').val(), 'fromEmail': $('#fromEmail').val(), 'toName': $('#toName').val(), 'toEmail': $('#toEmail').val(), 'description': $('#description').val(), 'captcha': $('#captcha').val(), 'captchaEncryptedValue': $('#captchaEncryptedValue').val(), 'website': $('#website').val(), 'url': $('#url').val(), 'culture': $('#culture').val() }, function (xml) {
+		$.post("/TellAFriend.asmx/Send", { 'fromName': $('#fromName').val(), 'fromEmail': $('#fromEmail').val(), 'toName': $('#toName').val(), 'toEmail': $('#toEmail').val(), 'description': $('#description').val(), 'captcha': $('#captcha').val(), 'captchaEncryptedValue': $('#captchaEncryptedValue').val(), 'useCaptcha': $('#useCaptcha').val(), 'website': $('#website').val(), 'url': $('#url').val(), 'culture': $('#culture').val() }, function (xml) {
 			AjaxSucceeded(xml);
 		});
 

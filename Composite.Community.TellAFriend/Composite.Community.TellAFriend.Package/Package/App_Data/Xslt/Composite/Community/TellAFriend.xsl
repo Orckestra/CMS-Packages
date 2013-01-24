@@ -10,10 +10,10 @@
 	exclude-result-prefixes="xsl in lang f c1 captcha taf">
 
 	<xsl:param name="popUp" select="/in:inputs/in:param[@name='PopUp']" />
+	<xsl:param name="useCaptcha" select="/in:inputs/in:param[@name='UseCaptcha']" />
 	<xsl:variable name="website" select="taf:GetWebsite()" />
 	<xsl:variable name="url" select="taf:GetUrl()" />
 	<xsl:variable name="culture" select="taf:GetCurrentCulture()" />
-	<xsl:param name="useCaptcha" select="/in:inputs/in:param[@name='UseCaptcha']" />
 
 	<xsl:template match="/">
 		<html>
@@ -87,6 +87,7 @@
 					<input type="hidden" name="website" id="website" value="{$website}" />
 					<input type="hidden" name="url" id="url" value="{$url}" />
 					<input type="hidden" name="culture" id="culture" value="{$culture}" />
+					<input type="hidden" name="useCaptcha" id="useCaptcha" value="{$useCaptcha}" />
 					<h4>
 						<xsl:value-of select="taf:GetLocalized('TellAFriend','tellAFriend')" />
 					</h4>
