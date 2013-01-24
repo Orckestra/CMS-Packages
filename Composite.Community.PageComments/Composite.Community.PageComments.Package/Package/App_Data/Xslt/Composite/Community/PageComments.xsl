@@ -9,6 +9,8 @@
 	xmlns:asp="http://www.composite.net/ns/asp.net/controls"
 	exclude-result-prefixes="xsl in f csharp c1 captcha">
 
+	<xsl:param name="useCaptcha" select="/in:inputs/in:param[@name='UseCaptcha']" />
+
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -60,7 +62,14 @@
 		<!-- Captcha -->
 		<xsl:variable name="captchaEncryptedValue" select="captcha:GetEncryptedValue(c1:GetFormData('captcha'))" />
 		<xsl:variable name="captchaValue" select="c1:GetFormData('txtCaptcha')" />
-		<xsl:variable name="captchaIsValid" select="captcha:IsValid($captchaValue, $captchaEncryptedValue)" />
+		<xsl:variable name="captchaIsValid">
+			<xsl:choose>
+				<xsl:when test="$useCaptcha = 'true'">
+					<xsl:value-of select="captcha:IsValid($captchaValue, $captchaEncryptedValue)" />
+				</xsl:when>
+				<xsl:otherwise>true</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
 
 		<xsl:variable name="SaveCommentMarkup">
 			<f:function name="Composite.Community.PageComments.SaveComment">
@@ -97,7 +106,9 @@
 							</ul>
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:value-of select="captcha:RegisterUsage($captchaEncryptedValue)" />
+							<xsl:if test="$useCaptcha = 'true'">
+								<xsl:value-of select="captcha:RegisterUsage($captchaEncryptedValue)" />
+							</xsl:if>
 						</xsl:otherwise>
 					</xsl:choose>
 				</div>
@@ -150,7 +161,8 @@
 						<xsl:value-of select="$SaveActionData[@Fieldname = 'CommentText']/@Value" />
 					</textarea>
 				</li>
-				<li>
+				<xsl:if test="$useCaptcha = 'true'">
+					<li>
 					<xsl:if test="count($SaveActionErrors[@Fieldname='Captcha'])>0 and $Submitted = 'true'">
 						<xsl:attribute name="class">
 							<xsl:value-of select="$cssFieldError" />
@@ -163,6 +175,7 @@
 					<input name="captcha" type="hidden" value="{$captchaEncryptedValue}" />
 					<input type="text" name="txtCaptcha" value="{$captchaValue}" />
 				</li>
+				</xsl:if>
 				<li>
 					<input type="submit" value="Send" onclick="this.form.action=this.form.action+'#newcomment'" />
 					<a name="newcomment"></a>
