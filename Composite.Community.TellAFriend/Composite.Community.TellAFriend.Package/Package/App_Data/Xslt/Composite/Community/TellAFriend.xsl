@@ -20,7 +20,7 @@
 			<head>
 				<link rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/TellAFriend/Styles.css" />
 				<xsl:if test="$popUp='true'">
-					<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+					<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 					<script src="~/Frontend/Composite/Community/TellAFriend/Scripts/TellAFriend.js" type="text/javascript"></script>
 				</xsl:if>
 			</head>
