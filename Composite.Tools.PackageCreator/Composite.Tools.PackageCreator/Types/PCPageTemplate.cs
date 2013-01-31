@@ -13,7 +13,7 @@ using Composite.Core.IO;
 namespace Composite.Tools.PackageCreator.Types
 {
 	[PCCategory("PageTemplates")]
-	internal class PCPageTemplate : SimplePackageCreatorItem, IPackagable
+	internal class PCPageTemplate : SimplePackageCreatorItem, IPackageable
 	{
 		public PCPageTemplate(string name)
 			: base(name)

@@ -12,7 +12,7 @@ using Composite.Core.IO;
 	namespace Composite.Tools.PackageCreator.Types
 	{
 		[PCCategory("Functions", AliasNames = new[] { "CSharpFunctions", "InlineFunctions", "RazorFunctions", "VisualFunctions", "XsltFunctions" })]
-		partial class PCFunctions : SimplePackageCreatorItem, IPackagable
+		partial class PCFunctions : SimplePackageCreatorItem, IPackageable
 		{
 
 			public PCFunctions(string name)

@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Composite.Core.ResourceSystem;
 using Composite.C1Console.Security;
 using System.Xml.Linq;
-using Composite.Tools.PackageCreator.Types;
-using Composite.Plugins.Elements.ElementProviders.PageElementProvider;
 
 namespace Composite.Tools.PackageCreator.Types
 {
+    /// <summary>
+    /// Represents a package creator item that has only one 'name' attribute in serialized state.
+    /// Derived classes have to define a constructor from with a single <see cref="string"/> parameter.
+    /// </summary>
 	public abstract class SimplePackageCreatorItem : IPackageCreatorItem
 	{
 		protected string _name;
@@ -30,14 +31,14 @@ namespace Composite.Tools.PackageCreator.Types
 		}
 
 
-		public SimplePackageCreatorItem() { }
+		protected SimplePackageCreatorItem() { }
 
 		protected SimplePackageCreatorItem(string name)
 		{
 			this._name = name;
 		}
 
-		public SimplePackageCreatorItem(EntityToken entityToken)
+        protected SimplePackageCreatorItem(EntityToken entityToken)
 		{
 			this._entityToken = entityToken;
 		}

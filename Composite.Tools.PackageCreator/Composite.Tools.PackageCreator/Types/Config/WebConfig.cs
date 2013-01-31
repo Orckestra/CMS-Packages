@@ -5,7 +5,7 @@ using Composite.Tools.PackageCreator.ElementProvider;
 namespace Composite.Tools.PackageCreator.Types
 {
 	[PCCategory("Web.config", AliasNames = new[] { "Configuration" })]
-	internal class PCWebConfig : SimplePackageCreatorItem, IPackagable
+	internal class PCWebConfig : SimplePackageCreatorItem, IPackageable
 	{
 		public const string Source = "Web.config";
 		public const string Path = "~/Web.config";

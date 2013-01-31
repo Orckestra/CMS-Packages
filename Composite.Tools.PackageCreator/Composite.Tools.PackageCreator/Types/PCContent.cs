@@ -11,7 +11,7 @@ using Composite.Plugins.Elements.ElementProviders.PageElementProvider;
 namespace Composite.Tools.PackageCreator.Types
 {
 	[PCCategory("Content")]
-	internal class PCContent : SimplePackageCreatorItem, IPackageCreatorItemActionToken, IPackagable
+	internal class PCContent : SimplePackageCreatorItem, IPackageCreatorItemActionToken, IPackageable
 	{
 		private const string _pagesName = "Pages";
 		private const string _mediasName = "Medias";
@@ -105,7 +105,7 @@ namespace Composite.Tools.PackageCreator.Types
 			{
 				if (creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToAllLocales || creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToCurrentLocale)
 				{
-					using (var locale = new DataScope(DataLocalizationFacade.DefaultLocalizationCulture))
+					using (new DataScope(DataLocalizationFacade.DefaultLocalizationCulture))
 					{
 						IEnumerable<Type> pageDataTypeInterfaces = PageFolderFacade.GetAllFolderTypes();
 						IEnumerable<Type> pageMetaTypeInterfaces = PageMetaDataFacade.GetAllMetaDataTypes();

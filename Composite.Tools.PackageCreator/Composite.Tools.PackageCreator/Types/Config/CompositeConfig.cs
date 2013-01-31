@@ -5,7 +5,7 @@ using Composite.Tools.PackageCreator.ElementProvider;
 namespace Composite.Tools.PackageCreator.Types
 {
 	[PCCategory("Composite.config", AliasNames = new[] {"Configuration"})]
-	internal class PCCompositeConfig : SimplePackageCreatorItem, IPackagable
+	internal class PCCompositeConfig : SimplePackageCreatorItem, IPackageable
 	{
 		public const string Source = "Composite.config";
 		public const string Path = "~/App_Data/Composite/Composite.config"; 

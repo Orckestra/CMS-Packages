@@ -10,7 +10,7 @@ using Composite.Data.Types;
 namespace Composite.Tools.PackageCreator.Types
 {
 	[PCCategory("PageTypes")]
-	internal class PCPageType : SimplePackageCreatorItem, IPackagable
+	internal class PCPageType : SimplePackageCreatorItem, IPackageable
 	{
 		public PCPageType(string name)
 			: base(name)

@@ -160,7 +160,7 @@ namespace Composite.Tools.PackageCreator
 
 
 				var packageId = XPackageInformation.Attribute("id").Value;
-				var installedPackageFilename = Path.Combine(Path.Combine(Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), "App_Data\\Composite\\Packages"), packageId), "package.zip");
+				// var installedPackageFilename = Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), "App_Data\\Composite\\Packages", packageId, "package.zip");
 
 				XPackageInstaller.Add(XPackageInformation);
 
@@ -402,7 +402,7 @@ namespace Composite.Tools.PackageCreator
 						{
 							foreach (var packageItem in PackageCreatorFacade.GetItems(categoryType.Value, config.Root))
 							{
-								(packageItem as IPackagable).Pack(this);
+								(packageItem as IPackageable).Pack(this);
 							}
 						}
 					}

@@ -13,7 +13,7 @@ using Composite.Core.IO;
 namespace Composite.Tools.PackageCreator.Types
 {
 	[PCCategory("PageTrees")]
-	internal class PCPageTree : SimplePackageCreatorItem, IPackagable
+	internal class PCPageTree : SimplePackageCreatorItem, IPackageable
 	{
 		public PCPageTree(string name)
 			: base(name)

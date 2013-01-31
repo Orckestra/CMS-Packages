@@ -140,7 +140,7 @@ namespace Composite.Tools.PackageCreator
 
 		public static bool IsIPackagable(this Type type)
 		{
-			return type.GetInterfaces().Contains(typeof (IPackagable));
+			return type.GetInterfaces().Contains(typeof (IPackageable));
 		}
 	}
 }

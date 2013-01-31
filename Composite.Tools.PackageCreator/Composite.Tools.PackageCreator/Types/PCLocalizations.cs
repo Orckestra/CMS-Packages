@@ -13,7 +13,7 @@ using System.Xml.Linq;
 namespace Composite.Tools.PackageCreator.Types
 {
 	[PCCategory("Localizations")]
-	internal sealed class PCLocalizations : SimplePackageCreatorItem, IPackagable
+	internal sealed class PCLocalizations : SimplePackageCreatorItem, IPackageable
 	{
 		private static readonly XNamespace xsl = "http://www.w3.org/1999/XSL/Transform";
 

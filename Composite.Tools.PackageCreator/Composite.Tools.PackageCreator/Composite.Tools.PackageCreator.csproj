@@ -106,7 +106,7 @@
     <Compile Include="Types\Config\WebConfig.cs" />
     <Compile Include="Types\Functions\PCUserControlFunction.cs" />
     <Compile Include="Types\PCFunctions.cs" />
-    <Compile Include="Types\Interfaces\IPackagable.cs" />
+    <Compile Include="Types\Interfaces\IPackageable.cs" />
     <Compile Include="Types\Interfaces\IPackageCreatorItemActionToken.cs" />
     <Compile Include="Types\MIPackageFragmentInstallerBinary.cs" />
     <Compile Include="Types\PCContent.cs" />

@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Composite.Tools.PackageCreator.Types
 {
+    /// <summary>
+    /// All classes that inherit <see cref="IPackageCreatorItem"/> and has this attribute, will be picked up by PackageCreator
+    /// Category is shown in 'Package Creator' section as a folder for grouping package creator items
+    /// </summary>
 	[AttributeUsage(AttributeTargets.Class| AttributeTargets.Struct, AllowMultiple = false, Inherited = true)]
-	public sealed class PCCategoryAttribute : Attribute
+    public sealed class PCCategoryAttribute : Attribute
 	{
 		internal PCCategoryAttribute(string name){
 			this.Name = name;
