@@ -63,6 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\Bin\Composite.Localization.C1Console.FragmentInstaller.dll" />
     <Content Include="Package\Bin\Composite.Tools.PackageCreator.dll" />
     <Content Include="Package\Composite\content\forms\InstalledPackages\Composite.Tools.PackageCreator\DeletePackage.xml" />
     <Content Include="Package\Composite\content\forms\InstalledPackages\Composite.Tools.PackageCreator\PackageInfo.xml" />

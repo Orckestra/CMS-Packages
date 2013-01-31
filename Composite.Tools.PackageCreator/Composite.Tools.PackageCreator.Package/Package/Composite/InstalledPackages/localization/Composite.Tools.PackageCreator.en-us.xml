@@ -12,8 +12,9 @@
 	<string key="Composite.Tools.PackageCreator.Localizations.Label" value="Localizations" />
 	<string key="Composite.Tools.PackageCreator.Functions.Label" value="Functions" />
 	<string key="Composite.Tools.PackageCreator.PageTrees.Label" value="Page trees" />
+  <string key="Composite.Tools.PackageCreator.MediaFolders.Label" value="Media Folders" />
 
-	<string key="Composite.Tools.PackageCreator.NoPackages.Title" value="A package is required" />
+  <string key="Composite.Tools.PackageCreator.NoPackages.Title" value="A package is required" />
 	<string key="Composite.Tools.PackageCreator.NoPackages.Message" value="Cannot add data because there are no definded packages. You can define one in the 'Package Creator' perspective." />
 
 	<string key="Composite.Tools.PackageCreator.Add.Label" value="Add to the Package" />
@@ -22,8 +23,10 @@
 	<string key="Composite.Tools.PackageCreator.PageTrees.Add.Label" value="Add This Page Tree to Package" />
 	<string key="Composite.Tools.PackageCreator.PageTrees.Add.ToolTip" value="Add selected page tree to the package" />
 
+  <string key="Composite.Tools.PackageCreator.MediaFolders.Add.Label" value="Add This Folder to Package" />
+  <string key="Composite.Tools.PackageCreator.MediaFolders.Add.ToolTip" value="Add selected media folder to the package" />
 
-	<string key="Composite.Tools.PackageCreator.DynamicDataTypesData.Add.Label" value="Add data to the package" />
+  <string key="Composite.Tools.PackageCreator.DynamicDataTypesData.Add.Label" value="Add data to the package" />
 	<string key="Composite.Tools.PackageCreator.DynamicDataTypesData.Add.ToolTip" value="Add data items to the package" />
 
 	<string key="Composite.Tools.PackageCreator.Content.Pages.Add.Label" value="Add all pages to the package" />
