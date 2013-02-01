@@ -22,8 +22,8 @@ namespace Composite.Community.Blog
 	{
 		public static IEnumerable<XElement> GetTagCloudXml(double minFontSize, double maxFontSize, DataReference<IPage> blogPage)
 		{
-			var currentPageId = blogPage.Data.Id;
-			var blog = DataFacade.GetData<Entries>().Where(b => b.PageId == currentPageId).Select(b => b.Tags).ToList();
+			Guid currentPageId = blogPage.Data == null ? Guid.Empty : blogPage.Data.Id;
+			var blog = currentPageId == Guid.Empty ? DataFacade.GetData<Entries>().Select(b => b.Tags).ToList() : DataFacade.GetData<Entries>().Where(b => b.PageId == currentPageId).Select(b => b.Tags).ToList();
 			var dcTags = new Dictionary<string, int>();
 
 			foreach (var tag in blog.Where(b => !string.IsNullOrEmpty(b)).SelectMany(b => b.Split(','), (b, s) => s.Trim()))
@@ -47,7 +47,8 @@ namespace Composite.Community.Blog
 				   select new XElement("Tags",
 									   new XAttribute("Tag", d.Key),
 									   new XAttribute("FontSize", fontSize),
-									   new XAttribute("Rel", d.Value)
+									   new XAttribute("Rel", d.Value),
+									   new XAttribute("PageId", blogPage)
 					);
 		}
 
@@ -63,10 +64,10 @@ namespace Composite.Community.Blog
 				);
 		}
 
-		public static Expression<Func<Entries, bool>> GetBlogFilterFromUrl()
+		public static Expression<Func<Entries, bool>> GetBlogFilterFromUrl(DataReference<IPage> blogPage)
 		{
-			Guid currentPageId = PageRenderer.CurrentPageId;
-			Expression<Func<Entries, bool>> filter = f => f.PageId == currentPageId;
+			Guid currentPageId = blogPage.Data == null ? Guid.Empty : blogPage.Data.Id;
+			Expression<Func<Entries, bool>> filter = f => (currentPageId == Guid.Empty || f.PageId == currentPageId);
 
 			var pathInfoParts = GetPathInfoParts();
 			if (pathInfoParts != null)
@@ -75,7 +76,7 @@ namespace Composite.Community.Blog
 				//TODO: this is very primitive and not ideal way of checking if it's year or tag: "2010" or "ASP.NET"
 				if (int.TryParse(pathInfoParts[1], out year) && (pathInfoParts[1].Length == 4))
 				{
-					filter = f => f.Date.Year == year && f.PageId == currentPageId;
+					filter = f => f.Date.Year == year && (currentPageId == Guid.Empty || f.PageId == currentPageId);
 				}
 				else
 				{
@@ -83,7 +84,7 @@ namespace Composite.Community.Blog
 
 					// filter below replaced becauase of LINQ2SQL problems
 					//filter = f => f.Tags.Split(',').Any(t => t == tag) && f.PageId == currentPageId;
-					filter = f => ((f.Tags.Contains("," + tag + ",")) || f.Tags.StartsWith(tag + ",") || (f.Tags.EndsWith("," + tag)) || f.Tags.Equals(tag)) && f.PageId == currentPageId;
+					filter = f => ((f.Tags.Contains("," + tag + ",")) || f.Tags.StartsWith(tag + ",") || (f.Tags.EndsWith("," + tag)) || f.Tags.Equals(tag)) && (currentPageId == Guid.Empty || f.PageId == currentPageId);
 				}
 
 				if (pathInfoParts.Length > 2)
@@ -99,16 +100,16 @@ namespace Composite.Community.Blog
 							var blogDate = new DateTime(year, month, day);
 
 							string title = pathInfoParts[4];
-							filter = f => f.Date.Date == blogDate && f.TitleUrl == title && f.PageId == currentPageId;
+							filter = f => f.Date.Date == blogDate && f.TitleUrl == title && (currentPageId == Guid.Empty || f.PageId == currentPageId);
 						}
 						else
 						{
-							filter = f => f.Date.Year == year && f.Date.Month == month && f.Date.Day == day && f.PageId == currentPageId;
+							filter = f => f.Date.Year == year && f.Date.Month == month && f.Date.Day == day && (currentPageId == Guid.Empty || f.PageId == currentPageId);
 						}
 					}
 					else
 					{
-						filter = f => f.Date.Year == year && f.Date.Month == month && f.PageId == currentPageId;
+						filter = f => f.Date.Year == year && f.Date.Month == month && (currentPageId == Guid.Empty || f.PageId == currentPageId);
 					}
 				}
 			}

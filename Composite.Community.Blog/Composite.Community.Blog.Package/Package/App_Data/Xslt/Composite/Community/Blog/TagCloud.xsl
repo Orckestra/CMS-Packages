@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:in="http://www.composite.net/ns/transformation/input/1.0"
 	xmlns:lang="http://www.composite.net/ns/localization/1.0"
@@ -6,7 +6,17 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:be="#BlogXsltExtensionsFunction"
 	exclude-result-prefixes="xsl in lang f be">
-	<xsl:variable name="blogPage" select="/in:inputs/in:param[@name='BlogPage']" />
+	<xsl:param name="blogPage">
+		<xsl:choose>
+        	<xsl:when test="/in:inputs/in:param[@name='BlogPage']='00000000-0000-0000-0000-000000000000'">
+				<xsl:value-of select="/in:inputs/in:param[@name='BlogRendererPage']" />
+			</xsl:when>
+			<xsl:otherwise> 
+				<xsl:value-of select="/in:inputs/in:param[@name='BlogPage']" />
+			</xsl:otherwise>
+		</xsl:choose>	
+	</xsl:param>
+		
 	<xsl:template match="/">
 		<html>
 			<head>

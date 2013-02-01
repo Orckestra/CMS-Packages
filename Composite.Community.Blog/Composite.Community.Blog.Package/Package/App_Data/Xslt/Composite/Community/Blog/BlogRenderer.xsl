@@ -118,11 +118,6 @@
 			<xsl:if test="contains($options, 'Show teaser')">
 				<div class="BlogTeaser">
 					<xsl:value-of select="@Teaser" />
-          <xsl:if test="$isBlogItem !='true'">&#160;
-            <a href="{be:GetBlogUrl(@Date, @Title)}" title="{be:GetLocalized('Blog','readMoreText')}">
-              <xsl:value-of select="be:GetLocalized('Blog','readMoreText')" />
-            </a>
-          </xsl:if>
 				</div>
 			</xsl:if>
 			<xsl:if test="contains($options, 'Show content')">
