@@ -39,7 +39,9 @@ public partial class ListBrokenLinks : System.Web.UI.Page
 
     private static readonly string LogTitle = "LinkChecker";
 
-    private readonly Hashtable<string, object> _hostnameSync = new Hashtable<string, object>(); 
+    private readonly Hashtable<string, object> _hostnameSync = new Hashtable<string, object>();
+
+
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -62,9 +64,9 @@ public partial class ListBrokenLinks : System.Web.UI.Page
                 emptyLabelPlaceHolder.Visible = true;
                 return;
             }
-            
+
             XDocument newTree = TransformMarkup(infoDocumentRoot);
-                
+
             visualOutput.Controls.Add(new LiteralControl(newTree.ToString()));
         }
     }
@@ -79,13 +81,13 @@ public partial class ListBrokenLinks : System.Web.UI.Page
 
     private PageRenderingResult RenderPage(string url, out string responseBody, out string errorMessage)
     {
-        if(!url.StartsWith("http"))
+        if (!url.StartsWith("http"))
         {
             url = UrlUtils.Combine(ServerUrl, url);
         }
 
         // Marking the link as valid, so it won't be shown multiple places and there won't be any additional requests
-        lock(_brokenLinks)
+        lock (_brokenLinks)
         {
             _brokenLinks[url] = BrokenLinkType.None;
         }
@@ -113,7 +115,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
                 return PageRenderingResult.Successful;
             }
 
-            if(statusCode == 301 || statusCode == 302)
+            if (statusCode == 301 || statusCode == 302)
             {
                 responseBody = null;
                 errorMessage = null;
@@ -122,14 +124,14 @@ public partial class ListBrokenLinks : System.Web.UI.Page
 
             errorMessage = string.Format(GetResourceString("BrokenLinkReport.HttpStatus"), statusCode);
         }
-        catch(WebException ex)
+        catch (WebException ex)
         {
             var webResponse = ex.Response as HttpWebResponse;
             if (webResponse != null && webResponse.StatusCode != HttpStatusCode.OK)
             {
-                if(webResponse.StatusCode == HttpStatusCode.NotFound)
+                if (webResponse.StatusCode == HttpStatusCode.NotFound)
                 {
-                    lock(_brokenLinks)
+                    lock (_brokenLinks)
                     {
                         _brokenLinks[url] = BrokenLinkType.Relative;
                     }
@@ -160,7 +162,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
     private bool BuildBrokenLinksReport(XElement infoDocumentRoot)
     {
         bool noInvalidLinksFound = true;
-        
+
         // Get all pages present in the console
         List<IPage> actionRequiredPages = DataFacade.GetData<IPage>().ToList();
 
@@ -186,17 +188,17 @@ public partial class ListBrokenLinks : System.Web.UI.Page
 
         var linksToCheck = new List<LinkToCheck>();
 
-        foreach(XElement pageElement in minimalTree)
+        foreach (XElement pageElement in minimalTree)
         {
             Guid pageId = new Guid(pageElement.Attribute("Id").Value);
-            
+
             IPage page = PageManager.GetPageById(pageId);
             Verify.IsNotNull(page, "Failed to get the page");
 
             string pageTitle = pageElement.Attribute("MenuTitle") != null
                                 ? pageElement.Attribute("MenuTitle").Value
                                 : pageElement.Attribute("Title").Value;
- 
+
             XElement resultPageElement = new XElement(PageElementName,
                                                new XAttribute("Id", pageId),
                                                new XAttribute("Title", pageTitle));
@@ -211,7 +213,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
             string url = pageElement.Attribute("URL").Value;
             string pageServerUrl = null;
 
-            if(url.StartsWith("http"))
+            if (url.StartsWith("http"))
             {
                 pageServerUrl = new UrlBuilder(url).ServerUrl;
                 if (pageServerUrl == string.Empty) pageServerUrl = url; /* Bug in versions < C1 4.0 beta 2 */
@@ -234,14 +236,14 @@ public partial class ListBrokenLinks : System.Web.UI.Page
             {
                 document = XDocument.Parse(htmlDocument);
             }
-            catch(Exception)
+            catch (Exception)
             {
                 resultPageElement.Add(GetRenderingErrorNode(GetResourceString("BrokenLinkReport.NotValidXhml")));
                 continue;
             }
 
             linksToCheck.AddRange(document.Descendants(Namespaces.Xhtml + "a")
-                                          .Select(a => new LinkToCheck {LinkNode = a, ReportPageNode = resultPageElement, PageServerUrl = pageServerUrl}));
+                                          .Select(a => new LinkToCheck { LinkNode = a, ReportPageNode = resultPageElement, PageServerUrl = pageServerUrl }));
         }
 
         linksToCheck = linksToCheck.OrderBy(o => Guid.NewGuid()).ToList(); // Shuffling links
@@ -264,7 +266,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
                 return;
             }
 
-            string previousnode = ToPreviewString (a.PreviousNode);
+            string previousnode = ToPreviewString(a.PreviousNode);
             string nextnode = ToPreviewString(a.NextNode);
 
             if (previousnode.Length > 50)
@@ -328,11 +330,11 @@ public partial class ListBrokenLinks : System.Web.UI.Page
     {
         if (node == null) return string.Empty;
 
-        if(node is XElement)
+        if (node is XElement)
         {
             var sbResult = new StringBuilder();
 
-            foreach(var childNode in (node as XElement).Nodes())
+            foreach (var childNode in (node as XElement).Nodes())
             {
                 sbResult.Append(ToPreviewString(childNode));
             }
@@ -347,10 +349,10 @@ public partial class ListBrokenLinks : System.Web.UI.Page
     {
         var childNodes = PageManager.GetChildrenIDs(currentPageId);
 
-        foreach(Guid childNodeId in childNodes)
+        foreach (Guid childNodeId in childNodes)
         {
             XElement element = allNodes[childNodeId];
-            if(element == null) continue;
+            if (element == null) continue;
 
             reportNode.Add(element);
 
@@ -371,7 +373,10 @@ public partial class ListBrokenLinks : System.Web.UI.Page
         PageUrlData pageUrlData = null;
         try
         {
-            pageUrlData = PageUrls.ParseUrl(url);
+            if (IsKnownHostname(url)) // Workaround "if" for early vesrions of 4.0 beta
+            {
+                pageUrlData = PageUrls.ParseUrl(url);
+            }
         }
         catch (UriFormatException)
         {
@@ -383,7 +388,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
 
             IPage page;
 
-            using(new DataScope(pageUrlData.PublicationScope, pageUrlData.LocalizationScope))
+            using (new DataScope(pageUrlData.PublicationScope, pageUrlData.LocalizationScope))
             {
                 page = PageManager.GetPageById(linkedPageId);
             }
@@ -394,7 +399,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
                 {
                     using (new DataScope(PublicationScope.Unpublished, pageUrlData.LocalizationScope))
                     {
-                        if(PageManager.GetPageById(linkedPageId) != null)
+                        if (PageManager.GetPageById(linkedPageId) != null)
                         {
                             brokenLinkType = BrokenLinkType.PageNotPublished;
                             return SaveLinkCheckResult(url, brokenLinkType);
@@ -407,7 +412,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
             }
 
             // If no PathInfo - page link is already valid
-            if(string.IsNullOrEmpty(pageUrlData.PathInfo))
+            if (string.IsNullOrEmpty(pageUrlData.PathInfo))
             {
                 brokenLinkType = BrokenLinkType.None;
                 return true;
@@ -417,14 +422,14 @@ public partial class ListBrokenLinks : System.Web.UI.Page
             brokenLinkType = ValidateByRequest(url, serverUrl, BrokenLinkType.Page);
             return brokenLinkType == BrokenLinkType.None;
         }
-        
+
         MediaUrlData mediaUrlData = MediaUrls.ParseUrl(url);
-        
+
         if (mediaUrlData != null)
         {
             Guid mediaId = mediaUrlData.MediaId;
             string mediastore = mediaUrlData.MediaStore;
-            
+
             bool mediaExist = DataFacade.GetData<IMediaFile>().Any(f => f.StoreId == mediastore && f.Id == mediaId);
 
             brokenLinkType = mediaExist ? BrokenLinkType.None : BrokenLinkType.MediaLibrary;
@@ -435,6 +440,45 @@ public partial class ListBrokenLinks : System.Web.UI.Page
 
         brokenLinkType = ValidateByRequest(url, serverUrl, urlIsInternal ? BrokenLinkType.Relative : BrokenLinkType.External);
         return brokenLinkType == BrokenLinkType.None;
+    }
+
+    private bool IsKnownHostname(string href)
+    {
+        if (!href.StartsWith("http://") && !href.StartsWith("https://"))
+        {
+            return true;
+        }
+
+        string absoluteUrl = href;
+
+        // Converting links 
+        // "http://localhost" to "http://localhost/"
+        // "http://localhost?..." to "http://localhost/?..."
+        if ((absoluteUrl.Count(c => c == '/') == 2) && absoluteUrl.Contains("//"))
+        {
+            int questionMarkIndex = absoluteUrl.IndexOf('?');
+            if (questionMarkIndex > 0)
+            {
+                absoluteUrl = absoluteUrl.Insert(questionMarkIndex, "/");
+            }
+            else
+            {
+                absoluteUrl += "/";
+            }
+        }
+
+        Uri uri = new Uri(absoluteUrl);
+
+        string hostname = uri.DnsSafeHost;
+
+        var context = HttpContext.Current;
+        if (context != null && context.Request.Url.DnsSafeHost == hostname)
+        {
+            return true;
+        }
+
+        // Can be optimized
+        return DataFacade.GetData<IHostnameBinding>().AsEnumerable().Any(b => b.Hostname == hostname);
     }
 
     private bool SaveLinkCheckResult(string url, BrokenLinkType brokenLinkType)
@@ -483,14 +527,14 @@ public partial class ListBrokenLinks : System.Web.UI.Page
     private XDocument TransformMarkup(XElement inputRoot)
     {
         XDocument newTree = new XDocument();
-        
+
         using (XmlWriter writer = newTree.CreateWriter())
         {
             var xslTransformer = new XslCompiledTransform();
             xslTransformer.LoadFromPath(this.MapPath(XsltFileName));
             xslTransformer.Transform(inputRoot.CreateReader(), writer);
         }
-        
+
         return newTree;
     }
 
@@ -501,7 +545,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
     /// <returns></returns>
     private BrokenLinkType ValidateByRequest(string url, string serverUrl, BrokenLinkType brokenLinkType)
     {
-        if(url.StartsWith("/"))
+        if (url.StartsWith("/"))
         {
             url = UrlUtils.Combine(serverUrl ?? ServerUrl, url);
         }
@@ -511,7 +555,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
         {
             hostname = new Uri(url).Host;
         }
-        catch(UriFormatException)
+        catch (UriFormatException)
         {
             return brokenLinkType;
         }
@@ -519,7 +563,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
         // Allowing only one request to the same hostname at a time. Along with cache also ensures that the same url won't be requested to twice
         object hostNameSyncRoot = GetHostNameSyncObject(hostname);
 
-        lock(hostNameSyncRoot)
+        lock (hostNameSyncRoot)
         {
             var cachedResult = _brokenLinks[url];
             if (cachedResult != null) return cachedResult.Value;
@@ -587,7 +631,7 @@ public partial class ListBrokenLinks : System.Web.UI.Page
         hostname = hostname.ToLowerInvariant();
 
         object result = _hostnameSync[hostname];
-        if(result == null)
+        if (result == null)
         {
             lock (_hostnameSync)
             {
