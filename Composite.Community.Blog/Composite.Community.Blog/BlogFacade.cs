@@ -15,6 +15,7 @@ using Composite.Core.WebClient.Renderings.Page;
 using Composite.Core.Xml;
 using Composite.Data;
 using Composite.Data.Types;
+using Composite.Functions;
 
 namespace Composite.Community.Blog
 {
@@ -117,7 +118,6 @@ namespace Composite.Community.Blog
 			return filter;
 		}
 
-	
 		public static string GetUrlFromTitle(string title)
 		{
 			const string autoRemoveChars = @",./\?#!""@+'`´*():;$%&=¦§";
@@ -145,7 +145,7 @@ namespace Composite.Community.Blog
 
 		public static string GetBlogPath(DateTime date, string title)
 		{
-			return string.Format("/{0}/{1}", CustomDateFormat(date, "yyyy/MM/dd", "en-US"), GetUrlFromTitle(title));
+			return string.Format("/{0}/{1}", CustomDateFormatCulture(date, "yyyy/MM/dd", "en-US"), GetUrlFromTitle(title));
 		}
 
 		public static string GetCurrentPageUrl()
@@ -219,7 +219,7 @@ namespace Composite.Community.Blog
 			return date.ToString(dateFormat, CultureInfo.CurrentCulture);
 		}
 
-		public static string CustomDateFormat(DateTime date, string dateFormat, string cultureName)
+		public static string CustomDateFormatCulture(DateTime date, string dateFormat, string cultureName)
 		{
 			return date.ToString(dateFormat, CultureInfo.CreateSpecificCulture(cultureName));
 		}

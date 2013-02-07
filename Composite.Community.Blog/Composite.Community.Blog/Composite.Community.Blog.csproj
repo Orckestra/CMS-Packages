@@ -100,7 +100,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlogEventRegistrator.cs" />
     <Compile Include="BlogFacade.cs" />
     <Compile Include="BlogRssFeed.ashx.cs" />
     <Compile Include="BlogCustomValidators.cs" />

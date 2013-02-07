@@ -39,7 +39,7 @@ namespace Composite.Community.Blog
 
 		public string CustomDateFormat(DateTime date, string dateFormat, string cultureName)
 		{
-			return BlogFacade.CustomDateFormat(date, dateFormat, cultureName);
+			return BlogFacade.CustomDateFormatCulture(date, dateFormat, cultureName);
 		}
 
 		public static XPathNavigator GetBlogTags(string tags)
