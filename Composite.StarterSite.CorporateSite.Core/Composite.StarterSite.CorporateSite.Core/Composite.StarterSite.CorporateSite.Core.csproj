@@ -114,7 +114,9 @@
     </Content>
     <Content Include="Package\VisualEditor.config\Install.xsl" />
     <Content Include="Package\VisualEditor.config\Uninstall.xsl" />
-    <Content Include="_PackageCreator\Composite.StarterSite.CorporateSite.Core.xml" />
+    <Content Include="_PackageCreator\Composite.StarterSite.CorporateSite.Core.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_PackageCreator\Composite.StarterSite.CorporateSite.Core_Data\VisualEditor.config\Install.xsl" />
     <Content Include="_PackageCreator\Composite.StarterSite.CorporateSite.Core_Data\VisualEditor.config\Uninstall.xsl" />
   </ItemGroup>
