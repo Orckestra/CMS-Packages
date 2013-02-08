@@ -1,13 +1,14 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4087.22991" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Templates.XsltBased" groupName="Composite.StarterSite.CorporateSite" version="1.0.4" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="38ba73ed-c569-4b23-992e-0b9eff5a4678" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Templates.XsltBased" groupName="Composite.StarterSite.CorporateSite" version="1.0.5" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="38ba73ed-c569-4b23-992e-0b9eff5a4678" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>StarterSite xslt based template</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
+				<File sourceFilename="~\App_Data\Xslt\Layout\CommonHtmlHead.xsl" targetFilename="~\App_Data\Xslt\Layout\CommonHtmlHead.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Xslt\Layout\AsideColumn.xsl" targetFilename="~\App_Data\Xslt\Layout\AsideColumn.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Xslt\Layout\ContentColumn.xsl" targetFilename="~\App_Data\Xslt\Layout\ContentColumn.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Xslt\Layout\Footer.xsl" targetFilename="~\App_Data\Xslt\Layout\Footer.xsl" allowOverwrite="false" />
