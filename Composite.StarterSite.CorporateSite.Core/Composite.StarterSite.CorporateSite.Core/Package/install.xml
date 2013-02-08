@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4266.16056" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Core" groupName="Composite.StarterSite.CorporateSite" version="1.0.13" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="f5e8484a-8c90-4b68-a263-3f1f174d42a5" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Core" groupName="Composite.StarterSite.CorporateSite" version="1.0.14" author="Composite A/S" website="http://startersite.dev01.composite.net/" id="f5e8484a-8c90-4b68-a263-3f1f174d42a5" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>StarterSite xslt based template</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries >
@@ -10,7 +10,6 @@
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
-				<File sourceFilename="~\App_Data\Xslt\Layout\CommonHtmlHead.xsl" targetFilename="~\App_Data\Xslt\Layout\CommonHtmlHead.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Xslt\Layout\Navigation\Menu.xsl" targetFilename="~\App_Data\Xslt\Layout\Navigation\Menu.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Xslt\Layout\Navigation\TopLinks.xsl" targetFilename="~\App_Data\Xslt\Layout\Navigation\TopLinks.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Composite\DynamicTypeForms\Layout\Navigation\TopLink.xml" targetFilename="~\App_Data\Composite\DynamicTypeForms\Layout\Navigation\TopLink.xml" allowOverwrite="false" />
@@ -51,9 +50,6 @@
 				</Type>
 				<Type type="Composite.Data.Types.IPageType,Composite">
 					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTypes_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IParameter,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
 				</Type>
 				<Type type="Composite.Data.Types.IXsltFunction,Composite">
 					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
