@@ -3,19 +3,23 @@
 	<pc:PageTypes>
 		<Add name="Blog" />
 	</pc:PageTypes>
+	<pc:DynamicDataTypesData>
+		<Add name="Composite.Community.Blog.Authors" />
+		<Add name="Composite.Community.Blog.Tags" />
+	</pc:DynamicDataTypesData>
 	<pc:XsltFunctions>
 		<Add name="Composite.Community.Blog.Archive" />
+		<Add name="Composite.Community.Blog.BlogRenderer" />
 		<Add name="Composite.Community.Blog.Comments" />
 		<Add name="Composite.Community.Blog.Latest" />
 		<Add name="Composite.Community.Blog.TagCloud" />
-		<Add name="Composite.Community.Blog.BlogRenderer" />
 	</pc:XsltFunctions>
 	<pc:CSharpFunctions>
 		<Add name="Composite.Community.Blog.GetArchiveXml" />
 		<Add name="Composite.Community.Blog.GetTagCloudXml" />
 		<Add name="Composite.Community.Blog.XsltExtensions" />
 		<Add name="Composite.Community.Blog.GetBlogFilterFromUrl" />
-    <Add name="Composite.Community.Blog.TagValidatorContainer.TagValidator" />
+		<Add name="Composite.Community.Blog.TagValidatorContainer.TagValidator" />
 	</pc:CSharpFunctions>
 	<pc:DynamicDataTypes>
 		<Add name="Composite.Community.Blog.Authors" />
@@ -31,6 +35,7 @@
 		<Add name="Bin\CookComputing.XmlRpcV2.dll" />
 		<Add name="Bin\Composite.Community.Blog.dll" />
 		<Add name="App_GlobalResources\Composite\Community\Blog.resx" />
+		<Add name="App_GlobalResources\Composite\Community\Blog.ru-ru.resx" />
 		<Add name="BlogRssFeed.ashx" />
 		<Add name="App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" />
 		<Add name="App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Settings.xml" />
@@ -44,7 +49,7 @@
 		</mi:Add>
 	</pc:PackageFragmentInstallers>
 	<mi:PackageRequirements minimumCompositeVersion="3.2.4485.9196" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.Blog" groupName="Composite.Community" version="1.8.1" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Community.Blog" id="303b7865-055b-4fe7-a429-907b32bb6776" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+	<mi:PackageInformation name="Composite.Community.Blog" groupName="Composite.Community" version="1.8.2" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Community.Blog" id="303b7865-055b-4fe7-a429-907b32bb6776" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
 		<Description>Allows you to set up one or more blogs on a website. Entries can be filtered by month/year or tag, commented on, shared with popular online communities and services. Supports RSS export.</Description>
 		<TechnicalDetails>Allows you to set up one or more blogs on a website. Entries can be filtered by month/year or tag, commented on, shared with popular online communities and services. Supports RSS export.</TechnicalDetails>
 	</mi:PackageInformation>
