@@ -176,6 +176,10 @@
 						</li>
 						</xsl:if>
 						<li>
+							<xsl:if test="$useCaptcha != true and $popUp='true'">
+								<input type="hidden" name="captchaEncryptedValue" id="captchaEncryptedValue" value="captcha:GetEncryptedValue($url)" />
+								<input type="hidden" name="captcha" id ="captcha" value="{$url}" />
+							</xsl:if>
 							<input type="submit" name="submitTellAFriend" id="submitTellAFriend" value="{taf:GetLocalized('TellAFriend','submit')}" />
 						</li>
 					</ul>

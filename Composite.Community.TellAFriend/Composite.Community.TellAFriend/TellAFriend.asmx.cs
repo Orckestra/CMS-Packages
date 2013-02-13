@@ -3,6 +3,7 @@ using System.Web.Services;
 using System.Web.Services.Protocols;
 using System.Xml;
 using System.Xml.Linq;
+using Composite.Core.WebClient.Captcha;
 
 namespace Composite.Community.TellAFriend
 {
@@ -18,7 +19,22 @@ namespace Composite.Community.TellAFriend
 			System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(culture);
 			System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(culture);
 			var send = TellAFriendFacade.Send(fromName, fromEmail, toName, toEmail, description, captcha, captchaEncryptedValue, useCaptcha, website, url);
-			return GetXmlNode(new XElement("TellAFriend", send));
+			var result = new XElement("TellAFriend", send);
+			if (Captcha.IsValid(captchaEncryptedValue, captcha))
+			{
+				if (captcha != url)
+				{
+					Captcha.RegisterUsage(captchaEncryptedValue);
+					var newEncryptedValue = Captcha.CreateEncryptedValue();
+					//Refactoring Captcha.GetImageUrl
+					var captchaServiceUrl = Composite.Core.WebClient.UrlUtils.PublicRootPath + "/Renderers/Captcha.ashx";
+					var captchaUrl = new Composite.Core.UrlBuilder(captchaServiceUrl);
+					captchaUrl["value"] = newEncryptedValue;
+					result.SetAttributeValue("captchaImage", captchaUrl.ToString());
+					result.SetAttributeValue("captchaEncryptedValue", newEncryptedValue);
+				}
+			}
+			return GetXmlNode(result);
 		}
 
 		static XmlNode GetXmlNode(XElement element)
