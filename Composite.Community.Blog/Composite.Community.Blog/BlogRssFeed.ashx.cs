@@ -19,6 +19,7 @@ namespace Composite.Community.Blog
 
 			if (context.Request["bid"] != null && Guid.TryParse(context.Request["bid"], out pageId))
 			{
+				bool isGlobal = Convert.ToBoolean(context.Request["IsGlobal"]);
 				var cultureName = context.Request["cultureName"];
 				if (string.IsNullOrEmpty(cultureName))
 				{
@@ -38,11 +39,9 @@ namespace Composite.Community.Blog
 							pageUrl = BlogFacade.GetFullPath(pageUrl);
 							string pageTitle = conn.Get<IPage>().Where(p => p.Id == pageId).Select(p => p.Title).Single();
 							var feed = new SyndicationFeed(pageTitle, "", new Uri(pageUrl));
-							var blogItems =
-								conn.Get<Entries>().Where(b => b.PageId == pageId).Select(
-									b => new { b.Id, b.Title, b.Date, b.Teaser, b.Tags }).OrderByDescending(b => b.Date).ToList();
+							var blogItems = conn.Get<Entries>().Where(b => isGlobal ? b.PageId != null : b.PageId == pageId).Select(b => new { b.Id, b.Title, b.Date, b.Teaser, b.Tags, b.PageId }).OrderByDescending(b => b.Date).ToList();
 
-							var items = (from blog in blogItems let blogUrl = BlogFacade.GetBlogUrl(blog.Date, blog.Title, pageUrl) select new SyndicationItem(blog.Title, blog.Teaser, new Uri(blogUrl), blog.Id.ToString(), blog.Date)).ToList();
+							var items = (from blog in blogItems let blogUrl = BlogFacade.GetBlogUrl(blog.Date, blog.Title, blog.PageId, pageUrl) select new SyndicationItem(blog.Title, blog.Teaser, new Uri(blogUrl), blog.Id.ToString(), blog.Date)).ToList();
 
 							feed.Items = items;
 							context.Cache[cachedRssKey] = feed;

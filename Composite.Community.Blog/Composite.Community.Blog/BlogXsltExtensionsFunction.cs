@@ -15,9 +15,9 @@ namespace Composite.Community.Blog
 			return BlogFacade.GetUrlFromTitle(title);
 		}
 
-		public string GetBlogUrl(DateTime date, string title)
+		public string GetBlogUrl(DateTime date, string title, string pageId)
 		{
-			return BlogFacade.GetBlogUrl(date, title);
+			return BlogFacade.GetBlogUrl(date, title, new Guid(pageId));
 		}
 
 		public string GetBlogPath(DateTime date, string title)
@@ -27,9 +27,10 @@ namespace Composite.Community.Blog
 
 		public string GetFullBlogUrl(DateTime date, string title)
 		{
-			string pageUrl = BlogFacade.GetPageUrlById(SitemapNavigator.CurrentPageId);
+			Guid pageId = SitemapNavigator.CurrentPageId;
+			string pageUrl = BlogFacade.GetPageUrlById(pageId);
 			pageUrl = BlogFacade.GetFullPath(pageUrl);
-			return BlogFacade.GetBlogUrl(date, title, pageUrl);
+			return BlogFacade.GetBlogUrl(date, title, pageId, pageUrl);
 		}
 
 		public string CustomDateFormat(DateTime date, string dateFormat)

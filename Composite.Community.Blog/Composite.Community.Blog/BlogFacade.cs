@@ -59,10 +59,10 @@ namespace Composite.Community.Blog
 					);
 		}
 
-		public static IEnumerable<XElement> GetArchiveXml(DataReference<IPage> blogPage)
+		public static IEnumerable<XElement> GetArchiveXml(DataReference<IPage> blogPage, bool isGlobal)
 		{
 			var currentPageId = blogPage.Data.Id;
-			return DataFacade.GetData<Entries>().Where(c => c.PageId == currentPageId).GroupBy(c => new { c.Date.Year, c.Date.Month }).Select(
+			return DataFacade.GetData<Entries>().Where(c => isGlobal ? c.PageId != null : c.PageId == currentPageId).GroupBy(c => new { c.Date.Year, c.Date.Month }).Select(
 					b =>
 					new XElement("BlogEntries",
 									new XAttribute("Date", new DateTime(b.Key.Year, b.Key.Month, 1)),
@@ -139,11 +139,11 @@ namespace Composite.Community.Blog
 			return url;
 		}
 
-		public static string GetBlogUrl(DateTime date, string title, string pageUrl = "")
+		public static string GetBlogUrl(DateTime date, string title, Guid pageId, string pageUrl = "")
 		{
 			if (string.IsNullOrEmpty(pageUrl))
 			{
-				pageUrl = GetCurrentPageUrl();
+				pageUrl = GetPageUrlById(pageId);
 			}
 
 			return string.Format("{0}{1}", pageUrl, GetBlogPath(date, title));

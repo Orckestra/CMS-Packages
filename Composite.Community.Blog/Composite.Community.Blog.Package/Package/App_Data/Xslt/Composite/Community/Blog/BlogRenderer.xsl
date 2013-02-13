@@ -15,6 +15,7 @@
 	<xsl:variable name="blogListOptions" select="/in:inputs/in:param[@name='BlogListOptions']" />
 	<xsl:variable name="blogItemOptions" select="/in:inputs/in:param[@name='BlogItemOptions']" />
 	<xsl:variable name="commentsServiceKey" select="/in:inputs/in:param[@name='CommentsServiceKey']" />
+	<xsl:param name="isGlobal" select="/in:inputs/in:param[@name='IsGlobal']" />
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -49,7 +50,7 @@
 							</xsl:if>
 							<xsl:if test="contains($blogListOptions, 'Show RSS')">
 								<div class="BlogRSS">
-									<a title="Blog Feed" href="~/BlogRssFeed.ashx?bid={$pageId}&amp;cultureName={$currentCultureName}">Blog RSS</a>
+									<a title="Blog Feed" href="~/BlogRssFeed.ashx?bid={$pageId}&amp;IsGlobal={$isGlobal}&amp;cultureName={$currentCultureName}">Blog RSS</a>
 								</div>
 							</xsl:if>
 							<xsl:if test="contains($blogListOptions, 'Show Comments Count')">
@@ -84,7 +85,7 @@
 							<xsl:value-of select="@Title" />
 						</xsl:when>
 						<xsl:otherwise>
-							<a href="{be:GetBlogUrl(@Date, @Title)}" title="{@Title}">
+							<a href="{be:GetBlogUrl(@Date, @Title, @PageId.Id)}" title="{@Title}">
 								<xsl:value-of select="@Title" />
 							</a>
 							<xsl:if test="@DisplayComments = 'true' and contains($options, 'Show Comments Count')">

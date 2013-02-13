@@ -17,7 +17,7 @@ namespace Composite.Community.Blog.MetaWeblog
 
 		public static string GetPublicUrl(this Entries entry)
 		{
-			return GetPagePublicUrl(entry.PageId) + BlogFacade.GetBlogUrl(entry.Date, entry.Title);
+			return GetPagePublicUrl(entry.PageId) + BlogFacade.GetBlogUrl(entry.Date, entry.Title, entry.PageId);
 		}
 
 		public static string GetPagePublicUrl(Guid pageId)
