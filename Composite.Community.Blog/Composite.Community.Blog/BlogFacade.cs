@@ -21,9 +21,15 @@ namespace Composite.Community.Blog
 {
 	public class BlogFacade
 	{
-		public static IEnumerable<XElement> GetTagCloudXml(double minFontSize, double maxFontSize, DataReference<IPage> blogPage)
+		public static IEnumerable<XElement> GetTagCloudXml(double minFontSize, double maxFontSize, DataReference<IPage> blogPage, bool isGlobal)
 		{
-			Guid currentPageId = blogPage.Data == null ? Guid.Empty : blogPage.Data.Id;
+			Guid currentPageId = blogPage.Data == null ? PageRenderer.CurrentPageId : blogPage.Data.Id;
+
+			if (isGlobal)
+			{
+				currentPageId = Guid.Empty;
+			}
+
 			var blog = currentPageId == Guid.Empty ? DataFacade.GetData<Entries>().Select(b => b.Tags).ToList() : DataFacade.GetData<Entries>().Where(b => b.PageId == currentPageId).Select(b => b.Tags).ToList();
 			var dcTags = new Dictionary<string, int>();
 
@@ -65,9 +71,9 @@ namespace Composite.Community.Blog
 				);
 		}
 
-		public static Expression<Func<Entries, bool>> GetBlogFilterFromUrl(DataReference<IPage> blogPage)
+		public static Expression<Func<Entries, bool>> GetBlogFilterFromUrl(bool isGlobal)
 		{
-			Guid currentPageId = blogPage.Data == null ? Guid.Empty : blogPage.Data.Id;
+			Guid currentPageId = isGlobal ? Guid.Empty : PageRenderer.CurrentPageId;
 			Expression<Func<Entries, bool>> filter = f => (currentPageId == Guid.Empty || f.PageId == currentPageId);
 
 			var pathInfoParts = GetPathInfoParts();

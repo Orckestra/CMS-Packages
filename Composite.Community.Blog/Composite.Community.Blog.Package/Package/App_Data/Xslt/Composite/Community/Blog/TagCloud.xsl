@@ -6,13 +6,20 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:be="#BlogXsltExtensionsFunction"
 	exclude-result-prefixes="xsl in lang f be">
-	<xsl:param name="blogPage">
+	<xsl:variable name="blogPage" select="/in:inputs/in:param[@name='BlogPage']" />
+	<xsl:variable name="isGlobal" select="/in:inputs/in:param[@name='IsGlobal']" />
+	<xsl:variable name="pageId" select="/in:inputs/in:result[@name='GetPageId']" />
+
+	<xsl:param name="page">
 		<xsl:choose>
-        	<xsl:when test="/in:inputs/in:param[@name='BlogPage']='00000000-0000-0000-0000-000000000000'">
-				<xsl:value-of select="/in:inputs/in:param[@name='BlogRendererPage']" />
+      <xsl:when test="$blogPage='00000000-0000-0000-0000-000000000000' and $isGlobal='true'">
+				<xsl:value-of select="$pageId" />
+			</xsl:when>
+			<xsl:when test="$blogPage='00000000-0000-0000-0000-000000000000'">
+				<xsl:value-of select="$pageId" />
 			</xsl:when>
 			<xsl:otherwise> 
-				<xsl:value-of select="/in:inputs/in:param[@name='BlogPage']" />
+				<xsl:value-of select="$blogPage" />
 			</xsl:otherwise>
 		</xsl:choose>	
 	</xsl:param>
@@ -25,7 +32,7 @@
 			<body>
 				<div id="TagCloud">
 					<xsl:for-each select="/in:inputs/in:result[@name='GetTagCloudXml']/Tags">
-						<a title="{@Tag}" style="font-size:{@FontSize}px;" href="~/page({$blogPage})/{be:Encode(@Tag)}" rel="{@Rel}">
+						<a title="{@Tag}" style="font-size:{@FontSize}px;" href="~/page({$page})/{be:Encode(@Tag)}" rel="{@Rel}">
 							<xsl:value-of select="@Tag" /> (<xsl:value-of select="@Rel" />)
 						</a>
 					</xsl:for-each>
