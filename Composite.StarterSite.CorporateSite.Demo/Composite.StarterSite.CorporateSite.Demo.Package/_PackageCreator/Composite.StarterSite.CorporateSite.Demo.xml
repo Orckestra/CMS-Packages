@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Content>
+		<Add name="Pages" />
+	</pc:Content>
+	<mi:PackageRequirements minimumCompositeVersion="3.2.4681.14221" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Demo" groupName="Composite.StarterSite.CorporateSite" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://demo.c1.composite.net" id="40c8a2de-4332-41a3-abb4-5325d9ffa475" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<TechnicalDetails>Content update for http://demo.c1.composite.net</TechnicalDetails>
+		<Description>Content update for http://demo.c1.composite.net</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Composite.StarterSite.CorporateSite.Demo.dll" />
+	</mi:PackageFragmentInstallerBinaries>
+</pc:PackageCreator>

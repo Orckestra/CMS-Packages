@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="3.2.4681.14221" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Demo" groupName="Composite.StarterSite.CorporateSite" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://demo.c1.composite.net" id="40c8a2de-4332-41a3-abb4-5325d9ffa475" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<TechnicalDetails>Content update for http://demo.c1.composite.net</TechnicalDetails>
+		<Description>Content update for http://demo.c1.composite.net</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Composite.StarterSite.CorporateSite.Demo.dll" />
+	</mi:PackageFragmentInstallerBinaries>
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.StarterSite.CorporateSite.Demo.CorporateSiteDemoFragmentInstaller, Composite.StarterSite.CorporateSite.Demo" uninstallerType="Composite.StarterSite.CorporateSite.Demo.CorporateSiteDemoFragmentUninstaller, Composite.StarterSite.CorporateSite.Demo">
+			<Files>
+				<Source file="~\Datas\Composite.Data.Types.IPagePlaceholderContents.xml" />
+			</Files>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
