@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="3.2.4681.14221" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Demo" groupName="Composite.StarterSite.CorporateSite" version="1.0.3" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://demo.c1.composite.net" id="40c8a2de-4332-41a3-abb4-5325d9ffa475" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Demo" groupName="Composite.StarterSite.CorporateSite" version="1.0.4" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://demo.c1.composite.net" id="40c8a2de-4332-41a3-abb4-5325d9ffa475" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<TechnicalDetails>Content update for http://demo.c1.composite.net. When installed, the admin's password is changed.</TechnicalDetails>
 		<Description>Content update for http://demo.c1.composite.net</Description>
 	</mi:PackageInformation>
