@@ -67,8 +67,18 @@
   <ItemGroup>
     <Content Include="Package\Bin\Composite.StarterSite.CorporateSite.Demo.dll" />
     <Content Include="Package\Datas\Composite.Data.Types.IPagePlaceholderContents.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserActiveLocale_Published.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserActivePerspective_Published.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserGroupActivePerspective_Published.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserGroupPermissionDefinitionPermissionType_Published.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserGroupPermissionDefinition_Published.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserGroup_Published.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserPermissionDefinitionPermissionType_Published.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserPermissionDefinition_Published.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserSettings_Published.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUserUserGroupRelation_Published.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IUser_Published.xml" />
     <Content Include="Package\install.xml" />
-    <Content Include="_PackageCreator\Composite.StarterSite.CorporateSite.Demo.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Release\Composite.StarterSite.CorporateSite.Demo.zip" />

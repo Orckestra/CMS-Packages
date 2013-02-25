@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="3.2.4681.14221" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Demo" groupName="Composite.StarterSite.CorporateSite" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://demo.c1.composite.net" id="40c8a2de-4332-41a3-abb4-5325d9ffa475" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.StarterSite.CorporateSite.Demo" groupName="Composite.StarterSite.CorporateSite" version="1.0.2" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://demo.c1.composite.net" id="40c8a2de-4332-41a3-abb4-5325d9ffa475" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<TechnicalDetails>Content update for http://demo.c1.composite.net</TechnicalDetails>
 		<Description>Content update for http://demo.c1.composite.net</Description>
 	</mi:PackageInformation>
@@ -13,6 +13,22 @@
 			<Files>
 				<Source file="~\Datas\Composite.Data.Types.IPagePlaceholderContents.xml" />
 			</Files>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\Datas\Composite.Data.Types.IUser_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.Data.Types.IUser_Published.xml" allowOverwrite="true" />
+				<File sourceFilename="~\Datas\Composite.Data.Types.IUserActiveLocale_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.Data.Types.IUserActiveLocale_Published.xml" allowOverwrite="true" />
+				<File sourceFilename="~\Datas\Composite.Data.Types.IUserActivePerspective_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.Data.Types.IUserActivePerspective_Published.xml" allowOverwrite="true" />
+				<File sourceFilename="~\Datas\Composite.Data.Types.IUserGroup_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.Data.Types.IUserGroup_Published.xml" allowOverwrite="true" />
+				<File sourceFilename="~\Datas\Composite.Data.Types.IUserGroupActivePerspective_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.Data.Types.IUserGroupActivePerspective_Published.xml" allowOverwrite="true" />
+				<File sourceFilename="~\Datas\Composite.Data.Types.IUserGroupPermissionDefinition_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.Data.Types.IUserGroupPermissionDefinition_Published.xml" allowOverwrite="true" />
+				<File sourceFilename="~\Datas\Composite.Data.Types.IUserGroupPermissionDefinitionPermissionType_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.Data.Types.IUserGroupPermissionDefinitionPermissionType_Published.xml" allowOverwrite="true" />
+				<File sourceFilename="~\Datas\Composite.Data.Types.IUserPermissionDefinition_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.Data.Types.IUserPermissionDefinition_Published.xml" allowOverwrite="true" />
+				<File sourceFilename="~\Datas\Composite.Data.Types.IUserPermissionDefinitionPermissionType_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.Data.Types.IUserPermissionDefinitionPermissionType_Published.xml" allowOverwrite="true" />
+				<File sourceFilename="~\Datas\Composite.Data.Types.IUserSettings_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.Data.Types.IUserSettings_Published.xml" allowOverwrite="true" />
+				<File sourceFilename="~\Datas\Composite.Data.Types.IUserUserGroupRelation_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.Data.Types.IUserUserGroupRelation_Published.xml" allowOverwrite="true" />
+			</Files>
+			<Directories />
 		</mi:Add>
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>
