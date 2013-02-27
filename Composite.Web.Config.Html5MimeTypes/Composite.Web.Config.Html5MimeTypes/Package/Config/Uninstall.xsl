@@ -5,8 +5,19 @@
 			<xsl:apply-templates select="@* | node()" />
 		</xsl:copy>
 	</xsl:template>
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.mp4']" />
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.m4v']" />
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.ogg']" />
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.ogv']" />
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.oga']" />
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.spx']" />
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.svg']" />
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.svgz']" />
 	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.eot']" />
-
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.otf']" />
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.woff']" />
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.appcache']" />
+	<xsl:template match="/configuration/system.webServer/staticContent/remove[@fileExtension='.less']" />
 	<xsl:template match="/configuration/system.webServer/staticContent/mimeMap[@fileExtension='.mp4']" />
 	<xsl:template match="/configuration/system.webServer/staticContent/mimeMap[@fileExtension='.m4v']" />
 	<xsl:template match="/configuration/system.webServer/staticContent/mimeMap[@fileExtension='.ogg']" />
