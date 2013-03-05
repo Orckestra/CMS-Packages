@@ -9,32 +9,32 @@
 	<xsl:variable name="structure">
 		<system.webServer>
 			<staticContent>
-				<remove fileExtension=".mp4" />
-				<remove fileExtension=".m4v" />
-				<remove fileExtension=".ogg" />
-				<remove fileExtension=".ogv" />
-				<remove fileExtension=".oga" />
-				<remove fileExtension=".spx" />
-				<remove fileExtension=".svg" />
-				<remove fileExtension=".svgz" />
-				<remove fileExtension=".eot" />
-				<remove fileExtension=".otf" />
-				<remove fileExtension=".woff" />
-				<remove fileExtension=".appcache" />
-				<remove fileExtension=".less" />
-				<mimeMap fileExtension=".mp4" mimeType="video/mp4" />
-				<mimeMap fileExtension=".m4v" mimeType="video/m4v" />
-				<mimeMap fileExtension=".ogg" mimeType="video/ogg" />
-				<mimeMap fileExtension=".ogv" mimeType="video/ogg" />
-				<mimeMap fileExtension=".oga" mimeType="audio/ogg" />
-				<mimeMap fileExtension=".spx" mimeType="audio/ogg" />
-				<mimeMap fileExtension=".svg" mimeType="images/svg+xml" />
-				<mimeMap fileExtension=".svgz" mimeType="images/svg+xml" />
-				<mimeMap fileExtension=".eot" mimeType="application/vnd.ms-fontobject" />
-				<mimeMap fileExtension=".otf" mimeType="font/otf" />
-				<mimeMap fileExtension=".woff" mimeType="font/x-woff" />
-				<mimeMap fileExtension=".appcache" mimeType="text/cache-manifest" />
-				<mimeMap fileExtension=".less" mimeType="text/css" />
+				<add:remove add:key="fileExtension" fileExtension=".mp4" />
+				<add:remove add:key="fileExtension" fileExtension=".m4v" />
+				<add:remove add:key="fileExtension" fileExtension=".ogg" />
+				<add:remove add:key="fileExtension" fileExtension=".ogv" />
+				<add:remove add:key="fileExtension" fileExtension=".oga" />
+				<add:remove add:key="fileExtension" fileExtension=".spx" />
+				<add:remove add:key="fileExtension" fileExtension=".svg" />
+				<add:remove add:key="fileExtension" fileExtension=".svgz" />
+				<add:remove add:key="fileExtension" fileExtension=".eot" />
+				<add:remove add:key="fileExtension" fileExtension=".otf" />
+				<add:remove add:key="fileExtension" fileExtension=".woff" />
+				<add:remove add:key="fileExtension" fileExtension=".appcache" />
+				<add:remove add:key="fileExtension" fileExtension=".less" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".mp4" mimeType="video/mp4" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".m4v" mimeType="video/m4v" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".ogg" mimeType="video/ogg" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".ogv" mimeType="video/ogg" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".oga" mimeType="audio/ogg" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".spx" mimeType="audio/ogg" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".svg" mimeType="images/svg+xml" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".svgz" mimeType="images/svg+xml" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".eot" mimeType="application/vnd.ms-fontobject" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".otf" mimeType="font/otf" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".woff" mimeType="font/x-woff" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".appcache" mimeType="text/cache-manifest" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".less" mimeType="text/css" />
 			</staticContent>
 		</system.webServer>
 	</xsl:variable>
