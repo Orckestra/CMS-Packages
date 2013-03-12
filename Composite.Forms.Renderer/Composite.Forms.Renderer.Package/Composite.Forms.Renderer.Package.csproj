@@ -79,8 +79,11 @@
     <None Include="Release\Composite.Forms.Renderer.zip" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\Bin\Composite.Localization.C1Console.FragmentInstaller.dll" />
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Widgets\Containers\PlaceHolder.ascx" />
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Widgets\Containers\TabPanels.ascx" />
+    <Content Include="Package\Frontend\Composite\Forms\Renderer\Widgets\Selectors\DataReferenceSelector.ascx" />
+    <Content Include="Package\Frontend\Composite\Forms\Renderer\Widgets\Selectors\DataReferenceTreeSelector.ascx" />
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Widgets\Selectors\MultiKeySelector.ascx" />
     <Content Include="_PackageCreator\Composite.Forms.Renderer.xml" />
     <Content Include="Package\Bin\Composite.Forms.Renderer.dll" />

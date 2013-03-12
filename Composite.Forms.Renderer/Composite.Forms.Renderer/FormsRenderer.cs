@@ -30,12 +30,20 @@ using Composite.Data.Validation;
 using Composite.Data.Validation.ClientValidationRules;
 using Composite.Functions;
 using Microsoft.Practices.EnterpriseLibrary.Validation;
+using Composite.C1Console.Elements;
+using Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider;
+using System.Linq.Expressions;
 
 namespace Composite.Forms.Renderer
 {
 	public class FormsRenderer
 	{
 		protected static string formsRendererPath = "Frontend/Composite/Forms/Renderer/";
+
+		private static readonly Expression IgnoreCaseConstantExpression = Expression.Constant(StringComparison.OrdinalIgnoreCase, typeof(StringComparison));
+		private static readonly MethodInfo EndsWithMethodInfo = typeof(string).GetMethod("EndsWith", new[] { typeof(string), typeof(StringComparison) });
+
+
 		public static string FormsRendererWebPath
 		{
 			get
@@ -75,7 +83,7 @@ namespace Composite.Forms.Renderer
 		public static void InsertForm(Control control, ParameterList parameters)
 		{
 			Page currentPageHandler = HttpContext.Current.Handler as Page;
-			
+
 
 			if (currentPageHandler == null) throw new InvalidOperationException("The Current HttpContext Handler must be a System.Web.Ui.Page");
 
@@ -127,17 +135,17 @@ namespace Composite.Forms.Renderer
 					_compiler.Compile(reader, channelIdentifier, bindings, formHelper.GetBindingsValidationRules(newData));
 
 					#region ClientValidationRules
-					clientValidationRules = new Dictionary<string,List<ClientValidationRule>>();
-					foreach(var item in _compiler.GetField<object>("_context").GetProperty<IEnumerable>("Rebindings"))
+					clientValidationRules = new Dictionary<string, List<ClientValidationRule>>();
+					foreach (var item in _compiler.GetField<object>("_context").GetProperty<IEnumerable>("Rebindings"))
 					{
-						
-						var SourceProducer  = item.GetProperty<object>("SourceProducer");
+
+						var SourceProducer = item.GetProperty<object>("SourceProducer");
 						var uiControl = SourceProducer as IWebUiControl;
-						if(uiControl != null)
+						if (uiControl != null)
 						{
 							clientValidationRules[uiControl.UiControlID] = uiControl.ClientValidationRules;
 						}
-						
+
 					}
 					#endregion
 				}
@@ -171,7 +179,7 @@ namespace Composite.Forms.Renderer
 				webUiControl.InitializeViewState();
 			}
 
-			
+
 
 			return;
 		}
@@ -339,7 +347,7 @@ namespace Composite.Forms.Renderer
 										LoggingService.LogError(string.Format("Mail sending(Cc: '{0}')", formEmail.Cc), e.Message);
 									}
 								}
-								
+
 								try
 								{
 									mailMessage.Subject = formEmail.Subject;
@@ -409,15 +417,89 @@ namespace Composite.Forms.Renderer
 
 		public static bool IsRequiredControl(string controlId)
 		{
-			if(clientValidationRules == null)
+			if (clientValidationRules == null)
 				return false;
-			if(!clientValidationRules.ContainsKey(controlId))
+			if (!clientValidationRules.ContainsKey(controlId))
 			{
 				return false;
 			}
 			return clientValidationRules[controlId].Where(d => d is NotNullClientValidationRule).Any();
-			
+
 		}
+
+		public static Func<IMediaFile, bool> GetPredicate(SearchToken searchToken)
+		{
+			var predicates = new List<Func<IMediaFile, bool>>();
+			if (searchToken is MediaFileSearchToken)
+			{
+				MediaFileSearchToken mediaFileSearchToken = (MediaFileSearchToken)searchToken;
+				if (mediaFileSearchToken.MimeTypes != null && mediaFileSearchToken.MimeTypes.Length > 0)
+				{
+					List<string> mimeTypes = new List<string>(mediaFileSearchToken.MimeTypes);
+					predicates.Add(x => mimeTypes.Contains(x.MimeType));
+				}
+				if (!string.IsNullOrEmpty(mediaFileSearchToken.Folder))
+				{
+					if(mediaFileSearchToken.HideSubfolders)
+					{
+						predicates.Add(d => d.FolderPath == mediaFileSearchToken.Folder);
+					}else{
+ 						predicates.Add(d => d.FolderPath.StartsWith(mediaFileSearchToken.Folder));
+					}
+				}
+
+				if (mediaFileSearchToken.Extensions != null && mediaFileSearchToken.Extensions.Length > 0)
+				{
+					System.Linq.Expressions.ParameterExpression fileParameter = Expression.Parameter(typeof(IMediaFile), "file");
+
+					Expression body = null;
+
+					foreach (string extension in mediaFileSearchToken.Extensions)
+					{
+						string suffix = extension.StartsWith(".") ? extension : "." + extension;
+
+						// "file.FileName"
+						Expression fileName = Expression.Property(fileParameter, typeof(IFile), "FileName");
+
+						// Building "file.FileName.EndsWith(suffix, StringComparison.OrdinalIgnoreCase)"
+						MethodCallExpression predicate = Expression.Call(fileName,
+																		 EndsWithMethodInfo,
+																		 Expression.Constant(suffix),
+																		 IgnoreCaseConstantExpression);
+
+						if (body == null)
+						{
+							// file => file.FileName.EndsWith(extension, StringComparison.OrdinalIgnoreCase);
+							body = predicate;
+						}
+						else
+						{
+							// body = (.....) || file.FileName.EndsWith(extension, StringComparison.OrdinalIgnoreCase;
+							body = Expression.OrElse(body, predicate);
+						}
+					}
+
+					predicates.Add(Expression.Lambda<Func<IMediaFile, bool>>(body, fileParameter).Compile());
+				}
+
+			}
+
+			if (predicates.Count == 0)
+			{
+				return (x => true);
+			}
+
+			Func<Func<IMediaFile, bool>, Func<IMediaFile, bool>, Func<IMediaFile, bool>>
+				and = (f1, f2) => (t => f1(t) && f2(t));
+
+			Func<IMediaFile, bool> current = (x => true);
+			foreach (Func<IMediaFile, bool> predicate in predicates)
+			{
+				current = and(predicate, current);
+			}
+			return current;
+		}
+
 	}
 
 	internal static class FormsRendererExtensions
