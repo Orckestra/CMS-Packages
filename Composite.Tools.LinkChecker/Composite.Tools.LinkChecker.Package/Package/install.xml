@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.0.4731.23472" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.LinkChecker" groupName="Composite.Tools" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Tools.LinkChecker" id="eb94930c-4bdf-478b-b779-6ef617f3aec2" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.Tools.LinkChecker" groupName="Composite.Tools" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Tools.LinkChecker" id="eb94930c-4bdf-478b-b779-6ef617f3aec2" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" reloadConsoleOnCompletion="true">
 		<TechnicalDetails>A tool for checking broken links in C1 page content</TechnicalDetails>
 		<Description>A tool for checking broken links in C1 page content</Description>
 	</mi:PackageInformation>
