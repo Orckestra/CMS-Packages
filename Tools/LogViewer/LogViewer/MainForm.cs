@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.ServiceModel;
 using System.Threading;
 using System.Windows.Forms;
 using LogViewer.C1LogService;
@@ -686,6 +687,8 @@ namespace LogViewer
 
 		private void AutoRefreshThreadStart(C1Connection connection, bool ignoreTimeouts, bool stayAlwaysConnected)
 		{
+		    bool stopOnServiceActivationError = true;
+
 			while (true) // Supposed to be stopped by ThreadAbortException
 			{
 				Thread.Sleep(600);
@@ -707,9 +710,19 @@ namespace LogViewer
 					{
 						_lastRefreshingDate = serverTime;
 					}
+
+				    stopOnServiceActivationError = false;
 				}
 				catch (Exception ex)
 				{
+                    // Ignoring singular occurances of ServiceActivationException as they may occur during AppDomain recycling
+                    if ((ex is ServiceActivationException) && !stopOnServiceActivationError)
+                    {
+                        Thread.Sleep(3000);
+                        stopOnServiceActivationError = true;
+                        continue;
+                    }
+
 					if (stayAlwaysConnected || (ignoreTimeouts && ex is TimeoutException))
 					{
 						Thread.Sleep(5000);
