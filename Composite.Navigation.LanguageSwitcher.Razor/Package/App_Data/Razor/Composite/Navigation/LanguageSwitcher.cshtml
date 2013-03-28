@@ -71,8 +71,8 @@
 	    <span class="description">@Description</span>
      }
     @{
-        var currentHomeID = HomePageNode.Id;
-        var currentPageID = CurrentPageNode.Id;
+        var currentHomeID = SitemapNavigator.CurrentHomePageId;
+        var currentPageID = SitemapNavigator.CurrentPageId;
         var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
         SwitcherMode mode = (SwitcherMode)Enum.Parse(typeof(SwitcherMode), Mode);
         foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
