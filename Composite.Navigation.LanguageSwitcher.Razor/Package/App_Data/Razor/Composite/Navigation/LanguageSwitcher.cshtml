@@ -57,7 +57,7 @@
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-@if (isLanguages)
+@if (isLanguages && NavigationId == "LanguageSwitcher")
 {
     <link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/LanguageSwitcher")/Styles.css" />
 }
@@ -65,16 +65,17 @@
 <body>
 @if (isLanguages)
 {
-    <div id="@NavigationId">
+    <ul id="@NavigationId" class="nav">
     @if (!string.IsNullOrWhiteSpace(Description))
-     {
-	    <span class="description">@Description</span>
-     }
+    {
+	    <li class="description">@Description</li>
+    }
     @{
         var currentHomeID = SitemapNavigator.CurrentHomePageId;
         var currentPageID = SitemapNavigator.CurrentPageId;
         var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
         SwitcherMode mode = (SwitcherMode)Enum.Parse(typeof(SwitcherMode), Mode);
+       
         foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
         {
             if (ShowCurrent || (!ShowCurrent && !culture.Equals(currentCulture)))
@@ -95,13 +96,16 @@
                     }
                     if (!string.IsNullOrEmpty(url))
                     {
-					    @LinkElement(culture, url)
+                        <li>
+					        @LinkElement(culture, url)
+                        </li>
                     }
                 }
             }
         }
+      
     }
-</div>
+</ul>
 }
 </body>
 </html>
