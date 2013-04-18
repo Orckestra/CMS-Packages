@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="3.2.4518.18950" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.AppFeed.Provider.Magazine" groupName="Composite.AppFeed" version="1.0.2" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.AppFeed.Provider.Magazine" id="86033117-e0a5-4fb4-ade5-cce980128fda" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<TechnicalDetails>Allows you to create and manage content for a Windows 8 Magazine App fed via AppFeed Server.</TechnicalDetails>
+		<Description>Allows you to create and manage content for a Windows 8 Magazine App fed via AppFeed Server.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Composite.AppFeed.Provider.Magazine.dll" />
+	</mi:PackageFragmentInstallerBinaries>
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Composite\TreeDefinitions\Composite.AppFeed.Provider.Magazine.Tree.xml" targetFilename="~\App_Data\Composite\TreeDefinitions\Composite.AppFeed.Provider.Magazine.Tree.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Composite\DynamicTypeForms\Composite\AppFeed\Composite.AppFeed.Provider.Magazine.MagazineArticle.xml" targetFilename="~\App_Data\Composite\DynamicTypeForms\Composite\AppFeed\Composite.AppFeed.Provider.Magazine.MagazineArticle.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Composite\DynamicTypeForms\Composite\AppFeed\Composite.AppFeed.Provider.Magazine.MagazineGroup.xml" targetFilename="~\App_Data\Composite\DynamicTypeForms\Composite\AppFeed\Composite.AppFeed.Provider.Magazine.MagazineGroup.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\3860acb5-cbe1-4113-8a52-7877880dfc28" targetFilename="~\App_Data\Media\3860acb5-cbe1-4113-8a52-7877880dfc28" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\3e9956c2-3ac6-49cf-94c6-cb44c6254126" targetFilename="~\App_Data\Media\3e9956c2-3ac6-49cf-94c6-cb44c6254126" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\421ae1fe-a666-400a-ac7a-dc8c0e64657b" targetFilename="~\App_Data\Media\421ae1fe-a666-400a-ac7a-dc8c0e64657b" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\515dd633-17ce-4069-8017-e61df67a9b69" targetFilename="~\App_Data\Media\515dd633-17ce-4069-8017-e61df67a9b69" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\8548443c-7a23-4f68-bb56-80cd50cd7a27" targetFilename="~\App_Data\Media\8548443c-7a23-4f68-bb56-80cd50cd7a27" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\87a48dc2-82be-4742-a45f-5fbac697c78f" targetFilename="~\App_Data\Media\87a48dc2-82be-4742-a45f-5fbac697c78f" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\a66a92c7-bd6d-44d5-8679-b8028df13c1b" targetFilename="~\App_Data\Media\a66a92c7-bd6d-44d5-8679-b8028df13c1b" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\37c9a7b6-b4ee-4845-a4b5-f8a22df3f9e4" targetFilename="~\App_Data\Media\37c9a7b6-b4ee-4845-a4b5-f8a22df3f9e4" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\da2f1927-0e8b-4d7c-b8eb-5a43f94fc54a" targetFilename="~\App_Data\Media\da2f1927-0e8b-4d7c-b8eb-5a43f94fc54a" allowOverwrite="false" />
+				<File sourceFilename="~\Bin\Composite.AppFeed.Provider.Magazine.dll" targetFilename="~\Bin\Composite.AppFeed.Provider.Magazine.dll" allowOverwrite="false" />
+			</Files>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataTypePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataTypePackageFragmentUninstaller, Composite">
+			<Types>
+				<Type name="Composite.AppFeed.Provider.Magazine.MagazineGroup, Composite.AppFeed.Provider.Magazine" />
+				<Type name="Composite.AppFeed.Provider.Magazine.MagazineArticle, Composite.AppFeed.Provider.Magazine" />
+			</Types>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IMediaFileData,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMediaFileDatas_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IMediaFolderData,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMediaFolderDatas_public.xml" />
+				</Type>
+				<!--<Type type="Composite.AppFeed.Provider.Magazine.MagazineGroup">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.AppFeed.Provider.Magazine.MagazineGroup_public.xml" />
+				</Type>
+				<Type type="Composite.AppFeed.Provider.Magazine.MagazineArticle">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.AppFeed.Provider.Magazine.MagazineArticle_public.xml" />
+				</Type>-->
+			</Types>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
+			<XslFiles>
+				<XslFile pathXml="~\App_Data\Composite\Configuration\Composite.AppFeed.xml" installXsl="~\Config\Install.xsl" uninstallXsl="~\Config\Uninstall.xsl" />
+			</XslFiles>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\Datas\Composite.AppFeed.Provider.Magazine.MagazineGroup_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.AppFeed.Provider.Magazine.MagazineGroup_Published.xml" allowOverwrite="false" />
+				<File sourceFilename="~\Datas\Composite.AppFeed.Provider.Magazine.MagazineArticle_Published.xml" targetFilename="~\App_Data\Composite\DataStores\Composite.AppFeed.Provider.Magazine.MagazineArticle_Published.xml" allowOverwrite="false" />
+			</Files>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

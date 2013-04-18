@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:DynamicDataTypesData>
+		<Add name="Composite.AppFeed.Provider.Magazine.MagazineArticle" />
+		<Add name="Composite.AppFeed.Provider.Magazine.MagazineGroup" />
+	</pc:DynamicDataTypesData>
+	<pc:Files>
+		<Add name="Bin\Composite.AppFeed.Provider.Magazine.dll" />
+		<Add name="App_Data\Composite\TreeDefinitions\Composite.AppFeed.Provider.Magazine.Tree.xml" />
+		<Add name="App_Data\Composite\DynamicTypeForms\Composite\AppFeed\Composite.AppFeed.Provider.Magazine.MagazineArticle.xml" />
+		<Add name="App_Data\Composite\DynamicTypeForms\Composite\AppFeed\Composite.AppFeed.Provider.Magazine.MagazineGroup.xml" />
+	</pc:Files>
+	<pc:MediaFolders>
+		<Add name="d330cde9-96ca-4f6c-84e7-eee42ffe90f8" />
+	</pc:MediaFolders>
+	<pc:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite" Ordering="10">
+			<XslFiles>
+				<XslFile pathXml="~\App_Data\Composite\Configuration\Composite.AppFeed.xml" installXsl="~\Config\Install.xsl" uninstallXsl="~\Config\Uninstall.xsl" />
+			</XslFiles>
+		</mi:Add>
+	</pc:PackageFragmentInstallers>
+
+	<mi:PackageRequirements minimumCompositeVersion="3.2.4518.18950" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.AppFeed.Provider.Magazine" groupName="Composite.AppFeed" version="1.0.2" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.AppFeed.Provider.Magazine" id="86033117-e0a5-4fb4-ade5-cce980128fda" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<TechnicalDetails>Composite.AppFeed.Provider.Magazine</TechnicalDetails>
+		<Description>Composite.AppFeed.Provider.Magazine</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

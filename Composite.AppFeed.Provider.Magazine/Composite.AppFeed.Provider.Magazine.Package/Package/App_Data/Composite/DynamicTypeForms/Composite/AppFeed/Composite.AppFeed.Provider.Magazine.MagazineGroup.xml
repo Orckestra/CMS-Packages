@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:ff="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0">
+	<cms:bindings>
+		<cms:binding name="Id" type="System.Guid" optional="true" />
+		<cms:binding name="Name" type="System.String" optional="true" />
+		<cms:binding name="Title" type="System.String" optional="true" />
+		<cms:binding name="SubTitle" type="System.String" optional="true" />
+		<cms:binding name="Priority" type="System.Int32" optional="true" />
+		<cms:binding name="Image" type="System.String" optional="true" />
+		<cms:binding name="Html" type="System.String" optional="true" />
+	</cms:bindings>
+	<cms:layout>
+		<cms:layout.label>
+			<cms:read source="Title" />
+		</cms:layout.label>
+		<TabPanels>
+			<PlaceHolder Label="Settings">
+				<FieldGroup Label="Settings">
+					<TextBox Label="Title" Help="The title of the group" SpellCheck="true">
+						<TextBox.Text>
+							<cms:bind source="Title" />
+						</TextBox.Text>
+					</TextBox>
+					<TextArea Label="Sub Title" Help="Optional. A short intro to the group" SpellCheck="true">
+						<TextArea.Text>
+							<cms:bind source="SubTitle" />
+						</TextArea.Text>
+					</TextArea>
+					<TextBox Label="Priority" Help="How the group should be ordered - low numbers come first" Type="Integer">
+						<TextBox.Text>
+							<cms:bind source="Priority" />
+						</TextBox.Text>
+					</TextBox>
+					<DataReferenceTreeSelector Label="Image" Help="Optional. Image that should represent the group" Handle="Composite.Management.ImageSelectorDialog" SearchToken="Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider.MediaFileSearchToken,Composite|MimeTypes=',\ \'image/gif\',\ \'image/jpeg\',\ \'image/png\',\ \'image/bmp\'', Extensions=null, Folder=null, HideSubfolders='False', Keyword=null" DataType="Composite.Data.Types.IImageFile,Composite" NullValueAllowed="true">
+						<DataReferenceTreeSelector.Selected>
+							<cms:bind source="Image" />
+						</DataReferenceTreeSelector.Selected>
+					</DataReferenceTreeSelector>
+				</FieldGroup>
+				<FieldGroup Label="Advanced">
+					<TextBox Label="Group Name" Help="Optional. Advanced feeds where articles can come from other sources can reference a group by name. If you use this feature specify name here." SpellCheck="false">
+						<TextBox.Text>
+							<cms:bind source="Name" />
+						</TextBox.Text>
+					</TextBox>
+				</FieldGroup>
+			</PlaceHolder>
+			<XhtmlEditor Label="Group Intro" Help="Group Intro" ClassConfigurationName="common">
+				<XhtmlEditor.Xhtml>
+					<cms:bind source="Html" />
+				</XhtmlEditor.Xhtml>
+			</XhtmlEditor>
+		</TabPanels>
+	</cms:layout>
+</cms:formdefinition>

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.AppFeed.Server", "Composite.AppFeed.Server\Composite.AppFeed.Server.csproj", "{CB3C907D-A1EB-468E-8FE6-C94CA435A315}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.AppFeed.Server.Package", "Composite.AppFeed.Server.Package\Composite.AppFeed.Server.Package.csproj", "{7C48E708-8A18-43EE-A312-7EE56E6FD5B1}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.AppFeed.Server\\Composite.AppFeed.Server.csproj
+		SccProjectName1 = Composite.AppFeed.Server
+		SccLocalPath1 = Composite.AppFeed.Server
+		SccProjectUniqueName2 = Composite.AppFeed.Server.Package\\Composite.AppFeed.Server.Package.csproj
+		SccProjectName2 = Composite.AppFeed.Server.Package
+		SccLocalPath2 = Composite.AppFeed.Server.Package
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB3C907D-A1EB-468E-8FE6-C94CA435A315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB3C907D-A1EB-468E-8FE6-C94CA435A315}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB3C907D-A1EB-468E-8FE6-C94CA435A315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB3C907D-A1EB-468E-8FE6-C94CA435A315}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C48E708-8A18-43EE-A312-7EE56E6FD5B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C48E708-8A18-43EE-A312-7EE56E6FD5B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C48E708-8A18-43EE-A312-7EE56E6FD5B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C48E708-8A18-43EE-A312-7EE56E6FD5B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

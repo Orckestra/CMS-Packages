@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:MediaFolders>
+		<Add name="d4ea0cce-2cb7-49a9-8782-a24a8b7bde42" />
+	</pc:MediaFolders>
+	<pc:Files>
+		<Add name="Bin\Composite.AppFeed.Server.dll" />
+		<Add name="appfeed\data\content.ashx" />
+		<Add name="appfeed\data\groups.ashx" />
+		<Add name="App_Data\Composite\Configuration\Composite.AppFeed.xml" />
+	</pc:Files>
+	<mi:PackageRequirements minimumCompositeVersion="3.2.4518.18950" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.AppFeed.Server" groupName="Composite.AppFeed" version="1.0.2" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.AppFeed.Server" id="96959738-c5d3-4b56-bb88-e0bdaeac80a8" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
+		<TechnicalDetails>Provides functionality to feed content from a website (content pages, blog posts etc).</TechnicalDetails>
+		<Description>Provides functionality to feed content from a website (content pages, blog posts etc).</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

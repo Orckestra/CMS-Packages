@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AutoAttachments>
+		<NamedParent Name="Content" Position="Bottom"/>
+	</ElementStructure.AutoAttachments>
+	<ElementRoot>
+		<Children>
+			<Element Label="Windows 8 App Magazine Content" Id="magazineroot">
+				<Actions>
+					<AddDataAction Type="Composite.AppFeed.Provider.Magazine.MagazineGroup" Label="Add Group" CustomFormMarkupPath="~/App_Data/Composite/DynamicTypeForms/Composite/AppFeed/Composite.AppFeed.Provider.Magazine.MagazineGroup.xml" />
+				</Actions>
+				<Children>
+					<DataElements Type="Composite.AppFeed.Provider.Magazine.MagazineGroup" Icon="folder">
+						<OrderBy>
+							<Field FieldName="Priority"/>
+						</OrderBy>
+						<Actions>
+							<AddDataAction Type="Composite.AppFeed.Provider.Magazine.MagazineArticle" Label="Add Article" CustomFormMarkupPath="~/App_Data/Composite/DynamicTypeForms/Composite/AppFeed/Composite.AppFeed.Provider.Magazine.MagazineArticle.xml" />
+							<EditDataAction Label="Edit Group" CustomFormMarkupPath="~/App_Data/Composite/DynamicTypeForms/Composite/AppFeed/Composite.AppFeed.Provider.Magazine.MagazineGroup.xml" />
+							<DeleteDataAction Label="Delete Group"/>
+						</Actions>
+						<Children>
+							<DataElements Type="Composite.AppFeed.Provider.Magazine.MagazineArticle">
+								<Filters>
+									<ParentIdFilter ParentType="Composite.AppFeed.Provider.Magazine.MagazineGroup" ReferenceFieldName="Group"/>
+								</Filters>
+								<Actions>
+									<EditDataAction Label="Edit Article" CustomFormMarkupPath="~/App_Data/Composite/DynamicTypeForms/Composite/AppFeed/Composite.AppFeed.Provider.Magazine.MagazineArticle.xml" />
+									<DeleteDataAction Label="Delete Article"/>
+								</Actions>
+							</DataElements>
+						</Children>
+					</DataElements>
+				</Children>
+			</Element>
+		</Children>
+
+	</ElementRoot>
+</ElementStructure>

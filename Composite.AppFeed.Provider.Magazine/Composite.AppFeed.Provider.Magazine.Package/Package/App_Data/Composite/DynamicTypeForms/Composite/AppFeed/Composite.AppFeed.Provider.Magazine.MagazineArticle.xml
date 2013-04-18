@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:ff="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<cms:bindings>
+		<cms:binding name="Id" type="System.Guid" optional="true" />
+		<cms:binding name="Group" type="System.Guid" optional="true" />
+		<cms:binding name="Title" type="System.String" optional="true" />
+		<cms:binding name="SubTitle" type="System.String" optional="true" />
+		<cms:binding name="Image" type="System.String" optional="true" />
+		<cms:binding name="Date" type="System.DateTime" optional="true" />
+		<cms:binding name="Html" type="System.String" optional="true" />
+	</cms:bindings>
+	<cms:layout>
+		<cms:layout.label>
+			<cms:read source="Title" />
+		</cms:layout.label>
+		<TabPanels>
+			<FieldGroup Label="Article Settings">
+				<TextBox Label="Title" Help="The title of the article" SpellCheck="true">
+					<TextBox.Text>
+						<cms:bind source="Title" />
+					</TextBox.Text>
+				</TextBox>
+				<TextArea Label="Sub Title" Help="Optional. A short intro to the article." SpellCheck="true">
+					<TextArea.Text>
+						<cms:bind source="SubTitle" />
+					</TextArea.Text>
+				</TextArea>
+				<KeySelector Label="Group" Help="The group this article should belong to" OptionsKeyField="Key" OptionsLabelField="Label" Required="true">
+					<KeySelector.Selected>
+						<cms:bind source="Group" />
+					</KeySelector.Selected>
+					<KeySelector.Options>
+						<ff:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=4.0.4826.20151, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.AppFeed.Provider.Magazine.MagazineGroup&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" Method="GetOptions" Parameters="Composite.AppFeed.Provider.Magazine.MagazineGroup" />
+					</KeySelector.Options>
+				</KeySelector>
+				<DataReferenceTreeSelector Label="Primary Image" Help="Optional. Image to associate to article." Handle="Composite.Management.ImageSelectorDialog" SearchToken="Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider.MediaFileSearchToken,Composite|MimeTypes=',\ \'image/gif\',\ \'image/jpeg\',\ \'image/png\',\ \'image/bmp\'', Extensions=null, Folder=null, HideSubfolders='False', Keyword=null" DataType="Composite.Data.Types.IImageFile,Composite" NullValueAllowed="true">
+					<DataReferenceTreeSelector.Selected>
+						<cms:bind source="Image" />
+					</DataReferenceTreeSelector.Selected>
+				</DataReferenceTreeSelector>
+				<DateTimeSelector Label="Date created" Help="Publication date for this article.">
+					<DateTimeSelector.Date>
+						<cms:bind source="Date" />
+					</DateTimeSelector.Date>
+				</DateTimeSelector>
+			</FieldGroup>
+			<XhtmlEditor Label="Article Text" Help="Article Text" ClassConfigurationName="common">
+				<XhtmlEditor.Xhtml>
+					<cms:bind source="Html" />
+				</XhtmlEditor.Xhtml>
+			</XhtmlEditor>
+		</TabPanels>
+	</cms:layout>
+</cms:formdefinition>

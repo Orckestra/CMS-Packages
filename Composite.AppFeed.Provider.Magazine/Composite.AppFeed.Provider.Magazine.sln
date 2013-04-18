@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.AppFeed.Provider.Magazine", "Composite.AppFeed.Provider.Magazine\Composite.AppFeed.Provider.Magazine.csproj", "{5AE595F5-E25F-452B-AF38-7C7C8FA22A25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.AppFeed.Provider.Magazine.Package", "Composite.AppFeed.Provider.Magazine.Package\Composite.AppFeed.Provider.Magazine.Package.csproj", "{AF3B42AE-2E54-47C7-81AD-E24A306A4806}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.AppFeed.Provider.Magazine\\Composite.AppFeed.Provider.Magazine.csproj
+		SccProjectName1 = Composite.AppFeed.Provider.Magazine
+		SccLocalPath1 = Composite.AppFeed.Provider.Magazine
+		SccProjectUniqueName2 = Composite.AppFeed.Provider.Magazine.Package\\Composite.AppFeed.Provider.Magazine.Package.csproj
+		SccProjectName2 = Composite.AppFeed.Provider.Magazine.Package
+		SccLocalPath2 = Composite.AppFeed.Provider.Magazine.Package
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AE595F5-E25F-452B-AF38-7C7C8FA22A25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AE595F5-E25F-452B-AF38-7C7C8FA22A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AE595F5-E25F-452B-AF38-7C7C8FA22A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AE595F5-E25F-452B-AF38-7C7C8FA22A25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF3B42AE-2E54-47C7-81AD-E24A306A4806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF3B42AE-2E54-47C7-81AD-E24A306A4806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF3B42AE-2E54-47C7-81AD-E24A306A4806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF3B42AE-2E54-47C7-81AD-E24A306A4806}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
