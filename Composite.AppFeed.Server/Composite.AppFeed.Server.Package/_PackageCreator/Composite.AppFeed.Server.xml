@@ -10,7 +10,7 @@
 		<Add name="App_Data\Composite\Configuration\Composite.AppFeed.xml" />
 	</pc:Files>
 	<mi:PackageRequirements minimumCompositeVersion="3.2.4518.18950" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.AppFeed.Server" groupName="Composite.AppFeed" version="1.0.2" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.AppFeed.Server" id="96959738-c5d3-4b56-bb88-e0bdaeac80a8" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.AppFeed.Server" groupName="Composite.Tools" version="1.0.3" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.AppFeed.Server" id="96959738-c5d3-4b56-bb88-e0bdaeac80a8" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
 		<TechnicalDetails>Provides functionality to feed content from a website (content pages, blog posts etc).</TechnicalDetails>
 		<Description>Provides functionality to feed content from a website (content pages, blog posts etc).</Description>
 	</mi:PackageInformation>
