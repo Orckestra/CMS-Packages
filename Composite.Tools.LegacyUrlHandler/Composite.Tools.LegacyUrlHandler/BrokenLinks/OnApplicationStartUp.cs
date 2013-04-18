@@ -69,7 +69,7 @@ namespace Composite.Tools.LegacyUrlHandler.BrokenLinks
 				C1File.WriteAllText(checkLastRunTimeFilePath, DateTime.Now.ToString(CultureInfo.InvariantCulture));
 				return true;
 			}
-			var lastrunDateTime = DateTime.Parse(File.ReadAllText(checkLastRunTimeFilePath));
+			var lastrunDateTime = DateTime.Parse(File.ReadAllText(checkLastRunTimeFilePath), CultureInfo.InvariantCulture);
 			var now = DateTime.Now;
 			if (lastrunDateTime.AddHours(double.Parse(Config.SendEveryNHours)) < now)
 			{
