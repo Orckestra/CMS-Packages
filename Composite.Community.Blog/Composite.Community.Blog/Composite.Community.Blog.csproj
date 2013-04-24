@@ -103,7 +103,6 @@
     <Compile Include="BlogFacade.cs" />
     <Compile Include="BlogRssFeed.ashx.cs" />
     <Compile Include="BlogCustomValidators.cs" />
-    <Compile Include="BlogXsltExtensionsFunction.cs" />
     <Compile Include="BlogStartupHandler.cs" />
     <Compile Include="Localization\Resource.cs" />
     <Compile Include="MetaWeblog\Extensions.cs" />
@@ -114,6 +113,8 @@
     <Compile Include="MetaWeblog\MetaWeblogMedia.cs" />
     <Compile Include="MetaWeblog\MetaWeblogPost.cs" />
     <Compile Include="MetaWeblog\Structs.cs" />
+    <Compile Include="Models\Archive.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="RegExpLib.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -134,6 +135,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

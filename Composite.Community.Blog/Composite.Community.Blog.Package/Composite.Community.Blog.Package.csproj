@@ -23,6 +23,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,13 +60,6 @@
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Entries.xml" />
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" />
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Settings.xml" />
-    <Content Include="Package\App_Data\Xslt\Composite\Community\Blog\Archive.xsl" />
-    <Content Include="Package\App_Data\Xslt\Composite\Community\Blog\Comments.xsl" />
-    <Content Include="Package\App_Data\Xslt\Composite\Community\Blog\BlogRenderer.xsl">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Package\App_Data\Xslt\Composite\Community\Blog\Latest.xsl" />
-    <Content Include="Package\App_Data\Xslt\Composite\Community\Blog\TagCloud.xsl" />
     <Content Include="Package\Bin\Composite.Community.Blog.dll" />
     <Content Include="Package\Bin\CookComputing.XmlRpcV2.dll" />
     <Content Include="Package\Config\Install.xsl">
@@ -70,13 +67,9 @@
     </Content>
     <Content Include="Package\Datas\Composite.Community.Blog.Authorss_public.xml" />
     <Content Include="Package\Datas\Composite.Community.Blog.Tagss_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypeDefaultPageContents_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypeTreeLinks_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
     <Content Include="Package\Frontend\Composite\Community\Blog\comment_bulb.png" />
     <Content Include="Package\Frontend\Composite\Community\Blog\Styles.css" />
     <Content Include="Package\install.xml" />
@@ -89,6 +82,11 @@
     <Content Include="Package\BlogRssFeed.ashx" />
     <Content Include="Package\BlogMetaWeblog.ashx" />
     <Content Include="DLL\Composite.Generated.dll" />
+    <Content Include="Package\App_Data\Razor\Composite\Community\Blog\Archive.cshtml" />
+    <Content Include="Package\App_Data\Razor\Composite\Community\Blog\BlogRenderer.cshtml" />
+    <Content Include="Package\App_Data\Razor\Composite\Community\Blog\Comments.cshtml" />
+    <Content Include="Package\App_Data\Razor\Composite\Community\Blog\Latest.cshtml" />
+    <Content Include="Package\App_Data\Razor\Composite\Community\Blog\TagCloud.cshtml" />
     <None Include="Release\Composite.Community.Blog.zip" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +97,13 @@
     <EmbeddedResource Include="Package\App_GlobalResources\Composite\Community\Blog.ru-ru.resx" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Composite">
+      <HintPath>..\..\References\Composite\4.0\Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Composite.Community.Blog, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Package\Bin\Composite.Community.Blog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
   </ItemGroup>

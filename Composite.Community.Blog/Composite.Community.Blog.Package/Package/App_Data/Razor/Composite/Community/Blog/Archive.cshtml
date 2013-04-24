@@ -1,0 +1,40 @@
+﻿@using Composite.Community.Blog
+@using Composite.Core.WebClient.Renderings.Page
+@inherits RazorFunction
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Display links to older blog entries grouped by month/year."; }
+	}
+
+	[FunctionParameter(Label = "Blog page", Help = "The page with the blog added.", DefaultValue = null)]
+	public DataReference<IPage> BlogPage { get; set; }
+
+	[FunctionParameter(Label = "Show posts from all blogs", Help = "If 'true', posts from all blogs available on this website will be shown; otherwise, only from the current blog. 'false' by default", DefaultValue = false)]
+	public bool IsGlobal { get; set; }
+}
+@{
+	var landingPageId = (BlogPage == null && IsGlobal) ? PageRenderer.CurrentPageId : BlogPage == null ? PageRenderer.CurrentPageId : BlogPage.Data.Id;
+	var entries = BlogFacade.GetArchive(BlogPage, IsGlobal);
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<link id="BlogStyles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
+	</head>
+	<body>
+		@if (entries.Any())
+		{
+			<ul id="BlogArchive">
+				@foreach (var entry in entries)
+				{
+					<li>
+						<a title="@entry.Date.ToString("MMMM yyyy")" href="~/page({@landingPageId})/@BlogFacade.CustomDateFormatCulture(entry.Date, "yyyy/MM", "en-US")">
+							@entry.Date.ToString("MMMM yyyy") (@entry.Count)
+						</a>
+					</li>
+				}
+			</ul>
+		}
+	</body>
+</html>

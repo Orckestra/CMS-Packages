@@ -13,21 +13,17 @@
 				<File sourceFilename="~\Bin\Composite.Community.Blog.dll" targetFilename="~\Bin\Composite.Community.Blog.dll" allowOverwrite="false" />
 				<File sourceFilename="~\App_GlobalResources\Composite\Community\Blog.resx" targetFilename="~\App_GlobalResources\Composite\Community\Blog.resx" allowOverwrite="false" />
 				<File sourceFilename="~\App_GlobalResources\Composite\Community\Blog.ru-ru.resx" targetFilename="~\App_GlobalResources\Composite\Community\Blog.ru-ru.resx" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Blog\Archive.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Blog\Archive.xsl" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Blog\BlogRenderer.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Blog\BlogRenderer.xsl" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Blog\Comments.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Blog\Comments.xsl" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Blog\TagCloud.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Blog\TagCloud.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\BlogRssFeed.ashx" targetFilename="~\BlogRssFeed.ashx" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" targetFilename="~\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Settings.xml" targetFilename="~\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Settings.xml" allowOverwrite="false" />
 				<File sourceFilename="~\BlogMetaWeblog.ashx" targetFilename="~\BlogMetaWeblog.ashx" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Authors.xml" targetFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Authors.xml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Entries.xml" targetFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Entries.xml" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\Xslt\Composite\Community\Blog\Latest.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\Blog\Latest.xsl" allowOverwrite="false" />
 			</Files>
 			<Directories>
 				<Directory sourceDirectory="~\Frontend\Composite\Community\Blog\" targetDirectory="~\Frontend\Composite\Community\Blog\" allowOverwrite="true" deleteTargetDirectory="false" />
 				<Directory sourceDirectory="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\" targetDirectory="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\App_Data\Razor\Composite\Community\Blog\" targetDirectory="~\App_Data\Razor\Composite\Community\Blog\" allowOverwrite="true" deleteTargetDirectory="false" />
 			</Directories>
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite">
@@ -39,20 +35,8 @@
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
 			<Types>
-				<Type type="Composite.Data.Types.IMethodBasedFunctionInfo,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
-				</Type>
 				<Type type="Composite.Data.Types.IPageType,Composite">
 					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTypes_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IParameter,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IXsltFunction,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
 				</Type>
 				<Type type="Composite.Data.Types.IPageTypeDefaultPageContent,Composite">
 					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTypeDefaultPageContents_public.xml" />

@@ -8,22 +8,20 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
-using System.Xml.Linq;
+using Composite.Community.Blog.Models;
 using Composite.Core;
 using Composite.Core.Logging;
 using Composite.Core.WebClient.Renderings.Page;
-using Composite.Core.Xml;
 using Composite.Data;
 using Composite.Data.Types;
-using Composite.Functions;
 
 namespace Composite.Community.Blog
 {
 	public class BlogFacade
 	{
-		public static IEnumerable<XElement> GetTagCloudXml(double minFontSize, double maxFontSize, DataReference<IPage> blogPage, bool isGlobal)
+		public static IEnumerable<Tag> GetTagCloud(double minFontSize, double maxFontSize, DataReference<IPage> blogPage, bool isGlobal)
 		{
-			Guid currentPageId = blogPage.Data == null ? PageRenderer.CurrentPageId : blogPage.Data.Id;
+			Guid currentPageId = blogPage == null ? PageRenderer.CurrentPageId : blogPage.Data.Id;
 
 			if (isGlobal)
 			{
@@ -51,24 +49,33 @@ namespace Composite.Community.Blog
 				   let occurencesOfCurrentTag = d.Value
 				   let weight = (Math.Log(occurencesOfCurrentTag) - Math.Log(minOccurs)) / (Math.Log(maxOccurs) - Math.Log(minOccurs))
 				   let fontSize = minFontSize + Math.Round((maxFontSize - minFontSize) * weight)
-				   select new XElement("Tags",
-									   new XAttribute("Tag", d.Key),
-									   new XAttribute("FontSize", fontSize),
-									   new XAttribute("Rel", d.Value),
-									   new XAttribute("PageId", blogPage)
-					);
+				   select new Tag { Title = d.Key, FontSize = fontSize, Rel = d.Value };
 		}
 
-		public static IEnumerable<XElement> GetArchiveXml(DataReference<IPage> blogPage, bool isGlobal)
+		public static IEnumerable<Archive> GetArchive(DataReference<IPage> blogPage, bool isGlobal)
 		{
-			var currentPageId = blogPage.Data.Id;
-			return DataFacade.GetData<Entries>().Where(c => isGlobal ? c.PageId != null : c.PageId == currentPageId).GroupBy(c => new { c.Date.Year, c.Date.Month }).Select(
+			Guid currentPageId = blogPage == null ? PageRenderer.CurrentPageId : blogPage.Data.Id;
+			var result =  DataFacade.GetData<Entries>().Where(c => isGlobal ? c.PageId != null : c.PageId == currentPageId).GroupBy(c => new { c.Date.Year, c.Date.Month }).Select(
 					b =>
-					new XElement("BlogEntries",
-									new XAttribute("Date", new DateTime(b.Key.Year, b.Key.Month, 1)),
-									new XAttribute("Count", b.Select(x => x.Date.Year).Count())
-								)
-				);
+					new Archive { Date = new DateTime(b.Key.Year, b.Key.Month, 1), Count = b.Select(x => x.Date.Year).Count() });
+			return result.OrderByDescending(e => e.Date);
+		}
+
+		public static IEnumerable<Entries> GetEntries(bool isGlobal)
+		{
+			using (var dataConnection = new DataConnection())
+			{
+				var filter = GetBlogFilterFromUrl(isGlobal);
+				return dataConnection.Get<Entries>().Where(filter).OrderByDescending(e => e.Date);
+			}
+		}
+
+		public static IEnumerable<Authors> GetAuthours()
+		{
+			using (var dataConnection = new DataConnection())
+			{
+				return dataConnection.Get<Authors>();
+			}
 		}
 
 		public static Expression<Func<Entries, bool>> GetBlogFilterFromUrl(bool isGlobal)
@@ -170,15 +177,6 @@ namespace Composite.Community.Blog
 				var sitemapNavigator = new SitemapNavigator(dataConnection);
 				return sitemapNavigator.GetPageNodeById(pageId).Url;
 			}
-		}
-
-		public static XsltExtensionDefinition<BlogXsltExtensionsFunction> XsltExtensions()
-		{
-			return new XsltExtensionDefinition<BlogXsltExtensionsFunction>
-			{
-				EntensionObject = new BlogXsltExtensionsFunction(),
-				ExtensionNamespace = "#BlogXsltExtensionsFunction"
-			};
 		}
 
 		public static string[] GetPathInfoParts()
@@ -318,6 +316,33 @@ namespace Composite.Community.Blog
 				HttpRuntime.Cache.Remove(string.Format(BlogRssFeed.CacheRSSKeyTemplate, entry.PageId, GetCurrentCultureName()));
 			}
 
+		}
+
+		public static string GetFullBlogUrl(DateTime date, string title)
+		{
+			Guid pageId = SitemapNavigator.CurrentPageId;
+			string pageUrl = BlogFacade.GetPageUrlById(pageId);
+			pageUrl = BlogFacade.GetFullPath(pageUrl);
+			return BlogFacade.GetBlogUrl(date, title, pageId, pageUrl);
+		}
+
+		public static List<string> GetBlogTags(string tags)
+		{
+			var blogTags = tags.Split(',').Where(t => !string.IsNullOrEmpty(t)).Select(t => t).ToList();
+
+			return blogTags;
+		}
+
+		public static bool IsBlogList()
+		{
+			var pathInfoParts = GetPathInfoParts();
+
+			return pathInfoParts != null && (pathInfoParts.Count() == 5 ? true : false);
+		}
+
+		public static void SetNoCache()
+		{
+			HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
 		}
 
 	}
