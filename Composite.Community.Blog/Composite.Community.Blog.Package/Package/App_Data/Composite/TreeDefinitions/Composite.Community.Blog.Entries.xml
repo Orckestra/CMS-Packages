@@ -4,13 +4,13 @@
 		<DataType Type="Composite.Data.Types.IPage"/>
 	</ElementStructure.AllowedAttachments>
 	<ElementRoot>
+		<Actions>
+			<AddDataAction Label="Add Blog Entry" Type="Composite.Community.Blog.Entries"/>
+		</Actions>
 		<Children>
 			<Element Label="Blog Entries" Id="Root">
-				<Actions>
-					<AddDataAction Label="Add Blog Entry" Type="Composite.Community.Blog.Entries"/>
-				</Actions>
 				<Children>
-					<DataFolderElements Type="Composite.Community.Blog.Entries" DateFormat="yyyy MMMM" FieldGroupingName="Date" Display="Compact">
+					<DataFolderElements Type="Composite.Community.Blog.Entries" DateFormat="yyyy MMMM" FieldGroupingName="Date" Display="Compact" SortDirection="Descending">
 						<Children>
 							<DataElements Type="Composite.Community.Blog.Entries" Label="${C1:Data:Composite.Community.Blog.Entries:Title}" Display="Auto">
 								<Actions>

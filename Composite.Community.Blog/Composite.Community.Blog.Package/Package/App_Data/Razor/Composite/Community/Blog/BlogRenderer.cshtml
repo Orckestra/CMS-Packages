@@ -1,6 +1,5 @@
 ﻿@using Composite.Community.Blog
 @using Composite.Core.WebClient.Renderings.Page
-@using Resources
 @inherits RazorFunction
 @functions {
 	public override string FunctionDescription
@@ -28,10 +27,7 @@
 	var pageCurrent = 0;
 	int.TryParse(Request.QueryString["p"], out pageCurrent);
 	var entries = BlogFacade.GetEntries(IsGlobal);
-	//var pageCount = Math.Ceiling(((entries.Count() / pageSize) + 1));
 	var pageCount = (entries.Count() + pageSize - 1) / pageSize;
-	var my = (entries.Count() / pageSize) + 1;
-	
 	entries = entries.Skip(pageSize * (pageCurrent-1)).Take(pageSize);
 	int entriesCount = entries.Count();
 	var isBlogItem = BlogFacade.IsBlogList();
@@ -51,6 +47,7 @@
 		}
 		<link rel="alternate" type="application/rss+xml" title="@CurrentPageNode.Title" href="/BlogRssFeed.ashx?bid=@CurrentPageNode.Id" />
 		<link id="BlogStyles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet" />
 	</head>
 	<body>
 		<div class="Blog">
@@ -154,12 +151,7 @@
 
 		@if (tags.Any() && blogItemOptions.Contains("Show tags"))
 		{
-			<div class="BlogTags">
-				<span>
-					@Blog.subjectsText
-				</span>
 				@TagsList(tags)
-			</div>
 		}
 		@if (blogItemOptions.Contains("Show teaser"))
 		{
@@ -173,7 +165,7 @@
 				@Html.Raw(entry.Content)
 			</div>
 		}
-
+		
 		@if (blogItemOptions.Contains("Show share icons"))
 		{
 			<div class="BlogContent">
@@ -217,10 +209,8 @@
 	{
 		<img class="BlogAuthorPicture" border="0" src="~/Renderers/ShowMedia.ashx?i=@author.Picture" alt="@author.Name" />
 	}
-	<div class="BlogAuthor">
-		<span>
-			@Blog.writtenByText
-		</span>&#160;
+	<div class="muted">
+		<i class="icon-user"></i>
 		@if (!string.IsNullOrEmpty(author.Email) && author.DisplayEmail)
 		{
 			<a href="mailto:@author.Email">@author.Name</a>
@@ -249,19 +239,20 @@
 @helper Date(DateTime date)
 {
 	<div class="muted">
-		<span>
-			@Blog.dateText
-		</span>&#160;
+		<i class="icon-calendar"></i>
 		@BlogFacade.CustomDateFormat(date, "dd MMMM yyyy")
 	</div>
 }
 
 @helper TagsList(List<string> tags)
 {
-	foreach (var tag in tags)
-	{
-		<a href="@BlogFacade.GetCurrentPageUrl()/@BlogFacade.Encode(tag)" title="@tag">
-			@tag
-		</a>
-	}
+	<div class="muted">
+		<i class="icon-tags"></i>
+		@foreach (var tag in tags)
+		{
+			<a href="@BlogFacade.GetCurrentPageUrl()/@BlogFacade.Encode(tag)" title="@tag">
+				@tag
+			</a>
+		}
+	</div>
 }

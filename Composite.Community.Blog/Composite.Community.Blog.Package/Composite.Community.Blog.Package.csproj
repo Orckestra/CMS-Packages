@@ -48,11 +48,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Package\App_GlobalResources\Composite\Community\Blog.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Blog.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,13 +83,6 @@
     <Content Include="Package\App_Data\Razor\Composite\Community\Blog\Latest.cshtml" />
     <Content Include="Package\App_Data\Razor\Composite\Community\Blog\TagCloud.cshtml" />
     <None Include="Release\Composite.Community.Blog.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Package\App_GlobalResources\Composite\Community\Blog.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Blog.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Package\App_GlobalResources\Composite\Community\Blog.ru-ru.resx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Composite">
