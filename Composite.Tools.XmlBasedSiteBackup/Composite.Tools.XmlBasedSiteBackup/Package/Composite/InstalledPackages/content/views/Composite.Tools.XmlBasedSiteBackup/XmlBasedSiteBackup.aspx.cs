@@ -12,9 +12,19 @@ using ICSharpCode.SharpZipLib.Zip;
 
 public partial class XmlBasedSiteBackup : Page
 {
-	string hash = "App_Data\\Backups";
-	private static object _lock = new object();
-	protected readonly string _deleteCommand = "DeleteCommand";
+	const string backupDirectoryRelativePath = "App_Data\\Backups";
+    protected readonly string _deleteCommand = "DeleteCommand";
+
+    readonly string[] TemporaryDirectories = new []
+        {
+            "\\App_Data\\Composite\\Cache\\Assemblies",
+            "\\App_Data\\Composite\\Cache\\Resized images", 
+            "\\App_Data\\Composite\\Cache\\ResourceCache",
+            "\\App_Data\\Composite\\ApplicationState\\LockFiles",
+            "\\App_Data\\Composite\\ApplicationState\\SerializedConsoleMessages"
+        };
+
+        private static object _lock = new object();
 
 	public string BackupFilename
 	{
@@ -36,7 +46,7 @@ public partial class XmlBasedSiteBackup : Page
 	{
 		get
 		{
-			return PathCombine(PathUtil.BaseDirectory, hash, "XmlBasedSiteBackup");
+			return PathCombine(PathUtil.BaseDirectory, backupDirectoryRelativePath, "XmlBasedSiteBackup");
 		}
 	}
 
@@ -118,7 +128,8 @@ public partial class XmlBasedSiteBackup : Page
 
 				foreach (string directory in directories)
 				{
-					if (directory.Contains(hash))
+					if (directory.Contains(backupDirectoryRelativePath)
+                        || IsTemporaryDirectory(directory))
 						continue;
 					ZipEntry entry = new ZipEntry(directory.Replace(BaseDirectory, "").Replace("\\", "/") + "/");
 					entry.DateTime = DateTime.Now;
@@ -128,15 +139,16 @@ public partial class XmlBasedSiteBackup : Page
 
 				foreach (string file in filenames)
 				{
-					if (file.Contains(hash))
+					if (file.Contains(backupDirectoryRelativePath)
+                        || IsTemporaryDirectory(file))
 						continue;
 					ZipEntry entry = new ZipEntry(file.Replace(BaseDirectory, "").Replace("\\", "/"));
-					var fi = new C1FileInfo(file);
-					entry.DateTime = fi.LastWriteTime;
-					entry.Size = fi.Length;
-
 					try
 					{
+                        var fi = new C1FileInfo(file);
+                        entry.DateTime = fi.LastWriteTime;
+                        entry.Size = fi.Length;
+
 						using (C1FileStream fs = C1File.OpenRead(file))
 						{
 							s.PutNextEntry(entry);
@@ -198,14 +210,14 @@ public partial class XmlBasedSiteBackup : Page
 	{
 		if (path.Length == 0)
 			return string.Empty;
-		return path.Aggregate((path1, path2) => Path.Combine(path1, path2));
+		return path.Aggregate(Path.Combine);
 	}
 
-	public List<string> GetFilesRecursive(string b)
+    public List<string> GetFilesRecursive(string rootDirectory)
 	{
 		List<string> result = new List<string>();
 		Stack<string> stack = new Stack<string>();
-		stack.Push(b);
+        stack.Push(rootDirectory);
 		while (stack.Count > 0)
 		{
 			string dir = stack.Pop();
@@ -225,11 +237,11 @@ public partial class XmlBasedSiteBackup : Page
 		return result;
 	}
 
-	public List<string> GetDirectoriesRecursive(string b)
+	public List<string> GetDirectoriesRecursive(string rootDirectory)
 	{
 		List<string> result = new List<string>();
 		Stack<string> stack = new Stack<string>();
-		stack.Push(b);
+		stack.Push(rootDirectory);
 		while (stack.Count > 0)
 		{
 			string dir = stack.Pop();
@@ -248,6 +260,11 @@ public partial class XmlBasedSiteBackup : Page
 		}
 		return result;
 	}
+
+    private bool IsTemporaryDirectory(string fileOrDirectoryPath)
+    {
+        return TemporaryDirectories.Any(tempDir => fileOrDirectoryPath.IndexOf(tempDir, StringComparison.OrdinalIgnoreCase) > 0);
+    }
 
 	protected void BackupList_ItemCommand(object source, System.Web.UI.WebControls.RepeaterCommandEventArgs e)
 	{
