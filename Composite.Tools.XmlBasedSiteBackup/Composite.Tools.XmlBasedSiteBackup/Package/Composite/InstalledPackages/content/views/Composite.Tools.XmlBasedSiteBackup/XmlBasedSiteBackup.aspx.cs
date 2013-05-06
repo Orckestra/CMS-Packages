@@ -128,8 +128,7 @@ public partial class XmlBasedSiteBackup : Page
 
 				foreach (string directory in directories)
 				{
-					if (directory.Contains(backupDirectoryRelativePath)
-                        || IsTemporaryDirectory(directory))
+					if (directory.Contains(backupDirectoryRelativePath))
 						continue;
 					ZipEntry entry = new ZipEntry(directory.Replace(BaseDirectory, "").Replace("\\", "/") + "/");
 					entry.DateTime = DateTime.Now;
