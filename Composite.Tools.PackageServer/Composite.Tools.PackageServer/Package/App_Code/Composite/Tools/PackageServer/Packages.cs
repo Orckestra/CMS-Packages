@@ -20,7 +20,7 @@ namespace Composite.Tools.PackageServer
 			using (DataConnection connection = new DataConnection())
 			{
 				return (
-					from package in connection.Get<Package>()
+					from package in connection.Get<Package>().AsEnumerable()
 					join media in connection.Get<IMediaFile>() on package.PackageFile equals media.KeyPath
 					select new PackageDescriptor()
 					{
