@@ -1,12 +1,6 @@
-﻿.Blog .line-separator {
-	height: 1px;
-	background: #8C8B8B;
-	border-bottom: 1px solid silver;
-	margin-bottom: 10px;
-}
-
-.BlogImage {
+﻿.BlogImage {
 	display: block;
+    margin: 20px 0;
 }
 
 .BlogTitle span.t-count, span.t-count a {
@@ -16,11 +10,6 @@
 	line-height: 20px;
 	vertical-align: middle;
 }
-
-.BlogTitle a {
-	text-decoration: none;
-}
-
 .BlogTitle span.t-count {
 	background-position: 0px 0px;
 	display: inline-block;
@@ -51,36 +40,23 @@
 	padding-right: 10px;
 }
 
-.BlogTeaser, .BlogContent {
-	display: block;
-	clear: both;
-	border-top: silver 1px solid;
-	padding: 15px 0px;
-}
-
 .BlogTeaser {
-	font-style: italic;
+	padding: 20px 0px;
 }
 
 .BlogContent {
-	padding-bottom: 0px;
+	padding-top: 20px;
 }
 
 .BlogTags a {
 	padding-left: 8px;
 }
 
-.AddThis {
-	margin: 0px 0px 20px 0px;
-	min-height: 25px;
-}
-
-.BlogPaging a, .BlogPaging span {
-	padding: 2px 5px;
+.pagination li {
+    display: inline-block;
 }
 
 #BlogArchive, #TagCloud {
-	padding: 0px;
 	margin-bottom: 20px;
 }
 
