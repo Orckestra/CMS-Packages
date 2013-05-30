@@ -13,18 +13,18 @@
                        DefaultValue = 1)]
 	public int Level { get; set; }
 
-	[FunctionParameter(Label = "Include Parent Page", 
+	[FunctionParameter(Label = "Show Parent Page", 
                        Help = "Check the box if you want parent page to be displayed in navigation", 
                        DefaultValue = false)]
-	public bool Parent { get; set; }
+    public bool ShowParent { get; set; }
 
-	[FunctionParameter(Label = "Include Child Pages", 
+    [FunctionParameter(Label = "Show Child Pages", 
                        Help = "Check the box if you want child pages to be displayed in navigation", 
                        DefaultValue = true)]
-	public bool Childs { get; set; }
+	public bool ShowChildPages { get; set; }
 
 	[FunctionParameter(Label = "Expand All", 
-                       Help = "Check the box to expand child pages in Composite.Navigation.Distributed or not (works only if childs=true)", 
+                       Help = "Check the box to expand child pages in Composite.Navigation.Distributed (works only if ShowChildPages=true)", 
                        DefaultValue = false)]
 	public bool Expand { get; set; }
 
@@ -63,12 +63,12 @@
 	@if (@StartPage != null && @StartPage.IsSet)
 	{
 		var pageNode = @Sitemap.GetPageNodeById(StartPage.Data.Id);
-		@NavigationTree(pageNode, Parent);
+        @NavigationTree(pageNode, ShowParent);
 	}
-	else if (OpenPages(@CurrentPageNode).Where(p => p.Level == Level).Any())
+	else if (OpenPages(@CurrentPageNode).Any(p => p.Level == Level))
 	{
-		var openLevelPage = OpenPages(@CurrentPageNode).Where(p => p.Level == Level).First();
-		@NavigationTree(openLevelPage, Parent);
+		var openLevelPage = OpenPages(@CurrentPageNode).First(p => p.Level == Level);
+		@NavigationTree(openLevelPage, ShowParent);
 	}
 </div>
 </body>
@@ -92,7 +92,7 @@
 					isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == subPage.Id);
 					isSelected = @CurrentPageNode.Id == subPage.Id;
 					<li class="@(isOpen ? " open" : string.Empty) @(isSelected ? " active" : string.Empty)"><a href="@(subPage.Url)">@subPage.MenuTitle</a>
-					@if (Childs && (isOpen || Expand))
+					@if (ShowChildPages && (isOpen || Expand))
 					{
 						@NavigationTree(subPage);
 					}

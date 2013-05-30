@@ -17,10 +17,10 @@
                        DefaultValue = 2)]
 	public int Depth { get; set; }
 
-	[FunctionParameter(Label = "Include Parent Page", 
+	[FunctionParameter(Label = "Show Parent Page", 
                        Help = "Check the box if you want parent page to be displayed in navigation", 
                        DefaultValue = false)]
-	public bool Parent { get; set; }
+	public bool ShowParent { get; set; }
 
 	[FunctionParameter(Label = "Navigation Id", 
                        Help = "Attribute Id of DIV element", 
@@ -46,75 +46,85 @@
 	<link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/LevelSitemap")/Styles.css" />
 </head>
 <body>
-<div id="@NavigationId">
-@{
-	Depth = Depth + Level;
-	if (Level == 0)
-	{
-		var list = new List<PageNode>();
-		list.Add(HomePageNode);
-		@NavigationTree((IEnumerable<PageNode>)list, Depth)
-	}
-	else if (Level == 1)
-	{
-		@NavigationTree(HomePageNode.ChildPages, Depth)
-	}
-	else
-	{
-		var openLevelPage = OpenPages(@CurrentPageNode).Where(p => p.Level == Level).FirstOrDefault();
-		if (openLevelPage != null)
+	<div id="@NavigationId">
+	@{
+		Depth = Depth + Level;
+		if (Level == 0)
 		{
-			@NavigationTree(openLevelPage.ChildPages, Depth);
+			var list = new List<PageNode>();
+			list.Add(HomePageNode);
+        
+			@NavigationTree(list, Depth)
 		}
-		else if (CurrentPageNode.ChildPages.Any() && CurrentPageNode.ChildPages.First().Level == Level + 1)
+		else if (Level == 1)
 		{
-			@NavigationTree(@CurrentPageNode.ChildPages, Depth);
+			@NavigationTree(HomePageNode.ChildPages, Depth)
+		}
+		else
+		{
+			var openLevelPage = OpenPages(@CurrentPageNode).FirstOrDefault(p => p.Level == Level);
+			if (openLevelPage != null)
+			{
+				@NavigationTree(openLevelPage.ChildPages, Depth)
+			}
+			else if (CurrentPageNode.ChildPages.Any() && CurrentPageNode.ChildPages.First().Level == Level + 1)
+			{
+				@NavigationTree(@CurrentPageNode.ChildPages, Depth)
+			}
 		}
 	}
-}
-
-</div>
+	</div>
 </body>
 </html>
 
 @helper NavigationTree(IEnumerable<PageNode> pages, int endRenderLevel)
-	{
-		if (pages.Any() && pages.First().Level <= endRenderLevel)
+{
+	if (!pages.Any()) { return; }
+
+	var firstPage = pages.First();
+	if (firstPage.Level > endRenderLevel) { return; }
+
+	int levelClass = firstPage.Level - Level - 1;
+	var mainareaIndex = ShowParent ? 1 : 0;
+			
+	<ul class ="level@(levelClass)">
+
+		@if (ShowParent && levelClass == 0 && firstPage.ParentPage != null)
 		{
-			int levelClass = pages.First().Level - Level - 1;
-			var mainareaIndex = Parent ? 1 : 0;
-			<ul class ="level@(levelClass)">
-			@if (Parent && levelClass == 0 && pages.First().ParentPage != null)
+			var parentPage = firstPage.ParentPage;
+	   
+			<li class ="level@(levelClass) @(levelClass == 0 ? "mainarea" + mainareaIndex : "")">
+				<a href="@(parentPage.Url)" class=" @IsOpenCss(parentPage) @IsSelectedCss(parentPage)">@parentPage.MenuTitle</a>
+			</li>
+		}
+
+		@foreach (var subPage in pages)
+		{
+			if (!String.IsNullOrWhiteSpace(subPage.MenuTitle))
 			{
-				<li class ="level@(levelClass) @(levelClass == 0 ? string.Format("mainarea{0}", mainareaIndex.ToString()) : "")">
-					<a href="@(pages.First().ParentPage.Url)" class=" @IsOpenCss(pages.First().ParentPage) @IsSelectedCss(pages.First().ParentPage)">@pages.First().ParentPage.MenuTitle</a>
+				mainareaIndex = mainareaIndex + 1;
+				<li class ="level@(levelClass) @(levelClass == 0 ? "mainarea" + mainareaIndex : "")">
+					<a href="@(subPage.Url)" class="@IsOpenCss(subPage) @IsSelectedCss(subPage)">@subPage.MenuTitle</a>
+
+					@NavigationTree(subPage.ChildPages, endRenderLevel)
 				</li>
 			}
-			@foreach (var subPage in pages)
-			{
-				if (!String.IsNullOrWhiteSpace(subPage.MenuTitle))
-				{
-					mainareaIndex = mainareaIndex + 1;
-					<li class ="level@(levelClass) @(levelClass == 0 ? string.Format("mainarea{0}", mainareaIndex.ToString()) : "")">
-						<a href="@(subPage.Url)" class="@IsOpenCss(subPage) @IsSelectedCss(subPage)">@subPage.MenuTitle</a>
-						@NavigationTree(subPage.ChildPages, endRenderLevel)
-					</li>
-				}
-			}
-			</ul>
 		}
+	</ul>
 }
+
 @helper IsOpenCss(PageNode page)
+{
+	if (OpenPages(@CurrentPageNode).Any(op => op.Id == page.Id))
 	{
-		if (OpenPages(@CurrentPageNode).Any(op => op.Id == page.Id))
-		{
 		<text>NavigationOpen</text>
-		}
+	}
 }
+
 @helper IsSelectedCss(PageNode page)
+{
+	if (@CurrentPageNode.Id == page.Id)
 	{
-		if (@CurrentPageNode.Id == page.Id)
-		{
 		<text>NavigationSelected</text>
-		}
+	}
 }
