@@ -2,39 +2,39 @@
 @using Composite.Core.WebClient.Renderings.Page
 @inherits RazorFunction
 @functions {
-	public override string FunctionDescription
-	{
-		get { return "Displays the tag cloud - the tags and the number of blog entries with these tags."; }
-	}
+    public override string FunctionDescription
+    {
+        get { return "Displays the tag cloud - the tags and the number of blog entries with these tags."; }
+    }
 
-	[FunctionParameter(Label = "Minimum Font Size", Help = "The font size for the tag used in the smallest number of blog entries (10px by default).", DefaultValue = 10)]
-	public int MinFontSize { get; set; }
+    [FunctionParameter(Label = "Minimum Font Size", Help = "The font size for the tag used in the smallest number of blog entries (10px by default).", DefaultValue = 10)]
+    public int MinFontSize { get; set; }
 
-	[FunctionParameter(Label = "Maximum Font Size", Help = "The font size for the tag used in the greatest number of blog entries (22px by default).", DefaultValue = 22)]
-	public int MaxFontSize { get; set; }
+    [FunctionParameter(Label = "Maximum Font Size", Help = "The font size for the tag used in the greatest number of blog entries (22px by default).", DefaultValue = 22)]
+    public int MaxFontSize { get; set; }
 
-	[FunctionParameter(Label = "Blog page", Help = "The page with the blog added.", DefaultValue = null)]
-	public DataReference<IPage> BlogPage { get; set; }
+    [FunctionParameter(Label = "Blog page", Help = "The page with the blog added.", DefaultValue = null)]
+    public DataReference<IPage> BlogPage { get; set; }
 
-	[FunctionParameter(Label = "Show tags from all blogs", Help = "If 'true', tags from all blogs available on this website will be shown; otherwise, only from the current blog. 'false' by default", DefaultValue = false)]
-	public bool IsGlobal { get; set; }
+    [FunctionParameter(Label = "Show tags from all blogs", Help = "If 'true', tags from all blogs available on this website will be shown; otherwise, only from the current blog. 'false' by default", DefaultValue = false)]
+    public bool IsGlobal { get; set; }
 }
 @{
-	var landingPageId = (BlogPage == null && IsGlobal) ? PageRenderer.CurrentPageId : BlogPage == null ? PageRenderer.CurrentPageId : BlogPage.Data.Id;
-	var tags = BlogFacade.GetTagCloud(MinFontSize, MaxFontSize, BlogPage, IsGlobal);
+    var landingPageId = (BlogPage == null && IsGlobal) ? PageRenderer.CurrentPageId : BlogPage == null ? PageRenderer.CurrentPageId : BlogPage.Data.Id;
+    var tags = BlogFacade.GetTagCloud(MinFontSize, MaxFontSize, BlogPage, IsGlobal);
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<link id="BlogStyles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
-	</head>
-	<body>
-		<div id="TagCloud">
-			@foreach (var tag in tags)
-			{
-				<a title="@tag.Title" style="font-size:@(tag.FontSize)px;" href="~/page(@landingPageId)/@BlogFacade.Encode(tag.Title)" rel="@tag.Rel">
-					@tag.Title (@tag.Rel)
-				</a>
-			}
-		</div>
-	</body>
+<head>
+    <link id="BlogStyles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
+</head>
+<body>
+    <div id="TagCloud">
+        @foreach (var tag in tags)
+        {
+            <a title="@tag.Title" style="font-size:@(tag.FontSize)px;" href="~/page(@landingPageId)/@BlogFacade.Encode(tag.Title)" rel="@tag.Rel">
+                @tag.Title (@tag.Rel)
+            </a>
+        }
+    </div>
+</body>
 </html>

@@ -85,9 +85,6 @@
     <None Include="Release\Composite.Community.Blog.zip" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Composite">
-      <HintPath>..\..\References\Composite\4.0\Composite.dll</HintPath>
-    </Reference>
     <Reference Include="Composite.Community.Blog, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Package\Bin\Composite.Community.Blog.dll</HintPath>

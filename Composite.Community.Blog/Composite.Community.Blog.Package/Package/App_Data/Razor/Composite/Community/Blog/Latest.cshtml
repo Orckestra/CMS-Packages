@@ -1,41 +1,40 @@
 ﻿@using Composite.Community.Blog
 @inherits RazorFunction
 @functions {
-	public override string FunctionDescription
-	{
-		get { return @"Shows the latest five posts from all the blogs on the website."; }
-	}
+    public override string FunctionDescription
+    {
+        get { return @"Shows the latest five posts from all the blogs on the website."; }
+    }
 
-	[FunctionParameter(Label="Count of items", Help= "The number of latest blog entries to display (5 by default).", DefaultValue = 5)]
-	public int Count { get; set; }// TODO: convert default value function markup
+    [FunctionParameter(Label = "Count of items", Help = "The number of latest blog entries to display (5 by default).", DefaultValue = 5)]
+    public int Count { get; set; }// TODO: convert default value function markup
 }
 @{
-	var entries = BlogFacade.GetEntries(true).Take(Count);
+    var entries = BlogFacade.GetEntries(true).Take(Count);
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head></head>
 <body>
-	<div class="BlogLatest">
-		<ul>
-			@foreach (var entry in entries)
-			{
-				var blogPath = BlogFacade.GetBlogPath(entry.Date, entry.Title);
-				<li>
-					<a href="~/page(@entry.PageId)@blogPath" title="@entry.Title">
-						<strong>
-							@entry.Title
-						</strong>
-					</a>
-					<p>
-						@entry.Teaser
-						<a href="~/page(@entry.PageId)@blogPath">
-							...
-						</a>
-					</p>
-				</li>
-			}
-		</ul>
-	</div>
+    <div class="BlogLatest">
+        <ul>
+            @foreach (var entry in entries)
+            {
+                var blogPath = BlogFacade.GetBlogPath(entry.Date, entry.Title);
+                <li>
+                    <a href="~/page(@entry.PageId)@blogPath" title="@entry.Title">
+                        <strong>
+                            @entry.Title
+                        </strong>
+                    </a>
+                    <p>
+                        @entry.Teaser
+                        <a href="~/page(@entry.PageId)@blogPath">...
+                        </a>
+                    </p>
+                </li>
+            }
+        </ul>
+    </div>
 </body>
 </html>

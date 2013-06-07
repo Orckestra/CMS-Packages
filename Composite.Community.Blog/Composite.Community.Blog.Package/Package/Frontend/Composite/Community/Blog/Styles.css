@@ -1,69 +1,84 @@
-﻿.BlogImage {
-	display: block;
+﻿.BlogImage
+{
+    display: block;
     margin: 20px 0;
 }
 
-.BlogTitle span.t-count, span.t-count a {
-	font-size: 12px;
-	background: url(comment_bulb.png) no-repeat;
-	height: 20px;
-	line-height: 20px;
-	vertical-align: middle;
-}
-.BlogTitle span.t-count {
-	background-position: 0px 0px;
-	display: inline-block;
-	margin-left: 4px;
-	padding-left: 8px;
-	text-decoration: none;
+.BlogTitle span.t-count, span.t-count a
+{
+    font-size: 12px;
+    background: url(comment_bulb.png) no-repeat;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
 }
 
-.BlogTitle span.t-count a {
-	background-position: right 0px;
-	float: left;
-	padding: 0px 8px 0px 4px;
-	text-align: center;
-	cursor: pointer;
+.BlogTitle span.t-count
+{
+    background-position: 0px 0px;
+    display: inline-block;
+    margin-left: 4px;
+    padding-left: 8px;
+    text-decoration: none;
 }
 
-.BlogTitle span.t-count:hover {
-	background-position: 0px -21px;
+    .BlogTitle span.t-count a
+    {
+        background-position: right 0px;
+        float: left;
+        padding: 0px 8px 0px 4px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .BlogTitle span.t-count:hover
+    {
+        background-position: 0px -21px;
+    }
+
+    .BlogTitle span.t-count a:hover
+    {
+        background-position: right -21px;
+    }
+
+.BlogAuthorPicture
+{
+    float: left;
+    width: 52px;
+    padding-right: 10px;
 }
 
-.BlogTitle span.t-count a:hover {
-	background-position: right -21px;
+.BlogTeaser
+{
+    padding: 20px 0px;
 }
 
-.BlogAuthorPicture {
-	float: left;
-	width: 52px;
-	padding-right: 10px;
+.BlogContent
+{
+    padding-top: 20px;
 }
 
-.BlogTeaser {
-	padding: 20px 0px;
+.BlogTags a
+{
+    padding-left: 8px;
 }
 
-.BlogContent {
-	padding-top: 20px;
-}
-
-.BlogTags a {
-	padding-left: 8px;
-}
-
-.pagination li {
+.pagination li
+{
     display: inline-block;
 }
 
-#BlogArchive, #TagCloud {
-	margin-bottom: 20px;
+#BlogArchive, #TagCloud
+{
+    margin-bottom: 20px;
 }
 
-#TagCloud a {
-	margin: 2px;
-}
+    #TagCloud a
+    {
+        margin: 2px;
+    }
 
-#BlogArchive li {
-	list-style: none;
-}
+    #BlogArchive li
+    {
+        list-style: none;
+    }
