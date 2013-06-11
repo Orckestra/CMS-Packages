@@ -1,0 +1,28 @@
+<%@ Master Language="C#" AutoEventWireup="true" 
+    MasterPageFile="Common.master" 
+    CodeFile="Frontpage.master.cs" Inherits="Frontpage" %>
+
+<asp:Content ContentPlaceHolderID="phHead" runat="Server">
+	<%-- you can add template specific head elements here --%>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="phContent" runat="Server">
+	<c1:PageTemplateFeature Name="Front Page Content Start" runat="server" /> 
+	
+	<f:Function Name="Layout.HeroUnit" runat="server">
+		<Parameters>
+			<f:param name="CustomContent" Value="<%# HeroUnit %>" runat="server"/>
+		</Parameters>
+	</f:Function>
+	
+	<div class="row">
+		<div class="span8">
+			<c1:Render Markup="<%# Content %>" runat="server"></c1:Render>
+		</div>
+		<div class="span4">
+			<c1:Render Markup="<%# Aside %>" runat="server"></c1:Render>
+
+			<c1:PageTemplateFeature Name="Aside Column" runat="server" /> 
+		</div>
+	</div>
+
+</asp:Content>

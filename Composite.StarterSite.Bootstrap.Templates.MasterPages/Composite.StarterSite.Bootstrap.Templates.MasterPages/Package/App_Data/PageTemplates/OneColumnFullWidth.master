@@ -1,0 +1,23 @@
+<%@ Master Language="C#" AutoEventWireup="true" 
+    MasterPageFile="Common.master" 
+    CodeFile="OneColumnFullWidth.master.cs" Inherits="OneColumnFullWidth" %>
+
+<asp:Content ContentPlaceHolderID="phHead" runat="Server">
+	<%-- you can add template specific head elements here --%>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="phContent" runat="Server">
+	<c1:PageTemplateFeature Name="Content Start" runat="server" /> 
+	
+	<f:Function Name="Layout.HeroUnit" runat="server">
+		<Parameters>
+			<f:param name="CustomContent" Value="<%# HeroUnit %>" runat="server"/>
+		</Parameters>
+	</f:Function>
+	
+	<div class="row">
+		<div class="span12">
+			<c1:Render Markup="<%# Content %>" runat="server"></c1:Render>
+		</div>
+	</div>
+
+</asp:Content>
