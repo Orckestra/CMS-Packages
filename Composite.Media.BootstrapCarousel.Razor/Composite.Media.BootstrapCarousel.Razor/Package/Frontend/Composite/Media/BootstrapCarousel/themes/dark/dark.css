@@ -1,0 +1,91 @@
+/*
+Skin Name: Composite Bootstrap Dark Theme
+Description: A dark skin for the Bootstrap Slider.
+Version: 1.0
+Author: Composite
+Author URI: http://composite.net/
+*/
+
+.theme-dark.slider-wrapper {
+    background: #222;
+    padding: 10px 10px 40px;
+}
+.theme-dark .carousel {
+	position:relative;
+	background:#fff url(loading.gif) no-repeat 50% 50%;
+    margin-bottom:0;
+    overflow: visible;
+}
+.theme-dark .carousel img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+.theme-dark .carousel a {
+	border:0;
+	display:block;
+}
+
+.theme-dark .carousel-indicators {
+	text-align: left;
+	padding: 0;
+	position: absolute;
+    bottom: -24px;
+    top: auto;
+    left: 0;
+	z-index: 10;
+}
+.theme-dark .carousel-indicators li {
+	display:inline-block;
+	width:10px;
+	height:10px;
+	background:url(bullets.png) no-repeat 0 1px;
+	text-indent:-9999px;
+	border:0;
+	margin: 0 2px;
+}
+.theme-dark .carousel-indicators li.active {
+	background-position:0 100%;
+}
+
+.theme-dark .carousel-controlNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background: url(arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	top: auto;
+	bottom: -35px;
+	z-index: 11;
+}
+.theme-dark .carousel-controlNav a:hover {
+    background-color: #333;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+.theme-dark a.carousel-control.left {
+	background-position:11px 50%;
+	right: 35px;
+    left: auto;
+
+}
+.theme-dark a.carousel-control.right {
+    background-position:-16px 50%;
+    left: auto;
+	right: 0px;
+}
+
+.theme-dark .carousel-caption {
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 5px 10px;
+}
+.theme-dark .carousel-caption a {
+    color:#fff;
+    border-bottom:1px dotted #fff;
+}
+.theme-dark .carousel-caption a:hover {
+    color:#fff;
+}

@@ -1,0 +1,139 @@
+/*
+Skin Name: Composite Bootstrap Bar Theme
+Description: A bar skin for the Bootstrap Slider.
+Version: 1.0
+Author: Composite
+Author URI: http://composite.net/
+*/
+
+.theme-bar.slider-wrapper {
+    position: relative;
+    border: 1px solid #333;
+    overflow: hidden;
+}
+.theme-bar .carousel  {
+	position:relative;
+	background:#fff url(loading.gif) no-repeat 50% 50%;
+    margin-bottom: 0;
+}
+.theme-bar .carousel  img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+.theme-bar .carousel  a {
+	border:0;
+	display:block;
+}
+
+.theme-bar .carousel-indicators {
+    position: absolute;
+    bottom: -12px;
+    top: auto;
+    z-index: 20;
+    left: 50px;
+    right: 50px;
+    text-align: center;
+    opacity: 0;
+}
+.theme-bar:hover .carousel-indicators {
+    opacity: 1;
+    bottom: 12px;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+.theme-bar .carousel-indicators li {
+    display: inline-block;
+    float: none;
+}
+.theme-bar .carousel-indicators a {
+	display:inline-block;
+	width:22px;
+	height:22px;
+	background:url(bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin: 5px 2px 0 2px;
+}
+.theme-bar .carousel-indicators a.active {
+	background-position:0 -22px;
+}
+.theme-bar .carousel-controlNav {
+    position: absolute;
+    left: 0;
+    bottom: -41px;
+    z-index: 10;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    padding: 5px 0;
+    border-top: 1px solid #333;
+    background: #333;
+    background: -moz-linear-gradient(top, #565656 0%, #333333 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#565656), color-stop(100%,#333333));
+    background: -webkit-linear-gradient(top, #565656 0%,#333333 100%);
+    background: -o-linear-gradient(top, #565656 0%,#333333 100%);
+    background: -ms-linear-gradient(top, #565656 0%,#333333 100%);
+    background: linear-gradient(to bottom, #565656 0%,#333333 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#565656', endColorstr='#333333',GradientType=0 );
+    opacity: 0.5;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+.theme-bar:hover .carousel-controlNav {
+    bottom: 0;
+    opacity: 1;
+}
+.theme-bar .carousel-controlNav a {
+	display:block;
+	border:0;
+	color: #fff;
+	text-transform: uppercase;
+	top: auto;
+	z-index: 11;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 20px;
+	opacity: 0.5;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    background: none;
+    font-size: 40px;
+    bottom: -7px;
+}
+.theme-bar a.carousel-control.right { right: -50px; }
+.theme-bar a.carousel-control.left { left: -50px; }
+.theme-bar:hover a.carousel-control.right { 
+    right: 15px; 
+    opacity: 1;
+}
+.theme-bar:hover a.carousel-control.left { 
+    left: 15px; 
+    opacity: 1;
+}
+.theme-bar .carousel-controlNav a:hover { color: #ddd; }
+
+.theme-bar .carousel-caption {
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+.theme-bar:hover .carousel-caption {
+    bottom: 41px;
+}
+.theme-bar .carousel-caption a {
+    color:#fff;
+    border-bottom:1px dotted #fff;
+}
+.theme-bar .carousel-caption a:hover {
+    color:#fff;
+}

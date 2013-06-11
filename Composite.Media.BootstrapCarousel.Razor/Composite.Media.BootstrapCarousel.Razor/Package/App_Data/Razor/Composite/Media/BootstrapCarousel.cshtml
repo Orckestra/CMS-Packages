@@ -1,0 +1,181 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "An animated carousel showing images from a media folder."; }
+    }
+
+	// Parameters for this Razor Function is defined last in this document...
+}
+@{ 
+    var instanceId = string.Format("carousel{0}", (new Random()).Next(1, 100000)); // allow multiple carousels on the same page
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<link id="carousel-theme-@(Theme)" rel="stylesheet" href="~/Frontend/Composite/Media/BootstrapCarousel/themes/@(Theme)/@(Theme).css" type="text/css" media="screen" />
+		<link id="carousel-css" rel="stylesheet" href="~/Frontend/Composite/Media/BootstrapCarousel/bootstrap-carousel.css" type="text/css" media="screen" />
+		<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script id="bootstrap-carousel" src="~/Frontend/Composite/Media/BootstrapCarousel/bootstrap-carousel.js" type="text/javascript"></script>
+		<script id="@instanceId-script" type="text/javascript">
+			(function ($, window) {	
+				$(window).load(function() {
+					$('#@instanceId').carousel({
+						interval: @PauseTime
+						});
+				});
+			})(jQuery, window);
+		</script>
+				
+		<style type="text/css">
+			@if (Width > 0)
+			{ 
+		  	 <text>
+				#@instanceId .carousel-controlNav,
+				#@instanceId .slider-wrapper,
+				#@instanceId .cover  {
+					width: @(Width)px;
+				}
+			  </text>
+			}
+
+			#@instanceId ,
+			#@instanceId .cover  {
+				height:@(Height)px;
+			}
+
+			#@instanceId .cover  {
+				background-position:center;
+				background-repeat: no-repeat;
+				background-size: @Resizing;
+				-moz-background-size: @Resizing;
+				-o-background-size: @Resizing;
+				-webkit-background-size: @Resizing;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slider-wrapper theme-@(Theme) @(ClassName)">
+			@{
+				var imageQuery = Data.Get<IMediaFile>().Where(m => m.FolderPath == ImagesFolder.Data.Path);
+
+				imageQuery = Randomized ? imageQuery.OrderBy(m => Guid.NewGuid()) : imageQuery;
+				var images = imageQuery.Take(ImageCount).ToList();
+			}
+			
+			<div id="@instanceId" class="carousel slide">
+				@if (Navigation)
+				{
+					<ol class="carousel-indicators">
+						@for (var i = 0; i < images.Count; i++)
+						{
+							<li data-target="#@instanceId" data-slide-to="@i"></li>
+						}
+					</ol>
+				}
+
+				<div class="carousel-inner">
+					@foreach (var mediaFile in images)
+					{
+						<div class="item @( mediaFile == images.First() ? "active" : "" )">
+							<div class="cover" style="background-image: url('@Html.C1().MediaUrl(mediaFile)')"></div>
+
+							@if (Captions && !string.IsNullOrEmpty(mediaFile.Title))
+							{
+								<div class="carousel-caption">
+									<p>@mediaFile.Title</p>
+								</div>
+							}
+						</div>
+					}
+				</div>
+
+				@if (Navigation)
+				{
+					<div class="carousel-controlNav">
+						<a class="carousel-control left" href="#@instanceId" data-slide="prev">&#8249;</a>
+						<a class="carousel-control right" href="#@instanceId" data-slide="next">&#8250;</a>
+					</div>
+				}
+			</div>
+		</div>
+	</body>
+</html>
+
+@functions {
+
+    [FunctionParameter(Label = "Images folder", Help = "The media folder with the images you want to display in a slider")]
+    public DataReference<IMediaFileFolder> ImagesFolder { get; set; }
+
+    [FunctionParameter(Label = "CSS theme", Help = "The CSS theme to use for the slider ('default' by default).", DefaultValue = "default", WidgetFactoryMethod = "GetThemeWidget")]
+    public string Theme { get; set; }
+
+    [FunctionParameter(Label = "Width of the slider", Help = "The fixed width of the slider. Full-width by default.", DefaultValue = 0)]
+    public int Width { get; set; }
+
+    [FunctionParameter(Label = "Height of the slider", Help = "The fixed height of the slider. 400 pixels by default.", DefaultValue = 400)]
+    public int Height { get; set; }
+
+    [FunctionParameter(Label = "Show captions", Help = "If 'true', the image captions are shown ('true' by default)", DefaultValue = true)]
+    public bool Captions { get; set; }
+
+    [FunctionParameter(Label = "Show navigation", Help = "If 'true' buttons for navigating images are shown ('true' by default)", DefaultValue = true)]
+    public bool Navigation { get; set; }
+
+    [FunctionParameter(Label = "Image resizing", Help = "How images should be resizied to fit the carousel. 'Fit to cover' is default - this will crop the image to a best fit.", DefaultValue = "cover", WidgetFactoryMethod = "GetResizingWidget")]
+    public string Resizing { get; set; }
+
+    [FunctionParameter(Label = "Randomized", Help = "'false' by default", DefaultValue = false)]
+    public bool Randomized { get; set; }
+
+    [FunctionParameter(Label = "Image Count", Help = "'5' by default", DefaultValue = 5)]
+    public int ImageCount { get; set; }
+
+    [FunctionParameter(Label = "Interval", Help = "The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle. (3000 by default)", DefaultValue = 3000)]
+    public int PauseTime { get; set; }
+
+    [FunctionParameter(Label = "Class Name", Help = "For advanced CSS tricks specify a custom class here. The class will be appended the base div.", DefaultValue = null)]
+    public string ClassName { get; set; }
+
+
+
+	#region Widget support functions
+	public static WidgetFunctionProvider GetThemeWidget()
+    {
+        Expression<Func<object>> expression = () => GetThemeOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Key", "Value", false, false);
+    }
+
+    public static WidgetFunctionProvider GetResizingWidget()
+    {
+        Expression<Func<object>> expression = () => GetResizingOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Key", "Value", false, false);
+    }
+
+
+	public static IDictionary<string, string> GetThemeOptions()
+    {
+        return new Dictionary<string, string>()
+        {
+            {"default", "Default"},
+            {"bar", "Bar"},
+			{"dark", "Dark"},
+			{"light", "Light"}
+        };
+    }
+
+    public static IDictionary<string, string> GetResizingOptions()
+    {
+        return new Dictionary<string, string>()
+        {
+            {"none", "No resizing"},
+            {"cover", "Fit to cover (crop)"},
+			{"contain", "Fit inside (show all)"},
+        };
+    }
+	#endregion
+}

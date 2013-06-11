@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="Frontend\Composite\Media\BootstrapCarousel\" />
+	</pc:Directories>
+	<pc:Functions>
+		<Add name="Composite.Media.BootstrapCarousel" />
+	</pc:Functions>
+	<mi:PackageRequirements minimumCompositeVersion="4.0.4882.28439" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Media.BootstrapCarousel.Razor" groupName="Composite.Media" version="1.0.1" author="Composite A/S" website="http://composite.net/" readMoreUrl="http://composite.net/" id="47c974eb-acee-42b1-9e5c-a292644dd4a6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>The slideshow below shows a generic plugin and component for cycling through elements like a carousel.</TechnicalDetails>
+		<Description>The slideshow below shows a generic plugin and component for cycling through elements like a carousel.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
