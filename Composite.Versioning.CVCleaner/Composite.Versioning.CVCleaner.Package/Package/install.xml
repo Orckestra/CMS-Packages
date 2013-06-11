@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="3.2.4491.36737" maximumCompositeVersion="9.9999.9999" />
+	<mi:PackageInformation name="Composite.Versioning.CVCleaner" groupName="Composite.Versioning" version="1.0.0" author="Composite A/S" website="http://composite.net/" id="019e3ac1-420d-4cb5-8e9f-beb3ae7f7bf5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Clean content versioning data</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\Bin\Composite.Versioning.CVCleaner.dll" targetFilename="~\Bin\Composite.Versioning.CVCleaner.dll" allowOverwrite="false" />
+			</Files>
+			<Directories />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types />
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

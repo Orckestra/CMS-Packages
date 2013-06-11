@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA6C5BE6-7800-44CE-98B4-46F0C9A6EB77}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.Versioning.ContentVersioning</RootNamespace>
+    <AssemblyName>Composite.Versioning.CVCleaner</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Composite">
+      <HintPath>..\..\..\Public\References\Composite\3.2\Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Composite.Versioning.ContentVersioning">
+      <HintPath>..\..\..\Commercial\Composite.Versioning.ContentVersioning\Composite.Versioning.ContentVersioning.Package\Package\Bin\Composite.Versioning.ContentVersioning.dll</HintPath>
+    </Reference>
+    <Reference Include="Composite.Workflows">
+      <HintPath>..\..\..\Public\References\Composite\3.2\Composite.Workflows.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cleaner\RefreshWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cleaner\RefreshWorkflow.designer.cs">
+      <DependentUpon>RefreshWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cleaner\CleanerFacade.cs" />
+    <Compile Include="Cleaner\CleanerExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\VersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Cleaner\RefreshWorkflow.layout">
+      <DependentUpon>RefreshWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="BeforeBuild">
+    <PropertyGroup>
+      <InstallXml>$([System.IO.File]::ReadAllText("$(SolutionDir)/$(SolutionName).Package/Package/install.xml"))</InstallXml>
+      <PackageVersion>$([System.Text.RegularExpressions.Regex]::Match($(InstallXml),"PackageInformation[^&gt;]+version=.([0-9\.]+).").Groups[1].Value)</PackageVersion>
+      <AssemblyFileVersionAttribute>[assembly:System.Reflection.AssemblyFileVersion("$(PackageVersion)")]</AssemblyFileVersionAttribute>
+    </PropertyGroup>
+    <Exec Command="&quot;$(DevEnvDir)\TF.exe&quot; checkout /lock:none  &quot;$(ProjectDir)Properties\VersionInfo.cs&quot;" IgnoreExitCode="true" />
+    <WriteLinesToFile File="Properties\VersionInfo.cs" Lines="$(AssemblyFileVersionAttribute)" Overwrite="true">
+    </WriteLinesToFile>
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(SolutionDir)$(SolutionName).Package\Package\Bin\$(TargetFileName)"
+copy "$(TargetPath)" "$(SolutionDir)$(SolutionName).Package\Package\Bin\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

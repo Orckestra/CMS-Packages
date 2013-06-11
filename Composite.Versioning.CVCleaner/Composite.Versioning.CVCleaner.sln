@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Versioning.CVCleaner.Package", "Composite.Versioning.CVCleaner.Package\Composite.Versioning.CVCleaner.Package.csproj", "{AEE68E4C-F4F6-4C80-A862-BD9FC4F3B13C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BA6C5BE6-7800-44CE-98B4-46F0C9A6EB77} = {BA6C5BE6-7800-44CE-98B4-46F0C9A6EB77}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Versioning.CVCleaner", "Composite.Versioning.CVCleaner\Composite.Versioning.CVCleaner.csproj", "{BA6C5BE6-7800-44CE-98B4-46F0C9A6EB77}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Composite.Versioning.CVCleaner.Package\\Composite.Versioning.CVCleaner.Package.csproj
+		SccProjectName1 = Composite.Versioning.CVCleaner.Package
+		SccLocalPath1 = Composite.Versioning.CVCleaner.Package
+		SccProjectUniqueName2 = Composite.Versioning.CVCleaner\\Composite.Versioning.CVCleaner.csproj
+		SccProjectName2 = Composite.Versioning.CVCleaner
+		SccLocalPath2 = Composite.Versioning.CVCleaner
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEE68E4C-F4F6-4C80-A862-BD9FC4F3B13C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE68E4C-F4F6-4C80-A862-BD9FC4F3B13C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE68E4C-F4F6-4C80-A862-BD9FC4F3B13C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE68E4C-F4F6-4C80-A862-BD9FC4F3B13C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA6C5BE6-7800-44CE-98B4-46F0C9A6EB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6C5BE6-7800-44CE-98B4-46F0C9A6EB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6C5BE6-7800-44CE-98B4-46F0C9A6EB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6C5BE6-7800-44CE-98B4-46F0C9A6EB77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
