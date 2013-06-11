@@ -1,0 +1,36 @@
+﻿@inherits RazorPageTemplate
+@functions {
+	public override void Configure()
+	{
+		TemplateId = new Guid("9f096519-d21c-435e-b334-62224fde2ab3");
+		TemplateTitle = "2 columns, content and aside";
+		Layout = "MasterLayout.cshtml";
+	}
+
+	[Placeholder(Id = "herounit", Title="Heading (hero unit)")]
+    public XhtmlDocument HeroUnit { get; set; }
+
+	[Placeholder(Id = "content", Title="Content", IsDefault = true)]
+    public XhtmlDocument Content { get; set; }
+
+    [Placeholder(Id = "aside", Title="Aside column")]
+    public XhtmlDocument Aside { get; set; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		@*you can add template specific head elements here*@
+	</head>
+	<body>
+		@PageTemplateFeature("Content Start")
+		@Function("Layout.HeroUnit", new { CustomContent = this.HeroUnit })
+		<div class="row">
+			<div class="span8">
+				@Markup(Content)
+			</div>
+			<div class="span4">
+				@Markup(Aside)
+				@PageTemplateFeature("Aside Column")
+			</div>
+		</div>
+	</body>
+</html>

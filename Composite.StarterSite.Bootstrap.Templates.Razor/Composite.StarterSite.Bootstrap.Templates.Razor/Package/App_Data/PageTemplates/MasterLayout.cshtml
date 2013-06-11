@@ -1,0 +1,52 @@
+﻿@inherits CompositeC1WebPage
+
+@{
+    string stylesFolder = "~/Frontend/Styles";
+    string jsFolder = "~/Frontend/Scripts";
+
+    string websiteTitle = HomePageNode.Title;
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="@Lang">
+    <head>
+        <title>@CurrentPageNode.Title</title>
+		@if (!string.IsNullOrEmpty(CurrentPageNode.Description)) {
+			<meta name="description" content="@CurrentPageNode.Description" />
+		}
+        @PageTemplateFeature("Descriptive HTML head elements")
+        <link rel="stylesheet" type="text/css" href="@Href(stylesFolder)/style.less" />
+        <!--To ensure devices display responsive pages properly, include the viewport meta tag.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />	
+        @* SCRIPTS *@
+        <script id="modernizr-js" type="text/javascript" src="@Href(jsFolder)/libs/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+        <script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="@Href(jsFolder)/libs/bootstrap/2.3.1/bootstrap.min.js"></script>
+        <script type="text/javascript" src="@Href(jsFolder)/script.js"></script>
+    </head>
+	<body>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+                    <a class="brand" href="/">@websiteTitle</a>
+					<div class="nav-collapse">
+						@PageTemplateFeature("Main Navigation")
+                        <div class="pull-right">
+						    @PageTemplateFeature("Service Menu")
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="container">
+			@* renders the sub template: *@
+			@RenderBody()
+					
+			@PageTemplateFeature("Content Footer")
+			<hr />
+			<footer>
+				@PageTemplateFeature("Page Footer")
+			</footer>
+		</div>	
+	</body>
+</html>

@@ -1,0 +1,34 @@
+﻿@inherits RazorPageTemplate
+@functions {
+	public override void Configure()
+	{
+		TemplateId = new Guid("e3851f7a-3f4b-4eda-9708-07c3b6020e08");
+		TemplateTitle = "2 columns, navigation and content";
+		Layout = "MasterLayout.cshtml";
+	}
+
+	[Placeholder(Id = "content", IsDefault = true)]
+	public XhtmlDocument Content { get; set; }
+
+	[Placeholder(Id = "herounit")]
+	public XhtmlDocument HeroUnit { get; set; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		@*you can add template specific head elements here*@
+	</head>
+	<body>
+		@PageTemplateFeature("Content Start")
+		@Function("Layout.HeroUnit", new { CustomContent = this.HeroUnit })
+		<div class="row">
+			<div class="span3">
+				<div class="well sidebar-nav">
+					@PageTemplateFeature("Navigation Column")
+				</div>
+			</div>
+			<div class="span8">
+				@Markup(Content)
+			</div>
+		</div>
+	</body>
+</html>

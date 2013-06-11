@@ -1,0 +1,30 @@
+﻿@inherits RazorPageTemplate
+
+@functions {
+	public override void Configure()
+	{
+		TemplateId = new Guid("0526ad34-c540-418e-8c23-0eec2a8da2ce");
+		TemplateTitle = "1 column, full width";
+	    Layout = "MasterLayout.cshtml";
+    }
+
+	[Placeholder(Id = "herounit", Title="Heading (hero unit)")]
+    public XhtmlDocument HeroUnit { get; set; }
+
+	[Placeholder(Id = "content", Title="Content", IsDefault = true)]
+    public XhtmlDocument Content { get; set; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		@*you can add template specific head elements here*@
+	</head>
+	<body>
+		@PageTemplateFeature("Content Start")
+		@Function( "Layout.HeroUnit", new { CustomContent = this.HeroUnit })
+		<div class="row">
+			<div class="span12">
+				@Markup(Content)
+			</div>
+		</div>
+	</body>
+</html>

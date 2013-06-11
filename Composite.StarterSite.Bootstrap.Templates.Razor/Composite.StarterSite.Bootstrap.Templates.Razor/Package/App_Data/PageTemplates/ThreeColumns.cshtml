@@ -1,0 +1,41 @@
+﻿@inherits RazorPageTemplate
+@functions {
+	public override void Configure()
+	{
+		TemplateId = new Guid("ea2ca748-efbf-4d94-8e2a-11ce49b71cd5");
+		TemplateTitle = "3 columns";
+		Layout = "MasterLayout.cshtml";
+	}
+
+	[Placeholder(Id = "content", IsDefault = true)]
+	public XhtmlDocument Content { get; set; }
+
+	[Placeholder(Id = "aside")]
+	public XhtmlDocument Aside { get; set; }
+
+	[Placeholder(Id = "herounit")]
+	public XhtmlDocument HeroUnit { get; set; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		@*you can add template specific head elements here*@
+	</head>
+	<body>
+		@PageTemplateFeature("Content Start")
+		@Function("Layout.HeroUnit", new { CustomContent = this.HeroUnit })
+		<div class="row">
+			<div class="span3">
+				<div class="well sidebar-nav">
+					@PageTemplateFeature("Navigation Column")
+				</div>
+			</div>
+			<div class="span5">
+				@Markup(Content)
+			</div>
+			<div class="span4">
+				@Markup(Aside)
+				@PageTemplateFeature("Aside Column")
+			</div>
+		</div>
+	</body>
+</html>
