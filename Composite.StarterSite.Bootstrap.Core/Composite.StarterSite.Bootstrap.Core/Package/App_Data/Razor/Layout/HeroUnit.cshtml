@@ -1,0 +1,29 @@
+﻿@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Hero Unit"; }
+	}
+
+	[FunctionParameter(DefaultValue = null)]
+	public XhtmlDocument CustomContent { get; set; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<head>
+	</head>
+	<body>
+		<div class="hero-unit">
+			@if (CustomContent != null 
+              && (CustomContent.Body.Elements().Any()
+                 || CustomContent.Body.Nodes().Any(node => node is XText && (node as XText).Value.Trim().Length > 0)))
+			{
+				@Markup(CustomContent)
+			} 
+            else
+			{
+				@PageTemplateFeature("Hero Unit (default)")
+			}
+		</div>
+	</body>
+</html>

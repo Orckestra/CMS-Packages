@@ -1,0 +1,38 @@
+﻿@inherits RazorFunction
+
+@functions {
+    override public string FunctionDescription
+    {
+        get { return "A function that displays top links"; }
+    }
+}
+@{
+	var breadscrumbs = Sitemap.CurrentHomePageNode.GetPageNodes(SitemapScope.AncestorsAndCurrent).Select(p => p.Id).ToList();
+	var topLinks = Data.Get<Layout.Navigation.TopLink>().Where(tl => breadscrumbs.Contains(tl.PageId)).OrderBy(l => l.Position).ToList();
+	if(!topLinks.Any()) { return;}
+
+	var iteration = 0;
+	var count = topLinks.Count;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	</head>
+	<body>
+		<ul class="nav">
+			@foreach(var link in topLinks)
+			{
+				var pageNode = Sitemap.GetPageNodeById(link.Page);
+				<li>
+					<a href="@Html.C1().PageUrl(pageNode.Id.ToString())">
+						@(pageNode.MenuTitle ?? pageNode.Title)
+					</a>
+				</li>
+				iteration++;
+				if (iteration < count)
+				{
+					<li class="divider-vertical"></li>
+				}
+			}
+		</ul>
+	</body>
+</html>

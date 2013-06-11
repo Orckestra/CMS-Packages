@@ -1,0 +1,26 @@
+﻿@inherits RazorFunction
+
+@if (CurrentPageNode.Level > 1)
+{
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head></head>
+	<body>
+		<ul class="breadcrumb">
+			@foreach (PageNode pageNode in CurrentPageNode.GetPageNodes(SitemapScope.AncestorsAndCurrent).OrderBy(f=>f.Level))
+			{
+				if (pageNode.Id == CurrentPageNode.Id)
+				{
+					<li class="active">@(pageNode.MenuTitle ?? pageNode.Title)</li>
+				}
+				else
+				{
+					<li>
+						<a href="@pageNode.Url">@(pageNode.MenuTitle ?? pageNode.Title)</a>
+						<span class="divider">/</span>
+					</li>
+				}
+			}
+		</ul>
+	</body>
+</html>
+}

@@ -1,0 +1,32 @@
+﻿@inherits RazorFunction
+		
+@functions {
+	override public string FunctionDescription
+	{
+		get { return "A function that displays a main menu"; }
+	}
+}
+@{
+	var pagenodes = Sitemap.CurrentHomePageNode.GetPageNodes(SitemapScope.Level2AndSiblings).ToList();
+	if(!pagenodes.Any()) { return; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	</head>
+	<body>
+		<ul class="nav">
+			<li>
+				<a href="@HomePageNode.Url">@HomePageNode.MenuTitle</a>
+			</li>
+			@foreach (var page in pagenodes)
+			{
+				if(!string.IsNullOrEmpty(page.MenuTitle))
+				{
+					<li>
+						<a href="@page.Url">@page.MenuTitle</a>
+					</li>
+				}
+			}
+		</ul>
+	</body>
+</html>

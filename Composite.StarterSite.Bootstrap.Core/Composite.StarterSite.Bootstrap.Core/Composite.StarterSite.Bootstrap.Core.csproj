@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F962146A-D1A1-4B9A-A22B-80D7A1B3BE79}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.StarterSite.Bootstrap.Core</RootNamespace>
+    <AssemblyName>Composite.StarterSite.Bootstrap.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Composite\DynamicTypeForms\Content\ContentSpot.xml" />
+    <Content Include="Package\App_Data\Composite\DynamicTypeForms\Layout\Navigation\TopLink.xml" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Aside Column.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Content Footer.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Content Start.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Descriptive HTML head elements.xml" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Front Page Content Start.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Hero Unit %28default%29.xml" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Main Navigation.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Navigation Column.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Page Footer.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Service Menu.html" />
+    <Content Include="Package\Datas\Composite.Data.Types.IGeneratedTypeWhiteLists_administrated.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTypeDataFolderTypeLinks_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
+    <Content Include="Package\Frontend\Config\VisualEditor\common.xml" />
+    <Content Include="Package\Frontend\Images\arrow.png" />
+    <Content Include="Package\Frontend\Images\background.png" />
+    <Content Include="Package\Frontend\Images\header.jpg" />
+    <Content Include="Package\Frontend\Images\headerlogo.png" />
+    <Content Include="Package\Frontend\Scripts\libs\bootstrap\2.3.1\bootstrap.js" />
+    <Content Include="Package\Frontend\Scripts\libs\bootstrap\2.3.1\bootstrap.min.js" />
+    <Content Include="Package\Frontend\Scripts\libs\html5-3.4-respond-1.1.0.min.js" />
+    <Content Include="Package\Frontend\Scripts\libs\modernizr-2.6.1-respond-1.1.0.min.js" />
+    <Content Include="Package\Frontend\Scripts\script.js" />
+    <Content Include="Package\Frontend\Styles\img\glyphicons-halflings-white.png" />
+    <Content Include="Package\Frontend\Styles\img\glyphicons-halflings.png" />
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_PackageCreator\Composite.StarterSite.Bootstrap.Core.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Layout\HeroUnit.cshtml" />
+    <Content Include="Package\App_Data\Razor\Layout\Navigation\Breadcrumbs.cshtml" />
+    <Content Include="Package\App_Data\Razor\Layout\Navigation\Menu.cshtml" />
+    <Content Include="Package\App_Data\Razor\Layout\Navigation\TopLinks.cshtml" />
+    <Content Include="Package\App_Data\Razor\Content\ShowContentSpots.cshtml" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\accordion.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\alerts.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\bootstrap.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\breadcrumbs.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\button-groups.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\buttons.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\carousel.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\close.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\code.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\component-animations.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\dropdowns.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\forms.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\grid.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\hero-unit.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\labels-badges.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\layouts.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\media.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\mixins.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\modals.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\navbar.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\navs.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\pager.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\pagination.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\popovers.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\progress-bars.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\reset.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\responsive-1200px-min.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\responsive-767px-max.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\responsive-768px-979px.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\responsive-navbar.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\responsive-utilities.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\responsive.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\scaffolding.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\sprites.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\tables.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\thumbnails.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\tooltip.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\type.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\utilities.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\variables.less" />
+    <None Include="Package\Frontend\Styles\bootstrap\2.3.1\wells.less" />
+    <None Include="Package\Frontend\Styles\style.less" />
+    <None Include="Package\Frontend\Styles\VisualEditor.common.less" />
+    <None Include="Package\Frontend\Styles\VisualEditor.less" />
+    <Content Include="Release\Composite.StarterSite.Bootstrap.Core.zip" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58350</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(ProjectName).zip"
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(ProjectName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(ProjectName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
