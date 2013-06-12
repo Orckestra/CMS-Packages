@@ -4,6 +4,9 @@
 		<Add name="App_Code\Composite\AspNet\MvcPlayer\Player.cs" />
 		<Add name="App_Code\Composite\AspNet\MvcPlayer\Route.cs" />
 		<Add name="Views\Web.config" />
+		<Add name="Bin\System.Web.Abstractions.dll" />
+		<Add name="Bin\System.Web.Helpers.dll" />
+		<Add name="Bin\System.Web.Mvc.dll" />
 	</pc:Files>
 	<pc:CSharpFunctions>
 		<Add name="Composite.AspNet.MvcPlayer.Render" />
@@ -17,15 +20,11 @@
 				<XslFile pathXml="~\Web.config" installXsl="~\Config\Install.xsl" uninstallXsl="~\Config\Uninstall.xsl" />
 			</XslFiles>
 		</mi:Add>
-		<mi:Add installerType="Composite.PackageFragmentInstaller.CheckAssembly.CheckAssemblyPackageFragmentInstaller, Composite.PackageFragmentInstaller.CheckAssembly" uninstallerType="Composite.PackageFragmentInstaller.CheckAssembly.CheckAssemblyPackageFragmentUninstaller, Composite.PackageFragmentInstaller.CheckAssembly">
-			<Check assembly="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" message="ASP.NET MVC 4 have not been installed on this webserver. Download and install this from Microsoft website" />
-		</mi:Add>
 	</pc:PackageFragmentInstallers>
 	<mi:PackageRequirements minimumCompositeVersion="4.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.AspNet.MvcPlayer" groupName="Composite.AspNet" version="1.2.18" author="Composite A/S" website="http://www.composite.net" id="7fbb67a8-dc12-4693-b653-80c5f155ff7a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.AspNet.MvcPlayer" groupName="Composite.AspNet" version="1.2.19" author="Composite A/S" website="http://www.composite.net" id="7fbb67a8-dc12-4693-b653-80c5f155ff7a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" readMoreUrl="http://docs.composite.net/Composite.AspNet.MvcPlayer">
 		<Description>Allows you to integrate an ASP.NET MVC solution on a C1 website.</Description>
+		<TechnicalDetails>Implemented as an MVC solution 'player'. Supports the Razor syntax.</TechnicalDetails>
 	</mi:PackageInformation>
-	<mi:PackageFragmentInstallerBinaries>
-		<mi:Add path="~\Composite.PackageFragmentInstaller.CheckAssembly.dll" />
-	</mi:PackageFragmentInstallerBinaries>
+	<mi:PackageFragmentInstallerBinaries />
 </pc:PackageCreator>

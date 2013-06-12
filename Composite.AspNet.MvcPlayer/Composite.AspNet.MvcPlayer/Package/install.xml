@@ -1,22 +1,28 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.AspNet.MvcPlayer" groupName="Composite.AspNet" version="1.2.18" readMoreUrl="http://docs.composite.net/Composite.AspNet.MvcPlayer" author="Composite A/S" website="http://www.composite.net" id="7fbb67a8-dc12-4693-b653-80c5f155ff7a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.AspNet.MvcPlayer" groupName="Composite.AspNet" version="1.2.19" author="Composite A/S" website="http://www.composite.net" id="7fbb67a8-dc12-4693-b653-80c5f155ff7a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" readMoreUrl="http://docs.composite.net/Composite.AspNet.MvcPlayer">
 		<Description>Allows you to integrate an ASP.NET MVC solution on a C1 website.</Description>
 		<TechnicalDetails>Implemented as an MVC solution 'player'. Supports the Razor syntax.</TechnicalDetails>
 	</mi:PackageInformation>
-	<mi:PackageFragmentInstallerBinaries>
-		<mi:Add path="~\Composite.PackageFragmentInstaller.CheckAssembly.dll" />
-	</mi:PackageFragmentInstallerBinaries>
+	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
-				<File sourceFilename="~\App_Data\Xslt\Composite\AspNet\MvcPlayer.xsl" targetFilename="~\App_Data\Xslt\Composite\AspNet\MvcPlayer.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Code\Composite\AspNet\MvcPlayer\Player.cs" targetFilename="~\App_Code\Composite\AspNet\MvcPlayer\Player.cs" allowOverwrite="false" />
 				<File sourceFilename="~\App_Code\Composite\AspNet\MvcPlayer\Route.cs" targetFilename="~\App_Code\Composite\AspNet\MvcPlayer\Route.cs" allowOverwrite="false" />
 				<File sourceFilename="~\Views\Web.config" targetFilename="~\Views\Web.config" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Xslt\Composite\AspNet\MvcPlayer.xsl" targetFilename="~\App_Data\Xslt\Composite\AspNet\MvcPlayer.xsl" allowOverwrite="false" />
 			</Files>
 		</mi:Add>
+
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+      <Files>
+        <File sourceFilename="~\Bin\System.Web.Abstractions.dll" targetFilename="~\Bin\System.Web.Abstractions.dll" allowOverwrite="true" />
+        <File sourceFilename="~\Bin\System.Web.Helpers.dll" targetFilename="~\Bin\System.Web.Helpers.dll" allowOverwrite="true" />
+        <File sourceFilename="~\Bin\System.Web.Mvc.dll" targetFilename="~\Bin\System.Web.Mvc.dll" allowOverwrite="true" />
+      </Files>
+    </mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
 			<Types>
 				<Type type="Composite.Data.Types.IMethodBasedFunctionInfo,Composite">
@@ -34,9 +40,6 @@
 			<XslFiles>
 				<XslFile pathXml="~\Web.config" installXsl="~\Config\Install.xsl" uninstallXsl="~\Config\Uninstall.xsl" />
 			</XslFiles>
-		</mi:Add>
-		<mi:Add installerType="Composite.PackageFragmentInstaller.CheckAssembly.CheckAssemblyPackageFragmentInstaller, Composite.PackageFragmentInstaller.CheckAssembly" uninstallerType="Composite.PackageFragmentInstaller.CheckAssembly.CheckAssemblyPackageFragmentUninstaller, Composite.PackageFragmentInstaller.CheckAssembly">
-			<Check assembly="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" message="ASP.NET MVC 4 have not been installed on this webserver. Download and install this from Microsoft website" />
 		</mi:Add>
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>
