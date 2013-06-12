@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Composite.Navigation.LevelSitemap.Razor</RootNamespace>
-    <AssemblyName>Composite.Navigation.LevelSitemap.Razor</AssemblyName>
+    <RootNamespace>Composite.Navigation.Sitemap.Razor</RootNamespace>
+    <AssemblyName>Composite.Navigation.Sitemap.Razor</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -24,6 +24,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,17 +65,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\Frontend\Composite\Navigation\LevelSitemap\Styles.css" />
+    <Content Include="Package\Frontend\Composite\Navigation\Sitemap\Styles.css" />
     <Content Include="Package\install.xml" />
-    <Content Include="_PackageCreator\Composite.Navigation.LevelSitemap.Razor.xml" />
+    <Content Include="_PackageCreator\Composite.Navigation.Sitemap.Razor.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Package\App_Data\Razor\Composite\Navigation\LevelSitemap.cshtml" />
-    <Content Include="Release\Composite.Navigation.LevelSitemap.Razor.zip" />
+    <Content Include="Package\App_Data\Razor\Composite\Navigation\Sitemap.cshtml" />
+    <Content Include="Release\Composite.Navigation.Sitemap.Razor.zip" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,27 @@
+.sitemap {
+  max-width: 40em;
+}
+
+.sitemap ul ul {
+  padding: 20px;
+  line-height: 2em;
+}
+
+.sitemap ul ul ul {
+  margin-left: 2em;
+  padding: 0;
+}
+
+.sitemap ul li {
+  padding: 0;
+  line-height: 1.8em;
+}
+
+.sitemap .btn-block {
+  margin: -1px;
+  width: auto;
+}
+
+.sitemap a.NavigationSelected {
+  font-weight: bold;
+}

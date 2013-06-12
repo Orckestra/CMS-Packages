@@ -1,4 +1,5 @@
 ﻿@inherits RazorFunction
+
 @functions {
     override public string FunctionDescription
     {
@@ -21,10 +22,10 @@
                        DefaultValue = false)]
     public bool ShowParent { get; set; }
 
-    [FunctionParameter(Label = "Navigation Id",
-                       Help = "Attribute Id of DIV element",
-                       DefaultValue = "LevelSitemap")]
-    public string NavigationId { get; set; }
+    [FunctionParameter(Label = "Navigation Class",
+                       Help = "Attribute Class of DIV element",
+                       DefaultValue = "sitemap")]
+    public string NavigationClass { get; set; }
 
     private IEnumerable<PageNode> OpenPages(PageNode selectedPageNode)
     {
@@ -42,10 +43,10 @@
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/LevelSitemap")/Styles.css" />
+    <link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/Sitemap")/Styles.css" />
 </head>
 <body>
-    <div id="@NavigationId">
+    <div class="@NavigationClass">
         @{
             Depth = Depth + Level;
             if (Level == 0)
@@ -91,9 +92,9 @@
         @if (ShowParent && levelClass == 0 && firstPage.ParentPage != null)
         {
             var parentPage = firstPage.ParentPage;
-
-            <li class ="level@(levelClass) @(levelClass == 0 ? " mainarea" + mainareaIndex : "")">
-                <a href="@(parentPage.Url)" class="@IsOpenCss(parentPage) @IsSelectedCss(parentPage)">@parentPage.MenuTitle</a>
+            
+            <li class ="level@(levelClass)@(levelClass == 0 ? " well" : "")">
+                <a href="@(parentPage.Url)" class="@(levelClass == 0 ? "btn btn-large btn-block" : "")@IsOpenCss(parentPage) @IsSelectedCss(parentPage)">@parentPage.MenuTitle</a>
             </li>
         }
 
@@ -102,7 +103,7 @@
             if (!String.IsNullOrWhiteSpace(subPage.MenuTitle))
             {
                 mainareaIndex = mainareaIndex + 1;
-            <li class ="level@(levelClass) @(levelClass == 0 ? " well mainarea" + mainareaIndex : "")">
+            <li class ="level@(levelClass)@(levelClass == 0 ? " well" : "")">
                 <a href="@(subPage.Url)" class="@(levelClass == 0 ? "btn btn-large btn-block" : "") @IsOpenCss(subPage) @IsSelectedCss(subPage)">@subPage.MenuTitle</a>
 
                 @NavigationTree(subPage.ChildPages, endRenderLevel)
