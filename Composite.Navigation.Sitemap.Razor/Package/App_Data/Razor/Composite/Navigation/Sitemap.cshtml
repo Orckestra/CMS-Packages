@@ -3,27 +3,27 @@
 @functions {
     override public string FunctionDescription
     {
-        get { return "A function that displays a menu as a horizontal navigation bar."; }
+        get { return "Adds a sitemap to a page."; }
     }
 
     // C1 Function parameters defined below...
     [FunctionParameter(Label = "Starting Level",
-                       Help = "Set from what level start to display items in navigation",
+                       Help = "The level to start displaying pages from in the sitemap. 1 by default.",
                        DefaultValue = 1)]
     public int Level { get; set; }
 
     [FunctionParameter(Label = "Subpages Depth",
-                       Help = "Set the depth of subpages",
+                       Help = "The depth of subpages to display in the sitemap. 2 by default.",
                        DefaultValue = 2)]
     public int Depth { get; set; }
 
     [FunctionParameter(Label = "Show Parent Page",
-                       Help = "Check the box if you want parent page to be displayed in navigation",
+                       Help = "If 'true', the parent page will be displayed in the sitemap, too. 'false' by default.",
                        DefaultValue = false)]
     public bool ShowParent { get; set; }
 
     [FunctionParameter(Label = "Navigation Class",
-                       Help = "Attribute Class of DIV element",
+                       Help = "A class to use on the sitemap's div element. 'sitemap' by default.",
                        DefaultValue = "sitemap")]
     public string NavigationClass { get; set; }
 
