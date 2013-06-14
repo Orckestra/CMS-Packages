@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="4.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Tools.XslToRazorFunctionConverter" groupName="Composite.Tools" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="-" id="c75c79ba-0df6-4a88-ada2-48cd56042f5e" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<TechnicalDetails>.</TechnicalDetails>
+		<Description>Tool that allows partially automate conversion of Xslt functions to Razor functions. To use - right click on an xslt function and choose "Convert to Razor" action.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
+			<Install xsltFilePath="~\Composite.config\Install.xsl" />
+			<Uninstall xsltFilePath="~\Composite.config\Uninstall.xsl" />
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Code\Composite\Tools\XslToRazorFunctionConverter.cs" targetFilename="~\App_Code\Composite\Tools\XslToRazorFunctionConverter.cs" allowOverwrite="false" />
+			</Files>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
