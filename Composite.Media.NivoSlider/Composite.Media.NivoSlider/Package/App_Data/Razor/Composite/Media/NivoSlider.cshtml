@@ -1,0 +1,180 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return @"Displays an image slider on a page"; }
+    }
+
+    [FunctionParameter(Label = "Images folder", Help = @"The media folder with the images you want to display in a slider", DefaultValue = null)]
+    public Composite.Data.DataReference<Composite.Data.Types.IMediaFileFolder> ImagesFolder { get; set; }
+
+
+    [FunctionParameter(Label = "CSS theme", Help = @"The CSS theme to use for the slider (""default"" by default).", DefaultValue = "default",
+        WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Options""><f:function xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Utils.String.Split""><f:param name=""String"" value=""default,bar,dark,light"" /></f:function></f:param></f:widgetfunction>")]
+    public string Theme { get; set; }
+
+    [FunctionParameter(Help = @"Transition effects to use when sliding images (""random"" by default).", DefaultValue = "random",
+        WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"" label="""" bindingsourcename=""""><f:helpdefinition xmlns:f=""http://www.composite.net/ns/function/1.0"" helptext="""" /><f:param xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Options""><f:function xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Utils.String.Split""><f:param name=""String"" value=""sliceDown,sliceDownLeft,sliceUp,sliceUpLeft,sliceUpDown,sliceUpDownLeft,fold,fade,random,slideInRight,slideInLeft,boxRandom,boxRain,boxRainReverse,boxRainGrow,boxRainGrowReverse"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /><f:param name=""Compact"" value=""True"" /></f:widgetfunction>")]
+    public string Effects { get; set; }
+
+    [FunctionParameter(Label = "Width of the slider", Help = @"The fixed width of the slider. Full-width by default.", DefaultValue = 0)]
+    public int Width { get; set; }
+
+
+    [FunctionParameter(Label = "Height of the slider", Help = @"The fixed height of the slider. Full-height by default.", DefaultValue = 0)]
+    public int Height { get; set; }
+
+
+    [FunctionParameter(Label = "Show navigation", Help = @"If 'true', the navigation buttons appear below the slider ('true' by default)", DefaultValue = true)]
+    public bool Navigation { get; set; }
+
+
+    [FunctionParameter(Label = "Show direction buttons", Help = @"If 'true', the Next and  Prev buttons are shown ('true' by default)", DefaultValue = true)]
+    public bool DirectionNav { get; set; }
+
+
+    [FunctionParameter(Label = "Show captions", Help = @"If 'true', the image captions are shown ('true' by default)", DefaultValue = true)]
+    public bool Captions { get; set; }
+
+
+    [FunctionParameter(Help = @"If 'true', the slideshow will repeat ('true' by default)", DefaultValue = true)]
+    public bool Repeat { get; set; }
+
+
+    [FunctionParameter(Label = "Animation speed", Help = @"Slide transition speed, in milliseconds (500 by default)", DefaultValue = 500)]
+    public int AnimSpeed { get; set; }
+
+
+    [FunctionParameter(Label = "Pause time", Help = @"How long each slide will show, in milliseconds (3000 by default)", DefaultValue = 3000)]
+    public int PauseTime { get; set; }
+
+
+    [FunctionParameter(Label = "Show thumbnails", Help = @"If 'true', the small image thumbnails are shown ('false' by default)", DefaultValue = "false")]
+    public bool ControlNavThumbs { get; set; }
+
+
+    private string JsBool(bool boolean)
+    {
+        return boolean ? "true" : "false";
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link id="slider-theme-@Theme" rel="stylesheet" href="~/Frontend/Composite/Media/NivoSlider/themes/@Theme/@(Theme).css" type="text/css" media="screen" />
+	<link id="slider-css" rel="stylesheet" href="~/Frontend/Composite/Media/NivoSlider/nivo-slider.css" type="text/css" media="screen" />
+	<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script id="jquery-slider" src="~/Frontend/Composite/Media/NivoSlider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+	<script id="slider-settings" type="text/javascript">
+		$(window).load(function() {
+			$('#slider').nivoSlider({
+				effect: '@Effects',
+				slices: 15, /* For slice animations*/
+				boxCols: 8, /* For box animations */
+				boxRows: 4, /* For box animations */
+				animSpeed: @AnimSpeed, /* Slide transition speed*/
+			pauseTime: @PauseTime, /* How long each slide will show*/
+			startSlide: 0, /* Set starting Slide (0 index)*/
+			directionNav: @JsBool(DirectionNav), /* Next and  Prev navigation*/
+			controlNav: @JsBool(Navigation), /* 1,2,3... navigation*/
+			    controlNavThumbs: @JsBool(ControlNavThumbs), /* Use thumbnails for Control Nav*/
+			pauseOnHover: true, /* Stop animation while hovering*/
+			manualAdvance: false, /* Force manual transitions*/
+			prevText: 'Prev', /* Prev directionNav text*/
+			nextText: 'Next', /* Next directionNav text*/
+			beforeChange: function(){}, /* Triggers before a slide transition*/
+			afterChange: function(){}, /* Triggers after a slide transition*/
+			slideshowEnd: function(){}, /* Triggers after all slides have been shown*/
+			lastSlide: function(){
+                @if (!Repeat)
+                {
+                    @: primary.vars.stop = true;
+                }
+			}, /* Triggers when last slide is shown*/
+			afterLoad: function(){} /* Triggers when slider has loaded*/
+		});
+    });
+	</script>
+    @{
+        string widthStyle = Width > 0 ? string.Format("width: {0}px ! important;", Width) : "";
+        string heightStyle = Height > 0 ? string.Format("height: {0}px ! important;", Height) : "";
+    }
+	<style type="text/css">
+		#slider img {
+		margin:0;
+		}
+		#slider  {
+		    @widthStyle /* Change this to your images width */
+		    @heightStyle /* Change this to your images height */
+		}
+		@if (Height > 0)
+  {
+            @: .theme-dark #slider {overflow: hidden;}
+		    @: .theme-light #slider {overflow: hidden;}
+        }
+
+		.nivo-controlNav { @widthStyle }
+		.slider-wrapper { @widthStyle }
+	</style>
+
+</head>
+<body>
+
+    <div class="slider-wrapper theme-@Theme">
+
+    @if (ImagesFolder != null && ImagesFolder.IsSet)
+    {
+        string folderPath = ImagesFolder.Data.Path;
+        var images = Data.Get<IImageFile>().Where(image => image.FolderPath == folderPath).ToList();
+        
+        <div id="slider" class="nivoSlider">
+            @foreach (var image in images)
+            {
+                <img src="~/media(@image.KeyPath)" 
+                    data-thumb="~/media(@image.KeyPath)?h=50&amp;w=70" 
+                    alt="@image.Title"
+                    @if (Captions)
+                    { <text> 
+                        title="@image.Title" 
+                    </text>} 
+                />
+            }
+			
+		</div>
+    }
+    else
+    {
+        @* Demo example or put here your markup *@
+		<div class="ribbon"></div>
+		<div id="slider" class="nivoSlider">
+			<img src="~/Frontend/Composite/Media/NivoSlider/demo/images/toystory.jpg" alt="" />
+
+			<a href="http://dev7studios.com">
+				<img src="~/Frontend/Composite/Media/NivoSlider/demo/images/up.jpg" alt=""
+                    @if (Captions)
+                    { <text> 
+                        title="This is an example of a caption" 
+                    </text>} 
+                />
+			</a>
+
+			<img src="~/Frontend/Composite/Media/NivoSlider/demo/images/walle.jpg" alt="" />
+
+			<img src="~/Frontend/Composite/Media/NivoSlider/demo/images/nemo.jpg" alt=""
+                @if (Captions)
+                    { <text> 
+                        title="#htmlcaption" 
+                    </text>} 
+            />
+		</div>
+        
+		<div id="htmlcaption" class="nivo-html-caption">
+			<strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
+		</div>
+    }
+						
+    </div>
+
+</body>
+</html>
