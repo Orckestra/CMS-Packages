@@ -7,7 +7,7 @@
 		<Add name="/configuration/Composite.C1Console.Elements.Plugins.ElementActionProviderConfiguration/ElementActionProviderPlugins/add[@name='Composite.Tools.XslToRazorFunctionConverter']" />
 	</pc:Composite.config>
 	<mi:PackageRequirements minimumCompositeVersion="4.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.XslToRazorFunctionConverter" groupName="Composite.Tools" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="-" id="c75c79ba-0df6-4a88-ada2-48cd56042f5e" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Tools.XslToRazorFunctionConverter" groupName="Composite.Tools" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Tools.XslToRazorFunctionConverter" id="c75c79ba-0df6-4a88-ada2-48cd56042f5e" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<TechnicalDetails>.</TechnicalDetails>
 		<Description>Tool that allows partially automate conversion of Xslt functions to Razor functions. To use - right click on an xslt function and choose "Convert to Razor" action.</Description>
 	</mi:PackageInformation>

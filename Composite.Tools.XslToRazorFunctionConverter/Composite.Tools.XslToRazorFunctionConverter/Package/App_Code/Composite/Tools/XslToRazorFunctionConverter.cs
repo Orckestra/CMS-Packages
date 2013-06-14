@@ -180,7 +180,7 @@ namespace Composite.Tools
                             string widgetFunctionName = str1.Substring(0, str1.IndexOf("\""));
 
                             // Skipping default widget for string fields
-                            if (!(typeName == "string" && widgetFunctionName == "Composite.Widgets.Integer.TextBox"))
+                            if (widgetFunctionName != GetDefaultWidgetFunctionName(parameterProfile.Type))
                             {
                                 parameterProperties.Add("WidgetFunctionName=\"{0}\"".FormatWith(widgetFunctionName));
                             }
@@ -269,6 +269,20 @@ c) Transformation template itself".FormatWith(functionFullName)));
             }
         }
 
+        private static string GetDefaultWidgetFunctionName(Type type)
+        {
+            if (type == typeof(string)) return "Composite.Widgets.String.TextBox";
+            if (type == typeof(Guid)) return "Composite.Widgets.Guid.TextBox";
+            if (type == typeof(int)) return "Composite.Widgets.Integer.TextBox";
+            if (type == typeof(bool)) return "Composite.Widgets.Bool.CheckBox";
+            if (type == typeof(Composite.Data.DataReference<Composite.Data.Types.IPage>)) return "Composite.Widgets.DataReference.PageSelector";
+            if (type == typeof(Composite.Data.DataReference<Composite.Data.Types.IMediaFileFolder>)) return "Composite.Widgets.MediaFileFolderSelector";
+            if (type == typeof(Composite.Data.DataReference<Composite.Data.Types.IMediaFile>)) return "Composite.Widgets.MediaFileSelectorWidgetFunction";
+            if (type == typeof(Composite.Data.DataReference<Composite.Data.Types.IImageFile>)) return "Composite.Widgets.ImageSelectorWidgetFunction";
+            
+            return null;
+        }
+
         private static string GetCSharpFriendlyTypeName(Type type)
         {
             string typeFullName = type.FullName;
@@ -276,7 +290,13 @@ c) Transformation template itself".FormatWith(functionFullName)));
             if(type.IsGenericType)
             {
                 var sb = new StringBuilder();
-                sb.Append(GetTypeNameWithoutNamespace(type));
+
+                string genericTypeName = GetTypeNameWithoutNamespace(type);
+
+                // Replacing "NullableDataReference`1" -> "Composite.Data.NullableDataReference"
+                genericTypeName = genericTypeName.Substring(0, genericTypeName.IndexOf("`"));
+
+                sb.Append(genericTypeName);
                 sb.Append("<");
 
                 sb.Append(string.Join(",", type.GetGenericArguments().Select(GetCSharpFriendlyTypeName)));
