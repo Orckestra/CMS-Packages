@@ -38,8 +38,8 @@
 	                <c1:Title runat="server" />
                 </a>
 				<div class="nav-collapse">
-					<c1:PageTemplateFeature Name="Main Navigation" runat="server" />
-					
+					<f:Function ID="Function1" Name="Layout.Navigation.Menu" runat="server" />
+
                     <div class="pull-right">
 	                    <c1:PageTemplateFeature Name="Service Menu" runat="server" />
 					</div>

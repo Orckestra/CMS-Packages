@@ -17,7 +17,14 @@
 	<div class="row">
 		<div class="span3">
 			<div class="well sidebar-nav">
-				<c1:PageTemplateFeature Name="Navigation Column" runat="server" /> 
+				<f:Function ID="Function1" Name="Composite.Navigation.Distributed" runat="server">
+					<Parameters>
+						<f:param ID="Param1" name="Level" value="2" runat="server" />
+						<f:param ID="Param2" name="ShowChildPages" value="True" runat="server" />
+						<f:param ID="Param3" name="Expand" value="False" runat="server" />
+						<f:param ID="Param4" name="NavigationId" value="navSideBar" runat="server" />
+					</Parameters>
+				</f:Function>
 			</div>
 		</div>
 		<div class="span8">
