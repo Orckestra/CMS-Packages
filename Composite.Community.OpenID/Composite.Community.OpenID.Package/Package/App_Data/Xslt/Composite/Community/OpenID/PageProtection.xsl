@@ -7,18 +7,18 @@
 	xmlns:cod="#OpenIDExtensions"
 	exclude-result-prefixes="xsl in lang f cod">
 
-	<xsl:variable name="signInPage" select="/in:inputs/in:param[@name='SignInPage']" />
-	<xsl:variable name="userDisplayName" select="cod:GetCurrentUserDisplayName()" />
+  <xsl:variable name="signInPage" select="/in:inputs/in:param[@name='SignInPage']" />
+  <xsl:variable name="userDisplayName" select="cod:GetCurrentUserDisplayName()" />
 
-	<xsl:template match="/">
-		<html>
-			<head />
-			<body>
-				<xsl:if test ="$userDisplayName = ''">
-					<xsl:value-of select="cod:Redirect($signInPage)" />
-				</xsl:if>
-			</body>
-		</html>
-	</xsl:template>
+  <xsl:template match="/">
+    <html>
+      <head />
+      <body>
+        <xsl:if test ="$userDisplayName = ''">
+          <xsl:value-of select="cod:Redirect($signInPage)" />
+        </xsl:if>
+      </body>
+    </html>
+  </xsl:template>
 
 </xsl:stylesheet>
