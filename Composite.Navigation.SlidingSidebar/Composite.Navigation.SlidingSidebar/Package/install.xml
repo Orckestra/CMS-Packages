@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="9.9999.9999.9999"></mi:PackageRequirements>
-	<mi:PackageInformation name="Composite.Navigation.SlidingSidebar" groupName="Composite.Navigation" version="1.1.8" author="Composite A/S" website="www.composite.net" id="201E0077-4AD0-467d-8A02-00A5BCED6597" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
-		<Description>Allows visitors to navigate the website via a sliding sidebar menu.</Description>
-	</mi:PackageInformation>
-	<mi:PackageFragmentInstallerBinaries />
-	<mi:PackageFragmentInstallers>
-		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
-			<Files>
-				<File sourceFilename="~\App_Data/Xslt/Composite/Navigation/SlidingSidebar.xsl" targetFilename="~\App_Data/Xslt/Composite/Navigation/SlidingSidebar.xsl" allowOverwrite="false" />
-			</Files>
-			<Directories>
-				<Directory sourceDirectory="~\Frontend\Composite\Navigation\SlidingSidebar\" targetDirectory="~\Frontend\Composite\Navigation\SlidingSidebar\" allowOverwrite="true" deleteTargetDirectory="false" />
-			</Directories>
-		</mi:Add>
-		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
-			<Types>
-				<Type type="Composite.Data.Types.IXsltFunction, Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IParameter, Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.INamedFunctionCall, Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
-				</Type>
-			</Types>
-		</mi:Add>
-	</mi:PackageFragmentInstallers>
+  <mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="9.9999.9999.9999"></mi:PackageRequirements>
+  <mi:PackageInformation name="Composite.Navigation.SlidingSidebar" groupName="Composite.Navigation" version="1.1.9" author="Composite A/S" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Navigation.SlidingSidebar" id="201E0077-4AD0-467d-8A02-00A5BCED6597" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
+    <Description>Allows visitors to navigate the website via a sliding sidebar menu.</Description>
+    <TechnicalDetails>Allows visitors to navigate the website via a sliding sidebar menu.</TechnicalDetails>
+  </mi:PackageInformation>
+  <mi:PackageFragmentInstallerBinaries />
+  <mi:PackageFragmentInstallers>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+      <Files>
+        <File sourceFilename="~\App_Data/Xslt/Composite/Navigation/SlidingSidebar.xsl" targetFilename="~\App_Data/Xslt/Composite/Navigation/SlidingSidebar.xsl" allowOverwrite="false" />
+      </Files>
+      <Directories>
+        <Directory sourceDirectory="~\Frontend\Composite\Navigation\SlidingSidebar\" targetDirectory="~\Frontend\Composite\Navigation\SlidingSidebar\" allowOverwrite="true" deleteTargetDirectory="false" />
+      </Directories>
+    </mi:Add>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+      <Types>
+        <Type type="Composite.Data.Types.IXsltFunction, Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.IParameter, Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.INamedFunctionCall, Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+        </Type>
+      </Types>
+    </mi:Add>
+  </mi:PackageFragmentInstallers>
 </mi:PackageInstaller>

@@ -1,109 +1,130 @@
-#SlidingSidebarContentsInner h2 {
-	color: #FFFFFF;
-	font-size: 90%;
-	font-family: arial;
-	margin: 10px;
-	font-weight: bold;
+#SlidingSidebarContentsInner h2
+{
+    color: #FFFFFF;
+    font-size: 90%;
+    font-family: arial;
+    margin: 10px;
+    font-weight: bold;
 }
 
-#SlidingSidebarContentsInner h2 span {
-	font-size: 105%;
-	font-weight: normal;
+    #SlidingSidebarContentsInner h2 span
+    {
+        font-size: 105%;
+        font-weight: normal;
+    }
+
+#SlidingSidebarContentsInner ul
+{
+    margin: 0px;
+    padding: 0px;
 }
 
-#SlidingSidebarContentsInner ul {
-	margin: 0px;
-	padding: 0px;
+#SlidingSidebarContentsInner li
+{
+    padding: 2px;
+    list-style-type: none;
+    display: block;
+    background-color: #DA1074;
+    margin: 0px 10px 3px 10px;
 }
 
-#SlidingSidebarContentsInner li {
-	padding: 2px;
-	list-style-type: none;
-	display: block;
-	background-color: #DA1074;
-	margin: 0px 10px 3px 10px;
+    #SlidingSidebarContentsInner li a
+    {
+        width: 100%;
+    }
+
+        #SlidingSidebarContentsInner li a:link, #SlidingSidebarContentsInner li a:visited
+        {
+            color: #FFFFFF;
+            font-family: verdana;
+            font-size: 70%;
+            text-decoration: none;
+            display: block;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #SlidingSidebarContentsInner li a:hover
+        {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+
+#SlidingSidebar
+{
+    position: absolute;
+    height: auto;
+    width: 28px;
+    top: 200px;
 }
 
-#SlidingSidebarContentsInner li a {
-	width: 100%;
+    #SlidingSidebar.right
+    {
+        right: 0px;
+        background-position: top left;
+    }
+
+    #SlidingSidebar.left
+    {
+        left: 0px;
+        background-position: top right;
+    }
+
+#SlidingSidebarTab
+{
+    height: 137px;
+    width: 28px;
 }
 
-#SlidingSidebarContentsInner li a:link, #SlidingSidebarContentsInner li a:visited {
-	color: #FFFFFF;
-	font-family: verdana;
-	font-size: 70%;
-	text-decoration: none;
-	display: block;
-	margin: 0px;
-	padding: 0px;
+#SlidingSidebar.right #SlidingSidebarTab
+{
+    float: left;
 }
 
-#SlidingSidebarContentsInner li a:hover {
-	color: #FFFFFF;
-	text-decoration: underline;
+#SlidingSidebar.left #SlidingSidebarTab
+{
+    float: right;
 }
 
-#SlidingSidebar {
-	position: absolute;
-	height: auto;
-	width: 28px;
-	top: 200px;
+.SlidingSidebarTableftactive
+{
+    background-image: url(images/slide-button-left-active.gif);
 }
 
-#SlidingSidebar.right {
-	right: 0px;
-	background-position: top left;
+.SlidingSidebarTabrightactive
+{
+    background-image: url(images/slide-button-right-active.gif);
 }
 
-#SlidingSidebar.left {
-	left: 0px;
-	background-position: top right;
+.SlidingSidebarTableft
+{
+    background-image: url(images/slide-button-left.gif);
 }
 
-#SlidingSidebarTab {
-	height: 137px;
-	width: 28px;
+.SlidingSidebarTabright
+{
+    background-image: url(images/slide-button-right.gif);
 }
 
-#SlidingSidebar.right #SlidingSidebarTab {
-	float: left;
+#SlidingSidebarContents
+{
+    overflow: hidden !important;
+    float: left;
+    background: #3e3e3e;
 }
 
-#SlidingSidebar.left #SlidingSidebarTab {
-	float: right;
+.ff3 #SlidingSidebar.right #SlidingSidebarContents
+{
+    float: right;
 }
 
-.SlidingSidebarTableftactive {
-	background-image: url(images/slide-button-left-active.gif);
+#SlidingSidebarContentsInner
+{
+    width: 200px;
+    float: left;
 }
 
-.SlidingSidebarTabrightactive {
-	background-image: url(images/slide-button-right-active.gif);
-}
-
-.SlidingSidebarTableft {
-	background-image: url(images/slide-button-left.gif);
-}
-
-.SlidingSidebarTabright {
-	background-image: url(images/slide-button-right.gif);
-}
-
-#SlidingSidebarContents {
-	overflow: hidden !important;
-	float: left;
-	background: #3e3e3e;
-}
-
-.ff3 #SlidingSidebar.right #SlidingSidebarContents {
-	float: right;
-}
-
-#SlidingSidebarContentsInner {
-	width: 200px;
-	float: left;
-}
-
-#SlidingSidebarContentsInner li a.NavigationSelected {
-	font-weight: bold !important;
-}
+    #SlidingSidebarContentsInner li a.NavigationSelected
+    {
+        font-weight: bold !important;
+    }
