@@ -1,40 +1,40 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.1.4241.27463" maximumCompositeVersion="9.9999.9999.9999">
-	</mi:PackageRequirements>
-	<mi:PackageInformation name="Composite.Media.YouTubeChannel" groupName="Composite.Media" version="2.0.3" author="Composite A/S" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Media.YouTubeChannel" id="5a06f424-e058-402a-973b-9f8e6629438c" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
-		<Description>Shows a playlist of videos from a YouTube account on a web page</Description>
-		<TechnicalDetails>Implemented as an XSLT function. Allows you to control the RSS source, the number of items to display, and other settings through its parameters. RSS feeds are not cached.</TechnicalDetails>
-	</mi:PackageInformation>
-	<mi:PackageFragmentInstallerBinaries />
-	<mi:PackageFragmentInstallers>
-		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
-			<Files>
-				<File sourceFilename="~\App_Data\Xslt\Composite\Media\YouTubeChannel.xsl" targetFilename="~\App_Data\Xslt\Composite\Media\YouTubeChannel.xsl" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\Composite\InlineCSharpFunctions\Composite.Media.YouTubeChannel.GetFeedURL.cs" targetFilename="~\App_Data\Composite\InlineCSharpFunctions\Composite.Media.YouTubeChannel.GetFeedURL.cs" allowOverwrite="false" />
-			</Files>
-			<Directories>
-				<Directory sourceDirectory="~\Frontend\Composite\Media\YouTubeChannel\" targetDirectory="~\Frontend\Composite\Media\YouTubeChannel\" allowOverwrite="true" deleteTargetDirectory="false" />
-			</Directories>
-		</mi:Add>
-		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
-			<Types>
-				<Type type="Composite.Data.Types.IInlineFunction,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctions_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IInlineFunctionAssemblyReference,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctionAssemblyReferences_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IParameter,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IXsltFunction,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
-				</Type>
-			</Types>
-		</mi:Add>
-	</mi:PackageFragmentInstallers>
+  <mi:PackageRequirements minimumCompositeVersion="2.1.4241.27463" maximumCompositeVersion="9.9999.9999.9999">
+  </mi:PackageRequirements>
+  <mi:PackageInformation name="Composite.Media.YouTubeChannel" groupName="Composite.Media" version="2.0.4" author="Composite A/S" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Media.YouTubeChannel" id="5a06f424-e058-402a-973b-9f8e6629438c" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+    <Description>Shows a playlist of videos from a YouTube account on a web page</Description>
+    <TechnicalDetails>Implemented as an XSLT function. Allows you to control the RSS source, the number of items to display, and other settings through its parameters. RSS feeds are not cached.</TechnicalDetails>
+  </mi:PackageInformation>
+  <mi:PackageFragmentInstallerBinaries />
+  <mi:PackageFragmentInstallers>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+      <Files>
+        <File sourceFilename="~\App_Data\Xslt\Composite\Media\YouTubeChannel.xsl" targetFilename="~\App_Data\Xslt\Composite\Media\YouTubeChannel.xsl" allowOverwrite="false" />
+        <File sourceFilename="~\App_Data\Composite\InlineCSharpFunctions\Composite.Media.YouTubeChannel.GetFeedURL.cs" targetFilename="~\App_Data\Composite\InlineCSharpFunctions\Composite.Media.YouTubeChannel.GetFeedURL.cs" allowOverwrite="false" />
+      </Files>
+      <Directories>
+        <Directory sourceDirectory="~\Frontend\Composite\Media\YouTubeChannel\" targetDirectory="~\Frontend\Composite\Media\YouTubeChannel\" allowOverwrite="true" deleteTargetDirectory="false" />
+      </Directories>
+    </mi:Add>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+      <Types>
+        <Type type="Composite.Data.Types.IInlineFunction,Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctions_public.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.IInlineFunctionAssemblyReference,Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctionAssemblyReferences_public.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.INamedFunctionCall,Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.IParameter,Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.IXsltFunction,Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+        </Type>
+      </Types>
+    </mi:Add>
+  </mi:PackageFragmentInstallers>
 </mi:PackageInstaller>
