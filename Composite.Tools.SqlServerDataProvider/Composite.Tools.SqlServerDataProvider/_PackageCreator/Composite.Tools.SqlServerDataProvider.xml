@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
 <pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
-	<pc:Directories>
-		<Add name="Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\" />
-	</pc:Directories>
-	<pc:Files>
-		<Add name="App_Data\Composite\TreeDefinitions\Composite.Tools.SqlServerDataProvider.xml" />
-		<Add name="Bin\Composite.MSSqlServer.dll" />
-	</pc:Files>
-	<mi:PackageRequirements minimumCompositeVersion="3.0.4301.29449" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.SqlServerDataProvider" groupName="Composite.Tools" version="1.0.12" author="Composite A/S" website="http://composite.net/" id="c2ab3d31-d7c4-4ce2-9710-954ff6da903e" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
-		<Description>Migrates a website’s data store from XML files to an SQL Server database.</Description>
-	</mi:PackageInformation>
+  <pc:Directories>
+    <Add name="Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\" />
+  </pc:Directories>
+  <pc:Files>
+    <Add name="App_Data\Composite\TreeDefinitions\Composite.Tools.SqlServerDataProvider.xml" />
+    <Add name="Bin\Composite.MSSqlServer.dll" />
+  </pc:Files>
+  <mi:PackageRequirements minimumCompositeVersion="3.0.4301.29449" maximumCompositeVersion="9.9999.9999.9999" />
+  <mi:PackageInformation name="Composite.Tools.SqlServerDataProvider" groupName="Composite.Tools" version="1.0.13" author="Composite A/S" website="http://composite.net/" readMoreUrl="http://docs.composite.net/Composite.Tools.SqlServerDataProvider" id="c2ab3d31-d7c4-4ce2-9710-954ff6da903e" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+    <Description>Migrates a website’s data store from XML files to an SQL Server database.</Description>
+    <TechnicalDetails>Migrates a website’s data store from XML files to an SQL Server database. Because of data logic captured in .NET LINQ, the migration is seamless and requires no code changes.</TechnicalDetails>
+  </mi:PackageInformation>
 </pc:PackageCreator>
