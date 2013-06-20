@@ -10,5 +10,4 @@
     }
 </script>
 
-<asp:PlaceHolder ID="content" runat="server">
-</asp:PlaceHolder>
+<asp:PlaceHolder ID="content" runat="server"></asp:PlaceHolder>

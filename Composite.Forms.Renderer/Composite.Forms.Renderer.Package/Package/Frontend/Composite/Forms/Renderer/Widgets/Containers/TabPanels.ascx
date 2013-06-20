@@ -13,13 +13,13 @@
             string uiTabStartTag = string.Format("<div class=\"tabpanel\" {0}>", CustomUiTabPanelTagParams(formControlDefinition, tabCounter));
             content.Controls.Add(new LiteralControl(uiTabStartTag));
             if (formControlDefinition.IsFullWidthControl == false)
-                content.Controls.Add( new LiteralControl("<div class=\"scrollbox padded\">"));
-                
+                content.Controls.Add(new LiteralControl("<div class=\"scrollbox padded\">"));
+
             content.Controls.Add(formControlDefinition.FormControl);
-            
+
             if (formControlDefinition.IsFullWidthControl == false)
                 content.Controls.Add(new LiteralControl("</div>"));
-            
+
             content.Controls.Add(new LiteralControl("</ui:tabpanel>"));
 
             tabCounter++;
@@ -37,5 +37,5 @@
 </script>
 
 <div class="tabbox">
-       <asp:PlaceHolder runat="server" ID="content" />
+    <asp:PlaceHolder runat="server" ID="content" />
 </div>

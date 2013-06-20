@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Composite.Core.Xml;
+﻿using Composite.Core.Xml;
 
 namespace Composite.Forms.Renderer
 {
-	internal class FormEmail
-	{
-		public string From { get; set; }
-		public string To { get; set; }
-		public string Cc { get; set; }
-		public string Subject { get; set; }
-		public XhtmlDocument Body { get; set; }
-		public bool AppendFormData { get; set; }
-	}
+    internal class FormEmail
+    {
+        public string From { get; set; }
+        public string To { get; set; }
+        public string Cc { get; set; }
+        public string Subject { get; set; }
+        public XhtmlDocument Body { get; set; }
+        public bool AppendFormData { get; set; }
+    }
 }

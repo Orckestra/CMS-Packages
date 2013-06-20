@@ -4,26 +4,26 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	>
 
-	<xsl:template match="/">
-		<html>
-			<head>
-				<title>Form Content</title>
-			</head>
-			<body>
-				<table cellspacing="3">
-					<xsl:for-each select="./*/Property">
-						<tr>
-							<td>
-								<xsl:value-of select="@Label" />
-							</td>
-							<td>
-								<xsl:value-of select="@Value" />
-							</td>
-						</tr>
-					</xsl:for-each>
-				</table>
-			</body>
-		</html>
-	</xsl:template>
+  <xsl:template match="/">
+    <html>
+      <head>
+        <title>Form Content</title>
+      </head>
+      <body>
+        <table cellspacing="3">
+          <xsl:for-each select="./*/Property">
+            <tr>
+              <td>
+                <xsl:value-of select="@Label" />
+              </td>
+              <td>
+                <xsl:value-of select="@Value" />
+              </td>
+            </tr>
+          </xsl:for-each>
+        </table>
+      </body>
+    </html>
+  </xsl:template>
 
 </xsl:stylesheet>
