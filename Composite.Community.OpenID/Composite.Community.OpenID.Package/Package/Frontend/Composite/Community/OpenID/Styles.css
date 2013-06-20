@@ -63,8 +63,9 @@
     border: 1px solid #CCCCCC;
     color: #6E6E6E;
     padding: 5px;
-    height: 32px;
+    height: 44px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 #Input textarea
