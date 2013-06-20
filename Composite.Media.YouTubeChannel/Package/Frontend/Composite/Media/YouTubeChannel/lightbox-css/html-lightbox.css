@@ -13,9 +13,13 @@
 
 #htmlCenter, #htmlBottomContainer {
 	position: absolute;
-	z-index: 9999;
+	z-index: 9000;
 	overflow: hidden;
 	background-color: #fff;
+}
+
+#htmlCenter {
+	z-index: 9999;
 }
 
 .htmlLoading {

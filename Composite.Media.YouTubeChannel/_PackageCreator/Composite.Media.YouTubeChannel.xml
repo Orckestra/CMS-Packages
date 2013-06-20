@@ -9,7 +9,7 @@
 	</pc:XsltFunctions>
 	<mi:PackageRequirements minimumCompositeVersion="2.1.4241.27463" maximumCompositeVersion="9.9999.9999.9999">
 	</mi:PackageRequirements>
-	<mi:PackageInformation name="Composite.Media.YouTubeChannel" groupName="Composite.Media" version="2.0.4" author="Composite A/S" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Media.YouTubeChannel" id="5a06f424-e058-402a-973b-9f8e6629438c" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Media.YouTubeChannel" groupName="Composite.Media" version="2.0.5" author="Composite A/S" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Media.YouTubeChannel" id="5a06f424-e058-402a-973b-9f8e6629438c" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Shows a playlist of videos from a YouTube account on a web page</Description>
 		<TechnicalDetails>Implemented as an XSLT function. Allows you to control the RSS source, the number of items to display, and other settings through its parameters. RSS feeds are not cached.</TechnicalDetails>
 	</mi:PackageInformation>
