@@ -168,4 +168,7 @@
   <data name="PhoneNumber" xml:space="preserve">
     <value>Phone number</value>
   </data>
+  <data name="missingSMTP" xml:space="preserve">
+    <value>The STMP configuration was not found in web.config – please refer to the documentation.</value>
+  </data>
 </root>

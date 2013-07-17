@@ -168,4 +168,7 @@
   <data name="PhoneNumber" xml:space="preserve">
     <value>Телефон</value>
   </data>
+  <data name="missingSMTP" xml:space="preserve">
+    <value>SMTP не был сконфигурирован в web.config – пожалуйста обратитесь к документации.</value>
+  </data>
 </root>
