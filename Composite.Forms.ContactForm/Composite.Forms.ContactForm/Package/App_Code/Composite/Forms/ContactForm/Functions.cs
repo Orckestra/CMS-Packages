@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 using System.Net.Mail;
 using Composite.Data.DynamicTypes;
 using Composite.Core.Types;
+using Composite.Data.Types;
 
 namespace Composite.Forms.ContactForm
 {
@@ -31,6 +32,7 @@ namespace Composite.Forms.ContactForm
         {
             bool isSmtpConfigured = IsSmtpConfigured();
             var catpchaIsValid = useCaptcha ? Captcha.IsValid(captcha, captchaEncryptedValue) : true;
+            var currentPageId = SitemapNavigator.CurrentPageId;
 
             #region SubmittedData
             yield return new XElement("SubmittedData",
@@ -63,7 +65,7 @@ namespace Composite.Forms.ContactForm
             #endregion
 
             #region Check Errors
-            if (!isSmtpConfigured || catpchaIsValid || string.IsNullOrEmpty(fromName) || string.IsNullOrEmpty(message) || !Regex.IsMatch(fromEmail, EmailPattern, RegexOptions.IgnoreCase))
+            if (!isSmtpConfigured || !catpchaIsValid || string.IsNullOrEmpty(fromName) || string.IsNullOrEmpty(message) || !Regex.IsMatch(fromEmail, EmailPattern, RegexOptions.IgnoreCase))
             {
                 var errorText = new Hashtable();
 
@@ -103,9 +105,16 @@ namespace Composite.Forms.ContactForm
             #region Save data and send Email
             else
             {
-                using (DataConnection con = new DataConnection())
+                using (var conn = new DataConnection())
                 {
-                    var newContactFormData = con.CreateNew<ContactFormData>();
+                    var currentPage = conn.Get<IPage>().SingleOrDefault(p => p.Id == currentPageId);
+
+                    if (!currentPage.GetDefinedFolderTypes().Contains(typeof(ContactFormData)))
+                    {
+                        currentPage.AddFolderDefinition(typeof(ContactFormData).GetImmutableTypeId());
+                    }
+
+                    var newContactFormData = conn.CreateNew<ContactFormData>();
                     newContactFormData.Id = Guid.NewGuid();
                     newContactFormData.PageId = SitemapNavigator.CurrentPageId;
                     newContactFormData.Name = fromName;
@@ -119,11 +128,11 @@ namespace Composite.Forms.ContactForm
                     newContactFormData.Address = address;
                     newContactFormData.PhoneNumber = phonenumber;
 
-                    con.Add<ContactFormData>(newContactFormData);
+                    conn.Add(newContactFormData);
 
                     #region Send Email
                     // Get Email template and fill it with item fields values.
-                    var emailTemplate = con.Get<EmailTemplate>().Where(e => e.Id == emailTemplateId).SingleOrDefault();
+                    var emailTemplate = conn.Get<EmailTemplate>().SingleOrDefault(e => e.Id == emailTemplateId);
                     if (emailTemplate != null)
                     {
                         try
@@ -134,12 +143,12 @@ namespace Composite.Forms.ContactForm
                         }
                         catch (Exception ex)
                         {
-                            Composite.Core.Log.LogError("Composite.Forms.ContactForm", ex);
+                            Log.LogError("Composite.Forms.ContactForm", ex);
                         }
                     }
                     else
                     {
-                        Composite.Core.Log.LogInformation("Composite.Forms.ContactForm", "Email was not sent because of EmailTemplate was not found.");
+                        Log.LogInformation("Composite.Forms.ContactForm", "Email was not sent because of EmailTemplate was not found.");
                     }
                     #endregion
                 }
@@ -150,7 +159,7 @@ namespace Composite.Forms.ContactForm
         // This function is used in form markup ~\App_Data\Composite\DynamicTypeForms\Composite\Forms\ContactForm\EmailTemplate.xml to get embeded fileds in content editor
         public static Type GetEmbedableFieldsTypes()
         {
-            return typeof(Composite.Forms.ContactFormData);
+            return typeof(ContactFormData);
         }
 
         private static void SendEmail(string fromName, string fromEmail, string toName, string toEmail, string subject, string body)
