@@ -107,11 +107,16 @@ namespace Composite.Forms.ContactForm
             {
                 using (var conn = new DataConnection())
                 {
-                    var currentPage = conn.Get<IPage>().SingleOrDefault(p => p.Id == currentPageId);
-
-                    if (!currentPage.GetDefinedFolderTypes().Contains(typeof(ContactFormData)))
+                    const string treeId = "Composite.Forms.ContactForm.xml";
+                    if (!conn.Get<IDataItemTreeAttachmentPoint>().Any(p => p.KeyValue == currentPageId.ToString() && p.TreeId == treeId))
                     {
-                        currentPage.AddFolderDefinition(typeof(ContactFormData).GetImmutableTypeId());
+                        var tree = conn.CreateNew<IDataItemTreeAttachmentPoint>();
+                        tree.Id = Guid.NewGuid();
+                        tree.TreeId = treeId;
+                        tree.Position = "Top";
+                        tree.KeyValue = currentPageId.ToString();
+                        tree.InterfaceType = typeof(IPage).ToString();
+                        conn.Add(tree);
                     }
 
                     var newContactFormData = conn.CreateNew<ContactFormData>();
