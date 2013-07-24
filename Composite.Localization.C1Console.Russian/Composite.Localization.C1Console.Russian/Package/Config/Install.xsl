@@ -65,7 +65,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.SecurityViolation.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.C1Console.SecurityViolation.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -193,7 +193,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
-				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.PackageSystem.PackageFragmentInstallers.ru-RU.xml" monitorFileChanges="false" />
+				<add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Core.PackageSystem.PackageFragmentInstallers.ru-RU.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -253,6 +253,50 @@
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@cultureName='ru-RU'])=0">
+        <add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.MasterPagePageTemplate.ru-RU.xml" monitorFileChanges="true" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@cultureName='ru-RU'])=0">
+        <add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.PageTemplateFeatureElementProvider.ru-RU.xml" monitorFileChanges="true" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@cultureName='ru-RU'])=0">
+        <add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.RazorFunction.ru-RU.xml" monitorFileChanges="true" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@cultureName='ru-RU'])=0">
+        <add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.RazorPageTemplate.ru-RU.xml" monitorFileChanges="true" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@cultureName='ru-RU'])=0">
+        <add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.UserControlFunction.ru-RU.xml" monitorFileChanges="true" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>  
 	<xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.PageTypeElementProvider']/Cultures">
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="AddNewMasterPagePageTemplateWorkflow.LabelDialog" value="Добавить новую главную страницу" />
+
+  <string key="EditMasterPageAction.Label" value="Изменить главную страницу" />
+  <string key="EditMasterPageAction.ToolTip" value="Редактировать исходный код главной страницы" />
+
+  <string key="DeleteMasterPageAction.Label" value="Удалить" />
+  <string key="DeleteMasterPageAction.ToolTip" value="Удалить шаблон страниц" />
+
+  <string key="EditTemplate.Validation.DialogTitle" value="Ошибка проверки" />
+  <string key="EditTemplate.Validation.CompilationFailed" value="Сбой при компиляции: {0}" />
+  <string key="EditTemplate.Validation.IncorrectBaseClass" value="Класс шаблона страниц не наследует '{0}'" />
+  <string key="EditTemplate.Validation.PropertyError" value="Не удалось вычислить значение свойства '{0}' шаблона страниц. Исключение: {1}" />
+  <string key="EditTemplate.Validation.TemplateIdChanged" value="Нельзя изменять идентификатор шаблона посредством текущего рабочего процесса. Исходный идентификатор шаблона: '{0}'" />
+
+
+  <string key="AddNewMasterPagePageTemplate.LabelDialog" value="Добавить новую главную страницу-шаблон" />
+  <string key="AddNewMasterPagePageTemplate.LabelFieldGroup" value="Главная страница-шаблон" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitle" value="Название шаблона" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitleHelp" value="Название шаблона идентифицирует его в списках. Рекомендуется выбрать короткое и осмысленное название." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFrom" value="Копировать из" />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromHelp" value="Вы можете скопировать код из другого шаблона, выбрав его в этом списке." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromEmptyOption" value="(Новый шаблон)" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleInUseTitle" value="Название уже используется" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleTooLong" value="Название слишком длинное (используется как часть имени файла)." />
+</strings>
