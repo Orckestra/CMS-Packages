@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootElement.Label" value="Razor функції" />
+  <string key="RootElement.ToolTip" value="Razor функції" />
+
+  <string key="AddNewRazorFunction.Label" value="Додати Razor функцію" />
+  <string key="AddNewRazorFunction.ToolTip" value="Додати нову Razor функцію" />
+  <string key="EditRazorFunction.Label" value="Змінити" />
+  <string key="EditRazorFunction.ToolTip" value="Редагувати Razor функцію" />
+  <string key="DeleteRazorFunction.Label" value="Видалити" />
+  <string key="DeleteRazorFunction.ToolTip" value="Видалити дану Razor функцію" />
+
+  <string key="AddNewRazorFunction.LabelDialog" value="Додати Razor функцію" />
+  <string key="AddNewRazorFunction.LabelFieldGroup" value="Нова Razor функція" />
+  <string key="AddNewRazorFunction.LabelName" value="Назва" />
+  <string key="AddNewRazorFunction.HelpName" value="" />
+  <string key="AddNewRazorFunction.LabelNamespace" value="Простір імен" />
+  <string key="AddNewRazorFunction.HelpNamespace" value="" />
+  <string key="AddNewRazorFunction.LabelCopyFrom" value="Копіювати з" />
+  <string key="AddNewRazorFunction.LabelCopyFromHelp" value="Ви можете скопіювати код з іншої Razor функції, вибрав її у цьому списку." />
+  <string key="AddNewRazorFunction.LabelCopyFromEmptyOption" value="(Нова Razor функція)" />
+
+
+  <string key="AddNewRazorFunctionWorkflow.DuplicateName" value="C1-функція з тією ж назвою вже існує." />
+  <string key="AddNewRazorFunctionWorkflow.EmptyName" value="Не вказано назву функції" />
+  <string key="AddNewRazorFunctionWorkflow.NamespaceEmpty" value="Не вказано простір імен функції" />
+  <string key="AddNewRazorFunctionWorkflow.InvalidNamespace" value="Простір імен має виглядати як A.B.C - та не починатися або закінчуватися на (.)." />
+  <string key="AddNewRazorFunctionWorkflow.TotalNameTooLang" value="Загальна довжина імені та простору імен надто велика (використовується в імені .cshtml файлу)." />
+
+  <string key="EditRazorFunctionWorkflow.Validation.DialogTitle" value="Помилка перевірки" />
+  <string key="EditRazorFunctionWorkflow.Validation.CompilationFailed" value="Збій під час компіляції: {0}" />
+  <string key="EditRazorFunctionWorkflow.Validation.IncorrectBaseClass" value="Razor функція має наслідувати &#39;{0}&#39;" />
+
+  <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteTitle" value="Видалити Razor функцію?" />
+  <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteMessage" value="Видалити вибрану Razor функцію?" />
+</strings>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootElement.Label" value="Функції-елементи керування" />
+  <string key="RootElement.ToolTip" value="Функції на основі .ascx-елементів керування" />
+
+  <string key="AddNewUserControlFunction.Label" value="Додати функцію-елемент керування" />
+  <string key="AddNewUserControlFunction.ToolTip" value="Додати нову функцію на основі користувацького елементу керування" />
+  <string key="EditUserControlFunction.Label" value="Змінити" />
+  <string key="EditUserControlFunction.ToolTip" value="Редагувати функцію на основі користувацького елементу керування" />
+  <string key="DeleteUserControlFunction.Label" value="Видалити" />
+  <string key="DeleteUserControlFunction.ToolTip" value="Видалити функцію на основі користувацького елементу керування" />
+  
+  <string key="AddNewUserControlFunction.LabelDialog" value="Додати нову функцію-елемент керування" />
+  <string key="AddNewUserControlFunction.LabelFieldGroup" value="Нова функція-елемент керування" />
+  <string key="AddNewUserControlFunction.LabelName" value="Назва" />
+  <string key="AddNewUserControlFunction.HelpName" value="" />
+  <string key="AddNewUserControlFunction.LabelNamespace" value="Простір імен" />
+  <string key="AddNewUserControlFunction.HelpNamespace" value="" />
+  <string key="AddNewUserControlFunction.LabelCopyFrom" value="Копіювати з" />
+  <string key="AddNewUserControlFunction.LabelCopyFromHelp" value="Ви можете скопіювати код з іншої функції на основі користувацького елементу керування, вибрав її у цьому списку." />
+  <string key="AddNewUserControlFunction.LabelCopyFromEmptyOption" value="(Нова функція-елемент керування)" />
+
+  <string key="AddNewUserControlFunctionWorkflow.DuplicateName" value="C1-функція з тією ж назвою вже існує." />
+  <string key="AddNewUserControlFunctionWorkflow.EmptyName" value="Не вказано назву функції" />
+  <string key="AddNewUserControlFunctionWorkflow.NamespaceEmpty" value="Не вказано простір імен функції" />
+  <string key="AddNewUserControlFunctionWorkflow.InvalidNamespace" value="Простір імен має виглядати як A.B.C - та не починатися або закінчуватися на (.)." />
+  <string key="AddNewUserControlFunctionWorkflow.TotalNameTooLang" value="Загальна довжина імені та простору імен надто велика (використовується в імені .ASCX файлу)." />
+
+  <string key="EditUserControlFunctionWorkflow.Validation.DialogTitle" value="Помилка перевірки" />
+  <string key="EditUserControlFunctionWorkflow.Validation.CompilationFailed" value="Збій під час компіляції: {0}" />
+  <string key="EditUserControlFunctionWorkflow.Validation.IncorrectBaseClass" value="Функція-елемент керування має наслідувати &#39;{0}&#39;" />
+
+  <string key="DeleteUserControlFunctionWorkflow.ConfirmDeleteTitle" value="Видалити функцію-елемент керування?" />
+  <string key="DeleteUserControlFunctionWorkflow.ConfirmDeleteMessage" value="Видалити вибрану функцію-елемент керування?" />
+</strings>

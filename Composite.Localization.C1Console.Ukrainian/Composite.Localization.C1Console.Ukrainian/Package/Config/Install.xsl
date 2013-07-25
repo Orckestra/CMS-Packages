@@ -65,7 +65,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.SecurityViolation.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.C1Console.SecurityViolation.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -193,7 +193,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">
-				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.PackageSystem.PackageFragmentInstallers.uk-UA.xml" monitorFileChanges="false" />
+				<add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Core.PackageSystem.PackageFragmentInstallers.uk-UA.xml" monitorFileChanges="false" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -253,7 +253,51 @@
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
-	<xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.PageTypeElementProvider']/Cultures">
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.MasterPagePageTemplate']/Cultures">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@cultureName='uk-UA'])=0">
+        <add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.MasterPagePageTemplate.uk-UA.xml" monitorFileChanges="true" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.PageTemplateFeatureElementProvider']/Cultures">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@cultureName='uk-UA'])=0">
+        <add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.PageTemplateFeatureElementProvider.uk-UA.xml" monitorFileChanges="true" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.RazorFunction']/Cultures">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@cultureName='uk-UA'])=0">
+        <add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.RazorFunction.uk-UA.xml" monitorFileChanges="true" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.RazorPageTemplate']/Cultures">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@cultureName='uk-UA'])=0">
+        <add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.RazorPageTemplate.uk-UA.xml" monitorFileChanges="true" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.UserControlFunction']/Cultures">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="count(add[@cultureName='uk-UA'])=0">
+        <add cultureName="uk-UA" xmlFile="~/App_Data/Composite/LanguagePacks/uk-UA/Composite.Plugins.UserControlFunction.uk-UA.xml" monitorFileChanges="true" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.PageTypeElementProvider']/Cultures">
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='uk-UA'])=0">

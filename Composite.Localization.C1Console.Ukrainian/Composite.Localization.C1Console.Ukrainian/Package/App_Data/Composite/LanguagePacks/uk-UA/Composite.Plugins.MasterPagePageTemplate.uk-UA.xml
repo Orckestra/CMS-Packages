@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="AddNewMasterPagePageTemplateWorkflow.LabelDialog" value="Додати нову головну сторінку" />
+
+  <string key="EditMasterPageAction.Label" value="Змінити головну сторінку" />
+  <string key="EditMasterPageAction.ToolTip" value="Редагувати вихідний код головної сторінки" />
+
+  <string key="DeleteMasterPageAction.Label" value="Видалити" />
+  <string key="DeleteMasterPageAction.ToolTip" value="Видалити шаблон сторінок" />
+
+  <string key="EditTemplate.Validation.DialogTitle" value="Помилка перевірки" />
+  <string key="EditTemplate.Validation.CompilationFailed" value="Збій під час компіляції: {0}" />
+  <string key="EditTemplate.Validation.IncorrectBaseClass" value="Клас шаблону сторінок не наслідує '{0}'" />
+  <string key="EditTemplate.Validation.PropertyError" value="Не вдалося обчислити значення властивості '{0}' шаблону сторінок. Виняток: {1}" />
+  <string key="EditTemplate.Validation.TemplateIdChanged" value="Не можна змінити ідентифікатор шаблону за допомогою поточного робочого процесу. Вихідний ідентифікатор шаблону: '{0}'" />
+
+
+  <string key="AddNewMasterPagePageTemplate.LabelDialog" value="Додати нову головну сторінку-шаблон" />
+  <string key="AddNewMasterPagePageTemplate.LabelFieldGroup" value="Головна сторінка-шаблон" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitle" value="Назва шаблону" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitleHelp" value="Назва шаблону ідентифікує його в списках. Рекомендується вибрати коротку та осмислену назву." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFrom" value="Копіювати з" />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromHelp" value="Ви можете скопіювати код з іншого шаблону, вибрав його у цьому списку." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromEmptyOption" value="(Новий шаблон)" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleInUseTitle" value="Назва вже використовується" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleTooLong" value="Назва надто довга (використовується як частина імені файлу)." />
+</strings>

@@ -3,46 +3,47 @@
   <string key="PackageManager.CompositeVersionMisMatch" value="Версія пакета C1 не відповідає поточній версії С1" />
   <string key="PackageManager.PackageAlreadyInstalled" value="Пакет вже встановлено" />
   <string key="PackageManager.NewerVersionInstalled" value="Пакет з більш новою версією вже встановлено" />	
-  <string key="PackageManager.MissingPackageDirectory" value="Неможливо знайти шлях каталогу пакету '{0}'" />
+  <string key="PackageManager.MissingPackageDirectory" value="Неможливо знайти шлях каталогу пакету &#39;{0}&#39;" />
   <string key="PackageManager.Uninstallable" value="Пакет відзначений як такий, що не видаляється з системи" />
-  <string key="PackageManager.MissingZipFile" value="Не вдалося знайти шлях до Zip-файлу пакету '{0}'" />
-  <string key="PackageManager.MissingUninstallFile" value="Не вдалося знайти шлях до файлу видалення пакета &quot;{0} '" />
-  <string key="PackageManager.MissingElement" value="Відсутній елемент '{0}'." />
-  <string key="PackageManager.MissingAttribute" value="Відсутній атрибут '{0}'." />
-  <string key="PackageManager.InvalidAttributeValue" value="Значення атрибуту '{0}' неприпустимо." />
-  <string key="PackageManager.InvalidElementValue" value="Значення елемента '{0}' неприпустиме." />
-  <string key="ConfigurationTransformationPackageFragmentInstaller.ExpectedExactlyTwoElements" value="Очікувалися рівно два елементи, '{0} &quot;і&quot; {1}'" />
-  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingElement" value="Відсутній елемент '{0}'." />
-  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingAttribute" value="Відсутній атрибут '{0}'." />
-  <string key="ConfigurationTransformationPackageFragmentInstaller.PathDoesNotExist" value="Шлях '{0}' не існує в Zip-файлі." />
-  <string key="ConfigurationTransformationPackageFragmentInstaller.UnableToParsXslt" value="Не вдалося розпарсити XSLT в Zip-файлі '{0}'. {1}" />
-  <string key="ConfigurationTransformationPackageFragmentInstaller.XsltWillGeneratedInvalid" value="XSLT файл '{0}' згенерує файл конфігурації у неприпустимому форматі. {1}" />
+  <string key="PackageManager.MissingZipFile" value="Не вдалося знайти шлях до Zip-файлу пакету &#39;{0}&#39;" />
+  <string key="PackageManager.MissingUninstallFile" value="Не вдалося знайти шлях до файлу видалення пакета &quot;{0} &#39;" />
+  <string key="PackageManager.MissingElement" value="Відсутній елемент &#39;{0}&#39;." />
+  <string key="PackageManager.MissingAttribute" value="Відсутній атрибут &#39;{0}&#39;." />
+  <string key="PackageManager.InvalidAttributeValue" value="Значення атрибуту &#39;{0}&#39; неприпустимо." />
+  <string key="PackageManager.InvalidElementValue" value="Значення елемента &#39;{0}&#39; неприпустиме." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.ExpectedExactlyTwoElements" value="Очікувалися рівно два елементи, &#39;{0} &quot;і&quot; {1}&#39;" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingElement" value="Відсутній елемент &#39;{0}&#39;." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingAttribute" value="Відсутній атрибут &#39;{0}&#39;." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.PathDoesNotExist" value="Шлях &#39;{0}&#39; не існує в Zip-файлі." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.UnableToParsXslt" value="Не вдалося розпарсити XSLT в Zip-файлі &#39;{0}&#39;. {1}" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.XsltWillGeneratedInvalid" value="XSLT файл &#39;{0}&#39; згенерує файл конфігурації у неприпустимому форматі. {1}" />
   <string key="DataPackageFragmentInstaller.OnlyOneElement" value="Допускається лише один елемент &quot;Types&quot;" />
   <string key="DataPackageFragmentInstaller.MissingElement" value="Відсутній елемент &quot;Types&quot;" />
   <string key="DataPackageFragmentInstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
-  <string key="DataPackageFragmentInstaller.WrongDataScopeIdentifier" value="Неправильне ім'я DataScopeIdentifier ({0}) в конфігурації" />
-  <string key="DataPackageFragmentInstaller.WrongLocale" value="Неправильно ім'я культури ({0}) в конфігурації" />
-  <string key="DataPackageFragmentInstaller.MissingFile" value="Відсутній файл '{0}' в Zip-файлі пакета" />
-  <string key="DataPackageFragmentInstaller.TypeNotConfigured" value="Тип інтерфейсу даних '{0}' не було налаштовано в системі" />
-  <string key="DataPackageFragmentInstaller.TypeNotInheriting" value="Тип інтерфейсу даних '{0}' не успадковує інтерфейс '{1}'" />
-  <string key="DataPackageFragmentInstaller.MissingProperty" value="Тип інтерфейсу даних '{0}' не має властивість з ім'ям '{1}'" />
-  <string key="DataPackageFragmentInstaller.MissingWritableProperty" value="У типу інтерфейсу даних '{0}' немає властивості, що можна змінювати,  з ім'ям '{1}'" />
-  <string key="DataPackageFragmentInstaller.ConversionFailed" value="Не вдалося перетворити значення '{0}' в тип '{1}'" />
-  <string key="DataPackageFragmentInstaller.MissingPropertyVaule" value="У властивості '{0}' інтерфейсу '{1}' відсутнє значення." />
-  <string key="DataPackageFragmentInstaller.DataExists" value="Елемент даних типу інтерфейсу даних '{0}' вже існує" />
+  <string key="DataPackageFragmentInstaller.WrongDataScopeIdentifier" value="Неправильне ім&#39;я DataScopeIdentifier ({0}) в конфігурації" />
+  <string key="DataPackageFragmentInstaller.WrongLocale" value="Неправильно ім&#39;я культури ({0}) в конфігурації" />
+  <string key="DataPackageFragmentInstaller.MissingFile" value="Відсутній файл &#39;{0}&#39; в Zip-файлі пакета" />
+  <string key="DataPackageFragmentInstaller.TypeNotConfigured" value="Тип інтерфейсу даних &#39;{0}&#39; не було налаштовано в системі" />
+  <string key="DataPackageFragmentInstaller.TypeNotInheriting" value="Тип інтерфейсу даних &#39;{0}&#39; не успадковує інтерфейс &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingProperty" value="Тип інтерфейсу даних &#39;{0}&#39; не має властивість з ім&#39;ям &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingWritableProperty" value="У типу інтерфейсу даних &#39;{0}&#39; немає властивості, що можна змінювати,  з ім&#39;ям &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.ConversionFailed" value="Не вдалося перетворити значення &#39;{0}&#39; в тип &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingPropertyVaule" value="У властивості &#39;{0}&#39; інтерфейсу &#39;{1}&#39; відсутнє значення." />
+  <string key="DataPackageFragmentInstaller.DataExists" value="Тип даних &#39;{0}&#39;: запис (-и) {1} вже встановлено" />
   <string key="DataPackageFragmentInstaller.MissingTypeDescriptor" value="Відсутній дескриптор типу даних для типу {0}" />
   <string key="DataPackageFragmentInstaller.TypeNonLocalizedWithLocale" value="Тип даних &quot;{0}&quot; не локалізовано, але локаль зазаначена в конфігурації" />
   <string key="DataPackageFragmentInstaller.TypeLocalizedWithoutLocale" value="Тип даних &quot;{0}&quot; локалізовано, але локалі не зазаначені в конфігурації" />
+  <string key="DataPackageFragmentInstaller.ReferencedDataMissing" value="Відсутні дані, на які посилаються. Тип: {0}, {1}: &#39;{2}&#39;" />
   <string key="DataPackageFragmentUninstaller.OnlyOneElement" value="Допускається лише один елемент &quot;Types&quot;" />
   <string key="DataPackageFragmentUninstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
-  <string key="DataPackageFragmentUninstaller.MissingKeyProperty" value="Тип даних '{0}' не містить ключову властивість з ім'ям '{1}'" />
+  <string key="DataPackageFragmentUninstaller.MissingKeyProperty" value="Тип даних &#39;{0}&#39; не містить ключову властивість з ім&#39;ям &#39;{1}&#39;" />
   <string key="DataTypePackageFragmentInstaller.OnlyOneElement" value="Допускається лише один елемент &quot;Types&quot;" />
   <string key="DataTypePackageFragmentInstaller.MissingElement" value="Відсутній елемент &quot;Types&quot;" />
   <string key="DataTypePackageFragmentInstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
-  <string key="DataTypePackageFragmentInstaller.TypeNotConfigured" value="Тип інтерфейсу даних '{0}' не було налаштовано в системі" />
-  <string key="DataTypePackageFragmentInstaller.TypeNotInheriting" value="Тип інтерфейсу даних '{0}' не успадковує інтерфейс '{1}'" />
+  <string key="DataTypePackageFragmentInstaller.TypeNotConfigured" value="Тип інтерфейсу даних &#39;{0}&#39; не було налаштовано в системі" />
+  <string key="DataTypePackageFragmentInstaller.TypeNotInheriting" value="Тип інтерфейсу даних &#39;{0}&#39; не успадковує інтерфейс &#39;{1}&#39;" />
   <string key="DataTypePackageFragmentInstaller.TypeExists" value="Інтерфейс типу &quot;{0}&quot; вже існує в системі" />
-  <string key="DataTypePackageFragmentInstaller.InterfaceCodeError" value="Інтерфейс типу '{0}' неправильно закодований" />
+  <string key="DataTypePackageFragmentInstaller.InterfaceCodeError" value="Не вдалося створити дескриптор типу даних для интерфейсу &#39;{0}&#39;" />
   <string key="DataTypePackageFragmentUninstaller.OnlyOneElement" value="Допускається лише один елемент &quot;Types&quot;" />
   <string key="DataTypePackageFragmentUninstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
   <string key="DataTypePackageFragmentUninstaller.WrongAttributeFormat" value="Неправильний формат атрибутів в конфігурації" />
@@ -50,7 +51,7 @@
   <string key="DynamicDataTypePackageFragmentInstaller.MissingElement" value="Відсутній елемент &quot;Types&quot;" />
   <string key="DynamicDataTypePackageFragmentInstaller.DataTypeDescriptorParseError" value="Помилка XML під час парсінгу атрибута даних TypeDescriptor" />
   <string key="DynamicDataTypePackageFragmentInstaller.DataTypeDescriptorDeserializeError" value="Помилка під час десеріалізациі типу даних. Текст помилки: {0}." />
-  <string key="DynamicDataTypePackageFragmentInstaller.MissingReferencedType" value="Не можу знайти залежний тип '{0}'." />
+  <string key="DynamicDataTypePackageFragmentInstaller.MissingReferencedType" value="Не можу знайти залежний тип &#39;{0}&#39;." />
   <string key="DynamicDataTypePackageFragmentInstaller.TypeExists" value="Тип інтерфейсу &quot;{0}&quot; вже існує в системі" />
   <string key="DynamicDataTypePackageFragmentUninstaller.OnlyOneElement" value="Допускається лише один елемент &quot;Types&quot;" />
   <string key="DynamicDataTypePackageFragmentUninstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
@@ -58,36 +59,36 @@
   <string key="FilePackageFragmentInstaller.OnlyOneFilesElement" value="Допускається лише один елемент &quot;Files&quot;" />
   <string key="FilePackageFragmentInstaller.OnlyOneDirectoriesElement" value="Допускається лише один елемент &quot;Directories&quot;" />
   <string key="FilePackageFragmentInstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
-  <string key="FilePackageFragmentInstaller.DeleteTargetDirectoryNotAllowed" value="Атрибут 'deleteTargetDirectory' може бути застосований лише до каталогів, а не файлів" />
+  <string key="FilePackageFragmentInstaller.DeleteTargetDirectoryNotAllowed" value="Атрибут &#39;deleteTargetDirectory&#39; може бути застосований лише до каталогів, а не файлів" />
   <string key="FilePackageFragmentInstaller.WrongAttributeBoolFormat" value="Неправильний формат значення атрибуту, очікується значення bool" />
-  <string key="FilePackageFragmentInstaller.MissingFile" value="Інсталяційний ZIP-файл не містить файл '{0}'" />
-  <string key="FilePackageFragmentInstaller.FileExists" value="Файл '{0}' вже існує" />
-  <string key="FilePackageFragmentInstaller.FileReadOnly" value="Файл '{0}' позначений &quot;тільки для читання&quot; і тому не може бути перезаписаний." />
-  <string key="FilePackageFragmentInstaller.AssemblyLoadNotAllowed" value="Атрибут &quot;assemblyLoad 'може бути застосований лише до файлів, а не каталогів" />
-  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowed" value="Атрибут &quot;onlyUpdate 'може бути застосований лише до файлів, а не каталогах" />
+  <string key="FilePackageFragmentInstaller.MissingFile" value="Інсталяційний ZIP-файл не містить файл &#39;{0}&#39;" />
+  <string key="FilePackageFragmentInstaller.FileExists" value="Файл &#39;{0}&#39; вже існує" />
+  <string key="FilePackageFragmentInstaller.FileReadOnly" value="Файл &#39;{0}&#39; позначений &quot;тільки для читання&quot; і тому не може бути перезаписаний." />
+  <string key="FilePackageFragmentInstaller.AssemblyLoadNotAllowed" value="Атрибут &quot;assemblyLoad &#39;може бути застосований лише до файлів, а не каталогів" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowed" value="Атрибут &quot;onlyUpdate &#39;може бути застосований лише до файлів, а не каталогах" />
   <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowedWithLoadAssemlby" value="Атрибут &quot;onlyUpdate&quot; неприпустимий у поєднанні з атрибутом &quot;loadAssembly&quot;" />
-  <string key="FilePackageFragmentInstaller.MissingDirectory" value="Інсталяційний ZIP-файл не містить каталог '{0}'" />
-  <string key="FilePackageFragmentInstaller.WrongBasePath" value="Uninstall.xml містить шляхи до файлів, пов'язані з вихідного розташування сайту, таким чином пакет не може бути безпечно вилучений з системи." />
+  <string key="FilePackageFragmentInstaller.MissingDirectory" value="Інсталяційний ZIP-файл не містить каталог &#39;{0}&#39;" />
+  <string key="FilePackageFragmentInstaller.WrongBasePath" value="Uninstall.xml містить шляхи до файлів, пов&#39;язані з вихідного розташування сайту, таким чином пакет не може бути безпечно вилучений з системи." />
   <string key="FilePackageFragmentUninstaller.OnlyOneFilesElement" value="Допускається лише один елемент &quot;Files&quot;" />
   <string key="VirtualElementProviderNodePackageFragmentInstaller.OnlyOneElement" value="Допускається лише один елемент &quot;Areas&quot;" />
-  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingType" value="Не вдалося знайти тип '{0}'" />
-  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingIcon" value="Не вдалося знайти значок '{0}'" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingType" value="Не вдалося знайти тип &#39;{0}&#39;" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingIcon" value="Не вдалося знайти значок &#39;{0}&#39;" />
   <string key="VirtualElementProviderNodePackageFragmentUninstaller.OnlyOneElement" value="Допускається лише один елемент &quot;Areas&quot;" />
   <string key="VirtualElementProviderNodePackageFragmentUninstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
   <string key="FileXslTransformationPackageFragmentInstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
-  <string key="FileXslTransformationPackageFragmentInstaller.FileNotFound" value="Файл '{0}' не знайдено" />
-  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnly" value="Файл '{0}' позначено як 'Лише для читання' і тому він не може бути перезаписаний." />
-  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnlyOverride" value="Файл '{0}' позначено як 'Лише для читання'. Цей атрибут файла було видалено явним чином и файл було нормально оновлено." />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileNotFound" value="Файл &#39;{0}&#39; не знайдено" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnly" value="Файл &#39;{0}&#39; позначено як &#39;Лише для читання&#39; і тому він не може бути перезаписаний." />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnlyOverride" value="Файл &#39;{0}&#39; позначено як &#39;Лише для читання&#39;. Цей атрибут файла було видалено явним чином и файл було нормально оновлено." />
 
   <string key="PackageVersionBumberFragmentInstaller.OnlyOneElement" value="Допускається лише один елемент &quot;PackageVersions&quot;" />
   <string key="PackageVersionBumberFragmentInstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
   <string key="PackageVersionBumberFragmentInstaller.WrongAttributeGuidFormat" value="Неправильний формат значення атрибуту, очікується значення Guid" />
-  <string key="PackageVersionBumberFragmentInstaller.PackageIdDuplicate" value="Дублювання ідентифікатора пакету: '{0}'" />
+  <string key="PackageVersionBumberFragmentInstaller.PackageIdDuplicate" value="Дублювання ідентифікатора пакету: &#39;{0}&#39;" />
   <string key="PackageVersionBumberFragmentInstaller.WrongAttributeVersionFormat" value="Неправильний формат значення атрибуту, очікується значення версії (x.y.z)" />
   <string key="PackageVersionBumberFragmentUninstaller.OnlyOneElement" value="Допускається лише один елемент &quot;PackageVersions&quot;" />
   <string key="PackageVersionBumberFragmentUninstaller.MissingAttribute" value="Відсутній атрибут {0} в конфігурації" />
   <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeGuidFormat" value="Неправильний формат значення атрибуту, очікується значення Guid" />
-  <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="Дублюючийся ідентифікатор пакету: '{0}'" />
+  <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="Дублюючийся ідентифікатор пакету: &#39;{0}&#39;" />
   <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeVersionFormat" value="Неправильний формат значення атрибуту, очікується значення версії (x.y.z)" />
   <string key="PackageLicenseFragmentInstaller.MissingPublicKeyElement" value="Публічний ключ RSA відсутній у конфигурації пакета" />
 
@@ -97,5 +98,5 @@
   <string key="License.ExpiredMessage" value="Термін дії ознайомлювального періоду для цього пакету завершено. Вам потрібен дійсний ліцензійний ключ." />
   <string key="License.Failed" value="Не вдалося отримати ліцензійну інформацію. Ідентифікатор продукту: {0}" />
 
-  <string key="NotEnoughNtfsPermissions" value="Обліковий запис користувача Windows, під яким даний екземпляр С1 працює, не має права на запис у файл або папку '{0}'." />
+  <string key="NotEnoughNtfsPermissions" value="Обліковий запис користувача Windows, під яким даний екземпляр С1 працює, не має права на запис у файл або папку &#39;{0}&#39;." />
 </strings>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="EditRazorFileAction.Label" value="Змінити Razor-файл" />
+  <string key="EditRazorFileAction.ToolTip" value="Редагувати cshtml-файл" />
+
+  <string key="EditRazorTemplateAction.Label" value="Змінити Razor-шаблон" />
+  <string key="EditRazorTemplateAction.ToolTip" value="Редагувати cshtml-файл, пов'язаний з шаблоном" />
+
+  <string key="DeleteRazorPageTemplateAction.Label" value="Видалити" />
+  <string key="DeleteRazorPageTemplateAction.ToolTip" value="Видалити шаблон сторінок" />
+
+  <string key="AddNewRazorPageTemplate.LabelDialog" value="Додати новий Razor-шаблон" />
+  <string key="AddNewRazorPageTemplate.LabelFieldGroup" value="Razor-шаблон" />
+  <string key="AddNewRazorPageTemplate.LabelTemplateTitle" value="Назва шаблону" />
+  <string key="AddNewRazorPageTemplate.LabelTemplateTitleHelp" value="Назва шаблону ідентифікує його в списках. Рекомендується вибрати коротку та осмислену назву." />
+  <string key="AddNewRazorPageTemplate.LabelCopyFrom" value="Копіювати з" />
+  <string key="AddNewRazorPageTemplate.LabelCopyFromHelp" value="Ви можете скопіювати код з іншого шаблону, вибрав його у цьому списку." />
+  <string key="AddNewRazorPageTemplate.LabelCopyFromEmptyOption" value="(Новий шаблон)" />
+  <string key="AddNewRazorPageTemplateWorkflow.TitleInUseTitle" value="Назва вже використовується" />
+  <string key="AddNewRazorPageTemplateWorkflow.TitleTooLong" value="Назва надто довга (використовується як частина імені .cshtml-файлу)." />
+
+  <string key="EditTemplate.Validation.DialogTitle" value="Помилка перевірки" />
+  <string key="EditTemplate.Validation.CompilationFailed" value="Збій під час компіляції: {0}" />
+  <string key="EditTemplate.Validation.IncorrectBaseClass" value="Клас шаблону сторінок не наслідує '{0}'" />
+  <string key="EditTemplate.Validation.PropertyError" value="Не вдалося обчислити значення властивості '{0}' шаблону сторінок. Виняток: {1}" />
+  <string key="EditTemplate.Validation.TemplateIdChanged" value="Не можна змінити ідентифікатор шаблону за допомогою поточного робочого процесу. Вихідний ідентифікатор шаблону: '{0}'" />
+</strings>

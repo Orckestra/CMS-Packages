@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+    <string key="ElementProvider.RootLabel" value="Фрагменти шаблонів" />
+    <string key="ElementProvider.RootToolTip" value="Тут знаходяться фрагменти HTML-коду та функціональності, які можна включати в шаблони сторінок сайту." />
+    <string key="ElementProvider.AddTemplateFeature" value="Додати фрагмент шаблону" />
+    <string key="ElementProvider.AddTemplateFeatureToolTip" value="Додати новий фрагмент шаблону сторінок" />
+    <string key="ElementProvider.DeleteTemplateFeature" value="Видалити фрагмент шаблону" />
+    <string key="ElementProvider.DeleteTemplateFeatureToolTip" value="Видалити цей фрагмент шаблону" />
+    <string key="ElementProvider.EditTemplateFeature" value="Змінити фрагмент шаблону" />
+    <string key="ElementProvider.EditTemplateFeatureToolTip" value="Редагувати вибраний фрагмент шаблону" />
+    <string key="ElementProvider.EditVisually" value="Використовувати візуальний редактор" />
+    <string key="ElementProvider.EditVisuallyToolTip" value="Якщо обрано цей варіант, для роботи з фрагментом шаблону буде використано візуальний редактор." />
+
+    <string key="AddWorkflow.LabelDialog" value="Додати новий фрагмент шаблону сторінок" />
+    <string key="AddWorkflow.LabelFieldGroup" value="Фрагмент шаблону сторінок" />
+    <string key="AddWorkflow.LabelTemplateFeatureName" value="Назва фрагменту" />
+    <string key="AddWorkflow.LabelTemplateFeatureNameHelp" value="Назва використовується для ідентифікації цього фрагменту при включенні його в шаблон." />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType" value="Тип редактору" />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorTypeHelp" value="Виберіть тип редактору для роботи з цим фрагментом. Ви завжди зможете пізніше переключити тип редактору - в дереві." />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType.html" value="Візуальний редактор" />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType.xml" value="Редактор коду" />
+    <string key="AddWorkflow.NameInUse" value="Назва вже використовується для іншого фрагменту" />
+    <string key="AddWorkflow.NameTooLong" value="Назва надто довга (макс. 50 символів)" />
+    <string key="AddWorkflow.NameNotValidInFilename" value="Назва має бути допустимою для використання в імені файлу. Вам слід видалити недопустимі символи." />
+
+    <string key="DeleteWorkflow.Title" value="Видалити цей фрагмент шаблону сторінок?" />
+    <string key="DeleteWorkflow.Text" value="Якщо цей фрагмент використовується в шаблоні сторінок, ця дія може призвести до помилок." />
+</strings>
