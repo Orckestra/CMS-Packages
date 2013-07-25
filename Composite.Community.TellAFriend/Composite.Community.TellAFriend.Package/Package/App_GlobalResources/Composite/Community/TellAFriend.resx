@@ -144,6 +144,9 @@
   <data name="fromNameError" xml:space="preserve">
     <value>Please provide a from name, the field cannot be empty.</value>
   </data>
+  <data name="missingSMTP" xml:space="preserve">
+    <value>The STMP configuration was not found in web.config – please refer to the documentation.</value>
+  </data>
   <data name="submit" xml:space="preserve">
     <value>Submit</value>
   </data>

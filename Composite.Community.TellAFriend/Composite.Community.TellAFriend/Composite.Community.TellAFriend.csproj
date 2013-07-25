@@ -39,6 +39,7 @@
       <HintPath>..\..\References\Composite\2.1\Composite.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -55,10 +56,10 @@
     <Compile Include="TellAFriend.asmx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="TellAFriendFacade.cs" />
     <Compile Include="TellAFriendXsltExtensionsFunction.cs" />
     <Compile Include="Validators\RegExp.cs" />
     <Compile Include="Validators\RegExpLib.cs" />
-    <Compile Include="TellAFriendFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.TellAFriend" groupName="Composite.Community" version="1.4.7" readMoreUrl="http://docs.composite.net/Composite.Community.TellAFriend" author="Composite A/S" website="http://composite.net" id="e46fde90-fda8-4de1-88a2-54c4474ac26f" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Community.TellAFriend" groupName="Composite.Community" version="1.4.8" readMoreUrl="http://docs.composite.net/Composite.Community.TellAFriend" author="Composite A/S" website="http://composite.net" id="e46fde90-fda8-4de1-88a2-54c4474ac26f" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>Allows visitors to your website  to send URLs of pages they are currently viewing to other people by email.</Description>
 		<TechnicalDetails>The form that appears when the user clicks the Tell a friend link can be generated on either the server (embedded) or client side (popup). In the latter case, JavaScript must be allowed on the client side.</TechnicalDetails>
 	</mi:PackageInformation>
