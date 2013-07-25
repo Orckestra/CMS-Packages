@@ -95,10 +95,6 @@
     <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Web.SourceEditor.uk-UA.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Web.UrlConfiguration.uk-UA.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\uk-UA\Composite.Web.VisualEditor.uk-UA.xml" />
-    <Content Include="Package\Config\Install.xsl">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Package\Config\Uninstall.xsl" />
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.Localization.C1Console.Ukrainian.xml">
       <SubType>Designer</SubType>

@@ -9,7 +9,7 @@
   <string key="AddNewPageStep1.LabelAbstract" value="Опис" />
   <string key="AddNewPageStep1.LabelAbstractHelp" value="Використовуйте це поле для короткого опису сторінки" />
   <string key="AddNewPageStep1.LabelTemplate" value="Тип сторінок" />
-  <string key="AddNewPageStep1.HelpTemplate" value="Виберіть тип, на якому повинна базуватися ця сторінка." />
+  <string key="AddNewPageStep1.HelpTemplate" value="Вибір типу сторінок визначає роль сторінки, напр., &quot;нормальна сторінка&quot; або &quot;блог&quot;. Доступні опції залежать від встановлених компонентів." />
   <string key="AddNewPageStep1.LabelPosition" value="Позиція" />
   <string key="AddNewPageStep1.HelpPosition" value="Виберіть, де ви хочете розмістити сторінку в дереві контенту." />
   <string key="AddNewPageStep1.LabelAddToTop" value="Вставити вгорі" />
@@ -24,6 +24,8 @@
   <string key="AddNewPageStep2.LabelPositionSelectorPanel" value="Виберіть точну позицію сторінки" />
   <string key="AddNewPageStep2.LabelPositionSelector" value="Позиція нижче" />
   <string key="AddNewPageStep2.HelpPositionSelector" value="" />
+  <string key="AddNewPageStep1.TitleTooLong" value="Вказано занадто довгу назву. Зробіть її коротшою і спробуйте знову" />
+  <string key="AddNewPageStep1.MenuTitleTooLong" value="Вказано занадто довгий заголовок меню. Зробіть його коротшим і спробуйте знову" />
   <string key="EditPage.LabelPaneSettings" value="Настройки" />
   <string key="EditPage.LabelPublicationState" value="Статус" />
   <string key="EditPage.HelpPublicationState" value="Дати сторінці інший статус" />
@@ -33,7 +35,7 @@
   <string key="EditPage.HelpMenuTitle" value="Значення у цьому полі може використовуватися для навігації по сайту." />
   <string key="EditPage.LabelUrlTitle" value="Назва для URL" />
   <string key="EditPage.UrlTitleFormattedTitle" value="Назву для URL було змінено" />	
-  <string key="EditPage.UrlTitleFormattedMessage" value="У відповідності до поточних правил заміни URL, назву для URL було змінено на '{0}'" />
+  <string key="EditPage.UrlTitleFormattedMessage" value="У відповідності до поточних правил заміни URL, назву для URL було змінено на &#39;{0}&#39;" />
   <string key="EditPage.HelpUrlTitle" value="Значення у цьому полі відображається в адресному рядку браузера як частина URL-адреси. Поле використовується пошуковими системами." />
   <string key="EditPage.LabelFriendlyUrl" value="Дружній URL" />
   <string key="EditPage.HelpFriendlyUrl" value="Значення у цьому полі відображається в рядку адреси браузера і замінює URL, згенерований системою. Зверніть увагу на те, що сервер повинен бути налаштований, щоб підтримувати цю функцію" />
@@ -46,6 +48,7 @@
   <string key="EditPage.LabelContent" value="Контент" />
   <string key="EditPage.LabelPreview" value="Перегляд" />
   <string key="EditPage.PageTypeSelectorLabel" value="Тип сторінок" />
+  <string key="EditPage.PageTypeSelectorHelp" value="Вибір типу сторінок визначає роль сторінки, напр., &quot;нормальна сторінка&quot; або &quot;блог&quot;. Доступні опції залежать від встановлених компонентів." />
   <string key="EditPage.MaxLength" value="{0} символів максимум" />
   <string key="DeletePage.LabelFieldGroup" value="Видалити сторінку?" />
   <string key="DeletePageStep1.Title" value="Видалити сторінку і всі підсторінки" />
@@ -92,23 +95,23 @@
   <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="Щоб створити підсторінку, необхідний тип сторінки без обмежень &quot;тільки домашні сторінки&quot;, але такі типи ще не додано. Можна додати тип сторінки в розділі &quot;Макет&quot;." />  
   <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Не можна додати сторінку!" />
   <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="Правила, які визначають доступність для типів сторінок, забороняють додавати тут сторінку." />
-  <string key="ManageHostNames.Add.DialogLabel" value="Керувати ім'ям сервера" />
-  <string key="ManageHostNames.Add.HeadingTitle" value="Додати зв'язок імені сервера на сторінку" />
-  <string key="ManageHostNames.Add.HeadingDescription" value="Ви можете зв'язати ім'я сервера (або доменне ім'я) з сторінкою, вказавши його в поле, що знаходиться нижче. Зверніть увагу на те, що параметри DNS для зазначеного імені сервера також повинні бути налаштовані - поза цією системою." />
-  <string key="ManageHostNames.Add.FieldGroupLabel" value="Прив'язка імені сервера до сторінки" />
-  <string key="ManageHostNames.Add.HostNameTextBoxLabel" value="Ім'я сервера" />
-  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Вкажіть ім'я сервера (наприклад, &quot;www.composite.net&quot; або &quot;composite.net&quot;), які ви хочете пов'язати з цією сторінкою" />
+  <string key="ManageHostNames.Add.DialogLabel" value="Керувати ім&#39;ям сервера" />
+  <string key="ManageHostNames.Add.HeadingTitle" value="Додати зв&#39;язок імені сервера на сторінку" />
+  <string key="ManageHostNames.Add.HeadingDescription" value="Ви можете зв&#39;язати ім&#39;я сервера (або доменне ім&#39;я) з сторінкою, вказавши його в поле, що знаходиться нижче. Зверніть увагу на те, що параметри DNS для зазначеного імені сервера також повинні бути налаштовані - поза цією системою." />
+  <string key="ManageHostNames.Add.FieldGroupLabel" value="Прив&#39;язка імені сервера до сторінки" />
+  <string key="ManageHostNames.Add.HostNameTextBoxLabel" value="Ім&#39;я сервера" />
+  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Вкажіть ім&#39;я сервера (наприклад, &quot;www.composite.net&quot; або &quot;composite.net&quot;), які ви хочете пов&#39;язати з цією сторінкою" />
   <string key="ManageHostNames.Add.InvalidHostNameSyntaxError" value="Синтаксис імені сервера не допустимий" />
-  <string key="ManageHostNames.Add.HostNameNotUniqueError" value="Це ім'я сервера вже пов'язано з іншою сторінкою. Потрібно спочатку видалити існуючу прив'язку." />
-  <string key="ManageHostNames.Remove.DialogLabel" value="Керувати ім'ям сервера" />
-  <string key="ManageHostNames.Remove.FieldGroupLabel" value="Видалити прив'язку імені сервера до сторінки" />
+  <string key="ManageHostNames.Add.HostNameNotUniqueError" value="Це ім&#39;я сервера вже пов&#39;язано з іншою сторінкою. Потрібно спочатку видалити існуючу прив&#39;язку." />
+  <string key="ManageHostNames.Remove.DialogLabel" value="Керувати ім&#39;ям сервера" />
+  <string key="ManageHostNames.Remove.FieldGroupLabel" value="Видалити прив&#39;язку імені сервера до сторінки" />
   <string key="ManageHostNames.Remove.MultiSelectorLabel" value="Імена серверів для видалення" />
-  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="Імена серверів, які ви вибрали, більше не будуть пов'язані зі цією сторінкою" />
+  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="Імена серверів, які ви вибрали, більше не будуть пов&#39;язані зі цією сторінкою" />
   <string key="Preview.PublishedPage.NotPublishedTitle" value="Обрана сторінка не опублікована" />
   <string key="Preview.PublishedPage.NotPublishedMessage" value="Обрана сторінка не опублікована" />
   <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="Будь ласка, підтвердіть видалення всіх підсторінок" />
   <string key="DeletePageWorkflow.CascadeDeleteErrorTitle" value="Помилка каскадного видалення" />
   <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="На цю сторінку посилається інший тип даних, який не допускає каскадне видалення. Виконання операції припинено." />
   <string key="DeletePageWorkflow.HasCompositionsTitle" value="Не вдається видалити сторінку" />
-  <string key="DeletePageWorkflow.HasCompositionsMessage" value="У цієї сторінки є одна або декілька пов'язаних з нею папок даних або полів метаданих. Спочатку видаліть їх." />
+  <string key="DeletePageWorkflow.HasCompositionsMessage" value="У цієї сторінки є одна або декілька пов&#39;язаних з нею папок даних або полів метаданих. Спочатку видаліть їх." />
 </strings>

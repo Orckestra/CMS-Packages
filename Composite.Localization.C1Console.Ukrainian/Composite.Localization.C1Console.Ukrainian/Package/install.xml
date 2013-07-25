@@ -1,16 +1,12 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.0.4897.31550" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Localization.C1Console.Ukrainian" groupName="Composite.Localization" version="1.2.1" author="Composite a/s" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Localization.C1Console" id="ca967d95-af83-4c11-9ea7-887f8a71d0d6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Localization.C1Console.Ukrainian" groupName="Composite.Localization" version="1.2.2" author="Composite a/s" website="www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Localization.C1Console" id="ca967d95-af83-4c11-9ea7-887f8a71d0d6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Ukrainian language pack for the console GUI</Description>
     <TechnicalDetails>Ukrainian language pack for the console GUI.</TechnicalDetails>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
-		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
-			<Install xsltFilePath="~\Config\Install.xsl" />
-			<Uninstall xsltFilePath="~\Config\Uninstall.xsl" />
-		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Directories>
 				<Directory sourceDirectory="~\App_Data\Composite\LanguagePacks\uk-UA\" targetDirectory="~\App_Data\Composite\LanguagePacks\uk-UA\" allowOverwrite="true" deleteTargetDirectory="false"/>

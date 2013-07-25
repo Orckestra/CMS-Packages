@@ -43,9 +43,9 @@
 	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.help" value="Посилання на тип даних для використання при виборі даних." />
 	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.label" value="Data Reference" />
 	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Дозволяє вибрати елемент даних, що базується на його посиланні на сторінку, оброблювану в даний момент." />
-	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.help" value="Виберіть, який зв'язок має бути у поточної сторінки з даними, які ви хочете отримати." />
+	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.help" value="Виберіть, який зв&#39;язок має бути у поточної сторінки з даними, які ви хочете отримати." />
 	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.label" value="Page scope" />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.description" value="Визначає запит типу &quot;і&quot; чи &quot;або&quot;, об'єднуючи два інших фільтра." />
+	<string key="Composite.IDataGenerated.Filter.CompoundFilter.description" value="Визначає запит типу &quot;і&quot; чи &quot;або&quot;, об&#39;єднуючи два інших фільтра." />
 	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.label" value="And / or filter" />
 	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.help" value="Якщо ви оберете опцію &quot;і&quot;, обидва фільтри будуть застосовані до даних. Вибір опції &quot;або&quot; поверне вам дані, які відповідають лише одному з фільтрів." />
 	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.help" value="Один з двох фільтрів (той, який обробляється першим)" />
@@ -76,13 +76,13 @@
 	<string key="Composite.IDataGenerated.GetXml.param.Randomized.label" value="Randomized" />
 	<string key="Composite.IDataGenerated.GetXml.param.CachePriority.help" value="Визначає, чи потрібно результат у вигляді XML кешувати, а також який пріоритет повинен бути у записів кеша." />
 	<string key="Composite.IDataGenerated.GetXml.param.CachePriority.label" value="Cache Priority" />
-	<string key="Composite.Pages.GetPageId.description" value="Повертає ідентифікатор поточної сторінки або сторінки, пов'язаної з поточною сторінкою." />
+	<string key="Composite.Pages.GetPageId.description" value="Повертає ідентифікатор поточної сторінки або сторінки, пов&#39;язаної з поточною сторінкою." />
 	<string key="Composite.Pages.GetPageId.param.SitemapScope.help" value="Ідентифікатор якої сторінки отримати. За замовчуванням, поточної сторінки." />
 	<string key="Composite.Pages.GetPageId.param.SitemapScope.label" value="Page association" />
-	<string key="Composite.Pages.QuickSitemap.description" value="Швидкий і необроблений XHTML карти сайту." />
+	<string key="Composite.Pages.QuickSitemap.description" value="Необроблений XHTML швидкої карти сайту." />
 	<string key="Composite.Pages.SitemapXml.description" value="Повертає ієрархічну структуру сторінок у вигляді XML. При виконанні в рамках обробки сторінки, до XML-елементів, що представляють собою поточні сторінки або їх предків, будуть додані атрибути IsOpen = &quot;True&quot; і IsCurrent = &quot;True&quot;" />
 	<string key="Composite.Pages.SitemapXml.param.SourcePage.label" value="Source page" />
-	<string key="Composite.Pages.SitemapXml.param.SourcePage.help" value="За замовчуванням вихідною сторінкою є сторінка, що обробляється в даний момент. Вкажіть інше значення, якщо ви хочете отримати інформацію про карту сайту, пов'язаною з іншою сторінкою. Вихідна сторінка контролює, як елементи сторінки анотуются за допомогою &quot;IsOpen&quot; і &quot;IsCurrent, і є відправною точкою при обчисленні області видимості сторінок." />
+	<string key="Composite.Pages.SitemapXml.param.SourcePage.help" value="За замовчуванням вихідною сторінкою є сторінка, що обробляється в даний момент. Вкажіть інше значення, якщо ви хочете отримати інформацію про карту сайту, пов&#39;язаною з іншою сторінкою. Вихідна сторінка контролює, як елементи сторінки анотуются за допомогою &quot;IsOpen&quot; і &quot;IsCurrent, і є відправною точкою при обчисленні області видимості сторінок." />
 	<string key="Composite.Pages.SitemapXml.param.SitemapScope.label" value="Page scope" />
 	<string key="Composite.Pages.SitemapXml.param.SitemapScope.help" value="Область видимості сторінок для вилучення з карти сайту. За замовчуванням - це &quot;всі сторінки&quot;. Ви можете використовувати цей параметр для вилучення структури, яка потрібна вам для виконання вашого завдання." />
 	<string key="Composite.Pages.GetForeignPageInfo.description" value="Отримує інформацію про поточну сторінку на всіх мовах." />
@@ -95,12 +95,12 @@
 	<string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.label" value="Page scope" />
 	<string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.help" value="Область видимості сторінок, в якій дані, що кешуються, повинні використовуватися спільно. За замовчуванням область видимості сторінок - &quot;цей сайт&quot;, але ви можете змінити його на кешування для конкретної сторінки і т.д." />
 	<string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.label" value="Cache duration (seconds)" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.help" value="Кількість секунд, протягом яких об'єкт, що кешується, повинен бути повторно використаний. За замовчуванням - 1 хвилина (60 секунд)." />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.help" value="Кількість секунд, протягом яких об&#39;єкт, що кешується, повинен бути повторно використаний. За замовчуванням - 1 хвилина (60 секунд)." />
 	<string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.label" value="Language specific" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.help" value="Виберіть, чи потрібно кешувати об'єкт спеціально для кожної мови веб-сайту, або використовувати один і той самий об'єкт для різних мов." />
+	<string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.help" value="Виберіть, чи потрібно кешувати об&#39;єкт спеціально для кожної мови веб-сайту, або використовувати один і той самий об&#39;єкт для різних мов." />
 
 	<string key="Composite.Utils.Compare.AreEqual.description" value="AreEqual" />
-	<string key="Composite.Utils.Compare.AreEqual.param.ValueA.help" value="Порівняння двох об'єктів на рівність. Повертає true, якщо два об'єкти рівні." />
+	<string key="Composite.Utils.Compare.AreEqual.param.ValueA.help" value="Порівняння двох об&#39;єктів на рівність. Повертає true, якщо два об&#39;єкти рівні." />
 	<string key="Composite.Utils.Compare.AreEqual.param.ValueA.label" value="Value A to compare." />
 	<string key="Composite.Utils.Compare.AreEqual.param.ValueB.help" value="" />
 	<string key="Composite.Utils.Compare.AreEqual.param.ValueB.label" value="Value B to compare." />
@@ -117,11 +117,11 @@
 	<string key="Composite.Utils.Date.AddDays.param.DaysToAdd.label" value="Days to add" />
 	<string key="Composite.Utils.Date.Now.description" value="Поточні дата і час" />
 	<string key="Composite.Utils.GetInputParameter.description" value="Повертає вхідний параметр з контексту виконуваної функції. Використовуйте його при розробці для копіювання вхідного значення в новий виклик функції." />
-	<string key="Composite.Utils.GetInputParameter.param.InputParameterName.help" value="Вкажіть ім'я вхідного параметру, значення якого ви хочете використовувати тут." />
+	<string key="Composite.Utils.GetInputParameter.param.InputParameterName.help" value="Вкажіть ім&#39;я вхідного параметру, значення якого ви хочете використовувати тут." />
 	<string key="Composite.Utils.GetInputParameter.param.InputParameterName.label" value="Parameter name" />
 
-	<string key="Composite.Utils.ParseStringToObject.description" value="Парсить рядок і перетворює її на об'єкт. Тип об'єкта залежить від одержувача. При використанні цієї функції, щоб встановити значення в параметрі типу DateTime, система розпарсить рядок як DateTime і т.д." />
-	<string key="Composite.Utils.ParseStringToObject.param.StringToParse.help" value="Вкажіть рядок для парсингу. Зверніть увагу на те, що рядок повинен мати формат, за яким він може бути перетворений в тип об'єкта, що очікується." />
+	<string key="Composite.Utils.ParseStringToObject.description" value="Парсить рядок і перетворює її на об&#39;єкт. Тип об&#39;єкта залежить від одержувача. При використанні цієї функції, щоб встановити значення в параметрі типу DateTime, система розпарсить рядок як DateTime і т.д." />
+	<string key="Composite.Utils.ParseStringToObject.param.StringToParse.help" value="Вкажіть рядок для парсингу. Зверніть увагу на те, що рядок повинен мати формат, за яким він може бути перетворений в тип об&#39;єкта, що очікується." />
 	<string key="Composite.Utils.ParseStringToObject.param.StringToParse.label" value="String to parse" />
 
 	<string key="Composite.Utils.Guid.NewGuid.description" value="Повертає новий випадковий GUID." />
@@ -161,7 +161,7 @@
 
 	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.description" value="Перевіряє, чи збігається строкове поле з одним із значень зі списку рядків, розділених комами" />
 	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.label" value="Search terms" />
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="Рядок, що містить умови пошуку, через кому, наприклад, 'c1, cms, linq'" />
+	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="Рядок, що містить умови пошуку, через кому, наприклад, &#39;c1, cms, linq&#39;" />
 	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.label" value="Ignore case" />
 	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.help" value="При значенні false, регістру літер у слові повинно точно бути дотримано. За замовчуванням - false, тобто пошук без урахування регістру" />
 
@@ -221,10 +221,10 @@
 	<string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.label" value="The value to compare with" />
 	<string key="Composite.Utils.Predicates.NullableDecimalNoValue.description" value="Перевіряє, чи відсутнє значення у десяткового числа, яке допускає пусте значення (null)" />
 
-	<string key="Composite.Utils.String.Join.description" value="Об'єднує список рядків в один рядок" />
+	<string key="Composite.Utils.String.Join.description" value="Об&#39;єднує список рядків в один рядок" />
 	<string key="Composite.Utils.String.Join.param.Separator.help" value="Роздільник для вставки між рядків." />
 	<string key="Composite.Utils.String.Join.param.Separator.label" value="Separator" />
-	<string key="Composite.Utils.String.Join.param.Strings.help" value="Список рядків для об'єднання" />
+	<string key="Composite.Utils.String.Join.param.Strings.help" value="Список рядків для об&#39;єднання" />
 	<string key="Composite.Utils.String.Join.param.Strings.label" value="Strings to join" />
 	<string key="Composite.Utils.String.JoinTwo.description" value="Поєднує два рядки в простий рядок" />
 	<string key="Composite.Utils.String.JoinTwo.param.StringA.help" value="Рядок, який потрібно вставити першим" />
@@ -268,13 +268,26 @@
 	<string key="Composite.Web.Client.IsMobileDevice.description" value="Правда, якщо поточний запит визначається як вихідний від мобільного пристрою." />
 	<string key="Composite.Web.Html.Template.CommonMetaTags.description" value="Стандартні мета-теги HTML, які вам, скоріш за все, будуть потрібні в заголовку сторінки (head)." />
 	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.label" value="Content-Type" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="За замовчанням: 'text/html; charset=utf-8'. Якщо ви користуєтесь іншим типом, змініть його тут." />
+	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="За замовчанням: &#39;text/html; charset=utf-8&#39;. Якщо ви користуєтесь іншим типом, змініть його тут." />
 	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.label" value="Designer" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Хто розробив цей веб-сайт? Покажіть це в мета-тезі 'Designer'. За замовчанням цей мета-тег не додається." />
+	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Хто розробив цей веб-сайт? Покажіть це в мета-тезі &#39;Designer&#39;. За замовчанням цей мета-тег не додається." />
 	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.label" value="Show generator" />
 	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.help" value="Покажіть усьому світові, що ви підтримуєте Composite C1 - бескоштовну систему з відкритим кодом" />
-	<string key="Composite.Web.Html.Template.LangAttribute.description" value="Додає атрибут lang='(код мови)' до батьківського элементу, відображаючи мову поточної сторінки. Можно вставити відразу під тегом &lt;html /&gt;" />
-	<string key="Composite.Web.Request.CookieValue.description" value="Отримує значення поточної колекції cookie користувача" />
+	<string key="Composite.Web.Html.Template.LangAttribute.description" value="Додає атрибут lang=&#39;(код мови)&#39; до батьківського элементу, відображаючи мову поточної сторінки. Можно вставити відразу під тегом &lt;html /&gt;" />
+  <string key="Composite.Web.Html.Template.PageTemplateFeature.description" value="Вставляє іменований фрагмент шаблону сторінок в указаному місці. Фрагменти шаблону сторінок можуть містити HTML-код та функціональність та управляються у розділі &quot;Макет&quot;." />
+  <string key="Composite.Web.Html.Template.PageTemplateFeature.param.FeatureName.label" value="Назва фрагменту" />
+  <string key="Composite.Web.Html.Template.PageTemplateFeature.param.FeatureName.help" value="Назва фрагменту шаблону сторінок, який ви хочете вставити." />
+	<string key="Composite.Web.Html.Template.HtmlTitleValue.description" value="Видає &quot;остаточний заголовок&quot; поточної сторінки, те ж значення, яке з&#39;являється в тезі title. Цей заголовок може братися з оброблюваної сторінки, або з C1-функції / елементу керування ASP.NET, які змінюють цей заголовок, щоб він відповідав конкретним даним, які розміщено на цій сторінці." />
+	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.label" value="Префікс для видалення" />
+	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.help" value="Якщо HTML-заголовок має значення префікса, якого ви бажаєте позбавитися, вкажіть цей префікс тут. Якщо префікс не знайдено в заголовку, це значення ігнорується." />
+	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.label" value="Постфікс для видалення" />
+	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.help" value="Якщо заголовок HTML має значення постфікса, якого ви бажаєте позбавитися, вкажіть цей постфікс тут. Якщо постфікс не знайдено в заголовку, це значення ігнорується." />
+	<string key="Composite.Web.Html.Template.MetaDescriptionValue.description" value="Видає &quot;остаточний опис&quot; поточної сторінки, те ж значення, яке з&#39;являється в мета-тезі description. Цей заголовок може братися з оброблюваної сторінки, або з C1-функції / елементу керування ASP.NET, які змінюють цей опис, щоб він відповідав конкретним даним, які розміщено на цій сторінці." />
+	<string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.label" value="Елемент для використання з описом" />
+	<string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.help" value="Щоб мати опис, який вказано в елементі (напр. &lt;p class=description /&gt;), вкажіть його тут. Елемент буде вставлено тільки, якщо текст опису існує." />
+
+
+  <string key="Composite.Web.Request.CookieValue.description" value="Отримує значення поточної колекції cookie користувача" />
 	<string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
 	<string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Cookie name" />
 	<string key="Composite.Web.Request.CookieValue.param.FallbackValue.help" value="Якщо у користувача немає цього cookie, використовуйте це поле для задання значення за замовчуванням." />
@@ -305,7 +318,7 @@
 	<string key="Composite.Web.Request.FormPostValue.param.ParameterName.help" value="" />
 	<string key="Composite.Web.Request.FormPostValue.param.ParameterName.label" value="Parameter name" />
 	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.description" value="Повертає значення дати і часу з надсилання форми (HTTP POST). Вхідний рядок дати, як очікується, буде відформатовано як XML (наприклад, &quot;2003-09-26T13: 30:00&quot;)" />
-	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.help" value="Значення, що використовується, якщо відправка форми не містить вказане ім'я параметра." />
+	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.help" value="Значення, що використовується, якщо відправка форми не містить вказане ім&#39;я параметра." />
 	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback value" />
 	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
 	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameter name" />
@@ -335,32 +348,32 @@
 	<string key="Composite.Web.Request.QueryStringValue.param.ParameterName.help" value="" />
 	<string key="Composite.Web.Request.QueryStringValue.param.ParameterName.label" value="Parameter name" />
 	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.description" value="Отримує значення дати і часу з параметра URL (HTTP GET). Вхідний рядок дати, як очікується, буде відформатовано як XML (наприклад, &quot;2003-09-26T13: 30:00&quot;)" />
-	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.help" value="Значення, що використовується, якщо URL-адреса не містить вказане ім'я параметра." />
+	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.help" value="Значення, що використовується, якщо URL-адреса не містить вказане ім&#39;я параметра." />
 	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback value" />
 	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
 	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameter name" />
 	<string key="Composite.Web.Request.PathInfo.description" value="Повертає додаткову інформацію, яка передається в URL разом з посиланням на сторінку." />
-	<string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Сегмент шляху, який потрібно отримати, в форматі '/(0)/(1)/(2)/...'. Вкажіть -1, щоб отримати весь рядок." />
+	<string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Сегмент шляху, який потрібно отримати, в форматі &#39;/(0)/(1)/(2)/...&#39;. Вкажіть -1, щоб отримати весь рядок." />
 	<string key="Composite.Web.Request.PathInfo.param.Segment.label" value="Segment" />
 	<string key="Composite.Web.Request.PathInfo.param.AutoApprove.help" value="У значенні true (істина), Composite C1 отримає вказівку приймати будь-який рядок шляху. За промовчанням - true." />
 	<string key="Composite.Web.Request.PathInfo.param.AutoApprove.label" value="AutoApprove" />
 	<string key="Composite.Web.Request.PathInfo.param.FallbackValue.help" value="" />
 	<string key="Composite.Web.Request.PathInfo.param.FallbackValue.label" value="Fallback value" />
 	<string key="Composite.Web.Request.PathInfoInt.description" value="Видобуває значення як ціле число зі сегменту шляху." />
-	<string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Сегмент шляху, який потрібно отримати, в форматі '/(0)/(1)/(2)/...'." />
+	<string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Сегмент шляху, який потрібно отримати, в форматі &#39;/(0)/(1)/(2)/...&#39;." />
 	<string key="Composite.Web.Request.PathInfoInt.param.Segment.label" value="Segment" />
 	<string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.help" value="У значенні true (істина), Composite C1 отримає вказівку приймати будь-який рядок шляху. За промовчанням - true." />
 	<string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.label" value="AutoApprove" />
 	<string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.help" value="" />
 	<string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.label" value="Fallback value" />
 	<string key="Composite.Web.Request.PathInfoGuid.description" value="Видобуває значення як GUID зі сегменту шляху." />
-	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Сегмент шляху, який потрібно отримати, в форматі '/(0)/(1)/(2)/...'." />
+	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Сегмент шляху, який потрібно отримати, в форматі &#39;/(0)/(1)/(2)/...&#39;." />
 	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.label" value="" />
 	<string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.help" value="У значенні true (істина), Composite C1 отримає вказівку приймати будь-який рядок шляху. За промовчанням - true." />
 	<string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.label" value="AutoApprove" />
 	<string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.help" value="" />
 	<string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.label" value="Fallback value" />
-	<string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Сповіщуєт систему про те, що в адресі використовується шлях (PathInfo), щоб запити не переспрямовувалися на сторінку 'Сторінку не знайдено'." />
+	<string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Сповіщуєт систему про те, що в адресі використовується шлях (PathInfo), щоб запити не переспрямовувалися на сторінку &#39;Сторінку не знайдено&#39;." />
 	<string key="Composite.Web.Request.SessionVariable.description" value="Повертає змінну з поточної сесії користувача у вигляді рядка." />
 	<string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="Значення, що використовується, якщо змінна сесії не була знайдена" />
 	<string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Fallback value" />
@@ -370,7 +383,7 @@
 	<string key="Composite.Web.Response.Redirect.param.Url.help" value="URL, на який повинен бути перенаправлений користувач, або абсолютний (http://contoso.com/default.aspx), або відносний (/ Login.aspx))." />
 	<string key="Composite.Web.Response.Redirect.param.Url.label" value="URL" />
 	<string key="Composite.Web.Response.SetCookieValue.description" value="Встановлює значення cookie для поточного користувача" />
-	<string key="Composite.Web.Response.SetCookieValue.param.CookieName.help" value="Ім'я cookie для установки / перезапису" />
+	<string key="Composite.Web.Response.SetCookieValue.param.CookieName.help" value="Ім&#39;я cookie для установки / перезапису" />
 	<string key="Composite.Web.Response.SetCookieValue.param.CookieName.label" value="Cookie name" />
 	<string key="Composite.Web.Response.SetCookieValue.param.Value.help" value="Значення, яке зберігається в cookie" />
 	<string key="Composite.Web.Response.SetCookieValue.param.Value.label" value="Cookie value" />
@@ -384,9 +397,9 @@
 	<string key="Composite.Web.Response.SetSessionVariable.description" value="Встановлює змінну сесії для поточного користувача" />
 	<string key="Composite.Web.Response.SetSessionVariable.param.Value.help" value="" />
 	<string key="Composite.Web.Response.SetSessionVariable.param.Value.label" value="Value" />
-	<string key="Composite.Web.Response.SetSessionVariable.param.VariableName.help" value="Ім'я змінної сесії, що встановлюється." />
+	<string key="Composite.Web.Response.SetSessionVariable.param.VariableName.help" value="Ім&#39;я змінної сесії, що встановлюється." />
 	<string key="Composite.Web.Response.SetSessionVariable.param.VariableName.label" value="Variable name" />
-	<string key="Composite.Web.Server.ApplicationPath.description" value="Повертає віртуальний шлях веб-застосунку. Як правило, це &quot;&quot; (порожній рядок), при запуску з кореневого каталогу сайту, але якщо Composite C1 запущений з підкаталогу, він може бути &quot;/MySubfolder&quot;. Ви можете використовувати це значення в якості префікса до різних URL, щоб вони працювали незалежно від того, запущений C1 з підпапки чи ні. Приклад використання в XSLT: &lt;img src=&quot;{/in:inputs/in:result[@name='ApplicationPath']}/images/myImage.png&quot; /&gt;" />
+	<string key="Composite.Web.Server.ApplicationPath.description" value="Повертає віртуальний шлях веб-застосунку. Як правило, це &quot;&quot; (порожній рядок), при запуску з кореневого каталогу сайту, але якщо Composite C1 запущений з підкаталогу, він може бути &quot;/MySubfolder&quot;. Ви можете використовувати це значення в якості префікса до різних URL, щоб вони працювали незалежно від того, запущений C1 з підпапки чи ні. Приклад використання в XSLT: &lt;img src=&quot;{/in:inputs/in:result[@name=&#39;ApplicationPath&#39;]}/images/myImage.png&quot; /&gt;" />
 	<string key="Composite.Web.Server.ApplicationVariable.description" value="Повертає змінну застосунків IIS" />
 	<string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.help" value="Значення, що використовується, якщо змінна застосунку не виявлена." />
 	<string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.label" value="Fallback value" />
@@ -410,7 +423,7 @@
 	<string key="Composite.Xslt.Extensions.Globalization.description" value="Надає функції глобалізації для використання в XSLT." />
 	<string key="Composite.Xslt.Extensions.MarkupParser.description" value="Надає функції для парсингу, кодованих XML-документів або XHTML-фрагментів у вузли. Використовуйте це розширення, коли у вас є код XML або XHTML у вигляді рядка і необхідно скопіювати його в засіб виведення або зробити з ним перетворення." />
 
-	<string key="Composite.Mail.SendMail.description" value="Відправляє електронну пошту. Не забудьте налаштувати SMTP-з'єднання з сервером у файлі web.config." />
+	<string key="Composite.Mail.SendMail.description" value="Відправляє електронну пошту. Не забудьте налаштувати SMTP-з&#39;єднання з сервером у файлі web.config." />
 	<string key="Composite.Mail.SendMail.param.From.label" value="From" />
 	<string key="Composite.Mail.SendMail.param.From.help" value="Адреса відправника." />
 	<string key="Composite.Mail.SendMail.param.To.label" value="To" />
@@ -428,7 +441,7 @@
 	<string key="Composite.Mail.SendMail.param.BCC.label" value="BCC" />
 	<string key="Composite.Mail.SendMail.param.BCC.help" value="Прихована копія. Список одержувачів, які отримають пошту, але їх індивідуальні адреси будуть приховані від повного списку одержувачів." />
 	<string key="Composite.Mail.SendMail.param.Attachment.label" value="Attachment" />
-	<string key="Composite.Mail.SendMail.param.Attachment.help" value="Список прикріплених файлів. \n Відформатуйте його таким чином, слідуючи [{ім'я} =] {шлях до файлу} [, {MIME-тип] [| .... ]. \n Шлях до файлу може бути або відносним, або абсолютним, напр. &quot;C:\\someimage.jpg&quot; або &quot;/ \coolpicture.jpg&quot; \ n, Якщо шлях до файлу починається з &quot;Composite /&quot;, він буде вважатися шляхом до медіа-файлу C1, напр. &quot;Composite / MediaArchive: someImage.gif '\ n \ n Приклади: \ n / attachment.jpg \ n image.jpg = / attachment.jpg \ n image.jpg = / attachment.jpg, image / jpg \ n image1.jpg = / attachment1.jpg, image / jpg | image2.jpg = / attachment2.jpg, image / jpg" />
+	<string key="Composite.Mail.SendMail.param.Attachment.help" value="Список прикріплених файлів. \n Відформатуйте його таким чином, слідуючи [{ім&#39;я} =] {шлях до файлу} [, {MIME-тип] [| .... ]. \n Шлях до файлу може бути або відносним, або абсолютним, напр. &quot;C:\\someimage.jpg&quot; або &quot;/ \coolpicture.jpg&quot; \ n, Якщо шлях до файлу починається з &quot;Composite /&quot;, він буде вважатися шляхом до медіа-файлу C1, напр. &quot;Composite / MediaArchive: someImage.gif &#39;\ n \ n Приклади: \ n / attachment.jpg \ n image.jpg = / attachment.jpg \ n image.jpg = / attachment.jpg, image / jpg \ n image1.jpg = / attachment1.jpg, image / jpg | image2.jpg = / attachment2.jpg, image / jpg" />
 
 	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="AttachmentFromMedia" />
 	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.help" value="Вкладений файл з бібліотеки мультимедіа." />
@@ -445,19 +458,19 @@
 	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Media Folder" />
 	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Визначає, чи потрібно включати медіа-файли з підпапок." />
 
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Перетворює перелічування XElement'ів у тип 'словник' (Dictionary), використовуючи вказані атрибути в якості ключів та значень." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Перетворює перелічування XElement&#39;ів у тип &#39;словник&#39; (Dictionary), використовуючи вказані атрибути в якості ключів та значень." />
   <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.label" value="XElements" />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.help" value="Перелічування XElement'ів, з яких буде створено 'словник' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.help" value="Перелічування XElement&#39;ів, з яких буде створено &#39;словник&#39; (Dictionary)." />
   <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.label" value="Key Attribute Name" />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Ім'я атрибута в кожного XElement'а, чиє значення буде використано як ключ у 'словнику' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Ім&#39;я атрибута в кожного XElement&#39;а, чиє значення буде використано як ключ у &#39;словнику&#39; (Dictionary)." />
   <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.label" value="Value Attribute Name" />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Ім'я атрибута в кожного XElement'а, чиє значення буде використано як значення в 'словнику' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Ім&#39;я атрибута в кожного XElement&#39;а, чиє значення буде використано як значення в &#39;словнику&#39; (Dictionary)." />
 
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Перетворює перелічування об'єктів у тип 'словник' (Dictionary), використовуючи вказані властивості в якості ключів та значень." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Перетворює перелічування об&#39;єктів у тип &#39;словник&#39; (Dictionary), використовуючи вказані властивості в якості ключів та значень." />
   <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.label" value="Objects" />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.help" value="Перелічування об'єктів, з яких буде створено 'словник' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.help" value="Перелічування об&#39;єктів, з яких буде створено &#39;словник&#39; (Dictionary)." />
   <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.label" value="Key Property Name" />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Ім'я властивості в кожного об'єкта, чиє значення буде використано як ключ у 'словнику' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Ім&#39;я властивості в кожного об&#39;єкта, чиє значення буде використано як ключ у &#39;словнику&#39; (Dictionary)." />
   <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.label" value="Value Property Name" />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Ім'я властивості в кожного об'єкта, чиє значення буде використано як значення у 'словнику' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Ім&#39;я властивості в кожного об&#39;єкта, чиє значення буде використано як значення у &#39;словнику&#39; (Dictionary)." />
 </strings>

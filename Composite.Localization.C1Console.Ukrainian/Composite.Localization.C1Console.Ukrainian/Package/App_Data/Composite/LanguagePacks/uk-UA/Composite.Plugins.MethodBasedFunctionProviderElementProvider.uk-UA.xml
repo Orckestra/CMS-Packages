@@ -28,9 +28,9 @@
   <string key="AddFunction.TypeHasNoValidMethod" value="Тип не містить допустимі методи" />
   <string key="AddFunction.TypeIsAbstractOrStatic" value="Тип позначений як абстрактний або статичний. Виклик методів з абстрактних або статичних типів не підтримується." />
   <string key="AddFunction.TypeMustNotHaveOverloads" value="Тип не може мати перевантаження" />
-  <string key="AddFunction.MethodNameIsEmpty" value="Ім'я методу не повинно бути порожнім" />
+  <string key="AddFunction.MethodNameIsEmpty" value="Ім&#39;я методу не повинно бути порожнім" />
   <string key="AddFunction.InvalidNamespace" value="Простір імен повинен бути у вигляді A.B.C Не може починатися і не закінчуватися &quot;.&quot;." />
-  <string key="AddFunction.NameAlreadyUsed" value="Ім'я функції '{0}' вже використовується" />
+  <string key="AddFunction.NameAlreadyUsed" value="Ім&#39;я функції &#39;{0}&#39; вже використовується" />
   <string key="EditMethodBasedFunction.LabelFieldGroup" value="Змінити запит на основі методу" />
   <string key="EditMethodBasedFunction.LabelMethodName" value="Назва методу" />
   <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="Назва, під якою функція повинна бути відома." />
@@ -41,7 +41,7 @@
   <string key="EditMethodBasedFunction.LabelMethod" value="Метод" />
   <string key="EditMethodBasedFunction.LabelMethodHelp" value="Метод, який викликається з типу." />
   <string key="EditMethodBasedFunction.LabelError" value="Помилка" />
-  <string key="EditFunction.MethodNameEmpty" value="Ім'я методу не повинно бути порожнім" />
+  <string key="EditFunction.MethodNameEmpty" value="Ім&#39;я методу не повинно бути порожнім" />
   <string key="EditFunction.InvalidNamespace" value="Простір імен не повинен починатися і закінчуватися &quot;.&quot;, Наприклад, A.B.C" />
   <string key="EditFunction.TypeNotFound" value="Не вдалося знайти тип" />
   <string key="EditFunction.MethodNotInType" value="Тип не містить метод" />
@@ -79,10 +79,10 @@
   <string key="InlineFunctionMethodTemplate.Clean" value="Порожній метод" />
   <string key="InlineFunctionMethodTemplate.WithParameters" value="Метод з параметрами" />
   <string key="InlineFunctionMethodTemplate.DataConnection" value="Метод з використанням підключення даних" />
-  <string key="CSharpInlineFunction.OnMissingContainerType" value="У коді відсутній публічний статичний клас з ім'ям {0}. Цей клас повинен містити метод функції." />
-  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="Простір імен в коді '{0}' не відповідає простору імен даної функції '{1}'." />
-  <string key="CSharpInlineFunction.OnMissionMethod" value="Дане ім'я функції '{0}' не знайдено або не є публічним статичним у класі &quot;{1} '." />
-  <string key="CSharpInlineFunction.MissingParameterDefinition" value="Параметр '{0}' не був доданий у &quot;Вхідні параметри&quot;. Для виклику функції потрібно додати параметр і призначити йому значення, або тестове, або за замовчуванням." />
-  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="Параметр '{0}' очікує тестове значення типу '{1}', Одержано значення типу '{2}'." />
-  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="Параметру '{0}', визначений у &quot;Вхідних параметрах&quot;, повинно бути присвоєно тестове значення або значення за замовчуванням до обчислення функції." />
+  <string key="CSharpInlineFunction.OnMissingContainerType" value="У коді відсутній публічний статичний клас з ім&#39;ям {0}. Цей клас повинен містити метод функції." />
+  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="Простір імен в коді &#39;{0}&#39; не відповідає простору імен даної функції &#39;{1}&#39;." />
+  <string key="CSharpInlineFunction.OnMissionMethod" value="Дане ім&#39;я функції &#39;{0}&#39; не знайдено або не є публічним статичним у класі &quot;{1} &#39;." />
+  <string key="CSharpInlineFunction.MissingParameterDefinition" value="Параметр &#39;{0}&#39; не був доданий у &quot;Вхідні параметри&quot;. Для виклику функції потрібно додати параметр і призначити йому значення, або тестове, або за замовчуванням." />
+  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="Параметр &#39;{0}&#39; очікує тестове значення типу &#39;{1}&#39;, Одержано значення типу &#39;{2}&#39;." />
+  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="Параметру &#39;{0}&#39;, визначений у &quot;Вхідних параметрах&quot;, повинно бути присвоєно тестове значення або значення за замовчуванням до обчислення функції." />
 </strings>

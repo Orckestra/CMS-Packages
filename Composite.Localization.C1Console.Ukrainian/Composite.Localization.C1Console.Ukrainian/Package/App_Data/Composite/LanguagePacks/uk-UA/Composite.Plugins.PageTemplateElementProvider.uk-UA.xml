@@ -4,34 +4,53 @@
   <string key="PageTemplateElementProvider.RootLabelToolTip" value="Тут ви можете знайти XHTML шаблони веб-сайтів." />
   <string key="PageTemplateElementProvider.AddTemplate" value="Додати шаблон" />
   <string key="PageTemplateElementProvider.AddTemplateToolTip" value="Додати новий шаблон" />
-  <string key="PageTemplateElementProvider.EditTemplate" value="Змінити шаблон" />
-  <string key="PageTemplateElementProvider.EditTemplateToolTip" value="Змінити вибраний шаблон" />
-	<string key="PageTemplateElementProvider.DeleteTemplate" value="Видалити" />
+  <string key="PageTemplateElementProvider.DeleteTemplate" value="Видалити" />
 	<string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="Видалити вибраний шаблон" />
-	
-  <string key="AddNewPageTemplateStep1.LabelDialog" value="Додати новий шаблон веб-сайту" />
-  <string key="AddNewPageTemplateStep1.LabelFieldGroup" value="Шаблон веб-сайту" />
-  <string key="AddNewPageTemplateStep1.LabelTemplateTitle" value="Назва шаблону" />
-  <string key="AddNewPageTemplateStep1.LabelTemplateTitleHelp" value="Назва шаблону ідентифікує його в списках. Рекомендується вибрати коротку й осмислену назву." />
-  <string key="AddNewPageTemplateStep1.LabelCopyFrom" value="Копіювати з" />
-  <string key="AddNewPageTemplateStep1.LabelCopyFromHelp" value="Можна скопіювати код розмітки з іншого шаблону, вибравши його в цьому списку." />
-  <string key="AddNewPageTemplateStep1.LabelCopyFromEmptyOption" value="(Новий шаблон)" />
-  <string key="AddNewPageTemplateStep1.TitleInUseTitle" value="Назва вже використовується" />
-  <string key="AddNewPageTemplateStep1.TitleTooLong" value="Назва занадто довга (використовується як частина імені XML файлу)." />
 
-  <string key="EditPageTemplate.LabelMarkUpCode" value="Розмітка" />
-  <string key="EditPageTemplate.LabelTemplateIdentification" value="Інформація про шаблон" />
-  <string key="EditPageTemplate.LabelTemplateTitle" value="Назва шаблону" />
-  <string key="EditPageTemplate.LabelTemplateTitleHelp" value="Назва шаблону ідентифікує його в списках. Рекомендується вибрати коротку й осмислену назву." />
+  <string key="PageTemplateElementProvider.SharedCodeFolder.Title" value="Загальний код" />
+  <string key="PageTemplateElementProvider.SharedCodeFolder.ToolTip" value="Файли, які використовуються файлами макету" />
+  
+  <string key="EditSharedCodeFile.Label" value="Змінити" /> 
+  <string key="EditSharedCodeFile.ToolTip" value="Редагувати файл" />
 
-  <string key="EditPageTemplateWorkflow.InvalidXmlTitle" value="Неможливо зберегти шаблон" />
-  <string key="EditPageTemplateWorkflow.InvalidXmlMessage" value="Код розмітки шаблону не пройшов перевірку. {0}" />
-  <string key="EditPageTemplateWorkflow.CannotRenameFileExists" value="Не можна перейменувати шаблон - файл з ім'ям '{0}' вже існує." />
-  <string key="EditPageTemplateWorkflow.TitleInUseTitle" value="Назва вже використовується" />
+  <string key="PageTemplateElementProvider.EditXmlTemplate" value="Змінити XML-шаблон" />
+  <string key="PageTemplateElementProvider.EditXmlTemplateToolTip" value="Редагувати вибраний XML-шаблон" />
+
+  <string key="AddNewXmlPageTemplate.LabelDialog" value="Додати новий XML-шаблон сторінок" />
+  <string key="AddNewXmlPageTemplate.LabelFieldGroup" value="XML-шаблон" />
+  <string key="AddNewXmlPageTemplate.LabelTemplateTitle" value="Назва шаблону" />
+  <string key="AddNewXmlPageTemplate.LabelTemplateTitleHelp" value="Назва шаблону ідентифікує його в списках. Рекомендується вибрати коротку та осмислену назву." />
+  <string key="AddNewXmlPageTemplate.LabelCopyFrom" value="Копіювати з" />
+  <string key="AddNewXmlPageTemplate.LabelCopyFromHelp" value="Ви можете скопіювати XML-код з іншого XML-шаблону сторінок, вибрав його у цьому списку." />
+  <string key="AddNewXmlPageTemplate.LabelCopyFromEmptyOption" value="(Новий шаблон)" />
+  <string key="AddNewXmlPageTemplateWorkflow.TitleInUseTitle" value="Назва вже використовується" />
+  <string key="AddNewXmlPageTemplateWorkflow.TitleTooLong" value="Занадто довгий заголовок (використовується як частина імені XML-файлу)." />
+
+  <string key="EditXmlPageTemplate.LabelMarkUpCode" value="Код розмітки" />
+  <string key="EditXmlPageTemplate.LabelTemplateIdentification" value="Інформація про шаблон" />
+  <string key="EditXmlPageTemplate.LabelTemplateTitle" value="Назва шаблону" />
+  <string key="EditXmlPageTemplate.LabelTemplateTitleHelp" value="Назва шаблону ідентифікує його в списках. Рекомендується вибрати коротку та осмислену назву." />
+
+  <string key="EditXmlPageTemplateWorkflow.InvalidXmlTitle" value="Неможливо зберегти шаблон" />
+  <string key="EditXmlPageTemplateWorkflow.InvalidXmlMessage" value="Код розмітки шаблону не пройшов перевірку. {0}" />
+  <string key="EditXmlPageTemplateWorkflow.CannotRenameFileExists" value="Не можна перейменувати шаблон - файл з ім&#39;ям &#39;{0}&#39; вже існує." />
+  <string key="EditXmlPageTemplateWorkflow.TitleInUseTitle" value="Назва вже використовується" />
 
   <string key="DeletePageTemplateStep1.LabelFieldGroup" value="Видалити цей шаблон сторінки?" />
 	<string key="DeletePageTemplateStep1.Text" value="Видалити шаблон сторінки?" />
 	
 	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="Помилка каскадного видалення" />
 	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="На цей тип посилається інший тип даних, який не допускає каскадне видалення. Виконання операції припинено." />
+
+  <string key="DeletePageTemplateWorkflow.PageReference" value="Існують сторінки ( {0} ), які посилаються на цей шаблон: {1}" /> 
+  <string key="DeletePageTemplateWorkflow.PageTypeReference" value="Існують типи сторінок ( {0} ), які посилаються на цей шаблон: {1}" />
+
+  <string key="AddNewPageTemplate.LabelDialog" value="Додати новий шаблон сторінки" />
+  <string key="AddNewPageTemplate.LabelFieldGroup" value="Новий шаблон сторінок" />
+  <string key="AddNewPageTemplate.TemplateTypeHelp" value="Виберіть один з можливих типів шаблонів сторінок" />
+  <string key="AddNewPageTemplate.TemplateTypeLabel" value="Тип шаблону" />
+
+  <string key="AddNewPageTemplate.TemplateType.Razor" value="Razor" />
+  <string key="AddNewPageTemplate.TemplateType.MasterPage" value="Головна сторінка" />
+  <string key="AddNewPageTemplate.TemplateType.XML" value="XML" />
 </strings>

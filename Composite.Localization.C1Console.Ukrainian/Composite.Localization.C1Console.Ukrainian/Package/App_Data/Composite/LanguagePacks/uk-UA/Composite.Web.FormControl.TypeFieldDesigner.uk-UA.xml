@@ -9,8 +9,8 @@
   <string key="LabelDataTypeFields" value="Поля типу даних" />
   
   <string key="FieldDetailsGroupLabel" value="Властивості поля" />
-  <string key="Name" value="Ім'я" />
-  <string key="NameHelp" value="Ім'я поля використовується системою для ідентифікації цього поля. Імена повинні бути унікальними і не можуть містити пробіли та інші спеціальні символи. Використовуйте імена, як &quot;Title&quot;, &quot;StartDate&quot;, &quot;LargeImage&quot; і т.д." />
+  <string key="Name" value="Ім&#39;я" />
+  <string key="NameHelp" value="Ім&#39;я поля використовується системою для ідентифікації цього поля. Імена повинні бути унікальними і не можуть містити пробіли та інші спеціальні символи. Використовуйте імена, як &quot;Title&quot;, &quot;StartDate&quot;, &quot;LargeImage&quot; і т.д." />
   <string key="Label" value="Напис" />
   <string key="LabelHelp" value="Напис показується користувачам при додаванні нового елементу на основі цього типу даних." />
   <string key="Help" value="Довідка" />
@@ -27,8 +27,8 @@
   <string key="System.Guid" value="Унікальний ідентифікатор (GUID)" />
   <string key="Reference" value="Посилання на тип даних" />
   <string key="TypeDetailsHelp" value="Використовуйте це поле для подальшої настройки вибраного типу." />
-  <string key="Optional" value="Необов'язкове" />
-  <string key="OptionalHelp" value="Необов'язкові поля можна залишити порожніми." />
+  <string key="Optional" value="Необов&#39;язкове" />
+  <string key="OptionalHelp" value="Необов&#39;язкові поля можна залишити порожніми." />
   <string key="OptionalFalseLabel" value="Ні" />
   <string key="OptionalTrueLabel" value="Так" />
   <string key="ValidationRules" value="Правила перевірки" />
@@ -48,11 +48,18 @@
   <string key="Position" value="Позиція" />
   <string key="PositionLast" value="Остання" />
   <string key="PositionHelp" value="Позиція поля. Управляє порядком полів у списку." />
-  <string key="GroupByPriority" value="Групування полів" />
-  <string key="GroupByPriorityNone" value="Немає групування" />
+  <string key="GroupByPriority" value="Групування в дереві" />
+  <string key="GroupByPriorityNone" value="(немає групування)..." />
   <string key="GroupByPriorityFirst" value="Групувати по цьому полю" />
   <string key="GroupByPriorityN" value="Групувати з {0} пріоритетом" />
   <string key="GroupByPriorityHelp" value="Ви можете вказати, що поле повинно використовуватися для групування даних - це може поліпшити якість читання при перегляді довгих списків. Використовуйте пріоритет, коли для групування використовується кілька полів." />
+  <string key="TreeOrdering" value="Сортування у дереві" />
+  <string key="TreeOrderingNone" value="(без сортування)..." />
+  <string key="TreeOrderingFirstAscending" value="За зростанням (A-Z)" />
+  <string key="TreeOrderingFirstDescending" value="За спаданням (Z-A)" />
+  <string key="TreeOrderingNAscending" value="Сортувати {0} за зростанням" />
+  <string key="TreeOrderingNDescending" value="Сортувати {0} за спаданням" />
+  <string key="TreeOrderingHelp" value="Можна вказати, що поле має використовуватися для сортування даних в дереві - це може полегшити  читання, коли поле використовується для позиціювання елементів на веб-сайті." />
   <string key="IsTitleField" value="Є титульним полем" />
   <string key="IsTitleFieldHelp" value="Встановіть прапорець, якщо ви хочете, щоб це поле використовувалося як титульне. Титульні поля використовуються під час виводу даних у списку, наприклад у дереві зліва." />
   <string key="IsTitleFieldLabel" value="Використовувати його як титульне поле в списках" />
@@ -81,13 +88,13 @@
   
   <string key="ReferenceType" value="Тип посилання" />
   
-  <string key="FieldNameSyntaxInvalid" value="Зазначене ім'я неприпустиме." />
-  <string key="CannotSave" value="Не вдалося зберегти ... Існує інше поле з таким же ім'ям. Будь ласка, використовуйте інше ім'я." />
+  <string key="FieldNameSyntaxInvalid" value="Зазначене ім&#39;я неприпустиме." />
+  <string key="CannotSave" value="Не вдалося зберегти ... Існує інше поле з таким же ім&#39;ям. Будь ласка, використовуйте інше ім&#39;я." />
 
-  <string key="SpaceInNameError" value="Неприпустиме ім'я. Імена полів даних не можуть містити пробіли. Ви можете вказати зрозуміле користувачу ім'я в полі &quot;Напис&quot; нижче." />
-  <string key="NameEmptyError" value="Імена полів даних не можуть бути порожніми. Будь ласка, вкажіть ім'я." />
-  <string key="NameAlreadyInUseError" value="Інше поле використовує це ім'я. Імена полів даних повинні бути унікальними." />
-  <string key="NotAnOptionalTypeError" value="Обраний тип не може бути необов'язковим." />
+  <string key="SpaceInNameError" value="Неприпустиме ім&#39;я. Імена полів даних не можуть містити пробіли. Ви можете вказати зрозуміле користувачу ім&#39;я в полі &quot;Напис&quot; нижче." />
+  <string key="NameEmptyError" value="Імена полів даних не можуть бути порожніми. Будь ласка, вкажіть ім&#39;я." />
+  <string key="NameAlreadyInUseError" value="Інше поле використовує це ім&#39;я. Імена полів даних повинні бути унікальними." />
+  <string key="NotAnOptionalTypeError" value="Обраний тип не може бути необов&#39;язковим." />
   <string key="NoWidgetSelected" value="Не забудьте вказати віджет ..." />
   <string key="NoWidgetSelectedLabel" value="(Не вказано віджет)" />
 </strings>
