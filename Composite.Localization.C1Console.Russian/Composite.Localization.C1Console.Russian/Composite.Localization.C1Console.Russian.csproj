@@ -24,6 +24,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -94,8 +98,6 @@
     <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Web.SourceEditor.ru-RU.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Web.UrlConfiguration.ru-RU.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\ru-RU\Composite.Web.VisualEditor.ru-RU.xml" />
-    <Content Include="Package\Config\Install.xsl" />
-    <Content Include="Package\Config\Uninstall.xsl" />
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.Localization.C1Console.Russian.xml" />
   </ItemGroup>
