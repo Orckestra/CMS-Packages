@@ -2,24 +2,33 @@
 <strings>
 	<!-- Element tree -->
 	<string key="Tree.ConfigurationElementLabel" value="Конфігурація URL-адрес" />
-	<string key="Tree.ConfigurationElementEditLabel" value="Редагувати конфігурацію URL-адрес" />
-	<string key="Tree.ConfigurationElementToolTip" value="У цьому розділі можна сконфігурувати більш короткі та 'дружні' URL-адреси" />
-	<string key="Tree.HostnamesFolderLabel" value="Імена хостів" />
-	<string key="Tree.HostnamesFolderToolTip" value="тут можна прив'язати ім'я хосту да сайта" />
-	<string key="Tree.AddHostnameLabel" value="Додати ім'я хосту" />
-	<string key="Tree.UrlConfigurationLabel" value="Конфігурація URL-адрес" />
+  <string key="Tree.ConfigurationElementToolTip" value="У цьому розділі можна сконфігурувати більш короткі та &#39;дружні&#39; URL-адреси" />
+  <string key="Tree.ConfigurationElementEditLabel" value="Змінити конфігурацію URL-адрес" />
+  <string key="Tree.ConfigurationElementEditToolTip" value="Редагувати конфігурацію URL-адрес" />
+  <string key="Tree.HostnamesFolderLabel" value="Імена хостів" />
+	<string key="Tree.HostnamesFolderToolTip" value="тут можна прив&#39;язати ім&#39;я хосту да сайта" />
+	<string key="Tree.AddHostnameLabel" value="Додати ім&#39;я хосту" />
+  <string key="Tree.AddHostnameToolTip" value="Додати нову прив&#39;язку імені хосту" />
+  <string key="Tree.EditHostnameLabel" value="Змінити ім&#39;я хосту" />
+  <string key="Tree.EditHostnameToolTip" value="Редагувати цю прив&#39;язку імені хосту" />
+  <string key="Tree.DeleteHostnameLabel" value="Видалити ім&#39;я хосту" />
+  <string key="Tree.DeleteHostnameToolTip" value="Видалити цю прив&#39;язку імені хосту" />
+
+
+  <string key="Tree.UrlConfigurationLabel" value="Конфігурація URL-адрес" />
+  
 
 	<!-- Url configuration -->
 	<string key="UrlConfiguration.Title" value="Конфігурація URL-адрес" />
 	<string key="UrlConfiguration.PageUrlSuffix.Label" value="Суфікс URL-адреси сторінки" />
-	<string key="UrlConfiguration.PageUrlSuffix.Help" value="Розширення, яке буде додано до URL-адреси всіх сторінок. Напр., '.aspx' або '.html'. Залиште поле пустим, щоб не використовувати розширення з URL-адресами." />
+	<string key="UrlConfiguration.PageUrlSuffix.Help" value="Розширення, яке буде додано до URL-адреси всіх сторінок. Напр., &#39;.aspx&#39; або &#39;.html&#39;. Залиште поле пустим, щоб не використовувати розширення з URL-адресами." />
 
 	<!-- Hostname binding editing -->
-	<string key="HostnameBinding.AddNewHostnameTitle" value="Нове ім'я хосту" />
-	<string key="HostnameBinding.Hostname.Label" value="Ім'я хосту" />
-	<string key="HostnameBinding.Hostname.Help" value="Ім'я хосту, до я кого буде застосовано поточні правила побудови URL-адрес" />
+	<string key="HostnameBinding.AddNewHostnameTitle" value="Нове ім&#39;я хосту" />
+	<string key="HostnameBinding.Hostname.Label" value="Ім&#39;я хосту" />
+	<string key="HostnameBinding.Hostname.Help" value="Ім&#39;я хосту, до я кого буде застосовано поточні правила побудови URL-адрес" />
 	<string key="HostnameBinding.Page.Label" value="Сторінка" />
-	<string key="HostnameBinding.Page.Help" value="Коренева сторінка, яка буде сторінкою за промовчанням для поточного ім'я хосту." />
+	<string key="HostnameBinding.Page.Help" value="Коренева сторінка, яка буде сторінкою за промовчанням для поточного ім&#39;я хосту." />
 	<string key="HostnameBinding.IncludeHomepageUrlTitle.Label" value="URL-адреса" />
 	<string key="HostnameBinding.IncludeHomepageUrlTitle.ItemLabel" value="Включити назву URL-адреси домашньої сторінки" />
 	<string key="HostnameBinding.IncludeHomepageUrlTitle.Help" value="Визначає, чи буде назва URL-адреси домашньої сторінки частиною всеї URL-адреси. Не встановлюйте прапорець, якщо вам потрібні більш короткі URL-адреси." />
@@ -28,5 +37,5 @@
 	<string key="HostnameBinding.Custom404Page.Label" value="Користув. сторінка 404" />
 	<string key="HostnameBinding.Custom404Page.Help" value="URL-адреса, на яку буде переспрямовано запити, при запиті сторінки, яка не існує в С1" />
 	<string key="HostnameBinding.Aliases.Label" value="Псевдоніми хостів" />
-	<string key="HostnameBinding.Aliases.Help" value="Імена хостів, з яких буде переспрямовано на поточне ім'я хосту всі запити" />
+	<string key="HostnameBinding.Aliases.Help" value="Імена хостів, з яких буде переспрямовано на поточне ім&#39;я хосту всі запити" />
 </strings>
