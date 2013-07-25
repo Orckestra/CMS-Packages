@@ -161,7 +161,7 @@
 
 	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.description" value="Проверяет, совпадает ли строковое поле с одним из значений из списка строк, разделенных запятыми" />
 	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.label" value="Search terms" />
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="Строка, содержащая условия поиска, через запятую, например, 'c1,cms,linq'" />
+	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="Строка, содержащая условия поиска, через запятую, например, &#39;c1,cms,linq&#39;" />
 	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.label" value="Ignore case" />
 	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.help" value="При значении false, регистр букв в слове должен точно соблюдаться. По умолчанию - false, то есть поиск без учета регистра" />
 
@@ -268,13 +268,26 @@
 	<string key="Composite.Web.Client.IsMobileDevice.description" value="True (истина), если текущий запрос определяется как исходящий от мобильного устройства." />
 	<string key="Composite.Web.Html.Template.CommonMetaTags.description" value="Стандартные мета-теги HTML, которые вам, скорее всего, понадобяться в заголовке страницы (head)." />
 	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.label" value="Content-Type" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="По умолчанию: 'text/html; charset=utf-8'. Если вы используете другой тип, измените его здесь." />
+	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="По умолчанию: &#39;text/html; charset=utf-8&#39;. Если вы используете другой тип, измените его здесь." />
 	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.label" value="Designer" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Кто разработал этот веб-сайт? Покажите это в мета-теге 'Designer'. По умолчанию этот мета-тег не добавляется." />
+	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Кто разработал этот веб-сайт? Покажите это в мета-теге &#39;Designer&#39;. По умолчанию этот мета-тег не добавляется." />
 	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.label" value="Show generator" />
 	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.help" value="Покажите всему миру, что вы поддерживаете Composite C1 - бесплатную систему с открытым исходным кодом!" />
-	<string key="Composite.Web.Html.Template.LangAttribute.description" value="Добавляет атрибут lang='(код языка)' к родительскому элементу, отражая язык текущей страницы. Можно вставить сразу под тэгом &lt;html /&gt;." />
-	<string key="Composite.Web.Request.CookieValue.description" value="Получает значение из текущей пользовательской коллекции cookie" />
+	<string key="Composite.Web.Html.Template.LangAttribute.description" value="Добавляет атрибут lang=&#39;(код языка)&#39; к родительскому элементу, отражая язык текущей страницы. Можно вставить сразу под тэгом &lt;html /&gt;." />
+  <string key="Composite.Web.Html.Template.PageTemplateFeature.description" value="Вставляет именованный фрагмент шаблона страницы в указанном месте. Фрагменты шаблона страницы могут содержать HTML-код и функциональность и управляются в разделе &quot;Макет&quot;." />
+  <string key="Composite.Web.Html.Template.PageTemplateFeature.param.FeatureName.label" value="Название фрагмента" />
+  <string key="Composite.Web.Html.Template.PageTemplateFeature.param.FeatureName.help" value="Название фрагмента шаблона  страниц,который вы хотите вставить." />
+	<string key="Composite.Web.Html.Template.HtmlTitleValue.description" value="Выводит &quot;окончательный заголовок&quot; текущей страницы, то же значение, которое оказывается в теге title. Этот заголовок может браться из обрабатываемой страницы, или из C1-функции / элемента управления ASP.NET, которые меняют этот заголовок, чтобы он соответствовал конкретным данным, размещенным на этой странице." />
+	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.label" value="Префикс для удаления" />
+	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.help" value="Если HTML-заголовок имеет значение префикс, от которого вы хотите избавиться, укажите этот префикс здесь. Если префикс не найден в заголовке, это значение игнорируется." />
+	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.label" value="Постфикс для удаления" />
+	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.help" value="Если HTML-заголовок имеет значение постфикса, от которого вы хотите избавиться, укажите этот постфикс здесь. Если постфикс не найден в заголовке, это значение игнорируется." />
+	<string key="Composite.Web.Html.Template.MetaDescriptionValue.description" value="Выводит &quot;окончательное описание&quot; текущей страницы, то же значение, которое оказывается в мета-теге description. Это описание может браться из обрабатываемой страницы, или из C1-функции / элемента управления ASP.NET, которые меняют это описание , чтобы оно соответствовало конкретным данным, размещенным на этой странице." />
+	<string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.label" value="Элемент для использования с описанием" />
+	<string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.help" value="Чтобы иметь описание, указанное в элементе (напр. &lt;p class=description /&gt;), укажите его здесь. Элемент будет вставлен только, если текст описания существует." />
+
+
+  <string key="Composite.Web.Request.CookieValue.description" value="Получает значение из текущей пользовательской коллекции cookie" />
 	<string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
 	<string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Cookie name" />
 	<string key="Composite.Web.Request.CookieValue.param.FallbackValue.help" value="Если у пользователя нет этого cookie, используйте это поле для указания значения по умолчанию." />
@@ -340,27 +353,27 @@
 	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
 	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameter name" />
 	<string key="Composite.Web.Request.PathInfo.description" value="Возвращает дополнительную информацию передаваемую в URL вместе с ссылкой на страницу." />
-	<string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Сегмент пути, который нужно получить, в формате '/(0)/(1)/(2)/...'. Укажите -1 чтобы получить всю строку." />
+	<string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Сегмент пути, который нужно получить, в формате &#39;/(0)/(1)/(2)/...&#39;. Укажите -1 чтобы получить всю строку." />
 	<string key="Composite.Web.Request.PathInfo.param.Segment.label" value="Segment" />
 	<string key="Composite.Web.Request.PathInfo.param.AutoApprove.help" value="В значении true (истина), Composite C1 получит указание принимать любую строку пути. По умолчанию - true." />
 	<string key="Composite.Web.Request.PathInfo.param.AutoApprove.label" value="AutoApprove" />
 	<string key="Composite.Web.Request.PathInfo.param.FallbackValue.help" value="" />
 	<string key="Composite.Web.Request.PathInfo.param.FallbackValue.label" value="Fallback value" />
 	<string key="Composite.Web.Request.PathInfoInt.description" value="Извлекает значение как целое число из сегмента пути." />
-	<string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Сегмент пути, который нужно получить, в формате '/(0)/(1)/(2)/...'." />
+	<string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Сегмент пути, который нужно получить, в формате &#39;/(0)/(1)/(2)/...&#39;." />
 	<string key="Composite.Web.Request.PathInfoInt.param.Segment.label" value="Segment" />
 	<string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.help" value="В значении true (истина), Composite C1 получит указание принимать любую строку пути. По умолчанию - true." />
 	<string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.label" value="AutoApprove" />
 	<string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.help" value="" />
 	<string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.label" value="Fallback value" />
 	<string key="Composite.Web.Request.PathInfoGuid.description" value="Извлекает значение как GUID из сегмента пути." />
-	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Сегмент пути, который нужно получить, в формате '/(0)/(1)/(2)/...'." />
+	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Сегмент пути, который нужно получить, в формате &#39;/(0)/(1)/(2)/...&#39;." />
 	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.label" value="Segment" />
 	<string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.help" value="В значении true (истина), Composite C1 получит указание принимать любую строку пути. По умолчанию - true." />
 	<string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.label" value="AutoApprove" />
 	<string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.help" value="" />
 	<string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.label" value="Fallback value" />
-	<string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Извещает систему о том, что в адресе используется путь (PathInfo), чтобы запросы не перенаправлялись на страницу 'Страница не найдена'." />
+	<string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Извещает систему о том, что в адресе используется путь (PathInfo), чтобы запросы не перенаправлялись на страницу &#39;Страница не найдена&#39;." />
 	<string key="Composite.Web.Request.SessionVariable.description" value="Возвращает переменную из текущей сессии пользователя в виде строки." />
 	<string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="Используемое значение, если переменная сессии не была найдена" />
 	<string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Fallback value" />
@@ -386,7 +399,7 @@
 	<string key="Composite.Web.Response.SetSessionVariable.param.Value.label" value="Value" />
 	<string key="Composite.Web.Response.SetSessionVariable.param.VariableName.help" value="Имя устанавливаемой переменной сессии." />
 	<string key="Composite.Web.Response.SetSessionVariable.param.VariableName.label" value="Variable name" />
-	<string key="Composite.Web.Server.ApplicationPath.description" value="Возвращает виртуальный путь веб-приложения. Как правило, это &quot;&quot; (пустая строка), при запуске из корневого каталога сайта, но если Composite C1 запущен из подкаталога, он может быть &quot;/ MySubfolder&quot;. Вы можете использовать это значение в качестве префикса к разным URL, чтобы они работали независимо от того, запущен C1 из подпапки или нет. Пример использования в XSLT: &lt;img src=&quot;{/in:inputs/in:result[@name='ApplicationPath']}/images/myImage.png&quot; /&gt;" />
+	<string key="Composite.Web.Server.ApplicationPath.description" value="Возвращает виртуальный путь веб-приложения. Как правило, это &quot;&quot; (пустая строка), при запуске из корневого каталога сайта, но если Composite C1 запущен из подкаталога, он может быть &quot;/ MySubfolder&quot;. Вы можете использовать это значение в качестве префикса к разным URL, чтобы они работали независимо от того, запущен C1 из подпапки или нет. Пример использования в XSLT: &lt;img src=&quot;{/in:inputs/in:result[@name=&#39;ApplicationPath&#39;]}/images/myImage.png&quot; /&gt;" />
 	<string key="Composite.Web.Server.ApplicationVariable.description" value="Возвращает переменную приложений IIS" />
 	<string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.help" value="Используемое значение, если переменная приложения не обнаружена." />
 	<string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.label" value="Fallback value" />
@@ -428,7 +441,7 @@
 	<string key="Composite.Mail.SendMail.param.BCC.label" value="BCC" />
 	<string key="Composite.Mail.SendMail.param.BCC.help" value="Скрытая копия. Список получателей, которые получат почту, но их индивидуальные адреса будут скрыты от полного списка получателей." />
 	<string key="Composite.Mail.SendMail.param.Attachment.label" value="Attachment" />
-	<string key="Composite.Mail.SendMail.param.Attachment.help" value="Список прикрепленных файлов. \n  Отформатируйте его таким образом, следуя [{имя} =] {путь к файлу} [, {MIME-тип] [| .... ]. \n Путь к файлу может быть или относительным, или абсолютным, напр. &quot;C: \ someimage.jpg&quot; или &quot;/coolpicture.jpg&quot; \n, Если путь к файлу начинается с &quot;Composite /&quot;, он будет считаться как путем к медиа-файлу C1, напр. &quot;Composite / MediaArchive: someImage.gif '\n \n Примеры: \n / attachment.jpg \n image.jpg = /attachment.jpg \n image.jpg = / attachment.jpg, image/jpg\n image1.jpg = / attachment1.jpg, image/jpg| image2.jpg = / attachment2.jpg, image/jpg" />
+	<string key="Composite.Mail.SendMail.param.Attachment.help" value="Список прикрепленных файлов. \n  Отформатируйте его таким образом, следуя [{имя} =] {путь к файлу} [, {MIME-тип] [| .... ]. \n Путь к файлу может быть или относительным, или абсолютным, напр. &quot;C: \ someimage.jpg&quot; или &quot;/coolpicture.jpg&quot; \n, Если путь к файлу начинается с &quot;Composite /&quot;, он будет считаться как путем к медиа-файлу C1, напр. &quot;Composite / MediaArchive: someImage.gif &#39;\n \n Примеры: \n / attachment.jpg \n image.jpg = /attachment.jpg \n image.jpg = / attachment.jpg, image/jpg\n image1.jpg = / attachment1.jpg, image/jpg| image2.jpg = / attachment2.jpg, image/jpg" />
 
 	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="AttachmentFromMedia" />
 	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.help" value="Прикрепляемый файл из библиотеки мультимедиа." />
@@ -445,19 +458,19 @@
 	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Media Folder" />
 	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Определяет, нужно ли включать медиа-файлы из подпапок." />
 
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Преобразует перечисление XElement'ов в тип 'словарь' (Dictionary), используя указанные атрибуты в качестве ключей и значений." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Преобразует перечисление XElement&#39;ов в тип &#39;словарь&#39; (Dictionary), используя указанные атрибуты в качестве ключей и значений." />
   <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.label" value="XElements" />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.help" value="Перечисление XElement'ов, из которых будет создан 'словарь' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.help" value="Перечисление XElement&#39;ов, из которых будет создан &#39;словарь&#39; (Dictionary)." />
   <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.label" value="Key Attribute Name" />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Имя атрибута у каждого XElement'а, чье значение будет использоваться как ключ в 'словаре' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Имя атрибута у каждого XElement&#39;а, чье значение будет использоваться как ключ в &#39;словаре&#39; (Dictionary)." />
   <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.label" value="Value Attribute Name" />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Имя атрибута у каждого XElement'а, чье значение будет использоваться как значение в 'словаре' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Имя атрибута у каждого XElement&#39;а, чье значение будет использоваться как значение в &#39;словаре&#39; (Dictionary)." />
 
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Преобразует перечисление объектов в тип 'словарь' (Dictionary), используя указанные свойства в качестве ключей и значений." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Преобразует перечисление объектов в тип &#39;словарь&#39; (Dictionary), используя указанные свойства в качестве ключей и значений." />
   <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.label" value="Objects" />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.help" value="Перечисление объектов, из которых будет создан 'словарь' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.help" value="Перечисление объектов, из которых будет создан &#39;словарь&#39; (Dictionary)." />
   <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.label" value="Key Property Name" />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Имя свойства у каждого объекта, чье значение будет использоваться как ключ в 'словаре' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Имя свойства у каждого объекта, чье значение будет использоваться как ключ в &#39;словаре&#39; (Dictionary)." />
   <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.label" value="Value Property Name" />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Имя свойства у каждого объекта, чье значение будет использоваться как значение в 'словаре' (Dictionary)." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Имя свойства у каждого объекта, чье значение будет использоваться как значение в &#39;словаре&#39; (Dictionary)." />
 </strings>

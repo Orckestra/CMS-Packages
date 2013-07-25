@@ -48,11 +48,18 @@
   <string key="Position" value="Позиция" />
   <string key="PositionLast" value="Последняя" />
   <string key="PositionHelp" value="Позиция поля. Управляет порядком полей в списке." />
-  <string key="GroupByPriority" value="Группировка полей" />
-  <string key="GroupByPriorityNone" value="Нет группировки" />
+  <string key="GroupByPriority" value="Группировка в дереве" />
+  <string key="GroupByPriorityNone" value="(нет группировки)..." />
   <string key="GroupByPriorityFirst" value="Группировать по этому полю" />
   <string key="GroupByPriorityN" value="Группировать с {0} приоритетом" />
   <string key="GroupByPriorityHelp" value="Вы можете указать, что поле должно использоваться для группировки данных - это может улучшить читаемость при просмотре длинных списков. Используйте приоритет когда для группировки используется несколько полей." />
+  <string key="TreeOrdering" value="Сортировка в дереве" />
+  <string key="TreeOrderingNone" value="(без сортировки)..." />
+  <string key="TreeOrderingFirstAscending" value="По возрастанию (А-Я)" />
+  <string key="TreeOrderingFirstDescending" value="По убыванию (Я-А)" />
+  <string key="TreeOrderingNAscending" value="Сортировать {0} по возрастанию" />
+  <string key="TreeOrderingNDescending" value="Сортировать {0} по убыванию" />
+  <string key="TreeOrderingHelp" value="Можно указать, что поле должно использоваться для сортировки данных в дереве - это может улучшить читаемость, когда поле используется для позиционирования элементов на веб-сайте." />
   <string key="IsTitleField" value="Является титульным полем" />
   <string key="IsTitleFieldHelp" value="Установите флажок, если вы хотите, чтобы это поле использовалось как титульное. Титульные поля используются  при выводе данных в списке, например в дереве слева." />
   <string key="IsTitleFieldLabel" value="Использовать его в качестве титульного поля в списках" />

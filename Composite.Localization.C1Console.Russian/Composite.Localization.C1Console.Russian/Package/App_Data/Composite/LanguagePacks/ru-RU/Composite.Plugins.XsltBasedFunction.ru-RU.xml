@@ -21,7 +21,7 @@
   <string key="EditXsltFunctionWorkflow.InvalidNamespace" value="Пространство имен должно выглядеть как A.B.C - и не начинаться или заканчиваться на &quot;.&quot;." />
   <string key="EditXsltFunctionWorkflow.InvalidFileName" value="Путь к файлу XSLT должен начинаться с \ или /" />
   <string key="EditXsltFunctionWorkflow.InvalidName" value="Недопустимое имя функции" />
-  <string key="EditXsltFunctionWorkflow.CannotRenameFileExists" value="Нельзя переименовать функцию, файл '{0}' уже существует." />
+  <string key="EditXsltFunctionWorkflow.CannotRenameFileExists" value="Нельзя переименовать функцию, файл &#39;{0}&#39; уже существует." />
   <string key="EditXsltFunctionWorkflow.TotalNameTooLang" value="Общая длина имени и пространства имен слишком большая (используется в имени XSL файла)." />
 
   <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashTitle" value="Локальное имя функции уже используется" />
@@ -34,12 +34,16 @@
   <string key="XsltBasedFunctionProviderElementProvider.Delete" value="Удалить" />
   <string key="XsltBasedFunctionProviderElementProvider.DeleteToolTip" value="Удалить XSLT функцию" />
   <string key="AddNewXsltFunctionStep1.LabelDialog" value="Добавить новую XSLT функцию" />
-  <string key="AddNewXsltFunctionStep1.LabelFieldGroup" value="Название и тип вывода" />
+  <string key="AddNewXsltFunctionStep1.LabelFieldGroup" value="Новая XSLT функция" />
   <string key="AddNewXsltFunctionStep1.LabelName" value="Имя" />
   <string key="AddNewXsltFunctionStep1.HelpName" value="" />
   <string key="AddNewXsltFunctionStep1.LabelNamespace" value="Пространство имен" />
   <string key="AddNewXsltFunctionStep1.HelpNamespace" value="" />
   <string key="AddNewXsltFunctionStep1.LabelOutputType" value="Тип вывода" />
+  <string key="AddNewXsltFunctionStep1.LabelCopyFrom" value="Копировать из" />
+  <string key="AddNewXsltFunctionStep1.LabelCopyFromEmptyOption" value="(Новая XSLT функция)" />
+
+
   <string key="EditXsltFunction.LabelSettings" value="Настройки" />
   <string key="EditXsltFunction.LabelName" value="Имя" />
   <string key="EditXsltFunction.HelpName" value="" />

@@ -16,7 +16,7 @@
 	<string key="DeleteUserWorkflow.DeleteSelfTitle" value="Не удается удалить пользователя" />
 	<string key="DeleteUserWorkflow.DeleteSelfErrorMessage" value="Нельзя удалить учетную запись, с которой  вы вошли в систему." />
 
-	<string key="Website.Function.SelectDialog.Title" value="Выбрать функцию" />
+	<string key="Website.Function.SelectDialog.Title" value="Выберите функцию" />
 	<string key="Website.Widget.SelectDialog.Title" value="Выбрать виджет" />
 	<string key="Website.ContentLink.SelectDialog.Title" value="Выбрать страницу или файл" />
 	<string key="Website.Page.SelectDialog.Title" value="Выбрать страницу" />
@@ -34,7 +34,7 @@
 	<string key="Website.Forms.Administrative.EditUserStep1.EmailHelp" value="Адрес электронной почты  пользователя (необязательно)." />
 	<string key="Website.Forms.Administrative.EditUserStep1.GroupLabel" value="Папка" />
 	<string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Если вы введете имя папки, которое еще не существует, будет создана новая папка." />
-  <string key="Website.Forms.Administrative.EditUserStep1.LabelLocalizationFieldGroup" value="Локализация &#xD;консоли C1" />
+  <string key="Website.Forms.Administrative.EditUserStep1.LabelLocalizationFieldGroup" value="Локализация  консоли C1" />
   <string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Региональные настройки" />
 	<string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="Чтобы изменить способ отображения чисел, времени и дат, выберите вариант из списка." />
   <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageLabel" value="Язык консоли C1" />
@@ -59,7 +59,7 @@
 	<string key="Website.Forms.Administrative.EditUserStep1.UserGroupsFieldLabel" value="Группы пользователей" />
 	<string key="Website.Forms.Administrative.EditUserStep1.UserGroupsMultiSelectHelp" value="Выберите группы пользователей, членом которых должен быть выбранный пользователь." />
 	<string key="EditUserWorkflow.EditErrorTitle" value="Ошибка" />
-	<string key="EditUserWorkflow.EditOwnAccessToUsersPerspective" value="Нельзя удалять свои собственные права доступа к разделу &quot;Пользователи&quot;." />
+	<string key="EditUserWorkflow.EditOwnAccessToSystemPerspective" value="Вы не можете удалить свои собственные права доступа к разделу &quot;Система&quot;." />
 	<string key="UserElementProvider.RootLabel" value="Пользователи" />
 	<string key="UserElementProvider.RootToolTip" value="Пользователи" />
 	<string key="UserElementProvider.AddUserLabel" value="Добавить пользователя ..." />
@@ -115,9 +115,9 @@
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasPublishing" value="Поддержка публикации" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasLocalization" value="Поддержка локализации" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesTitle" value="Не существует ни одной папки данных для страницы" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Ни одной папки данных для страницы еще не было создано. Вы можете создать папку данных для страницы  в разделе 'Данные'." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Ни одной папки данных для страницы еще не было создано. Вы можете создать папку данных для страницы  в разделе &#39;Данные&#39;." />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesTitle" value="Не существуют неиспользованные папки данных для страницы" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Все доступные папки данных для страницы уже добавлены. Создать новую папку данных вы можете в разделе 'Данные'." />
+	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Все доступные папки данных для страницы уже добавлены. Создать новую папку данных вы можете в разделе &#39;Данные&#39;." />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ErrorTitle" value="Ошибка" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.FieldLabel" value="Выберите для добавления папку данных" />
 	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorLabel" value="Существующие типы папки данных" />
@@ -150,7 +150,7 @@
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorLabel" value="Наследовать отображение" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorHelp" value="Наследовать отображение" />
 	<string key="AssociatedDataElementProviderHelper.NoItems.Title" value="У группы полей метаданных нет элементов в этом диапазоне" />
-	<string key="AssociatedDataElementProviderHelper.NoItems.Description" value="В настоящее время нет элементов в указанном диапазоне отображения.  Нажмите 'Назад', чтоб изменить диапазон отображения или 'Готово', чтобы создать группу полей метаданных." />
+	<string key="AssociatedDataElementProviderHelper.NoItems.Description" value="В настоящее время нет элементов в указанном диапазоне отображения.  Нажмите &#39;Назад&#39;, чтоб изменить диапазон отображения или &#39;Готово&#39;, чтобы создать группу полей метаданных." />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption0" value="Этого элемента" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption1" value="Дочерних элементов" />
 	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption2" value="Потомков 2-го поколения" />
@@ -252,6 +252,7 @@
 	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorLabel" value="Выберите тип данных" />
 	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorHelp" value="Выберите один из существующих типов" />
 	<string key="VirtualElementProviderElementProvider.ID01" value="Виртуальный корневой элемент" />
+  <string key="VirtualElementProviderElementProvider.PermissionsPerspective" value="Пользователи и разрешения" />
 	<string key="VirtualElementProviderElementProvider.UserPerspective" value="Пользователи" />
 	<string key="VirtualElementProviderElementProvider.DeveloperApplicationPerspective" value="Приложения" />
 	<string key="VirtualElementProviderElementProvider.UserGroupPerspective" value="Группы пользователей" />
@@ -320,7 +321,7 @@
 	<string key="MediaFileProviderElementProvider.MediaFileItemToolTip" value="Медиа-элемент" />
 	<string key="MediaFileProviderElementProvider.OrganizedFilesAndFoldersToolTip" value="Организовать папки и файлы" />
 	<string key="MediaFileProviderElementProvider.ErrorMessageTitle" value="Ошибка" />
-	<string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Файл '{0}' уже существует в папке '{1}'" />
+	<string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Файл &#39;{0}&#39; уже существует в папке &#39;{1}&#39;" />
 	<string key="UploadNewMediaFileWorkflow.UploadFailure" value="Сбой" />
 	<string key="UploadNewMediaFileWorkflow.UploadFailureMessage" value="Загружаемый файл должен быть того же типа, что и оригинал. Загружаемый вами файл имеет другой тип." />
 	<string key="RelationshipGraphActionExecutor.ShowGraph" value="Показать диаграмму" />
@@ -364,16 +365,12 @@
 	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPixels" value="Пиксели" />
 	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPercent" value="Проценты" />
 	<string key="Website.Dialogs.Options.LoginScreen" value="Экран входа в систему" />
-	<string key="Website.Dialogs.Options.SoundEffects" value="Звуковые эффекты" />
 	<string key="Website.Dialogs.Options.LabelOptions" value="Параметры" />
 	<string key="Website.Dialogs.Options.LabelGeneral" value="Общие" />
 	<string key="Website.Dialogs.Options.LabelAdvanced" value="Расширенные" />
 	<string key="Website.Dialogs.Options.LabelLoginPreferences" value="Настройки входа в систему" />
 	<string key="Website.Dialogs.Options.LabelFakeLoginScreen" value="Псевдо-экран входа в систему" />
 	<string key="Website.Dialogs.Options.LabelNoLoginScreen" value="Без экрана входа в систему" />
-	<string key="Website.Dialogs.Options.LabelAudioPreferences" value="Аудио настройки" />
-	<string key="Website.Dialogs.Options.LabelSoundOn" value="Раздражающие звуковые эффекты" />
-	<string key="Website.Dialogs.Options.LabelSoundOff" value="Без звуковых эффектов" />
 	<string key="Website.Dialogs.WebServices.Error" value="Ошибка в методе веб-службы" />
 	<string key="Website.Dialogs.WebServices.LabelWebServiceError" value="Ошибка веб-службы" />
 	<string key="Website.Dialogs.SystemTree.DetailedPaste.Title" value="Вставить где?" />
@@ -434,6 +431,11 @@
 	<string key="ServerLog.LogEntry.MessageLabel" value="Сообщение" />
 	<string key="ServerLog.LogEntry.TitleLabel" value="Заголовок" />
 	<string key="ServerLog.LogEntry.EventTypeLabel" value="Тип события" />
+  <string key="ServerLog.Severity.Verbose" value="Подробно" />
+  <string key="ServerLog.Severity.Information" value="Информация" />
+  <string key="ServerLog.Severity.Warning" value="Предупреждение" />
+  <string key="ServerLog.Severity.Error" value="Ошибка" />
+  <string key="ServerLog.Severity.Critical" value="Критическая ошибка" />
 	<string key="FunctionDocumentation.LabelButtonRefresh" value="Обновить" />
 	<string key="FunctionDocumentation.LabelButtonPrint" value="Печать" />
 	<string key="Website.FlowUICompleted.ExecutionEndedTitle" value="Выполнение завершилось" />
@@ -563,7 +565,7 @@
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpDescription" value="" />
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameAlreadyUsed" value="Папка уже существует" />
 	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="Полное имя папки слишком длинное" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Имя папки не может быть только '/' или '\'" />
+	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Имя папки не может быть только &#39;/&#39; или &#39;\&#39;" />
 	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Загрузка нескольких файлов с помощью Zip-файла" />
 	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFieldGroup" value="Выберите Zip-файл, содержащий файлы для извлечения" />
 	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Zip-файл" />
@@ -643,8 +645,11 @@
 	<string key="AspNetUiControl.Selector.SelectValueLabel" value="Выберите значение ..." />
 	<string key="AspNetUiControl.Selector.BrokenReference" value="&lt;Неверная ссылка&gt; ..." />
 	<string key="AspNetUiControl.Selector.NoSelection" value="(не выбрано)" />
+	<string key="AspNetUiControl.Selector.NoMatchesFor" value="Нет ни одного совпадения для &#39;{0}&#39;" />
 
-	<string key="Validation.Decimal.SymbolsAfterPointAllowed" value="Только {0} цифр разрешено после запятой" />
+  <string key="Validation.BrokenReference" value="Это поле содержит неработающую ссылку" />
+  <string key="Validation.RequiredField" value="Это обязательное поле." />
+  <string key="Validation.Decimal.SymbolsAfterPointAllowed" value="Только {0} цифр разрешено после запятой" />
 	<string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Только {0} цифр разрешено до запятой" />
 	<string key="Validation.Int32.Overflow" value="Указанное значение либо слишком большое, либо слишком маленькое. Диапазон допустимых значений от -2,147,483,648 до 2,147,483,647" />
 </strings>

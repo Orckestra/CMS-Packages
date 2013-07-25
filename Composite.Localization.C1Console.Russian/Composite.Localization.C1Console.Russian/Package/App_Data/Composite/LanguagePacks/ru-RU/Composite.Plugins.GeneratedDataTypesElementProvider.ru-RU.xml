@@ -81,12 +81,12 @@
   <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="Удалить тип данных" />
   <string key="DeleteAggregationTypeWorkflow.Text" value="Удалить тип данных" />
   <string key="DeleteAggregationTypeWorkflow.ErrorTitle" value="Ошибка" />
-  <string key="DeleteAggregationTypeWorkflow.IsUsedByPageType" value="Нельзя удалить тип '{0}', так как он используется типом страниц." />  
+  <string key="DeleteAggregationTypeWorkflow.IsUsedByPageType" value="Нельзя удалить тип &#39;{0}&#39;, так как он используется типом страниц." />  
   <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="Удалить тип данных" />
   <string key="DeleteCompositionTypeWorkflow.Text" value="Удалить тип данных" />
   <string key="DeleteCompositionTypeWorkflow.ErrorTitle" value="Ошибка" />
-  <string key="DeleteCompositionTypeWorkflow.TypeIsReferenced" value="Нельзя удалить тип '{0}', так как другие типы ссылаются на него." />
-  <string key="DeleteCompositionTypeWorkflow.IsUsedByPageType" value="Нельзя удалить тип '{0}', так как он используется типом страниц." />  
+  <string key="DeleteCompositionTypeWorkflow.TypeIsReferenced" value="Нельзя удалить тип &#39;{0}&#39;, так как другие типы ссылаются на него." />
+  <string key="DeleteCompositionTypeWorkflow.IsUsedByPageType" value="Нельзя удалить тип &#39;{0}&#39;, так как он используется типом страниц." />  
   <string key="ToXmlLabel" value="В XML" />
   <string key="ToXmlToolTip" value="В XML" />
   <string key="EnableTypeLocalizationWorkflow.Dialog.Label" value="Включить локализацию" />
@@ -109,7 +109,7 @@
   <string key="LocalizeDataWorkflow.ShowError.InfoTableCaption" value="Ошибки перевода" />
   <string key="LocalizeDataWorkflow.ShowError.AlreadyTranslated" value="Эти данные уже были переведены. Переведенная версия принадлежит к другой группе." />
   <string key="LocalizeDataWorkflow.ShowError.Description" value="Следующие поля ссылаются на определенный тип данных. Вы должны перевести эти элементы данных, прежде чем переводить этот элемент данных" />
-  <string key="LocalizeDataWorkflow.ShowError.FieldErrorFormat" value="Поле '{0}' ссылается на данные типа '{1}' с надписью '{2} '" />
+  <string key="LocalizeDataWorkflow.ShowError.FieldErrorFormat" value="Поле &#39;{0}&#39; ссылается на данные типа &#39;{1}&#39; с надписью &#39;{2} &#39;" />
   <string key="AddNewInterfaceTypeStep1.ErrorTitle" value="Ошибка" />
   <string key="EditInterfaceTypeStep1.ErrorTitle" value="Ошибка" />
   <string key="AddNewCompositionTypeWorkflow.ErrorTitle" value="Ошибка" />
@@ -119,4 +119,7 @@
   <string key="EditAggregationTypeWorkflow.ErrorTitle" value="Ошибка" />
   
   <string key="DataTypeDescriptorToXmlLabel" value="XML-результат" />
+
+  <string key="FormMarkupInfo.Dialog.Label" value="Этот тип имеет собственную разметку формы" />
+  <string key="FormMarkupInfo.Message" value="Ваши изменения в полях не отобразятся в форме для редактирования данных. Выполните &#39;{0}&#39;, чтобы изменить форму или удалите файл &#39;{1}&#39;." />
 </strings>

@@ -9,7 +9,7 @@
   <string key="AddNewPageStep1.LabelAbstract" value="Описание" />
   <string key="AddNewPageStep1.LabelAbstractHelp" value="Используйте это поле для краткого описания страницы" />
   <string key="AddNewPageStep1.LabelTemplate" value="Тип страниц" />
-  <string key="AddNewPageStep1.HelpTemplate" value="Выберите тип, на котором должна основываться эта страница." />
+  <string key="AddNewPageStep1.HelpTemplate" value="Выбор типа страницы определяет роль страницы, напр. &quot;нормальная страница&quot; или &quot;блог&quot;. Доступные опции зависят от установленных компонентов." />
   <string key="AddNewPageStep1.LabelPosition" value="Позиция" />
   <string key="AddNewPageStep1.HelpPosition" value="Выберите, где вы хотите разместить страницу в дереве контента." />
   <string key="AddNewPageStep1.LabelAddToTop" value="Вставить вверху" />
@@ -24,6 +24,8 @@
   <string key="AddNewPageStep2.LabelPositionSelectorPanel" value="Выберите точную позицию страницы" />
   <string key="AddNewPageStep2.LabelPositionSelector" value="Позиция ниже" />
   <string key="AddNewPageStep2.HelpPositionSelector" value="" />
+  <string key="AddNewPageStep1.TitleTooLong" value="Указано слишком длинное название. Сделайте его короче и попробуйте снова." />
+  <string key="AddNewPageStep1.MenuTitleTooLong" value="Указан слишком длинный заголовок меню. Сделайте его короче и попробуйте снова." />
   <string key="EditPage.LabelPaneSettings" value="Настройки" />
   <string key="EditPage.LabelPublicationState" value="Статус" />
   <string key="EditPage.HelpPublicationState" value="Установить странице другой статус" />
@@ -33,7 +35,7 @@
   <string key="EditPage.HelpMenuTitle" value="Значение в этом поле может использоваться для навигации по сайту." />
   <string key="EditPage.LabelUrlTitle" value="Название для URL" />
   <string key="EditPage.UrlTitleFormattedTitle" value="Название для URL было изменено" />	
-  <string key="EditPage.UrlTitleFormattedMessage" value="В соответствии с текущими правилами замены URL, название для URL было изменено на '{0}'" />
+  <string key="EditPage.UrlTitleFormattedMessage" value="В соответствии с текущими правилами замены URL, название для URL было изменено на &#39;{0}&#39;" />
   <string key="EditPage.HelpUrlTitle" value="Значение в этом поле отображается в адресной строке браузера как часть URL-адреса. Поле используется поисковыми системами." />
   <string key="EditPage.LabelFriendlyUrl" value="Быстрый URL" />
   <string key="EditPage.HelpFriendlyUrl" value="Значение в этом поле отображается в адресной строке браузера и заменяет URL, сгенерированный системой. Обратите внимание на то, что должен быть настроен сервер, чтобы поддерживать эту функцию" />
@@ -46,6 +48,7 @@
   <string key="EditPage.LabelContent" value="Контент" />
   <string key="EditPage.LabelPreview" value="Просмотр" />
   <string key="EditPage.PageTypeSelectorLabel" value="Тип страниц" />
+  <string key="EditPage.PageTypeSelectorHelp" value="Выбор типа страницы определяет роль страницы, напр. &quot;нормальная страница&quot; или &quot;блог&quot;. Доступные опции зависят от установленных компонентов." />
   <string key="EditPage.MaxLength" value="{0} символов максимум" />
   <string key="DeletePage.LabelFieldGroup" value="Удалить страницу?" />
   <string key="DeletePageStep1.Title" value="Удалить страницу и все подстраницы" />

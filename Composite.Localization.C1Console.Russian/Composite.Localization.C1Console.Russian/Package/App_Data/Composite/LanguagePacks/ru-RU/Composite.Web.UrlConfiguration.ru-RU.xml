@@ -2,17 +2,26 @@
 <strings>
 	<!-- Element tree -->
 	<string key="Tree.ConfigurationElementLabel" value="Конфигурация URL-адресов" />
-	<string key="Tree.ConfigurationElementEditLabel" value="Редактировать конфигурацию URL-адресов" />
-	<string key="Tree.ConfigurationElementToolTip" value="В этом разделе можно сконфигурировать более короткие и 'дружественные' URL-адреса" />
-	<string key="Tree.HostnamesFolderLabel" value="Имена узлов" />
+  <string key="Tree.ConfigurationElementToolTip" value="В этом разделе можно сконфигурировать более короткие и &#39;дружественные&#39; URL-адреса" />
+  <string key="Tree.ConfigurationElementEditLabel" value="Изменить конфигурацию URL-адресов" />
+  <string key="Tree.ConfigurationElementEditToolTip" value="Редактировать конфигурацию URL-адресов" />
+  <string key="Tree.HostnamesFolderLabel" value="Имена узлов" />
 	<string key="Tree.HostnamesFolderToolTip" value="Здесь можно привязать имя узла к сайту" />
 	<string key="Tree.AddHostnameLabel" value="Добавить имя узла" />
-	<string key="Tree.UrlConfigurationLabel" value="Конфигурация URL-адресов" />
+  <string key="Tree.AddHostnameToolTip" value="Добавить новую привязку имени узла" />
+  <string key="Tree.EditHostnameLabel" value="Изменить имя узла" />
+  <string key="Tree.EditHostnameToolTip" value="Редактировать эту привязку имени узла" />
+  <string key="Tree.DeleteHostnameLabel" value="Удалить имя узла" />
+  <string key="Tree.DeleteHostnameToolTip" value="Удалить эту привязку имени узла" />
+
+
+  <string key="Tree.UrlConfigurationLabel" value="Конфигурация URL-адресов" />
+  
 
 	<!-- Url configuration -->
 	<string key="UrlConfiguration.Title" value="Конфигурация URL-адресов" />
 	<string key="UrlConfiguration.PageUrlSuffix.Label" value="Суффикс URL-адреса страницы" />
-	<string key="UrlConfiguration.PageUrlSuffix.Help" value="Расширение, которое будет добавлено к URL-адресу всех страниц. Напр., '.aspx' або '.html'. Оставьте поле пустым, чтобы не использовать расширения с URL-адресами." />
+	<string key="UrlConfiguration.PageUrlSuffix.Help" value="Расширение, которое будет добавлено к URL-адресу всех страниц. Напр., &#39;.aspx&#39; або &#39;.html&#39;. Оставьте поле пустым, чтобы не использовать расширения с URL-адресами." />
 
 	<!-- Hostname binding editing -->
 	<string key="HostnameBinding.AddNewHostnameTitle" value="Новое имя узла" />

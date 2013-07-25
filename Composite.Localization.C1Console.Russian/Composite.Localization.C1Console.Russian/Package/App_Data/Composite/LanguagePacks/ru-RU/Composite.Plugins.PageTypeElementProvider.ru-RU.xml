@@ -74,7 +74,7 @@
   <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Идентификатор заполнителя" />
   <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="Идентификатор заполнителя. Вы можете указать несуществующий идентификатор и создать заполнитель позже (изменив шаблон страницы)." />
   <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Title" value="Нет шаблонов с {0}" />
-  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Message" value="Обратите внимание, что указанный вами идентификатор заполнителя '{0}' в данный момент отсутствует в шаблонах страниц." />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Message" value="Обратите внимание, что указанный вами идентификатор заполнителя &#39;{0}&#39; в данный момент отсутствует в шаблонах страниц." />
   <string key="PageType.EditPageTypeDefaultPageContentWorkflow.Layout.Label" value="Изменить контент по умолчанию" />
   <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsPlaceHolder.Label" value="Настройки" />
   <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsFieldGroup.Label" value="Информация о заполнителе" />
@@ -98,12 +98,16 @@
   <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Message" value="Удалить поле метаданных {0}? Предупреждение: все существующие элементы метаданных также будут удалены" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.Layout.Label" value="Изменить поле метаданных" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="Настройки поля метаданных" />
-  <!--<string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Name" />
-  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="The uniqueue name of the Metadata field" />-->
+  <!--
+
+  
+-->
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Надпись" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Надпись поля метаданных. Используется в пользовательском интерфейсе" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Вкладка" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="Выберите вкладку, где следует добавить метаданные при изменении страницы" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaTypeName.Label" value="Метатип" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaTypeName.Help" value="Название метатипа." />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Такой тип метаданных уже используется с тем же именем, но с другой надписью" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataContainerChangeNotAllowed" value="Существует одно или несколько определений с тем же именем. Изменение контейнера недопустимо." />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Title" value="Этот тип метаданных был удален" />

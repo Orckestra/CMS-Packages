@@ -30,7 +30,7 @@
   <string key="AddFunction.TypeMustNotHaveOverloads" value="Типа не должно иметь перегрузки" />
   <string key="AddFunction.MethodNameIsEmpty" value="Имя метода не должно быть пустым" />
   <string key="AddFunction.InvalidNamespace" value="Пространство имен должно быть в виде A.B.C.  Не может начинаться и не заканчиваться &quot;.&quot;." />
-  <string key="AddFunction.NameAlreadyUsed" value="Имя функции '{0}' уже используется" />
+  <string key="AddFunction.NameAlreadyUsed" value="Имя функции &#39;{0}&#39; уже используется" />
   <string key="EditMethodBasedFunction.LabelFieldGroup" value="Изменить запрос на основе метода" />
   <string key="EditMethodBasedFunction.LabelMethodName" value="Название метода" />
   <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="Название, под которым функция должна быть известна." />
@@ -80,9 +80,9 @@
   <string key="InlineFunctionMethodTemplate.WithParameters" value="Метод с параметрами" />
   <string key="InlineFunctionMethodTemplate.DataConnection" value="Метод с использованием подключения данных" />
   <string key="CSharpInlineFunction.OnMissingContainerType" value="В коде отсутствует публичный статический класс с именем {0}. Этот класс должен содержать метод функции." />
-  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="Пространство имен в коде '{0}' не соответствует пространству имен данной функции '{1}'." />
-  <string key="CSharpInlineFunction.OnMissionMethod" value="Данное имя функции '{0}' не найдено или не является публичным статическим в классе &quot;{1} '." />
-  <string key="CSharpInlineFunction.MissingParameterDefinition" value="Параметр '{0}' не был добавлен во &quot;Входные параметры&quot;. Для вызова функции нужно добавить параметр и присвоить ему значение, либо тестовое, либо по умолчанию." />
-  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="Параметр '{0}' ожидает тестовое значение типа '{1}', Получено значение типа '{2}'." />
-  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="Параметру '{0}', определенный во &quot;Входных параметрах&quot;, должно быть присвоено тестовое значение или значение по умолчанию до вычисления функции." />
+  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="Пространство имен в коде &#39;{0}&#39; не соответствует пространству имен данной функции &#39;{1}&#39;." />
+  <string key="CSharpInlineFunction.OnMissionMethod" value="Данное имя функции &#39;{0}&#39; не найдено или не является публичным статическим в классе &quot;{1} &#39;." />
+  <string key="CSharpInlineFunction.MissingParameterDefinition" value="Параметр &#39;{0}&#39; не был добавлен во &quot;Входные параметры&quot;. Для вызова функции нужно добавить параметр и присвоить ему значение, либо тестовое, либо по умолчанию." />
+  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="Параметр &#39;{0}&#39; ожидает тестовое значение типа &#39;{1}&#39;, Получено значение типа &#39;{2}&#39;." />
+  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="Параметру &#39;{0}&#39;, определенный во &quot;Входных параметрах&quot;, должно быть присвоено тестовое значение или значение по умолчанию до вычисления функции." />
 </strings>

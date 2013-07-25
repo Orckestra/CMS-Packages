@@ -61,7 +61,7 @@
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
-	<xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.SecurityViolation']/Cultures">
+	<xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.SecurityViolation']/Cultures">
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
@@ -253,7 +253,7 @@
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
-  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures">
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.MasterPagePageTemplate']/Cultures">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" />
       <xsl:if test="count(add[@cultureName='ru-RU'])=0">
@@ -262,7 +262,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures">
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.PageTemplateFeatureElementProvider']/Cultures">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" />
       <xsl:if test="count(add[@cultureName='ru-RU'])=0">
@@ -271,7 +271,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures">
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.RazorFunction']/Cultures">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" />
       <xsl:if test="count(add[@cultureName='ru-RU'])=0">
@@ -280,7 +280,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures">
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.RazorPageTemplate']/Cultures">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" />
       <xsl:if test="count(add[@cultureName='ru-RU'])=0">
@@ -289,15 +289,15 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.C1Console.Trees']/Cultures">
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.UserControlFunction']/Cultures">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" />
       <xsl:if test="count(add[@cultureName='ru-RU'])=0">
         <add cultureName="ru-RU" xmlFile="~/App_Data/Composite/LanguagePacks/ru-RU/Composite.Plugins.UserControlFunction.ru-RU.xml" monitorFileChanges="true" />
       </xsl:if>
     </xsl:copy>
-  </xsl:template>  
-	<xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.PageTypeElementProvider']/Cultures">
+  </xsl:template>
+  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins/add[@name='Composite.Plugins.PageTypeElementProvider']/Cultures">
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@cultureName='ru-RU'])=0">
