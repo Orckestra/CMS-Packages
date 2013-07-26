@@ -5,7 +5,7 @@
 		<Add name="/configuration/Composite.C1Console.Forms.Plugins.UiControlFactoryConfiguration/Channels/Channel[@name='AspNet.Management']/Namespaces/Namespace[@name='http://www.composite.net/ns/Composite/Community/QuickPoll/1.0']" />
 	</pc:Configuration>
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3904.14629" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.QuickPoll" groupName="Composite.Community" version="1.4.8" author="Composite A/S" website="www.composite.net" id="480ddca7-bf60-4f96-9525-d81318c917f4" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Community.QuickPoll" groupName="Composite.Community" version="1.4.9" author="Composite A/S" website="www.composite.net" id="480ddca7-bf60-4f96-9525-d81318c917f4" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" reloadConsoleOnCompletion="true">
 		<Description>Allows visitors to take part in polls on a website. Supports automatic rotation by schedule.</Description>
 	</mi:PackageInformation>
 	<pc:PageTemplates />
