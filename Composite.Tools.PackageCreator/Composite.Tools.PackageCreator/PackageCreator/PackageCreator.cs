@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -511,7 +510,7 @@ namespace Composite.Tools.PackageCreator
 					{
 						
 						XslFiles.Add(
-							new XElement("XsltFile",
+							new XElement("XslFile",
 								new XAttribute("pathXml", PackageCreatorFacade.GetConfigurationPath(source)),
 								new XAttribute("installXsl", string.Format(@"~\{0}\{1}", source, configInstallFileName)),
 								new XAttribute("uninstallXsl", string.Format(@"~\{0}\{1}", source, configUninstallFileName))
@@ -1043,15 +1042,6 @@ namespace Composite.Tools.PackageCreator
 				AddFile(filename);
 		}
 
-		internal void AddXslFile(string pathXml, string pathXsl)
-		{
-			XslFiles.Add(
-				new XElement("XsltFile",
-					new XAttribute("pathXml", "~\\" + pathXml),
-					new XAttribute("pathXsl", "~\\" + pathXsl)
-				)
-			);
-		}
 
 		public void AddFile(string filename)
 		{
