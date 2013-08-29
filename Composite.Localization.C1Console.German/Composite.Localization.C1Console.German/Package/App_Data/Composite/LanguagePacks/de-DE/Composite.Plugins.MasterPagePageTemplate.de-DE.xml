@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="AddNewMasterPagePageTemplateWorkflow.LabelDialog" value="Neue Master Page hinzuf&#252;gen" />
+
+  <string key="EditMasterPageAction.Label" value="Master Page bearbeiten" />
+  <string key="EditMasterPageAction.ToolTip" value="Quellcode der Master Page bearbeiten" />
+
+  <string key="DeleteMasterPageAction.Label" value="L&#246;schen" />
+  <string key="DeleteMasterPageAction.ToolTip" value="Seitenvorlagen l&#246;schen" />
+
+  <string key="EditTemplate.Validation.DialogTitle" value="Fehler bei der Validierung" />
+  <string key="EditTemplate.Validation.CompilationFailed" value="Kompilierung fehlgeschlagen:  {0}" />
+  <string key="EditTemplate.Validation.IncorrectBaseClass" value="Seitenvorlagen-Klasse erbt nicht &#39;{0}&#39;" />
+  <string key="EditTemplate.Validation.PropertyError" value="Fehler beim Validieren der Seitenvorlagen-Eigenschaft &#39;{0}&#39;. Ausnahme: {1}" />
+  <string key="EditTemplate.Validation.TemplateIdChanged" value="Eine &#196;nderung der Vorlagen-ID ist im aktuellen Workflow nicht erlaubt. Die Original Vorlagen-ID ist &#39;{0}&#39;" />
+
+
+  <string key="AddNewMasterPagePageTemplate.LabelDialog" value="Neue Master Page Vorlage hinzuf&#252;gen" />
+  <string key="AddNewMasterPagePageTemplate.LabelFieldGroup" value="Master Page Vorlage" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitle" value="Vorlagentitel" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitleHelp" value="Der Titel identifiziert diese Vorlage in Listen. W&#228;hlen Sie einen kurzen, aber aussagekr&#228;ftigen Namen." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFrom" value="Kopieren von" />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromHelp" value="Markieren Sie eine Vorlage in dieser Liste, um deren Quellcode zu kopieren." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromEmptyOption" value="(Neue Vorlage)" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleInUseTitle" value="Titel wird bereits verwendet" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleTooLong" value="Der Titel ist zu lang (wird als Teil eines Dateinamens verwendet)" />
+</strings>

@@ -2,113 +2,116 @@
 <strings>
   <string key="AddNewPageStep1.DialogLabel" value="Neue Seite erstellen" />
   <string key="GeneralSettings.FieldGroupLabel" value="Allgemeine Einstellungen" />
-  <string key="PublicationSettings.FieldGroupLabel" value="Veröffentlichungseinstellungen" />
+  <string key="PublicationSettings.FieldGroupLabel" value="Ver&#246;ffentlichungseinstellungen" />
   <string key="AdvancedSettings.FieldGroupLabel" value="Erweiterte Einstellungen" />
   <string key="AddNewPageStep1.LabelTitle" value="Seitentitel" />
   <string key="AddNewPageStep1.LabelTitleHelp" value="Der in diesem Feld angegebene Eintrag wird in der Titelleiste des Browserfensters angezeigt. Das Feld wird von Suchmaschinen und Sitemaps verwendet" />
   <string key="AddNewPageStep1.LabelAbstract" value="Beschreibung" />
-  <string key="AddNewPageStep1.LabelAbstractHelp" value="Verwenden Sie dieses Feld für eine kurze Beschreibung der Seite" />
+  <string key="AddNewPageStep1.LabelAbstractHelp" value="Verwenden Sie dieses Feld f&#252;r eine kurze Beschreibung der Seite" />
   <string key="AddNewPageStep1.LabelTemplate" value="Seitentyp" />
-  <string key="AddNewPageStep1.HelpTemplate" value="Wählen Sie den Seitentyp, auf der diese Seite basieren soll." />
+  <string key="AddNewPageStep1.HelpTemplate" value="W&#228;hlen Sie den Seitentyp, auf der diese Seite basieren soll." />
   <string key="AddNewPageStep1.LabelPosition" value="Position" />
-  <string key="AddNewPageStep1.HelpPosition" value="Wählen Sie, wo im Seitenbaum Sie die Seite platzieren wollen." />
-  <string key="AddNewPageStep1.LabelAddToTop" value="Oben einfügen" />
-  <string key="AddNewPageStep1.LabelAddToBottom" value="Unten einfügen" />
-  <string key="AddNewPageStep1.LabelAddAlphabetic" value="Alphabetisch einfügen" />
-  <string key="AddNewPageStep1.LabelAddBelowOtherPage" value="Wählen Sie die Position ..." />
+  <string key="AddNewPageStep1.HelpPosition" value="W&#228;hlen Sie, wo im Seitenbaum Sie die Seite platzieren wollen." />
+  <string key="AddNewPageStep1.LabelAddToTop" value="Oben einf&#252;gen" />
+  <string key="AddNewPageStep1.LabelAddToBottom" value="Unten einf&#252;gen" />
+  <string key="AddNewPageStep1.LabelAddAlphabetic" value="Alphabetisch einf&#252;gen" />
+  <string key="AddNewPageStep1.LabelAddBelowOtherPage" value="W&#228;hlen Sie die Position ..." />
   <string key="AddNewPageStep2.LabelFieldGroup" value="Erweiterte Einstellungen" />
   <string key="AddNewPageStep2.LabelUrlTitle" value="URL Titel" />
   <string key="AddNewPageStep2.HelpUrlTitle" value="Der in diesem Feld angegebene Eintrag wird in der Adresszeile des Browsers angezeigt. Das Feld wird von Suchmaschinen verwendet" />
-  <string key="AddNewPageStep2.LabelMenuTitle" value="Menütitel" />
+  <string key="AddNewPageStep2.LabelMenuTitle" value="Men&#252;titel" />
   <string key="AddNewPageStep2.HelpMenuTitle" value="Der Eintrag in diesem Feld angegebene finden Sie in der Navigation auf der Website verwendet werden" />
-  <string key="AddNewPageStep2.LabelPositionSelectorPanel" value="Wählen Sie die genaue Position der Seite" />
+  <string key="AddNewPageStep2.LabelPositionSelectorPanel" value="W&#228;hlen Sie die genaue Position der Seite" />
   <string key="AddNewPageStep2.LabelPositionSelector" value="Position unterhalb" />
   <string key="AddNewPageStep2.HelpPositionSelector" value="" />
+  <string key="AddNewPageStep1.TitleTooLong" value="Der angegebene Titel ist zu lang. K&#252;rzen Sie ihn und versuchen es erneut" />
+  <string key="AddNewPageStep1.MenuTitleTooLong" value="Der angegebene Men&#252;titel ist zu lang. K&#252;rzen Sie ihn und versuchen es erneut" />
   <string key="EditPage.LabelPaneSettings" value="Einstellungen" />
   <string key="EditPage.LabelPublicationState" value="Status" />
   <string key="EditPage.HelpPublicationState" value="Senden Sie die Seite in einen anderen Status" />
   <string key="EditPage.LabelPageTitle" value="Seitentitel" />
   <string key="EditPage.LabelPageTitleHelp" value="Der in diesem Feld angegebene Eintrag wird in der Titelleiste des Browserfensters angezeigt. Das Feld wird von Suchmaschinen und Sitemaps verwendet" />
-  <string key="EditPage.LabelMenuTitle" value="Menütitel" />
+  <string key="EditPage.LabelMenuTitle" value="Men&#252;titel" />
   <string key="EditPage.HelpMenuTitle" value="Der Eintrag in diesem Feld angegebene finden Sie in der Navigation auf der Website verwendet werden" />
   <string key="EditPage.LabelUrlTitle" value="URL Titel" />
   <string key="EditPage.UrlTitleFormattedTitle" value="URL-Titel wurde neu erstellt" />	
-  <string key="EditPage.UrlTitleFormattedMessage" value="Basierend auf den aktuellen URL Austauschregeln wurde der Titel in '{0}' geändert" />
+  <string key="EditPage.UrlTitleFormattedMessage" value="Basierend auf den aktuellen URL Austauschregeln wurde der Titel in &#39;{0}&#39; ge&#228;ndert" />
   <string key="EditPage.HelpUrlTitle" value="Der in diesen Feld definierte Eintrag wird in der Adresszeile des Browsers als Teil der URL dargestellt. Dieses Feld wird von Suchmaschinen verwendet" />
   <string key="EditPage.LabelFriendlyUrl" value="Freundliche URL" />
-  <string key="EditPage.HelpFriendlyUrl" value="Der in diesem Feld definierte EIntrag ist eine kürzere Version der aktuellen Seiten-URL und leitet dorthin weiter. Bitte beachten Sie, dass einige Server zuvor noch entsprechend konfiguriert werden müssen, um dieses Feature zu verwenden." />
+  <string key="EditPage.HelpFriendlyUrl" value="Der in diesem Feld definierte EIntrag ist eine k&#252;rzere Version der aktuellen Seiten-URL und leitet dorthin weiter. Bitte beachten Sie, dass einige Server zuvor noch entsprechend konfiguriert werden m&#252;ssen, um dieses Feature zu verwenden." />
   <string key="EditPage.LabelAbstract" value="Beschreibung" />
-  <string key="EditPage.LabelAbstractHelp" value="Verwenden Sie dieses Feld für eine kurze Beschreibung der Seite" />
-  <string key="EditPage.LabelPublishDate" value="Veröffentlichungsdatum" />
-  <string key="EditPage.HelpPublishDate" value="Geben Sie an, zu welchem Datum und zu welcher Uhrzeit Ihre Seite veröffentlicht werden soll. Zum angegebenen Zeitpunkt wird die Seite automatisch auf der Website veröffentlicht werden" />
-  <string key="EditPage.LabelUnpublishDate" value="Datum des Zurücknehmens der Veröffentlichung" />
-  <string key="EditPage.HelpUnpublishDate" value="Geben Sie an, zu welchem Datum und zu welcher Uhrzeit Sie die Veröffentlichung der Seite zurücknehmen wollen. Zum angegebenen Zeitpunkt wird die Seite automatisch von der Website entfernt werden" />
+  <string key="EditPage.LabelAbstractHelp" value="Verwenden Sie dieses Feld f&#252;r eine kurze Beschreibung der Seite" />
+  <string key="EditPage.LabelPublishDate" value="Ver&#246;ffentlichungsdatum" />
+  <string key="EditPage.HelpPublishDate" value="Geben Sie an, zu welchem Datum und zu welcher Uhrzeit Ihre Seite ver&#246;ffentlicht werden soll. Zum angegebenen Zeitpunkt wird die Seite automatisch auf der Website ver&#246;ffentlicht werden" />
+  <string key="EditPage.LabelUnpublishDate" value="Datum des Zur&#252;cknehmens der Ver&#246;ffentlichung" />
+  <string key="EditPage.HelpUnpublishDate" value="Geben Sie an, zu welchem Datum und zu welcher Uhrzeit Sie die Ver&#246;ffentlichung der Seite zur&#252;cknehmen wollen. Zum angegebenen Zeitpunkt wird die Seite automatisch von der Website entfernt werden" />
   <string key="EditPage.LabelContent" value="Inhalt" />
   <string key="EditPage.LabelPreview" value="Vorschau" />
   <string key="EditPage.PageTypeSelectorLabel" value="Seitentyp" />
+  <string key="EditPage.PageTypeSelectorHelp" value="Die Auswahl des Seitentyps definiert die Rolle der Seite wie z.B. &#39;Normale Seite&#39; oder &#39;Blog&#39;. Die verf&#252;gbaren Optionen h&#228;ngen von den installierten Features ab." />
   <string key="EditPage.MaxLength" value="{0} Zeichen maximal" />
-  <string key="DeletePage.LabelFieldGroup" value="Seite löschen?" />
-  <string key="DeletePageStep1.Title" value="Seite und alle Unterseiten löschen" />
-  <string key="DeletePageStep1.Description" value="Alle Unterseiten werden ebenfalls gelöscht. Fortfahren?" />
-  <string key="DeletePageStep2.Text" value="Seite löschen '{0}'?" />
+  <string key="DeletePage.LabelFieldGroup" value="Seite l&#246;schen?" />
+  <string key="DeletePageStep1.Title" value="Seite und alle Unterseiten l&#246;schen" />
+  <string key="DeletePageStep1.Description" value="Alle Unterseiten werden ebenfalls gel&#246;scht. Fortfahren?" />
+  <string key="DeletePageStep2.Text" value="Seite l&#246;schen &#39;{0}&#39;?" />
   <string key="UrlTitleNotUniqueError" value="Eine andere Seite verwendet bereits den angegebenen URL-Titel. Der Titel muss bei Seiten mit den gleichen Elternseiten eindeutig sein." />
-  <string key="UrlTitleNotValidError" value="Der angegebene URL-Titel enthält ungültige Zeichen. Da dieses Feld verwendet wird, um die Webadresse für die Seite zu generieren, sind bestimmte Sonderzeichen (wie Fragezeichen, Schrägstrich und Punkt) nicht erlaubt. Sie können Buchstaben, Ziffern und Bindestriche verwenden." />
-  <string key="UrlTitleTooLong" value="Der angegebene URL-Titel ist zu lang. Kürzen Sie ihn und versuchen Sie es erneut" />
-  <string key="FriendlyUrlNotUniqueError" value="Eine andere Seite verwendet bereits die angegebenen Freundliche URL. Freundliche URLs müssen eindeutig sein." />
+  <string key="UrlTitleNotValidError" value="Der angegebene URL-Titel enth&#228;lt ung&#252;ltige Zeichen. Da dieses Feld verwendet wird, um die Webadresse f&#252;r die Seite zu generieren, sind bestimmte Sonderzeichen (wie Fragezeichen, Schr&#228;gstrich und Punkt) nicht erlaubt. Sie k&#246;nnen Buchstaben, Ziffern und Bindestriche verwenden." />
+  <string key="UrlTitleTooLong" value="Der angegebene URL-Titel ist zu lang. K&#252;rzen Sie ihn und versuchen Sie es erneut" />
+  <string key="FriendlyUrlNotUniqueError" value="Eine andere Seite verwendet bereits die angegebenen Freundliche URL. Freundliche URLs m&#252;ssen eindeutig sein." />
   <string key="TitleMissingError" value="Der Titel darf nicht leer sein." />
   <string key="PageSaveValidationFailedTitle" value="Seite nicht gespeichert" />
-  <string key="PageSaveValidationFailedMessage" value="Die Seite konnte nicht validiert werden und ist daher gespeichert nicht gespeichert worden. Bitte prüfen Sie die Hinweise in den Feldern." />
+  <string key="PageSaveValidationFailedMessage" value="Die Seite konnte nicht validiert werden und ist daher gespeichert nicht gespeichert worden. Bitte pr&#252;fen Sie die Hinweise in den Feldern." />
   <string key="PageElementProvider.RootLabel" value="Websites" />
   <string key="PageElementProvider.RootLabelToolTip" value="Websites" />
-  <string key="PageElementProvider.AddPageAtRoot" value="Website hinzufügen" />
-  <string key="PageElementProvider.AddPageAtRootToolTip" value="Neue Website hinzufügen" />
-  <string key="PageElementProvider.ViewUnpublishedItems" value="Auflisten nicht veröffentlichter Seiten" />
-  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="Holen Sie sich einen Überblick über Seiten und Seitenordner-Daten, die bisher noch nicht veröffentlicht wurden." />
-  <string key="PageElementProvider.ViewUnpublishedItems-document-title" value="Unveröffentlichte Inhalte" />
-  <string key="PageElementProvider.ViewUnpublishedItems-document-description" value="Die Liste zeigt die Seiten und Daten, welche Seite gerade bearbeitet werden können oder genehmigt / veröffentlicht werden." />
+  <string key="PageElementProvider.AddPageAtRoot" value="Website hinzuf&#252;gen" />
+  <string key="PageElementProvider.AddPageAtRootToolTip" value="Neue Website hinzuf&#252;gen" />
+  <string key="PageElementProvider.ViewUnpublishedItems" value="Auflisten nicht ver&#246;ffentlichter Seiten" />
+  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="Holen Sie sich einen &#220;berblick &#252;ber Seiten und Seitenordner-Daten, die bisher noch nicht ver&#246;ffentlicht wurden." />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-title" value="Unver&#246;ffentlichte Inhalte" />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-description" value="Die Liste zeigt die Seiten und Daten, welche Seite gerade bearbeitet werden k&#246;nnen oder genehmigt / ver&#246;ffentlicht werden." />
   <string key="PageElementProvider.EditPage" value="Seite bearbeiten" />
-  <string key="PageElementProvider.EditPageToolTip" value="Ausgewählte Seite bearbeiten" />
-  <string key="PageElementProvider.Delete" value="Löschen" />
-  <string key="PageElementProvider.DeleteToolTip" value="Ausgewählte Seite löschen" />
-  <string key="PageElementProvider.LocalizePage" value="Seite übersetzen" />
-  <string key="PageElementProvider.LocalizePageToolTip" value="Ausgewählte Seite übersetzen" />
-  <string key="PageElementProvider.AddSubPage" value="Seite hinzufügen ..." />
-  <string key="PageElementProvider.AddSubPageToolTip" value="Neue Seite unterhalb der ausgewählten Seite erstellen" />
-  <string key="PageElementProvider.ViewPublicPage" value="Veröffentlichte Seiten anzeigen" />
-  <string key="PageElementProvider.ViewPublicToolTip" value="Die zuletzt veröffentlichte Version anzeigen" />
-  <string key="PageElementProvider.ViewDraftPage" value="Alle unveröffentlichten Seiten anzeigen" />
-  <string key="PageElementProvider.ViewDraftToolTip" value="Letzte Änderungen anzeigen" />
+  <string key="PageElementProvider.EditPageToolTip" value="Ausgew&#228;hlte Seite bearbeiten" />
+  <string key="PageElementProvider.Delete" value="L&#246;schen" />
+  <string key="PageElementProvider.DeleteToolTip" value="Ausgew&#228;hlte Seite l&#246;schen" />
+  <string key="PageElementProvider.LocalizePage" value="Seite &#252;bersetzen" />
+  <string key="PageElementProvider.LocalizePageToolTip" value="Ausgew&#228;hlte Seite &#252;bersetzen" />
+  <string key="PageElementProvider.AddSubPage" value="Seite hinzuf&#252;gen ..." />
+  <string key="PageElementProvider.AddSubPageToolTip" value="Neue Seite unterhalb der ausgew&#228;hlten Seite erstellen" />
+  <string key="PageElementProvider.ViewPublicPage" value="Ver&#246;ffentlichte Seiten anzeigen" />
+  <string key="PageElementProvider.ViewPublicToolTip" value="Die zuletzt ver&#246;ffentlichte Version anzeigen" />
+  <string key="PageElementProvider.ViewDraftPage" value="Alle unver&#246;ffentlichten Seiten anzeigen" />
+  <string key="PageElementProvider.ViewDraftToolTip" value="Letzte &#196;nderungen anzeigen" />
   <string key="PageElementProvider.DisplayLocalOrderingLabel" value="Lokale Sortierung der Seite anzeigen" />
   <string key="PageElementProvider.DisplayLocalOrderingToolTip" value="Lokale Sortierung der Seite anzeigen" />
-  <string key="PageElementProvider.DisabledPage" value="Noch nicht genehmigt oder veröffentlicht" />
+  <string key="PageElementProvider.DisabledPage" value="Noch nicht genehmigt oder ver&#246;ffentlicht" />
   <string key="PageElementProvider.MissingTemplateTitle" value="Website-Vorlage erforderlich" />
-  <string key="PageElementProvider.MissingTemplateMessage" value="Um eine Seite zu erstellen, wird eine Website-Vorlage benötigt, aber bisher wurde noch keine erstellt. Sie können eine Vorlage unter der Ansicht Layout erstellen." />
-  <string key="PageElementProvider.MissingActiveLanguageTitle" value="Gewünschte Sprache" />
-  <string key="PageElementProvider.MissingActiveLanguageMessage" value="Um eine Seite hinzuzufügen, sollten Sie zunächst mindestens eine Sprache hinzufügen. Die kann in der System Ansicht gemacht werden." />
+  <string key="PageElementProvider.MissingTemplateMessage" value="Um eine Seite zu erstellen, wird eine Website-Vorlage ben&#246;tigt, aber bisher wurde noch keine erstellt. Sie k&#246;nnen eine Vorlage unter der Ansicht Layout erstellen." />
+  <string key="PageElementProvider.MissingActiveLanguageTitle" value="Gew&#252;nschte Sprache" />
+  <string key="PageElementProvider.MissingActiveLanguageMessage" value="Um eine Seite hinzuzuf&#252;gen, sollten Sie zun&#228;chst mindestens eine Sprache hinzuf&#252;gen. Die kann in der System Ansicht gemacht werden." />
   <string key="PageElementProvider.NoPageTypesAvailableTitle" value="Keine Seitentypen vorhanden" />
   <string key="PageElementProvider.NoPageTypesAvailableMessage" value="Sie sollten zuerst mindestens einen Seitentyp erstellen" />
-  <string key="PageElementProvider.MissingPageTypeTitle" value="Seitentyp benötigt" />
-  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="Um eine Homepage zu erstellen, ist eine Seite, ohne die &quot;nur Unterseiten&quot;- Einschränkung erforderlich, aber bisher wurde noch keine erstellt. Sie können ein solche in der Layout Ansicht hinzufügen." />
-  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="Um eine Unterseite zu erstellen ist ein Seitentyp ohne die &quot;nur Homepage&quot;-Einschränkung erforderlich. Sie können einen solchen in der Layout Ansicht erstellen." />  
-  <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Seite kann nicht hinzugefügt werden!" />
-  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="Die Regeln, die die Verfügbarkeit von Seitentypen definieren, verbieten das Hinzufügen einer Seite hier." />
+  <string key="PageElementProvider.MissingPageTypeTitle" value="Seitentyp ben&#246;tigt" />
+  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="Um eine Homepage zu erstellen, ist eine Seite, ohne die &quot;nur Unterseiten&quot;- Einschr&#228;nkung erforderlich, aber bisher wurde noch keine erstellt. Sie k&#246;nnen ein solche in der Layout Ansicht hinzuf&#252;gen." />
+  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="Um eine Unterseite zu erstellen ist ein Seitentyp ohne die &quot;nur Homepage&quot;-Einschr&#228;nkung erforderlich. Sie k&#246;nnen einen solchen in der Layout Ansicht erstellen." />  
+  <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Seite kann nicht hinzugef&#252;gt werden!" />
+  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="Die Regeln, die die Verf&#252;gbarkeit von Seitentypen definieren, verbieten das Hinzuf&#252;gen einer Seite hier." />
   <string key="ManageHostNames.Add.DialogLabel" value="Verwalten von Hostnamen" />
   <string key="ManageHostNames.Add.HeadingTitle" value="Hostnamen der Seite zuweisen" />
-  <string key="ManageHostNames.Add.HeadingDescription" value="Sie können einen Host-Namen (oder einen Domainnamen) zu einer Seite zuordnen, indem Sie es im unteren Feld definieren. Bitte beachten Sie, dass die DNS-Einstellungen für den angegebenen Hostnamen vorher bei Ihrem Provider konfiguriert werden müssen." />
+  <string key="ManageHostNames.Add.HeadingDescription" value="Sie k&#246;nnen einen Host-Namen (oder einen Domainnamen) zu einer Seite zuordnen, indem Sie es im unteren Feld definieren. Bitte beachten Sie, dass die DNS-Einstellungen f&#252;r den angegebenen Hostnamen vorher bei Ihrem Provider konfiguriert werden m&#252;ssen." />
   <string key="ManageHostNames.Add.FieldGroupLabel" value="Hostnamen der Seite zuweisen" />
   <string key="ManageHostNames.Add.HostNameTextBoxLabel" value="Hostname" />
-  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Geben Sie die Hostnamen ein (z.B. 'www.composite.net' oder 'composite.net'), die Sie dieser Seite zuweisen wollen" />
-  <string key="ManageHostNames.Add.InvalidHostNameSyntaxError" value="Die Syntax des Hostnamens ist nicht gültig" />
-  <string key="ManageHostNames.Add.HostNameNotUniqueError" value="Dieser Hostname ist bereits einer Seite zugewiesen. Sie müssen die bestehende Zuweisung zunächst entfernen." />
+  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Geben Sie die Hostnamen ein (z.B. &#39;www.composite.net&#39; oder &#39;composite.net&#39;), die Sie dieser Seite zuweisen wollen" />
+  <string key="ManageHostNames.Add.InvalidHostNameSyntaxError" value="Die Syntax des Hostnamens ist nicht g&#252;ltig" />
+  <string key="ManageHostNames.Add.HostNameNotUniqueError" value="Dieser Hostname ist bereits einer Seite zugewiesen. Sie m&#252;ssen die bestehende Zuweisung zun&#228;chst entfernen." />
   <string key="ManageHostNames.Remove.DialogLabel" value="Verwalten von Hostnamen" />
   <string key="ManageHostNames.Remove.FieldGroupLabel" value="Entfernen Sie die Hostnamenzuweisung der Seite" />
   <string key="ManageHostNames.Remove.MultiSelectorLabel" value="Zu entfernende Hostnamen" />
-  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="Die ausgewählten Hostnamen werden der Seite nicht mehr länger zugewiesen werden." />
-  <string key="Preview.PublishedPage.NotPublishedTitle" value="Die ausgewählte Seite ist nicht veröffentlicht" />
-  <string key="Preview.PublishedPage.NotPublishedMessage" value="Die ausgewählte Seite ist nicht veröffentlicht" />
-  <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="Bitte bestätigen Sie das Löschen aller Unterseiten" />
-  <string key="DeletePageWorkflow.CascadeDeleteErrorTitle" value="Kaskadierender Fehler beim Löschen" />
-  <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="Die Seite wird durch einen andere Typ referenziert, der keine Löschweitergaben zulässt. Dieser Vorgang wird angehalten" />
-  <string key="DeletePageWorkflow.HasCompositionsTitle" value="Seite kann nicht gelöscht werden" />
-  <string key="DeletePageWorkflow.HasCompositionsMessage" value="Diese Seite hat einen oder mehrere Seitendatenordner oder Metadatenfelder definiert. Löschen Sie diese zuerst." />
+  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="Die ausgew&#228;hlten Hostnamen werden der Seite nicht mehr l&#228;nger zugewiesen werden." />
+  <string key="Preview.PublishedPage.NotPublishedTitle" value="Die ausgew&#228;hlte Seite ist nicht ver&#246;ffentlicht" />
+  <string key="Preview.PublishedPage.NotPublishedMessage" value="Die ausgew&#228;hlte Seite ist nicht ver&#246;ffentlicht" />
+  <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="Bitte best&#228;tigen Sie das L&#246;schen aller Unterseiten" />
+  <string key="DeletePageWorkflow.CascadeDeleteErrorTitle" value="Kaskadierender Fehler beim L&#246;schen" />
+  <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="Die Seite wird durch einen andere Typ referenziert, der keine L&#246;schweitergaben zul&#228;sst. Dieser Vorgang wird angehalten" />
+  <string key="DeletePageWorkflow.HasCompositionsTitle" value="Seite kann nicht gel&#246;scht werden" />
+  <string key="DeletePageWorkflow.HasCompositionsMessage" value="Diese Seite hat einen oder mehrere Seitendatenordner oder Metadatenfelder definiert. L&#246;schen Sie diese zuerst." />
 </strings>

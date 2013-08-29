@@ -2,36 +2,55 @@
 <strings>
   <string key="PageTemplateElementProvider.RootLabel" value="Seitenvorlagen" />
   <string key="PageTemplateElementProvider.RootLabelToolTip" value="Sie finden die XHTML-Seitenvorlagen hier" />
-  <string key="PageTemplateElementProvider.AddTemplate" value="Vorlage hinzufügen" />
-  <string key="PageTemplateElementProvider.AddTemplateToolTip" value="Neue Vorlage hinzufügen" />
-  <string key="PageTemplateElementProvider.EditTemplate" value="Vorlage bearbeiten" />
-  <string key="PageTemplateElementProvider.EditTemplateToolTip" value="Ausgewählte Vorlage bearbeiten" />
-	<string key="PageTemplateElementProvider.DeleteTemplate" value="Löschen" />
-	<string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="Dieses Element löschen" />
+  <string key="PageTemplateElementProvider.AddTemplate" value="Vorlage hinzuf&#252;gen" />
+  <string key="PageTemplateElementProvider.AddTemplateToolTip" value="Neue Vorlage hinzuf&#252;gen" />
+  <string key="PageTemplateElementProvider.DeleteTemplate" value="L&#246;schen" />
+	<string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="Dieses Element l&#246;schen" />
+
+  <string key="PageTemplateElementProvider.SharedCodeFolder.Title" value="Shared Code" />
+  <string key="PageTemplateElementProvider.SharedCodeFolder.ToolTip" value="Durch Layoutdateien genutzte Dateien" />
+  
+  <string key="EditSharedCodeFile.Label" value="Bearbeiten" /> 
+  <string key="EditSharedCodeFile.ToolTip" value="Datei bearbeiten" />
+
+  <string key="PageTemplateElementProvider.EditXmlTemplate" value="XML-Vorlage bearbeiten" />
+  <string key="PageTemplateElementProvider.EditXmlTemplateToolTip" value="Ausgew&#228;hlte XML-Vorlage bearbeiten" />
+
+  <string key="AddNewXmlPageTemplate.LabelDialog" value="Neue XML Seitenvorlage hinzuf&#252;gen" />
+  <string key="AddNewXmlPageTemplate.LabelFieldGroup" value="XML Vorlage" />
+  <string key="AddNewXmlPageTemplate.LabelTemplateTitle" value="Vorlagentitel" />
+  <string key="AddNewXmlPageTemplate.LabelTemplateTitleHelp" value="Der Titel identifiziert diese Vorlage in Listen. W&#228;hlen Sie einen kurzen, aber aussagekr&#228;ftigen Namen." />
+  <string key="AddNewXmlPageTemplate.LabelCopyFrom" value="Kopieren von" />
+  <string key="AddNewXmlPageTemplate.LabelCopyFromHelp" value="Durch Markieren einer XML-Vorlage in dieser Liste k&#246;nnen Sie deren Quellcode kopieren" />
+  <string key="AddNewXmlPageTemplate.LabelCopyFromEmptyOption" value="(Neue Vorlage)" />
+  <string key="AddNewXmlPageTemplateWorkflow.TitleInUseTitle" value="Titel wird bereits verwendet" />
+  <string key="AddNewXmlPageTemplateWorkflow.TitleTooLong" value="Der Titel ist zu lang (wird als Teil des XML-Dateinamens verwendet)." />
+
+  <string key="EditXmlPageTemplate.LabelMarkUpCode" value="Quelltext" />
+  <string key="EditXmlPageTemplate.LabelTemplateIdentification" value="Vorlagen-Info" />
+  <string key="EditXmlPageTemplate.LabelTemplateTitle" value="Vorlagentitel" />
+  <string key="EditXmlPageTemplate.LabelTemplateTitleHelp" value="Der Titel identifiziert diese Vorlage in Listen. W&#228;hlen Sie einen kurzen, aber aussagekr&#228;ftigen Namen." />
+
+  <string key="EditXmlPageTemplateWorkflow.InvalidXmlTitle" value="Vorlage kann nicht gespeichert werden" />
+  <string key="EditXmlPageTemplateWorkflow.InvalidXmlMessage" value="Der Quelltext der Vorlage ist nicht valide.  {0}" />
+  <string key="EditXmlPageTemplateWorkflow.CannotRenameFileExists" value="Vorlage kann nicht umbenannt werden - eine Datei mit dem Namen &#39;{0}&#39; existiert bereits." />
+  <string key="EditXmlPageTemplateWorkflow.TitleInUseTitle" value="Titel wird bereits verwendet" />
+
+  <string key="DeletePageTemplateStep1.LabelFieldGroup" value="Diese Seitenvorlage l&#246;schen?" />
+	<string key="DeletePageTemplateStep1.Text" value="Seitenvorlage l&#246;schen?" />
 	
-  <string key="AddNewPageTemplateStep1.LabelDialog" value="Neue Vorlage hinzufügen" />
-  <string key="AddNewPageTemplateStep1.LabelFieldGroup" value="Vorlage" />
-  <string key="AddNewPageTemplateStep1.LabelTemplateTitle" value="Vorlagentitel" />
-  <string key="AddNewPageTemplateStep1.LabelTemplateTitleHelp" value="Der Titel identifiziert diese Vorlage in Listen. Wählen Sie einen kurzen aber bezeichnenden Namen." />
-  <string key="AddNewPageTemplateStep1.LabelCopyFrom" value="Kopieren von" />
-  <string key="AddNewPageTemplateStep1.LabelCopyFromHelp" value="Sie können das Markup aus einer anderen Layoutvorlage kopieren, indem Sie sie in dieser Liste auswählen" />
-  <string key="AddNewPageTemplateStep1.LabelCopyFromEmptyOption" value="(Neue Vorlage)" />
-  <string key="AddNewPageTemplateStep1.TitleInUseTitle" value="Titel bereits verwendet" />
-  <string key="AddNewPageTemplateStep1.TitleTooLong" value="Titel ist zu lang (wird als Teil der XML-Dateinamen verwendet)." />
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="Kaskadierender Fehler beim L&#246;schen" />
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="Der Typ wird von einem anderen Typ referenziert, der keine L&#246;schweitergaben unterst&#252;tzt. Dieser Vorgang wird angehalten" />
 
-  <string key="EditPageTemplate.LabelMarkUpCode" value="Markup-Code" />
-  <string key="EditPageTemplate.LabelTemplateIdentification" value="Vorlageninfo" />
-  <string key="EditPageTemplate.LabelTemplateTitle" value="Vorlagentitel" />
-  <string key="EditPageTemplate.LabelTemplateTitleHelp" value="Der Titel identifiziert diese Vorlage in Listen. Wählen Sie einen kurzen aber bezeichnenden Namen." />
+  <string key="DeletePageTemplateWorkflow.PageReference" value="Es gibt {0} Seiten, die auf diese Vorlage verweisen: {1}" /> 
+  <string key="DeletePageTemplateWorkflow.PageTypeReference" value="Es gibt {0} Seitentypen, die auf diese Vorlage verweisen: {1}" />
 
-  <string key="EditPageTemplateWorkflow.InvalidXmlTitle" value="Kann Vorlage nicht speichern" />
-  <string key="EditPageTemplateWorkflow.InvalidXmlMessage" value="Das Markup der Seitenvorlage kann nicht validiert werden. {0}" />
-  <string key="EditPageTemplateWorkflow.CannotRenameFileExists" value="Vorlage kann nicht umbenannt werden - eine Datei mit dem Namen '{0}' ist bereits vorhanden." />
-  <string key="EditPageTemplateWorkflow.TitleInUseTitle" value="Titel bereits verwendet" />
+  <string key="AddNewPageTemplate.LabelDialog" value="Neue Seitenvorlage hinzuf&#252;gen" />
+  <string key="AddNewPageTemplate.LabelFieldGroup" value="Neue Seitenvorlage" />
+  <string key="AddNewPageTemplate.TemplateTypeHelp" value="W&#228;hlen Sie eine der m&#246;glichen Typen von Seitenvorlagen" />
+  <string key="AddNewPageTemplate.TemplateTypeLabel" value="Vorlagentyp" />
 
-  <string key="DeletePageTemplateStep1.LabelFieldGroup" value="Diese Seitenvorlage löschen?" />
-	<string key="DeletePageTemplateStep1.Text" value="Seitenvorlage löschen?" />
-	
-	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="Kaskadierender Fehler beim Löschen" />
-	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="Der Typ wird von einem anderen Typ referenziert, der keine Löschweitergaben unterstützt. Dieser Vorgang wird angehalten" />
+  <string key="AddNewPageTemplate.TemplateType.Razor" value="Razor" />
+  <string key="AddNewPageTemplate.TemplateType.MasterPage" value="Master Page" />
+  <string key="AddNewPageTemplate.TemplateType.XML" value="XML" />
 </strings>

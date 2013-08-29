@@ -2,19 +2,19 @@
 <strings>
   <string key="RootFolderLabel" value="C# Funktionen" />
   <string key="RootFolderToolTip" value="Methodenbasierte Funktionen" />
-  <string key="DeleteFunction.LabelFieldGroup" value="Diese Funktion löschen" />
-  <string key="DeleteFunction.Text" value="Diese Funktion löschen" />
-  <string key="Add" value="Externe C# Funktion hinzufügen" />
-  <string key="AddToolTip" value="Methodenbasierte externe C# Funktion hinzufügen" />
-  <string key="Create" value="Inline C# Funktion hinzufügen" />
-  <string key="CreateToolTip" value="Neue methodenbasierte Inline C# Funktion hinzufügen" />
+  <string key="DeleteFunction.LabelFieldGroup" value="Diese Funktion l&#246;schen" />
+  <string key="DeleteFunction.Text" value="Diese Funktion l&#246;schen" />
+  <string key="Add" value="Externe C# Funktion hinzuf&#252;gen" />
+  <string key="AddToolTip" value="Methodenbasierte externe C# Funktion hinzuf&#252;gen" />
+  <string key="Create" value="Inline C# Funktion hinzuf&#252;gen" />
+  <string key="CreateToolTip" value="Neue methodenbasierte Inline C# Funktion hinzuf&#252;gen" />
   <string key="Edit" value="Bearbeiten" />
   <string key="EditToolTip" value="Funktion bearbeiten" />
-  <string key="Delete" value="Löschen" />
-  <string key="DeleteToolTip" value="Funktion löschen" />
-  <string key="AddNewMethodBasedFunction.LabelFieldGroup" value="Neue methodenbasierte Funktion hinzufügen" />
+  <string key="Delete" value="L&#246;schen" />
+  <string key="DeleteToolTip" value="Funktion l&#246;schen" />
+  <string key="AddNewMethodBasedFunction.LabelFieldGroup" value="Neue methodenbasierte Funktion hinzuf&#252;gen" />
   <string key="AddNewMethodBasedFunctionStep1.LabelType" value="Typ" />
-  <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="Der Typ, der die betreffende Methode enthält" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="Der Typ, der die betreffende Methode enth&#228;lt" />
   <string key="AddNewMethodBasedFunctionStep2.LabelMethodName" value="Methodenname" />
   <string key="AddNewMethodBasedFunctionStep2.HelpMethodName" value="" />
   <string key="AddNewMethodBasedFunctionStep3.LabelMethodName" value="Methodenname" />
@@ -22,45 +22,45 @@
   <string key="AddNewMethodBasedFunctionStep3.LabelNamespaceName" value="Name des Namensraums" />
   <string key="AddNewMethodBasedFunctionStep3.HelpNamespaceName" value="" />
   <string key="AddNewMethodBasedFunctionStep3.LabelError" value="Fehler" />
-  <string key="CascadeDeleteErrorTitle" value="Kaskadierender Fehler beim Löschen" />
-  <string key="CascadeDeleteErrorMessage" value="Der Typ wird von einem anderen Typen referenziert, der keine Löschweitergaben zulässt. Dieser Vorgang wird angehalten" />
+  <string key="CascadeDeleteErrorTitle" value="Kaskadierender Fehler beim L&#246;schen" />
+  <string key="CascadeDeleteErrorMessage" value="Der Typ wird von einem anderen Typen referenziert, der keine L&#246;schweitergaben zul&#228;sst. Dieser Vorgang wird angehalten" />
   <string key="AddFunction.CouldNotFindType" value="Typ konnte nicht gefunden werden" />
-  <string key="AddFunction.TypeHasNoValidMethod" value="Der Typ enthält keine gültige Methode" />
-  <string key="AddFunction.TypeIsAbstractOrStatic" value="Der Typ ist entweder als Abstrakt oder als Statisch markiert. Das Aufrufen von Methoden auf abstrakte oder statische Typen wird nicht unterstützt." />
-  <string key="AddFunction.TypeMustNotHaveOverloads" value="Der Typ darf keine Überladungen enthalten" />
+  <string key="AddFunction.TypeHasNoValidMethod" value="Der Typ enth&#228;lt keine g&#252;ltige Methode" />
+  <string key="AddFunction.TypeIsAbstractOrStatic" value="Der Typ ist entweder als Abstrakt oder als Statisch markiert. Das Aufrufen von Methoden auf abstrakte oder statische Typen wird nicht unterst&#252;tzt." />
+  <string key="AddFunction.TypeMustNotHaveOverloads" value="Der Typ darf keine &#220;berladungen enthalten" />
   <string key="AddFunction.MethodNameIsEmpty" value="Der Methodenname darf nicht leer sein" />
-  <string key="AddFunction.InvalidNamespace" value="Der Namensraum muss wie A.B.C definiert werden - er darf nicht mit einem '.' beginnen oder enden" />
-  <string key="AddFunction.NameAlreadyUsed" value="Der Name der Funktion '{0}' wird bereits verwendet" />
+  <string key="AddFunction.InvalidNamespace" value="Der Namensraum muss wie A.B.C angegeben werden - er darf nicht mit einem Punkt (.) beginnen oder enden." />
+  <string key="AddFunction.NameAlreadyUsed" value="Der Name der Funktion &#39;{0}&#39; wird bereits verwendet" />
   <string key="EditMethodBasedFunction.LabelFieldGroup" value="Methodenbasierte Abfrage bearbeiten" />
   <string key="EditMethodBasedFunction.LabelMethodName" value="Methodenname" />
   <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="Der Name, unter dem die Funktion bekannt sein soll" />
   <string key="EditMethodBasedFunction.LabelNamespaceName" value="Name des Namensraums" />
   <string key="EditMethodBasedFunction.LabelNamespaceNameHelp" value="Der Namensraum, unter dem die Methode platziert werden soll" />
   <string key="EditMethodBasedFunction.LabelType" value="Typ" />
-  <string key="EditMethodBasedFunction.LabelTypeHelp" value="Der Typ, der die betreffende Methode enthält." />
+  <string key="EditMethodBasedFunction.LabelTypeHelp" value="Der Typ, der die betreffende Methode enth&#228;lt." />
   <string key="EditMethodBasedFunction.LabelMethod" value="Methode" />
   <string key="EditMethodBasedFunction.LabelMethodHelp" value="Die Methode, die auf dem Typ aufgerufen werden soll" />
   <string key="EditMethodBasedFunction.LabelError" value="Fehler" />
   <string key="EditFunction.MethodNameEmpty" value="Der Methodenname darf nicht leer sein" />
   <string key="EditFunction.InvalidNamespace" value="Namensraum darf nicht starten und beenden Sie mit . - Beispiel A.B.C" />
   <string key="EditFunction.TypeNotFound" value="Typ konnte nicht gefunden werden" />
-  <string key="EditFunction.MethodNotInType" value="Der Typ enthält die Methode nicht" />
-  <string key="EditFunction.NoValidMethod" value="Der Typ enthält keine gültige Methode" />
-  <string key="EditFunction.MethodOverloadsNotAllowed" value="Der Typ darf keine Überladungen enthalten" />
+  <string key="EditFunction.MethodNotInType" value="Der Typ enth&#228;lt die Methode nicht" />
+  <string key="EditFunction.NoValidMethod" value="Der Typ enth&#228;lt keine g&#252;ltige Methode" />
+  <string key="EditFunction.MethodOverloadsNotAllowed" value="Der Typ darf keine &#220;berladungen enthalten" />
   <string key="AddInlineFunctionWorkflow.FieldGroup.Label" value="Einstellungen" />
   <string key="AddInlineFunctionWorkflow.MethodName.Label" value="Name" />
-  <string key="AddInlineFunctionWorkflow.MethodName.Help" value="Der Name der Methode, die Sie erstellen möchten" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Help" value="Der Name der Methode, die Sie erstellen m&#246;chten" />
   <string key="AddInlineFunctionWorkflow.MethodNamespace.Label" value="Namensraum" />
-  <string key="AddInlineFunctionWorkflow.MethodNamespace.Help" value="Der Namensraum der Methode, die Sie erstellen möchten" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Help" value="Der Namensraum der Methode, die Sie erstellen m&#246;chten" />
   <string key="AddInlineFunctionWorkflow.MethodDescription.Label" value="Beschreibung" />
   <string key="AddInlineFunctionWorkflow.MethodDescription.Help" value="Eine kurze Beschreibung der Funktion" />
   <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Label" value="Vorlage" />
-  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Help" value="Wählen Sie die Vorlage, die Sie für die neue Methode verwenden wollen." />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Help" value="W&#228;hlen Sie die Vorlage, die Sie f&#252;r die neue Methode verwenden wollen." />
   <string key="EditInlineFunctionWorkflow.FieldGroup.Label" value="Einstellungen" />
   <string key="EditInlineFunctionWorkflow.MethodName.Label" value="Name" />
-  <string key="EditInlineFunctionWorkflow.MethodName.Help" value="Der Name der Methode, die Sie erstellen möchten" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Help" value="Der Name der Methode, die Sie erstellen m&#246;chten" />
   <string key="EditInlineFunctionWorkflow.MethodNamespace.Label" value="Namensraum" />
-  <string key="EditInlineFunctionWorkflow.MethodNamespace.Help" value="Der Namensraum der Methode, die Sie erstellen möchten" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Help" value="Der Namensraum der Methode, die Sie erstellen m&#246;chten" />
   <string key="EditInlineFunctionWorkflow.MethodDescription.Label" value="Beschreibung" />
   <string key="EditInlineFunctionWorkflow.MethodDescription.Help" value="Eine kurze Beschreibung der Funktion" />
   <string key="EditInlineFunctionWorkflow.DebugFieldGroup.Label" value="Debuggen" />
@@ -75,14 +75,14 @@
   <string key="EditInlineFunctionWorkflow.Preview.Label" value="Vorschau" />
   <string key="EditInlineFunctionWorkflow.ParameterFieldGroup.Label" value="Eingabeparameter" />
   <string key="EditInlineFunctionWorkflow.AdminitrativeScope.Label" value="Administrativ" />
-  <string key="EditInlineFunctionWorkflow.PublicScope.Label" value="Öffentlich" />
+  <string key="EditInlineFunctionWorkflow.PublicScope.Label" value="&#214;ffentlich" />
   <string key="InlineFunctionMethodTemplate.Clean" value="Leere Methode" />
   <string key="InlineFunctionMethodTemplate.WithParameters" value="Methode mit Parametern" />
   <string key="InlineFunctionMethodTemplate.DataConnection" value="Methode, die eine Datenverbindung nutzt" />
-  <string key="CSharpInlineFunction.OnMissingContainerType" value="Eine öffentliche statische Klasse mit dem Namen {0} fehlt im Code. Diese Klasse sollte die Funktionsmethode enthalten." />
-  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="Der Namensraum im Code '{0}' stimmt nicht mit dem angegebenen Funktionsnamensraum '{1}' überein." />
-  <string key="CSharpInlineFunction.OnMissionMethod" value="Der angegebene Funktionsname '{0}' wurde nicht gefunden oder nicht als Öffentlich und Statisch in der Klasse '{1}' definiert." />
-  <string key="CSharpInlineFunction.MissingParameterDefinition" value="Der Parameter '{0}' ist nicht zu den Eingabeparametern hinzugefügt worden - um Ihre Funktion aufzurufen, müssen sie diesen Parameter angeben und ihm einen Test- oder Standardwert geben." />
-  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="Der Parameter '{0}' erwartet einen Testwert des Typs '{1}'  - übergeben wurde ein Wert des Typs '{2}'." />
-  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="Der in den Eingabeparametern definierte Parameter '{0}' muss einen Test- oder Standardwert enthalten, bevor Ihre Funktion getestet werden kann." />
+  <string key="CSharpInlineFunction.OnMissingContainerType" value="Eine &#246;ffentliche statische Klasse mit dem Namen {0} fehlt im Code. Diese Klasse sollte die Funktionsmethode enthalten." />
+  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="Der Namensraum im Code &#39;{0}&#39; stimmt nicht mit dem angegebenen Funktionsnamensraum &#39;{1}&#39; &#252;berein." />
+  <string key="CSharpInlineFunction.OnMissionMethod" value="Der angegebene Funktionsname &#39;{0}&#39; wurde nicht gefunden oder nicht als &#214;ffentlich und Statisch in der Klasse &#39;{1}&#39; definiert." />
+  <string key="CSharpInlineFunction.MissingParameterDefinition" value="Der Parameter &#39;{0}&#39; ist nicht zu den Eingabeparametern hinzugef&#252;gt worden - um Ihre Funktion aufzurufen, m&#252;ssen sie diesen Parameter angeben und ihm einen Test- oder Standardwert geben." />
+  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="Der Parameter &#39;{0}&#39; erwartet einen Testwert des Typs &#39;{1}&#39;  - &#252;bergeben wurde ein Wert des Typs &#39;{2}&#39;." />
+  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="Der in den Eingabeparametern definierte Parameter &#39;{0}&#39; muss einen Test- oder Standardwert enthalten, bevor Ihre Funktion getestet werden kann." />
 </strings>

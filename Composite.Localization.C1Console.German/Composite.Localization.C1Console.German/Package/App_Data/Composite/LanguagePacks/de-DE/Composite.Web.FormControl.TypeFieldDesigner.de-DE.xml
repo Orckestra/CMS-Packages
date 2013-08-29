@@ -4,21 +4,21 @@
   <string key="BasicTabLabel" value="Standard" />
   <string key="AdvancedTabLabel" value="Erweitert" />
 
-  <string key="AddNewButtonLabel" value="Hinzufügen" />
-  <string key="DeleteButtonLabel" value="Löschen" />
+  <string key="AddNewButtonLabel" value="Hinzuf&#252;gen" />
+  <string key="DeleteButtonLabel" value="L&#246;schen" />
   <string key="LabelDataTypeFields" value="Datentypfelder" />
   
   <string key="FieldDetailsGroupLabel" value="Feldeigenschaften" />
   <string key="Name" value="Name" />
-  <string key="NameHelp" value="Der Name des Feldes wird durch das System verwendet, um dieses zu identifizieren. Namen müssen eindeutig sein und dürfen keine Leerzeichen und andere Sonderzeichen enthalten. Verwenden Sie Namen wie 'Titel', 'StartDate', 'LargeImage' usw." />
+  <string key="NameHelp" value="Der Name des Feldes wird durch das System verwendet, um dieses zu identifizieren. Namen m&#252;ssen eindeutig sein und d&#252;rfen keine Leerzeichen und andere Sonderzeichen enthalten. Verwenden Sie Namen wie &#39;Titel&#39;, &#39;StartDate&#39;, &#39;LargeImage&#39; usw." />
   <string key="Label" value="Bezeichnung" />
-  <string key="LabelHelp" value="DieBezeichnung wird den Nutzern beim Hinzufügen eines auf diesem Datentyp basierenden Elements angezeigt." />
+  <string key="LabelHelp" value="DieBezeichnung wird den Nutzern beim Hinzuf&#252;gen eines auf diesem Datentyp basierenden Elements angezeigt." />
   <string key="Help" value="Hilfe" />
-  <string key="HelpHelp" value="Verwenden Sie diesen Eintrag für einen kurzen Hilfetext." />
+  <string key="HelpHelp" value="Verwenden Sie diesen Eintrag f&#252;r einen kurzen Hilfetext." />
 
   <string key="FieldTypeGroupLabel" value="Feldtyp und Anforderungen" />
   <string key="FieldType" value="Feldtyp" />
-  <string key="FieldTypeHelp" value="Wählen Sie einen Datentyp für das Feld. Der Datentyp bestimmt, welche Daten das Feld enthalten kann." />
+  <string key="FieldTypeHelp" value="W&#228;hlen Sie einen Datentyp f&#252;r das Feld. Der Datentyp bestimmt, welche Daten das Feld enthalten kann." />
   <string key="System.String" value="String" />
   <string key="System.Int32" value="Ganze Zahl" />
   <string key="System.Decimal" value="Dezimalzahl" />
@@ -26,14 +26,14 @@
   <string key="System.Boolean" value="Boolean" />
   <string key="System.Guid" value="Eindeutiger Bezeichner (GUID)" />
   <string key="Reference" value="Datenreferenz" />
-  <string key="TypeDetailsHelp" value="Verwenden Sie dieses Feld für die weitere Konfiguration Ihres gewählten Typs." />
+  <string key="TypeDetailsHelp" value="Verwenden Sie dieses Feld f&#252;r die weitere Konfiguration Ihres gew&#228;hlten Typs." />
   <string key="Optional" value="Optional" />
-  <string key="OptionalHelp" value="Optionale Felder können leer gelassen werden." />
+  <string key="OptionalHelp" value="Optionale Felder k&#246;nnen leer gelassen werden." />
   <string key="OptionalFalseLabel" value="Nein" />
   <string key="OptionalTrueLabel" value="Ja" />
   <string key="ValidationRules" value="Validierungsregeln" />
-  <string key="ValidationRulesHelp" value="Sie können strenge Regeln für die Daten, die in dieses Feld eingegeben werden, definieren. Beispiel:  &quot;mindestens 5 Zeichen lang&quot;, &quot;muss eine gültige E-Mail-Adresse sein&quot;, &quot;muss ein Datum in der Vergangenheit sein&quot;, etc." />
-  <string key="ValidationRulesAdd" value="Validierungsregeln hinzufügen..." />
+  <string key="ValidationRulesHelp" value="Sie k&#246;nnen strenge Regeln f&#252;r die Daten, die in dieses Feld eingegeben werden, definieren. Beispiel:  &quot;mindestens 5 Zeichen lang&quot;, &quot;muss eine g&#252;ltige E-Mail-Adresse sein&quot;, &quot;muss ein Datum in der Vergangenheit sein&quot;, etc." />
+  <string key="ValidationRulesAdd" value="Validierungsregeln hinzuf&#252;gen..." />
   <string key="ValidationRulesEdit" value="Validierungsregeln bearbeiten" />
   <string key="ValidationRulesDialogLabel" value="Konfiguration der Feldvalidierungsregeln" />
 
@@ -43,7 +43,7 @@
   <string key="FieldStructureGroupLabel" value="Strukturelle Darstellung" />
   
   <string key="Widget" value="Widget-Typ" />
-  <string key="WidgetHelp" value="Sie können auswählen, welche Art von Eingabe-Widgets (wie eine Textbox) beim Bearbeiten dieses Feldes verwendet werden soll." />
+  <string key="WidgetHelp" value="Sie k&#246;nnen ausw&#228;hlen, welche Art von Eingabe-Widgets (wie eine Textbox) beim Bearbeiten dieses Feldes verwendet werden soll." />
   <string key="WidgetDialogLabel" value="Feld-Widget-Konfiguration" />
   <string key="Position" value="Position" />
   <string key="PositionLast" value="Letzte" />
@@ -51,19 +51,26 @@
   <string key="GroupByPriority" value="Gruppierung von Feldern" />
   <string key="GroupByPriorityNone" value="Keine Gruppierung" />
   <string key="GroupByPriorityFirst" value="Nach diesem Feld gruppieren" />
-  <string key="GroupByPriorityN" value="Gruppieren als {0}. Priorität" />
-  <string key="GroupByPriorityHelp" value="Sie können angeben, dass ein Feld zum Gruppieren von Daten verwendet werden soll - dies kann die Lesbarkeit bei der Anzeige von langen Listen verbessern. Verwenden Sie Priorität, wenn mehrere Felder zur Gruppierung benutzt werden." />
+  <string key="GroupByPriorityN" value="Gruppieren als {0}. Priorit&#228;t" />
+  <string key="GroupByPriorityHelp" value="Sie k&#246;nnen angeben, dass ein Feld zum Gruppieren von Daten verwendet werden soll - dies kann die Lesbarkeit bei der Anzeige von langen Listen verbessern. Verwenden Sie Priorit&#228;t, wenn mehrere Felder zur Gruppierung benutzt werden." />
+  <string key="TreeOrdering" value="Baumsortierung" />
+  <string key="TreeOrderingNone" value="(keine Sortierung)..." />
+  <string key="TreeOrderingFirstAscending" value="Aufsteigend sortieren (A-Z)" />
+  <string key="TreeOrderingFirstDescending" value="Absteigend sortieren (Z-A)" />
+  <string key="TreeOrderingNAscending" value="{0}. aufsteigend sortieren" />
+  <string key="TreeOrderingNDescending" value="{0}. absteigend sortieren" />
+  <string key="TreeOrderingHelp" value="Sie k&#246;nnen ein Feld festlegen, dass zur Sortierung der Daten in der Baumansicht genutzt wird - dies kann die Lesbarkeit erh&#246;hen, wenn ein Feld zur Positionierung der Elemente auf der Website genutzt wird." />
   <string key="IsTitleField" value="Ist Titelfeld" />
-  <string key="IsTitleFieldHelp" value="Aktivieren Sie diese Option, wenn Sie dieses Feld als Titelfeld verwenden möchten. Titelfelder werden beim Auflisten von Daten verwendet, wie in der Baumstruktur auf der linken Seite." />
+  <string key="IsTitleFieldHelp" value="Aktivieren Sie diese Option, wenn Sie dieses Feld als Titelfeld verwenden m&#246;chten. Titelfelder werden beim Auflisten von Daten verwendet, wie in der Baumstruktur auf der linken Seite." />
   <string key="IsTitleFieldLabel" value="Verwenden Sie dies als Titelfeld in Listen" />
 
   
   <string key="DefaultValueGroupLabel" value="Standardwert des Feldes" />
   <string key="DefaultValue" value="Standardwert" />
-  <string key="DefaultValueHelp" value="Sie können einen Standardwert für dieses Feld definieren." />
-  <string key="DefaultValueDialogLabel" value="Standardwert-Konfiguration für das Feld" />
+  <string key="DefaultValueHelp" value="Sie k&#246;nnen einen Standardwert f&#252;r dieses Feld definieren." />
+  <string key="DefaultValueDialogLabel" value="Standardwert-Konfiguration f&#252;r das Feld" />
 
-  <string key="StringMaximumLength" value="Maximale Länge des Strings" />
+  <string key="StringMaximumLength" value="Maximale L&#228;nge des Strings" />
   <string key="16CharMax" value="Maximal 16 Zeichen" />
   <string key="32CharMax" value="Maximal 32 Zeichen" />
   <string key="64CharMax" value="Maximal 64 Zeichen" />
@@ -71,7 +78,7 @@
   <string key="256CharMax" value="Maximal 256 Zeichen" />
   <string key="512CharMax" value="Maximal 512 Zeichen" />
   <string key="1024CharMax" value="Maximal 1024 Zeichen" />
-  <string key="Unlimited" value="Unbegrenzte Länge" />
+  <string key="Unlimited" value="Unbegrenzte L&#228;nge" />
   
   <string key="DecimalNumberFormat" value="Dezimalzahlformat" />
   <string key="1DecimalPlace" value="1 Dezimalstelle" />
@@ -81,13 +88,13 @@
   
   <string key="ReferenceType" value="Referenztyp" />
   
-  <string key="FieldNameSyntaxInvalid" value="Der angegebene Name ist ungültig." />
-  <string key="CannotSave" value="Kann nicht gespeichert werden ... Ein anderes Feld hat den gleichen Namen. Bitte den Namen ändern." />
+  <string key="FieldNameSyntaxInvalid" value="Der angegebene Name ist ung&#252;ltig." />
+  <string key="CannotSave" value="Kann nicht gespeichert werden ... Ein anderes Feld hat den gleichen Namen. Bitte den Namen &#228;ndern." />
 
-  <string key="SpaceInNameError" value="Ungültiger Name. Datenfeld-Namen dürfen keine Leerzeichen enthalten. Sie können einen lesbaren Namen in das Feld Bezeichnung unten eingeben." />
-  <string key="NameEmptyError" value="Datenfeld-Namen können nicht leer sein. Bitte geben Sie einen Namen ein." />
-  <string key="NameAlreadyInUseError" value="Ein anderes Feld verwendet diesen Namen. Datenfeld-Namen müssen eindeutig sein." />
-  <string key="NotAnOptionalTypeError" value="Der ausgewählte Typ darf nicht optional sein." />
+  <string key="SpaceInNameError" value="Ung&#252;ltiger Name. Datenfeld-Namen d&#252;rfen keine Leerzeichen enthalten. Sie k&#246;nnen einen lesbaren Namen in das Feld Bezeichnung unten eingeben." />
+  <string key="NameEmptyError" value="Datenfeld-Namen k&#246;nnen nicht leer sein. Bitte geben Sie einen Namen ein." />
+  <string key="NameAlreadyInUseError" value="Ein anderes Feld verwendet diesen Namen. Datenfeld-Namen m&#252;ssen eindeutig sein." />
+  <string key="NotAnOptionalTypeError" value="Der ausgew&#228;hlte Typ darf nicht optional sein." />
   <string key="NoWidgetSelected" value="Denken Sie daran, ein Widget zu definieren ..." />
   <string key="NoWidgetSelectedLabel" value="(Kein Widget angegeben)" />
 </strings>

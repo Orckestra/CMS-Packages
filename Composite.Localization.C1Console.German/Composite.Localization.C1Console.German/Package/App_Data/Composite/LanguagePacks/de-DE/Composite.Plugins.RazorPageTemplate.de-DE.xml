@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="EditRazorFileAction.Label" value="Razor-Datei bearbeiten" />
+  <string key="EditRazorFileAction.ToolTip" value=".cshtml-Datei bearbeiten" />
+
+  <string key="EditRazorTemplateAction.Label" value="Razor-Vorlage bearbeiten" />
+  <string key="EditRazorTemplateAction.ToolTip" value=".cshtml-Datei der Vorlage bearbeiten" />
+
+  <string key="DeleteRazorPageTemplateAction.Label" value="L&#246;schen" />
+  <string key="DeleteRazorPageTemplateAction.ToolTip" value="Seitenvorlagen l&#246;schen" />
+
+  <string key="AddNewRazorPageTemplate.LabelDialog" value="Neue Razor-Vorlage hinzuf&#252;gen" />
+  <string key="AddNewRazorPageTemplate.LabelFieldGroup" value="Razor-Vorlage" />
+  <string key="AddNewRazorPageTemplate.LabelTemplateTitle" value="Vorlagentitel" />
+  <string key="AddNewRazorPageTemplate.LabelTemplateTitleHelp" value="Der Titel identifiziert diese Vorlage in Listen. W&#228;hlen Sie einen kurzen, aber aussagekr&#228;ftigen Namen." />
+  <string key="AddNewRazorPageTemplate.LabelCopyFrom" value="Kopieren von" />
+  <string key="AddNewRazorPageTemplate.LabelCopyFromHelp" value="Markieren Sie eine Vorlage in dieser Liste, um deren Quellcode zu kopieren." />
+  <string key="AddNewRazorPageTemplate.LabelCopyFromEmptyOption" value="(Neue Vorlage)" />
+  <string key="AddNewRazorPageTemplateWorkflow.TitleInUseTitle" value="Titel wird bereits verwendet" />
+  <string key="AddNewRazorPageTemplateWorkflow.TitleTooLong" value="Der Titel ist zu lang (wird als Teil des .cshtml-Dateinamens verwendet)." />
+
+  <string key="EditTemplate.Validation.DialogTitle" value="Fehler bei der Validierung" />
+  <string key="EditTemplate.Validation.CompilationFailed" value="Kompilierung fehlgeschlagen:  {0}" />
+  <string key="EditTemplate.Validation.IncorrectBaseClass" value="Seitenvorlagen-Klasse erbt nicht &#39;{0}&#39;" />
+  <string key="EditTemplate.Validation.PropertyError" value="Fehler bei der Evaluierung der Seitenvorlagen-Eigenschaft &#39;{0}&#39;. Ausnahme:  {1}" />
+  <string key="EditTemplate.Validation.TemplateIdChanged" value="Im aktuellen Workflow ist es nicht erlaubt, die Vorlagen-ID zu &#228;ndern. Die Original-ID der Vorlage ist &#39;{0}&#39;" />
+</strings>

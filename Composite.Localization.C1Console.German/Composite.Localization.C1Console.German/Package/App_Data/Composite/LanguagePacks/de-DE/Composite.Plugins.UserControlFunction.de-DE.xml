@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootElement.Label" value="User Control Funktionen" />
+  <string key="RootElement.ToolTip" value="Funktionen basierend auf .ascx-Controls" />
+
+  <string key="AddNewUserControlFunction.Label" value="User Control Funktion hinzuf&#252;gen" />
+  <string key="AddNewUserControlFunction.ToolTip" value="Neue User Control Funktion hinzuf&#252;gen" />
+  <string key="EditUserControlFunction.Label" value="Bearbeiten" />
+  <string key="EditUserControlFunction.ToolTip" value="User Control Funktion bearbeiten" />
+  <string key="DeleteUserControlFunction.Label" value="L&#246;schen" />
+  <string key="DeleteUserControlFunction.ToolTip" value="User Control Funktion l&#246;schen" />
+  
+  <string key="AddNewUserControlFunction.LabelDialog" value="User Control Funktion hinzuf&#252;gen" />
+  <string key="AddNewUserControlFunction.LabelFieldGroup" value="Neue User Control Funktion" />
+  <string key="AddNewUserControlFunction.LabelName" value="Name" />
+  <string key="AddNewUserControlFunction.HelpName" value="" />
+  <string key="AddNewUserControlFunction.LabelNamespace" value="Namensraum" />
+  <string key="AddNewUserControlFunction.HelpNamespace" value="" />
+  <string key="AddNewUserControlFunction.LabelCopyFrom" value="Kopieren von" />
+  <string key="AddNewUserControlFunction.LabelCopyFromHelp" value="Durch Markieren in dieser Liste k&#246;nnen Sie den Code eines anderen User Controls kopieren." />
+  <string key="AddNewUserControlFunction.LabelCopyFromEmptyOption" value="(Neue User Control Funktion)" />
+
+  <string key="AddNewUserControlFunctionWorkflow.DuplicateName" value="Eine C1-Funktion mit dem gleichen Namen existiert bereits." />
+  <string key="AddNewUserControlFunctionWorkflow.EmptyName" value="Funktionsname nicht angegeben" />
+  <string key="AddNewUserControlFunctionWorkflow.NamespaceEmpty" value="Funktions-Namensraum nicht angegeben" />
+  <string key="AddNewUserControlFunctionWorkflow.InvalidNamespace" value="Der Namensraum muss wie A.B.C angegeben werden - er darf nicht mit einem Punkt (.) beginnen oder enden." />
+  <string key="AddNewUserControlFunctionWorkflow.TotalNameTooLang" value="Die Gesamtl&#228;nge des Namens in Verbindung mit dem Namensraum ist zu lang (wird verwendet, um die .ascx-Datei zu benennen)." />
+
+  <string key="EditUserControlFunctionWorkflow.Validation.DialogTitle" value="Fehler bei der Validierung" />
+  <string key="EditUserControlFunctionWorkflow.Validation.CompilationFailed" value="Kompilierung fehlgeschlagen:  {0}" />
+  <string key="EditUserControlFunctionWorkflow.Validation.IncorrectBaseClass" value="Die User Control Funktion sollte  &#39;{0}&#39; erben" />
+
+  <string key="DeleteUserControlFunctionWorkflow.ConfirmDeleteTitle" value="User Control Funktion l&#246;schen?" />
+  <string key="DeleteUserControlFunctionWorkflow.ConfirmDeleteMessage" value="Ausgew&#228;hltes User Control l&#246;schen?" />
+</strings>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+    <string key="ElementProvider.RootLabel" value="Seitenvorlagen-Features" />
+    <string key="ElementProvider.RootToolTip" value="Hier finden Sie Features - Schnipsel aus HTML und Funktionalit&#228;ten - die in den Website-Vorlagen enthalten sind" />
+    <string key="ElementProvider.AddTemplateFeature" value="Vorlagen-Feature hinzuf&#252;gen" />
+    <string key="ElementProvider.AddTemplateFeatureToolTip" value="Neues Vorlagen-Feature hinzuf&#252;gen" />
+    <string key="ElementProvider.DeleteTemplateFeature" value="Vorlagen-Feature l&#246;schen" />
+    <string key="ElementProvider.DeleteTemplateFeatureToolTip" value="Dieses Vorlagen-Feature l&#246;schen" />
+    <string key="ElementProvider.EditTemplateFeature" value="Vorlagen-Feature bearbeiten" />
+    <string key="ElementProvider.EditTemplateFeatureToolTip" value="Markiertes Vorlagen-Feature bearbeiten" />
+    <string key="ElementProvider.EditVisually" value="Visuellen Editor verwenden" />
+    <string key="ElementProvider.EditVisuallyToolTip" value="Wenn aktiviert, wird der visuelle Editor verwendet, um dieses Feature zu verwalten" />
+
+    <string key="AddWorkflow.LabelDialog" value="Neues Seitenvorlagen-Feature hinzuf&#252;gen" />
+    <string key="AddWorkflow.LabelFieldGroup" value="Seitenvorlagen-Feature" />
+    <string key="AddWorkflow.LabelTemplateFeatureName" value="Featurename" />
+    <string key="AddWorkflow.LabelTemplateFeatureNameHelp" value="Der Name wird verwendet, um diese Feature zu identifizieren, wenn es in einer Vorlage genutzt wird" />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType" value="Editortyp" />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorTypeHelp" value="W&#228;hlen Sie, welcher Editortyp bei der Bearbeitung dieses Features verwendet werden soll. Der Typ kann sp&#228;ter immer noch ge&#228;ndert werden." />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType.html" value="Visueller Editor" />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType.xml" value="Quellcode-Editor" />
+    <string key="AddWorkflow.NameInUse" value="Der Name wird bereits durch ein anderes Feature verwendet" />
+    <string key="AddWorkflow.NameTooLong" value="Der Titel ist zu lang (maximal 50 Zeichen)" />
+    <string key="AddWorkflow.NameNotValidInFilename" value="Der Name muss in einem Dateinamen nutzbar sein - entfernen Sie die nicht konformen Zeichen" />
+
+    <string key="DeleteWorkflow.Title" value="Dieses Seitenvorlagen-Feature l&#246;schen ?" />
+    <string key="DeleteWorkflow.Text" value="Falls dieses Feature in Seitenvorlagen genutzt wird, k&#246;nnte diese Aktion zu Fehlern f&#252;hren." />
+</strings>
