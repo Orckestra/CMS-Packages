@@ -111,7 +111,7 @@
   <PropertyGroup>
     <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(ProjectName).zip"
 "$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(ProjectName).zip"
-"$(SolutionDir)..\R eferences\7za.exe" a -tzip "$(ProjectDir)Release\$(ProjectName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(ProjectName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
