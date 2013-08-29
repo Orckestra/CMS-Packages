@@ -1,34 +1,34 @@
-<%@ Master Language="C#" AutoEventWireup="true" 
-    MasterPageFile="Common.master" 
+<%@ Master Language="C#" AutoEventWireup="true"
+    MasterPageFile="Common.master"
     CodeFile="TwoColumnsNavigationContent.master.cs" Inherits="TwoColumnsNavigationContent" %>
 
 <asp:Content ContentPlaceHolderID="phHead" runat="Server">
-	<%-- you can add template specific head elements here --%>
+    <%-- you can add template specific head elements here --%>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="phContent" runat="Server">
-	<c1:PageTemplateFeature Name="Content Start" runat="server" /> 
-	
-	<f:Function Name="Layout.HeroUnit" runat="server">
-		<Parameters>
-			<f:param name="CustomContent" Value="<%# HeroUnit %>" runat="server"/>
-		</Parameters>
-	</f:Function>
-	
-	<div class="row">
-		<div class="span3">
-			<div class="well sidebar-nav">
-				<f:Function ID="Function1" Name="Composite.Navigation.Distributed" runat="server">
-					<Parameters>
-						<f:param ID="Param1" name="Level" value="2" runat="server" />
-						<f:param ID="Param2" name="ShowChildPages" value="True" runat="server" />
-						<f:param ID="Param3" name="Expand" value="False" runat="server" />
-						<f:param ID="Param4" name="NavigationId" value="navSideBar" runat="server" />
-					</Parameters>
-				</f:Function>
-			</div>
-		</div>
-		<div class="span8">
-			<c1:Render Markup="<%# Content %>" runat="server"></c1:Render>
-		</div>
-	</div>
+    <c1:pagetemplatefeature name="Content Start" runat="server" />
+
+    <f:function name="Layout.HeroUnit" runat="server">
+        <Parameters>
+            <f:param name="CustomContent" Value="<%# HeroUnit %>" runat="server"/>
+        </Parameters>
+    </f:function>
+
+    <div class="row">
+        <div class="span3">
+            <div class="well sidebar-nav">
+                <f:function id="Function1" name="Composite.Navigation.Distributed" runat="server">
+                    <Parameters>
+                        <f:param ID="Param1" name="Level" value="2" runat="server" />
+                        <f:param ID="Param2" name="ShowChildPages" value="True" runat="server" />
+                        <f:param ID="Param3" name="Expand" value="False" runat="server" />
+                        <f:param ID="Param4" name="NavigationId" value="navSideBar" runat="server" />
+                    </Parameters>
+                </f:function>
+            </div>
+        </div>
+        <div class="span8">
+            <c1:render markup="<%# Content %>" runat="server"></c1:render>
+        </div>
+    </div>
 </asp:Content>
