@@ -1,1 +1,1 @@
-@"%~dp0node.exe" "%~dp0sass\sassc" %*
+@"%~dp0node.exe" "%~dp0sass\sassc" "%*"
