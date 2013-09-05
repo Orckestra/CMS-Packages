@@ -1,4 +1,3 @@
-using System;
 using System.Xml.Linq;
 using Composite.Core.ResourceSystem;
 
@@ -20,56 +19,56 @@ namespace Composite.Tools.PackageCreator.Types
     ///   }
     /// }
     /// </example>
-	public interface IPackageCreatorItem
-	{
-		string Name
-		{
-			get;
-		}
+    public interface IPackageCreatorItem
+    {
+        string Name
+        {
+            get;
+        }
 
-		string ActionLabel
-		{
-			get;
-		}
+        string ActionLabel
+        {
+            get;
+        }
 
-		string ActionToolTip
-		{
-			get;
-		}
+        string ActionToolTip
+        {
+            get;
+        }
 
         ResourceHandle ActionIcon
         {
             get;
         }
 
-		/// <summary>
-		/// Icon that is used for showing the package creator item in 'Package Creator' perspective
-		/// </summary>
+        /// <summary>
+        /// Icon that is used for showing the package creator item in 'Package Creator' perspective
+        /// </summary>
         ResourceHandle ItemIcon
-		{
-			get;
-		}
+        {
+            get;
+        }
 
-		string CategoryName { get; }
+        string CategoryName { get; }
 
-		string[] CategoryAllNames { get; }
+        string[] CategoryAllNames { get; }
 
         /// <summary>
         /// Gets the label for console action.
         /// </summary>
         /// <returns></returns>
-		string GetLabel();
+        string GetLabel();
 
         /// <summary>
         /// Adds the package creator item to configuration.
         /// </summary>
         /// <param name="config">The config.</param>
-		void AddToConfiguration(XElement config);
+        void AddToConfiguration(XElement config);
 
         /// <summary>
         /// Removes the package creator item from configuration.
         /// </summary>
         /// <param name="config">The config.</param>
-		void RemoveFromConfiguration(XElement config);
-	}
+        void RemoveFromConfiguration(XElement config);
+    }
 }

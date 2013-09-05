@@ -1,23 +1,20 @@
 using Composite.C1Console.Security;
+using Composite.Tools.PackageCreator.ElementProvider.EntityTokens.Interfaces;
 
-namespace Composite.Tools.PackageCreator.ElementProvider
+namespace Composite.Tools.PackageCreator.ElementProvider.EntityTokens
 {
 	[SecurityAncestorProvider(typeof(PackageCreatorProviderEntityTokenSecurityAncestorProvider))]
-	public sealed class PackageCreatorItemElementProviderEntityToken : PackageCreatorEntityToken
+	public class PackageCreatorPackageElementProviderEntityToken : PackageCreatorEntityToken
 	{
-		private string _id;
 		private string _source;
-		private string _type;
 
-		public PackageCreatorItemElementProviderEntityToken(string id, string source, string type)
+		public PackageCreatorPackageElementProviderEntityToken(string source)
 		{
-			this._id = id;
 			this._source = source;
-			this._type = type;
 		}
 		public override string Id
 		{
-			get { return _id; }
+			get { return ""; }
 		}
 
 		public override string Serialize()
@@ -32,7 +29,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 
 		public override string Type
 		{
-			get { return _type; }
+			get { return ""; }
 		}
 
 		public static EntityToken Deserialize(string serializedData)
@@ -41,7 +38,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 
 			DoDeserialize(serializedData, out type, out source, out id);
 
-			return new PackageCreatorItemElementProviderEntityToken(id, source, type);
+			return new PackageCreatorPackageElementProviderEntityToken(source);
 		}
 	}
 }

@@ -17,7 +17,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@name='Composite.Tools.PackageCreator'])=0">
-				<add name="Composite.Tools.PackageCreator" type="Composite.Tools.PackageCreator.PackageCreatorElementActionProvider, Composite.Tools.PackageCreator" />
+				<add name="Composite.Tools.PackageCreator" type="Composite.Tools.PackageCreator.Actions.PackageCreatorElementActionProvider, Composite.Tools.PackageCreator" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>

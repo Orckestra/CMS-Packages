@@ -24,6 +24,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,6 +50,9 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Composite">
+      <HintPath>..\..\References\Composite\4.0\Composite.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -83,6 +91,12 @@
     <Content Include="Package\Composite\content\forms\InstalledPackages\Composite.Tools.PackageCreator\UploadConfigSuccessfull.xml" />
     <Content Include="Package\Composite\InstalledPackages\services\Composite.Tools.PackageCreator\GetPackage.ashx" />
     <None Include="Release\Composite.Tools.PackageCreator.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Composite.Tools.PackageCreator\Composite.Tools.PackageCreator.csproj">
+      <Project>{b92a1cb9-9584-4b3e-9e53-11ca5db74cfc}</Project>
+      <Name>Composite.Tools.PackageCreator</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

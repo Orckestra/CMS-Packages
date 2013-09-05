@@ -85,18 +85,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Action\AddLocalizationActionToken.cs" />
-    <Compile Include="Action\PackageCreatorActionFacade.cs" />
-    <Compile Include="Action\PackageCreatorActionToken.cs" />
-    <Compile Include="Action\PackageCreatorElementActionProvider.cs" />
-    <Compile Include="Action\PackageCreatorElementProviderActionExecutor.cs" />
-    <Compile Include="ElementProvider\Action\DownloadPackageActionToken.cs" />
-    <Compile Include="ElementProvider\Action\SetActivePackageActionToken.cs" />
-    <Compile Include="ElementProvider\EntityToken\Interfaces\PackageCreatorEntityToken.cs" />
-    <Compile Include="ElementProvider\EntityToken\PackageCreatorItemElementProviderEntityToken.cs" />
-    <Compile Include="ElementProvider\EntityToken\PackageCreatorPackageElementProviderEntityToken.cs" />
-    <Compile Include="ElementProvider\EntityToken\XmlNodeAttributeProviderEntityToken.cs" />
-    <Compile Include="ElementProvider\EntityToken\XmlNodeElementProviderEntityToken.cs" />
+    <Compile Include="Actions\AddLocalizationActionToken.cs" />
+    <Compile Include="Actions\PackageCreatorActionFacade.cs" />
+    <Compile Include="Actions\PackageCreatorActionToken.cs" />
+    <Compile Include="Actions\PackageCreatorElementActionProvider.cs" />
+    <Compile Include="Actions\PackageCreatorElementProviderActionExecutor.cs" />
+    <Compile Include="ElementProvider\Actions\DownloadPackageActionToken.cs" />
+    <Compile Include="ElementProvider\Actions\SetActivePackageActionToken.cs" />
+    <Compile Include="ElementProvider\EntityTokens\Interfaces\PackageCreatorEntityToken.cs" />
+    <Compile Include="ElementProvider\EntityTokens\PackageCreatorItemElementProviderEntityToken.cs" />
+    <Compile Include="ElementProvider\EntityTokens\PackageCreatorPackageElementProviderEntityToken.cs" />
+    <Compile Include="ElementProvider\EntityTokens\XmlNodeAttributeProviderEntityToken.cs" />
+    <Compile Include="ElementProvider\EntityTokens\XmlNodeElementProviderEntityToken.cs" />
     <Compile Include="PackageCreatorFragmentInstaller.cs" />
     <Compile Include="PackageCreator\Tools\DataFileDictionary.cs" />
     <Compile Include="PackageCreator\Tools\ReferencedAssemblies.cs" />
@@ -119,11 +119,11 @@
     <Compile Include="Types\PCFilesInDirectory.cs" />
     <Compile Include="Types\Interfaces\Category.cs" />
     <Compile Include="Types\Interfaces\IPackageCreatorItem.cs" />
-    <Compile Include="ElementProvider\Action\DeletePackageCreatorActionToken.cs" />
-    <Compile Include="ElementProvider\Action\DeleteItemPackageCreatorActionToken.cs" />
+    <Compile Include="ElementProvider\Actions\DeletePackageCreatorActionToken.cs" />
+    <Compile Include="ElementProvider\Actions\DeleteItemPackageCreatorActionToken.cs" />
     <Compile Include="ElementProvider\PackageCreatorElementProvider.cs" />
-    <Compile Include="ElementProvider\EntityToken\PackageCreatorCategoryElementProviderEntityToken.cs" />
-    <Compile Include="ElementProvider\EntityToken\PackageCreatorElementProviderEntityToken.cs" />
+    <Compile Include="ElementProvider\EntityTokens\PackageCreatorCategoryElementProviderEntityToken.cs" />
+    <Compile Include="ElementProvider\EntityTokens\PackageCreatorElementProviderEntityToken.cs" />
     <Compile Include="ElementProvider\PackageCreatorProviderEntityTokenSecurityAncestorProvider.cs" />
     <Compile Include="PackageCreator\Tools\Extension.cs" />
     <Compile Include="PackageCreator\Tools\FileSystem.cs" />

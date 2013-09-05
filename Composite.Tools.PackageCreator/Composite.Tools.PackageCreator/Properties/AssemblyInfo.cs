@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Composite A/S")]
 [assembly: AssemblyProduct("Composite.Tools.PackageCreator")]
-[assembly: AssemblyCopyright("Copyright © Composite A/S 2012")]
+[assembly: AssemblyCopyright("Copyright © Composite A/S 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
