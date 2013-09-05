@@ -8,10 +8,28 @@ using Composite.Core.Collections.Generic;
 
 namespace Composite.Web.Css.Less
 {
-    public class LessHttpModule : IHttpModule
+    public class LessHttpModule : CssCompilationHttpModule
+    {
+        public LessHttpModule() : base(".less", "*.less", CompressFiles.CompressLess)
+        {
+        }
+    }
+
+    public class CssCompilationHttpModule : IHttpModule
     {
         private static readonly ReaderWriterLockSlim _compilationLock = new ReaderWriterLockSlim();
-        private static readonly Hashtable<string, CachedDirectoryInfo>  _directoryInfo = new Hashtable<string, CachedDirectoryInfo>();
+        private static readonly Hashtable<string, CachedDirectoryInfo> _directoryInfo = new Hashtable<string, CachedDirectoryInfo>();
+
+        private readonly string _extension;
+        private readonly string _fileWatcherMask;
+        private readonly Action<string, string, DateTime> _compileAction;
+
+        public CssCompilationHttpModule(string extension, string fileWatcherMask, Action<string, string, DateTime> compileAction)
+        {
+            _extension = extension;
+            _fileWatcherMask = fileWatcherMask;
+            _compileAction = compileAction;
+        }
 
         public void Init(HttpApplication application)
         {
@@ -21,22 +39,23 @@ namespace Composite.Web.Css.Less
         private void context_BeginRequest(HttpContext context)
         {
             var requestPath = context.Request.Path;
-            if (!requestPath.Contains(".less"))
+            if (!requestPath.EndsWith(_extension))
             {
                 return;
             }
 
-            var filePathLess = context.Server.MapPath(requestPath);
-            if (!File.Exists(filePathLess))
+            var filePath = context.Server.MapPath(requestPath);
+            if (!File.Exists(filePath))
             {
                 return;
             }
 
-            string directory = Path.GetDirectoryName(filePathLess);
+            string directory = Path.GetDirectoryName(filePath);
 
-            DateTime folderLastUpdatedUtc = GetCachedFolderLastUpdateDateUtc(directory, "*.less");
+            DateTime folderLastUpdatedUtc = GetCachedFolderLastUpdateDateUtc(directory, _fileWatcherMask);
 
-            var filePathCss = filePathLess.Substring(0, filePathLess.Length - ".less".Length) + ".min.css";
+            var filePathCss = filePath.Substring(0, filePath.Length - _extension.Length) + ".min.css";
+
             if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < folderLastUpdatedUtc)
             {
                 try
@@ -47,7 +66,7 @@ namespace Composite.Web.Css.Less
                     {
                         if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < folderLastUpdatedUtc)
                         {
-                            CompressFiles.CompressLess(filePathLess, filePathCss, folderLastUpdatedUtc);
+                            _compileAction(filePath, filePathCss, folderLastUpdatedUtc);
                         }
                     }
                     catch (CssCompileException ex)
@@ -57,8 +76,29 @@ namespace Composite.Web.Css.Less
                             throw;
                         }
 
-                        context.Response.StatusCode = 500;
-                        context.Response.Write(ex.Message);
+                        // Showing a friendly error message for logged in users
+                        context.Response.Write(string.Format(@"
+/* 
+CSS COMPILE ERROR:
+{2}
+*/
+body:before {{
+   position: fixed;
+   top: 10px;
+   display: block;
+   width: 60%;
+   margin-left: 19%;
+   padding: 20px;
+   border: 2px solid red;
+   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+   font-size: 12px;
+   font-weight: bold;
+   color: InfoText;
+   white-space:pre;
+   background-color: InfoBackground;
+   content: 'Error in {0}:\A\A {1}';
+   z-index: 10000;
+}}", requestPath, EncodeCssContent(ex.Message), EncodeCssComment(ex.Message)));
                         context.ApplicationInstance.CompleteRequest();
                         return;
                     }
@@ -84,8 +124,18 @@ namespace Composite.Web.Css.Less
             {
                 _compilationLock.ExitReadLock();
             }
-            
+
             context.ApplicationInstance.CompleteRequest();
+        }
+
+        private string EncodeCssContent(string text)
+        {
+            return text.Replace("'", "\"").Replace(@"\", @"\\").Replace("\n", @"\A ");
+        }
+
+        private string EncodeCssComment(string text)
+        {
+            return text.Replace("*", "");
         }
 
         private DateTime GetCachedFolderLastUpdateDateUtc(string directory, string fileMask)
