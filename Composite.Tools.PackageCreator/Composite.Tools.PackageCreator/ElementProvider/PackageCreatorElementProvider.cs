@@ -47,8 +47,8 @@ namespace Composite.Tools.PackageCreator.ElementProvider
             {
                 VisualData = new ElementVisualizedData()
                 {
-                    Label = "Packages",
-                    ToolTip = "Packages",
+                    Label = PackageCreatorFacade.GetLocalization("PackageCreatorElementProviderEntityToken.Label"),
+                    ToolTip = PackageCreatorFacade.GetLocalization("PackageCreatorElementProviderEntityToken.ToolTip"),
                     HasChildren = true,
                     Icon = new ResourceHandle("Composite.Icons", "package-element-closed-availableitem"),
                     OpenedIcon = new ResourceHandle("Composite.Icons", "package-element-closed-availableitem")
@@ -175,8 +175,8 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     {
                         VisualData = new ActionVisualizedData
                         {
-                            Label = "Edit",
-                            ToolTip = "Edit",
+                            Label = PackageCreatorFacade.GetLocalization("EditPackage.Label"),
+                            ToolTip = PackageCreatorFacade.GetLocalization("EditPackage.ToolTip"),
                             Icon = new ResourceHandle("Composite.Icons", "page-edit-page"),
                             ActionLocation = new ActionLocation
                             {
@@ -191,8 +191,8 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     {
                         VisualData = new ActionVisualizedData
                         {
-                            Label = "Set Active",
-                            ToolTip = "Set Active",
+                            Label = PackageCreatorFacade.GetLocalization("SetActivePackage.Label"),
+                            ToolTip = PackageCreatorFacade.GetLocalization("SetActivePackage.ToolTip"),
                             Icon = new ResourceHandle("Composite.Icons", "accept"),
                             ActionLocation = new ActionLocation
                             {
@@ -208,8 +208,8 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     {
                         VisualData = new ActionVisualizedData
                         {
-                            Label = "Delete",
-                            ToolTip = "Delete",
+                            Label = PackageCreatorFacade.GetLocalization("DeleteConfigPackageCreator.Label"),
+                            ToolTip = PackageCreatorFacade.GetLocalization("DeleteConfigPackageCreator.ToolTip"),
                             Icon = new ResourceHandle("Composite.Icons", "generated-type-delete"),
                             ActionLocation = new ActionLocation
                             {
@@ -298,8 +298,8 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     {
                         VisualData = new ActionVisualizedData
                         {
-                            Label = "Delete",
-                            ToolTip = "Delete",
+                            Label = PackageCreatorFacade.GetLocalization("DeleteItemPackageCreator.Label"),
+                            ToolTip = PackageCreatorFacade.GetLocalization("DeleteItemPackageCreator.ToolTip"),
                             Icon = new ResourceHandle("Composite.Icons", "page-delete-page"),
                             ActionLocation = new ActionLocation
                             {
