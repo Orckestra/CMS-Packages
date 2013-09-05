@@ -109,7 +109,7 @@ body:before {{
                 }
             }
 
-            if (!UserValidationFacade.IsLoggedIn())
+            if ((DateTime.UtcNow - folderLastUpdatedUtc).Days >= 1 || !UserValidationFacade.IsLoggedIn())
             {
                 context.Response.Cache.SetExpires(DateTime.Now.AddDays(1.0));
             }
