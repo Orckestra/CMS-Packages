@@ -1,1 +1,1 @@
-@"%~dp0node.exe" "%~dp0less\lessc" %*
+@"%~dp0node.exe" "%~dp0less\lessc" "%*"
