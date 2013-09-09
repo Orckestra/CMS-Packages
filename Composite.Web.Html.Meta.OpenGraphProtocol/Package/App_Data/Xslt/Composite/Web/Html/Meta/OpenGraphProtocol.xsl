@@ -17,7 +17,9 @@
 	  System.Collections.Specialized.NameValueCollection strCol = new System.Collections.Specialized.NameValueCollection();
 	  strCol.Add("id", mediaId);	  
 	  Composite.Data.Types.IMediaFile mediaFile = Composite.Core.WebClient.MediaUrlHelper.GetFileFromQueryString(strCol);
-	  return Composite.Core.WebClient.MediaUrlHelper.GetUrl(mediaFile, false);}]]>
+	  string urlStr = Composite.Core.WebClient.MediaUrlHelper.GetUrl(mediaFile, true);
+	  Composite.Core.Routing.MediaUrlData urlData = Composite.Core.Routing.MediaUrls.ParseUrl(urlStr);
+	  return Composite.Core.Routing.MediaUrls.BuildUrl(urlData, Composite.Core.Routing.UrlKind.Public);}]]>
   </msxsl:script>
 
   <xsl:template match="/">
@@ -70,7 +72,7 @@
     <xsl:param name="urlImage" select="mediaHelper:GetUrl($graph1/@Image)" />
     <xsl:choose>
       <xsl:when test="string-length($graph1/@Image) > 0">
-        <meta property="og:image" content="http://{$host}{$appPath}/{$urlImage}" />
+        <meta property="og:image" content="http://{$host}{$appPath}{$urlImage}" />
       </xsl:when>
       <xsl:otherwise>
         <xsl:variable name="parentId" select="/in:inputs/in:result[@name='SitemapXml']//Page[Page[@Id = $id]]/@Id" />
@@ -81,6 +83,5 @@
         </xsl:if>
       </xsl:otherwise>
     </xsl:choose>
-
   </xsl:template>
 </xsl:stylesheet>
