@@ -114,6 +114,8 @@ body:before {{
                 context.Response.Cache.SetExpires(DateTime.Now.AddDays(1.0));
             }
 
+            context.Response.ContentType = "text/css";
+            
             try
             {
                 _compilationLock.EnterReadLock();
