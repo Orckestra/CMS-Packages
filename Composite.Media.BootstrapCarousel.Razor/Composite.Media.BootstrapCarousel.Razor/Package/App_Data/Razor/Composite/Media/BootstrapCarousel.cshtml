@@ -17,17 +17,14 @@
 		<link id="carousel-css" rel="stylesheet" href="~/Frontend/Composite/Media/BootstrapCarousel/bootstrap-carousel.css" type="text/css" media="screen" />
 		<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 		<script id="bootstrap-carousel" src="~/Frontend/Composite/Media/BootstrapCarousel/bootstrap-carousel.js" type="text/javascript"></script>
-		<script id="@instanceId-script" type="text/javascript">
-			(function ($, window) {	
-				$(window).load(function() {
-					$('#@instanceId').carousel({
-						interval: @PauseTime
-						});
-				});
-			})(jQuery, window);
-		</script>
+        <script id="imgpreload" src="~/Frontend/Composite/Media/BootstrapCarousel/jquery.imgpreload.min.js" type="text/javascript"></script>
+        <script id="bootstrap-carousel-preload" src="~/Frontend/Composite/Media/BootstrapCarousel/bootstrap-carousel-preload.js" type="text/javascript"></script>
 				
 		<style type="text/css">
+            .load-image {
+                background: url(/Frontend/Composite/Media/BootstrapCarousel/loader.gif) no-repeat center;
+            }
+
 			@if (Width > 0)
 			{ 
 		  	 <text>
@@ -63,7 +60,7 @@
 				var images = imageQuery.Take(ImageCount).ToList();
 			}
 			
-			<div id="@instanceId" class="carousel slide">
+			<div id="@instanceId" class="carousel slide load-image" data-interval="@PauseTime">
 				@if (Navigation)
 				{
 					<ol class="carousel-indicators">
@@ -78,7 +75,7 @@
 					@foreach (var mediaFile in images)
 					{
 						<div class="item @( mediaFile == images.First() ? "active" : "" )">
-							<div class="cover" style="background-image: url('@Html.C1().MediaUrl(mediaFile)')"></div>
+							<div class="cover" style="background-image: url('@Html.C1().MediaUrl(mediaFile)')" data-src="@Html.C1().MediaUrl(mediaFile)"></div>
 
 							@if (Captions && !string.IsNullOrEmpty(mediaFile.Title))
 							{
