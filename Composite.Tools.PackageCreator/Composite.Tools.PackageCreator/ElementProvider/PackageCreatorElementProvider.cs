@@ -65,7 +65,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     {
                         ActionType = PackageCreatorFacade.ActionType,
                         IsInFolder = false,
-                        IsInToolbar = false,
+                        IsInToolbar = true,
                         ActionGroup = new ActionGroup("Develop", ActionGroupPriority.PrimaryLow)
                     }
                 }
@@ -89,7 +89,6 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                 }
             });
 
-            //if (UserSettings.CultureInfo.Name != "en-US")
             if (UserSettings.C1ConsoleUiLanguage.Name != "en-US")
             {
                 element.AddAction(new ElementAction(new ActionHandle(new CreatePackageWorkflowActionToken(string.Format("Composite.LanguagePack.{0}", new CultureInfo(UserSettings.C1ConsoleUiLanguage.TwoLetterISOLanguageName).EnglishName), new AddLocalizationActionToken(UserSettings.C1ConsoleUiLanguage.Name))))
@@ -149,9 +148,6 @@ namespace Composite.Tools.PackageCreator.ElementProvider
             return element;
         }
 
-
-
-
         public IEnumerable<Element> GetChildren(EntityToken entityToken, SearchToken seachToken)
         {
             if (entityToken is PackageCreatorElementProviderEntityToken)
@@ -182,7 +178,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             {
                                 ActionType = ActionType.Other,
                                 IsInFolder = false,
-                                IsInToolbar = false,
+                                IsInToolbar = true,
                                 ActionGroup = new ActionGroup("Develop", ActionGroupPriority.PrimaryLow)
                             }
                         }
@@ -198,7 +194,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             {
                                 ActionType = ActionType.Other,
                                 IsInFolder = false,
-                                IsInToolbar = false,
+                                IsInToolbar = true,
                                 ActionGroup = new ActionGroup("Develop", ActionGroupPriority.PrimaryLow)
                             }
                         }
@@ -233,7 +229,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             {
                                 ActionType = PackageCreatorFacade.ActionType,
                                 IsInFolder = false,
-                                IsInToolbar = false,
+                                IsInToolbar = true,
                                 ActionGroup = new ActionGroup("Download", ActionGroupPriority.PrimaryLow)
                             }
                         }
@@ -305,7 +301,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             {
                                 ActionType = ActionType.Other,
                                 IsInFolder = false,
-                                IsInToolbar = false,
+                                IsInToolbar = true,
                                 ActionGroup = new ActionGroup("Develop", ActionGroupPriority.PrimaryLow)
                             }
                         }
