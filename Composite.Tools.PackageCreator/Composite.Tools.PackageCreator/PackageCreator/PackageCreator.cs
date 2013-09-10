@@ -294,21 +294,8 @@ namespace Composite.Tools.PackageCreator
                         try
                         {
                             var filename = item.IndexAttributeValue();
-                            var targetFilename = Path.Combine(packageDirectoryPath, filename);
-                            if (Directory.Exists(Path.GetDirectoryName(targetFilename)) == false)
-                            {
-                                Directory.CreateDirectory(Path.GetDirectoryName(targetFilename));
-                            }
-                            FileSystem.copyDirectory(Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), filename), targetFilename);
 
-                            Directories.Add(
-                                new XElement("Directory",
-                                    new XAttribute("sourceDirectory", "~\\" + filename),
-                                    new XAttribute("targetDirectory", "~\\" + filename),
-                                    new XAttribute("allowOverwrite", "true"),
-                                    new XAttribute("deleteTargetDirectory", "false")
-                                )
-                            );
+                            AddDirectory(filename);
                         }
                         catch { }
                     }
@@ -664,6 +651,25 @@ namespace Composite.Tools.PackageCreator
                 return Path.Combine(packageName, "Release", zipFilename);
             }
 
+        }
+
+        public void AddDirectory(string filename)
+        {
+            var targetFilename = Path.Combine(packageDirectoryPath, filename);
+            if (Directory.Exists(Path.GetDirectoryName(targetFilename)) == false)
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(targetFilename));
+            }
+            FileSystem.copyDirectory(Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), filename), targetFilename);
+
+            Directories.Add(
+                new XElement("Directory",
+                    new XAttribute("sourceDirectory", "~\\" + filename),
+                    new XAttribute("targetDirectory", "~\\" + filename),
+                    new XAttribute("allowOverwrite", "true"),
+                    new XAttribute("deleteTargetDirectory", "false")
+                )
+            );
         }
 
         internal void AddFilesinDirectory(string path)
