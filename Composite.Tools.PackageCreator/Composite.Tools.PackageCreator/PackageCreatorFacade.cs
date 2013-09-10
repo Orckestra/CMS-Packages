@@ -214,12 +214,15 @@ namespace Composite.Tools.PackageCreator
             package.Id = packageInformation.AttributeValue("id") != null ? new Guid(packageInformation.AttributeValue("id")) : Guid.NewGuid();
 
             package.Author = packageInformation.AttributeValue("author") ?? string.Empty;
+
             package.GroupName = packageInformation.AttributeValue("groupName") ?? UserSettings.LastSpecifiedNamespace;
             package.Name = packageInformation.AttributeValue("name") ?? package.GroupName + ".NewPackage";
+            package.ReadMoreUrl = packageInformation.AttributeValue("readMoreUrl") ?? string.Empty;
+
             package.Version = packageInformation.AttributeValue("version") ?? "1.0.0";
             var request = HttpContext.Current.Request;
             package.Website = packageInformation.AttributeValue("website") ?? (new Uri(request.Url, request.ApplicationPath)).ToString();
-            package.ReadMoreUrl = packageInformation.AttributeValue("readMoreUrl") ?? string.Empty;
+
             package.Description = string.IsNullOrEmpty(packageInformation.ForceElement("Description").Value) ? string.Empty : packageInformation.ForceElement("Description").Value;//string.Format("Created by {0}", package.Author) : packageInformation.ForceElement("Description").Value;
             package.TechnicalDetails = string.IsNullOrEmpty(packageInformation.ForceElement("TechnicalDetails").Value) ? string.Empty : packageInformation.ForceElement("TechnicalDetails").Value;
 

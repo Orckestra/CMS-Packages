@@ -5,6 +5,7 @@ using System.Workflow.Activities;
 using System.Workflow.Runtime;
 using Composite.C1Console.Actions;
 using Composite.C1Console.Security;
+using Composite.C1Console.Users;
 using Composite.C1Console.Workflow;
 using Composite.Core.Serialization;
 using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
@@ -28,7 +29,16 @@ namespace Composite.Tools.PackageCreator
                 {
                     var name = StringConversionServices.DeserializeValueString(dic["Name"]);
                     package.Name = name;
-                    package.GroupName = name.Substring(0, name.LastIndexOf("."));
+
+                    if (UserSettings.C1ConsoleUiLanguage.Name != "en-US")
+                    {
+                        package.GroupName = String.Join(".", name.Split('.').Take(2));
+                        package.ReadMoreUrl = @"http://docs.composite.net/Composite.Localization.C1Console";
+                    }
+                    else
+                    {
+                        package.GroupName = name.Substring(0, name.LastIndexOf("."));
+                    }
                 }
             }
 

@@ -39,8 +39,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
         {
             set { _context = value; }
         }
-
-
+        
         public IEnumerable<Element> GetRoots(SearchToken seachToken)
         {
             Element element = new Element(_context.CreateElementHandle(new PackageCreatorElementProviderEntityToken()))
@@ -54,6 +53,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     OpenedIcon = new ResourceHandle("Composite.Icons", "package-element-closed-availableitem")
                 }
             };
+         
             element.AddAction(new ElementAction(new ActionHandle(new WorkflowActionToken(typeof(CreatePackageWorkflow), new PermissionType[] { PermissionType.Administrate })))
             {
                 VisualData = new ActionVisualizedData
@@ -91,7 +91,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 
             if (UserSettings.C1ConsoleUiLanguage.Name != "en-US")
             {
-                element.AddAction(new ElementAction(new ActionHandle(new CreatePackageWorkflowActionToken(string.Format("Composite.LanguagePack.{0}", new CultureInfo(UserSettings.C1ConsoleUiLanguage.TwoLetterISOLanguageName).EnglishName), new AddLocalizationActionToken(UserSettings.C1ConsoleUiLanguage.Name))))
+                element.AddAction(new ElementAction(new ActionHandle(new CreatePackageWorkflowActionToken(string.Format("Composite.Localization.C1Console.{0}", new CultureInfo(UserSettings.C1ConsoleUiLanguage.TwoLetterISOLanguageName).EnglishName), new AddLocalizationActionToken(UserSettings.C1ConsoleUiLanguage.Name))))
                 {
                     VisualData = new ActionVisualizedData
                     {
