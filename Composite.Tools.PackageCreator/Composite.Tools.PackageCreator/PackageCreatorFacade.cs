@@ -310,7 +310,7 @@ namespace Composite.Tools.PackageCreator
         internal static void AddItem(IPackageCreatorItem item)
         {
             AddItem(item, ActivePackageName);
-
+            PackageCreatorFacade.ActivePackageName = item.Name;
         }
 
         internal static void AddItem(IPackageCreatorItem item, string packageName)
@@ -448,10 +448,8 @@ namespace Composite.Tools.PackageCreator
             {
                 case PCCompositeConfig.Source:
                     return PCCompositeConfig.Path;
-                    break;
                 case PCWebConfig.Source:
                     return PCWebConfig.Path;
-                    break;
             }
             return null;
         }

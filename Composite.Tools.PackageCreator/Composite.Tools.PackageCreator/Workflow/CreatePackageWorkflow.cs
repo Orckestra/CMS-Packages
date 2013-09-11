@@ -8,6 +8,7 @@ using Composite.C1Console.Security;
 using Composite.C1Console.Users;
 using Composite.C1Console.Workflow;
 using Composite.Core.Serialization;
+using Composite.Tools.PackageCreator.ElementProvider.Actions;
 using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
 
 namespace Composite.Tools.PackageCreator
@@ -30,10 +31,13 @@ namespace Composite.Tools.PackageCreator
                     var name = StringConversionServices.DeserializeValueString(dic["Name"]);
                     package.Name = name;
 
-                    if (UserSettings.C1ConsoleUiLanguage.Name != "en-US")
+                    if (dic.ContainsKey("GroupName"))
                     {
-                        package.GroupName = String.Join(".", name.Split('.').Take(2));
-                        package.ReadMoreUrl = @"http://docs.composite.net/Composite.Localization.C1Console";
+                        var readMoreUrl = StringConversionServices.DeserializeValueString(dic["ReadMoreUrl"]);
+                        package.ReadMoreUrl = readMoreUrl;
+
+                        var groupName = StringConversionServices.DeserializeValueString(dic["GroupName"]);
+                        package.GroupName = groupName;
                     }
                     else
                     {
@@ -59,11 +63,18 @@ namespace Composite.Tools.PackageCreator
                 var type = StringConversionServices.DeserializeValueString(StringConversionServices.ParseKeyValueCollection(Payload)["ActionToken"]);
                 ActionToken actionToken = ActionTokenSerializer.Deserialize(type);
                 ActionExecutorFacade.Execute(package.GetEntityToken(), actionToken, WorkflowFacade.GetFlowControllerServicesContainer(WorkflowEnvironment.WorkflowInstanceId));
+
+            }
+            else
+            {
+                ActionExecutorFacade.Execute(
+                    package.GetEntityToken(),
+                    new SetActivePackageActionToken(),
+                    WorkflowFacade.GetFlowControllerServicesContainer(WorkflowEnvironment.WorkflowInstanceId));
             }
 
             SpecificTreeRefresher treeRefresher = this.CreateSpecificTreeRefresher();
             treeRefresher.PostRefreshMesseges(new PackageCreatorElementProviderEntityToken());
-
         }
 
         private void ValidateSave(object sender, ConditionalEventArgs e)

@@ -167,6 +167,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             OpenedIcon = icon
                         }
                     };
+
                     element.AddAction(new ElementAction(new ActionHandle(new WorkflowActionToken(typeof(EditPackageWorkflow), new PermissionType[] { PermissionType.Administrate })))
                     {
                         VisualData = new ActionVisualizedData
@@ -183,6 +184,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             }
                         }
                     });
+
                     element.AddAction(new ElementAction(new ActionHandle(new SetActivePackageActionToken()))
                     {
                         VisualData = new ActionVisualizedData
@@ -216,8 +218,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             }
                         }
                     });
-
-
+                    
                     element.AddAction(new ElementAction(new ActionHandle(new DownloadPackageActionToken("package")))
                     {
                         VisualData = new ActionVisualizedData
@@ -234,6 +235,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             }
                         }
                     });
+
                     element.AddAction(new ElementAction(new ActionHandle(new DownloadPackageActionToken("config")))
                     {
                         VisualData = new ActionVisualizedData
@@ -290,6 +292,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             OpenedIcon = item.ItemIcon
                         }
                     };
+
                     element.AddAction(new ElementAction(new ActionHandle(new DeleteItemPackageCreatorActionToken()))
                     {
                         VisualData = new ActionVisualizedData
@@ -306,6 +309,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             }
                         }
                     });
+
                     yield return element;
                 }
             }
