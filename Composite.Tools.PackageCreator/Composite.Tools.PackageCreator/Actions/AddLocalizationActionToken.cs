@@ -24,19 +24,15 @@ namespace Composite.Tools.PackageCreator.Actions
         {
             CultureName = cultureName;
         }
-
-
+        
         public override string Serialize()
         {
             var sb = new StringBuilder();
             StringConversionServices.SerializeKeyValuePair<string>(sb, "_cultureName", CultureName);
             return sb.ToString();
         }
-
-
-
+        
         public string CultureName { get; private set; }
-
 
         public static ActionToken Deserialize(string serializedData)
         {
@@ -44,12 +40,10 @@ namespace Composite.Tools.PackageCreator.Actions
             var cultureName = StringConversionServices.DeserializeValueString(dic["_cultureName"]);
             return new AddLocalizationActionToken(cultureName);
         }
-
     }
 
     internal class AddLocalizationActionExecutor : IActionExecutor
     {
-
         #region IActionExecutor Members
 
         public FlowToken Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
@@ -80,7 +74,7 @@ namespace Composite.Tools.PackageCreator.Actions
             return null;
 
         }
-        #endregion
 
+        #endregion
     }
 }
