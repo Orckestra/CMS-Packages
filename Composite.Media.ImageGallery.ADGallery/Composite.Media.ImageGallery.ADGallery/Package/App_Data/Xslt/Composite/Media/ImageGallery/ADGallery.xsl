@@ -24,8 +24,8 @@
 								<ul class="ad-thumb-list">
 									<xsl:for-each select="/in:inputs/in:result[@name='GetIImageFileXml']/IImageFile">
 										<li>
-											<a href="~/Renderers/ShowMedia.ashx?id={@Id}&amp;mw=600&amp;mh=400">
-												<img src="~/Renderers/ShowMedia.ashx?id={@Id}&amp;mh=60" title="{@Title}" alt="{@Description}" class="image{position()-1}" />
+											<a href="~/media({@KeyPath})?mw=600&amp;mh=400">
+												<img src="~/media({@KeyPath})?mh=60" title="{@Title}" alt="{@Description}" class="image{position()-1}" />
 											</a>
 										</li>
 									</xsl:for-each>
