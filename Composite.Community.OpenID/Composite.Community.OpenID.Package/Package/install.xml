@@ -1,15 +1,14 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.OpenID" groupName="Composite.Community" version="1.2.7" author="Composite A/S" website="http://www.composite.net" id="ffc347e1-bbf2-4006-8683-ecac6df245c7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" readMoreUrl="http://docs.composite.net/Composite.Community.OpenID">
-    <Description>Forces visitors to sign in with their OpenIDs (including those provided by Google, Yahoo etc) to view selected pages or content on pages. Redirects anonymous visitors to the sign-in page.</Description>
-		<TechnicalDetails>Requires visitors sign in with an OpenID (including that provided by Google, Yahoo etc) to view protected pages or content on pages. Redirects unauthorized visitors to the sign-in page.</TechnicalDetails>
+	<mi:PackageInformation name="Composite.Community.OpenID" groupName="Composite.Community" version="1.2.8" author="Composite A/S" website="http://www.composite.net" id="ffc347e1-bbf2-4006-8683-ecac6df245c7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" readMoreUrl="http://docs.composite.net/Composite.Community.OpenID">
+		<Description>Forces visitors to sign in with their OpenIDs (including those provided by Google, Yahoo etc) to view selected pages or content on pages. Redirects anonymous visitors to the sign-in page.</Description>
+		<TechnicalDetails>Forces visitors to sign in with their OpenIDs (including those provided by Google, Yahoo etc) to view selected pages or content on pages. Redirects anonymous visitors to the sign-in page.</TechnicalDetails>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries>
-		<mi:Add path="~\Bin\DotNetOpenAuth.OpenId.dll" />
+		<mi:Add path="~\Bin\DotNetOpenAuth.dll" />
 		<mi:Add path="~\Bin\Composite.Community.OpenID.dll" />
-    <mi:Add path="~\Bin\DotNetOpenAuth.Core.dll" />
-  </mi:PackageFragmentInstallerBinaries>
+	</mi:PackageFragmentInstallerBinaries>
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
 			<Install xsltFilePath="~\Composite.Config\Install.xsl" />
@@ -27,8 +26,7 @@
 				<File sourceFilename="~\App_Data\Xslt\Composite\Community\OpenID\SignInForm.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\OpenID\SignInForm.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Xslt\Composite\Community\OpenID\SignInStatus.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\OpenID\SignInStatus.xsl" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Xslt\Composite\Community\OpenID\UserDetailsForm.xsl" targetFilename="~\App_Data\Xslt\Composite\Community\OpenID\UserDetailsForm.xsl" allowOverwrite="false" />
-				<File sourceFilename="~\Bin\DotNetOpenAuth.OpenId.dll" targetFilename="~\Bin\DotNetOpenAuth.OpenId.dll" allowOverwrite="false" />
-        <File sourceFilename="~\Bin\DotNetOpenAuth.Core.dll" targetFilename="~\Bin\DotNetOpenAuth.Core.dll" allowOverwrite="false" />
+				<File sourceFilename="~\Bin\DotNetOpenAuth.dll" targetFilename="~\Bin\DotNetOpenAuth.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\Composite.Community.OpenID.dll" targetFilename="~\Bin\Composite.Community.OpenID.dll" allowOverwrite="false" />
 				<File sourceFilename="~\xrds.aspx" targetFilename="~\xrds.aspx" allowOverwrite="false" />
 			</Files>
