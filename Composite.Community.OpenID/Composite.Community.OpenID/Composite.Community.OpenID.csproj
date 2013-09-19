@@ -153,16 +153,15 @@
     <Compile Include="Validators\RegExpLib.cs" />
     <Compile Include="Properties\VersionInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)$(SolutionName).Package\Package\Bin\"
+    <PostBuildEvent>copy "$(TargetDir)DotNetOpenAuth.OpenId.dll" "$(SolutionDir)$(SolutionName).Package\Package\Bin\"
+copy "$(TargetDir)DotNetOpenAuth.Core.dll" "$(SolutionDir)$(SolutionName).Package\Package\Bin\"
+copy "$(TargetPath)" "$(SolutionDir)$(SolutionName).Package\Package\Bin\"
 cmd /c ""</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>"$(DevEnvDir)tf" checkout /lock:none /force  "$(SolutionDir)\$(SolutionName).Package\Package\Bin\$(TargetFileName)"
+    <PreBuildEvent>"$(DevEnvDir)tf" checkout /lock:none   "$(SolutionDir)$(SolutionName).Package\Package\Bin\$(TargetFileName)"
 cmd /c ""</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

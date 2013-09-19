@@ -197,9 +197,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Dll\Composite.Generated.dll" />
     <Content Include="Package\App_Data\Xslt\Composite\Community\OpenID\ContentProtection.xsl" />
     <Content Include="Package\App_Data\Xslt\Composite\Community\OpenID\PageProtection.xsl">
