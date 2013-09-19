@@ -37,8 +37,8 @@
 		</mi:Add>
 	</pc:PackageFragmentInstallers>
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.OpenID" groupName="Composite.Community" version="1.2.4" author="Composite A/S" website="http://www.composite.net" id="ffc347e1-bbf2-4006-8683-ecac6df245c7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" readMoreUrl="http://docs.composite.net/Composite.Community.OpenID">
-		<Description>Requires visitors sign in with an OpenID (including that provided by Google, Yahoo etc) to view protected pages or content on pages. Redirects unauthorized visitors to the sign-in page.</Description>
-		<TechnicalDetails>Requires visitors sign in with an OpenID (including that provided by Google, Yahoo etc) to view protected pages or content on pages. Redirects unauthorized visitors to the sign-in page.</TechnicalDetails>
+	<mi:PackageInformation name="Composite.Community.OpenID" groupName="Composite.Community" version="1.2.5" author="Composite A/S" website="http://www.composite.net" id="ffc347e1-bbf2-4006-8683-ecac6df245c7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" readMoreUrl="http://docs.composite.net/Composite.Community.OpenID">
+		<Description>Forces visitors to sign in with their OpenIDs (including those provided by Google, Yahoo etc) to view selected pages or content on pages. Redirects anonymous visitors to the sign-in page.</Description>
+		<TechnicalDetails>Forces visitors to sign in with their OpenIDs (including those provided by Google, Yahoo etc) to view selected pages or content on pages. Redirects anonymous visitors to the sign-in page.</TechnicalDetails>
 	</mi:PackageInformation>
 </pc:PackageCreator>
