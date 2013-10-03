@@ -54,9 +54,7 @@
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    @if(NavigationId == "NavigationSideBar"){
-	    <link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/Distributed")/Styles.css" />
-    }
+    <link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/Distributed")/Styles.css" />
 </head>
 <body>
 <div id="@NavigationId">
@@ -81,7 +79,7 @@
 	<ul class="nav nav-list">
 		@if (includeParent)
 		{
-			<li class="@(isOpen ? " open" : string.Empty) @(isSelected ? " active" : string.Empty)"><a href="@(parentPage.Url)">@parentPage.MenuTitle</a></li>
+			<li class="@(isSelected ? " active" : string.Empty)"><a href="@(parentPage.Url)">@parentPage.MenuTitle</a></li>
 		}
 		@if (pages.Any())
 		{
@@ -91,7 +89,7 @@
 				{
 					isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == subPage.Id);
 					isSelected = @CurrentPageNode.Id == subPage.Id;
-					<li class="@(isOpen ? " open" : string.Empty) @(isSelected ? " active" : string.Empty)"><a href="@(subPage.Url)">@subPage.MenuTitle</a>
+					<li class="@(isSelected ? " active" : string.Empty)"><a href="@(subPage.Url)">@subPage.MenuTitle</a>
 					@if (ShowChildPages && (isOpen || Expand))
 					{
 						@NavigationTree(subPage);
