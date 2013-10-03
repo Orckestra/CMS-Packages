@@ -87,14 +87,14 @@
     int levelClass = firstPage.Level - Level - 1;
     var mainareaIndex = ShowParent ? 1 : 0;
 
-    <ul class ="level@(levelClass) unstyled">
+    <ul class ="level@(levelClass) list-unstyled">
 
         @if (ShowParent && levelClass == 0 && firstPage.ParentPage != null)
         {
             var parentPage = firstPage.ParentPage;
             
             <li class ="level@(levelClass)@(levelClass == 0 ? " well" : "")">
-                <a href="@(parentPage.Url)" class="@(levelClass == 0 ? "btn btn-large btn-block" : "")@IsOpenCss(parentPage) @IsSelectedCss(parentPage)">@parentPage.MenuTitle</a>
+                <a href="@(parentPage.Url)" class="@(levelClass == 0 ? "btn btn-primary btn-lg btn-block" : "")@IsOpenCss(parentPage) @IsSelectedCss(parentPage)">@parentPage.MenuTitle</a>
             </li>
         }
 
@@ -104,7 +104,7 @@
             {
                 mainareaIndex = mainareaIndex + 1;
             <li class ="level@(levelClass)@(levelClass == 0 ? " well" : "")">
-                <a href="@(subPage.Url)" class="@(levelClass == 0 ? "btn btn-large btn-block" : "") @IsOpenCss(subPage) @IsSelectedCss(subPage)">@subPage.MenuTitle</a>
+                <a href="@(subPage.Url)" class="@(levelClass == 0 ? "btn btn-primary btn-lg btn-block" : "") @IsOpenCss(subPage) @IsSelectedCss(subPage)">@subPage.MenuTitle</a>
 
                 @NavigationTree(subPage.ChildPages, endRenderLevel)
             </li>
