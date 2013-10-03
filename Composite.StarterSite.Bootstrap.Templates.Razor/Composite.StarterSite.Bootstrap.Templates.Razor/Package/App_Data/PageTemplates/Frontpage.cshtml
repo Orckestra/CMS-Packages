@@ -25,10 +25,10 @@
         @PageTemplateFeature("Front Page Content Start")
         @Function( "Layout.HeroUnit", new { CustomContent = this.HeroUnit })
         <div class="row">
-            <div class="span8">
+            <div class="col-xs-8">
                 @Html.Raw(Content)
             </div>
-            <div class="span4">
+            <div class="col-xs-4">
                 @Markup(Aside)
                 @PageTemplateFeature("Aside Column")
             </div>
