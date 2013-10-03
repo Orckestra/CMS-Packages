@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.0.4846.29049" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.StarterSite.Bootstrap.Core" groupName="Composite.StarterSite.Bootstrap" version="1.1.0" author="Composite A/S" website="http://composite.net" readMoreUrl="-" id="0f8684e9-fcf9-4053-a67d-669180fc0f07" canBeUninstalled="false" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.StarterSite.Bootstrap.Core" groupName="Composite.StarterSite.Bootstrap" version="2.0.0" author="Composite A/S" website="http://composite.net" readMoreUrl="-" id="0f8684e9-fcf9-4053-a67d-669180fc0f07" canBeUninstalled="false" systemLocking="none" flushOnCompletion="false">
 		<TechnicalDetails>-</TechnicalDetails>
 		<Description>-</Description>
 	</mi:PackageInformation>
@@ -25,8 +25,8 @@
 			<Directories>
 				<Directory sourceDirectory="~\Frontend\Scripts\libs\" targetDirectory="~\Frontend\Scripts\libs\" allowOverwrite="true" deleteTargetDirectory="false" />
 				<Directory sourceDirectory="~\Frontend\Images\" targetDirectory="~\Frontend\Images\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\Frontend\fonts\" targetDirectory="~\Frontend\fonts\" allowOverwrite="true" deleteTargetDirectory="false" />
 				<Directory sourceDirectory="~\Frontend\Styles\bootstrap\" targetDirectory="~\Frontend\Styles\bootstrap\" allowOverwrite="true" deleteTargetDirectory="false" />
-				<Directory sourceDirectory="~\Frontend\Styles\img\" targetDirectory="~\Frontend\Styles\img\" allowOverwrite="true" deleteTargetDirectory="false" />
 				<Directory sourceDirectory="~\App_Data\PageTemplateFeatures\" targetDirectory="~\App_Data\PageTemplateFeatures\" allowOverwrite="true" deleteTargetDirectory="false" />
 			</Directories>
 		</mi:Add>

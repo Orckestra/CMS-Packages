@@ -1,5 +1,4 @@
-﻿@navbarBackground: #fff;
-@import "bootstrap/2.3.2/bootstrap.less";
+﻿@import "bootstrap/3.0.0/bootstrap.less";
 
 body {
     padding-top: 60px;
@@ -8,18 +7,40 @@ body {
 .sidebar-nav {
     padding: 9px 0;
  }
-
 .hero-unit {
     padding: 15px 30px;
 }
+ 
+.nav-list {
+    padding-left: 15px;
+    padding-right: 15px;
 
+    > li {
+        > a {
+            margin-left: -15px;
+            margin-right: -15px;
+            padding: 3px 15px;
+        }
+    }
+
+    > .open > a {
+        background-color: @well-bg;
+    }
+
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+        color: @navbar-inverse-link-hover-color;
+        background-color: @brand-primary;
+    }
+}
 @media only screen and (max-width : 320px) {
     .hero-unit h1 {
         font-size: 30px;
         margin: 0 0 10px 0;
     }
 }
-@import "bootstrap/2.3.2/responsive.less";
+@import "bootstrap/3.0.0/responsive-utilities.less";
 @import "VisualEditor.common.less";
 
 

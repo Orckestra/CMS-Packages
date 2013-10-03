@@ -109,7 +109,7 @@
 			<format id="text-warning" label="Warning" image="" notes="" classes="text-warning" selector="p">
 				<select />
 			</format>
-			<format id="muted" label="Muted" image="" notes="" classes="muted" selector="p, div">
+			<format id="text-muted" label="Muted" image="" notes="" classes="text-muted" selector="p, div">
 				<select />
 			</format>
 
@@ -119,15 +119,15 @@
 			</format>
 			
 			<!-- lists -->
-			<format id="unstyled" label="Unstyled" image="" notes="" classes="unstyled" selector="ul, ol">
+			<format id="list-unstyled" label="Unstyled" image="" notes="" classes="list-unstyled" selector="ul, ol">
 				<select />
 			</format>
-			<format id="inline-list" label="Inline" image="" notes="" classes="inline" selector="ul, ol">
+			<format id="list-inline" label="Inline" image="" notes="" classes="list-inline" selector="ul, ol">
 				<select />
 			</format>
 			
 			<!-- images -->
-			<format id="img-polaroid" label="Polaroid" image="" notes="" classes="img-polaroid" selector="img">
+			<format id="img-thumbnail" label="Thumbnail" image="" notes="" classes="img-thumbnail" selector="img">
 				<select />
 			</format>
 			<format id="img-rounded" label="Rounded" image="" notes="" classes="img-rounded" selector="img">
@@ -155,7 +155,7 @@
 			</format>
 			
 			<!-- link buttons -->
-			<format id="btn" label="Default Button" image="" notes="" classes="btn" selector="a,button">
+			<format id="btn" label="Default Button" image="" notes="" classes="btn btn-default" selector="a,button">
 				<select />
 			</format>
 			<format id="btn-info" label="Info Button" image="" notes="" classes="btn btn-info" selector="a,button">
@@ -164,7 +164,7 @@
 			<format id="btn-primary" label="Primary Button" image="" notes="" classes="btn btn-primary" selector="a,button">
 				<select />
 			</format>
-			<format id="btn-primary-large" label="Large Primary Button" image="" notes="" classes="btn btn-primary btn-large" selector="a,button">
+			<format id="btn-primary-lg" label="Large Primary Button" image="" notes="" classes="btn btn-primary btn-lg" selector="a,button">
 				<select />
 			</format>
 		</radiogroup>

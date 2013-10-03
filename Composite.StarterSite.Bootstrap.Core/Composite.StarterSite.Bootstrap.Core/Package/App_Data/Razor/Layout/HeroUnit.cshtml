@@ -13,7 +13,7 @@
 	<head>
 	</head>
 	<body>
-		<div class="hero-unit">
+		<div class="jumbotron">
 			@if (CustomContent != null 
               && (CustomContent.Body.Elements().Any()
                  || CustomContent.Body.Nodes().Any(node => node is XText && (node as XText).Value.Trim().Length > 0)))
