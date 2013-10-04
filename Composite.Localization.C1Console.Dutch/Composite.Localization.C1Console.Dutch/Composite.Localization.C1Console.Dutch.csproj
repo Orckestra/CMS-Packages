@@ -22,6 +22,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,34 +74,44 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.C1Console.SecurityViolation.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.C1Console.Trees.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.C1Console.Users.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Core.PackageSystem.PackageFragmentInstallers.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Cultures.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.EntityTokenLocked.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.GeneratedTypes.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Management.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.NameValidation.nl-NL.xml" />
-    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.PackageSystem.PackageFragmentInstallers.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Permissions.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.AllFunctionsElementProvider.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.GeneratedDataTypesElementProvider.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.GenericPublishProcessController.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.LocalizationElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.MasterPagePageTemplate.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.MethodBasedFunctionProviderElementProvider.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.PackageElementProvider.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.PageElementProvider.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.PageTemplateElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.PageTemplateFeatureElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.PageTypeElementProvider.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.RazorFunction.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.RazorPageTemplate.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.SqlFunction.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.StandardFunctions.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.UserControlFunction.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.UserGroupElementProvider.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.VisualFunction.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.WebsiteFileElementProvider.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Plugins.XsltBasedFunction.nl-NL.xml" />
-    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.SecurityViolation.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.FormControl.FunctionCallsDesigner.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.FormControl.FunctionParameterDesigner.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.FormControl.TypeFieldDesigner.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.PageBrowser.nl-NL.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.SEOAssistant.nl-NL.xml" />
-    <Content Include="Package\Config\Install.xsl" />
-    <Content Include="Package\Config\Uninstall.xsl" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.SourceEditor.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.UrlConfiguration.nl-NL.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\nl-NL\Composite.Web.VisualEditor.nl-NL.xml" />
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.Localization.C1Console.Dutch.xml" />
   </ItemGroup>
