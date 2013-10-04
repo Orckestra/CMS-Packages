@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="EditRazorFileAction.Label" value="Bewerk Razor bestand" />
+  <string key="EditRazorFileAction.ToolTip" value="Bewerk het .cshtml bestand" />
+
+  <string key="EditRazorTemplateAction.Label" value="Bewerk Razor template" />
+  <string key="EditRazorTemplateAction.ToolTip" value="Bewerk het .cshtml bestand van de template" />
+
+  <string key="DeleteRazorPageTemplateAction.Label" value="Verwijderen" />
+  <string key="DeleteRazorPageTemplateAction.ToolTip" value="Verwijder pagina template" />
+
+  <string key="AddNewRazorPageTemplate.LabelDialog" value="Voeg nieuwe Razor template toe" />
+  <string key="AddNewRazorPageTemplate.LabelFieldGroup" value="Razor template" />
+  <string key="AddNewRazorPageTemplate.LabelTemplateTitle" value="Template titel" />
+  <string key="AddNewRazorPageTemplate.LabelTemplateTitleHelp" value="De titel identificeert de template in lijsten. Overweeg het selecteren van een korte maar betekenisvolle naam." />
+  <string key="AddNewRazorPageTemplate.LabelCopyFrom" value="Kopi&#235;ren van" />
+  <string key="AddNewRazorPageTemplate.LabelCopyFromHelp" value="U kunt de opmaak van een andere layout template kopi&#235;ren door deze te selecteren in deze lijst." />
+  <string key="AddNewRazorPageTemplate.LabelCopyFromEmptyOption" value="(Nieuwe template)" />
+  <string key="AddNewRazorPageTemplateWorkflow.TitleInUseTitle" value="Titel is al gebruikt" />
+  <string key="AddNewRazorPageTemplateWorkflow.TitleTooLong" value="De titel is te lang (gebruikt voor een deel van de naam van het .cshtml bestand) ." />
+
+  <string key="EditTemplate.Validation.DialogTitle" value="Validatiefout" />
+  <string key="EditTemplate.Validation.CompilationFailed" value="Compilatie is mislukt: {0}" />
+  <string key="EditTemplate.Validation.IncorrectBaseClass" value="Page template erft niet van &#39;{0}&#39;" />
+  <string key="EditTemplate.Validation.PropertyError" value="Evalueren van pagina template eigenschap  &#39;{0}&#39; is mislukt. Fout: {1}" />
+  <string key="EditTemplate.Validation.TemplateIdChanged" value="Het is niet toegstaan om het template ID te wijzigen in de huidige workflow. Het originele template ID is &#39;{0}&#39;" />
+</strings>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="AddNewMasterPagePageTemplateWorkflow.LabelDialog" value="Voeg een nieuwe MasterPage toe" />
+
+  <string key="EditMasterPageAction.Label" value="MasterPage bewerken" />
+  <string key="EditMasterPageAction.ToolTip" value="Bewerk broncode van de MasterPage" />
+
+  <string key="DeleteMasterPageAction.Label" value="Verwijderen" />
+  <string key="DeleteMasterPageAction.ToolTip" value="Verwijder pagina template" />
+
+  <string key="EditTemplate.Validation.DialogTitle" value="Validatiefout" />
+  <string key="EditTemplate.Validation.CompilationFailed" value="Compilatie is mislukt: {0}" />
+  <string key="EditTemplate.Validation.IncorrectBaseClass" value="Page template erft niet van &#39;{0}&#39;" />
+  <string key="EditTemplate.Validation.PropertyError" value="Kan pagina eigenschap &#39;{0}&#39; niet verwerken. Fout: {1}" />
+  <string key="EditTemplate.Validation.TemplateIdChanged" value="Het is niet toegestaan ​​om het template ID wijzigen binnen de huidige workflow. Het oorspronkelijke template ID is &#39;{0}&#39;" />
+
+
+  <string key="AddNewMasterPagePageTemplate.LabelDialog" value="Toevoegen nieuwe MasterPage template" />
+  <string key="AddNewMasterPagePageTemplate.LabelFieldGroup" value="MasterPage Template" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitle" value="Template titel" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitleHelp" value="De titel identificeert de template in lijsten. Overweeg het selecteren van een korte maar betekenisvolle naam." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFrom" value="Kopi&#235;ren van" />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromHelp" value="U kunt de opmaak van een andere layout template kopi&#235;ren door deze te selecteren in deze lijst." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromEmptyOption" value="(Nieuwe template)" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleInUseTitle" value="Titel is al gebruikt" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleTooLong" value="De titel is te lang (als deel van een bestandsnaam)." />
+</strings>

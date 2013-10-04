@@ -1,7 +1,115 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="PageType.Tree.Root.Label" value="Paginatypen" />
+  <string key="PageType.Tree.DefaultContentElement.Label" value="Placeholder inhoud" />
+  <string key="PageType.Tree.MetaDataFieldsElement.Label" value="Metadata fields" />
+  <string key="PageType.Tree.AddNewPageType.Label" value="Voeg pagina type toe" />
+  <string key="PageType.Tree.AddNewPageType.ToolTip" value="Voeg nieuw pagina type toe" />
+  <string key="PageType.Tree.EditPageType.Label" value="Bewerk pagina type" />
+  <string key="PageType.Tree.EditPageType.ToolTip" value="Bewerk het geselecteerde pagina type" />
+  <string key="PageType.Tree.DeletePageType.Label" value="Verwijder pagina type" />
+  <string key="PageType.Tree.DeletePageType.ToolTip" value="Verwijder het geselecteerde pagina type" />
+  <string key="PageType.Tree.AddDefaultPageContent.Label" value="Voeg standaard content toe" />
+  <string key="PageType.Tree.AddDefaultPageContent.ToolTip" value="Voeg standaard placeholder content toe" />
+  <string key="PageType.Tree.EditDefaultPageContent.Label" value="Bewerk standaard content" />
+  <string key="PageType.Tree.EditDefaultPageContent.ToolTip" value="Bewerk standaard placeholder content" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.Label" value="Verwijder standaard content" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.ToolTip" value="Verwijder standaard content" />
+  <string key="PageType.Tree.AddMetaDataField.Label" value="Voeg metadata veld toe" />
+  <string key="PageType.Tree.AddMetaDataField.ToolTip" value="Voeg nieuw metadata veld toe" />
+  <string key="PageType.Tree.EditMetaDataField.Label" value="Bewerk metadata veld" />
+  <string key="PageType.Tree.EditMetaDataField.ToolTip" value="Bewerk geselecteerd metadata veld" />
+  <string key="PageType.Tree.DeleteMetaDataField.Label" value="Verwijder metadata veld" />
+  <string key="PageType.Tree.DeleteMetaDataField.ToolTip" value="Verwijder geselecteerd metadata veld" />
+  <string key="PageType.AddNewPageTypeWorkflow.Layout.Label" value="Voeg nieuw pagina type toe" />
+  <string key="PageType.AddNewPageTypeWorkflow.FieldGroup.Label" value="Nieuw pagina type instellingen" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Label" value="Naam" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Help" value="De naam van het nieuwe pagina type" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Label" value="Omschrijving" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Help" value="De omschrijving van het nieuwe pagina type" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsPlaceHolder.Label" value="Instellingen" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsFieldGroup.Label" value="Pagina type instellingen" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Label" value="Naam" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Help" value="De naam van het pagina type" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Label" value="Omschrijving" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Help" value="De omschrijving van het pagina type" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Label" value="Beschikbaar" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Help" value="De-selecteren zorgt ervoor dat deze pagina niet te selecteren is op  enige pagina" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Label" value="Standaard menu titel" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Help" value="Als dit is geselecteerd zal een standaard waarde voor de menutitel worden gekozen" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Label" value="Standaard onderliggend pagina type" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Help" value="Selecteer een pagina type dat standaard wordt gebruikt voor elke onderliggende pagina" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.NoneSelectedLabel" value="[Geen]" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplatePlaceHolder.Label" value="Layout" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionFieldGroup.Label" value="Layout" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Label" value="Layout beperkingen" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Help" value="Selecteer de layouts die beschikbaar zijn als pagina&#39;s van dit type worden bewerkt, Als [Geen] wordt geselecteerd (standaard)  zijn alle typen beschikbaar" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Label" value="Standaard layout" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Help" value="Selecteer een standaard layout die wordt gebruikt voor paginas die worden aangemaakt met dit type" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.NoneSelectedLabel" value="[Geen]" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityPlaceHolder.Label" value="Beschikbaarheid" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityFieldGroup.Label" value="Beschikbaarheid" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Label" value="Homepage relatie" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Help" value="Homepage relatie" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.NoRestrictionLabel" value="Geen beperkingen" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlySubPagesLabel" value="Allen onderliggende pagina&#39;s" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlyHomePagesLabel" value="Alleen home pagina&#39;s" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Label" value="Pagina type bovenliggende pagina beperkingen" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Help" value="Sta alleen dit pagina type toe als onderliggende pagina voor de geselecteerde pagina typen" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderApplicationPlaceHolder.Label" value="Datamappen / Applicaties" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderFieldGroup.Label" value="Datamappen" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Label" value="Datamappen" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Help" value="Selecteer de datamappen die automatisch moeten worden toegevoegd aan paginas die dit pagina type gebruiken" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationFieldGroup.Label" value="Applicaties" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Label" value="Applicaties" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Help" value="Selecteer de applicaties die automatisch moeten worden toegevoegd aan pagina&#39;s die dit pagina type gebruiken" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.DefaultTemplateNotInRestrictions" value="De standaard  layout is geen geselecteerde layout beperking" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.HomepageRelationConflictsWithParentRestrictions" value="Beperkingen voor bovenliggende pagina&#39;s zijn niet toegestaan voor allleen home pagina&#39;s" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Label" value="Verwijder dit pagina type?" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Messeage" value="Verwijder pagina type {0}?" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Label" value="Pagina type is in gebruik" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Message" value="Het pagina type {0} is in gebruik en kan niet worden verwijderd" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.Layout.Label" value="Voeg standaard content toe" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.FieldGroup.Label" value="Kies placeholder" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Placeholder ID" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="Het ID van de placeholder. U kunt kiezen voor een niet bestaand ID en dit later aanmaken (door de pagina template opmaak te bewerken)." />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Title" value="Geen templates met {0}" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Message" value="Het placeholder ID dat u heeft gespecificeerd {0} is op dit moment niet beschikbaar in enige layout template" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.Layout.Label" value="Bewerk standaard content" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsPlaceHolder.Label" value="Instellingen" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsFieldGroup.Label" value="Placeholder informatie" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Placeholder ID" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="Het placeholder ID dat u heeft gespecificeerd {0} is op dit moment niet beschikbaar in enige layout template" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.ContentXhtmlEditor.Label" value="Inhoud" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.Layout.Label" value="Voeg metadata veld toe" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="" />
   <!-- "Metadata settings" - but too much text! -->
-  <!--<string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Name" />
-  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="The uniqueue name of the Metadata field" />-->
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Technische naam" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="De unieke naam van het metadata veld. Deze naam kan niet meer gewijzigd worden!" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Laat label zien" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Het label van het metadata veld. Dit wordt gebruikt in de user interface." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Label" value="Metadata type" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Help" value="Het metadata type" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Laat zien op tab" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="Selecteer de tab waar het metadata veld zichtbaar moet zijn als een pagina wordt bewerkt." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.AddingDefaultMetaData.Title" value="Voeg metadata standaard waarden toe" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Een veldnaam is al in gebruik door een ander type." />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Label" value="Verwijder dit metadata veld?" />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Message" value="Verwijder metadata veld {0}? Let op! Alle bestaande metadata items zullen ook worden verwijderd." />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.Layout.Label" value="Bewerk metadata veld" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="Metadata veld instellingen" />
+  <!--
+
+  
+-->
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Label" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Het label voor het metadata veld. Dit wordt gebruikt in de user interface" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Tab" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="Selecteer de tab waar de metadata zichtbaar moet zijn als een pagina wordt bewerkt" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaTypeName.Label" value="Metatype" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaTypeName.Help" value="De naam van het metatype" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Het metatype wordt al gebruikt met dezelfde naam maar met een ander label" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataContainerChangeNotAllowed" value="Er bestaan &#233;&#233;n of meer definities met dezelfde naam, container wijziging is niet toegestaan" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Title" value="Het metadata type is verwijderd" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Message" value="Het metadata type is verwijderd an kan niet langer toegevoegd worden aan een pagina type" />
 </strings>

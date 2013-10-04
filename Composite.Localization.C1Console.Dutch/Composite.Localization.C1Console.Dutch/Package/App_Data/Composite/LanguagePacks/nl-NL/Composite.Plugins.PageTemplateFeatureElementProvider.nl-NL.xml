@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+    <string key="ElementProvider.RootLabel" value="Pagina template features" />
+    <string key="ElementProvider.RootToolTip" value="Hier bevinden zich de &#39;features&#39; - blokken HTML en functionaliteit - in gebruik door de website templates." />
+    <string key="ElementProvider.AddTemplateFeature" value="Voeg template feature toe" />
+    <string key="ElementProvider.AddTemplateFeatureToolTip" value="Voeg een nieuw pagina template feature toe" />
+    <string key="ElementProvider.DeleteTemplateFeature" value="Verwijder template feature" />
+    <string key="ElementProvider.DeleteTemplateFeatureToolTip" value="Verwijder deze template feature" />
+    <string key="ElementProvider.EditTemplateFeature" value="Bewerk template feature" />
+    <string key="ElementProvider.EditTemplateFeatureToolTip" value="Bewerk het geselecteerde template feature" />
+    <string key="ElementProvider.EditVisually" value="Gebruik de visuele editor" />
+    <string key="ElementProvider.EditVisuallyToolTip" value="De visuele editor wordt gebruikt om deze feature the beheren" />
+
+    <string key="AddWorkflow.LabelDialog" value="Voeg een nieuw pagina template feature toe" />
+    <string key="AddWorkflow.LabelFieldGroup" value="Pagina template feature" />
+    <string key="AddWorkflow.LabelTemplateFeatureName" value="Feature naam" />
+    <string key="AddWorkflow.LabelTemplateFeatureNameHelp" value="De naam wordt gebruikt om dit feature te identificeren in templates" />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType" value="Editor type" />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorTypeHelp" value="Keis wel type editor u wilt gebruiken om dit feature te beheren. U kunt later altijd nog wisselen van type." />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType.html" value="Visuele editor" />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType.xml" value="Opmaak editor" />
+    <string key="AddWorkflow.NameInUse" value="Deze naam is al in gebruik voor een andere feature" />
+    <string key="AddWorkflow.NameTooLong" value="De titel is te lang (maximaal 50 karakters)" />
+    <string key="AddWorkflow.NameNotValidInFilename" value="De naam moet bruikbaar zijn als bestandsnaam - deze naam bevat ongeldige karakters die moeten worden verwijderd" />
+
+    <string key="DeleteWorkflow.Title" value="Verwijder dit pagina template feature?" />
+    <string key="DeleteWorkflow.Text" value="Als dit feature wordt gebruikt in pagina templates kan deze aktie tot fouten leiden." />
+</strings>

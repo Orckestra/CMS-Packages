@@ -1,34 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <strings>
-  <!-- change password -->
-  <string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Wachtwoord veranderen" />
-  <string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Verander je wachtwoord" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Verander wachtwoord" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="Verander je wachtwoord" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Bestaand wachtwoord" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="Om veiligheidsredenen moet u uw bestaande wachtwoord presenteren voordat u kunt doorgaan." />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Nieuw wachtwoord" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="Het ingegeven wachtwoord in dit veld moet matchen met de bevestiging hieronder" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="Bevestig nieuw wachtwoord" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="Het ingegeven wachtwoord in dit veld moet matchen met de bevestiging hierboven" />
-  <!-- change culture -->
-  <string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Regionale instellingen" />
-  <string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Stel de weergave van getallen, tijden en data in" />
-  <string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Regionale instellingen en talen" />
-  <string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Regionale instellingen/taal" />
-  <string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="Als u de manier waarop getallen, tijden en data zijn weergegeven witl veranderen, selecteert u een item uit de lijst. De meest rechtse is de taal van de gebruikersinterface." />
-  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="Weet u zeker dat u de instellingen wilt veranderen. De applicatie zal herstarten en alle niet bewaarde veranderingen zullen kwijt zijn." />
-  <string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="Regionale instellingen" />
-  <string key="AdministratorAutoCreator.DefaultGroupName" value="Beheerders" />
-  <!-- change own active and foreign locale -->
-  <string key="ChangeForeignLocaleWorkflow.ActionLabel" value="Vertaling" />
-  <string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="Verander brontaal" />
-  <string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="Geen" />
-  <string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="Vertaling" />
-  <string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="Selecteer taal om te vertalen" />
-  <string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="Geen taal ingesteld" />
-  <string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="U moet talen installeren ter ondersteuning van de vertalingen. Neem contact op met de systeembeheerder." />
-  <string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="Van taal" />
-  <string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Pagina's geschreven in de originele -taal zal worden aangegeven door Globe-pictogrammen in de Content boom. De bijbehorende &quot;Translate Page&quot; actie de invoer van de pagina in de huidige taal." />
+	<!-- change password -->
+	<string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Wachtwoord wijzigen" />
+	<string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Wijzig je wachtwoord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Wijzig wachtwoord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="Wijzig je wachtwoord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Bestaand wachtwoord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="Om veiligheidsredenen moet u uw bestaande wachtwoord invoeren voordat u kunt doorgaan." />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Nieuw wachtwoord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="Het wachtwoord in dit veld moet overeen komen met het wachtwoord in het bevestigingsveld hieronder" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="Bevestig nieuw wachtwoord" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="Het ingegeven wachtwoord in dit veld moet overeenkomen met het wachtwoord in het bevestigingsveld hierboven" />
+
+	<!-- change culture -->
+	<string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Regionale instellingen" />
+	<string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Stel de weergave van getallen, tijden en datums in" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Regionale instellingen en talen" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Regionale instellingen" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="Als u de manier waarop getallen, tijden en datums wordt weergegeven wilt veranderen, selecteert u een element uit de lijst." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Label" value="C1 Console taal" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Help" value="Selecteer de taal die moet worden gebruikt voor labels, helpteksten, dialogen enz. De beschikbare opties hier zijn beperkt tot talen die zijn ge&#239;nstalleerd. U kunt meer talen via de console installeren, zie Composite.Localization." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="Wijzig de taal van de applicatie" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="Weet u zeker dat u de instellingen wilt veranderen. De applicatie zal herstarten en alle niet bewaarde wijzigen zullen verloren gaan." />
+	<string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="Regionale instellingen" />
+	<string key="AdministratorAutoCreator.DefaultGroupName" value="Beheerders" />
+
+	<!-- change own active and foreign locale -->
+	<string key="ChangeForeignLocaleWorkflow.ActionLabel" value="Vertaling" />
+	<string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="Wijzig brontaal" />
+	<string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="Geen" />
+	<string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="Vertaling" />
+	<string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="Selecteer brontaal" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="Er zijn meerdere talen niet ge&#239;nstalleerd" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="Vertalingen worden alleen ondersteund als er twee of meer talen zijn ge&#239;nstalleerd. Beheerders kunnen talen installeren via het Systeem menu." />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="Bron taal" />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Pagina&#39;s geschreven in de brontaal zijn herkenbaar aan een globe icoon. De bijbehorende &quot;Vertaal pagina&quot; actie importeert de pagina in de huidige taal." />
+
+
   <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="De actieve taal is gewijzigd" />
 </strings>

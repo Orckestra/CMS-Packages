@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-	<string key="EmptyName" value="Naam kan niet een lege string zijn" />
-	<string key="EmptyNamespace" value="Naamruimte kan niet een lege string zijn" />
-  <string key="DuplicateElementNamespace" value="Naamspace kan niet bestaan uit een zelfde naam meerdere  keren" />
-  <string key="InvalidIdentifier" value="De naam '{)}'is geen geldige identificatie" />
-	<string key="InvalidIdentifierDigit" value="De naam '{)}'is geen geldige identificatie. Indentificaties mogen niet starten met getallen" />
+	<string key="EmptyName" value="Naam kan geen lege string zijn" />
+	<string key="EmptyNamespace" value="Namespace kan geen lege string zijn" />
+  <string key="DuplicateElementNamespace" value="Namespace kan niet bestaan uit meerdere  keren dezelfde naam" />
+  <string key="InvalidIdentifier" value="De naam &#39;{0}&#39;is geen geldig id" />
+	<string key="InvalidIdentifierDigit" value="De naam &#39;{0}&#39;is geen geldige id. Id&#39;s mogen niet starten met getallen" />
 </strings>

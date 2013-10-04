@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootElement.Label" value="Razor functies" />
+  <string key="RootElement.ToolTip" value="Razor functies" />
+
+  <string key="AddNewRazorFunction.Label" value="Voeg Razor functie toe" />
+  <string key="AddNewRazorFunction.ToolTip" value="Voeg nieuwe Razor functie toe" />
+  <string key="EditRazorFunction.Label" value="Bewerk" />
+  <string key="EditRazorFunction.ToolTip" value="Bewerk Razor functie" />
+  <string key="DeleteRazorFunction.Label" value="Verwijderen" />
+  <string key="DeleteRazorFunction.ToolTip" value="Verwijder Razor functie" />
+
+  <string key="AddNewRazorFunction.LabelDialog" value="Voeg Razor functie toe" />
+  <string key="AddNewRazorFunction.LabelFieldGroup" value="Nieuwe Razor functie" />
+  <string key="AddNewRazorFunction.LabelName" value="Naam" />
+  <string key="AddNewRazorFunction.HelpName" value="" />
+  <string key="AddNewRazorFunction.LabelNamespace" value="Namespace" />
+  <string key="AddNewRazorFunction.HelpNamespace" value="" />
+  <string key="AddNewRazorFunction.LabelCopyFrom" value="Kopi&#235;ren van" />
+  <string key="AddNewRazorFunction.LabelCopyFromHelp" value="U kunt bestaande code van een bestaande Razor functie kopieeren door deze te selecteren in de lijst," />
+  <string key="AddNewRazorFunction.LabelCopyFromEmptyOption" value="(Nieuwe Razor functie)" />
+
+
+  <string key="AddNewRazorFunctionWorkflow.DuplicateName" value="Een Composite C1 functie met dezelfde naam bestaat al." />
+  <string key="AddNewRazorFunctionWorkflow.EmptyName" value="De functie naam is leeg" />
+  <string key="AddNewRazorFunctionWorkflow.NamespaceEmpty" value="De namespace van de functie is leeg" />
+  <string key="AddNewRazorFunctionWorkflow.InvalidNamespace" value="De namespace moet eruitzien als A.B.C en mag niet starten of eindigen met een punt (.)" />
+  <string key="AddNewRazorFunctionWorkflow.TotalNameTooLang" value="De totale lengte van de naam en de namespace is te lang (zoals gebruikt als de naam van het .cshtml bestand)." />
+
+  <string key="EditRazorFunctionWorkflow.Validation.DialogTitle" value="Validatie fout" />
+  <string key="EditRazorFunctionWorkflow.Validation.CompilationFailed" value="Compilatie is mislukt: {0}" />
+  <string key="EditRazorFunctionWorkflow.Validation.IncorrectBaseClass" value="Razor functie moet erven van &#39;{0}&#39;" />
+
+  <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteTitle" value="Verwijder Razor functie?" />
+  <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteMessage" value="Verwijder de geselecteerde Razor functie?" />
+</strings>

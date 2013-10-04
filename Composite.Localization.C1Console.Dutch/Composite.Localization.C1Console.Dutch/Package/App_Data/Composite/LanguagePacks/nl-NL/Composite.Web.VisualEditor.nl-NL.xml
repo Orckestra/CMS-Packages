@@ -1,8 +1,184 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <!-- preload precaution -->
-  <string key="Preload.Key" value="Teruggewonnen VisualEditorBinding opstarten om ervoor te zorgen snaren worden geladen :)" />
+  <string key="Preload.Key" value="Geladen tijdens VisualEditorBinding om ervoor te zorgen snaren worden geladen :)" />
   <!-- simple toolbar -->
-  <string key="ToolBar.ToolTipStrong" value="Sterke tekst" />
-  <string key="ToolBar.ToolTipEmphasize" value="Leg de nadruk op tekst" />
+  <string key="ToolBar.ToolTipStrong" value="Vet" />
+  <string key="ToolBar.ToolTipEmphasize" value="Schuin" />
+  <string key="ToolBar.ToolTipUnderline" value="Onderstrepen" />
+  <string key="ToolBar.ToolTipStrike" value="Doorhalen" />
+  <string key="ToolBar.ToolTipAlignLeft" value="Links uitlijnen" />
+  <string key="ToolBar.ToolTipAlignRight" value="Rechts uitlijnen" />
+  <string key="ToolBar.ToolTipJustifyLeft" value="Links uitlijnen" />
+  <string key="ToolBar.ToolTipJustifyRight" value="Rechts uitlijnen" />
+  <string key="ToolBar.ToolTipJustifyCenter" value="In het midden uitlijnen" />
+  <string key="ToolBar.ToolTipJustifyFull" value="Uitvullen" />
+  <string key="ToolBar.ToolTipUnorderedList" value="Ongeordende lijst" />
+  <string key="ToolBar.ToolTipOrderedList" value="Geordende lijst" />
+  <string key="ToolBar.ToolTipLink" value="Link" />
+  <string key="ToolBar.ToolTipDeleteLink" value="Verwijder link" />
+  <string key="ToolBar.ToolTipCleanup" value="Code opschonen" />
+  <string key="ToolBar.ToolTipUndo" value="Ongedaan maken" />
+  <string key="ToolBar.ToolTipRedo" value="Opnieuw" />
+  <string key="ToolBar.LabelSource" value="Bron" />
+  <string key="ToolBar.LabelWysiwyg" value="Zichtbaar" />
+  <!-- format selector -->
+  <string key="FormatSelector.LabelParagraph" value="Paragraaf" />
+  <string key="FormatSelector.LabelAddress" value="Adres" />
+  <string key="FormatSelector.LabelBlockQuote" value="Quote" />
+  <string key="FormatSelector.LabelDivision" value="Delen" />
+  <string key="FormatSelector.LabelHeading1" value="Heading 1" />
+  <string key="FormatSelector.LabelHeading2" value="Heading 2" />
+  <string key="FormatSelector.LabelHeading3" value="Heading 3" />
+  <string key="FormatSelector.LabelHeading4" value="Heading 4" />
+  <string key="FormatSelector.LabelHeading5" value="Heading 5" />
+  <string key="FormatSelector.LabelHeading6" value="Heading 6" />
+  <!-- classname selector -->
+  <string key="ClassSelector.LabelNone" value="(Geen)" />
+  <!-- contextmenu (duplicated in toolbar) -->
+  <string key="ContextMenu.LabelInsert" value="Invoegen" />
+  <string key="ContextMenu.LabelPaste" value="Plakken" />
+  <string key="ContextMenu.LabelLink" value="Link" />
+  <string key="ContextMenu.LabelUnLink" value="Unlink" />
+  <string key="ContextMenu.LabelLinkProperties" value="Link eigenschappen" />
+  <string key="ContextMenu.LabelTable" value="Tabel ..." />
+  <string key="ContextMenu.LabelTableManage" value="Beheren Tabel" />
+  <string key="ContextMenu.LabelImage" value="Afbeelding ..." />
+  <string key="ContextMenu.LabelAsText" value="Als platte tekst..." />
+  <string key="ContextMenu.LabelField" value="Veld" />
+  <string key="ContextMenu.LabelFieldDelete" value="Verwijder veld" />
+  <string key="ContextMenu.LabelRendering" value="Functie ..." />
+  <string key="ContextMenu.LabelCharacter" value="Karakter ..." />
+  <string key="ContextMenu.LabelImageProperties" value="Eigenschappen afbeelding ..." />
+  <string key="ContextMenu.LabelRenderingProperties" value="Functie Eigenschappen ..." />
+  <string key="ContextMenu.LabelCutRow" value="Knip rij" />
+  <string key="ContextMenu.LabelCopyRow" value="Kopieer rij" />
+  <string key="ContextMenu.LabelPasteRow" value="Plak rij" />
+  <string key="ContextMenu.LabelBefore" value="Voor" />
+  <string key="ContextMenu.LabelAfter" value="Na" />
+  <string key="ContextMenu.LabelTableProperties" value="Tabeleigenschappen" />
+  <string key="ContextMenu.LabelCellProperties" value="Celeigenschappen" />
+  <string key="ContextMenu.LabelRowProperties" value="Rij eigenschappen" />
+  <string key="ContextMenu.LabelInsertRow" value="Rij invoegen" />
+  <string key="ContextMenu.LabelDeleteRow" value="Rij verwijderen" />
+  <string key="ContextMenu.LabelInsertcolumn" value="Kolom invoegen" />
+  <string key="ContextMenu.LabelDeleteColumn" value="Kolom verwijderen" />
+  <string key="ContextMenu.LabelMergeTableCells" value="Tabelcellen samenvoegen" />
+  <string key="ContextMenu.LabelSplitMergedCells" value="Samengevoegde cellen splitsen" />
+  <string key="ContextMenu.LabelDeleteTable" value="Tabel verwijderen" />
+  <string key="ContextMenu.LabelAlignImage" value="Afbeelding uitlijnen" />
+  <string key="ContextMenu.LabelAlignImageRight" value="Rechts" />
+  <string key="ContextMenu.LabelAlignImageLeft" value="Links" />
+  <string key="ContextMenu.LabelAlignImageNone" value="Geen" />
+  <!-- error dialog -->
+  <string key="ContentError.DialogTitle" value="Broncode fout" />
+  <string key="ContentError.DialogText" value="Fout in de broncode:" />
+  <!-- template selector -->
+  <string key="TemplateTree.NoTemplateWarning" value="Geen tijdelijke aanduidingen in template." />
+  <!-- PLUGINS ............................................................... -->
+  <!-- general -->
+  <string key="LabelTabBasic" value="Basis" />
+  <string key="LabelTabAdvanced" value="Geavanceerd" />
+  <string key="LabelPresentation" value="Presentatie" />
+  <string key="LabelClass" value="Klasse" />
+  <string key="HelpClass" value="Het klasse attribuut specificeert een CSS class naam voor een element." />
+  <string key="LabelId" value="ID" />
+  <string key="HelpId" value="Dit id kan worden gebruikt door JavaScript of CSS om een element te wijzigen." />
+  <string key="MozSecurityNote.LabelSecurityStuff" value="Klembord uitgeschakeld" />
+  <string key="MozSecurityNote.TextSecurityStuff" value="Om veiligheidsredenen werd de toegang tot het klembord geblokkeerd door uw browser. Gebruik de standaard sneltoetsen. Voor een technische beschrijving van, hoe u uw browser configureren voor gebruik met Composite C1, druk op de Meer Info knop." />
+  <!-- link -->
+  <string key="Link.LabelInsertLink" value="Link invoegen" />
+  <string key="Link.LabelLinkProperties" value="Link eigenschappen" />
+  <string key="Link.LinkDestination" value="URL" />
+  <string key="Link.LinkRole" value="Rol" />
+  <string key="Link.TitleText" value="Titel" />
+  <string key="Link.LinkTarget" value="Doel" />
+  <string key="Link.LinkTarget.LabelCheckBox" value="Open in nieuw venster" />
+  <string key="Link.TitleTextToolTip" value="De titel tekst wordt gerenderd als een tooltip wanneer de muis over de link bewwegt. Dit kan gebruikt worden om uw klanten te laten weten waar de link is zonder de structuur van de tekst te storen." />
+  <string key="Link.LabelLink" value="Link eigenschappen" />
+  <!-- table -->
+  <string key="Tables.Cell.CellType" value="Celtype" />
+  <string key="Tables.Cell.LabelWidth" value="Cel breedte" />
+  <string key="Tables.Cell.HorizontalAlignment" value="Horizontale uitlijning" />
+  <string key="Tables.Cell.VerticalAlignment" value="Verticale uitlijning" />
+  <string key="Tables.Cell.ApplyTo" value="Wijzigingen toepassen op" />
+  <string key="Tables.Cell.LabelCellProperties" value="Celeigenschappen" />
+  <string key="Tables.Cell.LabelLayout" value="Layout" />
+  <string key="Tables.Cell.LabelDataCell" value="Data Cell" />
+  <string key="Tables.Cell.LabelHeaderCell" value="Header Cell" />
+  <string key="Tables.Cell.LabelLeft" value="Links" />
+  <string key="Tables.Cell.LabelRight" value="Rechts" />
+  <string key="Tables.Cell.LabelTop" value="Top" />
+  <string key="Tables.Cell.LabelCenter" value="Midden" />
+  <string key="Tables.Cell.LabelBottom" value="Bodem" />
+  <string key="Tables.Cell.LabelScope" value="Scope" />
+  <string key="Tables.Cell.LabelCurrentCell" value="Huidige cel" />
+  <string key="Tables.Cell.LabelAllRowCells" value="Alle cellen in rij" />
+  <string key="Tables.Cell.LabelAllTableCells" value="Alle cellen in tabel" />
+  <string key="Tables.Merge.Columns" value="Kolommen" />
+  <string key="Tables.Merge.Rows" value="Rijen" />
+  <string key="Tables.Merge.LabelMergeCells" value="Tabelcellen samenvoegen" />
+  <string key="Tables.Row.Rows" value="Rij in tabel deel" />
+  <string key="Tables.Row.HorizontalAlignment" value="Horizontale uitlijning" />
+  <string key="Tables.Row.VerticalAlignment" value="Vertikale uitlijning" />
+  <string key="Tables.Row.ApplyTo" value="Wijzigingen toepassen op" />
+  <string key="Tables.Row.LabelRowProperties" value="Rij eigenschappen" />
+  <string key="Tables.Row.LabelLayout" value="Layout" />
+  <string key="Tables.Row.LabelTableHead" value="Tabel header" />
+  <string key="Tables.Row.LabelTableBody" value="Tabel Body" />
+  <string key="Tables.Row.LabelTableFoot" value="Tabel Footer" />
+  <string key="Tables.Row.LabelLeft" value="Links" />
+  <string key="Tables.Row.LabelCenter" value="Midden" />
+  <string key="Tables.Row.LabelRight" value="Rechts" />
+  <string key="Tables.Row.LabelTop" value="Top" />
+  <string key="Tables.Row.LabelBottom" value="Bodem" />
+  <string key="Tables.Row.LabelScope" value="Scope" />
+  <string key="Tables.Row.LabelCurrentRow" value="Huidige rij" />
+  <string key="Tables.Row.LabelOddRows" value="Oneven rijen in tabel" />
+  <string key="Tables.Row.LabelEvenRows" value="Even rijen in tabel" />
+  <string key="Tables.Row.LabelAllRows" value="Alle rijen in tabel" />
+  <string key="Tables.Table.TitleInsert" value="Tabel invoegen" />
+  <string key="Tables.Table.TitleUpdate" value="Tabeleigenschappen" />
+  <string key="Tables.Table.Columns" value="Kolommen" />
+  <string key="Tables.Table.Rows" value="Rijen" />
+  <string key="Tables.Table.Summary" value="Overzicht" />
+  <string key="Tables.Table.SummaryHelp" value="De samenvatting legt de tabelinhoud en structuur uit zodat de mensen die niet-visuele browsers (zoals blinden) gebruiken deze kunnen begrijpen. Dit is vooral belangrijk voor tabellen zonder bijschriften." />
+  <string key="Tables.Table.LabelLayout" value="Tabel layout" />
+  <string key="Tables.Table.LabelMeta" value="Tabel omschrijving" />
+  <!-- image -->
+  <string key="Image.Source" value="Bron" />
+  <string key="Image.AlternativeText" value="Alternatieve tekst" />
+  <string key="Image.AlternativeTextToolTip" value="De alternatieve tekst wordt weergegeven als zichtbare tekst in browsers waar afbeeldingen niet normaal kunnen worden weergegeven. Dit kan het geval zijn voor mobiele browsers en speciale browsers voor slechtzienden. Het alt attribuut moet duidelijk de inhoud van de afbeelding beschrijven." />
+  <string key="Image.TitleText" value="Titeltekst" />
+  <string key="Image.TitleTextToolTip" value="De titel tekst wordt gerenderd als een tooltip wanneer de muis over de afbeelding beweegt. Een afbeelding die zou verwarrend zijn voor de gebruiker kan direct worden verduidelijkt door een titel." />
+  <string key="Image.LabelImage" value="Afbeelding eigenschappen" />
+  <string key="Image.LabelInsertImage" value="Afbeelding invoegen" />
+  <string key="Image.LabelImageProperties" value="Afbeelding Eigenschappen" />
+  <string key="Image.MaxWidth" value="Maximale breedte" />
+  <string key="Image.MaxWidthToolTip" value="Als de breedte van het beeld groter is dat de opgegeven waarde, wordt deze teruggebracht tot de ingestelde waarde." />
+  <string key="Image.MaxHeight" value="Maximale hoogte" />
+  <string key="Image.MaxHeightToolTip" value="Als de hoogte van het beeld is groter dat de opgegeven waarde, zal het worden teruggebracht tot de gespecificeerde waarde." />
+
+	<!-- charmap -->
+  <string key="CharMap.LabelSelectSpecialChar" value="Selecteer Karakter" />
+  <string key="CharMap.LabelGeneral" value="Algemeen" />
+  <string key="CharMap.LabelAlphabetical" value="Alfabetisch" />
+  <string key="CharMap.LabelMathSymbols" value="Wiskunde en symbolen" />
+  <string key="CharMap.LabelCommon" value="Gemeenschappelijk" />
+  <string key="CharMap.LabelQuotation" value="Citaat" />
+  <string key="CharMap.LabelCurrency" value="Valuta" />
+  <string key="CharMap.LabelLatin" value="Latijn" />
+  <string key="CharMap.LabelGreek" value="Grieks" />
+  <string key="CharMap.LabelMathAndLogic" value="Wiskunde en logica" />
+  <string key="CharMap.LabelSymbols" value="Symbolen" />
+  <string key="CharMap.LabelArrows" value="Pijlen" />
+  <!-- text paste -->
+  <string key="TextPaste.Label" value="Plakken als tekst" />
+  <string key="TextPaste.PasteHereContent" value="Plak hier de inhoud. Druk vervolgens op OK." />
+
+  <!-- spellcheck-->
+  <string key="SpellCheck.InfoLabel" value="Hoe spellingcontrole to te passen ..." />
+  <string key="SpellCheck.InfoCaption" value="Hoe de spelling te controleren in de Visual Editor" />
+  <string key="SpellCheck.InfoText" value="Om suggesties voor een verkeerd gespeld woord te krijgen, houdt u de SHIFT toets ingedrukt wanneer u het context menu oproept." />
+
 </strings>

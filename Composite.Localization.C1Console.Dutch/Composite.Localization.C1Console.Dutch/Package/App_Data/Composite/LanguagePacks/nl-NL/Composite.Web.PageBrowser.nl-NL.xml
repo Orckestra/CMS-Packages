@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+  <!-- menus -->
+  <string key="Menu.ViewSource" value="Pagina Bron" />
+  <string key="ContextMenu.Back" value="Terug" />
+  <string key="ContextMenu.Forward" value="Vooruit" />
+  <string key="ContextMenu.Refresh" value="Verversen" />
+  <string key="ContextMenu.ViewSource" value="Bekijk Pagina Bron" />
+
+
+  <!-- buttons -->
+	<string key="ToolBarButton.Back.ToolTip" value="Ga een pagina terug" />
+	<string key="ToolBarButton.Forward.ToolTip" value="Ga een pagina vooruit" />
+	<string key="ToolBarButton.Refresh.ToolTip" value="Ververs pagina" />
+  <string key="ToolBarButton.Go.ToolTip" value="Ga naar het adres in de adresbalk" />
+  <string key="ToolBarButton.Home.ToolTip" value="Ga naar de startpagina" /> <!-- TODO: Show URL instead! -->
+	
+	<!-- URL errors -->
+	<string key="AddressBar.Invalid.DialogTitle.External" value="Toegang geweigerd" />
+	<string key="AddressBar.Invalid.DialogText.External" value="Externe URL kan niet worden geladen." />
+	<string key="AddressBar.Invalid.DialogTitle.BadRequest" value="Ongeldige URL" />
+	<string key="AddressBar.Invalid.DialogText.BadRequest" value="De URL is ongeldig en kan niet worden geladen." />
+	<string key="AddressBar.Invalid.DialogTitle.Unauthorized" value="Niet toegestaan" />
+	<string key="AddressBar.Invalid.DialogText.Unauthorized" value="U bent niet bevoegd om de pagina te bekijken op opgegeven URL." />
+	<string key="AddressBar.Invalid.DialogTitle.NotFound" value="Pagina niet gevonden" />
+	<string key="AddressBar.Invalid.DialogText.NotFound" value="Pagina niet gevonden op de opgegeven URL." />
+	<string key="AddressBar.Invalid.DialogTitle.InternalError" value="Server fout" />
+	<string key="AddressBar.Invalid.DialogText.InternalError" value="De server heeft een fout op de opgegeven URL gemeld. De pagina kan niet worden geladen." />
+	<string key="AddressBar.Invalid.DialogTitle.Default" value="Pagina niet geladen" />
+	<string key="AddressBar.Invalid.DialogText.Default" value="Een fout voorkomt dat de pagina kan worden geladen." />	
+	
+</strings>

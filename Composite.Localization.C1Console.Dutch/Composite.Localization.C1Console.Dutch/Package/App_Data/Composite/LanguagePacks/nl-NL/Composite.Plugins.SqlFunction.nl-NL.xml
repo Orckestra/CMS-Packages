@@ -1,41 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="SqlFunctionElementProvider.RootLabel" value="SQL functies" />
-  <string key="SqlFunctionElementProvider.RootLabelToolTip" value="Voeg verbindingen toe en dan queries naar verbindingen" />
-  <string key="SqlFunctionElementProvider.AddConnection" value="Voeg SQL verbinding toe" />
-  <string key="SqlFunctionElementProvider.AddConnectionToolTip" value="Voeg nieuwe SQL verbinding toe" />
+  <string key="SqlFunctionElementProvider.RootLabelToolTip" value="Voeg connecties toe en dan queries naar connecties" />
+  <string key="SqlFunctionElementProvider.AddConnection" value="Voeg SQL connectie toe" />
+  <string key="SqlFunctionElementProvider.AddConnectionToolTip" value="Voeg nieuwe SQL connectie toe" />
   <string key="SqlFunctionElementProvider.EditConnection" value="Bewerk" />
-  <string key="SqlFunctionElementProvider.EditConnectionToolTip" value="Bewerk SQL verbinding" />
-  <string key="SqlFunctionElementProvider.DeleteConnection" value="Verwijder" />
-  <string key="SqlFunctionElementProvider.DeleteConnectionToolTip" value="Verwijder SQL verbinding" />
+  <string key="SqlFunctionElementProvider.EditConnectionToolTip" value="Bewerk SQL connectie" />
+  <string key="SqlFunctionElementProvider.DeleteConnection" value="Verwijderen" />
+  <string key="SqlFunctionElementProvider.DeleteConnectionToolTip" value="Verwijder SQL connectie" />
   <string key="SqlFunctionElementProvider.AddQuery" value="Voeg nieuwe SQL query toe" />
   <string key="SqlFunctionElementProvider.AddQueryToolTip" value="Voeg nieuwe SQL XML provider toe" />
   <string key="SqlFunctionElementProvider.EditQuery" value="Bewerk" />
   <string key="SqlFunctionElementProvider.EditQueryToolTip" value="Bewerk SQL query" />
-  <string key="SqlFunctionElementProvider.DeleteQuery" value="Verwijder" />
+  <string key="SqlFunctionElementProvider.DeleteQuery" value="Verwijderen" />
   <string key="SqlFunctionElementProvider.DeleteQueryToolTip" value="Verwijder SQL Query" />
   <string key="AddNewSqlFunction.LabelDialog" value="Voeg nieuwe SQL query toe" />
   <string key="AddNewSqlFunction.LabelNamingPanel" value="Functie naam" />
   <string key="AddNewSqlFunction.LabelName" value="Naam" />
   <string key="AddNewSqlFunction.HelpName" value="" />
-  <string key="AddNewSqlFunction.LabelNamespace" value="Naamruimte" />
+  <string key="AddNewSqlFunction.LabelNamespace" value="Namespace" />
   <string key="AddNewSqlFunction.HelpNamespace" value="" />
-  <string key="AddNewSqlFunction.LabelQueryCOmmand" value="SQL commando tekst" />
+  <string key="AddNewSqlFunction.LabelQueryCOmmand" value="SQL command tekst" />
   <string key="AddNewSqlFunction.HelpQueryCOmmand" value="" />
   <!-- shared on add and edit -->
   <string key="AddEditSqlFunction.LabelIsStoredProcedure" value="Is een Stored Procedure" />
-  <string key="AddEditSqlFunction.LabelIsStoredProcedureCheckBox" value="Ja commando is een procedure" />
-  <string key="AddEditSqlFunction.LabelReturnsXml" value="Result retour als XML" />
-  <string key="AddEditSqlFunction.LabelReturnsXmlCheckBox" value="Ja, commando geeft XML terug" />
+  <string key="AddEditSqlFunction.LabelIsStoredProcedureCheckBox" value="Ja, het command is een procedure" />
+  <string key="AddEditSqlFunction.LabelReturnsXml" value="Retouneert het resultaat als XML" />
+  <string key="AddEditSqlFunction.LabelReturnsXmlCheckBox" value="Ja, command geeft XML terug" />
   <string key="AddEditSqlFunction.LabelIsQuery" value="Is een query" />
-  <string key="AddEditSqlFunction.LabelIsQueryCheckBox" value="Ja commando geeft data terug" />
-  <string key="AddEditSqlFunction.LabelCommandBehaviour" value="SQL commando gedrag" />
-  <string key="AddEditSqlFunctionConnection.LabelFieldGroup" value="SQL verbinding instellingen" />
-  <string key="AddEditSqlFunction.LabelSqlEditor" value="SQL commando" />
-  <string key="AddNewSqlFunctionConnection.LabelDialog" value="Voeg nieuwe SQL commando toe" />
+  <string key="AddEditSqlFunction.LabelIsQueryCheckBox" value="Ja command geeft data terug" />
+  <string key="AddEditSqlFunction.LabelCommandBehaviour" value="SQL command gedrag" />
+  <string key="AddEditSqlFunctionConnection.LabelFieldGroup" value="SQL connectie instellingen" />
+  <string key="AddEditSqlFunction.LabelSqlEditor" value="SQL command" />
+  <string key="AddNewSqlFunctionConnection.LabelDialog" value="Voeg nieuw SQL command toe" />
   <string key="AddNewSqlFunctionConnection.LabelName" value="Naam" />
   <string key="AddNewSqlFunctionConnection.HelpName" value="" />
-  <string key="AddNewSqlFunctionConnection.LabelConnectionString" value="Verbinding string" />
+  <string key="AddNewSqlFunctionConnection.LabelConnectionString" value="Connectiestring" />
   <string key="AddNewSqlFunctionConnection.HelpConnectionString" value="" />
   <string key="AddNewSqlFunctionConnection.LabelIsMSSQL" value="MS SQL server" />
   <string key="AddNewSqlFunctionConnection.LabelIsMSSQLCheckBox" value="Database is een MS SQL Server" />
@@ -44,21 +44,21 @@
   <string key="EditSqlFunction.LabelNamingAndDescription" value="Functie naam en omschrijving" />
   <string key="EditSqlFunction.LabelName" value="Naam" />
   <string key="EditSqlFunction.HelpName" value="" />
-  <string key="EditSqlFunction.LabelNamespace" value="Naamruimte" />
+  <string key="EditSqlFunction.LabelNamespace" value="Namespace" />
   <string key="EditSqlFunction.HelpNamespace" value="" />
   <string key="EditSqlFunction.LabelDescription" value="Omschrijving" />
   <string key="EditSqlFunction.HelpDescription" value="" />
   <string key="EditSqlFunction.LabelPreview" value="Preview" />
   <string key="EditSqlFunctionConnection.LabelName" value="Naam" />
   <string key="EditSqlFunctionConnection.HelpName" value="" />
-  <string key="EditSqlFunctionConnection.LabelConnectionString" value="Verbinding string" />
+  <string key="EditSqlFunctionConnection.LabelConnectionString" value="Connectiestring" />
   <string key="EditSqlFunctionConnection.HelpConnectionString" value="" />
   <string key="EditSqlFunctionConnection.LabelIsMSSQL" value="MS SQL Server" />
   <string key="EditSqlFunctionConnection.LabelIsMSSQLCheckBox" value="Database is een MS SQL Server" />
-  <string key="DeleteSqlConnection.LabelFieldGroup" value="Verwijder deze SQL verbinding?" />
-  <string key="DeleteSqlConnection.Text" value="Verwijder deze SQL verbinding?" />
-  <string key="DeleteSqlFunction.LabelFieldGroup" value="Verwijder deze SQL verbinding?" />
-  <string key="DeleteSqlFunction.Text" value="Verwijder deze SQL verbinding?" />
-  <string key="CascadeDeleteErrorTitle" value="Cascade verwijderingsfout" />
-  <string key="CascadeDeleteErrorMessage" value="Er wordt door een ander datatype verwezen naar dit datatype welke geen cascade verwijdering toestaat. Deze operatie wordt stopgezet." />
+  <string key="DeleteSqlConnection.LabelFieldGroup" value="Verwijder deze SQL connectie?" />
+  <string key="DeleteSqlConnection.Text" value="Verwijder deze SQL connectie?" />
+  <string key="DeleteSqlFunction.LabelFieldGroup" value="Verwijder deze SQL connectie?" />
+  <string key="DeleteSqlFunction.Text" value="Verwijder deze SQL connectie?" />
+  <string key="CascadeDeleteErrorTitle" value="Trapsgewijze verwijderingsfout" />
+  <string key="CascadeDeleteErrorMessage" value="Er wordt verwezen naar dit type door een ander type dat geen trapsgewijze verwijdering toestaat. Deze bewerking wordt gestopt" />
 </strings>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootElement.Label" value="User Control Functies" />
+  <string key="RootElement.ToolTip" value="Functies op basis van .ascx controls" />
+
+  <string key="AddNewUserControlFunction.Label" value="Voeg User Control Functie toe" />
+  <string key="AddNewUserControlFunction.ToolTip" value="Voeg een nieuwe User Control functietoe" />
+  <string key="EditUserControlFunction.Label" value="Bewerk" />
+  <string key="EditUserControlFunction.ToolTip" value="Bewerk de User Control Functie" />
+  <string key="DeleteUserControlFunction.Label" value="Verwijderen" />
+  <string key="DeleteUserControlFunction.ToolTip" value="Wis de User Control functie" />
+  
+  <string key="AddNewUserControlFunction.LabelDialog" value="Voeg User Control Functie toe" />
+  <string key="AddNewUserControlFunction.LabelFieldGroup" value="Nieuwe User Control functie" />
+  <string key="AddNewUserControlFunction.LabelName" value="Naam" />
+  <string key="AddNewUserControlFunction.HelpName" value="" />
+  <string key="AddNewUserControlFunction.LabelNamespace" value="Namespace" />
+  <string key="AddNewUserControlFunction.HelpNamespace" value="" />
+  <string key="AddNewUserControlFunction.LabelCopyFrom" value="Kopi&#235;ren van" />
+  <string key="AddNewUserControlFunction.LabelCopyFromHelp" value="U kunt de code van een andere User Control functie kopi&#235;ren door deze te selecteren in deze lijst." />
+  <string key="AddNewUserControlFunction.LabelCopyFromEmptyOption" value="(Nieuwe User Control functie)" />
+
+  <string key="AddNewUserControlFunctionWorkflow.DuplicateName" value="Een Composite C1 functie met dezelfde naam bestaat al." />
+  <string key="AddNewUserControlFunctionWorkflow.EmptyName" value="Functienaam is leeg" />
+  <string key="AddNewUserControlFunctionWorkflow.NamespaceEmpty" value="Functie namespace is leeg" />
+  <string key="AddNewUserControlFunctionWorkflow.InvalidNamespace" value="Namespace moet eruit zien als A.B.C en mag niet starten en/of eindigen op een punt" />
+  <string key="AddNewUserControlFunctionWorkflow.TotalNameTooLang" value="De totale lengte van de naam en de namespace is te lang (gebruikt om het ASCX bestand een naam)." />
+
+  <string key="EditUserControlFunctionWorkflow.Validation.DialogTitle" value="Validatie fout" />
+  <string key="EditUserControlFunctionWorkflow.Validation.CompilationFailed" value="Compilatie is mislukt: {0}" />
+  <string key="EditUserControlFunctionWorkflow.Validation.IncorrectBaseClass" value="De User Control functie moet erven van &#39;{0}&#39;" />
+
+  <string key="DeleteUserControlFunctionWorkflow.ConfirmDeleteTitle" value="User Control functie verwijderen?" />
+  <string key="DeleteUserControlFunctionWorkflow.ConfirmDeleteMessage" value="Verwijder het geselecteerde User Control?" />
+</strings>

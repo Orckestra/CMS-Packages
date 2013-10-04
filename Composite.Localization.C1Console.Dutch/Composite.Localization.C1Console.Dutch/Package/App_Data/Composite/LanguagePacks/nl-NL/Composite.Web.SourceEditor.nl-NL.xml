@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+	<!-- preload precaution -->
+	<string key="Preload.Key" value="Opgehaald tijdens &#39;SourceEditorBinding&#39; om ervoor te zorgen dat strings worden geladen :)" />
+	
+	<!-- validation messages -->
+	<string key="Invalid.HTML.DialogTitle" value="Ongeldige XHTML" />
+	<string key="Invalid.HTML.MissingHtml" value="Het root element &lt;html&gt; ontbreekt." />
+	<string key="Invalid.HTML.MissingHead" value="Het &lt;head&gt; element ontbreekt." />
+	<string key="Invalid.HTML.MissingBody" value="Het &lt;body&gt; element ontbreekt." />
+	<string key="Invalid.HTML.HeadBodyIndex" value="Het &lt;head&gt; element moet voorafgaan aan het &lt;body&gt; element." />
+	<string key="Invalid.HTML.NamespaceURI" value="De root namespace is verkeerd." />
+	<string key="Invalid.HTML.MultipleBody" value="Slechts &#233;&#233;n &lt;body&gt; element is toegestaan." />
+	<string key="Invalid.HTML.MultipleHead" value="Slechts &#233;&#233;n &lt;head&gt; element is toegestaan." />
+	
+	<string key="Format.XML.ErrorDialog.Title" value="Bron opmaak afgebroken" /> 
+	<string key="Format.XML.ErrorDialog.Text" value="XML bronopmaak vereist een juist documentstructuur." />
+	
+	<!-- plain/colored switch button -->
+	<string key="Switch.PlainEdit.Label" value="Zwart/wit Bewerken" />
+	<string key="Switch.PlainEdit.ToolTip" value="Geen syntax highlight, snellere prestaties" />
+	<string key="Switch.ColoredEdit.Label" value="Gekleurd Bewerken" />
+	<string key="Switch.ColoredEdit.ToolTip" value="Syntax highlight, tragere prestaties" />
+
+  <!-- toolbar menus -->
+  <string key="Toolbar.Insert.Label" value="Invoegen" />
+  <string key="Toolbar.Format.Label" value="Formaat" />
+  <string key="Toolbar.Format.ToolTip" value="Maak XML bron op" />
+  
+  <!-- insert dropdown -->
+	<string key="Insert.PageURL.Label" value="Pagina URL" />
+	<string key="Insert.ImageURL.Label" value="Afbeelding URL" />
+	<string key="Insert.MediaURL.Label" value="Media URL" />
+	<string key="Insert.FrontendURL.Label" value="Frontend URL" />
+	<string key="Insert.FunctionMarkup.Label" value="Functie Opmaak" />
+	
+</strings>

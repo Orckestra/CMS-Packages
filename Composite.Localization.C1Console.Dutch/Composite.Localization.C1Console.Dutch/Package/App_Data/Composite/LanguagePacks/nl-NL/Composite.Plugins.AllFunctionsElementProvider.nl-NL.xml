@@ -1,9 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderLabel" value="Alle functies" />
-  <string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderToolTip" value="Alle functies" />
-  <string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderLabel" value="Alle widget functies" />
-  <string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderToolTip" value="Alle widget functies" />
-  <string key="AllFunctionsElementProvider.GenerateDocumentation" value="Genereer documentatie" />
-  <string key="AllFunctionsElementProvider.GenerateDocumentationTooltip" value="Genereer documentatie voor alle functies onder deze folder" />
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderLabel" value="Alle functies" />
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderToolTip" value="Alle functies" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderLabel" value="Alle widget functies" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderToolTip" value="Alle widget functies" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentation" value="Genereer documentatie" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentationTooltip" value="Genereer documentatie voor alle functies onder deze folder" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformation" value="Informatie" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformationTooltip" value="Bekijk functie-informatie" />
+
+  <string key="FunctionTesterWorkflow.Layout.Label" value="Test: {0}" />
+  <string key="FunctionTesterWorkflow.FunctionCalls.Label" value="Functies" />  
+  <string key="FunctionTesterWorkflow.Preview.Label" value="Resultaten" />
+  <string key="FunctionTesterWorkflow.Runtime.FieldGroup.Label" value="Speeltijd" />
+  <string key="FunctionTesterWorkflow.DebugFieldGroup.Label" value="Instellingen" />
+  <string key="FunctionTesterWorkflow.DebugPage.Label" value="Pagina" />
+  <string key="FunctionTesterWorkflow.DebugPage.Help" value="Bij het uitvoeren van de functie, wordt deze pagina gebruikt als de huidige pagina" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Label" value="Data scope" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Help" value="Bij het uitvoeren van de functie, wordt deze gebruikt als actuele gegevens scope" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Label" value="Taal" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Help" value="Bij het uitvoeren van de functie, wordt dit gebruikt als de huidige taal" />
+  <string key="FunctionTesterWorkflow.AdminitrativeScope.Label" value="Administratief" />
+  <string key="FunctionTesterWorkflow.PublicScope.Label" value="Publiek" />
+  
+
+  <string key="AllFunctionsElementProvider.FunctionTester.Label" value="Test Functie" />
+  <string key="AllFunctionsElementProvider.FunctionTester.ToolTip" value="Test functie" />
 </strings>

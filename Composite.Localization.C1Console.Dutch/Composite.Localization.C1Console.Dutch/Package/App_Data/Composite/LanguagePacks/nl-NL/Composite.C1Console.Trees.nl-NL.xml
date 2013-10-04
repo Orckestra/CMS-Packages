@@ -1,13 +1,161 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <string key="KeyFacade.ErrorTreeNode.Label" value="Fout in de boom" />
+  <string key="KeyFacade.ErrorTreeNode.Label" value="Fout in de structuur" />
   <string key="KeyFacade.ErrorTreeNode.ShowMessage.Label" value="Toon bericht" />
-  <string key="KeyFacade.ErrorTreeNode.ShowMessage.ToolTip" value="Toon Foutbericht" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.ToolTip" value="Toon foutbericht" />
   <string key="KeyFacade.ErrorTreeNode.ShowMessage.Title" value="Foutmelding" />
+  
   <!-- Validation -->
-  <string key="TreeValidationError.Common.UnknownException" value="Onbekend uitzondering is gebeurd: '{0}'" />
-  <string key="TreeValidationError.Common.UnknownElement" value="Onbekend element '{0}'" />
-  <string key="TreeValidationError.Common.MissingAttribute" value="De benodigde attribuut '{0}' ontbreekt" />
-  <string key="TreeValidationError.Common.WrongAttributeValue" value="Het attribuut '{0}' heeft een waarde die niet is toegestaan" />
-  <string key="TreeValidationError.Common.MissingProperty" value="Het type '{0}' bevat geen attribuut genaamd '{1}'" />
+  <string key="TreeValidationError.Common.UnknownException" value="Onbekende fout: &#39;{0}&#39;" />
+  <string key="TreeValidationError.Common.UnknownElement" value="Onbekend element &#39;{0}&#39;" />
+  <string key="TreeValidationError.Common.MissingAttribute" value="De benodigde attribuut &#39;{0}&#39; ontbreekt" />
+  <string key="TreeValidationError.Common.WrongAttributeValue" value="Het attribuut &#39;{0}&#39; heeft een waarde die niet is toegestaan" />  
+  <string key="TreeValidationError.Common.MissingProperty" value="Het type &#39;{0}&#39; bevat geen attribuut genaamd &#39;{1}&#39;" />
+  <string key="TreeValidationError.Common.UnkownInterfaceType" value="Het type &#39;{0}&#39; kan niet worden gevonden" />
+  <string key="TreeValidationError.Common.NotImplementingIData" value="Het type &#39;{0}&#39; implementeert niet de interface &#39;{1}&#39;" />
+  <string key="TreeValidationError.Common.WrongPermissinValue" value="De waarde &#39;{0} is niet toegestaan ​​als machtiging" />
+  <string key="TreeValidationError.Common.WrongLocationValue" value="De waarde &#39;{0}&#39; is niet toegestaan ​​als locatie" />
+  <string key="TreeValidationError.Common.MissingFunctionMarkup" value="Geen functie code beschikbaar als onderliggend element" />
+  <string key="TreeValidationError.Common.WrongFunctionMarkup" value="De functie kan niet worden gecreeerd met de beschikbare functie code" />
+
+  <string key="TreeValidationError.Markup.NoRootElement" value="Ontbrekend hoofdelement" />
+  <string key="TreeValidationError.Markup.SchemaError" value="Syntax error: {0} op regel {1} ​​positie {2}" />
+  
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPoint" value="Het koppel punt &#39;{0}&#39; is niet bekend" />
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPosition" value="De koppel positie &#39;{0}&#39; is niet bekend" />
+  <string key="TreeValidationError.DataAttachments.NoElementsAllowed" value="Elementen zijn niet toegestaan in ​​structuren met geneste structuren" />
+
+  <string key="TreeValidationError.ElementRoot.ShareRootElementByIdNotAllowed" value="ShareRootElementById is alleen toegestaan ​​als de structuur een koppelpunt heeft met een enkelvoudige naam" />
+
+  <string key="TreeValidationError.SimpleElement.WrongIdValue" value="De waarde van het Id is niet toegestaan. Het id mag niet leeg zijn, niet beginnen met NodeAutoId_ en niet met RootTreeNode" />
+  <string key="TreeValidationError.SimpleElement.AlreadyUsedId" value="Het id &#39;{0}&#39; is reeds gebruikt in deze structuur" />
+
+  <string key="TreeValidationError.DataElementsTreeNode.SameInterfaceUsedTwice" value="De data-interface &#39;{0}&#39; is al gebruikt als een element onder hetzelfde bovenliggende element en dat is niet toegestaan" />
+  <string key="TreeValidationError.DataElementsTreeNode.SameParentFilterInterfaceUsedTwice" value="Dezelfde interface &#39;{0}&#39; wordt gebruikt als bovenliggend type en als bovenliggend filter en dit is niet toegestaan" />
+  <string key="TreeValidationError.DataElementsTreeNode.MoreThanOnParentFilterIsPointingToMe" value="Meer dan &#233;&#233;n bovenliggend filter wijst naar de interface &#39;{0}&#39;. Wijzig de display waarde naar Lazy" />
+
+  <string key="TreeValidationError.DataFolderElements.MissingInterfaceType" value="Type attribuut ontbreekt" />
+  <string key="TreeValidationError.DataFolderElements.WrongInterfaceType" value="De interface type &#39;{0}&#39; komt niet overeen met de bovenliggende element interface  &#39;{1}&#39;" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetNotAllowed" value="Attribuut DateFormat vereist dat de eigenschap &#39;{0}&#39; van het type &#39;{1}&#39; moet zijn, maar het is van het type &#39;{2}&#39;" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetIsMissing" value="De eigenschap &#39;{0}&#39; is van het type Datum en dit vereist dat het attribuut DateFormat aanwezig is" />
+  <string key="TreeValidationError.DataFolderElements.RangesAndFirstLetterOnlyNotAllowed" value="Ranges en first-letter-only zijn niet toegestaan ​​op hetzelfde moment" />
+  <string key="TreeValidationError.DataFolderElements.WrongFirstLetterOnlyPropertyType" value="First-letter-only vereist dat de eigenschap &#39;{0}&#39; van het type &#39;{1}&#39; is, maar het is van het type &#39;{2}&#39;" />
+  <string key="TreeValidationError.DataFolderElements.WrongDateChildInterfaceType" value="Alleen gegevens van onderliggende elementen met dezelfde interface type als groepering (&#39;{0}&#39;) zijn toegestaan" />
+  <string key="TreeValidationError.DataFolderElements.InterfaceTypeSwitchNotAllowed" value="Overschakelen van interface &#39;{0}&#39; naar een andere interface &#39;{1}&#39; is niet toegestaan ​​in dezelfde groepering" />
+  <string key="TreeValidationError.DataFolderElements.SameFieldUsedTwice" value="Twee keer dezelfde veldnaam &#39;{0}&#39; in een gegroepeerde structuur is niet toegestaan" />
+  <string key="TreeValidationError.DataFolderElements.TooManyParentIdFilters" value="Er kan maximaal &#233;&#233;n bovenliggend id filter gebruikt worden voor gegevenselementen die in groepen worden gebruikt" />
+
+  <string key="TreeValidationError.ParentIdFilterNode.TypeIsNotInParentTree" value="Het type &#39;{0}&#39; is niet aanwezig in de bovenliggende structuur van dit knooppunt of is gespecificeerd als koppel punt" />
+  <string key="TreeValidationError.FieldFilter.UnknownOperatorName" value="De operator &#39;{0}&#39; is onbekend of wordt niet ondersteund" />
+  <string key="TreeValidationError.FieldFilter.ValueCouldNotBeConverted" value="De string waarde &#39;{0}&#39; kan niet worden omgezet naar het type &#39;{1}&#39;" />
+  <string key="TreeValidationError.FieldFilter.OperatorNotSupportedForType" value="De operator &#39;{0}&#39; wordt niet ondersteund voor het type &#39;{1}&#39;" />
+
+  <string key="TreeValidationError.FunctionFilter.MissingFunctionMarkup" value="Functie code ontbreekt" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionMarkup" value="De functie kan niet worden gecreeerd met de beschikbare functie code" />
+  <string key="TreeValidationError.FunctionFilter.WrongReturnValue" value="De functie geeft niet een waarde van het type &#39;{0}&#39; terug" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionReturnType" value="Het type van de expressie dat geretourneerd wordt door de functie is &#39;{0}&#39;, &#39;{1}&#39; werd verwacht" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterCount" value="Er werden {0} parameters geretourneerd door de functie, 1 werd verwacht" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterType" value="Het type &#39;{0}&#39; werd geretourneerd door de functie, &#39;{1}&#39; werd verwacht" />
+  
+  <string key="TreeValidationError.ReportFunctionAction.WrongReturnValue" value="De functie geeft niet een waarde van het type &#39;{0}&#39; terug" />
+  <string key="TreeValidationError.GenericAddDataAction.MissingMarkupFile" value="Het bestand &#39;{0}&#39; bestaat niet" />
+  <string key="TreeValidationError.GenericAddDataAction.BadMarkupPath" value="Het bestandspad &#39;{0}&#39; is verkeerd geformatteerd. Gebruik ~ / Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericEditDataAction.OwnerIsNotDataNode" value="De &#39;bewerk&#39; data actie is alleen van toepassing op elementen die data-elementen produceren" />
+  <string key="TreeValidationError.GenericEditDataAction.MissingMarkupFile" value="Het bestand &#39;{0}&#39; bestaat niet" />
+  <string key="TreeValidationError.GenericEditDataAction.BadMarkupPath" value="Het bestandspad &#39;{0}&#39; is verkeerd geformatteerd. Gebruik ~ / Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericDeleteDataAction.OwnerIsNotDataNode" value="De &#39;verwijder&#39; actie geldt alleen voor elementen die data-elementen produceren" />
+  <string key="TreeValidationError.MessageBoxAction.UnknownDialogType" value="Het type dialoogvenster &#39;{0}&#39; wordt niet ondersteund" />
+  <string key="TreeValidationError.CustomUrlAction.TooManyPostParameterElements" value="Te veel &#39;{0}&#39; elementen, slechts &#233;&#233;n is toegestaan" />
+  <string key="TreeValidationError.CustomUrlAction.UnknownViewType" value="Het type view &#39;{0}&#39; wordt niet ondersteund" />
+
+  <string key="TreeValidationError.FieldOrderBy.UnknownDirection" value="De sorteringswaarde &#39;{0}&#39; is verkeerd, het moet ofwel &#39;oplopende&#39; of &#39;aflopend&#39; zijn" />
+  <string key="TreeValidationError.FieldOrderBy.UnknownField" value="Het type &#39;{0}&#39; bevat niet het veld met  naam &#39;{1}&#39;" />
+
+  <string key="TreeValidationError.DataFieldValueHelper.WrongFormat" value="&#39;{0}&#39; is onjuist opgemaakt, gebruik de notatie: {1}" />
+  <string key="TreeValidationError.DataFieldValueHelper.InterfaceNotInParentTree" value="De interface van &#39;{0}&#39; is niet opgenomen in het huidige element of een van haar boveliggende elementen" />
+
+  <string key="TreeValidationError.Range.WrongFormat" value="Het bereik is verkeerd geformatteerd" />
+  <string key="TreeValidationError.Range.UnsupportedType" value="De eigenschap &#39;{0}&#39; is van het type &#39;{1}&#39; dat geen bereik ondersteunt" />
+
+  <string key="TreeValidationError.Range.MinMaxError" value="De waarde eerste waarde ({0}) in een bereik moet minder zijn dan de tweede waarde ({1})" />
+  <string key="TreeValidationError.Range.NextRangeError" value="De maximale waarde van een bereik moet minder zijn dan de minimale waarde van het opvolgende bereik" />
+
+  
+  <!-- Ranges -->
+  
+  <string key="TreeRanges.IntRange.Closed" value="Van {0} tot {1}" />
+  <string key="TreeRanges.IntRange.MinOpenEnded" value="{0} of minder" />
+  <string key="TreeRanges.IntRange.MaxOpenEnded" value="{0} of meer" />
+  <string key="TreeRanges.IntRange.Other" value="Ander" />
+
+  <string key="TreeRanges.StringRange.Closed" value="Van {0} tot {1}" />
+  <string key="TreeRanges.StringRange.MinOpenEnded" value="{0} en voor" />
+  <string key="TreeRanges.StringRange.MaxOpenEnded" value="{0} en na" />
+  <string key="TreeRanges.StringRange.Other" value="Ander" />
+
+  
+  <!-- Other -->
+  <string key="GenericAddDataAction.DefaultLabel" value="Toevoegen" />
+  <string key="GenericEditDataAction.DefaultLabel" value="Bewerk" />
+  <string key="GenericDeleteDataAction.DefaultLabel" value="Verwijderen" />
+  
+  
+  <string key="TreeGenericDelete.CascadeDeleteErrorTitle" value="Trapgewijze verwijderingsfout" />
+  <string key="TreeGenericDelete.CascadeDeleteErrorMessage" value="Er wordt verwezen naar dit type door een ander type dat geen trapsgewijze verwijdering toestaat. Deze bewerking wordt gestopt" />
+  
+  <string key="TreeGenericDeleteConfirm.LabelFieldGroup" value="Gegevens verwijderen?" />
+  <string key="TreeGenericDeleteConfirm.Text" value="Verwijderen" />
+  
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.LabelFieldGroup" value="Gegevens verwijderen?" />
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.ConfirmationText" value="Gegevens waar naar verwezen wordt, worden ook verwijderd, wilt u doorgaan?" />
+
+
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.Label" value="Toevoegen" />
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.ToolTip" value="Voeg een nieuwe structuur definitie toe" />           
+  <string key="TreeAddTreeDefinition.Layout.Label" value="Voeg een nieuwe structuur definitie toe" />
+  <string key="TreeAddTreeDefinition.FieldGroup.Label" value="Voeg een nieuwe structuur definitie toe" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Label" value="Definitie naam" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Help" value="Definitie naam" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Label" value="Template" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Help" value="Selecteer een sjabloon om mee te beginnen" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Label" value="Positie" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Help" value="Positie" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.Label" value="Verwijderen" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.ToolTip" value="Verwijder structuur definitie" />
+  <string key="TreeDeleteTreeDefinition.Layout.Label" value="Verwijder structuur definitie" />
+  <string key="TreeDeleteTreeDefinition.Title" value="Verwijder geselecteerde structuur definitie" />
+  <string key="TreeDeleteTreeDefinition.Description" value="Verwijder geselecteerde structuur definitie?" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.Label" value="Bewerk" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.ToolTip" value="Bewerk structuur definitie" />
+
+  <string key="AddApplicationWorkflow.AddApplication.Label" value="Applicatie toevoegen" />
+  <string key="AddApplicationWorkflow.AddApplication.ToolTip" value="Voeg een nieuwe applicatie toe" />
+  <string key="AddApplication.Layout.Label" value="Toevoegen applicatie" />
+  <string key="AddApplication.FieldGroup.Label" value="Selecteer applicatie" />
+  <string key="AddApplication.TreeIdSelector.Label" value="Applicatie" />
+  <string key="AddApplication.TreeIdSelector.Help" value="Selecteer de applicatie die u wilt toevoegen" />
+  <string key="AddApplication.PositionSelector.Label" value="Positie" />
+  <string key="AddApplication.PositionSelector.Help" value="De positie om deze applicatie in te voegen" />
+  <string key="AddApplication.NoTrees.Title" value="Geen applicaties" />
+  <string key="AddApplication.NoTrees.Message" value="Je hebt alle beschikbare applicaties toegevoegd" />
+
+  <string key="RemoveApplicationWorkflow.RemoveApplication.Label" value="Applicatie verwijderen" />
+  <string key="RemoveApplicationWorkflow.RemoveApplication.ToolTip" value="Verwijder bestaande applicatie" />
+  <string key="RemoveApplication.Layout.Label" value="Verwijder applicatie" />
+  <string key="RemoveApplication.FieldGroup.Label" value="Verwijder applicatie" />
+  <string key="RemoveApplication.TreeIdSelector.Label" value="Applicatie" />
+  <string key="RemoveApplication.TreeIdSelector.Help" value="Selecteer de applicatie die u wilt verwijderen" />
+  <string key="RemoveApplication.NoTrees.Title" value="Geen applicaties" />
+  <string key="RemoveApplication.NoTrees.Message" value="Je hebt alle beschikbare applicaties verwijderd" />
+
+  <string key="LocalizeDataWorkflow.LocalizeDataLabel" value="Vertaal gegevens" />
+  <string key="LocalizeDataWorkflow.LocalizeDataToolTip" value="Vertaal gegevens" />
+  <string key="LocalizeDataWorkflow.DisabledData" value="Nog niet goedgekeurd of gepubliceerd" />
+  <string key="LocalizeData.ShowError.Layout.Label" value="Het vertalen van de gegevens is mislukt" />
+  <string key="LocalizeData.ShowError.InfoTable.Caption" value="Vertaalfouten" />  
+  <string key="LocalizeData.ShowError.Description" value="De volgende velden hebben een verwijzing naar een gegevens type. U moet die gegevens eerst vertalen voordat u deze gegevens kunt vertalen" />
+  <string key="LocalizeData.ShowError.FieldErrorFormat" value="Het veld &#39;{0}&#39; verwijst naar gegevens van het type &#39;{1}&#39; met het label &#39;{2}&#39;" />
+  <string key="LocalizeData.ShowError.AlreadyTranslated" value="Deze gegevens zijn al vertaald. De vertaalde versie behoort tot een andere groep." />
 </strings>

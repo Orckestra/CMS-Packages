@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+	<string key="UserGroupElementProvider.RootLabel" value="Gebruikersgroepen" />
+  <string key="UserGroupElementProvider.RootToolTip" value="Gebruikersgroepen" />
+  <string key="UserGroupElementProvider.AddNewUserGroupLabel" value="Voeg gebruikersgroep toe..." />  
+  <string key="UserGroupElementProvider.AddNewUserGroupToolTip" value="Voeg nieuwe gebruikersgroep toe" />
+  <string key="UserGroupElementProvider.EditUserGroupLabel" value="Bewerk gebruikersgroep" />
+  <string key="UserGroupElementProvider.EditUserGroupToolTip" value="Bewerk gebruikersgroep" />
+  <string key="UserGroupElementProvider.DeleteUserGroupLabel" value="Verwijder gebruikersgroep" />
+  <string key="UserGroupElementProvider.DeleteUserGroupToolTip" value="Verwijder gebruikersgroep" />
+
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.LabelFieldGroup" value="Voeg gebruikersgroep toe" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameLabel" value="Gebruikersgroep naam" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameHelp" value="De naam van de nieuwe gebruikersgroep" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameAlreadyExists" value="Een gebruikersgroep met dezelfde naam bestaat al" />
+
+  <string key="EditUserGroup.EditUserGroupStep1.LabelFieldGroup" value="Bewerk gebruikersgroep" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameLabel" value="Gebruikersgroep naam" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameHelp" value="De naam van de gebruikersgroep" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameAlreadyExists" value="Een gebruikersgroep met dezelfde naam bestaat al" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveFieldLabel" value="Onderdelen" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectLabel" value="Onderdelen" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectHelp" value="Selecteer welke onderdelen de gebruiker mag inzien" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsFieldLabel" value="Globale rechten" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectLabel" value="Globale rechten" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectHelp" value="Het  &#39;Administratie&#39; recht verleent de gebruikersgroep de mogelijkheid om gebruikersgroep rechten te beheren en andere administratieve taken uit te voeren." />
+
+
+  
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersTitle" value="Gebruikersgroep bevat gebruikers" />
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersMessage" value="U kunt een gebruikersgroep die gebruikers bevat niet verwijderen." />
+  
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.LabelFieldGroup" value="Verwijder gebruikersgroep" />
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.Text" value="Verwijder de geselecteerde gebruikersgroep?" />
+</strings>

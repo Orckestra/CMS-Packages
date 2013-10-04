@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="RootFolderLabel" value="C1-pakketten" />
-  <string key="RootFolderToolTip" value="C1-pakketten" />
+  <string key="RootFolderToolTip" value="Blader door en beheer geinstalleerde paketten" />
   <string key="AvailablePackagesFolderLabel" value="Beschikbare pakketten" />
   <string key="AvailablePackagesFolderToolTip" value="Beschikbare pakketten" />
   <string key="InstalledPackageFolderLabel" value="Geinstalleerde pakketten" />
@@ -15,7 +15,7 @@
   <string key="ViewInstalledInformationLabel" value="Pakket info" />
   <string key="ViewInstalledInformationToolTip" value="Bekijk pakket informatie" />
   <string key="InstallLocalPackageLabel" value="Installeer lokaal pakket" />
-  <string key="InstallLocalPackageToolTip" value="Installeer pakket van locale bestand systeem" />
+  <string key="InstallLocalPackageToolTip" value="Installeer pakket van lokaal bestand systeem" />
   <string key="AddPackageSourceLabel" value="Voeg pakket bron toe" />
   <string key="AddPackageSourceToolTip" value="Voeg pakket bron toe" />
   <string key="DeletePackageSourceLabel" value="Verwijder pakket bron" />
@@ -26,92 +26,120 @@
   <string key="ViewAvailableInformation.NameTextLabel" value="Naam" />
   <string key="ViewAvailableInformation.DescriptionTextLabel" value="Omschrijving" />
   <string key="ViewAvailableInformation.AuthorTextLabel" value="Auteur" />
+
+  <string key="ViewAvailableInformation.TrialInfoFieldGroupLabel" value="Gratis proefperiode informatie" />
+  <string key="ViewAvailableInformation.TrialInformationLabel" value="Gratis proefperiode informatie" />
+  <string key="ViewAvailableInformation.TrialInformationText" value="Dit is een commercieel pakket, gratis beschikbaar in de proefperiode. Wanneer de proefperiode is verstreken kan functionaliteit worden uitgeschakeld, tenzij u ervoor kiest om een ​​licentie aan te schaffen." />
+  <string key="ViewAvailableInformation.TrialDaysLabel" value="Gratis proefperiode (dagen)" />
+
+
+  <string key="ViewAvailableInformation.InstallationInfoFieldGroupLabel" value="Installatie informatie" />
   <string key="ViewAvailableInformation.VersionTextLabel" value="Versie" />
   <string key="ViewAvailableInformation.TechicalDescriptionTextLabel" value="Technische omschrijving" />
-  <string key="ViewAvailableInformation.PackageSourceTextLabel" value="Voeg bron toe" />
+  <string key="ViewAvailableInformation.PackageSourceTextLabel" value="Bron" />
+
+
   <string key="ViewAvailableInformation.PriceTextLabel" value="Prijs (EUR)" />
   <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="Installeer" />
   <string key="ViewAvailableInformation.Toolbar.ReadMoreLabel" value="Lees meer" />
-  <string key="ViewAvailableInformation.ShowError.MessageTitle" value="Reeds geïnstalleerd" />
-  <string key="ViewAvailableInformation.ShowError.MessageMessage" value="Pakket is reeds geïnstalleerd, kan niet het geselecteerde bestand installeren" />
+  <string key="ViewAvailableInformation.ShowError.MessageTitle" value="Reeds ge&#239;nstalleerd" />
+  <string key="ViewAvailableInformation.ShowError.MessageMessage" value="Het pakket is reeds ge&#239;nstalleerd, kan het geselecteerde bestand niet installeren" />
   <string key="ViewAvailableInformation.ShowServerError.MessageTitle" value="Pakket server reageert niet" />
   <string key="ViewAvailableInformation.ShowServerError.MessageMessage" value="Pakket server reageert niet, neem contact op met de systeembeheerder" />
   <string key="ViewInstalledInformation.FieldGroupLabel" value="Pakket info" />
-  <string key="ViewInstalledInformation.NameTextLabel" value="Pakket naam" />
+  <string key="ViewInstalledInformation.NameTextLabel" value="Naam" />
   <string key="ViewInstalledInformation.DateTextLabel" value="Installatie datum" />
   <string key="ViewInstalledInformation.UserTextLabel" value="Geinstalleerd door" />
+  <string key="ViewInstalledInformation.AuthorTextLabel" value="Auteur" />
+  <string key="ViewInstalledInformation.VersionTextLabel" value="Versie" />
+  <string key="ViewInstalledInformation.TrialInfoFieldGroupLabel" value="Proefperiode informatie" />
+  <string key="ViewInstalledInformation.TrialInformationLabel" value="Gratis proefperiode informatie" />
+  <string key="ViewInstalledInformation.TrialInformationText" value="Dit is een commercieel pakket, gratis beschikbaar in de proefperiode. Wanneer de proefperiode is verstreken kan functionaliteit worden uitgeschakeld, tenzij u ervoor kiest om een ​​licentie aan te schaffen." />
+  <string key="ViewInstalledInformation.TrialExpireLabel" value="Datum einde proefperiode" />
+
   <string key="ViewInstalledInformation.Toolbar.UninstallLabel" value="Verwijder" />
+  <string key="ViewInstalledInformation.Toolbar.PurchaseLabel" value="Schaf dit aan!" />
   <string key="ViewInstalledInformation.ShowError.MessageTitle" value="Reeds verwijderd" />
-  <string key="ViewInstalledInformation.ShowError.MessageMessage" value="Pakket is reeds verwijderd, kan niet het geselecteerde pakket verwijderen" />
+  <string key="ViewInstalledInformation.ShowError.MessageMessage" value="Pakket is reeds verwijderd, kan het geselecteerde pakket niet verwijderen" />
   <string key="InstallRemotePackage.Step1.LayoutLabel" value="Installeer pakket" />
   <string key="InstallRemotePackage.Step1.HeadingTitle" value="Dit pakket is niet gratis" />
-  <string key="InstallRemotePackage.Step1.HeadingDescription" value="Wij sturen u een factuur wanneer de installatie succesvol is afgerond" />
+  <string key="InstallRemotePackage.Step1.HeadingDescription" value="Dit is een commercieel pakket - bekijk de gebruiksvoorwaarden (EULA) op het volgende scherm voor meer informatie over proefperiode en betalingsvoorwaarden." />
   <string key="InstallRemotePackage.Step2.LayoutLabel" value="Installeer pakket" />
-  <string key="InstallRemotePackage.Step2.HeadingTitle" value="Eula" />
+  <string key="InstallRemotePackage.Step2.HeadingTitle" value="Licentie overeenkomst (EULA)" />
+  <string key="InstallRemotePackage.Step2.HeadingDescription" value="Als u de voorwaarden van de overeenkomst accepteert, klikt u op het selectievakje. U moet de overeenkomst accepteren om te kunnen installeren." />
+  <string key="InstallRemotePackage.Step2.IAcceptItemLabel" value="Ik accepteer de licentie overeenkomst" />
+  <string key="InstallRemotePackage.Step2.AcceptMissing" value="U moet de licentieovereenkomst accepeteren om verder te gaan." />
   <string key="InstallRemotePackage.Step3.LayoutLabel" value="Installeer pakket" />
   <string key="InstallRemotePackage.Step3.HeadingTitle" value="Download en valideer het pakket" />
-  <string key="InstallRemotePackage.Step3.HeadingDescription" value="Pakket wordt geinstalleerd en gevalideerd. Dit duurt een paar minuten. Klik op volgende om verder te gaan." />
+  <string key="InstallRemotePackage.Step3.HeadingDescription" value="Het pakket wordt geinstalleerd en gevalideerd. Dit duurt een paar minuten. Klik op volgende om verder te gaan." />
   <string key="InstallRemotePackage.Step4.LayoutLabel" value="Installeer lokaal pakket" />
   <string key="InstallRemotePackage.Step4.HeadingTitle" value="Klaar om te installeren" />
-  <string key="InstallRemotePackage.Step4.HeadingDescription" value="Pakket is gereed om te installeren. Dit duurt een paar minuten. Klik op volgende om verder te gaan." />
+  <string key="InstallRemotePackage.Step4.HeadingDescription" value="Het pakket is gereed om te installeren. Dit duurt een paar minuten. Klik op volgende om verder te gaan." />
   <string key="InstallRemotePackage.Step4.NonUninstallableHeadingTitle" value="Gereed om te installeren" />
-  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingDescription" value="Gereed om het pakket te installeren. Dit duurt een paar minuten. Let op dit pakket kan niet worden verwijderd.  Klik op volgende om verder te gaan" />
+  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingDescription" value="Gereed om het pakket te installeren. Dit duurt een paar minuten. Let op dit pakket kan niet worden verwijderd. Klik op volgende om verder te gaan" />
   <string key="InstallRemotePackage.Step5.LayoutLabel" value="Pakket geinstalleerd" />
   <string key="InstallRemotePackage.Step5.HeadingTitle" value="Pakket succesvol geinstalleerd" />
   <string key="InstallRemotePackage.Step5.HeadingDescription" value="Pakket succesvol geinstalleerd" />
   <string key="InstallRemotePackage.ShowError.LayoutLabel" value="Installatie pakket mislukt" />
   <string key="InstallRemotePackage.ShowError.InfoTableCaption" value="Fouten" />
-  <string key="InstallRemotePackage.ShowError.MessageTitle" value="Boodschap" />
+  <string key="InstallRemotePackage.ShowError.MessageTitle" value="Bericht" />
+  <string key="InstallRemotePackage.ShowWarning.LayoutLabel" value="Het pakket kon niet worden gevalideerd" />
+  <string key="InstallRemotePackage.ShowWarning.InfoTableCaption" value="Het pakket kon niet worden gevalideerd" />
   <string key="InstallLocalPackage.Step1.LayoutLabel" value="Installeer lokaal pakket" />
-  <string key="InstallLocalPackage.Step1.FieldGroupLabel" value="Installeer lokaal pakket" />
+  <string key="InstallLocalPackage.Step1.FieldGroupLabel" value="Lokatie van het lokaal pakket" />
   <string key="InstallLocalPackage.Step1.FileUploadLabel" value="Pakket bestand" />
   <string key="InstallLocalPackage.Step1.FileUploadHelp" value="Browse naar pakketbestand" />
   <string key="InstallLocalPackage.Step2.LayoutLabel" value="Installeer lokaal pakket" />
   <string key="InstallLocalPackage.Step2.HeadingTitle" value="Gereed om te installeren" />
-  <string key="InstallLocalPackage.Step2.HeadingDescription" value="Gereed om het pakket te installeren. Dit duurt een paar minuten.  Klik op volgende om verder te gaan." />
+  <string key="InstallLocalPackage.Step2.HeadingDescription" value="Het pakket is gereed om te installeren. Dit duurt een paar minuten. Klik op volgende om verder te gaan." />
   <string key="InstallLocalPackage.Step3.LayoutLabel" value="Pakket geinstalleerd" />
   <string key="InstallLocalPackage.Step3.HeadingTitle" value="Pakket succesvol geinstalleerd" />
   <string key="InstallLocalPackage.Step3.HeadingDescription" value="Pakket succesvol geinstalleerd" />
   <string key="InstallLocalPackage.ShowError.LayoutLabel" value="Pakket installatie is mislukt" />
   <string key="InstallLocalPackage.ShowError.InfoTableCaption" value="Fouten" />
-  <string key="InstallLocalPackage.ShowError.MessageTitle" value="Boodschap" />
+  <string key="InstallLocalPackage.ShowError.MessageTitle" value="Bericht" />
+  <string key="InstallLocalPackage.ShowWarning.LayoutLabel" value="Het pakket kon niet worden gevalideerd" />
+  <string key="InstallLocalPackage.ShowWarning.InfoTableCaption" value="Het pakket kon niet worden gevalideerd" />
   <string key="UninstallRemotePackage.Step1.LayoutLabel" value="Verwijder pakket" />
   <string key="UninstallRemotePackage.Step1.HeadingTitle" value="Gereed om verwijderingsprocedure te controleren" />
-  <string key="UninstallRemotePackage.Step1.HeadingDescription" value="Gereed voor controle op het verwijderde pakket. Klik op volgende om verder te gaan." />
+  <string key="UninstallRemotePackage.Step1.HeadingDescription" value="Gereed voor controle van het verwijderingsproces van het pakket. Klik volgende om verder te gaan." />
   <string key="UninstallRemotePackage.Step2.LayoutLabel" value="Verwijder pakket" />
   <string key="UninstallRemotePackage.Step2.HeadingTitle" value="Gereed voor verwijderen" />
-  <string key="UninstallRemotePackage.Step2.HeadingDescription" value="Gereed om pakket te verwijderen. Dit duurt een paar minuten.  Klik op volgende om verder te gaan." />
-  <string key="UninstallRemotePackage.Step3.LayoutLabel" value="Pakket verwijdert" />
+  <string key="UninstallRemotePackage.Step2.HeadingDescription" value="Gereed om het pakket te verwijderen. Dit duurt een paar minuten. Klik op volgende om verder te gaan." />
+  <string key="UninstallRemotePackage.Step3.LayoutLabel" value="Pakket verwijderd" />
   <string key="UninstallRemotePackage.Step3.HeadingTitle" value="Pakket succesvol verwijderd" />
   <string key="UninstallRemotePackage.Step3.HeadingDescription" value="Pakket succesvol verwijderd" />
   <string key="UninstallRemotePackage.ShowError.LayoutLabel" value="Pakket verwijdering is mislukt" />
   <string key="UninstallRemotePackage.ShowError.InfoTableCaption" value="Fouten" />
-  <string key="UninstallRemotePackage.ShowError.MessageTitle" value="Boodschap" />
+  <string key="UninstallRemotePackage.ShowError.MessageTitle" value="Bericht" />
   <string key="UninstallRemotePackage.ShowUnregistre.LayoutLabel" value="Verwijder pakket" />
   <string key="UninstallRemotePackage.ShowUnregistre.HeadingTitle" value="Registratie van verwijdering is mislukt" />
-  <string key="UninstallRemotePackage.ShowUnregistre.HeadingDescription" value="Registratie van verwijderingsproces is mislukt. Neem contact op met pakketleverancier voor handmatige registratieverwijdering" />
+  <string key="UninstallRemotePackage.ShowUnregistre.HeadingDescription" value="Registratie van het verwijderingsproces is mislukt. Neem contact op met pakketleverancier voor handmatige registratieverwijdering" />
   <string key="UninstallLocalPackage.Step1.LayoutLabel" value="Verwijder lokaal pakket" />
   <string key="UninstallLocalPackage.Step1.HeadingTitle" value="Gereed om het verwijdersproces te controleren" />
-  <string key="UninstallLocalPackage.Step1.HeadingDescription" value="Gereed voor controle van het verwijderingsproces van pakket. Klik volgende om verder te gaan." />
+  <string key="UninstallLocalPackage.Step1.HeadingDescription" value="Gereed voor controle van het verwijderingsproces van het pakket. Klik volgende om verder te gaan." />
   <string key="UninstallLocalPackage.Step2.LayoutLabel" value="Verwijder lokaal pakket" />
   <string key="UninstallLocalPackage.Step2.HeadingTitle" value="Gereed voor verwijdering" />
-  <string key="UninstallLocalPackage.Step2.HeadingDescription" value="Gereed om pakket te verwijderen. Dit duurt een paar minuten.  Klik op volgende om verder te gaan." />
-  <string key="UninstallLocalPackage.Step3.LayoutLabel" value="Pakket verwijdert" />
+  <string key="UninstallLocalPackage.Step2.HeadingDescription" value="Gereed om het pakket te verwijderen. Dit duurt een paar minuten. Klik op volgende om verder te gaan." />
+  <string key="UninstallLocalPackage.Step3.LayoutLabel" value="Pakket verwijderd" />
   <string key="UninstallLocalPackage.Step3.HeadingTitle" value="Pakket verwijdering succesvol" />
   <string key="UninstallLocalPackage.Step3.HeadingDescription" value="Pakket is succesvol verwijderd" />
   <string key="UninstallLocalPackage.ShowError.LayoutLabel" value="Pakket verwijdering is mislukt" />
   <string key="UninstallLocalPackage.ShowError.InfoTableCaption" value="Fouten" />
-  <string key="UninstallLocalPackage.ShowError.MessageTitle" value="Boodschap" />
-  <string key="AddPackageSource.Step1.LayoutLabel" value="Nieuw pakket bron" />
+  <string key="UninstallLocalPackage.ShowError.MessageTitle" value="Bericht" />
+  <string key="AddPackageSource.Step1.LayoutLabel" value="Nieuwe pakket bron" />
   <string key="AddPackageSource.Step1.FieldGroupLabel" value="Brongegevens van pakket" />
   <string key="AddPackageSource.Step1.UrlLabel" value="Pakket webservice URL" />
-  <string key="AddPackageSource.Step1.UrlHelp" value="Pakketten kunnen worden gehost op remote servers. De pakket webservice URL zal worden gevaliderd in de volgende stap" />
+  <string key="AddPackageSource.Step1.UrlHelp" value="Pakketten kunnen worden gehost op remote servers. De pakket webservice URL zal worden gevalideerd in de volgende stap" />
   <string key="AddPackageSource.Step1.UrlNotValid" value="De ingevoerde tekst is geen geldige url" />
-  <string key="AddPackageSource.Step1.UrlNonPackageServer" value="De server is niet een Composite C1 pakket server" />
+  <string key="AddPackageSource.Step1.UrlNonPackageServer" value="De server is geen Composite C1 pakket server" />
   <string key="AddPackageSource.Step2.LayoutLabel" value="Voeg pakket server bron toe" />
   <string key="AddPackageSource.Step2.HeadingTitle" value="Server URL is geldig" />
-  <string key="AddPackageSource.Step2.HeadingNoHttpsDescription" value="Letop  dat het HTTP-protocol wordt gebruikt op deze verbinding. Dit houdt in dat alle verzonden informatie niet is geëncrypteerd. Klik op Voltooien om de source toe te voegen" />
-  <string key="AddPackageSource.Step2.HeadingWithHttpsDescription" value="Klik finish om de bron toe te voegen" />
+  <string key="AddPackageSource.Step2.HeadingNoHttpsDescription" value="Let op dat het HTTP-protocol wordt gebruikt voor deze verbinding. Dit houdt in dat alle verzonden informatie onbeveiligd is. Klik op Voltooien om de source toe te voegen." />
+  <string key="AddPackageSource.Step2.HeadingWithHttpsDescription" value="Klik Einde om de bron toe te voegen" />
   <string key="DeletePackageSource.Step1.LayoutLabel" value="Verwijder bevestiging" />
   <string key="DeletePackageSource.Step1.Text" value="Verwijder geselecteerde server bron" />
+
+  <string key="ConfirmLicense.ExpiredTitle" value="De proefperiode is verlopen" />
+  <string key="ConfirmLicense.ExpiredMessage" value="De proefperiode van het pakket is verstreken. U heeft een geldige licentie nodig." />
 </strings>

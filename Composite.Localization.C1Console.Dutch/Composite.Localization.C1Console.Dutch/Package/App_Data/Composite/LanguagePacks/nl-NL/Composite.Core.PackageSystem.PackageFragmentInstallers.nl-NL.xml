@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="PackageManager.CompositeVersionMisMatch" value="De Composite versie die het pakket vereist komt niet overeen met de huidige Composite versie" />
+  <string key="PackageManager.PackageAlreadyInstalled" value="Pakket is al ge&#239;nstalleerd" />
+  <string key="PackageManager.NewerVersionInstalled" value="Een nieuwere versie van het pakket is al ge&#239;nstalleerd" />	
+  <string key="PackageManager.MissingPackageDirectory" value="Kan pakket map &#39;{0}&#39; niet vinden" />
+  <string key="PackageManager.Uninstallable" value="Het pakket is gemarkeerd als niet installeerbaar" />
+  <string key="PackageManager.MissingZipFile" value="Kan het zip-bestand &#39;{0}&#39; van het pakket niet vinden" />
+  <string key="PackageManager.MissingUninstallFile" value="Kan het de-installeer pad &#39;{0}&#39; niet vinden" />
+  <string key="PackageManager.MissingElement" value="Element &#39;{0}&#39; ontbreekt." />
+  <string key="PackageManager.MissingAttribute" value="Attribuut &#39;{0}&#39; ontbreekt." />
+  <string key="PackageManager.InvalidAttributeValue" value="Attribuut waarde &#39;{0}&#39; is ongeldig." />
+  <string key="PackageManager.InvalidElementValue" value="Element waarde &#39;{0}&#39; is ongeldig" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.ExpectedExactlyTwoElements" value="Verwachtte precies twee elementen, &#39;{0}&#39; en &#39;{1}&#39;" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingElement" value="Element &#39;{0}&#39; ontbreekt." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingAttribute" value="Attribuut &#39;{0}&#39; ontbreekt." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.PathDoesNotExist" value="Het pad &#39;{0}&#39; bestaat niet in de ZIP." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.UnableToParsXslt" value="Kan het XSLT-bestand &#39;{0}&#39; in de zip niet verwerken. {1}" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.XsltWillGeneratedInvalid" value="Het XSLT-bestand &#39;{0}&#39; zal een ongeldig configuratie bestand genereren. {1}" />
+  <string key="DataPackageFragmentInstaller.OnlyOneElement" value="Er is slechts &#233;&#233;n element &#39;Types&#39; toegestaan" />
+  <string key="DataPackageFragmentInstaller.MissingElement" value="Element &#39;Types&#39; ontbreekt" />
+  <string key="DataPackageFragmentInstaller.MissingAttribute" value="Ontbrekend attribuut {0} in de configuratie" />
+  <string key="DataPackageFragmentInstaller.WrongDataScopeIdentifier" value="Verkeerde DataScopeIdentifier ({0}) naam in de configuratie" />
+  <string key="DataPackageFragmentInstaller.WrongLocale" value="Verkeerde cultuur ({0}) naam in de configuratie" />
+  <string key="DataPackageFragmentInstaller.MissingFile" value="Bestand &#39;{0}&#39; onbreekt in het pakket zip" />
+  <string key="DataPackageFragmentInstaller.TypeNotConfigured" value="De data-interface van het type &#39;{0}&#39; is niet geconfigureerd in het systeem" />
+  <string key="DataPackageFragmentInstaller.TypeNotInheriting" value="De data-interface van het type &#39;{0}&#39; erft niet van de interface &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingProperty" value="De data-interface het type &#39;{0}&#39; heeft niet de eigenschap met naam &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingWritableProperty" value="De data-interface het type &#39;{0}&#39; heeft geen beschrijfbare eigenschap met de naam &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.ConversionFailed" value="Kan de waarde &#39;{0}&#39; niet converteren naar het type &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingPropertyVaule" value="De eigenschap &#39;{0}&#39; op de interface &#39;{1}&#39; heeft geen waarde." />
+  <string key="DataPackageFragmentInstaller.DataExists" value="Data type &#39;{0}&#39;: {1} record (s) al ge&#239;nstalleerd" />
+  <string key="DataPackageFragmentInstaller.MissingTypeDescriptor" value="Ontbrekend data type descriptor voor type {0}" />
+  <string key="DataPackageFragmentInstaller.TypeNonLocalizedWithLocale" value="Het data type &#39;{0}&#39; is niet vertaald, maar een taal is opgegeven in de configuratie" />
+  <string key="DataPackageFragmentInstaller.TypeLocalizedWithoutLocale" value="De data type &#39;{0}&#39; is  vertaald maar er is geen taal opgegeven in de configuratie" />
+  <string key="DataPackageFragmentInstaller.ReferencedDataMissing" value="Genoemde gegevens ontbreken. Type: {0}, {1}: &#39;{2}&#39;" />
+  <string key="DataPackageFragmentUninstaller.OnlyOneElement" value="Er is slechts &#233;&#233;n element &#39;Types&#39; toegestaan" />
+  <string key="DataPackageFragmentUninstaller.MissingAttribute" value="Ontbrekend attribuut {0} in de configuratie" />
+  <string key="DataPackageFragmentUninstaller.MissingKeyProperty" value="De data type &#39;{0}&#39; bevat niet de sleutel eigenschap met de naam &#39;{1}&#39;" />
+  <string key="DataTypePackageFragmentInstaller.OnlyOneElement" value="Er is slechts &#233;&#233;n element &#39;Types&#39; toegestaan" />
+  <string key="DataTypePackageFragmentInstaller.MissingElement" value="Element &#39;Types&#39; ontbreekt" />
+  <string key="DataTypePackageFragmentInstaller.MissingAttribute" value="Ontbrekend attribuut {0} in de configuratie" />
+  <string key="DataTypePackageFragmentInstaller.TypeNotConfigured" value="De data-interface van het type &#39;{0}&#39; is niet geconfigureerd in het systeem" />
+  <string key="DataTypePackageFragmentInstaller.TypeNotInheriting" value="De data-interface van het type &#39;{0}&#39; erft niet van de interface &#39;{1}&#39;" />
+  <string key="DataTypePackageFragmentInstaller.TypeExists" value="De interface type &#39;{0}&#39; bestaat al in het systeem" />
+  <string key="DataTypePackageFragmentInstaller.InterfaceCodeError" value="Kon geen datatype beschrijving voor interface &#39;{0}&#39; genereren" />
+  <string key="DataTypePackageFragmentUninstaller.OnlyOneElement" value="Er is slechts &#233;&#233;n element &#39;Types&#39; toegestaan" />
+  <string key="DataTypePackageFragmentUninstaller.MissingAttribute" value="Ontbrekend attribuut {0} in de configuratie" />
+  <string key="DataTypePackageFragmentUninstaller.WrongAttributeFormat" value="Verkeerde attribuut formaat in de configuratie" />
+  <string key="DynamicDataTypePackageFragmentInstaller.OnlyOneElement" value="Er is slechts &#233;&#233;n element &#39;Types&#39; toegestaan" />
+  <string key="DynamicDataTypePackageFragmentInstaller.MissingElement" value="Element &#39;Types&#39; ontbreekt" />
+  <string key="DynamicDataTypePackageFragmentInstaller.DataTypeDescriptorParseError" value="Fout bij het verwerken van de xml van het attribuut dataTypeDescriptor" />
+  <string key="DynamicDataTypePackageFragmentInstaller.DataTypeDescriptorDeserializeError" value="Er is een fout opgetreden tijdens het deserialiseren van een DataType: {0}." />
+  <string key="DynamicDataTypePackageFragmentInstaller.MissingReferencedType" value="Kan het type &#39;{0}&#39; waar naar verwezen wordt niet vinden." />
+  <string key="DynamicDataTypePackageFragmentInstaller.TypeExists" value="De interface type &#39;{0}&#39; bestaat al in het systeem" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.OnlyOneElement" value="Er is slechts &#233;&#233;n element &#39;Types&#39; toegestaan" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.MissingAttribute" value="Ontbrekend attribuut {0} in de configuratie" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.WrongAttributeFormat" value="Verkeerde attribuut formaat in de configuratie" />
+  <string key="FilePackageFragmentInstaller.OnlyOneFilesElement" value="Slechts &#233;&#233;n element &#39;Files&#39; toegestaan" />
+  <string key="FilePackageFragmentInstaller.OnlyOneDirectoriesElement" value="Slechts &#233;&#233;n element &#39;Directories&#39; toegestaan" />
+  <string key="FilePackageFragmentInstaller.MissingAttribute" value="Ontbrekend attribuut {0} in de configuratie" />
+  <string key="FilePackageFragmentInstaller.DeleteTargetDirectoryNotAllowed" value="De &#39;deleteTargetDirectory&#39; eigenschap kan alleen worden toegepast op directories, geen bestanden" />
+  <string key="FilePackageFragmentInstaller.WrongAttributeBoolFormat" value="Verkeerd attribuutwaarde formaat, boolean waarde verwacht" />
+  <string key="FilePackageFragmentInstaller.MissingFile" value="De install zip bevat niet het bestand &#39;{0}&#39;" />
+  <string key="FilePackageFragmentInstaller.FileExists" value="Het bestand &#39;{0}&#39; bestaat al" />
+  <string key="FilePackageFragmentInstaller.FileReadOnly" value="Bestand &#39;{0}&#39; is gemarkeerd als &#39;Alleen-lezen&#39; en kan dus niet worden overschreven." />
+  <string key="FilePackageFragmentInstaller.AssemblyLoadNotAllowed" value="Het attribuut &#39;assemblyLoad&#39; kan alleen worden toegepast op bestanden, niet op directories" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowed" value="Het attribuut &#39;onlyUpdate&#39; kan alleen worden toegepast op bestanden, niet op directories" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowedWithLoadAssemlby" value="Het kenmerk &#39;onlyUpdate&#39; is niet toegestaan ​​in combinatie met het attribuut &#39;loadAssembly&#39;" />
+  <string key="FilePackageFragmentInstaller.MissingDirectory" value="De install zip bevat niet de map &#39;{0}&#39;" />
+  <string key="FilePackageFragmentInstaller.WrongBasePath" value="Uninstall.xml bevat bestandspaden die verwijzen naar de originele website locatie, het pakket kan niet veilig worden verwijderd." />
+  <string key="FilePackageFragmentUninstaller.OnlyOneFilesElement" value="Slechts &#233;&#233;n element &#39;Files&#39; toegestaan" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.OnlyOneElement" value="Slechts &#233;&#233;n element &#39;Areas&#39; toegestaan" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingType" value="Kan het type &#39;{0}&#39; niet vinden" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingIcon" value="Kan het pictogram &#39;{0}&#39; niet vinden" />
+  <string key="VirtualElementProviderNodePackageFragmentUninstaller.OnlyOneElement" value="Slechts &#233;&#233;n element &#39;Areas&#39; toegestaan" />
+  <string key="VirtualElementProviderNodePackageFragmentUninstaller.MissingAttribute" value="Ontbrekend attribuut {0} in de configuratie" />
+  <string key="FileXslTransformationPackageFragmentInstaller.MissingAttribute" value="Ontbrekend attribuut {0} in de configuratie" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileNotFound" value="Bestand &#39;{0}&#39; niet gevonden" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnly" value="Bestand &#39;{0}&#39; is gemarkeerd als &#39;Alleen-lezen&#39; en kan dus niet worden overschreven." />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnlyOverride" value="Bestand &#39;{0}&#39; is gemarkeerd als &#39;Alleen lezen&#39;. Deze eigenschap werd expliciet verwijderd en het bestand is normaal bijgewerkt." />
+
+  <string key="PackageVersionBumberFragmentInstaller.OnlyOneElement" value="Slechts &#233;&#233;n element &#39;PackageVersions&#39; toegestaan" />
+  <string key="PackageVersionBumberFragmentInstaller.MissingAttribute" value="Ontbrekend attribuut {0} in de configuratie" />
+  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeGuidFormat" value="Verkeerd attribuutwaarde formaat, Guid waarde verwacht" />
+  <string key="PackageVersionBumberFragmentInstaller.PackageIdDuplicate" value="Het pakket id &#39;{0}&#39; bestaat al" />
+  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeVersionFormat" value="Verkeerd attribuutwaarde formaat, Versie waarde verwacht (xyz)" />
+  <string key="PackageVersionBumberFragmentUninstaller.OnlyOneElement" value="Slechts &#233;&#233;n element &#39;PackageVersions&#39; toegestaan" />
+  <string key="PackageVersionBumberFragmentUninstaller.MissingAttribute" value="Ontbrekend attribuut {0} in de configuratie" />
+  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeGuidFormat" value="Verkeerd attribuutwaarde formaat, Guid waarde verwacht" />
+  <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="Het pakket id &#39;{0}&#39; bestaat al" />
+  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeVersionFormat" value="Verkeerd attribuutwaarde formaat, Versie waarde verwacht (xyz)" />
+  <string key="PackageLicenseFragmentInstaller.MissingPublicKeyElement" value="Een openbare RSA sleutel ontbreekt in de pakket configuratie" />
+
+  <string key="License.InvalidKeyTitle" value="Ongeldige licentiesleutel" />
+  <string key="License.InvalidKeyMessage" value="De licentiesleutel is ongeldig. U heeft een geldige licentiesleutel nodig." />
+  <string key="License.ExpiredTitle" value="Proefperiode is verstreken" />
+  <string key="License.ExpiredMessage" value="De proefperiode van het pakket is verstreken. U heeft een geldige licentie nodig." />
+  <string key="License.Failed" value="Geen licentie gevonden. ProductId: {0}" />
+
+  <string key="NotEnoughNtfsPermissions" value="De Windows-gebruiker waarmee deze instantie C1 is opgestart heeft geen schrijfrechten voor bestand of map &#39;{0}&#39;." />
+</strings>

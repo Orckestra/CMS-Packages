@@ -1,32 +1,56 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <string key="PageTemplateElementProvider.RootLabel" value="Layout Templates (sjablonen)" />
-  <string key="PageTemplateElementProvider.RootLabelToolTip" value="Je kan hier de XHTML templates (sjablonen) van de site vinden" />
-  <string key="PageTemplateElementProvider.AddTemplate" value="Voeg template (sjabloon) toe" />
-  <string key="PageTemplateElementProvider.AddTemplateToolTip" value="Voeg nieuw template (sjabloon) toe" />
-  <string key="PageTemplateElementProvider.EditTemplate" value="Bewerk template (sjabloon)" />
-  <string key="PageTemplateElementProvider.EditTemplateToolTip" value="Bewerk geselecteerde template (sjabloon)" />
-  <string key="PageTemplateElementProvider.DeleteTemplate" value="Verwijder" />
-  <string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="Verwijder dit item" />
-  <string key="AddNewPageTemplateStep1.LabelDialog" value="Voeg nieuw layout template (sjabloon) voor de homepage toe" />
-  <string key="AddNewPageTemplateStep1.LabelFieldGroup" value="Layout Template (sjabloon) voor de homepage" />
-  <string key="AddNewPageTemplateStep1.LabelTemplateTitle" value="Template (sjabloon) titel" />
-  <string key="AddNewPageTemplateStep1.LabelTemplateTitleHelp" value="De titel identificeert het template (sjabloon) in de lijsten. Bedenk een korte maar betekenisvolle naam." />
-  <string key="AddNewPageTemplateStep1.LabelCopyFrom" value="Kopiëren van" />
-  <string key="AddNewPageTemplateStep1.LabelCopyFromHelp" value="U kunt de opmaak van een andere layout template (sjabloon) kopiëren  door deze te selecteren in de lijst." />
-  <string key="AddNewPageTemplateStep1.LabelCopyFromEmptyOption" value="(Nieuw template (sjabloon))" />
-  <string key="AddNewPageTemplateStep1.TitleInUseTitle" value="Titel reeds gebruikt" />
-  <string key="AddNewPageTemplateStep1.TitleTooLong" value="Titel is te lang (wordt als onderdeel van de xml bestandsnaam gebruikt)." />
-  <string key="EditPageTemplate.LabelMarkUpCode" value="Opmaak code" />
-  <string key="EditPageTemplate.LabelTemplateIdentification" value="Template (sjabloon) informatie" />
-  <string key="EditPageTemplate.LabelTemplateTitle" value="Template (sjabloon) titel" />
-  <string key="EditPageTemplate.LabelTemplateTitleHelp" value="De titel identificeert het template (sjabloon) in de lijsten. Bedenk een korte maar betekenisvolle naam." />
-  <string key="EditPageTemplateWorkflow.InvalidXmlTitle" value="Kan de pagina niet opslaan" />
-  <string key="EditPageTemplateWorkflow.InvalidXmlMessage" value="Pagina template (sjabloon) opmaak kon niet gevalideerd worden. {0}" />
-  <string key="EditPageTemplateWorkflow.CannotRenameFileExists" value="Kan het template (sjabloon) niet hernoemen - een bestand met de naam '{0}' bestaat reeds." />
-  <string key="EditPageTemplateWorkflow.TitleInUseTitle" value="Titel reeds gebruikt" />
-  <string key="DeletePageTemplateStep1.LabelFieldGroup" value="Verwijder dit pagina template (sjabloon)?" />
-  <string key="DeletePageTemplateStep1.Text" value="Verwijder pagina template (sjabloon)?" />
-  <string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="Probleem met recursief verwijderen" />
-  <string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="Er wordt verwezen naar dit type door een ander type dat recursief verwijderen niet ondersteund. Deze operatie is stopgezet." />
+  <string key="PageTemplateElementProvider.RootLabel" value="Pagina Templates" />
+  <string key="PageTemplateElementProvider.RootLabelToolTip" value="Je kan XHTML templates hier vinden" />
+  <string key="PageTemplateElementProvider.AddTemplate" value="Voeg template toe" />
+  <string key="PageTemplateElementProvider.AddTemplateToolTip" value="Voeg een nieuwe template toe" />
+  <string key="PageTemplateElementProvider.DeleteTemplate" value="Verwijderen" />
+	<string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="Verwijder dit item" />
+
+  <string key="PageTemplateElementProvider.SharedCodeFolder.Title" value="Gedeelde code" />
+  <string key="PageTemplateElementProvider.SharedCodeFolder.ToolTip" value="Bestanden die gebruikt worden door layout bestanden" />
+  
+  <string key="EditSharedCodeFile.Label" value="Bewerk" /> 
+  <string key="EditSharedCodeFile.ToolTip" value="Bewerk dit bestand" />
+
+  <string key="PageTemplateElementProvider.EditXmlTemplate" value="Bewerk XML template" />
+  <string key="PageTemplateElementProvider.EditXmlTemplateToolTip" value="Bewerk de geselecteerde XML  template" />
+
+  <string key="AddNewXmlPageTemplate.LabelDialog" value="Voeg nieuwe XML pagina template toe" />
+  <string key="AddNewXmlPageTemplate.LabelFieldGroup" value="XML template" />
+  <string key="AddNewXmlPageTemplate.LabelTemplateTitle" value="Template titel" />
+  <string key="AddNewXmlPageTemplate.LabelTemplateTitleHelp" value="De titel identificeert de template in lijsten. Overweeg het selecteren van een korte maar betekenisvolle naam." />
+  <string key="AddNewXmlPageTemplate.LabelCopyFrom" value="Kopi&#235;ren van" />
+  <string key="AddNewXmlPageTemplate.LabelCopyFromHelp" value="U kunt de opmaak van een andere XML pagina template kopieren door die te selecteren in deze lijst." />
+  <string key="AddNewXmlPageTemplate.LabelCopyFromEmptyOption" value="(Nieuwe template)" />
+  <string key="AddNewXmlPageTemplateWorkflow.TitleInUseTitle" value="Titel is al gebruikt" />
+  <string key="AddNewXmlPageTemplateWorkflow.TitleTooLong" value="De titel is te lang (zoals gebruikt als onderdeel van de XML bestandsnaam)." />
+
+  <string key="EditXmlPageTemplate.LabelMarkUpCode" value="Opmaak code" />
+  <string key="EditXmlPageTemplate.LabelTemplateIdentification" value="Template informatie" />
+  <string key="EditXmlPageTemplate.LabelTemplateTitle" value="Template titel" />
+  <string key="EditXmlPageTemplate.LabelTemplateTitleHelp" value="De titel identificeert de template in lijsten. Overweeg het selecteren van een korte maar betekenisvolle naam." />
+
+  <string key="EditXmlPageTemplateWorkflow.InvalidXmlTitle" value="Template kan niet worden opgeslagen" />
+  <string key="EditXmlPageTemplateWorkflow.InvalidXmlMessage" value="De opmaak van de template is niet valide. {0}" />
+  <string key="EditXmlPageTemplateWorkflow.CannotRenameFileExists" value="Kan de template niet hernoemen, er bestaat al een bestand  met de naam {0}." />
+  <string key="EditXmlPageTemplateWorkflow.TitleInUseTitle" value="Titel is al gebruikt" />
+
+  <string key="DeletePageTemplateStep1.LabelFieldGroup" value="Verwijder pagina template?" />
+	<string key="DeletePageTemplateStep1.Text" value="Verwijder pagina template" />
+	
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="Trapsgewijze verwijderingsfout" />
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="Dit type verwijst naar een ander type dat het verwijderen van cascades niet toestaat. De actie is gestopt" />
+
+  <string key="DeletePageTemplateWorkflow.PageReference" value="Er zijn {0} pagina(s) die verwijzen naar deze template {1}." /> 
+  <string key="DeletePageTemplateWorkflow.PageTypeReference" value="Er zijn {0} pagina(s) die verwijzen naar deze template {1}." />
+
+  <string key="AddNewPageTemplate.LabelDialog" value="Voeg nieuwe pafina template toe" />
+  <string key="AddNewPageTemplate.LabelFieldGroup" value="Nieuwe pagina template" />
+  <string key="AddNewPageTemplate.TemplateTypeHelp" value="Kies &#233;&#233;n van mogelijke typen pagina template" />
+  <string key="AddNewPageTemplate.TemplateTypeLabel" value="Template type" />
+
+  <string key="AddNewPageTemplate.TemplateType.Razor" value="Razor" />
+  <string key="AddNewPageTemplate.TemplateType.MasterPage" value="MasterPage" />
+  <string key="AddNewPageTemplate.TemplateType.XML" value="XML" />
 </strings>

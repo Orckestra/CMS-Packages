@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="SEOAssistant" value="SEO assistent" />
-  <string key="IntroText" value="Maak een pagina preview voor de SEO indicatie" />
+  <string key="IntroText" value="Maak een pagina preview om de SEO indicatie te berekenen." />
   <string key="TabResult" value="Resultaat" />
   <string key="TabKeywords" value="Keywords" />
-  <string key="NoKeywordsWarning" value="Er zijn geen keywords gedefinieerd" />
+  <string key="ResultHeading" value="Keywords gevonden in de preview:" />
+  <string key="NoKeywordsWarning" value="Er zijn geen keywords gedefinieerd." />
   <string key="isInTitle" value="Keyword in de titel" />
   <string key="isInURL" value="Keyword in de url" />
   <string key="isInMenuTitle" value="Keyword in de menutitel" />
@@ -12,5 +13,5 @@
   <string key="isInHeading" value="Keyword in heading" />
   <string key="isInContent" value="Keyword in de content" />
   <string key="NoKeywords" value="Geen keywords" />
-  <string key="IncorrectHtml" value="Kan de zoekwoorden niet analyseren, omdat de opmaak niet geldig is" />
+	<string key="IncorrectHtml" value="Kan de keywords niet analyseren omdat de opmaak niet geldig is" />
 </strings>

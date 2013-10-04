@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<!-- Element tree -->
+	<string key="Tree.ConfigurationElementLabel" value="URL Configuratie" />
+  <string key="Tree.ConfigurationElementToolTip" value="Deze sectie laat het configureren van korte en vriendelijkere urls toe" />
+  <string key="Tree.ConfigurationElementEditLabel" value="Bewerken URL Configuratie" />
+  <string key="Tree.ConfigurationElementEditToolTip" value="Bewerken URL Configuratie" />
+  <string key="Tree.HostnamesFolderLabel" value="Hostnames" />
+	<string key="Tree.HostnamesFolderToolTip" value="Hier kun je een hostnaam koppelen aan een site" />
+	<string key="Tree.AddHostnameLabel" value="Voeg Hostnaam toe" />
+  <string key="Tree.AddHostnameToolTip" value="Voeg een nieuwe hostnaam koppeling toe" />
+  <string key="Tree.EditHostnameLabel" value="Bewerk Hostnaam" />
+  <string key="Tree.EditHostnameToolTip" value="Wijzig deze hostnaam" />
+  <string key="Tree.DeleteHostnameLabel" value="Verwijder Hostnaam" />
+  <string key="Tree.DeleteHostnameToolTip" value="Verwijder deze hostnaam koppeling" />
+
+
+  <string key="Tree.UrlConfigurationLabel" value="UrlConfiguratie" />
+  
+
+	<!-- Url configuration -->
+	<string key="UrlConfiguration.Title" value="URL Configuratie" />
+	<string key="UrlConfiguration.PageUrlSuffix.Label" value="Pagina URL Suffix" />
+	<string key="UrlConfiguration.PageUrlSuffix.Help" value="Een tekenreeks die zal worden toegevoegd aan alle pagina urls. Bijvoorbeeld &#39;.aspx&#39; of  &#39;.html&#39;. Als u dit veld leeg laat zullen urls zonder extensie worden gebruikt" />
+
+	<!-- Hostname binding editing -->
+	<string key="HostnameBinding.AddNewHostnameTitle" value="Nieuwe hostnaam" />
+	<string key="HostnameBinding.Hostname.Label" value="Hostnaam" />
+	<string key="HostnameBinding.Hostname.Help" value="Hostnaam waarop de huidige url opmaakregels zullen worden toegepast" />
+	<string key="HostnameBinding.Page.Label" value="Pagina" />
+	<string key="HostnameBinding.Page.Help" value="Root pagina die de standaard pagina zal zijn voor de huidige hostname" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Label" value="URL" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.ItemLabel" value="Inclusief homepage URL Titel" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Help" value="Bepaalt of titel van de root pagina&#39;s een deel van de url zou moeten zijn. Het niet selecteren van deze optie levert kortere urls op" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.ItemLabel" value="Gebruik de taal in de URL koppeling" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.Help" value="Bepaalt of de taalcode een onderdeel van de url moet zijn" />
+	<string key="HostnameBinding.Custom404Page.Label" value="Aangepaste 404-pagina" />
+	<string key="HostnameBinding.Custom404Page.Help" value="Url waarnaar een request wordt doorgestuurd in het geval er een request wordt gedaan naar een niet bestaande c1 pagina" />
+	<string key="HostnameBinding.Aliases.Label" value="Alias ​​hostnamen" />
+	<string key="HostnameBinding.Aliases.Help" value="Hostnamen van waaruit alle verzoeken wordt doorgestuurd naar de huidige hostnaam" />
+</strings>

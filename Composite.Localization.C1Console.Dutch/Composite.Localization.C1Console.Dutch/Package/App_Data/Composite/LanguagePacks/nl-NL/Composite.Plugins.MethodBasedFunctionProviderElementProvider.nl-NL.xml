@@ -1,47 +1,88 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="RootFolderLabel" value="C# functies" />
-  <string key="RootFolderToolTip" value="Method functions" />
+  <string key="RootFolderToolTip" value="Methode functies" />
   <string key="DeleteFunction.LabelFieldGroup" value="Verwijder deze functie" />
   <string key="DeleteFunction.Text" value="Verwijder deze functie" />
-  <string key="Add" value="Toevoegen" />
-  <string key="AddToolTip" value="Nieuwe functie toevoegen" />
+  <string key="Add" value="Voeg externe C# functie toe" />
+  <string key="AddToolTip" value="Voeg een externe C# functie toe." />
+  <string key="Create" value="Voeg inline C# functie toe" />
+  <string key="CreateToolTip" value="Voeg inline C# functie toe" />
   <string key="Edit" value="Bewerk" />
   <string key="EditToolTip" value="Bewerk functie" />
-  <string key="Delete" value="Verwijder" />
+  <string key="Delete" value="Verwijderen" />
   <string key="DeleteToolTip" value="Verwijder functie" />
-  <string key="AddNewMethodBasedFunction.LabelFieldGroup" value="Nieuw method based function toevoegen" />
+  <string key="AddNewMethodBasedFunction.LabelFieldGroup" value="Voeg een nieuwe op een methode gebaseerde functie toe" />
   <string key="AddNewMethodBasedFunctionStep1.LabelType" value="Type" />
-  <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="The type that contains the method in question" />
-  <string key="AddNewMethodBasedFunctionStep2.LabelMethodName" value="Method naam" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="Het type dat de methode bevat" />
+  <string key="AddNewMethodBasedFunctionStep2.LabelMethodName" value="Methode naam" />
   <string key="AddNewMethodBasedFunctionStep2.HelpMethodName" value="" />
-  <string key="AddNewMethodBasedFunctionStep3.LabelMethodName" value="Method naam" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelMethodName" value="Methode naam" />
   <string key="AddNewMethodBasedFunctionStep3.HelpMethodName" value="" />
-  <string key="AddNewMethodBasedFunctionStep3.LabelNamespaceName" value="Naamruimte naam" />
+  <string key="AddNewMethodBasedFunctionStep3.LabelNamespaceName" value="Namespace naam" />
   <string key="AddNewMethodBasedFunctionStep3.HelpNamespaceName" value="" />
   <string key="AddNewMethodBasedFunctionStep3.LabelError" value="Fout" />
-  <string key="CascadeDeleteErrorTitle" value="Cascade verwijderingsfout" />
-  <string key="CascadeDeleteErrorMessage" value="Er wordt door een ander datatype verwezen naar dit datatype welke geen cascade verwijdering toestaat. Deze operatie wordt stopgezet." />
+  <string key="CascadeDeleteErrorTitle" value="Trapgewijze verwijderingsfout" />
+  <string key="CascadeDeleteErrorMessage" value="Er wordt verwezen naar dit type door een ander type dat geen trapsgewijze verwijdering toestaat. Deze bewerking wordt gestopt" />
   <string key="AddFunction.CouldNotFindType" value="Kan type niet vinden" />
   <string key="AddFunction.TypeHasNoValidMethod" value="Het type bevat geen geldige methode" />
-  <string key="AddFunction.TypeIsAbstractOrStatic" value="Type is gemarkeerd als abstract of statisch. Het aanroepen van methoden over abstracte of statische soorten wordt niet ondersteund." />
-  <string key="AddFunction.TypeMustNotHaveOverloads" value="Type mag niet voorzien zijn van overbelasting" />
-  <string key="AddFunction.MethodNameIsEmpty" value="Method name mag niet leeg zijn" />
-  <string key="AddFunction.InvalidNamespace" value="Naamruimte moet net als ABC - niet starten en eindigen op." />
-  <string key="EditMethodBasedFunction.LabelFieldGroup" value="Bewerk Method Based query" />
-  <string key="EditMethodBasedFunction.LabelMethodName" value="Method naam" />
-  <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="De naam die de functie moet weten onder." />
-  <string key="EditMethodBasedFunction.LabelNamespaceName" value="Naamruimte naam" />
-  <string key="EditMethodBasedFunction.LabelNamespaceNameHelp" value="De naam die de functie moet weten onder." />
+  <string key="AddFunction.TypeIsAbstractOrStatic" value="Type is gemarkeerd als abstract of statisch. Het aanroepen van methoden van abstracte of statische typen wordt niet ondersteund." />
+  <string key="AddFunction.TypeMustNotHaveOverloads" value="Type mag niet voorzien zijn van overloads" />
+  <string key="AddFunction.MethodNameIsEmpty" value="Methode naam mag niet leeg zijn" />
+  <string key="AddFunction.InvalidNamespace" value="Namespace moet eruit zien als A.B.C en mag niet starten en/of eindigen op een punt" />
+  <string key="AddFunction.NameAlreadyUsed" value="De naam van de functie &#39;{0}&#39; wordt al gebruikt" />
+  <string key="EditMethodBasedFunction.LabelFieldGroup" value="Bewerk op methode gebaseerde zoekopdracht (query)" />
+  <string key="EditMethodBasedFunction.LabelMethodName" value="Methode naam" />
+  <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="De naam van de functie." />
+  <string key="EditMethodBasedFunction.LabelNamespaceName" value="Namespace naam" />
+  <string key="EditMethodBasedFunction.LabelNamespaceNameHelp" value="De namespace waartoe de functie behoort." />
   <string key="EditMethodBasedFunction.LabelType" value="Type" />
-  <string key="EditMethodBasedFunction.LabelTypeHelp" value="The type that contains the method in question." />
-  <string key="EditMethodBasedFunction.LabelMethod" value="Method" />
-  <string key="EditMethodBasedFunction.LabelMethodHelp" value="De methode die daarbij een beroep doen op het type." />
+  <string key="EditMethodBasedFunction.LabelTypeHelp" value="Het type dat de huidige method bevat." />
+  <string key="EditMethodBasedFunction.LabelMethod" value="Methode" />
+  <string key="EditMethodBasedFunction.LabelMethodHelp" value="De methode om het type te aan te roepen" />
   <string key="EditMethodBasedFunction.LabelError" value="Fout" />
-  <string key="EditFunction.MethodNameEmpty" value="Method naam moet niet leeg zijn" />
-  <string key="EditFunction.InvalidNamespace" value="Naamruimte moet niet starten en eindigen met. voorbeeld A.B.C" />
+  <string key="EditFunction.MethodNameEmpty" value="Methode naam mag niet leeg zijn" />
+  <string key="EditFunction.InvalidNamespace" value="Namespace mag niet starten en eindigen met een punt, bijvoorbeeld A.B.C" />
   <string key="EditFunction.TypeNotFound" value="Kan type niet vinden" />
   <string key="EditFunction.MethodNotInType" value="Het type bevat niet de methode" />
   <string key="EditFunction.NoValidMethod" value="Het type bevat geen geldige methode" />
-  <string key="EditFunction.MethodOverloadsNotAllowed" value="Type mag geen overbelasting hebben" />
+  <string key="EditFunction.MethodOverloadsNotAllowed" value="Type mag niet voorzien zijn van overloads" />
+  <string key="AddInlineFunctionWorkflow.FieldGroup.Label" value="Instellingen" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Label" value="Naam" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Help" value="De naam van de methode die u wilt maken" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Label" value="Namespace" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Help" value="De namespace van de methode die u wilt maken" />
+  <string key="AddInlineFunctionWorkflow.MethodDescription.Label" value="Omschrijving" />
+  <string key="AddInlineFunctionWorkflow.MethodDescription.Help" value="Een korte beschrijving van de functie" />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Label" value="Template" />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Help" value="Selecteer de template die u wilt gebruiken voor de nieuwe methode." />
+  <string key="EditInlineFunctionWorkflow.FieldGroup.Label" value="Instellingen" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Label" value="Naam" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Help" value="De naam van de methode die u wilt maken" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Label" value="Namespace" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Help" value="De namespace van de methode die u wilt maken" />
+  <string key="EditInlineFunctionWorkflow.MethodDescription.Label" value="Omschrijving" />
+  <string key="EditInlineFunctionWorkflow.MethodDescription.Help" value="Een korte beschrijving van de functie" />
+  <string key="EditInlineFunctionWorkflow.DebugFieldGroup.Label" value="Debuggen" />
+  <string key="EditInlineFunctionWorkflow.DebugPage.Label" value="Pagina" />
+  <string key="EditInlineFunctionWorkflow.DebugPage.Help" value="Bij het debuggen wordt deze pagina gebruikt als de huidige pagina" />
+  <string key="EditInlineFunctionWorkflow.DebugPageDataScope.Label" value="Data scope" />
+  <string key="EditInlineFunctionWorkflow.DebugPageDataScope.Help" value="Bij het debuggen wordt dit gebruikt als actuele gegevens scope" />
+  <string key="EditInlineFunctionWorkflow.DebugActiveLocale.Label" value="Taal" />
+  <string key="EditInlineFunctionWorkflow.DebugActiveLocale.Help" value="Bij het debuggen wordt dit gebruikt als de huidige taal" />
+  <string key="EditInlineFunctionWorkflow.Code.Label" value="Bron" />
+  <string key="EditInlineFunctionWorkflow.AssembliesFieldGroup.Label" value="Assembly Referenties" />
+  <string key="EditInlineFunctionWorkflow.Preview.Label" value="Preview" />
+  <string key="EditInlineFunctionWorkflow.ParameterFieldGroup.Label" value="Invoer parameters" />
+  <string key="EditInlineFunctionWorkflow.AdminitrativeScope.Label" value="Administratief" />
+  <string key="EditInlineFunctionWorkflow.PublicScope.Label" value="Publiek" />
+  <string key="InlineFunctionMethodTemplate.Clean" value="Lege methode" />
+  <string key="InlineFunctionMethodTemplate.WithParameters" value="Methode met parameters" />
+  <string key="InlineFunctionMethodTemplate.DataConnection" value="Methode die gebruik maakt van een data verbinding" />
+  <string key="CSharpInlineFunction.OnMissingContainerType" value="Een openbare statische klasse met de naam {0} ontbreekt in de code. Deze klasse moet de functie methode bevatten." />
+  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="De namespace in de code &#39;{0}&#39; komt niet overeen met de gegeven namespace &#39;{1}&#39; van de functie." />
+  <string key="CSharpInlineFunction.OnMissionMethod" value="De gegeven functie naam &#39;{0}&#39; is niet gevonden of niet publiek statisch in de klasse &#39;{1}&#39;." />
+  <string key="CSharpInlineFunction.MissingParameterDefinition" value="De parameter &#39;{0}&#39; is niet toegevoegd aan &#39;Invoer Parameters&#39; - om uw functie aan te roepen moet u de parameter toevoegen en geef het ofwel een test of standaardwaarde." />
+  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="De parameter &#39;{0}&#39; verwacht een testwaarde van het type &#39;{1}&#39;, kreeg waarde van het type &#39;{2}&#39;." />
+  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="De parameter &#39;{0}&#39; gedefinieerd bij &#39;Invoer Parameters&#39; moet een test of een standaardwaarde hebben voordat de functie kan worden uitgevoerd." />
 </strings>

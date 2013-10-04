@@ -1,54 +1,72 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <string key="AddNewXsltFunctionWorkflow.MethodEmpty" value="Methode naam moet niet- leeg zijn" />
-  <string key="AddNewXsltFunctionWorkflow.InvalidNamespace" value="Naamruimte moet als A.B.C. - niet beginnen en eindigen met" />
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderLabel" value="XSLT Functies" />
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderToolTip" value="XSLT functies" />
+  <string key="AddNewXsltFunctionWorkflow.DuplicateName" value="Een XSLT functie met dezelfde naam bestaat al." />
+  <string key="AddNewXsltFunctionWorkflow.MethodEmpty" value="Methode naam mag niet leeg zijn" />
+  <string key="AddNewXsltFunctionWorkflow.NamespaceEmpty" value="Namespace mag niet leeg zijn" />
+  <string key="AddNewXsltFunctionWorkflow.InvalidNamespace" value="Namespace moet eruit zien als A.B.C en mag niet starten en/of eindigen op een punt" />
   <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageTitle" value="Een taal is vereist" />
-  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Om een xslt functie te maken is een taal vereist, maar er is nog geen taal gemaakt. Je kan een taal maken in de sytem area" />
+  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Om een xslt functie te maken is een taal vereist, maar er is nog geen taal gemaakt. U kunt een taal toevoegen in het systeem onderdeel." />
   <string key="AddNewXsltFunctionWorkflow.MissingPageTitle" value="Een pagina is vereist" />
-  <string key="AddNewXsltFunctionWorkflow.MissingPageMessage" value="Om een xslt function te maken op zijn minst 1 pagina moet zijn toegevoegd." />
+  <string key="AddNewXsltFunctionWorkflow.MissingPageMessage" value="Om een xslt functie te maken moet op zijn minst 1 pagina zijn toegevoegd." />
+  <string key="AddNewXsltFunctionWorkflow.TotalNameTooLang" value="De totale lengte van de naam en de namespace is te lang (gebruikt voor de XSL bestandsnaam)." />
   <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteTitle" value="Verwijder XSLT?" />
   <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteMessage" value="Verwijder geselecteerde XSLT?" />
-  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorTitle" value="Cascade verwijderingsfout" />
-  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorMessage" value="Er wordt door een ander datatype verwezen naar dit datatype welke geen cascade verwijdering toestaat. Deze operatie wordt stopgezet." />
-  <string key="EditXsltFunctionWorkflow.EmptyMethodName" value="Methode naam moet niet leeg zijn" />
-  <string key="EditXsltFunctionWorkflow.InvalidNamespace" value="Naamruimte moet als A.B.C. - niet beginnen en eindigen met." />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorTitle" value="Trapsgewijze verwijderingsfout" />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorMessage" value="Er wordt verwezen naar dit type door een ander type dat geen trapsgewijze verwijdering toestaat. Deze bewerking wordt gestopt" />
+  <string key="EditXsltFunctionWorkflow.DuplicateName" value="Een XSLT functie met dezelfde naam bestaat al." />
+  <string key="EditXsltFunctionWorkflow.EmptyMethodName" value="Methode naam mag niet leeg zijn" />
+  <string key="EditXsltFunctionWorkflow.NamespaceEmpty" value="De namespace mag niet leeg zijn" />
+  <string key="EditXsltFunctionWorkflow.InvalidNamespace" value="Een namespace moet als eruitzien als A.B.C. - niet beginnen en eindigen met een punt (.)" />
   <string key="EditXsltFunctionWorkflow.InvalidFileName" value="XslFilePath moet beginnen met \ of /" />
-  <string key="XsltBasedFunctionProviderElementProvider.Add" value="Voeg toe" />
+  <string key="EditXsltFunctionWorkflow.InvalidName" value="Ongeldige functienaam" />
+  <string key="EditXsltFunctionWorkflow.CannotRenameFileExists" value="Kan de naam van de functie niet wijzigen, bestand &#39;{0}&#39; bestaat reeds." />
+  <string key="EditXsltFunctionWorkflow.TotalNameTooLang" value="De totale lengte van de naam en de namespace is te lang (gebruikt voor de XSL bestandsnaam)." />
+
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashTitle" value="Dupliceren lokale functienamen" />
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashMessage" value="Twee of meer functies aanroepen hebben dezelfde lokale naam. Wijzig de name zodanig dat ze verschillend zijn." />
+  
+  <string key="XsltBasedFunctionProviderElementProvider.Add" value="Voeg een XSLT functie toe" />
   <string key="XsltBasedFunctionProviderElementProvider.AddToolTip" value="Voeg nieuwe XSLT functie toe" />
   <string key="XsltBasedFunctionProviderElementProvider.Edit" value="Bewerk" />
   <string key="XsltBasedFunctionProviderElementProvider.EditToolTip" value="Bewerk XSLT functie" />
-  <string key="XsltBasedFunctionProviderElementProvider.Delete" value="Verwijder" />
+  <string key="XsltBasedFunctionProviderElementProvider.Delete" value="Verwijderen" />
   <string key="XsltBasedFunctionProviderElementProvider.DeleteToolTip" value="Verwijder XSLT functie" />
   <string key="AddNewXsltFunctionStep1.LabelDialog" value="Voeg nieuwe XSLT functie toe" />
-  <string key="AddNewXsltFunctionStep1.LabelFieldGroup" value="Naamgeving en het type uitvoer\" />
+  <string key="AddNewXsltFunctionStep1.LabelFieldGroup" value="Nieuwe XSLT functie" />
   <string key="AddNewXsltFunctionStep1.LabelName" value="Naam" />
   <string key="AddNewXsltFunctionStep1.HelpName" value="" />
-  <string key="AddNewXsltFunctionStep1.LabelNamespace" value="Naamruimte" />
+  <string key="AddNewXsltFunctionStep1.LabelNamespace" value="Namespace" />
   <string key="AddNewXsltFunctionStep1.HelpNamespace" value="" />
-  <string key="AddNewXsltFunctionStep1.LabelOutputType" value="Uitvoer type" />
+  <string key="AddNewXsltFunctionStep1.LabelOutputType" value="UItvoer type" />
+  <string key="AddNewXsltFunctionStep1.LabelCopyFrom" value="Kopi&#235;ren van" />
+  <string key="AddNewXsltFunctionStep1.LabelCopyFromEmptyOption" value="(Nieuwe XSLT functie)" />
+
+
   <string key="EditXsltFunction.LabelSettings" value="Instellingen" />
   <string key="EditXsltFunction.LabelName" value="Naam" />
   <string key="EditXsltFunction.HelpName" value="" />
-  <string key="EditXsltFunction.LabelNamespace" value="Naamruimte" />
+  <string key="EditXsltFunction.LabelNamespace" value="Namespace" />
   <string key="EditXsltFunction.HelpNamespace" value="" />
   <string key="EditXsltFunction.LabelDescription" value="Omschrijving" />
   <string key="EditXsltFunction.HelpDescription" value="" />
-  <string key="EditXsltFunction.LabelDebug" value="Debug" />
+  <string key="EditXsltFunction.LabelDebug" value="Debuggen" />
   <string key="EditXsltFunction.LabelPage" value="Pagina" />
-  <string key="EditXsltFunction.HelpPage" value="Pagina" />
-  <string key="EditXsltFunction.LabelAdminitrativeScope" value="Administratie" />
+  <string key="EditXsltFunction.HelpPage" value="Tijdens het debuggen wordt deze pagina gebruikt als context voor rendering." />
+  <string key="EditXsltFunction.LabelAdminitrativeScope" value="Administratief" />
   <string key="EditXsltFunction.LabelPublicScope" value="Publiek" />
-  <string key="EditXsltFunction.LabelPageDataScope" value="Datagebied" />
-  <string key="EditXsltFunction.HelpPageDataScope" value="Datagebied" />
+  <string key="EditXsltFunction.LabelPageDataScope" value="Data scope" />
+  <string key="EditXsltFunction.HelpPageDataScope" value="Kies voor de publieke of ontwikkel versie als context van de rendering." />
   <string key="EditXsltFunction.LabelActiveLocales" value="Taal" />
-  <string key="EditXsltFunction.HelpActiveLocales" value="Taal" />
-  <string key="EditXsltFunction.OutputType" value="UItvoer tyoe" />
+  <string key="EditXsltFunction.HelpActiveLocales" value="Selecteer de taal die gerbuikt wordt bij het debuggen van deze functie." />
+  <string key="EditXsltFunction.OutputType" value="UItvoer type" />
   <string key="EditXsltFunction.LabelInputParameters" value="Invoer parameters" />
-  <string key="EditXsltFunction.LabelFunctionCalls" value="Functie uitvoeringen" />
+  <string key="EditXsltFunction.LabelFunctionCalls" value="Functie aanroepen" />
   <string key="EditXsltFunction.LabelTemplate" value="Template" />
   <string key="EditXsltFunction.LabelPreview" value="Preview" />
   <string key="EditXsltFunctionWorkflow.MissingActiveLanguageTitle" value="Een taal is vereist" />
-  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Om een xslt functie te maken is een taal vereist, maar er is nog geen taal toegevoegd. Je kan een taal toevoegen in de system area" />
+  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Om een xslt functie te maken is een taal vereist, maar er is nog geen taal toegevoegd. U kunt een taal toevoegen in het systeem onderdeel." />
   <string key="EditXsltFunctionWorkflow.MissingPageTitle" value="Een pagina is vereist" />
-  <string key="EditXsltFunctionWorkflow.MissingPageMessage" value="Om een xslt te wijzigen op zijn minst 1 pagina moet worden toegevoegd" />
+  <string key="EditXsltFunctionWorkflow.MissingPageMessage" value="Om een xslt te wijzigen moet op zijn minst 1 pagina zijn toegevoegd." />
 </strings>

@@ -1,12 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <string key="TypesAreReferencing" value="Een of meerdere typen verwijzen naar dit type. Hernoemen is niet mogelijk." />
-  <string key="TypeNameInNamespace" value="Type naam '{0}' komt voor in namespace '{1}' - dit is niet toegestaan." />
+	<string key="TypesAreReferencing" value="Een of meerdere typen verwijzen naar dit type. Hernoemen is niet mogelijk." />
+  <string key="TypeNameInNamespace" value="Type naam &#39;{0}&#39; komt voor in namespace &#39;{1}&#39; - dit is niet toegestaan." />
   <string key="TypesNameClash" value="Er bestaat al een type met dezelfde naam" />
-  <string key="MissingFields" value="Geen velden toegevoegd" />
-  <string key="FieldNameCannotBeUsed" value="Veldnaam '{0}' kan niet gebruikt worden" />
-  <string key="NameSpaceIsTypeTypeName" value="The specified 'Type namespace' is already in use as a 'Type name' (namespace + name). Consider changing the name of '{0}' to '{0}.Item'." />
-  <string key="NamespaceIsReserved" value="Type naam behoort aan een voorbehouden naamruimte" />
-  <string key="CompileErrorWhileAddingType" value="Er kan niet een datatype worden toegevoegd omdat het compilatie fouten veroorzaakt" />
-  <string key="CompileErrorWhileChangingType" value="Een datatype kan worden omgewisseld omdat het compilatie fouten veroorzaakt" />
+	<string key="MissingFields" value="Geen velden toegevoegd" />
+	<string key="TypeNameIsInvalidIdentifier" value="Het type naam &#39;{0}&#39; is geen geldige identifier." />
+	<string key="FieldNameCannotBeUsed" value="Veldnaam &#39;{0}&#39; kan niet gebruikt worden" />
+  <string key="NameSpaceIsTypeTypeName" value="De gespecificeerde &#39;Type namespace&#39; is al in gebruik als &#39;Type name&#39; (namespace + name). Verander de naam van &#39;{0}&#39; naar &#39;{0}.Item&#39;." />
+	<string key="NamespaceIsReserved" value="Type naam behoort aan een voorbehouden namepace" />
+	<string key="CompileErrorWhileAddingType" value="Het datatype kan niet worden toegevoegd omdat het compilatie fouten veroorzaakt" />
+	<string key="CompileErrorWhileChangingType" value="Het datatype kan niet worden gewijzijgd omdat het compilatie fouten veroorzaakt" />
 </strings>

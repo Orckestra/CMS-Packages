@@ -1,75 +1,103 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <strings>
-  <string key="AddNewButtonLabel" value="Voeg nieuwe toe" />
-  <string key="DeleteButtonLabel" value="Verwijder" />
+  <string key="BasicTabLabel" value="Basis" />
+  <string key="AdvancedTabLabel" value="Geavanceerd" />
+
+  <string key="AddNewButtonLabel" value="Toevoegen nieuwe" />
+  <string key="DeleteButtonLabel" value="Verwijderen" />
   <string key="LabelDataTypeFields" value="Datatype velden" />
-  <string key="FieldDetailsGroupLabel" value="Velddetails" />
+  
+  <string key="FieldDetailsGroupLabel" value="Veld eigenschappen" />
   <string key="Name" value="Naam" />
-  <string key="NameHelp" value="De naam van het veld wordt gebruikt door het systeem om velden te identificeren . Namen moet uniek zijn en mogen geen spaties en andere speciale tekens bevatten. Gebruik namen als' Titel ',' Begindatum ',' LargeImage 'etc." />
+  <string key="NameHelp" value="De naam van het veld wordt gebruikt door het systeem om velden te identificeren . Namen moet uniek zijn en mogen geen spaties en andere speciale tekens bevatten. Gebruik namen als &#39;Titel&#39;, &#39;Begindatum&#39;, &#39;LargeImage&#39; etc." />
   <string key="Label" value="Label" />
   <string key="LabelHelp" value="Label tekst wordt getoond aan gebruikers bij het toevoegen van een nieuw item op basis van het datatype." />
   <string key="Help" value="Help" />
-  <string key="HelpHelp" value="Gebruik deze ingang voor een korte helptekst voor de gebruiker" />
-  <string key="FieldTypeGroupLabel" value="Veldtype vereisten" />
+  <string key="HelpHelp" value="Gebruik dit voor een korte helptekst voor de gebruiker" />
+
+  <string key="FieldTypeGroupLabel" value="Veldtype en vereisten" />
   <string key="FieldType" value="Veldtype" />
-  <string key="FieldTypeHelp" value="Selecteer een datatype voor het veld. Het type bepaalt welk soort data het veld kan beschikken" />
+  <string key="FieldTypeHelp" value="Selecteer een datatype voor het veld. Het type bepaalt welk soort data het veld kan bevatten." />
   <string key="System.String" value="String" />
-  <string key="System.Int32" value="Integer" />
-  <string key="System.Decimal" value="Decimale nummer" />
+  <string key="System.Int32" value="Heel getal (Integer)" />
+  <string key="System.Decimal" value="Decimaal getal" />
   <string key="System.DateTime" value="Datum" />
   <string key="System.Boolean" value="Boolean" />
   <string key="System.Guid" value="Unieke indentifier (GUID)" />
   <string key="Reference" value="Data referentie" />
-  <string key="TypeDetailsHelp" value="Gebruik dit veld om je geselecteerde type verder te configureren" />
+  <string key="TypeDetailsHelp" value="Gebruik dit veld om je geselecteerde type verder te configureren." />
   <string key="Optional" value="Optioneel" />
-  <string key="OptionalHelp" value="Optionele velden kunnen worden opengelaten." />
+  <string key="OptionalHelp" value="Optionele velden kunnen worden leeggelaten." />
   <string key="OptionalFalseLabel" value="Nee" />
   <string key="OptionalTrueLabel" value="Ja" />
   <string key="ValidationRules" value="Validatie regels" />
-  <string key="ValidationRulesHelp" value="U kunt opgeven strikte regels met betrekking tot de gegevens die worden ingevoerd in dit veld bepalen, dat wil zeggen &quot;moet ten minste 5 tekens lang zijn&quot;, &quot;moet een geldig e-mailadres&quot;, &quot;moet een datum in het verleden&quot;, enz." />
+  <string key="ValidationRulesHelp" value="U kunt hier strikte regels opgeven die van toepassing zijn op de invoerde gegevens, bijvoorbeeld &quot;moet ten minste 5 tekens lang zijn&quot;, &quot;moet een geldig e-mailadres zijn&quot;, &quot;moet een datum in het verleden zijn&quot;, enz." />
   <string key="ValidationRulesAdd" value="Voeg validatie regels toe" />
   <string key="ValidationRulesEdit" value="Bewerk validatie regels" />
   <string key="ValidationRulesDialogLabel" value="Veld validatie regels configuratie" />
+
+  
   <string key="FieldValidationGroupLabel" value="Veld validatie" />
-  <string key="FieldPresentationGroupLabel" value="Veld presentatie" />
-  <string key="FieldStructureGroupLabel" value="Structurele presentatie" />
+  <string key="FieldPresentationGroupLabel" value="Veld weergave" />
+  <string key="FieldStructureGroupLabel" value="Structurele weergave" />
+  
   <string key="Widget" value="Widget" />
-  <string key="WidgetHelp" value="Je kan selecteren welke invoer type je wilt gebruiken (zoals een textbox) bij het bewerken van dit veld" />
+  <string key="WidgetHelp" value="U kunt selecteren welk invoer widget u wilt gebruiken (zoals een textbox) bij het bewerken van dit veld." />
   <string key="WidgetDialogLabel" value="Veld widget configuratie" />
   <string key="Position" value="Positie" />
   <string key="PositionLast" value="Laatste" />
-  <string key="PositionHelp" value="De positie van dit veld. Dit controleert de volgorde van de velden" />
-  <string key="GroupByPriority" value="Field grouping" />
-  <string key="GroupByPriorityNone" value="Geen groepering" />
-  <string key="GroupByPriorityFirst" value="Groepeer door dit veld" />
-  <string key="GroupByPriorityN" value="Groepeer als {0}. prioriteit heeft" />
-  <string key="GroupByPriorityHelp" value="U kunt opgeven dat een veld moet worden gebruikt om groepsgegevens - dit kan verbeterde leesbaarheid bij het bekijken van lange lijsten opleveren. Gebruik prioriteit wanneer meerdere velden worden gebruikt voor grouping.priority." />
-  <string key="IsTitleField" value="Is titel veld" />
-  <string key="IsTitleFieldHelp" value="Controleer of dit veld wilt gebruiken voor een titelveld. Titelvelden worden gebruikt voor list data, zoals de verkenner aan de linkerkant" />
-  <string key="IsTitleFieldLabel" value="Gebruik dit voor titelveld in lijsten" />
+  <string key="PositionHelp" value="De positie van dit veld. Dit bepaalt de volgorde van de velden." />
+  <string key="GroupByPriority" value="Structuur groepering" />
+  <string key="GroupByPriorityNone" value="(geen groepering)" />
+  <string key="GroupByPriorityFirst" value="Groepeer op basis van dit veld" />
+  <string key="GroupByPriorityN" value="Groepeer op basis van {0} prioriteit" />
+  <string key="GroupByPriorityHelp" value="U kunt hier opgeven dat een veld moet worden gebruikt om gegevens te groperen - dit kan verbeterde leesbaarheid bij het bekijken van lange lijsten opleveren. Gebruik prioriteit wanneer meerdere velden worden gebruikt voor groeperen." />
+  <string key="TreeOrdering" value="Structuur volgorde" />
+  <string key="TreeOrderingNone" value="(geen sortering) ..." />
+  <string key="TreeOrderingFirstAscending" value="Sorteer oplopend (A-Z)" />
+  <string key="TreeOrderingFirstDescending" value="Sorteer aflopend (Z-A)" />
+  <string key="TreeOrderingNAscending" value="Sorteer {0} oplopend" />
+  <string key="TreeOrderingNDescending" value="Sorteer {0} aflopend" />
+  <string key="TreeOrderingHelp" value="U kunt opgeven dat een veld moet worden gebruikt om de gegevens in de boomstructuur te sorteren - dit kan de leesbaarheid verbeteren wanneer een veld wordt gebruikt om de positie van elementen op de website bepalen." />
+  <string key="IsTitleField" value="Is een titel veld" />
+  <string key="IsTitleFieldHelp" value="Controleer of u dit veld wilt gebruiken als titelveld. Titelvelden worden gebruikt voor data in lijsten, zoals de structuur aan de linkerkant." />
+  <string key="IsTitleFieldLabel" value="Gebruik als titelveld in lijsten" />
+
+  
   <string key="DefaultValueGroupLabel" value="Standaard veld waarde" />
   <string key="DefaultValue" value="Standaard waarde" />
-  <string key="DefaultValueHelp" value="Je kan een standaard definieren voor dit veld" />
+  <string key="DefaultValueHelp" value="U kunt een standaard waarde definieren voor dit veld" />
   <string key="DefaultValueDialogLabel" value="Veld standaard waarde configuratie" />
-  <string key="StringMaximumLength" value="String maximum lengte" />
-  <string key="16CharMax" value="16 karakter maximaal" />
-  <string key="32CharMax" value="32 karakters maximaal" />
-  <string key="64CharMax" value="64 karakters maximaal" />
-  <string key="128CharMax" value="128 karakters maximaal" />
-  <string key="256CharMax" value="256 karakters maximaal" />
-  <string key="512CharMax" value="512 karakters maximaal" />
-  <string key="1024CharMax" value="1024 karakters maximaal" />
+
+  <string key="StringMaximumLength" value="String maximale lengte" />
+  <string key="16CharMax" value="Maximaal 16 karakters" />
+  <string key="32CharMax" value="Maximaal 32 karakters" />
+  <string key="64CharMax" value="Maximaal 64 karakters" />
+  <string key="128CharMax" value="Maximaal 128 karakters" />
+  <string key="256CharMax" value="Maximaal 256 karakters" />
+  <string key="512CharMax" value="Maximaal 512 karakters" />
+  <string key="1024CharMax" value="Maximaal 1024 karakters" />
   <string key="Unlimited" value="Onbeperkte lengte" />
-  <string key="DecimalNumberFormat" value="Decimaal nummer formaat" />
-  <string key="1DecimalPlace" value="1 decimale ruimte" />
-  <string key="2DecimalPlace" value="2 decimale ruimte" />
-  <string key="3DecimalPlace" value="3 decimale ruimte" />
-  <string key="4DecimalPlace" value="4 decimale ruimte" />
+  
+  <string key="DecimalNumberFormat" value="Decimaal getal opmaak" />
+  <string key="1DecimalPlace" value="1 decimaal getal" />
+  <string key="2DecimalPlace" value="2 decimale getallen" />
+  <string key="3DecimalPlace" value="3 decimale getallen" />
+  <string key="4DecimalPlace" value="4 decimale getallen" />
+  
   <string key="ReferenceType" value="Referentie type" />
+  
   <string key="FieldNameSyntaxInvalid" value="Gespecificeerde naam is niet geldig" />
-  <string key="CannotSave" value="Kan niet bewaren... ander veld heeft dezelfde naam. Verander de naam" />
-  <string key="SpaceInNameError" value="Ongeldige naam. Dataveldnamen kunnen geen leegtes bevatten. Je kan een leesbare naam in onderstaand veldlabel plaatsen" />
-  <string key="NameEmptyError" value="Dataveldnamen kunnen niet leeg zijn. Specificeer een naam aub" />
-  <string key="NameAlreadyInUseError" value="Een ander veld gebruikt deze naam. Dataveld namen moeten uniek zijn" />
+  <string key="CannotSave" value="Kan naam niet opslaan ... een ander veld heeft dezelfde naam. Verander de naam." />
+
+  <string key="SpaceInNameError" value="Ongeldige naam. Dataveldnamen kunnen geen spaties bevatten. U kunt een leesbare naam opgeven in het Label veld hieronder." />
+  <string key="NameEmptyError" value="Dataveldnamen kunnen niet leeg zijn. Specificeer een naam aub." />
+  <string key="NameAlreadyInUseError" value="Een ander veld gebruikt deze naam. Dataveldnamen moeten uniek zijn" />
   <string key="NotAnOptionalTypeError" value="Het geselecteerde type kan niet optioneel zijn" />
+  <string key="NoWidgetSelected" value="Specificeer een widget..." />
+  <string key="NoWidgetSelectedLabel" value="(geen widget gespecificeerd)" />
 </strings>
+
+
+
