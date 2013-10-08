@@ -1,7 +1,7 @@
 /*
 Skin Name: Composite Bootstrap Light Theme
 Description: A light skin for the Bootstrap Slider.
-Version: 1.0
+Version: 2.0
 Author: Composite
 Author URI: http://composite.net/
 */
@@ -31,7 +31,8 @@ Author URI: http://composite.net/
 	text-align: left;
 	padding: 0;
 	position: absolute;
-    bottom: -24px;
+    margin: 0;
+    bottom: -30px;
     top: auto;
     left: 0;
 	z-index: 10;

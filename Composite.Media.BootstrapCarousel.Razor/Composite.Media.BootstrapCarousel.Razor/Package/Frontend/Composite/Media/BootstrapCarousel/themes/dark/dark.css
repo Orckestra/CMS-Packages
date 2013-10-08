@@ -1,7 +1,7 @@
 /*
 Skin Name: Composite Bootstrap Dark Theme
 Description: A dark skin for the Bootstrap Slider.
-Version: 1.0
+Version: 2.0
 Author: Composite
 Author URI: http://composite.net/
 */
@@ -31,7 +31,8 @@ Author URI: http://composite.net/
 	text-align: left;
 	padding: 0;
 	position: absolute;
-    bottom: -24px;
+    margin: 0;
+    bottom: -30px;
     top: auto;
     left: 0;
 	z-index: 10;
@@ -47,6 +48,7 @@ Author URI: http://composite.net/
 }
 .theme-dark .carousel-indicators li.active {
 	background-position:0 100%;
+    margin-bottom: 1px;
 }
 
 .theme-dark .carousel-controlNav a {
@@ -80,7 +82,7 @@ Author URI: http://composite.net/
 
 .theme-dark .carousel-caption {
     font-family: Helvetica, Arial, sans-serif;
-    padding: 5px 10px;
+    padding: 10px 10px 0;
 }
 .theme-dark .carousel-caption a {
     color:#fff;
@@ -88,4 +90,7 @@ Author URI: http://composite.net/
 }
 .theme-dark .carousel-caption a:hover {
     color:#fff;
+}
+.theme-dark .cover {
+    margin-left: -1px;
 }
