@@ -12,7 +12,7 @@ process.on('exit', function() { process.reallyExit(currentErrorcode) });
 
 var parseLessFile = function (e, data) 
 {
-    var parser = new(less.Parser)({ silent: false, verbose:true, strictMath: true });
+    var parser = new(less.Parser)({ silent: false, verbose:true, strictMath: true, relativeUrls: true });
 
     parser.parse(data, function (err, tree) 
     {
