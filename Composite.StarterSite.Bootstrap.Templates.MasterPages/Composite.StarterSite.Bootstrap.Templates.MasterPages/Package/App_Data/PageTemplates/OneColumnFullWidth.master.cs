@@ -15,8 +15,8 @@ public partial class OneColumnFullWidth : MasterPagePageTemplate
         get { return "1 column, full width"; }
 	}
 
-    [Placeholder(Id = "herounit", Title = "Heading (hero unit)")]
-    public XhtmlDocument HeroUnit { get; set; }
+    [Placeholder(Id = "jumbotron", Title = "Heading (jumbotron)")]
+    public XhtmlDocument Jumbotron { get; set; }
 
     [Placeholder(Id = "content", Title = "Content", IsDefault = true)]
     public XhtmlDocument Content { get; set; }

@@ -18,8 +18,8 @@ public partial class TwoColumnsNavigationContent : MasterPagePageTemplate
     [Placeholder(Id = "content", IsDefault = true)]
     public XhtmlDocument Content { get; set; }
 
-    [Placeholder(Id = "herounit")]
-    public XhtmlDocument HeroUnit { get; set; }
+    [Placeholder(Id = "jumbotron")]
+    public XhtmlDocument Jumbotron { get; set; }
 
 	protected void Page_Load(object sender, EventArgs e)
 	{

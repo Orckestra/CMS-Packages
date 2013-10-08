@@ -21,8 +21,8 @@ public partial class TwoColumnsContentAside : MasterPagePageTemplate
     [Placeholder(Id = "aside")]
     public XhtmlDocument Aside { get; set; }
 
-    [Placeholder(Id = "herounit")]
-    public XhtmlDocument HeroUnit { get; set; }
+    [Placeholder(Id = "jumbotron")]
+    public XhtmlDocument Jumbotron { get; set; }
 
 	protected void Page_Load(object sender, EventArgs e)
 	{

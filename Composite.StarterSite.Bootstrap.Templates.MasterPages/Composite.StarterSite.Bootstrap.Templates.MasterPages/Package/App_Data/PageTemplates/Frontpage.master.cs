@@ -17,8 +17,8 @@ public partial class Frontpage : MasterPagePageTemplate
 		get { return "Front page"; }
 	}
 
-    [Placeholder(Id = "herounit", Title = "Heading (hero unit)")]
-    public XhtmlDocument HeroUnit { get; set; }
+    [Placeholder(Id = "jumbotron", Title = "Heading (jumbotron)")]
+    public XhtmlDocument Jumbotron { get; set; }
 
     [Placeholder(Id = "content", Title = "Content", IsDefault = true)]
     public XhtmlDocument Content { get; set; }

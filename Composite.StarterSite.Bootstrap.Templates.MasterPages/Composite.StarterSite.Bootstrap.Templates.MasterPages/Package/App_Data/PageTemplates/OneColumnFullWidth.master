@@ -8,9 +8,9 @@
 <asp:Content ContentPlaceHolderID="phContent" runat="Server">
     <c1:pagetemplatefeature name="Content Start" runat="server" />
 
-    <f:function name="Layout.HeroUnit" runat="server">
+    <f:function name="Layout.Jumbotron" runat="server">
         <Parameters>
-            <f:param name="CustomContent" Value="<%# HeroUnit %>" runat="server"/>
+            <f:param name="CustomContent" Value="<%# Jumbotron %>" runat="server"/>
         </Parameters>
     </f:function>
 
