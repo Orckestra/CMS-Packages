@@ -13,8 +13,8 @@
     [Placeholder(Id = "aside")]
     public XhtmlDocument Aside { get; set; }
 
-    [Placeholder(Id = "herounit")]
-    public XhtmlDocument HeroUnit { get; set; }
+    [Placeholder(Id = "jumbotron")]
+    public XhtmlDocument Jumbotron { get; set; }
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -22,7 +22,7 @@
     </head>
     <body>
         @PageTemplateFeature("Content Start")
-        @Function("Layout.HeroUnit", new { CustomContent = this.HeroUnit })
+        @Function("Layout.Jumbotron", new { CustomContent = this.Jumbotron })
         <div class="row">
             <div class="col-xs-3">
                 <div class="well sidebar-nav">

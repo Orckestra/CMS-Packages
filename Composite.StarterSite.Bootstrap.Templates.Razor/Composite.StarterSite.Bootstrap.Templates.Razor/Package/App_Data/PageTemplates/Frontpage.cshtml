@@ -8,8 +8,8 @@
         Layout = "MasterLayout.cshtml";
     }
 
-    [Placeholder(Id = "herounit", Title="Heading (hero unit)")]
-    public XhtmlDocument HeroUnit { get; set; }
+    [Placeholder(Id = "jumbotron", Title = "Heading (jumbotron)")]
+    public XhtmlDocument Jumbotron { get; set; }
 
     [Placeholder(Id = "content", Title="Content", IsDefault = true)]
     public XhtmlDocument Content { get; set; }
@@ -23,7 +23,7 @@
     </head>
     <body id="frontpage">
         @PageTemplateFeature("Front Page Content Start")
-        @Function( "Layout.HeroUnit", new { CustomContent = this.HeroUnit })
+        @Function( "Layout.Jumbotron", new { CustomContent = this.Jumbotron })
         <div class="row">
             <div class="col-xs-8">
                 @Html.Raw(Content)
