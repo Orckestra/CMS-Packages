@@ -75,14 +75,20 @@
     <Content Include="Package\App_Data\PageTemplateFeatures\Content Start.html" />
     <Content Include="Package\App_Data\PageTemplateFeatures\Descriptive HTML head elements.xml" />
     <Content Include="Package\App_Data\PageTemplateFeatures\Front Page Content Start.html" />
-    <Content Include="Package\App_Data\PageTemplateFeatures\Hero Unit %28default%29.xml" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Jumbotron %28default%29.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Package\App_Data\PageTemplateFeatures\Main Navigation.html" />
     <Content Include="Package\App_Data\PageTemplateFeatures\Navigation Column.html" />
     <Content Include="Package\App_Data\PageTemplateFeatures\Page Footer.html" />
     <Content Include="Package\App_Data\PageTemplateFeatures\Service Menu.html" />
-    <Content Include="Package\Datas\Composite.Data.Types.IGeneratedTypeWhiteLists_administrated.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IGeneratedTypeWhiteLists_administrated.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypeDataFolderTypeLinks_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Package\Frontend\Config\VisualEditor\common.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -102,7 +108,7 @@
     <Content Include="_PackageCreator\Composite.StarterSite.Bootstrap.Core.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Razor\Layout\HeroUnit.cshtml" />
+    <Content Include="Package\App_Data\Razor\Layout\Jumbotron.cshtml" />
     <Content Include="Package\App_Data\Razor\Layout\Navigation\Breadcrumbs.cshtml" />
     <Content Include="Package\App_Data\Razor\Layout\Navigation\Menu.cshtml" />
     <Content Include="Package\App_Data\Razor\Layout\Navigation\TopLinks.cshtml" />
