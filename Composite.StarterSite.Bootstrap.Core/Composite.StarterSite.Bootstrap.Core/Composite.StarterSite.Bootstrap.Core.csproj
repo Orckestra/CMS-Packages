@@ -92,7 +92,7 @@
     <Content Include="Package\Frontend\Config\VisualEditor\common.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Package\Frontend\Styles\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Package\Frontend\Images\arrow.png" />
     <Content Include="Package\Frontend\Images\background.png" />
     <Content Include="Package\Frontend\Images\header.jpg" />
@@ -153,9 +153,9 @@
     <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\utilities.less" />
     <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\variables.less" />
     <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\wells.less" />
-    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Package\Frontend\Styles\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Package\Frontend\Styles\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Package\Frontend\Styles\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Package\Frontend\Styles\style.less" />
     <None Include="Package\Frontend\Styles\VisualEditor.common.less" />
     <None Include="Package\Frontend\Styles\VisualEditor.less" />
