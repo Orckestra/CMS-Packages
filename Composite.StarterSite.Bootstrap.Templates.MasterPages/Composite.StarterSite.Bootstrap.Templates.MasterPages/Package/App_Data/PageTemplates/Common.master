@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Common.master.cs" Inherits="Common" ClientIDMode="Static" %>
 <%@ Import Namespace="System.Web.Hosting" %>
+<%@ Import Namespace="Composite.AspNet" %>
 
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" class="no-js" id="html_tag" runat="server">
@@ -38,8 +39,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-               <a class="navbar-brand" href="<%= SiteMap.RootNode.Url %>" title="<%= SiteMap.RootNode.Title %>">
-                    <%= SiteMap.RootNode.Title %>
+               <a class="navbar-brand" href="<%= SiteMap.RootNode.Url %>" title="<%= (SiteMap.RootNode as CompositeC1SiteMapNode).DocumentTitle %>">
+                    <%= (SiteMap.RootNode as CompositeC1SiteMapNode).DocumentTitle %>
                </a>
             </div>
 
