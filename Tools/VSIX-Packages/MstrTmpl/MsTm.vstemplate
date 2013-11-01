@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Composite C1 Master Page Template</Name>
+    <Description>Master Pages Templates reside below ~/App_Data/PageTemplates and let you create C1 Page Templates using ASP.NET Web Forms (.master).</Description>
+    <Icon>MasterPageTemplate.ico</Icon>
+    <TemplateID>f7d432b8-60a0-40e3-88b6-7e10d1df6241</TemplateID>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+    <DefaultName>TemplateName.master</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.master">TemplateName.master</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.master.cs">TemplateName.master.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

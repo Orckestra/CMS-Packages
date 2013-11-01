@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="CompositeC1RazorExtensions..09134f8f-41cf-40b3-881f-190aeec500bb" Version="1.0" Language="en-US" Publisher="Composite C1 Team" />
+    <DisplayName>Composite C1 Razor Extensions</DisplayName>
+    <Description xml:space="preserve">Composite C1 CMS extension to Visual Studio - enable creation of Razor Functions and Razor Templates.</Description>
+    <MoreInfo>http://compositec1.codeplex.com/</MoreInfo>
+    <License>EULAtxt.txt</License>
+    <Icon>Composite-S-cropped-32-32.png</Icon>
+    <PreviewImage>Vs2012AddNewCompositeC1File.png</PreviewImage>
+    <Tags>Composite C1, CMS, Razor</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
+  </Installation>
+  <Dependencies>
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="RazFunc" d:TargetPath="|RazFunc;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="RazTmpl" d:TargetPath="|RazTmpl;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="RazFunc-WA" d:TargetPath="|RazFunc-WA;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="RazTmpl-WA" d:TargetPath="|RazTmpl-WA;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+  </Assets>
+</PackageManifest>

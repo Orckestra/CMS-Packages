@@ -1,0 +1,22 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "A demo function that outputs a hello message."; }
+    }
+     
+    [FunctionParameter(Label="Whom to greet", Help="Specify a name or thing to greet.", DefaultValue = "World")]
+    public string Name { get; set; }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+		@* script, css etc. you add in this head section end up in the head on the rendered page *@
+    </head>
+    <body>
+        <div>
+            Hello @Name!
+        </div>
+    </body>
+</html>

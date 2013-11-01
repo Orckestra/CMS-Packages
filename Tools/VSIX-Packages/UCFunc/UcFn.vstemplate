@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Composite C1 User Control Function</Name>
+    <Description>User Control Functions reside below ~/App_Data/UserControls and let you extend the C1 Function set using ASP.NET Web Forms (.ascx).</Description>
+    <Icon>UserControlFunction.ico</Icon>
+    <TemplateID>32b04b71-8643-4947-a434-80cddd9cc8e7</TemplateID>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+    <DefaultName>FunctionName.ascx</DefaultName>
+    <TemplateGroupID>Web</TemplateGroupID>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.ascx">FunctionName.ascx</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.ascx.cs">FunctionName.ascx.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Composite C1 Razor Template</Name>
+    <Description>Razor Templates reside below ~/App_Data/PageTemplates and let you create C1 Page Templates using ASP.NET Razor (.cshtml).</Description>
+    <Icon>RazorTemplate.ico</Icon>
+    <TemplateID>34cebd49-caeb-4776-abd4-1a02d32ee6d9</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <DefaultName>TemplateName.cshtml</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true">TemplateName.cshtml</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

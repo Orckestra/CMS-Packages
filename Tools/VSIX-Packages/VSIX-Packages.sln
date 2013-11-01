@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCFunc", "UCFunc\UCFunc.csproj", "{2C9F1922-65A5-42F5-9179-10D7DAFBFEF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MstrTmpl", "MstrTmpl\MstrTmpl.csproj", "{CA673B6F-74E4-46A9-AC7A-376CB8320C74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazFunc", "RazFunc\RazFunc.csproj", "{387E356E-05C9-46BB-9F7C-05463B5EB66A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazTmpl", "RazTmpl\RazTmpl.csproj", "{72F65FD9-0E9E-4E0D-B44C-D0950B7B3894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MstrTmpl-WA", "MstrTmpl-WA\MstrTmpl-WA.csproj", "{412F8296-FFAC-4C75-B1BB-EFFEFC2D381D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazFunc-WA", "RazFunc-WA\RazFunc-WA.csproj", "{D760B85F-F3FE-4620-BAF3-89238C460667}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazTmpl-WA", "RazTmpl-WA\RazTmpl-WA.csproj", "{D12D4584-D516-4B12-B8F5-FA01E7421EB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCFunc-WA", "UCFunc-WA\UCFunc-WA.csproj", "{FCC46BA3-3295-4809-BFF5-419633A2E4F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositeC1RazorVSIX", "CompositeC1RazorVSIX\CompositeC1RazorVSIX.csproj", "{CA03A44E-1277-454E-840E-3DAF7AEFAE57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositeC1WebFormVSIX", "CompositeC1WebFormVSIX\CompositeC1WebFormVSIX.csproj", "{D68FBFAE-807B-44BC-8E6A-111FCA3692B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{177AE434-1CAB-450A-8599-DBB0A29ECFC5}"
+	ProjectSection(SolutionItems) = preProject
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = RazFunc-WA\\RazFunc-WA.csproj
+		SccProjectName1 = RazFunc-WA
+		SccLocalPath1 = RazFunc-WA
+		SccProjectUniqueName2 = RazFunc\\RazFunc.csproj
+		SccProjectName2 = RazFunc
+		SccLocalPath2 = RazFunc
+		SccProjectUniqueName3 = RazTmpl-WA\\RazTmpl-WA.csproj
+		SccProjectName3 = RazTmpl-WA
+		SccLocalPath3 = RazTmpl-WA
+		SccProjectUniqueName4 = RazTmpl\\RazTmpl.csproj
+		SccProjectName4 = RazTmpl
+		SccLocalPath4 = RazTmpl
+		SccProjectUniqueName5 = CompositeC1RazorVSIX\\CompositeC1RazorVSIX.csproj
+		SccProjectName5 = CompositeC1RazorVSIX
+		SccLocalPath5 = CompositeC1RazorVSIX
+		SccProjectUniqueName6 = MstrTmpl-WA\\MstrTmpl-WA.csproj
+		SccProjectName6 = MstrTmpl-WA
+		SccLocalPath6 = MstrTmpl-WA
+		SccProjectUniqueName7 = MstrTmpl\\MstrTmpl.csproj
+		SccProjectName7 = MstrTmpl
+		SccLocalPath7 = MstrTmpl
+		SccProjectUniqueName8 = UCFunc-WA\\UCFunc-WA.csproj
+		SccProjectName8 = UCFunc-WA
+		SccLocalPath8 = UCFunc-WA
+		SccProjectUniqueName9 = UCFunc\\UCFunc.csproj
+		SccProjectName9 = UCFunc
+		SccLocalPath9 = UCFunc
+		SccProjectUniqueName10 = CompositeC1WebFormVSIX\\CompositeC1WebFormVSIX.csproj
+		SccProjectName10 = CompositeC1WebFormVSIX
+		SccLocalPath10 = CompositeC1WebFormVSIX
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C9F1922-65A5-42F5-9179-10D7DAFBFEF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C9F1922-65A5-42F5-9179-10D7DAFBFEF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C9F1922-65A5-42F5-9179-10D7DAFBFEF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C9F1922-65A5-42F5-9179-10D7DAFBFEF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA673B6F-74E4-46A9-AC7A-376CB8320C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA673B6F-74E4-46A9-AC7A-376CB8320C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA673B6F-74E4-46A9-AC7A-376CB8320C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA673B6F-74E4-46A9-AC7A-376CB8320C74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{387E356E-05C9-46BB-9F7C-05463B5EB66A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{387E356E-05C9-46BB-9F7C-05463B5EB66A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{387E356E-05C9-46BB-9F7C-05463B5EB66A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{387E356E-05C9-46BB-9F7C-05463B5EB66A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72F65FD9-0E9E-4E0D-B44C-D0950B7B3894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F65FD9-0E9E-4E0D-B44C-D0950B7B3894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F65FD9-0E9E-4E0D-B44C-D0950B7B3894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F65FD9-0E9E-4E0D-B44C-D0950B7B3894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412F8296-FFAC-4C75-B1BB-EFFEFC2D381D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412F8296-FFAC-4C75-B1BB-EFFEFC2D381D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412F8296-FFAC-4C75-B1BB-EFFEFC2D381D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412F8296-FFAC-4C75-B1BB-EFFEFC2D381D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D760B85F-F3FE-4620-BAF3-89238C460667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D760B85F-F3FE-4620-BAF3-89238C460667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D760B85F-F3FE-4620-BAF3-89238C460667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D760B85F-F3FE-4620-BAF3-89238C460667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D12D4584-D516-4B12-B8F5-FA01E7421EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D12D4584-D516-4B12-B8F5-FA01E7421EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D12D4584-D516-4B12-B8F5-FA01E7421EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D12D4584-D516-4B12-B8F5-FA01E7421EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC46BA3-3295-4809-BFF5-419633A2E4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC46BA3-3295-4809-BFF5-419633A2E4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC46BA3-3295-4809-BFF5-419633A2E4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC46BA3-3295-4809-BFF5-419633A2E4F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA03A44E-1277-454E-840E-3DAF7AEFAE57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA03A44E-1277-454E-840E-3DAF7AEFAE57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA03A44E-1277-454E-840E-3DAF7AEFAE57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA03A44E-1277-454E-840E-3DAF7AEFAE57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D68FBFAE-807B-44BC-8E6A-111FCA3692B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D68FBFAE-807B-44BC-8E6A-111FCA3692B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D68FBFAE-807B-44BC-8E6A-111FCA3692B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D68FBFAE-807B-44BC-8E6A-111FCA3692B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Composite C1 Razor Function</Name>
+    <Description>Razor Functions reside below ~/App_Data/Razor and let you extend the C1 Function set using ASP.NET Razor (.cshtml).</Description>
+    <Icon>RazorFunction.ico</Icon>
+    <TemplateID>03cab896-cd56-4a3e-8df8-46ea5c563d20</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <DefaultName>FunctionName.cshtml</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="false" TargetFileName="$fileinputname$.cshtml">FunctionName.cshtml</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

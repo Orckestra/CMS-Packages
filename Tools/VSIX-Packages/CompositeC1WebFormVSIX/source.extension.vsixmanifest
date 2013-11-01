@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="CompositeC1WebFormExtensions..0650d4e5-660d-4735-a697-120125a46bc3" Version="1.0" Language="en-US" Publisher="Composite C1 Team" />
+    <DisplayName>Composite C1 Web Form Extensions</DisplayName>
+    <Description xml:space="preserve">Composite C1 CMS extension to Visual Studio - enable creation of User Control Functions and Master Page Templates.</Description>
+    <MoreInfo>http://compositec1.codeplex.com/</MoreInfo>
+    <License>EULAtxt.txt</License>
+    <Icon>Composite-S-cropped-32-32.png</Icon>
+    <PreviewImage>Vs2012AddNewCompositeC1File.png</PreviewImage>
+    <Tags>Composite C1, CMS, Web Forms, User Controls, Master Pages</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
+  </Installation>
+  <Dependencies>
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="UCFunc" d:TargetPath="|UCFunc;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="MstrTmpl" d:TargetPath="|MstrTmpl;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="MstrTmpl-WA" d:TargetPath="|MstrTmpl-WA;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="UCFunc-WA" d:TargetPath="|UCFunc-WA;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+  </Assets>
+</PackageManifest>
