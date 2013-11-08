@@ -7,21 +7,16 @@ using Composite.Core.IO;
 
 namespace Composite.Web.Css.Sass
 {
-    public class CssCompileException: Exception
-    {
-        public CssCompileException(string message): base(message) {}
-     }
-
     public static class CompressFiles
     {
-        private static readonly string LessCompilerFilePath = HostingEnvironment.MapPath("~/Frontend/Composite/Web/Css/Sass/sassc.cmd");
+        private static readonly string SassCompilerFilePath = HostingEnvironment.MapPath("~/Frontend/Composite/Web/Css/Sass/sassc.cmd");
 
-        public static void CompressSass(string lessFilePath, string cssFilePath, DateTime folderLastUpdatedUtc)
+        public static void CompressSass(string sassFilePath, string cssFilePath, DateTime folderLastUpdatedUtc)
         {
             var scriptProc = new Process();
-            scriptProc.StartInfo.FileName = "\"" + LessCompilerFilePath + "\"";
-            scriptProc.StartInfo.Arguments = lessFilePath;
-            scriptProc.StartInfo.WorkingDirectory = Path.GetDirectoryName(lessFilePath);
+            scriptProc.StartInfo.FileName = "\"" + SassCompilerFilePath + "\"";
+            scriptProc.StartInfo.Arguments = sassFilePath;
+            scriptProc.StartInfo.WorkingDirectory = Path.GetDirectoryName(sassFilePath);
             scriptProc.StartInfo.RedirectStandardOutput = true;
             scriptProc.StartInfo.RedirectStandardError = true;
             scriptProc.StartInfo.CreateNoWindow = true;

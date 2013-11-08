@@ -9,7 +9,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@name='SassHttpModule'])=0">
-				<add name="SassHttpModule" type="Composite.Web.Css.Sass.SassHttpModule, App_Code" />
+				<add name="SassHttpModule" type="Composite.Web.Css.Sass.SassHttpModule, Composite.Web.Css.Sass" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -17,7 +17,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@name='SassHttpModule'])=0">
-				<add name="SassHttpModule" type="Composite.Web.Css.Sass.SassHttpModule, App_Code" />
+				<add name="SassHttpModule" type="Composite.Web.Css.Sass.SassHttpModule, Composite.Web.Css.Sass" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>

@@ -1,15 +1,17 @@
 <?xml version="1.0"?>
 <pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
-	<pc:Web.config>
-		<Add name="/configuration/system.web/httpModules/add[@name='SassHttpModule']" />
-		<Add name="/configuration/system.webServer/modules/add[@name='SassHttpModule']" />
-	</pc:Web.config>
 	<pc:Directories>
 		<Add name="Frontend\Composite\Web\Css\Sass\" />
-		<Add name="App_Code\Composite\Web\Css\Sass\" />
 	</pc:Directories>
-	<mi:PackageRequirements minimumCompositeVersion="3.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Web.Css.Sass" groupName="Composite.Web" version="1.0.0" author="Composite A/S" website="http://www.composite.net/" readMoreUrl="http://docs.composite.net/Composite.Web.Css.Sass" id="d665fbe2-3ca1-4c3a-b25b-79e4760e0c16" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+  <pc:Files>
+    <Add name="Bin\Composite.Web.Css.Sass.dll" />
+  </pc:Files>
+  <pc:Web.config>
+    <Add name="/configuration/system.web/httpModules/add[@name='SassHttpModule']" />
+    <Add name="/configuration/system.webServer/modules/add[@name='SassHttpModule']" />
+  </pc:Web.config>
+  <mi:PackageRequirements minimumCompositeVersion="3.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Web.Css.Sass" groupName="Composite.Web" version="1.1.0" author="Composite A/S" website="http://www.composite.net/" readMoreUrl="http://docs.composite.net/Composite.Web.Css.Sass" id="d665fbe2-3ca1-4c3a-b25b-79e4760e0c16" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<TechnicalDetails>Based on node-sass v0.6.4 (https://github.com/andrew/node-sass)</TechnicalDetails>
 		<Description>Allows you to create and use dynamic CSS's  by integrating .scss support on your C1 website (http://sass-lang.com/)</Description>
 	</mi:PackageInformation>

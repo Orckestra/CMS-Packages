@@ -8,13 +8,6 @@ using Composite.Core.Collections.Generic;
 
 namespace Composite.Web.Css.Sass
 {
-    public class SassHttpModule : CssCompilationHttpModule
-    {
-        public SassHttpModule(): base(".scss", "*.scss", CompressFiles.CompressSass)
-        {
-        }
-    }
-
     public class CssCompilationHttpModule : IHttpModule
     {
         private static readonly ReaderWriterLockSlim _compilationLock = new ReaderWriterLockSlim();
@@ -115,7 +108,7 @@ body:before {{
             }
 
             context.Response.ContentType = "text/css";
-            
+
             try
             {
                 _compilationLock.EnterReadLock();
@@ -200,4 +193,5 @@ body:before {{
             public DateTime? LastTimeUpdatedUtc { get; set; }
         }
     }
+
 }
