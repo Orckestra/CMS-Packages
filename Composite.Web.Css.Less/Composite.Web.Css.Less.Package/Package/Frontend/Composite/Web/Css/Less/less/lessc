@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+var fs = require('fs'),
+    sys = require('util'),
+    inFile = process.argv[2],
+    less = require('./lib/less'),
+    currentErrorcode;
+
+// calling process.exit does not flush stdout always
+// so use this to set the exit code
+process.on('exit', function() { process.reallyExit(currentErrorcode) });
+
+var parseLessFile = function (e, data) 
+{
+    var parser = new(less.Parser)({ silent: false, verbose:true, strictMath: true, relativeUrls: true });
+
+    parser.parse(data, function (err, tree) 
+    {
+        if (err) 
+        {
+            less.writeError(err, null);
+            currentErrorcode = 2;
+            return;
+        } 
+        else
+        {
+            try 
+            {
+                var css = tree.toCSS();
+                sys.print(css);
+            } 
+            catch (e) 
+            {
+                less.writeError(e, null);
+                currentErrorcode = 2;
+                return;
+            }
+        }
+    });
+};
+
+fs.readFile(inFile, 'utf8', parseLessFile);
