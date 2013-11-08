@@ -8,13 +8,6 @@ using Composite.Core.Collections.Generic;
 
 namespace Composite.Web.Css.Less
 {
-    public class LessHttpModule : CssCompilationHttpModule
-    {
-        public LessHttpModule() : base(".less", "*.less", CompressFiles.CompressLess)
-        {
-        }
-    }
-
     public class CssCompilationHttpModule : IHttpModule
     {
         private static readonly ReaderWriterLockSlim _compilationLock = new ReaderWriterLockSlim();
@@ -109,7 +102,7 @@ body:before {{
                 }
             }
 
-            if ((DateTime.UtcNow -  folderLastUpdatedUtc).Days >= 1 || !UserValidationFacade.IsLoggedIn())
+            if ((DateTime.UtcNow - folderLastUpdatedUtc).Days >= 1 || !UserValidationFacade.IsLoggedIn())
             {
                 context.Response.Cache.SetExpires(DateTime.Now.AddDays(1.0));
             }

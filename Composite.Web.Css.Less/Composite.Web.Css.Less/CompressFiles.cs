@@ -7,11 +7,6 @@ using Composite.Core.IO;
 
 namespace Composite.Web.Css.Less
 {
-    public class CssCompileException: Exception
-    {
-        public CssCompileException(string message): base(message) {}
-     }
-
     public static class CompressFiles
     {
         private static readonly string LessCompilerFilePath = HostingEnvironment.MapPath("~/Frontend/Composite/Web/Css/Less/lessc.cmd");

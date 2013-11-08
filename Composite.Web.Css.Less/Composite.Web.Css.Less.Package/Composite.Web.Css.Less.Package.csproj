@@ -47,8 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Code\Composite\Web\Css\Less\CompressFiles.cs" />
-    <Content Include="Package\App_Code\Composite\Web\Css\Less\LessHttpModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +55,7 @@
     <None Include="Release\Composite.Web.Css.Less.zip" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\Bin\Composite.Web.Css.Less.dll" />
     <Content Include="Package\Frontend\Composite\Web\Css\Less\less\lib\less\browser.js" />
     <Content Include="Package\Frontend\Composite\Web\Css\Less\less\lib\less\colors.js" />
     <Content Include="Package\Frontend\Composite\Web\Css\Less\less\lib\less\env.js" />
@@ -104,6 +103,12 @@
     <Content Include="Package\Web.config\Install.xsl" />
     <Content Include="Package\Web.config\Uninstall.xsl" />
     <Content Include="_PackageCreator\Composite.Web.Css.Less.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Composite.Web.Css.Less\Composite.Web.Css.Less.csproj">
+      <Project>{63a67c65-43da-4517-8c00-aae5b0787e2e}</Project>
+      <Name>Composite.Web.Css.Less</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
