@@ -30,7 +30,7 @@
 <body runat="server">
     <c1:pagetemplatefeature runat="server" name="Descriptive HTML head elements" />
 
-    <header class="navbar navbar-default navbar-fixed-top" role="banner">
+    <header class="navbar navbar-default navbar-static-top" role="banner">
         <div class="container">
 
             <div class="navbar-header">
