@@ -13,8 +13,10 @@
 	<string key="Invalid.HTML.NamespaceURI" value="Der Root-Namensraum ist falsch." />
 	<string key="Invalid.HTML.MultipleBody" value="Nur ein &lt;body&gt; Tag erlaubt." />
 	<string key="Invalid.HTML.MultipleHead" value="Nur ein &lt;head&gt; Tag erlaubt." />
-	
-	<string key="Format.XML.ErrorDialog.Title" value="Quell-Format abgebrochen" /> 
+  <string key="Invalid.HTML.NotAllowedHtmlChild" value="Das Root Element &lt;html&gt; kann nur &lt;head&gt; und &lt;body&gt; enthalten." />
+  
+
+  <string key="Format.XML.ErrorDialog.Title" value="Quell-Format abgebrochen" /> 
 	<string key="Format.XML.ErrorDialog.Text" value="XML Quellformatierung erfordert eine wohlgeformtes Dokumentstruktur." />
 	
 	<!-- plain/colored switch button -->

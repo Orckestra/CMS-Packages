@@ -4,53 +4,55 @@
   <string key="GlobalDataFolderToolTip" value="Globale Datentypen" />
   <string key="GlobalDataFolderLabel_OnlyGlobalData" value="Website-Elemente" />
   <string key="GlobalDataFolderToolTip_OnlyGlobalData" value="Website-Elemente (Daten)" />
+  <string key="StaticDataTypesFolderLabel" value="Statische Datentypen" />
+  <string key="StaticDataTypesFolderToolTip" value="Benutzerdefinierte statische Datentypen" />
   <string key="PageDataFolderDataFolderLabel" value="Seitendatenordner" />
   <string key="PageDataFolderDataFolderToolTip" value="Seitendatenordner" />
   <string key="PageMetaDataFolderLabel" value="Seitenmetatypen" />
   <string key="PageMetaDataFolderToolTip" value="Seitenmetatypen" />
-  <string key="Add" value="Datentyp hinzuf&#252;gen" />
-  <string key="AddToolTip" value="Neuen globalen Datentyp hinzuf&#252;gen" />
-  <string key="ViewUnpublishedItems" value="Auflisten unver&#246;ffentlichter Daten" />
-  <string key="ViewUnpublishedItemsToolTip" value="Holen Sie sich einen &#220;berblick &#252;ber die Daten, die bisher noch nicht ver&#246;ffentlicht wurden" />
-  <string key="ViewUnpublishedItems-document-title" value="Unver&#246;ffentlichte Daten" />
-  <string key="ViewUnpublishedItems-document-description" value="Die untenstehende Liste zeigt Elemente, die gerade bearbeitet werden, oder genehmigt / ver&#246;ffentlicht werden k&#246;nnen." />
-  <string key="ViewUnpublishedItems-document-empty-label" value="Keine unver&#246;ffentlichte Daten." />
-  <string key="AddDataFolder" value="Datenordner hinzuf&#252;gen" />
-  <string key="AddDataFolderToolTip" value="Neuen Datenordner hinzuf&#252;gen" />
-  <string key="AddMetaDataLabel" value="Metatyp hinzuf&#252;gen" />
-  <string key="AddMetaDataToolTip" value="Metatyp hinzuf&#252;gen" />
+  <string key="Add" value="Datentyp hinzufügen" />
+  <string key="AddToolTip" value="Neuen globalen Datentyp hinzufügen" />
+  <string key="ViewUnpublishedItems" value="Auflisten unveröffentlichter Daten" />
+  <string key="ViewUnpublishedItemsToolTip" value="Holen Sie sich einen Überblick über die Daten, die bisher noch nicht veröffentlicht wurden" />
+  <string key="ViewUnpublishedItems-document-title" value="Unveröffentlichte Daten" />
+  <string key="ViewUnpublishedItems-document-description" value="Die untenstehende Liste zeigt Elemente, die gerade bearbeitet werden, oder genehmigt / veröffentlicht werden können." />
+  <string key="ViewUnpublishedItems-document-empty-label" value="Keine unveröffentlichte Daten." />
+  <string key="AddDataFolder" value="Datenordner hinzufügen" />
+  <string key="AddDataFolderToolTip" value="Neuen Datenordner hinzufügen" />
+  <string key="AddMetaDataLabel" value="Metatyp hinzufügen" />
+  <string key="AddMetaDataToolTip" value="Metatyp hinzufügen" />
   <string key="Edit" value="Datentyp bearbeiten" />
-  <string key="EditToolTip" value="Ausgew&#228;hlten Datentyp bearbeiten" />
+  <string key="EditToolTip" value="Ausgewählten Datentyp bearbeiten" />
   <string key="EditDataFolderTypeLabel" value="Bearbeiten" />
-  <string key="EditDataFolderTypeToolTip" value="Ausgew&#228;hlten Datenordner bearbeiten" />
+  <string key="EditDataFolderTypeToolTip" value="Ausgewählten Datenordner bearbeiten" />
   <string key="EditMetaDataTypeLabel" value="Bearbeiten" />
-  <string key="EditMetaDataTypeToolTip" value="Ausgew&#228;hlte Metadaten bearbeiten" />
-  <string key="Delete" value="Datentyp l&#246;schen" />
-  <string key="DeleteToolTip" value="Ausgew&#228;hlten Datentyp l&#246;schen" />
-  <string key="DeleteDataFolderTypeLabel" value="L&#246;schen" />
-  <string key="DeleteDataFolderTypeToolTip" value="Ausgew&#228;hlten Datenordner l&#246;schen" />
-  <string key="DeleteMetaDataTypeLabel" value="L&#246;schen" />
-  <string key="DeleteMetaDataTypeToolTip" value="Ausgew&#228;hlte Metadaten l&#246;schen" />
+  <string key="EditMetaDataTypeToolTip" value="Ausgewählte Metadaten bearbeiten" />
+  <string key="Delete" value="Datentyp löschen" />
+  <string key="DeleteToolTip" value="Ausgewählten Datentyp löschen" />
+  <string key="DeleteDataFolderTypeLabel" value="Löschen" />
+  <string key="DeleteDataFolderTypeToolTip" value="Ausgewählten Datenordner löschen" />
+  <string key="DeleteMetaDataTypeLabel" value="Löschen" />
+  <string key="DeleteMetaDataTypeToolTip" value="Ausgewählte Metadaten löschen" />
   <string key="EditFormMarkup" value="Formular Markup bearbeiten" />
-  <string key="EditFormMarkupToolTip" value="&#196;ndern Sie das Layout des Datenformulars mit Markup" />
+  <string key="EditFormMarkupToolTip" value="Ändern Sie das Layout des Datenformulars mit Markup" />
   <string key="EnableLocalization" value="Lokalisierung aktivieren" />
   <string key="EnableLocalizationToolTip" value="Lokalisierung aktivieren" />
   <string key="DisableLocalization" value="Lokalisierung deaktivieren" />
   <string key="DisableLocalizationToolTip" value="Lokalisierung deaktivieren" />
-  <string key="DisabledData" value="Noch nicht genehmigt oder ver&#246;ffentlicht" />
+  <string key="DisabledData" value="Noch nicht genehmigt oder veröffentlicht" />
   <string key="UndefinedLabelTemplate" value="(Undefiniert [{0}])" />
   <string key="UndefinedDataLavelTemplate" value="(Undefiniert)" />
-  <string key="ShowInContent" value="In der Ansicht &#39;Inhalt&#39; zeigen" />
-  <string key="ShowInContentToolTip" value="In der Ansicht &#39;Inhalt&#39; zeigen" />
-  <string key="AddData" value="Daten hinzuf&#252;gen" />
-  <string key="AddDataToolTip" value="Neue Daten hinzuf&#252;gen" />
+  <string key="ShowInContent" value="In der Ansicht 'Inhalt' zeigen" />
+  <string key="ShowInContentToolTip" value="In der Ansicht 'Inhalt' zeigen" />
+  <string key="AddData" value="Daten hinzufügen" />
+  <string key="AddDataToolTip" value="Neue Daten hinzufügen" />
   <string key="EditData" value="Daten bearbeiten" />
-  <string key="EditDataToolTip" value="Ausgew&#228;hlte Daten bearbeiten" />
-  <string key="DeleteData" value="Daten l&#246;schen" />
-  <string key="DeleteDataToolTip" value="Ausgew&#228;hlten Daten l&#246;schen" />
-  <string key="LocalizeData" value="Daten &#252;bersetzen" />
-  <string key="LocalizeDataToolTip" value="Ausgew&#228;hlte Daten &#252;bersetzen" />
-  <string key="LabelPublicationState" value="Ver&#246;ffentlichungsstatus" />
+  <string key="EditDataToolTip" value="Ausgewählte Daten bearbeiten" />
+  <string key="DeleteData" value="Daten löschen" />
+  <string key="DeleteDataToolTip" value="Ausgewählten Daten löschen" />
+  <string key="LocalizeData" value="Daten übersetzen" />
+  <string key="LocalizeDataToolTip" value="Ausgewählte Daten übersetzen" />
+  <string key="LabelPublicationState" value="Veröffentlichungsstatus" />
   <string key="DraftTransition" value="Entwurf" />
   <string key="AwaitingApprovalTransition" value="Auf Genehmigung warten" />
   <string key="AddNewInterfaceTypeStep1.DocumentTitle" value="Neuer Datentyp" />
@@ -61,55 +63,55 @@
   <string key="EditorCommon.LabelProgrammaticNamingAndServices" value="Programmatische Namensgebung und Dienste" />
   <string key="EditorCommon.LabelProgrammaticNaming" value="Programmatische Namensgebung" />
   <string key="EditorCommon.LabelTypeName" value="Namen eingeben" />
-  <string key="EditorCommon.HelpTypeName" value="Der technische Name des Datentyps (z.B. Produkt). Dieser wird verwendet, um diesen Typ im Code zu identifizieren und sollte nicht ge&#228;ndert werden, sobald er extern bearbeitet wurde." />
+  <string key="EditorCommon.HelpTypeName" value="Der technische Name des Datentyps (z.B. Produkt). Dieser wird verwendet, um diesen Typ im Code zu identifizieren und sollte nicht geändert werden, sobald er extern bearbeitet wurde." />
   <string key="EditorCommon.LabelTypeNamespace" value="Typ Namensraum" />
-  <string key="EditorCommon.HelpTypeNamespace" value="Der Namensraum (Modul / Kategoriename) des Typs. Dieser wird verwendet, um diesen Typ im Code zu identifizieren und sollte nicht ge&#228;ndert werden sobald er einmal verwendet wurde." />
+  <string key="EditorCommon.HelpTypeNamespace" value="Der Namensraum (Modul / Kategoriename) des Typs. Dieser wird verwendet, um diesen Typ im Code zu identifizieren und sollte nicht geändert werden sobald er einmal verwendet wurde." />
   <string key="EditorCommon.LabelTitle" value="Titel" />
   <string key="EditorCommon.HelpTitle" value="Verwenden Sie diesen Eintrag, um einen benutzerfreundlichen Namen zu definieren. Dieser Name wird in den meisten UI-Elementen verwendet." />
   <string key="EditorCommon.LabelFields" value="Felder" />
   <string key="EditorCommon.ServicesLabel" value="Services" />
   <string key="EditorCommon.HasCaching" value="Hat Caching" />
-  <string key="EditorCommon.HasPublishing" value="Ist ver&#246;ffentlicht" />
+  <string key="EditorCommon.HasPublishing" value="Ist veröffentlicht" />
   <string key="EditorCommon.HasLocalization" value="Ist lokalisiert" />
-  <string key="DeleteGeneratedDataStep1.LabelFieldGroup" value="Daten l&#246;schen?" />
-  <string key="DeleteGeneratedDataStep1.Text" value="Daten l&#246;schen?" />
-  <string key="DeleteDataConfirmationText" value="Es gibt einige referenzierte Daten, die auch gel&#246;scht werden - wollen Sie fortfahren?" />
-  <string key="DeleteGeneratedInterfaceStep1.LabelFieldGroup" value="Datentyp l&#246;schen" />
-  <string key="DeleteGeneratedInterfaceStep1.Text" value="L&#246;schen Sie den Datentyp" />
-  <string key="CascadeDeleteErrorTitle" value="Kaskadierender Fehler beim L&#246;schen" />
-  <string key="CascadeDeleteErrorMessage" value="Der Typ wird durch einen anderen Typ referenziert, der keine L&#246;schweitergaben zul&#228;sst. Dieser Vorgang wird angehalten" />
-  <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="L&#246;schen Sie den Datentyp" />
-  <string key="DeleteAggregationTypeWorkflow.Text" value="L&#246;schen Sie den Datentyp" />
+  <string key="DeleteGeneratedDataStep1.LabelFieldGroup" value="Daten löschen?" />
+  <string key="DeleteGeneratedDataStep1.Text" value="Daten löschen?" />
+  <string key="DeleteDataConfirmationText" value="Es gibt einige referenzierte Daten, die auch gelöscht werden - wollen Sie fortfahren?" />
+  <string key="DeleteGeneratedInterfaceStep1.LabelFieldGroup" value="Datentyp löschen" />
+  <string key="DeleteGeneratedInterfaceStep1.Text" value="Löschen Sie den Datentyp" />
+  <string key="CascadeDeleteErrorTitle" value="Kaskadierender Fehler beim Löschen" />
+  <string key="CascadeDeleteErrorMessage" value="Der Typ wird durch einen anderen Typ referenziert, der keine Löschweitergaben zulässt. Dieser Vorgang wird angehalten" />
+  <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="Löschen Sie den Datentyp" />
+  <string key="DeleteAggregationTypeWorkflow.Text" value="Löschen Sie den Datentyp" />
   <string key="DeleteAggregationTypeWorkflow.ErrorTitle" value="Fehler" />
-  <string key="DeleteAggregationTypeWorkflow.IsUsedByPageType" value="Der Typ &#39;{0}&#39; kann nicht gel&#246;scht werden, da er von einem Seitentyp verwendet wird." />  
-  <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="L&#246;schen Sie den Datentyp" />
-  <string key="DeleteCompositionTypeWorkflow.Text" value="L&#246;schen Sie den Datentyp" />
+  <string key="DeleteAggregationTypeWorkflow.IsUsedByPageType" value="Der Typ '{0}' kann nicht gelöscht werden, da er von einem Seitentyp verwendet wird." />  
+  <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="Löschen Sie den Datentyp" />
+  <string key="DeleteCompositionTypeWorkflow.Text" value="Löschen Sie den Datentyp" />
   <string key="DeleteCompositionTypeWorkflow.ErrorTitle" value="Fehler" />
-  <string key="DeleteCompositionTypeWorkflow.TypeIsReferenced" value="Typ &#39;{0}&#39; kann nicht gel&#246;scht werden, da Typen vorhanden sind, die darauf referenzieren" />
-  <string key="DeleteCompositionTypeWorkflow.IsUsedByPageType" value="Der Typ &#39;{0}&#39; kann nicht gel&#246;scht werden, da er von einem Seitentyp verwendet wird." />  
+  <string key="DeleteCompositionTypeWorkflow.TypeIsReferenced" value="Typ '{0}' kann nicht gelöscht werden, da Typen vorhanden sind, die darauf referenzieren" />
+  <string key="DeleteCompositionTypeWorkflow.IsUsedByPageType" value="Der Typ '{0}' kann nicht gelöscht werden, da er von einem Seitentyp verwendet wird." />  
   <string key="ToXmlLabel" value="Zu XML" />
   <string key="ToXmlToolTip" value="Zu XML" />
   <string key="EnableTypeLocalizationWorkflow.Dialog.Label" value="Lokalisierung aktivieren" />
   <string key="EnableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Lokalisierung aktivieren" />
   <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Verschieben Sie vorhandene Daten zu ..." />
-  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Wenn Sie &#39;Lokalisierung&#39; bei einem Datentyp aktivieren, m&#252;ssen alle Daten zu einer Sprache geh&#246;ren. W&#228;hlen Sie die Sprache, zu der die existierenden Daten verschoben werden sollen." />
-  <string key="EnableTypeLocalizationWorkflow.Step2.Title" value="Best&#228;tigung" />
-  <string key="EnableTypeLocalizationWorkflow.Step2.Description" value="Datentyp wird lokalisiert und die Daten in das ausgew&#228;hlte Gebietsschema kopiert. Klicken Sie auf Fertig, um fortzufahren." />
+  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Wenn Sie 'Lokalisierung' bei einem Datentyp aktivieren, müssen alle Daten zu einer Sprache gehören. Wählen Sie die Sprache, zu der die existierenden Daten verschoben werden sollen." />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Title" value="Bestätigung" />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Description" value="Datentyp wird lokalisiert und die Daten in das ausgewählte Gebietsschema kopiert. Klicken Sie auf Fertig, um fortzufahren." />
   <string key="EnableTypeLocalizationWorkflow.Step3.Title" value="Warnung" />
-  <string key="EnableTypeLocalizationWorkflow.Step3.Description" value="Es existieren einige Datentypen, die Referenzen zu diesem Typ haben. W&#228;hrend der Lokalisierung werden die Daten in alle Sprachen kopiert, um das Auftreten von fehlerhaften Referenzierungen zu vermeiden." />
+  <string key="EnableTypeLocalizationWorkflow.Step3.Description" value="Es existieren einige Datentypen, die Referenzen zu diesem Typ haben. Während der Lokalisierung werden die Daten in alle Sprachen kopiert, um das Auftreten von fehlerhaften Referenzierungen zu vermeiden." />
   <string key="EnableTypeLocalizationWorkflow.Abort.Title" value="Fehlende aktive Sprachen" />
-  <string key="EnableTypeLocalizationWorkflow.Abort.Description" value="Es existieren keine aktiven Sprachen. F&#252;gen Sie vor der Lokalisierung mindestens eine hinzu," />
+  <string key="EnableTypeLocalizationWorkflow.Abort.Description" value="Es existieren keine aktiven Sprachen. Fügen Sie vor der Lokalisierung mindestens eine hinzu," />
   <string key="DisableTypeLocalizationWorkflow.Dialog.Label" value="Lokalisierung deaktivieren" />
   <string key="DisableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Lokalisierung deaktivieren" />
   <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Behalte Daten von..." />
-  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Wenn Lokalisierung bei einem Datentypen deaktiviert ist, kann nur eine &#220;bersetzung beibehalten werden. Daten von anderen Sprachen werden gel&#246;scht." />
-  <string key="DisableTypeLocalizationWorkflow.Step2.Title" value="Best&#228;tigung" />
-  <string key="DisableTypeLocalizationWorkflow.Step2.Description" value="Alle Daten aus anderen Sprachen als den ausgew&#228;hlten gehen verloren. Klicken Sie auf Fertig, um fortzufahren." />
-  <string key="LocalizeDataWorkflow.ShowError.LayoutLabel" value="Daten konnten nicht &#252;bersetzt werden" />
-  <string key="LocalizeDataWorkflow.ShowError.InfoTableCaption" value="&#220;bersetzungsfehler" />
-  <string key="LocalizeDataWorkflow.ShowError.AlreadyTranslated" value="Diese Daten wurden bereits &#252;bersetzt. Die &#252;bersetzte Version geh&#246;rt zu einer anderen Gruppe." />
-  <string key="LocalizeDataWorkflow.ShowError.Description" value="Die folgenden Felder haben einen Verweis auf einen Datentyp. Sie sollten zuerst diese Datenelemente &#252;bersetzen, bevor dieses Datenelement &#252;bersetzen werden kann." />
-  <string key="LocalizeDataWorkflow.ShowError.FieldErrorFormat" value="Das Feld &#39;{0}&#39; verweist auf Daten des Typs &#39;{1}&#39; mit der Bezeichnung &#39;{2}&#39;" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Wenn Lokalisierung bei einem Datentypen deaktiviert ist, kann nur eine Übersetzung beibehalten werden. Daten von anderen Sprachen werden gelöscht." />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Title" value="Bestätigung" />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Description" value="Alle Daten aus anderen Sprachen als den ausgewählten gehen verloren. Klicken Sie auf Fertig, um fortzufahren." />
+  <string key="LocalizeDataWorkflow.ShowError.LayoutLabel" value="Daten konnten nicht übersetzt werden" />
+  <string key="LocalizeDataWorkflow.ShowError.InfoTableCaption" value="Übersetzungsfehler" />
+  <string key="LocalizeDataWorkflow.ShowError.AlreadyTranslated" value="Diese Daten wurden bereits übersetzt. Die übersetzte Version gehört zu einer anderen Gruppe." />
+  <string key="LocalizeDataWorkflow.ShowError.Description" value="Die folgenden Felder haben einen Verweis auf einen Datentyp. Sie sollten zuerst diese Datenelemente übersetzen, bevor dieses Datenelement übersetzen werden kann." />
+  <string key="LocalizeDataWorkflow.ShowError.FieldErrorFormat" value="Das Feld '{0}' verweist auf Daten des Typs '{1}' mit der Bezeichnung '{2}'" />
   <string key="AddNewInterfaceTypeStep1.ErrorTitle" value="Fehler" />
   <string key="EditInterfaceTypeStep1.ErrorTitle" value="Fehler" />
   <string key="AddNewCompositionTypeWorkflow.ErrorTitle" value="Fehler" />
@@ -121,5 +123,5 @@
   <string key="DataTypeDescriptorToXmlLabel" value="XML Ergebnis" />
 
   <string key="FormMarkupInfo.Dialog.Label" value="Dieser Typ hat ein individuelles Formular-Markup" />
-  <string key="FormMarkupInfo.Message" value="Ihre &#196;nderung betreffen nicht das Bearbeitungsformular. F&#252;hren Sie &#39;{0}&#39;  aus, um das Formular zu &#228;ndern oder l&#246;schen Sie die Datei &#39;{1}&#39;." />
+  <string key="FormMarkupInfo.Message" value="Ihre Änderung betreffen nicht das Bearbeitungsformular. Führen Sie '{0}'  aus, um das Formular zu ändern oder löschen Sie die Datei '{1}'." />
 </strings>

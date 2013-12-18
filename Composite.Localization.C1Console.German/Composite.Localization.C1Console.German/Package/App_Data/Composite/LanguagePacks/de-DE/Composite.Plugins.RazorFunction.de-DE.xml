@@ -3,14 +3,14 @@
   <string key="RootElement.Label" value="Razor-Funktionen" />
   <string key="RootElement.ToolTip" value="Razor-Funktionen" />
 
-  <string key="AddNewRazorFunction.Label" value="Razor-Funktion hinzuf&#252;gen" />
-  <string key="AddNewRazorFunction.ToolTip" value="Neue Razor-Funktion hinzuf&#252;gen" />
+  <string key="AddNewRazorFunction.Label" value="Razor-Funktion hinzufügen" />
+  <string key="AddNewRazorFunction.ToolTip" value="Neue Razor-Funktion hinzufügen" />
   <string key="EditRazorFunction.Label" value="Bearbeiten" />
   <string key="EditRazorFunction.ToolTip" value="Razor-Funktion bearbeiten" />
-  <string key="DeleteRazorFunction.Label" value="L&#246;schen" />
-  <string key="DeleteRazorFunction.ToolTip" value="Diese Razor-Funktion l&#246;schen" />
+  <string key="DeleteRazorFunction.Label" value="Löschen" />
+  <string key="DeleteRazorFunction.ToolTip" value="Diese Razor-Funktion löschen" />
 
-  <string key="AddNewRazorFunction.LabelDialog" value="Razor-Funktion hinzuf&#252;gen" />
+  <string key="AddNewRazorFunction.LabelDialog" value="Razor-Funktion hinzufügen" />
   <string key="AddNewRazorFunction.LabelFieldGroup" value="Neue Razor-Funktion" />
   <string key="AddNewRazorFunction.LabelName" value="Name" />
   <string key="AddNewRazorFunction.HelpName" value="" />
@@ -25,12 +25,12 @@
   <string key="AddNewRazorFunctionWorkflow.EmptyName" value="Der Funktionsname ist leer" />
   <string key="AddNewRazorFunctionWorkflow.NamespaceEmpty" value="Der Funktions-Namensraum ist leer." />
   <string key="AddNewRazorFunctionWorkflow.InvalidNamespace" value="Der Namensraum muss wie A.B.C angegeben werden - er darf nicht mit einem Punkt (.) beginnen oder enden." />
-  <string key="AddNewRazorFunctionWorkflow.TotalNameTooLang" value="Die Gesamtl&#228;nge der Namens in Verbindung mit dem Namensraum ist zu lang (wird verwendet um die .cshtml Datei zu benennen)." />
+  <string key="AddNewRazorFunctionWorkflow.TotalNameTooLang" value="Die Gesamtlänge der Namens in Verbindung mit dem Namensraum ist zu lang (wird verwendet um die .cshtml Datei zu benennen)." />
 
   <string key="EditRazorFunctionWorkflow.Validation.DialogTitle" value="Fehler bei der Validierung" />
   <string key="EditRazorFunctionWorkflow.Validation.CompilationFailed" value="Kompilierung fehlgeschlagen:  {0}" />
-  <string key="EditRazorFunctionWorkflow.Validation.IncorrectBaseClass" value="Razor-Funktion sollte &#39;{0}&#39; erben" />
+  <string key="EditRazorFunctionWorkflow.Validation.IncorrectBaseClass" value="Razor-Funktion sollte '{0}' erben" />
 
-  <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteTitle" value="Razor-Funktion l&#246;schen?" />
-  <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteMessage" value="Ausgew&#228;hlte Razor-Funktion l&#246;schen?" />
+  <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteTitle" value="Razor-Funktion löschen?" />
+  <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteMessage" value="Ausgewählte Razor-Funktion löschen?" />
 </strings>
