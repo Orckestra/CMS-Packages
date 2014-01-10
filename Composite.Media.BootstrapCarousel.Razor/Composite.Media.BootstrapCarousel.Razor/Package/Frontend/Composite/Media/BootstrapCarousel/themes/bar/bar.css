@@ -11,56 +11,46 @@ Author URI: http://composite.net/
     border: 1px solid #333;
     overflow: hidden;
 }
-.theme-bar .carousel  {
-	position:relative;
-	background:#fff url(loading.gif) no-repeat 50% 50%;
+
+.theme-bar .carousel {
+    position: relative;
+    background: #fff url(loading.gif) no-repeat 50% 50%;
     margin-bottom: 0;
 }
-.theme-bar .carousel  img {
-	position:absolute;
-	top:0px;
-	left:0px;
-	display:none;
-}
-.theme-bar .carousel  a {
-	border:0;
-	display:block;
-}
+
+    .theme-bar .carousel img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: none;
+    }
+
+    .theme-bar .carousel a {
+        border: 0;
+        display: block;
+    }
 
 .theme-bar .carousel-indicators {
     position: absolute;
     bottom: -12px;
     top: auto;
     z-index: 20;
-    left: 50px;
-    right: 50px;
+    left: 50%;
+    width: 60%;
     text-align: center;
     opacity: 0;
+    margin: 0 0 0 -30%;
 }
+
 .theme-bar:hover .carousel-indicators {
     opacity: 1;
-    bottom: 12px;
+    bottom: 5px;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
 }
-.theme-bar .carousel-indicators li {
-    display: inline-block;
-    float: none;
-}
-.theme-bar .carousel-indicators a {
-	display:inline-block;
-	width:22px;
-	height:22px;
-	background:url(bullets.png) no-repeat;
-	text-indent:-9999px;
-	border:0;
-	margin: 5px 2px 0 2px;
-}
-.theme-bar .carousel-indicators a.active {
-	background-position:0 -22px;
-}
+
 .theme-bar .carousel-controlNav {
     position: absolute;
     left: 0;
@@ -85,40 +75,52 @@ Author URI: http://composite.net/
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
 }
+
 .theme-bar:hover .carousel-controlNav {
     bottom: 0;
     opacity: 1;
 }
+
 .theme-bar .carousel-controlNav a {
-	display:block;
-	border:0;
-	color: #fff;
-	text-transform: uppercase;
-	top: auto;
-	z-index: 11;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	line-height: 20px;
-	opacity: 0.5;
+    display: block;
+    width: 15px;
+    border: 0;
+    color: #fff;
+    text-transform: uppercase;
+    bottom: 0;
+    z-index: 11;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 20px;
+    font-size: 40px;
+    opacity: 0.5;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
     background: none;
-    font-size: 40px;
-    bottom: -7px;
 }
-.theme-bar a.carousel-control.right { right: -50px; }
-.theme-bar a.carousel-control.left { left: -50px; }
-.theme-bar:hover a.carousel-control.right { 
-    right: 15px; 
+
+.theme-bar a.carousel-control.right {
+    right: -50px;
+}
+
+.theme-bar a.carousel-control.left {
+    left: -50px;
+}
+
+.theme-bar:hover a.carousel-control.right {
+    right: 30px;
     opacity: 1;
 }
-.theme-bar:hover a.carousel-control.left { 
-    left: 15px; 
+
+.theme-bar:hover a.carousel-control.left {
+    left: 30px;
     opacity: 1;
 }
-.theme-bar .carousel-controlNav a:hover { color: #ddd; }
+
+.theme-bar .carousel-controlNav a:hover {
+    color: #ddd;
+}
 
 .theme-bar .carousel-caption {
     font-family: Helvetica, Arial, sans-serif;
@@ -126,14 +128,20 @@ Author URI: http://composite.net/
     -moz-transition: all 200ms ease-in-out;
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
+    padding: 0;
+    bottom: 0;
+    margin: 0;
 }
+
 .theme-bar:hover .carousel-caption {
-    bottom: 41px;
+    bottom: 40px;
 }
+
 .theme-bar .carousel-caption a {
-    color:#fff;
-    border-bottom:1px dotted #fff;
+    color: #fff;
+    border-bottom: 1px dotted #fff;
 }
-.theme-bar .carousel-caption a:hover {
-    color:#fff;
-}
+
+    .theme-bar .carousel-caption a:hover {
+        color: #fff;
+    }
