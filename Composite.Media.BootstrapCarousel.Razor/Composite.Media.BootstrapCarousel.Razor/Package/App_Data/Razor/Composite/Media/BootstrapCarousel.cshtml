@@ -6,27 +6,25 @@
         get { return "An animated carousel showing images from a media folder."; }
     }
 
-	// Parameters for this Razor Function is defined last in this document...
+    // Parameters for this Razor Function is defined last in this document...
 }
-@{ 
+@{
     var instanceId = string.Format("carousel{0}", (new Random()).Next(1, 100000)); // allow multiple carousels on the same page
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<link id="carousel-theme-@(Theme)" rel="stylesheet" href="~/Frontend/Composite/Media/BootstrapCarousel/themes/@(Theme)/@(Theme).css" type="text/css" media="screen" />
-		<link id="carousel-css" rel="stylesheet" href="~/Frontend/Composite/Media/BootstrapCarousel/bootstrap-carousel.css" type="text/css" media="screen" />
-		<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-		<script id="bootstrap-carousel" src="~/Frontend/Composite/Media/BootstrapCarousel/bootstrap-carousel.js" type="text/javascript"></script>
-        <script id="imgpreload" src="~/Frontend/Composite/Media/BootstrapCarousel/jquery.imgpreload.min.js" type="text/javascript"></script>
-        <script id="bootstrap-carousel-preload" src="~/Frontend/Composite/Media/BootstrapCarousel/bootstrap-carousel-preload.js" type="text/javascript"></script>
-				
-		<style type="text/css">
+<head>
+    <link id="carousel-theme-@(Theme)" rel="stylesheet" href="~/Frontend/Composite/Media/BootstrapCarousel/themes/@(Theme)/@(Theme).css" type="text/css" media="screen" />
+    <script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script id="imgpreload" src="~/Frontend/Composite/Media/BootstrapCarousel/jquery.imgpreload.min.js" type="text/javascript"></script>
+    <script id="bootstrap-carousel-preload" src="~/Frontend/Composite/Media/BootstrapCarousel/bootstrap-carousel-preload.js" type="text/javascript"></script>
+
+    <style type="text/css">
             .load-image {
                 background: url(/Frontend/Composite/Media/BootstrapCarousel/loader.gif) no-repeat center;
             }
 
 			@if (Width > 0)
-			{ 
+			{
 		  	 <text>
 				#@instanceId .carousel-controlNav,
 				#@instanceId .slider-wrapper,
@@ -49,54 +47,64 @@
 				-o-background-size: @Resizing;
 				-webkit-background-size: @Resizing;
 			}
-		</style>
-	</head>
-	<body>
-		<div class="slider-wrapper theme-@(Theme) @(ClassName)">
-			@{
-				var imageQuery = Data.Get<IMediaFile>().Where(m => m.FolderPath == ImagesFolder.Data.Path);
+    </style>
+</head>
+<body>
+    <div class="slider-wrapper theme-@(Theme) @(ClassName)">
+        @{
+            var imageQuery = Data.Get<IMediaFile>().Where(m => m.FolderPath == ImagesFolder.Data.Path);
 
-				imageQuery = Randomized ? imageQuery.OrderBy(m => Guid.NewGuid()) : imageQuery;
-				var images = imageQuery.Take(ImageCount).ToList();
-			}
-			
-			<div id="@instanceId" class="carousel slide load-image" data-interval="@PauseTime">
-				@if (Navigation)
-				{
-					<ol class="carousel-indicators">
-						@for (var i = 0; i < images.Count; i++)
-						{
-							<li data-target="#@instanceId" data-slide-to="@i" class="@(i == 0 ? "active" : string.Empty)"></li>
-						}
-					</ol>
-				}
+            imageQuery = Randomized ? imageQuery.OrderBy(m => Guid.NewGuid()) : imageQuery;
+            var images = imageQuery.Take(ImageCount).ToList();
+        }
 
-				<div class="carousel-inner">
-					@foreach (var mediaFile in images)
-					{
-						<div class="item @( mediaFile == images.First() ? "active" : string.Empty )">
-							<div class="cover" style="background-image: url('@Html.C1().MediaUrl(mediaFile)')" data-src="@Html.C1().MediaUrl(mediaFile)"></div>
+        <div id="@instanceId" class="carousel slide load-image" data-interval="@PauseTime">
+            @if (Navigation)
+            {
+                <ol class="carousel-indicators">
+                    @for (var i = 0; i < images.Count; i++)
+                    {
+                        <li data-target="#@instanceId" data-slide-to="@i" class="@(i == 0 ? "active" : string.Empty)"></li>
+                    }
+                </ol>
+            }
 
-							@if (Captions && !string.IsNullOrEmpty(mediaFile.Title))
-							{
-								<div class="carousel-caption">
-									<p>@mediaFile.Title</p>
-								</div>
-							}
-						</div>
-					}
-				</div>
+            <div class="carousel-inner">
+                @foreach (var mediaFile in images)
+                {
+                    <div class="item @( mediaFile == images.First() ? "active" : string.Empty)">
+                        <div class="cover" style="background-image: url('@Html.C1().MediaUrl(mediaFile)')" data-src="@Html.C1().MediaUrl(mediaFile)"></div>
 
-				@if (Navigation)
-				{
-					<div class="carousel-controlNav">
-						<a class="carousel-control left" href="#@instanceId" data-slide="prev">&#8249;</a>
-						<a class="carousel-control right" href="#@instanceId" data-slide="next">&#8250;</a>
-					</div>
-				}
-			</div>
-		</div>
-	</body>
+                        @if (Captions && !string.IsNullOrEmpty(mediaFile.Title))
+                        {
+                            <div class="carousel-caption">
+                                @mediaFile.Title
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+
+            @if (Navigation)
+            {
+                <div class="carousel-controlNav">
+                    <a class="carousel-control left" href="#@instanceId" data-slide="prev">
+                        @if (Theme == "default")
+                        {<span class="glyphicon glyphicon-chevron-left"></span>}
+                        else
+                        { <text>&#8249;</text> }
+                    </a>
+                    <a class="carousel-control right" href="#@instanceId" data-slide="next">
+                        @if (Theme == "default")
+                        {<span class="glyphicon glyphicon-chevron-right"></span>}
+                        else
+                        { <text>&#8250;</text> }
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</body>
 </html>
 
 @functions {
@@ -136,8 +144,8 @@
 
 
 
-	#region Widget support functions
-	public static WidgetFunctionProvider GetThemeWidget()
+    #region Widget support functions
+    public static WidgetFunctionProvider GetThemeWidget()
     {
         Expression<Func<object>> expression = () => GetThemeOptions();
         var method = (expression.Body as MethodCallExpression).Method;
@@ -154,7 +162,7 @@
     }
 
 
-	public static IDictionary<string, string> GetThemeOptions()
+    public static IDictionary<string, string> GetThemeOptions()
     {
         return new Dictionary<string, string>()
         {

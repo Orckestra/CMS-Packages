@@ -1,7 +1,7 @@
 /*
 Skin Name: Composite Bootstrap Bar Theme
 Description: A bar skin for the Bootstrap Slider.
-Version: 2.0
+Version: 2.1
 Author: Composite
 Author URI: http://composite.net/
 */
@@ -69,7 +69,7 @@ Author URI: http://composite.net/
     background: -ms-linear-gradient(top, #565656 0%,#333333 100%);
     background: linear-gradient(to bottom, #565656 0%,#333333 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#565656', endColorstr='#333333',GradientType=0 );
-    opacity: 0.5;
+    opacity: 0.8;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     -o-transition: all 200ms ease-in-out;
@@ -93,10 +93,10 @@ Author URI: http://composite.net/
     line-height: 20px;
     font-size: 40px;
     opacity: 0.5;
-    -webkit-transition: all 200ms ease-in-out;
-    -moz-transition: all 200ms ease-in-out;
-    -o-transition: all 200ms ease-in-out;
-    transition: all 200ms ease-in-out;
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
     background: none;
 }
 
@@ -128,13 +128,21 @@ Author URI: http://composite.net/
     -moz-transition: all 200ms ease-in-out;
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
-    padding: 0;
-    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 0;
     margin: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+   
 }
 
 .theme-bar:hover .carousel-caption {
-    bottom: 40px;
+    padding-bottom: 35px;
+}
+
+.theme-bar:hover .without-indicators .carousel-caption {
+    bottom: 0;
 }
 
 .theme-bar .carousel-caption a {
