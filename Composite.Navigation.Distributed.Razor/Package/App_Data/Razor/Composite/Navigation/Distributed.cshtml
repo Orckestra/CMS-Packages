@@ -73,30 +73,31 @@
 </html>
 @helper NavigationTree(PageNode parentPage, bool includeParent = false)
 	{
-		var pages = parentPage.ChildPages;
-		var isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == parentPage.Id);
-		var isSelected = @CurrentPageNode.Id == parentPage.Id;
-	<ul class="nav nav-list">
-		@if (includeParent)
-		{
-			<li class="@(isSelected ? " active" : string.Empty)"><a href="@(parentPage.Url)">@parentPage.MenuTitle</a></li>
-		}
-		@if (pages.Any())
-		{
-			foreach (var subPage in pages)
-			{
-				if (!String.IsNullOrWhiteSpace(subPage.MenuTitle))
-				{
-					isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == subPage.Id);
-					isSelected = @CurrentPageNode.Id == subPage.Id;
-					<li class="@(isSelected ? " active" : string.Empty)"><a href="@(subPage.Url)">@subPage.MenuTitle</a>
-					@if (ShowChildPages && (isOpen || Expand))
-					{
-						@NavigationTree(subPage);
-					}
-					</li>
-				}
-			}
-		}
-	</ul>
+    var pages = parentPage.ChildPages;
+    var isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == parentPage.Id);
+    var isSelected = @CurrentPageNode.Id == parentPage.Id;
+    <ul class="nav nav-pills nav-stacked nav-distributed">
+        @if (includeParent)
+        {
+            <li class="@(isSelected ? " active" : string.Empty)"><a href="@(parentPage.Url)">@parentPage.MenuTitle</a></li>
+        }
+        @if (pages.Any())
+{
+    foreach (var subPage in pages)
+    {
+        if (!String.IsNullOrWhiteSpace(subPage.MenuTitle))
+        {
+            isOpen = OpenPages(@CurrentPageNode).Any(op => op.Id == subPage.Id);
+            isSelected = @CurrentPageNode.Id == subPage.Id;
+            <li class="@(isOpen ? "open" : string.Empty)@(isSelected ? " active" : string.Empty)">
+                <a href="@(subPage.Url)">@subPage.MenuTitle</a>
+                @if (ShowChildPages && (isOpen || Expand))
+                {
+                    @NavigationTree(subPage);
+                }
+            </li>
+        }
+    }
+}
+    </ul>
 }
