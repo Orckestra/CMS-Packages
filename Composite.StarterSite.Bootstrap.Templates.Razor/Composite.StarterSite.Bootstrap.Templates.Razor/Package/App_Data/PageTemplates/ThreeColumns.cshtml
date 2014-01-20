@@ -24,15 +24,15 @@
         @PageTemplateFeature("Content Start")
         @Function("Layout.Jumbotron", new { CustomContent = this.Jumbotron })
         <div class="row">
-            <div class="col-xs-3">
+            <div class="col-xs-12 col-sm-4 col-md-3">
                 <div class="well sidebar-nav">
                     @PageTemplateFeature("Navigation Column")
                 </div>
             </div>
-            <div class="col-xs-5">
+            <div class="col-xs-12 col-sm-5 col-md-6">
                 @Markup(Content)
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-12 col-sm-3 col-md-3">
                 @Markup(Aside)
                 @PageTemplateFeature("Aside Column")
             </div>
