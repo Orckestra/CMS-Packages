@@ -15,10 +15,10 @@
     </f:function>
 
     <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-12 col-sm-8 col-md-8">
             <c1:render markup="<%# Content %>" runat="server"></c1:render>
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-sm-4 col-md-4">
             <c1:render markup="<%# Aside %>" runat="server"></c1:render>
 
             <c1:pagetemplatefeature name="Aside Column" runat="server" />

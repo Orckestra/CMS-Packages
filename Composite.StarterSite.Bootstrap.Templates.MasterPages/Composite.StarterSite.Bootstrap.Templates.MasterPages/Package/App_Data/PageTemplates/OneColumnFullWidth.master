@@ -15,7 +15,7 @@
     </f:function>
 
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-md-12">
             <c1:render markup="<%# Content %>" runat="server"></c1:render>
         </div>
     </div>
