@@ -16,12 +16,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head></head>
 <body>
-    <div class="BlogLatest">
-        <ul>
+    <div class="blog-latest">
+        <ul class="list-group">
             @foreach (var entry in entries)
             {
                 var blogPath = BlogFacade.GetBlogPath(entry.Date, entry.Title);
-                <li>
+                <li class="list-group-item">
                     <a href="~/page(@entry.PageId)@blogPath" title="@entry.Title">
                         <strong>
                             @entry.Title
@@ -29,8 +29,7 @@
                     </a>
                     <p>
                         @entry.Teaser
-                        <a href="~/page(@entry.PageId)@blogPath">...
-                        </a>
+                        <a href="~/page(@entry.PageId)@blogPath">...</a>
                     </p>
                 </li>
             }

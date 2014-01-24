@@ -16,6 +16,18 @@
 @{
     var landingPageId = (BlogPage == null && IsGlobal) ? PageRenderer.CurrentPageId : BlogPage == null ? PageRenderer.CurrentPageId : BlogPage.Data.Id;
     var entries = BlogFacade.GetArchive(BlogPage, IsGlobal);
+
+    var PathInfo = Composite.Core.Routing.Pages.C1PageRoute.GetPathInfo();
+    int year = 0, month = 0;
+    if (PathInfo != null)
+    {
+        var parts = PathInfo.Split('/');
+        if (parts.Length == 3)
+        {
+            int.TryParse(parts[1], out year);
+            int.TryParse(parts[2], out month);
+        }
+    }
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,16 +37,15 @@
 <body>
     @if (entries.Any())
     {
-        <ul id="BlogArchive">
+        <div class="blog-archive list-group">
             @foreach (var entry in entries)
             {
-                <li>
-                    <a title="@entry.Date.ToString("MMMM yyyy")" href="~/page({@landingPageId})/@BlogFacade.CustomDateFormatCulture(entry.Date, "yyyy/MM", "en-US")">
-                        @entry.Date.ToString("MMMM yyyy") (@entry.Count)
-                    </a>
-                </li>
+                <a class="list-group-item @(entry.Date.Year == year && entry.Date.Month == month ? "active" : string.Empty)" title="@entry.Date.ToString("MMMM yyyy")" href="~/page({@landingPageId})/@BlogFacade.CustomDateFormatCulture(entry.Date, "yyyy/MM", "en-US")">
+                    @entry.Date.ToString("MMMM yyyy") <span class="badge">@entry.Count</span>
+                </a>
+
             }
-        </ul>
+        </div>
     }
 </body>
 </html>
