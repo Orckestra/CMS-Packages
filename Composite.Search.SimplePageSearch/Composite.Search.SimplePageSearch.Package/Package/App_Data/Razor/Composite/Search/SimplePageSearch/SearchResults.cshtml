@@ -1,0 +1,141 @@
+@inherits RazorFunction
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Search results rendering"; }
+    }
+
+    [FunctionParameter(Label = "Show Search Form", Help = "If 'True', the search box will be also shown ('True' by default).", DefaultValue = "true")]
+    public bool ShowSearchForm { get; set; }
+
+    [FunctionParameter(Label = "Current Site", Help = "If checked than search will be only on current site", DefaultValue = "true")]
+    public bool CurrentSite { get; set; }
+
+    [FunctionParameter(Label = "Page size", Help = "Search results per page (10 by default)", DefaultValue = "10")]
+    public int PageSize { get; set; }
+
+    private Expression<Func<T, bool>> PredicatTrue<T>() { return f => true; }
+    private Expression<Func<T, bool>> PredicatFalse<T>() { return f => false; }
+
+    private Expression<Func<T, bool>> PredicatOr<T>(Expression<Func<T, bool>> expr1, Expression<Func<T, bool>> expr2)
+    {
+        var invokedExpr = Expression.Invoke(expr2, expr1.Parameters.Cast<Expression>());
+        return Expression.Lambda<Func<T, bool>>(Expression.Or(expr1.Body, invokedExpr), expr1.Parameters);
+    }
+
+    private int TotalCount;
+    private int PageNumber
+    {
+        get
+        {
+            var page = 1;
+            if (!int.TryParse(Request["p"], out page))
+            {
+                page = 1;
+            }
+
+            if (page < 1 || page > TotalPages)
+            {
+                page = 1;
+            }
+            return page;
+        }
+    }
+
+    protected int TotalPages
+    {
+        get { return (int)Math.Ceiling((decimal)TotalCount / PageSize); }
+    }
+
+}
+
+@{
+
+    var searchQuery = Request.QueryString["q"] ?? string.Empty;
+
+    var searchResults = new List<IPage>();
+
+    if (!string.IsNullOrWhiteSpace(searchQuery) && searchQuery.Length > 2)
+    {
+        // Tokenize
+        searchQuery = searchQuery.Trim().ToLower();
+        string[] keywords = searchQuery.Split(' ');
+
+        // Build dynamic where clause
+        Expression<Func<IPage, bool>> predicate1 = PredicatFalse<IPage>();
+        Expression<Func<IPagePlaceholderContent, bool>> predicate2 = PredicatFalse<IPagePlaceholderContent>();
+
+        foreach (string keyword in keywords)
+        {
+            string temp = keyword;
+            predicate1 = PredicatOr(predicate1, p => p.Title.ToLower().Contains(temp) || p.Description.ToLower().Contains(temp));
+            predicate2 = PredicatOr(predicate2, p => p.Content.ToLower().Contains(temp));
+        }
+
+        var pages = Data.Get<IPage>();
+        var pagesIdsByPredicate1 = pages.Where(predicate1).Select(p => p.Id).ToList();
+        var pagesIdsByPredicate2 = Data.Get<IPagePlaceholderContent>().Where(predicate2).Select(p => p.PageId).ToList();
+
+        // Union the different resultsets (and thereby eliminitate duplicates)
+        var combinedSearchResult = (pagesIdsByPredicate1.Union(pagesIdsByPredicate2)).ToList();
+
+        if (CurrentSite)
+        {
+            List<Guid> pagesIdsOfCurrentSite = CurrentPageNode.GetPageIds(SitemapScope.Level1AndDescendants).ToList();
+            combinedSearchResult = pagesIdsOfCurrentSite.Intersect(combinedSearchResult).ToList();
+        }
+
+        pages = pages.Where(p => combinedSearchResult.Contains(p.Id));
+        TotalCount = pages.Count();
+
+        searchResults = pages.Skip(PageSize * (PageNumber - 1)).Take(PageSize).ToList();
+
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+    <div class="simplepagesearch clearfix">
+        @if (ShowSearchForm)
+        {
+            var page = Data.Get<IPage>().First(p => p.Id == CurrentPageNode.Id);
+            <div class="clearfix">
+                @Html.C1().Function("Composite.Search.SimplePageSearch.SearchForm", new { SearchResultPage = new DataReference<IPage>(page) })
+            </div>
+            <hr />
+        }
+        <p class="alert alert-info">
+            Found <strong>@TotalCount</strong> results for "@searchQuery"
+        </p>
+        <ol class="simplepagesearch-results" start="@(PageSize*(PageNumber-1)+1)">
+            @foreach (var item in searchResults)
+            {
+                <li>
+                    <a href="@Html.C1().PageUrl(item.Id.ToString())">
+                        @item.Title
+                    </a>
+                </li>
+            }
+        </ol>
+        @if (TotalPages > 1)
+        {
+            <ul class="pagination">
+
+                @for (int i = 1; i <= TotalPages; i++)
+                {
+                    if (i == PageNumber)
+                    {
+                        <li class="active"><span>@i</span></li>
+                    }
+                    else
+                    {
+                        <li>  <a href="?p=@i&amp;q=@searchQuery">@i</a> </li>
+                    }
+                }
+            </ul>
+        }
+    </div>
+</body>
+</html>
