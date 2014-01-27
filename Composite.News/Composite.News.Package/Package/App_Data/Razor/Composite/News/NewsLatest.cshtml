@@ -1,0 +1,34 @@
+﻿@inherits RazorFunction
+@using Composite.News;
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Shows the latest news as a list of news teasers."; }
+    }
+
+    [FunctionParameter(Label = "", Help = "The number of items to display on the page (5 by default).", DefaultValue = 5)]
+    public int Count { get; set; }
+
+}
+@{
+    var pageIds = HomePageNode.GetPageIds(SitemapScope.Level1AndDescendants).ToList();
+    var news = Data.Get<NewsItem>().Where(n => pageIds.Contains(n.PageId)).OrderByDescending(n => n.Date).Take(Count).ToList();
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+    <div class="list-group">
+        @foreach (var entry in news)
+        {
+            var newsPath = NewsFacade.GetPathInfo(entry.TitleUrl, entry.Date);
+            <a href="~/page(@entry.PageId)@newsPath" title="@entry.Title" class="list-group-item">
+                <h4 class="list-group-item-heading">@entry.Title</h4>
+                <small class="text-muted">@entry.Date.ToShortDateString()</small>
+                <p class="list-group-item-text">@entry.Teaser</p>
+            </a>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+@inherits RazorFunction
+@using Composite.News;
+@using System.Threading;
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "List the news or shows the full content of a single news item when selected."; }
+    }
+
+    [FunctionParameter(Label = "List options",
+                        Help = "Additional data to show when displaying news items in a list, such as the date, teaser, news story, RSS link. (By default the date and the teaser are displayed.)",
+                        DefaultValue = "Show date,Show teaser",
+                        WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Options""><f:function xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Show date,Show teaser,Show news story,Show RSS link"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
+    public string ListOptions { get; set; }
+
+    [FunctionParameter(Label = "Item options",
+                        Help = "Additional data to show when displaying a single news item, such as the date, teaser, news story, share icons. (By default the date, content, share icons and 'Back to News' link are displayed.)",
+                        DefaultValue = "Show date,Show news story,Show share icons,Show 'Back to News' link",
+                         WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Options""><f:function xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Show date,Show teaser,Show news story,Show share icons,Show 'Back to News' link"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
+    public string ItemOptions { get; set; }
+
+    [FunctionParameter(Label = "Page size",
+                        Help = "The number of items to display on the page (10 by default).",
+                        DefaultValue = 10)]
+    public int PageSize { get; set; }
+
+    private int TotalCount;
+    
+    protected int TotalPages
+    {
+        get { return (int)Math.Ceiling((decimal)TotalCount / PageSize); }
+    }
+
+}
+@{
+    var newsItems = Data.Get<NewsItem>().Where(NewsFacade.GetNewsFilterFromUrl());
+    TotalCount = newsItems.Count();
+    newsItems = newsItems.Skip(PageSize * (NewsFacade.PageNumber - 1)).Take(PageSize);
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet" />
+</head>
+<body>
+    @foreach (var item in newsItems.ToList())
+    {
+        @NewsItem(item, NewsFacade.IsNewsItem ? ItemOptions : ListOptions)
+    }
+    @if (!NewsFacade.IsNewsItem && ListOptions.Contains("Show RSS"))
+    {
+        <a class="btn btn-default" title="News RSS Feed" href="~/NewsRssFeed.ashx/@Thread.CurrentThread.CurrentCulture.Name">RSS</a>
+    }
+    @if (NewsFacade.IsNewsItem && ItemOptions.Contains("Back to News"))
+    {
+        <hr />
+        <a class="btn btn-default" title="@Resources.News.labelBackToNews" href="@Html.C1().PageUrl(CurrentPageNode.Id.ToString())">@Resources.News.labelBackToNews</a>
+    }
+    @if (TotalPages > 1)
+    {
+        <ul class="pagination">
+
+            @for (int i = 1; i <= TotalPages; i++)
+            {
+                if (i == NewsFacade.PageNumber)
+                {
+                    <li class="active"><span>@i</span></li>
+                }
+                else
+                {
+                    <li>  <a href="@Html.C1().PageUrl(CurrentPageNode.Id.ToString())/@i">@i</a> </li>
+                }
+            }
+        </ul>
+    }
+</body>
+</html>
+
+@helper NewsItem(NewsItem entry, string itemOptions)
+{
+    var newsPathInfo = NewsFacade.GetPathInfo(entry.TitleUrl, entry.Date);
+    <div class="news-item media">
+        <div class="media-heading">
+            @if (NewsFacade.IsNewsItem)
+            {
+                <h1>@entry.Title</h1>
+            }
+            else
+            {
+                <h2>
+                    <a href="@Html.C1().PageUrl(CurrentPageNode.Id.ToString())@newsPathInfo" title="@entry.Title">@entry.Title</a>
+                </h2>
+            }
+            <div class="news-info">
+                @if (itemOptions.Contains("Show date"))
+                {
+                    <div class="news-date">
+                        @Date(entry.Date)
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="media-body">
+            @if (itemOptions.Contains("Show teaser"))
+            {
+                <p class="@(NewsFacade.IsNewsItem ? "lead" : string.Empty)">@entry.Teaser</p>
+            }
+            @if (itemOptions.Contains("Show news story"))
+            {
+                <div class="news-content">
+                    @Html.Raw(entry.Description)
+                </div>
+            }
+
+            @if (itemOptions.Contains("Show share icons"))
+            {
+                var fullNewsUrl = (new Uri(Request.Url, Path.Combine(Request.ApplicationPath, newsPathInfo))).OriginalString;
+                <br />
+                <div class="news-addthis">
+                    @AddThis(fullNewsUrl, entry.Title)
+                </div>
+            }
+        </div>
+    </div>
+
+}
+
+@helper AddThis(string fullUrl, string title)
+{
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style @(NewsFacade.IsNewsItem ? "addthis_32x32_style" : "")" addthis:url="@fullUrl" addthis:title="@title" xmlns:addthis="http://www.addthis.com">
+        <a class="addthis_button_preferred_1"></a>
+        <a class="addthis_button_preferred_2"></a>
+        <a class="addthis_button_compact"></a>
+    </div>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pub=AddThis"></script>
+    <!-- AddThis Button END -->
+}
+
+@helper Date(DateTime date)
+{
+    <span class="text-muted">
+        <span class="icon-calendar"></span>
+        @date.ToShortDateString()
+    </span>
+}
