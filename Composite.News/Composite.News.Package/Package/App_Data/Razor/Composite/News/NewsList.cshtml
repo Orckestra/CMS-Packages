@@ -33,7 +33,7 @@
 
 }
 @{
-    var newsItems = Data.Get<NewsItem>().Where(NewsFacade.GetNewsFilterFromUrl());
+    var newsItems = Data.Get<NewsItem>().OrderByDescending(n => n.Date).Where(NewsFacade.GetNewsFilterFromUrl());
     TotalCount = newsItems.Count();
     newsItems = newsItems.Skip(PageSize * (NewsFacade.PageNumber - 1)).Take(PageSize);
 }
