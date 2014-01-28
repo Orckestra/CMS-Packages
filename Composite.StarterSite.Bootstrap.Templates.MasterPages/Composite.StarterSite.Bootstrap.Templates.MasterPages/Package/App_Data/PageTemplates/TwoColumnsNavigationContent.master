@@ -16,7 +16,7 @@
 
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-3">
-            <div class="well sidebar-nav">
+            <div class="well nav-sidebar hidden-print">
                 <f:function id="Function1" name="Composite.Navigation.Distributed" runat="server">
                     <Parameters>
                         <f:param ID="Param1" name="Level" value="2" runat="server" />
