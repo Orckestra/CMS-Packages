@@ -130,7 +130,7 @@
 
         @if (IsBlogItem)
         {
-            if (blogItemOptions.Contains("Display title"))
+            if (blogItemOptions.Contains("Show title"))
             {
                 <h1 class="media-heading">@entry.Title</h1>
             }
@@ -292,7 +292,7 @@
         <span class="icon-tags"></span><span>&#160;</span>
         @foreach (var tag in tags)
         {
-            <a href="@BlogFacade.GetCurrentPageUrl()/@BlogFacade.Encode(tag)" title="@tag">@tag</a><text>&#160;</text>
+             <a href="@CurrentPageNode.Url/@BlogFacade.Encode(tag)" title="@tag">@tag</a><text>&#160;</text>
         }
     </span>
 }

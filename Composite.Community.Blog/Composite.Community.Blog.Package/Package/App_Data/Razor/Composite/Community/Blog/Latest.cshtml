@@ -14,26 +14,20 @@
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head></head>
+<head>
+</head>
 <body>
-    <div class="blog-latest">
-        <ul class="list-group">
-            @foreach (var entry in entries)
-            {
-                var blogPath = BlogFacade.GetBlogPath(entry.Date, entry.Title);
-                <li class="list-group-item">
-                    <a href="~/page(@entry.PageId)@blogPath" title="@entry.Title">
-                        <strong>
-                            @entry.Title
-                        </strong>
-                    </a>
-                    <p>
-                        @entry.Teaser
-                        <a href="~/page(@entry.PageId)@blogPath">...</a>
-                    </p>
-                </li>
-            }
-        </ul>
+    <div class="list-group">
+        @foreach (var entry in entries)
+        {
+            var blogPath = BlogFacade.GetBlogPath(entry.Date, entry.Title);
+            <a href="~/page(@entry.PageId)@blogPath" title="@entry.Title" class="list-group-item">
+                <h4 class="list-group-item-heading">@entry.Title</h4>
+                <small class="text-muted">@entry.Date.ToShortDateString()</small>
+                <p class="list-group-item-text">@entry.Teaser</p>
+            </a>
+        }
     </div>
 </body>
 </html>
+
