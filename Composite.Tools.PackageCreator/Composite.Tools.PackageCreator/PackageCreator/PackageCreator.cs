@@ -957,7 +957,7 @@ namespace Composite.Tools.PackageCreator
             {
                 if (LocaleActions.AllLocales == LocaleAction)
                 {
-                    cultureName = localizedData.CultureName;
+					cultureName = localizedData.SourceCultureName;
                 }
                 else if (LocaleActions.DefaultLocalesToAllLocales == LocaleAction)
                 {
