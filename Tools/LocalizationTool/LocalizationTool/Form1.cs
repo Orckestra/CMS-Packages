@@ -199,7 +199,11 @@ namespace LocalizationTool
 
 		private void TxtSearchTextChanged(object sender, EventArgs e)
 		{
-			FileHandler.FilterDataSource(txtSearch.Text, chbShowFlaggedOnly.Checked);
+            if (_selectedKey != null)
+            {
+                SaveString();
+            }
+            FileHandler.FilterDataSource(txtSearch.Text, chbShowFlaggedOnly.Checked);
 			_filesListSource.Clear();
 			foreach (var s in FileHandler.StringsCurrentDataSource)
 			{
