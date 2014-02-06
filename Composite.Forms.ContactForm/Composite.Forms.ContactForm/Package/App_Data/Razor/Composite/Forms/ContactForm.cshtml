@@ -1,0 +1,240 @@
+@inherits RazorFunction
+@using System.Net.Mail;
+@using System.Text.RegularExpressions;
+@using Composite.Core;
+@using Composite.Forms;
+@using Composite.Forms.ContactForm;
+@using Composite.Data.DynamicTypes;
+@using Composite.Core.Types;
+@using Composite.Core.WebClient.Captcha;
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "A demo function that outputs a hello message."; }
+    }
+
+    [FunctionParameter(Help = "The email address to send the message to")]
+    public string Email { get; set; }
+
+    [FunctionParameter(Label = "Optional fields",
+                        Help = "Optional fields to include on the form if needed", DefaultValue = "",
+                        WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""company,website,address,phone number,subject"" /></f:function></f:param><f:param name=""Required"" value=""False"" /><f:param name=""Multiple"" value=""True"" /><f:param name=""Compact"" value=""False"" /></f:widgetfunction>")]
+    public string OptionalFields { get; set; }
+
+    [FunctionParameter(Label = "Form options",
+                        Help = "Select one or more form options", DefaultValue = "",
+                        WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Use captcha,Show labels"" /></f:function></f:param><f:param name=""Required"" value=""False"" /><f:param name=""Multiple"" value=""True"" /><f:param name=""Compact"" value=""False"" /></f:widgetfunction>")]
+    public string FormOptions { get; set; }
+
+
+    [FunctionParameter(Label = "Email template", Help = "The email template to use when sending the message", DefaultValue = null)]
+    public DataReference<EmailTemplate> EmailTemplate { get; set; }
+
+
+    private const string EmailPattern = @"^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+(?:[A-Za-z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum|coop|pro)\b$";
+    private bool UseCaptcha = false;
+    private bool ShowLabels = false;
+}
+@{
+    if (EmailTemplate == null)
+    {
+        EmailTemplate = new DataReference<EmailTemplate>(Guid.Parse("c42599a1-872d-4cce-bbf5-36ffdb266e51"));
+    }
+
+    UseCaptcha = FormOptions.Contains("Use captcha");
+    ShowLabels = FormOptions.Contains("Show labels");
+
+    var fromName = Request["fromName"] ?? string.Empty;
+    var fromEmail = Request["fromEmail"] ?? string.Empty;
+    var company = Request["company"] ?? string.Empty;
+    var website = Request["website"] ?? string.Empty;
+    var address = Request["address"] ?? string.Empty;
+    var phonenumber = Request["phonenumber"] ?? string.Empty;
+    var messageSubject = Request["messageSubject"] ?? string.Empty;
+    var message = Request["message"] ?? string.Empty;
+    var captcha = Request["captcha"] ?? string.Empty;
+    var captchaEncryptedValue = Request["captchaEncryptedValue"] ?? string.Empty;
+    if (UseCaptcha)
+    {
+        captchaEncryptedValue = Captcha.IsValid(captchaEncryptedValue) ? captchaEncryptedValue : Captcha.CreateEncryptedValue();
+    }
+
+    if (IsPost && Request["submitContactForm"] != null)
+    {
+        if (string.IsNullOrEmpty(fromName))
+        {
+            ModelState.AddError("fromName", Resources.ContactForm.emptyFromNameError);
+        }
+        if (string.IsNullOrEmpty(message))
+        {
+            ModelState.AddError("message", Resources.ContactForm.emptyMessageError);
+        }
+
+        if (!Regex.IsMatch(fromEmail, EmailPattern, RegexOptions.IgnoreCase))
+        {
+            ModelState.AddError("fromEmail", Resources.ContactForm.incorrectEmailError);
+        }
+
+        if (UseCaptcha && !Captcha.IsValid(captcha, captchaEncryptedValue))
+        {
+            ModelState.AddError("captcha", Resources.ContactForm.incorrectCaptchaError);
+        }
+
+        if (!ModelState.Any())
+        {
+            #region Save data and send Email
+            using (var conn = new DataConnection())
+            {
+                const string treeId = "Composite.Forms.ContactForm.xml";
+                if (!conn.Get<IDataItemTreeAttachmentPoint>().Any(p => p.KeyValue == CurrentPageNode.Id.ToString() && p.TreeId == treeId))
+                {
+                    var tree = conn.CreateNew<IDataItemTreeAttachmentPoint>();
+                    tree.Id = Guid.NewGuid();
+                    tree.TreeId = treeId;
+                    tree.Position = "Top";
+                    tree.KeyValue = CurrentPageNode.Id.ToString();
+                    tree.InterfaceType = typeof(IPage).ToString();
+                    conn.Add(tree);
+                }
+
+                var newContactFormData = conn.CreateNew<ContactFormData>();
+                newContactFormData.Id = Guid.NewGuid();
+                newContactFormData.PageId = CurrentPageNode.Id;
+                newContactFormData.Name = fromName;
+                newContactFormData.Email = fromEmail;
+                newContactFormData.Subject = messageSubject;
+                newContactFormData.Message = HttpUtility.HtmlEncode(message);
+                newContactFormData.IP = HttpContext.Current.Request.UserHostName;
+                newContactFormData.Date = DateTime.Now;
+                newContactFormData.Company = company;
+                newContactFormData.Website = website;
+                newContactFormData.Address = address;
+                newContactFormData.PhoneNumber = phonenumber;
+
+                conn.Add(newContactFormData);
+
+                #region Send Email
+                // Get Email template and fill it with item fields values.
+                var emailTemplate = conn.Get<Composite.Forms.ContactForm.EmailTemplate>().SingleOrDefault(e => e.Id == EmailTemplate.Data.Id);
+                if (emailTemplate != null)
+                {
+                    try
+                    {
+                        XDocument document = ResolveFields(newContactFormData, emailTemplate);
+                        var subject = string.Format("{0}: {1}", emailTemplate.Subject, (messageSubject != string.Empty ? messageSubject : fromName));
+                        SendEmail(fromName, fromEmail, "", Email, subject, document.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.LogError("Composite.Forms.ContactForm", ex);
+                    }
+                }
+                else
+                {
+                    Log.LogInformation("Composite.Forms.ContactForm", "Email was not sent because of EmailTemplate was not found.");
+                }
+                #endregion
+            }
+            #endregion
+        }
+    }
+}
+@if (IsPost && !ModelState.Any())
+{
+    <div class="alert alert-success">@Resources.ContactForm.ResponseText</div>
+    if (UseCaptcha)
+    {
+        Captcha.RegisterUsage(captchaEncryptedValue);
+    }
+    return;
+}
+
+
+<form role="form" method="post">
+    @if (!string.IsNullOrEmpty(Resources.ContactForm.RequestText))
+    {
+        <p>@Resources.ContactForm.RequestText</p>
+    }
+    @if (ModelState.Any())
+    {
+        <div class="alert alert-danger">@Html.ValidationSummary()</div>
+    }
+    @InputFieldBuilder("fromName", "text", fromName, Resources.ContactForm.Name, "required", "256", null)
+    @InputFieldBuilder("fromEmail", "email", fromEmail, Resources.ContactForm.Email, "required", "128", null)
+    @InputFieldBuilder("company", "text", company, Resources.ContactForm.Company, null, "128", "company")
+    @InputFieldBuilder("website", "url", website, Resources.ContactForm.WebSite, null, "256", "website")
+    @InputFieldBuilder("address", "text", address, Resources.ContactForm.Address, null, "256", "address")
+    @InputFieldBuilder("phonenumber", "text", phonenumber, Resources.ContactForm.PhoneNumber, null, "256", "phone number")
+    @InputFieldBuilder("messageSubject", "text", messageSubject, Resources.ContactForm.Subject, null, "256", "subject")
+    <div class="form-group">
+        <label for="message" class="@(ShowLabels ? string.Empty: "sr-only")">@Resources.ContactForm.Message</label>
+        <textarea name="message" id="messageSubject" class="form-control required" placeholder="@Resources.ContactForm.Message" rows="3" required="required">@message</textarea>
+    </div>
+    @if (UseCaptcha)
+    {
+        <div class="form-group required @(ModelState.Any(s=>s.Key=="captcha") ? "has-error": string.Empty)">
+            <label for="captcha" class="@(ShowLabels ? string.Empty: "sr-only")">@Resources.ContactForm.Captcha</label>
+            <input type="hidden" name="captchaEncryptedValue" id="captchaEncryptedValue" value="@captchaEncryptedValue" />
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-2">
+                    <input type="text" name="captcha" id="captcha" class="form-control" placeholder="@Resources.ContactForm.Captcha" value="@captcha" required="required" />
+                </div>
+                <div class="col-xs-12 col-sm-3  col-md-3"><img class="captchaImg" src="@Captcha.GetImageUrl(captchaEncryptedValue)" alt="Captcha image" /></div>
+            </div>
+        </div>
+    }
+    <button name="submitContactForm" type="submit" class="btn btn-default">@Resources.ContactForm.SendButton</button>
+</form>
+
+@functions{
+
+    private void SendEmail(string fromName, string fromEmail, string toName, string toEmail, string subject, string body)
+    {
+        MailMessage mailMessage = new MailMessage();
+        var from = new MailAddress(fromEmail, fromName);
+        var to = new MailAddress(toEmail, toName);
+        mailMessage.Body = body;
+        mailMessage.IsBodyHtml = true;
+        mailMessage.Subject = subject;
+        mailMessage.To.Add(to);
+        mailMessage.From = from;
+        var smtp = new SmtpClient();
+        smtp.Send(mailMessage);
+    }
+
+    private XDocument ResolveFields(ContactFormData dataItem, EmailTemplate emailTemplate)
+    {
+        XDocument document = XDocument.Parse(emailTemplate.Template);
+        Type interfaceType = typeof(Composite.Forms.ContactFormData);
+        var properties = interfaceType.GetPropertiesRecursively();
+
+        List<DynamicTypeMarkupServices.FieldReferenceDefinition> references =
+                DynamicTypeMarkupServices.GetFieldReferenceDefinitions(document, "Composite.Forms.ContactFormData").ToList();
+        if (references.Count() == 0)
+        {
+            references = DynamicTypeMarkupServices.GetFieldReferenceDefinitions(document, "DynamicType:Composite.Forms.ContactFormData").ToList();
+        }
+        foreach (DynamicTypeMarkupServices.FieldReferenceDefinition reference in references)
+        {
+            var pr = properties.Find(p => p.Name == reference.FieldName);
+            if (pr != null)
+            {
+                var prValue = pr.GetValue(dataItem, null).ToString().Replace(Environment.NewLine, "<br/>");
+                XElement xl = XElement.Parse(String.Format("<span>{0}</span>", prValue));
+                reference.FieldReferenceElement.ReplaceWith(xl);
+            }
+        }
+        return document;
+    }
+
+}
+@helper InputFieldBuilder(string inputName, string inputType, string inputValue, string inputLabelText, string required, string maxlength, string optionValue)
+{
+    if (optionValue == null || OptionalFields.Contains(optionValue))
+    {
+        <div class="form-group @(required != null ? "required": string.Empty) @(ModelState.Any(s => s.Key == inputName) ? "has-error" : string.Empty)">
+            <label for="@inputName" class="@(ShowLabels ? string.Empty: "sr-only")">@inputLabelText</label>
+            <input name="@inputName" id="@inputName" type="@inputType" class="form-control " maxlength="@maxlength" value="@inputValue" placeholder="@inputLabelText" required="@required" />
+        </div>
+    }
+}

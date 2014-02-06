@@ -24,6 +24,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -68,20 +72,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Package\App_Code\Composite\Forms\ContactForm\Functions.cs" />
+    <Compile Include="Package\App_Data\Composite\InlineCSharpFunctions\Composite.Forms.ContactForm.GetEmbedableFieldsTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Composite\Forms\ContactForm.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\Composite.Generated.dll" />
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Composite\Forms\ContactForm\EmailTemplate.xml" />
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Forms.ContactForm.xml" />
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Forms.ContactFrom.EmailTemplate.xml" />
     <Content Include="Package\App_Data\Xslt\Composite\Forms\ContactForm.xsl" />
+    <Content Include="Package\Datas\Composite.Data.Types.IInlineFunctionAssemblyReference_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IInlineFunction_public.xml" />
     <Content Include="Package\Datas\Composite.Forms.ContactForm.EmailTemplates_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
     <Content Include="Package\Frontend\Composite\Forms\ContactForm\Scripts\contactform_validation.js" />
     <Content Include="Package\Frontend\Composite\Forms\ContactForm\Styles.css" />
     <Content Include="Package\install.xml" />

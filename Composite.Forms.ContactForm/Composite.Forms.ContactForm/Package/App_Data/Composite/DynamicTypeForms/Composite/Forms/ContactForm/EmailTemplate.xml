@@ -26,7 +26,7 @@
 			</PlaceHolder>
 			<XhtmlEditor Label="Content" Help="The content of the email template.">
 				<XhtmlEditor.EmbedableFieldsTypes>
-					<f:CompositeFunctionCall Name="Composite.Forms.ContactForm.Functions.GetEmbedableFieldsTypes" />
+					<f:CompositeFunctionCall Name="Composite.Forms.ContactForm.GetEmbedableFieldsTypes" />
 				</XhtmlEditor.EmbedableFieldsTypes>
 				<cms:bind source="Template" />
 			</XhtmlEditor>
