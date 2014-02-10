@@ -1,0 +1,24 @@
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Shows a static map for an address or the latitude/longitude using Google Maps"; }
+    }
+
+    [FunctionParameter(Label = "Address", Help = "An address (e.g. 25 Some Street, Some City) or the latitude/longitude (e.g. 40.7813132127194,-73.9663660526276) to show on a map")]
+    public string Address { get; set; }
+
+    [FunctionParameter(Label = "Zoom", Help = "The zoom level of the map from 1 to 21. 14 by default.", DefaultValue = 14)]
+    public int Zoom { get; set; }
+
+    [FunctionParameter(Label = "Width", Help = "The width of the map on a page. 400 by default.", DefaultValue = 400)]
+    public int Width { get; set; }
+
+    [FunctionParameter(Label = "Height", Help = "The height of the map on a page. 400 by default.", DefaultValue = 400)]
+    public int Height { get; set; }
+}
+
+<a href="http://maps.google.com/maps?q=@(HttpUtility.UrlEncode(Address))&amp;z=@Zoom" target="_blank">
+    <img src="http://maps.google.com/maps/api/staticmap?center=@(HttpUtility.UrlEncode(Address))&amp;size=@(Width)x@(Height)&amp;zoom=@Zoom&amp;mobile=true&amp;sensor=false&amp;markers=color:blue|@(HttpUtility.UrlEncode(Address))" border="0" />
+</a>
