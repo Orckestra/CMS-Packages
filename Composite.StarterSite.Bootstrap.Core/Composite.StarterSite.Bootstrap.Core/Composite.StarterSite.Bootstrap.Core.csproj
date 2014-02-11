@@ -102,6 +102,9 @@
     <Content Include="Package\Frontend\Scripts\libs\html5-3.4-respond-1.1.0.min.js" />
     <Content Include="Package\Frontend\Scripts\libs\modernizr-2.6.1-respond-1.1.0.min.js" />
     <Content Include="Package\Frontend\Scripts\script.js" />
+    <Content Include="Package\Frontend\Styles\style.css">
+      <DependentUpon>style.less</DependentUpon>
+    </Content>
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -156,6 +159,7 @@
     <Content Include="Package\Frontend\Styles\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Package\Frontend\Styles\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Package\Frontend\Styles\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Package\App_Data\Razor\Layout\CommonHtmlHead.cshtml" />
     <None Include="Package\Frontend\Styles\style.less" />
     <None Include="Package\Frontend\Styles\VisualEditor.common.less" />
     <None Include="Package\Frontend\Styles\VisualEditor.less" />
