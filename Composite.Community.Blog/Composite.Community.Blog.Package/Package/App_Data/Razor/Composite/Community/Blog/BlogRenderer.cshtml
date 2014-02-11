@@ -10,7 +10,7 @@
     [FunctionParameter(Label = "Blog Entries Count", Help = @"The number of blog entries to display (5 by default).", DefaultValue = 5)]
     public int BlogEntriesCount { get; set; }
 
-    [FunctionParameter(Label = "List options", Help = "Additional data to show when displaying blog posts in a list, such as the image, teaser, content, author, date, tags, share icons, RSS link. By default  all data is displayed  except for the image, content, RSS link.", DefaultValue = "Show date,Show author,Show teaser,Show image,Show tags", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Options""><f:function xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Show Comments Count,Show image,Show teaser,Show content,Show author,Show date,Show tags,Show share icons,Show RSS"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
+    [FunctionParameter(Label = "List options", Help = "Additional data to show when displaying blog posts in a list, such as the image, teaser, content, author, date, tags, share icons, RSS link. By default  all data is displayed  except for the image, content, RSS link.", DefaultValue = "Show date,Show author,Show teaser,Show image,Show tags", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Options""><f:function xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Show DISQUS Comment Count,Show image,Show teaser,Show content,Show author,Show date,Show tags,Show share icons,Show RSS"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
     public string BlogListOptions { get; set; }
 
     [FunctionParameter(Label = "Item options", Help = @"Additional data to show when displaying an individual  blog post, such as the image, teaser, content, author, date, tags, share icons. By default  the author, date and content are only  displayed.", DefaultValue = "Show content,Show tags,Show date,Show author,Show title,Show share icons", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"" label="""" bindingsourcename=""""><f:helpdefinition xmlns:f=""http://www.composite.net/ns/function/1.0"" helptext="""" /><f:param xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Options""><f:function xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Show title,Show image,Show teaser,Show content,Show author,Show date,Show tags,Show share icons"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
@@ -91,7 +91,7 @@
                     <a class="btn btn-info" title="Blog Feed" href="~/BlogRssFeed.ashx?bid=@pageId&amp;IsGlobal=@IsGlobal.ToString()&amp;cultureName=@BlogFacade.GetCurrentCultureName()">Blog RSS</a>
                 </div>
             }
-            if (BlogListOptions.Contains("Show Comments Count"))
+            if (BlogListOptions.Contains("Show DISQUS Comment Count"))
             {
                 <script type="text/javascript">
                     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -124,7 +124,7 @@
         @if (!string.IsNullOrEmpty(entry.Image) && blogItemOptions.Contains("Show image"))
         {
             <div class="media-object">
-                <img class="blog-image img-polaroid" border="0" src="~/media(@entry.Image)" alt="" />
+                <img class="blog-img img-thumbnail" border="0" src="~/media(@entry.Image)" alt="" />
             </div>
         }
 
@@ -139,10 +139,10 @@
         {
             <h2 class="media-heading">
                 <a href="@blogUrl" title="@entry.Title">@entry.Title</a>
-                @if (displayComments && blogItemOptions.Contains("Show Comments Count"))
+                @if (displayComments && blogItemOptions.Contains("Show DISQUS Comment Count"))
                 {
                     <span class="blog-comments-count">
-                        <a href="@(fullBlogUrl)#disqus_thread"></a>
+                        <a href="@(fullBlogUrl)#disqus_thread">0</a>
                     </span>
                 }
             </h2>
@@ -292,7 +292,7 @@
         <span class="icon-tags"></span><span>&#160;</span>
         @foreach (var tag in tags)
         {
-             <a href="@CurrentPageNode.Url/@BlogFacade.Encode(tag)" title="@tag">@tag</a><text>&#160;</text>
+            <a href="@CurrentPageNode.Url/@BlogFacade.Encode(tag)" title="@tag">@tag</a><text>&#160;</text>
         }
     </span>
 }
