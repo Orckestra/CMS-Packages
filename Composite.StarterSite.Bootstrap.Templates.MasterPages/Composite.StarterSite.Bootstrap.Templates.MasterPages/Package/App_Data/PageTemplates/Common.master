@@ -10,21 +10,6 @@
         <c1:title id="title" runat="server" />
     </title>
     <c1:descriptionmetatag runat="server" />
-
-    <asp:PlaceHolder runat="server">
-        <%--To ensure devices display responsive pages properly, include the viewport meta tag. --%>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <link rel="stylesheet" type="text/css" href="<%= HostingEnvironment.ApplicationVirtualPath %>Frontend/Styles/style.less" />
-
-        <%--  SCRIPTS --%>
-        <script id="modernizr-js" type="text/javascript" src="<%= HostingEnvironment.ApplicationVirtualPath %>Frontend/Scripts/libs/modernizr-2.6.1-respond-1.1.0.min.js"></script>
-        <script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="<%= HostingEnvironment.ApplicationVirtualPath %>Frontend/Scripts/libs/bootstrap/3.0.0/bootstrap.min.js"></script>
-        <script type="text/javascript" src="<%= HostingEnvironment.ApplicationVirtualPath %>Frontend/Scripts/script.js"></script>
-
-    </asp:PlaceHolder>
-
     <asp:ContentPlaceHolder ID="phHead" runat="server" />
 </head>
 <body runat="server">
