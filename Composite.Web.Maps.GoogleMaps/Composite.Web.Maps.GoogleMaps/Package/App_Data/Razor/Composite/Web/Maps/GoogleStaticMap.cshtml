@@ -12,13 +12,45 @@
     [FunctionParameter(Label = "Zoom", Help = "The zoom level of the map from 1 to 21. 14 by default.", DefaultValue = 14)]
     public int Zoom { get; set; }
 
-    [FunctionParameter(Label = "Width", Help = "The width of the map on a page. 400 by default.", DefaultValue = 400)]
-    public int Width { get; set; }
-
-    [FunctionParameter(Label = "Height", Help = "The height of the map on a page. 400 by default.", DefaultValue = 400)]
-    public int Height { get; set; }
 }
 
-<a href="http://maps.google.com/maps?q=@(HttpUtility.UrlEncode(Address))&amp;z=@Zoom" target="_blank">
-    <img src="http://maps.google.com/maps/api/staticmap?center=@(HttpUtility.UrlEncode(Address))&amp;size=@(Width)x@(Height)&amp;zoom=@Zoom&amp;mobile=true&amp;sensor=false&amp;markers=color:blue|@(HttpUtility.UrlEncode(Address))" border="0" />
-</a>
+@{
+    var mapImgSrc = string.Format("http://maps.google.com/maps/api/staticmap?center={0}&size=640x640&zoom={1}&sensor=false&markers=color:blue|{0}", HttpUtility.UrlEncode(Address), Zoom);
+    var mapImgSrcScale2 = string.Format("http://maps.google.com/maps/api/staticmap?center={0}&size=640x640&zoom={1}&sensor=false&scale=2&markers=color:blue|{0}", HttpUtility.UrlEncode(Address), Zoom);
+    var mapId = "map" + Guid.NewGuid().GetHashCode().ToString();
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    @*Responsive Google Map Images*@
+    <style id="google-static-map" type="text/css">
+        .google-static-map {
+            display: block;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            line-height: 0;
+            background-size: 640px 640px;
+            <![CDATA[
+            @Html.Raw("background-image: url('" +mapImgSrc +"');")
+            ]]>
+        }
+        .google-static-map img {
+            opacity: 0;
+            width: 100%;
+        }
+    </style>
+    <style type="text/css">
+        <![CDATA[ @Html.Raw("#" + mapId + "{ background-image: url('" + mapImgSrc +"'); }") ]]>
+        @@media only screen and (min--moz-device-pixel-ratio: 2),
+                 only screen and (-o-min-device-pixel-ratio: 2/1),
+                 only screen and (-webkit-min-device-pixel-ratio: 2),
+                 only screen and (min-device-pixel-ratio: 2) {
+         <![CDATA[ @Html.Raw("#" + mapId + "{ background-image: url('" + mapImgSrcScale2 + "'); }") ]]>
+       }
+    </style>
+</head>
+<body>
+    <a id="@mapId" class="google-static-map" href="http://maps.google.com/maps?q=@(HttpUtility.UrlEncode(Address))&amp;z=@Zoom" target="_blank">
+        <img src="@mapImgSrc" alt="@Address" />
+    </a>
+</body>
+</html>
