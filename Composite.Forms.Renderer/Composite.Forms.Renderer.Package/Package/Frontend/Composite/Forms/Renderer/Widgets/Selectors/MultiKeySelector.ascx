@@ -63,5 +63,5 @@
 
 </script>
 
-<asp:CheckBoxList ID="MultiKeyCheckBoxList" runat="server" RepeatLayout="Flow" CssClass="Checkbox" DataTextField="Label" DataValueField="Key">
+<asp:CheckBoxList ID="MultiKeyCheckBoxList" runat="server" RepeatLayout="Flow" CssClass="checkbox" DataTextField="Label" DataValueField="Key">
 </asp:CheckBoxList>

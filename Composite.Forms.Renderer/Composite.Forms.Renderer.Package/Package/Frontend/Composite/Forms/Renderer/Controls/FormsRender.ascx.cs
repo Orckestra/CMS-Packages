@@ -56,7 +56,7 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
 
     protected void Page_PreRender(object sender, EventArgs e)
     {
-        InsertCssIntoHeader(FormsRenderer.FormsRendererWebPath + "Styles.css");
+        /*InsertCssIntoHeader(FormsRenderer.FormsRendererWebPath + "Styles.css");*/
         InsertCssIntoHeader("http://ajax.microsoft.com/ajax/jquery.ui/1.8.7/themes/cupertino/jquery-ui.css");
 
         InsertScriptIntoHeader("//code.jquery.com/jquery-latest.min.js", "jquery-js");

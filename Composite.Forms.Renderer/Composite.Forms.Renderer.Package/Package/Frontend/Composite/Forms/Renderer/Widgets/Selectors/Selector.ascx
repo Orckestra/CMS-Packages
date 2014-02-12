@@ -60,7 +60,7 @@
         }
     }
 </script>
-<select name="<%= this.ClientName %>" id="<%= this.ClientID %>">
+<select name="<%= this.ClientName %>" id="<%= this.ClientID %>" class="form-control">
     <asp:Repeater runat="server" ID="optionsRepeater">
         <ItemTemplate>
             <option

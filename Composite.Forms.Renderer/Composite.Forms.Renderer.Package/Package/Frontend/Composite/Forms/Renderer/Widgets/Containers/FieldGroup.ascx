@@ -8,7 +8,7 @@
         {
             Control labelPlaceHolder = new PlaceHolder();
 
-            UiFields.Controls.Add(new LiteralControl(string.Format("<div class='FormElement{0}'>", Composite.Forms.Renderer.FormsRenderer.IsRequiredControl(formControlDefinition.FormControl.ID) ? " required" : "")));
+            UiFields.Controls.Add(new LiteralControl(string.Format("<div class='FormElement{0} form-group'>", Composite.Forms.Renderer.FormsRenderer.IsRequiredControl(formControlDefinition.FormControl.ID) ? " required" : "")));
             UiFields.Controls.Add(labelPlaceHolder);
             UiFields.Controls.Add(new LiteralControl("<div class='FormElementInput'>"));
             UiFields.Controls.Add(formControlDefinition.FormControl);

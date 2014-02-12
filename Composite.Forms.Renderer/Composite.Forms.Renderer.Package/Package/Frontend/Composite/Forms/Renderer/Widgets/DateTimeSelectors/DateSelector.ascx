@@ -53,4 +53,4 @@
 
 </script>
 
-<input name="<%= this.UniqueID  %>" id="<%= this.UniqueID  %>" value="<%= Server.HtmlEncode(_currentStringValue) %>" class="InputDate" />
+<input name="<%= this.UniqueID  %>" id="<%= this.UniqueID  %>" value="<%= Server.HtmlEncode(_currentStringValue) %>" class="form-control InputDate" />

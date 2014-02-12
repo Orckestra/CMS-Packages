@@ -73,5 +73,5 @@
     }
 
 </script>
-<asp:DropDownList runat="server" ID="DataReferenceSelector">
+<asp:DropDownList runat="server" ID="DataReferenceSelector" CssClass="form-control">
 </asp:DropDownList>

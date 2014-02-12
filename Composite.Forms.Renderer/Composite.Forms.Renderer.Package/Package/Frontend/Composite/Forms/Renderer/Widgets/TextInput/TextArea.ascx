@@ -26,6 +26,11 @@
     {
         return this.ClientID;
     }
+   
+    private string Required()
+    {
+        return Composite.Forms.Renderer.FormsRenderer.IsRequiredControl(this.ID) ? @" required=""required""" : string.Empty;
+    }
 </script>
 
-<textarea cols="32" rows="6" id="<%= this.ClientID %>" name="<%= this.UniqueID %>"><%= Server.HtmlEncode(_currentStringValue) %></textarea>
+<textarea class="form-control" rows="6" id="<%= this.ClientID %>" name="<%= this.UniqueID %>" <%= Required() %>><%= Server.HtmlEncode(_currentStringValue) %></textarea>
