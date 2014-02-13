@@ -6,7 +6,7 @@
         get { return "Shows a static map for an address or the latitude/longitude using Google Maps"; }
     }
 
-    [FunctionParameter(Label = "Address", Help = "An address (e.g. 25 Some Street, Some City) or the latitude/longitude (e.g. 40.7813132127194,-73.9663660526276) to show on a map")]
+    [FunctionParameter(Label = "Address", Help = "An address (e.g. 25 Some Street, Some City) or the latitude/longitude (e.g. 40.7813132127194,-73.9663660526276) to show on a map", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.TextArea"" />")]
     public string Address { get; set; }
 
     [FunctionParameter(Label = "Zoom", Help = "The zoom level of the map from 1 to 21. 14 by default.", DefaultValue = 14)]
@@ -15,8 +15,10 @@
 }
 
 @{
-    var mapImgSrc = string.Format("http://maps.google.com/maps/api/staticmap?center={0}&size=640x640&zoom={1}&sensor=false&markers=color:blue|{0}", HttpUtility.UrlEncode(Address), Zoom);
-    var mapImgSrcScale2 = string.Format("http://maps.google.com/maps/api/staticmap?center={0}&size=640x640&zoom={1}&sensor=false&scale=2&markers=color:blue|{0}", HttpUtility.UrlEncode(Address), Zoom);
+
+    Address = HttpUtility.UrlEncode(Address.Replace("\n", ", "));
+    var mapImgSrc = string.Format("http://maps.google.com/maps/api/staticmap?center={0}&size=640x640&zoom={1}&sensor=false&markers=color:blue|{0}", Address, Zoom);
+    var mapImgSrcScale2 = string.Format("http://maps.google.com/maps/api/staticmap?center={0}&size=640x640&zoom={1}&sensor=false&scale=2&markers=color:blue|{0}", Address, Zoom);
     var mapId = "map" + Guid.NewGuid().GetHashCode().ToString();
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
@@ -25,13 +27,12 @@
     <style id="google-static-map" type="text/css">
         .google-static-map {
             display: block;
+			max-width: 640px;
+			max-height: 640px;
             background-repeat: no-repeat;
             background-position: 50% 50%;
             line-height: 0;
             background-size: 640px 640px;
-            <![CDATA[
-            @Html.Raw("background-image: url('" +mapImgSrc +"');")
-            ]]>
         }
         .google-static-map img {
             opacity: 0;
@@ -49,7 +50,7 @@
     </style>
 </head>
 <body>
-    <a id="@mapId" class="google-static-map" href="http://maps.google.com/maps?q=@(HttpUtility.UrlEncode(Address))&amp;z=@Zoom" target="_blank">
+    <a id="@mapId" class="google-static-map" href="http://maps.google.com/maps?q=@Address&amp;z=@Zoom">
         <img src="@mapImgSrc" alt="@Address" />
     </a>
 </body>
