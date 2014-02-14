@@ -17,7 +17,7 @@
             </div>
         </div>
         <div id="FieldSet" runat="server" class="form-group">
-            <input type="reset" id="Reset" runat="server" value="Reset" class="Reset" />
+            <input type="reset" id="Reset" runat="server" value="Reset" class="btn btn-default Reset" />
             <asp:Button ID="Send" runat="server" Text="Submit" OnClick="Send_Click" CssClass="btn btn-default" />
         </div>
     </asp:Panel>

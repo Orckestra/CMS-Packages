@@ -38,4 +38,4 @@
     }
 
 </script>
-<textarea cols="32" rows="6" name="<%= this.UniqueID  %>"><%= Server.HtmlEncode(_currentStringValue) %></textarea>
+<textarea class="form-control" rows="6" name="<%= this.UniqueID  %>"><%= Server.HtmlEncode(_currentStringValue) %></textarea>
