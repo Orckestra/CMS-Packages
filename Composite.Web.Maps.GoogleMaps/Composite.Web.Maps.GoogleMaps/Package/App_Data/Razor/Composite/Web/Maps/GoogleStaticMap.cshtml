@@ -15,7 +15,6 @@
 }
 
 @{
-
     Address = HttpUtility.UrlEncode(Address.Replace("\n", ", "));
     var mapImgSrc = string.Format("http://maps.google.com/maps/api/staticmap?center={0}&size=640x640&zoom={1}&sensor=false&markers=color:blue|{0}", Address, Zoom);
     var mapImgSrcScale2 = string.Format("http://maps.google.com/maps/api/staticmap?center={0}&size=640x640&zoom={1}&sensor=false&scale=2&markers=color:blue|{0}", Address, Zoom);
@@ -27,30 +26,31 @@
     <style id="google-static-map" type="text/css">
         .google-static-map {
             display: block;
-			max-width: 640px;
-			max-height: 640px;
+            max-width: 640px;
+            max-height: 640px;
             background-repeat: no-repeat;
             background-position: 50% 50%;
             line-height: 0;
             background-size: 640px 640px;
         }
-        .google-static-map img {
-            opacity: 0;
-            width: 100%;
-        }
+
+            .google-static-map img {
+                opacity: 0;
+                width: 100%;
+            }
     </style>
     <style type="text/css">
-        <![CDATA[ @Html.Raw("#" + mapId + "{ background-image: url('" + mapImgSrc +"'); }") ]]>
+        /*<!--*/ @Html.Raw("#" + mapId + "{ background-image: url('" + mapImgSrc +"'); }") /*-->*/
         @@media only screen and (min--moz-device-pixel-ratio: 2),
                  only screen and (-o-min-device-pixel-ratio: 2/1),
                  only screen and (-webkit-min-device-pixel-ratio: 2),
                  only screen and (min-device-pixel-ratio: 2) {
-         <![CDATA[ @Html.Raw("#" + mapId + "{ background-image: url('" + mapImgSrcScale2 + "'); }") ]]>
+        /*<!--*/ @Html.Raw("#" + mapId + "{ background-image: url('" + mapImgSrcScale2 + "'); }") /*-->*/
        }
     </style>
 </head>
 <body>
-    <a id="@mapId" class="google-static-map" href="http://maps.google.com/maps?q=@Address&amp;z=@Zoom">
+    <a id="@mapId" class="google-static-map" href="http://maps.google.com/maps?q=@Address&amp;z=@Zoom" target="_blank">
         <img src="@mapImgSrc" alt="@Address" />
     </a>
 </body>
