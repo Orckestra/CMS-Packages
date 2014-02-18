@@ -18,22 +18,23 @@
 	<head>
 	</head>
 	<body>
-		@if (!string.IsNullOrEmpty(ContentSpotIds))
-		{
-			var spotIds = ContentSpotIds.Split(',').Select(f => new Guid(f));
-			var spots = Data.Get<Content.ContentSpot>().Where(f => spotIds.Contains(f.Id)).ToList();
-			if (spots.Any()) 
-			{
-				<div class="spots">
-					@foreach (var spotId in spotIds)
-					{
-                        var spot = spots.First(s => s.Id == spotId);
-						<div class="spot">
-							@Html.Raw(spot.Content)
-						</div>
-					}
-				</div>
-			}
-		}
+        @if (!string.IsNullOrEmpty(ContentSpotIds))
+        {
+            var spotIds = ContentSpotIds.Split(',').Select(f => new Guid(f));
+            var spots = Data.Get<Content.ContentSpot>().Where(f => spotIds.Contains(f.Id)).ToList();
+            if (spots.Any())
+            {
+                <div class="spots">
+                    @foreach (var spotId in spotIds) // making positioning matter
+                    {
+                        var spot = spots.FirstOrDefault(s => s.Id == spotId);
+                        if (spot == null) { continue; }
+                        <div class="spot">
+                            @Html.Raw(spot.Content)
+                        </div>
+                    }
+                </div>
+            }
+        }
 	</body>
 </html>
