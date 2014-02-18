@@ -45,10 +45,8 @@
                         <div id="ytplayer" class="player-window"></div>
                         <div class="media-body">
                             <h3 class="media-heading">@Channel.Videos.First().Title</h3>
-                          
                         </div>
                     </div>
-                    
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-5">
                     <div class="list-group">
@@ -58,7 +56,7 @@
                             <a href="#@video.Id" title="@video.Title" class="list-group-item clearfix" data-title="@video.Title" data-views="@video.ViewCount">
                                 <img class="img-responsive pull-left" src="http://img.youtube.com/vi/@video.Id/0.jpg" alt="@video.Title" />
                                 <h5 class="list-group-item-heading">@video.Title</h5>
-                                <small>@video.ViewCount @Resources.YouTubeChannel.VideoViewsText</small><br />
+                                <small>@video.ViewCount @(video.ViewCount == 1 ? Resources.YouTubeChannel.VideoOneViewText : Resources.YouTubeChannel.VideoViewsText)</small><br />
                                 <small class="text-muted">@duration.ToString()</small>
                             </a>
                         }
@@ -70,9 +68,23 @@
                         var curEndIndex = Channel.StartIndex + Channel.ItemsPerPage - 1;
                         curEndIndex = curEndIndex < Channel.TotalResults ? curEndIndex : Channel.TotalResults;
                         <ul class="pagination">
-                            <li class="@( Channel.StartIndex  <2 ? "disabled" : string.Empty)"><a href="?page=@Channel.StartIndex" title="Previous">«</a></li>
+                            @if (Channel.StartIndex > 1)
+                            {
+                                <li><a href="?index=@prevIndex" title="Previous">«</a></li>
+                            }
+                            else
+                            {
+                                <li class="disabled"><a href="#">«</a></li>
+                            }
                             <li><a><strong>@Channel.StartIndex</strong> - <strong>@curEndIndex</strong> of about <strong>@Channel.TotalResults</strong></a></li>
-                            <li class="@(nextIndex > Channel.TotalResults ? "disabled": string.Empty)"><a href="?index=@nextIndex" title="Next">»</a></li>
+                            @if (nextIndex <= Channel.TotalResults)
+                            {
+                                <li><a href="?index=@nextIndex" title="Next">»</a></li>
+                            }
+                            else
+                            {
+                                <li class="disabled"><a href="#">»</a></li>
+                            }
                         </ul>
                     }
                 </div>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Composite.Core;
+using System;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Caching;
@@ -54,17 +55,24 @@ namespace Composite.Media.YouTube
        
         private static YoutubeChannel GetYouTubeFeed(string feed, string feedType)
         {
-
+            
             if (HttpContext.Current.Cache[feed] == null)
             {
                 lock (cahceLock)
                 {
-                    if (HttpContext.Current.Cache[feed] == null)
-                        HttpContext.Current.Cache.Add(feed, new YoutubeChannel(XDocument.Load(feed).Root, feedType),
-                            null, DateTime.Now.AddSeconds(CacheTimeInSecons),
-                            Cache.NoSlidingExpiration,
-                            CacheItemPriority.Default,
-                            null);
+                    try
+                    {
+                        if (HttpContext.Current.Cache[feed] == null)
+                            HttpContext.Current.Cache.Add(feed, new YoutubeChannel(XDocument.Load(feed).Root, feedType),
+                                null, DateTime.Now.AddSeconds(CacheTimeInSecons),
+                                Cache.NoSlidingExpiration,
+                                CacheItemPriority.Default,
+                                null);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.LogError("GetYouTubeFeed", feed + ": " +ex.Message);
+                    }
                 }
             }
             return HttpContext.Current.Cache[feed] as YoutubeChannel;
