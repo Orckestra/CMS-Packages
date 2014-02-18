@@ -20,13 +20,14 @@
 	<body>
 		@if (!string.IsNullOrEmpty(ContentSpotIds))
 		{
-			var spotIds = ContentSpotIds.Split(',').Select(f=>new Guid(f));
-			var spots = Data.Get<Content.ContentSpot>().Where(f=> spotIds.Contains(f.Id)).ToList();
+			var spotIds = ContentSpotIds.Split(',').Select(f => new Guid(f));
+			var spots = Data.Get<Content.ContentSpot>().Where(f => spotIds.Contains(f.Id)).ToList();
 			if (spots.Any()) 
 			{
 				<div class="spots">
-					@foreach(var spot in spots)
+					@foreach (var spotId in spotIds)
 					{
+                        var spot = spots.First(s => s.Id == spotId);
 						<div class="spot">
 							@Html.Raw(spot.Content)
 						</div>
