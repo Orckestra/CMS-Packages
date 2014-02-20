@@ -35,11 +35,11 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider.Functions
 
 
 				yield return new FormsRendererFunctionParameterProfile(
-					"IntroText", typeof(string), false, new ConstantValueProvider(""), new WidgetFunctionProvider(new VisualXhtmlEditorFuntion(null)));
+					"IntroText", typeof(XhtmlDocument), false, new ConstantValueProvider(""), new WidgetFunctionProvider(new VisualXhtmlEditorFuntion(null)));
 
 
 				yield return new FormsRendererFunctionParameterProfile(
-					"ResponseText", typeof(string), false, new ConstantValueProvider(""), new WidgetFunctionProvider(new VisualXhtmlEditorFuntion(null)));
+                    "ResponseText", typeof(XhtmlDocument), false, new ConstantValueProvider(""), new WidgetFunctionProvider(new VisualXhtmlEditorFuntion(null)));
 
 				yield return new FormsRendererFunctionParameterProfile(
 					"ResponseUrl", typeof(string), false, new ConstantValueProvider(""), StandardWidgetFunctions.GetDataReferenceWidget<IPage>());

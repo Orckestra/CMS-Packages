@@ -30,6 +30,7 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
             oScriptManager = new ScriptManager { ID = "ScriptManager1" };
             Page.Controls.AddAt(0, oScriptManager);
         }
+
     }
 
     protected void Page_Load(object sender, EventArgs e)
@@ -56,12 +57,9 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
 
     protected void Page_PreRender(object sender, EventArgs e)
     {
-        /*InsertCssIntoHeader(FormsRenderer.FormsRendererWebPath + "Styles.css");*/
-        InsertCssIntoHeader("http://ajax.microsoft.com/ajax/jquery.ui/1.8.7/themes/cupertino/jquery-ui.css");
-
-        InsertScriptIntoHeader("//code.jquery.com/jquery-latest.min.js", "jquery-js");
+        InsertCssIntoHeader("//code.jquery.com/ui/1.10.4/themes/cupertino/jquery-ui.css");
         InsertScriptIntoHeader("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js");
-        InsertScriptIntoHeader("http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.7/jquery-ui.js");
+        InsertScriptIntoHeader("//code.jquery.com/ui/1.10.4/jquery-ui.min.js");
 
         if (i18n.Contains(CultureInfo.CurrentCulture.Name))
         {
