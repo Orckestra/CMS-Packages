@@ -1,0 +1,38 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Plays a YouTube video on your page using the specified video id."; }
+    }
+
+    [FunctionParameter(Label = "Video Id", Help = "Place the video id from YouTube in here (like 64Nl7Mhnugo from http://www.youtube.com/watch?v=64Nl7Mhnugo")]
+    public string VideoId { get; set; }
+
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style id="youtube-video" type="text/css">
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+            .video-container iframe, .video-container object, .video-container embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <iframe src="http://www.youtube.com/embed/@(VideoId)?fs=1" frameborder="0" width="560" height="315"></iframe>
+    </div>
+</body>
+</html>
