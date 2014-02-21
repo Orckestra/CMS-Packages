@@ -92,18 +92,26 @@
     <Content Include="Package\Frontend\Config\VisualEditor\common.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Package\Frontend\Styles\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Package\Frontend\Scripts\libs\bootstrap\bootstrap.min.js" />
+    <Content Include="Package\Frontend\Styles\bootstrap\variables.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Package\Frontend\Images\arrow.png" />
     <Content Include="Package\Frontend\Images\background.png" />
     <Content Include="Package\Frontend\Images\header.jpg" />
     <Content Include="Package\Frontend\Images\headerlogo.png" />
-    <Content Include="Package\Frontend\Scripts\libs\bootstrap\3.0.0\bootstrap.js" />
-    <Content Include="Package\Frontend\Scripts\libs\bootstrap\3.0.0\bootstrap.min.js" />
     <Content Include="Package\Frontend\Scripts\libs\html5-3.4-respond-1.1.0.min.js" />
     <Content Include="Package\Frontend\Scripts\libs\modernizr-2.6.1-respond-1.1.0.min.js" />
     <Content Include="Package\Frontend\Scripts\script.js" />
     <Content Include="Package\Frontend\Styles\style.css">
       <DependentUpon>style.less</DependentUpon>
+    </Content>
+    <Content Include="Package\Frontend\Styles\VisualEditor.css">
+      <DependentUpon>VisualEditor.less</DependentUpon>
+    </Content>
+    <Content Include="Package\Frontend\Styles\VisualEditor.min.css">
+      <DependentUpon>VisualEditor.less</DependentUpon>
     </Content>
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
@@ -116,50 +124,50 @@
     <Content Include="Package\App_Data\Razor\Layout\Navigation\Menu.cshtml" />
     <Content Include="Package\App_Data\Razor\Layout\Navigation\TopLinks.cshtml" />
     <Content Include="Package\App_Data\Razor\Content\ShowContentSpots.cshtml" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\alerts.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\badges.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\bootstrap.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\breadcrumbs.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\button-groups.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\buttons.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\carousel.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\close.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\code.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\component-animations.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\dropdowns.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\forms.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\glyphicons.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\grid.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\input-groups.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\jumbotron.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\labels.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\list-group.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\media.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\mixins.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\modals.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\navbar.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\navs.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\normalize.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\pager.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\pagination.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\panels.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\popovers.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\print.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\progress-bars.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\responsive-utilities.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\scaffolding.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\tables.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\theme.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\thumbnails.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\tooltip.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\type.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\utilities.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\variables.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\3.0.0\wells.less" />
-    <Content Include="Package\Frontend\Styles\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Package\Frontend\Styles\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Package\Frontend\Styles\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Package\App_Data\Razor\Layout\CommonHtmlHead.cshtml" />
+    <Content Include="Package\Frontend\Styles\bootstrap\alerts.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\badges.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\bootstrap.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\breadcrumbs.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\button-groups.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\buttons.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\carousel.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\close.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\code.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\component-animations.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\dropdowns.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\forms.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\glyphicons.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\grid.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\input-groups.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\jumbotron.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\labels.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\list-group.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\media.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\modals.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\navbar.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\navs.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\normalize.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\pager.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\pagination.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\panels.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\popovers.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\print.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\progress-bars.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\responsive-utilities.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\scaffolding.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\tables.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\theme.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\thumbnails.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\tooltip.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\type.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\utilities.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\variables.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\wells.less" />
     <None Include="Package\Frontend\Styles\style.less" />
     <None Include="Package\Frontend\Styles\VisualEditor.common.less" />
     <None Include="Package\Frontend\Styles\VisualEditor.less" />

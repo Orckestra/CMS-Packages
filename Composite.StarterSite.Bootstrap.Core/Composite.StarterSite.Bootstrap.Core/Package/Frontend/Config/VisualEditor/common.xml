@@ -106,19 +106,19 @@
       <format id="lead" label="Lead" image="" notes="" classes="lead" selector="p">
         <select />
       </format>
-      <format id="text-muted" label="Text muted" image="" notes="" classes="text-muted" selector="p, div">
+      <format id="text-muted" label="Text muted" image="" notes="" classes="text-muted" selector="p">
         <select />
       </format>
-      <format id="text-primary" label="Text primary" image="" notes="" classes="text-primary" selector="p, div">
+      <format id="text-primary" label="Text primary" image="" notes="" classes="text-primary" selector="p">
         <select />
       </format>
-      <format id="text-success" label="Text success" image="" notes="" classes="text-success" selector="p, div">
+      <format id="text-success" label="Text success" image="" notes="" classes="text-success" selector="p">
         <select />
       </format>
-      <format id="text-success" label="Text success" image="" notes="" classes="text-success" selector="p, div">
+      <format id="text-success" label="Text success" image="" notes="" classes="text-success" selector="p">
         <select />
       </format>
-      <format id="text-info" label="Text info" image="" notes="" classes="text-info" selector="p,div">
+      <format id="text-info" label="Text info" image="" notes="" classes="text-info" selector="p">
         <select />
       </format>
       <format id="text-warning" label="Text warning" image="" notes="" classes="text-warning" selector="p">
@@ -127,7 +127,22 @@
       <format id="text-danger" label="Text danger" image="" notes="" classes="text-danger" selector="p">
         <select />
       </format>
-
+      <!-- Contextual backgrounds -->
+      <format id="bg-primary" label="Background primary" image="" notes="" classes="bg-primary" selector="p">
+        <select />
+      </format>
+      <format id="bg-success" label="Background success" image="" notes="" classes="bg-success" selector="p">
+        <select />
+      </format>
+      <format id="bg-info" label="Background info" image="" notes="" classes="bg-info" selector="p">
+        <select />
+      </format>
+      <format id="bg-warning" label="Background warning" image="" notes="" classes="bg-warning" selector="p">
+        <select />
+      </format>
+      <format id="bg-danger" label="Background danger" image="" notes="" classes="bg-danger" selector="p">
+        <select />
+      </format>
       <!-- blockquote -->
       <format id="pull-right" label="Pull Right" image="" notes="" classes="pull-right" selector="blockquote">
         <select />
