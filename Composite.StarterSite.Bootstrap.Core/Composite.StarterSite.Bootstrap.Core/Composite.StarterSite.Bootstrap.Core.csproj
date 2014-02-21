@@ -93,6 +93,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Package\Frontend\Scripts\libs\bootstrap\bootstrap.min.js" />
+    <Content Include="Package\Frontend\Styles\bootstrap\bootstrap.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
     <Content Include="Package\Frontend\Styles\bootstrap\variables.css">
       <DependentUpon>variables.less</DependentUpon>
     </Content>
@@ -104,9 +107,6 @@
     <Content Include="Package\Frontend\Scripts\libs\html5-3.4-respond-1.1.0.min.js" />
     <Content Include="Package\Frontend\Scripts\libs\modernizr-2.6.1-respond-1.1.0.min.js" />
     <Content Include="Package\Frontend\Scripts\script.js" />
-    <Content Include="Package\Frontend\Styles\style.css">
-      <DependentUpon>style.less</DependentUpon>
-    </Content>
     <Content Include="Package\Frontend\Styles\VisualEditor.css">
       <DependentUpon>VisualEditor.less</DependentUpon>
     </Content>
