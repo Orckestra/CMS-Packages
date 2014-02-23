@@ -1,14 +1,23 @@
 ﻿@inherits RazorFunction
-
+@using System.Text.RegularExpressions
 @functions {
     public override string FunctionDescription
     {
-        get { return "Plays a YouTube video on your page using the specified video id."; }
+        get { return "Plays a YouTube video on your page using the specified URL."; }
     }
 
-    [FunctionParameter(Label = "Video Id", Help = "Place the video id from YouTube in here (like 64Nl7Mhnugo from http://www.youtube.com/watch?v=64Nl7Mhnugo")]
-    public string VideoId { get; set; }
+    [FunctionParameter(Label = "YouTube URL", Help = "Paste the URL to the video you wish to show.")]
+    public string YouTubeURL { get; set; }
 
+}
+@{
+    string pattern = @"(?:https?:\/\/)?(?:www\.)?(?:(?:(?:youtube.com\/watch\?[^?]*v=|youtu.be\/)([\w\-]+))(?:[^\s?]+)?)";
+    if (!Regex.IsMatch(YouTubeURL, pattern))
+    {
+        <div class="alert alert-danger">Wrong Youtube URL.</div>
+        return;
+    }
+    var match = Regex.Match(YouTubeURL, pattern);
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,6 +30,7 @@
             height: 0;
             overflow: hidden;
         }
+
             .video-container iframe, .video-container object, .video-container embed {
                 position: absolute;
                 top: 0;
@@ -32,7 +42,7 @@
 </head>
 <body>
     <div class="video-container">
-        <iframe src="http://www.youtube.com/embed/@(VideoId)?fs=1" frameborder="0" width="560" height="315"></iframe>
+        <iframe src="http://www.youtube.com/embed/@(match.Groups[1].Value)?fs=1" frameborder="0" width="560" height="315"></iframe>
     </div>
 </body>
 </html>
