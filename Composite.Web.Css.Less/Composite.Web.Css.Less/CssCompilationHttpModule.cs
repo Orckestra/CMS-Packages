@@ -1,26 +1,23 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Web;
 using Composite.C1Console.Security;
-using Composite.Core.Collections.Generic;
 
 namespace Composite.Web.Css.Less
 {
     public class CssCompilationHttpModule : IHttpModule
     {
         private static readonly ReaderWriterLockSlim _compilationLock = new ReaderWriterLockSlim();
-        private static readonly Hashtable<string, CachedDirectoryInfo> _directoryInfo = new Hashtable<string, CachedDirectoryInfo>();
 
         private readonly string _extension;
         private readonly string _fileWatcherMask;
         private readonly Action<string, string, DateTime> _compileAction;
 
-        public CssCompilationHttpModule(string extension, string fileWatcherMask, Action<string, string, DateTime> compileAction)
+        public CssCompilationHttpModule(string extension, string fileMask, Action<string, string, DateTime> compileAction)
         {
             _extension = extension;
-            _fileWatcherMask = fileWatcherMask;
+            _fileWatcherMask = fileMask;
             _compileAction = compileAction;
         }
 
@@ -43,13 +40,11 @@ namespace Composite.Web.Css.Less
                 return;
             }
 
-            string directory = Path.GetDirectoryName(filePath);
-
-            DateTime folderLastUpdatedUtc = GetCachedFolderLastUpdateDateUtc(directory, _fileWatcherMask);
+            DateTime lastTimeUpdatedUtc = StylesHashing.GetLastStyleUpdateTimeUtc(_fileWatcherMask);
 
             var filePathCss = filePath.Substring(0, filePath.Length - _extension.Length) + ".min.css";
 
-            if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < folderLastUpdatedUtc)
+            if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < lastTimeUpdatedUtc)
             {
                 try
                 {
@@ -57,9 +52,9 @@ namespace Composite.Web.Css.Less
 
                     try
                     {
-                        if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < folderLastUpdatedUtc)
+                        if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < lastTimeUpdatedUtc)
                         {
-                            _compileAction(filePath, filePathCss, folderLastUpdatedUtc);
+                            _compileAction(filePath, filePathCss, lastTimeUpdatedUtc);
                         }
                     }
                     catch (CssCompileException ex)
@@ -102,7 +97,7 @@ body:before {{
                 }
             }
 
-            if ((DateTime.UtcNow - folderLastUpdatedUtc).Days >= 1 || !UserValidationFacade.IsLoggedIn())
+            if ((DateTime.UtcNow - lastTimeUpdatedUtc).Days >= 1 || !UserValidationFacade.IsLoggedIn())
             {
                 context.Response.Cache.SetExpires(DateTime.Now.AddDays(1.0));
             }
@@ -133,64 +128,9 @@ body:before {{
             return text.Replace("*", "");
         }
 
-        private DateTime GetCachedFolderLastUpdateDateUtc(string directory, string fileMask)
-        {
-            var cacheRecord = _directoryInfo[directory];
-
-            if (cacheRecord == null)
-            {
-                lock (_directoryInfo)
-                {
-                    cacheRecord = _directoryInfo[directory];
-                    if (cacheRecord == null)
-                    {
-                        cacheRecord = new CachedDirectoryInfo();
-
-                        cacheRecord.FileSystemWatcher = new FileSystemWatcher(directory, fileMask);
-                        cacheRecord.FileSystemWatcher.IncludeSubdirectories = true;
-                        cacheRecord.FileSystemWatcher.Created += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
-                        cacheRecord.FileSystemWatcher.Changed += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
-                        cacheRecord.FileSystemWatcher.Deleted += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
-                        cacheRecord.FileSystemWatcher.Renamed += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
-
-                        cacheRecord.FileSystemWatcher.EnableRaisingEvents = true;
-
-                        _directoryInfo[directory] = cacheRecord;
-                    }
-                }
-            }
-
-            var cachedResult = cacheRecord.LastTimeUpdatedUtc;
-
-            if (cachedResult.HasValue) return cachedResult.Value;
-
-            var files = Directory.GetFiles(directory, fileMask, SearchOption.AllDirectories);
-
-            if (files.Length == 0) return DateTime.Now;
-
-            DateTime result = File.GetLastWriteTimeUtc(files[0]);
-            foreach (var file in files.Skip(1))
-            {
-                DateTime lastUpdatedUtc = File.GetLastWriteTimeUtc(file);
-                if (lastUpdatedUtc > result)
-                {
-                    result = lastUpdatedUtc;
-                }
-            }
-
-            cacheRecord.LastTimeUpdatedUtc = result;
-
-            return result;
-        }
 
         public void Dispose()
         {
-        }
-
-        private class CachedDirectoryInfo
-        {
-            public FileSystemWatcher FileSystemWatcher { get; set; }
-            public DateTime? LastTimeUpdatedUtc { get; set; }
         }
     }
 }

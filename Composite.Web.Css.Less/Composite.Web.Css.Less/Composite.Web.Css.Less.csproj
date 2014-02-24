@@ -34,8 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Composite">
-      <HintPath>..\..\References\Composite\3.0\Composite.dll</HintPath>
+    <Reference Include="Composite, Version=3.0.4358.29126, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Composite\4.2\Composite.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +53,7 @@
     <Compile Include="CssCompilationHttpModule.cs" />
     <Compile Include="CssCompileException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StylesHashing.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
