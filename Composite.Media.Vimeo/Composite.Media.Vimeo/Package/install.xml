@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.1.5058.34326" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Media.Vimeo" groupName="Composite.Media" version="1.0.0" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="b61446c4-cdd5-45c5-8d34-016fd6c74f31" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.Media.Vimeo" groupName="Composite.Media" version="1.0.0" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Media.Vimeo" id="b61446c4-cdd5-45c5-8d34-016fd6c74f31" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Plays a Vimeo video on your page using the specified URL.</TechnicalDetails>
 		<Description>Plays a Vimeo video on your page using the specified URL.</Description>
 	</mi:PackageInformation>
