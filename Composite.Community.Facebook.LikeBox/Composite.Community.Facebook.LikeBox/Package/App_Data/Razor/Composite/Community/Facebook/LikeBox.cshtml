@@ -13,9 +13,9 @@
                      WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""light,dark"" /></f:function></f:param></f:widgetfunction>")]
     public string ColorScheme { get; set; }
 
-    
-    [FunctionParameter(Label = "Options", Help = "Customize LikeBox", DefaultValue = "Show Faces,Show Stream,Show Header",
-                     WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Show Border,Show Faces,Show Stream,Show Header,Force Wall"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
+
+    [FunctionParameter(Label = "Options", Help = "Customize LikeBox", DefaultValue = "Show Friends’ Faces,Show Posts,Show Header,Show Border",
+                     WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Show Friends’ Faces,Show Posts,Show Header,Show Border"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
     public string Options { get; set; }
     
 
@@ -37,10 +37,10 @@
     var cultures = GetXml("http://www.facebook.com/translations/FacebookLocales.xml");
     var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name.Replace("-", "_");
     currentCulture = cultures.Descendants("representation").Any(c => c.Value == currentCulture) ? currentCulture : "en_US";
-    var showFaces = Options.Contains("Show Faces").ToString().ToLower();
-    var showStream = Options.Contains("Show Stream").ToString().ToLower();
+    var showFaces = Options.Contains("Show Friends’ Faces").ToString().ToLower();
+    var showStream = Options.Contains("Show Posts").ToString().ToLower();
     var showHeader = Options.Contains("Show Header").ToString().ToLower();
-    var forceWall = Options.Contains("Force Wall").ToString().ToLower();
+    var forceWall = Options.Contains("Show Posts").ToString().ToLower();
     var showBorder = Options.Contains("Show Border").ToString().ToLower();
 }
 
