@@ -14,7 +14,7 @@
     public string ColorScheme { get; set; }
 
 
-    [FunctionParameter(Label = "Options", Help = "Customize LikeBox", DefaultValue = "Show Friends’ Faces,Show Posts,Show Header,Show Border",
+    [FunctionParameter(Label = "Options", Help = "Options to customize the Like Box's appearance.", DefaultValue = "Show Friends’ Faces,Show Posts,Show Header,Show Border",
                      WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Show Friends’ Faces,Show Posts,Show Header,Show Border"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
     public string Options { get; set; }
     
