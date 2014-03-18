@@ -51,7 +51,8 @@
 <body>
     <div class="slider-wrapper theme-@(Theme) @(ClassName)">
         @{
-            var imageQuery = Data.Get<IMediaFile>().Where(m => m.FolderPath == ImagesFolder.Data.Path);
+            string imageFolderPath = ImagesFolder.Data.Path;
+            var imageQuery = Data.Get<IMediaFile>().Where(m => m.FolderPath == imageFolderPath);
 
             imageQuery = Randomized ? imageQuery.OrderBy(m => Guid.NewGuid()) : imageQuery;
             var images = imageQuery.Take(ImageCount).ToList();
