@@ -2,6 +2,16 @@
 @import "bootstrap/3.1.1/responsive-utilities.less";
 @import "VisualEditor.common.less";
 
+// Fix responsive isssue for IE10 on Windows Phone 8 
+// Issue: https://github.com/twbs/bootstrap/issues/10497
+// Docs: http://getbootstrap.com/getting-started/#browsers
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+// end fix 
+
 .page-header {
     margin: 0 0 20px 0;
 }
