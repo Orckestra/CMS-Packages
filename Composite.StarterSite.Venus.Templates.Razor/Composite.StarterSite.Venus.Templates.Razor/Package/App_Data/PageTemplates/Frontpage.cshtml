@@ -1,0 +1,22 @@
+﻿@inherits RazorPageTemplate
+
+@functions {
+    public override void Configure()
+    {
+        TemplateId = new Guid("a270f819-0b5c-4f7e-9194-4b554043e4ab");
+        TemplateTitle = "Front page";
+        Layout = "MasterLayout.cshtml";
+    }
+    [Placeholder(Id = "content", Title = "Content")]
+    public XhtmlDocument Content { get; set; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        @*you can add template specific head elements here*@
+    </head>
+<body class="frontpage">
+    @PageTemplateFeature("Front Page Content Start")
+	@this.Function("Layout.Helpers.InjectContainerElements",
+		new { Document = Content, InjectedContainerClassName = "container", DontApplyClassNameList="container,fullwidth" })
+</body>
+</html>

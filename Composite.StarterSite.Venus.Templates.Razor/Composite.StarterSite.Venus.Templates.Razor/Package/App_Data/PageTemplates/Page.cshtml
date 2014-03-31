@@ -1,0 +1,31 @@
+﻿@inherits RazorPageTemplate
+
+@functions {
+    public override void Configure()
+    {
+        TemplateId = new Guid("0526ad34-c540-418e-8c23-0eec2a8da2ce");
+        TemplateTitle = "Page";
+        Layout = "MasterLayout.cshtml";
+    }
+
+    [Placeholder(Id = "content", Title="Content", IsDefault = true)]
+    public XhtmlDocument Content { get; set; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        @*you can add template specific head elements here*@
+    </head>
+    <body>
+        @PageTemplateFeature("Content Start")
+		<div class="container">
+			<div class="row">
+                <div class="col-md-12 content-column">
+                    <div class="content-column-limiter">
+                        @Markup(Content)
+                    </div>
+                </div>
+			</div>
+		</div>
+        <hr class="content-bottom-line" />
+    </body>
+</html>
