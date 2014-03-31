@@ -57,10 +57,6 @@
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-@if (isLanguages && NavigationId == "LanguageSwitcher")
-{
-    <link rel="stylesheet" type="text/css" href="@Href("~/Frontend/Composite/Navigation/LanguageSwitcher")/Styles.css" />
-}
 </head>
 <body>
 @if (isLanguages)
@@ -140,7 +136,7 @@
 		case SwitcherFormat.ThreeLetterISOLanguageName:<text>@c.ThreeLetterISOLanguageName</text>; break;
 		case SwitcherFormat.ThreeLetterWindowsLanguageName:<text>@c.ThreeLetterWindowsLanguageName</text>; break;
 		case SwitcherFormat.TwoLetterISOLanguageName:<text>@c.TwoLetterISOLanguageName</text>; break;
-		case SwitcherFormat.Image:<img src="@string.Format("~/Frontend/Composite/Navigation/LanguageSwitcher/Images/{0}.png", c.Name)" alt="@c.Name" />break;
+		case SwitcherFormat.Image:<img src="@string.Format("~/Frontend/Composite/Navigation/LanguageSwitcher/Images/{0}.png", c.Name)" class="pull-left" alt="@c.Name" />break;
 		case SwitcherFormat.Empty:
 		default: break;
 	}
