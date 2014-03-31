@@ -104,10 +104,11 @@
             <div class="clearfix">
                 @Html.C1().Function("Composite.Search.SimplePageSearch.SearchForm", new { SearchResultPage = new DataReference<IPage>(page) })
             </div>
-            <hr />
+           
         }
         @if (!string.IsNullOrWhiteSpace(searchQuery))
         {
+            <hr />
             <p class="alert alert-info">
                 Found <strong>@TotalCount</strong> results for "@searchQuery"
             </p>
