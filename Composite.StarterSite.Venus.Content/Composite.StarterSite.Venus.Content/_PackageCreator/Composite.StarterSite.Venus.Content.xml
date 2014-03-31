@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:DynamicDataTypesData>
+		<Add name="Content.ContentSpot" />
+		<Add name="Composite.Community.Newsletter.SubjectBased.ISubject" />
+	</pc:DynamicDataTypesData>
+	<pc:Content>
+		<Add name="Pages" />
+		<Add name="DatatypesData" />
+	</pc:Content>
+	<mi:PackageRequirements minimumCompositeVersion="4.2.5200.24979" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.Venus.Content" groupName="Composite.StarterSite.Venus" version="1.0.0" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="19e37de4-c106-45d0-a8f2-fa99503dac85" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>Venus Content</TechnicalDetails>
+		<Description>Venus Content</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
