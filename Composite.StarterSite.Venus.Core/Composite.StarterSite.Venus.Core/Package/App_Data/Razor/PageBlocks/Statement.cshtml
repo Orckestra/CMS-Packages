@@ -1,0 +1,68 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "A statement page block"; }
+    }
+     
+    [FunctionParameter(Label = "Statement content")]
+    public XhtmlDocument Statement { get; set; }
+
+	[FunctionParameter(Label = "Style", DefaultValue = "None", WidgetFactoryMethod = "GetStyleWidget")]
+	public string Style { get; set; }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+    </head>
+    <body>
+		<div class="@MapStyle(Style) statement">
+			<div class="container">
+				@Markup(Statement)
+			</div>
+		</div>
+	</body>
+</html>
+
+
+@functions {
+	public static WidgetFunctionProvider GetStyleWidget()
+	{
+		Expression<Func<object>> expression = () => GetBackgroundOptions();
+		var method = (expression.Body as MethodCallExpression).Method;
+
+		return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Key", "Value" , false);
+	}
+
+	public static Dictionary<string,string> GetBackgroundOptions()
+	{
+		return new Dictionary<string, string>()
+		{
+			{"none", "None"},
+			{"primary", "Primary"},
+			{"information", "Information"},
+			{"warning", "Warning"},
+			{"alert", "Alert"}
+		};
+	}
+	
+	private string MapStyle(string styleSelection )
+	{
+		switch (styleSelection)
+		{
+			case "none":
+                return "";
+            case "primary":
+				return "bg-primary";
+			case "information":
+                return "bg-info";
+            case "warning":
+				return "bg-warning";
+			case "alert":
+				return "";
+		}
+
+		throw new NotImplementedException("Unhandled style selection");
+	}
+}

@@ -1,0 +1,450 @@
+﻿@import "bootstrap/3.1.1/bootstrap.less";
+@import "bootstrap/3.1.1/responsive-utilities.less";
+@import "VisualEditor.common.less";
+
+@white_color: #fff;
+@colums-separator-gap: 35px;
+
+body, html {
+    font-size: @font-size-base;
+}
+
+/* LAYOUT */
+/* fix responsive isssue for IE10 on Windows Phone 8 */
+@-webkit-viewport {
+    width: device-width;
+}
+
+@-moz-viewport {
+    width: device-width;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+/* end fix */
+
+@media (max-width: @screen-xs-max) {
+    .container {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+.main-container {
+    padding: @navbar-height 0 0 0;
+}
+
+@media (min-width: @screen-sm-min) {
+    h1, h2, h3, h4 {
+        &:first-child {
+            margin-top: 0px;
+        }
+    }
+}
+
+.content-column {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .page-header {
+        margin-bottom: 40px;
+    }
+
+    .content-column-limiter {
+        .center-block();
+        max-width: 700px;
+    }
+
+    &.left-column {
+        border-right: solid 1px @gray-lighter;
+        padding-right: 20px;
+    }
+
+    &.right-column {
+        border-left: solid 1px @gray-lighter;
+    }
+
+    h1:first-child, .content-column-limiter h1:first-child {
+        margin-bottom: 30px;
+    }
+
+
+    img {
+        .img-responsive();
+
+        &.large-image {
+            max-width: 150%;
+            margin: 0 -25%;
+        }
+    }
+}
+
+.aside-column, .nav-column {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.aside-column {
+    @media (min-width: @screen-sm-min) {
+        padding-left: @colums-separator-gap;
+    }
+}
+
+hr.content-bottom-line {
+    margin: 0px;
+}
+
+.page-footer {
+    background: @gray-darker;
+    padding: 25px 0;
+
+    @media (min-width: @screen-sm-min) {
+        padding: 55px 0;
+    }
+
+    h1, h2, h3, h4 {
+        color: @white_color;
+
+        em {
+            color: @gray-dark;
+        }
+    }
+
+    a {
+        color: @brand-primary;
+    }
+}
+
+/* columns of same height styles */
+@media (min-width: @screen-sm-min) {
+    .container-height {
+        display: table;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .row-height {
+        display: table-row;
+    }
+
+    .col-height {
+        display: table-cell;
+        float: none;
+        vertical-align: top;
+
+        .img-responsive {
+            width: 100%;
+        }
+    }
+
+    .col-middle {
+        vertical-align: middle;
+    }
+}
+/* END LAYOUT */
+
+
+
+/**** NAV ***/
+.nav {
+    > li {
+        > a {
+            font-weight: bold;
+            color: @gray-darker;
+
+            &:hover {
+                color: @brand-primary;
+            }
+        }
+
+        &.open > a, &.active > a, &.active > a:hover {
+            color: @brand-primary;
+            background: none;
+        }
+    }
+}
+
+.nav-distributed > li > a {
+    padding-left: 45px;
+}
+
+.nav-distributed .nav > li > a {
+    padding-left: 60px !important;
+}
+
+.nav-distributed .nav .nav > li > a {
+    padding-left: 75px !important;
+}
+
+.nav-distributed .nav .nav .nav > li > a {
+    padding-left: 85px !important;
+}
+
+.nav-distributed .nav .nav .nav .nav > li > a {
+    padding-left: 95px !important;
+}
+
+.nav-distributed .nav .nav .nav .nav .nav > li > a {
+    padding-left: 105px !important;
+}
+/*** END NAV ***/
+
+/*** TYPOGRAPHY ***/
+h1, h2, h3, h4 {
+    color: @gray-darker;
+    font-weight: bold;
+    em, small {
+        color: @brand-primary;
+        font-style: inherit;
+    }
+}
+
+/* STATEMENT MODULES */
+.iconified-statement {
+    background: #fff;
+    margin: 35px 0 35px 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    .statement-icon, .statement-img, .statement-body {
+        display: block;
+    }
+
+    .statement-body {
+        padding-bottom: 30px;
+    }
+
+    .statement-icon {
+        text-align: center;
+        padding: 50px 0;
+
+        .icon-helper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        .glyphicon {
+            color: @gray-light;
+            font-size: 12em;
+            vertical-align: middle;
+        }
+    }
+
+    a {
+        * {
+            color: @text-color;
+        }
+
+        h1, h2, h3 {
+            color: @gray-darker;
+        }
+
+        &:hover {
+            * {
+                color: @brand-primary;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    .three-columns .iconified-statement, .two-columns .iconified-statement {
+      //  height: 550px;
+        width: 100%;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+
+        .statement-img {
+          //  height: 300px;
+            overflow: hidden;
+        }
+
+        .statement-icon {
+            height: 300px;
+            padding: 0px;
+        }
+    }
+
+    .iconified-statement {
+        .statement-icon .glyphicon {
+            font-size: 9em;
+        }
+    }
+}
+
+
+.statement {
+    padding: 65px 0;
+    position: relative;
+
+    &.bg-primary em {
+        color: @white_color;
+    }
+
+    &.bg-info {
+        .btn-default {
+            background: darken(@btn-default-bg, 5%);
+        }
+    }
+
+    *:first-child {
+        margin-top: 0px;
+    }
+
+    .iconified-statement {
+        .statement-header, .statement-body {
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+    }
+}
+
+.image-and-text-content {
+    border-bottom: 1px solid @gray-lighter;
+    padding-top: 80px;
+
+    .image-content {
+        text-align: center;
+
+        img {
+            .img-responsive();
+        }
+    }
+
+    .text-content {
+
+        h1, h2, h3 {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+    }
+}
+/* FRONTPAGE MODULES */
+
+
+/*** NESLETTER MODULE ***/
+.newsletter-signup-wrapper {
+    max-width: 920px;
+    .center-block();
+}
+
+.newsletter-signup {
+    .form-inline();
+
+    .btn-default {
+        .btn-primary();
+        width: 100%;
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    .newsletter-signup {
+         .form-group {
+            width: 37%;
+
+            &:last-child {
+                width: 24%;
+            }
+
+            input, button {
+                width: 97%;
+            }
+        }
+    }
+}
+/*** END NEWSLETER ***/
+
+
+/***SEARCH FORM ***/
+.content-column #SearchForm {
+    margin: 0;
+    padding: 0;
+    float: none !important;
+
+    .btn {
+        width: 100%;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        .form-group {
+            width: 50%;
+            input {
+                width: 97%;
+            }
+        }
+        .btn {
+            width: 35%;
+        }
+    }
+}
+
+.spot {
+    margin-top: 70px;
+}
+
+.spots:first-child,  .spots .spot:first-child {
+    margin-top: 0px;
+}
+
+.spot .iconified-statement .statement-body {
+    padding-bottom: 0;
+}
+
+
+/* BUTTONS, INPUTS */
+.btn {
+    padding-left: 34px;
+    padding-right: 34px;
+}
+
+
+/*** CONTENT COLUMNS ***/
+@media (min-width: @screen-sm-min) {
+    .three-columns, .two-columns {
+        margin: 25px 0 65px 0;
+    }
+
+    .three-columns {
+        .content-columns(3);
+
+        div:nth-child(3n+1) {
+            clear: both;
+        }
+    }
+
+    .frontpage {
+        .three-columns {
+            .content-columns(3, 120px);
+        }
+    }
+
+    .two-columns {
+        .content-columns(2);
+
+        div:nth-child(2n+1) {
+            clear: both;
+        }
+    }
+}
+
+// plugins
+@import "plugins/jumbotron.less";
+@import "plugins/navbar.less";
+@import "plugins/mega-menu.less";

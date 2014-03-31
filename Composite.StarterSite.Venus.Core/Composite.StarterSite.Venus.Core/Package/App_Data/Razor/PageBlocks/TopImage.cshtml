@@ -1,0 +1,32 @@
+﻿@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+        get { return "Show random image at the top of the content pages"; }
+	}
+
+    [FunctionParameter(Label = "Images folder")]
+    public DataReference<IMediaFileFolder> ImagesFolder { get; set; }
+	
+    
+    private string InlineStyle(string imageId)
+    {
+        return (!string.IsNullOrEmpty(imageId) ? "background-image:url('/media(" + imageId + ")');" : "");
+
+    }
+}
+@{
+    var image = Data.Get<IImageFile>().Where(i => i.FolderPath == ImagesFolder.Data.Path).OrderBy(it => Guid.NewGuid()).FirstOrDefault();
+    if (image == null)
+    {
+        return;
+    }
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<head>
+	</head>
+	<body>
+        <div class="page-top-image" style="@InlineStyle(image.Id.ToString())"></div>
+	</body>
+</html>

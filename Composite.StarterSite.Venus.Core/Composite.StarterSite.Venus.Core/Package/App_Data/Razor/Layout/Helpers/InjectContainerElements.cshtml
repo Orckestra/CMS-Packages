@@ -1,0 +1,52 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+		get { return "Transforms a document by injecting container elements where missing. Given a XhtmlDocument this function ensure than elements in the body either have a class name in the specified 'Don't apply when these class names exists' or a container element (div class='container') will be injected around the elements."; }
+    }
+     
+    [FunctionParameter(Label="Document To Ensure Containers In", Help="Specify the XhtmlDocument where nodes below the body should either contain the desired container class name already or be wrapped in a container (div) with the desired class.")]
+    public XhtmlDocument Document { get; set; }
+
+	[FunctionParameter(Label = "Class Name For Injected Container", Help = "The class name used for injected containers.")]
+	public string InjectedContainerClassName { get; set; }
+
+	[FunctionParameter(Label = "Don't apply when these class names exists", Help = "A comma seperated list of class names which to look for. Elements in the body containing any of these classes do not get a container injected around them.")]
+	public string DontApplyClassNameList { get; set; }
+	
+	
+	private XhtmlDocument InjectContainers(XhtmlDocument sourceDoc)
+	{
+		if (sourceDoc != null)
+		{
+			XElement container = null;
+			var dontApplyClassesPadded = DontApplyClassNameList.Split(',').Select(f => string.Format(" {0} ", f.Trim()));
+
+			foreach (var node in sourceDoc.Body.Nodes().ToList())
+			{
+				bool wrapInContainer = !(node is XElement && ((XElement)node).DescendantsAndSelf().Attributes("class").Any(f => dontApplyClassesPadded.Any( g=> string.Format(" {0} ", f.Value).Contains(g))));
+
+				if (wrapInContainer)
+				{
+					if (container == null)
+					{
+						container = new XElement(Namespaces.Xhtml + "div", new XAttribute("class", InjectedContainerClassName));
+						node.AddBeforeSelf(container);
+					}
+
+					node.Remove();
+					container.Add(node);
+				}
+				else
+				{
+					container = null;
+				}
+			}
+		}
+
+		return sourceDoc;
+	}
+}
+
+@Markup(InjectContainers(Document))

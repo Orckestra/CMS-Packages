@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CAE21F0B-9F43-4FA5-9311-93FDF3E1A9E5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.StarterSite.Venus.Core</RootNamespace>
+    <AssemblyName>Composite.StarterSite.Venus.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Composite\DynamicTypeForms\Content\ContentSpot.xml" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Aside Column.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Content Footer.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Content Start.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Descriptive HTML head elements.xml" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Front Page Content Start.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Main Navigation.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Navigation Column.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Page Footer.html" />
+    <Content Include="Package\App_Data\PageTemplateFeatures\Service Menu.html" />
+    <Content Include="Package\Datas\Composite.Data.Types.IGeneratedTypeWhiteLists_administrated.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
+    <Content Include="Package\Frontend\Config\VisualEditor\common.xml" />
+    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Package\Frontend\Images\logo.png" />
+    <Content Include="Package\Frontend\Images\overlay.png" />
+    <Content Include="Package\Frontend\Scripts\libs\bootstrap\bootstrap.min.js" />
+    <Content Include="Package\Frontend\Scripts\libs\html5-3.4-respond-1.1.0.min.js" />
+    <Content Include="Package\Frontend\Scripts\libs\modernizr-2.6.1-respond-1.1.0.min.js" />
+    <Content Include="Package\Frontend\Scripts\script.js" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\bootstrap.css" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\mixins.css" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\normalize.css" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\variables.css" />
+    <Content Include="Package\Frontend\Styles\plugins\jumbotron.css" />
+    <Content Include="Package\Frontend\Styles\plugins\jumbotron.min.css" />
+    <Content Include="Package\Frontend\Styles\plugins\mega-menu.css" />
+    <Content Include="Package\Frontend\Styles\plugins\mega-menu.min.css" />
+    <Content Include="Package\Frontend\Styles\plugins\navbar.css" />
+    <Content Include="Package\Frontend\Styles\plugins\navbar.min.css" />
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_PackageCreator\Composite.StarterSite.Venus.Core.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Content\ShowContentSpots.cshtml" />
+    <Content Include="Package\App_Data\Razor\Layout\CommonHtmlHead.cshtml" />
+    <Content Include="Package\App_Data\Razor\Layout\Helpers\InjectContainerElements.cshtml" />
+    <Content Include="Package\App_Data\Razor\Layout\Navigation\MegaMenu.cshtml" />
+    <Content Include="Package\App_Data\Razor\Layout\Navigation\TopLinks.cshtml" />
+    <Content Include="Package\App_Data\Razor\PageBlocks\IconifiedStatements.cshtml" />
+    <Content Include="Package\App_Data\Razor\PageBlocks\ImageAndText.cshtml" />
+    <Content Include="Package\App_Data\Razor\PageBlocks\Jumbotron.cshtml" />
+    <Content Include="Package\App_Data\Razor\PageBlocks\Statement.cshtml" />
+    <Content Include="Package\App_Data\Razor\PageBlocks\TopImage.cshtml" />
+    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\alerts.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\badges.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\bootstrap.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\breadcrumbs.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\button-groups.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\buttons.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\carousel.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\close.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\code.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\component-animations.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\dropdowns.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\forms.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\glyphicons.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\grid.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\input-groups.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\jumbotron.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\labels.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\list-group.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\media.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\mixins.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\modals.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\navbar.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\navs.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\normalize.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\pager.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\pagination.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\panels.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\popovers.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\print.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\progress-bars.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\responsive-utilities.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\scaffolding.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\tables.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\theme.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\thumbnails.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\tooltip.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\type.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\utilities.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\variables.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\3.1.1\wells.less" />
+    <Content Include="Package\Frontend\Styles\plugins\jumbotron.less" />
+    <Content Include="Package\Frontend\Styles\plugins\mega-menu.less" />
+    <Content Include="Package\Frontend\Styles\plugins\navbar.less" />
+    <Content Include="Package\Frontend\Styles\style.less" />
+    <Content Include="Package\Frontend\Styles\VisualEditor.common.less" />
+    <Content Include="Package\Frontend\Styles\VisualEditor.less" />
+    <Content Include="Release\Composite.StarterSite.Venus.Core.zip" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51877</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51877/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:Checkout  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
+</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

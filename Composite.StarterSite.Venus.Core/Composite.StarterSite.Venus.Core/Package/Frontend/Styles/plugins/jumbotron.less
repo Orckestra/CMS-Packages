@@ -1,0 +1,67 @@
+﻿.jumbotron, .page-top-image {
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+.jumbotron {
+    padding: 0;
+    margin-bottom: 0;
+
+    &.jumbotron-light {
+        color: @white_color;
+        background-color: @gray-darker;
+        .overlay {
+            background: url(/Frontend/Images/overlay.png) no-repeat top left;
+        }
+    }
+
+    &.jumbotron-dark {
+        color: @gray-darker;
+        background-color: @gray-lighter;
+    }
+
+    .container {
+        min-height: 420px;
+        position: relative; // for vertical align = middle
+        @media (min-width: @screen-sm-min) {
+            min-height: 520px;
+        }
+
+        @media (min-width: @screen-lg-min) {
+            min-height: 720px;
+        }
+
+        .jumbotron-content {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        h1 {
+            font-size: (@font-size-base * 3.9);
+        }
+        h1, p {
+            max-width: 50%;
+        }
+    }
+
+    p {
+        font-size: 1rem; // overwrite bootstrap jumbotron <p> font size
+    }
+}
+
+
+.page-top-image {
+    min-height: 210px;
+
+    @media (min-width: @screen-sm-min) {
+        min-height: 420px;
+    }
+}
+

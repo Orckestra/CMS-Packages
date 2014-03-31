@@ -1,0 +1,40 @@
+﻿@inherits RazorFunction
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Show one or more content spots from the 'Website Items, Content Spots' folder."; }
+	}
+	
+	private const string spotSelecterWidgetMarkup = @"<f:widgetfunction name='Composite.Widgets.String.DataIdMultiSelector' xmlns:f='http://www.composite.net/ns/function/1.0'>
+													   <f:param name='OptionsType' value='Content.ContentSpot' />
+													   <f:param name='CompactMode' value='true' />
+													  </f:widgetfunction>";
+
+	[FunctionParameter(Label="Content Spots", WidgetMarkup = spotSelecterWidgetMarkup)]
+	public string ContentSpotIds { get; set; }
+					   
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	</head>
+	<body>
+        @if (!string.IsNullOrEmpty(ContentSpotIds))
+        {
+            var spotIds = ContentSpotIds.Split(',').Select(f => new Guid(f));
+            var spots = Data.Get<Content.ContentSpot>().Where(f => spotIds.Contains(f.Id)).ToList();
+            if (spots.Any())
+            {
+                <div class="spots">
+                    @foreach (var spotId in spotIds) // making positioning matter
+                    {
+                        var spot = spots.FirstOrDefault(s => s.Id == spotId);
+                        if (spot == null) { continue; }
+                        <div class="spot">
+                            @Html.Raw(spot.Content)
+                        </div>
+                    }
+                </div>
+            }
+        }
+	</body>
+</html>

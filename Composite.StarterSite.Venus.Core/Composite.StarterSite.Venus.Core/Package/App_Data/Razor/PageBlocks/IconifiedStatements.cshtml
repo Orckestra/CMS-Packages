@@ -1,0 +1,283 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "Shows a group of statements decorated with large icons"; }
+    }
+
+	[FunctionParameter(Label = "Icon", Help = "The icon to show on top of the statement", DefaultValue = null, WidgetFactoryMethod = "GetIconWidget")]
+	/* widget defined below */
+    public string Icon { get; set; }
+
+    [FunctionParameter(Label = "Image", Help = "The image to show on top of the statement if Icon is not selected", DefaultValue = null)]
+    public DataReference<IImageFile> Image { get; set; }
+
+	[FunctionParameter(Label = "Heading", Help = "The heading of the statement", DefaultValue = null)]
+	public string Heading { get; set; }
+
+	[FunctionParameter(Label = "Statement", Help = "The statement to show.", DefaultValue = null, WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+	public string Statement { get; set; }
+
+	[FunctionParameter(Label = "Link", Help = "If you want the statement to link to another page, specify the link here.", DefaultValue = null, WidgetFunctionName = "Composite.Widgets.String.UrlComboBox")]
+	public string Link { get; set; }
+}
+@{
+    
+    
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+    </head>
+<body>
+    <div class="iconified-statement">
+        @if (string.IsNullOrWhiteSpace(Link))
+        {
+            @StatementBody()}
+        else
+        {
+            <a href="@Link">@StatementBody()</a>
+        }
+    </div>
+</body>
+
+</html>
+@helper StatementBody() { 
+    var isIcon = !string.IsNullOrEmpty(Icon);
+    var isImage = Image != null;
+    if (isImage || isIcon) { 
+        <span class="@(isIcon ? "statement-icon" : "statement-img")">
+            @if (isIcon)
+            {
+                <span class="icon-helper"></span>
+                <span class="glyphicon glyphicon-@Icon"></span>
+            } else {
+                <img class="img-responsive" alt="@Heading" src="@Html.C1().MediaUrl(Image.Data.Id.ToString())"/>
+            }
+
+        </span>
+        }
+        <h3 class="statement-header">@Heading</h3>
+        <span class="statement-body">
+            @foreach (var statementBlock in Statement.Split(Environment.NewLine.ToCharArray()).Where(f => f.Length > 0))
+            {
+                <p>@statementBlock</p>
+            }
+        </span>
+    }
+
+@functions{
+
+	public static WidgetFunctionProvider GetIconWidget()
+	{
+		Expression<Func<object>> expression = () => GetIconOptions();
+		var method = (expression.Body as MethodCallExpression).Method;
+
+		return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, false, false);
+	}
+	
+	public static IEnumerable<string> GetIconOptions()
+	{
+		yield return "adjust";
+		yield return "align-center";
+		yield return "align-justify";
+		yield return "align-left";
+		yield return "align-right";
+		yield return "arrow-down";
+		yield return "arrow-left";
+		yield return "arrow-right";
+		yield return "arrow-up";
+		yield return "asterisk";
+		yield return "backward";
+		yield return "ban-circle";
+		yield return "barcode";
+		yield return "bell";
+		yield return "bold";
+		yield return "book";
+		yield return "bookmark";
+		yield return "briefcase";
+		yield return "bullhorn";
+		yield return "calendar";
+		yield return "camera";
+		yield return "certificate";
+		yield return "check";
+		yield return "chevron-down";
+		yield return "chevron-left";
+		yield return "chevron-right";
+		yield return "chevron-up";
+		yield return "circle-arrow-down";
+		yield return "circle-arrow-left";
+		yield return "circle-arrow-right";
+		yield return "circle-arrow-up";
+		yield return "cloud";
+		yield return "cloud-download";
+		yield return "cloud-upload";
+		yield return "cog";
+		yield return "collapse-down";
+		yield return "collapse-up";
+		yield return "comment";
+		yield return "compressed";
+		yield return "copyright-mark";
+		yield return "credit-card";
+		yield return "cutlery";
+		yield return "dashboard";
+		yield return "download";
+		yield return "download-alt";
+		yield return "earphone";
+		yield return "edit";
+		yield return "eject";
+		yield return "envelope";
+		yield return "euro";
+		yield return "exclamation-sign";
+		yield return "expand";
+		yield return "export";
+		yield return "eye-close";
+		yield return "eye-open";
+		yield return "facetime-video";
+		yield return "fast-backward";
+		yield return "fast-forward";
+		yield return "file";
+		yield return "film";
+		yield return "filter";
+		yield return "fire";
+		yield return "flag";
+		yield return "flash";
+		yield return "floppy-disk";
+		yield return "floppy-open";
+		yield return "floppy-remove";
+		yield return "floppy-save";
+		yield return "floppy-saved";
+		yield return "folder-close";
+		yield return "folder-open";
+		yield return "font";
+		yield return "forward";
+		yield return "fullscreen";
+		yield return "gbp";
+		yield return "gift";
+		yield return "glass";
+		yield return "globe";
+		yield return "hand-down";
+		yield return "hand-left";
+		yield return "hand-right";
+		yield return "hand-up";
+		yield return "hdd";
+		yield return "hd-video";
+		yield return "header";
+		yield return "headphones";
+		yield return "heart";
+		yield return "heart-empty";
+		yield return "home";
+		yield return "import";
+		yield return "inbox";
+		yield return "indent-left";
+		yield return "indent-right";
+		yield return "info-sign";
+		yield return "italic";
+		yield return "leaf";
+		yield return "link";
+		yield return "list";
+		yield return "list-alt";
+		yield return "lock";
+		yield return "log-in";
+		yield return "log-out";
+		yield return "magnet";
+		yield return "map-marker";
+		yield return "minus";
+		yield return "minus-sign";
+		yield return "move";
+		yield return "music";
+		yield return "new-window";
+		yield return "off";
+		yield return "ok";
+		yield return "ok-circle";
+		yield return "ok-sign";
+		yield return "open";
+		yield return "paperclip";
+		yield return "pause";
+		yield return "pencil";
+		yield return "phone";
+		yield return "phone-alt";
+		yield return "picture";
+		yield return "plane";
+		yield return "play";
+		yield return "play-circle";
+		yield return "plus";
+		yield return "plus-sign";
+		yield return "print";
+		yield return "pushpin";
+		yield return "qrcode";
+		yield return "question-sign";
+		yield return "random";
+		yield return "record";
+		yield return "refresh";
+		yield return "registration-mark";
+		yield return "remove";
+		yield return "remove-circle";
+		yield return "remove-sign";
+		yield return "repeat";
+		yield return "resize-full";
+		yield return "resize-horizontal";
+		yield return "resize-small";
+		yield return "resize-vertical";
+		yield return "retweet";
+		yield return "road";
+		yield return "save";
+		yield return "saved";
+		yield return "screenshot";
+		yield return "sd-video";
+		yield return "search";
+		yield return "send";
+		yield return "share";
+		yield return "share-alt";
+		yield return "shopping-cart";
+		yield return "signal";
+		yield return "sort";
+		yield return "sort-by-alphabet";
+		yield return "sort-by-alphabet-alt";
+		yield return "sort-by-attributes";
+		yield return "sort-by-attributes-alt";
+		yield return "sort-by-order";
+		yield return "sort-by-order-alt";
+		yield return "sound-5-1";
+		yield return "sound-6-1";
+		yield return "sound-7-1";
+		yield return "sound-dolby";
+		yield return "sound-stereo";
+		yield return "star";
+		yield return "star-empty";
+		yield return "stats";
+		yield return "step-backward";
+		yield return "step-forward";
+		yield return "stop";
+		yield return "subtitles";
+		yield return "tag";
+		yield return "tags";
+		yield return "tasks";
+		yield return "text-height";
+		yield return "text-width";
+		yield return "th";
+		yield return "th-large";
+		yield return "th-list";
+		yield return "thumbs-down";
+		yield return "thumbs-up";
+		yield return "time";
+		yield return "tint";
+		yield return "tower";
+		yield return "transfer";
+		yield return "trash";
+		yield return "tree-conifer";
+		yield return "tree-deciduous ";
+		yield return "unchecked";
+		yield return "upload";
+		yield return "usd";
+		yield return "user";
+		yield return "volume-down";
+		yield return "volume-off";
+		yield return "volume-up";
+		yield return "warning-sign";
+		yield return "wrench";
+		yield return "zoom-in";
+		yield return "zoom-out";
+	}
+}

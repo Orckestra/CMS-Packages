@@ -1,0 +1,27 @@
+﻿<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:ff="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+  <cms:bindings>
+    <cms:binding name="Id" type="System.Guid" optional="true" />
+    <cms:binding name="Title" type="System.String" optional="true" />
+    <cms:binding name="Content" type="System.String" optional="true" />
+    <cms:binding name="PublicationStatus" type="System.String" optional="true" />
+  </cms:bindings>
+  <cms:layout>
+    <cms:layout.label>
+      <cms:read source="Title" />
+    </cms:layout.label>
+	<TabPanels>
+		<FieldGroup Label="Settings">
+		  <TextBox Label="Title" Help="" SpellCheck="true">
+			<TextBox.Text>
+			  <cms:bind source="Title" />
+			</TextBox.Text>
+		  </TextBox>
+		</FieldGroup>
+		<XhtmlEditor Label="Spot" Help="" ClassConfigurationName="common">
+			<XhtmlEditor.Xhtml>
+				<cms:bind source="Content" />
+			</XhtmlEditor.Xhtml>
+		</XhtmlEditor>
+	</TabPanels>
+  </cms:layout>
+</cms:formdefinition>
