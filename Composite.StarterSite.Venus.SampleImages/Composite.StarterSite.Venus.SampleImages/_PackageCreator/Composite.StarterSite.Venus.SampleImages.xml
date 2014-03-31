@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Content>
+		<Add name="Medias" />
+	</pc:Content>
+	<pc:MediaFolders />
+	<mi:PackageRequirements minimumCompositeVersion="4.2.5200.24979" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.Venus.SampleImages" groupName="Composite.StarterSite.Venus" version="1.0.0" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="e9233fb0-75c3-47f5-9b91-97d4b632826e" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>Venus  Sample Images</TechnicalDetails>
+		<Description>Venus  Sample Images</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

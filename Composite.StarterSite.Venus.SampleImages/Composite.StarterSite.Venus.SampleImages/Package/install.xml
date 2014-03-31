@@ -1,0 +1,71 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="4.2.5200.24979" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.StarterSite.Venus.SampleImages" groupName="Composite.StarterSite.Venus" version="1.0.0" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="e9233fb0-75c3-47f5-9b91-97d4b632826e" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>Venus  Sample Images</TechnicalDetails>
+		<Description>Venus  Sample Images</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Media\038441ad-4b72-4da6-9bb6-e39edd4ed013" targetFilename="~\App_Data\Media\038441ad-4b72-4da6-9bb6-e39edd4ed013" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\05637cb3-be1a-432f-bffe-5ef5c0661ea5" targetFilename="~\App_Data\Media\05637cb3-be1a-432f-bffe-5ef5c0661ea5" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\095aa120-7bf5-412a-b4ee-be9d3a1773c9" targetFilename="~\App_Data\Media\095aa120-7bf5-412a-b4ee-be9d3a1773c9" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\0b11c288-5432-4482-a776-3eb0ac9ad437" targetFilename="~\App_Data\Media\0b11c288-5432-4482-a776-3eb0ac9ad437" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\199240bd-3166-496c-b2d1-a676f642ec26" targetFilename="~\App_Data\Media\199240bd-3166-496c-b2d1-a676f642ec26" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\2a402f8c-a108-4b72-8e8e-0a6ef95b8637" targetFilename="~\App_Data\Media\2a402f8c-a108-4b72-8e8e-0a6ef95b8637" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\2d3da31a-9b96-48d0-845b-478fb6203d2e" targetFilename="~\App_Data\Media\2d3da31a-9b96-48d0-845b-478fb6203d2e" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\2ddf8982-ba9e-4f6a-a1df-bbc07016dddb" targetFilename="~\App_Data\Media\2ddf8982-ba9e-4f6a-a1df-bbc07016dddb" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\2eb8ffd9-81b9-49fe-a573-c76b255f2f49" targetFilename="~\App_Data\Media\2eb8ffd9-81b9-49fe-a573-c76b255f2f49" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\370eca2e-e434-4b1b-9e57-5087a7831b12" targetFilename="~\App_Data\Media\370eca2e-e434-4b1b-9e57-5087a7831b12" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\38a5e297-bc3d-4190-be7a-789a925ca64e" targetFilename="~\App_Data\Media\38a5e297-bc3d-4190-be7a-789a925ca64e" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\3d5c94e6-b0a9-4226-9514-48cdd7d50139" targetFilename="~\App_Data\Media\3d5c94e6-b0a9-4226-9514-48cdd7d50139" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\40ef35a6-2ed9-4daa-a5db-c47ecc13e6d6" targetFilename="~\App_Data\Media\40ef35a6-2ed9-4daa-a5db-c47ecc13e6d6" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\43aa8b6b-6406-418d-a155-c3acdb63a42f" targetFilename="~\App_Data\Media\43aa8b6b-6406-418d-a155-c3acdb63a42f" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\49f6bd2f-9477-4bfe-8abf-a162c1935643" targetFilename="~\App_Data\Media\49f6bd2f-9477-4bfe-8abf-a162c1935643" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\5034385a-014e-4cbe-b032-00dc490b9d19" targetFilename="~\App_Data\Media\5034385a-014e-4cbe-b032-00dc490b9d19" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\68d15a7c-6afb-4849-afa8-df2873e219d9" targetFilename="~\App_Data\Media\68d15a7c-6afb-4849-afa8-df2873e219d9" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\693bee77-c208-4e1b-9597-cd43414891a0" targetFilename="~\App_Data\Media\693bee77-c208-4e1b-9597-cd43414891a0" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\6aee4108-9475-4cd0-99c8-319a8bdf477f" targetFilename="~\App_Data\Media\6aee4108-9475-4cd0-99c8-319a8bdf477f" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\6f268676-6109-469e-9f74-797fc6a06ab6" targetFilename="~\App_Data\Media\6f268676-6109-469e-9f74-797fc6a06ab6" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\6f94d001-4a10-476e-abec-fa86fdbb9a3c" targetFilename="~\App_Data\Media\6f94d001-4a10-476e-abec-fa86fdbb9a3c" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\70125800-cd41-4eb0-844e-bf32c0f7c080" targetFilename="~\App_Data\Media\70125800-cd41-4eb0-844e-bf32c0f7c080" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\74114161-70b5-407e-a3d5-22c78d9e216c" targetFilename="~\App_Data\Media\74114161-70b5-407e-a3d5-22c78d9e216c" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\79715853-2d99-4a85-918b-3b18d0d48701" targetFilename="~\App_Data\Media\79715853-2d99-4a85-918b-3b18d0d48701" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\892acdb5-cbca-4c90-9d0f-f842cb4dfae0" targetFilename="~\App_Data\Media\892acdb5-cbca-4c90-9d0f-f842cb4dfae0" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\8ab4b82a-cb2a-4ef7-954b-f88f52e6783e" targetFilename="~\App_Data\Media\8ab4b82a-cb2a-4ef7-954b-f88f52e6783e" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\8bce73d1-b3ca-404b-8e0b-02b991c24870" targetFilename="~\App_Data\Media\8bce73d1-b3ca-404b-8e0b-02b991c24870" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\9132965e-4a0b-48f1-9585-0bfe42aacefa" targetFilename="~\App_Data\Media\9132965e-4a0b-48f1-9585-0bfe42aacefa" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\91f98350-2475-4daf-be1d-593072a28b6b" targetFilename="~\App_Data\Media\91f98350-2475-4daf-be1d-593072a28b6b" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\928bfd99-84a0-41d2-b504-0f1dbc1fd876" targetFilename="~\App_Data\Media\928bfd99-84a0-41d2-b504-0f1dbc1fd876" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\9451f3f7-24f0-4b25-806a-809f8b3b9a61" targetFilename="~\App_Data\Media\9451f3f7-24f0-4b25-806a-809f8b3b9a61" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\969705d6-adc5-4311-8186-641e59bbbddb" targetFilename="~\App_Data\Media\969705d6-adc5-4311-8186-641e59bbbddb" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\a5ad2644-186b-47f6-8e58-892d381d2006" targetFilename="~\App_Data\Media\a5ad2644-186b-47f6-8e58-892d381d2006" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\a9c279ad-ba49-4573-8951-285d310d9146" targetFilename="~\App_Data\Media\a9c279ad-ba49-4573-8951-285d310d9146" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\b183734e-a8cc-449d-ba79-6cab6e3a9bdf" targetFilename="~\App_Data\Media\b183734e-a8cc-449d-ba79-6cab6e3a9bdf" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\b2614f26-fab2-4747-8e29-b19e7599da96" targetFilename="~\App_Data\Media\b2614f26-fab2-4747-8e29-b19e7599da96" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\b72125aa-5828-463b-8548-f43d65ee33e0" targetFilename="~\App_Data\Media\b72125aa-5828-463b-8548-f43d65ee33e0" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\bb4b8072-3e31-47d6-ada9-84077a86eee3" targetFilename="~\App_Data\Media\bb4b8072-3e31-47d6-ada9-84077a86eee3" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\c50bbc07-8aba-4a53-b73f-7cee6d06a8e9" targetFilename="~\App_Data\Media\c50bbc07-8aba-4a53-b73f-7cee6d06a8e9" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\d20e8a0f-359b-473d-9640-6f75318ba0fb" targetFilename="~\App_Data\Media\d20e8a0f-359b-473d-9640-6f75318ba0fb" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\d6942b16-9051-41a0-986f-0ac0cd28e427" targetFilename="~\App_Data\Media\d6942b16-9051-41a0-986f-0ac0cd28e427" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\d8d38053-d3f6-4300-a55c-db8107241d35" targetFilename="~\App_Data\Media\d8d38053-d3f6-4300-a55c-db8107241d35" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\edf8d4a6-7e4f-4785-ab12-bf1f66f6c820" targetFilename="~\App_Data\Media\edf8d4a6-7e4f-4785-ab12-bf1f66f6c820" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\f74ee284-71df-4efb-90fe-bd7441e998d1" targetFilename="~\App_Data\Media\f74ee284-71df-4efb-90fe-bd7441e998d1" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\fb1ab5cf-6c20-46ec-9c3b-64356c9b0aec" targetFilename="~\App_Data\Media\fb1ab5cf-6c20-46ec-9c3b-64356c9b0aec" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Media\ffc1b94f-1998-4e65-afcc-44873906862d" targetFilename="~\App_Data\Media\ffc1b94f-1998-4e65-afcc-44873906862d" allowOverwrite="false" />
+			</Files>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IMediaFileData,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMediaFileDatas_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IMediaFolderData,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMediaFolderDatas_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
