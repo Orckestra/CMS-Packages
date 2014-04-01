@@ -2,7 +2,7 @@
 <pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
 	<pc:DynamicDataTypesData>
 		<Add name="Content.ContentSpot" />
-		<Add name="Composite.Community.Newsletter.SubjectBased.ISubject" />
+    <!--Add name="Composite.Community.Newsletter.SubjectBased.ISubject" /-->
 	</pc:DynamicDataTypesData>
 	<pc:Content>
 		<Add name="Pages" />
