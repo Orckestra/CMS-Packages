@@ -2,14 +2,12 @@
 
 .navbar {
     margin-bottom: 0;
-   
     .nav-main {
         > li > a {
             padding-left: 22px;
             padding-right: 22px;
         }
     }
-   
 }
 
 
@@ -28,10 +26,14 @@
     }
 }
 
-/* Navbar toggle */
+
 .navbar-default {
+    .navbar-header {
+        background: @navbar-default-bg;
+    }
     .navbar-collapse {
         border-color: transparent;
+        background:  @navbar-default-bg;
        .box-shadow(~"inset 0 1px 12px rgba(0,0,0,.075)");
 
     }
@@ -107,6 +109,16 @@
     }
 }
 
+@media (max-width: @grid-float-breakpoint-max) {
+    .navbar-default {
+        background: transparent;
+        border-bottom: 0;
+        .navbar-collapse {
+            width: 70%;
+        }
+    }
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min){
     .mobile-navbar-link {
@@ -131,22 +143,8 @@
     }
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) {
-
-}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) { 
-
-
-}
-
 @media (min-width: (@container-large-desktop + 432)) {
     .navbar-brand {
-      //  position: absolute;
-     //   top: 0;
-     //   left: 0;
         border-right: solid 1px @gray-lighter;
     }
   

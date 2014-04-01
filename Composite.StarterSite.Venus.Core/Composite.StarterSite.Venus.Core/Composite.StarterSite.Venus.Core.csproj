@@ -94,6 +94,9 @@
     <Content Include="Package\Frontend\Styles\plugins\mega-menu.min.css" />
     <Content Include="Package\Frontend\Styles\plugins\navbar.css" />
     <Content Include="Package\Frontend\Styles\plugins\navbar.min.css" />
+    <Content Include="Package\Frontend\Styles\style.css">
+      <DependentUpon>style.less</DependentUpon>
+    </Content>
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>

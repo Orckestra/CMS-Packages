@@ -10,14 +10,17 @@
     }
     /* end fix */
 
-
     $(document).ready(function () {
         $(".mega-menu").on("show.bs.dropdown", function () {
+            if (!$(".navbar-collapse").hasClass("in")) {
                 showOverlay();
+            }
         })
 
         $(".mega-menu").on("hide.bs.dropdown", function () {
-                 hideOverlay();
+            if (!$(".navbar-collapse").hasClass("in")) {
+                hideOverlay();
+            }
         })
        
         $('.navbar-collapse').on('show.bs.collapse', function () {

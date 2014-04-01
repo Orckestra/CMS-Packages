@@ -65,12 +65,17 @@ body, html {
     }
 
     &.left-column {
-        border-right: solid 1px @gray-lighter;
         padding-right: 20px;
+
+        @media (min-width: @screen-sm-min) {
+            border-right: solid 1px @gray-lighter;
+        }
     }
 
-    &.right-column {
-        border-left: solid 1px @gray-lighter;
+    @media (min-width: @screen-sm-min) {
+        &.right-column {
+            border-left: solid 1px @gray-lighter;
+        }
     }
 
     h1:first-child, .content-column-limiter h1:first-child {
