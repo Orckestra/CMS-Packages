@@ -110,10 +110,10 @@
 									new { SearchResultPage = new DataReference<IPage>(CurrentPageNode.Id),
 										  SearchButtonLabel = SearchButtonLabel})
             </div>
+            if (!string.IsNullOrWhiteSpace(searchQuery)) { <hr/> }
         }
         @if (!string.IsNullOrWhiteSpace(searchQuery))
         {
-            <hr />
             <p>
                 Found <strong>@TotalCount</strong> results for "@searchQuery"
             </p>
