@@ -1,18 +1,24 @@
-@inherits RazorFunction
+﻿@inherits RazorFunction
 @functions {
     public override string FunctionDescription
     {
         get { return "Search results rendering"; }
     }
 
-    [FunctionParameter(Label = "Show Search Form", Help = "If 'True', the search box will be also shown ('True' by default).", DefaultValue = "true")]
+    [FunctionParameter(Label = "Show Search Form", Help = "If checked, a search form will be shown above the search result.", DefaultValue = "true")]
     public bool ShowSearchForm { get; set; }
 
-    [FunctionParameter(Label = "Current Site", Help = "If checked than search will be only on current site", DefaultValue = "true")]
+    [FunctionParameter(Label = "Search Form Button Label", Help = "The text to show on the search form submit button. When left blank a generic search icon is used.", DefaultValue = "")]
+    public string SearchButtonLabel { get; set; }
+
+    [FunctionParameter(Label = "Results Per Page", Help = "The maximum number of results to show at a time. If the search contains more results links will be provided to navigate results.", DefaultValue = "10")]
+    public int PageSize { get; set; }
+
+    [FunctionParameter(Label = "Search Current Site Only", Help = "If checked only the current site will be searched. Uncheck to search all subsites.", DefaultValue = "true")]
     public bool CurrentSite { get; set; }
 
-    [FunctionParameter(Label = "Page size", Help = "Search results per page (10 by default)", DefaultValue = "10")]
-    public int PageSize { get; set; }
+    [FunctionParameter(Label = "Show Descriptions", Help = "If checked search results will have descriptions (when available) shown below the title.", DefaultValue = "false")]
+    public bool ShowDescriptions { get; set; }
 
     private Expression<Func<T, bool>> PredicatTrue<T>() { return f => true; }
     private Expression<Func<T, bool>> PredicatFalse<T>() { return f => false; }
@@ -55,7 +61,7 @@
 
     var searchResults = new List<IPage>();
 
-    if (!string.IsNullOrWhiteSpace(searchQuery) && searchQuery.Length > 2)
+    if (!string.IsNullOrWhiteSpace(searchQuery) && searchQuery.Length > 1)
     {
         // Tokenize
         searchQuery = searchQuery.Trim().ToLower();
@@ -89,7 +95,6 @@
         TotalCount = pages.Count();
 
         searchResults = pages.Skip(PageSize * (PageNumber - 1)).Take(PageSize).ToList();
-
     }
 }
 
@@ -100,16 +105,16 @@
     <div class="simplepagesearch clearfix">
         @if (ShowSearchForm)
         {
-            var page = Data.Get<IPage>().First(p => p.Id == CurrentPageNode.Id);
             <div class="clearfix">
-                @Html.C1().Function("Composite.Search.SimplePageSearch.SearchForm", new { SearchResultPage = new DataReference<IPage>(page) })
+                @Html.C1().Function("Composite.Search.SimplePageSearch.SearchForm", 
+									new { SearchResultPage = new DataReference<IPage>(CurrentPageNode.Id),
+										  SearchButtonLabel = SearchButtonLabel})
             </div>
-           
         }
         @if (!string.IsNullOrWhiteSpace(searchQuery))
         {
             <hr />
-            <p class="alert alert-info">
+            <p>
                 Found <strong>@TotalCount</strong> results for "@searchQuery"
             </p>
         }
@@ -120,13 +125,17 @@
                     <a href="@Html.C1().PageUrl(item.Id.ToString())">
                         @item.Title
                     </a>
+					@if(ShowDescriptions && !string.IsNullOrEmpty(item.Description))
+					{
+						<br />
+						@item.Description
+					}
                 </li>
             }
         </ol>
         @if (TotalPages > 1)
         {
             <ul class="pagination">
-
                 @for (int i = 1; i <= TotalPages; i++)
                 {
                     if (i == PageNumber)
@@ -135,7 +144,7 @@
                     }
                     else
                     {
-                        <li>  <a href="?p=@i&amp;q=@searchQuery">@i</a> </li>
+                        <li><a href="?p=@i&amp;q=@searchQuery">@i</a></li>
                     }
                 }
             </ul>
