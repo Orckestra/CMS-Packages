@@ -2,6 +2,7 @@
 
 .navbar {
     margin-bottom: 0;
+
     .nav-main {
         > li > a {
             padding-left: 22px;
@@ -20,22 +21,28 @@
     img {
         max-height: @navbar-height;
         max-width: 205px;
-         @media (max-width: @screen-sm-max) {
+
+        @media (max-width: @screen-sm-max) {
             max-width: 100%;
-       }
+        }
     }
 }
 
 
 .navbar-default {
-    .navbar-header {
-        background: @navbar-default-bg;
-    }
+    background: transparent;
+    border-bottom: 0;
+
     .navbar-collapse {
         border-color: transparent;
-        background:  @navbar-default-bg;
-       .box-shadow(~"inset 0 1px 12px rgba(0,0,0,.075)");
+    }
 
+    .navbar-inner-wrapper {
+        height: @navbar-height;
+        width: 100%;
+        background-color: @navbar-default-bg;
+        .box-shadow(~"inset 0 1px 12px rgba(0,0,0,.075)");
+         border-bottom: solid 1px @gray-lighter;
     }
 
     .navbar-toggle {
@@ -50,6 +57,7 @@
             background-color: @gray-darker !important;
             margin: 4px auto;
         }
+
         .icon-close {
             color: @brand-primary;
             font-family: @font-family-monospace;
@@ -57,21 +65,20 @@
         }
 
         &:focus, &:hover {
-            background-color: @navbar-default-bg !important;
+            background-color: transparent !important;
         }
 
-        &:hover .icon-bar {
-            background-color: @brand-primary !important;
-        }
-
+            &:hover .icon-bar {
+                background-color: @brand-primary !important;
+            }
     }
-
 }
 
 
 .nav-toplinks {
     margin: 0;
-     > li {
+
+    > li {
         height: @navbar-height;
         display: inline-block;
         line-height: @navbar-height;
@@ -79,8 +86,8 @@
         vertical-align: middle;
         padding: 0px 11px;
         margin-left: -0.25em;
-      
-     }
+    }
+
     .glyphicon {
         color: @gray-darker;
     }
@@ -90,6 +97,7 @@
     a {
         color: @gray-light;
         font-weight: bold;
+
         &:hover {
             text-decoration: none;
         }
@@ -99,10 +107,15 @@
 
 .mobile-navbar-link {
     border-right: solid 1px @gray-lighter;
-    &:last-child { border-right: 0;}
-    a { 
-        display: block; 
-        width: 100%; 
+
+    &:last-child {
+        border-right: 0;
+    }
+
+    a {
+        display: block;
+        width: 100%;
+
         &:hover, &:hover span {
             color: @brand-primary;
         }
@@ -111,30 +124,30 @@
 
 @media (max-width: @grid-float-breakpoint-max) {
     .navbar-default {
-        background: transparent;
-        border-bottom: 0;
-        .navbar-collapse {
+       .navbar-collapse {
             width: 70%;
+            background-color: @navbar-default-bg;
         }
     }
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min){
+@media (min-width: @screen-sm-min) {
     .mobile-navbar-link {
         width: auto !important;
         border: 0px;
     }
-  
+
     .navbar-brand {
         width: 205px !important;
         display: block;
         border-right: solid 1px @gray-lighter;
-        
     }
+
     .navbar-toggle {
         width: 100px !important;
     }
+
     .service-nav {
         float: right;
         position: absolute;
@@ -147,7 +160,6 @@
     .navbar-brand {
         border-right: solid 1px @gray-lighter;
     }
-  
 }
 
 /* END NAVBAR */
