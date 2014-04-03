@@ -2,7 +2,8 @@
 <pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
 	<pc:Files>
 		<Add name="App_Data\PageTemplates\MasterLayout.cshtml" />
-		<Add name="App_Data\PageTemplates\Page with aside.cshtml" />
+		<Add name="App_Data\PageTemplates\Page with left aside.cshtml" />
+    <Add name="App_Data\PageTemplates\Page with right aside.cshtml" />
 		<Add name="App_Data\PageTemplates\Frontpage.cshtml" />
 		<Add name="App_Data\PageTemplates\Page with navigation.cshtml" />
 		<Add name="App_Data\PageTemplates\Page.cshtml" />

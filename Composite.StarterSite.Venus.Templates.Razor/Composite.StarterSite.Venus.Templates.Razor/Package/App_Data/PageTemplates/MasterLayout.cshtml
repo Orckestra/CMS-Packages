@@ -16,22 +16,23 @@
 </head>
 <body>
     <header class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="navbar-header">
-
-            <button class="navbar-toggle mobile-navbar-link" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-close hide">x</span>
-            </button>
-            <a href="@HomePageNode.Url" class="navbar-brand navbar-item-wrapper mobile-navbar-link" title="@websiteTitle"><img class="logo" src="/Frontend/Images/logo.png" alt="logo" /></a>
-            <div class="service-nav">
-                @PageTemplateFeature("Service Menu")
+        <div class="navbar-inner-wrapper">
+            <div class="navbar-header">
+                <button class="navbar-toggle mobile-navbar-link" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-close hide">x</span>
+                </button>
+                <a href="@HomePageNode.Url" class="navbar-brand navbar-item-wrapper mobile-navbar-link" title="@websiteTitle"><img class="logo" src="/Frontend/Images/logo.png" alt="logo" /></a>
+                <div class="service-nav">
+                    @PageTemplateFeature("Service Menu")
+                </div>
             </div>
-        </div>
-        <div class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <div class="nav-main-container">
-                @PageTemplateFeature("Main Navigation")
+            <div class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                <div class="nav-main-container">
+                    @PageTemplateFeature("Main Navigation")
+                </div>
             </div>
         </div>
     </header>

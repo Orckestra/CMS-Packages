@@ -73,9 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\PageTemplates\Frontpage.cshtml" />
-    <Content Include="Package\App_Data\PageTemplates\Page with aside.cshtml" />
     <Content Include="Package\App_Data\PageTemplates\Page with navigation.cshtml" />
     <Content Include="Package\App_Data\PageTemplates\Page.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\PageTemplates\Page with left aside.cshtml" />
+    <Content Include="Package\App_Data\PageTemplates\Page with right aside.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

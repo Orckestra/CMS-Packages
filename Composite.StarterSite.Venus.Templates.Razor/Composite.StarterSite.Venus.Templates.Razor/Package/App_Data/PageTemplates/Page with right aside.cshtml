@@ -3,7 +3,7 @@
     public override void Configure()
     {
         TemplateId = new Guid("9f096519-d21c-435e-b334-62224fde2ab3");
-        TemplateTitle = "Page with aside";
+        TemplateTitle = "Page with right aside";
         Layout = "MasterLayout.cshtml";
     }
 
@@ -26,7 +26,7 @@
                     @Markup(Content)
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 aside-column col-height">
+            <div class="col-xs-12 col-sm-4 col-md-4 aside-right-column col-height">
                 @Markup(Aside)
                 @PageTemplateFeature("Aside Column")
             </div>

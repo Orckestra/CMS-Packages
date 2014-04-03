@@ -1,30 +1,30 @@
-﻿@inherits RazorPageTemplate
+@inherits RazorPageTemplate
 @functions {
     public override void Configure()
     {
-        TemplateId = new Guid("e3851f7a-3f4b-4eda-9708-07c3b6020e08");
-        TemplateTitle = "Page with navigation";
+        TemplateId = new Guid("ea2ca748-efbf-4d94-8e2a-11ce49b71cd5");
+        TemplateTitle = "Page with left aside";
         Layout = "MasterLayout.cshtml";
     }
 
-    [Placeholder(Id = "content", IsDefault = true)]
+    [Placeholder(Id = "content", Title = "Content", IsDefault = true)]
     public XhtmlDocument Content { get; set; }
 
+    [Placeholder(Id = "aside", Title = "Aside column")]
+    public XhtmlDocument Aside { get; set; }
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     @*you can add template specific head elements here*@
 </head>
 <body>
-    @PageTemplateFeature("Content Start")
     <div class="container page-container container-height">
         <div class="row row-height">
-            <div class="col-xs-12 col-sm-4 col-md-3 aside-left-column col-height">
-                <div class="nav-sidebar hidden-print">
-                    @PageTemplateFeature("Navigation Column")
-                </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 aside-left-column col-height">
+                @Markup(Aside)
+                @PageTemplateFeature("Aside Column")
             </div>
-            <div class="col-xs-12 col-sm-8 col-md-9 content-column right-column col-height">
+            <div class="col-xs-12 col-sm-8 col-md-8 content-column right-column col-height">
                 <div class="content-column-limiter">
                     @Markup(Content)
                 </div>
