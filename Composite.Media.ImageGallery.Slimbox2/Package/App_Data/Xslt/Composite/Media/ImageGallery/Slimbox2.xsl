@@ -35,7 +35,7 @@
 								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:attribute>
-						<img src="/Renderers/ShowMedia.ashx?id={@Id}&amp;w={$thWidth}&amp;h={$thHeight}&amp;action={$imageResizeAction}" title="{@Description}" alt="{@Title}" />
+						<img src="~/media({@KeyPath})?w={$thWidth}&amp;h={$thHeight}&amp;action={$imageResizeAction}" title="{@Description}" alt="{@Title}" />
 					</a>
 					<span style="display:none;">
 						<xsl:if test="@Title != ''">
@@ -49,7 +49,7 @@
 						</xsl:if>
 						<xsl:if test="$downloadOriginal != ''">
 							<br />
-							<a target="_blank" href="/Renderers/ShowMedia.ashx?id={@Id}&amp;download=true">
+							<a target="_blank" href="~/media({@KeyPath})?download=true">
 								<xsl:value-of select="$downloadOriginal" />
 							</a>
 						</xsl:if>
