@@ -58,7 +58,7 @@
 		</html>
 	</xsl:template>
 	<xsl:template match="IImageFile">
-		<img alt="image" title="{@Title}" src="~/Renderers/ShowMedia.ashx?id={@Id}">
+		<img alt="image" title="{@Title}" src="~/media({@KeyPath})">
 			<xsl:attribute name="class">
 				<xsl:if test="position() = 1">active</xsl:if>
 			</xsl:attribute>
