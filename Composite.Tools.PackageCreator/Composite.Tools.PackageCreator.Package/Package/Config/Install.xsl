@@ -41,17 +41,4 @@
       </xsl:if>
     </xsl:copy>
   </xsl:template>
-
-  <xsl:template match="/configuration/Composite.Core.ResourceSystem.Plugins.ResourceProviderConfiguration/ResourceProviderPlugins">
-		<xsl:copy>
-			<xsl:apply-templates select="@* | node()" />
-			<xsl:if test="count(add[@name='Composite.Tools.PackageCreator'])=0">
-				<add name="Composite.Tools.PackageCreator" defaultCultureName="en-US" type="Composite.Plugins.ResourceSystem.XmlStringResourceProvider.XmlStringResourceProvider, Composite">
-					<Cultures>
-						<add cultureName="en-US" xmlFile="~/Composite/InstalledPackages/localization/Composite.Tools.PackageCreator.en-us.xml" monitorFileChanges="true" />
-					</Cultures>
-				</add>
-			</xsl:if>
-		</xsl:copy>
-	</xsl:template>
 </xsl:stylesheet>
