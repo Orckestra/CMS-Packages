@@ -59,12 +59,12 @@
         </span>
         }
         <h3 class="statement-header">@Heading</h3>
-        <span class="statement-body">
+        <div class="statement-body">
             @foreach (var statementBlock in Statement.Split(Environment.NewLine.ToCharArray()).Where(f => f.Length > 0))
             {
                 <p>@statementBlock</p>
             }
-        </span>
+        </div>
     }
 
 @functions{

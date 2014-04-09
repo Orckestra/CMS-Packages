@@ -37,6 +37,12 @@
         $(".dropdown-toggle").dblclick(function (e) {
              window.location.href = $(this).attr("href");
         });
+
+        // Mobile navbar links 
+        var maxLinksInRow = 5;
+        var linksCount = $(".mobile-navbar-link").length > 5 ? 5 : $(".mobile-navbar-link").length;
+        var linksStyle = "width-" + Math.floor(100/linksCount);
+        $(".mobile-navbar-link").addClass(linksStyle);
     });
 
     function showOverlay() {
