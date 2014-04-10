@@ -1,50 +1,52 @@
 ﻿@inherits CompositeC1WebPage
 @{
-    string stylesFolder = "~/Frontend/Styles";
-    string jsFolder = "~/Frontend/Scripts";
     string websiteTitle = HomePageNode.Title;
 }
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="@Lang">
-<head>
-    <title>@CurrentPageNode.Title</title>
-    @if (!string.IsNullOrEmpty(CurrentPageNode.Description))
-    {
-        <meta name="description" content="@CurrentPageNode.Description" />
-    }
-    @PageTemplateFeature("Descriptive HTML head elements")
-</head>
-<body>
-    <header class="navbar navbar-default navbar-fixed-top">
-        <div class="navbar-inner-wrapper">
-            <div class="navbar-header">
-                <button class="navbar-toggle mobile-navbar-link" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-close hide">x</span>
-                </button>
-                <a href="@HomePageNode.Url" class="navbar-brand navbar-item-wrapper mobile-navbar-link" title="@websiteTitle"><img class="logo" src="/Frontend/Images/logo.png" alt="logo" /></a>
-                <div class="service-nav">
-                    @PageTemplateFeature("Service Menu")
+<f:function name="Layout.Helpers.ScriptsElementsAtBottom" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <f:param name="Page">
+        <html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="@Lang">
+        <head>
+            <title>@CurrentPageNode.Title</title>
+            @if (!string.IsNullOrEmpty(CurrentPageNode.Description))
+            {
+                <meta name="description" content="@CurrentPageNode.Description" />
+            }
+            @PageTemplateFeature("Descriptive HTML head elements")
+        </head>
+        <body>
+            <header class="navbar navbar-default navbar-fixed-top">
+                <div class="navbar-inner-wrapper">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle mobile-navbar-link" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-close hide">x</span>
+                        </button>
+                        <a href="@HomePageNode.Url" class="navbar-brand navbar-item-wrapper mobile-navbar-link" title="@websiteTitle"><img class="logo" src="/Frontend/Images/logo.png" alt="logo" /></a>
+                        <div class="service-nav">
+                            @PageTemplateFeature("Service Menu")
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                        <div class="nav-main-container">
+                            @PageTemplateFeature("Main Navigation")
+                        </div>
+                    </div>
                 </div>
+            </header>
+            <div class="container-fluid main-container">
+                @* renders the sub template: *@
+                @RenderBody()
+                @PageTemplateFeature("Content Footer")
+                <footer class="page-footer" role="contentinfo">
+                    <div class="container">
+                        @PageTemplateFeature("Page Footer")
+                    </div>
+                </footer>
             </div>
-            <div class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-                <div class="nav-main-container">
-                    @PageTemplateFeature("Main Navigation")
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="container-fluid main-container">
-        @* renders the sub template: *@
-        @RenderBody()
-        @PageTemplateFeature("Content Footer")
-        <footer class="page-footer" role="contentinfo">
-            <div class="container">
-                @PageTemplateFeature("Page Footer")
-            </div>
-        </footer>
-    </div>
-</body>
-</html>
+        </body>
+    </html>
+</f:param>
+</f:function>
