@@ -164,6 +164,9 @@
     <Content Include="Package\Frontend\Styles\VisualEditor.less" />
     <Content Include="Release\Composite.StarterSite.Venus.Core.zip" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Layout\Helpers\ScriptsElementsAtBottom.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

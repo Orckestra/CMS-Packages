@@ -1,0 +1,39 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "Moves all <script /> elements to the end of the page, making page content appear faster."; }
+    }
+     
+    [FunctionParameter(Label="Web Page", Help="The web page to transform. All script elements in this page will be moved from head or body to the end of the body.")]
+    public XhtmlDocument Page { get; set; }
+
+	private XhtmlDocument ScriptElementsAtBottom( XhtmlDocument page)
+	{
+        var registeredIds = new List<string>();
+        var registeredSources = new List<string>();
+
+        var scriptElements = page.Descendants(Namespaces.Xhtml + "script").ToList();
+        foreach (var scriptElement in scriptElements)
+        {
+            string id = (string)scriptElement.Attribute("id");
+            string src = (string)scriptElement.Attribute("src");
+
+            scriptElement.Remove();
+
+            if (registeredIds.Any(f => f == id) || registeredSources.Any(f => f == src))
+            {
+                continue;
+            }
+
+            page.Body.Add(scriptElement);
+
+            if (id != null) registeredIds.Add(id);
+            if (src != null) registeredSources.Add(src);
+        }
+
+        return page;
+	}
+}
+@Html.Raw(ScriptElementsAtBottom(Page))
