@@ -1,8 +1,9 @@
-﻿.jumbotron, .page-top-image {
+﻿.jumbotron, .page-top-image, .jumbotron.jumbotron-light .overlay  {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .jumbotron {
@@ -13,7 +14,7 @@
         color: @white_color;
         background-color: @gray-darker;
         .overlay {
-            background: url(/Frontend/Images/overlay.png) no-repeat top left;
+            background-image: url(/Frontend/Images/overlay.png);
         }
     }
 
