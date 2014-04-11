@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.5200.24979" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.StarterSite.Venus.Core" groupName="Composite.StarterSite.Venus" version="1.0.4" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="65d06d1e-e810-49f4-98c8-4a336936f5cc" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.StarterSite.Venus.Core" groupName="Composite.StarterSite.Venus" version="1.0.5" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="65d06d1e-e810-49f4-98c8-4a336936f5cc" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Venus Core</TechnicalDetails>
 		<Description>Venus Core</Description>
 	</mi:PackageInformation>
@@ -21,6 +21,7 @@
 				<File sourceFilename="~\App_Data/Razor/PageBlocks/Jumbotron.cshtml" targetFilename="~\App_Data/Razor/PageBlocks/Jumbotron.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data/Razor/PageBlocks/Statement.cshtml" targetFilename="~\App_Data/Razor/PageBlocks/Statement.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data/Razor/Layout/Helpers/InjectContainerElements.cshtml" targetFilename="~\App_Data/Razor/Layout/Helpers/InjectContainerElements.cshtml" allowOverwrite="false" />
+        <File sourceFilename="~\App_Data/Razor/Layout/Helpers/ScriptsElementsAtBottom.cshtml" targetFilename="~\App_Data/Razor/Layout/Helpers/ScriptsElementsAtBottom.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data/Razor/Layout/CommonHtmlHead.cshtml" targetFilename="~\App_Data/Razor/Layout/CommonHtmlHead.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data/Razor/Layout/Navigation/TopLinks.cshtml" targetFilename="~\App_Data/Razor/Layout/Navigation/TopLinks.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data/Razor/Layout/Navigation/MegaMenu.cshtml" targetFilename="~\App_Data/Razor/Layout/Navigation/MegaMenu.cshtml" allowOverwrite="false" />
