@@ -41,7 +41,7 @@
 				<add assembly="System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
 			</xsl:if>
 			<xsl:if test="count(add[starts-with(@assembly,'System.Web.Mvc')])=0">
-				<add assembly="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+				<add assembly="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
 			</xsl:if>
 			<xsl:if test="count(add[starts-with(@assembly,'System.Web.WebPages')])=0">
 				<add assembly="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
