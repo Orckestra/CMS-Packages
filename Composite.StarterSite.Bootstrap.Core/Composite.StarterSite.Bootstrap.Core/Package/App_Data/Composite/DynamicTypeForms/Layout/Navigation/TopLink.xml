@@ -2,7 +2,6 @@
   <cms:bindings>
     <cms:binding name="Page" type="System.Guid" optional="true" />
     <cms:binding name="Position" type="System.Int32" optional="true" />
-    <cms:binding name="CultureName" type="System.String" optional="true" />
     <cms:binding name="SourceCultureName" type="System.String" optional="true" />
     <cms:binding name="Id" type="System.Guid" optional="true" />
     <cms:binding name="PageId" type="System.Guid" optional="true" />
