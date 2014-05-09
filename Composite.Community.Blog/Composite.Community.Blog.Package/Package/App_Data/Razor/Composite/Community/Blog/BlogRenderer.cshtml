@@ -54,7 +54,7 @@
     }
     <link rel="alternate" type="application/rss+xml" title="@CurrentPageNode.Title" href="/BlogRssFeed.ashx?bid=@CurrentPageNode.Id" />
     <link id="BlogStyles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Community/Blog/Styles.css" />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet" />
+    <link id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
 </head>
 <body>
     <div class="blog">
@@ -250,7 +250,7 @@
     }
     else
     {
-        <span class="text-muted icon-user"></span>
+        <span class="text-muted fa fa-user"></span>
     }
 
     if (!string.IsNullOrEmpty(author.Email) && author.DisplayEmail)
@@ -281,7 +281,7 @@
 @helper Date(DateTime date)
 {
     <span class="text-muted">
-        <span class="icon-calendar"></span>
+        <span class="fa fa-calendar"></span>
         @BlogFacade.CustomDateFormat(date, "dd MMMM yyyy")
     </span>
 }
@@ -289,7 +289,7 @@
 @helper TagsList(List<string> tags)
 {
     <span class="text-muted">
-        <span class="icon-tags"></span><span>&#160;</span>
+        <span class="fa fa-tags" ></span><span>&#160;</span>
         @foreach (var tag in tags)
         {
             <a href="@CurrentPageNode.Url/@BlogFacade.Encode(tag)" title="@tag">@tag</a><text>&#160;</text>
