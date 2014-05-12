@@ -1,0 +1,101 @@
+@inherits RazorFunction
+@using Composite.Lists.Profiles;
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "A function that outputs the Profiles list."; }
+    }
+
+    [FunctionParameter(Label = "Profile Group", Help = "If Group is not selected, then all Profiles will be rendered ", DefaultValue = null)]
+    public DataReference<Group> ProfileGroup { get; set; }
+}
+@{
+    var groups = Data.Get<Group>().OrderBy(gr => gr.Title).ToList();
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <link id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+</head>
+<body>
+    @if (ProfileGroup != null || groups.Count() == 1)
+    {
+        var profiles = Data.Get<Profile>().Where(p => ProfileGroup == null || p.Group == ProfileGroup.Data.Id).OrderBy(p => p.Priority).ToList();
+        @ProfilesList(profiles);
+    }
+    else
+    {
+        foreach (var gr in groups)
+        {
+            var profiles = Data.Get<Profile>().Where(p => p.Group == gr.Id).OrderBy(p => p.Priority).ToList();
+            <h2>@gr.Title</h2>
+            @ProfilesList(profiles);
+
+        }
+    }
+</body>
+
+</html>
+
+@helper ProfilesList(List<Profile> profiles)
+{
+    var rowsCount = Math.Ceiling((double)profiles.Count() / 3);
+    <section class="profiles-list">
+        @for (var i = 0; i < rowsCount; i++)
+        {
+            <div class="row">
+                @for (var j = 0; j < 3; j++)
+                {
+                    var index = i * 3 + j;
+                    if (index >= profiles.Count) { break; }
+                    var profile = profiles[index];
+                    <div class="col-xs-12 col-sm-4 col-md-4 profiles-list-item">
+                        <div class="thumbnail">
+                            @if (!string.IsNullOrEmpty(profile.Image))
+                            {
+                                <img alt="@profile.Name" src="@Html.C1().MediaUrl(@profile.Image)" class="img-responsive" />
+                            }
+                            <div class="item-body caption">
+                                <p class="item-title text-muted">
+                                    @profile.Title
+                                </p>
+                                <h3 class="item-name">
+                                    @profile.Name
+                                </h3>
+                                @if (!string.IsNullOrEmpty(profile.Statement))
+                                {
+                                    <p class="item-statement">
+                                        <em><q>@profile.Statement</q></em>
+                                    </p>
+                                }
+                                @if (!string.IsNullOrEmpty(profile.Description))
+                                {
+                                    <p class="item-description">@profile.Description</p>
+                                }
+
+                                @if (!string.IsNullOrEmpty(profile.Email))
+                                {
+                                    <p><a href="mailto:@profile.Email" class="item-email">@profile.Email</a></p>
+                                }
+
+                                <div class="item-social">
+                                    @if (!string.IsNullOrEmpty(profile.TwitterUsername))
+                                    {
+                                        <a href="https://twitter.com/@profile.TwitterUsername" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                    }
+                                    @if (!string.IsNullOrEmpty(profile.LinkedInLink))
+                                    {
+                                        <a href="@profile.LinkedInLink" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                                    }
+                                    @if (!string.IsNullOrEmpty(profile.FacebookLink))
+                                    {
+                                        <a href="@profile.FacebookLink" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </section>
+}
