@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderLabel" value="Alle funktioner" />
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderToolTip" value="Alle funktioner" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderLabel" value="Alle widgetfunktioner" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderToolTip" value="Alle widgetfunktioner" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentation" value="Gener&#233;r dokumentation" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentationTooltip" value="Gener&#233;r dokumentation for alle funktioner under denne mappe" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformation" value="Information" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformationTooltip" value="Information om vis-funktionen" />
+
+  <string key="FunctionTesterWorkflow.Layout.Label" value="Test: {0}" />
+  <string key="FunctionTesterWorkflow.FunctionCalls.Label" value="Funktioner" />  
+  <string key="FunctionTesterWorkflow.Preview.Label" value="Resultater" />
+  <string key="FunctionTesterWorkflow.Runtime.FieldGroup.Label" value="Driftstid" />
+  <string key="FunctionTesterWorkflow.DebugFieldGroup.Label" value="Indstillinger" />
+  <string key="FunctionTesterWorkflow.DebugPage.Label" value="Side" />
+  <string key="FunctionTesterWorkflow.DebugPage.Help" value="N&#229;r du udf&#248;rer funktionen, bliver denne side brugt som aktuel side" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Label" value="Dataomfang" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Help" value="N&#229;r du udf&#248;rer funktionen, bruges dette som aktuelt data omfang" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Label" value="Sprog" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Help" value="N&#229;r du udf&#248;rer funktionen, bruges dette som det aktuelle sprog" />
+  <string key="FunctionTesterWorkflow.AdminitrativeScope.Label" value="Administrativ" />
+  <string key="FunctionTesterWorkflow.PublicScope.Label" value="Offentlig" />
+  
+
+  <string key="AllFunctionsElementProvider.FunctionTester.Label" value="Test funktion" />
+  <string key="AllFunctionsElementProvider.FunctionTester.ToolTip" value="Test funktion" />
+</strings>

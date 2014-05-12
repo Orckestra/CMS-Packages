@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="PageTemplateElementProvider.RootLabel" value="Sideskabeloner" />
+  <string key="PageTemplateElementProvider.RootLabelToolTip" value="Du kan finde hjemmesidens XHTML skabeloner her" />
+  <string key="PageTemplateElementProvider.AddTemplate" value="Tilf&#248;j skabelon" />
+  <string key="PageTemplateElementProvider.AddTemplateToolTip" value="Tilf&#248;j ny skabelon" />
+  <string key="PageTemplateElementProvider.DeleteTemplate" value="Slet" />
+	<string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="Slet dette element" />
+
+  <string key="PageTemplateElementProvider.SharedCodeFolder.Title" value="Delt kode" />
+  <string key="PageTemplateElementProvider.SharedCodeFolder.ToolTip" value="Filer som bruges af layoutfiler" />
+  
+  <string key="EditSharedCodeFile.Label" value="Redig&#233;r" /> 
+  <string key="EditSharedCodeFile.ToolTip" value="Redig&#233;r filen" />
+
+  <string key="PageTemplateElementProvider.EditXmlTemplate" value="Redig&#233;r XML skabelonen" />
+  <string key="PageTemplateElementProvider.EditXmlTemplateToolTip" value="Redig&#233;r den valgte XML skabelon" />
+
+  <string key="AddNewXmlPageTemplate.LabelDialog" value="Tilf&#248;j ny XML sideskabelon" />
+  <string key="AddNewXmlPageTemplate.LabelFieldGroup" value="XML skabelon" />
+  <string key="AddNewXmlPageTemplate.LabelTemplateTitle" value="Skabelontitel" />
+  <string key="AddNewXmlPageTemplate.LabelTemplateTitleHelp" value="Titlen identificerer denne skabelon p&#229; lister. Overvej at v&#230;lge et kort, men meningsfuldt navn." />
+  <string key="AddNewXmlPageTemplate.LabelCopyFrom" value="Kopi&#233;r fra" />
+  <string key="AddNewXmlPageTemplate.LabelCopyFromHelp" value="Du kan kopiere markup&#39;en fra en anden XML sideskabelon ved at v&#230;lge den p&#229; listen." />
+  <string key="AddNewXmlPageTemplate.LabelCopyFromEmptyOption" value="(Ny skabelon)" />
+  <string key="AddNewXmlPageTemplateWorkflow.TitleInUseTitle" value="Titlen er allerede i brug" />
+  <string key="AddNewXmlPageTemplateWorkflow.TitleTooLong" value="Titlen er for lang (bruges som en del af XML filnavnet)." />
+
+  <string key="EditXmlPageTemplate.LabelMarkUpCode" value="Markupkode" />
+  <string key="EditXmlPageTemplate.LabelTemplateIdentification" value="Skabeloninformation" />
+  <string key="EditXmlPageTemplate.LabelTemplateTitle" value="Skabelontitel" />
+  <string key="EditXmlPageTemplate.LabelTemplateTitleHelp" value="Titlen identificerer denne skabelon p&#229; lister. Overvej at v&#230;lge et kort, men meningsfuldt navn." />
+
+  <string key="EditXmlPageTemplateWorkflow.InvalidXmlTitle" value="Skabelonen kunne ikke gemmes" />
+  <string key="EditXmlPageTemplateWorkflow.InvalidXmlMessage" value="Sideskabelonens markup validerede ikke. {0}" />
+  <string key="EditXmlPageTemplateWorkflow.CannotRenameFileExists" value="En skabelon kan ikke omd&#248;bes - filen med navnet &#39;{0}&#39; findes allerede." />
+  <string key="EditXmlPageTemplateWorkflow.TitleInUseTitle" value="Titlen er allerede i brug" />
+
+  <string key="DeletePageTemplateStep1.LabelFieldGroup" value="Slet sideskabelon ?" />
+	<string key="DeletePageTemplateStep1.Text" value="Slet sideskabelon ?" />
+	
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="Multipel slettefejl" />
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="Typen refereres til af en anden type, som ikke tillader kaskadesletninger. Denne operation er standset." />
+
+  <string key="DeletePageTemplateWorkflow.PageReference" value="Der er {0} side(r),som  henviser til denne skabelon: {1}" /> 
+  <string key="DeletePageTemplateWorkflow.PageTypeReference" value="Der er {0} sidetype(r), som henviser til denne skabelon: {1}" />
+
+  <string key="AddNewPageTemplate.LabelDialog" value="Tilf&#248;j en ny sideskabelon" />
+  <string key="AddNewPageTemplate.LabelFieldGroup" value="Ny sideskabelon" />
+  <string key="AddNewPageTemplate.TemplateTypeHelp" value="V&#230;lg en af ​​de mulige typer sideskabelon" />
+  <string key="AddNewPageTemplate.TemplateTypeLabel" value="Skabelontype" />
+
+  <string key="AddNewPageTemplate.TemplateType.Razor" value="Razor" />
+  <string key="AddNewPageTemplate.TemplateType.MasterPage" value="Masterside" />
+  <string key="AddNewPageTemplate.TemplateType.XML" value="XML" />
+</strings>

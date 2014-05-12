@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<!-- Element tree -->
+	<string key="Tree.ConfigurationElementLabel" value="Url-konfiguration" />
+  <string key="Tree.ConfigurationElementToolTip" value="Denne sektion tillader konfigurering af kortere og mere brugervenlige Url&#39;er" />
+  <string key="Tree.ConfigurationElementEditLabel" value="Redig&#233;r Url-konfiguration" />
+  <string key="Tree.ConfigurationElementEditToolTip" value="Redig&#233;r Url-konfiguration" />
+  <string key="Tree.HostnamesFolderLabel" value="V&#230;rtsnavne" />
+	<string key="Tree.HostnamesFolderToolTip" value="Her kan du mappe et v&#230;rtsnavn til en hjemmeside" />
+	<string key="Tree.AddHostnameLabel" value="Tilf&#248;j v&#230;rtsnavn" />
+  <string key="Tree.AddHostnameToolTip" value="Tilf&#248;j en ny mapping af v&#230;rtsnavn" />
+  <string key="Tree.EditHostnameLabel" value="Redig&#233;r v&#230;rtsnavn" />
+  <string key="Tree.EditHostnameToolTip" value="Redig&#233;r mapping af dette v&#230;rtsnavn" />
+  <string key="Tree.DeleteHostnameLabel" value="Slet v&#230;rtsnavn" />
+  <string key="Tree.DeleteHostnameToolTip" value="Slet mapping af dette v&#230;rtsnavn" />
+
+
+  <string key="Tree.UrlConfigurationLabel" value="Url-konfiguration" />
+  
+
+	<!-- Url configuration -->
+	<string key="UrlConfiguration.Title" value="Url-konfiguration" />
+	<string key="UrlConfiguration.PageUrlSuffix.Label" value="Side-url suffiks" />
+	<string key="UrlConfiguration.PageUrlSuffix.Help" value="En streng, som tilf&#248;jes alle side-url&#39;er . Fx. &#39;. aspx&#39; eller &#39;. html&#39;, Hvis dette felt st&#229;r tomt vises Url&#39;er uden filendelse." />
+
+	<!-- Hostname binding editing -->
+	<string key="HostnameBinding.AddNewHostnameTitle" value="Nyt v&#230;rtsnavn" />
+	<string key="HostnameBinding.Hostname.Label" value="V&#230;rtsnavn" />
+	<string key="HostnameBinding.Hostname.Help" value="V&#230;rtsnavnet hvorp&#229; aktuelle Url-konstruktionsregler regler vil blive anvendt" />
+	<string key="HostnameBinding.Page.Label" value="Side" />
+	<string key="HostnameBinding.Page.Help" value="Rod-siden, som er det aktuelle v&#230;rtsnavns standardside" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Label" value="Url" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.ItemLabel" value="Medtag startsidens URL-titel" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Help" value="Bestemmer, om rodsidens titel skal v&#230;re en del af Url&#39;en. Hvis dette ikke markeres, s&#229; skabes kortere Url&#39;er." />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.ItemLabel" value="Medtag sprogkode i URL" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.Help" value="Bestemmer, om sprogkoden er en del af Url&#39;en" />
+	<string key="HostnameBinding.Custom404Page.Label" value="Brugerdefineret 404-side" />
+	<string key="HostnameBinding.Custom404Page.Help" value="Url hvortil anmodningen omdirigeres i tilf&#230;lde af, at der er en anmodning til en ikke-eksisterende c1 side" />
+	<string key="HostnameBinding.Aliases.Label" value="Alias ​​v&#230;rtsnavne" />
+	<string key="HostnameBinding.Aliases.Help" value="V&#230;rtsnavne hvorfra alle anmodninger vil blive omdirigeret til det aktuelle v&#230;rtsnavn" />
+</strings>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="PackageManager.CompositeVersionMisMatch" value="Pakkens krav til Composite C1 versionen passer ikke med din nuv&#230;rende version" />
+  <string key="PackageManager.PackageAlreadyInstalled" value="Pakken er allerede installeret" />
+  <string key="PackageManager.NewerVersionInstalled" value="En nyere version af pakken er allerede installeret" />	
+  <string key="PackageManager.MissingPackageDirectory" value="Kunne ikke finde pakkens indholdssti &#39;{0}&#39;" />
+  <string key="PackageManager.Uninstallable" value="Pakken er m&#230;rket som ikke-install&#233;rbar" />
+  <string key="PackageManager.MissingZipFile" value="Kunne ikke finde pakkens sti for zip-filen &#39;{0}&#39;" />
+  <string key="PackageManager.MissingUninstallFile" value="Kunne ikke finde pakkens sti for afinstalleringsfilen &#39;{0}&#39;" />
+  <string key="PackageManager.MissingElement" value="&#39;{0}&#39; element mangler" />
+  <string key="PackageManager.MissingAttribute" value="&#39;{0}&#39; attribut mangler." />
+  <string key="PackageManager.InvalidAttributeValue" value="Attribut v&#230;rdien  &#39;{0}&#39; er ikke en gyldig v&#230;rdi." />
+  <string key="PackageManager.InvalidElementValue" value="Elementv&#230;rdien &#39;{0}&#39; er ikke en gyldig v&#230;rdi" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.ExpectedExactlyTwoElements" value="Pr&#230;cis to elementer, &#39;{0}&#39; og &#39;{1}&#39; er forventet" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingElement" value="&#39;{0}&#39; element mangler" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.MissingAttribute" value="&#39;{0}&#39; attribut mangler." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.PathDoesNotExist" value="Stien &#39;{0}&#39; findes ikke i ZIP&#39;en." />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.UnableToParsXslt" value="Det lykkedes ikke at analysere den ZIP&#39;ede XSLT-fil &#39;{0}&#39;. {1}" />
+  <string key="ConfigurationTransformationPackageFragmentInstaller.XsltWillGeneratedInvalid" value="XSLT-filen &#39;{0}&#39; vil generere en ugyldig konfigurationsfil. {1}" />
+  <string key="DataPackageFragmentInstaller.OnlyOneElement" value="Kun &#233;t &#39;typer&#39; element er tilladt" />
+  <string key="DataPackageFragmentInstaller.MissingElement" value="Manglende &#39;typer&#39; element" />
+  <string key="DataPackageFragmentInstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
+  <string key="DataPackageFragmentInstaller.WrongDataScopeIdentifier" value="Forkert DataScopeIdentifier ({0}) navn i konfigurationen" />
+  <string key="DataPackageFragmentInstaller.WrongLocale" value="Forkert kultur ({0}) navn i konfigurationen" />
+  <string key="DataPackageFragmentInstaller.MissingFile" value="Manglende fil &#39;{0}&#39; i pakkens zip" />
+  <string key="DataPackageFragmentInstaller.TypeNotConfigured" value="Datainterfacetypen &#39;{0}&#39; er ikke blevet konfigureret i systemet" />
+  <string key="DataPackageFragmentInstaller.TypeNotInheriting" value="Datainterfacetypen &#39;{0}&#39; nedarver ikke interfacet &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingProperty" value="Datainterfacetypen &#39;{0}&#39; har ikke en egenskab ved navn &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingWritableProperty" value="Datainterfacetypen &#39;{0}&#39; har ikke en skrivbar egenskab ved navn &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.ConversionFailed" value="Det lykkedes ikke at konvertere v&#230;rdien &#39;{0}&#39; til typen &#39;{1}&#39;" />
+  <string key="DataPackageFragmentInstaller.MissingPropertyVaule" value="Egenskaben &#39;{0}&#39; p&#229; interfacet &#39;{1}&#39; mangler en v&#230;rdi." />
+  <string key="DataPackageFragmentInstaller.DataExists" value="Datatypen &#39;{0}&#39;: {1} post(er) er allerede installeret" />
+  <string key="DataPackageFragmentInstaller.MissingTypeDescriptor" value="Manglende datatypem&#230;rkning af typen {0}" />
+  <string key="DataPackageFragmentInstaller.TypeNonLocalizedWithLocale" value="Datatypen &#39;{0}&#39; blev ikke lokaliseret, men en lokalitet er angivet i konfigurationen" />
+  <string key="DataPackageFragmentInstaller.TypeLocalizedWithoutLocale" value="Datatypen &#39;{0}&#39; er lokaliseret, men der er ikke angivet en lokalitet i konfigurationen" />
+  <string key="DataPackageFragmentInstaller.ReferencedDataMissing" value="Referencedata mangler. Typen: {0}, {1}: &#39;{2}&#39;" />
+  <string key="DataPackageFragmentUninstaller.OnlyOneElement" value="Kun &#233;t &#39;typer&#39; element er tilladt" />
+  <string key="DataPackageFragmentUninstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
+  <string key="DataPackageFragmentUninstaller.MissingKeyProperty" value="Datatypen &#39;{0}&#39; indeholder ikke en vigtig egenskab ved navn &#39;{1}&#39;" />
+  <string key="DataTypePackageFragmentInstaller.OnlyOneElement" value="Kun &#233;t &#39;typer&#39; element er tilladt" />
+  <string key="DataTypePackageFragmentInstaller.MissingElement" value="Manglende &#39;typer&#39; element" />
+  <string key="DataTypePackageFragmentInstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
+  <string key="DataTypePackageFragmentInstaller.TypeNotConfigured" value="Datainterfacetypen &#39;{0}&#39; er ikke blevet konfigureret i systemet" />
+  <string key="DataTypePackageFragmentInstaller.TypeNotInheriting" value="Datainterfacetypen &#39;{0}&#39; nedarver ikke interfacet &#39;{1}&#39;" />
+  <string key="DataTypePackageFragmentInstaller.TypeExists" value="Interfacetypen &#39;{0}&#39; findes allerede i systemet" />
+  <string key="DataTypePackageFragmentInstaller.InterfaceCodeError" value="Det lykkedes ikke at opbygge en datatypem&#230;rkning for interfacet &#39;{0}&#39;" />
+  <string key="DataTypePackageFragmentUninstaller.OnlyOneElement" value="Kun &#233;t &#39;typer&#39; element er tilladt" />
+  <string key="DataTypePackageFragmentUninstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
+  <string key="DataTypePackageFragmentUninstaller.WrongAttributeFormat" value="Forkert attributformat i konfigurationen" />
+  <string key="DynamicDataTypePackageFragmentInstaller.OnlyOneElement" value="Kun &#233;t &#39;typer&#39; element er tilladt" />
+  <string key="DynamicDataTypePackageFragmentInstaller.MissingElement" value="Manglende &#39;typer&#39; element" />
+  <string key="DynamicDataTypePackageFragmentInstaller.DataTypeDescriptorParseError" value="Fejl xml parsing af datatypem&#230;rknings-attributten" />
+  <string key="DynamicDataTypePackageFragmentInstaller.DataTypeDescriptorDeserializeError" value="Fejl under deserializing af en datatype. Fejl tekst: {0}." />
+  <string key="DynamicDataTypePackageFragmentInstaller.MissingReferencedType" value="Kan ikke finde en referencetype &#39;{0}&#39;." />
+  <string key="DynamicDataTypePackageFragmentInstaller.TypeExists" value="Interfacetypen &#39;{0}&#39; findes allerede i systemet" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.OnlyOneElement" value="Kun &#233;t &#39;typer&#39; element er tilladt" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
+  <string key="DynamicDataTypePackageFragmentUninstaller.WrongAttributeFormat" value="Forkert attributformat i konfigurationen" />
+  <string key="FilePackageFragmentInstaller.OnlyOneFilesElement" value="Kun &#233;t &#39;filer&#39; element er tilladt" />
+  <string key="FilePackageFragmentInstaller.OnlyOneDirectoriesElement" value="Kun &#233;t &#39;mapper&#39; element er tilladt" />
+  <string key="FilePackageFragmentInstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
+  <string key="FilePackageFragmentInstaller.DeleteTargetDirectoryNotAllowed" value="Slet &#39;Target-mappe &#39;attributten kan kun anvendes til mapper, ikke filer" />
+  <string key="FilePackageFragmentInstaller.WrongAttributeBoolFormat" value="Forkert format for attributv&#230;rdi, der forventes en boolisk v&#230;rdi" />
+  <string key="FilePackageFragmentInstaller.MissingFile" value="Installerings zip-filen indeholder ikke filen &#39;{0}&#39;" />
+  <string key="FilePackageFragmentInstaller.FileExists" value="Filen &#39;{0}&#39; findes allerede" />
+  <string key="FilePackageFragmentInstaller.FileReadOnly" value="Filen &#39;{0}&#39; er markeret som Read Only og kan derfor ikke overskrives" />
+  <string key="FilePackageFragmentInstaller.AssemblyLoadNotAllowed" value="&#39;AssemblyLoad &#39;attributten kan kun anvendes p&#229; filer, ikke p&#229; mapper" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowed" value="&#39;OnlyUpdate &#39;attributent kan kun anvendes p&#229; filer, ikke p&#229; mapper" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowedWithLoadAssemlby" value="&#39;OnlyUpdate &#39;attributten er ikke tilladt i kombination med&#39; LoadAssembly &#39;attributten" />
+  <string key="FilePackageFragmentInstaller.MissingDirectory" value="Installerings zip-filen indeholder ikke mappen &#39;{0}&#39;" />
+  <string key="FilePackageFragmentInstaller.WrongBasePath" value="Uninstall.xml indeholder filstier knyttet til den oprindelige hjemmesides placering, og derfor kan pakken ikke afinstalleres sikkert." />
+  <string key="FilePackageFragmentUninstaller.OnlyOneFilesElement" value="Kun &#233;t &#39;filer&#39; element er tilladt" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.OnlyOneElement" value="Kun &#233;t &#39;omr&#229;der&#39; element er tilladt" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingType" value="Kunne ikke finde typen &#39;{0}&#39;" />
+  <string key="VirtualElementProviderNodePackageFragmentInstaller.MissingIcon" value="Kunne ikke finde ikonet &#39;{0}&#39;" />
+  <string key="VirtualElementProviderNodePackageFragmentUninstaller.OnlyOneElement" value="Kun &#233;t &#39;omr&#229;der&#39; element er tilladt" />
+  <string key="VirtualElementProviderNodePackageFragmentUninstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileNotFound" value="Filen &#39;{0}&#39; blev ikke fundet" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnly" value="Filen &#39;{0}&#39; er markeret som Read Only og kan derfor ikke overskrives" />
+  <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnlyOverride" value="File &#39;{0}&#39; blev markeret som &#39;Read Only&#39;. Denne fil attribut blev fjernet, og filen blev opdateret normalt." />
+
+  <string key="PackageVersionBumberFragmentInstaller.OnlyOneElement" value="Kun &#233;t &#39;PackageVersions&#39; element er tilladt" />
+  <string key="PackageVersionBumberFragmentInstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
+  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeGuidFormat" value="Forkert attributv&#230;rdi format, Guide v&#230;rdi forventet" />
+  <string key="PackageVersionBumberFragmentInstaller.PackageIdDuplicate" value="Pakke id kopien: &#39;{0}&#39;" />
+  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeVersionFormat" value="Forkert attribut v&#230;rdi format, version v&#230;rdi forventet (xyz)" />
+  <string key="PackageVersionBumberFragmentUninstaller.OnlyOneElement" value="Kun &#233;t &#39;PackageVersions&#39; element er tilladt" />
+  <string key="PackageVersionBumberFragmentUninstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
+  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeGuidFormat" value="Forkert attributv&#230;rdi format, Guide v&#230;rdi forventet" />
+  <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="Pakke id kopien: &#39;{0}&#39;" />
+  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeVersionFormat" value="Forkert attribut v&#230;rdi format, version v&#230;rdi forventet (xyz)" />
+  <string key="PackageLicenseFragmentInstaller.MissingPublicKeyElement" value="En offentlig RSA-n&#248;gle mangler i pakkekonfigurationen" />
+
+  <string key="License.InvalidKeyTitle" value="Ugyldig licensn&#248;gle" />
+  <string key="License.InvalidKeyMessage" value="Licensn&#248;glen er ugyldig. Du m&#229; skaffe en gyldig licensn&#248;gle." />
+  <string key="License.ExpiredTitle" value="Pr&#248;veperioden er udl&#248;bet" />
+  <string key="License.ExpiredMessage" value="Pakkens pr&#248;veperiode er udl&#248;bet. Du m&#229; skaffe en gyldig licens." />
+  <string key="License.Failed" value="Det lykkedes ikke at skaffe licensinformation. ProductId: {0}" />
+
+  <string key="NotEnoughNtfsPermissions" value="Windowsbrugeren, som dette C1 eksempel k&#248;rer p&#229;, har ikke skriveadgang til filen eller mappen &#39;{0}&#39;." />
+
+  <string key="PackageFragmentInstaller.OnlyOneElementAllowed" value="Kun &#233;t &#39;{0}&#39; element er tilladt" />
+  <string key="PackageFragmentInstaller.IncorrectElement" value="Uventet element navn &#39;{0}&#39;, Det eneste tilladte element navn er &#39;{1}&#39;" />
+  <string key="PackageFragmentInstaller.MissingAttribute" value="&#39;{0}&#39; attribut mangler." />
+  <string key="PackageFragmentInstaller.MissingElement" value="Manglende element &#39;{0}&#39;." />
+</strings>

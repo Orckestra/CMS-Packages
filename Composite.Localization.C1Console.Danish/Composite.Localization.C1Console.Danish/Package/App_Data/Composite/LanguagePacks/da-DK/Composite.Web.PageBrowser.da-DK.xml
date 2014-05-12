@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+  <!-- menus -->
+  <string key="Menu.ViewSource" value="Sidekilde" />
+  <string key="ContextMenu.Back" value="Tilbage" />
+  <string key="ContextMenu.Forward" value="Fremad" />
+  <string key="ContextMenu.Refresh" value="Opdat&#233;r" />
+  <string key="ContextMenu.ViewSource" value="Vis sidekilde" />
+
+
+  <!-- buttons -->
+	<string key="ToolBarButton.Back.ToolTip" value="G&#229; en side tilbage" />
+	<string key="ToolBarButton.Forward.ToolTip" value="G&#229; en side frem" />
+	<string key="ToolBarButton.Refresh.ToolTip" value="Opdat&#233;r side" />
+  <string key="ToolBarButton.Go.ToolTip" value="G&#229; til adressen i lokationsbarren" />
+  <string key="ToolBarButton.Home.ToolTip" value="G&#229; til startsiden" /> <!-- TODO: Show URL instead! -->
+	
+	<!-- URL errors -->
+	<string key="AddressBar.Invalid.DialogTitle.External" value="Adgang n&#230;gtet" />
+	<string key="AddressBar.Invalid.DialogText.External" value="Ekstern Url kan ikke indl&#230;ses." />
+	<string key="AddressBar.Invalid.DialogTitle.BadRequest" value="Bad Url" />
+	<string key="AddressBar.Invalid.DialogText.BadRequest" value="Url&#39;en er ugyldig og kan ikke indl&#230;ses." />
+	<string key="AddressBar.Invalid.DialogTitle.Unauthorized" value="Ikke godkendt" />
+	<string key="AddressBar.Invalid.DialogText.Unauthorized" value="Du er ikke godkendt til at se siden p&#229; den angivne Url." />
+	<string key="AddressBar.Invalid.DialogTitle.NotFound" value="Siden blev ikke fundet" />
+	<string key="AddressBar.Invalid.DialogText.NotFound" value="Siden blev ikke fundet p&#229; den angivne Url." />
+	<string key="AddressBar.Invalid.DialogTitle.InternalError" value="Serverfejl" />
+	<string key="AddressBar.Invalid.DialogText.InternalError" value="Serveren har rapporteret en fejl p&#229; den angivne Url. Siden kan ikke indl&#230;ses." />
+	<string key="AddressBar.Invalid.DialogTitle.Default" value="Side ikke indl&#230;st" />
+	<string key="AddressBar.Invalid.DialogText.Default" value="En fejl forhindrer Url&#39;en i at blive indl&#230;st." />	
+	
+</strings>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<strings>
+  
+  <string key="AddNewButtonLabel" value="Tilf&#248;j ny" />
+  <string key="DeleteButtonLabel" value="Slet" />
+
+  <string key="TreeRootNodeLabel" value="Liste over inputparametre" />
+
+  <string key="ParameterNamingGroupLabel" value="Parameternavngivning og hj&#230;lp" />
+  <string key="Name" value="Parameternavn" />
+  <string key="NameHelp" value="Parameterets navn. Systemet bruger navnet til at identificere denne parameter. Navne skal v&#230;re unikke og m&#229; ikke indeholde mellemrum eller andre specialtegn. Brug navne som titel&#39;, &#39;startdato&#39;, &#39;largeImage&#39; osv." />
+  <string key="Label" value="Label" />
+  <string key="LabelHelp" value="Den tekst, som brugere skal kunne se, ved angivelse af en v&#230;rdi for denne parameter. Dette er parameterets &#39;menneskelige navn&#39;." />
+  <string key="Help" value="Hj&#230;lp" />
+  <string key="HelpHelp" value="Skriv en kort tekst, som fort&#230;ller brugeren, hvordan parameteren skal anvendes." />
+
+  <string key="ParameterTypeValueGroupLabel" value="Parametertype og v&#230;rdier" />
+  <string key="Type" value="Parametertype" />
+  <string key="TypeHelp" value="Denne parameters type." />
+  <string key="DefaultValue" value="Standardv&#230;rdi" />
+  <string key="DefaultValueHelp" value="Du kan angive en standardv&#230;rdi for denne parameter. Hvis en parameter har en standardv&#230;rdi, er brugerne ikke forpligtet til at angive det, n&#229;r de kalder funktionen." />
+  <string key="DefaultValueSpecify" value="Angiv standardv&#230;rdi" />
+  <string key="DefaultValueEdit" value="Redig&#233;r standardv&#230;rdi" />
+  <string key="DefaultValueDialogLabel" value="Standard parameterv&#230;rdi" />
+  
+  <string key="TestValue" value="Testv&#230;rdi" />
+  <string key="TestValueHelp" value="Ved visning af eksempel kan du teste med forskellige input parameterv&#230;rdier ved at bruge dette felt. Hvis dette er tomt, vil standardv&#230;rdien blive anvendt til eksempelvisninger." />
+  <string key="TestValueSpecify" value="Angiv testv&#230;rdi" />
+  <string key="TestValueEdit" value="Redig&#233;r testv&#230;rdi" />
+  <string key="TestValueDialogLabel" value="Parameterens Testv&#230;rdi" />
+
+  <string key="ParameterPresentationGroupLabel" value="Parameterpr&#230;sentation" />
+  <string key="Widget" value="Widget" />
+  <string key="WidgetHelp" value="Du kan v&#230;lge, hvilken type input widget (ligesom en tekstboks) du vil anvende, n&#229;r du angiver en v&#230;rdi for denne parameter. Widgets er kun tilg&#230;ngelige for simple typer." />
+  <string key="NoWidgetSpecifiedLabel" value="(Ingen widget angivet)" />
+  <string key="WidgetDialogLabel" value="Parameter widget" />
+  <string key="Position" value="Placering" />
+  <string key="PositionLast" value="Sidste" />
+  <string key="PositionHelp" value="Parameterens position. Dette kontrollerer parametrenes r&#230;kkef&#248;lge." />
+
+  <string key="SpecifyWidgetTip" value="Husk at angive en widget ..." />
+
+  <string key="FieldNameSyntaxInvalid" value="Det angivne navn er ikke gyldigt." />
+  <string key="CannotSave" value="Kan ikke gemme ... En anden parameter har samme navn. Navnet skal &#230;ndres." />
+
+  <string key="SpaceInNameError" value="Ugyldigt navn. Parameternavne kan ikke indeholde mellemrum. Du kan skrive et l&#230;sbart navn i labelfeltet nedenfor." />
+  <string key="NameEmptyError" value="Parameternavne kan ikke v&#230;re tomme. Angiv venligst et navn." />
+  <string key="NameAlreadyInUseError" value="En anden parameter bruger dette navn. Parameternavne skal v&#230;re unikke." />
+
+
+
+</strings>
+
+
+

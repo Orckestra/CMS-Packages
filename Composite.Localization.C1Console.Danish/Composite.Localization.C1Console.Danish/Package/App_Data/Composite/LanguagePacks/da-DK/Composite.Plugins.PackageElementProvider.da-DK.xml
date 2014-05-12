@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootFolderLabel" value="Pakker" />
+  <string key="RootFolderToolTip" value="Udforsk og administr&#233;r installerede pakker" />
+  <string key="AvailablePackagesFolderLabel" value="Tilg&#230;ngelige pakker" />
+  <string key="AvailablePackagesFolderToolTip" value="Tilg&#230;ngelige pakker" />
+  <string key="InstalledPackageFolderLabel" value="Installerede pakker" />
+  <string key="InstalledPackageFolderToolTip" value="Installerede pakker" />
+  <string key="LocalPackagesFolderLabel" value="Lokale pakker" />
+  <string key="LocalPackagesFolderToolTip" value="Lokale pakker" />
+  <string key="PackageSourcesFolderLabel" value="Pakkekilder" />
+  <string key="PackageSourcesFolderToolTip" value="Pakkens kilder" />
+  <string key="ViewAvailableInformationLabel" value="Pakkens info" />
+  <string key="ViewAvailableInformationToolTip" value="Se pakkeinformation" />
+  <string key="ViewInstalledInformationLabel" value="Pakkens info" />
+  <string key="ViewInstalledInformationToolTip" value="Se pakkeinformation" />
+  <string key="InstallLocalPackageLabel" value="Install&#233;r lokal pakke ..." />
+  <string key="InstallLocalPackageToolTip" value="Install&#233;r pakke fra det lokale filsystem" />
+  <string key="AddPackageSourceLabel" value="Tilf&#248;j pakke kilde" />
+  <string key="AddPackageSourceToolTip" value="Tilf&#248;j pakke kilde" />
+  <string key="DeletePackageSourceLabel" value="Slet pakke kilde" />
+  <string key="DeletePackageSourceToolTip" value="Slet pakke kilde" />
+  <string key="ClearServerCacheLabel" value="Ryd cache" />
+  <string key="ClearServerCacheToolTip" value="Ryd cache for at f&#229; de nyeste pakker" />
+  <string key="ViewAvailableInformation.FieldGroupLabel" value="Pakkens info" />
+  <string key="ViewAvailableInformation.NameTextLabel" value="Navn" />
+  <string key="ViewAvailableInformation.DescriptionTextLabel" value="Beskrivelse" />
+  <string key="ViewAvailableInformation.AuthorTextLabel" value="Forfatter" />
+
+  <string key="ViewAvailableInformation.TrialInfoFieldGroupLabel" value="Information om gratis pr&#248;veversion" />
+  <string key="ViewAvailableInformation.TrialInformationLabel" value="Information om pr&#248;veversion" />
+  <string key="ViewAvailableInformation.TrialInformationText" value="Dette er en kommerciel pakke, som er gratis i pr&#248;veperioden. N&#229;r pr&#248;veperioden er udl&#248;bet, vil funktionaliteten oph&#248;re, medmindre du v&#230;lger at k&#248;be en licens." />
+  <string key="ViewAvailableInformation.TrialDaysLabel" value="Gratis pr&#248;veperiode (dage)" />
+
+
+  <string key="ViewAvailableInformation.InstallationInfoFieldGroupLabel" value="Installationsinfo" />
+  <string key="ViewAvailableInformation.VersionTextLabel" value="Version" />
+  <string key="ViewAvailableInformation.TechicalDescriptionTextLabel" value="Teknisk beskrivelse" />
+  <string key="ViewAvailableInformation.PackageSourceTextLabel" value="Kilde" />
+
+
+  <string key="ViewAvailableInformation.PriceTextLabel" value="Pris (USD)" />
+  <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="Install&#233;r" />
+  <string key="ViewAvailableInformation.Toolbar.ReadMoreLabel" value="L&#230;s mere" />
+  <string key="ViewAvailableInformation.ShowError.MessageTitle" value="Allerede installeret" />
+  <string key="ViewAvailableInformation.ShowError.MessageMessage" value="Pakken er allerede installeret. Den valgte pakke kan ikke installeres." />
+  <string key="ViewAvailableInformation.ShowServerError.MessageTitle" value="Pakke-serveren svarede ikke" />
+  <string key="ViewAvailableInformation.ShowServerError.MessageMessage" value="Pakken-serveren svarede ikke. Pr&#248;v igen eller kontakt systemadministratoren" />
+  <string key="ViewInstalledInformation.FieldGroupLabel" value="Pakkens info" />
+  <string key="ViewInstalledInformation.NameTextLabel" value="Navn" />
+  <string key="ViewInstalledInformation.DateTextLabel" value="Installationsdato" />
+  <string key="ViewInstalledInformation.UserTextLabel" value="Installeret af" />
+  <string key="ViewInstalledInformation.AuthorTextLabel" value="Forfatter" />
+  <string key="ViewInstalledInformation.VersionTextLabel" value="Version" />
+  <string key="ViewInstalledInformation.TrialInfoFieldGroupLabel" value="Information om pr&#248;veperioden" />
+  <string key="ViewInstalledInformation.TrialInformationLabel" value="Information om pr&#248;veversion" />
+  <string key="ViewInstalledInformation.TrialInformationText" value="Dette er en kommerciel pakke, som er gratis i pr&#248;veperioden. N&#229;r pr&#248;veperioden er udl&#248;bet, vil funktionaliteten oph&#248;re, medmindre du v&#230;lger at k&#248;be en licens." />
+  <string key="ViewInstalledInformation.TrialExpireLabel" value="Pr&#248;veperiodens udl&#248;bsdato" />
+
+  <string key="ViewInstalledInformation.Toolbar.UninstallLabel" value="Afinstall&#233;r" />
+  <string key="ViewInstalledInformation.Toolbar.PurchaseLabel" value="K&#248;b denne !" />
+  <string key="ViewInstalledInformation.ShowError.MessageTitle" value="Er  allerede afinstalleret" />
+  <string key="ViewInstalledInformation.ShowError.MessageMessage" value="Pakken er allerede afinstalleret. Den valgte pakke kan ikke installeres." />
+  <string key="InstallRemotePackage.Step1.LayoutLabel" value="Install&#233;r pakke" />
+  <string key="InstallRemotePackage.Step1.HeadingTitle" value="Dette er en pr&#248;veperiode / betalingspakke" />
+  <string key="InstallRemotePackage.Step1.HeadingDescription" value="Denne pakke kr&#230;ver betaling. Unders&#248;g venligst  EULA&#39;en p&#229; det n&#230;ste sk&#230;rmbillede for detaljer om pr&#248;veperiode og betalingsbetingelser." />
+  <string key="InstallRemotePackage.Step2.LayoutLabel" value="Install&#233;r pakke" />
+  <string key="InstallRemotePackage.Step2.HeadingTitle" value="Licensaftale" />
+  <string key="InstallRemotePackage.Step2.HeadingDescription" value="Hvis du accepterer betingelserne i aftalen, skal du markere afkrydsningsfeltet nedenfor. Du skal acceptere vilk&#229;rene for at kunne installere." />
+  <string key="InstallRemotePackage.Step2.IAcceptItemLabel" value="Jeg accepterer licensaftalen" />
+  <string key="InstallRemotePackage.Step2.AcceptMissing" value="Du skal acceptere betingelserne i licensaftalen, f&#248;r du kan forts&#230;tte." />
+  <string key="InstallRemotePackage.Step3.LayoutLabel" value="Install&#233;r pakke" />
+  <string key="InstallRemotePackage.Step3.HeadingTitle" value="Download og valid&#233;r pakken" />
+  <string key="InstallRemotePackage.Step3.HeadingDescription" value="Pakken vil blive hentet og valideret. Bem&#230;rk, at dette kan tage flere minutter. Klik p&#229; &#39;n&#230;ste&#39; for at forts&#230;tte." />
+  <string key="InstallRemotePackage.Step4.LayoutLabel" value="Install&#233;r lokal pakke" />
+  <string key="InstallRemotePackage.Step4.HeadingTitle" value="Klar til at installere" />
+  <string key="InstallRemotePackage.Step4.HeadingDescription" value="Klar til at installere pakken. Bem&#230;rk, at installationen kan tage flere minutter. Klik p&#229; &#39;n&#230;ste&#39; for at forts&#230;tte." />
+  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingTitle" value="Klar til at installere" />
+  <string key="InstallRemotePackage.Step4.NonUninstallableHeadingDescription" value="Klar til at installere pakken. Bem&#230;rk, at installationen kan tage flere minutter. Bem&#230;rk ogs&#229;, at denne pakke ikke kan afinstalleres. Klik p&#229; &#39;n&#230;ste&#39; for at forts&#230;tte." />
+  <string key="InstallRemotePackage.Step5.LayoutLabel" value="Pakken er installeret" />
+  <string key="InstallRemotePackage.Step5.HeadingTitle" value="Pakken blev installeret med succes" />
+  <string key="InstallRemotePackage.Step5.HeadingDescription" value="Pakken blev installeret med succes" />
+  <string key="InstallRemotePackage.ShowError.LayoutLabel" value="Installation af pakken mislykkedes" />
+  <string key="InstallRemotePackage.ShowError.InfoTableCaption" value="Installation af pakken mislykkedes" />
+  <string key="InstallRemotePackage.ShowError.MessageTitle" value="Besked" />
+  <string key="InstallRemotePackage.ShowWarning.LayoutLabel" value="Pakken blev ikke valideret" />
+  <string key="InstallRemotePackage.ShowWarning.InfoTableCaption" value="Pakken blev ikke valideret" />
+  <string key="InstallLocalPackage.Step1.LayoutLabel" value="Install&#233;r lokal pakke" />
+  <string key="InstallLocalPackage.Step1.FieldGroupLabel" value="Sti til den lokale pakke" />
+  <string key="InstallLocalPackage.Step1.FileUploadLabel" value="Pakkefilen" />
+  <string key="InstallLocalPackage.Step1.FileUploadHelp" value="Find og v&#230;lg den lokale pakkefil" />
+  <string key="InstallLocalPackage.Step2.LayoutLabel" value="Install&#233;r lokal pakke" />
+  <string key="InstallLocalPackage.Step2.HeadingTitle" value="Klar til at installere" />
+  <string key="InstallLocalPackage.Step2.HeadingDescription" value="Klar til at installere pakken. Bem&#230;rk, at installationen kan tage flere minutter. Klik p&#229; &#39;n&#230;ste&#39; for at forts&#230;tte." />
+  <string key="InstallLocalPackage.Step3.LayoutLabel" value="Pakken er installeret" />
+  <string key="InstallLocalPackage.Step3.HeadingTitle" value="Pakken blev installeret med succes" />
+  <string key="InstallLocalPackage.Step3.HeadingDescription" value="Pakken blev installeret med succes" />
+  <string key="InstallLocalPackage.ShowError.LayoutLabel" value="Installation af pakken mislykkedes" />
+  <string key="InstallLocalPackage.ShowError.InfoTableCaption" value="Installation af pakken mislykkedes" />
+  <string key="InstallLocalPackage.ShowError.MessageTitle" value="Besked" />
+  <string key="InstallLocalPackage.ShowWarning.LayoutLabel" value="Pakken blev ikke valideret" />
+  <string key="InstallLocalPackage.ShowWarning.InfoTableCaption" value="Pakken blev ikke valideret" />
+  <string key="UninstallRemotePackage.Step1.LayoutLabel" value="Afinstall&#233;r pakken" />
+  <string key="UninstallRemotePackage.Step1.HeadingTitle" value="Klar til at kontrollere afinstalleringsprocessen" />
+  <string key="UninstallRemotePackage.Step1.HeadingDescription" value="Klar til at kontrollere afinstallationen af ​​pakken. Klik p&#229; &#39;n&#230;ste&#39; for at forts&#230;tte." />
+  <string key="UninstallRemotePackage.Step2.LayoutLabel" value="Afinstall&#233;r pakken" />
+  <string key="UninstallRemotePackage.Step2.HeadingTitle" value="Klar til at afinstallere" />
+  <string key="UninstallRemotePackage.Step2.HeadingDescription" value="Klar til at afinstallere pakken. Bem&#230;rk, at afinstalleringen kan tage flere minutter. Klik p&#229; &#39;n&#230;ste&#39; for at forts&#230;tte." />
+  <string key="UninstallRemotePackage.Step3.LayoutLabel" value="Pakke afinstalleret" />
+  <string key="UninstallRemotePackage.Step3.HeadingTitle" value="Pakke afinstalleret med succes" />
+  <string key="UninstallRemotePackage.Step3.HeadingDescription" value="Pakke afinstalleret med succes." />
+  <string key="UninstallRemotePackage.ShowError.LayoutLabel" value="Afinstallation af pakken mislykkedes" />
+  <string key="UninstallRemotePackage.ShowError.InfoTableCaption" value="Afinstallation af pakken mislykkedes" />
+  <string key="UninstallRemotePackage.ShowError.MessageTitle" value="Besked" />
+  <string key="UninstallRemotePackage.ShowUnregistre.LayoutLabel" value="Afinstall&#233;r pakken" />
+  <string key="UninstallRemotePackage.ShowUnregistre.HeadingTitle" value="Registrering af afinstallation mislykkedes" />
+  <string key="UninstallRemotePackage.ShowUnregistre.HeadingDescription" value="Afinstallationen blev ikke registeret. Kontakt pakkeleverand&#248;ren for manuel afmelding." />
+  <string key="UninstallLocalPackage.Step1.LayoutLabel" value="Afinstall&#233;r lokal pakke" />
+  <string key="UninstallLocalPackage.Step1.HeadingTitle" value="Klar til at kontrollere afinstalleringsprocessen" />
+  <string key="UninstallLocalPackage.Step1.HeadingDescription" value="Klar til at kontrollere afinstallationen af ​​pakken. Klik p&#229; &#39;n&#230;ste&#39; for at forts&#230;tte." />
+  <string key="UninstallLocalPackage.Step2.LayoutLabel" value="Afinstall&#233;r lokal pakke" />
+  <string key="UninstallLocalPackage.Step2.HeadingTitle" value="Klar til at afinstallere" />
+  <string key="UninstallLocalPackage.Step2.HeadingDescription" value="Klar til at afinstallere pakken. Bem&#230;rk, at afinstalleringen kan tage flere minutter. Klik p&#229; &#39;n&#230;ste&#39; for at forts&#230;tte." />
+  <string key="UninstallLocalPackage.Step3.LayoutLabel" value="Pakke afinstalleret" />
+  <string key="UninstallLocalPackage.Step3.HeadingTitle" value="Pakke afinstalleret med succes" />
+  <string key="UninstallLocalPackage.Step3.HeadingDescription" value="Pakke afinstalleret med succes." />
+  <string key="UninstallLocalPackage.ShowError.LayoutLabel" value="Afinstallation af pakken mislykkedes" />
+  <string key="UninstallLocalPackage.ShowError.InfoTableCaption" value="Afinstallation af pakken mislykkedes" />
+  <string key="UninstallLocalPackage.ShowError.MessageTitle" value="Besked" />
+  <string key="AddPackageSource.Step1.LayoutLabel" value="Ny pakke kilde" />
+  <string key="AddPackageSource.Step1.FieldGroupLabel" value="Pakkekilde data" />
+  <string key="AddPackageSource.Step1.UrlLabel" value="Pakke webservice-URL" />
+  <string key="AddPackageSource.Step1.UrlHelp" value="Pakker kan hostes p&#229; eksterne servere. Pakkens  webservice-URL vil blive valideret i det n&#230;ste trin." />
+  <string key="AddPackageSource.Step1.UrlNotValid" value="Den indtastede tekst var ikke en gyldig URL" />
+  <string key="AddPackageSource.Step1.UrlNonPackageServer" value="Serveren er ikke en Composite C1 pakke server" />
+  <string key="AddPackageSource.Step2.LayoutLabel" value="Tilf&#248;j pakke server kilde" />
+  <string key="AddPackageSource.Step2.HeadingTitle" value="Server-URL&#39;en er gyldig" />
+  <string key="AddPackageSource.Step2.HeadingNoHttpsDescription" value="Bem&#230;rk, at HTTP-protokollen er i brug p&#229; denne forbindelse. Dette indeb&#230;rer, at alle oplysninger vil blive sendt ukrypteret. Klik p&#229; &#39;udf&#248;r&#39; for at tilf&#248;je kilden." />
+  <string key="AddPackageSource.Step2.HeadingWithHttpsDescription" value="Klik p&#229; &#39;udf&#248;r&#39; for at tilf&#248;je kilden." />
+  <string key="DeletePackageSource.Step1.LayoutLabel" value="Slet bekr&#230;ftelse" />
+  <string key="DeletePackageSource.Step1.Text" value="Slet den valgte serverkilde" />
+
+  <string key="ConfirmLicense.ExpiredTitle" value="Pr&#248;veperioden er udl&#248;bet" />
+  <string key="ConfirmLicense.ExpiredMessage" value="Pakkens pr&#248;veperiode er udl&#248;bet. Du m&#229; skaffe en gyldig licens." />
+</strings>

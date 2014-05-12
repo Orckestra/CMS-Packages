@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="AddNewPageStep1.DialogLabel" value="Tilf&#248;j ny side" />
+  <string key="GeneralSettings.FieldGroupLabel" value="Generelle indstillinger" />
+  <string key="PublicationSettings.FieldGroupLabel" value="Publiceringsindstillinger" />
+  <string key="AdvancedSettings.FieldGroupLabel" value="Avancerede indstillinger" />
+  <string key="AddNewPageStep1.LabelTitle" value="Sidetitel" />
+  <string key="AddNewPageStep1.LabelTitleHelp" value="Indtastningerne i dette felt vises i browservinduets titelbar. Feltet bruges af s&#248;gemaskiner og sitemaps" />
+  <string key="AddNewPageStep1.LabelAbstract" value="Beskrivelse" />
+  <string key="AddNewPageStep1.LabelAbstractHelp" value="Brug dette felt til en kort beskrivelse af siden" />
+  <string key="AddNewPageStep1.LabelTemplate" value="Sidetype" />
+  <string key="AddNewPageStep1.HelpTemplate" value="Valg af sidetype p&#229;virker adf&#230;rden og funktionerne  p&#229; din side, som p&#229; &#39;en normal side&#39; eller &#39;en blog&#39; . De tilg&#230;ngelige indstillinger afh&#230;nger af de installerede funktioner." />
+  <string key="AddNewPageStep1.LabelPosition" value="Placering" />
+  <string key="AddNewPageStep1.HelpPosition" value="V&#230;lg hvor i indholdstr&#230;et du &#248;nsker, at siden skal placeres." />
+  <string key="AddNewPageStep1.LabelAddToTop" value="Inds&#230;t i toppen" />
+  <string key="AddNewPageStep1.LabelAddToBottom" value="Inds&#230;t nederst" />
+  <string key="AddNewPageStep1.LabelAddAlphabetic" value="Inds&#230;t alfabetisk" />
+  <string key="AddNewPageStep1.LabelAddBelowOtherPage" value="V&#230;lg position ..." />
+  <string key="AddNewPageStep2.LabelFieldGroup" value="Avancerede indstillinger" />
+  <string key="AddNewPageStep2.LabelUrlTitle" value="URL-titel" />
+  <string key="AddNewPageStep2.HelpUrlTitle" value="Indtastningen i dette felt vises i browserens adresselinie. Feltet bruges af s&#248;gemaskiner" />
+  <string key="AddNewPageStep2.LabelMenuTitle" value="Menutitel" />
+  <string key="AddNewPageStep2.HelpMenuTitle" value="Indtastningen i dette felt kan bruges i navigationen p&#229; hjemmesiden." />
+  <string key="AddNewPageStep2.LabelPositionSelectorPanel" value="V&#230;lg detaljeret sideposition" />
+  <string key="AddNewPageStep2.LabelPositionSelector" value="Position under" />
+  <string key="AddNewPageStep2.HelpPositionSelector" value="" />
+  <string key="AddNewPageStep1.TitleTooLong" value="Den angivne titel er for lang. Afkort den og pr&#248;v igen" />
+  <string key="AddNewPageStep1.MenuTitleTooLong" value="Den angivne menutitel er for lang. Afkort den og pr&#248;v igen" />
+  <string key="EditPage.LabelPaneSettings" value="Indstillinger" />
+  <string key="EditPage.LabelPublicationState" value="Status" />
+  <string key="EditPage.HelpPublicationState" value="Send siden til en anden status" />
+  <string key="EditPage.LabelPageTitle" value="Sidetitel" />
+  <string key="EditPage.LabelPageTitleHelp" value="Indtastningerne i dette felt vises i browservinduets titelbar. Feltet bruges af s&#248;gemaskiner og sitemaps" />
+  <string key="EditPage.LabelMenuTitle" value="Menutitel" />
+  <string key="EditPage.HelpMenuTitle" value="Indtastningen i dette felt kan bruges i navigationen p&#229; hjemmesiden." />
+  <string key="EditPage.LabelUrlTitle" value="URL-titel" />
+  <string key="EditPage.UrlTitleFormattedTitle" value="URL-titlen blev omskrevet" />	
+  <string key="EditPage.UrlTitleFormattedMessage" value="I henhold til de aktuelle URL-udskiftningsregler blev URL-titlen &#230;ndret til &#39;{0}&#39;" />
+  <string key="EditPage.HelpUrlTitle" value="Indtastningen i dette felt vises i browserens adresselinje som en del af URL-adressen. Feltet bruges af s&#248;gemaskiner" />
+  <string key="EditPage.LabelFriendlyUrl" value="Brugervenlig  URL" />
+  <string key="EditPage.HelpFriendlyUrl" value="Indtastningen i dette felt er en forkortelse af sidens faktiske URL og videresender til dette, n&#229;r det indtastes i browserens adresselinie. Bem&#230;rk at nogle servere skal konfigureres for at underst&#248;tte denne funktion." />
+  <string key="EditPage.LabelAbstract" value="Beskrivelse" />
+  <string key="EditPage.LabelAbstractHelp" value="Brug dette felt til en kort beskrivelse af siden" />
+  <string key="EditPage.LabelPublishDate" value="Publiseringsdato" />
+  <string key="EditPage.HelpPublishDate" value="Angiv p&#229; hvilken dato og p&#229; hvilket tidspunkt du &#248;nsker, at siden skal publiseres. Siden vil automatisk blive publiseret p&#229; det angivne tidspunkt." />
+  <string key="EditPage.LabelUnpublishDate" value="Publiseringsdato" />
+  <string key="EditPage.HelpUnpublishDate" value="Angiv p&#229; hvilken dato og p&#229; hvilket tidspunkt du &#248;nsker, at siden skal afpubliseres. Siden bliver automatisk fjernet fra hjemmesiden p&#229; det angivne tidspunkt." />
+  <string key="EditPage.LabelContent" value="Indhold" />
+  <string key="EditPage.LabelPreview" value="Forh&#229;ndsvisning" />
+  <string key="EditPage.PageTypeSelectorLabel" value="Sidetype" />
+  <string key="EditPage.PageTypeSelectorHelp" value="Valg af sidetype definerer sidens rolle som &#39;en normal side&#39; eller &#39;en blog&#39; . De tilg&#230;ngelige indstillinger afh&#230;nger af de installerede funktioner." />
+  <string key="EditPage.MaxLength" value="{0} karakterer maksimum" />
+  <string key="DeletePage.LabelFieldGroup" value="Slet siden ?" />
+  <string key="DeletePageStep1.Title" value="Slet siden og alle dens undersider" />
+  <string key="DeletePageStep1.Description" value="Alle undersider vil ogs&#229; blive slettet. Forts&#230;t?" />
+  <string key="DeletePageStep2.Text" value="Slet side &#39;{0}&#39;?" />
+  <string key="UrlTitleNotUniqueError" value="Der er en anden side som bruger den valgte URL-titel. URL-titler skal v&#230;re unikke for sider som har samme overside." />
+  <string key="UrlTitleNotValidError" value="Den angivne URL-titel indeholder ugyldige tegn. Da dette felt bruges til at bygge sidens web-adresse, er visse specialtegn (som sp&#248;rgsm&#229;lstegn, skr&#229;streg og punktum) ikke tilladt. Du kan anvende bogstaver, tal og bindestreg." />
+  <string key="UrlTitleTooLong" value="Den angivne URL-titel er for lang. Afkort den og pr&#248;v igen" />
+  <string key="FriendlyUrlNotUniqueError" value="Der findes en anden side, som bruger det angivne, brugervenlige URL. Brugervenlige URL&#39;er skal v&#230;re unikke." />
+  <string key="TitleMissingError" value="Titlen kan ikke v&#230;re tom." />
+  <string key="PageSaveValidationFailedTitle" value="Siden blev ikke gemt" />
+  <string key="PageSaveValidationFailedMessage" value="Siden kunne ikke valideres og er ikke blevet gemt. Unders&#248;g  venligst feltets beskeder." />
+  <string key="PageElementProvider.RootLabel" value="Hjemmesider" />
+  <string key="PageElementProvider.RootLabelToolTip" value="Hjemmesider" />
+  <string key="PageElementProvider.AddPageAtRoot" value="Tilf&#248;j hjemmeside ..." />
+  <string key="PageElementProvider.AddPageAtRootToolTip" value="Tilf&#248;j ny startside" />
+  <string key="PageElementProvider.ViewUnpublishedItems" value="Lav en liste over upublicerede sider" />
+  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="F&#229; overblik over sider og sidemappe data, som endnu ikke er publiseret." />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-title" value="Upubliceret indhold" />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-description" value="Listen nedenfor viser sider og sidedata som i &#248;jeblikket er under redigering eller er klar til at blive godkendt / publiceret." />
+  <string key="PageElementProvider.EditPage" value="Redig&#233;r side" />
+  <string key="PageElementProvider.EditPageToolTip" value="Redig&#233;r valgte side" />
+  <string key="PageElementProvider.Delete" value="Slet" />
+  <string key="PageElementProvider.DeleteToolTip" value="Slet den valgte side" />
+  <string key="PageElementProvider.LocalizePage" value="Overs&#230;t side" />
+  <string key="PageElementProvider.LocalizePageToolTip" value="Overs&#230;t valgte side" />
+  <string key="PageElementProvider.AddSubPage" value="Tilf&#248;j side ..." />
+  <string key="PageElementProvider.AddSubPageToolTip" value="Tilf&#248;j ny side under den valgte" />
+  <string key="PageElementProvider.ViewPublicPage" value="Vis siden (kun publiceret)" />
+  <string key="PageElementProvider.ViewPublicToolTip" value="Vis seneste publiserede version" />
+  <string key="PageElementProvider.ViewDraftPage" value="Vis siden (med udkast)" />
+  <string key="PageElementProvider.ViewDraftToolTip" value="Vis de seneste &#230;ndringer" />
+  <string key="PageElementProvider.DisplayLocalOrderingLabel" value="Vis sidens lokale ordninger" />
+  <string key="PageElementProvider.DisplayLocalOrderingToolTip" value="Vis sidens lokale ordninger" />
+  <string key="PageElementProvider.DisabledPage" value="Endnu ikke godkendt eller publiceret" />
+  <string key="PageElementProvider.MissingTemplateTitle" value="Hjemmesideskabelon er p&#229;kr&#230;vet" />
+  <string key="PageElementProvider.MissingTemplateMessage" value="En hjemmesideskabelon er p&#229;kr&#230;vet for at kunne oprette en ny side, men der er endnu ikke oprettet en skabelon. Du kan oprette en skabelon under layoutperspektiv." />
+  <string key="PageElementProvider.MissingActiveLanguageTitle" value="Sprog er p&#229;kr&#230;vet" />
+  <string key="PageElementProvider.MissingActiveLanguageMessage" value="For at kunne tilf&#248;je en side, m&#229; du f&#248;rst tilf&#248;je mindst &#233;t sprog.  Dette kan g&#248;res i &#39;system&#39; perspektiv." />
+  <string key="PageElementProvider.NoPageTypesAvailableTitle" value="Der er ingen sidetype tilg&#230;ngelig" />
+  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="Du b&#248;r oprette mindst &#233;n sidetype f&#248;rst" />
+  <string key="PageElementProvider.MissingPageTypeTitle" value="Sidetype er p&#229;kr&#230;vet" />
+  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="Hvis du vil oprette en startside, er det n&#248;dvendigt at bruge en sidetype uden restriktionen &#39;kun undersider&#39;, men en s&#229;dan er endnu ikke oprettet.  Du kan tilf&#248;je en under layoutperspektiv." />
+  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="For at oprette en underside, er det n&#248;dvendigt at bruge en sidetype uden restriktionen &#39;kun startsider&#39;, men ingen er blevet tilf&#248;jet endnu. Du kan tilf&#248;je en under layoutperspektiv." />  
+  <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Siden kunne ikke tilf&#248;jes!" />
+  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="De regler, der definerer sidetypernes tilg&#230;ngelighed, forbyder tilf&#248;jelse af en side her." />
+  <string key="ManageHostNames.Add.DialogLabel" value="Administr&#233;r v&#230;rtsnavn" />
+  <string key="ManageHostNames.Add.HeadingTitle" value="Tilf&#248;j v&#230;rtsnavnsassociation til side" />
+  <string key="ManageHostNames.Add.HeadingDescription" value="Du kan knytte et v&#230;rtsnavn (eller et dom&#230;nenavn) til en side ved at angive det i feltet nedenfor. Bem&#230;rk, at det angivne v&#230;rtsnavns DNS-indstillinger ogs&#229; skal konfigureres. Dette g&#248;res udenfor dette system." />
+  <string key="ManageHostNames.Add.FieldGroupLabel" value="V&#230;rtsnavnets tilknytning til siden" />
+  <string key="ManageHostNames.Add.HostNameTextBoxLabel" value="V&#230;rtsnavn" />
+  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Angiv det  v&#230;rtsnavn (ligesom &#39;www.composite.net&#39; eller &#39;composite.net&#39;), som du &#248;nsker at knytte til denne side" />
+  <string key="ManageHostNames.Add.InvalidHostNameSyntaxError" value="V&#230;rtsnavnets syntaks er ikke gyldig" />
+  <string key="ManageHostNames.Add.HostNameNotUniqueError" value="Dette v&#230;rtsnavn er allerede tilknyttet en side. Du skal fjerne den eksisterende tilknytning f&#248;rst." />
+  <string key="ManageHostNames.Remove.DialogLabel" value="Administr&#233;r v&#230;rtsnavn" />
+  <string key="ManageHostNames.Remove.FieldGroupLabel" value="Fjern v&#230;rtsnavnstilknytning fra siden." />
+  <string key="ManageHostNames.Remove.MultiSelectorLabel" value="V&#230;rtsnavne som skal fjernes" />
+  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="De v&#230;rtsnavne, du v&#230;lger, vil ikke l&#230;ngere v&#230;re tilknyttet siden" />
+  <string key="Preview.PublishedPage.NotPublishedTitle" value="Den valgte side er ikke publiseret" />
+  <string key="Preview.PublishedPage.NotPublishedMessage" value="Den valgte side er ikke publiseret" />
+  <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="Bekr&#230;ft venligst sletning af alle undersider" />
+  <string key="DeletePageWorkflow.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
+  <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="Siden refereres til af en anden type, som ikke tillader multiple sletninger. Denne handling er standset" />
+  <string key="DeletePageWorkflow.HasCompositionsTitle" value="Siden kan ikke slettes" />
+  <string key="DeletePageWorkflow.HasCompositionsMessage" value="Denne side indeholder en eller flere sidemapper eller metadatafelter. Slet disse f&#248;rst." />
+</strings>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+	<!-- preload precaution -->
+	<string key="Preload.Key" value="Retrieved on SourceEditorBinding startup to make sure strings are loaded :)" />
+	
+	<!-- validation messages -->
+	<string key="Invalid.HTML.DialogTitle" value="Ugyldig XHTML" />
+	<string key="Invalid.HTML.MissingHtml" value="Rodens &lt;html&gt; tag mangler." />
+	<string key="Invalid.HTML.MissingHead" value="Tag&#39;et  &lt;head&gt; mangler." />
+	<string key="Invalid.HTML.MissingBody" value="Tag&#39;et &lt;body&gt; mangler." />
+	<string key="Invalid.HTML.HeadBodyIndex" value="Tag&#39;et &lt;head&gt; skal g&#229; forud for &lt;body&gt;." />
+	<string key="Invalid.HTML.NamespaceURI" value="Rodens navnefelt er forkert." />
+	<string key="Invalid.HTML.MultipleBody" value="Kun &#233;t &lt;body&gt; tag er tilladt." />
+	<string key="Invalid.HTML.MultipleHead" value="Kun &#233;t &lt;head&gt; tag er tilladt." />
+  <string key="Invalid.HTML.NotAllowedHtmlChild" value="Rodens &lt;html&gt; tag kan kun have &lt;head&gt; og &lt;body&gt; som underelementer." />
+  
+
+  <string key="Format.XML.ErrorDialog.Title" value="Kildeformat afbrudt" /> 
+	<string key="Format.XML.ErrorDialog.Text" value="XML kildeformatering kr&#230;ver en velformet dokumentstruktur." />
+	
+	<!-- plain/colored switch button -->
+	<string key="Switch.PlainEdit.Label" value="Simpel redigering" />
+	<string key="Switch.PlainEdit.ToolTip" value="Ingen syntaksfremh&#230;vning, hurtigere ydeevne" />
+	<string key="Switch.ColoredEdit.Label" value="Farvet redigering" />
+	<string key="Switch.ColoredEdit.ToolTip" value="Syntaksfremh&#230;vning, langsommere ydeevne" />
+
+  <!-- toolbar menus -->
+  <string key="Toolbar.Insert.Label" value="Tilf&#248;j" />
+  <string key="Toolbar.Format.Label" value="Format&#233;r" />
+  <string key="Toolbar.Format.ToolTip" value="Format&#233;r XML kilde" />
+  
+  <!-- insert dropdown -->
+	<string key="Insert.PageURL.Label" value="Side-url" />
+	<string key="Insert.ImageURL.Label" value="Billed-url" />
+	<string key="Insert.MediaURL.Label" value="Medie-url" />
+	<string key="Insert.FrontendURL.Label" value="Frontende-url" />
+	<string key="Insert.FunctionMarkup.Label" value="Funktionsmarkup" />
+	
+</strings>

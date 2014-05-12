@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootElement.Label" value="Brugerkontrolfunktioner" />
+  <string key="RootElement.ToolTip" value="Funktioner baseret p&#229;. Ascx styringer" />
+
+  <string key="AddNewUserControlFunction.Label" value="Tilf&#248;j brugerkontrolfunktion" />
+  <string key="AddNewUserControlFunction.ToolTip" value="Tilf&#248;j en ny brugerkontrolfunktion" />
+  <string key="EditUserControlFunction.Label" value="Redig&#233;r" />
+  <string key="EditUserControlFunction.ToolTip" value="Redig&#233;r brugerkontrolfunktion" />
+  <string key="DeleteUserControlFunction.Label" value="Slet" />
+  <string key="DeleteUserControlFunction.ToolTip" value="Slet brugerkontrolfunktionen" />
+  
+  <string key="AddNewUserControlFunction.LabelDialog" value="Tilf&#248;j brugerkontrolfunktion" />
+  <string key="AddNewUserControlFunction.LabelFieldGroup" value="Ny brugerkontrolfunktion" />
+  <string key="AddNewUserControlFunction.LabelName" value="Navn" />
+  <string key="AddNewUserControlFunction.HelpName" value="" />
+  <string key="AddNewUserControlFunction.LabelNamespace" value="Navnefelt" />
+  <string key="AddNewUserControlFunction.HelpNamespace" value="" />
+  <string key="AddNewUserControlFunction.LabelCopyFrom" value="Kopi&#233;r fra" />
+  <string key="AddNewUserControlFunction.LabelCopyFromHelp" value="Du kan kopiere koden fra en anden brugerkontrolfunktion ved at v&#230;lge den p&#229; listen." />
+  <string key="AddNewUserControlFunction.LabelCopyFromEmptyOption" value="(Ny brugerkontrolfunktion)" />
+
+  <string key="AddNewUserControlFunctionWorkflow.DuplicateName" value="Der findes allerede en C1-funktion med samme navn" />
+  <string key="AddNewUserControlFunctionWorkflow.EmptyName" value="Funktionens navn er tomt" />
+  <string key="AddNewUserControlFunctionWorkflow.NamespaceEmpty" value="Funktionens navnefelt er tomt" />
+  <string key="AddNewUserControlFunctionWorkflow.InvalidNamespace" value="Navnefeltet skal v&#230;re som A.B.C -  det m&#229; ikke starte og slutte med punktum" />
+  <string key="AddNewUserControlFunctionWorkflow.TotalNameTooLang" value="Den samlede l&#230;ngde af navnet og navnefeltet er for lang (bruges til at navngive ASCX filen)." />
+
+  <string key="EditUserControlFunctionWorkflow.Validation.DialogTitle" value="Valideringsfejl" />
+  <string key="EditUserControlFunctionWorkflow.Validation.CompilationFailed" value="Kompilering mislykkedes: {0}" />
+  <string key="EditUserControlFunctionWorkflow.Validation.IncorrectBaseClass" value="Brugerkontrolfunktionen skal arve &#39;{0}&#39;" />
+
+  <string key="DeleteUserControlFunctionWorkflow.ConfirmDeleteTitle" value="Slet brugerkontrolfunktion?" />
+  <string key="DeleteUserControlFunctionWorkflow.ConfirmDeleteMessage" value="Slet den valgte brugerkontrol?" />
+</strings>

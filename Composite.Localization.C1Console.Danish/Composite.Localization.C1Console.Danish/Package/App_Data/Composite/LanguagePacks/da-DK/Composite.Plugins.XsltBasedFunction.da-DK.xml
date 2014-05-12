@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderLabel" value="XSLT-funktioner" />
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderToolTip" value="XSLT-funktioner" />
+  <string key="AddNewXsltFunctionWorkflow.DuplicateName" value="Der findes allerede en  XSLT funktion med samme navn." />
+  <string key="AddNewXsltFunctionWorkflow.MethodEmpty" value="Metodenavn m&#229; ikke v&#230;re tomt" />
+  <string key="AddNewXsltFunctionWorkflow.NamespaceEmpty" value="Navnefeltet skal v&#230;re ikke-tomt" />
+  <string key="AddNewXsltFunctionWorkflow.InvalidNamespace" value="Navnefeltet skal v&#230;re som A.B.C -  det m&#229; ikke starte og slutte med punktum" />
+  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageTitle" value="Et sprog er p&#229;kr&#230;vet" />
+  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Et sprog er p&#229;kr&#230;vet, for  at oprette en XSLT funktion, men der er endnu ikke tilf&#248;jet nogen sprog. Du kan tilf&#248;je et under systemperspektiv." />
+  <string key="AddNewXsltFunctionWorkflow.MissingPageTitle" value="En side er n&#248;dvendig" />
+  <string key="AddNewXsltFunctionWorkflow.MissingPageMessage" value="Mindst &#233;n side skal tilf&#248;jes, for at en  XSLT funktion kan oprettes." />
+  <string key="AddNewXsltFunctionWorkflow.TotalNameTooLang" value="Den samlede l&#230;ngde af navnet og navnefeltet er for lang (bruges til at navngive XSL fil)." />
+  <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteTitle" value="Slet XSLT funktion?" />
+  <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteMessage" value="Slet den valgte XSLT?" />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorTitle" value="Multipel slettefejl" />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorMessage" value="Der er en anden type, som referer til typen, som ikke tillader kumulerede sletninger. Denne handling er stoppet" />
+  <string key="EditXsltFunctionWorkflow.DuplicateName" value="Der findes allerede en  XSLT funktion med samme navn." />
+  <string key="EditXsltFunctionWorkflow.EmptyMethodName" value="Metodenavnet skal v&#230;re ikke-tom" />
+  <string key="EditXsltFunctionWorkflow.NamespaceEmpty" value="Navnefeltet skal v&#230;re ikke-tomt" />
+  <string key="EditXsltFunctionWorkflow.InvalidNamespace" value="Navnefeltet skal v&#230;re som A.B.C - ikke starte og slutte med &#39;.&#39; (punktum)" />
+  <string key="EditXsltFunctionWorkflow.InvalidFileName" value="XslFilStien skal starte med \ eller /" />
+  <string key="EditXsltFunctionWorkflow.InvalidName" value="Ugyldigt funktionsnavn" />
+  <string key="EditXsltFunctionWorkflow.CannotRenameFileExists" value="Funktionen kan ikke omd&#248;bes, filen &#39;{0}&#39; findes allerede." />
+  <string key="EditXsltFunctionWorkflow.TotalNameTooLang" value="Den samlede l&#230;ngde af navnet og navnefeltet er for lang (bruges til at navngive XSL fil)." />
+
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashTitle" value="Duplik&#233;r lokale funktionsnavne" />
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashMessage" value="To eller flere funktionskald har samme lokale navn. Du m&#229; &#230;ndre navnene, s&#229; de alle er forskellige." />
+  
+  <string key="XsltBasedFunctionProviderElementProvider.Add" value="Tilf&#248;j XSLT funktion" />
+  <string key="XsltBasedFunctionProviderElementProvider.AddToolTip" value="Tilf&#248;j ny XSLT funktion" />
+  <string key="XsltBasedFunctionProviderElementProvider.Edit" value="Redig&#233;r" />
+  <string key="XsltBasedFunctionProviderElementProvider.EditToolTip" value="Redig&#233;r XSLT funktion" />
+  <string key="XsltBasedFunctionProviderElementProvider.Delete" value="Slet" />
+  <string key="XsltBasedFunctionProviderElementProvider.DeleteToolTip" value="Slet XSLT funktion" />
+  <string key="AddNewXsltFunctionStep1.LabelDialog" value="Tilf&#248;j ny XSLT funktion" />
+  <string key="AddNewXsltFunctionStep1.LabelFieldGroup" value="Ny Xslt funktion" />
+  <string key="AddNewXsltFunctionStep1.LabelName" value="Navn" />
+  <string key="AddNewXsltFunctionStep1.HelpName" value="" />
+  <string key="AddNewXsltFunctionStep1.LabelNamespace" value="Navnefelt" />
+  <string key="AddNewXsltFunctionStep1.HelpNamespace" value="" />
+  <string key="AddNewXsltFunctionStep1.LabelOutputType" value="Output type" />
+  <string key="AddNewXsltFunctionStep1.LabelCopyFrom" value="Kopi&#233;r fra" />
+  <string key="AddNewXsltFunctionStep1.LabelCopyFromEmptyOption" value="(Ny XSLT funktion)" />
+
+
+  <string key="EditXsltFunction.LabelSettings" value="Indstillinger" />
+  <string key="EditXsltFunction.LabelName" value="Navn" />
+  <string key="EditXsltFunction.HelpName" value="" />
+  <string key="EditXsltFunction.LabelNamespace" value="Navnefelt" />
+  <string key="EditXsltFunction.HelpNamespace" value="" />
+  <string key="EditXsltFunction.LabelDescription" value="Beskrivelse" />
+  <string key="EditXsltFunction.HelpDescription" value="" />
+  <string key="EditXsltFunction.LabelDebug" value="Fejlfind" />
+  <string key="EditXsltFunction.LabelPage" value="Side" />
+  <string key="EditXsltFunction.HelpPage" value="Ved debugging bruges denne side som baggrund for renderingen." />
+  <string key="EditXsltFunction.LabelAdminitrativeScope" value="Administrativ" />
+  <string key="EditXsltFunction.LabelPublicScope" value="Offentlig" />
+  <string key="EditXsltFunction.LabelPageDataScope" value="Dataomfang" />
+  <string key="EditXsltFunction.HelpPageDataScope" value="V&#230;lg offentlig eller udviklingsversion som kontekst for renderingen." />
+  <string key="EditXsltFunction.LabelActiveLocales" value="Sprog" />
+  <string key="EditXsltFunction.HelpActiveLocales" value="V&#230;lg det sprog, som skal bruges mens funktionen debugges." />
+  <string key="EditXsltFunction.OutputType" value="Output type" />
+  <string key="EditXsltFunction.LabelInputParameters" value="Inputparametre" />
+  <string key="EditXsltFunction.LabelFunctionCalls" value="Funktionsopkald" />
+  <string key="EditXsltFunction.LabelTemplate" value="Skabelon" />
+  <string key="EditXsltFunction.LabelPreview" value="Forh&#229;ndsvisning" />
+  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageTitle" value="Der kr&#230;ves et sprog" />
+  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Et sprog er p&#229;kr&#230;vet, for at kunne redigere en XSLT funktion, men der er endnu ikke tilf&#248;jet nogen sprog. Du kan tilf&#248;je et under systemperspektiv." />
+  <string key="EditXsltFunctionWorkflow.MissingPageTitle" value="En side er p&#229;kr&#230;vet" />
+  <string key="EditXsltFunctionWorkflow.MissingPageMessage" value="For at redigere  en XSLT funktion, m&#229; mindst &#233;n side tilf&#248;jes." />
+</strings>

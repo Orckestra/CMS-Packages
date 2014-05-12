@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="TypesAreReferencing" value="En eller flere typer refererer til denne type. Det er ikke muligt at omd&#248;be" />
+  <string key="TypeNameInNamespace" value="Typenavnet &#39;{0}&#39; vises i navnefeltet &#39;{1}&#39; - dette er ikke tilladt" />
+  <string key="TypesNameClash" value="En type med samme navn findes allerede" />
+	<string key="MissingFields" value="Ingen felter blev tilf&#248;jet" />
+	<string key="TypeNameIsInvalidIdentifier" value="Typenavnet &#39;{0}&#39; er ikke et gyldigt id." />
+	<string key="FieldNameCannotBeUsed" value="Feltnavnet &#39;{0}&#39; kan ikke bruges" />
+  <string key="NameSpaceIsTypeTypeName" value="Det angivne &#39;typenavnefelt&#39; er allerede i brug som et &#39;typenavn&#39; (navnefelt + navn). Overvej at &#230;ndre navnet p&#229; &#39;{0}&#39; til &#39;{0}.Item&#39;." />
+	<string key="NamespaceIsReserved" value="Typenavn tilh&#248;rer et reserveret navnefelt." />
+	<string key="CompileErrorWhileAddingType" value="Det er ikke muligt at tilf&#248;je en datatype, da det vil medf&#248;re kompileringsfejl." />
+	<string key="CompileErrorWhileChangingType" value="Det er ikke muligt at  &#230;ndre en datatype, da det vil medf&#248;re kompileringsfejl." />
+</strings>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="EditRazorFileAction.Label" value="Redig&#233;r razor fil" />
+  <string key="EditRazorFileAction.ToolTip" value="Redig&#233;r cshtml fil" />
+
+  <string key="EditRazorTemplateAction.Label" value="Redig&#233;r razor skabelon" />
+  <string key="EditRazorTemplateAction.ToolTip" value="Redig&#233;r cshtml filen bag skabelonen" />
+
+  <string key="DeleteRazorPageTemplateAction.Label" value="Slet" />
+  <string key="DeleteRazorPageTemplateAction.ToolTip" value="Slet sideskabelon" />
+
+  <string key="AddNewRazorPageTemplate.LabelDialog" value="Tilf&#248;j ny razor skabelon" />
+  <string key="AddNewRazorPageTemplate.LabelFieldGroup" value="Razor skabelon" />
+  <string key="AddNewRazorPageTemplate.LabelTemplateTitle" value="Skabelontitel" />
+  <string key="AddNewRazorPageTemplate.LabelTemplateTitleHelp" value="Titlen identificerer denne skabelon p&#229; lister. Overvej at v&#230;lge et kort, men meningsfuldt navn." />
+  <string key="AddNewRazorPageTemplate.LabelCopyFrom" value="Kopi&#233;r fra" />
+  <string key="AddNewRazorPageTemplate.LabelCopyFromHelp" value="Du kan kopiere markup&#39;en fra en anden layoutskabelon ved at v&#230;lge den p&#229; listen." />
+  <string key="AddNewRazorPageTemplate.LabelCopyFromEmptyOption" value="(Ny skabelon)" />
+  <string key="AddNewRazorPageTemplateWorkflow.TitleInUseTitle" value="Titlen er allerede i brug" />
+  <string key="AddNewRazorPageTemplateWorkflow.TitleTooLong" value="Titlen er for lang (bruges som en del af. cshtml filnavnet)." />
+
+  <string key="EditTemplate.Validation.DialogTitle" value="Valideringsfejl" />
+  <string key="EditTemplate.Validation.CompilationFailed" value="Kompilering mislykkedes: {0}" />
+  <string key="EditTemplate.Validation.IncorrectBaseClass" value="Sideskabelonens klasse nedarver ikke &#39;{0}&#39;" />
+  <string key="EditTemplate.Validation.PropertyError" value="Det lykkedes ikke at  evaluere sideskabelonsegenskaben&#39; {0}&#39;. Fejl: {1}" />
+  <string key="EditTemplate.Validation.TemplateIdChanged" value="Det er ikke tilladt at &#230;ndre skabelons-id i den aktuelle arbejdsgang. Det oprindelige skabelons-id er &#39;{0}&#39;" />
+</strings>

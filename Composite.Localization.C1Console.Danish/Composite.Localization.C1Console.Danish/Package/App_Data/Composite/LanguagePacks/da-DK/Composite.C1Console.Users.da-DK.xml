@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+	<!-- change password -->
+	<string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Skift adgangskode ..." />
+	<string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Skift din adgangskode" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Skift adgangskode" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="Skift din adgangskode" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Eksisterende adgangskode" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="Af sikkerhedsm&#230;ssige &#229;rsager skal du indtaste din eksisterende adgangskode, f&#248;r du kan forts&#230;tte." />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Ny adgangskode" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="Adgangskoden angivet i dette felt, skal v&#230;re identitisk med den,  som bekr&#230;ftes nedenfor." />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="Bekr&#230;ft ny adgangskode" />
+	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="Adgangskoden angivet i dette felt skal tilsvare den, som er angivet ovenfor" />
+
+	<!-- change culture -->
+	<string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Regionale indstillinger ..." />
+	<string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Indstil sprog i C1 konsol og formatering af tal, tidspunkter og datoer" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Regionale indstillinger og sprog" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Regionale indstillinger" />
+	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="V&#230;lg et punkt p&#229; listen for at &#230;ndre den m&#229;de hvorp&#229; tal, datoer og tidspunkter vises" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Label" value="Sprog i C1 konsol" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Help" value="V&#230;lg det sprog, som skal anvendes til betegnelser, hj&#230;lpetekster, dialoger osv. De tilg&#230;ngelige indstillinger er her begr&#230;nset til de installerede sprog. Du kan installere flere sprog via  pakkesystemet. Se Composite lokalisering." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="Skift applikationssprog" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="Er du sikker p&#229;, at du &#248;nsker at &#230;ndre indstillingerne? Applikationen genstartes, og alle de &#230;ndringer, som du ikke har gemt, vil g&#229; tabt." />
+	<string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="Regionale indstillinger" />
+	<string key="AdministratorAutoCreator.DefaultGroupName" value="Administratorer" />
+
+	<!-- change own active and foreign locale -->
+	<string key="ChangeForeignLocaleWorkflow.ActionLabel" value="Overs&#230;ttelse ..." />
+	<string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="Skift kildesprog" />
+	<string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="Ingen" />
+	<string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="Overs&#230;ttelse" />
+	<string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="V&#230;lg det sprog, som du &#248;nsker at overs&#230;tte fra" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="Der er ikke installeret flere sprog" />
+	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="For at kunne overs&#230;tte m&#229; to eller flere sprog v&#230;re installeret. Administratorer kan tilf&#248;je flere sprog i &#39;system&#39; oversigten." />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="Fra-sprog" />
+	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Sider skrevet p&#229; fra-sproget vil blive indikeret af klode-ikoner i indholdstr&#230;et. Den associerede &quot;overs&#230;ttelsesside&quot; handling importerer siden p&#229; d&#233;t sprog, som der aktuelt arbejdes p&#229;." />
+
+
+  <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="Det aktive sprog er blevet &#230;ndret" />
+</strings>

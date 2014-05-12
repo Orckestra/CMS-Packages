@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+	<string key="UserGroupElementProvider.RootLabel" value="Brugergrupper" />
+  <string key="UserGroupElementProvider.RootToolTip" value="Brugergrupper" />
+  <string key="UserGroupElementProvider.AddNewUserGroupLabel" value="Tilf&#248;j brugergruppe ..." />  
+  <string key="UserGroupElementProvider.AddNewUserGroupToolTip" value="Tilf&#248;j ny brugergruppe" />
+  <string key="UserGroupElementProvider.EditUserGroupLabel" value="Redig&#233;r brugergruppe" />
+  <string key="UserGroupElementProvider.EditUserGroupToolTip" value="Redig&#233;r brugergruppe" />
+  <string key="UserGroupElementProvider.DeleteUserGroupLabel" value="Slet brugergruppe" />
+  <string key="UserGroupElementProvider.DeleteUserGroupToolTip" value="Slet brugergruppe" />
+
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.LabelFieldGroup" value="Tilf&#248;j brugergruppe" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameLabel" value="Brugergruppens navn" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameHelp" value="Navnet p&#229; den nye brugergruppe" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameAlreadyExists" value="Der findes allerede en brugergruppe med samme navn" />
+
+  <string key="EditUserGroup.EditUserGroupStep1.LabelFieldGroup" value="Redig&#233;r brugergruppe" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameLabel" value="Brugergruppens navn" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameHelp" value="Brugergruppens navn" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameAlreadyExists" value="Der findes allerede en brugergruppe med samme navn" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveFieldLabel" value="Perspektiver" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectLabel" value="Perspektiver" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectHelp" value="V&#230;lg hvilke perspektiver brugeren f&#229;r adgang til at se" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsFieldLabel" value="Globale rettigheder" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectLabel" value="Globale rettigheder" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectHelp" value="Administratorrettigheden giver brugergruppen adgang til at administrere brugergrupperettigheder og udf&#248;re andre administrative opgaver." />
+
+
+  
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersTitle" value="Brugergruppen har brugere" />
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersMessage" value="Du kan ikke slette en brugergruppe, som har brugere." />
+  
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.LabelFieldGroup" value="Slet brugergruppe" />
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.Text" value="Slet den valgte brugergruppe?" />
+</strings>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="AddNewMasterPagePageTemplateWorkflow.LabelDialog" value="Tilf&#248;j ny masterside" />
+
+  <string key="EditMasterPageAction.Label" value="Redig&#233;r master side" />
+  <string key="EditMasterPageAction.ToolTip" value="Redig&#233;r mastersidens kildekode" />
+
+  <string key="DeleteMasterPageAction.Label" value="Slet" />
+  <string key="DeleteMasterPageAction.ToolTip" value="Slet sideskabelon" />
+
+  <string key="EditTemplate.Validation.DialogTitle" value="Valideringsfejl" />
+  <string key="EditTemplate.Validation.CompilationFailed" value="Kompilering mislykkedes: {0}" />
+  <string key="EditTemplate.Validation.IncorrectBaseClass" value="Sideskabelonens klasse nedarver ikke &#39;{0}&#39;" />
+  <string key="EditTemplate.Validation.PropertyError" value="Kunne ikke evaluere sideskabelonens egenskab &#39;{0}&#39;. Fejl: {1}" />
+  <string key="EditTemplate.Validation.TemplateIdChanged" value="Det er ikke tilladt at &#230;ndre skabelon-id&#39;et i det aktuelle workflow. Det oprindelige skabelon-id er &#39;{0}&#39;" />
+
+
+  <string key="AddNewMasterPagePageTemplate.LabelDialog" value="Tilf&#248;j ny master sideskabelon" />
+  <string key="AddNewMasterPagePageTemplate.LabelFieldGroup" value="Master sideskabelon" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitle" value="Skabelontitel" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitleHelp" value="Titlen identificerer denne skabelon p&#229; lister. Overvej at v&#230;lge et kort, men meningsfuldt navn." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFrom" value="Kopi&#233;r fra" />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromHelp" value="Du kan kopiere markup&#39;en fra en anden layoutskabelon ved at v&#230;lge den p&#229; listen." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromEmptyOption" value="(Ny skabelon)" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleInUseTitle" value="Titlen er allerede i brug" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleTooLong" value="Titlenen er for lang (anvendt som en del af et filnavn)." />
+</strings>

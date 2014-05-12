@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <!-- preload precaution -->
+  <string key="Preload.Key" value="Retrieved on SourceEditorBinding startup to make sure strings are loaded :)" />
+  <!-- simple toolbar -->
+  <string key="ToolBar.ToolTipStrong" value="St&#230;rk tekst" />
+  <string key="ToolBar.ToolTipEmphasize" value="Understreg tekst" />
+  <string key="ToolBar.ToolTipUnderline" value="Understreg tekst" />
+  <string key="ToolBar.ToolTipStrike" value="Gennemstreg tekst" />
+  <string key="ToolBar.ToolTipAlignLeft" value="Just&#233;r venstre" />
+  <string key="ToolBar.ToolTipAlignRight" value="Just&#233;r h&#248;jre" />
+  <string key="ToolBar.ToolTipJustifyLeft" value="Begrund venstre" />
+  <string key="ToolBar.ToolTipJustifyRight" value="Begrund h&#248;jre" />
+  <string key="ToolBar.ToolTipJustifyCenter" value="Begrund center" />
+  <string key="ToolBar.ToolTipJustifyFull" value="Begrund fuld" />
+  <string key="ToolBar.ToolTipUnorderedList" value="Uordnet liste" />
+  <string key="ToolBar.ToolTipOrderedList" value="Ordnet liste" />
+  <string key="ToolBar.ToolTipLink" value="Link" />
+  <string key="ToolBar.ToolTipDeleteLink" value="Slet link" />
+  <string key="ToolBar.ToolTipCleanup" value="Oprydning af rodet kode" />
+  <string key="ToolBar.ToolTipUndo" value="Fortryd" />
+  <string key="ToolBar.ToolTipRedo" value="Gendan" />
+  <string key="ToolBar.LabelSource" value="Kilde" />
+  <string key="ToolBar.LabelWysiwyg" value="Visuel" />
+  <!-- format selector -->
+  <string key="FormatSelector.LabelParagraph" value="Paragraf" />
+  <string key="FormatSelector.LabelAddress" value="Adresse" />
+  <string key="FormatSelector.LabelBlockQuote" value="Blokcitat" />
+  <string key="FormatSelector.LabelDivision" value="Opdeling" />
+  <string key="FormatSelector.LabelHeading1" value="Overskrift 1" />
+  <string key="FormatSelector.LabelHeading2" value="Overskrift 2" />
+  <string key="FormatSelector.LabelHeading3" value="Overskrift 3" />
+  <string key="FormatSelector.LabelHeading4" value="Overskrift 4" />
+  <string key="FormatSelector.LabelHeading5" value="Overskrift 5" />
+  <string key="FormatSelector.LabelHeading6" value="Overskrift 6" />
+  <!-- classname selector -->
+  <string key="ClassSelector.LabelNone" value="(Ingen)" />
+  <!-- contextmenu (duplicated in toolbar) -->
+  <string key="ContextMenu.LabelInsert" value="Tilf&#248;j" />
+  <string key="ContextMenu.LabelPaste" value="Inds&#230;t" />
+  <string key="ContextMenu.LabelLink" value="Link" />
+  <string key="ContextMenu.LabelUnLink" value="Fjern link" />
+  <string key="ContextMenu.LabelLinkProperties" value="Linkegenskaber" />
+  <string key="ContextMenu.LabelTable" value="Tabel ..." />
+  <string key="ContextMenu.LabelTableManage" value="H&#229;ndt&#233;r tabel" />
+  <string key="ContextMenu.LabelImage" value="Billede ..." />
+  <string key="ContextMenu.LabelAsText" value="Som simpel tekst ..." />
+  <string key="ContextMenu.LabelField" value="Felt" />
+  <string key="ContextMenu.LabelFieldDelete" value="Slet felt" />
+  <string key="ContextMenu.LabelRendering" value="Funktion ..." />
+  <string key="ContextMenu.LabelCharacter" value="Tegn ..." />
+  <string key="ContextMenu.LabelImageProperties" value="Billedegenskaber..." />
+  <string key="ContextMenu.LabelRenderingProperties" value="Funktionsegenskaber ..." />
+  <string key="ContextMenu.LabelCutRow" value="Slet r&#230;kke" />
+  <string key="ContextMenu.LabelCopyRow" value="Kopi&#233;r r&#230;kke" />
+  <string key="ContextMenu.LabelPasteRow" value="Inds&#230;t r&#230;kke" />
+  <string key="ContextMenu.LabelBefore" value="F&#248;r" />
+  <string key="ContextMenu.LabelAfter" value="Efter" />
+  <string key="ContextMenu.LabelTableProperties" value="Tabel-egenskaber" />
+  <string key="ContextMenu.LabelCellProperties" value="Celle-egenskaber" />
+  <string key="ContextMenu.LabelRowProperties" value="R&#230;kke-egenskaber" />
+  <string key="ContextMenu.LabelInsertRow" value="Inds&#230;t r&#230;kke" />
+  <string key="ContextMenu.LabelDeleteRow" value="Slet r&#230;kke" />
+  <string key="ContextMenu.LabelInsertcolumn" value="Inds&#230;t kolonne" />
+  <string key="ContextMenu.LabelDeleteColumn" value="Slet kolonne" />
+  <string key="ContextMenu.LabelMergeTableCells" value="Flet tabelceller" />
+  <string key="ContextMenu.LabelSplitMergedCells" value="Split flettede celler" />
+  <string key="ContextMenu.LabelDeleteTable" value="Slet tabel" />
+  <string key="ContextMenu.LabelAlignImage" value="Just&#233;r billedet" />
+  <string key="ContextMenu.LabelAlignImageRight" value="H&#248;jre" />
+  <string key="ContextMenu.LabelAlignImageLeft" value="Venstre" />
+  <string key="ContextMenu.LabelAlignImageNone" value="Ingen" />
+  <!-- error dialog -->
+  <string key="ContentError.DialogTitle" value="Kildekode fejl" />
+  <string key="ContentError.DialogText" value="Fejl i kildekoden:" />
+  <!-- template selector -->
+  <string key="TemplateTree.NoTemplateWarning" value="Ingen placeholdere i skabelonen." />
+  <!-- PLUGINS ............................................................... -->
+  <!-- general -->
+  <string key="LabelTabBasic" value="Basal" />
+  <string key="LabelTabAdvanced" value="Avanceret" />
+  <string key="LabelPresentation" value="Pr&#230;sentation" />
+  <string key="LabelClass" value="Klasse" />
+  <string key="HelpClass" value="Klassens attribut angiver et elements CSS klassenavn." />
+  <string key="LabelId" value="Id" />
+  <string key="HelpId" value="Id-attributten kan anvendes af JavaScript eller CSS til at foretage &#230;ndringer af et element." />
+  <string key="MozSecurityNote.LabelSecurityStuff" value="Udklipsholder deaktiveret" />
+  <string key="MozSecurityNote.TextSecurityStuff" value="Af sikkerhedsm&#230;ssige &#229;rsager, blev adgang til klippebordet blokeret af din browser. Brug venligst standard tastaturgenveje. For at f&#229; en teknisk beskrivelse af, hvordan du konfigurerer din browser til brug med Composite C1, skal du trykke p&#229; &quot;mere info&quot; knappen." />
+  <!-- link -->
+  <string key="Link.LabelInsertLink" value="Inds&#230;t link" />
+  <string key="Link.LabelLinkProperties" value="Linkegenskaber" />
+  <string key="Link.LinkDestination" value="Url" />
+  <string key="Link.LinkRole" value="Rolle" />
+  <string key="Link.TitleText" value="Titel" />
+  <string key="Link.LinkTarget" value="M&#229;l" />
+  <string key="Link.LinkTarget.LabelCheckBox" value="&#197;bn i nyt vindue" />
+  <string key="Link.TitleTextToolTip" value="Titelteksten gengives som et v&#230;rkt&#248;jstip, n&#229;r musen sv&#230;ver over linket. Dette kan bruges til at lade dine kunder vide, hvor linket er, uden at forstyrre din tekst." />
+  <string key="Link.LabelLink" value="Link egenskaber" />
+  <!-- table -->
+  <string key="Tables.Cell.CellType" value="Celletype" />
+  <string key="Tables.Cell.LabelWidth" value="Cellebredde" />
+  <string key="Tables.Cell.HorizontalAlignment" value="Vandret justering" />
+  <string key="Tables.Cell.VerticalAlignment" value="Lodret justering" />
+  <string key="Tables.Cell.ApplyTo" value="Anvend &#230;ndringer" />
+  <string key="Tables.Cell.LabelCellProperties" value="Celle-egenskaber" />
+  <string key="Tables.Cell.LabelLayout" value="Layout" />
+  <string key="Tables.Cell.LabelDataCell" value="Datacelle" />
+  <string key="Tables.Cell.LabelHeaderCell" value="Overskriftscelle" />
+  <string key="Tables.Cell.LabelLeft" value="Venstre" />
+  <string key="Tables.Cell.LabelRight" value="H&#248;jre" />
+  <string key="Tables.Cell.LabelTop" value="Top" />
+  <string key="Tables.Cell.LabelCenter" value="Center" />
+  <string key="Tables.Cell.LabelBottom" value="Bund" />
+  <string key="Tables.Cell.LabelScope" value="Omfang" />
+  <string key="Tables.Cell.LabelCurrentCell" value="Aktuel celle" />
+  <string key="Tables.Cell.LabelAllRowCells" value="Alle celler i r&#230;kken" />
+  <string key="Tables.Cell.LabelAllTableCells" value="Alle celler i tabellen" />
+  <string key="Tables.Merge.Columns" value="Kolonner" />
+  <string key="Tables.Merge.Rows" value="R&#230;kker" />
+  <string key="Tables.Merge.LabelMergeCells" value="Flet tabelceller" />
+  <string key="Tables.Row.Rows" value="R&#230;kke i tabeldel" />
+  <string key="Tables.Row.HorizontalAlignment" value="Vandret justering" />
+  <string key="Tables.Row.VerticalAlignment" value="Lodret justering" />
+  <string key="Tables.Row.ApplyTo" value="Anvend &#230;ndringer" />
+  <string key="Tables.Row.LabelRowProperties" value="R&#230;kke-egenskaber" />
+  <string key="Tables.Row.LabelLayout" value="Layout" />
+  <string key="Tables.Row.LabelTableHead" value="Tabelhoved" />
+  <string key="Tables.Row.LabelTableBody" value="Tabelkrop" />
+  <string key="Tables.Row.LabelTableFoot" value="Tabelfod" />
+  <string key="Tables.Row.LabelLeft" value="Venstre" />
+  <string key="Tables.Row.LabelCenter" value="Center" />
+  <string key="Tables.Row.LabelRight" value="H&#248;jre" />
+  <string key="Tables.Row.LabelTop" value="Top" />
+  <string key="Tables.Row.LabelBottom" value="Bund" />
+  <string key="Tables.Row.LabelScope" value="Omfang" />
+  <string key="Tables.Row.LabelCurrentRow" value="Aktuel r&#230;kke" />
+  <string key="Tables.Row.LabelOddRows" value="Ulige r&#230;kker i tabellen" />
+  <string key="Tables.Row.LabelEvenRows" value="Lige r&#230;kker i tabellen" />
+  <string key="Tables.Row.LabelAllRows" value="Alle r&#230;kker i tabellen" />
+  <string key="Tables.Table.TitleInsert" value="Inds&#230;t tabel" />
+  <string key="Tables.Table.TitleUpdate" value="Tabel-egenskaber" />
+  <string key="Tables.Table.Columns" value="Kolonner" />
+  <string key="Tables.Table.Rows" value="R&#230;kker" />
+  <string key="Tables.Table.Summary" value="Resum&#233;" />
+  <string key="Tables.Table.SummaryHelp" value="Resum&#233;et forklarer tabelindholdet og strukturen, s&#229;ledes at personer, som bruger ikke-visuelle browsere (s&#229;som blinde mennesker), bedre kan forst&#229; det. Dette er is&#230;r vigtigt for tabeller uden billedtekster." />
+  <string key="Tables.Table.LabelLayout" value="Tabel layout" />
+  <string key="Tables.Table.LabelMeta" value="Tabelbeskrivelse" />
+  <!-- image -->
+  <string key="Image.Source" value="Kilde" />
+  <string key="Image.AlternativeText" value="Alternativ tekst" />
+  <string key="Image.AlternativeTextToolTip" value="Den alternative tekst vises som synlig tekst i browsere, hvor billeder ikke kan gengives normalt. Dette kan v&#230;re tilf&#230;ldet for mobiltelefon browsere og s&#230;rlige browsere til svagtseende. Alt-attributten b&#248;r klart beskrive billedets indhold." />
+  <string key="Image.TitleText" value="Titeltekst" />
+  <string key="Image.TitleTextToolTip" value="Titelteksten gengives som et v&#230;rkt&#248;jstip, n&#229;r musen sv&#230;ver over billedet.En titel kan &#248;jeblikketligt skabe klarhed omkring et billede, som kan v&#230;re forvirrende for brugeren." />
+  <string key="Image.LabelImage" value="Billedegenskaber" />
+  <string key="Image.LabelInsertImage" value="Inds&#230;t billede" />
+  <string key="Image.LabelImageProperties" value="Billedegenskaber" />
+  <string key="Image.MaxWidth" value="Maksimal bredde" />
+  <string key="Image.MaxWidthToolTip" value="Hvis bredden af ​​billedet er st&#248;rre end den angivne v&#230;rdi, vil det blive reduceret til den angivne v&#230;rdi." />
+  <string key="Image.MaxHeight" value="Maksimal h&#248;jde" />
+  <string key="Image.MaxHeightToolTip" value="Hvis h&#248;jden af ​​billedet er st&#248;rre end den angivne v&#230;rdi, vil det blive reduceret til den angivne v&#230;rdi." />
+
+	<!-- charmap -->
+  <string key="CharMap.LabelSelectSpecialChar" value="V&#230;lg tegn" />
+  <string key="CharMap.LabelGeneral" value="Generelt" />
+  <string key="CharMap.LabelAlphabetical" value="Alfabetisk" />
+  <string key="CharMap.LabelMathSymbols" value="Matematik og symboler" />
+  <string key="CharMap.LabelCommon" value="F&#230;lles" />
+  <string key="CharMap.LabelQuotation" value="Citat" />
+  <string key="CharMap.LabelCurrency" value="Valuta" />
+  <string key="CharMap.LabelLatin" value="Latin" />
+  <string key="CharMap.LabelGreek" value="Gr&#230;sk" />
+  <string key="CharMap.LabelMathAndLogic" value="Matematik og logik" />
+  <string key="CharMap.LabelSymbols" value="Symboler" />
+  <string key="CharMap.LabelArrows" value="Pile" />
+  <!-- text paste -->
+  <string key="TextPaste.Label" value="Inds&#230;t som tekst" />
+  <string key="TextPaste.PasteHereContent" value="Inds&#230;t indhold her. Tryk derefter p&#229; OK." />
+
+  <!-- spellcheck-->
+  <string key="SpellCheck.InfoLabel" value="Hvordan bruges stavekontrol ..." />
+  <string key="SpellCheck.InfoCaption" value="Hvordan bruges stavekontrol i den visuelle editor" />
+  <string key="SpellCheck.InfoText" value="For at f&#229; forslag til forkert stavede ord, skal du holde shift nede n&#229;r du aktiverer genvejsmenuen." />
+
+</strings>

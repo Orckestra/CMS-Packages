@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="DeleteStep1.FieldGroupLabel" value="Slet visuel funktion?" />
+  <string key="DeleteStep1.Text" value="Er du sikker p&#229;, at du &#248;nsker at slette den valgte funktion?" />
+  <string key="AddNew.DialogLabel" value="Tilf&#248;j visuel funktion" />
+  <string key="AddNew.NoTypesExistsErrorTitle" value="Ingen datatyper at visualisere" />
+  <string key="AddNew.NoTypesExistsErrorMessage" value="Der er ikke oprettet nogen datatyper endnu. Du skal f&#248;rst oprette en datatype at visualisere, f&#248;r du kan oprette en visualisering." />
+  <string key="AddNew.NoDataExistsErrorTitle" value="Ingen data at visualisere og forh&#229;ndsvise" />
+  <string key="AddNew.NoDataExistsErrorMessage" value="Dataene skal eksistere, f&#248;r du kan oprette en rendering. F&#248;j nogle data til denne type og pr&#248;v igen." />
+  <string key="AddNew.NoPageTemplatesExistsErrorTitle" value="Ingen skabeloner" />
+  <string key="AddNew.NoPageTemplatesExistsErrorMessage" value="Mindst &#233;n skabelon skal findes, f&#248;r du kan oprette en rendering. Opret en skabelon og pr&#248;v igen." />
+  <string key="AddNew.MissingActiveLanguageTitle" value="Der kr&#230;ves et sprog" />
+  <string key="AddNew.MissingActiveLanguageMessage" value="At skabe en visuel funktion et sprog er p&#229;kr&#230;vet, men er blevet tilf&#248;jet nogen sprog endnu. Du kan tilf&#248;je en under systemperspektiv." />
+  <string key="AddNewStep1.FieldGroupLabel" value="V&#230;lg datatype som skal visualiseres" />
+  <string key="AddNewStep1.TypeSelectorLabel" value="Datatype" />
+  <string key="AddNewStep1.TypeSelectorHelp" value="" />
+  <string key="AddNewStep2.FieldGroupLabel" value="Visuel funktionsnavngivning" />
+  <string key="AddNewStep2.FuncitonNameLabel" value="Funktionsnavn" />
+  <string key="AddNewStep2.FuncitonNameHelp" value="" />
+  <string key="AddNewStep2.FuncitonNamespaceLabel" value="Funktionsnavnefelt" />
+  <string key="AddNewStep2.FuncitonNamespaceHelp" value="" />
+  <string key="Edit.PlaceHolderLabel" value="Visuelle funktionsindstillinger" />
+  <string key="Edit.HeadingTitel" value="Visuel funktion" />
+  <string key="Edit.FieldGroupLabel" value="Visuelle funktionsindstillinger" />
+  <string key="Edit.FunctionNameLabel" value="Funktionsnavn" />
+  <string key="Edit.FunctionNameHelp" value="Funktionens navn. Navne skal v&#230;re unikke med et navnefelt." />
+  <string key="Edit.FunctionNamespaceLabel" value="Funktionsnavnefelt" />
+  <string key="Edit.FunctionNamespaceHelp" value="&#39; Pakken&#39;, som denne funktion tilh&#248;rer." />
+  <string key="Edit.FunctionDescriptionLabel" value="Beskrivelse" />
+  <string key="Edit.FunctionDescriptionHelp" value="En beskrivelse af funktionen, som kan hj&#230;lpe folk med at forst&#229;, hvad den g&#248;r." />
+  <string key="Edit.ItemListLenghtLabel" value="Elementlistens l&#230;ngde" />
+  <string key="Edit.ItemListLenghtHelp" value="Det maksimale antal viste elementer." />
+  <string key="Edit.ItemSortingLabel" value="Elementsortering" />
+  <string key="Edit.ItemSortingHelp" value="V&#230;lg hvilket felt, soms kal bruges, n&#229;r du sorterer listen. Brug &#39;(tilf&#230;ldig)&#39; for at plukke tilf&#230;ldigt fra listen." />
+  <string key="Edit.ListSortingLabel" value="Listens sorteringsr&#230;kkef&#248;lge" />
+  <string key="Edit.ListSortingTrueLabel" value="Stigende" />
+  <string key="Edit.ListSortingFalseLabel" value="Faldende" />
+  <string key="Edit.ListSortingHelp" value="V&#230;lg sorteret r&#230;kkef&#248;lge. Stigende r&#230;kkef&#248;lge er alfabetisk, kronologisk. Dette felt ignoreres, n&#229;r &#39;(tilf&#230;ldig)&#39; sortering er aktiv." />
+  <string key="Edit.PreviewTemplateLabel" value="Forh&#229;ndsvisningsskabelon" />
+  <string key="Edit.PreviewTemplateHelp" value="Denne information bruges kun, n&#229;r funktionen forh&#229;ndsvises." />
+  <string key="Edit.WYSIWYGLayoutLabel" value="Visuelt layout" />
+  <string key="Edit.LabelPreview" value="Forh&#229;ndsvisning" />
+  <string key="Edit.NoPageTemplatesExistsErrorTitle" value="Ingen skabeloner" />
+  <string key="Edit.NoPageTemplatesExistsErrorMessage" value="Mindst &#233;n skabelon skal findes, f&#248;r du kan redigere en gengivelse. Opret en skabelon og pr&#248;v igen." />
+  <string key="Edit.MissingActiveLanguageTitle" value="Et sprog er p&#229;kr&#230;vet" />
+  <string key="Edit.MissingActiveLanguageMessage" value="Et sprog er p&#229;kr&#230;vet, for at kunne redigere en  visuel funktion, men der er endnu ikke tilf&#248;jet nogen sprog. Du kan tilf&#248;je et sprog under systemperspektiv." />
+  <string key="Select.FieldGroupLabel" value="V&#230;lg en visuel funktion" />
+  <string key="Select.FunctionFunctionsLabel" value="V&#230;lg en funktion" />
+  <string key="Select.FunctionFunctionsHelp" value="V&#230;lg en visuel funktion for at redigere eller slette" />
+  <string key="AddVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="Der findes en anden funktion med dette navn. Navne skal v&#230;re unikke." />
+  <string key="EditVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="Der findes en anden funktion med dette navn. Navne skal v&#230;re unikke." />
+  <string key="VisualFunctionElementProvider.RootFolderLabel" value="Visuelle funktioner" />
+  <string key="VisualFunctionElementProvider.RootFolderToolTip" value="Visuelle funktioner" />
+  <string key="VisualFunctionElementProvider.AddNewLabel" value="Tilf&#248;j visuel funktion" />
+  <string key="VisualFunctionElementProvider.AddNewToolTip" value="Tilf&#248;j en ny visuel funktion" />
+  <string key="VisualFunctionElementProvider.EditLabel" value="Redig&#233;r visuel funktion" />
+  <string key="VisualFunctionElementProvider.EditToolTip" value="Redig&#233;r visuel funktion" />
+  <string key="VisualFunctionElementProvider.DeleteLabel" value="Slet visuel funktion" />
+  <string key="VisualFunctionElementProvider.DeleteToolTip" value="Slet visuel funktion" />
+  <string key="VisualFunctionElementProvider.FunctionNameNotUniqueError" value="Der findes en anden funktion med dette navn. Navne skal v&#230;re unikke." />
+  <string key="VisualFunctionElementProviderHelper.AddNewLabel" value="Ny visuel funktion" />
+  <string key="VisualFunctionElementProviderHelper.AddNewToolTip" value="Ny visuel funktion" />
+  <string key="VisualFunctionElementProviderHelper.EditLabel" value="Redig&#233;r visuel funktion" />
+  <string key="VisualFunctionElementProviderHelper.EditToolTip" value="Redig&#233;r visuel funktion" />
+  <string key="VisualFunctionElementProviderHelper.DeleteLabel" value="Slet visuel funktion" />
+  <string key="VisualFunctionElementProviderHelper.DeleteToolTip" value="Slet visuel funktion" />
+</strings>

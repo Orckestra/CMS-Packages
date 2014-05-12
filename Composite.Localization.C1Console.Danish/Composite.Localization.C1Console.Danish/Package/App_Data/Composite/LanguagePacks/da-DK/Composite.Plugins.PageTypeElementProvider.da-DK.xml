@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="PageType.Tree.Root.Label" value="Sidetyper" />
+  <string key="PageType.Tree.DefaultContentElement.Label" value="Placeholder indhold" />
+  <string key="PageType.Tree.MetaDataFieldsElement.Label" value="Metadatafelter" />
+  <string key="PageType.Tree.AddNewPageType.Label" value="Tilf&#248;j sidetype" />
+  <string key="PageType.Tree.AddNewPageType.ToolTip" value="Tilf&#248;j ny sidetype" />
+  <string key="PageType.Tree.EditPageType.Label" value="Redig&#233;r sidetype" />
+  <string key="PageType.Tree.EditPageType.ToolTip" value="Redig&#233;r den valgte sidetype" />
+  <string key="PageType.Tree.DeletePageType.Label" value="Slet sidetype" />
+  <string key="PageType.Tree.DeletePageType.ToolTip" value="Slet den valgte sidetype" />
+  <string key="PageType.Tree.AddDefaultPageContent.Label" value="Tilf&#248;j standardindhold" />
+  <string key="PageType.Tree.AddDefaultPageContent.ToolTip" value="Tilf&#248;j placeholder standardindhold" />
+  <string key="PageType.Tree.EditDefaultPageContent.Label" value="Redig&#233;r standardindhold" />
+  <string key="PageType.Tree.EditDefaultPageContent.ToolTip" value="Redig&#233;r placeholder standardindhold" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.Label" value="Slet standardindhold" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.ToolTip" value="Slet standardindhold" />
+  <string key="PageType.Tree.AddMetaDataField.Label" value="Tilf&#248;j metadatafelt" />
+  <string key="PageType.Tree.AddMetaDataField.ToolTip" value="Tilf&#248;j nyt metadatafelt" />
+  <string key="PageType.Tree.EditMetaDataField.Label" value="Redig&#233;r metadatafelt" />
+  <string key="PageType.Tree.EditMetaDataField.ToolTip" value="Redig&#233;r det valgte metadatafelt" />
+  <string key="PageType.Tree.DeleteMetaDataField.Label" value="Slet metadatafelt" />
+  <string key="PageType.Tree.DeleteMetaDataField.ToolTip" value="Slet valgte metadatafelt" />
+  <string key="PageType.AddNewPageTypeWorkflow.Layout.Label" value="Tilf&#248;j ny sidetype" />
+  <string key="PageType.AddNewPageTypeWorkflow.FieldGroup.Label" value="Indstillinger for ny sidetype" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Label" value="Navn" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Help" value="Den nye sidetypes navn" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Label" value="Beskrivelse" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Help" value="Beskrivelse af ​​den nye sidetype" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsPlaceHolder.Label" value="Indstillinger" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsFieldGroup.Label" value="Sidetypeindstillinger" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Label" value="Navn" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Help" value="Sidetypens navn" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Label" value="Beskrivelse" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Help" value="Beskrivelsen af ​​sidetypen" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Label" value="Tilg&#230;ngelig" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Help" value="Afmarkeres dette vil det ikke v&#230;re muligt at v&#230;lge denne side p&#229; nogen sider" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Label" value="Foruddefineret menutitel" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Help" value="Hvis dette er markeret, vil en standardv&#230;rdi v&#230;re foruddefineret for menutitlen p&#229; siderne" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Label" value="Standard undersidetype" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Help" value="V&#230;lg en sidetype, som skal v&#230;re standard sidetype p&#229; undersider, som oprettes med denne sidetype" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.NoneSelectedLabel" value="[Ingen]" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplatePlaceHolder.Label" value="Layout" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionFieldGroup.Label" value="Layout" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Label" value="Layout restriktioner" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Help" value="V&#230;lg layouts som kun er tilg&#230;ngelige, n&#229;r du redigerer sider af denne sidetype. Hvis ingen er valgt (standard), vil alle v&#230;re til r&#229;dighed." />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Label" value="Standard layout" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Help" value="V&#230;lg et layout, som skal v&#230;re standard layout for sider oprettet med denne sidetype" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.NoneSelectedLabel" value="[Ingen]" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityPlaceHolder.Label" value="Tilg&#230;ngelighed" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityFieldGroup.Label" value="Tilg&#230;ngelighed" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Label" value="Tillad p&#229; sideniveau" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Help" value="Tillad p&#229; sideniveau" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.NoRestrictionLabel" value="Ingen begr&#230;nsninger" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlySubPagesLabel" value="Kun undersider" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlyHomePagesLabel" value="Kun startsider" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Label" value="Tillad kun under" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Help" value="Tillad kun denne sidetype som underelement til de valgte sidetyper." />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderApplicationPlaceHolder.Label" value="Datamapper / applikationer" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderFieldGroup.Label" value="Datamapper" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Label" value="Datamapper" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Help" value="V&#230;lg de datamapper, som automatisk skal tilf&#248;jes sider, som bruger denne sidetype" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationFieldGroup.Label" value="Applikationer" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Label" value="Applikationer" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Help" value="V&#230;lg de applikationer, som automatisk skal tilf&#248;jes sider, som bruger denne sidetype" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.DefaultTemplateNotInRestrictions" value="Standardlayoutet er ikke et af ​​de udvalgte begr&#230;nsede layouts" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.HomepageRelationConflictsWithParentRestrictions" value="Du kan ikke s&#230;tte &quot;tillad kun under&quot; begr&#230;nsninger, hvis du samtidig v&#230;lger &quot;kun startsider&quot;" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Label" value="Slet denne sidetype?" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Messeage" value="Slet sidetypen {0}?" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Label" value="Sidetypen er i brug" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Message" value="Sidetypen {0} er i brug, og det er ikke muligt at slette den" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.Layout.Label" value="Tilf&#248;j standardindhold" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.FieldGroup.Label" value="V&#230;lg placeholder" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Placeholder id" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="Placeholder id. Du kan indtaste et ikke-eksisterende id og skabe placeholderen bagefter (ved at redigere sideskabelonsmarkup)." />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Title" value="Ingen skabeloner med {0}" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Message" value="Bem&#230;rk, at det placeholder id, du har angivet som &#39;{0}&#39;,  ikke findes p&#229; nogen layoutskabelon i &#248;jeblikket." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.Layout.Label" value="Redig&#233;r standardindhold" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsPlaceHolder.Label" value="Indstillinger" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsFieldGroup.Label" value="Placeholder info" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="Placeholder id" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="Placeholderens id. Du kan indtaste et ikke-eksisterende id og skabe placeholderen bagefter (redig&#233;r sideskabelonsmarkup)." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.ContentXhtmlEditor.Label" value="Indhold" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.Layout.Label" value="Tilf&#248;j metadatafelt" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="" />
+  <!-- "Metadata settings" - but too much text! -->
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Programmatisk navn" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="Metadatafeltets unikke navn. Dette kan ikke &#230;ndres senere!" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Vis med label" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Metadatafeltets label. Bruges til UI." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Label" value="Metadatatypen" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Help" value="Metadatatypen" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Display p&#229; fanen" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="V&#230;lg fanen for at vise metadata, n&#229;r du redigerer en side." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.AddingDefaultMetaData.Title" value="Tilf&#248;j metadata standardv&#230;rdier" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Feltnavnet med en anden type er allerede brugt." />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Label" value="Slet metadatafelt ?" />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Message" value="Slet metadatafeltet {0}? Advarsel: alle feltets eksisterende metadataelementer vil ogs&#229; blive slettet" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.Layout.Label" value="Redig&#233;r metadatafelt" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="Metadatafeltets indstillinger" />
+  <!--
+
+  
+-->
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Label" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Metadatafeltets label. Bruges til UI" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Fane" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="V&#230;lg fanen hvor Metadata skal placeres, n&#229;r du redigerer en side" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaTypeName.Label" value="Metatype" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaTypeName.Help" value="Metatypens navn" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Metadatatypen er i brug et andet sted med samme navn men med en anden label" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataContainerChangeNotAllowed" value="Der findes en eller flere definitioner med samme navn. Forandring af container er ikke tilladt" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Title" value="Metadatatypen er blevet slettet" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Message" value="Metadatatypen er blevet slettet fra systemet og kan ikke l&#230;ngere tilf&#248;jes til nogen sidetyper" />
+</strings>

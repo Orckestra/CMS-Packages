@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="WebsiteFilesRootElement.Label" value="/" />
+	<string key="LayoutResourcesRootElement.Label" value="/" /> <!-- Layout Resources -->
+	<string key="LayoutResourcesKeyNameLabel" value="Layout" />
+	
+	<string key="DeleteFile.LabelFieldGroup" value="Slet fil?" />
+	<string key="DeleteFile.Text" value="Slet fil?" />
+	<string key="DeleteFolder.LabelFieldGroup" value="Slet mappe?" />
+	<string key="DeleteFolder.Text" value="Slet mappe?" />
+	<string key="AddNewFolder.LabelFieldGroup" value="Tilf&#248;j ny mappe" />
+	<string key="AddNewFolder.Text" value="Mappenavn" />
+	<string key="AddNewFolder.Help" value="Indtast navnet p&#229; den nye mappe" />
+	<string key="AddNewFolder.Error.FolderExist" value="Der findes allerede en mappe med samme navn" />
+	<string key="AddNewFile.LabelFieldGroup" value="Tilf&#248;j ny fil" />
+	<string key="AddNewFile.Text" value="Filnavn" />
+	<string key="AddNewFile.Help" value="Indtast navnet p&#229; den nye fil" />
+	<string key="AddNewFile.Error.FileExist" value="Der findes allerede en fil med det samme navn" />
+	<string key="UploadNewWebsiteFile.LabelFieldGroup" value="Upload fil" />
+	<string key="UploadNewWebsiteFile.LabelFile" value="V&#230;lg fil" />
+	<string key="UploadNewWebsiteFile.HelpFile" value="V&#230;lg en fil som skal uploades" />
+  <string key="UploadNewWebsiteFile.ConfirmOverwriteTitle" value="Overskriv eksisterende fil" />
+  <string key="UploadNewWebsiteFile.ConfirmOverwriteDescription" value="Der findes allerede en fil med det samme navn, Overskriv?" />
+	<string key="UploadFile.Error.WrongTypeTitle" value="Forkert filtype" />
+	<string key="UploadFile.Error.WrongTypeMessage" value="Forkert filtype" />
+	
+
+	<string key="AddWebsiteFolderTitle" value="Ny mappe" />
+	<string key="AddWebsiteFolderToolTip" value="Tilf&#248;j ny mappe" />
+	<string key="AddWebsiteFileTitle" value="Ny fil" />
+	<string key="AddWebsiteFileToolTip" value="Opret ny fil" />
+	<string key="DeleteWebsiteFileTitle" value="Slet fil" />
+	<string key="DeleteWebsiteFileToolTip" value="Slet fil" />
+  <string key="DownloadFileTitle" value="Download" />
+  <string key="DownloadFileToolTip" value="Hent fil" />
+  <string key="DeleteWebsiteFolderTitle" value="Slet mappe" />
+	<string key="DeleteWebsiteFolderToolTip" value="Slet mappe" />
+	<string key="EditWebsiteFileTitle" value="Redig&#233;r fil" />
+	<string key="EditWebsiteFileToolTip" value="Redig&#233;r fil" />
+	<string key="UploadWebsiteFileTitle" value="Upload fil" />
+	<string key="UploadWebsiteFileToolTip" value="Upload fil" />
+	<string key="AddFolderToWhiteListTitle" value="Vis i &quot;{0}&quot;" />
+	<string key="AddFolderToWhiteListToolTip" value="Kontroll&#233;r om denne mappe skal v&#230;re synlig i &quot;{0}&quot;" />
+	<string key="RemoveFolderFromWhiteListTitle" value="Vis i &quot;{0}&quot;" />
+	<string key="RemoveFolderFromWhiteListToolTip" value="Kontroll&#233;r om denne mappe skal v&#230;re synlig i &quot;{0}&quot;" />
+
+	<string key="DeleteWebsiteFileWorkflow.DeleteErrorTitle" value="Fejl" />
+	<string key="DeleteWebsiteFileWorkflow.DeleteErrorMessage" value="Filen kunne ikke slettes" />
+	<string key="DeleteWebsiteFolderWorkflow.DeleteErrorTitle" value="Fejl" />
+	<string key="DeleteWebsiteFolderWorkflow.DeleteErrorMessage" value="Mappen kunne ikke slettes" />
+</strings>

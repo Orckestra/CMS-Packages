@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="KeyFacade.ErrorTreeNode.Label" value="Fejl i tr&#230;" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Label" value="Vis meddelelse" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.ToolTip" value="Vis fejlmeddelelse" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Title" value="Fejlmeddelelse" />
+  
+  <!-- Validation -->
+  <string key="TreeValidationError.Common.UnknownException" value="Ukendt fejl: &#39;{0}&#39;" />
+  <string key="TreeValidationError.Common.UnknownElement" value="Ukendt element &#39;{0}&#39;" />
+  <string key="TreeValidationError.Common.MissingAttribute" value="Den p&#229;kr&#230;vede attribut &#39;{0}&#39; mangler" />
+  <string key="TreeValidationError.Common.WrongAttributeValue" value="Attributten &#39;{0}&#39; har en v&#230;rdi, som ikke er tilladt" />  
+  <string key="TreeValidationError.Common.MissingProperty" value="Typen &#39;{0}&#39; indeholder ikke en egenskab ved navn &#39;{1}&#39;" />
+  <string key="TreeValidationError.Common.UnkownInterfaceType" value="Typen &#39;{0}&#39; blev ikke fundet" />
+  <string key="TreeValidationError.Common.NotImplementingIData" value="Typen &#39;{0}&#39; implementerer ikke interfacet &#39;{1}&#39;" />
+  <string key="TreeValidationError.Common.WrongPermissinValue" value="V&#230;rdien &#39;{0}&#39; er ikke en tilladt adgangstypev&#230;rdi" />
+  <string key="TreeValidationError.Common.WrongLocationValue" value="V&#230;rdien &#39;{0}&#39; er ikke en tilladt lokationsv&#230;rdi" />
+  <string key="TreeValidationError.Common.MissingFunctionMarkup" value="Manglende funktionsmarkup som underelement" />
+  <string key="TreeValidationError.Common.WrongFunctionMarkup" value="Funktionen kunne ikke oprettes for den angivne funktionsmarkup" />
+
+  <string key="TreeValidationError.Markup.NoRootElement" value="Manglende rod-element i tr&#230;ets markup" />
+  <string key="TreeValidationError.Markup.SchemaError" value="Syntaksfejl: {0} p&#229; linie {1} position {2}" />
+  
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPoint" value="Den vedh&#230;ftede fil punkt &#39;{0}&#39; er ukendt" />
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPosition" value="Den vedh&#230;ftede fil position &#39;{0}&#39; er ukendt" />
+  <string key="TreeValidationError.DataAttachments.NoElementsAllowed" value="Ingen elementer er tilladt i tr&#230;er, som bruges sammen med tr&#230;er med tilknyttet data" />
+
+  <string key="TreeValidationError.ElementRoot.ShareRootElementByIdNotAllowed" value="ShareRootElementById er kun tilladt, hvis tr&#230;et  har et anknytningspunkt med et singul&#230;rt navn" />
+
+  <string key="TreeValidationError.SimpleElement.WrongIdValue" value="V&#230;rdien af ​​id&#39;et er ikke tilladt. Id&#39;et kan ikke v&#230;re tomt, kan ikke starte med NodeAutoId_ og kan ikke v&#230;re RootTreeNode" />
+  <string key="TreeValidationError.SimpleElement.AlreadyUsedId" value="Id-v&#230;rdien &#39;{0}&#39; er allerede anvendt i dette tr&#230;" />
+
+  <string key="TreeValidationError.DataElementsTreeNode.SameInterfaceUsedTwice" value="Data interface &#39;{0}&#39; er i brug mere end &#233;n gang som et underelement med samme overelement. Dette er ikke tilladt" />
+  <string key="TreeValidationError.DataElementsTreeNode.SameParentFilterInterfaceUsedTwice" value="Det samme interface &#39;{0}&#39; er i brug som overtype som overfilter. Dette er ikke tilladt" />
+  <string key="TreeValidationError.DataElementsTreeNode.MoreThanOnParentFilterIsPointingToMe" value="Mere end &#233;t over-filter peger p&#229; interfacet &#39;{0}&#39;. Udskift Display v&#230;rdien til Lazy" />
+
+  <string key="TreeValidationError.DataFolderElements.MissingInterfaceType" value="Typeatributten mangler" />
+  <string key="TreeValidationError.DataFolderElements.WrongInterfaceType" value="Interface typen &#39;{0}&#39; svarer ikke til overelementets interface type &#39;{1}&#39;" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetNotAllowed" value="Datoformatattributten kr&#230;ver, at egenskaben &#39;{0}&#39; skal antage typen &#39;{1}&#39;, men den antager typen &#39;{2}&#39;" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetIsMissing" value="Egenskaben &#39;{0}&#39; antager typen dato og dette kr&#230;ver, at datoformatattributen er til stede" />
+  <string key="TreeValidationError.DataFolderElements.RangesAndFirstLetterOnlyNotAllowed" value="Intervaller og first-letter-only er ikke tilladt samtidigt" />
+  <string key="TreeValidationError.DataFolderElements.WrongFirstLetterOnlyPropertyType" value="First-letter-only kr&#230;ver, at egenskaben &#39;{0}&#39; skal antage typen&#39;{1}&#39;, men den antager typen &#39;{2}&#39;" />
+  <string key="TreeValidationError.DataFolderElements.WrongDateChildInterfaceType" value="Kun underordnede dataelementer med samme interfacetype som mappegrupperingen (&#39;{0}&#39;) er tilladt" />
+  <string key="TreeValidationError.DataFolderElements.InterfaceTypeSwitchNotAllowed" value="Det er ikke tilladt at udskifte interfacetypen &#39;{0}&#39; med en anden interfacetype &#39;{1}&#39; i den samme mappegrupperings-gruppe" />
+  <string key="TreeValidationError.DataFolderElements.SameFieldUsedTwice" value="Det er ikke tilladt at bruge det samme omr&#229;denavn &#39;{0}&#39; to gange i det samme grupperingstr&#230;" />
+  <string key="TreeValidationError.DataFolderElements.TooManyParentIdFilters" value="Maksimalt &#233;t over-idfilterknudepunkt kan bruges i forhold til dataelementer, som anvendes i grupperinger" />
+
+  <string key="TreeValidationError.ParentIdFilterNode.TypeIsNotInParentTree" value="Typen &#39;{0}&#39; findes hverken i dette knudepunkts overtr&#230; eller er specificeret som et anknytningspunkts type" />
+  <string key="TreeValidationError.FieldFilter.UnknownOperatorName" value="Operat&#248;ren &#39;{0}&#39; er ukendt og underst&#248;ttes ikke" />
+  <string key="TreeValidationError.FieldFilter.ValueCouldNotBeConverted" value="Strengv&#230;rdien &#39;{0}&#39; kan ikke konverteres til typen &#39;{1}&#39;" />
+  <string key="TreeValidationError.FieldFilter.OperatorNotSupportedForType" value="Operat&#248;ren &#39;{0}&#39; underst&#248;ttes ikke for typen &#39;{1}&#39;" />
+
+  <string key="TreeValidationError.FunctionFilter.MissingFunctionMarkup" value="Manglende funktionsmarkup" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionMarkup" value="Funktionen kunne ikke oprettes for den angivne funktionsmarkup" />
+  <string key="TreeValidationError.FunctionFilter.WrongReturnValue" value="Funktionen returnerer ikke v&#230;rdier med typen &#39;{0}&#39;" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionReturnType" value="Den af funktionen returnerede returtype er &#39;{0}&#39;, &#39;{1}&#39; var forventet" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterCount" value="Parameteropt&#230;llingen af tilkendegivelser returneret af funktionen er &#39;{0}&#39;, 1 var forventet" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterType" value="Udtryksparametertypen som funktionen returnerer er &#39;{0}&#39;, &#39;{1}&#39; var forventet" />
+  
+  <string key="TreeValidationError.ReportFunctionAction.WrongReturnValue" value="Funktionen returnerer ikke v&#230;rdier med typen &#39;{0}&#39;" />
+  <string key="TreeValidationError.GenericAddDataAction.MissingMarkupFile" value="Filen &#39;{0}&#39; findes ikke" />
+  <string key="TreeValidationError.GenericAddDataAction.BadMarkupPath" value="Den brugerdefinerede markupsti &#39;{0}&#39; er forkert formateret. Brug ~ / Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericEditDataAction.OwnerIsNotDataNode" value="&#39;Edit data action only&#39; g&#230;lder kun for elementer, som producerer dataelementer" />
+  <string key="TreeValidationError.GenericEditDataAction.MissingMarkupFile" value="Filen &#39;{0}&#39; findes ikke" />
+  <string key="TreeValidationError.GenericEditDataAction.BadMarkupPath" value="Den brugerdefinerede markupsti &#39;{0}&#39; er forkert formateret. Brug ~ / Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericDeleteDataAction.OwnerIsNotDataNode" value="&#39;Delete data action only&#39; g&#230;lder kun for elementer, som  producerer dataelementer" />
+  <string key="TreeValidationError.MessageBoxAction.UnknownDialogType" value="Dialogtypen &#39;{0}&#39; underst&#248;ttes ikke" />
+  <string key="TreeValidationError.CustomUrlAction.TooManyPostParameterElements" value="For mange &#39;{0}&#39; elementer. Kun &#233;t er tilladt" />
+  <string key="TreeValidationError.CustomUrlAction.UnknownViewType" value="Viewtypen &#39;{0}&#39; underst&#248;ttes ikke" />
+
+  <string key="TreeValidationError.FieldOrderBy.UnknownDirection" value="Retningsv&#230;rdi &#39;{0}&#39; er forkert. Den skal v&#230;re enten &#39;stigende&#39; eller &#39;faldende&#39;" />
+  <string key="TreeValidationError.FieldOrderBy.UnknownField" value="Typen &#39;{0}&#39; indeholder ikke et felt med navnet &#39;{1}&#39;" />
+
+  <string key="TreeValidationError.DataFieldValueHelper.WrongFormat" value="&#39;{0}&#39; er af det forkerte format. Brug formatet: {1}" />
+  <string key="TreeValidationError.DataFieldValueHelper.InterfaceNotInParentTree" value="Interfacet &#39;{0}&#39; er hverken indeholdt i det aktuelle element eller nogen af dets overelementer" />
+
+  <string key="TreeValidationError.Range.WrongFormat" value="Intervalv&#230;rdien er forkert formateret" />
+  <string key="TreeValidationError.Range.UnsupportedType" value="Egenskaben &#39;{0}&#39; antager typen &#39;{1}&#39;, som ikke underst&#248;tter intervaller" />
+
+  <string key="TreeValidationError.Range.MinMaxError" value="Den f&#248;rste v&#230;rdi ({0}) i et interval b&#248;r v&#230;re mindre end anden v&#230;rdi ({1})" />
+  <string key="TreeValidationError.Range.NextRangeError" value="Et intervals maksimale v&#230;rdi b&#248;r v&#230;re mindre end det efterf&#248;lgende intervals minimumsv&#230;rdi" />
+
+  
+  <!-- Ranges -->
+  
+  <string key="TreeRanges.IntRange.Closed" value="Fra {0} til {1}" />
+  <string key="TreeRanges.IntRange.MinOpenEnded" value="{0} eller mindre" />
+  <string key="TreeRanges.IntRange.MaxOpenEnded" value="{0} eller st&#248;rre" />
+  <string key="TreeRanges.IntRange.Other" value="Andet" />
+
+  <string key="TreeRanges.StringRange.Closed" value="Fra {0} til {1}" />
+  <string key="TreeRanges.StringRange.MinOpenEnded" value="{0} og f&#248;r" />
+  <string key="TreeRanges.StringRange.MaxOpenEnded" value="{0} og efter" />
+  <string key="TreeRanges.StringRange.Other" value="Andet" />
+
+  
+  <!-- Other -->
+  <string key="GenericAddDataAction.DefaultLabel" value="Tilf&#248;j" />
+  <string key="GenericEditDataAction.DefaultLabel" value="Redig&#233;r" />
+  <string key="GenericDeleteDataAction.DefaultLabel" value="Slet" />
+  
+  
+  <string key="TreeGenericDelete.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
+  <string key="TreeGenericDelete.CascadeDeleteErrorMessage" value="Der er en anden type, som referer til typen, som ikke tillader kumulerede sletninger. Denne handling er stoppet" />
+  
+  <string key="TreeGenericDeleteConfirm.LabelFieldGroup" value="Slet data?" />
+  <string key="TreeGenericDeleteConfirm.Text" value="Slet" />
+  
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.LabelFieldGroup" value="Slet data?" />
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.ConfirmationText" value="Der er nogle data, der refereres til, som ogs&#229; vil blive slettet. &#216;nsker du at forts&#230;tte?" />
+
+
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.Label" value="Tilf&#248;j" />
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.ToolTip" value="Tilf&#248;j ny definition af tr&#230;" />           
+  <string key="TreeAddTreeDefinition.Layout.Label" value="Tilf&#248;j ny definition af tr&#230;" />
+  <string key="TreeAddTreeDefinition.FieldGroup.Label" value="Tilf&#248;j ny definition af tr&#230;" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Label" value="Definitionsnavn" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Help" value="Definitionsnavn" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Label" value="Skabelon" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Help" value="Begynd med at v&#230;lge en en skabelon" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Label" value="Placering" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Help" value="Placering" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.Label" value="Slet" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.ToolTip" value="Slet definition af tr&#230;" />
+  <string key="TreeDeleteTreeDefinition.Layout.Label" value="Slet definition af tr&#230;" />
+  <string key="TreeDeleteTreeDefinition.Title" value="Slet valgte definition af tr&#230;" />
+  <string key="TreeDeleteTreeDefinition.Description" value="Slet valgte definition af tr&#230;?" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.Label" value="Redig&#233;r" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.ToolTip" value="Redig&#233;r definition af tr&#230;" />
+
+  <string key="AddApplicationWorkflow.AddApplication.Label" value="Tilf&#248;j applikation" />
+  <string key="AddApplicationWorkflow.AddApplication.ToolTip" value="Tilf&#248;j ny applikation" />
+  <string key="AddApplication.Layout.Label" value="Tilf&#248;j applikation" />
+  <string key="AddApplication.FieldGroup.Label" value="V&#230;lg applikation" />
+  <string key="AddApplication.TreeIdSelector.Label" value="Applikation" />
+  <string key="AddApplication.TreeIdSelector.Help" value="V&#230;lg den applikation, som du &#248;nsker at tilf&#248;je" />
+  <string key="AddApplication.PositionSelector.Label" value="Placering" />
+  <string key="AddApplication.PositionSelector.Help" value="Placeringen af denne applikation" />
+  <string key="AddApplication.NoTrees.Title" value="Ingen applikationer" />
+  <string key="AddApplication.NoTrees.Message" value="Du har tilf&#248;jet alle tilg&#230;ngelige applikationer" />
+
+  <string key="RemoveApplicationWorkflow.RemoveApplication.Label" value="Fjern applikation" />
+  <string key="RemoveApplicationWorkflow.RemoveApplication.ToolTip" value="Fjern eksisterende applikation" />
+  <string key="RemoveApplication.Layout.Label" value="Fjern applikation" />
+  <string key="RemoveApplication.FieldGroup.Label" value="Fjern applikation" />
+  <string key="RemoveApplication.TreeIdSelector.Label" value="Applikation" />
+  <string key="RemoveApplication.TreeIdSelector.Help" value="V&#230;lg den applikation, du &#248;nsker at fjerne" />
+  <string key="RemoveApplication.NoTrees.Title" value="Ingen applikationer" />
+  <string key="RemoveApplication.NoTrees.Message" value="Du har fjernet alle tilg&#230;ngelige applikationer" />
+
+  <string key="LocalizeDataWorkflow.LocalizeDataLabel" value="Overs&#230;t data" />
+  <string key="LocalizeDataWorkflow.LocalizeDataToolTip" value="Overs&#230;t data" />
+  <string key="LocalizeDataWorkflow.DisabledData" value="Endnu ikke godkendt eller publiceret" />
+  <string key="LocalizeData.ShowError.Layout.Label" value="Det lykkedes ikke at overs&#230;tte data" />
+  <string key="LocalizeData.ShowError.InfoTable.Caption" value="Overs&#230;ttelsesfejl" />  
+  <string key="LocalizeData.ShowError.Description" value="De f&#248;lgende felter refererer til en datatype. Du skal overs&#230;tte disse dataelementer, f&#248;r du kan overs&#230;tte dette dataelement" />
+  <string key="LocalizeData.ShowError.FieldErrorFormat" value="Feltet &#39;{0}&#39; henviser til data af typen &#39;{1}&#39; med betegnelsen &#39;{2}&#39;" />
+  <string key="LocalizeData.ShowError.AlreadyTranslated" value="Disse data er allerede oversat. Den oversatte version tilh&#248;rer en anden gruppe." />
+</strings>
