@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="ElementProvider.RootFolderLabel" value="Langues" />
+  <string key="ElementProvider.RootFolderToolTip" value="Explorer et g&#233;rer les langues install&#233;es" />
+  <string key="ElementProvider.DefaultLabel" value="Par d&#233;faut" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesTitle" value="Aucune langue disponible" />
+  <string key="AddSystemLocaleWorkflow.NoMoreLocalesMessage" value="Vous avez install&#233; toutes les langues possibles." />
+  <string key="AddSystemLocaleWorkflow.AddElementActionLabel" value="Ajouter une langue" />
+  <string key="AddSystemLocaleWorkflow.AddElementActionToolTip" value="Ajouter une nouvelle langue" />
+  <string key="AddSystemLocaleWorkflow.Dialog.Label" value="Ajouter une langue" />
+  <string key="AddSystemLocaleWorkflow.FieldGroup.Label" value="Choisisser la langue" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Label" value="Langues" />
+  <string key="AddSystemLocaleWorkflow.CultureSelector.Help" value="La liste des langues d&#233;sinstall&#233;es disponibles. Les &quot;packages&quot; de langues peuvent &#234;tre install&#233;s avec des options suppl&#233;mentaires." />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Label" value="Nom de mappage de l&#39;URL" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.Help" value="Cette cha&#238;ne sera ins&#233;r&#233;e dans l&#39;URL de pages publi&#233;es dans une langue donn&#233;e. La langue du site par d&#233;faut peut laisser cette entr&#233;e vide." />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Label" value="Acc&#232;s de l&#39;utilisateur" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.ItemLabel" value="Donner acc&#232;s &#224; tous les utilisateurs" />
+  <string key="AddSystemLocaleWorkflow.AllUsersAccess.Help" value="Si elle est coch&#233;e, la langue sera disponible &#224; tous les utilisateurs enregistr&#233;s pour la visualisation et l&#39;&#233;dition" />
+  <string key="AddSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="Le nom de mappage de l&#39;URL est d&#233;j&#224; utilis&#233;" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionLabel" value="Modifier la langue" />
+  <string key="EditSystemLocaleWorkflow.EditElementActionToolTip" value="Modifier la langue" />
+  <string key="EditSystemLocaleWorkflow.Dialog.Label" value="Modifier la langue" />
+  <string key="EditSystemLocaleWorkflow.FieldGroup.Label" value="Propri&#233;t&#233;s de la langue" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Label" value="Nom de mappage de l&#39;URL" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.Help" value="Nom de mappage de l&#39;URL" />
+  <string key="EditSystemLocaleWorkflow.UrlMappingName.InUseMessage" value="Le nom de mappage de l&#39;URL est d&#233;j&#224; utilis&#233;" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionLabel" value="D&#233;finir par d&#233;faut" />
+  <string key="DefineDefaultActiveLocaleWorkflow.ElementActionToolTip" value="D&#233;finir comme langue par d&#233;faut" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionLabel" value="Retirer la langue" />
+  <string key="RemoveSystemLocaleWorkflow.RemoveElementActionToolTip" value="Retirer la langue" />
+  <string key="RemoveSystemLocaleWorkflow.Dialog.Label" value="Retirer la langue?" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Title" value="Impossible de supprimer la derni&#232;re langue" />
+  <string key="RemoveSystemLocaleWorkflow.Abort.Description" value="Vous &#234;tes sur le point de supprimer une langue qui est la seule langue pour un ou plusieurs utilisateurs. S&#39;il vous pla&#238;t ajouter d&#39;autres langues &#224; ces utilisateurs et essayer &#224; nouveau." />
+  <string key="RemoveSystemLocaleWorkflow.Confirm.Description" value="Retirer cette langue?" />
+</strings>

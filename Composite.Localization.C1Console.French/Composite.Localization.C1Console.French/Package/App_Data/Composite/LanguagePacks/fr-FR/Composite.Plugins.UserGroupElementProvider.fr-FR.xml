@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+	<string key="UserGroupElementProvider.RootLabel" value="Groupes d&#39;utilisateurs" />
+  <string key="UserGroupElementProvider.RootToolTip" value="Groupes d&#39;utilisateurs" />
+  <string key="UserGroupElementProvider.AddNewUserGroupLabel" value="Ajouter un groupe d&#39;utilisateurs ..." />  
+  <string key="UserGroupElementProvider.AddNewUserGroupToolTip" value="Ajouter un nouveau groupe d&#39;utilisateurs" />
+  <string key="UserGroupElementProvider.EditUserGroupLabel" value="Modifier le groupe d&#39;utilisateurs" />
+  <string key="UserGroupElementProvider.EditUserGroupToolTip" value="Modifier le groupe d&#39;utilisateurs" />
+  <string key="UserGroupElementProvider.DeleteUserGroupLabel" value="Supprimer le groupe d&#39;utilisateurs" />
+  <string key="UserGroupElementProvider.DeleteUserGroupToolTip" value="Supprimer le groupe d&#39;utilisateurs" />
+
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.LabelFieldGroup" value="Ajouter un groupe d&#39;utilisateurs" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameLabel" value="Nom du groupe d&#39;utilisateurs" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameHelp" value="Le nom du nouveau groupe d&#39;utilisateurs" />
+  <string key="AddNewUserGroup.AddNewUserGroupStep1.UserGroupNameAlreadyExists" value="Un groupe d&#39;utilisateurs avec le m&#234;me nom existe d&#233;j&#224;" />
+
+  <string key="EditUserGroup.EditUserGroupStep1.LabelFieldGroup" value="Modifier le groupe d&#39;utilisateurs" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameLabel" value="Nom du groupe d&#39;utilisateurs" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameHelp" value="Le nom du groupe d&#39;utilisateurs" />
+  <string key="EditUserGroup.EditUserGroupStep1.UserGroupNameAlreadyExists" value="Un groupe d&#39;utilisateurs avec le m&#234;me nom existe d&#233;j&#224;" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveFieldLabel" value="Sections" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectLabel" value="Sections" />
+  <string key="EditUserGroup.EditUserGroupStep1.ActivePerspectiveMultiSelectHelp" value="S&#233;lectionner quelles sections l&#39;utilisateur peut avoir acc&#232;s" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsFieldLabel" value="Autorisations globales" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectLabel" value="Autorisations globales" />
+  <string key="EditUserGroup.EditUserGroupStep1.GlobalPermissionsMultiSelectHelp" value="L&#39;autorisation &#39;Administrer&#39; donne l&#39;acc&#232;s des groupes d&#39;utilisateurs pour g&#233;rer les autorisations des groupes d&#39;utilisateurs et d&#39;ex&#233;cuter d&#39;autres t&#226;ches administratives." />
+
+
+  
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersTitle" value="Le groupe d&#39;utilisateurs comporte des utilisateurs" />
+  <string key="DeleteUserGroup.DeleteUserGroupInitialStep.UserGroupHasUsersMessage" value="Vous ne pouvez pas supprimer un groupe d&#39;utilisateurs qui comporte des utilisateurs." />
+  
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.LabelFieldGroup" value="Supprimer le groupe d&#39;utilisateurs" />
+  <string key="DeleteUserGroup.DeleteUserGroupStep1.Text" value="Supprimer le groupe s&#233;lectionn&#233;?" />
+</strings>

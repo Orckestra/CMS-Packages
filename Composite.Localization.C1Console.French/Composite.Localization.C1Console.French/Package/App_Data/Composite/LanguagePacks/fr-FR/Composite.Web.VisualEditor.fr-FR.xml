@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <!-- preload precaution -->
+  <string key="Preload.Key" value="R&#233;cup&#233;ration sur le d&#233;marrage de VisualEditorBinding afin de s&#39;assurer que les &quot;strings&quot; sont charg&#233;s :)" />
+  <!-- simple toolbar -->
+  <string key="ToolBar.ToolTipStrong" value="Texte gras" />
+  <string key="ToolBar.ToolTipEmphasize" value="Souligner le texte" />
+  <string key="ToolBar.ToolTipUnderline" value="Souligner le texte" />
+  <string key="ToolBar.ToolTipStrike" value="Texte barr&#233;" />
+  <string key="ToolBar.ToolTipAlignLeft" value="Aligner &#224; gauche" />
+  <string key="ToolBar.ToolTipAlignRight" value="Aligner &#224; droite" />
+  <string key="ToolBar.ToolTipJustifyLeft" value="Justifier &#224; gauche" />
+  <string key="ToolBar.ToolTipJustifyRight" value="Justifier &#224; droite" />
+  <string key="ToolBar.ToolTipJustifyCenter" value="Justifier au centre" />
+  <string key="ToolBar.ToolTipJustifyFull" value="Justifier tout" />
+  <string key="ToolBar.ToolTipUnorderedList" value="Liste non ordonn&#233;e" />
+  <string key="ToolBar.ToolTipOrderedList" value="Liste ordonn&#233;e" />
+  <string key="ToolBar.ToolTipLink" value="Lien" />
+  <string key="ToolBar.ToolTipDeleteLink" value="Supprimer le lien" />
+  <string key="ToolBar.ToolTipCleanup" value="Nettoyage du code" />
+  <string key="ToolBar.ToolTipUndo" value="Annuler" />
+  <string key="ToolBar.ToolTipRedo" value="Refaire" />
+  <string key="ToolBar.LabelSource" value="Source" />
+  <string key="ToolBar.LabelWysiwyg" value="&#201;diteur WYSIWYG" />
+  <!-- format selector -->
+  <string key="FormatSelector.LabelParagraph" value="Paragraphe" />
+  <string key="FormatSelector.LabelAddress" value="Adresse" />
+  <string key="FormatSelector.LabelBlockQuote" value="Blockquote" />
+  <string key="FormatSelector.LabelDivision" value="Division" />
+  <string key="FormatSelector.LabelHeading1" value="Rubrique 1" />
+  <string key="FormatSelector.LabelHeading2" value="Rubrique 2" />
+  <string key="FormatSelector.LabelHeading3" value="Rubrique 3" />
+  <string key="FormatSelector.LabelHeading4" value="Rubrique 4" />
+  <string key="FormatSelector.LabelHeading5" value="Rubrique 5" />
+  <string key="FormatSelector.LabelHeading6" value="Rubrique 6" />
+  <!-- classname selector -->
+  <string key="ClassSelector.LabelNone" value="(Aucun)" />
+  <!-- contextmenu (duplicated in toolbar) -->
+  <string key="ContextMenu.LabelInsert" value="Ins&#233;rer" />
+  <string key="ContextMenu.LabelPaste" value="Coller" />
+  <string key="ContextMenu.LabelLink" value="Lien" />
+  <string key="ContextMenu.LabelUnLink" value="D&#233;lier" />
+  <string key="ContextMenu.LabelLinkProperties" value="Propri&#233;t&#233;s du lien" />
+  <string key="ContextMenu.LabelTable" value="Table ..." />
+  <string key="ContextMenu.LabelTableManage" value="G&#233;rer le tableau" />
+  <string key="ContextMenu.LabelImage" value="Image ..." />
+  <string key="ContextMenu.LabelAsText" value="Comme texte simple ..." />
+  <string key="ContextMenu.LabelField" value="Champ" />
+  <string key="ContextMenu.LabelFieldDelete" value="Supprimer le champ" />
+  <string key="ContextMenu.LabelRendering" value="Fonction ..." />
+  <string key="ContextMenu.LabelCharacter" value="Caract&#232;re ..." />
+  <string key="ContextMenu.LabelImageProperties" value="Propri&#233;t&#233;s de l&#39;image ..." />
+  <string key="ContextMenu.LabelRenderingProperties" value="Propri&#233;t&#233;s de la fonction ..." />
+  <string key="ContextMenu.LabelCutRow" value="Couper la ligne" />
+  <string key="ContextMenu.LabelCopyRow" value="Copier la ligne" />
+  <string key="ContextMenu.LabelPasteRow" value="Coller la ligne" />
+  <string key="ContextMenu.LabelBefore" value="Avant" />
+  <string key="ContextMenu.LabelAfter" value="Apr&#232;s" />
+  <string key="ContextMenu.LabelTableProperties" value="Propri&#233;t&#233;s du tableau" />
+  <string key="ContextMenu.LabelCellProperties" value="Propri&#233;t&#233;s de la cellule" />
+  <string key="ContextMenu.LabelRowProperties" value="Propri&#233;t&#233;s de la ligne" />
+  <string key="ContextMenu.LabelInsertRow" value="Ins&#233;rer une ligne" />
+  <string key="ContextMenu.LabelDeleteRow" value="Supprimer la ligne" />
+  <string key="ContextMenu.LabelInsertcolumn" value="Ins&#233;rer une colonne" />
+  <string key="ContextMenu.LabelDeleteColumn" value="Supprimer la colonne" />
+  <string key="ContextMenu.LabelMergeTableCells" value="Fusionner des cellules de tableau" />
+  <string key="ContextMenu.LabelSplitMergedCells" value="Fractionner les cellules fusionn&#233;es" />
+  <string key="ContextMenu.LabelDeleteTable" value="Supprimer le tableau" />
+  <string key="ContextMenu.LabelAlignImage" value="Aligner l&#39;image" />
+  <string key="ContextMenu.LabelAlignImageRight" value="Droite" />
+  <string key="ContextMenu.LabelAlignImageLeft" value="Gauche" />
+  <string key="ContextMenu.LabelAlignImageNone" value="Aucun" />
+  <!-- error dialog -->
+  <string key="ContentError.DialogTitle" value="Erreur de code source" />
+  <string key="ContentError.DialogText" value="Erreur dans le code source :" />
+  <!-- template selector -->
+  <string key="TemplateTree.NoTemplateWarning" value="Aucun &quot;placeholder&quot; dans le mod&#232;le." />
+  <!-- PLUGINS ............................................................... -->
+  <!-- general -->
+  <string key="LabelTabBasic" value="De base" />
+  <string key="LabelTabAdvanced" value="Avanc&#233;" />
+  <string key="LabelPresentation" value="Pr&#233;sentation" />
+  <string key="LabelClass" value="Classe" />
+  <string key="HelpClass" value="L&#39;attribut class sp&#233;cifie un nom de classe CSS pour un &#233;l&#233;ment." />
+  <string key="LabelId" value="ID" />
+  <string key="HelpId" value="L&#39;attribut id peut &#234;tre utilis&#233; par du JavaScript ou du CSS pour apporter des modifications &#224; un &#233;l&#233;ment." />
+  <string key="MozSecurityNote.LabelSecurityStuff" value="Presse-papiers d&#233;sactiv&#233;" />
+  <string key="MozSecurityNote.TextSecurityStuff" value="Pour des raisons de s&#233;curit&#233;, l&#39;acc&#232;s au presse-papiers a &#233;t&#233; bloqu&#233;e par votre navigateur. S&#39;il vous pla&#238;t utiliser les raccourcis clavier standard. Pour une description technique de comment configurer votre navigateur pour une utilisation avec Composite C1, appuyer sur le bouton D&#233;tails." />
+  <!-- link -->
+  <string key="Link.LabelInsertLink" value="Ins&#233;rer un lien" />
+  <string key="Link.LabelLinkProperties" value="Propri&#233;t&#233;s du lien" />
+  <string key="Link.LinkDestination" value="URL" />
+  <string key="Link.LinkRole" value="R&#244;le" />
+  <string key="Link.TitleText" value="Titre" />
+  <string key="Link.LinkTarget" value="Cible" />
+  <string key="Link.LinkTarget.LabelCheckBox" value="Ouvrir dans une nouvelle fen&#234;tre" />
+  <string key="Link.TitleTextToolTip" value="Le texte du titre est rendu comme une info-bulle lorsque la souris survole le lien. Ceci peut &#234;tre utilis&#233; pour permettre &#224; vos clients de savoir o&#249; le lien va sans perturber la lecture de votre texte." />
+  <string key="Link.LabelLink" value="Propri&#233;t&#233;s du lien" />
+  <!-- table -->
+  <string key="Tables.Cell.CellType" value="Type de cellule" />
+  <string key="Tables.Cell.LabelWidth" value="Largeur de la cellule" />
+  <string key="Tables.Cell.HorizontalAlignment" value="Alignement horizontal" />
+  <string key="Tables.Cell.VerticalAlignment" value="Alignement vertical" />
+  <string key="Tables.Cell.ApplyTo" value="Appliquer les modifications &#224;" />
+  <string key="Tables.Cell.LabelCellProperties" value="Propri&#233;t&#233;s de la cellule" />
+  <string key="Tables.Cell.LabelLayout" value="Mettre en cache" />
+  <string key="Tables.Cell.LabelDataCell" value="Cellule de donn&#233;es" />
+  <string key="Tables.Cell.LabelHeaderCell" value="Ent&#234;te de cellule" />
+  <string key="Tables.Cell.LabelLeft" value="Gauche" />
+  <string key="Tables.Cell.LabelRight" value="Droite" />
+  <string key="Tables.Cell.LabelTop" value="Haut" />
+  <string key="Tables.Cell.LabelCenter" value="Centre" />
+  <string key="Tables.Cell.LabelBottom" value="Bas" />
+  <string key="Tables.Cell.LabelScope" value="Port&#233;e" />
+  <string key="Tables.Cell.LabelCurrentCell" value="Cellule actuelle" />
+  <string key="Tables.Cell.LabelAllRowCells" value="Toutes les cellules de la ligne" />
+  <string key="Tables.Cell.LabelAllTableCells" value="Toutes les cellules du tableau" />
+  <string key="Tables.Merge.Columns" value="Colonnes" />
+  <string key="Tables.Merge.Rows" value="Lignes" />
+  <string key="Tables.Merge.LabelMergeCells" value="Fusionner des cellules de tableau" />
+  <string key="Tables.Row.Rows" value="Ligne dans une section de tableau" />
+  <string key="Tables.Row.HorizontalAlignment" value="Alignement horizontal" />
+  <string key="Tables.Row.VerticalAlignment" value="Alignement vertical" />
+  <string key="Tables.Row.ApplyTo" value="Appliquer les modifications &#224;" />
+  <string key="Tables.Row.LabelRowProperties" value="Propri&#233;t&#233;s de la ligne" />
+  <string key="Tables.Row.LabelLayout" value="Mettre en cache" />
+  <string key="Tables.Row.LabelTableHead" value="Ent&#234;te de tableau" />
+  <string key="Tables.Row.LabelTableBody" value="Partie centrale du tablea" />
+  <string key="Tables.Row.LabelTableFoot" value="Bas du tableau" />
+  <string key="Tables.Row.LabelLeft" value="Gauche" />
+  <string key="Tables.Row.LabelCenter" value="Centre" />
+  <string key="Tables.Row.LabelRight" value="Droite" />
+  <string key="Tables.Row.LabelTop" value="Haut" />
+  <string key="Tables.Row.LabelBottom" value="Bas" />
+  <string key="Tables.Row.LabelScope" value="Port&#233;e" />
+  <string key="Tables.Row.LabelCurrentRow" value="Ligne actuelle" />
+  <string key="Tables.Row.LabelOddRows" value="Lignes impaires du tableau" />
+  <string key="Tables.Row.LabelEvenRows" value="Lignes paires du tableau" />
+  <string key="Tables.Row.LabelAllRows" value="Toutes les lignes du tableau" />
+  <string key="Tables.Table.TitleInsert" value="Ins&#233;rer un tableau" />
+  <string key="Tables.Table.TitleUpdate" value="Propri&#233;t&#233;s du tableau" />
+  <string key="Tables.Table.Columns" value="Colonnes" />
+  <string key="Tables.Table.Rows" value="Lignes" />
+  <string key="Tables.Table.Summary" value="R&#233;sum&#233;" />
+  <string key="Tables.Table.SummaryHelp" value="Le r&#233;sum&#233; explique le contenu du tableau et de la structure afin que les gens qui utilisent des navigateurs non-visuels (tels que les personnes aveugles) puissent mieux comprendre. Ceci est particuli&#232;rement important pour les tableaux sans l&#233;gendes." />
+  <string key="Tables.Table.LabelLayout" value="Mise en page du tableau" />
+  <string key="Tables.Table.LabelMeta" value="Description du tableau" />
+  <!-- image -->
+  <string key="Image.Source" value="Source" />
+  <string key="Image.AlternativeText" value="Texte de remplacement" />
+  <string key="Image.AlternativeTextToolTip" value="Le texte de remplacement est affich&#233; comme du texte visible dans les navigateurs o&#249; les images ne peuvent pas &#234;tre rendus normalement. Ce peut &#234;tre le cas pour les navigateurs de t&#233;l&#233;phones mobiles et navigateurs sp&#233;ciaux pour les malvoyants. L&#39;attribut alt doit d&#233;crire clairement le contenu de l&#39;image." />
+  <string key="Image.TitleText" value="Titre du texte" />
+  <string key="Image.TitleTextToolTip" value="Letitre du texte est rendu comme une info-bulle lorsque la souris passe sur l&#39;image. Une image qui pourrait &#234;tre source de confusion pour le spectateur peut &#234;tre imm&#233;diatement pr&#233;cis&#233; par un titre." />
+  <string key="Image.LabelImage" value="Propri&#233;t&#233;s de l&#39;image" />
+  <string key="Image.LabelInsertImage" value="Ins&#233;rer l&#39;image" />
+  <string key="Image.LabelImageProperties" value="Propri&#233;t&#233;s de l&#39;image" />
+  <string key="Image.MaxWidth" value="Largeur maximum" />
+  <string key="Image.MaxWidthToolTip" value="Si la largeur de l&#39;image est plus grande que la valeur sp&#233;cifi&#233;e, elle va &#234;tre r&#233;duite &#224; la valeur sp&#233;cifi&#233;e." />
+  <string key="Image.MaxHeight" value="Hauteur maximale" />
+  <string key="Image.MaxHeightToolTip" value="Si la hauteur de l&#39;image est plus grande que la valeur sp&#233;cifi&#233;e, elle va &#234;tre r&#233;duite &#224; la valeur sp&#233;cifi&#233;e." />
+
+	<!-- charmap -->
+  <string key="CharMap.LabelSelectSpecialChar" value="S&#233;lectionner le caract&#232;re" />
+  <string key="CharMap.LabelGeneral" value="G&#233;n&#233;ral" />
+  <string key="CharMap.LabelAlphabetical" value="Alphab&#233;tique" />
+  <string key="CharMap.LabelMathSymbols" value="Math&#233;matiques et symboles" />
+  <string key="CharMap.LabelCommon" value="Commun" />
+  <string key="CharMap.LabelQuotation" value="Citation" />
+  <string key="CharMap.LabelCurrency" value="Devise" />
+  <string key="CharMap.LabelLatin" value="Latin" />
+  <string key="CharMap.LabelGreek" value="Grecque" />
+  <string key="CharMap.LabelMathAndLogic" value="Math&#233;matique et logique" />
+  <string key="CharMap.LabelSymbols" value="Symboles" />
+  <string key="CharMap.LabelArrows" value="Fl&#232;ches" />
+  <!-- text paste -->
+  <string key="TextPaste.Label" value="Coller comme du texte" />
+  <string key="TextPaste.PasteHereContent" value="Coller le contenu ici. Puis appuyez sur OK." />
+
+  <!-- spellcheck-->
+  <string key="SpellCheck.InfoLabel" value="Comment v&#233;rification l&#39;orthographe" />
+  <string key="SpellCheck.InfoCaption" value="Comment v&#233;rifier l&#39;orthographe dans l&#39;&#233;diteur visual" />
+  <string key="SpellCheck.InfoText" value="Pour obtenir des suggestions pour un mot mal orthographi&#233;, maintener la touche MAJ enfonc&#233;e lorsque vous appelez le menu contextuel." />
+
+  <string key="Function.Edit" value="Modifier" />
+</strings>

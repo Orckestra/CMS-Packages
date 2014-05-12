@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="PageTemplateElementProvider.RootLabel" value="Mod&#232;les de pages" />
+  <string key="PageTemplateElementProvider.RootLabelToolTip" value="Vous pouvez trouver les mod&#232;les de sites XHTML ici" />
+  <string key="PageTemplateElementProvider.AddTemplate" value="Ajouter un mod&#232;le" />
+  <string key="PageTemplateElementProvider.AddTemplateToolTip" value="Ajouter un nouveau mod&#232;le" />
+  <string key="PageTemplateElementProvider.DeleteTemplate" value="Effacer" />
+	<string key="PageTemplateElementProvider.DeleteTemplateToolTip" value="Supprimer cet &#233;l&#233;ment" />
+
+  <string key="PageTemplateElementProvider.SharedCodeFolder.Title" value="Code partag&#233;" />
+  <string key="PageTemplateElementProvider.SharedCodeFolder.ToolTip" value="Fichiers utilis&#233;s par des fichiers de mise en page" />
+  
+  <string key="EditSharedCodeFile.Label" value="Modifier" /> 
+  <string key="EditSharedCodeFile.ToolTip" value="Editer le fichier" />
+
+  <string key="PageTemplateElementProvider.EditXmlTemplate" value="Modifier le mod&#232;le XML" />
+  <string key="PageTemplateElementProvider.EditXmlTemplateToolTip" value="Modifier le mod&#232;le XML s&#233;lectionn&#233;" />
+
+  <string key="AddNewXmlPageTemplate.LabelDialog" value="Ajouter un nouveau mod&#232;le de page XML" />
+  <string key="AddNewXmlPageTemplate.LabelFieldGroup" value="Mod&#232;le XML" />
+  <string key="AddNewXmlPageTemplate.LabelTemplateTitle" value="Titre du mod&#232;le" />
+  <string key="AddNewXmlPageTemplate.LabelTemplateTitleHelp" value="Le titre d&#233;crit ce mod&#232;le dans les listes. Envisager de choisir un nom court mais significatif." />
+  <string key="AddNewXmlPageTemplate.LabelCopyFrom" value="Copier de" />
+  <string key="AddNewXmlPageTemplate.LabelCopyFromHelp" value="Vous pouvez copier le balisage XML d&#39;un autre mod&#232;le de page en le s&#233;lectionnant dans cette liste." />
+  <string key="AddNewXmlPageTemplate.LabelCopyFromEmptyOption" value="(Nouveau mod&#232;le)" />
+  <string key="AddNewXmlPageTemplateWorkflow.TitleInUseTitle" value="Titre d&#233;j&#224; utilis&#233;" />
+  <string key="AddNewXmlPageTemplateWorkflow.TitleTooLong" value="Le titre est trop long (utilis&#233; dans le cadre du fichier XML)." />
+
+  <string key="EditXmlPageTemplate.LabelMarkUpCode" value="Code de balisage" />
+  <string key="EditXmlPageTemplate.LabelTemplateIdentification" value="Information sur le mod&#232;le" />
+  <string key="EditXmlPageTemplate.LabelTemplateTitle" value="Titre du mod&#232;le" />
+  <string key="EditXmlPageTemplate.LabelTemplateTitleHelp" value="Le titre d&#233;crit ce mod&#232;le dans les listes. Envisager de choisir un nom court mais significatif." />
+
+  <string key="EditXmlPageTemplateWorkflow.InvalidXmlTitle" value="Impossible d&#39;enregistrer le mod&#232;le" />
+  <string key="EditXmlPageTemplateWorkflow.InvalidXmlMessage" value="Le balisage du mod&#232;le de page n&#39;est pas valide. {0}" />
+  <string key="EditXmlPageTemplateWorkflow.CannotRenameFileExists" value="Vous ne pouvez pas renommer un mod&#232;le - le fichier avec le nom &#39;{0}&#39; existe d&#233;j&#224;." />
+  <string key="EditXmlPageTemplateWorkflow.TitleInUseTitle" value="Titre d&#233;j&#224; utilis&#233;" />
+
+  <string key="DeletePageTemplateStep1.LabelFieldGroup" value="Supprimer ce mod&#232;le de page?" />
+	<string key="DeletePageTemplateStep1.Text" value="Supprimer le mod&#232;le de page?" />
+	
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorTitle" value="Erreur de suppression en cascade" />
+	<string key="DeletePageTemplateWorkflow.CascadeDeleteErrorMessage" value="Le type est r&#233;f&#233;renc&#233; par un autre type qui ne permet pas de suppression en cascade.  Cette op&#233;ration a &#233;t&#233; arr&#234;t&#233;e." />
+
+  <string key="DeletePageTemplateWorkflow.PageReference" value="Il y a {0} page[s] r&#233;f&#233;renc&#233;es par ce mod&#232;le : {1}" /> 
+  <string key="DeletePageTemplateWorkflow.PageTypeReference" value="Il y a {0} de type[s] de pages r&#233;f&#233;ren&#231;ant ce mod&#232;le : {1}" />
+
+  <string key="AddNewPageTemplate.LabelDialog" value="Ajouter un nouveau mod&#232;le de page" />
+  <string key="AddNewPageTemplate.LabelFieldGroup" value="Nouveau mod&#232;le de page" />
+  <string key="AddNewPageTemplate.TemplateTypeHelp" value="Choisisser l&#39;un des types de mod&#232;les de pages possibles" />
+  <string key="AddNewPageTemplate.TemplateTypeLabel" value="Type de mod&#232;le" />
+
+  <string key="AddNewPageTemplate.TemplateType.Razor" value="Razor" />
+  <string key="AddNewPageTemplate.TemplateType.MasterPage" value="Page ma&#238;tre" />
+  <string key="AddNewPageTemplate.TemplateType.XML" value="XML" />
+</strings>

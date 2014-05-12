@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderLabel" value="Fonctions XSLT" />
+  <string key="Plugins.XsltBasedFunctionProviderElementProvider.RootFolderToolTip" value="Fonctions XSLT" />
+  <string key="AddNewXsltFunctionWorkflow.DuplicateName" value="Une fonction XSLT avec le m&#234;me nom existe d&#233;j&#224;." />
+  <string key="AddNewXsltFunctionWorkflow.MethodEmpty" value="Nom de la m&#233;thode doit &#234;tre pr&#233;sent" />
+  <string key="AddNewXsltFunctionWorkflow.NamespaceEmpty" value="L&#39;espace de noms doit &#234;tre non-vide" />
+  <string key="AddNewXsltFunctionWorkflow.InvalidNamespace" value="Espace de noms doit &#234;tre comme A.B.C - Ne pas commencer et se terminer par ." />
+  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageTitle" value="Une langue est n&#233;cessaire" />
+  <string key="AddNewXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Pour cr&#233;er une fonction XSLT une langue est n&#233;cessaire, mais pas de langues n&#39;a encore &#233;t&#233; ajout&#233;e. Vous pouvez ajouter une langue dans la section Syst&#232;me" />
+  <string key="AddNewXsltFunctionWorkflow.MissingPageTitle" value="Une page est requise" />
+  <string key="AddNewXsltFunctionWorkflow.MissingPageMessage" value="Pour cr&#233;er une fonction XSLT au moins une page doit &#234;tre ajout&#233;e." />
+  <string key="AddNewXsltFunctionWorkflow.TotalNameTooLang" value="La longueur totale du nom et de l&#39;espace de noms est trop long (utilis&#233; pour nommer le fichier XSL)." />
+  <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteTitle" value="Supprimer la fonction  XSLT?" />
+  <string key="DeleteXsltFunctionWorkflow.ConfirmDeleteMessage" value="Supprimer le XSLT s&#233;lectionn&#233;?" />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorTitle" value="Erreur de suppression en cascade" />
+  <string key="DeleteXsltFunctionWorkflow.CascadeDeleteErrorMessage" value="Le type est r&#233;f&#233;renc&#233; par un autre type qui ne permet pas de suppression en cascade. Cette op&#233;ration a &#233;t&#233; interrompue" />
+  <string key="EditXsltFunctionWorkflow.DuplicateName" value="Une fonction XSLT avec le m&#234;me nom existe d&#233;j&#224;." />
+  <string key="EditXsltFunctionWorkflow.EmptyMethodName" value="Le nom de la m&#233;thode doit &#234;tre pr&#233;sent" />
+  <string key="EditXsltFunctionWorkflow.NamespaceEmpty" value="L&#39;espace de noms doit &#234;tre pr&#233;sent" />
+  <string key="EditXsltFunctionWorkflow.InvalidNamespace" value="L&#39;espace de noms doit &#234;tre du format A.B.C - Ne pas commencer et se terminer par &#39;.&#39; (point)" />
+  <string key="EditXsltFunctionWorkflow.InvalidFileName" value="XslFilePath doit commencer par \ ou /" />
+  <string key="EditXsltFunctionWorkflow.InvalidName" value="Nom de la fonction invalide" />
+  <string key="EditXsltFunctionWorkflow.CannotRenameFileExists" value="Impossible de renommer la fonction, le fichier &#39;{0}&#39; existe d&#233;j&#224;." />
+  <string key="EditXsltFunctionWorkflow.TotalNameTooLang" value="La longueur totale du nom et de l&#39;espace de noms est trop long (utilis&#233; pour nommer le fichier XSL)." />
+
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashTitle" value="Dupliquer les noms de fonctions locales" />
+  <string key="EditXsltFunctionWorkflow.SameLocalFunctionNameClashMessage" value="Deux ou plusieurs appels de fonction ont le m&#234;me nom local. Changer les noms de sorte qu&#39;ils soient tous diff&#233;rents." />
+  
+  <string key="XsltBasedFunctionProviderElementProvider.Add" value="Ajouter une fonction XSLT" />
+  <string key="XsltBasedFunctionProviderElementProvider.AddToolTip" value="Ajouter une nouvelle fonction XSLT" />
+  <string key="XsltBasedFunctionProviderElementProvider.Edit" value="Modifier" />
+  <string key="XsltBasedFunctionProviderElementProvider.EditToolTip" value="Modifier la fonction XSLT" />
+  <string key="XsltBasedFunctionProviderElementProvider.Delete" value="Effacer" />
+  <string key="XsltBasedFunctionProviderElementProvider.DeleteToolTip" value="Supprimer la fonction XSLT" />
+  <string key="AddNewXsltFunctionStep1.LabelDialog" value="Ajouter une nouvelle fonction XSLT" />
+  <string key="AddNewXsltFunctionStep1.LabelFieldGroup" value="Nouvelle fonction XSLT" />
+  <string key="AddNewXsltFunctionStep1.LabelName" value="Nom" />
+  <string key="AddNewXsltFunctionStep1.HelpName" value="" />
+  <string key="AddNewXsltFunctionStep1.LabelNamespace" value="Espace de noms" />
+  <string key="AddNewXsltFunctionStep1.HelpNamespace" value="" />
+  <string key="AddNewXsltFunctionStep1.LabelOutputType" value="Type de sortie" />
+  <string key="AddNewXsltFunctionStep1.LabelCopyFrom" value="Copier de" />
+  <string key="AddNewXsltFunctionStep1.LabelCopyFromEmptyOption" value="(Nouvelle fonction XSLT)" />
+
+
+  <string key="EditXsltFunction.LabelSettings" value="Param&#232;tres" />
+  <string key="EditXsltFunction.LabelName" value="Nom" />
+  <string key="EditXsltFunction.HelpName" value="" />
+  <string key="EditXsltFunction.LabelNamespace" value="Espace de noms" />
+  <string key="EditXsltFunction.HelpNamespace" value="" />
+  <string key="EditXsltFunction.LabelDescription" value="Description" />
+  <string key="EditXsltFunction.HelpDescription" value="" />
+  <string key="EditXsltFunction.LabelDebug" value="Debug" />
+  <string key="EditXsltFunction.LabelPage" value="Page" />
+  <string key="EditXsltFunction.HelpPage" value="Lors du d&#233;bogage, cette page est utilis&#233;e comme contexte pour le rendu." />
+  <string key="EditXsltFunction.LabelAdminitrativeScope" value="Administratif" />
+  <string key="EditXsltFunction.LabelPublicScope" value="Public" />
+  <string key="EditXsltFunction.LabelPageDataScope" value="Port&#233;e des donn&#233;es" />
+  <string key="EditXsltFunction.HelpPageDataScope" value="Choisisser la version publique ou en d&#233;veloppement comme contexte pour le rendu." />
+  <string key="EditXsltFunction.LabelActiveLocales" value="Langue" />
+  <string key="EditXsltFunction.HelpActiveLocales" value="S&#233;lectionner la langue &#224; utiliser lors du d&#233;bogage de la fonction." />
+  <string key="EditXsltFunction.OutputType" value="Type de sortie" />
+  <string key="EditXsltFunction.LabelInputParameters" value="Param&#232;tres d&#39;entr&#233;e" />
+  <string key="EditXsltFunction.LabelFunctionCalls" value="Appels de fonctions" />
+  <string key="EditXsltFunction.LabelTemplate" value="Mod&#232;le" />
+  <string key="EditXsltFunction.LabelPreview" value="Aper&#231;u" />
+  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageTitle" value="Une langue est obligatoire" />
+  <string key="EditXsltFunctionWorkflow.MissingActiveLanguageMessage" value="Pour modifier une fonction XSLT une langue est n&#233;cessaire, mais pas de langues n&#39;a encore &#233;t&#233; ajout&#233;e. Vous pouvez ajouter une langue dans la section Syst&#232;me." />
+  <string key="EditXsltFunctionWorkflow.MissingPageTitle" value="Une page est requise" />
+  <string key="EditXsltFunctionWorkflow.MissingPageMessage" value="Pour modifier une fonction XSLT au moins une page doit &#234;tre ajout&#233;e." />
+</strings>

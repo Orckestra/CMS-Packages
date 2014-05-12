@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<!-- Element tree -->
+	<string key="Tree.ConfigurationElementLabel" value="Configuration de l&#39;URL" />
+  <string key="Tree.ConfigurationElementToolTip" value="Cette section permet de configurer des URL plus courts et plus conviviaux" />
+  <string key="Tree.ConfigurationElementEditLabel" value="Modifier la configuration de l&#39;URL" />
+  <string key="Tree.ConfigurationElementEditToolTip" value="Modifier la configuration de l&#39;URL" />
+  <string key="Tree.HostnamesFolderLabel" value="Noms d&#39;h&#244;tes" />
+	<string key="Tree.HostnamesFolderToolTip" value="Ici vous pouvez mapper un nom d&#39;h&#244;te pour un site" />
+	<string key="Tree.AddHostnameLabel" value="Ajouter le nom d&#39;h&#244;te" />
+  <string key="Tree.AddHostnameToolTip" value="Ajouter un nouveau mappage de nom d&#39;h&#244;te" />
+  <string key="Tree.EditHostnameLabel" value="Modifier le nom d&#39;h&#244;te" />
+  <string key="Tree.EditHostnameToolTip" value="Modifier la corresponsance du nom d&#39;h&#244;te" />
+  <string key="Tree.DeleteHostnameLabel" value="Supprimer le nom d&#39;h&#244;te" />
+  <string key="Tree.DeleteHostnameToolTip" value="Supprimer la corresponsance du nom d&#39;h&#244;te" />
+
+
+  <string key="Tree.UrlConfigurationLabel" value="UrlConfiguration" />
+  
+
+	<!-- Url configuration -->
+	<string key="UrlConfiguration.Title" value="Configuration de l&#39;URL" />
+	<string key="UrlConfiguration.PageUrlSuffix.Label" value="Suffixe de l&#39;URL de la page" />
+	<string key="UrlConfiguration.PageUrlSuffix.Help" value="Une cha&#238;ne qui sera ajout&#233;e &#224; tous les urls de page. F.e. . Aspx &#39;ou&#39;. Html &#39;, Laisser ce champ vide produira des URL sans extension" />
+
+	<!-- Hostname binding editing -->
+	<string key="HostnameBinding.AddNewHostnameTitle" value="Nouveau nom d&#39;h&#244;te" />
+	<string key="HostnameBinding.Hostname.Label" value="Nom d&#39;h&#244;te" />
+	<string key="HostnameBinding.Hostname.Help" value="Nom d&#39;h&#244;te dans laquel les r&#232;gles de construction url actuelles seront appliqu&#233;es" />
+	<string key="HostnameBinding.Page.Label" value="Page" />
+	<string key="HostnameBinding.Page.Help" value="Page racide qui sera la page par d&#233;faut pour le nom d&#39;h&#244;te actuel" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Label" value="URL" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.ItemLabel" value="Inclure le titre de l&#39;URL de page d&#39;accueil" />
+	<string key="HostnameBinding.IncludeHomepageUrlTitle.Help" value="D&#233;termine si le titre de la page racine doit &#234;tre une partie de l&#39;URL. Ne pas l&#39;avoir coch&#233; produit des urls courts" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.ItemLabel" value="Inclure le mappage de la langue de l&#39;URL" />
+	<string key="HostnameBinding.IncludeLanguageUrlMapping.Help" value="D&#233;termine si le code de la langue doit &#234;tre faire partie de l&#39;URL" />
+	<string key="HostnameBinding.Custom404Page.Label" value="Page 404 personnalis&#233;e" />
+	<string key="HostnameBinding.Custom404Page.Help" value="URL de redirection dans le cas o&#249; il ya une demande &#224; une page in&#233;xistante" />
+	<string key="HostnameBinding.Aliases.Label" value="Alias du noms d&#39;h&#244;te" />
+	<string key="HostnameBinding.Aliases.Help" value="Les noms d&#39;h&#244;tes &#224; partir desquels toutes les demandes seront redirig&#233;es vers le nom actuel" />
+</strings>

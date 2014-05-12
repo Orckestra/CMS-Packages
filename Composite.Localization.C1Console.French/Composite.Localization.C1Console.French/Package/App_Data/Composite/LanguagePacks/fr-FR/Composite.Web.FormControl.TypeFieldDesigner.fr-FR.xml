@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<strings>
+  <string key="BasicTabLabel" value="De base" />
+  <string key="AdvancedTabLabel" value="Avanc&#233;" />
+
+  <string key="AddNewButtonLabel" value="Ajouter un nouveau" />
+  <string key="DeleteButtonLabel" value="Effacer" />
+  <string key="LabelDataTypeFields" value="Champs de type de donn&#233;es" />
+  
+  <string key="FieldDetailsGroupLabel" value="Propri&#233;t&#233;s du champ" />
+  <string key="Name" value="Nom" />
+  <string key="NameHelp" value="Le nom du champ est utilis&#233; par le syst&#232;me pour identifier ce champ. Les noms doivent &#234;tre uniques et ne peuvent pas contenir des espaces et autres caract&#232;res sp&#233;ciaux. Utilisez des noms comme &#171;Titre&#187;, &#171;date de d&#233;but&#187;, &#171;largeimage &#39;etc" />
+  <string key="Label" value="Libell&#233;" />
+  <string key="LabelHelp" value="Les libell&#233;s sont montr&#233; aux utilisateurs lors de l&#39;ajout d&#39;un nouvel &#233;l&#233;ment bas&#233; sur le type de donn&#233;es." />
+  <string key="Help" value="Aide" />
+  <string key="HelpHelp" value="Utiliser cette entr&#233;e pour un court texte d&#39;aide &#224; l&#39;utilisateur." />
+
+  <string key="FieldTypeGroupLabel" value="Type et exigences relatives au champ" />
+  <string key="FieldType" value="Type de champ" />
+  <string key="FieldTypeHelp" value="S&#233;lectionnez un type de donn&#233;es pour le champ. Le type &#224; d&#233;terminer quel type de donn&#233;es, le champ peut contenir." />
+  <string key="System.String" value="Cha&#238;ne" />
+  <string key="System.Int32" value="Entier" />
+  <string key="System.Decimal" value="Nombre d&#233;cimal" />
+  <string key="System.DateTime" value="Date" />
+  <string key="System.Boolean" value="Bool&#233;en" />
+  <string key="System.Guid" value="Unique Identifier (GUID)" />
+  <string key="Reference" value="R&#233;f&#233;rence des donn&#233;es" />
+  <string key="TypeDetailsHelp" value="Utiliser ce champ pour configurer davantage votre type s&#233;lectionn&#233;." />
+  <string key="Optional" value="Optionnel" />
+  <string key="OptionalHelp" value="Les champs facultatifs peuvent &#234;tre laiss&#233;s vides" />
+  <string key="OptionalFalseLabel" value="Non" />
+  <string key="OptionalTrueLabel" value="Oui" />
+  <string key="ValidationRules" value="Les r&#232;gles de validation" />
+  <string key="ValidationRulesHelp" value="Vous pouvez sp&#233;cifier des r&#232;gles strictes sur les donn&#233;es qui sont entr&#233;es dans ce champ &#224; savoir doit &#234;tre au moins 5 caract&#232;res, doit &#234;tre une adresse de courriel valide, doit &#234;tre une date dans le pass&#233;, etc" />
+  <string key="ValidationRulesAdd" value="Ajouter des r&#232;gles de validation ..." />
+  <string key="ValidationRulesEdit" value="Modifier les r&#232;gles de validation" />
+  <string key="ValidationRulesDialogLabel" value="Configuration des r&#232;gles de validation des champs" />
+
+  
+  <string key="FieldValidationGroupLabel" value="Validation du champ" />
+  <string key="FieldPresentationGroupLabel" value="Pr&#233;sentation du champ de formulaire" />
+  <string key="FieldStructureGroupLabel" value="Pr&#233;sentation structurelle" />
+  
+  <string key="Widget" value="Type de gadget" />
+  <string key="WidgetHelp" value="Vous pouvez s&#233;lectionner le type de gadget d&#39;entr&#233;e (comme une zone de texte) &#224; utiliser lors de l&#39;&#233;dition de ce champ." />
+  <string key="WidgetDialogLabel" value="Configuration du champ du gadget" />
+  <string key="Position" value="Position" />
+  <string key="PositionLast" value="Dernier" />
+  <string key="PositionHelp" value="La position du champ. Contr&#244;le l&#39;ordre des champs." />
+  <string key="GroupByPriority" value="Groupement de l&#39;arborescence" />
+  <string key="GroupByPriorityNone" value="(Aucun groupement) ..." />
+  <string key="GroupByPriorityFirst" value="Groupe par ce champ" />
+  <string key="GroupByPriorityN" value="Groupe en tant que {0}. priorit&#233;" />
+  <string key="GroupByPriorityHelp" value="Vous pouvez sp&#233;cifier qu&#39;un champ doit &#234;tre utilis&#233; pour les donn&#233;es de groupe - ce qui peut am&#233;liorer la lisibilit&#233; lors de l&#39;affichage de longues listes. Utilisez priorit&#233; lorsque plusieurs champs sont utilis&#233;s pour le regroupement." />
+  <string key="TreeOrdering" value="Ordre de l&#39;arborescence" />
+  <string key="TreeOrderingNone" value="(Aucun ordre) ..." />
+  <string key="TreeOrderingFirstAscending" value="Ordre croissant (A-Z)" />
+  <string key="TreeOrderingFirstDescending" value="Ordre d&#233;croissant (Z-A)" />
+  <string key="TreeOrderingNAscending" value="Ordre {0}. croissant" />
+  <string key="TreeOrderingNDescending" value="Ordre {0}. descendant" />
+  <string key="TreeOrderingHelp" value="Vous pouvez sp&#233;cifier qu&#39;un champ doit &#234;tre utilis&#233; pour trier des donn&#233;es dans l&#39;arborescence - ce qui peut am&#233;liorer la lisibilit&#233; quand un champ est utilis&#233; pour positionner des &#233;l&#233;ments sur le site." />
+  <string key="IsTitleField" value="Est titre du champ" />
+  <string key="IsTitleFieldHelp" value="Cochez cette case si vous souhaitez que ce champ soit utilis&#233; comme le champ titre. Les champs titre sont utilis&#233;s lors de l&#39;inscription des donn&#233;es, comme dans l&#39;arborescence &#224; gauche." />
+  <string key="IsTitleFieldLabel" value="Utiliser ce champ de titre dans les listes" />
+
+  
+  <string key="DefaultValueGroupLabel" value="Valeur par d&#233;faut du champ" />
+  <string key="DefaultValue" value="Valeur par d&#233;faut" />
+  <string key="DefaultValueHelp" value="Vous pouvez d&#233;finir une valeur par d&#233;faut pour ce champ." />
+  <string key="DefaultValueDialogLabel" value="Configuration de la valeur par d&#233;faut du champ" />
+
+  <string key="StringMaximumLength" value="Longueur maximale de la cha&#238;ne" />
+  <string key="16CharMax" value="16 caract&#232;res maximum" />
+  <string key="32CharMax" value="32 caract&#232;res maximum" />
+  <string key="64CharMax" value="64 caract&#232;res maximum" />
+  <string key="128CharMax" value="128 caract&#232;res maximum" />
+  <string key="256CharMax" value="256 caract&#232;res maximum" />
+  <string key="512CharMax" value="512 caract&#232;res maximum" />
+  <string key="1024CharMax" value="1024 caract&#232;res maximum" />
+  <string key="Unlimited" value="Longueur illimit&#233;e" />
+  
+  <string key="DecimalNumberFormat" value="Format d&#233;cimal" />
+  <string key="1DecimalPlace" value="1 d&#233;cimale" />
+  <string key="nDecimalPlaces" value="{0} d&#233;cimales" />
+
+  <string key="ReferenceType" value="Type de r&#233;f&#233;rence" />
+  
+  <string key="FieldNameSyntaxInvalid" value="Le nom sp&#233;cifi&#233; est invalide." />
+  <string key="CannotSave" value="Vous ne pouvez pas enregistrer... Un autre champ du m&#234;me nom existe. S&#39;il vous pla&#238;t changer le nom." />
+
+  <string key="SpaceInNameError" value="Nom invalide. Noms de champs de donn&#233;es ne peuvent pas contenir d&#39;espaces. Vous pouvez &#233;crire un nom lisible dans le champ de l&#39;&#233;tiquette ci-dessous." />
+  <string key="NameEmptyError" value="Les noms des champs de donn&#233;es ne peuvent pas &#234;tre vides. S&#39;il vous pla&#238;t sp&#233;cifier un nom." />
+  <string key="NameAlreadyInUseError" value="Un autre champ utilise ce nom. Les noms de champs de donn&#233;es doivent &#234;tre uniques." />
+  <string key="NotAnOptionalTypeError" value="Le type s&#233;lectionn&#233; ne peut pas &#234;tre facultatif." />
+  <string key="NoWidgetSelected" value="N&#39;oubliez pas de sp&#233;cifier un gadget..." />
+  <string key="NoWidgetSelectedLabel" value="(Aucun gadget sp&#233;cifi&#233;)" />
+</strings>
+
+
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="TypesAreReferencing" value="Un ou plusieurs types font r&#233;f&#233;rence &#224; ce type. Le changement de nom n&#39;est pas possible" />
+  <string key="TypeNameInNamespace" value="Le nom du type &#39;{0}&#39; appara&#238;t dans l&#39;espace de noms &#39;{1}&#39; - ce n&#39;est pas autoris&#233;" />
+  <string key="TypesNameClash" value="Un type avec le m&#234;me nom existe d&#233;j&#224;" />
+	<string key="MissingFields" value="Pas de champs ajout&#233;s" />
+	<string key="TypeNameIsInvalidIdentifier" value="Le nom du type &#39;{0}&#39; n&#39;est pas un identifiant valide." />
+	<string key="FieldNameCannotBeUsed" value="Le nom du champ &#39;{0}&#39; ne peut pas &#234;tre utilis&#233;" />
+  <string key="NameSpaceIsTypeTypeName" value="Le &#39;type d&#39;espace nom&#39; est d&#233;j&#224; utilis&#233; comme un &#171;nom de Type &#39;(nom d&#39;espace de noms). Pensez &#224; changer le nom de &#39;{0}&#39; &#224; &#39;{0}.Item" />
+	<string key="NamespaceIsReserved" value="Nom du type appartient &#224; un espace de noms r&#233;serv&#233;." />
+	<string key="CompileErrorWhileAddingType" value="Vous ne pouvez pas ajouter un type de donn&#233;es, car il provoquera des erreurs de compilation." />
+	<string key="CompileErrorWhileChangingType" value="Vous ne pouvez pas modifier un type de donn&#233;es, car il provoquera des erreurs de compilation." />
+</strings>

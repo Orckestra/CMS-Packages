@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="KeyFacade.ErrorTreeNode.Label" value="Erreur dans l&#39;arborescence" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Label" value="Afficher un message" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.ToolTip" value="Afficher un message d&#39;erreur" />
+  <string key="KeyFacade.ErrorTreeNode.ShowMessage.Title" value="Message d&#39;erreur" />
+  
+  <!-- Validation -->
+  <string key="TreeValidationError.Common.UnknownException" value="Une exception inconnue s&#39;est produite : &#39;{0}&#39;" />
+  <string key="TreeValidationError.Common.UnknownElement" value="&#201;l&#233;ment inconnu &#39;{0}&#39;" />
+  <string key="TreeValidationError.Common.MissingAttribute" value="L&#39;attribut obligatoire &#39;{0}&#39; est manquant" />
+  <string key="TreeValidationError.Common.WrongAttributeValue" value="L&#39;attribut &#39;{0}&#39; a une valeur qui n&#39;est pas autoris&#233;" />  
+  <string key="TreeValidationError.Common.MissingProperty" value="Le type &#39;{0}&#39; ne contient pas une propri&#233;t&#233; nomm&#233;e &#39;{1}&#39;" />
+  <string key="TreeValidationError.Common.UnkownInterfaceType" value="Le type &#39;{0}&#39; n&#39;a pas &#233;t&#233; trouv&#233;" />
+  <string key="TreeValidationError.Common.NotImplementingIData" value="Le type &#39;{0}&#39; n&#39;impl&#233;mente pas l&#39;interface &#39;{1}&#39;" />
+  <string key="TreeValidationError.Common.WrongPermissinValue" value="La valeur &#39;{0}&#39; n&#39;est pas autoris&#233; en tant que valeur de type d&#39;autorisation" />
+  <string key="TreeValidationError.Common.WrongLocationValue" value="La valeur &#39;{0}&#39; n&#39;est pas autoris&#233; en tant que valeur d&#39;emplacement" />
+  <string key="TreeValidationError.Common.MissingFunctionMarkup" value="Pas de fonction balisage pr&#233;vu comme un &#233;l&#233;ment enfant" />
+  <string key="TreeValidationError.Common.WrongFunctionMarkup" value="La fonction ne peut &#234;tre cr&#233;&#233; pour le balisage pr&#233;vu de fonction" />
+
+  <string key="TreeValidationError.Markup.NoRootElement" value="L&#39;&#233;l&#233;ment racine est manquant dans le balisage de l&#39;arborescence" />
+  <string key="TreeValidationError.Markup.SchemaError" value="Erreur de syntaxe : {0} &#224; la ligne {1} position {2}" />
+  
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPoint" value="Le point de fixation &#39;{0}&#39; est inconnu" />
+  <string key="TreeValidationError.AutoAttachments.UnknownAttachmentPosition" value="La position de fixation &#39;{0}&#39; est inconnue" />
+  <string key="TreeValidationError.DataAttachments.NoElementsAllowed" value="Aucun &#233;l&#233;ment n&#39;est permis dans les arbres qui sont utilis&#233;s avec les donn&#233;es des arbres attach&#233;s" />
+
+  <string key="TreeValidationError.ElementRoot.ShareRootElementByIdNotAllowed" value="ShareRootElementById n&#39;est autoris&#233; que si l&#39;arborescence a un seul point de fixation nomm&#233;" />
+
+  <string key="TreeValidationError.SimpleElement.WrongIdValue" value="La valeur de l&#39;ID n&#39;est pas autoris&#233;. L&#39;Id doit &#234;tre non-vide, pas commenc&#233; avec NodeAutoId_ et ne pas &#234;tre RootTreeNode" />
+  <string key="TreeValidationError.SimpleElement.AlreadyUsedId" value="La valeur id &#39;{0}&#39; a d&#233;j&#224; &#233;t&#233; utilis&#233; dans cet arbre" />
+
+  <string key="TreeValidationError.DataElementsTreeNode.SameInterfaceUsedTwice" value="L&#39;interface de donn&#233;es &#39;{0}&#39; est utilis&#233; plus d&#39;une fois comme un enfant sous le m&#234;me &#233;l&#233;ment parent et ce n&#39;est pas autoris&#233;" />
+  <string key="TreeValidationError.DataElementsTreeNode.SameParentFilterInterfaceUsedTwice" value="La m&#234;me interface &#39;{0}&#39; est utilis&#233; comme type de parent comme filtre de parent et ce n&#39;est pas autoris&#233;" />
+  <string key="TreeValidationError.DataElementsTreeNode.MoreThanOnParentFilterIsPointingToMe" value="Plus d&#39;un filtre de parent pointe &#224; l&#39;interface &#39;{0}&#39;. Modifiez la valeur d&#39;affichage pour Lazy" />
+
+  <string key="TreeValidationError.DataFolderElements.MissingInterfaceType" value="Le type attribut est absent" />
+  <string key="TreeValidationError.DataFolderElements.WrongInterfaceType" value="Le type d&#39;interface &#39;{0}&#39; ne correspond pas au type d&#39;interface des &#233;l&#233;ments parents &#39;{1}&#39;" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetNotAllowed" value="DateFormat attribut exige que la propri&#233;t&#233; &#39;{0}&#39; doit &#234;tre de type &#39;{1}&#39;, mais est de type &#39;{2}&#39;" />
+  <string key="TreeValidationError.DataFolderElements.DateFormetIsMissing" value="La propri&#233;t&#233; &#39;{0}&#39; est de type Date et cela n&#233;cessite que l&#39;attribut DateFormat soit pr&#233;sent" />
+  <string key="TreeValidationError.DataFolderElements.RangesAndFirstLetterOnlyNotAllowed" value="Plages et premi&#232;re lettre seulement sont non autoris&#233; en m&#234;me temps" />
+  <string key="TreeValidationError.DataFolderElements.WrongFirstLetterOnlyPropertyType" value="Premi&#232;re lettre exige que la propri&#233;t&#233; &#39;{0}&#39; soit de type &#39;{1}&#39;, mais elle est de type &#39;{2}&#39;" />
+  <string key="TreeValidationError.DataFolderElements.WrongDateChildInterfaceType" value="Seuls les &#233;l&#233;ments enfants de donn&#233;es avec le m&#234;me type d&#39;interface que le regroupement de dossiers (&#39;{0}&#39;) sont autoris&#233;s" />
+  <string key="TreeValidationError.DataFolderElements.InterfaceTypeSwitchNotAllowed" value="Changer du type d&#39;interface &#39;{0}&#39; &#224; un autre type d&#39;interface &#39;{1}&#39; n&#39;est pas autoris&#233; dans le m&#234;me groupe de regroupement des dossiers" />
+  <string key="TreeValidationError.DataFolderElements.SameFieldUsedTwice" value="Utiliser le nom de champ &#39;{0}&#39; deux fois dans le m&#234;me arborescence de regroupement n&#39;est pas autoris&#233;" />
+  <string key="TreeValidationError.DataFolderElements.TooManyParentIdFilters" value="Nœud maximale du filtre un parent id peut &#234;tre utilis&#233; sur des &#233;l&#233;ments de donn&#233;es utilis&#233;s dans les groupes" />
+
+  <string key="TreeValidationError.ParentIdFilterNode.TypeIsNotInParentTree" value="Le type &#39;{0}&#39; n&#39;est pas dans l&#39;arbre de parent de ce nœud ou sp&#233;cifi&#233; comme un type de points de fixation" />
+  <string key="TreeValidationError.FieldFilter.UnknownOperatorName" value="L&#39;op&#233;rateur &#39;{0}&#39; est inconnu ou n&#39;est pas support&#233;" />
+  <string key="TreeValidationError.FieldFilter.ValueCouldNotBeConverted" value="La valeur de cha&#238;ne {0} &#39;n&#39;a pas pu &#234;tre convertie dans le type&#39; {1} &#39;" />
+  <string key="TreeValidationError.FieldFilter.OperatorNotSupportedForType" value="L&#39;op&#233;rateur &#39;{0}&#39; n&#39;est pas pris en charge pour le type &#39;{1}&#39;" />
+
+  <string key="TreeValidationError.FunctionFilter.MissingFunctionMarkup" value="Fonction de balisage manquante" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionMarkup" value="La fonction ne peut &#234;tre cr&#233;&#233; pour le balisage pr&#233;vu de fonction" />
+  <string key="TreeValidationError.FunctionFilter.WrongReturnValue" value="La fonction ne retourne pas de valeur de type &#39;{0}&#39;" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionReturnType" value="Le type de l&#39;expression retourn&#233;e par la fonction de retour est &#39;{0}&#39;, &#39;{1}&#39; &#233;tait attendu" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterCount" value="Le nombre de param&#232;tre d&#39;expression retourn&#233;e par la fonction est &#39;{0}&#39;, 1 &#233;tait attendu" />
+  <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterType" value="Le type des expressions de param&#232;tre renvoy&#233; par la fonction est &#39;{0}&#39;, &#39;{1}&#39; &#233;tait attendu" />
+  
+  <string key="TreeValidationError.ReportFunctionAction.WrongReturnValue" value="La fonction ne retourne pas de valeur de type &#39;{0}&#39;" />
+  <string key="TreeValidationError.GenericAddDataAction.MissingMarkupFile" value="Le fichier &#39;{0}&#39; n&#39;existe pas" />
+  <string key="TreeValidationError.GenericAddDataAction.BadMarkupPath" value="Le chemin de balisage personnalis&#233; &#39;{0}&#39; est mal format&#233;. Utiliseer ~ / Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericEditDataAction.OwnerIsNotDataNode" value="L&#39;action de modifier des donn&#233;es ne s&#39;applique qu&#39;aux &#233;l&#233;ments qui produisent des &#233;l&#233;ments de donn&#233;es" />
+  <string key="TreeValidationError.GenericEditDataAction.MissingMarkupFile" value="Le fichier &#39;{0}&#39; n&#39;existe pas" />
+  <string key="TreeValidationError.GenericEditDataAction.BadMarkupPath" value="Le chemin de balisage personnalis&#233; &#39;{0}&#39; est mal format&#233;. Utiliseer ~ / Dir1/Dir2/File.xml" />
+  <string key="TreeValidationError.GenericDeleteDataAction.OwnerIsNotDataNode" value="L&#39;action de suppression de donn&#233;es ne s&#39;applique qu&#39;aux &#233;l&#233;ments qui produisent des &#233;l&#233;ments de donn&#233;es" />
+  <string key="TreeValidationError.MessageBoxAction.UnknownDialogType" value="Le type de dialogue &#39;{0}&#39; n&#39;est pas pris en charge" />
+  <string key="TreeValidationError.CustomUrlAction.TooManyPostParameterElements" value="Trop de &#39;{0}&#39; &#233;l&#233;ments, un seul est autoris&#233;" />
+  <string key="TreeValidationError.CustomUrlAction.UnknownViewType" value="Le type de vue &#39;{0}&#39; n&#39;est pas pris en charge" />
+
+  <string key="TreeValidationError.FieldOrderBy.UnknownDirection" value="La valeur de direction &#39;{0}&#39; est erron&#233;e.  Elle doit &#234;tre soit &#171;croissant&#187; ou &#171;d&#233;croissant&#187;" />
+  <string key="TreeValidationError.FieldOrderBy.UnknownField" value="Le type &#39;{0}&#39; ne contient pas de champ nomm&#233; &#39;{1}&#39;" />
+
+  <string key="TreeValidationError.DataFieldValueHelper.WrongFormat" value="&#39;{0}&#39; est dans un mauvais format, utiliser le format: {1}" />
+  <string key="TreeValidationError.DataFieldValueHelper.InterfaceNotInParentTree" value="L&#39;interface &#39;{0}&#39; ne figure pas dans l&#39;&#233;l&#233;ment en cours ou l&#39;un de ses parents," />
+
+  <string key="TreeValidationError.Range.WrongFormat" value="La valeur de la plage est mal format&#233;e" />
+  <string key="TreeValidationError.Range.UnsupportedType" value="La propri&#233;t&#233; &#39;{0}&#39; est de type &#39;{1}&#39; qui ne supporte pas les plages" />
+
+  <string key="TreeValidationError.Range.MinMaxError" value="La premi&#232;re valeur ({0}) dans une plage devrait &#234;tre moindre que la deuxi&#232;me valeur ({1})" />
+  <string key="TreeValidationError.Range.NextRangeError" value="La valeur maximale d&#39;une plage doit &#234;tre inf&#233;rieure &#224; la valeur minimale de la plage succ&#233;dant" />
+
+  
+  <!-- Ranges -->
+  
+  <string key="TreeRanges.IntRange.Closed" value="De {0} &#224; {1}" />
+  <string key="TreeRanges.IntRange.MinOpenEnded" value="{0} ou moins" />
+  <string key="TreeRanges.IntRange.MaxOpenEnded" value="{0} ou plus" />
+  <string key="TreeRanges.IntRange.Other" value="Autre" />
+
+  <string key="TreeRanges.StringRange.Closed" value="De {0} &#224; {1}" />
+  <string key="TreeRanges.StringRange.MinOpenEnded" value="{0} et avant" />
+  <string key="TreeRanges.StringRange.MaxOpenEnded" value="{0} et apr&#232;s" />
+  <string key="TreeRanges.StringRange.Other" value="Autre" />
+
+  
+  <!-- Other -->
+  <string key="GenericAddDataAction.DefaultLabel" value="Ajouter" />
+  <string key="GenericEditDataAction.DefaultLabel" value="Modifier" />
+  <string key="GenericDeleteDataAction.DefaultLabel" value="Effacer" />
+  
+  
+  <string key="TreeGenericDelete.CascadeDeleteErrorTitle" value="Erreur de suppression en cascade" />
+  <string key="TreeGenericDelete.CascadeDeleteErrorMessage" value="Le type est r&#233;f&#233;renc&#233; par un autre type qui ne permet pas de suppression en cascade. Cette op&#233;ration a &#233;t&#233; interrompue" />
+  
+  <string key="TreeGenericDeleteConfirm.LabelFieldGroup" value="Supprimer les donn&#233;es?" />
+  <string key="TreeGenericDeleteConfirm.Text" value="Effacer" />
+  
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.LabelFieldGroup" value="Supprimer les donn&#233;es?" />
+  <string key="TreeGenericDeleteConfirmDeletingRelatedData.ConfirmationText" value="Il existe des donn&#233;es r&#233;f&#233;renc&#233;es qui seront &#233;galement supprim&#233;s, voulez-vous continuer?" />
+
+
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.Label" value="Ajouter" />
+  <string key="TreeAddTreeDefinitionWorkflow.AddNew.ToolTip" value="Ajouter une nouvelle d&#233;finition d&#39;arborescence" />           
+  <string key="TreeAddTreeDefinition.Layout.Label" value="Ajouter une nouvelle d&#233;finition d&#39;arborescence" />
+  <string key="TreeAddTreeDefinition.FieldGroup.Label" value="Ajouter une nouvelle d&#233;finition d&#39;arborescence" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Label" value="Nom de la d&#233;finition" />
+  <string key="TreeAddTreeDefinition.NameTextBox.Help" value="Nom de la d&#233;finition" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Label" value="Mod&#232;le" />
+  <string key="TreeAddTreeDefinition.TemplateSelector.Help" value="S&#233;lectionner un mod&#232;le de d&#233;part" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Label" value="Position" />
+  <string key="TreeAddTreeDefinition.PositionSelector.Help" value="Position" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.Label" value="Effacer" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Delete.ToolTip" value="Supprimer la d&#233;finition de l&#39;arborescence" />
+  <string key="TreeDeleteTreeDefinition.Layout.Label" value="Supprimer la d&#233;finition de l&#39;arborescence" />
+  <string key="TreeDeleteTreeDefinition.Title" value="Supprimer la d&#233;finition de l&#39;arborescence s&#233;lectionn&#233;" />
+  <string key="TreeDeleteTreeDefinition.Description" value="Supprimer la d&#233;finition de l&#39;arborescence s&#233;lectionn&#233;?" />
+
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.Label" value="Modifier" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.ToolTip" value="Modifier la d&#233;finition de l&#39;arborescence" />
+
+  <string key="AddApplicationWorkflow.AddApplication.Label" value="Ajouter une application" />
+  <string key="AddApplicationWorkflow.AddApplication.ToolTip" value="Ajouter une nouvelle application" />
+  <string key="AddApplication.Layout.Label" value="Ajouter une application" />
+  <string key="AddApplication.FieldGroup.Label" value="S&#233;lectionner une application" />
+  <string key="AddApplication.TreeIdSelector.Label" value="Application" />
+  <string key="AddApplication.TreeIdSelector.Help" value="S&#233;lectionner l&#39;application que vous souhaitez ajouter" />
+  <string key="AddApplication.PositionSelector.Label" value="Position" />
+  <string key="AddApplication.PositionSelector.Help" value="La position d&#39;insertion de cette application" />
+  <string key="AddApplication.NoTrees.Title" value="Aucune application" />
+  <string key="AddApplication.NoTrees.Message" value="Vous avez ajout&#233; toutes les applications disponibles" />
+
+  <string key="RemoveApplicationWorkflow.RemoveApplication.Label" value="Retirer l&#39;application" />
+  <string key="RemoveApplicationWorkflow.RemoveApplication.ToolTip" value="Supprimer l&#39;application existante" />
+  <string key="RemoveApplication.Layout.Label" value="Supprimer l&#39;application" />
+  <string key="RemoveApplication.FieldGroup.Label" value="Supprimer l&#39;application" />
+  <string key="RemoveApplication.TreeIdSelector.Label" value="Application" />
+  <string key="RemoveApplication.TreeIdSelector.Help" value="S&#233;lectionner l&#39;application que vous souhaitez supprimer" />
+  <string key="RemoveApplication.NoTrees.Title" value="Aucune application" />
+  <string key="RemoveApplication.NoTrees.Message" value="Vous avez supprim&#233; toutes les applications disponibles" />
+
+  <string key="LocalizeDataWorkflow.LocalizeDataLabel" value="Traduire les donn&#233;es" />
+  <string key="LocalizeDataWorkflow.LocalizeDataToolTip" value="Traduire les donn&#233;es" />
+  <string key="LocalizeDataWorkflow.DisabledData" value="Pas encore approuv&#233; ou publi&#233;" />
+  <string key="LocalizeData.ShowError.Layout.Label" value="Impossible de traduire les donn&#233;es" />
+  <string key="LocalizeData.ShowError.InfoTable.Caption" value="Erreurs de traduction" />  
+  <string key="LocalizeData.ShowError.Description" value="Les domaines suivants ont une r&#233;f&#233;rence &#224; un type de donn&#233;es. Vous devez traduire ces &#233;l&#233;ments de donn&#233;es avant de pouvoir traduire cette donn&#233;e" />
+  <string key="LocalizeData.ShowError.FieldErrorFormat" value="Le champ &#39;{0}&#39; r&#233;f&#233;rence des donn&#233;es de type &#39;{1}&#39; avec le libell&#233; &#39;{2}&#39;" />
+  <string key="LocalizeData.ShowError.AlreadyTranslated" value="Ces donn&#233;es ont d&#233;j&#224; &#233;t&#233; traduite. La version traduite appartient &#224; un groupe diff&#233;rent." />
+</strings>

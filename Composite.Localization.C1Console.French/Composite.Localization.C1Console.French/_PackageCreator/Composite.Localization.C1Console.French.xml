@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Localizations>
+		<Add name="fr-FR" />
+	</pc:Localizations>
+	<mi:PackageRequirements minimumCompositeVersion="4.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Localization.C1Console.French" groupName="Composite.Localization" version="1.0.4" author="Erik Paquet" website="none" readMoreUrl="http://docs.composite.net/Composite.Localization.C1Console" id="9b16ade6-3f18-4170-9bc4-365473f0828c" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>French language pack for the console GUI</Description>
+		<TechnicalDetails>French language pack for the console GUI.</TechnicalDetails>
+	</mi:PackageInformation>
+</pc:PackageCreator>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+  <!-- menus -->
+  <string key="Menu.ViewSource" value="Source de la page" />
+  <string key="ContextMenu.Back" value="Pr&#233;c&#233;dent" />
+  <string key="ContextMenu.Forward" value="Avant" />
+  <string key="ContextMenu.Refresh" value="Actualiser" />
+  <string key="ContextMenu.ViewSource" value="Source de la page" />
+
+
+  <!-- buttons -->
+	<string key="ToolBarButton.Back.ToolTip" value="Revenir d&#39;une page" />
+	<string key="ToolBarButton.Forward.ToolTip" value="Avancer d&#39;une page" />
+	<string key="ToolBarButton.Refresh.ToolTip" value="Actualiser la page" />
+  <string key="ToolBarButton.Go.ToolTip" value="Allez &#224; l&#39;adresse dans la barre d&#39;adresse" />
+  <string key="ToolBarButton.Home.ToolTip" value="Aller &#224; la page de d&#233;marrage" /> <!-- TODO: Show URL instead! -->
+	
+	<!-- URL errors -->
+	<string key="AddressBar.Invalid.DialogTitle.External" value="Acc&#232;s refus&#233;" />
+	<string key="AddressBar.Invalid.DialogText.External" value="L&#39;URL externe ne peut pas charg&#233;." />
+	<string key="AddressBar.Invalid.DialogTitle.BadRequest" value="URL invalide" />
+	<string key="AddressBar.Invalid.DialogText.BadRequest" value="L&#39;URL est invalide et ne peut pas &#234;tre charg&#233;." />
+	<string key="AddressBar.Invalid.DialogTitle.Unauthorized" value="Non autoris&#233;" />
+	<string key="AddressBar.Invalid.DialogText.Unauthorized" value="Vous n&#39;&#234;tes pas autoris&#233; &#224; consulter la page de l&#39;URL sp&#233;cifi&#233;e." />
+	<string key="AddressBar.Invalid.DialogTitle.NotFound" value="Page non trouv&#233;e" />
+	<string key="AddressBar.Invalid.DialogText.NotFound" value="Page de l&#39;URL sp&#233;cifi&#233; non trouv&#233;e." />
+	<string key="AddressBar.Invalid.DialogTitle.InternalError" value="Erreur serveur" />
+	<string key="AddressBar.Invalid.DialogText.InternalError" value="Le serveur a signal&#233; une erreur avec l&#39;URL sp&#233;cifi&#233;. La page ne peut pas &#234;tre charg&#233;e." />
+	<string key="AddressBar.Invalid.DialogTitle.Default" value="Page non charg&#233;e" />
+	<string key="AddressBar.Invalid.DialogText.Default" value="Une erreur emp&#234;che l&#39;URL d&#39;&#234;tre charg&#233;." />	
+	
+</strings>

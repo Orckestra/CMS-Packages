@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="RootElement.Label" value="Fonctions de contr&#244;le utilisateur" />
+  <string key="RootElement.ToolTip" value="Fonctions bas&#233;es sur un contr&#244;le .ascx" />
+
+  <string key="AddNewUserControlFunction.Label" value="Ajouter une fonction de contr&#244;le utilisateur" />
+  <string key="AddNewUserControlFunction.ToolTip" value="Ajouter une nouvelle fonction de contr&#244;le utilisateur" />
+  <string key="EditUserControlFunction.Label" value="Modifier" />
+  <string key="EditUserControlFunction.ToolTip" value="Modifier la fonction de contr&#244;le utilisateur" />
+  <string key="DeleteUserControlFunction.Label" value="Effacer" />
+  <string key="DeleteUserControlFunction.ToolTip" value="Supprimer la fonction de contr&#244;le utilisateur" />
+  
+  <string key="AddNewUserControlFunction.LabelDialog" value="Ajouter une fonction de contr&#244;le utilisateur" />
+  <string key="AddNewUserControlFunction.LabelFieldGroup" value="Nouvelle fonction de contr&#244;le utilisateur" />
+  <string key="AddNewUserControlFunction.LabelName" value="Nom" />
+  <string key="AddNewUserControlFunction.HelpName" value="" />
+  <string key="AddNewUserControlFunction.LabelNamespace" value="Espace de noms" />
+  <string key="AddNewUserControlFunction.HelpNamespace" value="" />
+  <string key="AddNewUserControlFunction.LabelCopyFrom" value="Copier de" />
+  <string key="AddNewUserControlFunction.LabelCopyFromHelp" value="Vous pouvez copier le code d&#39;un autre fonction de contr&#244;le de l&#39;utilisateur en le s&#233;lectionnant dans cette liste." />
+  <string key="AddNewUserControlFunction.LabelCopyFromEmptyOption" value="(Nouvelle fonction de contr&#244;le utilisateur)" />
+
+  <string key="AddNewUserControlFunctionWorkflow.DuplicateName" value="Une fonction de C1 avec le m&#234;me nom existe d&#233;j&#224;." />
+  <string key="AddNewUserControlFunctionWorkflow.EmptyName" value="Nom de la fonction est vide" />
+  <string key="AddNewUserControlFunctionWorkflow.NamespaceEmpty" value="La fonction espace de noms est vide" />
+  <string key="AddNewUserControlFunctionWorkflow.InvalidNamespace" value="Espace de noms doit &#234;tre comme A.B.C - Ne pas commencer et se terminer par ." />
+  <string key="AddNewUserControlFunctionWorkflow.TotalNameTooLang" value="La longueur totale du nom et de l&#39;espace de noms est trop long (utilis&#233; pour nommer le fichier ASCX)." />
+
+  <string key="EditUserControlFunctionWorkflow.Validation.DialogTitle" value="Erreur de validation" />
+  <string key="EditUserControlFunctionWorkflow.Validation.CompilationFailed" value="La compilation a &#233;chou&#233; : {0}" />
+  <string key="EditUserControlFunctionWorkflow.Validation.IncorrectBaseClass" value="La fonction de contr&#244;le utilisateur doit h&#233;riter &#39;{0}&#39;" />
+
+  <string key="DeleteUserControlFunctionWorkflow.ConfirmDeleteTitle" value="Supprimer la fonction de contr&#244;le utilisateur?" />
+  <string key="DeleteUserControlFunctionWorkflow.ConfirmDeleteMessage" value="Supprimer le contr&#244;le utilisateur s&#233;lectionn&#233;?" />
+</strings>

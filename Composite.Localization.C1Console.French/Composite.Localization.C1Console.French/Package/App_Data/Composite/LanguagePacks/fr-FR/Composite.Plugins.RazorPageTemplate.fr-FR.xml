@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="EditRazorFileAction.Label" value="Modifier le fichier Razor" />
+  <string key="EditRazorFileAction.ToolTip" value="Editer le fichier CSHTML" />
+
+  <string key="EditRazorTemplateAction.Label" value="Modifier le mod&#232;le Razor" />
+  <string key="EditRazorTemplateAction.ToolTip" value="Editer le fichier CSHTML derri&#232;re le mod&#232;le" />
+
+  <string key="DeleteRazorPageTemplateAction.Label" value="Effacer" />
+  <string key="DeleteRazorPageTemplateAction.ToolTip" value="Supprimer le mod&#232;le de page" />
+
+  <string key="AddNewRazorPageTemplate.LabelDialog" value="Ajouter un nouveau mod&#232;le Razor" />
+  <string key="AddNewRazorPageTemplate.LabelFieldGroup" value="Mod&#232;le Razor" />
+  <string key="AddNewRazorPageTemplate.LabelTemplateTitle" value="Titre du mod&#232;le" />
+  <string key="AddNewRazorPageTemplate.LabelTemplateTitleHelp" value="Le titre d&#233;crit ce mod&#232;le dans les listes. Envisager de choisir un nom court mais significatif." />
+  <string key="AddNewRazorPageTemplate.LabelCopyFrom" value="Copier de" />
+  <string key="AddNewRazorPageTemplate.LabelCopyFromHelp" value="Vous pouvez copier les balises d&#39;un autre mod&#232;le de mise en page en le s&#233;lectionnant dans cette liste." />
+  <string key="AddNewRazorPageTemplate.LabelCopyFromEmptyOption" value="(Nouveau mod&#232;le)" />
+  <string key="AddNewRazorPageTemplateWorkflow.TitleInUseTitle" value="Titre d&#233;j&#224; utilis&#233;" />
+  <string key="AddNewRazorPageTemplateWorkflow.TitleTooLong" value="Le titre est trop long (utilis&#233; comme partie du nom de fichier .cshtml)." />
+
+  <string key="EditTemplate.Validation.DialogTitle" value="Erreur de validation" />
+  <string key="EditTemplate.Validation.CompilationFailed" value="La compilation a &#233;chou&#233; : {0}" />
+  <string key="EditTemplate.Validation.IncorrectBaseClass" value="classe de mod&#232;le de page n&#39;h&#233;rite pas &#39;{0}&#39;" />
+  <string key="EditTemplate.Validation.PropertyError" value="Impossible d&#39;&#233;valuerla propri&#233;t&#233; &#39;{0}&#39; de la page de mod&#232;le. Excepton : {1}" />
+  <string key="EditTemplate.Validation.TemplateIdChanged" value="Il n&#39;est pas autoris&#233; &#224; changer l&#39;identifiant du mod&#232;le par le flux de travail actuel. L&#39;identifiant du mod&#232;le original est &#39;{0}&#39;" />
+</strings>

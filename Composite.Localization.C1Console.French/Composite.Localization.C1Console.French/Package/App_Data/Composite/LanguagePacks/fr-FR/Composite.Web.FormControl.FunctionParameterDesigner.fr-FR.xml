@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<strings>
+  
+  <string key="AddNewButtonLabel" value="Ajouter un nouveau" />
+  <string key="DeleteButtonLabel" value="Effacer" />
+
+  <string key="TreeRootNodeLabel" value="Liste des param&#232;tres d&#39;entr&#233;e" />
+
+  <string key="ParameterNamingGroupLabel" value="Nommage des param&#232;tres et de l&#39;aide" />
+  <string key="Name" value="Nom du param&#232;tre" />
+  <string key="NameHelp" value="Le nom du param&#232;tre. Ce nom est utilis&#233; par le syst&#232;me pour identifier ce param&#232;tre. Les noms doivent &#234;tre uniques et ne peuvent pas contenir des espaces et autres caract&#232;res sp&#233;ciaux. Utilisez des noms comme &#171;Titre&#187;, &#171;date de d&#233;but&#187;, &#171;largeimage &#39;etc" />
+  <string key="Label" value="Libell&#233;" />
+  <string key="LabelHelp" value="Le texte que les utilisateurs devraient voir lorsque vous sp&#233;cifiez une valeur pour ce param&#232;tre. C&#39;est le &#171;nom humain&#187; pour le param&#232;tre." />
+  <string key="Help" value="Aide" />
+  <string key="HelpHelp" value="&#201;crire un court texte qui indique &#224; l&#39;utilisateur ce qu&#39;il faut faire avec le param&#232;tre." />
+
+  <string key="ParameterTypeValueGroupLabel" value="Type et les valeurs du param&#232;tre" />
+  <string key="Type" value="Type de param&#232;tre" />
+  <string key="TypeHelp" value="Le type de ce param&#232;tre." />
+  <string key="DefaultValue" value="Valeur par d&#233;faut" />
+  <string key="DefaultValueHelp" value="Vous pouvez sp&#233;cifier une valeur par d&#233;faut pour ce param&#232;tre. Si un param&#232;tre a une valeur par d&#233;faut, les utilisateurs ne sont pas tenus de le pr&#233;ciser lors de l&#39;appel de la fonction." />
+  <string key="DefaultValueSpecify" value="Sp&#233;cifiez la valeur par d&#233;faut" />
+  <string key="DefaultValueEdit" value="Modifier la valeur par d&#233;faut" />
+  <string key="DefaultValueDialogLabel" value="Valeur par d&#233;faut du param&#232;tre" />
+  
+  <string key="TestValue" value="La valeur de test" />
+  <string key="TestValueHelp" value="Lors de la pr&#233;visualisation, vous pouvez tester avec diff&#233;rentes valeurs de param&#232;tres d&#39;entr&#233;e &#224; l&#39;aide de ce champ. S&#39;il est laiss&#233; vide, la valeur par d&#233;faut sera utilis&#233;e pour les pr&#233;visualisations." />
+  <string key="TestValueSpecify" value="Sp&#233;cifier la valeur de test" />
+  <string key="TestValueEdit" value="Modifier la valeur de test" />
+  <string key="TestValueDialogLabel" value="Valeur de test du param&#232;tre" />
+
+  <string key="ParameterPresentationGroupLabel" value="Pr&#233;sentation du param&#232;tre" />
+  <string key="Widget" value="Gadget" />
+  <string key="WidgetHelp" value="Vous pouvez s&#233;lectionner le type de gadget d&#39;entr&#233;e (comme une zone de texte) &#224; utiliser lors de la sp&#233;cification d&#39;une valeur pour ce param&#232;tre. Les gadgets sont disponibles uniquement pour les types simples." />
+  <string key="NoWidgetSpecifiedLabel" value="(Aucun gadget sp&#233;cifi&#233;)" />
+  <string key="WidgetDialogLabel" value="Param&#232;tre du gadget" />
+  <string key="Position" value="Position" />
+  <string key="PositionLast" value="Dernier" />
+  <string key="PositionHelp" value="La position du param&#232;tre. Contr&#244;le l&#39;ordre des param&#232;tres." />
+
+  <string key="SpecifyWidgetTip" value="N&#39;oubliez pas de sp&#233;cifier un gadget..." />
+
+  <string key="FieldNameSyntaxInvalid" value="Le nom sp&#233;cifi&#233; est invalide." />
+  <string key="CannotSave" value="Vous ne pouvez pas enregistrer... Un autre param&#232;tre a le m&#234;me nom. S&#39;il vous pla&#238;t changer le nom." />
+
+  <string key="SpaceInNameError" value="Nom invalide. Les noms de param&#232;tres ne peuvent pas contenir d&#39;espaces. Vous pouvez &#233;crire un nom lisible dans le champ ci-dessous." />
+  <string key="NameEmptyError" value="Les noms de param&#232;tres ne peuvent pas &#234;tre vide. S&#39;il vous pla&#238;t sp&#233;cifier un nom." />
+  <string key="NameAlreadyInUseError" value="Un autre param&#232;tre utilise ce nom. Les noms de param&#232;tres doivent &#234;tre uniques." />
+
+
+
+</strings>
+
+
+

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1CA537AC-F896-455F-A9EB-82103F0EDDC0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.Localization.C1Console.French</RootNamespace>
+    <AssemblyName>Composite.Localization.C1Console.French</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.C1Console.SecurityViolation.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.C1Console.Trees.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.C1Console.Users.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Core.PackageSystem.PackageFragmentInstallers.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Cultures.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.EntityTokenLocked.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.GeneratedTypes.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Management.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.NameValidation.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Permissions.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.AllFunctionsElementProvider.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.GeneratedDataTypesElementProvider.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.GenericPublishProcessController.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.LocalizationElementProvider.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.MasterPagePageTemplate.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.MethodBasedFunctionProviderElementProvider.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.PackageElementProvider.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.PageElementProvider.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.PageTemplateElementProvider.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.PageTemplateFeatureElementProvider.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.PageTypeElementProvider.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.RazorFunction.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.RazorPageTemplate.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.SqlFunction.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.StandardFunctions.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.UserControlFunction.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.UserGroupElementProvider.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.VisualFunction.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.WebsiteFileElementProvider.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.XsltBasedFunction.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Web.FormControl.FunctionCallsDesigner.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Web.FormControl.FunctionParameterDesigner.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Web.FormControl.TypeFieldDesigner.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Web.PageBrowser.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Web.SEOAssistant.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Web.SourceEditor.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Web.UrlConfiguration.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Web.VisualEditor.fr-FR.xml" />
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_PackageCreator\Composite.Localization.C1Console.French.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Release\Composite.Localization.C1Console.French.zip" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56742</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

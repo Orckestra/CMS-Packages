@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderLabel" value="Toutes les fonctions" />
+	<string key="Plugins.AllFunctionsElementProvider.FunctionRootFolderToolTip" value="Toutes les fonctions" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderLabel" value="Toutes les fonctions de gadgets" />
+	<string key="Plugins.AllFunctionsElementProvider.WidgetFunctionRootFolderToolTip" value="Toutes les fonctions de gadget" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentation" value="G&#233;n&#233;rer la documentation" />
+	<string key="AllFunctionsElementProvider.GenerateDocumentationTooltip" value="G&#233;n&#233;rer la documentation pour toutes les fonctions sous ce dossier" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformation" value="Informations" />
+  <string key="AllFunctionsElementProvider.ViewFunctionInformationTooltip" value="Afficher les informations de fonction" />
+
+  <string key="FunctionTesterWorkflow.Layout.Label" value="Test : {0}" />
+  <string key="FunctionTesterWorkflow.FunctionCalls.Label" value="Fonctions" />  
+  <string key="FunctionTesterWorkflow.Preview.Label" value="R&#233;sultats" />
+  <string key="FunctionTesterWorkflow.Runtime.FieldGroup.Label" value="Dur&#233;e" />
+  <string key="FunctionTesterWorkflow.DebugFieldGroup.Label" value="Param&#232;tres" />
+  <string key="FunctionTesterWorkflow.DebugPage.Label" value="Page" />
+  <string key="FunctionTesterWorkflow.DebugPage.Help" value="Lors de l&#39;ex&#233;cution de la fonction, cette page est utilis&#233;e comme page courante" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Label" value="Port&#233;e des donn&#233;es" />
+  <string key="FunctionTesterWorkflow.DebugPageDataScope.Help" value="Lors de l&#39;ex&#233;cution de la fonction, il est utilis&#233; comme port&#233;e actuelle des donn&#233;es" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Label" value="Langue" />
+  <string key="FunctionTesterWorkflow.DebugActiveLocale.Help" value="Lors de l&#39;ex&#233;cution de la fonction, il est utilis&#233; comme langage courant" />
+  <string key="FunctionTesterWorkflow.AdminitrativeScope.Label" value="Administratif" />
+  <string key="FunctionTesterWorkflow.PublicScope.Label" value="Public" />
+  
+
+  <string key="AllFunctionsElementProvider.FunctionTester.Label" value="Fonction de test" />
+  <string key="AllFunctionsElementProvider.FunctionTester.ToolTip" value="Fonction de test" />
+</strings>

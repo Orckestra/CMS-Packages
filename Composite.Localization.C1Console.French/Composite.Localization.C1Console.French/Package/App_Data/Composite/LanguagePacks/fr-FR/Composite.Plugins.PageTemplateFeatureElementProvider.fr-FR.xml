@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+    <string key="ElementProvider.RootLabel" value="Mod&#232;les de composants" />
+    <string key="ElementProvider.RootToolTip" value="Ici vous pouvez trouver des fonctions - des extraits d&#39;HTML et des fonctionnalit&#233;s - inclus dans les mod&#232;les de site Web." />
+    <string key="ElementProvider.AddTemplateFeature" value="Ajouter un mod&#232;le de composant" />
+    <string key="ElementProvider.AddTemplateFeatureToolTip" value="Ajouter un nouveau mod&#232;le de composant" />
+    <string key="ElementProvider.DeleteTemplateFeature" value="Supprimer le mod&#232;le de composant" />
+    <string key="ElementProvider.DeleteTemplateFeatureToolTip" value="Supprimer ce mod&#232;le de composant" />
+    <string key="ElementProvider.EditTemplateFeature" value="Modifier le mod&#232;le de composant" />
+    <string key="ElementProvider.EditTemplateFeatureToolTip" value="Modifier le mod&#232;le de composant s&#233;lectionn&#233;" />
+    <string key="ElementProvider.EditVisually" value="Utiliser l&#39;&#233;diteur visuel" />
+    <string key="ElementProvider.EditVisuallyToolTip" value="Lorsqu&#39;il est activ&#233; l&#39;&#233;diteur visuel sera utilis&#233; pour g&#233;rer ce composant" />
+
+    <string key="AddWorkflow.LabelDialog" value="Ajouter un nouveau mod&#232;le de composant" />
+    <string key="AddWorkflow.LabelFieldGroup" value="Mod&#232;le de composant" />
+    <string key="AddWorkflow.LabelTemplateFeatureName" value="Nom du composant" />
+    <string key="AddWorkflow.LabelTemplateFeatureNameHelp" value="Le nom est utilis&#233; pour identifier ce composant lorsqu&#39;il est inclus dans les mod&#232;les" />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType" value="Type d&#39;&#233;diteur" />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorTypeHelp" value="Choisissez le type d&#39;&#233;diteur &#224; utiliser pour le maintien de ce composant. Vous pouvez toujours changer le type d&#39;&#233;diteur dans l&#39;arborescence plus tard." />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType.html" value="&#201;diteur visuel" />
+    <string key="AddWorkflow.LabelTemplateFeatureEditorType.xml" value="&#201;diteur de balises" />
+    <string key="AddWorkflow.NameInUse" value="Le nom est d&#233;j&#224; utilis&#233; par un autre composant" />
+    <string key="AddWorkflow.NameTooLong" value="Le titre est trop long (max 50 caract&#232;res)" />
+    <string key="AddWorkflow.NameNotValidInFilename" value="Le nom doit &#234;tre utilisable dans un nom de fichier - vous avez des caract&#232;res non valides" />
+
+    <string key="DeleteWorkflow.Title" value="Supprimer ce mod&#232;le de composant?" />
+    <string key="DeleteWorkflow.Text" value="Si ce composant est utilis&#233; par les mod&#232;les, cette action pourrait g&#233;n&#233;rer des erreurs." />
+</strings>

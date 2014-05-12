@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="PageType.Tree.Root.Label" value="Types de page" />
+  <string key="PageType.Tree.DefaultContentElement.Label" value="&#39;Placeholder&#39; avec contenu" />
+  <string key="PageType.Tree.MetaDataFieldsElement.Label" value="Champs de m&#233;tadonn&#233;es" />
+  <string key="PageType.Tree.AddNewPageType.Label" value="Ajouter un type de page" />
+  <string key="PageType.Tree.AddNewPageType.ToolTip" value="Ajouter un nouveau type de page" />
+  <string key="PageType.Tree.EditPageType.Label" value="Modifier le type de page" />
+  <string key="PageType.Tree.EditPageType.ToolTip" value="Modifier le type de page s&#233;lectionn&#233;" />
+  <string key="PageType.Tree.DeletePageType.Label" value="Supprimer le type de page" />
+  <string key="PageType.Tree.DeletePageType.ToolTip" value="Supprimer le type de page s&#233;lectionn&#233;" />
+  <string key="PageType.Tree.AddDefaultPageContent.Label" value="Ajouter un contenu par d&#233;faut" />
+  <string key="PageType.Tree.AddDefaultPageContent.ToolTip" value="Ajouter une &#39;placeholder&#39; avec contenu par d&#233;faut" />
+  <string key="PageType.Tree.EditDefaultPageContent.Label" value="Modifier le contenu par d&#233;faut" />
+  <string key="PageType.Tree.EditDefaultPageContent.ToolTip" value="Modifier le &#39;placeholder&#39; avec contenu par d&#233;faut" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.Label" value="Supprimer le contenu par d&#233;faut" />
+  <string key="PageType.Tree.DeleteDefaultPageContent.ToolTip" value="Supprimer le contenu par d&#233;faut" />
+  <string key="PageType.Tree.AddMetaDataField.Label" value="Ajouter des m&#233;tadonn&#233;es" />
+  <string key="PageType.Tree.AddMetaDataField.ToolTip" value="Ajouter une nouvelle m&#233;tadonn&#233;e" />
+  <string key="PageType.Tree.EditMetaDataField.Label" value="Modifier les m&#233;tadonn&#233;es" />
+  <string key="PageType.Tree.EditMetaDataField.ToolTip" value="Modifier les m&#233;tadonn&#233;es s&#233;lectionn&#233;es" />
+  <string key="PageType.Tree.DeleteMetaDataField.Label" value="Supprimer la m&#233;tadonn&#233;e" />
+  <string key="PageType.Tree.DeleteMetaDataField.ToolTip" value="Supprimer la m&#233;tadonn&#233;e s&#233;lectionn&#233;e" />
+  <string key="PageType.AddNewPageTypeWorkflow.Layout.Label" value="Ajouter un nouveau type de page" />
+  <string key="PageType.AddNewPageTypeWorkflow.FieldGroup.Label" value="Param&#232;tres du nouveau type de page" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Label" value="Nom" />
+  <string key="PageType.AddNewPageTypeWorkflow.NameTextBox.Help" value="Le nom du nouveau type de page" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Label" value="Description" />
+  <string key="PageType.AddNewPageTypeWorkflow.DescriptionTextArea.Help" value="La description du nouveau type de page" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsPlaceHolder.Label" value="Param&#232;tres" />
+  <string key="PageType.EditPageTypeWorkflow.SettingsFieldGroup.Label" value="Param&#232;tres du type de page" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Label" value="Nom" />
+  <string key="PageType.EditPageTypeWorkflow.NameTextBox.Help" value="Le nom du type de page" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Label" value="Description" />
+  <string key="PageType.EditPageTypeWorkflow.DescriptionTextArea.Help" value="La description du type de page" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Label" value="Disponible" />
+  <string key="PageType.EditPageTypeWorkflow.AvailableCheckBox.Help" value="D&#233;cocher cette case rendra cette page non s&#233;lectionnable de toutes les pages" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Label" value="Titre de menu pr&#233;d&#233;fini" />
+  <string key="PageType.EditPageTypeWorkflow.PresetMenuTitleCheckBox.Help" value="Si cette case est coch&#233;e une valeur par d&#233;faut pour le titre du menu des pages sera pr&#233;d&#233;fini" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Label" value="Type par d&#233;faut des pages enfant" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.Help" value="S&#233;lectionnez un type de page qui sera celui par d&#233;faut des pages enfants" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultChildPageTypeKeySelector.NoneSelectedLabel" value="[Aucun]" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplatePlaceHolder.Label" value="Mettre en cache" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionFieldGroup.Label" value="Mettre en cache" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Label" value="Restrictions de mise en page" />
+  <string key="PageType.EditPageTypeWorkflow.PageTemplateRestrictionMultiKeySelector.Help" value="Mises en page disponibles uniquement lorsque la page modifi&#233;e est de ce type de page. Si aucune n&#39;est s&#233;lectionn&#233;e (par d&#233;faut), tous seront disponibles." />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Label" value="Disposition par d&#233;faut" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.Help" value="S&#233;lectionner une mise en page par d&#233;faut disponible pour les pages cr&#233;&#233;es avec ce type de page" />
+  <string key="PageType.EditPageTypeWorkflow.DefaultPageTemplateKeySelector.NoneSelectedLabel" value="[Aucun]" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityPlaceHolder.Label" value="Disponibilit&#233;" />
+  <string key="PageType.EditPageTypeWorkflow.AvailabilityFieldGroup.Label" value="Disponibilit&#233;" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Label" value="Lien avec la page d&#39;accueil" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.Help" value="Lien avec la page d&#39;accueil" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.NoRestrictionLabel" value="Aucune restriction" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlySubPagesLabel" value="Seulement les sous-pages" />
+  <string key="PageType.EditPageTypeWorkflow.HomepageRelationKeySelector.OnlyHomePagesLabel" value="Seulement les pages d&#39;accueil" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Label" value="Restriction du parent du type de page" />
+  <string key="PageType.EditPageTypeWorkflow.PageTypeChildRestrictionMultiKeySelector.Help" value="Autoriser uniquement ce type de page que pour les pages de l&#39;enfant avec les types de pages s&#233;lectionn&#233;es" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderApplicationPlaceHolder.Label" value="Dossier de donn&#233;es / Applications" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderFieldGroup.Label" value="Dossier de donn&#233;es" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Label" value="Dossier de donn&#233;es" />
+  <string key="PageType.EditPageTypeWorkflow.DataFolderMultiKeySelector.Help" value="S&#233;lectionner les dossiers de donn&#233;es qui devraient &#234;tre automatiquement ajout&#233;es &#224; des pages &#224; l&#39;aide de ce type de page" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationFieldGroup.Label" value="Applications" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Label" value="Applications" />
+  <string key="PageType.EditPageTypeWorkflow.ApplicationMultiKeySelector.Help" value="S&#233;lectionner les applications qui devraient &#234;tre automatiquement ajout&#233;es &#224; des pages &#224; l&#39;aide de ce type de page" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.DefaultTemplateNotInRestrictions" value="La mise en page par d&#233;faut n&#39;est pas l&#39;une des mises en page restreintes s&#233;lectionn&#233;es" />
+  <string key="PageType.EditPageTypeWorkflow.ValidationError.HomepageRelationConflictsWithParentRestrictions" value="Les restriction de type de page parent ne sont pas permises avec les pages d&#39;accueil seulement" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Label" value="Supprimer ce type de page?" />
+  <string key="PageType.DeletePageTypeWorkflow.Confirm.Layout.Messeage" value="Supprimer le type de page {0}?" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Label" value="Type de page en cours d&#39;utilisation" />
+  <string key="PageType.DeletePageTypeWorkflow.PagesRefering.Layout.Message" value="Le type de page {0} est utilis&#233; et il n&#39;est pas possible de le supprimer" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.Layout.Label" value="Ajouter un contenu par d&#233;faut" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.FieldGroup.Label" value="Choisisser un &#39;placehorder&#39;" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="ID du &#39;placeholder&#39;" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="L&#39;ID du &#39;placeholder&#39;. Vous pouvez &#233;crire un ID non-existant et cr&#233;er un &#39;placeholder&#39; par la suite (en modifiant les balises du mod&#232;le de page)." />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Title" value="Aucun mod&#232;le avec {0}" />
+  <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Message" value="S&#39;il vous pla&#238;t noter que l&#39;ID du &#39;placeholder&#39; que vous avez sp&#233;cifi&#233; &#39;{0}&#39; n&#39;est actuellement dans aucun mod&#232;le de mise en page." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.Layout.Label" value="Modifier le contenu par d&#233;faut" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsPlaceHolder.Label" value="Param&#232;tres" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsFieldGroup.Label" value="Informations du &#39;placeholder&#39;" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="ID du &#39;placeholder&#39;" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="L&#39;ID du &#39;placeholder&#39;. Vous pouvez &#233;crire un ID non-existant et cr&#233;er un &#39;placeholder&#39; par la suite (modifier le balisage du mod&#232;le de page)." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.ContentXhtmlEditor.Label" value="Contenu" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.Layout.Label" value="Ajouter des m&#233;tadonn&#233;es" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="" />
+  <!-- "Metadata settings" - but too much text! -->
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Label" value="Nom programmatique" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.NameTextBox.Help" value="Le nom unique de la m&#233;tadonn&#233;e. Il ne peut pas &#234;tre chang&#233; plus tard!" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Afficher avec le libell&#233;" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Libell&#233; de la m&#233;tadonn&#233;e. Utilis&#233; pour l&#39;interface utilisateur." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Label" value="Type de m&#233;tadonn&#233;es" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataTypeKeySelector.Help" value="Le type de m&#233;tadonn&#233;es" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Afficher sur l&#39;onglet" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="S&#233;lectionner l&#39;onglet pour afficher les m&#233;tadonn&#233;es lors de l&#39;&#233;dition d&#39;une page." />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.AddingDefaultMetaData.Title" value="Ajouter les valeurs par d&#233;faut de m&#233;tadonn&#233;es" />
+  <string key="PageType.AddPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Le nom du champ avec un autre type est d&#233;j&#224; utilis&#233;." />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Label" value="Supprimer la m&#233;tadonn&#233;es?" />
+  <string key="PageType.DeletePageTypeMetaDataFieldWorkflow.Confirm.Layout.Message" value="Supprimer la m&#233;tadonn&#233;e {0}? Attention: tous les &#233;l&#233;ments de m&#233;tadonn&#233;es existants seront &#233;galement supprim&#233;s" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.Layout.Label" value="Modifier les m&#233;tadonn&#233;es" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.FieldGroup.Label" value="Param&#232;tres des m&#233;tadonn&#233;es" />
+  <!--
+
+  
+-->
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Label" value="Libell&#233;" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.LabelTextBox.Help" value="Le libell&#233; des m&#233;tadonn&#233;es. Utilis&#233; pour l&#39;interface utilisateur" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Label" value="Onglet" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaDataContainerKeySelector.Help" value="S&#233;lectionner l&#39;onglet pour mettre les m&#233;tadonn&#233;es lors de l&#39;&#233;dition d&#39;une page" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaTypeName.Label" value="M&#233;tatype" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.MetaTypeName.Help" value="Le nom du m&#233;tatype." />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataFieldNameAlreadyUsed" value="Le type de m&#233;tadonn&#233;es est utilis&#233; &#224; un autre endroit avec le m&#234;me nom mais un libell&#233; diff&#233;rent" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataContainerChangeNotAllowed" value="Il existe une ou plusieurs d&#233;finitions avec le m&#234;me nom. Le  changement de conteneur n&#39;est pas autoris&#233;" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Title" value="Le type de m&#233;tadonn&#233;es a &#233;t&#233; supprim&#233;" />
+  <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Message" value="Le type de m&#233;tadonn&#233;es a &#233;t&#233; supprim&#233; du syst&#232;me et ne peut plus &#234;tre ajout&#233; &#224; tous les types de page" />
+</strings>

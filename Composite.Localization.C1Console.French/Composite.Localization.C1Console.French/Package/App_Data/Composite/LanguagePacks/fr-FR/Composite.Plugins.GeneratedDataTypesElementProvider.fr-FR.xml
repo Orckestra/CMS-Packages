@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="GlobalDataFolderLabel" value="Types de donn&#233;es globales" />
+  <string key="GlobalDataFolderToolTip" value="Types de donn&#233;es globales" />
+  <string key="GlobalDataFolderLabel_OnlyGlobalData" value="&#201;l&#233;ments du site" />
+  <string key="GlobalDataFolderToolTip_OnlyGlobalData" value="&#201;l&#233;ments du site (donn&#233;es)" />
+  <string key="PageDataFolderDataFolderLabel" value="Dossiers de donn&#233;es de page" />
+  <string key="PageDataFolderDataFolderToolTip" value="Dossiers de donn&#233;es de page" />
+  <string key="PageMetaDataFolderLabel" value="M&#233;tatypes de pages" />
+  <string key="PageMetaDataFolderToolTip" value="M&#233;tatypes de pages" />
+  <string key="Add" value="Ajouter un type de donn&#233;es" />
+  <string key="AddToolTip" value="Ajouter un nouveau type de donn&#233;es global" />
+  <string key="ViewUnpublishedItems" value="Liste des donn&#233;es non publi&#233;es" />
+  <string key="ViewUnpublishedItemsToolTip" value="Obtener un aper&#231;u des donn&#233;es qui n&#39;ont pas encore &#233;t&#233; publi&#233;es" />
+  <string key="ViewUnpublishedItems-document-title" value="Donn&#233;es non publi&#233;es" />
+  <string key="ViewUnpublishedItems-document-description" value="La liste ci-dessous des &#233;l&#233;ments de donn&#233;es d&#39;affichage qui sont actuellement en cours d&#39;&#233;dition ou pr&#234;ts &#224; &#234;tre approuv&#233; / publi&#233;." />
+  <string key="ViewUnpublishedItems-document-empty-label" value="Aucune donn&#233;e non publi&#233;e." />
+  <string key="AddDataFolder" value="Ajouter un dossier de donn&#233;es" />
+  <string key="AddDataFolderToolTip" value="Ajouter un nouveau dossier de donn&#233;es" />
+  <string key="AddMetaDataLabel" value="Ajouter un m&#233;tatype" />
+  <string key="AddMetaDataToolTip" value="Ajouter un m&#233;tatype" />
+  <string key="Edit" value="Modifier le type de donn&#233;es" />
+  <string key="EditToolTip" value="Modifier le type de donn&#233;es s&#233;lectionn&#233;" />
+  <string key="EditDataFolderTypeLabel" value="Modifier" />
+  <string key="EditDataFolderTypeToolTip" value="Modifier le dossier de donn&#233;es s&#233;lectionn&#233;" />
+  <string key="EditMetaDataTypeLabel" value="Modifier" />
+  <string key="EditMetaDataTypeToolTip" value="Modifier les m&#233;tadonn&#233;es s&#233;lectionn&#233;es" />
+  <string key="Delete" value="Supprimer le type de donn&#233;es" />
+  <string key="DeleteToolTip" value="Supprimer le type de donn&#233;es s&#233;lectionn&#233;" />
+  <string key="DeleteDataFolderTypeLabel" value="Effacer" />
+  <string key="DeleteDataFolderTypeToolTip" value="Supprimer dossier de donn&#233;es s&#233;lectionn&#233;" />
+  <string key="DeleteMetaDataTypeLabel" value="Effacer" />
+  <string key="DeleteMetaDataTypeToolTip" value="Supprimer les m&#233;tadonn&#233;es s&#233;lectionn&#233;es" />
+  <string key="EditFormMarkup" value="Modifier le balisage du formulaire" />
+  <string key="EditFormMarkupToolTip" value="Modifier la mise en page du formulaire de donn&#233;es &#224; l&#39;aide des balises" />
+  <string key="EnableLocalization" value="Activer la localisation" />
+  <string key="EnableLocalizationToolTip" value="Activer la localisation" />
+  <string key="DisableLocalization" value="D&#233;sactiver la localisation" />
+  <string key="DisableLocalizationToolTip" value="D&#233;sactiver la localisation" />
+  <string key="DisabledData" value="Pas encore approuv&#233; ou publi&#233;" />
+  <string key="UndefinedLabelTemplate" value="(Undefined [{0}])" />
+  <string key="UndefinedDataLavelTemplate" value="(Undefined)" />
+  <string key="ShowInContent" value="Afficher dans la section &quot;Contenu&quot;" />
+  <string key="ShowInContentToolTip" value="Afficher dans la section &quot;Contenu&quot;" />
+  <string key="AddData" value="Ajouter des donn&#233;es" />
+  <string key="AddDataToolTip" value="Ajouter de nouvelles donn&#233;es" />
+  <string key="EditData" value="Modifier les donn&#233;es" />
+  <string key="EditDataToolTip" value="Modifier les donn&#233;es s&#233;lectionn&#233;es" />
+  <string key="DeleteData" value="Supprimer les donn&#233;es" />
+  <string key="DeleteDataToolTip" value="Supprimer les donn&#233;es s&#233;lectionn&#233;es" />
+  <string key="LocalizeData" value="Traduire les donn&#233;es" />
+  <string key="LocalizeDataToolTip" value="Traduire les donn&#233;es s&#233;lectionn&#233;es" />
+  <string key="LabelPublicationState" value="&#201;tat de publication" />
+  <string key="DraftTransition" value="Brouillon" />
+  <string key="AwaitingApprovalTransition" value="En attente d&#39;approbation" />
+  <string key="AddNewInterfaceTypeStep1.DocumentTitle" value="Nouveau type de donn&#233;es" />
+  <string key="AddNewCompositionTypeWorkflow.DocumentTitle" value="Nouvelle page Metatype" />
+  <string key="AddNewAggregationTypeWorkflow.DocumentTitle" value="Nouvelle page dossier de donn&#233;es" />
+  <string key="EditorCommon.SettingsTab" value="Param&#232;tres" />
+  <string key="EditorCommon.LabelTitleGroup" value="Titre du Type" />
+  <string key="EditorCommon.LabelProgrammaticNamingAndServices" value="Nommage de programmation et des services" />
+  <string key="EditorCommon.LabelProgrammaticNaming" value="Nommage programm&#233;" />
+  <string key="EditorCommon.LabelTypeName" value="Nom du type" />
+  <string key="EditorCommon.HelpTypeName" value="Le nom technique du type de donn&#233;es (ex. produit). Il est utilis&#233; pour identifier ce type dans le code et ne doit pas &#234;tre chang&#233; une fois utilis&#233; &#224; l&#39;ext&#233;rieur." />
+  <string key="EditorCommon.LabelTypeNamespace" value="Type de l&#39;espace de noms" />
+  <string key="EditorCommon.HelpTypeNamespace" value="L&#39;espace de noms (module / nom de la cat&#233;gorie) du type. Il est utilis&#233; pour identifier ce type dans le code et ne doit pas &#234;tre chang&#233; une fois utilis&#233; &#224; l&#39;ext&#233;rieur." />
+  <string key="EditorCommon.LabelTitle" value="Titre" />
+  <string key="EditorCommon.HelpTitle" value="Utiliser cette entr&#233;e pour sp&#233;cifier un nom convivial. Ce nom est utilis&#233; dans la plupart des UI." />
+  <string key="EditorCommon.LabelFields" value="Champs" />
+  <string key="EditorCommon.ServicesLabel" value="Services" />
+  <string key="EditorCommon.HasCaching" value="Mise en cache" />
+  <string key="EditorCommon.HasPublishing" value="Est un contenu publiable" />
+  <string key="EditorCommon.HasLocalization" value="Est localisable" />
+  <string key="DeleteGeneratedDataStep1.LabelFieldGroup" value="Supprimer les donn&#233;es?" />
+  <string key="DeleteGeneratedDataStep1.Text" value="Supprimer les donn&#233;es?" />
+  <string key="DeleteDataConfirmationText" value="Il existe des donn&#233;es r&#233;f&#233;renc&#233;es qui seront &#233;galement supprim&#233;s, voulez-vous continuer?" />
+  <string key="DeleteGeneratedInterfaceStep1.LabelFieldGroup" value="Supprimer le type de donn&#233;es" />
+  <string key="DeleteGeneratedInterfaceStep1.Text" value="Supprimer le type de donn&#233;es" />
+  <string key="CascadeDeleteErrorTitle" value="Erreur de suppression en cascade" />
+  <string key="CascadeDeleteErrorMessage" value="Le type est r&#233;f&#233;renc&#233; par un autre type qui ne permet pas de suppression en cascade. Cette op&#233;ration a &#233;t&#233; interrompue" />
+  <string key="DeleteAggregationTypeWorkflow.LabelFieldGroup" value="Supprimer le type de donn&#233;es" />
+  <string key="DeleteAggregationTypeWorkflow.Text" value="Supprimer le type de donn&#233;es" />
+  <string key="DeleteAggregationTypeWorkflow.ErrorTitle" value="Erreur" />
+  <string key="DeleteAggregationTypeWorkflow.IsUsedByPageType" value="Vous ne pouvez supprimer un type &#39;{0}&#39;, car il est utilis&#233; par un type de page." />  
+  <string key="DeleteCompositionTypeWorkflow.LabelFieldGroup" value="Supprimer le type de donn&#233;es" />
+  <string key="DeleteCompositionTypeWorkflow.Text" value="Supprimer le type de donn&#233;es" />
+  <string key="DeleteCompositionTypeWorkflow.ErrorTitle" value="Erreur" />
+  <string key="DeleteCompositionTypeWorkflow.TypeIsReferenced" value="Vous ne pouvez supprimer un type &#39;{0}&#39;, car il ya des types qui lui font r&#233;f&#233;rence." />
+  <string key="DeleteCompositionTypeWorkflow.IsUsedByPageType" value="Vous ne pouvez supprimer un type &#39;{0}&#39;, car il est utilis&#233; par un type de page." />  
+  <string key="ToXmlLabel" value="Vers Xml" />
+  <string key="ToXmlToolTip" value="Vers Xml" />
+  <string key="EnableTypeLocalizationWorkflow.Dialog.Label" value="Activer la localisation" />
+  <string key="EnableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="Activer la localisation" />
+  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="D&#233;placer les donn&#233;es existantes vers ,,," />
+  <string key="EnableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Lorsque vous activez &#171;localisation&#187; sur un type de donn&#233;es, toutes les donn&#233;es doivent appartenir &#224; une langue. S&#233;lectionner la langue des donn&#233;es existantes devraient &#234;tre d&#233;plac&#233;s vers." />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Title" value="Confirmation" />
+  <string key="EnableTypeLocalizationWorkflow.Step2.Description" value="Le type de donn&#233;es sera localis&#233; et les donn&#233;es copi&#233;s vers le local s&#233;lectionn&#233;. Cliquer sur Terminer pour continuer." />
+  <string key="EnableTypeLocalizationWorkflow.Step3.Title" value="Avertissement" />
+  <string key="EnableTypeLocalizationWorkflow.Step3.Description" value="Il y a certains types de donn&#233;es qui ont des r&#233;f&#233;rences au type. Alors que la localisation des donn&#233;es seront copi&#233;es dans toutes les langues afin de pr&#233;venir l&#39;apparition de r&#233;f&#233;rences bris&#233;es." />
+  <string key="EnableTypeLocalizationWorkflow.Abort.Title" value="&quot;Active locales&quot; manquants" />
+  <string key="EnableTypeLocalizationWorkflow.Abort.Description" value="Il n&#39;y a pas de local actifs ajout&#233;s. Ajouter au moins un local avant de localiser de ce type de donn&#233;es." />
+  <string key="DisableTypeLocalizationWorkflow.Dialog.Label" value="D&#233;sactiver la localisation" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.FieldGroup.Label" value="D&#233;sactiver la localisation" />
+  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Label" value="Conserver les donn&#233;es de ..." />
+  <string key="DisableTypeLocalizationWorkflow.Step1.CultureSelector.Help" value="Lorsque la localisation est d&#233;sactiv&#233;e sur un type de donn&#233;es une seule traduction peut &#234;tre maintenue. Les donn&#233;es d&#39;autres langues seront perdues." />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Title" value="Confirmation" />
+  <string key="DisableTypeLocalizationWorkflow.Step2.Description" value="Toutes les donn&#233;es provenant d&#39;autres locaux autres que celui s&#233;lectionn&#233; seront perdues. Cliqueer sur Terminer pour continuer." />
+  <string key="LocalizeDataWorkflow.ShowError.LayoutLabel" value="Impossible de traduire les donn&#233;es" />
+  <string key="LocalizeDataWorkflow.ShowError.InfoTableCaption" value="Erreurs de traduction" />
+  <string key="LocalizeDataWorkflow.ShowError.AlreadyTranslated" value="Ces donn&#233;es ont d&#233;j&#224; &#233;t&#233; traduite. La version traduite appartient &#224; un groupe diff&#233;rent." />
+  <string key="LocalizeDataWorkflow.ShowError.Description" value="Les domaines suivants ont une r&#233;f&#233;rence &#224; un type de donn&#233;es. Vous devez traduire ces &#233;l&#233;ments de donn&#233;es avant de pouvoir traduire cette donn&#233;e" />
+  <string key="LocalizeDataWorkflow.ShowError.FieldErrorFormat" value="Le champ &#39;{0}&#39; r&#233;f&#233;rence des donn&#233;es de type &#39;{1}&#39; avec le libell&#233; &#39;{2}&#39;" />
+  <string key="AddNewInterfaceTypeStep1.ErrorTitle" value="Erreur" />
+  <string key="EditInterfaceTypeStep1.ErrorTitle" value="Erreur" />
+  <string key="AddNewCompositionTypeWorkflow.ErrorTitle" value="Erreur" />
+  <string key="AddNewAggregationTypeWorkflow.ErrorTitle" value="Erreur" />
+
+  <string key="EditCompositionTypeWorkflow.ErrorTitle" value="Erreur" />
+  <string key="EditAggregationTypeWorkflow.ErrorTitle" value="Erreur" />
+  
+  <string key="DataTypeDescriptorToXmlLabel" value="R&#233;sultat XML" />
+
+  <string key="FormMarkupInfo.Dialog.Label" value="Ce type a une forme personnalis&#233;e de balisage" />
+  <string key="FormMarkupInfo.Message" value="Vos modifications n&#39;affecteront pas le formulaire pour &#233;diter des donn&#233;es. Faire &#39;{0}&#39; de changer le formulaire ou supprimer le fichier &#39;{1}&#39;." />
+</strings>

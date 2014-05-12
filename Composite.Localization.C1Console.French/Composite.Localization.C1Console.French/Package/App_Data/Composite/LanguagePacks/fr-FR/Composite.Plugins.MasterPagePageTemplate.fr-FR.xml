@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <string key="AddNewMasterPagePageTemplateWorkflow.LabelDialog" value="Ajouter une nouvelle page ma&#238;tre" />
+
+  <string key="EditMasterPageAction.Label" value="Modifier la page ma&#238;tre" />
+  <string key="EditMasterPageAction.ToolTip" value="Modifier le code source de la page ma&#238;tre" />
+
+  <string key="DeleteMasterPageAction.Label" value="Effacer" />
+  <string key="DeleteMasterPageAction.ToolTip" value="Supprimer le mod&#232;le de page" />
+
+  <string key="EditTemplate.Validation.DialogTitle" value="Erreur de validation" />
+  <string key="EditTemplate.Validation.CompilationFailed" value="La compilation a &#233;chou&#233; : {0}" />
+  <string key="EditTemplate.Validation.IncorrectBaseClass" value="classe de mod&#232;le de page n&#39;h&#233;rite pas &#39;{0}&#39;" />
+  <string key="EditTemplate.Validation.PropertyError" value="Impossible d&#39;&#233;valuer la propri&#233;t&#233; de mod&#232;le &#39;{0}&#39;. Exception: {1}" />
+  <string key="EditTemplate.Validation.TemplateIdChanged" value="Il n&#39;est pas permis de changer l&#39;ID de mod&#232;le &#224; travers le flux de travail actuel. L&#39;ID du mod&#232;le d&#39;origine est &#39;{0}&#39;" />
+
+
+  <string key="AddNewMasterPagePageTemplate.LabelDialog" value="Ajouter un nouveau mod&#232;le de page ma&#238;tre" />
+  <string key="AddNewMasterPagePageTemplate.LabelFieldGroup" value="Mod&#232;le de page ma&#238;tre" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitle" value="Titre du mod&#232;le" />
+  <string key="AddNewMasterPagePageTemplate.LabelTemplateTitleHelp" value="Le titre d&#233;crit ce mod&#232;le dans les listes. Envisager de choisir un nom court mais significatif." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFrom" value="Copier de" />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromHelp" value="Vous pouvez copier les balises d&#39;un autre mod&#232;le de mise en page en le s&#233;lectionnant dans cette liste." />
+  <string key="AddNewMasterPagePageTemplate.LabelCopyFromEmptyOption" value="(Nouveau mod&#232;le)" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleInUseTitle" value="Titre d&#233;j&#224; utilis&#233;" />
+  <string key="AddNewMasterPagePageTemplateWorkflow.TitleTooLong" value="Le titre est trop long (utilis&#233; dans le cadre d&#39;un nom de fichier)." />
+</strings>

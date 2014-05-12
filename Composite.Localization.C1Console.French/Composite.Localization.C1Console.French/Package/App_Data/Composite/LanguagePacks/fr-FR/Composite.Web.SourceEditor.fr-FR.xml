@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+
+	<!-- preload precaution -->
+	<string key="Preload.Key" value="R&#233;cup&#233;r&#233; au d&#233;marrage de SourceEditorBinding pour s&#39;assurer que les cha&#238;nes sont charg&#233;s :)" />
+	
+	<!-- validation messages -->
+	<string key="Invalid.HTML.DialogTitle" value="XHTML invalide" />
+	<string key="Invalid.HTML.MissingHtml" value="La balise &lt;html&gt; racine est absente." />
+	<string key="Invalid.HTML.MissingHead" value="La balise &lt;head&gt; est absente." />
+	<string key="Invalid.HTML.MissingBody" value="La balise &lt;body&gt; est absente." />
+	<string key="Invalid.HTML.HeadBodyIndex" value="La balise &lt;head&gt; doit pr&#233;c&#233;der la balise &lt;body&gt;." />
+	<string key="Invalid.HTML.NamespaceURI" value="L&#39;espace de noms de la racine est erron&#233;." />
+	<string key="Invalid.HTML.MultipleBody" value="Une seule balise &lt;body&gt; est permise." />
+	<string key="Invalid.HTML.MultipleHead" value="Une seule balise &lt;head&gt; est permise." />
+  <string key="Invalid.HTML.NotAllowedHtmlChild" value="La balise racine &lt;html&gt; ne peut avoir que les balises &lt;head&gt; et &lt;body&gt; comme enfants." />
+  
+
+  <string key="Format.XML.ErrorDialog.Title" value="Formatage de la source interrompue" /> 
+	<string key="Format.XML.ErrorDialog.Text" value="La source XML  n&#233;cessite une structure de document bien form&#233;." />
+	
+	<!-- plain/colored switch button -->
+	<string key="Switch.PlainEdit.Label" value="Modifier sans artifice" />
+	<string key="Switch.PlainEdit.ToolTip" value="Pas de coloration syntaxique, des performances plus rapides" />
+	<string key="Switch.ColoredEdit.Label" value="Modifier en couleur" />
+	<string key="Switch.ColoredEdit.ToolTip" value="La coloration syntaxique, une baisse des performances" />
+
+  <!-- toolbar menus -->
+  <string key="Toolbar.Insert.Label" value="Ins&#233;rer" />
+  <string key="Toolbar.Format.Label" value="Format" />
+  <string key="Toolbar.Format.ToolTip" value="Formater la source XML" />
+  
+  <!-- insert dropdown -->
+	<string key="Insert.PageURL.Label" value="URL de la page" />
+	<string key="Insert.ImageURL.Label" value="URL de l&#39;image" />
+	<string key="Insert.MediaURL.Label" value="URL du m&#233;dia" />
+	<string key="Insert.FrontendURL.Label" value="URL de l&#39;interface" />
+	<string key="Insert.FunctionMarkup.Label" value="Balise de fonction" />
+</strings>
