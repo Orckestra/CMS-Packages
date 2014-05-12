@@ -179,9 +179,7 @@
     <None Include="Package\Frontend\Styles\VisualEditor.less" />
     <Content Include="Release\Composite.StarterSite.Bootstrap.Core.zip" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Package\Frontend\Styles\bootstrap\3.1.1\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
