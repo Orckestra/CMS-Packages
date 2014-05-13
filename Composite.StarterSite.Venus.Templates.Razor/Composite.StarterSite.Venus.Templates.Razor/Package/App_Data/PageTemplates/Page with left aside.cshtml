@@ -1,4 +1,4 @@
-@inherits RazorPageTemplate
+﻿@inherits RazorPageTemplate
 @functions {
     public override void Configure()
     {
@@ -17,7 +17,7 @@
 <head>
     @*you can add template specific head elements here*@
 </head>
-<body>
+<body class="contentpage-with-aside">
     <div class="container page-container container-height">
         <div class="row row-height">
             <div class="col-xs-12 col-sm-4 col-md-4 aside-left-column col-height">
@@ -25,7 +25,7 @@
                 @PageTemplateFeature("Aside Column")
             </div>
             <div class="col-xs-12 col-sm-8 col-md-8 content-column right-column col-height">
-                <div class="content-column-limiter">
+                <div class="content-column-width-limiter">
                     @Markup(Content)
                 </div>
             </div>

@@ -9,7 +9,7 @@
 
     [Placeholder(Id = "content", Title = "Content", IsDefault = true)]
     public XhtmlDocument Content { get; set; }
-
+   
     [Placeholder(Id = "aside", Title = "Aside column")]
     public XhtmlDocument Aside { get; set; }
 }
@@ -17,12 +17,12 @@
 <head>
     @*you can add template specific head elements here*@
 </head>
-<body>
+<body class="contentpage-with-aside">
     @PageTemplateFeature("Content Start")
     <div class="container page-container container-height">
         <div class="row row-height">
             <div class="col-xs-12 col-sm-8 col-md-8 content-column left-column col-height">
-                <div class="content-column-limiter">
+                <div class="content-column-width-limiter">
                     @Markup(Content)
                 </div>
             </div>

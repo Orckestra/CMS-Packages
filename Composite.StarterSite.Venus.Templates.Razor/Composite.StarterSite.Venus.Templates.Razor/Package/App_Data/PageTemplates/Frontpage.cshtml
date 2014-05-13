@@ -17,6 +17,6 @@
 <body class="frontpage">
     @PageTemplateFeature("Front Page Content Start")
 	@this.Function("Layout.Helpers.InjectContainerElements",
-		new { Document = Content, InjectedContainerClassName = "container", DontApplyClassNameList="container,fullwidth" })
+                new { Document = Content, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid" })
 </body>
 </html>
