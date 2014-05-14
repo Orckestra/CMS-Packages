@@ -2,8 +2,8 @@
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.1.0.0" maximumCompositeVersion="9.9999.9999.9999" />
 	<mi:PackageInformation name="Composite.AspNet.WebAPI" groupName="Composite.AspNet" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.AspNet.WebAPI" id="d1a6a7bf-f11d-4607-a064-f69f9956a4d5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
-		<TechnicalDetails>Installs the nessary dll-s and configuraiton changes for using WebAPI</TechnicalDetails>
-		<Description>Installs the nessary dll-s and configuraiton changes for using WebAPI</Description>
+		<TechnicalDetails>Installs the nessary dll-s and configuraiton changes for using WebAPI and OData.</TechnicalDetails>
+		<Description>Installs the nessary dll-s and configuraiton changes for using WebAPI and OData.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
@@ -15,6 +15,10 @@
 				<File sourceFilename="~\Bin\System.Net.Http.Formatting.dll" targetFilename="~\Bin\System.Net.Http.Formatting.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\System.Web.Http.dll" targetFilename="~\Bin\System.Web.Http.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\System.Web.Http.WebHost.dll" targetFilename="~\Bin\System.Web.Http.WebHost.dll" allowOverwrite="false" />
+        <File sourceFilename="~\Bin\Microsoft.Data.Edm.dll" targetFilename="~\Bin\Microsoft.Data.Edm.dll" allowOverwrite="false" />
+        <File sourceFilename="~\Bin\Microsoft.Data.OData.dll" targetFilename="~\Bin\Microsoft.Data.OData.dll" allowOverwrite="false" />
+        <File sourceFilename="~\Bin\System.Spatial.dll" targetFilename="~\Bin\System.Spatial.dll" allowOverwrite="false" />
+        <File sourceFilename="~\Bin\System.Web.Http.OData.dll" targetFilename="~\Bin\System.Web.Http.OData.dll" allowOverwrite="false" />
 			</Files>
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">

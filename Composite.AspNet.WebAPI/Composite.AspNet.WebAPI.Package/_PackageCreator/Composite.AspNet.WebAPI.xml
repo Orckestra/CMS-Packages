@@ -8,6 +8,10 @@
 		<Add name="Bin\System.Web.Http.dll" />
 		<Add name="Bin\System.Web.Http.WebHost.dll" />
 		<Add name="Bin\Newtonsoft.Json.dll" />
+    <Add name="Bin\Microsoft.Data.Edm.dll" />
+    <Add name="Bin\Microsoft.Data.OData.dll" />
+    <Add name="Bin\System.Spatial.dll" />
+    <Add name="Bin\System.Web.Http.OData.dll" />
 		<Add name="App_Code\Composite\AspNet\WebAPI\StartupHandler.cs" />
 		<Add name="App_Code\Composite\AspNet\WebAPI\JsonIDataSerialization.cs" />
 	</pc:Files>

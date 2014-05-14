@@ -48,9 +48,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\Bin\Microsoft.Data.Edm.dll" />
+    <Content Include="Package\Bin\Microsoft.Data.OData.dll" />
     <Content Include="Package\Bin\Newtonsoft.Json.dll" />
     <Content Include="Package\Bin\System.Net.Http.Formatting.dll" />
+    <Content Include="Package\Bin\System.Spatial.dll" />
     <Content Include="Package\Bin\System.Web.Http.dll" />
+    <Content Include="Package\Bin\System.Web.Http.OData.dll" />
     <Content Include="Package\Bin\System.Web.Http.WebHost.dll" />
     <Content Include="Package\install.xml" />
     <Content Include="Package\Web.config\Install.xsl" />
