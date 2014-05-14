@@ -13,4 +13,12 @@
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
+	<xsl:template match="/configuration/system.webServer/modules">
+		<xsl:copy>
+			<xsl:apply-templates select="@* | node()" />
+			<xsl:if test="count(remove[@name='WebDAVModule'])=0">
+				<remove name="WebDAVModule" />
+			</xsl:if>
+		</xsl:copy>
+	</xsl:template>
 </xsl:stylesheet>

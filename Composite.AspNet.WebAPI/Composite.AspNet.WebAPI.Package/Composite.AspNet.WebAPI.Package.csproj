@@ -45,6 +45,7 @@
   <ItemGroup>
     <Content Include="Package\App_Code\Composite\AspNet\WebAPI\JsonIDataSerialization.cs" />
     <Content Include="Package\App_Code\Composite\AspNet\WebAPI\StartupHandler.cs" />
+    <Content Include="Package\App_Code\Composite\AspNet\WebAPI\CustomIDataXmlFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -9,16 +9,17 @@
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
-				<File sourceFilename="~\Bin\Newtonsoft.Json.dll" targetFilename="~\Bin\Newtonsoft.Json.dll" allowOverwrite="false" />
-				<File sourceFilename="~\App_Code\Composite\AspNet\WebAPI\StartupHandler.cs" targetFilename="~\App_Code\Composite\AspNet\WebAPI\StartupHandler.cs" allowOverwrite="false" />
-				<File sourceFilename="~\App_Code\Composite\AspNet\WebAPI\JsonIDataSerialization.cs" targetFilename="~\App_Code\Composite\AspNet\WebAPI\JsonIDataSerialization.cs" allowOverwrite="false" />
-				<File sourceFilename="~\Bin\System.Net.Http.Formatting.dll" targetFilename="~\Bin\System.Net.Http.Formatting.dll" allowOverwrite="false" />
-				<File sourceFilename="~\Bin\System.Web.Http.dll" targetFilename="~\Bin\System.Web.Http.dll" allowOverwrite="false" />
-				<File sourceFilename="~\Bin\System.Web.Http.WebHost.dll" targetFilename="~\Bin\System.Web.Http.WebHost.dll" allowOverwrite="false" />
-        <File sourceFilename="~\Bin\Microsoft.Data.Edm.dll" targetFilename="~\Bin\Microsoft.Data.Edm.dll" allowOverwrite="false" />
-        <File sourceFilename="~\Bin\Microsoft.Data.OData.dll" targetFilename="~\Bin\Microsoft.Data.OData.dll" allowOverwrite="false" />
-        <File sourceFilename="~\Bin\System.Spatial.dll" targetFilename="~\Bin\System.Spatial.dll" allowOverwrite="false" />
-        <File sourceFilename="~\Bin\System.Web.Http.OData.dll" targetFilename="~\Bin\System.Web.Http.OData.dll" allowOverwrite="false" />
+				<File sourceFilename="~\Bin\Newtonsoft.Json.dll" targetFilename="~\Bin\Newtonsoft.Json.dll" allowOverwrite="true" />
+				<File sourceFilename="~\App_Code\Composite\AspNet\WebAPI\StartupHandler.cs" targetFilename="~\App_Code\Composite\AspNet\WebAPI\StartupHandler.cs" allowOverwrite="true" />
+				<File sourceFilename="~\App_Code\Composite\AspNet\WebAPI\JsonIDataSerialization.cs" targetFilename="~\App_Code\Composite\AspNet\WebAPI\JsonIDataSerialization.cs" allowOverwrite="true" />
+				<File sourceFilename="~\Bin\Microsoft.Data.Edm.dll" targetFilename="~\Bin\Microsoft.Data.Edm.dll" allowOverwrite="true" />
+				<File sourceFilename="~\Bin\System.Spatial.dll" targetFilename="~\Bin\System.Spatial.dll" allowOverwrite="true" />
+				<File sourceFilename="~\App_Code\Composite\AspNet\WebAPI\CustomIDataXmlFormatter.cs" targetFilename="~\App_Code\Composite\AspNet\WebAPI\CustomIDataXmlFormatter.cs" allowOverwrite="true" />
+				<File sourceFilename="~\Bin\System.Net.Http.Formatting.dll" targetFilename="~\Bin\System.Net.Http.Formatting.dll" allowOverwrite="true" />
+				<File sourceFilename="~\Bin\Microsoft.Data.OData.dll" targetFilename="~\Bin\Microsoft.Data.OData.dll" allowOverwrite="true" />
+				<File sourceFilename="~\Bin\System.Web.Http.dll" targetFilename="~\Bin\System.Web.Http.dll" allowOverwrite="true" />
+				<File sourceFilename="~\Bin\System.Web.Http.WebHost.dll" targetFilename="~\Bin\System.Web.Http.WebHost.dll" allowOverwrite="true" />
+				<File sourceFilename="~\Bin\System.Web.Http.OData.dll" targetFilename="~\Bin\System.Web.Http.OData.dll" allowOverwrite="true" />
 			</Files>
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
