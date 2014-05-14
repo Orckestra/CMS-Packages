@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Web.config>
+		<Add name="/configuration/system.web/compilation/assemblies/add[@assembly='System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a']" />
+	</pc:Web.config>
+	<pc:Files>
+		<Add name="Bin\System.Net.Http.Formatting.dll" />
+		<Add name="Bin\System.Web.Http.dll" />
+		<Add name="Bin\System.Web.Http.WebHost.dll" />
+		<Add name="Bin\Newtonsoft.Json.dll" />
+		<Add name="App_Code\Composite\AspNet\WebAPI\StartupHandler.cs" />
+		<Add name="App_Code\Composite\AspNet\WebAPI\JsonIDataSerialization.cs" />
+	</pc:Files>
+	<mi:PackageRequirements minimumCompositeVersion="4.1.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.AspNet.WebAPI" groupName="Composite.AspNet" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.AspNet.WebAPI" id="d1a6a7bf-f11d-4607-a064-f69f9956a4d5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<TechnicalDetails>Installs the nessary dll-s and configuraiton changes for using WebAPI</TechnicalDetails>
+		<Description>Installs the nessary dll-s and configuraiton changes for using WebAPI</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>
