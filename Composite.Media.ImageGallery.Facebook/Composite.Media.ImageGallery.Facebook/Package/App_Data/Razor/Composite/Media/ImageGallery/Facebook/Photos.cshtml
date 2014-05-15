@@ -1,0 +1,85 @@
+@inherits RazorFunction
+@using Facebook;
+@using System.Web.Caching;
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Display images from a specific Facebook album on a page."; }
+    }
+
+    [FunctionParameter(Label = "Album ID", Help = "The ID of a Facebook album with images to display.")]
+    public string AlbumID { get; set; }
+
+    [FunctionParameter(Label = "Access token", Help = "The Facebook access token", DefaultValue = "")]
+    public string AccessToken { get; set; }
+
+    private dynamic GetData(string url)
+    {
+
+        if (HttpContext.Current.Cache[url] == null)
+        {
+            var fb = new FacebookClient();
+            if (!string.IsNullOrEmpty(AccessToken.Trim()))
+            {
+                fb = new FacebookClient(HttpUtility.UrlDecode(AccessToken));
+            }
+            HttpContext.Current.Cache.Add(url, fb.Get(url),
+                                 null, DateTime.Now.AddSeconds(60),
+                                 Cache.NoSlidingExpiration,
+                                 CacheItemPriority.Default,
+                                 null);
+        }
+        return HttpContext.Current.Cache[url];
+    }
+}
+@{
+    dynamic photos = null;
+    try
+    {
+        photos = GetData(AlbumID + "/photos?limit=1000&offset=0");
+    }
+    catch (Exception ex)
+    {
+        <p class="alert alert-danger">@ex.Message</p>
+        return;
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <style type="text/css">
+        .fb-photo-item {
+            float: left;
+            margin: 0 15px 15px 0;
+        }
+
+        .fb-squared-div {
+            width: 130px;
+            height: 100px;
+            background: white;
+            background-repeat: no-repeat;
+            background-position: center 25%;
+        }
+    </style>
+    <script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script id="slimbox2-js" src="~/Frontend/Composite/Media/ImageGallery/Slimbox-2.04/js/slimbox2.js" type="text/javascript"></script>
+    <link id="slimbox-2.04" media="screen" type="text/css" href="~/Frontend/Composite/Media/ImageGallery/Slimbox-2.04/css/slimbox2.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="clearfix">
+        @foreach (var photo in photos.data)
+        {
+            if (string.IsNullOrEmpty(photo.picture))
+            {
+                continue;
+            }
+            <div class="fb-photo-item">
+                <a rel="lightbox-@(AlbumID)" href="@photo.source" title="&lt;a href=@photo.link&gt;@photo.name&lt;/a&gt;" class="thumbnail">
+                    <div class="fb-squared-div" style="background-image: url(@photo.picture);">&#160;</div>
+                </a>
+            </div>
+        }
+    </div>
+</body>
+</html>
