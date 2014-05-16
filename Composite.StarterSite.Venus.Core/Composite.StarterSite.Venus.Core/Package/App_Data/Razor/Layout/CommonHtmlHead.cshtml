@@ -11,14 +11,18 @@
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
-    <link rel="stylesheet" type="text/css" href="@Href(stylesFolder)/style.less" />
+  
     <meta charset="utf-8" />
    
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    @* CSS *@
+    <link rel="stylesheet" type="text/css" href="@Href(stylesFolder)/style.less" />
+    @* The iconic font designed for Bootstrap - http://fontawesome.io/ *@
+    <link id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
     @* SCRIPTS *@
     <script id="modernizr-js" type="text/javascript" src="@Href(jsFolder)/libs/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     <script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="@Href(jsFolder)/libs/bootstrap/bootstrap.min.js"></script>
+    <script id="bootstrap-min-js" type="text/javascript" src="@Href(jsFolder)/libs/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="@Href(jsFolder)/script.js"></script>
 </head>
 <body>

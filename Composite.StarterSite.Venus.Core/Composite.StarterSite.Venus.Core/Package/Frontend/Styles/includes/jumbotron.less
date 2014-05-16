@@ -10,6 +10,10 @@
     padding: 0;
     margin-bottom: 0;
 
+    h1, h2, h3, h4 {
+        color: inherit;
+    }
+
     &.jumbotron-light {
         color: @white_color;
         background-color: @gray-darker;
@@ -40,6 +44,7 @@
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
+              max-width: 50%;
         }
     }
 
@@ -47,9 +52,7 @@
         h1 {
             font-size: (@font-size-base * 3.9);
         }
-        h1, p {
-            max-width: 50%;
-        }
+
     }
 
     p {

@@ -1,0 +1,42 @@
+﻿.profiles-list {
+    .profiles-list-item {
+        text-align: center;
+    }
+
+    .item-title {
+        font-size: 0.9rem;
+    }
+
+    .item-name {
+        margin: 0 0 2rem 0;
+    }
+
+    .item-statement {
+        color: @gray-darker;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        font-weight: bold;
+        display: block;
+        overflow: hidden;
+    }
+
+    .item-social {
+        a {
+            border: solid 1px @gray-lighter;
+            padding: 0;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+    }
+}
+
+
+@media (min-width: @screen-sm-min) {
+    .profiles-list {
+        .item-statement {
+            height: 60px;
+        }
+    }
+}

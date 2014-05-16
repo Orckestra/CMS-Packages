@@ -9,7 +9,7 @@
     [FunctionParameter(Label = "Statement content")]
     public XhtmlDocument Statement { get; set; }
 
-	[FunctionParameter(Label = "Style", DefaultValue = "None", WidgetFactoryMethod = "GetStyleWidget")]
+	[FunctionParameter(Label = "Background Style", DefaultValue = "None", WidgetFactoryMethod = "GetStyleWidget")]
 	public string Style { get; set; }
 }
 
@@ -41,9 +41,8 @@
 		{
 			{"none", "None"},
 			{"primary", "Primary"},
-			{"information", "Information"},
-			{"warning", "Warning"},
-			{"alert", "Alert"}
+			{"light", "Light"},
+			{"dark", "Dark"}
 		};
 	}
 	
@@ -55,12 +54,10 @@
                 return "";
             case "primary":
 				return "bg-primary";
-			case "information":
+			case "light":
                 return "bg-info";
-            case "warning":
-				return "bg-warning";
-			case "alert":
-				return "";
+            case "dark":
+				return "bg-dnager";
 		}
 
 		throw new NotImplementedException("Unhandled style selection");
