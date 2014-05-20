@@ -86,9 +86,8 @@
 <body>
     @if (!string.IsNullOrEmpty(Request.QueryString["album"]) && Request.QueryString["id"] == ObjectUniqueID)
     {
-        <a name="@ObjectUniqueID"></a>
         <div class="fb-photos">
-            <h2>@GetName(albums.data, Request.QueryString["album"])</h2>
+            <h2 id="@ObjectUniqueID" class="anchor">@GetName(albums.data, Request.QueryString["album"])</h2>
             @Html.C1().Function("Composite.Media.ImageGallery.Facebook.Photos", new { AlbumID = Request.QueryString["album"], AccessToken = AccessToken })
         </div>
         <hr />
