@@ -1,5 +1,8 @@
-﻿.blog-info {
-   margin-bottom: 20px;
+﻿.blog-title {
+    margin-bottom: 25px;
+}
+.blog-info {
+   margin-bottom: 25px;
 }
 
 .blog-date {
@@ -24,7 +27,7 @@
 
 .blog-img {
     display: block;
-    margin: 20px 0;
+    margin-bottom: 30px;
 }
 
 .blog-tags-cloud a:hover {

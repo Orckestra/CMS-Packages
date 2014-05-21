@@ -119,24 +119,17 @@
     var blogUrl = BlogFacade.GetBlogUrl(entry.Date, entry.Title, entry.PageId);
 
 
-    <div class="blog-item media">
-        @if (!string.IsNullOrEmpty(entry.Image) && blogItemOptions.Contains("Show image"))
-        {
-            <div class="media-object">
-                <img class="blog-img img-thumbnail" border="0" src="~/media(@entry.Image)" alt="" />
-            </div>
-        }
-
+    <div class="blog-item">
         @if (IsBlogItem)
         {
             if (blogItemOptions.Contains("Show title"))
             {
-                <h1 class="media-heading">@entry.Title</h1>
+                <h1 class="blog-title">@entry.Title</h1>
             }
         }
         else
         {
-            <h2 class="media-heading">
+            <h2 class="blog-title">
                 <a href="@blogUrl" title="@entry.Title">@entry.Title</a>
                 @if (displayComments && blogItemOptions.Contains("Show DISQUS Comment Count"))
                 {
@@ -148,7 +141,7 @@
         }
 
 
-        <div class="media-body">
+        <div class="blog-item-body">
             <div class="blog-info clearfix">
                 @if (blogItemOptions.Contains("Show date"))
                 {
@@ -164,6 +157,12 @@
                 }
 
             </div>
+            @if (!string.IsNullOrEmpty(entry.Image) && blogItemOptions.Contains("Show image"))
+            {
+
+                <img class="blog-img img-thumbnail" src="~/media(@entry.Image)" alt="@entry.Title" />
+
+            }
             @if (blogItemOptions.Contains("Show teaser"))
             {
                 <p class="@(IsBlogItem ? "lead" : string.Empty)">@entry.Teaser</p>
