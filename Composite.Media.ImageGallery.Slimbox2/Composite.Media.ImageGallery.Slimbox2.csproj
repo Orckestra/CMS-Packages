@@ -23,6 +23,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,27 +68,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Xslt\Composite\Media\ImageGallery\Slimbox2.xsl" />
-    <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\css\closelabel.gif" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\css\loading.gif" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\css\nextlabel.gif" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\css\prevlabel.gif" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\css\slimbox2-rtl.css" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\css\slimbox2.css" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\example.html" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\example.jpg" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\extra\android-market.js" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\extra\autoactivation.js" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\extra\fix-urls.js" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\extra\flickr.js" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\extra\picasaweb.js" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\js\slimbox2.js" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\README.txt" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\src\autoload.js" />
-    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.04\src\slimbox2.js" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\css\closelabel.gif" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\css\loading.gif" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\css\nextlabel.gif" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\css\prevlabel.gif" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\css\slimbox2-rtl.css" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\css\slimbox2.css" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\example.html" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\example.jpg" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\extra\autoactivation.js" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\extra\fix-urls.js" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\extra\flickr.js" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\extra\picasaweb.js" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\js\slimbox2.js" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\README.txt" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\src\autoload.js" />
+    <Content Include="Package\Frontend\Composite\Media\ImageGallery\Slimbox-2.05\src\slimbox2.js" />
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.Media.ImageGallery.Slimbox2.xml" />
   </ItemGroup>
@@ -92,6 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Release\Composite.Media.ImageGallery.Slimbox2.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Composite\Media\ImageGallery\Slimbox2.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
