@@ -35,7 +35,7 @@ public partial class FormsRenderer_FormsRender : System.Web.UI.UserControl
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        IntroText.Text = parameters.GetParameter<string>("IntroText");
+        IntroText.Text = ExtractBodyFromHtmlString(parameters.GetParameter<string>("IntroText"));
         useCaptcha = parameters.GetParameter<bool>("UseCaptcha");
         ValidationSummary.HeaderText = StringResourceSystemFacade.GetString("Composite.Forms.Renderer", "Composite.Forms.ValidationSummary.HeaderText");
         var sendButtonLabel = parameters.GetParameter<string>("SendButtonLabel");
@@ -211,5 +211,21 @@ $(document).ready(function() {
                 result.Append(c);
         }
         return result.ToString();
+    }
+
+    protected string ExtractBodyFromHtmlString(string htmlString)
+    {
+        if (htmlString.Contains("<body />"))
+        {
+            return string.Empty;
+        }
+        if (!string.IsNullOrEmpty(htmlString))
+        {
+            var startIndex = htmlString.IndexOf("<body>");
+            var endIndex = htmlString.IndexOf("</body>");
+            htmlString = htmlString.Substring(startIndex + 6, endIndex - startIndex - 6);
+        }
+
+        return htmlString;
     }
 }
