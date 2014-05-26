@@ -42,7 +42,7 @@ namespace Composite.Forms.Renderer.FormsRendererFunctionProvider.Functions
                     "ResponseText", typeof(XhtmlDocument), false, new ConstantValueProvider(""), new WidgetFunctionProvider(new VisualXhtmlEditorFuntion(null)));
 
 				yield return new FormsRendererFunctionParameterProfile(
-					"ResponseUrl", typeof(string), false, new ConstantValueProvider(""), StandardWidgetFunctions.GetDataReferenceWidget<IPage>());
+                    "ResponseUrl", typeof(string), false, new ConstantValueProvider(""), new WidgetFunctionProvider(FunctionFacade.GetWidgetFunction("Composite.Widgets.String.UrlComboBox")));
 
 				yield return new FormsRendererFunctionParameterProfile(
 					"SendButtonLabel", typeof(string), false, new ConstantValueProvider(""), StandardWidgetFunctions.TextBoxWidget);

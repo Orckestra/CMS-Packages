@@ -168,18 +168,12 @@ $(document).ready(function() {
             if (FormsRenderer.SubmitForm(parameters, CaptchaInput.Text))
             {
                 var responseText = parameters.GetParameter<string>("ResponseText");
-                var responsePageId = parameters.GetParameter<string>("ResponseUrl");
-
-                try
+                var responsePageUrl = parameters.GetParameter<string>("ResponseUrl");
+                if (!string.IsNullOrEmpty(responsePageUrl))
                 {
-                    string responsePageUrl;
-                    PageStructureInfo.TryGetPageUrl(new Guid(responsePageId), out responsePageUrl);
-                    if (responsePageUrl != string.Empty)
-                    {
-                        Response.Redirect(responsePageUrl);
-                    }
+                    Response.Redirect(responsePageUrl);
                 }
-                catch { }
+
                 IntroText.Text = responseText;
                 Fields.Visible = false;
                 FieldSet.Visible = false;
