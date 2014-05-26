@@ -213,7 +213,7 @@ $(document).ready(function() {
         {
             return string.Empty;
         }
-        if (!string.IsNullOrEmpty(htmlString))
+        if (!string.IsNullOrEmpty(htmlString) && htmlString.Contains("<body"))
         {
             var startIndex = htmlString.IndexOf("<body>");
             var endIndex = htmlString.IndexOf("</body>");
