@@ -65,7 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\install.xml" />
-    <Content Include="_PackageCreator\Composite.StarterSite.Venus.Templates.Razor.xml" />
+    <Content Include="_PackageCreator\Composite.StarterSite.Venus.Templates.Razor.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\PageTemplates\MasterLayout.cshtml" />

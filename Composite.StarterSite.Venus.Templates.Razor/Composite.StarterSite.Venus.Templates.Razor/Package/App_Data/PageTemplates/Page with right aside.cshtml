@@ -7,9 +7,12 @@
         Layout = "MasterLayout.cshtml";
     }
 
+    [Placeholder(Id = "start", Title = "Content Start")]
+    public XhtmlDocument Start { get; set; }
+
     [Placeholder(Id = "content", Title = "Content", IsDefault = true)]
     public XhtmlDocument Content { get; set; }
-   
+
     [Placeholder(Id = "aside", Title = "Aside column")]
     public XhtmlDocument Aside { get; set; }
 }
@@ -18,13 +21,12 @@
     @*you can add template specific head elements here*@
 </head>
 <body class="contentpage-with-aside">
-    @PageTemplateFeature("Content Start")
+    @this.Function("Layout.Helpers.InjectContainerElements",
+        new { Document = Start, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
     <div class="container page-container container-height">
         <div class="row row-height">
             <div class="col-xs-12 col-sm-8 col-md-8 content-column left-column col-height">
-                <div class="content-column-width-limiter">
-                    @Markup(Content)
-                </div>
+                @Markup(Content)
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 aside-right-column col-height">
                 @Markup(Aside)

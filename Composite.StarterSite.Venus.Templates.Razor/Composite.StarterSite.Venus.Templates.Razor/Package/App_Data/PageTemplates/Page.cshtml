@@ -8,19 +8,24 @@
         Layout = "MasterLayout.cshtml";
     }
 
+    [Placeholder(Id = "start", Title = "Content Start")]
+    public XhtmlDocument Start { get; set; }
+
     [Placeholder(Id = "content", Title = "Content", IsDefault = true)]
     public XhtmlDocument Content { get; set; }
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    @*you can add template specific head elements here*@
-</head>
-<body class="contentpage">
-    @PageTemplateFeature("Content Start")
-    <div class="content-column-width-limiter">
-        @this.Function("Layout.Helpers.InjectContainerElements",
-                new { Document = Content, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid" })
+	<head>
+		@*you can add template specific head elements here*@
+	</head>
+	<body class="contentpage">
+		<div class="content-column-width-limiter content-column">
+			@this.Function("Layout.Helpers.InjectContainerElements",
+					new { Document = Start, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
+			@this.Function("Layout.Helpers.InjectContainerElements",
+					new { Document = Content, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
 
-    </div>
-</body>
+		</div>
+		<hr class="content-bottom-line" />
+	</body>
 </html>
