@@ -1,4 +1,4 @@
-@inherits RazorFunction
+﻿@inherits RazorFunction
 @using Composite.Lists.Profiles;
 @functions {
     public override string FunctionDescription
@@ -11,10 +11,11 @@
 }
 @{
     var groups = Data.Get<Group>().OrderBy(gr => gr.Title).ToList();
+
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
-    <link id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+	 <link id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
 </head>
 <body>
     @if (ProfileGroup != null || groups.Count() == 1)
@@ -50,10 +51,10 @@
                     var profile = profiles[index];
                     <div class="col-xs-12 col-sm-4 col-md-4 profiles-list-item">
                         <div class="thumbnail">
-                            @if (!string.IsNullOrEmpty(profile.Image))
+							@if (!string.IsNullOrEmpty(profile.Image))
                             {
-                                <img alt="@profile.Name" src="@Html.C1().MediaUrl(@profile.Image)" class="img-responsive" />
-                            }
+								<img alt="@profile.Name" src="@Html.C1().MediaUrl(@profile.Image)" class="img-responsive" />
+							}
                             <div class="item-body caption">
                                 <p class="item-title text-muted">
                                     @profile.Title
@@ -80,7 +81,7 @@
                                 <div class="item-social">
                                     @if (!string.IsNullOrEmpty(profile.TwitterUsername))
                                     {
-                                        <a href="https://twitter.com/@profile.TwitterUsername" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                        <a href="https://twitter.com/@profile.TwitterUsername" title="Twitter"><i class="fa fa-twitter" ></i></a>
                                     }
                                     @if (!string.IsNullOrEmpty(profile.LinkedInLink))
                                     {
