@@ -9,135 +9,138 @@
         get { return "A function that displays a menu for switching between pages in multiple languages on localized websites."; }
     }
 
-	//// C1 Function parameters defined below...
-	[FunctionParameter(Help = "HomePages: always the link to the home page; TranslatedPages: only the link to the current page if translated; TranslatedOrHomePages:  the link to the translated page if it exists; otherwise, to the home page", 
+    //// C1 Function parameters defined below...
+    [FunctionParameter(Help = "HomePages: always the link to the home page; TranslatedPages: only the link to the current page if translated; TranslatedOrHomePages:  the link to the translated page if it exists; otherwise, to the home page",
                        WidgetMarkup = "<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector' label='' bindingsourcename=''><f:helpdefinition helptext='' /><f:param name='Options'><f:function name='Composite.Utils.String.Split'><f:param name='String' value='HomePages,TranslatedPages,TranslatedOrHomePages' /></f:function></f:param></f:widgetfunction>")]
-	public string Mode { get; set; }
+    public string Mode { get; set; }
 
-	[FunctionParameter(Label = "Show Current", Help = "Show the link to the current page (default)", DefaultValue = true)]
-	public bool ShowCurrent { get; set; }
+    [FunctionParameter(Label = "Show Current", Help = "Show the link to the current page (default)", DefaultValue = true)]
+    public bool ShowCurrent { get; set; }
 
-	[FunctionParameter(Label = "Navigation Id", Help = "Attribute Id of DIV element", DefaultValue = "LanguageSwitcher")]
-	public string NavigationId { get; set; }
+    [FunctionParameter(Help = "This text will be displayed next to the menu links if any exists (blank, by default)", DefaultValue = " ")]
+    public string Description { get; set; }
 
-	[FunctionParameter(Help = "This text will be displayed next to the menu links if any exists (blank, by default)", DefaultValue = " ")]
-	public string Description { get; set; }
-
-	[FunctionParameter(Label = "Select Format", 
-                       DefaultValue = "TwoLetterISOLanguageName", 
+    [FunctionParameter(Label = "Select Format",
+                       DefaultValue = "TwoLetterISOLanguageName",
                        WidgetMarkup = "<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector' label='' bindingsourcename=''><f:helpdefinition helptext='' /><f:param name='Options'><f:function name='Composite.Utils.String.Split'><f:param name='String' value='DisplayName,EnglishName,Name,NativeName,ThreeLetterISOLanguageName,ThreeLetterWindowsLanguageName,TwoLetterISOLanguageName,Image,Empty' /></f:function></f:param></f:widgetfunction>")]
-	public string Format { get; set; }
+    public string Format { get; set; }
 
-	[FunctionParameter(Label = "Include query in URL", 
-                       Help = "When true, path and query parts of the original URL will be included in the URL to other language versions. This is on by default.", 
+    [FunctionParameter(Label = "Include query in URL",
+                       Help = "When true, path and query parts of the original URL will be included in the URL to other language versions. This is on by default.",
                        DefaultValue = true)]
-	public bool IncludeQuery { get; set; }
+    public bool IncludeQuery { get; set; }
 
-	public enum SwitcherMode
-	{
-		HomePages,
-		TranslatedPages,
-		TranslatedOrHomePages
-	}
-	public enum SwitcherFormat
-	{
-		DisplayName,
-		EnglishName,
-		Name,
-		NativeName,
-		ThreeLetterISOLanguageName,
-		ThreeLetterWindowsLanguageName,
-		TwoLetterISOLanguageName,
-		Image,
-		Empty
-	}
+    public enum SwitcherMode
+    {
+        HomePages,
+        TranslatedPages,
+        TranslatedOrHomePages
+    }
+    public enum SwitcherFormat
+    {
+        DisplayName,
+        EnglishName,
+        Name,
+        NativeName,
+        ThreeLetterISOLanguageName,
+        ThreeLetterWindowsLanguageName,
+        TwoLetterISOLanguageName,
+        Image,
+        Empty
+    }
+
+    readonly CultureInfo CurrentCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
 }
 @{
-    var isLanguages = ShowCurrent || (!ShowCurrent && DataLocalizationFacade.ActiveLocalizationCultures.Count() > 1); 
+    var isLanguages = DataLocalizationFacade.ActiveLocalizationCultures.Count() > 1 && (ShowCurrent || (!ShowCurrent && DataLocalizationFacade.ActiveLocalizationCultures.Count() > 1));
+    if (!isLanguages)
+    {
+        return;
+    }
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 </head>
 <body>
-@if (isLanguages)
-{
-    <ul id="@NavigationId" class="nav navbar-nav">
-    @if (!string.IsNullOrWhiteSpace(Description))
+    @if (isLanguages)
     {
-	    <li class="description">@Description</li>
-    }
-    @{
-        var currentHomeID = SitemapNavigator.CurrentHomePageId;
-        var currentPageID = SitemapNavigator.CurrentPageId;
-        var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
-        SwitcherMode mode = (SwitcherMode)Enum.Parse(typeof(SwitcherMode), Mode);
-       
-        foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
-        {
-            if (ShowCurrent || (!ShowCurrent && !culture.Equals(currentCulture)))
+        <ul class="language-switcher list-inline list-unstyled">
+            @if (!string.IsNullOrWhiteSpace(Description))
             {
-                using (DataConnection conn = new DataConnection(culture))
-                {
-                    var homeNode = conn.SitemapNavigator.GetPageNodeById(currentHomeID);
-                    var pageNode = conn.SitemapNavigator.GetPageNodeById(currentPageID);
-                    var url = string.Empty;
+                <li class="description">@Description</li>
+            }
+            @{
+            var currentHomeID = SitemapNavigator.CurrentHomePageId;
+            var currentPageID = SitemapNavigator.CurrentPageId;
 
-                    if (pageNode != null && (mode == SwitcherMode.TranslatedPages || mode == SwitcherMode.TranslatedOrHomePages))
+            SwitcherMode mode = (SwitcherMode)Enum.Parse(typeof(SwitcherMode), Mode);
+
+            foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
+            {
+                if (ShowCurrent || (!ShowCurrent && !culture.Equals(CurrentCulture)))
+                {
+                    using (DataConnection conn = new DataConnection(culture))
                     {
-                         url = (IncludeQuery && Request.QueryString.Count > 0) ? string.Format("{0}{1}", pageNode.Url, Request.Url.Query) : pageNode.Url;
-                    }
-                    else if (homeNode != null && (mode == SwitcherMode.HomePages || mode == SwitcherMode.TranslatedOrHomePages))
-                    {
-                        url = homeNode.Url;
-                    }
-                    if (!string.IsNullOrEmpty(url))
-                    {
-                        <li>
-					        @LinkElement(culture, url)
-                        </li>
+                        var homeNode = conn.SitemapNavigator.GetPageNodeById(currentHomeID);
+                        var pageNode = conn.SitemapNavigator.GetPageNodeById(currentPageID);
+                        var url = string.Empty;
+
+                        if (pageNode != null && (mode == SwitcherMode.TranslatedPages || mode == SwitcherMode.TranslatedOrHomePages))
+                        {
+                            url = (IncludeQuery && Request.QueryString.Count > 0) ? string.Format("{0}{1}", pageNode.Url, Request.Url.Query) : pageNode.Url;
+                        }
+                        else if (homeNode != null && (mode == SwitcherMode.HomePages || mode == SwitcherMode.TranslatedOrHomePages))
+                        {
+                            url = homeNode.Url;
+                        }
+                        if (!string.IsNullOrEmpty(url))
+                        {
+                            <li class="@(culture.Equals(CurrentCulture) ? "active" : string.Empty)">
+                                @LinkElement(culture, url)
+                            </li>
+                        }
                     }
                 }
             }
-        }
-      
+
+            }
+        </ul>
     }
-</ul>
-}
 </body>
 </html>
 @helper LinkElement(CultureInfo c, string url)
 {
-	<a href="@url" class="@c.Name" lang="@c.Name.Substring(0, c.Name.IndexOf("-"))">@CultureFormat(c)</a>
+    <a href="@url" class="@c.Name" lang="@c.Name.Substring(0, c.Name.IndexOf("-"))">@CultureFormat(c)</a>
 }
 @helper CultureFormat(CultureInfo c)
 {
-	SwitcherFormat format = (SwitcherFormat)Enum.Parse(typeof(SwitcherFormat), Format);
-	switch (format)
-	{
-		case SwitcherFormat.DisplayName:
-			if ((c.CultureTypes & CultureTypes.SpecificCultures) != 0)
-			{<text>@c.Parent.DisplayName</text>}
-			else
-			{<text>@c.DisplayName</text>}
-			break;
-		case SwitcherFormat.EnglishName:
-			if ((c.CultureTypes & CultureTypes.SpecificCultures) != 0)
-			{<text>@c.Parent.EnglishName</text>}
-			else
-			{<text>@c.EnglishName</text>}
-			break;
-		case SwitcherFormat.Name:<text>@c.Name</text>break;
-		case SwitcherFormat.NativeName:
-			if ((c.CultureTypes & CultureTypes.SpecificCultures) != 0)
-			{<text>@c.Parent.NativeName</text>}
-			else
-			{<text>@c.NativeName</text>}
-			break;
-		case SwitcherFormat.ThreeLetterISOLanguageName:<text>@c.ThreeLetterISOLanguageName</text>; break;
-		case SwitcherFormat.ThreeLetterWindowsLanguageName:<text>@c.ThreeLetterWindowsLanguageName</text>; break;
-		case SwitcherFormat.TwoLetterISOLanguageName:<text>@c.TwoLetterISOLanguageName</text>; break;
-		case SwitcherFormat.Image:<img src="@string.Format("~/Frontend/Composite/Navigation/LanguageSwitcher/Images/{0}.png", c.Name)" class="pull-left" alt="@c.Name" />break;
-		case SwitcherFormat.Empty:
-		default: break;
-	}
+    SwitcherFormat format = (SwitcherFormat)Enum.Parse(typeof(SwitcherFormat), Format);
+    switch (format)
+    {
+        case SwitcherFormat.DisplayName:
+            if ((c.CultureTypes & CultureTypes.SpecificCultures) != 0)
+            {<text>@c.Parent.DisplayName</text>}
+            else
+            {<text>@c.DisplayName</text>}
+            break;
+        case SwitcherFormat.EnglishName:
+            if ((c.CultureTypes & CultureTypes.SpecificCultures) != 0)
+            {<text>@c.Parent.EnglishName</text>}
+            else
+            {<text>@c.EnglishName</text>}
+            break;
+        case SwitcherFormat.Name:<text>@c.Name</text>break;
+        case SwitcherFormat.NativeName:
+        if ((c.CultureTypes & CultureTypes.SpecificCultures) != 0)
+        {<text>@c.Parent.NativeName</text>}
+        else
+        {<text>@c.NativeName</text>}
+        break;
+        case SwitcherFormat.ThreeLetterISOLanguageName:<text>@c.ThreeLetterISOLanguageName</text>; break;
+        case SwitcherFormat.ThreeLetterWindowsLanguageName:<text>@c.ThreeLetterWindowsLanguageName</text>; break;
+        case SwitcherFormat.TwoLetterISOLanguageName:<text>@c.TwoLetterISOLanguageName</text>; break;
+        case SwitcherFormat.Image:<img src="@string.Format("~/Frontend/Composite/Navigation/LanguageSwitcher/Images/{0}.png", c.Name)" class="pull-left" alt="@c.Name" />break;
+        case SwitcherFormat.Empty:
+        default: break;
+    }
 }
