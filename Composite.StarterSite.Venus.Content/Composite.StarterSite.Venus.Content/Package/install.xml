@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
   <mi:PackageRequirements minimumCompositeVersion="4.2.5200.24979" maximumCompositeVersion="9.9999.9999.9999" />
-  <mi:PackageInformation name="Composite.StarterSite.Venus.Content" groupName="Composite.StarterSite.Venus" version="1.0.2" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="19e37de4-c106-45d0-a8f2-fa99503dac85" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+  <mi:PackageInformation name="Composite.StarterSite.Venus.Content" groupName="Composite.StarterSite.Venus" version="1.0.1" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="19e37de4-c106-45d0-a8f2-fa99503dac85" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
     <TechnicalDetails>Venus Content</TechnicalDetails>
     <Description>Venus Content</Description>
   </mi:PackageInformation>
@@ -9,23 +9,14 @@
   <mi:PackageFragmentInstallers>
     <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
       <Types>
+        <Type type="Composite.Data.Types.IPageStructure,Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageStructures_public.xml" />
+        </Type>
         <Type type="Composite.Data.Types.IPage,Composite">
           <Data dataScopeIdentifier="administrated" locale="?" dataFilename="~\Datas\Composite.Data.Types.IPages_administrated.xml" />
         </Type>
         <Type type="Composite.Data.Types.IPage,Composite">
           <Data dataScopeIdentifier="public" locale="?" dataFilename="~\Datas\Composite.Data.Types.IPages_public.xml" />
-        </Type>
-        <Type type="Composite.Data.Types.IPageFolderDefinition,Composite">
-          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageFolderDefinitions_public.xml" />
-        </Type>
-        <Type type="Composite.Data.Types.IPageStructure,Composite">
-          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageStructures_public.xml" />
-        </Type>
-        <Type type="Content.ContentSpot">
-          <Data dataScopeIdentifier="administrated" dataFilename="~\Datas\Content.ContentSpots_administrated.xml" />
-        </Type>
-        <Type type="Content.ContentSpot">
-          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Content.ContentSpots_public.xml" />
         </Type>
         <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite">
           <Data dataScopeIdentifier="administrated" locale="?" dataFilename="~\Datas\Composite.Data.Types.IPagePlaceholderContents_administrated.xml" />
@@ -36,9 +27,12 @@
         <Type type="Layout.Navigation.TopLink">
           <Data dataScopeIdentifier="public" locale="?" dataFilename="~\Datas\Layout.Navigation.TopLinks_public.xml" />
         </Type>
-        <!--Type type="Composite.Community.Newsletter.SubjectBased.ISubject, Composite.Community.Newsletter.SubjectBased">
+        <Type type="Composite.Data.Types.IPageFolderDefinition,Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageFolderDefinitions_public.xml" />
+        </Type>
+        <Type type="Composite.Community.Newsletter.SubjectBased.ISubject, Composite.Community.Newsletter.SubjectBased">
           <Data dataScopeIdentifier="public" locale="?" dataFilename="~\Datas\Composite.Community.Newsletter.SubjectBased.ISubject_public.xml" />
-        </Type-->
+        </Type>
       </Types>
     </mi:Add>
   </mi:PackageFragmentInstallers>

@@ -64,8 +64,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\Datas\Composite.Community.Newsletter.SubjectBased.ISubject_public.xml" />
+    <Content Include="Package\Datas\Composite.Community.Newsletter.SubjectBased.ISubject_public.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Package\Datas\Composite.Data.Types.IPageFolderDefinitions_public.xml" />
+    <Content Include="Package\Datas\Composite.Lists.Profiles.Groups_public.xml" />
+    <Content Include="Package\Datas\Composite.Lists.Profiles.Profiles_administrated.xml" />
+    <Content Include="Package\Datas\Composite.Lists.Profiles.Profiles_public.xml" />
     <Content Include="Package\Datas\Content.ContentSpots_administrated.xml" />
     <Content Include="Package\Datas\Content.ContentSpots_public.xml" />
     <Content Include="Package\Datas\Layout.Navigation.TopLinks_public.xml" />
@@ -80,7 +85,9 @@
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="_PackageCreator\Composite.StarterSite.Venus.Content.xml" />
+    <Content Include="_PackageCreator\Composite.StarterSite.Venus.Content.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
