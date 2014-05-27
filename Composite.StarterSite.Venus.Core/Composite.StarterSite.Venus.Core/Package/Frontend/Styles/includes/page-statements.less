@@ -28,7 +28,7 @@
 
         .icon {
             color: @gray-light;
-            font-size: 12em;
+            font-size: 8em;
             position: static; // fix for Safari
             vertical-align: middle;
         }
@@ -48,6 +48,10 @@
                 color: @brand-primary;
                 text-decoration: underline;
             }
+			
+			.icon {
+				text-decoration: none;
+			}
         }
     }
 }
@@ -61,37 +65,50 @@
         margin: 0;
 
         .statement-img {
-          //  height: 300px;
             overflow: hidden;
         }
 
         .statement-icon {
-            height: 300px;
+            height: 250px;
             padding: 0px;
         }
     }
+}
 
-    .iconified-statement {
-        .statement-icon .glyphicon {
-            font-size: 9em;
+@media (min-width: @screen-md-min) {
+    .three-columns .iconified-statement, .two-columns .iconified-statement {
+        .statement-icon {
+           // height: 300px;
         }
     }
 }
 
 
+
 .statement {
     padding: 65px 0;
     position: relative;
-
+	h1, h2, h3, h4 {
+		color: inherit;
+	}
     &.bg-primary em {
-        color: @white_color;
+        color: @gray-darker;
     }
 
     &.bg-info {
-        .btn-default {
+        color: @gray-darker;
+		.btn-default {
             background: darken(@btn-default-bg, 5%);
         }
     }
+	&.bg-dark { 
+		 background: @gray-darker;
+		 color: @gray-lighter;
+		em {
+		  color: @brand-primary;
+		}
+		
+	}
 
     *:first-child {
         margin-top: 0px;
@@ -105,6 +122,7 @@
         }
     }
 }
+
 
 .image-and-text-content {
     border-bottom: 1px solid @gray-lighter;
@@ -128,5 +146,10 @@
             margin-top: 20px;
         }
     }
+}
+
+.content-column .statement .container, .content-column .image-and-text-content .container {
+	.container-fluid();
+	width: auto;
 }
 

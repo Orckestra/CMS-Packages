@@ -11,10 +11,17 @@
 
 	private XhtmlDocument ScriptElementsAtBottom( XhtmlDocument page)
 	{
+		
+		if (page.Descendants(Namespaces.AspNetControls+"marker").Any())
+		{
+			return page;
+		}
+		
         var registeredIds = new List<string>();
         var registeredSources = new List<string>();
 
         var scriptElements = page.Descendants(Namespaces.Xhtml + "script").ToList();
+		scriptElements.AddRange(page.Descendants("script"));
         foreach (var scriptElement in scriptElements)
         {
             string id = (string)scriptElement.Attribute("id");

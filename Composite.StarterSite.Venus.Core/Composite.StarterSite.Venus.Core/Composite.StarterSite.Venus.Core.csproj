@@ -63,6 +63,7 @@
   <ItemGroup>
     <None Include="Package\App_Data\Composite\InlineCSharpFunctions\Widgets.FontIconSelector.GetIconsNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Package\App_Data\Razor\PageBlocks\Image.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Content\ContentSpot.xml" />
@@ -75,9 +76,10 @@
     <Content Include="Package\App_Data\PageTemplateFeatures\Navigation Column.html" />
     <Content Include="Package\App_Data\PageTemplateFeatures\Page Footer.html" />
     <Content Include="Package\App_Data\PageTemplateFeatures\Service Menu.html" />
-    <Content Include="Package\Datas\Composite.Data.Types.IGeneratedTypeWhiteLists_administrated.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IInlineFunction_administrated.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IInlineFunctionAssemblyReference_administrated.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTypeDataFolderTypeLinks_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IPageTypeDefaultPageContents_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
     <Content Include="Package\Frontend\Config\VisualEditor\common.xml" />
     <Content Include="Package\Frontend\fonts\fontawesome-webfont.svg" />
@@ -95,7 +97,9 @@
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="_PackageCreator\Composite.StarterSite.Venus.Core.xml" />
+    <Content Include="_PackageCreator\Composite.StarterSite.Venus.Core.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\Razor\Content\ShowContentSpots.cshtml" />
@@ -107,7 +111,6 @@
     <Content Include="Package\App_Data\Razor\PageBlocks\ImageAndText.cshtml" />
     <Content Include="Package\App_Data\Razor\PageBlocks\Jumbotron.cshtml" />
     <Content Include="Package\App_Data\Razor\PageBlocks\Statement.cshtml" />
-    <Content Include="Package\App_Data\Razor\PageBlocks\TopImage.cshtml" />
     <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.woff" />

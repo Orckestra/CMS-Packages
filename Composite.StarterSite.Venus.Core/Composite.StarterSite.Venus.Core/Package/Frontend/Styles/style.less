@@ -42,16 +42,16 @@ body, html {
     padding: @navbar-height 0 0 0;
 }
 
-.contentpage .content-column-width-limiter > .container, .contentpage-with-aside .content-column-width-limiter {
+.contentpage .content-column-width-limiter > .container {
     .center-block();
-    max-width: 700px;
+    max-width: 970px;
 }
 
-.content-column-width-limiter {
-    h1:first-child {
-        margin-bottom: 30px;
-    }
-
+.content-column, .content-column .container {
+	   > h1:first-child {
+			margin-bottom: 40px;
+		}
+	
     img {
         .img-responsive();
 
@@ -62,22 +62,13 @@ body, html {
     }
 }
 
-.contentpage .content-column-width-limiter {
-     p:first-child {
-        padding-top: 30px;
-    }
-}
 
 @media (min-width: @screen-sm-min) {
-    .contentpage-with-aside * {
+   .content-column *,  .aside-right-column *, .aside-left-column * {
         &:first-child {
             margin-top: 0px;
         }
     }
-}
-
-.page-header {
-    margin-bottom: 40px;
 }
 
 .content-column {
@@ -85,9 +76,24 @@ body, html {
     padding-bottom: 50px;
 }
 
-.aside-right-column, .aside-left-column {
+.aside-right-column, .aside-left-column, .nav-column {
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+//offsetting the html anchor to adjust for fixed navbar
+.anchor:before { 
+	content: '';
+	width: 0;
+	height: @navbar-height + 20;
+	display: block; 
+	position: relative; 
+	margin-top: -(@navbar-height + 20); 
+}
+
+//bootstrap badges
+.badge {
+	border: solid 1px @gray-lighter;
 }
 
 
@@ -111,6 +117,8 @@ body, html {
     .aside-left-column {
         padding-right: @grid-gutter-width;
     }
+	
+	
 }
 
 hr.content-bottom-line {
@@ -166,6 +174,8 @@ hr.content-bottom-line {
 }
 /* END LAYOUT */
 
+
+
 /**** NAV ***/
 .nav {
     > li {
@@ -196,6 +206,12 @@ h1, h2, h3, h4 {
         color: @brand-primary;
         font-style: inherit;
     }
+	a {
+		color: @gray-darker;
+		&:hover {
+			color: @brand-primary;
+		}
+	}
 }
 
 /*** NESLETTER MODULE ***/
@@ -251,22 +267,11 @@ h1, h2, h3, h4 {
         }
 
         .btn {
-            width: 35%;
+            width: auto;
         }
     }
 }
 
-.spot {
-    margin-top: 70px;
-}
-
-.spots:first-child, .spots .spot:first-child {
-    margin-top: 0px;
-}
-
-.spot .iconified-statement .statement-body {
-    padding-bottom: 0;
-}
 
 @media (min-width: @screen-sm-min) {
 

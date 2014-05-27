@@ -12,6 +12,8 @@
 
     $(document).ready(function () {
 
+
+
         $(".mega-menu").on("show.bs.dropdown", function () {
             if (!$(".navbar-collapse").hasClass("in")) {
                 showOverlay();

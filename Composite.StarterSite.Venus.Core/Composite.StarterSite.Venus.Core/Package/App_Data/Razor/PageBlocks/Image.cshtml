@@ -3,7 +3,7 @@
 @functions {
 	public override string FunctionDescription
 	{
-        get { return "Show random image at the top of the content pages"; }
+        get { return "Show random image"; }
 	}
 
     [FunctionParameter(Label = "Images folder")]
@@ -27,6 +27,6 @@
 	<head>
 	</head>
 	<body>
-        <div class="page-top-image" style="@InlineStyle(image.Id.ToString())"></div>
+        <div class="page-image wide" style="@InlineStyle(image.Id.ToString())"></div>
 	</body>
 </html>
