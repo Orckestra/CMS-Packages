@@ -15,17 +15,16 @@
     public XhtmlDocument Content { get; set; }
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		@*you can add template specific head elements here*@
-	</head>
-	<body class="contentpage">
-		<div class="content-column-width-limiter content-column">
-			@this.Function("Layout.Helpers.InjectContainerElements",
-					new { Document = Start, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
-			@this.Function("Layout.Helpers.InjectContainerElements",
-					new { Document = Content, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
-
-		</div>
-		<hr class="content-bottom-line" />
-	</body>
+<head>
+    @*you can add template specific head elements here*@
+</head>
+<body class="contentpage">
+    @this.Function("Layout.Helpers.InjectContainerElements",
+                    new { Document = Start, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
+    <div class="content-column-width-limiter content-column">
+        @this.Function("Layout.Helpers.InjectContainerElements",
+                    new { Document = Content, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
+    </div>
+    <hr class="content-bottom-line" />
+</body>
 </html>
