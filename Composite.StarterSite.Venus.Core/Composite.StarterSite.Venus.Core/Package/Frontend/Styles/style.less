@@ -1,35 +1,13 @@
 ﻿@import "bootstrap/bootstrap.less";
 @import "bootstrap/responsive-utilities.less";
 @import "VisualEditor.common.less";
+@import "includes/fixes.less";
 
 @white_color: #fff;
 
 body, html {
     font-size: @font-size-base;
 }
-
-/* LAYOUT */
-/* fix responsive isssue for IE10 on Windows Phone 8 */
-@-webkit-viewport {
-    width: device-width;
-}
-
-@-moz-viewport {
-    width: device-width;
-}
-
-@-ms-viewport {
-    width: device-width;
-}
-
-@-o-viewport {
-    width: device-width;
-}
-
-@viewport {
-    width: device-width;
-}
-/* end fix */
 
 @media (max-width: @screen-xs-max) {
     .container {
@@ -76,9 +54,13 @@ body, html {
     padding-bottom: 50px;
 }
 
-.aside-right-column, .aside-left-column, .nav-column {
+.aside-right-column, .aside-left-column {
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+.nav-column {
+     padding-top: 50px;
 }
 
 //offsetting the html anchor to adjust for fixed navbar
@@ -135,7 +117,6 @@ hr.content-bottom-line {
 
     h1, h2, h3, h4 {
         color: @white_color;
-
         em {
             color: @gray-dark;
         }
@@ -173,8 +154,6 @@ hr.content-bottom-line {
     }
 }
 /* END LAYOUT */
-
-
 
 /**** NAV ***/
 .nav {
@@ -214,65 +193,6 @@ h1, h2, h3, h4 {
 	}
 }
 
-/*** NESLETTER MODULE ***/
-.newsletter-signup-wrapper {
-    max-width: 920px;
-    .center-block();
-}
-
-.newsletter-signup {
-    .form-inline();
-
-    .btn-default {
-        .btn-primary();
-        width: 100%;
-    }
-}
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) {
-    .newsletter-signup {
-        .form-group {
-            width: 37%;
-
-            &:last-child {
-                width: 24%;
-            }
-
-            input, button {
-                width: 97%;
-            }
-        }
-    }
-}
-/*** END NEWSLETER ***/
-
-
-/***SEARCH FORM ***/
-.main-container #SearchForm {
-    margin: 0;
-    padding: 0;
-    float: none !important;
-
-    .btn {
-        width: 100%;
-    }
-
-    @media (min-width: @screen-sm-min) {
-        .form-group {
-            width: 50%;
-
-            input {
-                width: 97%;
-            }
-        }
-
-        .btn {
-            width: auto;
-        }
-    }
-}
-
-
 @media (min-width: @screen-sm-min) {
 
     /* BUTTONS */
@@ -309,9 +229,12 @@ h1, h2, h3, h4 {
     }
 }
 
-// plugins
 @import "includes/page-statements.less";
 @import "includes/jumbotron.less";
 @import "includes/navbar.less";
+@import "includes/service-menu.less";
+@import "includes/language-switcher.less";
+@import "includes/navbar-search.less";
 @import "includes/mega-menu.less";
 @import "includes/profiles.less";
+@import "includes/newsletter.less";

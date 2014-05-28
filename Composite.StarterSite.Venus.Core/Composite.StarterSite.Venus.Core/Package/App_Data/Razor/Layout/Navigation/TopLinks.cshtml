@@ -9,34 +9,30 @@
 @{
 	var breadscrumbs = Sitemap.CurrentHomePageNode.GetPageNodes(SitemapScope.AncestorsAndCurrent).Select(p => p.Id).ToList();
 	var topLinks = Data.Get<Layout.Navigation.TopLink>().Where(tl => breadscrumbs.Contains(tl.PageId)).OrderBy(l => l.Position).ToList();
-	//if(!topLinks.Any()) { return;}
+	if(!topLinks.Any()) { return;}
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 	</head>
 	<body>
-        @if (topLinks.Any()) { 
-        <ul class="list-unstyled list-inline nav-toplinks">
-             @foreach (var link in topLinks)
-             { 
-                 var pageNode = Sitemap.GetPageNodeById(link.Page);
-                 var title = !string.IsNullOrEmpty(pageNode.MenuTitle) ? pageNode.MenuTitle : pageNode.Title;
-                 var isIcon = !string.IsNullOrEmpty(link.Icon);
-
-                 <li class="mobile-navbar-link">
-                      <a href="@Html.C1().PageUrl(pageNode.Id.ToString())" title="@title" class="@(isIcon? "with-icon": string.Empty)">
-                          @if (isIcon && link.AlwaysUseIcon)
-                          {
-                                <span class="icon fa fa-@(link.Icon)"></span>
-                          } else
-                          {
-                             <span class="visible-sm visible-md visible-lg">@title</span>
-                             <span class="hidden-sm hidden-md hidden-lg icon glyphicon glyphicon-@(link.Icon)"></span>
-                          }
-                     </a>
-                 </li>
+ @foreach (var link in topLinks)
+{
+    var pageNode = Sitemap.GetPageNodeById(link.Page);
+    var title = !string.IsNullOrEmpty(pageNode.MenuTitle) ? pageNode.MenuTitle : pageNode.Title;
+    var isIcon = !string.IsNullOrEmpty(link.Icon);
+    <div>
+        <a href="@Html.C1().PageUrl(pageNode.Id.ToString())" title="@title" class="@(isIcon? "with-icon": string.Empty)">
+            @if (isIcon && link.AlwaysUseIcon)
+            {
+                <span class="icon fa fa-@(link.Icon)"></span>
             }
-        </ul>
-       }
-	</body>
+            else
+            {
+                <span class="visible-sm visible-md visible-lg">@title</span>
+                <span class="hidden-sm hidden-md hidden-lg icon icon-mobile fa fa-@(link.Icon)"></span>
+            }
+        </a>
+    </div>
+ }
+ 	</body>
 </html>

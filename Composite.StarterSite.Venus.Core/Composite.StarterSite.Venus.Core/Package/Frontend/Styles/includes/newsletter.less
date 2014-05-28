@@ -1,0 +1,30 @@
+﻿
+.newsletter-signup-wrapper {
+    max-width: 920px;
+    .center-block();
+}
+
+.newsletter-signup {
+    .form-inline();
+
+    .btn-default {
+        .btn-primary();
+        width: 100%;
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    .newsletter-signup {
+        .form-group {
+            width: 37%;
+
+            &:last-child {
+                width: 24%;
+            }
+
+            input, button {
+                width: 97%;
+            }
+        }
+    }
+}

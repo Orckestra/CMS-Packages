@@ -1,0 +1,68 @@
+﻿.service-nav {
+    > div {
+        float: left;
+        height: @navbar-height;
+        line-height: @navbar-height;
+        vertical-align: middle;
+        text-align: center;
+        position: relative;
+
+        a {
+            color: @gray-light;
+
+            .icon {
+                color: @navbar-default-link-color;
+                font-size: 20px;
+            }
+
+            &:hover {
+                text-decoration: none;
+                color: @brand-primary;
+
+                .icon {
+                    color: @brand-primary;
+                }
+            }
+        }
+
+        > a {
+            display: block;
+            font-weight: bold;
+            padding: 0px 11px;
+        }
+
+        .dropdown-menu {
+            margin-top: 0;
+            //  width: 100%;
+            border-top: 0;
+            text-align: left;
+
+            form {
+                margin: 20px;
+            }
+        }
+    }
+}
+
+    .service-nav > div:last-child {
+        border-right: 0;
+    }
+
+@media (min-width:@screen-sm-min) {
+    .service-nav {
+        float: right;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        > div {
+            float: left;
+
+            a {
+                .icon {
+                    font-size: inherit;
+                }
+            }
+        }
+    }
+}

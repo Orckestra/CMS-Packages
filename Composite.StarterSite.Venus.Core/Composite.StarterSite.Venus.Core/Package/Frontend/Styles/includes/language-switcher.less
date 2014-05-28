@@ -1,0 +1,46 @@
+﻿.language-switcher {
+    li {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        display: block;
+        padding-left: 6px;
+        padding-right: 6px;
+        position: relative;
+        font-weight: bold;
+
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+        li.active a, a:hover {
+            color: @brand-primary;
+        }
+
+
+}
+
+@media (min-width: @screen-sm-min) {
+    .language-switcher {
+        li {
+            > a {
+                &:after {
+                    content: '/';
+                    display: block;
+                    position: absolute;
+                    right: -4px;
+                    top: 0;
+                    color: @gray-light !important;
+                }
+            }
+        }
+            li:last-child {
+                > a:after {
+                    content: '';
+                }
+            }
+    }
+}

@@ -41,11 +41,24 @@
              window.location.href = $(this).attr("href");
         });
 
-        // Mobile navbar links 
+        $(".dropdown-menu").find("form").on("click", function (e) {
+            e.stopPropagation();
+        });
+
+
+        // Navbar links on Mobile
         var maxLinksInRow = 5;
-        var linksCount = $(".mobile-navbar-link").length > 5 ? 5 : $(".mobile-navbar-link").length;
+        //navbar-brand + navbar-toggle + service-nav
+        var linksCount = 2 + $(".service-nav > div").length > maxLinksInRow ? maxLinksInRow : 2 + $(".service-nav > div").length;
         var linksStyle = "width-" + Math.floor(100/linksCount);
-        $(".mobile-navbar-link").addClass(linksStyle);
+        $(".navbar-brand").addClass(linksStyle);
+        $(".navbar-toggle").addClass(linksStyle);
+        $(".service-nav > div").addClass(linksStyle);
+
+        //NAVBAR SEARCH FORM
+        $(".navbar-search-form .dropdown-toggle").on("click", function (e) {
+            setTimeout(function () { $("#searchText").focus(); }, 0);
+        })
 
         //Profiles
         $(".profiles-list .row").each(function () {
