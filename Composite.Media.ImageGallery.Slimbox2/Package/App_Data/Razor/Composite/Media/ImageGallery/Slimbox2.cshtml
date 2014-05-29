@@ -7,10 +7,10 @@
     }
 
     [FunctionParameter(Label = "Media folder", Help = "A folder with images in the Media Archive to display as a gallery (not set by default). Do not use when the Media Image is set.", DefaultValue = null)]
-    public DataReference<IMediaFileFolder> MediaFolder { get; set; }
+    public NullableDataReference<IMediaFileFolder> MediaFolder { get; set; }
 
     [FunctionParameter(Label = "Media image", Help = " A single image file in the Media Archive to display (not set by default). Do not use when the Media Folder is set.", DefaultValue = null)]
-    public DataReference<IImageFile> MediaImage { get; set; }
+    public NullableDataReference<IImageFile> MediaImage { get; set; }
 
     [FunctionParameter(Label = "Download link text", Help = "When the text is specified, a link to the image with this text is added to the slimbox (no link/text by default).", DefaultValue = "")]
     public string DownloadLinkText { get; set; }
@@ -45,7 +45,7 @@
     <a title="@img.Title" href="@Html.C1().MediaUrl(img.KeyPath)?mw=1048&amp;mh=768" rel="lightbox-@(img.FolderPath)">
         <img src="@Html.C1().MediaUrl(img.KeyPath)?w=173&amp;h=173&amp;action=crop" title="@img.Description" alt="@img.Title" />
     </a>
-    <div style="display:none;">
+    <div class="slimbox-img-caption" style="display:none;">
         @if (!string.IsNullOrEmpty(img.Title))
         {
             <h5>
