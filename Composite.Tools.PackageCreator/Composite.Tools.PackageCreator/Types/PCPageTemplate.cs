@@ -23,7 +23,7 @@ namespace Composite.Tools.PackageCreator.Types
         {
         }
 
-        public override string Name
+        public override string Id
         {
             get
             {
@@ -66,10 +66,10 @@ namespace Composite.Tools.PackageCreator.Types
 
         public void Pack(PackageCreator creator)
         {
-            var pageTemplate = PageTemplateFacade.GetPageTemplates().FirstOrDefault(t => t.Title == Name);
+            var pageTemplate = PageTemplateFacade.GetPageTemplates().FirstOrDefault(t => t.Title == Id);
 
             if (pageTemplate == null)
-                throw new InvalidOperationException(string.Format("Template '{0}' does not exists", Name));
+                throw new InvalidOperationException(string.Format("Template '{0}' does not exists", Id));
 
             if (pageTemplate.GetType().Name == "MasterPagePageTemplateDescriptor")
             {

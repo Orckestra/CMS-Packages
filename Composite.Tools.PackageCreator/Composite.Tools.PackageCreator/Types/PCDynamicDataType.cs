@@ -9,7 +9,7 @@ namespace Composite.Tools.PackageCreator.Types
     [PCCategory("DynamicDataTypes")]
     public class PCDynamicDataType : SimplePackageCreatorItem
     {
-        public override string Name
+        public override string Id
         {
             get
             {

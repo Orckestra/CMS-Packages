@@ -30,12 +30,12 @@ namespace Composite.Tools.PackageCreator.Types
             try
             {
                 csharpFunction = (from i in DataFacade.GetData<IMethodBasedFunctionInfo>()
-                                  where i.Namespace + "." + i.UserMethodName == this.Name
+                                  where i.Namespace + "." + i.UserMethodName == this.Id
                                   select i).First();
             }
             catch (Exception)
             {
-                throw new ArgumentException(string.Format(@"C# Function '{0}' doesn't exists", this.Name));
+                throw new ArgumentException(string.Format(@"C# Function '{0}' doesn't exists", this.Id));
             }
 
             pc.AddData(csharpFunction);

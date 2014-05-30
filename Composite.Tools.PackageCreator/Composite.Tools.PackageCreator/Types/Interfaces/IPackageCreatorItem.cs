@@ -21,7 +21,7 @@ namespace Composite.Tools.PackageCreator.Types
     /// </example>
     public interface IPackageCreatorItem
     {
-        string Name
+        string Id
         {
             get;
         }

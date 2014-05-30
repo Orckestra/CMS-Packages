@@ -41,7 +41,7 @@ namespace Composite.Tools.PackageCreator.Types
 
         public void Pack(PackageCreator creator)
         {
-            creator.AddDirectory(string.Format(@"App_Data\Composite\LanguagePacks\{0}\", this.Name));
+            creator.AddDirectory(string.Format(@"App_Data\Composite\LanguagePacks\{0}\", this.Id));
         }
     }
 }

@@ -29,12 +29,12 @@ namespace Composite.Tools.PackageCreator.Types
             try
             {
                 xsltFunction = (from i in DataFacade.GetData<IXsltFunction>()
-                                where i.Namespace + "." + i.Name == this.Name
+                                where i.Namespace + "." + i.Name == this.Id
                                 select i).First();
             }
             catch (Exception)
             {
-                throw new ArgumentException(string.Format(@"XSLT Function '{0}' doesn't exists", this.Name));
+                throw new ArgumentException(string.Format(@"XSLT Function '{0}' doesn't exists", this.Id));
             }
 
             var newXslFilePath = "\\" + xsltFunction.Namespace.Replace(".", "\\") + "\\" + xsltFunction.Name + ".xsl";

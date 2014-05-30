@@ -45,11 +45,11 @@ namespace Composite.Tools.PackageCreator.Types
         public override void AddToConfiguration(XElement config)
         {
             var category = config.ForceElement(ns + this.CategoryName);
-            if (category.Elements(itemName).Where(x => x.AttributeValue("path") == this.Name).Count() == 0)
+            if (category.Elements(itemName).Where(x => x.AttributeValue("path") == this.Id).Count() == 0)
             {
                 category.Add(
                     new XElement(itemName,
-                        new XAttribute("path", this.Name)
+                        new XAttribute("path", this.Id)
                     )
                 );
             }

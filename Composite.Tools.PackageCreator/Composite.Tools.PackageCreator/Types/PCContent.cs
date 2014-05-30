@@ -37,13 +37,13 @@ namespace Composite.Tools.PackageCreator.Types
         {
             get
             {
-                if (Name == _pagesName)
+                if (Id == _pagesName)
                     return new ResourceHandle("Composite.Icons", "page-publication");
-                if (Name == _mediasName)
+                if (Id == _mediasName)
                     return new ResourceHandle("Composite.Icons", "perspective-media");
-                if (Name == _datatypesName)
+                if (Id == _datatypesName)
                     return new ResourceHandle("Composite.Icons", "perspective-datas");
-                if (Name == _applicationsName)
+                if (Id == _applicationsName)
                     return new ResourceHandle("Composite.Icons", "perspective-developerapplication");
 
                 return base.ItemIcon;
@@ -55,7 +55,7 @@ namespace Composite.Tools.PackageCreator.Types
             if (entityToken is PackageCreatorPackageElementProviderEntityToken
                 || entityToken is PageElementProviderEntityToken)
             {
-                yield return new PCContent(_pagesName);
+                /*yield return new PCContent(_pagesName);*/
                 yield return new PCContent(_mediasName);
                 yield return new PCContent(_datatypesName);
                 yield return new PCContent(_applicationsName);
@@ -68,7 +68,7 @@ namespace Composite.Tools.PackageCreator.Types
 
         public void Pack(PackageCreator creator)
         {
-            if (Name == _pagesName)
+            if (Id == _pagesName)
             {
                 #region All Pages
                 if (creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToAllLocales || creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToCurrentLocale)
@@ -96,13 +96,13 @@ namespace Composite.Tools.PackageCreator.Types
                 #endregion
 
             }
-            else if (Name == _mediasName)
+            else if (Id == _mediasName)
             {
                 creator.AddData(typeof(IMediaFileData));
                 creator.AddData(typeof(IMediaFolderData));
                 creator.AddFilesinDirectory(@"App_Data\Media\");
             }
-            else if (Name == _datatypesName)
+            else if (Id == _datatypesName)
             {
                 if (creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToAllLocales || creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToCurrentLocale)
                 {
@@ -122,7 +122,7 @@ namespace Composite.Tools.PackageCreator.Types
                     }
                 }
             }
-            else if (Name == _applicationsName)
+            else if (Id == _applicationsName)
             {
                 creator.AddData<IDataItemTreeAttachmentPoint>();
             }

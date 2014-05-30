@@ -44,7 +44,7 @@ namespace Composite.Tools.PackageCreator.Types
             this._entityToken = entityToken;
         }
 
-        public virtual string Name
+        public virtual string Id
         {
             get
             {
@@ -54,7 +54,7 @@ namespace Composite.Tools.PackageCreator.Types
 
         public virtual string GetLabel()
         {
-            return Name;
+            return Id;
         }
 
 
@@ -84,16 +84,16 @@ namespace Composite.Tools.PackageCreator.Types
             var category = config.ForceElement(ns + this.CategoryName);
             category.Add(
                 new XElement(itemName,
-                    new XAttribute(category.IndexAttributeName(), this.Name)
+                    new XAttribute(category.IndexAttributeName(), this.Id)
                 )
             );
 
         }
-        public void RemoveFromConfiguration(XElement config)
+        public virtual void RemoveFromConfiguration(XElement config)
         {
             foreach (var name in this.CategoryAllNames)
             {
-                config.Elements(ns + name).Elements(itemName).Where(x => x.IndexAttributeValue() == this.Name).Remove();
+                config.Elements(ns + name).Elements(itemName).Where(x => x.IndexAttributeValue() == this.Id).Remove();
             }
         }
 

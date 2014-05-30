@@ -279,14 +279,14 @@ namespace Composite.Tools.PackageCreator.ElementProvider
             else if (entityToken is PackageCreatorCategoryElementProviderEntityToken)
             {
                 var items = PackageCreatorFacade.GetItems(entityToken.Type, entityToken.Source);
-                foreach (var item in items.OrderBy(d => d.Name))
+                foreach (var item in items.OrderBy(d => d.Id))
                 {
-                    var element = new Element(_context.CreateElementHandle(new PackageCreatorItemElementProviderEntityToken(item.Name, entityToken.Source, entityToken.Type)))
+                    var element = new Element(_context.CreateElementHandle(new PackageCreatorItemElementProviderEntityToken(item.Id, entityToken.Source, entityToken.Type)))
                     {
                         VisualData = new ElementVisualizedData()
                         {
                             Label = item.GetLabel(),
-                            ToolTip = item.Name,
+                            ToolTip = item.Id,
                             HasChildren = false,
                             Icon = item.ItemIcon,
                             OpenedIcon = item.ItemIcon

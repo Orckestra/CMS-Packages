@@ -138,7 +138,12 @@ namespace Composite.Tools.PackageCreator
 			dictionary[key][listKey] = listValue;
 		}
 
-		public static bool IsIPackagable(this Type type)
+		public static bool IsInitable(this Type type)
+		{
+			return type.GetInterfaces().Contains(typeof(IInitable));
+		}
+
+		public static bool IsPackagable(this Type type)
 		{
 			return type.GetInterfaces().Contains(typeof (IPackageable));
 		}

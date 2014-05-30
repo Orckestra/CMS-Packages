@@ -38,6 +38,7 @@ namespace Composite.Tools.PackageCreator
         private string serviceDirectoryPath;
         private string packageDirectoryPath;
         private string zipDirectoryPath;
+		public HashSet<Guid> ExludedIds = new HashSet<Guid>();
         private List<XElement> Files = new List<XElement>();
         private List<XElement> Directories = new List<XElement>();
         private List<XElement> XslFiles = new List<XElement>();
@@ -181,28 +182,18 @@ namespace Composite.Tools.PackageCreator
 
                 #endregion
 
-                #region CSharpFunctions
-                XElement CSharpFunctions = config.Descendants(pc + "CSharpFunctions").FirstOrDefault();
-                if (CSharpFunctions != null)
-                {
-                    foreach (XElement item in CSharpFunctions.Elements("Add"))
-                    {
-
-
-                    }
-                }
-                #endregion
-
-                #region VisualFunctions
-                XElement VisualFunctions = config.Descendants(pc + "VisualFunctions").FirstOrDefault();
-                if (VisualFunctions != null)
-                {
-                    foreach (XElement item in VisualFunctions.Elements("Add"))
-                    {
-
-                    }
-                }
-                #endregion
+				#region Init Categories
+				foreach (var categoryType in PackageCreatorActionFacade.CategoryTypes)
+				{
+					if (categoryType.Value.IsInitable())
+					{
+						foreach (var packageItem in PackageCreatorFacade.GetItems(categoryType.Value, config.Root))
+						{
+							(packageItem as IInitable).Init(this);
+						}
+					}
+				}
+				#endregion
 
                 #region PageTemplates
                 XElement PageTemplates = config.Descendants(pc + "PageTemplates").FirstOrDefault();
@@ -244,29 +235,6 @@ namespace Composite.Tools.PackageCreator
                         AddFile(filename);
                     }
                 }
-                #endregion
-
-                #region FileXslTransformation
-                /*XElement FileXslTransformation = config.Descendants(pc + "FileXslTransformation").FirstOrDefault();
-				if (FileXslTransformation != null)
-				{
-					foreach (XElement item in FileXslTransformation.Elements("Add"))
-					{
-						string pathXml = item.IndexAttributeValue();
-						string pathXsl = item.AttributeValue("pathXsl");
-
-						if (string.IsNullOrEmpty(filename))
-						{
-							throw new InvalidOperationException("Files->Add attribute 'name' must be spesified");
-						}
-						XslFiles.Add(
-							new XElement("XsltFile",
-								new XAttribute("pathXml", "~\\" + pathXml),
-								new XAttribute("pathXsl", "~\\" + pathXsl)
-							)
-						);
-					}
-				}*/
                 #endregion
 
                 #region FilesInDirectory
@@ -385,7 +353,7 @@ namespace Composite.Tools.PackageCreator
 
                     foreach (var categoryType in PackageCreatorActionFacade.CategoryTypes)
                     {
-                        if (categoryType.Value.IsIPackagable())
+                        if (categoryType.Value.IsPackagable())
                         {
                             foreach (var packageItem in PackageCreatorFacade.GetItems(categoryType.Value, config.Root))
                             {
@@ -1082,7 +1050,6 @@ namespace Composite.Tools.PackageCreator
         #endregion
 
 
-
-        #endregion
-    }
+		#endregion
+	}
 }

@@ -310,7 +310,7 @@ namespace Composite.Tools.PackageCreator
         internal static void AddItem(IPackageCreatorItem item)
         {
             AddItem(item, ActivePackageName);
-            PackageCreatorFacade.ActivePackageName = item.Name;
+            PackageCreatorFacade.ActivePackageName = item.Id;
         }
 
         internal static void AddItem(IPackageCreatorItem item, string packageName)
@@ -362,24 +362,36 @@ namespace Composite.Tools.PackageCreator
 
         internal static IEnumerable<IPackageCreatorItem> GetItems(Type type, XElement config)
         {
-            var method = type.GetMethod("GetItems",
-                BindingFlags.FlattenHierarchy | BindingFlags.Public | BindingFlags.Static,
-                null,
-                CallingConventions.Any,
-                new Type[] { typeof(Type), typeof(XElement) },
-                null
-            );
+			var manager = ItemManagerCache.GetItemManager(type);
+			if (manager != null)
+			{
+				var results = manager.GetItems(type, config);
+				foreach (var result in results)
+				{
+					yield return result;
+				}
 
-            if (method == null)
-            {
-                LoggingService.LogError("Type {0} doesnot have static methos GetItems", type.FullName);
-                yield break;
-            }
-            var results = (IEnumerable<IPackageCreatorItem>)method.Invoke(Type.Missing, new object[] { type, config });
-            foreach (var result in results)
-            {
-                yield return result;
-            }
+			}
+			else {
+				var method = type.GetMethod("GetItems",
+				BindingFlags.FlattenHierarchy | BindingFlags.Public | BindingFlags.Static,
+				null,
+				CallingConventions.Any,
+				new Type[] { typeof(Type), typeof(XElement) },
+				null
+			);
+
+				if (method == null)
+				{
+					LoggingService.LogError("Type {0} doesnot have static methos GetItems", type.FullName);
+					yield break;
+				}
+				var results = (IEnumerable<IPackageCreatorItem>)method.Invoke(Type.Missing, new object[] { type, config });
+				foreach (var result in results)
+				{
+					yield return result;
+				}
+			}
         }
 
 

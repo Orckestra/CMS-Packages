@@ -83,8 +83,17 @@ namespace Composite.Tools.PackageCreator.Actions
         {
             var type = CategoryTypes.Where(d => d.Key.Name == category).Select(d => d.Value).First();
 
-            var result = Activator.CreateInstance(type, new object[] { name });
-            return (IPackageCreatorItem)result;
+			var manager = ItemManagerCache.GetItemManager(type);
+			if (manager != null)
+			{
+				return manager.GetItem(type, name);
+
+			}
+			else
+			{
+				var result = Activator.CreateInstance(type, new object[] { name });
+				return (IPackageCreatorItem)result;
+			}
         }
 
 

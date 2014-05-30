@@ -37,7 +37,7 @@ namespace Composite.Tools.PackageCreator.Types
         {
 
             IFunction function = null;
-            if (FunctionFacade.TryGetFunction(out function, this.Name))
+            if (FunctionFacade.TryGetFunction(out function, this.Id))
             {
 
                 var innerFunction = function.GetProperty<IFunction>("InnerFunction");

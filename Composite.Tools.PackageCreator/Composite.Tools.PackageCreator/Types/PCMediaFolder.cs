@@ -47,7 +47,7 @@ namespace Composite.Tools.PackageCreator.Types
 
         private IMediaFileFolder GetMediaFolder()
         {
-            Guid mediaFolderId = new Guid(Name);
+            Guid mediaFolderId = new Guid(Id);
 
             return DataFacade.GetData<IMediaFileFolder>().FirstOrDefault(m => m.Id == mediaFolderId);
         }

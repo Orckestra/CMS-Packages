@@ -26,7 +26,7 @@ namespace Composite.Tools.PackageCreator.Types
 
         public void Pack(PackageCreator creator)
         {
-            creator.AddConfigurationXPath(PCCompositeConfig.Source, this.Name);
+            creator.AddConfigurationXPath(PCCompositeConfig.Source, this.Id);
         }
     }
 }
