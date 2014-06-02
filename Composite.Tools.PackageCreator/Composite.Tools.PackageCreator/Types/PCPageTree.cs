@@ -5,6 +5,7 @@ using Composite.Data;
 using Composite.Data.Types;
 using System.Xml.Linq;
 using System.Linq;
+using Composite.Core.Types;
 
 namespace Composite.Tools.PackageCreator.Types
 {
@@ -12,18 +13,20 @@ namespace Composite.Tools.PackageCreator.Types
 	[ItemManager(typeof(PCPageTreeManager))]
 	internal class PCPageTree : SimplePackageCreatorItem, IPackageCreatorItemActionToken, IPackageable
 	{
-		public bool IsNew { get; set; }
-		public PCPageTree(string name, bool isNew)
+		public bool IsRoot { get; private set; }
+		public bool IncludeData { get; private set; }
+		public PCPageTree(string name, bool isRoot, bool includeData)
 			: base(name)
 		{
-			this.IsNew = isNew;
+			this.IsRoot = isRoot;
+			this.IncludeData = includeData;
 		}
 
 		public override string ActionLabel
 		{
 			get
 			{
-				return IsNew 
+				return IsRoot 
 					? PackageCreatorFacade.GetLocalization(string.Format("{0}.AddRoot.Label", this.CategoryName))
 					: PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName));
 			}
@@ -34,7 +37,7 @@ namespace Composite.Tools.PackageCreator.Types
 		public override string ActionToolTip
 		{
 			get {
-				return IsNew
+				return IsRoot
 					? PackageCreatorFacade.GetLocalization(string.Format("{0}.AddRoot.ToolTip", this.CategoryName))
 					: PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.ToolTip", this.CategoryName));
 			}
@@ -45,7 +48,7 @@ namespace Composite.Tools.PackageCreator.Types
 		{
 			get
 			{
-				return this._name + ":" + this.IsNew;
+				return this._name + ":" + this.IsRoot;
 			}
 		}
 
@@ -60,7 +63,7 @@ namespace Composite.Tools.PackageCreator.Types
 			{
 				result = base.GetLabel();
 			}
-			return result + (IsNew ? "(new)" : string.Empty);
+			return result + (IsRoot ? "(new)" : string.Empty);
 		}
 
 		public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
@@ -72,8 +75,8 @@ namespace Composite.Tools.PackageCreator.Types
 				{
 					var page = dataEntityToken.Data as IPage;
 					if(page.GetParentId() != Guid.Empty)
-						yield return new PCPageTree(page.Id.ToString(), true);
-					yield return new PCPageTree(page.Id.ToString(), false);
+						yield return new PCPageTree(page.Id.ToString(), true, true);
+					yield return new PCPageTree(page.Id.ToString(), false, true);
 				}
 			}
 		}
@@ -84,13 +87,14 @@ namespace Composite.Tools.PackageCreator.Types
 			if (pc.ExludedIds.Contains(pageId))
 				return;
 			PackPageTree(pc, pageId);
-			if (this.IsNew)
+			if (this.IsRoot)
 			{
 				var pageStructure = DataFacade.BuildNew<IPageStructure>();
 				pageStructure.Id = pageId;
 				pageStructure.ParentId = Guid.Empty;
 				pageStructure.LocalOrdering = PageManager.GetLocalOrdering(pageId);
 				pc.AddData(pageStructure);
+
 			}
 			else {
 				pc.AddData<IPageStructure>(d => d.Id == pageId);
@@ -104,7 +108,8 @@ namespace Composite.Tools.PackageCreator.Types
 			category.Add(
 				new XElement(itemName,
 					new XAttribute(category.IndexAttributeName(), this._name),
-					new XAttribute("new", this.IsNew.ToString().ToLower())
+					new XAttribute("root", this.IsRoot.ToString().ToLower()),
+					new XAttribute("data", this.IncludeData.ToString().ToLower())
 				)
 			);
 		}
@@ -131,11 +136,28 @@ namespace Composite.Tools.PackageCreator.Types
 			}
 			pc.AddData<IPage>(d => d.Id == pageId);
 			pc.AddData<IPagePlaceholderContent>(d => d.PageId == pageId);
+
+			if (IncludeData)
+			{
+				pc.AddData<IDataItemTreeAttachmentPoint>(d => d.KeyValue == ValueTypeConverter.Convert<string>(pageId));
+				pc.AddData<IPageFolderDefinition>(d => d.PageId == pageId);
+				using (new DataScope(DataScopeIdentifier.Administrated))
+				{
+
+					var page = PageManager.GetPageById(pageId, true);
+
+					var items = PageFolderFacade.GetFolderData(page).ToList();
+					foreach (var item in items)
+					{
+						pc.AddData(item);
+					}
+				}
+			}
 		}
 
 		public string ActionTokenName
 		{
-			get { return this.IsNew.ToString(); }
+			get { return this.IsRoot.ToString(); }
 		}
 	}
 
@@ -149,7 +171,11 @@ namespace Composite.Tools.PackageCreator.Types
 			{
 				foreach (var element in config.Elements(ns + category).Elements(itemName))
 				{
-					var item = new PCPageTree(element.IndexAttributeValue(), element.AttributeValue("new") != "false");
+					var item = new PCPageTree(
+						element.IndexAttributeValue(),
+						element.AttributeValue("root") != "false",
+						element.AttributeValue("data") != "false"
+						);
 					yield return item;
 				}
 			};
@@ -161,7 +187,7 @@ namespace Composite.Tools.PackageCreator.Types
 			var split = id.Split(':');
 			var pageId = split[0];
 			var isNew = split[1] == true.ToString();
-			return new PCPageTree(pageId, isNew);
+			return new PCPageTree(pageId, isNew, true);
 		}
 	}
 }
