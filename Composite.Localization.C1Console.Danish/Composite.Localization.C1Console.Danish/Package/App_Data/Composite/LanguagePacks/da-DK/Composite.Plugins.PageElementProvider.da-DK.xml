@@ -32,23 +32,23 @@
   <string key="EditPage.LabelPageTitle" value="Sidetitel" />
   <string key="EditPage.LabelPageTitleHelp" value="Indtastningerne i dette felt vises i browservinduets titelbar. Feltet bruges af s&#248;gemaskiner og sitemaps" />
   <string key="EditPage.LabelMenuTitle" value="Menutitel" />
-  <string key="EditPage.HelpMenuTitle" value="Indtastningen i dette felt kan bruges i navigationen p&#229; hjemmesiden." />
+  <string key="EditPage.HelpMenuTitle" value="Den (korte) tekst der skal repræsentere siden i navigationen. Efterlades feltet tomt vises siden ikke i navigationen." />
   <string key="EditPage.LabelUrlTitle" value="URL-titel" />
   <string key="EditPage.UrlTitleFormattedTitle" value="URL-titlen blev omskrevet" />	
   <string key="EditPage.UrlTitleFormattedMessage" value="I henhold til de aktuelle URL-udskiftningsregler blev URL-titlen &#230;ndret til &#39;{0}&#39;" />
-  <string key="EditPage.HelpUrlTitle" value="Indtastningen i dette felt vises i browserens adresselinje som en del af URL-adressen. Feltet bruges af s&#248;gemaskiner" />
+  <string key="EditPage.HelpUrlTitle" value="Den tekst der skal repræsentere siden i browserens adresselinje som en del af URL-adressen. Feltet bør kun indeholde tegn fra a til z og 0 til 9 samt bindestreg og understregning." />
   <string key="EditPage.LabelFriendlyUrl" value="Brugervenlig  URL" />
-  <string key="EditPage.HelpFriendlyUrl" value="Indtastningen i dette felt er en forkortelse af sidens faktiske URL og videresender til dette, n&#229;r det indtastes i browserens adresselinie. Bem&#230;rk at nogle servere skal konfigureres for at underst&#248;tte denne funktion." />
+  <string key="EditPage.HelpFriendlyUrl" value="Hvis du ønsker at man skal kunne finde siden med en kort URL-adresse kan du indtaste en brugervenlig URL (som fungerer som en genvej til siden). Du kan herefter finde siden ved at skrive dit domænenavn efterfulgt af den brugervenlige URL (fx www.firmanavn.dk/kontakt-os)" />
   <string key="EditPage.LabelAbstract" value="Beskrivelse" />
   <string key="EditPage.LabelAbstractHelp" value="Brug dette felt til en kort beskrivelse af siden" />
-  <string key="EditPage.LabelPublishDate" value="Publiseringsdato" />
-  <string key="EditPage.HelpPublishDate" value="Angiv p&#229; hvilken dato og p&#229; hvilket tidspunkt du &#248;nsker, at siden skal publiseres. Siden vil automatisk blive publiseret p&#229; det angivne tidspunkt." />
-  <string key="EditPage.LabelUnpublishDate" value="Publiseringsdato" />
-  <string key="EditPage.HelpUnpublishDate" value="Angiv p&#229; hvilken dato og p&#229; hvilket tidspunkt du &#248;nsker, at siden skal afpubliseres. Siden bliver automatisk fjernet fra hjemmesiden p&#229; det angivne tidspunkt." />
+  <string key="EditPage.LabelPublishDate" value="Publiceringsdato" />
+  <string key="EditPage.HelpPublishDate" value="Angiv p&#229; hvilken dato og p&#229; hvilket tidspunkt du &#248;nsker, at siden skal publiceres. Siden vil automatisk blive publiceret p&#229; det angivne tidspunkt." />
+  <string key="EditPage.LabelUnpublishDate" value="Afpubliceringsdato" />
+  <string key="EditPage.HelpUnpublishDate" value="Angiv p&#229; hvilken dato og p&#229; hvilket tidspunkt du &#248;nsker, at siden skal afpubliceres. Siden bliver automatisk fjernet fra hjemmesiden p&#229; det angivne tidspunkt." />
   <string key="EditPage.LabelContent" value="Indhold" />
   <string key="EditPage.LabelPreview" value="Forh&#229;ndsvisning" />
   <string key="EditPage.PageTypeSelectorLabel" value="Sidetype" />
-  <string key="EditPage.PageTypeSelectorHelp" value="Valg af sidetype definerer sidens rolle som &#39;en normal side&#39; eller &#39;en blog&#39; . De tilg&#230;ngelige indstillinger afh&#230;nger af de installerede funktioner." />
+  <string key="EditPage.PageTypeSelectorHelp" value="Valg af sidetype definerer sidens funktion som f.eks. &#39;en normal side&#39; eller &#39;en blog&#39;. Når flere sidetyper er til rådighed kan skift ændre tilgængelige felter og skabeloner." />
   <string key="EditPage.MaxLength" value="{0} karakterer maksimum" />
   <string key="DeletePage.LabelFieldGroup" value="Slet siden ?" />
   <string key="DeletePageStep1.Title" value="Slet siden og alle dens undersider" />
@@ -66,7 +66,7 @@
   <string key="PageElementProvider.AddPageAtRoot" value="Tilf&#248;j hjemmeside ..." />
   <string key="PageElementProvider.AddPageAtRootToolTip" value="Tilf&#248;j ny startside" />
   <string key="PageElementProvider.ViewUnpublishedItems" value="Lav en liste over upublicerede sider" />
-  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="F&#229; overblik over sider og sidemappe data, som endnu ikke er publiseret." />
+  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="F&#229; overblik over sider og sidemappe data, som endnu ikke er publiceret." />
   <string key="PageElementProvider.ViewUnpublishedItems-document-title" value="Upubliceret indhold" />
   <string key="PageElementProvider.ViewUnpublishedItems-document-description" value="Listen nedenfor viser sider og sidedata som i &#248;jeblikket er under redigering eller er klar til at blive godkendt / publiceret." />
   <string key="PageElementProvider.EditPage" value="Redig&#233;r side" />
@@ -78,7 +78,7 @@
   <string key="PageElementProvider.AddSubPage" value="Tilf&#248;j side ..." />
   <string key="PageElementProvider.AddSubPageToolTip" value="Tilf&#248;j ny side under den valgte" />
   <string key="PageElementProvider.ViewPublicPage" value="Vis siden (kun publiceret)" />
-  <string key="PageElementProvider.ViewPublicToolTip" value="Vis seneste publiserede version" />
+  <string key="PageElementProvider.ViewPublicToolTip" value="Vis seneste publicerede version" />
   <string key="PageElementProvider.ViewDraftPage" value="Vis siden (med udkast)" />
   <string key="PageElementProvider.ViewDraftToolTip" value="Vis de seneste &#230;ndringer" />
   <string key="PageElementProvider.DisplayLocalOrderingLabel" value="Vis sidens lokale ordninger" />
@@ -107,8 +107,8 @@
   <string key="ManageHostNames.Remove.FieldGroupLabel" value="Fjern v&#230;rtsnavnstilknytning fra siden." />
   <string key="ManageHostNames.Remove.MultiSelectorLabel" value="V&#230;rtsnavne som skal fjernes" />
   <string key="ManageHostNames.Remove.MultiSelectorHelp" value="De v&#230;rtsnavne, du v&#230;lger, vil ikke l&#230;ngere v&#230;re tilknyttet siden" />
-  <string key="Preview.PublishedPage.NotPublishedTitle" value="Den valgte side er ikke publiseret" />
-  <string key="Preview.PublishedPage.NotPublishedMessage" value="Den valgte side er ikke publiseret" />
+  <string key="Preview.PublishedPage.NotPublishedTitle" value="Den valgte side er ikke publiceret" />
+  <string key="Preview.PublishedPage.NotPublishedMessage" value="Den valgte side er ikke publiceret" />
   <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="Bekr&#230;ft venligst sletning af alle undersider" />
   <string key="DeletePageWorkflow.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
   <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="Siden refereres til af en anden type, som ikke tillader multiple sletninger. Denne handling er standset" />

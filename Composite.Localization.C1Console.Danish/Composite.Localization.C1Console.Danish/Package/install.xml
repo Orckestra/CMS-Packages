@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.1.5058.34326" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Localization.C1Console.Danish" groupName="Composite.Localization" version="1.0.2" author="Maria Leonhardt, Acto A/S" website="http://www.acto.dk/" readMoreUrl="http://docs.composite.net/Composite.Localization.C1Console" id="1627db93-0571-4876-a9e8-4040617abea5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.Localization.C1Console.Danish" groupName="Composite.Localization" version="1.0.3" author="Maria Leonhardt, Acto A/S" website="http://www.acto.dk/" readMoreUrl="http://docs.composite.net/Composite.Localization.C1Console" id="1627db93-0571-4876-a9e8-4040617abea5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Translation of core strings to Danish. Stings from external packages may still be in English.</TechnicalDetails>
 		<Description>The C1 Console UI in Danish.</Description>
 	</mi:PackageInformation>
