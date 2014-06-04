@@ -18,8 +18,8 @@
 		<Add name="App_Code\Composite\AspNet\WebAPI\CustomIDataXmlFormatter.cs" />
 	</pc:Files>
 	<mi:PackageRequirements minimumCompositeVersion="4.1.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.AspNet.WebAPI" groupName="Composite.AspNet" version="1.0.0" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.AspNet.WebAPI" id="d1a6a7bf-f11d-4607-a064-f69f9956a4d5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
-		<TechnicalDetails>Installs the nessary dll-s and configuraiton changes for using WebAPI and OData.</TechnicalDetails>
-		<Description>Installs the nessary dll-s and configuraiton changes for using WebAPI and OData.</Description>
+	<mi:PackageInformation name="Composite.AspNet.WebAPI" groupName="Composite.AspNet" version="1.0.1" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.AspNet.WebAPI" id="d1a6a7bf-f11d-4607-a064-f69f9956a4d5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+    <TechnicalDetails>Installs the necessary DLLs and makes configuration changes to enable WebAPI and OData on a Composite C1 website.</TechnicalDetails>
+    <Description>Enables WebAPI and OData on a Composite C1 website.</Description>
 	</mi:PackageInformation>
 </pc:PackageCreator>
