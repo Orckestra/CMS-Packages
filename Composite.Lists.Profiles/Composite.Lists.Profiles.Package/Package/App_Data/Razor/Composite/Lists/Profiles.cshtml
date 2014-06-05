@@ -3,10 +3,10 @@
 @functions {
     public override string FunctionDescription
     {
-        get { return "A function that outputs the Profiles list."; }
+        get { return "Lists profiles on a page."; }
     }
 
-    [FunctionParameter(Label = "Profile Group", Help = "If Group is not selected, then all Profiles will be rendered ", DefaultValue = null)]
+    [FunctionParameter(Label = "Profile Group", Help = "When specified, profiles of this group will appear on the page. If none is selected (by default), all the groups will be listed.", DefaultValue = null)]
     public DataReference<Group> ProfileGroup { get; set; }
 }
 @{
