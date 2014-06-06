@@ -1,48 +1,49 @@
 
 (function (window) {
     /* fix bootstrap responsive issue for IE 10 on Windows Phone 8: */
-    if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) { 
-        var msViewportStyle = document.createElement("style"); 
-        msViewportStyle.appendChild( 
-            document.createTextNode("@-ms-viewport{width:auto!important}") 
-        ); 
-        document.getElementsByTagName("head")[0].appendChild(msViewportStyle); 
+    if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+        var msViewportStyle = document.createElement("style");
+        msViewportStyle.appendChild(
+            document.createTextNode("@-ms-viewport{width:auto!important}")
+        );
+        document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
     }
     /* end fix */
 
     $(document).ready(function () {
-
-
-
         $(".mega-menu").on("show.bs.dropdown", function () {
             if (!$(".navbar-collapse").hasClass("in")) {
                 showOverlay();
             }
-        })
 
+        })
         $(".mega-menu").on("hide.bs.dropdown", function () {
             if (!$(".navbar-collapse").hasClass("in")) {
                 hideOverlay();
             }
         })
-       
         $('.navbar-collapse').on('show.bs.collapse', function () {
             $(".navbar-toggle .icon-bar").addClass("hide");
             $(".navbar-toggle .icon-close").removeClass("hide");
             showOverlay();
+
         });
-        $('.navbar-collapse').on('hide.bs.collapse', function () {
+        $('.navbar-collapse').on('hidden.bs.collapse', function () {
             $(".navbar-toggle .icon-bar").removeClass("hide");
             $(".navbar-toggle .icon-close").addClass("hide");
             hideOverlay();
         });
 
         $(".dropdown-toggle").dblclick(function (e) {
-             window.location.href = $(this).attr("href");
+            window.location.href = $(this).attr("href");
         });
 
         $(".dropdown-menu").find("form").on("click", function (e) {
             e.stopPropagation();
+        });
+
+        $(window).on("load resize", function () {
+            $('.navbar-collapse').css("min-height", $(window).height());
         });
 
 
@@ -50,7 +51,7 @@
         var maxLinksInRow = 5;
         //navbar-brand + navbar-toggle + service-nav
         var linksCount = 2 + $(".service-nav > div").length > maxLinksInRow ? maxLinksInRow : 2 + $(".service-nav > div").length;
-        var linksStyle = "width-" + Math.floor(100/linksCount);
+        var linksStyle = "width-" + Math.floor(100 / linksCount);
         $(".navbar-brand").addClass(linksStyle);
         $(".navbar-toggle").addClass(linksStyle);
         $(".service-nav > div").addClass(linksStyle);
@@ -62,7 +63,7 @@
 
         //Profiles
         $(".profiles-list .row").each(function () {
-            $(".thumbnail", $(this)).equalHeightColumns({minWidth: 767, extraHeight: 18});
+            $(".thumbnail", $(this)).equalHeightColumns({ minWidth: 767, extraHeight: 18 });
         });
     });
 
