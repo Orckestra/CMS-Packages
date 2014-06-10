@@ -9,8 +9,6 @@
     [FunctionParameter(Label = "Search Result Page", Help = "Select the page where search results will be displayed. This should be a page which contains the 'Search Results' function.")]
     public DataReference<Composite.Data.Types.IPage> SearchResultPage { get; set; }
 
-    [FunctionParameter(Label = "Search Button Label", Help = "Label for search button", DefaultValue = "")]
-    public string SearchButtonLabel { get; set; }
 }
 @{
     var pageNode = Data.SitemapNavigator.GetPageNodeById((Guid)SearchResultPage.KeyValue);
