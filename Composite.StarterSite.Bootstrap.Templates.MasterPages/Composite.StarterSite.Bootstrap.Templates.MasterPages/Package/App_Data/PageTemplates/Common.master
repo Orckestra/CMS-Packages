@@ -31,7 +31,7 @@
 
             <div class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <f:function id="Function1" name="Layout.Navigation.Menu" runat="server" />
-                <div class="pull-right">
+                 <div class="service-nav">
                     <c1:pagetemplatefeature name="Service Menu" runat="server" />
                 </div>
             </div>
