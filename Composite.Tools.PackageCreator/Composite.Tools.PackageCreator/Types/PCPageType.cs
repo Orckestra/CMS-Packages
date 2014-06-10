@@ -36,9 +36,9 @@ namespace Composite.Tools.PackageCreator.Types
 
         public void Pack(PackageCreator creator)
         {
-            var pageType = DataFacade.GetData<IPageType>(d => d.Name == this._name).FirstOrDefault();
+            var pageType = DataFacade.GetData<IPageType>(d => d.Name == this.Name).FirstOrDefault();
             if (pageType == null)
-                throw new InvalidOperationException(string.Format("PageType '{0}' does not exists", this._name));
+                throw new InvalidOperationException(string.Format("PageType '{0}' does not exists", this.Name));
             var pageTypeId = pageType.Id;
             creator.AddData(pageType);
             creator.AddData<IPageTypeDataFolderTypeLink>(d => d.PageTypeId == pageTypeId);

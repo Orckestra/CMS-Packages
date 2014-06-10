@@ -13,7 +13,7 @@ namespace Composite.Tools.PackageCreator.Types
     /// </summary>
     public abstract class SimplePackageCreatorItem : IPackageCreatorItem
     {
-        protected string _name;
+       
         protected EntityToken _entityToken;
         protected virtual XNamespace ns
         {
@@ -36,7 +36,7 @@ namespace Composite.Tools.PackageCreator.Types
 
         protected SimplePackageCreatorItem(string name)
         {
-            this._name = name;
+            this.Name = name;
         }
 
         protected SimplePackageCreatorItem(EntityToken entityToken)
@@ -44,17 +44,19 @@ namespace Composite.Tools.PackageCreator.Types
             this._entityToken = entityToken;
         }
 
+		public virtual string Name { get; set; }
+
         public virtual string Id
         {
             get
             {
-                return _name;
+                return Name;
             }
         }
 
         public virtual string GetLabel()
         {
-            return Id;
+            return Name;
         }
 
 
@@ -93,7 +95,7 @@ namespace Composite.Tools.PackageCreator.Types
         {
             foreach (var name in this.CategoryAllNames)
             {
-                config.Elements(ns + name).Elements(itemName).Where(x => x.IndexAttributeValue() == this.Id).Remove();
+                config.Elements(ns + name).Elements(itemName).Where(x => x.IndexAttributeValue() == this.Name).Remove();
             }
         }
 

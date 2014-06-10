@@ -17,6 +17,7 @@ namespace Composite.Tools.PackageCreator.Types
         private const string _mediasName = "Medias";
         private const string _datatypesName = "DatatypesData";
         private const string _applicationsName = "Applications";
+		private const string _metatypesName = "MetatypesData";
 
         public PCContent(string name)
             : base(name)
@@ -25,12 +26,12 @@ namespace Composite.Tools.PackageCreator.Types
 
         public override string ActionLabel
         {
-            get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.{1}.Add.Label", this.CategoryName, _name)); }
+            get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.{1}.Add.Label", this.CategoryName, Name)); }
         }
 
         public override string ActionToolTip
         {
-            get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.{1}.Add.ToolTip", this.CategoryName, _name)); }
+            get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.{1}.Add.ToolTip", this.CategoryName, Name)); }
         }
 
         public override ResourceHandle ItemIcon
@@ -45,7 +46,8 @@ namespace Composite.Tools.PackageCreator.Types
                     return new ResourceHandle("Composite.Icons", "perspective-datas");
                 if (Id == _applicationsName)
                     return new ResourceHandle("Composite.Icons", "perspective-developerapplication");
-
+				if (Id == _metatypesName)
+					return new ResourceHandle("Composite.Icons", "perspective-datas");
                 return base.ItemIcon;
             }
         }
@@ -56,14 +58,15 @@ namespace Composite.Tools.PackageCreator.Types
                 || entityToken is PageElementProviderEntityToken)
             {
                 /*yield return new PCContent(_pagesName);*/
-                yield return new PCContent(_mediasName);
-                yield return new PCContent(_datatypesName);
-                yield return new PCContent(_applicationsName);
+                //yield return new PCContent(_mediasName);
+                //yield return new PCContent(_datatypesName);
+                //yield return new PCContent(_applicationsName);
+				yield return new PCContent(_metatypesName);
             }
         }
         public string ActionTokenName
         {
-            get { return _name; }
+            get { return Name; }
         }
 
         public void Pack(PackageCreator creator)
@@ -126,6 +129,21 @@ namespace Composite.Tools.PackageCreator.Types
             {
                 creator.AddData<IDataItemTreeAttachmentPoint>();
             }
+			else if (Id == _metatypesName)
+			{
+				if (creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToAllLocales || creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToCurrentLocale)
+				{
+					using (new DataScope(DataLocalizationFacade.DefaultLocalizationCulture))
+					{
+						IEnumerable<Type> pageMetaTypeInterfaces = PageMetaDataFacade.GetAllMetaDataTypes();
+
+						foreach (var pageMetaType in pageMetaTypeInterfaces)
+						{
+							creator.AddDinamicDataTypeData(pageMetaType);
+						}
+					}
+				}
+			}
             return;
         }
     }

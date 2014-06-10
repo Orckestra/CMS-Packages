@@ -30,8 +30,6 @@ namespace Composite.Tools.PackageCreator.Types
 					? PackageCreatorFacade.GetLocalization(string.Format("{0}.AddRoot.Label", this.CategoryName))
 					: PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName));
 			}
-
-			//get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName)); }
 		}
 
 		public override string ActionToolTip
@@ -48,7 +46,7 @@ namespace Composite.Tools.PackageCreator.Types
 		{
 			get
 			{
-				return this._name + ":" + this.IsRoot;
+				return this.Name + ":" + this.IsRoot;
 			}
 		}
 
@@ -57,7 +55,7 @@ namespace Composite.Tools.PackageCreator.Types
 			string result;
 			try
 			{
-				result = PageManager.GetPageById(new Guid(this._name), true).Title;
+				result = PageManager.GetPageById(new Guid(this.Name), true).Title;
 			}
 			catch
 			{
@@ -83,7 +81,7 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public void Pack(PackageCreator pc)
 		{
-			var pageId = new Guid(this._name);
+			var pageId = new Guid(this.Name);
 			if (pc.ExludedIds.Contains(pageId))
 				return;
 			PackPageTree(pc, pageId);
@@ -107,23 +105,12 @@ namespace Composite.Tools.PackageCreator.Types
 			var category = config.ForceElement(ns + this.CategoryName);
 			category.Add(
 				new XElement(itemName,
-					new XAttribute(category.IndexAttributeName(), this._name),
+					new XAttribute(category.IndexAttributeName(), this.Name),
 					new XAttribute("root", this.IsRoot.ToString().ToLower()),
 					new XAttribute("data", this.IncludeData.ToString().ToLower())
 				)
 			);
 		}
-
-		public override void RemoveFromConfiguration(XElement config)
-		{
-			foreach (var name in this.CategoryAllNames)
-			{
-				config.Elements(ns + name).Elements(itemName).Where(
-					x => x.IndexAttributeValue() == this._name
-					).Remove();
-			}
-		}
-
 
 		private void PackPageTree(PackageCreator pc, Guid pageId)
 		{
@@ -145,12 +132,17 @@ namespace Composite.Tools.PackageCreator.Types
 				{
 
 					var page = PageManager.GetPageById(pageId, true);
-
-					var items = PageFolderFacade.GetFolderData(page).ToList();
-					foreach (var item in items)
+					foreach (Type folderType in page.GetDefinedFolderTypes())
 					{
-						pc.AddData(item);
+						pc.AddData(folderType, d => (d as IPageFolderData).PageId == pageId);
 					}
+
+					//var items = PageFolderFacade.GetFolderData(page).ToList();
+					//foreach (var item in items)
+					//{
+					//	if (!pc.ExludedIds.Contains((item as IPageFolderData).Id))
+					//		pc.AddData(item);
+					//}
 				}
 			}
 		}

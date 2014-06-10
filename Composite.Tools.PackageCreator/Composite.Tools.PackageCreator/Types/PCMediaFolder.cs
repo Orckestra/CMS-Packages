@@ -52,15 +52,19 @@ namespace Composite.Tools.PackageCreator.Types
             return DataFacade.GetData<IMediaFileFolder>().FirstOrDefault(m => m.Id == mediaFolderId);
         }
 
+		public Func<IMediaFileData, string, bool> TestFile = (file, path) => (file.FolderPath == path || file.FolderPath.StartsWith(path + "/"));
+		public Func<IMediaFolderData, string, bool> TestFolder = (file, path) => (file.Path == path || file.Path.StartsWith(path + "/"));
+
+		
+
         public void Pack(PackageCreator creator)
         {
             var mediaFolder = GetMediaFolder();
 
-            string folderPath = mediaFolder.Path;
-            string folderPrefix = mediaFolder.Path + "/";
+            string path = mediaFolder.Path;
 
-            Func<IMediaFileData, bool> fileFilter = file => (file.FolderPath == folderPath) || file.FolderPath.StartsWith(folderPrefix);
-            Func<IMediaFolderData, bool> folderFilter = file => (file.Path == folderPath) || file.Path.StartsWith(folderPrefix);
+			Func<IMediaFileData, bool> fileFilter = file => TestFile(file, path) && !creator.ExludedPaths.Where(p => TestFile(file,p)).Any();
+			Func<IMediaFolderData, bool> folderFilter = folder => TestFolder(folder, path) && !creator.ExludedPaths.Where(p => TestFolder(folder, p)).Any();
 
             creator.AddData(fileFilter);
             creator.AddData(folderFilter);

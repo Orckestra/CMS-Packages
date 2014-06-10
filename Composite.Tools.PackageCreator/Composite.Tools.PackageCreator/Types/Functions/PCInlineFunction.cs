@@ -28,7 +28,7 @@ namespace Composite.Tools.PackageCreator.Types
 
         public void PackInlineFunction(PackageCreator creator)
         {
-            var inlineFunction = DataFacade.GetData<IInlineFunction>(data => (data.Namespace + "." + data.Name) == this._name).FirstOrDefault();
+            var inlineFunction = DataFacade.GetData<IInlineFunction>(data => (data.Namespace + "." + data.Name) == this.Name).FirstOrDefault();
             if (inlineFunction != null)
             {
 

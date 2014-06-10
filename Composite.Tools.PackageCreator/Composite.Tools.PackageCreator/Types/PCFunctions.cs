@@ -67,7 +67,7 @@ namespace Composite.Tools.PackageCreator.Types
             }
             else
             {
-                throw new InvalidOperationException(string.Format("Function '{0}' does not exists", this._name));
+                throw new InvalidOperationException(string.Format("Function '{0}' does not exists", this.Name));
             }
         }
     }

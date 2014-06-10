@@ -39,6 +39,7 @@ namespace Composite.Tools.PackageCreator
         private string packageDirectoryPath;
         private string zipDirectoryPath;
 		public HashSet<Guid> ExludedIds = new HashSet<Guid>();
+		public HashSet<string> ExludedPaths = new HashSet<string>();
         private List<XElement> Files = new List<XElement>();
         private List<XElement> Directories = new List<XElement>();
         private List<XElement> XslFiles = new List<XElement>();
@@ -290,15 +291,14 @@ namespace Composite.Tools.PackageCreator
                     foreach (XElement item in blockElement.Elements("Type"))
                     {
                         var dataTypeName = item.Attribute("type").Value;
-                        var dataScopeIdentifier = item.Element("Data").Attribute("dataScopeIdentifier").Value;
+						//var dataScopeIdentifier = item.Element("Data").Attribute("dataScopeIdentifier").Value;
 
                         Func<XElement, Func<IData, bool>> trueAttributes = e => e.Attributes().Where(x => x.Name.Namespace == XNamespace.None)
                             .Aggregate(new Func<IData, bool>(d => true), (f, x) => new Func<IData, bool>(d => (d.GetProperty(x.Name.LocalName) == x.Value) && f(d)));
-                        Func<IData, bool> where = item.Element("Data").Elements("Add")
+                        Func<IData, bool> where = item.Elements("Add")
                             .Aggregate(new Func<IData, bool>(d => false), (f, e) => new Func<IData, bool>(d => trueAttributes(e)(d) || f(d)));
 
-
-                        AddData(dataTypeName, dataScopeIdentifier, where);
+                        AddData(dataTypeName, where);
                     }
                 }
                 #endregion
@@ -915,6 +915,14 @@ namespace Composite.Tools.PackageCreator
                 if ((data as ICompositionContainer).Id == new Guid("eb210a75-be25-401f-b0d4-b3787bce36fa"))
                     return;
             }
+
+			var keyProperies = data.GetKeyProperties();
+			if (keyProperies.Count == 1 && keyProperies.First().Name == "Id" && keyProperies.First().PropertyType == typeof(Guid))
+			{
+				var id = data.GetProperty<Guid>("Id");
+				if (ExludedIds.Contains(id))
+					return;
+			}
 
             string dataTypeName = TypeManager.SerializeType(data.DataSourceId.InterfaceType);
             string dataScopeIdentifier = DataScopeManager.CurrentDataScope.Name;

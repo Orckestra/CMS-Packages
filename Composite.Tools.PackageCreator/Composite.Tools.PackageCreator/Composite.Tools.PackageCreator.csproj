@@ -43,16 +43,16 @@
   <ItemGroup>
     <Reference Include="Composite, Version=4.0.4897.31550, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\References\Composite\4.2\Composite.dll</HintPath>
+      <HintPath>..\..\..\Public\References\Composite\4.2\Composite.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\..\References\Composite\2.1.1\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\..\..\Public\References\Composite\2.1.1\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
-      <HintPath>..\..\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <HintPath>..\..\..\Public\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation">
-      <HintPath>..\..\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+      <HintPath>..\..\..\Public\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
     </Reference>
     <Reference Include="System.configuration" />
     <Reference Include="System.Workflow.Activities">
@@ -111,6 +111,7 @@
     <Compile Include="Types\Interfaces\IItemManager.cs" />
     <Compile Include="Types\Interfaces\ItemManagerAttribute.cs" />
     <Compile Include="Types\Interfaces\ItemManagerCache.cs" />
+    <Compile Include="Types\PCDataItem.cs" />
     <Compile Include="Types\PCFunctions.cs" />
     <Compile Include="Types\Interfaces\IPackageable.cs" />
     <Compile Include="Types\Interfaces\IPackageCreatorItemActionToken.cs" />

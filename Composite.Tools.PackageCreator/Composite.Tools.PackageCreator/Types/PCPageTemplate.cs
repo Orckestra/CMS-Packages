@@ -27,7 +27,7 @@ namespace Composite.Tools.PackageCreator.Types
         {
             get
             {
-                if (_name == null)
+                if (Name == null)
                 {
                     if (_entityToken is PageTemplateEntityToken)
                     {
@@ -35,10 +35,10 @@ namespace Composite.Tools.PackageCreator.Types
                         var template = PageTemplateFacade.GetPageTemplates().FirstOrDefault(t => t.Id == pageTemplateEntityToken.TemplateId);
                         Verify.IsNotNull(template, "Faile to find page template by ID '{0}'", pageTemplateEntityToken.TemplateId);
 
-                        _name = template.Title;
+                        Name = template.Title;
                     }
                 }
-                return _name;
+                return Name;
             }
         }
 

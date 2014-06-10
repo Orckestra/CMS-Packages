@@ -13,15 +13,15 @@ namespace Composite.Tools.PackageCreator.Types
         {
             get
             {
-                if (_name == null)
+                if (Name == null)
                 {
                     if (_entityToken is GeneratedDataTypesElementProviderTypeEntityToken)
                     {
                         Type type = TypeManager.GetType(((GeneratedDataTypesElementProviderTypeEntityToken)_entityToken).SerializedTypeName);
-                        _name = type.FullName;
+                        Name = type.FullName;
                     }
                 }
-                return _name;
+                return Name;
             }
         }
 

@@ -24,8 +24,8 @@
   <string key="Composite.Tools.PackageCreator.PageTrees.Add.ToolTip" value="Add selected page tree to Package Creator" />
 	<string key="Composite.Tools.PackageCreator.PageTrees.AddRoot.Label" value="Add This Page Tree to Package Creator as Root" />
 	<string key="Composite.Tools.PackageCreator.PageTrees.AddRoot.ToolTip" value="Add selected page tree to Package Creator as Root" />
-	<string key="Composite.Tools.PackageCreator.Excludes.Page.Label" value="Exclude This Page Tree from Package Creator" />
-	<string key="Composite.Tools.PackageCreator.Excludes.Page.ToolTip" value="Exclude selected page tree from Package Creator" />
+	<string key="Composite.Tools.PackageCreator.Excludes.Add.Label" value="Exclude from Package Creator" />
+	<string key="Composite.Tools.PackageCreator.Excludes.Add.ToolTip" value="Exclude selected item tree from Package Creator" />
 
 
 	<string key="Composite.Tools.PackageCreator.MediaFolders.Add.Label" value="Add This Folder to Package Creator" />
@@ -42,6 +42,8 @@
   <string key="Composite.Tools.PackageCreator.Content.DatatypesData.Add.ToolTip" value="Add metatypes data and datafolders data to Package Creator" />
   <string key="Composite.Tools.PackageCreator.Content.Applications.Add.Label" value="Add page application associations" />
   <string key="Composite.Tools.PackageCreator.Content.Applications.Add.ToolTip" value="Add page application associations" />
+	<string key="Composite.Tools.PackageCreator.Content.MetatypesData.Add.Label" value="Add metatypes data to Package Creator" />
+	<string key="Composite.Tools.PackageCreator.Content.MetatypesData.Add.ToolTip" value="Add metatypes data to Package Creator" />
 
   <string key="Composite.Tools.PackageCreator.CreateLocalizationPackage.Label" value="Create {0} package" />
   <string key="Composite.Tools.PackageCreator.CreateLocalizationPackage.ToolTip" value="Create {0} C1 Console translation package" />
