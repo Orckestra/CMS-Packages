@@ -2,8 +2,6 @@
     > div {
         float: left;
         height: @navbar-height;
-        line-height: @navbar-height;
-        vertical-align: middle;
         text-align: center;
         position: relative;
 
@@ -29,6 +27,11 @@
             display: block;
             font-weight: bold;
             padding: 0px 11px;
+        }
+
+        > *:first-child, > ul {
+            line-height: @navbar-height;
+            vertical-align: middle;
         }
 
         .dropdown-menu {
@@ -57,9 +60,11 @@
 
         > div {
             float: left;
+
             &:last-child {
                 padding-right: 20px;
             }
+
             a {
                 .icon {
                     font-size: inherit;

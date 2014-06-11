@@ -7,6 +7,7 @@
 
 body, html {
     font-size: @font-size-base;
+    height: 100%;
 }
 
 @media (max-width: @screen-xs-max) {
@@ -26,25 +27,16 @@ body, html {
 }
 
 .content-column, .content-column .container {
-	   > h1:first-child {
-			margin-bottom: 40px;
-		}
-	
+    > h1:first-child {
+        margin-bottom: 40px;
+    }
+
     img {
         .img-responsive();
 
         &.large-image {
             max-width: 150%;
             margin: 0 -25%;
-        }
-    }
-}
-
-
-@media (min-width: @screen-sm-min) {
-   .content-column *,  .aside-right-column *, .aside-left-column * {
-        &:first-child {
-            margin-top: 0px;
         }
     }
 }
@@ -60,22 +52,34 @@ body, html {
 }
 
 .nav-column {
-     padding-top: 50px;
+    padding-top: 50px;
+}
+
+@media (min-width: @screen-sm-min) {
+    .content-column > *, .aside-right-column > *, .aside-left-column > * {
+        &:first-child {
+            margin-top: 0px;
+        }
+    }
+
+    .nav-column {
+        padding-bottom: 50px;
+    }
 }
 
 //offsetting the html anchor to adjust for fixed navbar
-.anchor:before { 
-	content: '';
-	width: 0;
-	height: @navbar-height + 20;
-	display: block; 
-	position: relative; 
-	margin-top: -(@navbar-height + 20); 
+.anchor:before {
+    content: '';
+    width: 0;
+    height: @navbar-height + 20;
+    display: block;
+    position: relative;
+    margin-top: -(@navbar-height + 20);
 }
 
 //bootstrap badges
 .badge {
-	border: solid 1px @gray-lighter;
+    border: solid 1px @gray-lighter;
 }
 
 
@@ -99,8 +103,6 @@ body, html {
     .aside-left-column {
         padding-right: @grid-gutter-width;
     }
-	
-	
 }
 
 hr.content-bottom-line {
@@ -117,6 +119,7 @@ hr.content-bottom-line {
 
     h1, h2, h3, h4 {
         color: @white_color;
+
         em {
             color: @gray-dark;
         }
@@ -173,7 +176,6 @@ hr.content-bottom-line {
         }
     }
 }
-
 /*** END NAV ***/
 
 /*** TYPOGRAPHY ***/
@@ -185,12 +187,14 @@ h1, h2, h3, h4 {
         color: @brand-primary;
         font-style: inherit;
     }
-	a {
-		color: @gray-darker;
-		&:hover {
-			color: @brand-primary;
-		}
-	}
+
+    a {
+        color: @gray-darker;
+
+        &:hover {
+            color: @brand-primary;
+        }
+    }
 }
 
 @media (min-width: @screen-sm-min) {
