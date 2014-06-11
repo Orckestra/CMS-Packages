@@ -36,10 +36,9 @@
 
         .dropdown-menu {
             margin-top: 0;
-            //  width: 100%;
             border-top: 0;
             text-align: left;
-
+            min-width: 280px;
             form {
                 margin: 20px;
             }
@@ -51,7 +50,7 @@
         border-right: 0;
     }
 
-@media (min-width:@screen-sm-min) {
+@media (min-width: @screen-sm-min) {
     .service-nav {
         float: right;
         position: absolute;
@@ -68,6 +67,9 @@
             a {
                 .icon {
                     font-size: inherit;
+                    &.fa {
+                        font-size: 1.3rem;
+                    }
                 }
             }
         }

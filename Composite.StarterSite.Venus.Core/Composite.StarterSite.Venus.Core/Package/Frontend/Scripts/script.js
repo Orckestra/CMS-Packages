@@ -45,7 +45,7 @@
         });
 
         // Navbar links on Mobile
-        var maxLinksInRow = 5;
+        var maxLinksInRow = 6;
         //navbar-brand + navbar-toggle + service-nav
         var linksCount = 2 + $(".service-nav > div").length > maxLinksInRow ? maxLinksInRow : 2 + $(".service-nav > div").length;
         var linksStyle = "width-" + Math.floor(100 / linksCount);
