@@ -69,7 +69,12 @@
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="_PackageCreator\Composite.StarterSite.Venus.SampleImages.xml" />
+    <Content Include="_PackageCreator\Composite.StarterSite.Venus.SampleImages.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Release\Composite.StarterSite.Venus.SampleImages.zip" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\Media\038441ad-4b72-4da6-9bb6-e39edd4ed013" />
@@ -118,7 +123,6 @@
     <Content Include="Package\App_Data\Media\f74ee284-71df-4efb-90fe-bd7441e998d1" />
     <Content Include="Package\App_Data\Media\fb1ab5cf-6c20-46ec-9c3b-64356c9b0aec" />
     <Content Include="Package\App_Data\Media\ffc1b94f-1998-4e65-afcc-44873906862d" />
-    <Content Include="Release\Composite.StarterSite.Venus.SampleImages.zip" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
