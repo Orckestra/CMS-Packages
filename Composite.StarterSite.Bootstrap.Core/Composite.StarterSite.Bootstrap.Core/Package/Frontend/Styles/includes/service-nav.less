@@ -2,7 +2,10 @@
     float: right;
     > div,  > .navbar-nav {
         float: left;
-        line-height: @navbar-height;
-        vertical-align: middle;
+       
+		 > *:first-child, > ul {
+            line-height: @navbar-height;
+            vertical-align: middle;
+        }
     }
 }
