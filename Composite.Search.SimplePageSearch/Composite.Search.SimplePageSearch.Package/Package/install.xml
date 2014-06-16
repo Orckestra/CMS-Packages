@@ -14,11 +14,5 @@
         <File sourceFilename="~\App_Data/Razor/Composite/Search/SimplePageSearch/NavbarSearchForm.cshtml" targetFilename="~\App_Data/Razor/Composite/Search/SimplePageSearch/NavbarSearchForm.cshtml" allowOverwrite="false" />
       </Files>
     </mi:Add>
-    <!--mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
-      <XslFiles>
-        <XslFile pathXml="~\App_Data\PageTemplateFeatures\Service Menu.html" installXsl="~\PageTemplateFeatures\Install.xsl"  uninstallXsl="~\PageTemplateFeatures\Uninstall.xsl" />
-      </XslFiles>
-    </mi:Add-->
   </mi:PackageFragmentInstallers>
-
 </mi:PackageInstaller>

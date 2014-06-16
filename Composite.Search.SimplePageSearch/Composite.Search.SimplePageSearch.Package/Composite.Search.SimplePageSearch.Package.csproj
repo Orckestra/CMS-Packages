@@ -67,8 +67,6 @@
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Package\PageTemplateFeatures\Install.xsl" />
-    <Content Include="Package\PageTemplateFeatures\Uninstall.xsl" />
     <Content Include="_PackageCreator\Composite.Search.SimplePageSearch.xml" />
   </ItemGroup>
   <ItemGroup>
