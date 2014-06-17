@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="4.2.5249.21154" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Lists.Profiles.DefaultContent" groupName="Composite.Lists.Profiles" version="1.0.1" author="Composite A/S" website="http://composite.net" readMoreUrl="-" id="6e5ca364-0d37-43b6-8549-d17a054d3e4a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>-</TechnicalDetails>
+		<Description>-</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+      <Files>
+        <File sourceFilename="~\App_Data\Media\1a607c2f-77fe-4ffc-9d14-30b83a94e081" targetFilename="~\App_Data\Media\1a607c2f-77fe-4ffc-9d14-30b83a94e081" allowOverwrite="false" />
+        <File sourceFilename="~\App_Data\Media\393eeb79-ec4b-4a36-ab03-1b71e17112e2" targetFilename="~\App_Data\Media\393eeb79-ec4b-4a36-ab03-1b71e17112e2" allowOverwrite="false" />
+        <File sourceFilename="~\App_Data\Media\9fc7a81f-e800-48c1-993c-ffbcbe67c244" targetFilename="~\App_Data\Media\9fc7a81f-e800-48c1-993c-ffbcbe67c244" allowOverwrite="false" />
+      </Files>
+    </mi:Add>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+      <Types>
+        <Type type="Composite.Data.Types.IMediaFileData,Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMediaFileDatas_public.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.IMediaFolderData,Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMediaFolderDatas_public.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.IPageFolderDefinition,Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageFolderDefinitions_public.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.IPageStructure,Composite">
+          <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageStructures_public.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite">
+          <Data dataScopeIdentifier="administrated" locale="?" dataFilename="~\Datas\Composite.Data.Types.IPages_administrated.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.IPage,Composite">
+          <Data dataScopeIdentifier="public" locale="?" dataFilename="~\Datas\Composite.Data.Types.IPages_public.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite">
+          <Data dataScopeIdentifier="administrated" locale="?" dataFilename="~\Datas\Composite.Data.Types.IPagePlaceholderContents_administrated.xml" />
+        </Type>
+        <Type type="Composite.Data.Types.IPagePlaceholderContent,Composite">
+          <Data dataScopeIdentifier="public" locale="?" dataFilename="~\Datas\Composite.Data.Types.IPagePlaceholderContents_public.xml" />
+        </Type>
+        <Type type="Composite.Lists.Profiles.Profile">
+          <Data dataScopeIdentifier="administrated" locale="?" dataFilename="~\Datas\Composite.Lists.Profiles.Profiles_administrated.xml" />
+        </Type>
+        <Type type="Composite.Lists.Profiles.Profile">
+          <Data dataScopeIdentifier="public" locale="?" dataFilename="~\Datas\Composite.Lists.Profiles.Profiles_public.xml" />
+        </Type>
+      </Types>
+    </mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
