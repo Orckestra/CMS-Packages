@@ -49,22 +49,28 @@ body, html {
 .aside-right-column, .aside-left-column {
     padding-top: 50px;
     padding-bottom: 50px;
+    img {
+        .img-responsive();
+    }
 }
 
-.nav-column {
-    padding-top: 50px;
+.content-column > *, .aside-right-column > *, .aside-left-column > * {
+    &:first-child {
+        margin-top: 0px;
+    }
 }
 
 @media (min-width: @screen-sm-min) {
-    .content-column > *, .aside-right-column > *, .aside-left-column > * {
-        &:first-child {
-            margin-top: 0px;
-        }
-    }
 
-    .nav-column {
+    .nav-sidebar {
+        padding-top: 50px;
         padding-bottom: 50px;
     }
+}
+
+a {
+    outline: 0;
+    outline-style: none; 
 }
 
 //offsetting the html anchor to adjust for fixed navbar
@@ -145,33 +151,6 @@ hr.content-bottom-line {
 
     a {
         color: @brand-primary;
-    }
-}
-
-/* columns of same height styles */
-@media (min-width: @screen-sm-min) {
-    .container-height {
-        display: table;
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    .row-height {
-        display: table-row;
-    }
-
-    .col-height {
-        display: table-cell;
-        float: none;
-        vertical-align: top;
-
-        .img-responsive {
-            width: 100%;
-        }
-    }
-
-    .col-middle {
-        vertical-align: middle;
     }
 }
 /* END LAYOUT */

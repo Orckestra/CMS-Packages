@@ -34,20 +34,22 @@
 </head>
 <body>
     <div class="image-and-text-content">
-        <div class="container container-height">
-           <div class="row row-height">
+        <div class="container">
+           <div class="row">
                     @if (ImagePosition == "Left")
                     {
-                        <div class="col-xs-12 col-sm-6 image-content col-height">
+                        <div class="col-xs-12 col-sm-6 image-content">
                             <img alt="@Image.Data.Title" src="@Html.C1().MediaUrl(Image.Data)" />
                         </div>
                     }
-               <div class="col-xs-12 col-sm-6 text-content col-height  col-middle">
-                          @Markup(Text)
+               <div class="col-xs-12 col-sm-6 text-content">
+                   <div class="text-content-inner">
+                       @Markup(Text)
+                   </div>
                </div>
                     @if (ImagePosition != "Left")
                     {
-                        <div class="col-xs-12 col-sm-6 image-content col-height" >
+                        <div class="col-xs-12 col-sm-6 image-content" >
                             <img alt="@Image.Data.Title" src="@Html.C1().MediaUrl(Image.Data)" />
                         </div>
                     }

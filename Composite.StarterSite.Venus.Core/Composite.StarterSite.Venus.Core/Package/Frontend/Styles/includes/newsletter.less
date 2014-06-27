@@ -2,12 +2,13 @@
 .newsletter-signup-wrapper {
     max-width: 920px;
     .center-block();
+    h1, h2 {
+        margin-top: 0;
+    }
 }
 
 .newsletter-signup {
-    .form-inline();
-
-    .btn-default {
+     .btn {
         .btn-primary();
         width: 100%;
     }
@@ -22,7 +23,7 @@
                 width: 24%;
             }
 
-            input, button {
+            input[type=text], input[type=email], button {
                 width: 97%;
             }
         }

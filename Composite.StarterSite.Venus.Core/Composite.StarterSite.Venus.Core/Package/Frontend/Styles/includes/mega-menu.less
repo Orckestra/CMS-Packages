@@ -15,16 +15,36 @@ body.overlay:after {
 }
 
 .mega-menu {
-
     .dropdown {
         position: static !important;
     }
 
-     .mega-dropdown-menu {
-        padding: 10px 0 0 0;
+    .mega-dropdown-menu {
+        padding: 0;
         width: 100%;
         border-width: 0;
-        .box-shadow(~"inset 0 1px 12px rgba(0,0,0,.075)");
+        .box-shadow(none);
+    }
+
+    .mega-menu-headline {
+        padding: 10px 15px;
+        margin-left: 1rem;
+        margin-right: 1.5rem;
+        border-left: solid 1px @gray-lighter;
+
+        a {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: @gray-darker;
+            &:hover {
+                color: @brand-primary;
+                text-decoration: none;
+            }
+        }
+
+        .description {
+            display: none;
+        }
     }
 
     > li > a {
@@ -32,53 +52,76 @@ body.overlay:after {
     }
 
     .nav.level-2 {
+        margin-left: 1rem;
+        border-left: solid 1px @gray-lighter;
+
         > li > a {
-            font-size: 1.1rem;
+            font-size: 1rem;
+            padding-bottom: 5px;
         }
     }
 
     .nav.level-3 {
-         > li > a {
+        margin-left: 1rem;
+        margin-top: 0px;
+        margin-bottom: 10px;
+
+        > li > a {
             font-size: 0.9rem;
-            font-weight: bold;
+            font-weight: normal;
+            padding-top: 0;
+        }
+
+        ul {
+            margin-left: 1rem;
+            margin-top: 0;
+            a {
+                font-size: 0.9rem;
+                font-weight: normal;
+            }
         }
     }
-
 }
+
 &.navbar-nav > li > .dropdown-menu {
     border-color: @gray-lighter;
 }
 
-@media (max-width:  @grid-float-breakpoint-max) {
-    /*** TABLET AND MOBILE ***/
 
-    .mega-menu {
-
-        .nav.level-2 {
-            margin-left: 1rem;
-        }
-
-        .nav.level-3 {
-            margin-left: 2rem;
-        }
-
-        .nav.level-3 {
-            margin-top: 10px;
-        }
-    }
-}
-// end 
 
 /*** DESKTOP ***/
 @media (min-width: @grid-float-breakpoint) {
     .mega-menu {
         margin-left: 28px;
-         .mega-dropdown-menu {
+
+        .mega-dropdown-menu {
             padding-left: 2.5%;
-            padding-bottom: 75px;
+            padding-bottom: 45px;
         }
-          .nav.level-2 {
+
+        .mega-menu-headline {
+            padding: 10px 0 20px 0;
+            width: 98%;
+            border-left: 0px;
+            border-bottom: solid 1px darken(@gray-lighter, 10%);
+            margin-left: -0.25em;
+            margin-right: 0;
+
+            a {
+                font-size: @font-size-h1;
+                font-weight: bold;
+                color: @gray-darker;
+            }
+
+            .description {
+                margin-bottom: 10px;
+                display: block;
+            }
+        }
+
+        .nav.level-2 {
             margin-left: 0;
+            border-left: 0;
 
             > li {
                 display: inline-block;
@@ -87,7 +130,8 @@ body.overlay:after {
                 *display: inline;
                 *zoom: 1;
                 vertical-align: top;
-                width: 22.5%;
+                width: 23%;
+                margin-left: -0.25em;
 
                 > a {
                     padding: 20px 0;
@@ -104,13 +148,18 @@ body.overlay:after {
         }
 
         .nav.level-3 {
+            margin-left: 0px;
+
             > li > a {
                 padding-left: 0;
+                padding-top: 10px;
+                padding-bottom: 0;
             }
+            ul { display: none; }
         }
     }
 }
-// END DESKTOP 
+// END DESKTOP
 
 //
 @media (min-width: 1300px) {
@@ -121,8 +170,3 @@ body.overlay:after {
         }
     }
 }
-
-
-
-
-
