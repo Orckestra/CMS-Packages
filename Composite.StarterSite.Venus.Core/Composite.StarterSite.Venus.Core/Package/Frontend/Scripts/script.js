@@ -13,35 +13,36 @@
     $(document).ready(function () {
 
         //Layout columns with the same height
-        $(".aside-left-column, .aside-right-column, .right-column, .left-column, .nav-column").equalHeightColumns({ minWidth: 300 });
+        if ($(document).width() > 768) {
+            $(".aside-left-column, .aside-right-column, .right-column, .left-column, .nav-column").equalHeightColumns({ minWidth: 300 });
+        }
 
-         //Image and Text Statement
+        //Image and Text Statement
         $(".image-and-text-content .image-content, .image-and-text-content .text-content").equalHeightColumns({ minWidth: 100 });
 
         // MEGA DROPDOWN MENU
         //check if mouseenter is supported. If not then Click will open the DropDown when ExpandOnHover is true
         $(".mega-menu").on("mouseenter", function () { $(".mega-menu").addClass("hover-detected"); $(".mega-menu").unbind("mouseenter"); })
 
-        setTimeout(function () {
-            $(".mega-menu-expandonhover .dropdown").hoverIntent({
-                over: function () {
-                    if (!$(".navbar-collapse").hasClass("in")) {
-                        $(this).addClass("open");
-                        showOverlay();
-                    }
+        $(".mega-menu-expandonhover .dropdown").hoverIntent({
+            over: function () {
+                if (!$(".navbar-collapse").hasClass("in")) {
+                    $(this).addClass("open");
+                    showOverlay();
+                }
 
-                },
-                out: function () {
-                    if (!$(".navbar-collapse").hasClass("in")) {
-                        $(this).removeClass("open");
-                    }
-                    if (!$(".navbar-collapse").hasClass("in") && !$(".mega-menu .dropdown").hasClass("open")) {
-                        hideOverlay();
-                    }
-                },
-                timeout: 350
-            });
-        }, 0);
+            },
+            out: function () {
+                if (!$(".navbar-collapse").hasClass("in")) {
+                    $(this).removeClass("open");
+                }
+                if (!$(".navbar-collapse").hasClass("in") && !$(".mega-menu .dropdown").hasClass("open")) {
+                    hideOverlay();
+                }
+            },
+            timeout: 350
+        });
+
 
         $(".mega-menu").on("click", ".dropdown", function (e) {
             if ($(".mega-menu").hasClass("hover-detected") && $(".mega-menu").hasClass("mega-menu-expandonhover") && $(window).width() > 1000) {
