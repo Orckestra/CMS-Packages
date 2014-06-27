@@ -23,13 +23,13 @@
 <body class="contentpage-with-aside">
 	@this.Function("Layout.Helpers.InjectContainerElements",
 		new { Document = Start, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
-    <div class="container page-container container-height">
-        <div class="row row-height">
-            <div class="col-xs-12 col-sm-4 col-md-4 aside-left-column col-height">
+    <div class="container page-container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 aside-left-column">
                 @Markup(Aside)
                 @PageTemplateFeature("Aside Column")
             </div>
-            <div class="col-xs-12 col-sm-8 col-md-8 content-column right-column col-height">
+            <div class="col-xs-12 col-sm-8 col-md-8 content-column right-column">
                     @Markup(Content)
           </div>
         </div>
