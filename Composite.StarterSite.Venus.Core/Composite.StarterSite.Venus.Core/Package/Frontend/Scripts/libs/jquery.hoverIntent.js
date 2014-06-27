@@ -51,6 +51,10 @@
         // pX, pY = previous X and Y position of mouse, set by mouseover and polling interval
         var cX, cY, pX, pY;
 
+        //CUSTOM COMPOSITE MODIFICATION
+        var isMouseMoved = 0;
+        var mvcX, mvcY, mvpX, mvpY;
+
         // A private function for getting mouse position
         var track = function(ev) {
             cX = ev.pageX;
@@ -61,7 +65,8 @@
         var compare = function(ev,ob) {
             ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t);
             // compare mouse positions to see if they've crossed the threshold
-            if ( ( Math.abs(pX-cX) + Math.abs(pY-cY) ) < cfg.sensitivity ) {
+            var v_sensitivity = Math.abs(pX - cX) + Math.abs(pY - cY);
+            if (v_sensitivity < cfg.sensitivity && isMouseMoved) {
                 $(ob).off("mousemove.hoverIntent",track);
                 // set hoverIntent state to true (so mouseOut can be called)
                 ob.hoverIntent_s = 1;
@@ -107,6 +112,15 @@
                 if (ob.hoverIntent_s == 1) { ob.hoverIntent_t = setTimeout( function(){delay(ev,ob);} , cfg.timeout );}
             }
         };
+
+        //CUSTOM COMPOSITE METHOD
+        $("body").on("mousemove", function (e) {
+            mvpX = mvcX; mvpY = mvcY; mvcX = e.pageX; mvcY = e.pageY;
+            if ((Math.abs(mvpX - mvcX) + Math.abs(mvpY - mvcY)) > 1) {
+                $("body").unbind("mousemove");
+                isMouseMoved = 1;
+            }
+        })
 
         // listen for mouseenter and mouseleave
         return this.on({'mouseenter.hoverIntent':handleHover,'mouseleave.hoverIntent':handleHover}, cfg.selector);
