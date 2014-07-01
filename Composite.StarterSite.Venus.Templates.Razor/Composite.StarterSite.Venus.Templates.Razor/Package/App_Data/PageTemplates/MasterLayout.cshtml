@@ -39,7 +39,11 @@
             <div class="container-fluid main-container">
                 @* renders the sub template: *@
                 @RenderBody()
-                @PageTemplateFeature("Content Footer")
+                <div class="content-footer">
+                    <div class="container">
+                        @PageTemplateFeature("Content Footer")
+                    </div>
+                </div>
                 <footer class="page-footer" role="contentinfo">
                     <div class="container">
                         @PageTemplateFeature("Page Footer")
