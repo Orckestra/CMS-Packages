@@ -6,12 +6,15 @@
         get { return "A function that displays a main menu"; }
     }
 
-    [FunctionParameter(Label = "Expand on hover",
-                       Help = "When this option is selected menu items will expand on mouse hover and clicks will navigate. When not selected or visitor is using a tablet, menu items will expand on click.", 
-                       DefaultValue = true)]
-	public bool ExpandOnHover { get; set; }
+    [FunctionParameter(Label = "Show Home Page", DefaultValue = false)]
+    public bool ShowHomePage { get; set; }
 
-    
+    [FunctionParameter(Label = "Expand on hover",
+                       Help = "When this option is selected menu items will expand on mouse hover and clicks will navigate. When not selected or visitor is using a tablet, menu items will expand on click.",
+                       DefaultValue = true)]
+    public bool ExpandOnHover { get; set; }
+
+
 
     private IEnumerable<PageNode> OpenPages(PageNode selectedPageNode)
     {
@@ -36,9 +39,11 @@
 </head>
 <body>
     <ul class="nav navbar-nav mega-menu @(ExpandOnHover ? "mega-menu-expandonhover" : "")">
+        @if (ShowHomePage)
+        {
         <li>
             <a href="@HomePageNode.Url">@HomePageNode.MenuTitle</a>
-        </li>
+        </li>}
         @foreach (var page in pagenodes)
         {
 

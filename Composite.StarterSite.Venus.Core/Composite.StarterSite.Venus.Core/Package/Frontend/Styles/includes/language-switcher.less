@@ -13,7 +13,7 @@
     }
 
         li.active a, a:hover {
-            color: @brand-primary;
+            color: @navbar-default-link-hover-color;
         }
 
     &.format-NativeName a {
@@ -36,7 +36,7 @@
                     position: absolute;
                     right: -4px;
                     top: 0;
-                    color: @gray-light !important;
+                    color: lighten(@navbar-default-link-color, 50%) !important;
                 }
             }
         }

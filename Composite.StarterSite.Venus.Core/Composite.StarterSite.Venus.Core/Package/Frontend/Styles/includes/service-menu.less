@@ -6,7 +6,7 @@
         position: relative;
 
         a {
-            color: @gray-light;
+            color: lighten(@navbar-default-link-color, 50%);
 
             .icon {
                 color: @navbar-default-link-color;
@@ -15,12 +15,16 @@
 
             &:hover {
                 text-decoration: none;
-                color: @brand-primary;
+                color: @navbar-default-link-hover-color;
 
                 .icon {
-                    color: @brand-primary;
+                    color: @navbar-default-link-hover-color;
                 }
             }
+        }
+
+        li.active a {
+            color: @navbar-default-link-hover-color;
         }
 
         > a {
@@ -39,6 +43,7 @@
             text-align: left;
             border-color: @gray-lighter;
             min-width: 280px;
+
             form {
                 margin: 20px;
             }
@@ -67,6 +72,7 @@
             a {
                 .icon {
                     font-size: inherit;
+
                     &.fa {
                         font-size: 1.3rem;
                     }
