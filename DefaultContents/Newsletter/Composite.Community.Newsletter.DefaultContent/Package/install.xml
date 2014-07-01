@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <mi:PackageRequirements minimumCompositeVersion="4.2.5200.24979" maximumCompositeVersion="9.9999.9999.9999" />
+  <mi:PackageInformation name="Composite.Community.Newsletter.DefaultContent" groupName="Composite.Community.Newsletter" version="1.0.0" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="29e37de4-c106-45d0-a8f2-fa99503dac80" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+    <TechnicalDetails>Composite.Community.Newsletter.DefaultContent</TechnicalDetails>
+    <Description>Composite.Community.Newsletter.DefaultContent</Description>
+  </mi:PackageInformation>
+  <mi:PackageFragmentInstallerBinaries />
+  <mi:PackageFragmentInstallers>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+      <Types>
+        <Type type="Composite.Community.Newsletter.SubjectBased.ISubject, Composite.Community.Newsletter.SubjectBased">
+          <Data dataScopeIdentifier="public" locale="?" dataFilename="~\Datas\Composite.Community.Newsletter.SubjectBased.ISubject_public.xml" />
+        </Type>
+      </Types>
+    </mi:Add>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
+      <XslFiles>
+        <XslFile pathXml="~\App_Data\PageTemplateFeatures\Content Footer.html" installXsl="~\PageTemplateFeatures\Install.xsl"  uninstallXsl="~\PageTemplateFeatures\Uninstall.xsl" />
+      </XslFiles>
+    </mi:Add>
+  </mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
