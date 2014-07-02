@@ -286,11 +286,11 @@
 
 @helper TagsList(List<string> tags)
 {
-    <span class="text-muted">
-        <span class="glyphicon glyphicon-tags"></span><span>&#160;</span>
+    <small class="text-muted">
+        <span class="glyphicon glyphicon-tags"></span>
         @foreach (var tag in tags)
         {
-            <a href="@CurrentPageNode.Url/@BlogFacade.Encode(tag)" title="@tag">@tag</a><text>&#160;</text>
+           <span>&#160;&#160;</span><a href="@CurrentPageNode.Url/@BlogFacade.Encode(tag)" title="@tag">@tag</a>
         }
-    </span>
+    </small>
 }
