@@ -1,15 +1,15 @@
-﻿
-.newsletter-signup-wrapper {
+﻿.newsletter-signup-wrapper {
     max-width: 920px;
     padding: 65px 0;
     .center-block();
-    h1, h2 {
+
+    *:first-child {
         margin-top: 0;
     }
 }
 
 .newsletter-signup {
-     .btn {
+    .btn {
         .btn-primary();
         width: 100%;
     }
@@ -19,11 +19,9 @@
     .newsletter-signup {
         .form-group {
             width: 37%;
-
             &:last-child {
                 width: 24%;
             }
-
             input[type=text], input[type=email], button {
                 width: 97%;
             }

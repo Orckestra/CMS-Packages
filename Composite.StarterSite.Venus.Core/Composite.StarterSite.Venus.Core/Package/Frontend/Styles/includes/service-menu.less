@@ -6,31 +6,35 @@
         position: relative;
 
         a {
-            color: lighten(@navbar-default-link-color, 50%);
+            color: @service-menu-link-color;
 
             .icon {
-                color: @navbar-default-link-color;
-                font-size: 20px;
+                color: @service-menu-icon-color;
+                font-size: @service-menu-icon-font-size;
+
+                &.fa {
+                    font-size: @service-menu-fa-icon-font-size;
+                }
             }
 
             &:hover {
                 text-decoration: none;
-                color: @navbar-default-link-hover-color;
+                color: @service-menu-link-hover-color;
 
                 .icon {
-                    color: @navbar-default-link-hover-color;
+                    color: @service-menu-link-hover-color;
                 }
             }
         }
 
         li.active a {
-            color: @navbar-default-link-hover-color;
+            color: @service-menu-link-hover-color;
         }
 
         > a {
             display: block;
             font-weight: bold;
-            padding: 0px 11px;
+            padding: 0 11px;
         }
 
         > *:first-child, > ul {
@@ -67,16 +71,6 @@
 
             &:last-child {
                 padding-right: 20px;
-            }
-
-            a {
-                .icon {
-                    font-size: inherit;
-
-                    &.fa {
-                        font-size: 1.3rem;
-                    }
-                }
             }
         }
     }

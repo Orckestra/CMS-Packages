@@ -1,6 +1,5 @@
 ﻿.navbar {
     margin-bottom: 0;
-
     .nav-main {
         > li > a {
             padding-left: 22px;
@@ -44,7 +43,6 @@
         margin: 0;
         border-right: solid 1px @navbar-default-border;
 
-
         .icon-bar {
             background-color: @navbar-default-link-color !important;
             margin: 4px auto;
@@ -53,7 +51,7 @@
         .icon-close {
             color: @brand-primary;
             font-family: @font-family-monospace;
-            font-size: 1.5rem;
+            font-size: 1.5em;
         }
 
         &:focus, &:hover {
@@ -98,7 +96,7 @@
             width: 100%;
 
             &:hover, &:hover span {
-                color: @brand-primary;
+                color: @service-menu-link-hover-color;
             }
         }
     }
@@ -120,7 +118,7 @@
 @media (min-width: @screen-sm-min) {
     .service-nav > div {
         width: auto !important;
-        border: 0px;
+        border: 0;
     }
 
     .navbar-brand {

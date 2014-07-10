@@ -12,39 +12,35 @@
         font-weight: bold;
     }
 
-        li.active a, a:hover {
-            color: @navbar-default-link-hover-color;
-        }
 
     &.format-NativeName a {
         &:first-letter {
             text-transform: uppercase;
         }
     }
-    &.format-TwoLetterISOLanguageName a{
-          text-transform: uppercase;
+
+    &.format-TwoLetterISOLanguageName a {
+        text-transform: uppercase;
     }
 }
 
 @media (min-width: @screen-sm-min) {
-    .language-switcher {
-        li {
-            > a {
-                &:after {
-                    content: '/';
-                    display: block;
-                    position: absolute;
-                    right: -4px;
-                    top: 0;
-                    color: lighten(@navbar-default-link-color, 50%) !important;
-                }
+    .language-switcher li {
+        > a {
+            &:after {
+                content: '/';
+                display: block;
+                position: absolute;
+                right: -4px;
+                top: 0;
+                color: @service-menu-link-color !important;
             }
         }
 
-            li:last-child {
-                > a:after {
-                    content: '';
-                }
+        &:last-child {
+            > a:after {
+                content: '';
             }
+        }
     }
 }

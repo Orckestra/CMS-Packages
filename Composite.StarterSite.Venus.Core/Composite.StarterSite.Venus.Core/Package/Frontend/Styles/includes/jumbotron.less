@@ -1,4 +1,4 @@
-﻿.jumbotron, .page-image, .jumbotron.jumbotron-light .overlay  {
+﻿.jumbotron, .jumbotron.jumbotron-light .overlay {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
@@ -14,9 +14,21 @@
         color: inherit;
     }
 
+    @media (min-width: @screen-sm-min) {
+        h1 {
+            font-size: @jumbotron-heading-font-size;
+        }
+    }
+
+    p {
+        font-size: @jumbotron-text-font-size; // overwrite bootstrap jumbotron <p> font size
+        line-height: 1.7;
+    }
+
     &.jumbotron-light {
-        color: @white_color;
+        color: @white-color;
         background-color: @gray-darker;
+
         .overlay {
             background-image: url(../../Images/overlay.png);
         }
@@ -44,29 +56,14 @@
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-              max-width: 50%;
+            padding-right: 35px;
+            .btn {
+                width: auto;
+            }
+            @media (min-width: @screen-xs-min) {
+                max-width: 50%;
+                padding-right: 0;
+            }
         }
     }
-
-    @media (min-width: @screen-sm-min) {
-        h1 {
-            font-size: (@font-size-base * 3.9);
-        }
-
-    }
-
-    p {
-        font-size: 1rem; // overwrite bootstrap jumbotron <p> font size
-        line-height: 1.7;
-    }
 }
-
-
-.page-image {
-    min-height: 210px;
-
-    @media (min-width: @screen-sm-min) {
-        min-height: 420px;
-    }
-}
-

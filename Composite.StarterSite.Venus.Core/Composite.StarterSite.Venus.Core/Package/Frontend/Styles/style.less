@@ -2,12 +2,22 @@
 @import "bootstrap/responsive-utilities.less";
 @import "VisualEditor.common.less";
 @import "includes/fixes.less";
+@import "includes/c1-variables.less";
 
-@white_color: #fff;
 
-body, html {
-    font-size: @font-size-base;
-    height: 100%;
+h1, h2, h3, h4, h5 {
+    em, small {
+        color: @brand-primary;
+        font-style: inherit;
+    }
+
+    a {
+        color: @headings-color;
+
+        &:hover {
+            color: @link-color;
+        }
+    }
 }
 
 @media (max-width: @screen-xs-max) {
@@ -35,50 +45,30 @@ body, html {
 .content-column, .content-column .container {
     > h1:first-child {
         margin-bottom: 40px;
-    }
-
-    img {
-        .img-responsive();
-
-        &.large-image {
-            max-width: 150%;
-            margin: 0 -25%;
-        }
+        margin-top: 0;
     }
 }
 
-.content-column {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.aside-right-column, .aside-left-column {
+.content-column, .aside-right-column, .aside-left-column {
     padding-top: 50px;
     padding-bottom: 50px;
 
     img {
         .img-responsive();
     }
-}
-
-    .content-column > *, .aside-right-column > *, .aside-left-column > * {
-        &:first-child {
-            margin-top: 0px;
-        }
+    >*:first-child {
+          margin-top: 0;
     }
+}
 
 @media (min-width: @screen-sm-min) {
-
     .nav-sidebar {
         padding-top: 50px;
         padding-bottom: 50px;
     }
 }
 
-a {
-    outline: 0;
-    outline-style: none;
-}
+
 
 //offsetting the html anchor to adjust for fixed navbar
 .anchor:before {
@@ -90,29 +80,10 @@ a {
     margin-top: -(@navbar-height + 20);
 }
 
-//bootstrap badges
+//override bootstrap badges
 .badge {
     border: solid 1px @gray-lighter;
 }
-
-form {
-    .btn {
-        width: 100%;
-
-        @media (min-width: @screen-sm-min) {
-            width: auto;
-        }
-    }
-}
-
-.form-control {
-    &:focus {
-        border-color: @brand-primary;
-        @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 1px @brand-primary;
-        .box-shadow(@shadow);
-    }
-}
-
 
 @media (min-width: @screen-sm-min) {
     .content-column {
@@ -137,20 +108,21 @@ form {
 }
 
 hr.content-bottom-line {
-    margin: 0px;
+    margin: 0;
     border-color: @navbar-default-border;
 }
 
 .page-footer {
-    background: @gray-darker;
+    background: @pagefooter-bg-color;
     padding: 25px 0;
+    font-size: @pagefoote-text-font-size;
 
     @media (min-width: @screen-sm-min) {
         padding: 55px 0;
     }
 
     h1, h2, h3, h4 {
-        color: @white_color;
+        color: @pagefooter-heading-color;
 
         em {
             color: @gray-dark;
@@ -158,64 +130,31 @@ hr.content-bottom-line {
     }
 
     a {
-        color: @brand-primary;
+        color: @pagefooter-link-color;
     }
 
     .contactbox .icon {
         margin-right: 10px;
-        font-size: 2.6em;
+        font-size: @pagefoote-contactbox-icon-font-size;
     }
 }
-/* END LAYOUT */
 
-/**** NAV ***/
-.nav {
-    > li {
-        > a {
-            font-weight: bold;
-            color: @gray-darker;
+.page-image {
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 210px;
 
-            &:hover {
-                color: @brand-primary;
-            }
-        }
-
-        &.open > a, &.active > a, &.active > a:hover {
-            color: @brand-primary;
-            background: none;
-        }
+    @media (min-width: @screen-sm-min) {
+        min-height: 420px;
     }
 }
-/*** END NAV ***/
 
-/*** TYPOGRAPHY ***/
-h1, h2, h3, h4 {
-    color: @gray-darker;
-    font-weight: bold;
-
-    em, small {
-        color: @brand-primary;
-        font-style: inherit;
-    }
-
-    a {
-        color: @gray-darker;
-
-        &:hover {
-            color: @brand-primary;
-        }
-    }
-}
 
 @media (min-width: @screen-sm-min) {
 
-    /* BUTTONS */
-    .btn {
-        padding-left: 34px;
-        padding-right: 34px;
-    }
-
-    /*** CONTENT COLUMNS ***/
     .three-columns, .two-columns {
         margin: 25px 0 65px 0;
     }
@@ -243,13 +182,14 @@ h1, h2, h3, h4 {
     }
 }
 
-@import "includes/page-statements.less";
+@import "includes/page-blocks.less";
 @import "includes/jumbotron.less";
 @import "includes/navbar.less";
+@import "includes/navs.less";
 @import "includes/service-menu.less";
 @import "includes/language-switcher.less";
-@import "includes/navbar-search.less";
 @import "includes/mega-menu.less";
+@import "includes/forms.less";
 @import "includes/profiles.less";
 @import "includes/newsletter.less";
 @import "includes/blog.less";

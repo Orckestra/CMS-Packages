@@ -13,16 +13,14 @@
     $(document).ready(function () {
 
         //Layout columns with the same height
-        if ($(document).width() > 768) {
-            $(".aside-left-column, .aside-right-column, .right-column, .left-column, .nav-column").equalHeightColumns({ minWidth: 300 });
-        }
-
-        //Image and Text Statement
-        $(".image-and-text-content .image-content, .image-and-text-content .text-content").equalHeightColumns({ minWidth: 100 });
+        $(".aside-left-column, .aside-right-column, .right-column, .left-column, .nav-column").equalHeightColumns({ minWidth: 768 });
 
         // MEGA DROPDOWN MENU
         //check if mouseenter is supported. If not then Click will open the DropDown when ExpandOnHover is true
-        $(".mega-menu").on("mouseenter", function () { $(".mega-menu").addClass("hover-detected"); $(".mega-menu").unbind("mouseenter"); })
+        $(".mega-menu").on("mouseenter", function () {
+            $(".mega-menu").addClass("hover-detected");
+            $(".mega-menu").unbind("mouseenter");
+        });
 
         $(".mega-menu-expandonhover .dropdown").hoverIntent({
             over: function () {
@@ -48,18 +46,18 @@
             if ($(".mega-menu").hasClass("hover-detected") && $(".mega-menu").hasClass("mega-menu-expandonhover") && $(window).width() > 1000) {
                 e.stopPropagation();
             }
-        })
+        });
 
         $(".mega-menu").on("show.bs.dropdown", function () {
             if (!$(".navbar-collapse").hasClass("in")) {
                 showOverlay();
             }
-        })
+        });
         $(".mega-menu").on("hide.bs.dropdown", function () {
             if (!$(".navbar-collapse").hasClass("in") && !$(".hover-detected").hasClass("open")) {
                 hideOverlay();
             }
-        })
+        });
         $('.navbar-collapse').on('show.bs.collapse', function () {
             $(".navbar-toggle .icon-bar").addClass("hide");
             $(".navbar-toggle .icon-close").removeClass("hide");
@@ -73,7 +71,7 @@
             e.stopPropagation();
         });
 
-        // Navbar links on Mobile
+        // NAVBAR ON MOBILE
         var maxLinksInRow = 6;
         //navbar-brand + navbar-toggle + service-nav
         var linksCount = 2 + $(".service-nav > div").length > maxLinksInRow ? maxLinksInRow : 2 + $(".service-nav > div").length;
@@ -83,9 +81,9 @@
         $(".service-nav > div").addClass(linksStyle);
 
         //NAVBAR SEARCH FORM
-        $(".navbar-search-form .dropdown-toggle").on("click", function (e) {
+        $(".navbar-search-form .dropdown-toggle").on("click", function () {
             setTimeout(function () { $("#searchText").focus(); }, 0);
-        })
+        });
 
         //PROFILES
         $(".profiles-list .row").each(function () {
@@ -97,6 +95,16 @@
             $(".newsletter-signup").addClass("form-inline");
         }
 
+        $(window).on("resize load", function () {
+            //ImageAndText Page Block: vertical align middle text content if image height > text content height
+            var imgAndText = $(".page-block-image-and-text");
+            if ($(".page-block-text-inner", imgAndText).height() < $(".page-block-image", imgAndText).height() && $(document).width() > 768) {
+                $(".page-block-text", imgAndText).css("min-height", $(".page-block-image", imgAndText).height()).find(":first-child").addClass("verticalalign-middle");
+            } else {
+                $(".page-block-text", imgAndText).removeAttr("style").find(":first-child").removeClass("verticalalign-middle");
+            }
+
+        });
 
     });
 

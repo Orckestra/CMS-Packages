@@ -1,6 +1,4 @@
-﻿@import "../bootstrap/variables.less";
-
-body.overlay:after {
+﻿body.overlay:after {
     content: '';
     display: block;
     position: fixed;
@@ -24,20 +22,25 @@ body.overlay:after {
         width: 100%;
         border-width: 0;
         .box-shadow(none);
+
+        ul {
+            margin-top: 0;
+            margin-left: 16px;
+        }
     }
 
     .mega-menu-headline {
         padding: 10px 15px;
-        margin-left: 1rem;
-        margin-right: 1.5rem;
+        margin-left: 16px;
         border-left: solid 1px @gray-lighter;
 
         a {
             font-weight: bold;
-            font-size: 1.1rem;
-            color: @gray-darker;
+            font-size: @mega-menu-level1-font-size;
+            color: @headings-color;
+
             &:hover {
-                color: @brand-primary;
+                color: @link-color;
                 text-decoration: none;
             }
         }
@@ -48,37 +51,25 @@ body.overlay:after {
     }
 
     > li > a {
-        font-size: 1.1rem;
+        font-size: @mega-menu-level1-font-size;
     }
 
     .nav.level-2 {
-        margin-left: 1rem;
         border-left: solid 1px @gray-lighter;
 
         > li > a {
-            font-size: 1rem;
+            font-size: @mega-menu-level2-font-size;
             padding-bottom: 5px;
         }
     }
 
     .nav.level-3 {
-        margin-left: 1rem;
-        margin-top: 0px;
         margin-bottom: 10px;
 
-        > li > a {
-            font-size: 0.9rem;
+        a {
+            font-size:  @mega-menu-level3-font-size;
             font-weight: normal;
             padding-top: 0;
-        }
-
-        ul {
-            margin-left: 1rem;
-            margin-top: 0;
-            a {
-                font-size: 0.9rem;
-                font-weight: normal;
-            }
         }
     }
 }
@@ -101,7 +92,7 @@ body.overlay:after {
         .mega-menu-headline {
             padding: 10px 0 20px 0;
             width: 98%;
-            border-left: 0px;
+            border-left: 0;
             border-bottom: solid 1px darken(@gray-lighter, 10%);
             margin-left: -0.25em;
             margin-right: 0;
@@ -109,7 +100,7 @@ body.overlay:after {
             a {
                 font-size: @font-size-h1;
                 font-weight: bold;
-                color: @gray-darker;
+                color: @headings-color;
             }
 
             .description {
@@ -147,21 +138,21 @@ body.overlay:after {
         }
 
         .nav.level-3 {
-            margin-left: 0px;
+            margin-left: 0;
 
             > li > a {
                 padding-left: 0;
                 padding-top: 10px;
                 padding-bottom: 0;
             }
-            ul { display: none; }
+
+            ul {
+                display: none;
+            }
         }
     }
 }
-// END DESKTOP
-
-//
-@media (min-width: 1300px) {
+@media (min-width: (@screen-lg + 100)) {
     .mega-menu {
         .mega-dropdown-menu {
             padding-left: 221px;
