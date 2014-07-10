@@ -20,10 +20,10 @@
 </head>
 <body class="contentpage">
     @this.Function("Layout.Helpers.InjectContainerElements",
-                    new { Document = Start, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
+                    new { Document = Start, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,c1-wide" })
     <div class="content-column-width-limiter content-column">
         @this.Function("Layout.Helpers.InjectContainerElements",
-                    new { Document = Content, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
+                    new { Document = Content, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,c1-wide" })
     </div>
     <hr class="content-bottom-line" />
 </body>

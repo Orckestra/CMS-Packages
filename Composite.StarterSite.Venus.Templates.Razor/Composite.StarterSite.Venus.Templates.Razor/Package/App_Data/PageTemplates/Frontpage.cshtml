@@ -11,12 +11,12 @@
     public XhtmlDocument Content { get; set; }
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        @*you can add template specific head elements here*@
-    </head>
+<head>
+    @*you can add template specific head elements here*@
+</head>
 <body class="frontpage">
     @PageTemplateFeature("Front Page Content Start")
-	@this.Function("Layout.Helpers.InjectContainerElements",
-                new { Document = Content, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
+    @this.Function("Layout.Helpers.InjectContainerElements",
+                new { Document = Content, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,c1-wide" })
 </body>
 </html>

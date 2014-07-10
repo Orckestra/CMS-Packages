@@ -6,7 +6,7 @@
         TemplateTitle = "Page with navigation";
         Layout = "MasterLayout.cshtml";
     }
-	
+
     [Placeholder(Id = "start", Title = "Content Start")]
     public XhtmlDocument Start { get; set; }
 
@@ -19,8 +19,8 @@
     @*you can add template specific head elements here*@
 </head>
 <body class="contentpage-with-nav">
-	@this.Function("Layout.Helpers.InjectContainerElements",
-		new { Document = Start, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,wide" })
+    @this.Function("Layout.Helpers.InjectContainerElements",
+        new { Document = Start, InjectedContainerClassName = "container", DontApplyClassNameList = "container,container-fluid,c1-wide" })
     <div class="container page-container">
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-3 nav-column">
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 content-column right-column">
-                    @Markup(Content)
+                @Markup(Content)
             </div>
         </div>
     </div>
