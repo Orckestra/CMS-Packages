@@ -3,26 +3,29 @@
   <xsl:variable name="response" select="/in:inputs/in:result[@name='LoadUrl']/rsp" />
   <xsl:template match="/">
     <html>
-      <head> 
-				<!-- markup placed here will be shown in the head section of the rendered page --></head>
+      <head>
+        <!-- markup placed here will be shown in the head section of the rendered page -->
+      </head>
       <body>
         <xsl:if test="$response//comment">
-        <div class="flickr_set_comments">
-          <h2>Comments on this set:</h2>
-          <xsl:for-each select="$response//comment">
-            <div class="flickr_comment">
-              <b>
-                <a href="http://www.flickr.com/photos/{@author}/" title="Photos of {@authorname}">
-                  <xsl:value-of select="@authorname" />
-                </a> says:
-              </b>
-              <br />
-              <span><xsl:value-of select="." /></span>
-              <br />
-            </div>
-          </xsl:for-each>
-        </div>
-      </xsl:if>
+          <div class="flickr_set_comments clearfix">
+            <h4>Comments on this set:</h4>
+            <xsl:for-each select="$response//comment">
+              <div class="flickr_comment">
+                <strong>
+                  <a href="http://www.flickr.com/photos/{@author}/" title="Photos of {@authorname}">
+                    <xsl:value-of select="@authorname" />
+                  </a> says:
+                </strong>
+                <p>
+                  <span>
+                    <xsl:value-of select="." />
+                  </span>
+                </p>
+              </div>
+            </xsl:for-each>
+          </div>
+        </xsl:if>
       </body>
     </html>
   </xsl:template>

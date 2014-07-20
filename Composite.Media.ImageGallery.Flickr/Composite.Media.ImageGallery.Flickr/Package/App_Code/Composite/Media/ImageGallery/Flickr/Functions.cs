@@ -24,7 +24,7 @@ namespace Composite.Media.ImageGallery.Flickr
            
 			string apiKeyValue = apiKey.Data.Key;
 
-            string urlFormat = "http://api.flickr.com/services/rest/?method={0}&api_key={1}&format=rest{2}";
+            string urlFormat = "https://api.flickr.com/services/rest/?method={0}&api_key={1}&format=rest{2}";
 
             StringBuilder extraParam = new StringBuilder();
 
@@ -47,7 +47,7 @@ namespace Composite.Media.ImageGallery.Flickr
         public static string GetUserId(string apiKey, string userName)
         {
             string id = string.Empty;
-            string uri = @"http://api.flickr.com/services/rest/?method=flickr.people.findByUsername&api_key={0}&username={1}&format=rest";
+            string uri = @"https://api.flickr.com/services/rest/?method=flickr.people.findByUsername&api_key={0}&username={1}&format=rest";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format(uri, apiKey, userName));
             WebResponse response = request.GetResponse();
             Stream strm = response.GetResponseStream();

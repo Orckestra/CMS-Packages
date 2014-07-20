@@ -16,7 +16,7 @@
             </span>
           </xsl:when>
           <xsl:otherwise>
-            <div class="flickr_photosets">
+            <div class="flickr_photosets clearfix">
               <xsl:for-each select="$response//photoset">
                 <div class="flickr_set">
                   <div class="flickr_set_thumb">
