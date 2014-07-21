@@ -1,0 +1,51 @@
+@using Composite.Media.ImageGallery.Flickr
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Displays the favorites from a specific account."; }
+    }
+
+    [FunctionParameter(Label = "API Key", Help = "Your Flickr API Key.")]
+    public DataReference<ApiKey> ApiKey { get; set; }
+
+    [FunctionParameter(Label = "User Id", Help = "The user ID of the account with the favorites to display.")]
+    public string UserId { get; set; }
+}
+@{
+    var photos = FlickrFacade.GetFavoritesPhotos(ApiKey.Data.Key, UserId);
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script id="slimbox2-js" src="~/Frontend/Composite/Media/ImageGallery/Slimbox-2/js/slimbox2.js" type="text/javascript"></script>
+    <link id="slimbox2-css" media="screen" type="text/css" href="~/Frontend/Composite/Media/ImageGallery/Slimbox-2/css/slimbox2.css" rel="stylesheet" />
+    <link id="flickr-styles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Media/ImageGallery/Flickr/Styles/Styles.css" />
+</head>
+<body>
+    <div class="clearfix">
+        @foreach (var photo in photos)
+        {
+            <a rel="lightbox-@UserId-favorites" title="@photo.Title" href="@photo.Url">
+                <img alt="@photo.Title" title="@photo.Title" src="@photo.ThumbnailUrl" />
+            </a>
+            <div class="slimbox-img-caption" style="display:none;">
+                <strong>
+                    @photo.Title
+                </strong>
+                @if (!string.IsNullOrEmpty(photo.OwnerName))
+                {
+                    @Resources.Flickr.Photos_Author
+                    <a href="@photo.OwnerUrl" title="@photo.OwnerName">@photo.OwnerName</a>
+                }
+                @if (!string.IsNullOrEmpty(photo.Description))
+                {
+                    <p>@photo.Description</p>
+                }
+            </div>
+        }
+    </div>
+</body>
+</html>

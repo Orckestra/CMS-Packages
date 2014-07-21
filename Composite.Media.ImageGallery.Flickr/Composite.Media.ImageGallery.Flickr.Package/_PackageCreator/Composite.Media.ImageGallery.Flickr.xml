@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:DynamicDataTypes>
+		<Add name="Composite.Media.ImageGallery.Flickr.ApiKey" />
+	</pc:DynamicDataTypes>
+	<pc:Files>
+		<Add name="App_GlobalResources\Composite\Media\ImageGallery\Flickr.resx" />
+		<Add name="Bin\Composite.Media.ImageGallery.Flickr.dll" />
+	</pc:Files>
+	<pc:Directories>
+		<Add name="Frontend\Composite\Media\ImageGallery\Flickr\" />
+	</pc:Directories>
+	<pc:Functions>
+		<Add name="Composite.Media.ImageGallery.Flickr.Favorites" />
+		<Add name="Composite.Media.ImageGallery.Flickr.Photos" />
+		<Add name="Composite.Media.ImageGallery.Flickr.PhotoSets" />
+	</pc:Functions>
+	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Media.ImageGallery.Flickr" groupName="Composite.Media.ImageGallery" version="1.0.6" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Media.ImageGallery.Flickr" id="6e3014de-5f75-4260-971a-c2a49ea325d5" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<TechnicalDetails>To show a full-size image from a Flickr album in a light box on your website, we recommend that you install Composite.Media.ImageGallery.Slimbox2.</TechnicalDetails>
+		<Description>Displays photos from Flickr's photostreams, favorites, photo sets on your website.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

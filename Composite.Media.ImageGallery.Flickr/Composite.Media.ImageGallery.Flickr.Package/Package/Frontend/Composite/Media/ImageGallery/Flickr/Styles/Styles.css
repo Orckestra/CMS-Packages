@@ -1,0 +1,25 @@
+﻿.flickr_set {
+    float: left;
+    height: 164px;
+    width: 115px;
+}
+
+.flickr_set_thumb {
+    background: url(../Images/set_case.gif) no-repeat;
+    padding: 7px 7px 11px;
+    margin: 0;
+}
+
+    .flickr_set_thumb img {
+        border: solid 1px black;
+        display: block;
+        margin: 0;
+    }
+
+.flickr_set_title {
+    line-height: 20px;
+}
+
+.flickr_comments {
+    margin: 20px 0;
+}

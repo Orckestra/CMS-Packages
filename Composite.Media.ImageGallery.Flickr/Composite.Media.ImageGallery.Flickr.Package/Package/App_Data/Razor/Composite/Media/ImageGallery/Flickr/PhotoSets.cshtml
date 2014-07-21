@@ -1,0 +1,111 @@
+@using Composite.Core.Routing.Pages
+@using Composite.Media.ImageGallery.Flickr
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Displays the photo sets from a specific account."; }
+    }
+
+    [FunctionParameter(Label = "API Key", Help = "Your Flickr API Key.")]
+    public DataReference<ApiKey> ApiKey { get; set; }
+
+    [FunctionParameter(Label = "User Id", Help = "The user ID of the account with the photo sets to display.")]
+    public string UserId { get; set; }
+
+    [FunctionParameter(Label = "Show comments", Help = "If 'True', the comments on the opened photo set are displayed. Default is 'True'.", DefaultValue = true)]
+    public bool ShowComments { get; set; }
+}
+@{
+    var pathInfo = C1PageRoute.GetPathInfo();
+    var photoSetId = string.Empty;
+    if (!string.IsNullOrEmpty(pathInfo))
+    {
+        var parts = pathInfo.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+        if (parts.Length == 1)
+        {
+            C1PageRoute.RegisterPathInfoUsage();
+        }
+
+        photoSetId = parts[0];
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script id="slimbox2-js" src="~/Frontend/Composite/Media/ImageGallery/Slimbox-2/js/slimbox2.js" type="text/javascript"></script>
+    <link id="slimbox2-css" media="screen" type="text/css" href="~/Frontend/Composite/Media/ImageGallery/Slimbox-2/css/slimbox2.css" rel="stylesheet" />
+    <link id="flickr-styles" rel="stylesheet" type="text/css" href="~/Frontend/Composite/Media/ImageGallery/Flickr/Styles/Styles.css" />
+</head>
+<body>
+    <div class="clearfix">
+        @if (string.IsNullOrEmpty(photoSetId))
+        {
+            var photosets = FlickrFacade.GetPhotoSetsList(ApiKey.Data.Key, UserId);
+            foreach (var set in photosets)
+            {
+                <div class="flickr_set">
+                    <div class="flickr_set_thumb">
+                        <a title="@set.Title" href="~/page(@CurrentPageNode.Id.ToString())/@set.Id">
+                            <img alt="@set.Title" src="@set.ThumbnailUrl" />
+                        </a>
+                    </div>
+                    <div class="flickr_set_title">
+                        <strong> @set.Title</strong>
+                        <br />
+                        <small class="flickr_set_count text-muted">
+                            @string.Format(Resources.Flickr.PhotoSets_PhotosCount, set.PhotosCount)
+                        </small>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            var photoset = FlickrFacade.GetPhotoSet(ApiKey.Data.Key, photoSetId);
+            if (photoset != null)
+            {
+                <h1>@photoset.Title</h1>
+                if (!string.IsNullOrEmpty(photoset.Description))
+                {
+                    <p>@photoset.Description</p>
+                }
+                @Html.C1().Function("Composite.Media.ImageGallery.Flickr.Photos", new { ApiKey, SetId = photoSetId })
+                <div class="clearfix">
+                    <small><a href="@CurrentPageNode.Url">@Resources.Flickr.PhotoSets_BackLink</a>&#160;|&#160; <a href="@string.Format("http://www.flickr.com/photos/{0}/sets/{1}", photoset.Owner, photoset.Id)">@Resources.Flickr.PhotoSets_FlickrSetLink</a></small>
+                </div>
+            }
+
+            if (ShowComments)
+            {
+
+                var comments = FlickrFacade.GetPhotoSetComments(ApiKey.Data.Key, photoSetId);
+                if (comments != null && comments.Count() > 0)
+                {
+                    <div class="clearfix flickr_comments">
+                        <h4 class="flickr_comments_title">@Resources.Flickr.PhotoSets_Comments_Title</h4>
+                        @foreach (var comment in comments)
+                        {
+
+                            <div class="flickr_comment">
+                                <strong>
+                                    <a href="http://www.flickr.com/photos/@comment.Author/" title="Photos of @comment.AuthorName">
+                                        @comment.AuthorName
+                                    </a> @Resources.Flickr.PhotoSets_Comments_Says:
+                                </strong>
+                                <p>
+                                    @comment.CommentText
+                                </p>
+                            </div>
+                        }
+                    </div>
+                }
+            }
+
+        }
+
+    </div>
+</body>
+</html>
