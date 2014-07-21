@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Data>
-  <Add Id="836ee028-3bdf-4823-8327-c7fa8c322919" Name="Favorites" Namespace="Composite.Media.ImageGallery.Flickr" Description="Displays the favorites from a specific account." OutputXmlSubType="XHTML" XslFilePath="\Composite\Media\ImageGallery\Flickr\Favorites.xsl" />
-  <Add Id="f9b3ee86-76b7-4e7f-a6c1-e959791a989d" Name="PhotoSets" Namespace="Composite.Media.ImageGallery.Flickr" Description="Displays the photo sets from a specific account." OutputXmlSubType="XHTML" XslFilePath="\Composite\Media\ImageGallery\Flickr\PhotoSets.xsl" />
-  <Add Id="84ce42cb-5044-45a7-847e-bd19b523be13" Name="CommentsList" Namespace="Composite.Media.ImageGallery.Flickr.PhotoSets" Description="Displays the comments for a specific photo set." OutputXmlSubType="XML" XslFilePath="\Composite\Media\ImageGallery\Flickr\PhotoSets\CommentsList.xsl" />
-  <Add Id="68a2d647-b44d-4d59-8476-5bd467ed6c21" Name="List" Namespace="Composite.Media.ImageGallery.Flickr.PhotoSets" Description="Returns the photosets belonging to the specified user." OutputXmlSubType="XML" XslFilePath="\Composite\Media\ImageGallery\Flickr\PhotoSets\List.xsl" />
-  <Add Id="a8c9888e-7848-47d5-a1c4-55ae545188a0" Name="Photos" Namespace="Composite.Media.ImageGallery.Flickr.PhotoSets" Description="Displays the photos from a specific photo set." OutputXmlSubType="XHTML" XslFilePath="\Composite\Media\ImageGallery\Flickr\PhotoSets\Photos.xsl" />
-  <Add Id="2fa506bc-e594-4d18-83a5-4df634ff7dab" Name="Photostream" Namespace="Composite.Media.ImageGallery.Flickr" Description="Displays the photostream from a specific account." OutputXmlSubType="XHTML" XslFilePath="\Composite\Media\ImageGallery\Flickr\Photostream.xsl" />
-</Data>
