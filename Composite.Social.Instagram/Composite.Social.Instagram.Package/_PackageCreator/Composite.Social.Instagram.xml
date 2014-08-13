@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:DynamicDataTypes>
+		<Add name="Composite.Social.Instagram.Data.Configuration" />
+	</pc:DynamicDataTypes>
+	<pc:Files>
+		<Add name="App_GlobalResources\Composite\Social\Instagram.resx" />
+		<Add name="Bin\Newtonsoft.Json.dll" />
+		<Add name="Bin\Composite.Social.Instagram.dll" />
+	</pc:Files>
+	<pc:Functions>
+		<Add name="Composite.Social.Instagram.User.RecentPhotos" />
+		<Add name="Composite.Social.Instagram.MostPopularPhotos" />
+		<Add name="Composite.Social.Instagram.RecentPhotosByTag" />
+		<Add name="Composite.Social.Instagram.SearchPhotosInArea" />
+	</pc:Functions>
+	<mi:PackageRequirements minimumCompositeVersion="4.2.5249.32246" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Social.Instagram" groupName="Composite.Social" version="1.0.0" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="00209889-4e6d-4fed-98ee-7b6918ce4de3" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>-</TechnicalDetails>
+		<Description>-</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

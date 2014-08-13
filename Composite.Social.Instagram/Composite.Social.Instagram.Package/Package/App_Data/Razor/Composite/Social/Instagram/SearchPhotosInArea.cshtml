@@ -1,0 +1,51 @@
+@using Composite.Social.Instagram
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Search for media in a given area. The default time span is set to 5 days."; }
+    }
+
+    [FunctionParameter(Label = "Latitude", Help = "Latitude of the center search coordinate. Example: 48.858844")]
+    public string Lat { get; set; }
+
+    [FunctionParameter(Label = "Longitude", Help = "Longitude of the center search coordinate. Example: 2.294351")]
+    public string Lng { get; set; }
+
+    [FunctionParameter(Label = "Radius (in meters)", Help = "Default is 1000 (1km), max radius is 5km.", DefaultValue = 1000)]
+    public int Distance { get; set; }
+}
+@{
+    var apiConfig = Data.Get<Composite.Social.Instagram.Data.Configuration>().FirstOrDefault();
+    if (apiConfig == null)
+    {
+        <div class="alert alert-danger">Instagram Api Configuration is missing.</div>
+        return;
+    }
+    Distance = Distance > 5000 ? 5000 : Distance;
+    var instagramConfig = new Configuration(null, apiConfig.ClientId, apiConfig.ClientSecret, null, null, "https://api.instagram.com/v1/", null);
+    var api = InstagramApiWrapper.GetInstance(instagramConfig, new InstagramCache());
+    var response = api.MediaSearch(Lat, Lng, Distance.ToString(), null, null, null);
+    if (response == null)
+    {
+        return;
+    }
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+    <div class="clearfix">
+        @foreach (var photo in response.data)
+        {
+            <div class="pull-left">
+                <a href="@photo.link" class="thumbnail">
+                    <img src="@photo.images.thumbnail.url" alt="img" />
+                </a>
+            </div>
+        }
+    </div>
+</body>
+</html>

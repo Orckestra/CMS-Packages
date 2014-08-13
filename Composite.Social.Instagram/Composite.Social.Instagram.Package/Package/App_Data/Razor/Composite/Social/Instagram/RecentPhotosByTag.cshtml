@@ -1,0 +1,46 @@
+@using Composite.Social.Instagram
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Shows the recently tagged photos."; }
+    }
+
+    [FunctionParameter(Label = "Tag", Help = "Specify the tag name to search the media tagged by this tag.")]
+    public string Tag { get; set; }
+
+}
+@{
+    var apiConfig = Data.Get<Composite.Social.Instagram.Data.Configuration>().FirstOrDefault();
+    if (apiConfig == null)
+    {
+        <div class="alert alert-danger">Instagram Api Configuration is missing.</div>
+        return;
+    }
+    var instagramConfig = new Configuration(null, apiConfig.ClientId, apiConfig.ClientSecret, null, null, "https://api.instagram.com/v1/", null);
+    var api = InstagramApiWrapper.GetInstance(instagramConfig, new InstagramCache());
+    var response = api.TagMedia(Tag, null, Request.QueryString["next"], null);
+    if (response == null)
+    {
+        return;
+    }
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+    <div class="clearfix">
+        @foreach (var photo in response.data)
+        {
+            <div class="pull-left">
+                <a href="@photo.link" class="thumbnail">
+                    <img src="@photo.images.thumbnail.url" alt="img" />
+                </a>
+            </div>
+        }
+    </div>
+    <a class="btn btn-default btn-sm" href="?next=@response.pagination.next_max_tag_id">@Resources.Instagram.ViewMore_Text</a>
+</body>
+</html>
