@@ -14,7 +14,7 @@
     public string Lng { get; set; }
 
     [FunctionParameter(Label = "Radius (in meters)", Help = "Default is 1000 (1km), max radius is 5km.", DefaultValue = 1000)]
-    public int Distance { get; set; }
+    public int Radius { get; set; }
 }
 @{
     var apiConfig = Data.Get<Composite.Social.Instagram.Data.Configuration>().FirstOrDefault();
@@ -23,10 +23,10 @@
         <div class="alert alert-danger">Instagram Api Configuration is missing.</div>
         return;
     }
-    Distance = Distance > 5000 ? 5000 : Distance;
+    Radius = Radius > 5000 ? 5000 : Radius;
     var instagramConfig = new Configuration(null, apiConfig.ClientId, apiConfig.ClientSecret, null, null, "https://api.instagram.com/v1/", null);
     var api = InstagramApiWrapper.GetInstance(instagramConfig, new InstagramCache());
-    var response = api.MediaSearch(Lat, Lng, Distance.ToString(), null, null, null);
+    var response = api.MediaSearch(Lat, Lng, Radius.ToString(), null, null, null);
     if (response == null)
     {
         return;
