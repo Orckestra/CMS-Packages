@@ -4,7 +4,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using Composite.Core;
-using Newtonsoft.Json;
+using System.Web.Script.Serialization;
 
 
 namespace Composite.Social.Instagram
@@ -13,15 +13,16 @@ namespace Composite.Social.Instagram
     {
         protected static ICache Cache;
         protected static readonly object Threadlock = new object();
+        protected static JavaScriptSerializer Serializer = new JavaScriptSerializer();
 
         public static T DeserializeObject<T>(string json)
         {
-            return JsonConvert.DeserializeObject<T>(json);
+            return Serializer.ConvertToType<T>(Serializer.DeserializeObject(json));
         }
 
         public static string SerializeObject(object value)
         {
-            return JsonConvert.SerializeObject(value);
+            return Serializer.Serialize(value);
         }
 
         public string RequestPostToUrl(string url, NameValueCollection postData, WebProxy proxy)

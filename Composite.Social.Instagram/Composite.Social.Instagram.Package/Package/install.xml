@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.5249.32246" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Social.Instagram" groupName="Composite.Social" version="1.0.1" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Social.Instagram" id="00209889-4e6d-4fed-98ee-7b6918ce4de3" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.Social.Instagram" groupName="Composite.Social" version="1.0.2" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Social.Instagram" id="00209889-4e6d-4fed-98ee-7b6918ce4de3" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Allows you to show Instagram photos on your website.</TechnicalDetails>
 		<Description>Allows you to show Instagram photos on your website.</Description>
 	</mi:PackageInformation>
@@ -10,7 +10,6 @@
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
 				<File sourceFilename="~\App_GlobalResources\Composite\Social\Instagram.resx" targetFilename="~\App_GlobalResources\Composite\Social\Instagram.resx" allowOverwrite="false" />
-				<File sourceFilename="~\Bin\Newtonsoft.Json.dll" targetFilename="~\Bin\Newtonsoft.Json.dll" allowOverwrite="true" />
 				<File sourceFilename="~\App_Data/Razor/Composite/Social/Instagram/User/RecentPhotos.cshtml" targetFilename="~\App_Data/Razor/Composite/Social/Instagram/User/RecentPhotos.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data/Razor/Composite/Social/Instagram/MostPopularPhotos.cshtml" targetFilename="~\App_Data/Razor/Composite/Social/Instagram/MostPopularPhotos.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data/Razor/Composite/Social/Instagram/RecentPhotosByTag.cshtml" targetFilename="~\App_Data/Razor/Composite/Social/Instagram/RecentPhotosByTag.cshtml" allowOverwrite="false" />
