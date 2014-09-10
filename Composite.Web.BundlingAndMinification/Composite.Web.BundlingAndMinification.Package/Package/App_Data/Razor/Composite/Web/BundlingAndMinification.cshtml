@@ -146,13 +146,13 @@
 
     private string GetVirtualPath(string url)
     {
+        if (string.IsNullOrEmpty(url)) return null;
         if (url.StartsWith("//"))
         {
             url = "http:" + url;
         }
         Uri uri;
-        if (string.IsNullOrEmpty(url) ||
-            !Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out uri) ||
+        if (!Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out uri) ||
             (uri.IsAbsoluteUri && uri.Host != Context.Request.Url.Host))
         {
             return null;
