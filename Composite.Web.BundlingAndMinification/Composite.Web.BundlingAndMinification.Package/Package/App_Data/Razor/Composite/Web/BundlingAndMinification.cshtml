@@ -1,4 +1,5 @@
 ﻿@using System.Web.Optimization
+@using Composite.C1Console.Security
 @using Composite.Core
 @using Composite.Web.Css.Less
 @inherits RazorFunction
@@ -15,8 +16,7 @@
 
     private XhtmlDocument BundlingAndMinification(XhtmlDocument page)
     {
-        //B&M is enabled or disabled by setting the value of the debug attribute in the compilation Element in the Web.config file.
-        if (HttpContext.Current.IsDebuggingEnabled)
+        if (HttpContext.Current.IsDebuggingEnabled || UserValidationFacade.IsLoggedIn())
             return page;
 
         var pageBeforeTransformation = new XhtmlDocument(page);
