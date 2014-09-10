@@ -24,6 +24,12 @@
 		scriptElements.AddRange(page.Descendants("script"));
         foreach (var scriptElement in scriptElements)
         {
+            var noMoveAttrib = scriptElement.Attribute("data-c1-nomove");
+            if (noMoveAttrib != null)
+            {
+                noMoveAttrib.Remove();
+                continue;
+            }
             string id = (string)scriptElement.Attribute("id");
             string src = (string)scriptElement.Attribute("src");
 
