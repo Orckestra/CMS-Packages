@@ -16,7 +16,7 @@
 
     private XhtmlDocument BundlingAndMinification(XhtmlDocument page)
     {
-        if (HttpContext.Current.IsDebuggingEnabled || UserValidationFacade.IsLoggedIn())
+        if (HttpContext.Current.IsDebuggingEnabled || UserValidationFacade.IsLoggedIn() || page.Descendants(Namespaces.AspNetControls + "marker").Any())
             return page;
 
         var pageBeforeTransformation = new XhtmlDocument(page);
