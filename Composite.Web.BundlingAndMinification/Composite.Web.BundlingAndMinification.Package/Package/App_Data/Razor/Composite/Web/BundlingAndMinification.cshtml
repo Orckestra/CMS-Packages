@@ -38,7 +38,8 @@
     private void BundleScriptsAndMoveAtBottom(XhtmlDocument page)
     {
         var registeredIds = new List<string>();
-        var registeredSources = new List<string>();
+        var registeredScripts = new List<string>();
+        var registeredInlineScripts = new List<XElement>();
 
         var scriptElements = page.Descendants(Namespaces.Xhtml + "script").ToList();
         scriptElements.AddRange(page.Descendants("script"));
@@ -57,8 +58,13 @@
 
             scriptElement.Remove();
 
-            if (registeredIds.Any(f => f == id) || registeredSources.Any(f => f == src))
+            if (registeredIds.Any(f => f == id) || registeredScripts.Any(f => f == src))
             {
+                continue;
+            }
+            if (string.IsNullOrEmpty(src))
+            {
+                registeredInlineScripts.Add(scriptElement);
                 continue;
             }
 
@@ -67,7 +73,7 @@
             var virtualPath = GetVirtualPath(src);
             if (!string.IsNullOrEmpty(virtualPath))
             {
-                registeredSources.Add(virtualPath);
+                registeredScripts.Add(virtualPath);
             }
             else
             {
@@ -75,12 +81,12 @@
             }
         }
 
-        var scriptsKey = string.Join(string.Empty, registeredSources.ToArray()).GetHashCode();
+        var scriptsKey = string.Join(string.Empty, registeredScripts.ToArray()).GetHashCode();
         var bundleVirtualPath = "~/Bundles/Scripts" + scriptsKey;
         if (BundleTable.Bundles.GetBundleFor(bundleVirtualPath) == null)
         {
             var sb = new ScriptBundle(bundleVirtualPath);
-            foreach (var source in registeredSources)
+            foreach (var source in registeredScripts)
             {
                 sb.Include(source);
             }
@@ -91,6 +97,11 @@
         var bundlerScriptElement = new XElement("script", new XAttribute("src", bundlerUrl), new XAttribute("type", "text/javascript"));
 
         page.Body.Add(bundlerScriptElement);
+        foreach (var inline in registeredInlineScripts)
+        {
+            page.Body.Add(inline);
+        }
+
     }
 
     //TODO: implement Sass to Bundle
