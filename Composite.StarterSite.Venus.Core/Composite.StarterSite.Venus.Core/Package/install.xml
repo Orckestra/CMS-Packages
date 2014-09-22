@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
   <mi:PackageRequirements minimumCompositeVersion="4.2.5200.24979" maximumCompositeVersion="9.9999.9999.9999" />
-  <mi:PackageInformation name="Composite.StarterSite.Venus.Core" groupName="Composite.StarterSite.Venus" version="1.0.27" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="65d06d1e-e810-49f4-98c8-4a336936f5cc" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="true">
+  <mi:PackageInformation name="Composite.StarterSite.Venus.Core" groupName="Composite.StarterSite.Venus" version="1.0.28" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="65d06d1e-e810-49f4-98c8-4a336936f5cc" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="true">
     <TechnicalDetails>Venus Core</TechnicalDetails>
     <Description>Venus Core</Description>
   </mi:PackageInformation>
@@ -17,7 +17,7 @@
         <File sourceFilename="~\Frontend\Scripts\script.js" targetFilename="~\Frontend\Scripts\script.js" allowOverwrite="false" />
         <File sourceFilename="~\Frontend\Config\VisualEditor\common.xml" targetFilename="~\Frontend\Config\VisualEditor\common.xml" allowOverwrite="true" />
         <File sourceFilename="~\App_Data\Composite\InlineCSharpFunctions\Widgets.FontIconSelector.GetIconsNames.cs" targetFilename="~\App_Data\Composite\InlineCSharpFunctions\Widgets.FontIconSelector.GetIconsNames.cs" allowOverwrite="false" />
-        <File sourceFilename="~\App_Data/Razor/PageBlocks/IconifiedStatements.cshtml" targetFilename="~\App_Data/Razor/PageBlocks/IconifiedStatements.cshtml" allowOverwrite="false" />
+        <File sourceFilename="~\App_Data/Razor/PageBlocks/IconifiedStatement.cshtml" targetFilename="~\App_Data/Razor/PageBlocks/IconifiedStatement.cshtml" allowOverwrite="false" />
         <File sourceFilename="~\App_Data/Razor/PageBlocks/ImageAndText.cshtml" targetFilename="~\App_Data/Razor/PageBlocks/ImageAndText.cshtml" allowOverwrite="false" />
         <File sourceFilename="~\App_Data/Razor/PageBlocks/Jumbotron.cshtml" targetFilename="~\App_Data/Razor/PageBlocks/Jumbotron.cshtml" allowOverwrite="false" />
         <File sourceFilename="~\App_Data/Razor/PageBlocks/Statement.cshtml" targetFilename="~\App_Data/Razor/PageBlocks/Statement.cshtml" allowOverwrite="false" />
