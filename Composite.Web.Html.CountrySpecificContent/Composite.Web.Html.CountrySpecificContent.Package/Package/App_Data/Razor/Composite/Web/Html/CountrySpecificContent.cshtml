@@ -1,0 +1,26 @@
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Show content for the specific countries"; }
+    }
+    [FunctionParameter(Label = "Active countries list", Help = "Specify the value as comma separated  '2 Letters' country codes, for example 'AT,BE,BG,HR,CY,CZ,DK'")]
+    public string Countries { get; set; }
+
+    [FunctionParameter(Label = "Content", Help = "This content will be shown for the specified countries list")]
+    public XhtmlDocument Content { get; set; }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <script id="jquery-cookie-js" src="~/Frontend/Composite/Web/Html/CountrySpecificContent/jquery.cookie.js"></script>
+    <script id="countryspecificcontent-js" src="~/Frontend/Composite/Web/Html/CountrySpecificContent/script.js"></script>
+    <link id="countryspecificcontent-css" href="~/Frontend/Composite/Web/Html/CountrySpecificContent/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="content-for-country" data-countries="@Countries.ToUpper().Replace(" ",string.Empty)">
+        @Html.Raw(Content)
+    </div>
+</body>
+</html>
