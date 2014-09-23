@@ -1,0 +1,35 @@
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Show accept alert"; }
+    }
+
+    [FunctionParameter(Label = "Alert Content")]
+    public XhtmlDocument Content { get; set; }
+
+    [FunctionParameter(Label = "Accept Button Text", DefaultValue = "OK")]
+    public string ButtonText { get; set; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <script id="jquery-cookie-js" src="~/Frontend/Composite/Web/Html/AcceptAlert/jquery.cookie.js"></script>
+    <script id="acceptalert-js" src="~/Frontend/Composite/Web/Html/AcceptAlert/script.js"></script>
+    <link id="acceptalert-css" href="~/Frontend/Composite/Web/Html/AcceptAlert/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="accept-alert alert alert-info" data-cookieskey="@Content.GetDocumentAsString().GetHashCode()">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="accept-alert-content">
+                        @Html.Raw(Content)
+                    </div>
+                </div>
+                <div class="col-md-2"><button type="button" class="btn btn-primary accept-alert-btn">@ButtonText</button></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
