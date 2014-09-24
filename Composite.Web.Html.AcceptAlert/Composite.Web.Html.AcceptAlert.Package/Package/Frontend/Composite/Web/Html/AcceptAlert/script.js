@@ -7,7 +7,7 @@
             var acceptAlert = $(this).appendTo($("body"));
             var cookiesName = acceptAlertCookieName + acceptAlert.data('cookieskey');
             var acceptAlertCookie = $.cookie(cookiesName);
-            if (acceptAlertCookie != undefined || acceptAlert.find('.accept-alert-content').children().length <= 0) {
+            if (acceptAlertCookie != undefined) {
                 acceptAlert.remove();
                 return;
             }
