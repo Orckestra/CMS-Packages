@@ -101,7 +101,7 @@
     <Content Include="Package\Frontend\Scripts\libs\html5-3.4-respond-1.1.0.min.js" />
     <Content Include="Package\Frontend\Scripts\libs\modernizr-2.6.1-respond-1.1.0.min.js" />
     <Content Include="Package\Frontend\Scripts\script.js" />
-    <Content Include="Package\Frontend\Styles\includes\font-awesome.css" />
+    <Content Include="Package\Frontend\Styles\font-awesome\font-awesome.css" />
     <Content Include="Package\Frontend\Styles\style.css">
       <DependentUpon>style.less</DependentUpon>
     </Content>
@@ -188,6 +188,7 @@
     <Content Include="Package\Frontend\fonts\fontawesome-webfont.woff" />
     <Content Include="Package\Frontend\fonts\FontAwesome.otf" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

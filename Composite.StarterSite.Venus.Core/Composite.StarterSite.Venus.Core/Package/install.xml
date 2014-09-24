@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
   <mi:PackageRequirements minimumCompositeVersion="4.2.5200.24979" maximumCompositeVersion="9.9999.9999.9999" />
-  <mi:PackageInformation name="Composite.StarterSite.Venus.Core" groupName="Composite.StarterSite.Venus" version="1.0.28" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="65d06d1e-e810-49f4-98c8-4a336936f5cc" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="true">
+  <mi:PackageInformation name="Composite.StarterSite.Venus.Core" groupName="Composite.StarterSite.Venus" version="1.0.29" author="Composite A/S" website="http://composite.net" readMoreUrl="http://composite.net" id="65d06d1e-e810-49f4-98c8-4a336936f5cc" canBeUninstalled="false" systemLocking="hard" flushOnCompletion="true">
     <TechnicalDetails>Venus Core</TechnicalDetails>
     <Description>Venus Core</Description>
   </mi:PackageInformation>
@@ -31,6 +31,7 @@
       <Directories>
         <Directory sourceDirectory="~\App_Data\PageTemplateFeatures\" targetDirectory="~\App_Data\PageTemplateFeatures\" allowOverwrite="true" deleteTargetDirectory="false" />
         <Directory sourceDirectory="~\Frontend\Styles\bootstrap\" targetDirectory="~\Frontend\Styles\bootstrap\" allowOverwrite="true" deleteTargetDirectory="false" />
+         <Directory sourceDirectory="~\Frontend\Styles\font-awesome\" targetDirectory="~\Frontend\Styles\font-awesome\" allowOverwrite="true" deleteTargetDirectory="false" />
         <Directory sourceDirectory="~\Frontend\Scripts\libs\" targetDirectory="~\Frontend\Scripts\libs\" allowOverwrite="true" deleteTargetDirectory="false" />
         <Directory sourceDirectory="~\Frontend\fonts\" targetDirectory="~\Frontend\fonts\" allowOverwrite="true" deleteTargetDirectory="false" />
         <Directory sourceDirectory="~\Frontend\Styles\includes\" targetDirectory="~\Frontend\Styles\includes\" allowOverwrite="true" deleteTargetDirectory="false" />
