@@ -1,17 +1,18 @@
+@using System.Globalization
+@using Composite.Core.WebClient.Renderings.Page
 @inherits RazorFunction
 
 @functions {
     public override string FunctionDescription
     {
-        get { return "Show content for the specific countries"; }
+        get { return "Shows country-specific content."; }
     }
-    [FunctionParameter(Label = "Active countries list", Help = "Specify the value as comma separated  '2 Letters' country codes, for example 'AT,BE,BG,HR,CY,CZ,DK'")]
-    public string Countries { get; set; }
+    [FunctionParameter(Label = "Countries list", Help = "One or more countries to target content for.", WidgetFactoryMethod = "GetCountriesOptionsWidget")]
+    public IEnumerable<string> Countries { get; set; }
 
-    [FunctionParameter(Label = "Content", Help = "This content will be shown for the specified countries list")]
+    [FunctionParameter(Label = "Content", Help = "The content to show to visitors from the countries specified.")]
     public XhtmlDocument Content { get; set; }
 }
-
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
     <script id="jquery-cookie-js" src="~/Frontend/Composite/Web/Html/CountrySpecificContent/jquery.cookie.js"></script>
@@ -19,8 +20,30 @@
     <link id="countryspecificcontent-css" href="~/Frontend/Composite/Web/Html/CountrySpecificContent/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="content-for-country" data-countries="@Countries.ToUpper().Replace(" ",string.Empty)">
+    <div class="@(PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration ? string.Empty : "content-for-country")" data-countries="@String.Join(",", Countries.ToArray())">
         @Html.Raw(Content)
     </div>
 </body>
 </html>
+@functions{
+    public static WidgetFunctionProvider GetCountriesOptionsWidget()
+    {
+        Expression<Func<object>> expression = () => GetCountriesOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Key", "Value", true, false);
+    }
+
+    public static IDictionary<string, string> GetCountriesOptions()
+    {
+        var countries = new Dictionary<string, string>();
+        foreach (var ri in CultureInfo.GetCultures(CultureTypes.SpecificCultures).Select(ci => new RegionInfo(ci.Name)).OrderBy(ri => ri.EnglishName))
+        {
+            if (!countries.ContainsKey(ri.TwoLetterISORegionName))
+            {
+                countries.Add(ri.TwoLetterISORegionName, ri.EnglishName);
+            }
+        }
+        return countries;
+    }
+}
