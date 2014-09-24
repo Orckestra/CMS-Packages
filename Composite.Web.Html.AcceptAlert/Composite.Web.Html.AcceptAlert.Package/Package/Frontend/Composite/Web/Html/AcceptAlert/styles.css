@@ -10,23 +10,25 @@
     box-shadow: 0 12px 18px 9px rgba(0,0,0, 0.2);
 }
 
-    .accept-alert .row {
-        padding-top: 20px;
-        padding-bottom: 25px;
-    }
+.accept-alert-row {
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
 
 .accept-alert-content *:first-child {
     margin-top: 0;
 }
+
 
 @media(min-width: 992px) {
     .accept-alert-content *:last-child {
         margin-bottom: 0;
     }
 
-    .accept-alert .accept-alert-btn {
+    .accept-alert-btn {
         padding-left: 15px;
         padding-right: 15px;
-        margin-top: 30px;
+        margin-top: 25px;
     }
 }

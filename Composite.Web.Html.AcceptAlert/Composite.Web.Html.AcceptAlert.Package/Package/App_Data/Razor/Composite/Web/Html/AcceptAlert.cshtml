@@ -1,9 +1,10 @@
+@using Composite.Core.WebClient.Renderings.Page
 @inherits RazorFunction
 
 @functions {
     public override string FunctionDescription
     {
-        get { return "Show accept alert"; }
+        get { return "Show accept alert."; }
     }
 
     [FunctionParameter(Label = "Alert Content")]
@@ -19,9 +20,9 @@
     <link id="acceptalert-css" href="~/Frontend/Composite/Web/Html/AcceptAlert/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="accept-alert alert alert-info" data-cookieskey="@Content.GetDocumentAsString().GetHashCode()">
+    <div class="@(PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration ? "" : "accept-alert") alert alert-info " data-cookieskey="@Content.GetDocumentAsString().GetHashCode()">
         <div class="container">
-            <div class="row">
+            <div class="row accept-alert-row">
                 <div class="col-md-10">
                     <div class="accept-alert-content">
                         @Html.Raw(Content)
