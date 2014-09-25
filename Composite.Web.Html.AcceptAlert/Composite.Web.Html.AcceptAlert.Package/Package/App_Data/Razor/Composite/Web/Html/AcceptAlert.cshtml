@@ -1,16 +1,16 @@
-@using Composite.Core.WebClient.Renderings.Page
+﻿@using Composite.Core.WebClient.Renderings.Page
 @inherits RazorFunction
 
 @functions {
     public override string FunctionDescription
     {
-        get { return "Show accept alert."; }
+        get { return "​Shows an alert dismissed with a cookie when accepted."; }
     }
 
-    [FunctionParameter(Label = "Alert Content")]
+    [FunctionParameter(Label = "Alert Content", Help = "The content to show in the alert.")]
     public XhtmlDocument Content { get; set; }
 
-    [FunctionParameter(Label = "Accept Button Text", DefaultValue = "OK")]
+    [FunctionParameter(Label = "Accept Button Text", Help = "The text to show on the accept button. OK by default.", DefaultValue = "OK")]
     public string ButtonText { get; set; }
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
@@ -20,7 +20,7 @@
     <link id="acceptalert-css" href="~/Frontend/Composite/Web/Html/AcceptAlert/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="@(PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration ? "" : "accept-alert") alert alert-info " data-cookieskey="@Content.GetDocumentAsString().GetHashCode()">
+    <div class="@(PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration ? string.Empty : "accept-alert") alert alert-info " data-cookieskey="@Content.GetDocumentAsString().GetHashCode()">
         <div class="container">
             <div class="row accept-alert-row">
                 <div class="col-md-10">
