@@ -1,6 +1,4 @@
-@using Composite.Core
 @using Composite.Social.Instagram
-@using Composite.Social.Instagram.Classes
 @inherits RazorFunction
 
 @functions {
@@ -20,22 +18,14 @@
         <div class="alert alert-danger">Instagram Api Configuration is missing.</div>
         return;
     }
-    InstagramResponse<InstagramMedia[]> response = null;
-    try
-    {
-        var instagramConfig = new Configuration(null, apiConfig.ClientId, apiConfig.ClientSecret, null, null, "https://api.instagram.com/v1/", null);
-        var api = InstagramApiWrapper.GetInstance(instagramConfig, new InstagramCache());
-        response = api.TagMedia(Tag, null, Request.QueryString["next"], null);
-
-    }
-    catch (Exception ex)
-    {
-        Log.LogError("Composite.Social.Instagram.RecentPhotosByTag", ex.Message);
-    }
+    var instagramConfig = new Configuration(null, apiConfig.ClientId, apiConfig.ClientSecret, null, null, "https://api.instagram.com/v1/", null);
+    var api = InstagramApiWrapper.GetInstance(instagramConfig, new InstagramCache());
+    var response = api.TagMedia(Tag, null, Request.QueryString["next"], null);
     if (response == null)
     {
         return;
     }
+
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
@@ -51,6 +41,9 @@
             </div>
         }
     </div>
-    <a class="btn btn-default btn-sm" href="?next=@response.pagination.next_max_tag_id">@Resources.Instagram.ViewMore_Text</a>
+    @if (response.pagination != null && !string.IsNullOrEmpty(response.pagination.next_max_id))
+    {
+        <a class="btn btn-default btn-sm" href="?next=@response.pagination.next_max_tag_id">@Resources.Instagram.ViewMore_Text</a>
+    }
 </body>
 </html>
