@@ -3,7 +3,6 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Net;
 using System.Text;
-using Composite.Core;
 using System.Web.Script.Serialization;
 
 
@@ -33,25 +32,18 @@ namespace Composite.Social.Instagram
             if (url.IndexOf("://", StringComparison.Ordinal) <= 0)
                 url = "http://" + url.Replace(",", ".");
 
-            try
-            {
-                using (var client = new WebClient())
-                {
-                    if (proxy != null)
-                        client.Proxy = proxy;
 
-                    var response = client.UploadValues(url, postData);
-                    var enc = new UTF8Encoding();
-                    var outp = enc.GetString(response);
-                    return outp;
-                }
-            }
-            catch (Exception ex)
+            using (var client = new WebClient())
             {
-                Log.LogError("Composite.Social.Instagram - RequestPostToUrl", "Request URL: " + url + ". " + ex.Message);
-            }
+                if (proxy != null)
+                    client.Proxy = proxy;
 
-            return null;
+                var response = client.UploadValues(url, postData);
+                var enc = new UTF8Encoding();
+                var outp = enc.GetString(response);
+                return outp;
+            }
+  
         }
 
         public string RequestDeleteToUrl(string url, WebProxy proxy)
@@ -62,36 +54,28 @@ namespace Composite.Social.Instagram
             if (url.IndexOf("://", StringComparison.Ordinal) <= 0)
                 url = "http://" + url.Replace(",", ".");
 
-            try
-            {
-                var request = WebRequest.Create(url);
-                if (proxy != null)
-                    request.Proxy = proxy;
-                request.Method = "DELETE";
-                var str = "";
-                var resp = request.GetResponse();
-                var receiveStream = resp.GetResponseStream();
-                var encode = Encoding.GetEncoding("utf-8");
-                var readStream = new StreamReader(receiveStream, encode);
-                var read = new Char[256];
-                int count = readStream.Read(read, 0, 256);
-                while (count > 0)
-                {
-                    str = str + new String(read, 0, count);
-                    count = readStream.Read(read, 0, 256);
-                }
-                readStream.Close();
-                receiveStream.Close();
-                //out
-                return str;
-            }
 
-            catch (Exception ex)
+            var request = WebRequest.Create(url);
+            if (proxy != null)
+                request.Proxy = proxy;
+            request.Method = "DELETE";
+            var str = "";
+            var resp = request.GetResponse();
+            var receiveStream = resp.GetResponseStream();
+            var encode = Encoding.GetEncoding("utf-8");
+            var readStream = new StreamReader(receiveStream, encode);
+            var read = new Char[256];
+            int count = readStream.Read(read, 0, 256);
+            while (count > 0)
             {
-                Log.LogError("Composite.Social.Instagram - RequestDeleteToUrl", "Request URL: " + url + ". " + ex.Message);
+                str = str + new String(read, 0, count);
+                count = readStream.Read(read, 0, 256);
             }
+            readStream.Close();
+            receiveStream.Close();
+            //out
+            return str;
 
-            return null;
         }
 
         public string RequestGetToUrl(string url, WebProxy proxy)
@@ -102,23 +86,16 @@ namespace Composite.Social.Instagram
             if (url.IndexOf("://", StringComparison.Ordinal) <= 0)
                 url = "http://" + url.Replace(",", ".");
 
-            try
+
+            using (var client = new WebClient())
             {
-                using (var client = new WebClient())
-                {
-                    if (proxy != null)
-                        client.Proxy = proxy;
-                    var response = client.DownloadData(url);
-                    var enc = new UTF8Encoding();
-                    var outp = enc.GetString(response);
-                    return outp;
-                }
+                if (proxy != null)
+                    client.Proxy = proxy;
+                var response = client.DownloadData(url);
+                var enc = new UTF8Encoding();
+                var outp = enc.GetString(response);
+                return outp;
             }
-            catch (Exception ex)
-            {
-                Log.LogError("Composite.Social.Instagram - RequestGetToUrl", "Request URL: " + url + ". " + ex.Message);
-            }
-            return null;
         }
     }
 }

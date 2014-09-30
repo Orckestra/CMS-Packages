@@ -1,4 +1,6 @@
+@using Composite.Core
 @using Composite.Social.Instagram
+@using Composite.Social.Instagram.Classes
 @inherits RazorFunction
 
 @functions {
@@ -13,32 +15,45 @@
 }
 @{
     var FunctIdentificator = "user_recent_photos_" + UserName;
-    
+
     var apiConfig = Data.Get<Composite.Social.Instagram.Data.Configuration>().FirstOrDefault();
     if (apiConfig == null)
     {
         <div class="alert alert-danger">Instagram Api Configuration is missing.</div>
         return;
     }
-    var instagramConfig = new Configuration(null, apiConfig.ClientId, apiConfig.ClientSecret, null, null, "https://api.instagram.com/v1/", null);
-    var api = InstagramApiWrapper.GetInstance(instagramConfig, new InstagramCache());
 
-    var responseUser = api.UsersSearch(UserName, "100", null);
-    if (responseUser == null)
+    InstagramResponse<InstagramMedia[]> response = null;
+    try
     {
-        <div class="alert alert-danger">Instagram User not found.</div>
+        var instagramConfig = new Configuration(null, apiConfig.ClientId, apiConfig.ClientSecret, null, null, "https://api.instagram.com/v1/", null);
+        var api = InstagramApiWrapper.GetInstance(instagramConfig, new InstagramCache());
+
+        var responseUser = api.UsersSearch(UserName, "100", null);
+        if (responseUser == null)
+        {
+            <div class="alert alert-danger">Instagram User not found.</div>
+            return;
+        }
+        var userId = "";
+        foreach (var user in responseUser.data)
+        {
+            if (user.username == UserName)
+            {
+                userId = user.id;
+                break;
+            }
+        }
+        response = api.UserRecentMedia(userId, string.Empty, Request.QueryString["id"] == FunctIdentificator.GetHashCode().ToString() ? Request.QueryString["next"] : null, null, null, null, null);
+    }
+    catch (Exception ex)
+    {
+        Log.LogError("Composite.Social.Instagram.User.RecentPhotos", ex.Message);
+    }
+    if (response == null)
+    {
         return;
     }
-    var userId = "";
-    foreach (var user in responseUser.data)
-    {
-        if (user.username == UserName)
-        {
-            userId = user.id;
-            break;
-        }
-    }
-    var responsePhotos = api.UserRecentMedia(userId, string.Empty, Request.QueryString["id"] == FunctIdentificator.GetHashCode().ToString() ? Request.QueryString["next"]: null, null, null, null, null);
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
@@ -46,7 +61,7 @@
 <body>
     <h2>@Html.Raw(string.Format(Resources.Instagram.RecentPhotosByUser_Text, UserName))</h2>
     <div class="clearfix">
-        @foreach (var photo in responsePhotos.data)
+        @foreach (var photo in response.data)
         {
             <div class="pull-left">
                 <a href="@photo.link" class="thumbnail">
@@ -55,9 +70,9 @@
             </div>
         }
     </div>
-    @if (responsePhotos.pagination != null)
+    @if (response.pagination != null)
     {
-        <a class="btn btn-default btn-sm" href="?next=@responsePhotos.pagination.next_max_id&amp;id=@FunctIdentificator.GetHashCode()">@Resources.Instagram.ViewMore_Text</a>
+        <a class="btn btn-default btn-sm" href="?next=@response.pagination.next_max_id&amp;id=@FunctIdentificator.GetHashCode()">@Resources.Instagram.ViewMore_Text</a>
     }
-    </body>
+</body>
 </html>

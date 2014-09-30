@@ -1,4 +1,6 @@
+@using Composite.Core
 @using Composite.Social.Instagram
+@using Composite.Social.Instagram.Classes
 @inherits RazorFunction
 
 @functions {
@@ -14,9 +16,17 @@
         <div class="alert alert-danger">Instagram Api Configuration is missing.</div>
         return;
     }
-    var instagramConfig = new Configuration(null, apiConfig.ClientId, apiConfig.ClientSecret, null, null, "https://api.instagram.com/v1/", null);
-    var api = InstagramApiWrapper.GetInstance(instagramConfig, new InstagramCache());
-    var response = api.MediaPopular(null, true);
+    InstagramResponse<InstagramMedia[]> response = null;
+    try
+    {
+        var instagramConfig = new Configuration(null, apiConfig.ClientId, apiConfig.ClientSecret, null, null, "https://api.instagram.com/v1/", null);
+        var api = InstagramApiWrapper.GetInstance(instagramConfig, new InstagramCache());
+        response = api.MediaPopular(null, true);
+    }
+    catch (Exception ex)
+    {
+        Log.LogError("Composite.Social.Instagram.MostPopularPhotos", ex.Message);
+    }
     if (response == null)
     {
         return;

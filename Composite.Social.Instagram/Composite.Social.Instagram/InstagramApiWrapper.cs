@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Web;
 using Composite.Social.Instagram.Classes;
 
 namespace Composite.Social.Instagram
@@ -40,7 +41,7 @@ namespace Composite.Social.Instagram
             {
                 if (_sharedInstance == null)
                 {
-                    _sharedInstance = new InstagramApiWrapper {Configuration = configuration};
+                    _sharedInstance = new InstagramApiWrapper { Configuration = configuration };
                 }
             }
 
@@ -752,12 +753,11 @@ namespace Composite.Social.Instagram
         }
         public InstagramResponse<InstagramMedia[]> TagMedia(string tagname, string min_id, string max_id, string accessToken)
         {
-            if (tagname.Contains("#"))
-                tagname = tagname.Replace("#", "");
+            tagname = tagname.Replace(" ", string.Empty).Replace("#", string.Empty);
 
-            string url = Configuration.ApiBaseUrl + "tags/" + tagname + "/media/recent?access_token=" + accessToken;
+            string url = Configuration.ApiBaseUrl + "tags/" + HttpUtility.UrlEncode(tagname) + "/media/recent?access_token=" + accessToken;
             if (string.IsNullOrEmpty(accessToken))
-                url = Configuration.ApiBaseUrl + "tags/" + tagname + "/media/recent?client_id=" + Configuration.ClientId;
+                url = Configuration.ApiBaseUrl + "tags/" + HttpUtility.UrlEncode(tagname) + "/media/recent?client_id=" + Configuration.ClientId;
 
 
             if (!string.IsNullOrEmpty(min_id)) url = url + "&min_id=" + min_id;

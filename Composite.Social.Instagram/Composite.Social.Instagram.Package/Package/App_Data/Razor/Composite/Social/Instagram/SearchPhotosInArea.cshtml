@@ -1,4 +1,6 @@
+@using Composite.Core
 @using Composite.Social.Instagram
+@using Composite.Social.Instagram.Classes
 @inherits RazorFunction
 
 @functions {
@@ -23,10 +25,18 @@
         <div class="alert alert-danger">Instagram Api Configuration is missing.</div>
         return;
     }
+    InstagramResponse<InstagramMedia[]> response = null;
     Radius = Radius > 5000 ? 5000 : Radius;
-    var instagramConfig = new Configuration(null, apiConfig.ClientId, apiConfig.ClientSecret, null, null, "https://api.instagram.com/v1/", null);
-    var api = InstagramApiWrapper.GetInstance(instagramConfig, new InstagramCache());
-    var response = api.MediaSearch(Lat, Lng, Radius.ToString(), null, null, null);
+    try
+    {
+        var instagramConfig = new Configuration(null, apiConfig.ClientId, apiConfig.ClientSecret, null, null, "https://api.instagram.com/v1/", null);
+        var api = InstagramApiWrapper.GetInstance(instagramConfig, new InstagramCache());
+        response = api.MediaSearch(Lat, Lng, Radius.ToString(), null, null, null);
+    }
+    catch (Exception ex)
+    {
+        Log.LogError("Composite.Social.Instagram.SearchPhotosInArea", ex.Message);
+    }
     if (response == null)
     {
         return;
