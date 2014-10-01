@@ -47,5 +47,9 @@
             </div>
         }
     </div>
+    @if (response.pagination != null && !string.IsNullOrEmpty(response.pagination.next_max_id))
+    {
+        <a class="btn btn-default btn-sm" href="?next=@response.pagination.next_max_tag_id">@Resources.Instagram.ViewMore_Text</a>
+    }
 </body>
 </html>
