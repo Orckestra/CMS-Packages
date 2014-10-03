@@ -7,7 +7,7 @@ using System.Xml.Linq;
 namespace Composite.Tools.PackageCreator.Types
 {
     /*[CategoryName("FileXslTransformation")]
-    internal class PCFileXslTransformation : SimplePackageCreatorItem
+    internal class PCFileXslTransformation : BasePackItem
     {
         public PCFileXslTransformation(string name)
             : base(name)

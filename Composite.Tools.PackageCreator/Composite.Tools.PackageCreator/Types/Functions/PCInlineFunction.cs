@@ -12,7 +12,7 @@ namespace Composite.Tools.PackageCreator.Types
     {
 
 
-        public static IEnumerable<IPackageCreatorItem> CreateInline(EntityToken entityToken)
+        public static IEnumerable<IPackItem> CreateInline(EntityToken entityToken)
         {
             if (entityToken is DataEntityToken)
             {

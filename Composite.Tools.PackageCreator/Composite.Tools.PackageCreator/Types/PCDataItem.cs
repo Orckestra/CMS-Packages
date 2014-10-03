@@ -1,6 +1,7 @@
 ﻿using Composite.C1Console.Security;
 using Composite.Core.Types;
 using Composite.Data;
+using Composite.Data.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ using System.Xml.Linq;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-	[PCCategory("DataItems", "Data Items")]
-	[ItemManager(typeof(PCDataItemManager))]
-	public class PCDataItem : SimplePackageCreatorItem
+	[PackCategory("DataItems", "Data Items")]
+	[ItemManager(typeof(PcDataPackItemManager))]
+	public class PCDataItem : BasePackItem
 	{
 		public string DataType { get; set; }
 		public string Params { get; set; }
@@ -125,12 +126,14 @@ namespace Composite.Tools.PackageCreator.Types
 			return TypeManager.TryGetType(type1) == TypeManager.TryGetType(type2);
 		}
 
-		public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+		public static IEnumerable<IPackItem> Create(EntityToken entityToken)
 		{
 			if (entityToken is DataEntityToken)
 			{
 				DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
-				if (dataEntityToken.Data is IPageFolderData)
+				if (dataEntityToken.Data is IPage) { 
+				}
+				else if (dataEntityToken.Data is IPageFolderData)
 				{
 					var data = dataEntityToken.Data as IPageFolderData;
 					yield return new PCDataItem(data);
@@ -140,15 +143,15 @@ namespace Composite.Tools.PackageCreator.Types
 					var data = dataEntityToken.Data;
 					var id = PCExclude.GetId(data);
 					if (id != Guid.Empty)
-						yield return new PCDataItem(data);;
+						yield return new PCDataItem(data);
 				}
 			}
 		}
 	}
 
-	internal class PCDataItemManager : IItemManager
+	internal class PcDataPackItemManager : IPackItemManager
 	{
-		public IEnumerable<IPackageCreatorItem> GetItems(Type type, XElement config)
+		public IEnumerable<IPackItem> GetItems(Type type, XElement config)
 		{
 			XNamespace ns = PackageCreator.pc;
 			XName itemName = "Add";
@@ -163,7 +166,7 @@ namespace Composite.Tools.PackageCreator.Types
 			yield break;
 		}
 
-		public IPackageCreatorItem GetItem(Type type, string id)
+		public IPackItem GetItem(Type type, string id)
 		{
 			var split = id.Split('*');
 			var name = split[0];

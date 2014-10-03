@@ -9,7 +9,7 @@ namespace Composite.Tools.PackageCreator.Types
 {
     partial class PCFunctions
     {
-        public static IEnumerable<IPackageCreatorItem> CreateXslt(EntityToken entityToken)
+        public static IEnumerable<IPackItem> CreateXslt(EntityToken entityToken)
         {
             if (entityToken is DataEntityToken)
             {

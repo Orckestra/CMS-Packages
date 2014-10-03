@@ -6,15 +6,15 @@ using Composite.Plugins.Elements.ElementProviders.WebsiteFileElementProvider;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    [PCCategory("Files")]
-    internal class PCFile : SimplePackageCreatorItem
+    [PackCategory("Files")]
+    internal class PCFile : BasePackItem
     {
         public PCFile(string name)
             : base(name)
         {
         }
 
-        public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
             if (entityToken is WebsiteFileElementProviderEntityToken)
             {

@@ -8,8 +8,8 @@ using Composite.Data.Types;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    [PCCategory("PageTypes")]
-    internal class PCPageType : SimplePackageCreatorItem, IPackageable
+    [PackCategory("PageTypes")]
+    internal class PCPageType : BasePackItem, IPack
     {
         public PCPageType(string name)
             : base(name)
@@ -21,7 +21,7 @@ namespace Composite.Tools.PackageCreator.Types
             get { return new ResourceHandle("Composite.Icons", "base-function-function"); }
         }
 
-        public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
             if (entityToken is DataEntityToken)
             {

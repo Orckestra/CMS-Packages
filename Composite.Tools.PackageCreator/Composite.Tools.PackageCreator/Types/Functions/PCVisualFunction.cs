@@ -10,7 +10,7 @@ namespace Composite.Tools.PackageCreator.Types
     partial class PCFunctions
     {
 
-        public static IEnumerable<IPackageCreatorItem> CreateVisual(EntityToken entityToken)
+        public static IEnumerable<IPackItem> CreateVisual(EntityToken entityToken)
         {
             if (entityToken is DataEntityToken)
             {

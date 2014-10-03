@@ -10,7 +10,7 @@ namespace Composite.Tools.PackageCreator.Types
 
 	internal static class ItemManagerCache
 	{
-		private static Dictionary<Type, IItemManager> _itemManagerCache = new Dictionary<Type, IItemManager>();
+		private static Dictionary<Type, IPackItemManager> _itemManagerCache = new Dictionary<Type, IPackItemManager>();
 
 		private static object _lock = new object();
 
@@ -19,11 +19,11 @@ namespace Composite.Tools.PackageCreator.Types
 			GlobalEventSystemFacade.SubscribeToFlushEvent(OnFlush);
 		}
 
-		public static IItemManager GetItemManager(Type type)
+		public static IPackItemManager GetItemManager(Type type)
 		{
 			if (type == null) throw new ArgumentNullException("type");
 
-			IItemManager actionExecutor = null;
+			IPackItemManager actionExecutor = null;
 
 			if (_itemManagerCache.TryGetValue(type, out actionExecutor) == false)
 			{
@@ -33,8 +33,8 @@ namespace Composite.Tools.PackageCreator.Types
 				{
 					ItemManagerAttribute attribute = (ItemManagerAttribute)attributes[0];
 					if (attribute.Type == null) throw new InvalidOperationException(string.Format("Item manger type can not be null on the action token {0}", type));
-					if (typeof(IItemManager).IsAssignableFrom(attribute.Type) == false) throw new InvalidOperationException(string.Format("Item manager {0} should implement the interface {1}", attribute.Type, typeof(IItemManager)));
-					actionExecutor = (IItemManager)Activator.CreateInstance(attribute.Type);
+					if (typeof(IPackItemManager).IsAssignableFrom(attribute.Type) == false) throw new InvalidOperationException(string.Format("Item manager {0} should implement the interface {1}", attribute.Type, typeof(IPackItemManager)));
+					actionExecutor = (IPackItemManager)Activator.CreateInstance(attribute.Type);
 				}
 				_itemManagerCache.Add(type, actionExecutor);
 
@@ -44,7 +44,7 @@ namespace Composite.Tools.PackageCreator.Types
 
 		private static void Flush()
 		{
-			_itemManagerCache = new Dictionary<Type, IItemManager>();
+			_itemManagerCache = new Dictionary<Type, IPackItemManager>();
 		}
 
 		private static void OnFlush(FlushEventArgs args)

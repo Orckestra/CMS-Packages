@@ -15,11 +15,21 @@ namespace Composite.Tools.PackageCreator.Actions
 
             foreach (var item in PackageCreatorActionFacade.GetPackageCreatorItems(entityToken))
             {
-                ActionToken actionToken;
-                if (item is IPackageCreatorItemActionToken)
-                    actionToken = new PackageCreatorActionToken(item.CategoryName, (item as IPackageCreatorItemActionToken).ActionTokenName);
-                else
-                    actionToken = new PackageCreatorActionToken(item.CategoryName);
+	            var name = string.Empty;
+	            var disabled = false;
+	            var checkStatus = ActionCheckedStatus.Uncheckable;
+				
+				if (item is IPackItemActionToken)
+                   name = (item as IPackItemActionToken).ActionTokenName;
+
+	            if (item is IPackToggle)
+	            {
+		            disabled = (item as IPackToggle).Disabled;
+		            checkStatus = (item as IPackToggle).CheckedStatus;
+	            }
+
+
+	            var  actionToken = new PackageCreatorActionToken(item.CategoryName, name);
 
                 yield return new ElementAction(new ActionHandle(actionToken))
                 {
@@ -28,6 +38,8 @@ namespace Composite.Tools.PackageCreator.Actions
                         Label = item.ActionLabel,
                         ToolTip = item.ActionToolTip,
                         Icon = item.ActionIcon,
+						Disabled = disabled,
+						ActionCheckedStatus = checkStatus,
                         ActionLocation = new ActionLocation
                         {
                             ActionType = PackageCreatorFacade.ActionType,

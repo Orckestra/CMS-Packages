@@ -10,7 +10,7 @@ namespace Composite.Tools.PackageCreator.Types
     partial class PCFunctions
     {
 
-        public static IEnumerable<IPackageCreatorItem> CreateCSharp(EntityToken entityToken)
+        public static IEnumerable<IPackItem> CreateCSharp(EntityToken entityToken)
         {
             if (entityToken is DataEntityToken)
             {

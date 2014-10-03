@@ -307,13 +307,13 @@ namespace Composite.Tools.PackageCreator
 
         }
 
-        internal static void AddItem(IPackageCreatorItem item)
+        internal static void AddItem(IPackItem item)
         {
             AddItem(item, ActivePackageName);
             PackageCreatorFacade.ActivePackageName = item.Id;
         }
 
-        internal static void AddItem(IPackageCreatorItem item, string packageName)
+        internal static void AddItem(IPackItem item, string packageName)
         {
             lock (_lockEditPackage)
             {
@@ -324,7 +324,7 @@ namespace Composite.Tools.PackageCreator
 
         }
 
-        internal static void RemoveItem(IPackageCreatorItem item, string packageName)
+        internal static void RemoveItem(IPackItem item, string packageName)
         {
             lock (_lockEditPackage)
             {
@@ -334,7 +334,7 @@ namespace Composite.Tools.PackageCreator
             }
         }
 
-        internal static IEnumerable<PCCategoryAttribute> GetCategories(string packageName)
+        internal static IEnumerable<PackCategoryAttribute> GetCategories(string packageName)
         {
             XDocument packageXml;
             lock (_lockEditPackage)
@@ -350,17 +350,27 @@ namespace Composite.Tools.PackageCreator
             }
         }
 
-        internal static IEnumerable<IPackageCreatorItem> GetItems(string categoryName, string packageName)
+		internal static IEnumerable<T> GetItems<T>() where T:IPackItem
+		{
+			return GetItems(typeof(T), ActivePackageName).Cast<T>();
+		}
+
+		internal static IEnumerable<IPackItem> GetItems(string categoryName, string packageName)
+		{
+			return GetItems(PackageCreatorActionFacade.CategoryTypes.Get(categoryName), packageName);
+		}
+
+        internal static IEnumerable<IPackItem> GetItems(Type categoryType, string packageName)
         {
             XDocument packageXml;
             lock (_lockEditPackage)
             {
                 packageXml = GetPackageXml(packageName);
             }
-            return GetItems(PackageCreatorActionFacade.CategoryTypes.Get(categoryName), packageXml.Root);
+			return GetItems(categoryType, packageXml.Root);
         }
 
-        internal static IEnumerable<IPackageCreatorItem> GetItems(Type type, XElement config)
+        internal static IEnumerable<IPackItem> GetItems(Type type, XElement config)
         {
 			var manager = ItemManagerCache.GetItemManager(type);
 			if (manager != null)
@@ -386,7 +396,7 @@ namespace Composite.Tools.PackageCreator
 					LoggingService.LogError("Type {0} doesnot have static methos GetItems", type.FullName);
 					yield break;
 				}
-				var results = (IEnumerable<IPackageCreatorItem>)method.Invoke(Type.Missing, new object[] { type, config });
+				var results = (IEnumerable<IPackItem>)method.Invoke(Type.Missing, new object[] { type, config });
 				foreach (var result in results)
 				{
 					yield return result;

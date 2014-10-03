@@ -4,8 +4,8 @@ using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    [PCCategory("Web.config", AliasNames = new[] { "Configuration" })]
-    internal class PCWebConfig : SimplePackageCreatorItem, IPackageable
+    [PackCategory("Web.config", AliasNames = new[] { "Configuration" })]
+    internal class PCWebConfig : BasePackItem, IPack
     {
         public const string Source = "Web.config";
         public const string Path = "~/Web.config";
@@ -15,7 +15,7 @@ namespace Composite.Tools.PackageCreator.Types
         {
         }
 
-        public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
             if (entityToken is XmlNodeAttributeProviderEntityToken && entityToken.Source == Source)
             {

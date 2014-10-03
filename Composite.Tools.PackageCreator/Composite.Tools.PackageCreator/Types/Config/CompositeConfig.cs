@@ -4,8 +4,8 @@ using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    [PCCategory("Composite.config", AliasNames = new[] { "Configuration" })]
-    internal class PCCompositeConfig : SimplePackageCreatorItem, IPackageable
+    [PackCategory("Composite.config", AliasNames = new[] { "Configuration" })]
+    internal class PCCompositeConfig : BasePackItem, IPack
     {
         public const string Source = "Composite.config";
         public const string Path = "~/App_Data/Composite/Composite.config";
@@ -15,7 +15,7 @@ namespace Composite.Tools.PackageCreator.Types
         {
         }
 
-        public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
             if (entityToken is XmlNodeAttributeProviderEntityToken && entityToken.Source == Source)
             {

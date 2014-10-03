@@ -9,7 +9,7 @@ namespace Composite.Tools.PackageCreator.Types
     partial class PCFunctions
     {
 
-        public static IEnumerable<IPackageCreatorItem> CreateUserControl(EntityToken entityToken)
+        public static IEnumerable<IPackItem> CreateUserControl(EntityToken entityToken)
         {
             if (entityToken is FileBasedFunctionEntityToken)
             {

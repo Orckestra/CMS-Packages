@@ -8,8 +8,8 @@ using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    [PCCategory("PackageFragmentInstallerBinaries")]
-    public class MIPackageFragmentInstallerBinary : SimplePackageCreatorItem
+    [PackCategory("PackageFragmentInstallerBinaries")]
+    public class MIPackageFragmentInstallerBinary : BasePackItem
     {
         public MIPackageFragmentInstallerBinary(string name)
             : base(name)
@@ -55,12 +55,12 @@ namespace Composite.Tools.PackageCreator.Types
             }
         }
 
-        public static new IEnumerable<IPackageCreatorItem> GetItems(Type type, XElement config)
+        public static new IEnumerable<IPackItem> GetItems(Type type, XElement config)
         {
             return GetItems(type, config, PackageCreator.mi, PackageCreator.mi + "Add");
         }
 
-        public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
             if (entityToken is PackageCreatorItemElementProviderEntityToken)
             {

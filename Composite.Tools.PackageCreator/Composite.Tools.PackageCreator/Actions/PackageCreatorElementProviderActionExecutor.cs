@@ -1,4 +1,5 @@
 using Composite.C1Console.Actions;
+using Composite.C1Console.Elements;
 using Composite.C1Console.Events;
 using Composite.C1Console.Security;
 using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
@@ -14,6 +15,7 @@ namespace Composite.Tools.PackageCreator.Actions
         public FlowToken Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
         {
             var packageName = PackageCreatorFacade.ActivePackageName;
+	        
             if (entityToken is PackageCreatorEntityToken)
             {
                 packageName = (entityToken as PackageCreatorEntityToken).Source;
@@ -34,7 +36,7 @@ namespace Composite.Tools.PackageCreator.Actions
                     if (item.CategoryName == token.CategoryName)
                     {
                         //if diffent item for one category and entitytoken
-                        var itemActionToken = item as IPackageCreatorItemActionToken;
+                        var itemActionToken = item as IPackItemActionToken;
                         if (itemActionToken != null)
                         {
                             if (token.Name != itemActionToken.ActionTokenName)
@@ -42,8 +44,24 @@ namespace Composite.Tools.PackageCreator.Actions
                                 continue;
                             }
                         }
-                        PackageCreatorFacade.AddItem(item, packageName);
-                        break;
+	                    if (item is IPackToggle)
+	                    {
+		                    if ((item as IPackToggle).CheckedStatus == ActionCheckedStatus.Checked)
+		                    {
+								 PackageCreatorFacade.RemoveItem(item, packageName);
+		                    }
+		                    else
+		                    {
+								PackageCreatorFacade.AddItem(item, packageName);
+							}
+							var parentTreeRefresher = new ParentTreeRefresher(flowControllerServicesContainer);
+							parentTreeRefresher.PostRefreshMesseges(entityToken);
+	                    }
+	                    else
+	                    {
+		                    PackageCreatorFacade.AddItem(item, packageName);
+	                    }
+	                    break;
                     }
                 }
 

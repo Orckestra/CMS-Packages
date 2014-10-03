@@ -9,38 +9,42 @@ using System;
 using System.Xml.Linq;
 using System.Linq;
 using Composite.Core.ResourceSystem;
-using Composite.Core.Types;
+using Composite.C1Console.Elements;
+
 
 namespace Composite.Tools.PackageCreator.Types
 {
 	//[PCCategory("Excludes")]
 #warning localization
-	[PCCategory("Excludes", "Excludes")]
+	[PackCategory("Excludes", "Excludes")]
 	[ItemManager(typeof(PCExludeManager))]
-	internal class PCExclude : SimplePackageCreatorItem, IInitable
+	internal class PCExclude : BasePackItem, IPackInit, IPackToggle
 	{
 		private const string _idName = "Id";
 
-		public enum Exclude { Page, MediaFolder, DataItem};
+		public enum Exclude { Page, MediaFolder, DataItem };
 
 		public Exclude Type { get; private set; }
 
-		public string Label { get; set; }
+		public string Label { get; private set; }
 
-		private static Dictionary<System.Type, bool> _isIdType = new Dictionary<Type, bool>();
+		public Guid PageId { get; private set; }
 
-		public static Guid GetId(IData data) {
+		private static readonly Dictionary<Type, bool> _isIdType = new Dictionary<Type, bool>();
+
+		public static Guid GetId(IData data)
+		{
 			var type = data.DataSourceId.InterfaceType;
 			if (!_isIdType.ContainsKey(type))
 			{
 				var keyProperies = data.GetKeyProperties();
 				_isIdType[type] = keyProperies.Count == 1 && keyProperies.First().Name == _idName && keyProperies.First().PropertyType == typeof(Guid);
-				
+
 			}
-			if(!_isIdType[type])
+			if (!_isIdType[type])
 				return Guid.Empty;
-			
-			return data.GetProperty<Guid>(_idName);		
+
+			return data.GetProperty<Guid>(_idName);
 		}
 
 		public PCExclude(string name, Exclude type, string label = "")
@@ -48,18 +52,30 @@ namespace Composite.Tools.PackageCreator.Types
 		{
 			Type = type;
 			Label = label;
+			Guid pageId;
+			if (Type == Exclude.Page && Guid.TryParse(name, out pageId))
+			{
+				PageId = pageId;
+			}
 		}
 
 		public override string Id
 		{
 			get
 			{
-				return this.Name + "*" + Type.ToString() + "*" + Label;
+				return Name + "*" + Type + "*" + Label;
 			}
 		}
 		public override string ActionLabel
 		{
-			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName)); }
+			get
+			{
+				if (Type == Exclude.Page)
+				{
+					return PackageCreatorFacade.GetLocalization(string.Format("{0}.Page.Label", this.CategoryName));
+				}
+				return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName));
+			}
 		}
 
 		public override string ActionToolTip
@@ -69,7 +85,7 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public override string GetLabel()
 		{
-			string result = Name;
+			var result = Name;
 			try
 			{
 				switch (Type)
@@ -85,12 +101,12 @@ namespace Composite.Tools.PackageCreator.Types
 						break;
 				}
 			}
-			catch
+			catch (Exception)
 			{
 			}
 			return result;
 		}
-		public override Core.ResourceSystem.ResourceHandle ItemIcon
+		public override ResourceHandle ItemIcon
 		{
 			get
 			{
@@ -100,41 +116,44 @@ namespace Composite.Tools.PackageCreator.Types
 						return new ResourceHandle("Composite.Icons", "data-disabled");
 						break;
 					case Exclude.MediaFolder:
-						return new ResourceHandle("Composite.Icons", "folder-disabled"); 
+						return new ResourceHandle("Composite.Icons", "folder-disabled");
 						break;
 					case Exclude.Page:
 					default:
 						return new ResourceHandle("Composite.Icons", "page-disabled");
 						break;
 				}
-				
+
 			}
 		}
 
-		public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+		public static IEnumerable<IPackItem> Create(EntityToken entityToken)
 		{
 			if (entityToken is DataEntityToken)
 			{
-				DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
+				var dataEntityToken = (DataEntityToken)entityToken;
 				if (dataEntityToken.Data is IPage)
 				{
 					var page = dataEntityToken.Data as IPage;
-					yield return new PCExclude(page.Id.ToString(), Exclude.Page);
+					if (page.GetParentId() != Guid.Empty)
+						yield return new PCExclude(page.Id.ToString(), Exclude.Page);
 				}
 				else if (dataEntityToken.Data is IMediaFileFolder)
 				{
-					var MediaFolder = dataEntityToken.Data as IMediaFileFolder;
-					yield return new PCExclude(MediaFolder.Path, Exclude.MediaFolder);
+					var mediaFolder = dataEntityToken.Data as IMediaFileFolder;
+					yield return new PCExclude(mediaFolder.Path, Exclude.MediaFolder);
 				}
 				else if (dataEntityToken.Data is IPageFolderData)
 				{
 					var data = dataEntityToken.Data as IPageFolderData;
 					yield return new PCExclude(data.Id.ToString(), Exclude.DataItem, data.GetLabel());
 
-				} else {
+				}
+				else
+				{
 					var data = dataEntityToken.Data;
 					var id = GetId(data);
-					if(id != Guid.Empty)
+					if (id != Guid.Empty)
 						yield return new PCExclude(id.ToString(), Exclude.DataItem, data.GetLabel());
 				}
 			}
@@ -151,6 +170,19 @@ namespace Composite.Tools.PackageCreator.Types
 					Label
 				)
 			);
+		}
+
+		public override void RemoveFromConfiguration(XElement config)
+		{
+			base.RemoveFromConfiguration(config);
+			if (Type == Exclude.Page)
+			{
+				Tree.Page.ClearCache();
+			}
+			else if (Type == Exclude.MediaFolder)
+			{
+				Tree.Media.ClearCache();
+			}
 		}
 
 		public void Init(PackageCreator creator)
@@ -170,13 +202,81 @@ namespace Composite.Tools.PackageCreator.Types
 					}
 					break;
 			}
-			
+
+		}
+
+		private TreeState GetState()
+		{
+			var state = TreeState.NotIncluded;
+			switch (Type)
+			{
+				case Exclude.Page:
+					state = Tree.Page.GetState(PageId);
+					break;
+				case Exclude.MediaFolder:
+					state = Tree.Media.GetState(Name);
+					break;
+			}
+			return state;
+		}
+
+		public ActionCheckedStatus CheckedStatus
+		{
+			get
+			{
+				switch (Type)
+				{
+					case Exclude.Page:
+					case Exclude.MediaFolder:
+						var state = GetState();
+						return (state == TreeState.ExcludedTree) ? ActionCheckedStatus.Checked : ActionCheckedStatus.Unchecked;
+						break;
+				}
+				return ActionCheckedStatus.Uncheckable;
+			}
+		}
+
+		public bool Disabled
+		{
+			get
+			{
+				switch (Type)
+				{
+					case Exclude.Page:
+					case Exclude.MediaFolder:
+						var state = GetState();
+						switch (state)
+						{
+							case TreeState.Included:
+							case TreeState.ExcludedTree:
+								return false;
+								break;
+						}
+						return true;
+						break;
+				}
+				return false;
+			}
+		}
+
+
+		public EntityToken GetEntityToken()
+		{
+			if (Type == Exclude.Page)
+			{
+				var page = PageManager.GetPageById(PageId);
+				if (page != null)
+				{
+					return page.GetDataEntityToken();
+				}
+			}
+			return null;
 		}
 	}
 
-	internal class PCExludeManager : IItemManager
+	internal class PCExludeManager : IPackItemManager
 	{
-		public IEnumerable<IPackageCreatorItem> GetItems(Type type, XElement config)
+		public IEnumerable<IPackItem> GetItems(Type type, XElement config)
 		{
 			XNamespace ns = PackageCreator.pc;
 			XName itemName = "Add";
@@ -185,8 +285,8 @@ namespace Composite.Tools.PackageCreator.Types
 				foreach (var element in config.Elements(ns + category).Elements(itemName))
 				{
 					var name = element.IndexAttributeValue();
-					var exludeType = PCExclude.Exclude.Page;
-					Enum.TryParse<PCExclude.Exclude>(element.AttributeValue("type"), true, out exludeType);
+					PCExclude.Exclude exludeType;
+					Enum.TryParse(element.AttributeValue("type"), true, out exludeType);
 					var label = element.Value;
 					var item = new PCExclude(name, exludeType, label);
 					yield return item;
@@ -194,13 +294,13 @@ namespace Composite.Tools.PackageCreator.Types
 			}; ;
 		}
 
-		public IPackageCreatorItem GetItem(Type type, string id)
+		public IPackItem GetItem(Type type, string id)
 		{
 			var split = id.Split('*');
 			var name = split[0];
 			var label = split[1];
-			var excludeType = PCExclude.Exclude.Page;
-			Enum.TryParse<PCExclude.Exclude>(split[1], true, out excludeType);
+			PCExclude.Exclude excludeType;
+			Enum.TryParse(split[1], true, out excludeType);
 			return new PCExclude(name, excludeType, label);
 		}
 	}

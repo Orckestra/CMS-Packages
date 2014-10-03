@@ -8,8 +8,8 @@ using Composite.Core.Types;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    [PCCategory("Localizations")]
-    internal sealed class PCLocalizations : SimplePackageCreatorItem, IPackageable
+    [PackCategory("Localizations")]
+    internal sealed class PCLocalizations : BasePackItem, IPack
     {
         private static readonly XNamespace xsl = "http://www.w3.org/1999/XSL/Transform";
 
@@ -34,7 +34,7 @@ namespace Composite.Tools.PackageCreator.Types
             }
         }
 
-        public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
             yield break;
         }

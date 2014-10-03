@@ -3,19 +3,19 @@
 namespace Composite.Tools.PackageCreator.Types
 {
     /// <summary>
-    /// All classes that inherit <see cref="IPackageCreatorItem"/> and has this attribute, will be picked up by PackageCreator
+    /// All classes that inherit <see cref="IPackItem"/> and has this attribute, will be picked up by PackageCreator
     /// Category is shown in 'Package Creator' section as a folder for grouping package creator items
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = false, Inherited = true)]
-    public sealed class PCCategoryAttribute : Attribute
+    public sealed class PackCategoryAttribute : Attribute
     {
-        internal PCCategoryAttribute(string name)
+        internal PackCategoryAttribute(string name)
         {
             this.Name = name;
             this.Label = string.Empty;
         }
 
-        public PCCategoryAttribute(string name, string label)
+        public PackCategoryAttribute(string name, string label)
         {
             this.Name = name;
             this.Label = label;

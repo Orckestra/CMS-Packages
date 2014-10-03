@@ -10,16 +10,16 @@ namespace Composite.Tools.PackageCreator.Types
     /// </summary>
     /// <example>
     /// [PCCategory("xxxxxxx")]
-    /// internal class PCDirectory : SimplePackageCreatorItem
+    /// internal class PCDirectory : BasePackItem
     /// {
     ///   // ..
-    ///   public static IEnumerable&lt;IPackageCreatorItem&gt; Create(EntityToken entityToken)
+    ///   public static IEnumerable&lt;IPackItem&gt; Create(EntityToken entityToken)
     ///   {
     ///       if (entityToken is xxxxEntityToken) { .... }
     ///   }
     /// }
     /// </example>
-    public interface IPackageCreatorItem
+    public interface IPackItem
     {
         string Id
         {

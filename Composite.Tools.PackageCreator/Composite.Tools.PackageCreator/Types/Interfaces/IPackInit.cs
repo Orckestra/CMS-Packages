@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-	public interface IInitable
+	public interface IPackInit
 	{
 		void Init(PackageCreator creator);
 	}

@@ -190,7 +190,7 @@ namespace Composite.Tools.PackageCreator
 					{
 						foreach (var packageItem in PackageCreatorFacade.GetItems(categoryType.Value, config.Root))
 						{
-							(packageItem as IInitable).Init(this);
+							(packageItem as IPackInit).Init(this);
 						}
 					}
 				}
@@ -357,7 +357,7 @@ namespace Composite.Tools.PackageCreator
                         {
                             foreach (var packageItem in PackageCreatorFacade.GetItems(categoryType.Value, config.Root))
                             {
-                                (packageItem as IPackageable).Pack(this);
+                                (packageItem as IPack).Pack(this);
                             }
                         }
                     }

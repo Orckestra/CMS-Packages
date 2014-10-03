@@ -10,8 +10,8 @@ using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    [PCCategory("Content")]
-    internal class PCContent : SimplePackageCreatorItem, IPackageCreatorItemActionToken, IPackageable
+    [PackCategory("Content")]
+    internal class PCContent : BasePackItem, IPackItemActionToken, IPack
     {
         private const string _pagesName = "Pages";
         private const string _mediasName = "Medias";
@@ -52,7 +52,7 @@ namespace Composite.Tools.PackageCreator.Types
             }
         }
 
-        public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
             if (entityToken is PackageCreatorPackageElementProviderEntityToken
                 || entityToken is PageElementProviderEntityToken)

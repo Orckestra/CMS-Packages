@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Composite.C1Console.Elements;
 using Composite.C1Console.Security;
+using Composite.Core.Collections;
 using Composite.Data;
 using Composite.Data.Types;
 using System.Xml.Linq;
@@ -9,9 +11,9 @@ using Composite.Core.Types;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-	[PCCategory("PageTrees")]
+	[PackCategory("PageTrees")]
 	[ItemManager(typeof(PCPageTreeManager))]
-	internal class PCPageTree : SimplePackageCreatorItem, IPackageCreatorItemActionToken, IPackageable
+	internal class PCPageTree : BasePackItem, IPackItemActionToken, IPack, IPackToggle
 	{
 		public bool IsRoot { get; private set; }
 		public bool IncludeData { get; private set; }
@@ -26,7 +28,7 @@ namespace Composite.Tools.PackageCreator.Types
 		{
 			get
 			{
-				return IsRoot 
+				return IsRoot
 					? PackageCreatorFacade.GetLocalization(string.Format("{0}.AddRoot.Label", this.CategoryName))
 					: PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName));
 			}
@@ -34,7 +36,8 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public override string ActionToolTip
 		{
-			get {
+			get
+			{
 				return IsRoot
 					? PackageCreatorFacade.GetLocalization(string.Format("{0}.AddRoot.ToolTip", this.CategoryName))
 					: PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.ToolTip", this.CategoryName));
@@ -47,6 +50,14 @@ namespace Composite.Tools.PackageCreator.Types
 			get
 			{
 				return this.Name + ":" + this.IsRoot;
+			}
+		}
+
+		public Guid PageId
+		{
+			get
+			{
+				return new Guid(Name);
 			}
 		}
 
@@ -64,7 +75,7 @@ namespace Composite.Tools.PackageCreator.Types
 			return result + (IsRoot ? "(new)" : string.Empty);
 		}
 
-		public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+		public static IEnumerable<IPackItem> Create(EntityToken entityToken)
 		{
 			if (entityToken is DataEntityToken)
 			{
@@ -72,8 +83,8 @@ namespace Composite.Tools.PackageCreator.Types
 				if (dataEntityToken.Data is IPage)
 				{
 					var page = dataEntityToken.Data as IPage;
-					if(page.GetParentId() != Guid.Empty)
-						yield return new PCPageTree(page.Id.ToString(), true, true);
+					//if (page.GetParentId() != Guid.Empty)
+					//	yield return new PCPageTree(page.Id.ToString(), true, true);
 					yield return new PCPageTree(page.Id.ToString(), false, true);
 				}
 			}
@@ -94,7 +105,8 @@ namespace Composite.Tools.PackageCreator.Types
 				pc.AddData(pageStructure);
 
 			}
-			else {
+			else
+			{
 				pc.AddData<IPageStructure>(d => d.Id == pageId);
 			}
 		}
@@ -110,6 +122,12 @@ namespace Composite.Tools.PackageCreator.Types
 					new XAttribute("data", this.IncludeData.ToString().ToLower())
 				)
 			);
+		}
+
+		public override void RemoveFromConfiguration(XElement config)
+		{
+			base.RemoveFromConfiguration(config);
+			Tree.Page.ClearCache();
 		}
 
 		private void PackPageTree(PackageCreator pc, Guid pageId)
@@ -136,13 +154,6 @@ namespace Composite.Tools.PackageCreator.Types
 					{
 						pc.AddData(folderType, d => (d as IPageFolderData).PageId == pageId);
 					}
-
-					//var items = PageFolderFacade.GetFolderData(page).ToList();
-					//foreach (var item in items)
-					//{
-					//	if (!pc.ExludedIds.Contains((item as IPageFolderData).Id))
-					//		pc.AddData(item);
-					//}
 				}
 			}
 		}
@@ -151,11 +162,47 @@ namespace Composite.Tools.PackageCreator.Types
 		{
 			get { return this.IsRoot.ToString(); }
 		}
+
+		public ActionCheckedStatus CheckedStatus
+		{
+			get
+			{
+				var status = Tree.Page.GetState(PageId);
+				return (status == TreeState.IncludedTree) ? ActionCheckedStatus.Checked : ActionCheckedStatus.Unchecked;
+			}
+		}
+
+		public bool Disabled
+		{
+			get
+			{
+				var status = Tree.Page.GetState(PageId);
+				switch (status)
+				{
+					case TreeState.NotIncluded:
+					case TreeState.IncludedTree:
+						return false;
+						break;
+				}
+				return true;
+			}
+		}
+
+
+		public EntityToken GetEntityToken()
+		{
+			var page = PageManager.GetPageById(PageId);
+			if (page != null)
+			{
+				return page.GetDataEntityToken();
+			}
+			return null;
+		}
 	}
 
-	internal class PCPageTreeManager : IItemManager
+	internal class PCPageTreeManager : IPackItemManager
 	{
-		public IEnumerable<IPackageCreatorItem> GetItems(Type type, XElement config)
+		public IEnumerable<IPackItem> GetItems(Type type, XElement config)
 		{
 			XNamespace ns = PackageCreator.pc;
 			XName itemName = "Add";
@@ -173,8 +220,7 @@ namespace Composite.Tools.PackageCreator.Types
 			};
 		}
 
-
-		public IPackageCreatorItem GetItem(Type type, string id)
+		public IPackItem GetItem(Type type, string id)
 		{
 			var split = id.Split(':');
 			var pageId = split[0];

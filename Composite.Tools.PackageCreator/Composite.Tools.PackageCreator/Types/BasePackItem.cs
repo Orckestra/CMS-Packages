@@ -11,7 +11,7 @@ namespace Composite.Tools.PackageCreator.Types
     /// Represents a package creator item that has only one 'name' attribute in serialized state.
     /// Derived classes have to define a constructor from with a single <see cref="string"/> parameter.
     /// </summary>
-    public abstract class SimplePackageCreatorItem : IPackageCreatorItem
+    public abstract class BasePackItem : IPackItem
     {
        
         protected EntityToken _entityToken;
@@ -32,14 +32,14 @@ namespace Composite.Tools.PackageCreator.Types
         }
 
 
-        protected SimplePackageCreatorItem() { }
+        protected BasePackItem() { }
 
-        protected SimplePackageCreatorItem(string name)
+        protected BasePackItem(string name)
         {
             this.Name = name;
         }
 
-        protected SimplePackageCreatorItem(EntityToken entityToken)
+        protected BasePackItem(EntityToken entityToken)
         {
             this._entityToken = entityToken;
         }
@@ -99,19 +99,19 @@ namespace Composite.Tools.PackageCreator.Types
             }
         }
 
-        public static IEnumerable<IPackageCreatorItem> GetItems(Type type, XElement config)
+        public static IEnumerable<IPackItem> GetItems(Type type, XElement config)
         {
             return GetItems(type, config, PackageCreator.pc, "Add");
         }
 
-        public static IEnumerable<IPackageCreatorItem> GetItems(Type type, XElement config, XNamespace ns, XName itemName)
+        public static IEnumerable<IPackItem> GetItems(Type type, XElement config, XNamespace ns, XName itemName)
         {
             foreach (var category in type.GetCategoryAllNames())
             {
                 foreach (var name in config.Elements(ns + category).Elements(itemName).Select(d => d.IndexAttributeValue()).Where(d => d != null))
                 {
                     object item = Activator.CreateInstance(type, new object[] { name });
-                    yield return (IPackageCreatorItem)item;
+                    yield return (IPackItem)item;
                 }
             }
         }
@@ -119,12 +119,12 @@ namespace Composite.Tools.PackageCreator.Types
 
         public string CategoryName
         {
-            get { return this.GetCategoryName2(); }
+            get { return this.GetCategoryName(); }
         }
 
         public string[] CategoryAllNames
         {
-            get { return this.GetCategoryAllNames2(); }
+            get { return this.GetCategoryAllNames(); }
         }
 
     }

@@ -7,10 +7,10 @@ using System.Xml.Linq;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-	public interface IItemManager
+	public interface IPackItemManager
 	{
-		IEnumerable<IPackageCreatorItem> GetItems(Type type, XElement config);
+		IEnumerable<IPackItem> GetItems(Type type, XElement config);
 
-		IPackageCreatorItem GetItem(Type type, string id);
+		IPackItem GetItem(Type type, string id);
 	}
 }

@@ -6,8 +6,8 @@ using Composite.Plugins.Elements.ElementProviders.WebsiteFileElementProvider;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    [PCCategory("Directories")]
-    internal class PCDirectory : SimplePackageCreatorItem
+    [PackCategory("Directories")]
+    internal class PCDirectory : BasePackItem
     {
         public PCDirectory(string name)
             : base(name)
@@ -15,7 +15,7 @@ namespace Composite.Tools.PackageCreator.Types
         }
 
 
-        public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
             if (entityToken is WebsiteFileElementProviderEntityToken)
             {

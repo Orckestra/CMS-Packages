@@ -10,10 +10,10 @@ namespace Composite.Tools.PackageCreator.Actions
 {
     public static class PackageCreatorActionFacade
     {
-        private volatile static Dictionary<PCCategoryAttribute, Type> _categoryTypes;
+        private volatile static Dictionary<PackCategoryAttribute, Type> _categoryTypes;
         private static readonly object _categoryTypesLock = new Object();
 
-        public static Dictionary<PCCategoryAttribute, Type> CategoryTypes
+        public static Dictionary<PackCategoryAttribute, Type> CategoryTypes
         {
             get
             {
@@ -23,7 +23,7 @@ namespace Composite.Tools.PackageCreator.Actions
 
                     if (result == null)
                     {
-                        result = new Dictionary<PCCategoryAttribute, Type>();
+                        result = new Dictionary<PackCategoryAttribute, Type>();
                         foreach (Assembly assembly in new[] { Assembly.GetExecutingAssembly(), AssemblyFacade.GetAppCodeAssembly() })
                         {
                             if (assembly == null)
@@ -34,7 +34,7 @@ namespace Composite.Tools.PackageCreator.Actions
 
                             foreach (var type in assembly.GetTypes())
                             {
-                                if (type.GetInterfaces().Contains(typeof(IPackageCreatorItem)))
+                                if (type.GetInterfaces().Contains(typeof(IPackItem)))
                                 {
 
                                     var category = type.GetCategoryAtribute();
@@ -62,14 +62,14 @@ namespace Composite.Tools.PackageCreator.Actions
         }
 
 
-        public static IEnumerable<IPackageCreatorItem> GetPackageCreatorItems(EntityToken entityToken)
+        public static IEnumerable<IPackItem> GetPackageCreatorItems(EntityToken entityToken)
         {
             foreach (var category in CategoryTypes)
             {
                 var type = category.Value;
                 var methodInfo = type.GetMethod("Create", new[] { typeof(EntityToken) });
                 var result = methodInfo.Invoke(Type.Missing, new object[] { entityToken });
-                var pcItems = result as IEnumerable<IPackageCreatorItem>;
+                var pcItems = result as IEnumerable<IPackItem>;
                 if (pcItems == null) continue;
                 foreach (var pcItem in pcItems)
                 {
@@ -79,7 +79,7 @@ namespace Composite.Tools.PackageCreator.Actions
         }
 
 
-        public static IPackageCreatorItem GetPackageCreatorItem(string category, string name)
+        public static IPackItem GetPackageCreatorItem(string category, string name)
         {
             var type = CategoryTypes.Where(d => d.Key.Name == category).Select(d => d.Value).First();
 
@@ -92,54 +92,8 @@ namespace Composite.Tools.PackageCreator.Actions
 			else
 			{
 				var result = Activator.CreateInstance(type, new object[] { name });
-				return (IPackageCreatorItem)result;
+				return (IPackItem)result;
 			}
         }
-
-
-        /*
-                private static ElementAction GetAction()
-                {
-                    return new ElementAction(new ActionHandle(new PackageCreatorActionToken("")))
-                    {
-                        VisualData = new ActionVisualizedData
-                        {
-                            Label = "Add to the package",
-                            ToolTip = "Add this item to the package",
-                            Icon = new ResourceHandle("Composite.Icons", "package-element-closed-availableitem"),
-                            ActionLocation = new ActionLocation
-                            {
-                                ActionType = PackageCreatorFacade.ActionType,
-                                IsInFolder = false,
-                                IsInToolbar = false,
-                                ActionGroup = new ActionGroup("Develop", ActionGroupPriority.PrimaryLow)
-                            }
-                        }
-                    };
-                }
-        */
-
-        /// <summary>
-        /// Return list category items
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public static IEnumerable<T> GetItems<T>() where T : class, IPackageCreatorItem
-        {
-            return GetItems(typeof(T)).Cast<T>();
-        }
-
-        /// <summary>
-        /// Return list category items
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public static IEnumerable<IPackageCreatorItem> GetItems(Type type)
-        {
-            if (type == null) throw new ArgumentNullException("type");
-            return null;
-        }
-
-
     }
 }

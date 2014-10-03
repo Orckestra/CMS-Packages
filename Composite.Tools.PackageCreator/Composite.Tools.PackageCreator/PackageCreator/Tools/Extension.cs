@@ -13,52 +13,33 @@ namespace Composite.Tools.PackageCreator
 	{
 		public static void SaveTabbed(this XDocument doc, string fileName)
 		{
-			XmlTextWriter writer = new XmlTextWriter(fileName, null);
-			writer.Formatting = Formatting.Indented;
-			writer.Indentation = 1;
-			writer.IndentChar = '\t';
+			var writer = new XmlTextWriter(fileName, null)
+			{
+				Formatting = Formatting.Indented,
+				Indentation = 1,
+				IndentChar = '\t'
+			};
 			doc.Save(writer);
 			writer.Close();
 		}
 
-		public static Type Get(this Dictionary<PCCategoryAttribute, Type> categoryTypes, string name)
+		public static Type Get(this Dictionary<PackCategoryAttribute, Type> categoryTypes, string name)
 		{
 			return categoryTypes.Where(d => d.Key.Name == name).Select(d => d.Value).First();
 		}
 
 		
 
-		public static PCCategoryAttribute GetCategoryAtribute(this Type type)
+		public static PackCategoryAttribute GetCategoryAtribute(this Type type)
 		{
-			object[] attributes = type.GetCustomAttributes(typeof(PCCategoryAttribute), true);
+			object[] attributes = type.GetCustomAttributes(typeof(PackCategoryAttribute), true);
 
 			if (attributes.Length == 0) return null;
 
-			PCCategoryAttribute category = (PCCategoryAttribute)attributes[0];
+			var category = (PackCategoryAttribute)attributes[0];
 			return category;
 			
 		}
-
-		//public static PCCategoryAttribute GetCategoryAtribute(this IPackageCreatorItem item)
-		//{
-		//    item.GetType().GetCategoryAtribute();
-		//}
-
-		//public static IEnumerable<string> GetCategoryNamesAtribute(this Type type)
-		//{
-		//    var categoryAttribute = type.GetCategoryAtribute();
-		//    if(!string.IsNullOrWhiteSpace(categoryAttribute.CommonName))
-		//    {
-		//        categoryAttribute.CommonName;
-		//    }
-		//    yield return categoryAttribute.Name;
-		//}
-
-
-		//public static IEnumerable<string> GetCategoryNamesAtribute(this IPackageCreatorItem item)
-		//{
-		//    return item.GetType().GetCategoryNamesAtribute();
-		//}
 
 		public static string GetCategoryName(this Type type)
 		{
@@ -66,7 +47,7 @@ namespace Composite.Tools.PackageCreator
 			return categoryAttribute.Name;
 		}
 
-		public static string GetCategoryName2(this IPackageCreatorItem item)
+		public static string GetCategoryName(this IPackItem item)
 		{
 			return item.GetType().GetCategoryName();
 		}
@@ -80,7 +61,7 @@ namespace Composite.Tools.PackageCreator
 				return new string[] { categoryAttribute.Name }.Concat(categoryAttribute.AliasNames).ToArray();
 		}
 
-		public static string[] GetCategoryAllNames2(this IPackageCreatorItem item)
+		public static string[] GetCategoryAllNames(this IPackItem item)
 		{
 			return item.GetType().GetCategoryAllNames();
 		}
@@ -140,12 +121,12 @@ namespace Composite.Tools.PackageCreator
 
 		public static bool IsInitable(this Type type)
 		{
-			return type.GetInterfaces().Contains(typeof(IInitable));
+			return type.GetInterfaces().Contains(typeof(IPackInit));
 		}
 
 		public static bool IsPackagable(this Type type)
 		{
-			return type.GetInterfaces().Contains(typeof (IPackageable));
+			return type.GetInterfaces().Contains(typeof (IPack));
 		}
 	}
 }

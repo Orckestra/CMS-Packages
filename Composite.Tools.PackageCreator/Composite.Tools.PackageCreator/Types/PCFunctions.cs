@@ -8,8 +8,8 @@ using Composite.Functions;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    [PCCategory("Functions", AliasNames = new[] { "CSharpFunctions", "InlineFunctions", "RazorFunctions", "VisualFunctions", "XsltFunctions" })]
-    partial class PCFunctions : SimplePackageCreatorItem, IPackageable
+    [PackCategory("Functions", AliasNames = new[] { "CSharpFunctions", "InlineFunctions", "RazorFunctions", "VisualFunctions", "XsltFunctions" })]
+    partial class PCFunctions : BasePackItem, IPack
     {
 
         public PCFunctions(string name)
@@ -22,7 +22,7 @@ namespace Composite.Tools.PackageCreator.Types
             get { return new ResourceHandle("Composite.Icons", "base-function-function"); }
         }
 
-        public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
             return CreateCSharp(entityToken)
                 .Concat(CreateInline(entityToken))

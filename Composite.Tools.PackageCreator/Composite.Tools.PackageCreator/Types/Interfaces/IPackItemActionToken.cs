@@ -1,7 +1,7 @@
 ﻿
 namespace Composite.Tools.PackageCreator.Types
 {
-    interface IPackageCreatorItemActionToken
+    interface IPackItemActionToken
     {
         string ActionTokenName
         {

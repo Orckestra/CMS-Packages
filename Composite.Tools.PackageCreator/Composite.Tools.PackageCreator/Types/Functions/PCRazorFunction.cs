@@ -8,7 +8,7 @@ namespace Composite.Tools.PackageCreator.Types
     partial class PCFunctions
     {
 
-        public static IEnumerable<IPackageCreatorItem> CreateRazor(EntityToken entityToken)
+        public static IEnumerable<IPackItem> CreateRazor(EntityToken entityToken)
         {
             if (entityToken is FileBasedFunctionEntityToken)
             {

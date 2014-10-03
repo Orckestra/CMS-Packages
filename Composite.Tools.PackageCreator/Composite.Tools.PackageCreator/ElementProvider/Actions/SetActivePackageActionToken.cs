@@ -1,14 +1,16 @@
 using System.Collections.Generic;
 using Composite.C1Console.Actions;
 using Composite.C1Console.Security;
+using Composite.Plugins.Elements.ElementProviders.PageElementProvider;
 using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
+using Composite.Tools.PackageCreator.Types;
 
 namespace Composite.Tools.PackageCreator.ElementProvider.Actions
 {
     [ActionExecutor(typeof(SetActivePackageActionExecutor))]
     public sealed class SetActivePackageActionToken : ActionToken
     {
-        static private IEnumerable<PermissionType> _permissionTypes = new PermissionType[] { PermissionType.Administrate };
+        static private readonly IEnumerable<PermissionType> _permissionTypes = new PermissionType[] { PermissionType.Administrate };
 
         public override IEnumerable<PermissionType> PermissionTypes
         {
@@ -31,8 +33,15 @@ namespace Composite.Tools.PackageCreator.ElementProvider.Actions
         public FlowToken Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
         {
             PackageCreatorFacade.ActivePackageName = entityToken.Source;
-            SpecificTreeRefresher treeRefresher = new SpecificTreeRefresher(flowControllerServicesContainer);
-            treeRefresher.PostRefreshMesseges(new PackageCreatorElementProviderEntityToken());
+			Tree.Page.ClearCache();
+			Tree.Media.ClearCache();
+            var specificTreeRefresher = new SpecificTreeRefresher(flowControllerServicesContainer);
+			var parentTreeRefresher = new ParentTreeRefresher(flowControllerServicesContainer);
+            specificTreeRefresher.PostRefreshMesseges(new PackageCreatorElementProviderEntityToken());
+			specificTreeRefresher.PostRefreshMesseges(new PageElementProviderEntityToken("PageElementProvider"));
+			parentTreeRefresher.PostRefreshMesseges(PCMediaFolder.GetRootEntityToken());
+
+
             return null;
         }
     }

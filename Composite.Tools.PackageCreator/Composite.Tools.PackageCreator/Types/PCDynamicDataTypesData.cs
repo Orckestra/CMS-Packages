@@ -6,8 +6,8 @@ using Composite.Plugins.Elements.ElementProviders.GeneratedDataTypesElementProvi
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    [PCCategory("DynamicDataTypesData")]
-    public class PCDynamicDataTypesData : SimplePackageCreatorItem
+    [PackCategory("DynamicDataTypesData")]
+    public class PCDynamicDataTypesData : BasePackItem
     {
         public override string Id
         {
@@ -45,7 +45,7 @@ namespace Composite.Tools.PackageCreator.Types
         {
         }
 
-        public static IEnumerable<IPackageCreatorItem> Create(EntityToken entityToken)
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
             if (entityToken is GeneratedDataTypesElementProviderTypeEntityToken)
             {

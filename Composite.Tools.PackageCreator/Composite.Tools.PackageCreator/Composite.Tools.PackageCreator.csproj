@@ -101,20 +101,22 @@
     <Compile Include="ElementProvider\EntityTokens\XmlNodeElementProviderEntityToken.cs" />
     <Compile Include="PackageCreatorFragmentInstaller.cs" />
     <Compile Include="PackageCreator\Tools\DataFileDictionary.cs" />
+    <Compile Include="PackageCreator\Tools\TreeState.cs" />
     <Compile Include="PackageCreator\Tools\ReferencedAssemblies.cs" />
     <Compile Include="PackageCreator\Tools\SelfPositionExtension.cs" />
     <Compile Include="PackageInformation.cs" />
     <Compile Include="Types\Config\CompositeConfig.cs" />
     <Compile Include="Types\Config\WebConfig.cs" />
     <Compile Include="Types\Functions\PCUserControlFunction.cs" />
-    <Compile Include="Types\Interfaces\IInitable.cs" />
-    <Compile Include="Types\Interfaces\IItemManager.cs" />
+    <Compile Include="Types\Interfaces\IPackInit.cs" />
+    <Compile Include="Types\Interfaces\IPackItemManager.cs" />
+    <Compile Include="Types\Interfaces\IPackToggle.cs" />
     <Compile Include="Types\Interfaces\ItemManagerAttribute.cs" />
     <Compile Include="Types\Interfaces\ItemManagerCache.cs" />
     <Compile Include="Types\PCDataItem.cs" />
     <Compile Include="Types\PCFunctions.cs" />
-    <Compile Include="Types\Interfaces\IPackageable.cs" />
-    <Compile Include="Types\Interfaces\IPackageCreatorItemActionToken.cs" />
+    <Compile Include="Types\Interfaces\IPack.cs" />
+    <Compile Include="Types\Interfaces\IPackItemActionToken.cs" />
     <Compile Include="Types\MIPackageFragmentInstallerBinary.cs" />
     <Compile Include="Types\PCContent.cs" />
     <Compile Include="Types\PCFileXslTransformation.cs" />
@@ -125,8 +127,8 @@
     <Compile Include="Types\PCPageTemplate.cs" />
     <Compile Include="Types\PCDirectory.cs" />
     <Compile Include="Types\PCFilesInDirectory.cs" />
-    <Compile Include="Types\Interfaces\Category.cs" />
-    <Compile Include="Types\Interfaces\IPackageCreatorItem.cs" />
+    <Compile Include="Types\Interfaces\PackCategoryAttribute.cs" />
+    <Compile Include="Types\Interfaces\IPackItem.cs" />
     <Compile Include="ElementProvider\Actions\DeletePackageCreatorActionToken.cs" />
     <Compile Include="ElementProvider\Actions\DeleteItemPackageCreatorActionToken.cs" />
     <Compile Include="ElementProvider\PackageCreatorElementProvider.cs" />
@@ -148,7 +150,7 @@
     <Compile Include="Types\Functions\PCRazorFunction.cs" />
     <Compile Include="Types\Functions\PCVisualFunction.cs" />
     <Compile Include="Types\Functions\PCXsltFunction.cs" />
-    <Compile Include="Types\SimplePackageCreatorItem.cs" />
+    <Compile Include="Types\BasePackItem.cs" />
     <Compile Include="Properties\AssemblyFileVersion.cs" />
     <Compile Include="Workflow\ConfirmPackageWorkflow.cs">
       <SubType>Component</SubType>
