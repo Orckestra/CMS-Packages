@@ -71,14 +71,14 @@ namespace Composite.Tools.PackageCreator.Types
             if (pageTemplate == null)
                 throw new InvalidOperationException(string.Format("Template '{0}' does not exists", Id));
 
-            if (pageTemplate.GetType().Name == "MasterPagePageTemplateDescriptor")
+            if (pageTemplate.GetType().Name.Contains("MasterPagePageTemplateDescriptor"))
             {
                 var codeBehindFilePath = pageTemplate.GetProperty("CodeBehindFilePath");
                 var filePath = pageTemplate.GetProperty("FilePath");
                 creator.AddFile("~" + PathUtil.GetWebsitePath(codeBehindFilePath));
                 creator.AddFile("~" + PathUtil.GetWebsitePath(filePath));
             }
-            else if (pageTemplate.GetType().Name == "RazorPageTemplateDescriptor")
+            else if (pageTemplate.GetType().Name.Contains("RazorPageTemplateDescriptor"))
             {
                 var virtualPath = pageTemplate.GetProperty("VirtualPath");
                 creator.AddFile(virtualPath);

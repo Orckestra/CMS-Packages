@@ -48,6 +48,7 @@ namespace Composite.Tools.PackageCreator.Types
                     case "MethodBasedFunction":
                         PackCSharpFunction(pc);
                         break;
+					case "LazyInitializedInlineFunction":
                     case "InlineFunction":
                         PackInlineFunction(pc);
                         break;

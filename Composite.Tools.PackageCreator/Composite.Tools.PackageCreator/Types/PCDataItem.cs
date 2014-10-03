@@ -19,6 +19,19 @@ namespace Composite.Tools.PackageCreator.Types
 		public string Params { get; set; }
 		public string Label { get; set; }
 
+		public static HashSet<Type> SkipTypes = new HashSet<Type>() { 
+			typeof(IPage),
+			typeof(IMethodBasedFunctionInfo),
+			typeof(IInlineFunction),
+			typeof(IVisualFunction),
+			typeof(IXsltFunction),
+			typeof(IPageType),
+			typeof(IXmlPageTemplate),
+			typeof(ISystemActiveLocale),
+			typeof(IPage),
+			
+		};
+
 		private static Dictionary<string, Type> _typeCache = new Dictionary<string, Type>();
 		
 		public PCDataItem(string name, string type, string label)
@@ -131,7 +144,8 @@ namespace Composite.Tools.PackageCreator.Types
 			if (entityToken is DataEntityToken)
 			{
 				DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
-				if (dataEntityToken.Data is IPage) { 
+				if (SkipTypes.Contains(dataEntityToken.InterfaceType)){
+
 				}
 				else if (dataEntityToken.Data is IPageFolderData)
 				{

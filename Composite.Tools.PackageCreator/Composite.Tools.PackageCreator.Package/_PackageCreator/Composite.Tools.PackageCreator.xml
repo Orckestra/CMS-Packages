@@ -23,7 +23,7 @@
 		<mi:Add installerType="Composite.Tools.PackageCreator.PackageCreatorFragmentInstaller, Composite.Tools.PackageCreator" uninstallerType="Composite.Tools.PackageCreator.PackageCreatorFragmentUninstaller, Composite.Tools.PackageCreator" />
 	</pc:PackageFragmentInstallers>
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.PackageCreator" groupName="Composite.Tools" version="3.5.13" author="Composite A/S" website="www.composite.net" id="2264b427-9e2d-4247-8ef2-8646682f39e7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true" readMoreUrl="http://docs.composite.net/Composite.Tools.PackageCreator">
+	<mi:PackageInformation name="Composite.Tools.PackageCreator" groupName="Composite.Tools" version="3.5.14" author="Composite A/S" website="www.composite.net" id="2264b427-9e2d-4247-8ef2-8646682f39e7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true" readMoreUrl="http://docs.composite.net/Composite.Tools.PackageCreator">
 		<TechnicalDetails>Allows users to export website data (pages, templates, page types, media files, functions, data types, data items, flat files, localizations) to packages and reuse them on other sites.</TechnicalDetails>
 		<Description>Allows users to export website data (pages, templates, page types, media files, functions, data types, data items, flat files, localizations) to packages and reuse them on other sites.</Description>
 	</mi:PackageInformation>
