@@ -132,7 +132,11 @@ namespace Composite.Tools.PackageCreator.Types
 			if (entityToken is DataEntityToken)
 			{
 				var dataEntityToken = (DataEntityToken)entityToken;
-				if (dataEntityToken.Data is IPage)
+				if (PCDataItem.SkipTypes.Contains(dataEntityToken.InterfaceType))
+				{
+					// Nothnig
+				}
+				else if (dataEntityToken.Data is IPage)
 				{
 					var page = dataEntityToken.Data as IPage;
 					if (page.GetParentId() != Guid.Empty)

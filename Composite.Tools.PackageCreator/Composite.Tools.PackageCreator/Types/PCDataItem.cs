@@ -29,6 +29,9 @@ namespace Composite.Tools.PackageCreator.Types
 			typeof(IXmlPageTemplate),
 			typeof(ISystemActiveLocale),
 			typeof(IPage),
+			typeof(IHostnameBinding),
+			typeof(IUser),
+			typeof(IUserGroup)
 			
 		};
 
