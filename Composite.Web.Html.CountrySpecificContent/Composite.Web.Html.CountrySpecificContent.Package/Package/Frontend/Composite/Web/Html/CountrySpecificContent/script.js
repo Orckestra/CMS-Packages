@@ -5,7 +5,7 @@
         var activeCountry = $.cookie(countryCookieName);
         if (activeCountry == undefined) {
             $.ajax({
-                url: '//freegeoip.net/json/',
+                url: 'http://www.telize.com/geoip?callback=?',
                 dataType: 'json',
                 async: false,
                 success: function (json) {
