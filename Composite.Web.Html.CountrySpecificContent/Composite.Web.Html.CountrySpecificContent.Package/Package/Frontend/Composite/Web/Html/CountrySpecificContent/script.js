@@ -1,26 +1,30 @@
 ﻿(function ($) {
     var countryCookieName = 'Composite.Web.Html.CountrySpecificContent.ClientCountry';
 
-    $(document).ready(function () {
-        var activeCountry = $.cookie(countryCookieName);
-        if (activeCountry == undefined) {
+    function getActiveCountry() {
+        var country = $.cookie(countryCookieName);
+        if (country == undefined) {
             $.ajax({
-                url: 'http://www.telize.com/geoip?callback=?',
-                dataType: 'json',
                 async: false,
+                url: "http://www.telize.com/geoip",
+                dataType: 'json',
                 success: function (json) {
-                    activeCountry = json.country_code;
-                    $.cookie(countryCookieName, activeCountry);
+                    country = json.country_code;
+                    $.cookie(countryCookieName, country);
                 }
             });
         }
+        return country;
+    }
 
+    $(document).ready(function () {
+        var activeCountry = getActiveCountry();
         $(".content-for-country").each(function () {
             var countries = $(this).data("countries").split(',');
             if ($.inArray(activeCountry, countries) >= 0) {
                 $(this).show();
             } else {
-                 $(this).remove();
+                $(this).remove();
             }
         });
     });
