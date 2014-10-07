@@ -177,7 +177,7 @@ namespace Composite.Tools.PackageCreator.Types
 				var dataType = element.AttributeValue("type");
 				foreach (var item in element.Elements(itemName))
 				{
-					yield return new PCDataItem(item.ToString(), dataType, element.Value);
+					yield return new PCDataItem(item.ToString(), dataType, item.Value);
 				}
 			}
 			yield break;
