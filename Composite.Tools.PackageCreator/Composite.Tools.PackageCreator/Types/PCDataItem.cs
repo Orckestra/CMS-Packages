@@ -147,13 +147,13 @@ namespace Composite.Tools.PackageCreator.Types
 			if (entityToken is DataEntityToken)
 			{
 				DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
-				if (SkipTypes.Contains(dataEntityToken.InterfaceType)){
-
-				}
-				else if (dataEntityToken.Data is IPageFolderData)
+				if (dataEntityToken.Data is IPageFolderData)
 				{
 					var data = dataEntityToken.Data as IPageFolderData;
 					yield return new PCDataItem(data);
+				}
+				else if (SkipTypes.Contains(dataEntityToken.InterfaceType)){
+					// Nothing
 				}
 				else
 				{

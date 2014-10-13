@@ -132,11 +132,7 @@ namespace Composite.Tools.PackageCreator.Types
 			if (entityToken is DataEntityToken)
 			{
 				var dataEntityToken = (DataEntityToken)entityToken;
-				if (PCDataItem.SkipTypes.Contains(dataEntityToken.InterfaceType))
-				{
-					// Nothnig
-				}
-				else if (dataEntityToken.Data is IPage)
+				if (dataEntityToken.Data is IPage)
 				{
 					var page = dataEntityToken.Data as IPage;
 					if (page.GetParentId() != Guid.Empty)
@@ -152,6 +148,10 @@ namespace Composite.Tools.PackageCreator.Types
 					var data = dataEntityToken.Data as IPageFolderData;
 					yield return new PCExclude(data.Id.ToString(), Exclude.DataItem, data.GetLabel());
 
+				}
+				else if (PCDataItem.SkipTypes.Contains(dataEntityToken.InterfaceType))
+				{
+					// Nothnig
 				}
 				else
 				{
