@@ -3,6 +3,8 @@ using System.IO;
 using System.Threading;
 using System.Web;
 using Composite.C1Console.Security;
+using Composite.Core;
+using Composite.Core.Collections.Generic;
 
 namespace Composite.Web.Css.Less
 {
@@ -13,6 +15,14 @@ namespace Composite.Web.Css.Less
         private readonly string _extension;
         private readonly string _fileWatcherMask;
         private readonly Action<string, string, DateTime> _compileAction;
+
+        private class CssCompilationErrorInformation
+        {
+            public DateTime LastModificationDateUtc;
+            public bool IsCssCompilationException;
+        }
+
+        private static Hashtable<string, CssCompilationErrorInformation> _filesWithErrors = new Hashtable<string, CssCompilationErrorInformation>();
 
         public CssCompilationHttpModule(string extension, string fileMask, Action<string, string, DateTime> compileAction)
         {
@@ -44,8 +54,24 @@ namespace Composite.Web.Css.Less
 
             var filePathCss = filePath.Substring(0, filePath.Length - _extension.Length) + ".min.css";
 
-            if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < lastTimeUpdatedUtc)
+            bool cssFileExists = File.Exists(filePathCss);
+
+            if (!cssFileExists || File.GetLastWriteTimeUtc(filePathCss) < lastTimeUpdatedUtc)
             {
+                string fileKey = filePathCss.ToLowerInvariant();
+
+                var errorInfo = _filesWithErrors[fileKey];
+                // Not recompiling a file if previous compilations failed
+                if (cssFileExists && errorInfo != null 
+                    && errorInfo.LastModificationDateUtc == lastTimeUpdatedUtc 
+                    && !(errorInfo.IsCssCompilationException && UserValidationFacade.IsLoggedIn()))
+                {
+                    context.Response.ContentType = "text/css";
+                    context.Response.WriteFile(filePathCss);
+                    context.ApplicationInstance.CompleteRequest();
+                    return;
+                }
+
                 try
                 {
                     _compilationLock.EnterWriteLock();
@@ -57,36 +83,31 @@ namespace Composite.Web.Css.Less
                             _compileAction(filePath, filePathCss, lastTimeUpdatedUtc);
                         }
                     }
-                    catch (CssCompileException ex)
+                    catch (Exception ex)
                     {
-                        if (!UserValidationFacade.IsLoggedIn())
+                        if (UserValidationFacade.IsLoggedIn() && ex is CssCompileException)
+                        {
+                            // Showing a friendly error message for logged in users
+                            EmitCssMakrupForException(context.Response, requestPath, ex);
+                            context.ApplicationInstance.CompleteRequest();
+                            return;
+                        }
+
+                        if (!cssFileExists)
                         {
                             throw;
                         }
 
-                        // Showing a friendly error message for logged in users
-                        context.Response.Write(string.Format(@"
-/* 
-CSS COMPILE ERROR:
-{2}
-*/
-body:before {{
-   position: fixed;
-   top: 10px;
-   display: block;
-   width: 60%;
-   margin-left: 19%;
-   padding: 20px;
-   border: 2px solid red;
-   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-   font-size: 12px;
-   font-weight: bold;
-   color: InfoText;
-   white-space:pre;
-   background-color: InfoBackground;
-   content: 'Error in {0}:\A\A {1}';
-   z-index: 10000;
-}}", requestPath, EncodeCssContent(ex.Message), EncodeCssComment(ex.Message)));
+                        _filesWithErrors[fileKey] = new CssCompilationErrorInformation
+                        {
+                            IsCssCompilationException = ex is CssCompileException,
+                            LastModificationDateUtc = lastTimeUpdatedUtc
+                        };
+
+                        Log.LogError(GetType().FullName, ex);
+
+                        context.Response.ContentType = "text/css";
+                        context.Response.WriteFile(filePathCss);
                         context.ApplicationInstance.CompleteRequest();
                         return;
                     }
@@ -116,6 +137,33 @@ body:before {{
             }
 
             context.ApplicationInstance.CompleteRequest();
+        }
+
+        private void EmitCssMakrupForException(HttpResponse response, string requestPath, Exception exception)
+        {
+            response.Write(string.Format(@"
+/* 
+CSS COMPILE ERROR:
+{2}
+*/
+body:before {{
+   position: fixed;
+   top: 10px;
+   display: block;
+   width: 60%;
+   margin-left: 19%;
+   padding: 20px;
+   border: 2px solid red;
+   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+   font-size: 12px;
+   font-weight: bold;
+   color: InfoText;
+   white-space:pre;
+   background-color: InfoBackground;
+   content: 'Error in {0}:\A\A {1}';
+   z-index: 10000;
+}}", requestPath, EncodeCssContent(exception.Message), EncodeCssComment(exception.Message)));
+
         }
 
         private string EncodeCssContent(string text)

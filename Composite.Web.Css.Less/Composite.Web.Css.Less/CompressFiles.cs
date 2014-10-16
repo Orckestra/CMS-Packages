@@ -15,20 +15,7 @@ namespace Composite.Web.Css.Less
         public static void CompressLess(string lessFilePath, string cssFilePath, DateTime folderLastUpdatedUtc)
         {
             var scriptProc = InitProcess(lessFilePath);
-            scriptProc.Start();
-
-            string output = scriptProc.StandardOutput.ReadToEnd();
-            string error = scriptProc.StandardError.ReadToEnd();
-
-            if (scriptProc.ExitCode == 2)
-            {
-                throw new CssCompileException(error);
-            }
-
-            if (scriptProc.ExitCode != 0)
-            {
-                throw new InvalidOperationException("Compiling less caused a scripting host error. " + error);
-            }
+            string output = GetOutput(scriptProc);
 
             C1File.WriteAllText(cssFilePath, output);
 
@@ -44,25 +31,32 @@ namespace Composite.Web.Css.Less
             var absouteLessFilePath = HttpContext.Current.Server.MapPath(virtualLessFilePath);
             var scriptProc = InitProcess(absouteLessFilePath);
 
-            scriptProc.Start();
-
-            string output = scriptProc.StandardOutput.ReadToEnd();
-            string error = scriptProc.StandardError.ReadToEnd();
-
-            if (scriptProc.ExitCode == 2)
-            {
-                throw new CssCompileException(error);
-            }
-
-            if (scriptProc.ExitCode != 0)
-            {
-                throw new InvalidOperationException("Compiling less caused a scripting host error. " + error);
-            }
+            string output = GetOutput(scriptProc);
 
             var filePathCss = absouteLessFilePath.Substring(0, absouteLessFilePath.Length - ".less".Length) + ".min.css";
             C1File.WriteAllText(filePathCss, output);
 
             return virtualLessFilePath.Substring(0, virtualLessFilePath.Length - ".less".Length) + ".min.css";
+        }
+
+        private static string GetOutput(Process process)
+        {
+            process.Start();
+
+            string output = process.StandardOutput.ReadToEnd();
+            string error = process.StandardError.ReadToEnd();
+
+            if (process.ExitCode == 2)
+            {
+                throw new CssCompileException(error);
+            }
+
+            if (process.ExitCode != 0)
+            {
+                throw new InvalidOperationException("Compiling less caused a scripting host error. " + error);
+            }
+
+            return output;
         }
 
         private static Process InitProcess(string filePath)
@@ -83,5 +77,7 @@ namespace Composite.Web.Css.Less
                 }
             };
         }
+
+
     }
 }
