@@ -29,7 +29,8 @@
     }
     @if (MediaFolder != null && MediaImage == null)
     {
-        var images = Data.Get<IImageFile>().Where(m => m.FolderPath == MediaFolder.Data.Path).ToList();
+        string mediaFolderPath = MediaFolder.Data.Path;
+        var images = Data.Get<IImageFile>().Where(m => m.FolderPath == mediaFolderPath).ToList();
 
         foreach (var img in images)
         {
