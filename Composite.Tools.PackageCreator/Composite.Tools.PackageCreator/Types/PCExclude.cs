@@ -149,6 +149,9 @@ namespace Composite.Tools.PackageCreator.Types
 					yield return new PCExclude(data.Id.ToString(), Exclude.DataItem, data.GetLabel());
 
 				}
+				else if (dataEntityToken.Data is IPackageServerSource)
+				{
+				}
 				else if (PCDataItem.SkipTypes.Contains(dataEntityToken.InterfaceType))
 				{
 					// Nothnig

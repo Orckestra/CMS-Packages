@@ -45,7 +45,15 @@ namespace Composite.Tools.PackageCreator.Types
 		}
 		public PCDataItem(IData data)
 		{
-			Label = data.GetLabel();
+			if (data is IPackageServerSource)
+			{
+				Label = (data as IPackageServerSource).Url;
+			}
+			else
+			{
+				Label = data.GetLabel();
+			}
+			
 			var dataId = data.DataSourceId.DataId;
 			Name = new XElement(itemName,
 				dataId.GetType().GetProperties()
