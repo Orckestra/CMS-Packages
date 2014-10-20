@@ -31,7 +31,8 @@ namespace Composite.Tools.PackageCreator.Types
 			typeof(IPage),
 			typeof(IHostnameBinding),
 			typeof(IUser),
-			typeof(IUserGroup)
+			typeof(IUserGroup),
+			typeof(IPageTypeMetaDataTypeLink)
 			
 		};
 
