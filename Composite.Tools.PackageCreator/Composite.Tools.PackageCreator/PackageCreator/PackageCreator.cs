@@ -832,6 +832,12 @@ namespace Composite.Tools.PackageCreator
             AddData(TypeManager.TryGetType(dataTypeName), DataScopeIdentifier.Deserialize(dataScopeIdentifier), where);
         }
 
+		internal void AddData<T>(DataScopeIdentifier dataScopeIdentifier, Func<T, bool> where) where T : class, IData
+		{
+			Func<IData, bool> f = d => where((T)d);
+			AddData(typeof(T), dataScopeIdentifier, f);
+		}
+
         internal void AddData(Type type, DataScopeIdentifier dataScopeIdentifier, Func<IData, bool> where)
         {
             using (new DataScope(dataScopeIdentifier))

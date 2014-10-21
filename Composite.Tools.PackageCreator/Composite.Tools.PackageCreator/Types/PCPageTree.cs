@@ -139,8 +139,19 @@ namespace Composite.Tools.PackageCreator.Types
 				PackPageTree(pc, childPageId);
 				pc.AddData<IPageStructure>(d => d.ParentId == pageId && d.Id == childPageId);
 			}
-			pc.AddData<IPage>(d => d.Id == pageId);
-			pc.AddData<IPagePlaceholderContent>(d => d.PageId == pageId);
+
+			foreach (var dataScopeIdentifier in DataFacade.GetSupportedDataScopes(typeof(IPage)))
+			{
+				using (new DataScope(dataScopeIdentifier))
+				{
+					var page = PageManager.GetPageById(pageId, true);
+					if (page != null)
+					{
+						pc.AddData(page);
+						pc.AddData<IPagePlaceholderContent>(dataScopeIdentifier, d => d.PageId == pageId);
+					}
+				}
+			}
 
 			if (IncludeData)
 			{
@@ -148,14 +159,17 @@ namespace Composite.Tools.PackageCreator.Types
 				pc.AddData<IPageFolderDefinition>(d => d.PageId == pageId);
 				using (new DataScope(DataScopeIdentifier.Administrated))
 				{
-
 					var page = PageManager.GetPageById(pageId, true);
 					foreach (Type folderType in page.GetDefinedFolderTypes())
 					{
 						pc.AddData(folderType, d => (d as IPageFolderData).PageId == pageId);
 					}
+
 				}
 			}
+
+
+			
 		}
 
 		public string ActionTokenName
