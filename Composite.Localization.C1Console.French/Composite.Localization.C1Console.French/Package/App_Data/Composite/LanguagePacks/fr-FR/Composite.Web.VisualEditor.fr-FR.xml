@@ -103,7 +103,7 @@
   <string key="Tables.Cell.VerticalAlignment" value="Alignement vertical" />
   <string key="Tables.Cell.ApplyTo" value="Appliquer les modifications &#224;" />
   <string key="Tables.Cell.LabelCellProperties" value="Propri&#233;t&#233;s de la cellule" />
-  <string key="Tables.Cell.LabelLayout" value="Mettre en cache" />
+  <string key="Tables.Cell.LabelLayout" value="Mettre en page" />
   <string key="Tables.Cell.LabelDataCell" value="Cellule de donn&#233;es" />
   <string key="Tables.Cell.LabelHeaderCell" value="Ent&#234;te de cellule" />
   <string key="Tables.Cell.LabelLeft" value="Gauche" />
@@ -123,7 +123,7 @@
   <string key="Tables.Row.VerticalAlignment" value="Alignement vertical" />
   <string key="Tables.Row.ApplyTo" value="Appliquer les modifications &#224;" />
   <string key="Tables.Row.LabelRowProperties" value="Propri&#233;t&#233;s de la ligne" />
-  <string key="Tables.Row.LabelLayout" value="Mettre en cache" />
+  <string key="Tables.Row.LabelLayout" value="Mettre en page" />
   <string key="Tables.Row.LabelTableHead" value="Ent&#234;te de tableau" />
   <string key="Tables.Row.LabelTableBody" value="Partie centrale du tablea" />
   <string key="Tables.Row.LabelTableFoot" value="Bas du tableau" />
@@ -182,4 +182,7 @@
   <string key="SpellCheck.InfoText" value="Pour obtenir des suggestions pour un mot mal orthographi&#233;, maintener la touche MAJ enfonc&#233;e lorsque vous appelez le menu contextuel." />
 
   <string key="Function.Edit" value="Modifier" />
+  
+  <!-- inline editor button -->
+  <string key="LaunchButton.Label" value="Modifier {0}" />
 </strings>

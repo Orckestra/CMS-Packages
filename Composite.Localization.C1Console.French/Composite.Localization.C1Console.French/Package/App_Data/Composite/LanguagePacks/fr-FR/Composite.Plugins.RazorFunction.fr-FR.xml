@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="RootElement.Label" value="Fonctions Razor" />
   <string key="RootElement.ToolTip" value="Fonction Razor" />
-
   <string key="AddNewRazorFunction.Label" value="Ajouter une fonction Razor" />
   <string key="AddNewRazorFunction.ToolTip" value="Ajouter une nouvelle fonction Razor" />
   <string key="EditRazorFunction.Label" value="Modifier" />
   <string key="EditRazorFunction.ToolTip" value="Modifier fonction Razor" />
   <string key="DeleteRazorFunction.Label" value="Effacer" />
   <string key="DeleteRazorFunction.ToolTip" value="Supprimer cette fonction Razor" />
-
   <string key="AddNewRazorFunction.LabelDialog" value="Ajouter une fonction Razor" />
   <string key="AddNewRazorFunction.LabelFieldGroup" value="Nouvelle fonction Razor" />
   <string key="AddNewRazorFunction.LabelName" value="Nom" />
@@ -17,20 +15,16 @@
   <string key="AddNewRazorFunction.LabelNamespace" value="Espace de noms" />
   <string key="AddNewRazorFunction.HelpNamespace" value="" />
   <string key="AddNewRazorFunction.LabelCopyFrom" value="Copier de" />
-  <string key="AddNewRazorFunction.LabelCopyFromHelp" value="Vous pouvez copier le code d&#39;un autre fonction Razor en le s&#233;lectionnant dans cette liste." />
+  <string key="AddNewRazorFunction.LabelCopyFromHelp" value="Vous pouvez copier le code d'un autre fonction Razor en le sélectionnant dans cette liste." />
   <string key="AddNewRazorFunction.LabelCopyFromEmptyOption" value="(Nouvelle fonction Razor)" />
-
-
-  <string key="AddNewRazorFunctionWorkflow.DuplicateName" value="Une fonction de C1 avec le m&#234;me nom existe d&#233;j&#224;." />
+  <string key="AddNewRazorFunctionWorkflow.DuplicateName" value="Une fonction de C1 avec le même nom existe déjà." />
   <string key="AddNewRazorFunctionWorkflow.EmptyName" value="Le nom de la fonction est absent" />
-  <string key="AddNewRazorFunctionWorkflow.NamespaceEmpty" value="L&#39;espace de noms de la fonction est vide" />
-  <string key="AddNewRazorFunctionWorkflow.InvalidNamespace" value="L&#39;espace de noms doit &#234;tre comme A.B.C - ne pas commencer ou se terminant par un point (.)" />
-  <string key="AddNewRazorFunctionWorkflow.TotalNameTooLang" value="La longueur totale du nom et de l&#39;espace de noms est trop long (utilis&#233; pour nommer le fichier CSHTML.)." />
-
+  <string key="AddNewRazorFunctionWorkflow.NamespaceEmpty" value="L'espace de noms de la fonction est vide" />
+  <string key="AddNewRazorFunctionWorkflow.InvalidNamespace" value="L'espace de noms doit être comme A.B.C - ne pas commencer ou se terminant par un point (.)" />
+  <string key="AddNewRazorFunctionWorkflow.TotalNameTooLang" value="La longueur totale du nom et de l'espace de noms est trop long (utilisé pour nommer le fichier CSHTML.)." />
   <string key="EditRazorFunctionWorkflow.Validation.DialogTitle" value="Erreur de validation" />
-  <string key="EditRazorFunctionWorkflow.Validation.CompilationFailed" value="La compilation a &#233;chou&#233; : {0}" />
-  <string key="EditRazorFunctionWorkflow.Validation.IncorrectBaseClass" value="La  fonction Razor devrait h&#233;riter &#39;{0}&#39;" />
-
+  <string key="EditRazorFunctionWorkflow.Validation.CompilationFailed" value="La compilation a échoué : {0}" />
+  <string key="EditRazorFunctionWorkflow.Validation.IncorrectBaseClass" value="La  fonction Razor devrait hériter '{0}'" />
   <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteTitle" value="Supprimer la  fonction Razor?" />
-  <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteMessage" value="Supprimer la fonction Razor s&#233;lectionn&#233;e?" />
+  <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteMessage" value="Supprimer la fonction Razor sélectionnée?" />
 </strings>

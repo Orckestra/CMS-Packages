@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="SqlFunctionElementProvider.RootLabel" value="Fonctions SQL" />
-  <string key="SqlFunctionElementProvider.RootLabelToolTip" value="Ajouter des connexions, puis les requ&#234;tes de connexions" />
+  <string key="SqlFunctionElementProvider.RootLabelToolTip" value="Ajouter des connexions, puis les requêtes de connexions" />
   <string key="SqlFunctionElementProvider.AddConnection" value="Ajouter une connexion SQL" />
   <string key="SqlFunctionElementProvider.AddConnectionToolTip" value="Ajouter une nouvelle connexion SQL" />
   <string key="SqlFunctionElementProvider.EditConnection" value="Modifier" />
   <string key="SqlFunctionElementProvider.EditConnectionToolTip" value="Modifier une connexion SQL" />
   <string key="SqlFunctionElementProvider.DeleteConnection" value="Effacer" />
   <string key="SqlFunctionElementProvider.DeleteConnectionToolTip" value="Supprimer une connexion SQL" />
-  <string key="SqlFunctionElementProvider.AddQuery" value="Ajouter une nouvelle requ&#234;te SQL" />
+  <string key="SqlFunctionElementProvider.AddQuery" value="Ajouter une nouvelle requête SQL" />
   <string key="SqlFunctionElementProvider.AddQueryToolTip" value="Ajouter un nouveau fournisseur SQL XML" />
   <string key="SqlFunctionElementProvider.EditQuery" value="Modifier" />
-  <string key="SqlFunctionElementProvider.EditQueryToolTip" value="Modifier la requ&#234;te SQL" />
+  <string key="SqlFunctionElementProvider.EditQueryToolTip" value="Modifier la requête SQL" />
   <string key="SqlFunctionElementProvider.DeleteQuery" value="Effacer" />
-  <string key="SqlFunctionElementProvider.DeleteQueryToolTip" value="Supprimer la requ&#234;te SQL" />
-  <string key="AddNewSqlFunction.LabelDialog" value="Ajouter une nouvelle requ&#234;te SQL" />
+  <string key="SqlFunctionElementProvider.DeleteQueryToolTip" value="Supprimer la requête SQL" />
+  <string key="AddNewSqlFunction.LabelDialog" value="Ajouter une nouvelle requête SQL" />
   <string key="AddNewSqlFunction.LabelNamingPanel" value="Nommage de fonction" />
   <string key="AddNewSqlFunction.LabelName" value="Nom" />
   <string key="AddNewSqlFunction.HelpName" value="" />
@@ -23,24 +23,24 @@
   <string key="AddNewSqlFunction.LabelQueryCOmmand" value="Texte de commande SQL" />
   <string key="AddNewSqlFunction.HelpQueryCOmmand" value="" />
   <!-- shared on add and edit -->
-  <string key="AddEditSqlFunction.LabelIsStoredProcedure" value="Est une proc&#233;dure stock&#233;e" />
-  <string key="AddEditSqlFunction.LabelIsStoredProcedureCheckBox" value="Oui, la commande est une proc&#233;dure" />
-  <string key="AddEditSqlFunction.LabelReturnsXml" value="Retourne le r&#233;sultat au format XML" />
+  <string key="AddEditSqlFunction.LabelIsStoredProcedure" value="Est une procédure stockée" />
+  <string key="AddEditSqlFunction.LabelIsStoredProcedureCheckBox" value="Oui, la commande est une procédure" />
+  <string key="AddEditSqlFunction.LabelReturnsXml" value="Retourne le résultat au format XML" />
   <string key="AddEditSqlFunction.LabelReturnsXmlCheckBox" value="Oui, la commande retourne du XML" />
-  <string key="AddEditSqlFunction.LabelIsQuery" value="Est une requ&#234;te" />
-  <string key="AddEditSqlFunction.LabelIsQueryCheckBox" value="Oui, la commande retourne des donn&#233;es" />
+  <string key="AddEditSqlFunction.LabelIsQuery" value="Est une requête" />
+  <string key="AddEditSqlFunction.LabelIsQueryCheckBox" value="Oui, la commande retourne des données" />
   <string key="AddEditSqlFunction.LabelCommandBehaviour" value="Le comportement de commandes SQL" />
-  <string key="AddEditSqlFunctionConnection.LabelFieldGroup" value="Param&#232;tres de connexion SQL" />
+  <string key="AddEditSqlFunctionConnection.LabelFieldGroup" value="Paramètres de connexion SQL" />
   <string key="AddEditSqlFunction.LabelSqlEditor" value="Commande SQL" />
   <string key="AddNewSqlFunctionConnection.LabelDialog" value="Ajouter une nouvelle connexion SQL" />
   <string key="AddNewSqlFunctionConnection.LabelName" value="Nom" />
   <string key="AddNewSqlFunctionConnection.HelpName" value="" />
-  <string key="AddNewSqlFunctionConnection.LabelConnectionString" value="Cha&#238;ne de connexion" />
+  <string key="AddNewSqlFunctionConnection.LabelConnectionString" value="Chaîne de connexion" />
   <string key="AddNewSqlFunctionConnection.HelpConnectionString" value="" />
   <string key="AddNewSqlFunctionConnection.LabelIsMSSQL" value="MS SQL Serveur" />
-  <string key="AddNewSqlFunctionConnection.LabelIsMSSQLCheckBox" value="La base de donn&#233;es est un serveur MS SQL" />
-  <string key="EditSqlFunction.LabelInputParameters" value="Param&#232;tres d&#39;entr&#233;e" />
-  <string key="EditSqlFunction.LabelSettings" value="Param&#232;tres" />
+  <string key="AddNewSqlFunctionConnection.LabelIsMSSQLCheckBox" value="La base de données est un serveur MS SQL" />
+  <string key="EditSqlFunction.LabelInputParameters" value="Paramètres d'entrée" />
+  <string key="EditSqlFunction.LabelSettings" value="Paramètres" />
   <string key="EditSqlFunction.LabelNamingAndDescription" value="Nom de la fonction et la description" />
   <string key="EditSqlFunction.LabelName" value="Nom" />
   <string key="EditSqlFunction.HelpName" value="" />
@@ -48,17 +48,17 @@
   <string key="EditSqlFunction.HelpNamespace" value="" />
   <string key="EditSqlFunction.LabelDescription" value="Description" />
   <string key="EditSqlFunction.HelpDescription" value="" />
-  <string key="EditSqlFunction.LabelPreview" value="Aper&#231;u" />
+  <string key="EditSqlFunction.LabelPreview" value="Aperçu" />
   <string key="EditSqlFunctionConnection.LabelName" value="Nom" />
   <string key="EditSqlFunctionConnection.HelpName" value="" />
-  <string key="EditSqlFunctionConnection.LabelConnectionString" value="Cha&#238;ne de connexion" />
+  <string key="EditSqlFunctionConnection.LabelConnectionString" value="Chaîne de connexion" />
   <string key="EditSqlFunctionConnection.HelpConnectionString" value="" />
   <string key="EditSqlFunctionConnection.LabelIsMSSQL" value="MS SQL Serveur" />
-  <string key="EditSqlFunctionConnection.LabelIsMSSQLCheckBox" value="La base de donn&#233;es est un serveur MS SQL" />
+  <string key="EditSqlFunctionConnection.LabelIsMSSQLCheckBox" value="La base de données est un serveur MS SQL" />
   <string key="DeleteSqlConnection.LabelFieldGroup" value="Supprimer cette connexion SQL?" />
   <string key="DeleteSqlConnection.Text" value="Supprimer cette connexion SQL?" />
   <string key="DeleteSqlFunction.LabelFieldGroup" value="Supprimer cette fonction SQL?" />
   <string key="DeleteSqlFunction.Text" value="Supprimer cette fonction SQL?" />
   <string key="CascadeDeleteErrorTitle" value="Erreur de suppression en cascade" />
-  <string key="CascadeDeleteErrorMessage" value="Le type est r&#233;f&#233;renc&#233; par un autre type qui ne permet pas de suppression en cascade. Cette op&#233;ration a &#233;t&#233; interrompue" />
+  <string key="CascadeDeleteErrorMessage" value="Le type est référencé par un autre type qui ne permet pas de suppression en cascade. Cette opération a été interrompue" />
 </strings>

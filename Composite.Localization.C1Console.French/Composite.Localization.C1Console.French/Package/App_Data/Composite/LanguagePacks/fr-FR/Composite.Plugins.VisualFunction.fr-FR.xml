@@ -1,54 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="DeleteStep1.FieldGroupLabel" value="Supprimer la fonction visuelle?" />
-  <string key="DeleteStep1.Text" value="&#202;tes-vous certain de vouloir supprimer la fonction s&#233;lectionn&#233;e?" />
+  <string key="DeleteStep1.Text" value="Êtes-vous certain de vouloir supprimer la fonction sélectionnée?" />
   <string key="AddNew.DialogLabel" value="Ajouter une fonction visuelle" />
-  <string key="AddNew.NoTypesExistsErrorTitle" value="Pas de types de donn&#233;es &#224; visualiser" />
-  <string key="AddNew.NoTypesExistsErrorMessage" value="Aucun types de donn&#233;es n&#39;a encore &#233;t&#233; cr&#233;&#233;. Vous devez d&#39;abord cr&#233;er un type de donn&#233;es &#224; visualiser avant de pouvoir cr&#233;er une visualisation." />
-  <string key="AddNew.NoDataExistsErrorTitle" value="Aucune donn&#233;e &#224; visualiser" />
-  <string key="AddNew.NoDataExistsErrorMessage" value="Les donn&#233;es doivent exister avant que vous pouvez cr&#233;er un rendu. Ajouter des donn&#233;es &#224; ce type et essayez &#224; nouveau." />
-  <string key="AddNew.NoPageTemplatesExistsErrorTitle" value="Aucun mod&#232;le" />
-  <string key="AddNew.NoPageTemplatesExistsErrorMessage" value="Au moins un mod&#232;le doit exister avant que vous pouvez cr&#233;er un rendu. Cr&#233;er un mod&#232;le et essayer &#224; nouveau." />
+  <string key="AddNew.NoTypesExistsErrorTitle" value="Pas de types de données à visualiser" />
+  <string key="AddNew.NoTypesExistsErrorMessage" value="Aucun types de données n'a encore été créé. Vous devez d'abord créer un type de données à visualiser avant de pouvoir créer une visualisation." />
+  <string key="AddNew.NoDataExistsErrorTitle" value="Aucune donnée à visualiser" />
+  <string key="AddNew.NoDataExistsErrorMessage" value="Les données doivent exister avant que vous pouvez créer un rendu. Ajouter des données à ce type et essayez à nouveau." />
+  <string key="AddNew.NoPageTemplatesExistsErrorTitle" value="Aucun modèle" />
+  <string key="AddNew.NoPageTemplatesExistsErrorMessage" value="Au moins un modèle doit exister avant que vous pouvez créer un rendu. Créer un modèle et essayer à nouveau." />
   <string key="AddNew.MissingActiveLanguageTitle" value="Une langue est obligatoire" />
-  <string key="AddNew.MissingActiveLanguageMessage" value="Pour cr&#233;er une fonction visuelle, une langue est n&#233;cessaire, mais aucune langue n&#39;a encore &#233;t&#233; ajout&#233;e. Vous pouvez ajouter une langue dans la section Syst&#232;me." />
-  <string key="AddNewStep1.FieldGroupLabel" value="S&#233;lectionner le type de donn&#233;es &#224; visualiser" />
-  <string key="AddNewStep1.TypeSelectorLabel" value="Type de donn&#233;es" />
+  <string key="AddNew.MissingActiveLanguageMessage" value="Pour créer une fonction visuelle, une langue est nécessaire, mais aucune langue n'a encore été ajoutée. Vous pouvez ajouter une langue dans la section Système." />
+  <string key="AddNewStep1.FieldGroupLabel" value="Sélectionner le type de données à visualiser" />
+  <string key="AddNewStep1.TypeSelectorLabel" value="Type de données" />
   <string key="AddNewStep1.TypeSelectorHelp" value="" />
   <string key="AddNewStep2.FieldGroupLabel" value="Fonction visuelle de nommage" />
   <string key="AddNewStep2.FuncitonNameLabel" value="Nom de la fonction" />
   <string key="AddNewStep2.FuncitonNameHelp" value="" />
   <string key="AddNewStep2.FuncitonNamespaceLabel" value="Fonction espace de noms" />
   <string key="AddNewStep2.FuncitonNamespaceHelp" value="" />
-  <string key="Edit.PlaceHolderLabel" value="Param&#232;tres de la fonction visuelle" />
+  <string key="Edit.PlaceHolderLabel" value="Paramètres de la fonction visuelle" />
   <string key="Edit.HeadingTitel" value="Fonction visuelle" />
-  <string key="Edit.FieldGroupLabel" value="Param&#232;tres de la fonction visuelle" />
+  <string key="Edit.FieldGroupLabel" value="Paramètres de la fonction visuelle" />
   <string key="Edit.FunctionNameLabel" value="Nom de la fonction" />
-  <string key="Edit.FunctionNameHelp" value="Le nom de la fonction. Les noms doivent &#234;tre uniques avec un espace de noms." />
+  <string key="Edit.FunctionNameHelp" value="Le nom de la fonction. Les noms doivent être uniques avec un espace de noms." />
   <string key="Edit.FunctionNamespaceLabel" value="Fonction espace de noms" />
-  <string key="Edit.FunctionNamespaceHelp" value="Le &#39;package&#39; auquel appartient cette fonction." />
+  <string key="Edit.FunctionNamespaceHelp" value="Le 'package' auquel appartient cette fonction." />
   <string key="Edit.FunctionDescriptionLabel" value="Description" />
-  <string key="Edit.FunctionDescriptionHelp" value="Une description de la fonction qui peut aider les gens &#224; comprendre." />
-  <string key="Edit.ItemListLenghtLabel" value="Llongueur de la liste d&#39;&#233;l&#233;ments" />
-  <string key="Edit.ItemListLenghtHelp" value="Le nombre maximum d&#39;&#233;l&#233;ments &#224; afficher." />
-  <string key="Edit.ItemSortingLabel" value="Tri d&#39;&#233;l&#233;ments" />
-  <string key="Edit.ItemSortingHelp" value="S&#233;lectionner le champ &#224; utiliser pour trier la liste. Utilisez &#39;(al&#233;atoire)&#39; pour choisir au hasard dans la liste." />
+  <string key="Edit.FunctionDescriptionHelp" value="Une description de la fonction qui peut aider les gens à comprendre." />
+  <string key="Edit.ItemListLenghtLabel" value="Llongueur de la liste d'éléments" />
+  <string key="Edit.ItemListLenghtHelp" value="Le nombre maximum d'éléments à afficher." />
+  <string key="Edit.ItemSortingLabel" value="Tri d'éléments" />
+  <string key="Edit.ItemSortingHelp" value="Sélectionner le champ à utiliser pour trier la liste. Utilisez '(aléatoire)' pour choisir au hasard dans la liste." />
   <string key="Edit.ListSortingLabel" value="Ordre du tri" />
   <string key="Edit.ListSortingTrueLabel" value="Ascendant" />
   <string key="Edit.ListSortingFalseLabel" value="Descendant" />
-  <string key="Edit.ListSortingHelp" value="S&#233;lectionner l&#39;ordre de tri. Ordre croissant est alphab&#233;tique, chronologique. Ce champ est ignor&#233; lorsque le tri al&#233;atoire est actif." />
-  <string key="Edit.PreviewTemplateLabel" value="Aper&#231;u du mod&#232;le" />
-  <string key="Edit.PreviewTemplateHelp" value="Cette information est utilis&#233;e uniquement lors de la pr&#233;visualisation de la fonction." />
+  <string key="Edit.ListSortingHelp" value="Sélectionner l'ordre de tri. Ordre croissant est alphabétique, chronologique. Ce champ est ignoré lorsque le tri aléatoire est actif." />
+  <string key="Edit.PreviewTemplateLabel" value="Aperçu du modèle" />
+  <string key="Edit.PreviewTemplateHelp" value="Cette information est utilisée uniquement lors de la prévisualisation de la fonction." />
   <string key="Edit.WYSIWYGLayoutLabel" value="Mise en page visuelle" />
-  <string key="Edit.LabelPreview" value="Aper&#231;u" />
-  <string key="Edit.NoPageTemplatesExistsErrorTitle" value="Aucun mod&#232;le" />
-  <string key="Edit.NoPageTemplatesExistsErrorMessage" value="Au moins un mod&#232;le doit exister avant que vous puissiez &#233;diter un rendu. Cr&#233;er un mod&#232;le et essayer &#224; nouveau." />
-  <string key="Edit.MissingActiveLanguageTitle" value="Une langue est n&#233;cessaire" />
-  <string key="Edit.MissingActiveLanguageMessage" value="Pour modifier une fonction visuelle une langue est n&#233;cessaire, mais aucune langue n&#39;a encore &#233;t&#233; ajout&#233;e. Vous pouvez ajouter une langue dans le section Syst&#232;me." />
-  <string key="Select.FieldGroupLabel" value="S&#233;lectionner une fonction visuelle" />
-  <string key="Select.FunctionFunctionsLabel" value="S&#233;lectionner une fonction" />
-  <string key="Select.FunctionFunctionsHelp" value="S&#233;lectionner une fonction visuelle pour modifier ou supprimer" />
-  <string key="AddVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="Une autre fonction avec le m&#234;me nom existe. Les noms doivent &#234;tre uniques." />
-  <string key="EditVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="Une autre fonction avec le m&#234;me nom existe. Les noms doivent &#234;tre uniques." />
+  <string key="Edit.LabelPreview" value="Aperçu" />
+  <string key="Edit.NoPageTemplatesExistsErrorTitle" value="Aucun modèle" />
+  <string key="Edit.NoPageTemplatesExistsErrorMessage" value="Au moins un modèle doit exister avant que vous puissiez éditer un rendu. Créer un modèle et essayer à nouveau." />
+  <string key="Edit.MissingActiveLanguageTitle" value="Une langue est nécessaire" />
+  <string key="Edit.MissingActiveLanguageMessage" value="Pour modifier une fonction visuelle une langue est nécessaire, mais aucune langue n'a encore été ajoutée. Vous pouvez ajouter une langue dans le section Système." />
+  <string key="Select.FieldGroupLabel" value="Sélectionner une fonction visuelle" />
+  <string key="Select.FunctionFunctionsLabel" value="Sélectionner une fonction" />
+  <string key="Select.FunctionFunctionsHelp" value="Sélectionner une fonction visuelle pour modifier ou supprimer" />
+  <string key="AddVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="Une autre fonction avec le même nom existe. Les noms doivent être uniques." />
+  <string key="EditVisualFunctionWorkflow.FunctionNameValidatoinErrorMessage" value="Une autre fonction avec le même nom existe. Les noms doivent être uniques." />
   <string key="VisualFunctionElementProvider.RootFolderLabel" value="Fonctions visuelles" />
   <string key="VisualFunctionElementProvider.RootFolderToolTip" value="Fonctions visuelles" />
   <string key="VisualFunctionElementProvider.AddNewLabel" value="Ajouter une fonction visuelle" />
@@ -57,7 +57,7 @@
   <string key="VisualFunctionElementProvider.EditToolTip" value="Modifier la fonction visuelle" />
   <string key="VisualFunctionElementProvider.DeleteLabel" value="Supprimer la fonction visuelle" />
   <string key="VisualFunctionElementProvider.DeleteToolTip" value="Supprimer la fonction visuelle" />
-  <string key="VisualFunctionElementProvider.FunctionNameNotUniqueError" value="Une autre fonction avec le m&#234;me nom existe. Les noms doivent &#234;tre uniques." />
+  <string key="VisualFunctionElementProvider.FunctionNameNotUniqueError" value="Une autre fonction avec le même nom existe. Les noms doivent être uniques." />
   <string key="VisualFunctionElementProviderHelper.AddNewLabel" value="Nouvelle fonction visuelle" />
   <string key="VisualFunctionElementProviderHelper.AddNewToolTip" value="Nouvelle fonction visuelle" />
   <string key="VisualFunctionElementProviderHelper.EditLabel" value="Modifier la fonction visuelle" />

@@ -1,117 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="AddNewPageStep1.DialogLabel" value="Ajouter une nouvelle page" />
-  <string key="GeneralSettings.FieldGroupLabel" value="Param&#232;tres g&#233;n&#233;raux" />
-  <string key="PublicationSettings.FieldGroupLabel" value="Param&#232;tres de publication" />
-  <string key="AdvancedSettings.FieldGroupLabel" value="Param&#232;tres avanc&#233;s" />
+  <string key="GeneralSettings.FieldGroupLabel" value="Paramètres généraux" />
+  <string key="PublicationSettings.FieldGroupLabel" value="Paramètres de publication" />
+  <string key="AdvancedSettings.FieldGroupLabel" value="Paramètres avancés" />
   <string key="AddNewPageStep1.LabelTitle" value="Titre de la page" />
-  <string key="AddNewPageStep1.LabelTitleHelp" value="L&#39;entr&#233;e sp&#233;cifi&#233; dans ce champ est affich&#233; dans la barre de titre de la fen&#234;tre du navigateur. Le champ est utilis&#233; par les moteurs de recherche et les cartes de site (sitemaps)" />
+  <string key="AddNewPageStep1.LabelTitleHelp" value="L'entrée spécifié dans ce champ est affiché dans la barre de titre de la fenêtre du navigateur. Le champ est utilisé par les moteurs de recherche et les cartes de site (sitemaps)" />
   <string key="AddNewPageStep1.LabelAbstract" value="Description" />
-  <string key="AddNewPageStep1.LabelAbstractHelp" value="Utiliser ce champ pour une br&#232;ve description de la page" />
+  <string key="AddNewPageStep1.LabelAbstractHelp" value="Utiliser ce champ pour une brève description de la page" />
   <string key="AddNewPageStep1.LabelTemplate" value="Type de page" />
-  <string key="AddNewPageStep1.HelpTemplate" value="La s&#233;lection du type de la page influe sur le comportement et les caract&#233;ristiques de votre page, comme &#171;une page normale&#187; ou &#171;un blog. Les options disponibles d&#233;pendent des fonctions install&#233;es." />
+  <string key="AddNewPageStep1.HelpTemplate" value="La sélection du type de la page influe sur le comportement et les caractéristiques de votre page, comme «une page normale» ou «un blog. Les options disponibles dépendent des fonctions installées." />
   <string key="AddNewPageStep1.LabelPosition" value="Position" />
-  <string key="AddNewPageStep1.HelpPosition" value="S&#233;lectionner l&#39;emplacement dans l&#39;arborescence de contenu o&#249; vous souhaitez placer la page." />
-  <string key="AddNewPageStep1.LabelAddToTop" value="Ins&#233;rer au sommet" />
-  <string key="AddNewPageStep1.LabelAddToBottom" value="Ins&#233;rer au bas" />
-  <string key="AddNewPageStep1.LabelAddAlphabetic" value="Ins&#233;rer en ordre alphab&#233;tique" />
-  <string key="AddNewPageStep1.LabelAddBelowOtherPage" value="S&#233;lectionner la position ..." />
-  <string key="AddNewPageStep2.LabelFieldGroup" value="Param&#232;tres avanc&#233;s" />
-  <string key="AddNewPageStep2.LabelUrlTitle" value="Titre de l&#39;URL" />
-  <string key="AddNewPageStep2.HelpUrlTitle" value="L&#39;entr&#233;e sp&#233;cifi&#233; dans ce champ est affich&#233;e dans la barre d&#39;adresse du navigateur. Le champ est utilis&#233; par les moteurs de recherche" />
+  <string key="AddNewPageStep1.HelpPosition" value="Sélectionner l'emplacement dans l'arborescence de contenu où vous souhaitez placer la page." />
+  <string key="AddNewPageStep1.LabelAddToTop" value="Insérer au sommet" />
+  <string key="AddNewPageStep1.LabelAddToBottom" value="Insérer au bas" />
+  <string key="AddNewPageStep1.LabelAddAlphabetic" value="Insérer en ordre alphabétique" />
+  <string key="AddNewPageStep1.LabelAddBelowOtherPage" value="Sélectionner la position ..." />
+  <string key="AddNewPageStep2.LabelFieldGroup" value="Paramètres avancés" />
+  <string key="AddNewPageStep2.LabelUrlTitle" value="Titre de l'URL" />
+  <string key="AddNewPageStep2.HelpUrlTitle" value="L'entrée spécifié dans ce champ est affichée dans la barre d'adresse du navigateur. Le champ est utilisé par les moteurs de recherche" />
   <string key="AddNewPageStep2.LabelMenuTitle" value="Titre du menu" />
-  <string key="AddNewPageStep2.HelpMenuTitle" value="L&#39;entr&#233;e sp&#233;cifi&#233;e dans ce champ peut &#234;tre utilis&#233; dans la navigation sur le site" />
-  <string key="AddNewPageStep2.LabelPositionSelectorPanel" value="S&#233;lectionner la position de la page d&#233;taill&#233;e" />
+  <string key="AddNewPageStep2.HelpMenuTitle" value="L'entrée spécifiée dans ce champ peut être utilisé dans la navigation sur le site" />
+  <string key="AddNewPageStep2.LabelPositionSelectorPanel" value="Sélectionner la position de la page détaillée" />
   <string key="AddNewPageStep2.LabelPositionSelector" value="Position au-dessous" />
   <string key="AddNewPageStep2.HelpPositionSelector" value="" />
-  <string key="AddNewPageStep1.TitleTooLong" value="Le titre sp&#233;cifi&#233; est trop long. Inscrire un titre plus court et r&#233;essayez" />
-  <string key="AddNewPageStep1.MenuTitleTooLong" value="Le titre de menu sp&#233;cifi&#233; est trop long. Inscrire un titre plus court et r&#233;essayez" />
-  <string key="EditPage.LabelPaneSettings" value="Param&#232;tres" />
+  <string key="AddNewPageStep1.TitleTooLong" value="Le titre spécifié est trop long. Inscrire un titre plus court et réessayez" />
+  <string key="AddNewPageStep1.MenuTitleTooLong" value="Le titre de menu spécifié est trop long. Inscrire un titre plus court et réessayez" />
+  <string key="EditPage.LabelPaneSettings" value="Paramètres" />
   <string key="EditPage.LabelPublicationState" value="Statut" />
   <string key="EditPage.HelpPublicationState" value="Changer le statut de la page" />
   <string key="EditPage.LabelPageTitle" value="Titre de la page" />
-  <string key="EditPage.LabelPageTitleHelp" value="L&#39;entr&#233;e sp&#233;cifi&#233; dans ce champ est affich&#233; dans la barre de titre de la fen&#234;tre du navigateur. Le champ est utilis&#233; par les moteurs de recherche et les cartes de site (sitemaps)" />
+  <string key="EditPage.LabelPageTitleHelp" value="L'entrée spécifié dans ce champ est affiché dans la barre de titre de la fenêtre du navigateur. Le champ est utilisé par les moteurs de recherche et les cartes de site (sitemaps)" />
   <string key="EditPage.LabelMenuTitle" value="Titre du menu" />
-  <string key="EditPage.HelpMenuTitle" value="L&#39;entr&#233;e sp&#233;cifi&#233;e dans ce champ peut &#234;tre utilis&#233; dans la navigation sur le site" />
-  <string key="EditPage.LabelUrlTitle" value="Titre de l&#39;URL" />
-  <string key="EditPage.UrlTitleFormattedTitle" value="Le titre del&#39;URL a &#233;t&#233; r&#233;&#233;crit" />	
-  <string key="EditPage.UrlTitleFormattedMessage" value="Selon les r&#232;gles de remplacement d&#39;URL actuelles, le titre de l&#39;URL a &#233;t&#233; chang&#233; pour &#39;{0}&#39;" />
-  <string key="EditPage.HelpUrlTitle" value="L&#39;entr&#233;e sp&#233;cifi&#233;e dans ce champ est affich&#233;e dans la barre d&#39;adresse du navigateur en tant que partie de l&#39;adresse URL. Le champ est utilis&#233; par les moteurs de recherche" />
+  <string key="EditPage.HelpMenuTitle" value="L'entrée spécifiée dans ce champ peut être utilisé dans la navigation sur le site" />
+  <string key="EditPage.LabelUrlTitle" value="Titre de l'URL" />
+  <string key="EditPage.UrlTitleFormattedTitle" value="Le titre del'URL a été réécrit" />
+  <string key="EditPage.UrlTitleFormattedMessage" value="Selon les règles de remplacement d'URL actuelles, le titre de l'URL a été changé pour '{0}'" />
+  <string key="EditPage.HelpUrlTitle" value="L'entrée spécifiée dans ce champ est affichée dans la barre d'adresse du navigateur en tant que partie de l'adresse URL. Le champ est utilisé par les moteurs de recherche" />
   <string key="EditPage.LabelFriendlyUrl" value="URL convivial" />
-  <string key="EditPage.HelpFriendlyUrl" value="L&#39;entr&#233;e sp&#233;cifi&#233;e dans ce champ est une version plus courte de l&#39;URL r&#233;el de la page URL et redirige vers cette derni&#232;re lorsqu&#39;il est entr&#233; dans la barre d&#39;adresse du navigateur. Notez que certains serveurs peuvent &#234;tre configur&#233;s pour supporter cette fonctionnalit&#233;." />
+  <string key="EditPage.HelpFriendlyUrl" value="L'entrée spécifiée dans ce champ est une version plus courte de l'URL réel de la page URL et redirige vers cette dernière lorsqu'il est entré dans la barre d'adresse du navigateur. Notez que certains serveurs peuvent être configurés pour supporter cette fonctionnalité." />
   <string key="EditPage.LabelAbstract" value="Description" />
   <string key="EditPage.LabelAbstractHelp" value="Utiliser ce champ pour une courte description de la page" />
-  <string key="EditPage.LabelPublishDate" value="Date de d&#233;but de publication" />
-  <string key="EditPage.HelpPublishDate" value="Pr&#233;cisez &#224; quelle date et heure vous souhaitez que la page soit publi&#233;e. &#192; la date et l&#39;heure indiqu&#233;es la page sera automatiquement publi&#233;e sur le site" />
+  <string key="EditPage.LabelPublishDate" value="Date de début de publication" />
+  <string key="EditPage.HelpPublishDate" value="Précisez à quelle date et heure vous souhaitez que la page soit publiée. À la date et l'heure indiquées la page sera automatiquement publiée sur le site" />
   <string key="EditPage.LabelUnpublishDate" value="Date de fin de publication" />
-  <string key="EditPage.HelpUnpublishDate" value="Pr&#233;cisez &#224; quelle date et heure vous souhaitez que la page soit publi&#233;e. &#192; la date et l&#39;heure indiqu&#233;e la page sera automatiquement retir&#233;e du site" />
+  <string key="EditPage.HelpUnpublishDate" value="Précisez à quelle date et heure vous souhaitez que la page soit publiée. À la date et l'heure indiquée la page sera automatiquement retirée du site" />
   <string key="EditPage.LabelContent" value="Contenu" />
-  <string key="EditPage.LabelPreview" value="Aper&#231;u" />
+  <string key="EditPage.LabelPreview" value="Aperçu" />
   <string key="EditPage.PageTypeSelectorLabel" value="Type de page" />
-  <string key="EditPage.PageTypeSelectorHelp" value="La s&#233;lection du type de la page d&#233;finit le r&#244;le de la page, comme &#171;une page normale&#187; ou &#171;un blog. Les options disponibles d&#233;pendent des fonctions install&#233;es." />
-  <string key="EditPage.MaxLength" value="{0} caract&#232;res maximum" />
+  <string key="EditPage.PageTypeSelectorHelp" value="La sélection du type de la page définit le rôle de la page, comme «une page normale» ou «un blog. Les options disponibles dépendent des fonctions installées." />
+  <string key="EditPage.MaxLength" value="{0} caractères maximum" />
   <string key="DeletePage.LabelFieldGroup" value="Supprimer la page?" />
   <string key="DeletePageStep1.Title" value="Supprimer la page et ses sous-pages" />
-  <string key="DeletePageStep1.Description" value="Toutes les sous-pages seront &#233;galement supprim&#233;es. Continuer?" />
-  <string key="DeletePageStep2.Text" value="Supprimer la page &#39;{0}&#39;?" />
-  <string key="UrlTitleNotUniqueError" value="Une autre page utilise le titre de l&#39;URL sp&#233;cifi&#233;. Le titre de l&#39;URL doit &#234;tre unique parmi les pages  d&#39;un m&#234;me parent." />
-  <string key="UrlTitleNotValidError" value="Le titre de l&#39;URL sp&#233;cifi&#233; contient des caract&#232;res non valides. Puisque ce champ est utilis&#233; pour construire l&#39;adresse web de la page, certains caract&#232;res sp&#233;ciaux (comme interrogation, slash et point) ne sont pas autoris&#233;s. Vous pouvez utiliser des lettres, des chiffres et le -." />
-  <string key="UrlTitleTooLong" value="Le titre de l&#39;URL sp&#233;cifi&#233; est trop long. Inscrire un titre plus court et r&#233;essayez" />
-  <string key="FriendlyUrlNotUniqueError" value="Une autre page utilise l&#39;URL simplifi&#233; sp&#233;cifi&#233;. L&#39;URL simplifi&#233; doit &#234;tre unique." />
-  <string key="TitleMissingError" value="Le titre ne peut pas &#234;tre vide." />
-  <string key="PageSaveValidationFailedTitle" value="Page non sauvegard&#233;e" />
-  <string key="PageSaveValidationFailedMessage" value="La page ne peut &#234;tre valid&#233;e et n&#39;a pas &#233;t&#233; enregistr&#233;e. S&#39;il vous pla&#238;t examiner les messages d&#39;erreur." />
+  <string key="DeletePageStep1.Description" value="Toutes les sous-pages seront également supprimées. Continuer?" />
+  <string key="DeletePageStep2.Text" value="Supprimer la page '{0}'?" />
+  <string key="UrlTitleNotUniqueError" value="Une autre page utilise le titre de l'URL spécifié. Le titre de l'URL doit être unique parmi les pages  d'un même parent." />
+  <string key="UrlTitleNotValidError" value="Le titre de l'URL spécifié contient des caractères non valides. Puisque ce champ est utilisé pour construire l'adresse web de la page, certains caractères spéciaux (comme interrogation, slash et point) ne sont pas autorisés. Vous pouvez utiliser des lettres, des chiffres et le -." />
+  <string key="UrlTitleTooLong" value="Le titre de l'URL spécifié est trop long. Inscrire un titre plus court et réessayez" />
+  <string key="FriendlyUrlNotUniqueError" value="Une autre page utilise l'URL simplifié spécifié. L'URL simplifié doit être unique." />
+  <string key="TitleMissingError" value="Le titre ne peut pas être vide." />
+  <string key="PageSaveValidationFailedTitle" value="Page non sauvegardée" />
+  <string key="PageSaveValidationFailedMessage" value="La page ne peut être validée et n'a pas été enregistrée. S'il vous plaît examiner les messages d'erreur." />
   <string key="PageElementProvider.RootLabel" value="Sites Web" />
   <string key="PageElementProvider.RootLabelToolTip" value="Sites Web" />
   <string key="PageElementProvider.AddPageAtRoot" value="Ajouter un site Web ..." />
-  <string key="PageElementProvider.AddPageAtRootToolTip" value="Ajouter une nouvelle page d&#39;accueil" />
-  <string key="PageElementProvider.ViewUnpublishedItems" value="Lister les pages non publi&#233;es" />
-  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="Obtenir un aper&#231;u des pages et du dossier de donn&#233;es de page qui n&#39;ont pas encore &#233;t&#233; publi&#233;s." />
-  <string key="PageElementProvider.ViewUnpublishedItems-document-title" value="Contenu non publi&#233;" />
-  <string key="PageElementProvider.ViewUnpublishedItems-document-description" value="La liste ci-dessous affiche les pages et les donn&#233;es de pages qui sont actuellement en cours d&#39;&#233;dition ou pr&#234;tes &#224; &#234;tre approuv&#233;es / publi&#233;s." />
+  <string key="PageElementProvider.AddPageAtRootToolTip" value="Ajouter une nouvelle page d'accueil" />
+  <string key="PageElementProvider.ViewUnpublishedItems" value="Lister les pages non publiées" />
+  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="Obtenir un aperçu des pages et du dossier de données de page qui n'ont pas encore été publiés." />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-title" value="Contenu non publié" />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-description" value="La liste ci-dessous affiche les pages et les données de pages qui sont actuellement en cours d'édition ou prêtes à être approuvées / publiés." />
   <string key="PageElementProvider.EditPage" value="Modifier la page" />
-  <string key="PageElementProvider.EditPageToolTip" value="Modifier la page s&#233;lectionn&#233;e" />
+  <string key="PageElementProvider.EditPageToolTip" value="Modifier la page sélectionnée" />
   <string key="PageElementProvider.Delete" value="Effacer" />
-  <string key="PageElementProvider.DeleteToolTip" value="Supprimer la page s&#233;lectionn&#233;e" />
+  <string key="PageElementProvider.DeleteToolTip" value="Supprimer la page sélectionnée" />
   <string key="PageElementProvider.LocalizePage" value="Traduire la page" />
-  <string key="PageElementProvider.LocalizePageToolTip" value="Traduire la page s&#233;lectionn&#233;e" />
+  <string key="PageElementProvider.LocalizePageToolTip" value="Traduire la page sélectionnée" />
   <string key="PageElementProvider.AddSubPage" value="Ajouter une page ..." />
-  <string key="PageElementProvider.AddSubPageToolTip" value="Ajouter une nouvelle page en dessous de celle s&#233;lectionn&#233;e" />
-  <string key="PageElementProvider.ViewPublicPage" value="Parcourir les pages publi&#233;es" />
-  <string key="PageElementProvider.ViewPublicToolTip" value="Voir la derni&#232;re version publi&#233;e" />
-  <string key="PageElementProvider.ViewDraftPage" value="Parcourir les pages sauvegard&#233;es" />
-  <string key="PageElementProvider.ViewDraftToolTip" value="Voir les changements r&#233;cents" />
-  <string key="PageElementProvider.DisplayLocalOrderingLabel" value="Afficher la page dans l&#39;ordre &#39;local&#39;" />
-  <string key="PageElementProvider.DisplayLocalOrderingToolTip" value="Afficher la page dans l&#39;ordre &#39;local&#39;" />
-  <string key="PageElementProvider.DisabledPage" value="Pas encore approuv&#233; ou publi&#233;" />
-  <string key="PageElementProvider.MissingTemplateTitle" value="Mod&#232;le de site Web requis" />
-  <string key="PageElementProvider.MissingTemplateMessage" value="Pour cr&#233;er une page, un mod&#232;le de site est n&#233;cessaire, mais aucun mod&#232;le n&#39;a &#233;t&#233; cr&#233;&#233;. Vous pouvez en cr&#233;er un dans la section Mise en page." />
+  <string key="PageElementProvider.AddSubPageToolTip" value="Ajouter une nouvelle page en dessous de celle sélectionnée" />
+  <string key="PageElementProvider.ViewPublicPage" value="Parcourir les pages publiées" />
+  <string key="PageElementProvider.ViewPublicToolTip" value="Voir la dernière version publiée" />
+  <string key="PageElementProvider.ViewDraftPage" value="Parcourir les pages sauvegardées" />
+  <string key="PageElementProvider.ViewDraftToolTip" value="Voir les changements récents" />
+  <string key="PageElementProvider.DisplayLocalOrderingLabel" value="Afficher la page dans l'ordre 'local'" />
+  <string key="PageElementProvider.DisplayLocalOrderingToolTip" value="Afficher la page dans l'ordre 'local'" />
+  <string key="PageElementProvider.DisabledPage" value="Pas encore approuvé ou publié" />
+  <string key="PageElementProvider.MissingTemplateTitle" value="Modèle de site Web requis" />
+  <string key="PageElementProvider.MissingTemplateMessage" value="Pour créer une page, un modèle de site est nécessaire, mais aucun modèle n'a été créé. Vous pouvez en créer un dans la section Mise en page." />
   <string key="PageElementProvider.MissingActiveLanguageTitle" value="Langue requise" />
-  <string key="PageElementProvider.MissingActiveLanguageMessage" value="Pour ajouter une page, vous devez tout d&#39;abord ajouter au moins une langue. Acc&#233;der &#224; la section Syst&#232;me pour ajouter une langue." />
+  <string key="PageElementProvider.MissingActiveLanguageMessage" value="Pour ajouter une page, vous devez tout d'abord ajouter au moins une langue. Accéder à la section Système pour ajouter une langue." />
   <string key="PageElementProvider.NoPageTypesAvailableTitle" value="Aucun type de page disponible" />
-  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="Vous devez cr&#233;er au moins un type de page en premier" />
+  <string key="PageElementProvider.NoPageTypesAvailableMessage" value="Vous devez créer au moins un type de page en premier" />
   <string key="PageElementProvider.MissingPageTypeTitle" value="Type de page requis" />
-  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="Pour cr&#233;er une page d&#39;accueil, un type de page sans la restriction &#39;Seulement sous-pages&#39; est n&#233;cessaire, mais aucun n&#39;a encore &#233;t&#233; ajout&#233;. Acc&#233;der &#224; la section Mise en page pour ajouter un type de page" />
-  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="Pour cr&#233;er une sous-page, un type de page sans restriction &#39;page d&#39;accueil seulement&#39; est n&#233;cessaire, mais aucun n&#39;a encore &#233;t&#233; ajout&#233;. Acc&#233;der &#224; la section Mise en page pour ajouter un type de page." />  
-  <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Impossible d&#39;ajouter une page!" />
-  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="Les r&#232;gles qui d&#233;finissent la disponibilit&#233; des types de page interdisent l&#39;ajout d&#39;une page ici." />
-  <string key="ManageHostNames.Add.DialogLabel" value="G&#233;rer le nom d&#39;h&#244;te" />
-  <string key="ManageHostNames.Add.HeadingTitle" value="Ajouter un nom h&#244;te associ&#233; &#224; la page" />
-  <string key="ManageHostNames.Add.HeadingDescription" value="Vous pouvez associer un nom d&#39;h&#244;te (ou un nom de domaine) &#224; une page en sp&#233;cifiant dans le champ ci-dessous. S&#39;il vous pla&#238;t noter que les param&#232;tres DNS pour le nom d&#39;h&#244;te sp&#233;cifi&#233; doivent &#233;galement &#234;tre configur&#233;s, ce qui se fait en dehors de ce syst&#232;me." />
-  <string key="ManageHostNames.Add.FieldGroupLabel" value="Nom d&#39;h&#244;te associ&#233; &#224; la page" />
-  <string key="ManageHostNames.Add.HostNameTextBoxLabel" value="Nom de l&#39;h&#244;te" />
-  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Indiquer le nom d&#39;h&#244;te (comme &#39;www.composite.net &#187;ou&#171; composite.net&#39;) que vous souhaitez associer &#224; cette page" />
-  <string key="ManageHostNames.Add.InvalidHostNameSyntaxError" value="La syntaxe du nom d&#39;h&#244;te n&#39;est pas valide" />
-  <string key="ManageHostNames.Add.HostNameNotUniqueError" value="Ce nom d&#39;h&#244;te est d&#233;j&#224; associ&#233; &#224; une page. Vous devez d&#39;abord enlever l&#39;association existante." />
-  <string key="ManageHostNames.Remove.DialogLabel" value="G&#233;rer le nom d&#39;h&#244;te" />
-  <string key="ManageHostNames.Remove.FieldGroupLabel" value="Retirer du nom d&#39;h&#244;te associ&#233; &#224; la page" />
-  <string key="ManageHostNames.Remove.MultiSelectorLabel" value="Noms d&#39;h&#244;tes &#224; retirer" />
-  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="Les noms d&#39;h&#244;te que vous avez s&#233;lectionn&#233;s ne seront plus associ&#233;s &#224; la page" />
-  <string key="Preview.PublishedPage.NotPublishedTitle" value="La page s&#233;lectionn&#233;e n&#39;est pas publi&#233;e" />
-  <string key="Preview.PublishedPage.NotPublishedMessage" value="La page s&#233;lectionn&#233;e n&#39;est pas publi&#233;e" />
-  <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="S&#39;il vous pla&#238;t confirmer la suppression de tous les sous-pages" />
+  <string key="PageElementProvider.MissingPageTypeHomepageMessage" value="Pour créer une page d'accueil, un type de page sans la restriction 'Seulement sous-pages' est nécessaire, mais aucun n'a encore été ajouté. Accéder à la section Mise en page pour ajouter un type de page" />
+  <string key="PageElementProvider.MissingPageTypeSubpageMessage" value="Pour créer une sous-page, un type de page sans restriction 'page d'accueil seulement' est nécessaire, mais aucun n'a encore été ajouté. Accéder à la section Mise en page pour ajouter un type de page." />
+  <string key="PageElementProvider.RuleDontAllowPageAddTitle" value="Impossible d'ajouter une page!" />
+  <string key="PageElementProvider.RuleDontAllowPageAddMessage" value="Les règles qui définissent la disponibilité des types de page interdisent l'ajout d'une page ici." />
+  <string key="ManageHostNames.Add.DialogLabel" value="Gérer le nom d'hôte" />
+  <string key="ManageHostNames.Add.HeadingTitle" value="Ajouter un nom hôte associé à la page" />
+  <string key="ManageHostNames.Add.HeadingDescription" value="Vous pouvez associer un nom d'hôte (ou un nom de domaine) à une page en spécifiant dans le champ ci-dessous. S'il vous plaît noter que les paramètres DNS pour le nom d'hôte spécifié doivent également être configurés, ce qui se fait en dehors de ce système." />
+  <string key="ManageHostNames.Add.FieldGroupLabel" value="Nom d'hôte associé à la page" />
+  <string key="ManageHostNames.Add.HostNameTextBoxLabel" value="Nom de l'hôte" />
+  <string key="ManageHostNames.Add.HostNametextBoxHelp" value="Indiquer le nom d'hôte (comme 'www.composite.net »ou« composite.net') que vous souhaitez associer à cette page" />
+  <string key="ManageHostNames.Add.InvalidHostNameSyntaxError" value="La syntaxe du nom d'hôte n'est pas valide" />
+  <string key="ManageHostNames.Add.HostNameNotUniqueError" value="Ce nom d'hôte est déjà associé à une page. Vous devez d'abord enlever l'association existante." />
+  <string key="ManageHostNames.Remove.DialogLabel" value="Gérer le nom d'hôte" />
+  <string key="ManageHostNames.Remove.FieldGroupLabel" value="Retirer du nom d'hôte associé à la page" />
+  <string key="ManageHostNames.Remove.MultiSelectorLabel" value="Noms d'hôtes à retirer" />
+  <string key="ManageHostNames.Remove.MultiSelectorHelp" value="Les noms d'hôte que vous avez sélectionnés ne seront plus associés à la page" />
+  <string key="Preview.PublishedPage.NotPublishedTitle" value="La page sélectionnée n'est pas publiée" />
+  <string key="Preview.PublishedPage.NotPublishedMessage" value="La page sélectionnée n'est pas publiée" />
+  <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="S'il vous plaît confirmer la suppression de tous les sous-pages" />
   <string key="DeletePageWorkflow.CascadeDeleteErrorTitle" value="Erreur de suppression en cascade" />
-  <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="La page est r&#233;f&#233;renc&#233;e par un autre type qui ne permet pas une suppression en cascade. Cette op&#233;ration a &#233;t&#233; annul&#233;e" />
+  <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="La page est référencée par un autre type qui ne permet pas une suppression en cascade. Cette opération a été annulée" />
   <string key="DeletePageWorkflow.HasCompositionsTitle" value="Vous ne pouvez pas supprimer la page" />
-  <string key="DeletePageWorkflow.HasCompositionsMessage" value="Cette page contient un ou plusieurs dossiers de page ou des champs de m&#233;tadonn&#233;es d&#233;finis. Supprimer d&#39;abord ces derniers." />
+  <string key="DeletePageWorkflow.HasCompositionsMessage" value="Cette page contient un ou plusieurs dossiers de page ou des champs de métadonnées définis. Supprimer d'abord ces derniers." />
 </strings>

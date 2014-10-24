@@ -1,476 +1,454 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
-	<string key="Composite.AspNet.LoadUserControl.description" value="Charge un contr&#244;le utilisateur ASP.NET" />
-	<string key="Composite.AspNet.LoadUserControl.param.Path.help" value="Le chemin d&#39;acc&#232;s au fichier .ascx du contr&#244;le utilisateur ASP.NET.  Exemple : &quot;~/ Controls / MonControl.ascx&quot;" />
-	<string key="Composite.AspNet.LoadUserControl.param.Path.label" value="Chemin" />
-	<string key="Composite.Constant.Boolean.description" value="Vous permet de sp&#233;cifier une constante pour une valeur bool&#233;enne" />
-	<string key="Composite.Constant.Boolean.param.Constant.help" value="" />
-	<string key="Composite.Constant.Boolean.param.Constant.label" value="Valeur" />
-	<string key="Composite.Constant.DateTime.description" value="Vous permet de sp&#233;cifier une constante pour une valeur date et heure" />
-	<string key="Composite.Constant.DateTime.param.Constant.help" value="" />
-	<string key="Composite.Constant.DateTime.param.Constant.label" value="Valeur" />
-	<string key="Composite.Constant.Decimal.description" value="Vous permet de sp&#233;cifier une constante pour une valeur d&#233;cimale" />
-	<string key="Composite.Constant.Decimal.param.Constant.help" value="" />
-	<string key="Composite.Constant.Decimal.param.Constant.label" value="Valeur" />
-	<string key="Composite.Constant.Guid.description" value="Permet de sp&#233;cifier une valeur pour une constante Guid" />
-	<string key="Composite.Constant.Guid.param.Constant.help" value="" />
-	<string key="Composite.Constant.Guid.param.Constant.label" value="Valeur" />
-	<string key="Composite.Constant.Integer.description" value="Vous permet de sp&#233;cifier une valeur pour une constante de type Integer" />
-	<string key="Composite.Constant.Integer.param.Constant.help" value="" />
-	<string key="Composite.Constant.Integer.param.Constant.label" value="Valeur" />
-	<string key="Composite.Constant.String.description" value="Vous permet de sp&#233;cifier une valeur pour une constante de type String" />
-	<string key="Composite.Constant.String.param.Constant.help" value="" />
-	<string key="Composite.Constant.String.param.Constant.label" value="Valeur" />
-	<string key="Composite.Constant.XhtmlDocument.description" value="Permet de sp&#233;cifier visuellement une constante pour un document XHTML" />
-	<string key="Composite.Constant.XhtmlDocument.param.Constant.help" value="" />
-	<string key="Composite.Constant.XhtmlDocument.param.Constant.label" value="Valeur" />
-
-	<string key="Composite.IDataGenerated.AddDataInstance.description" value="Ajoute une nouvelle instance d&#39;un type donn&#233;" />
-	<string key="Composite.IDataGenerated.UpdateDataInstance.description" value="Mises &#224; jour le(s) instance (s) avec les valeurs indiqu&#233;es." />
-	<string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.help" value="" />
-	<string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.label" value="Filtre" />
-	<string key="Composite.IDataGenerated.DeleteDataInstance.description" value="Supprime le(s) instance(s) avec le filtre donn&#233;." />
-	<string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.help" value="" />
-	<string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.label" value="Filtre" />
-	<string key="Composite.IDataGenerated.GetDataReference.description" value="Cr&#233;e un DataReference bas&#233;e sur une valeur de cl&#233;." />
-	<string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.help" value="La valeur de la cl&#233; des donn&#233;es &#224; r&#233;f&#233;rencer." />
-	<string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.label" value="Valeur de la cl&#233;" />
-	<string key="Composite.IDataGenerated.GetNullableDataReference.description" value="Cr&#233;e un NullableDataReference bas&#233; sur une valeur de cl&#233;. La valeur par d&#233;faut est &#171;nul&#187;, aucune r&#233;f&#233;rence." />
-	<string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.help" value="La valeur de la cl&#233; des donn&#233;es &#224; r&#233;f&#233;rencer." />
-	<string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.label" value="Valeur de la cl&#233;" />
-
-	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.description" value="Convertit un DataReference dans un filtre d&#39;un seul &#233;l&#233;ment. Ce filtre permet de s&#233;lectionner un maximum d&#39;un &#233;l&#233;ment." />
-	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.help" value="La r&#233;f&#233;rence de donn&#233;es &#224; utiliser pour la s&#233;lection des donn&#233;es." />
-	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.label" value="Donn&#233;es de r&#233;f&#233;rence" />
-	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Permet de s&#233;lectionner les donn&#233;es sur la base de sa r&#233;f&#233;rence &#224; la page actuellement rendue." />
-	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.help" value="S&#233;lectionner ce qui concerne la page en cours doit avoir avec les donn&#233;es que vous souhaitez r&#233;cup&#233;rer." />
-	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.label" value="Port&#233;e de la page" />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.description" value="D&#233;finit une requ&#234;te  &#171;et&#187; ou &#171;ou&#187; , combinant deux autres filtres." />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.label" value="Filtre et / ou" />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.help" value="Si vous s&#233;lectionnez &#39;et&#39;  les deux filtres sont appliqu&#233;s aux donn&#233;es. S&#233;lection ou vous donnera les donn&#233;es correspondant &#224; un seul des filtres." />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.help" value="L&#39;un des deux filtres (celui &#224; &#233;valuer en premier)" />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.label" value="Filtre de gauche" />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.help" value="L&#39;un des deux filtres (celui &#224; &#233;valuer en dernier)" />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.label" value="Filtre &#224; droite" />
-	<string key="Composite.IDataGenerated.Filter.FieldPredicatesFilter.description" value="Vous permet de sp&#233;cifier un filtre sur les donn&#233;es par des exigences pour les diff&#233;rents champs. Si vous d&#233;finissez les requ&#234;tes sur plusieurs champs, ils sont tous forc&#233;e (et requ&#234;te)." />
-	<string key="Composite.IDataGenerated.GetXml.description" value="R&#233;cup&#232;re une repr&#233;sentation XML des donn&#233;es." />
-	<string key="Composite.IDataGenerated.GetXml.param.ElementName.label" value="Nom de l&#39;&#233;l&#233;ment" />
-	<string key="Composite.IDataGenerated.GetXml.param.ElementNamespace.label" value="&#201;l&#233;ment espace de nommage" />
-	<string key="Composite.IDataGenerated.GetXml.param.Filter.help" value="" />
-	<string key="Composite.IDataGenerated.GetXml.param.Filter.label" value="Filtre" />
-	<string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.help" value="Une fois s&#233;lectionn&#233; le fichier XML de donn&#233;es sera pr&#233;c&#233;d&#233;e par un &#233;l&#233;ment &lt;PagingInfo /&gt; d&#233;taillant le nombre de pages, &#233;l&#233;ments et plus." />
-	<string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.label" value="Inclure les information de pagination" />
-	<string key="Composite.IDataGenerated.GetXml.param.OrderByField.help" value="Le champ pour trier les donn&#233;es" />
-	<string key="Composite.IDataGenerated.GetXml.param.OrderByField.label" value="Trier par" />
-	<string key="Composite.IDataGenerated.GetXml.param.OrderAscending.help" value="Lorsque d&#233;fini &#224; TRUE les r&#233;sultats sont pr&#233;sent&#233;s dans l&#39;ordre croissant, sinon l&#39;ordre descendant est utilis&#233;. L&#39;ordre par d&#233;faut est l&#39;ordre croissant." />
-	<string key="Composite.IDataGenerated.GetXml.param.OrderAscending.label" value="Tri ascendant" />
-	<string key="Composite.IDataGenerated.GetXml.param.PageNumber.help" value="Si le nombre d&#39;&#233;l&#233;ments de donn&#233;es d&#233;passe la taille de la page, vous pouvez utiliser la pagination pour passer aux autres pages. Voir le param&#232;tre de taille de la page." />
-	<string key="Composite.IDataGenerated.GetXml.param.PageNumber.label" value="Num&#233;ro de page" />
-	<string key="Composite.IDataGenerated.GetXml.param.PageSize.help" value="Le nombre d&#39;&#233;l&#233;ments &#224; afficher sur une page - le nombre maximum d&#39;&#233;l&#233;ments &#224; retouner." />
-	<string key="Composite.IDataGenerated.GetXml.param.PageSize.label" value="Taille de la page" />
-	<string key="Composite.IDataGenerated.GetXml.param.PropertyNames.help" value="Le champs de donn&#233;es &#224; la sortie dans le fichier XML. Moins de champs peuvent produire des rendus plus rapides." />
-	<string key="Composite.IDataGenerated.GetXml.param.PropertyNames.label" value="Champs s&#233;lectionn&#233;s" />
-	<string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.help" value="Si vous incluez des donn&#233;es de r&#233;f&#233;rence dans la mise en &#39;Biens s&#233;lectionn&#233;s &#187;, vous pouvez utiliser cette option pour contr&#244;ler la fa&#231;on dont les donn&#233;es r&#233;f&#233;renc&#233;e est inclus. &#171;Inline&#187; est facile &#224; utiliser, mais peut gonfler la taille du document XML." />
-	<string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.label" value="Afficher les donn&#233;es de r&#233;f&#233;rence &#39;inline&#39;" />
-	<string key="Composite.IDataGenerated.GetXml.param.Randomized.help" value="Lorsque les donn&#233;es r&#233;elles peuvent &#234;tre ordonn&#233;es al&#233;atoirement. Indiquer le nombre de r&#233;sultats al&#233;atoires dont vous avez besoin en d&#233;finissant la &#171;taille de la page. Si un filtre est sp&#233;cifi&#233;, il est appliqu&#233; avant la s&#233;lection al&#233;atoire. Si vous sp&#233;cifiez un &#171;Ordre de &#39;valeur, vous devez sp&#233;cifier une&#171; taille de la page &#171;faible ou la randomisation sera nulle." />
-	<string key="Composite.IDataGenerated.GetXml.param.Randomized.label" value="Al&#233;atoire" />
-	<string key="Composite.IDataGenerated.GetXml.param.CachePriority.help" value="D&#233;termine si le r&#233;sultat XML doit &#234;tre mis en cache, et quelle priorit&#233; les enregistrements en cache doivent avoir" />
-	<string key="Composite.IDataGenerated.GetXml.param.CachePriority.label" value="Priorit&#233; de la cache" />
-	<string key="Composite.Pages.GetPageId.description" value="R&#233;cup&#232;re l&#39;ID de la page en cours ou d&#39;une page relative &#224; la page courante." />
-	<string key="Composite.Pages.GetPageId.param.SitemapScope.help" value="Qu&#39;est-ce que la page pour obtenir Identifiant de. La valeur par d&#233;faut est de la page en cours." />
-	<string key="Composite.Pages.GetPageId.param.SitemapScope.label" value="Association de la page" />
-	<string key="Composite.Pages.QuickSitemap.description" value="Plan de site xhtml rapide et brut." />
-	<string key="Composite.Pages.SitemapXml.description" value="Retourne une structure XML hi&#233;rarchique de pages. Lorsqu&#39;il est ex&#233;cut&#233; dans le cadre d&#39;un des &#233;l&#233;ments XML de rendu des pages repr&#233;sentant les pages actuelles et anc&#234;tres seront annex&#233;s les attributs isOpen = true et IsCurrent = true" />
-	<string key="Composite.Pages.SitemapXml.param.SourcePage.label" value="Page source" />
-	<string key="Composite.Pages.SitemapXml.param.SourcePage.help" value="Par d&#233;faut, la page source est la page en cours de rendu. Sp&#233;cifiez une valeur si vous souhaitez obtenir des informations plan du site par rapport &#224; une autre page. Les champs de la page source comment les &#233;l&#233;ments de la page sont annot&#233;s avec &#39;isOpen &#187;et&#171; IsCurrent &#187;et est le point de d&#233;part pour le calcul de la port&#233;e de page." />
-	<string key="Composite.Pages.SitemapXml.param.SitemapScope.label" value="Port&#233;e de la page" />
-	<string key="Composite.Pages.SitemapXml.param.SitemapScope.help" value="Le profondeur de pages pour extraire du plan du site. La valeur par d&#233;faut est &#171;toutes les pages&#187;. Vous pouvez utiliser ce param&#232;tre pour extraire la structure dont vous avez besoin pour accomplir votre t&#226;che." />
-	<string key="Composite.Pages.GetForeignPageInfo.description" value="Obtient des informations sur la page en cours dans toutes les langues." />
-
-	<string key="Composite.Utils.Caching.PageObjectCache.description" value="D&#233;finit une &#39;zone de cache &#39;autour d&#39;un appel ou balisage fonction (contenant g&#233;n&#233;ralement des appels de fonction). Cette fonction peut &#234;tre utilis&#233;e pour am&#233;liorer performances de rendu en mettant en cache les sections d&#39;une page Web. La valeur &#39;objet Cache Id&#39; doit &#234;tre unique pour le contenu mis en cache." />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.label" value="Objet &#224; mettre en cache" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.help" value="Ce que vous voulez mettre en cache - cela peut &#234;tre un appel de fonction ou une section de balisage contenant un ou plusieurs appels de fonction." />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.label" value="Identifiant unique de cache" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.help" value="Sp&#233;cifiez un ID unique pour le contenu mis en cache. Cette valeur est utilis&#233;e - en conjonction avec la port&#233;e de la page - &#224; d&#233;finir une cl&#233; unique de cache." />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.label" value="Port&#233;e de la page" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.help" value="La port&#233;e de page les donn&#233;es mises en cache doit &#234;tre partag&#233;e sur. Par d&#233;faut, la port&#233;e est  &#39;ce site&#39;, mais vous pouvez le modifier pour une page mise en cache et plus sp&#233;cifique." />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.label" value="Dur&#233;e de mise en cache (en secondes)" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.help" value="Le nombre de secondes durant lesquelles l&#39;objet mis en cache doit &#234;tre r&#233;utilis&#233;. D&#233;faut est de 1 minute (60 secondes)." />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.label" value="Langage sp&#233;cifique" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.help" value="Choisissez si l&#39;objet mis en cache doit &#234;tre mis en cache uniquement pour la langue du site ou commun&#233;ment partag&#233;e entre les langues." />
-
-	<string key="Composite.Utils.Compare.AreEqual.description" value="Sont &#233;gales" />
-	<string key="Composite.Utils.Compare.AreEqual.param.ValueA.help" value="Compare deux objets pour l&#39;&#233;galit&#233;. Renvoie true si les deux objets sont &#233;gaux." />
-	<string key="Composite.Utils.Compare.AreEqual.param.ValueA.label" value="Valeur A &#224; comparer." />
-	<string key="Composite.Utils.Compare.AreEqual.param.ValueB.help" value="" />
-	<string key="Composite.Utils.Compare.AreEqual.param.ValueB.label" value="Valeur B &#224; comparer." />
-	<string key="Composite.Utils.Compare.IsLessThan.description" value="" />
-	<string key="Composite.Utils.Compare.IsLessThan.param.ValueA.help" value="" />
-	<string key="Composite.Utils.Compare.IsLessThan.param.ValueA.label" value="Valeur A &#224; comparer." />
-	<string key="Composite.Utils.Compare.IsLessThan.param.ValueB.help" value="" />
-	<string key="Composite.Utils.Compare.IsLessThan.param.ValueB.label" value="Valeur B &#224; comparer." />
-	<string key="Composite.Utils.Configuration.AppSettingsValue.description" value="Lit une cha&#238;ne &#224; partir du fichier de configuration de l&#39;application (web.config ou app.config)" />
-	<string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.help" value="" />
-	<string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.label" value="Nom de la cl&#233;" />
-	<string key="Composite.Utils.Date.AddDays.description" value="Ajouter un certain nombre de jours &#224; la date actuelle et obtenir la date r&#233;sultante," />
-	<string key="Composite.Utils.Date.AddDays.param.DaysToAdd.help" value="Sp&#233;cifiez un nombre positif ou n&#233;gatif de jours &#224; ajouter &#224; la date actuelle." />
-	<string key="Composite.Utils.Date.AddDays.param.DaysToAdd.label" value="Jours &#224; ajouter" />
-	<string key="Composite.Utils.Date.Now.description" value="La date et l&#39;heure courante" />
-	<string key="Composite.Utils.GetInputParameter.description" value="Retourne un param&#232;tre d&#39;entr&#233;e &#224; partir de l&#39;ex&#233;cution du contexte dede la fonction. Utiliser dans l&#39;&#233;laboration de copier une valeur d&#39;entr&#233;e pour un nouvel appel de la fonction." />
-	<string key="Composite.Utils.GetInputParameter.param.InputParameterName.help" value="Indiquez le nom du param&#232;tre d&#39;entr&#233;e dont la valeur que vous souhaitez utiliser ici." />
-	<string key="Composite.Utils.GetInputParameter.param.InputParameterName.label" value="Nom du param&#232;tre" />
-
-	<string key="Composite.Utils.ParseStringToObject.description" value="Parse une cha&#238;ne de caract&#232;res dans un objet. Le type d&#39;objet d&#233;pend du r&#233;cepteur. Gr&#226;ce &#224; cette fonction pour fournir une valeur &#224; un param&#232;tre DateTime, rendra le syst&#232;me analyser la cha&#238;ne en tant que DateTime etc" />
-	<string key="Composite.Utils.ParseStringToObject.param.StringToParse.help" value="Sp&#233;cifiez la cha&#238;ne &#224; analyser. Notez que la cha&#238;ne doit &#234;tre format&#233;e d&#39;une mani&#232;re qui peut &#234;tre convertie dans le type d&#39;objet que l&#39;on attend." />
-	<string key="Composite.Utils.ParseStringToObject.param.StringToParse.label" value="Cha&#238;ne &#224; analyser" />
-
-	<string key="Composite.Utils.Guid.NewGuid.description" value="Retourne un nouveau Guid al&#233;atoire." />
-	<string key="Composite.Utils.Globalization.AllCultures.description" value="Une liste de toutes les cultures" />
-	<string key="Composite.Utils.Globalization.CurrentCulture.description" value="La culture de l&#39;utilisateur actuel / demande." />
-	<string key="Composite.Utils.Integer.Sum.description" value="Renvoie la somme d&#39;une liste de nombres entiers" />
-	<string key="Composite.Utils.Integer.Sum.param.Ints.help" value="" />
-	<string key="Composite.Utils.Integer.Sum.param.Ints.label" value="Liste d&#39;entiers" />
-	<string key="Composite.Utils.Predicates.BoolEquals.description" value="V&#233;rifie si une valeur bool&#233;enne est vraie ou fausse." />
-	<string key="Composite.Utils.Predicates.BoolEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.BoolEquals.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.DateTimeEquals.description" value="V&#233;rifiez si une date est &#233;gale &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.DateTimeGreaterThan.description" value="V&#233;rifie si une date est sup&#233;rieure &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.DateTimeLessThan.description" value="V&#233;rifie si une date est inf&#233;rieure &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.DecimalEquals.description" value="V&#233;rifie si un nombre d&#233;cimal a une certaine valeur" />
-	<string key="Composite.Utils.Predicates.DecimalEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DecimalEquals.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.DecimalGreaterThan.description" value="V&#233;rifie si une d&#233;cimale est sup&#233;rieure &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.DecimalLessThan.description" value="V&#233;rifie si une d&#233;cimale est inf&#233;rieure &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.GuidEquals.description" value="V&#233;rifie si un Guid est &#233;gale &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.GuidEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.GuidEquals.param.Value.label" value="La valeur &#224; comparer avec" />
-
-	<string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.description" value="V&#233;rifie si un Guid existe dans une liste de cha&#238;nes s&#233;par&#233;es par des virgules" />
-	<string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.label" value="Liste des Guid" />
-	<string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.help" value="Une cha&#238;ne contenant z&#233;ro ou plusieurs Guids s&#233;par&#233;es par des virgules" />
-
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.description" value="V&#233;rifie si un champ de cha&#238;ne correspond &#224; l&#39;un des termes dans une liste de cha&#238;nes s&#233;par&#233;es par des virgules" />
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.label" value="Termes de recherche" />
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="Une cha&#238;ne contenant les termes de recherche s&#233;par&#233;s par des virgules, comme &#39;c1,cms,LINQ&#39;" />
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.label" value="Ignorer la casse" />
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.help" value="Lorsque &#171;faux&#187;, enveloppe des mots doit correspondre exactement. D&#233;faut est &#171;vrai&#187;, rechercne insensible &#224; la casse" />
-
-	<string key="Composite.Utils.Predicates.StringInList.description" value="V&#233;rifie si un champ caract&#232;re correspond &#224; l&#39;une des cha&#238;nes de la liste fournie" />
-	<string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.label" value="Termes de recherche" />
-	<string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.help" value="Une liste de cha&#238;nes de caract&#232;res pour correspondre contre le domaine de la cha&#238;ne recherch&#233;e." />
-	<string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.label" value="Ignorer la casse" />
-	<string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.help" value="Lorsque &#171;faux&#187;, enveloppe des mots doit correspondre exactement. D&#233;faut est &#171;vrai&#187;, rechercne insensible &#224; la casse" />
-
-
-	<string key="Composite.Utils.Predicates.IntegerEquals.description" value="V&#233;rifie si un nombre entier est &#233;gal &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.IntegerEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.IntegerEquals.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.IntegerGreaterThan.description" value="V&#233;rifie si un nombre entier est sup&#233;rieur &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.IntegerLessThan.description" value="V&#233;rifie si un nombre entier est inf&#233;rieur &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.StringContains.description" value="V&#233;rifie si une cha&#238;ne contient une certaine valeur" />
-	<string key="Composite.Utils.Predicates.StringContains.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.StringContains.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.StringEndsWith.description" value="V&#233;rifie si une cha&#238;ne se termine par une certaine valeur" />
-	<string key="Composite.Utils.Predicates.StringEndsWith.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.StringEndsWith.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.StringEquals.description" value="V&#233;rifie si une cha&#238;ne est &#233;gale &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.StringEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.StringEquals.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.StringStartsWith.description" value="V&#233;rifie si une cha&#238;ne commence par une certaine valeur" />
-	<string key="Composite.Utils.Predicates.StringStartsWith.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.StringStartsWith.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.NullableGuidEquals.description" value="V&#233;rifie si un Guid est &#233;gale &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.NullableGuidNoValue.description" value="V&#233;rifie si un Guid nullable n&#39;a aucune valeur" />
-	<string key="Composite.Utils.Predicates.NullableIntegerEquals.description" value="V&#233;rifie si un nombre entier est &#233;gal &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.NullableIntegerNoValue.description" value="V&#233;rifie si un nombre entier nullable n&#39;a aucune valeur" />
-	<string key="Composite.Utils.Predicates.StringNoValue.description" value="V&#233;rifie si une cha&#238;ne n&#39;a aucune valeur" />
-	<string key="Composite.Utils.Predicates.NullableBoolEquals.description" value="V&#233;rifie si une valeur bool&#233;enne est vraie ou fausse." />
-	<string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.NullableBoolNoValue.description" value="V&#233;rifie si un bool&#233;en nullable n&#39;a aucune valeur" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeEquals.description" value="V&#233;rifiez si une date est &#233;gale &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.description" value="V&#233;rifie si une date est sup&#233;rieure &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeLessThan.description" value="V&#233;rifie si une date est inf&#233;rieure &#224; une certaine valeur" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeNoValue.description" value="V&#233;rifie si une date nullable n&#39;a aucune valeur" />
-	<string key="Composite.Utils.Predicates.NullableDecimalEquals.description" value="V&#233;rifie si un nombre d&#233;cimal a une certaine valeur" />
-	<string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.label" value="La valeur &#224; comparer avec" />
-	<string key="Composite.Utils.Predicates.NullableDecimalNoValue.description" value="V&#233;rifie si un nombre d&#233;cimal nullable n&#39;a aucune valeur" />
-
-	<string key="Composite.Utils.String.Join.description" value="Joint une liste de cha&#238;nes caract&#232;res en une seule cha&#238;ne" />
-	<string key="Composite.Utils.String.Join.param.Separator.help" value="Le s&#233;parateur &#224; ins&#233;rer entre les caract&#232;res" />
-	<string key="Composite.Utils.String.Join.param.Separator.label" value="S&#233;parateur" />
-	<string key="Composite.Utils.String.Join.param.Strings.help" value="La liste des cha&#238;nes &#224; joindre" />
-	<string key="Composite.Utils.String.Join.param.Strings.label" value="Caract&#232;res &#224; joindre" />
-	<string key="Composite.Utils.String.JoinTwo.description" value="Joint deux cha&#238;nes de caract&#232;res en une seule" />
-	<string key="Composite.Utils.String.JoinTwo.param.StringA.help" value="Le caract&#232;re &#224; mettre en premier" />
-	<string key="Composite.Utils.String.JoinTwo.param.StringA.label" value="Cha&#238;ne A" />
-	<string key="Composite.Utils.String.JoinTwo.param.StringB.help" value="La cha&#238;ne &#224; mettre en derni&#232;re" />
-	<string key="Composite.Utils.String.JoinTwo.param.StringB.label" value="Cha&#238;ne B" />
-	<string key="Composite.Utils.String.JoinTwo.param.Separator.help" value="Une cha&#238;ne &#224; ins&#233;rer entrela chaine A et B. Le d&#233;faut est sans s&#233;pareteur" />
-	<string key="Composite.Utils.String.JoinTwo.param.Separator.label" value="S&#233;parateur" />
-	<string key="Composite.Utils.String.Split.description" value="Divise une cha&#238;ne en une liste de cha&#238;nes." />
-	<string key="Composite.Utils.String.Split.param.Separator.help" value="Le s&#233;parateur &#224; utiliser lors de la division de la cha&#238;ne. D&#233;faut est la virgule (,)" />
-	<string key="Composite.Utils.String.Split.param.Separator.label" value="S&#233;parateur" />
-	<string key="Composite.Utils.String.Split.param.String.help" value="La cha&#238;ne que vous souhaitez diviser en une liste." />
-	<string key="Composite.Utils.String.Split.param.String.label" value="Cha&#238;ne &#224; diviser" />
-	<string key="Composite.Utils.Validation.DateTimeNotNullValidation.description" value="" />
-	<string key="Composite.Utils.Validation.DecimalNotNullValidation.description" value="" />
-	<string key="Composite.Utils.Validation.DecimalPrecisionValidation.description" value="Valide la pr&#233;cision des d&#233;cimales (le nombre de d&#233;cimales que l&#39;utilisateur a sp&#233;cifi&#233;)" />
-	<string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.help" value="Le nombre maximum de chiffres pour permettre &#224; la d&#233;cimale" />
-	<string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.label" value="Le nombre maximum de chiffres apr&#232;s la virgule" />
-	<string key="Composite.Utils.Validation.GuidNotNullValidation.description" value="" />
-	<string key="Composite.Utils.Validation.Int32NotNullValidation.description" value="" />
-	<string key="Composite.Utils.Validation.IntegerRangeValidation.description" value="Valide qu&#39;un nombre entier est dans une certaine plage" />
-	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.help" value="Le nombre maximum autoris&#233; dans ce champ." />
-	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.label" value="Nombre maximum" />
-	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.help" value="Le nombre minimum autoris&#233; dans ce champ." />
-	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.label" value="Nombre minimum" />
-	<string key="Composite.Utils.Validation.RegularExpressionValidation.description" value="Valide qu&#39;une cha&#238;ne est conforme &#224; l&#39;expression r&#233;guli&#232;re sp&#233;cifi&#233;e" />
-	<string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.help" value="L&#39;expression r&#233;guli&#232;re &#224; utiliser" />
-	<string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.label" value="Pattern RegEx" />
-	<string key="Composite.Utils.Validation.StringLengthValidation.description" value="V&#233;rifie que la longueur d&#39;une cha&#238;ne de caract&#232;res est dans la plage sp&#233;cifi&#233;e" />
-	<string key="Composite.Utils.Validation.StringLengthValidation.param.max.help" value="" />
-	<string key="Composite.Utils.Validation.StringLengthValidation.param.max.label" value="Longueur maximale" />
-	<string key="Composite.Utils.Validation.StringLengthValidation.param.min.help" value="" />
-	<string key="Composite.Utils.Validation.StringLengthValidation.param.min.label" value="Longueur minimale" />
-	<string key="Composite.Utils.Validation.StringNotNullValidation.description" value="" />
-	<string key="Composite.Web.Client.BrowserPlatform.description" value="" />
-	<string key="Composite.Web.Client.BrowserString.description" value="" />
-	<string key="Composite.Web.Client.BrowserType.description" value="" />
-	<string key="Composite.Web.Client.BrowserVersion.description" value="" />
-	<string key="Composite.Web.Client.EcmaScriptVersion.description" value="" />
-	<string key="Composite.Web.Client.IsCrawler.description" value="Vrai si la requ&#234;te courante est identifi&#233;e comme provenant d&#39;un robot (moteur de recherche)." />
-	<string key="Composite.Web.Client.IsMobileDevice.description" value="Vrai si la requ&#234;te courante est identifi&#233;e comme provenant d&#39;un appareil mobile." />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.description" value="Balises Meta communes que vous d&#233;sirez probablement dans la balise &#39;HEAD&#39;" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.label" value="Type de contenu" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="Par d&#233;faut, c&#39;est &#39;text / html; charset = utf-8 &#39;. Si vous servez quelque chose que vous devriez remplacer cela." />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.label" value="Cr&#233;ateur" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Qui a con&#231;u ce site? Montrez-le dans le &#39;designer&#39; meta tag. D&#233;faut est de ne pas &#233;mettre de la balise meta." />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.label" value="Afficher le g&#233;n&#233;rateur" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.help" value="Montrez au monde que vous soutenez composite C1 - open source gratuit!" />
-	<string key="Composite.Web.Html.Template.LangAttribute.description" value="Ajoute un attribut lang = &#39;(code de langue)&#39; &#224; l&#39;&#233;l&#233;ment parent, ce qui refl&#232;te la langue de la page en cours. Vous pouvez mettre cette attribut juste en dessous de la balise &lt;html  /&gt;." />
-  <string key="Composite.Web.Html.Template.PageTemplateFeature.description" value="Comprend un nomm&#233; Page Template entit&#233; &#224; cet endroit. Mod&#232;le de page Caract&#233;ristiques peuvent contenir HTML et extraits fonctionnels et sont g&#233;r&#233;s sur la section Mise en page." />
+  <string key="Composite.AspNet.LoadUserControl.description" value="Charge un contrôle utilisateur ASP.NET" />
+  <string key="Composite.AspNet.LoadUserControl.param.Path.help" value="Le chemin d'accès au fichier .ascx du contrôle utilisateur ASP.NET.  Exemple : &quot;~/ Controls / MonControl.ascx&quot;" />
+  <string key="Composite.AspNet.LoadUserControl.param.Path.label" value="Chemin" />
+  <string key="Composite.Constant.Boolean.description" value="Vous permet de spécifier une constante pour une valeur booléenne" />
+  <string key="Composite.Constant.Boolean.param.Constant.help" value="" />
+  <string key="Composite.Constant.Boolean.param.Constant.label" value="Valeur" />
+  <string key="Composite.Constant.DateTime.description" value="Vous permet de spécifier une constante pour une valeur date et heure" />
+  <string key="Composite.Constant.DateTime.param.Constant.help" value="" />
+  <string key="Composite.Constant.DateTime.param.Constant.label" value="Valeur" />
+  <string key="Composite.Constant.Decimal.description" value="Vous permet de spécifier une constante pour une valeur décimale" />
+  <string key="Composite.Constant.Decimal.param.Constant.help" value="" />
+  <string key="Composite.Constant.Decimal.param.Constant.label" value="Valeur" />
+  <string key="Composite.Constant.Guid.description" value="Permet de spécifier une valeur pour une constante Guid" />
+  <string key="Composite.Constant.Guid.param.Constant.help" value="" />
+  <string key="Composite.Constant.Guid.param.Constant.label" value="Valeur" />
+  <string key="Composite.Constant.Integer.description" value="Vous permet de spécifier une valeur pour une constante de type Integer" />
+  <string key="Composite.Constant.Integer.param.Constant.help" value="" />
+  <string key="Composite.Constant.Integer.param.Constant.label" value="Valeur" />
+  <string key="Composite.Constant.String.description" value="Vous permet de spécifier une valeur pour une constante de type String" />
+  <string key="Composite.Constant.String.param.Constant.help" value="" />
+  <string key="Composite.Constant.String.param.Constant.label" value="Valeur" />
+  <string key="Composite.Constant.XhtmlDocument.description" value="Permet de spécifier visuellement une constante pour un document XHTML" />
+  <string key="Composite.Constant.XhtmlDocument.param.Constant.help" value="" />
+  <string key="Composite.Constant.XhtmlDocument.param.Constant.label" value="Valeur" />
+  <string key="Composite.IDataGenerated.AddDataInstance.description" value="Ajoute une nouvelle instance d'un type donné" />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.description" value="Mises à jour le(s) instance (s) avec les valeurs indiquées." />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.label" value="Filtre" />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.description" value="Supprime le(s) instance(s) avec le filtre donné." />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.label" value="Filtre" />
+  <string key="Composite.IDataGenerated.GetDataReference.description" value="Crée un DataReference basée sur une valeur de clé." />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.help" value="La valeur de la clé des données à référencer." />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.label" value="Valeur de la clé" />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.description" value="Crée un NullableDataReference basé sur une valeur de clé. La valeur par défaut est «nul», aucune référence." />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.help" value="La valeur de la clé des données à référencer." />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.label" value="Valeur de la clé" />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.description" value="Convertit un DataReference dans un filtre d'un seul élément. Ce filtre permet de sélectionner un maximum d'un élément." />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.help" value="La référence de données à utiliser pour la sélection des données." />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.label" value="Données de référence" />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Permet de sélectionner les données sur la base de sa référence à la page actuellement rendue." />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.help" value="Sélectionner ce qui concerne la page en cours doit avoir avec les données que vous souhaitez récupérer." />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.label" value="Portée de la page" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.description" value="Définit une requête  «et» ou «ou» , combinant deux autres filtres." />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.label" value="Filtre et / ou" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.help" value="Si vous sélectionnez 'et'  les deux filtres sont appliqués aux données. Sélection ou vous donnera les données correspondant à un seul des filtres." />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.help" value="L'un des deux filtres (celui à évaluer en premier)" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.label" value="Filtre de gauche" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.help" value="L'un des deux filtres (celui à évaluer en dernier)" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.label" value="Filtre à droite" />
+  <string key="Composite.IDataGenerated.Filter.FieldPredicatesFilter.description" value="Vous permet de spécifier un filtre sur les données par des exigences pour les différents champs. Si vous définissez les requêtes sur plusieurs champs, ils sont tous forcée (et requête)." />
+  <string key="Composite.IDataGenerated.GetXml.description" value="Récupère une représentation XML des données." />
+  <string key="Composite.IDataGenerated.GetXml.param.ElementName.label" value="Nom de l'élément" />
+  <string key="Composite.IDataGenerated.GetXml.param.ElementNamespace.label" value="Élément espace de nommage" />
+  <string key="Composite.IDataGenerated.GetXml.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.GetXml.param.Filter.label" value="Filtre" />
+  <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.help" value="Une fois sélectionné le fichier XML de données sera précédée par un élément &lt;PagingInfo /&gt; détaillant le nombre de pages, éléments et plus." />
+  <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.label" value="Inclure les information de pagination" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderByField.help" value="Le champ pour trier les données" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderByField.label" value="Trier par" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.help" value="Lorsque défini à TRUE les résultats sont présentés dans l'ordre croissant, sinon l'ordre descendant est utilisé. L'ordre par défaut est l'ordre croissant." />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.label" value="Tri ascendant" />
+  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.help" value="Si le nombre d'éléments de données dépasse la taille de la page, vous pouvez utiliser la pagination pour passer aux autres pages. Voir le paramètre de taille de la page." />
+  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.label" value="Numéro de page" />
+  <string key="Composite.IDataGenerated.GetXml.param.PageSize.help" value="Le nombre d'éléments à afficher sur une page - le nombre maximum d'éléments à retouner." />
+  <string key="Composite.IDataGenerated.GetXml.param.PageSize.label" value="Taille de la page" />
+  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.help" value="Le champs de données à la sortie dans le fichier XML. Moins de champs peuvent produire des rendus plus rapides." />
+  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.label" value="Champs sélectionnés" />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.help" value="Si vous incluez des données de référence dans la mise en 'Biens sélectionnés », vous pouvez utiliser cette option pour contrôler la façon dont les données référencée est inclus. «Inline» est facile à utiliser, mais peut gonfler la taille du document XML." />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.label" value="Afficher les données de référence 'inline'" />
+  <string key="Composite.IDataGenerated.GetXml.param.Randomized.help" value="Lorsque les données réelles peuvent être ordonnées aléatoirement. Indiquer le nombre de résultats aléatoires dont vous avez besoin en définissant la «taille de la page. Si un filtre est spécifié, il est appliqué avant la sélection aléatoire. Si vous spécifiez un «Ordre de 'valeur, vous devez spécifier une« taille de la page «faible ou la randomisation sera nulle." />
+  <string key="Composite.IDataGenerated.GetXml.param.Randomized.label" value="Aléatoire" />
+  <string key="Composite.IDataGenerated.GetXml.param.CachePriority.help" value="Détermine si le résultat XML doit être mis en cache, et quelle priorité les enregistrements en cache doivent avoir" />
+  <string key="Composite.IDataGenerated.GetXml.param.CachePriority.label" value="Priorité de la cache" />
+  <string key="Composite.Pages.GetPageId.description" value="Récupère l'ID de la page en cours ou d'une page relative à la page courante." />
+  <string key="Composite.Pages.GetPageId.param.SitemapScope.help" value="Qu'est-ce que la page pour obtenir Identifiant de. La valeur par défaut est de la page en cours." />
+  <string key="Composite.Pages.GetPageId.param.SitemapScope.label" value="Association de la page" />
+  <string key="Composite.Pages.QuickSitemap.description" value="Plan de site xhtml rapide et brut." />
+  <string key="Composite.Pages.SitemapXml.description" value="Retourne une structure XML hiérarchique de pages. Lorsqu'il est exécuté dans le cadre d'un des éléments XML de rendu des pages représentant les pages actuelles et ancêtres seront annexés les attributs isOpen = true et IsCurrent = true" />
+  <string key="Composite.Pages.SitemapXml.param.SourcePage.label" value="Page source" />
+  <string key="Composite.Pages.SitemapXml.param.SourcePage.help" value="Par défaut, la page source est la page en cours de rendu. Spécifiez une valeur si vous souhaitez obtenir des informations plan du site par rapport à une autre page. Les champs de la page source comment les éléments de la page sont annotés avec 'isOpen »et« IsCurrent »et est le point de départ pour le calcul de la portée de page." />
+  <string key="Composite.Pages.SitemapXml.param.SitemapScope.label" value="Portée de la page" />
+  <string key="Composite.Pages.SitemapXml.param.SitemapScope.help" value="Le profondeur de pages pour extraire du plan du site. La valeur par défaut est «toutes les pages». Vous pouvez utiliser ce paramètre pour extraire la structure dont vous avez besoin pour accomplir votre tâche." />
+  <string key="Composite.Pages.GetForeignPageInfo.description" value="Obtient des informations sur la page en cours dans toutes les langues." />
+  <string key="Composite.Utils.Caching.PageObjectCache.description" value="Définit une 'zone de cache 'autour d'un appel ou balisage fonction (contenant généralement des appels de fonction). Cette fonction peut être utilisée pour améliorer performances de rendu en mettant en cache les sections d'une page Web. La valeur 'objet Cache Id' doit être unique pour le contenu mis en cache." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.label" value="Objet à mettre en cache" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.help" value="Ce que vous voulez mettre en cache - cela peut être un appel de fonction ou une section de balisage contenant un ou plusieurs appels de fonction." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.label" value="Identifiant unique de cache" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.help" value="Spécifiez un ID unique pour le contenu mis en cache. Cette valeur est utilisée - en conjonction avec la portée de la page - à définir une clé unique de cache." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.label" value="Portée de la page" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.help" value="La portée de page les données mises en cache doit être partagée sur. Par défaut, la portée est  'ce site', mais vous pouvez le modifier pour une page mise en cache et plus spécifique." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.label" value="Durée de mise en cache (en secondes)" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.help" value="Le nombre de secondes durant lesquelles l'objet mis en cache doit être réutilisé. Défaut est de 1 minute (60 secondes)." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.label" value="Langage spécifique" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.help" value="Choisissez si l'objet mis en cache doit être mis en cache uniquement pour la langue du site ou communément partagée entre les langues." />
+  <string key="Composite.Utils.Compare.AreEqual.description" value="Sont égales" />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueA.help" value="Compare deux objets pour l'égalité. Renvoie true si les deux objets sont égaux." />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueA.label" value="Valeur A à comparer." />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueB.help" value="" />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueB.label" value="Valeur B à comparer." />
+  <string key="Composite.Utils.Compare.IsLessThan.description" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueA.help" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueA.label" value="Valeur A à comparer." />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueB.help" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueB.label" value="Valeur B à comparer." />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.description" value="Lit une chaîne à partir du fichier de configuration de l'application (web.config ou app.config)" />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.help" value="" />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.label" value="Nom de la clé" />
+  <string key="Composite.Utils.Date.AddDays.description" value="Ajouter un certain nombre de jours à la date actuelle et obtenir la date résultante," />
+  <string key="Composite.Utils.Date.AddDays.param.DaysToAdd.help" value="Spécifiez un nombre positif ou négatif de jours à ajouter à la date actuelle." />
+  <string key="Composite.Utils.Date.AddDays.param.DaysToAdd.label" value="Jours à ajouter" />
+  <string key="Composite.Utils.Date.Now.description" value="La date et l'heure courante" />
+  <string key="Composite.Utils.GetInputParameter.description" value="Retourne un paramètre d'entrée à partir de l'exécution du contexte dede la fonction. Utiliser dans l'élaboration de copier une valeur d'entrée pour un nouvel appel de la fonction." />
+  <string key="Composite.Utils.GetInputParameter.param.InputParameterName.help" value="Indiquez le nom du paramètre d'entrée dont la valeur que vous souhaitez utiliser ici." />
+  <string key="Composite.Utils.GetInputParameter.param.InputParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Utils.ParseStringToObject.description" value="Parse une chaîne de caractères dans un objet. Le type d'objet dépend du récepteur. Grâce à cette fonction pour fournir une valeur à un paramètre DateTime, rendra le système analyser la chaîne en tant que DateTime etc" />
+  <string key="Composite.Utils.ParseStringToObject.param.StringToParse.help" value="Spécifiez la chaîne à analyser. Notez que la chaîne doit être formatée d'une manière qui peut être convertie dans le type d'objet que l'on attend." />
+  <string key="Composite.Utils.ParseStringToObject.param.StringToParse.label" value="Chaîne à analyser" />
+  <string key="Composite.Utils.Guid.NewGuid.description" value="Retourne un nouveau Guid aléatoire." />
+  <string key="Composite.Utils.Globalization.AllCultures.description" value="Une liste de toutes les cultures" />
+  <string key="Composite.Utils.Globalization.CurrentCulture.description" value="La culture de l'utilisateur actuel / demande." />
+  <string key="Composite.Utils.Integer.Sum.description" value="Renvoie la somme d'une liste de nombres entiers" />
+  <string key="Composite.Utils.Integer.Sum.param.Ints.help" value="" />
+  <string key="Composite.Utils.Integer.Sum.param.Ints.label" value="Liste d'entiers" />
+  <string key="Composite.Utils.Predicates.BoolEquals.description" value="Vérifie si une valeur booléenne est vraie ou fausse." />
+  <string key="Composite.Utils.Predicates.BoolEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.BoolEquals.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.description" value="Vérifiez si une date est égale à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.description" value="Vérifie si une date est supérieure à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.description" value="Vérifie si une date est inférieure à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.description" value="Vérifie si un nombre décimal a une certaine valeur" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.description" value="Vérifie si une décimale est supérieure à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.description" value="Vérifie si une décimale est inférieure à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.GuidEquals.description" value="Vérifie si un Guid est égale à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.GuidEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.GuidEquals.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.description" value="Vérifie si un Guid existe dans une liste de chaînes séparées par des virgules" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.label" value="Liste des Guid" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.help" value="Une chaîne contenant zéro ou plusieurs Guids séparées par des virgules" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.description" value="Vérifie si un champ de chaîne correspond à l'un des termes dans une liste de chaînes séparées par des virgules" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.label" value="Termes de recherche" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="Une chaîne contenant les termes de recherche séparés par des virgules, comme 'c1,cms,LINQ'" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.label" value="Ignorer la casse" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.help" value="Lorsque «faux», enveloppe des mots doit correspondre exactement. Défaut est «vrai», rechercne insensible à la casse" />
+  <string key="Composite.Utils.Predicates.StringInList.description" value="Vérifie si un champ caractère correspond à l'une des chaînes de la liste fournie" />
+  <string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.label" value="Termes de recherche" />
+  <string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.help" value="Une liste de chaînes de caractères pour correspondre contre le domaine de la chaîne recherchée." />
+  <string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.label" value="Ignorer la casse" />
+  <string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.help" value="Lorsque «faux», enveloppe des mots doit correspondre exactement. Défaut est «vrai», rechercne insensible à la casse" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.description" value="Vérifie si un nombre entier est égal à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.description" value="Vérifie si un nombre entier est supérieur à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.description" value="Vérifie si un nombre entier est inférieur à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.StringContains.description" value="Vérifie si une chaîne contient une certaine valeur" />
+  <string key="Composite.Utils.Predicates.StringContains.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringContains.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.description" value="Vérifie si une chaîne se termine par une certaine valeur" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.StringEquals.description" value="Vérifie si une chaîne est égale à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.StringEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringEquals.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.description" value="Vérifie si une chaîne commence par une certaine valeur" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.description" value="Vérifie si un Guid est égale à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.NullableGuidNoValue.description" value="Vérifie si un Guid nullable n'a aucune valeur" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.description" value="Vérifie si un nombre entier est égal à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.NullableIntegerNoValue.description" value="Vérifie si un nombre entier nullable n'a aucune valeur" />
+  <string key="Composite.Utils.Predicates.StringNoValue.description" value="Vérifie si une chaîne n'a aucune valeur" />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.description" value="Vérifie si une valeur booléenne est vraie ou fausse." />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.NullableBoolNoValue.description" value="Vérifie si un booléen nullable n'a aucune valeur" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.description" value="Vérifiez si une date est égale à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.description" value="Vérifie si une date est supérieure à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.description" value="Vérifie si une date est inférieure à une certaine valeur" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeNoValue.description" value="Vérifie si une date nullable n'a aucune valeur" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.description" value="Vérifie si un nombre décimal a une certaine valeur" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.label" value="La valeur à comparer avec" />
+  <string key="Composite.Utils.Predicates.NullableDecimalNoValue.description" value="Vérifie si un nombre décimal nullable n'a aucune valeur" />
+  <string key="Composite.Utils.String.Join.description" value="Joint une liste de chaînes caractères en une seule chaîne" />
+  <string key="Composite.Utils.String.Join.param.Separator.help" value="Le séparateur à insérer entre les caractères" />
+  <string key="Composite.Utils.String.Join.param.Separator.label" value="Séparateur" />
+  <string key="Composite.Utils.String.Join.param.Strings.help" value="La liste des chaînes à joindre" />
+  <string key="Composite.Utils.String.Join.param.Strings.label" value="Caractères à joindre" />
+  <string key="Composite.Utils.String.JoinTwo.description" value="Joint deux chaînes de caractères en une seule" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringA.help" value="Le caractère à mettre en premier" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringA.label" value="Chaîne A" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringB.help" value="La chaîne à mettre en dernière" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringB.label" value="Chaîne B" />
+  <string key="Composite.Utils.String.JoinTwo.param.Separator.help" value="Une chaîne à insérer entrela chaine A et B. Le défaut est sans sépareteur" />
+  <string key="Composite.Utils.String.JoinTwo.param.Separator.label" value="Séparateur" />
+  <string key="Composite.Utils.String.Split.description" value="Divise une chaîne en une liste de chaînes." />
+  <string key="Composite.Utils.String.Split.param.Separator.help" value="Le séparateur à utiliser lors de la division de la chaîne. Défaut est la virgule (,)" />
+  <string key="Composite.Utils.String.Split.param.Separator.label" value="Séparateur" />
+  <string key="Composite.Utils.String.Split.param.String.help" value="La chaîne que vous souhaitez diviser en une liste." />
+  <string key="Composite.Utils.String.Split.param.String.label" value="Chaîne à diviser" />
+  <string key="Composite.Utils.Validation.DateTimeNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.DecimalNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.description" value="Valide la précision des décimales (le nombre de décimales que l'utilisateur a spécifié)" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.help" value="Le nombre maximum de chiffres pour permettre à la décimale" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.label" value="Le nombre maximum de chiffres après la virgule" />
+  <string key="Composite.Utils.Validation.GuidNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.Int32NotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.description" value="Valide qu'un nombre entier est dans une certaine plage" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.help" value="Le nombre maximum autorisé dans ce champ." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.label" value="Nombre maximum" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.help" value="Le nombre minimum autorisé dans ce champ." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.label" value="Nombre minimum" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.description" value="Valide qu'une chaîne est conforme à l'expression régulière spécifiée" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.help" value="L'expression régulière à utiliser" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.label" value="Pattern RegEx" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.description" value="Vérifie que la longueur d'une chaîne de caractères est dans la plage spécifiée" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.max.help" value="" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.max.label" value="Longueur maximale" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.min.help" value="" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.min.label" value="Longueur minimale" />
+  <string key="Composite.Utils.Validation.StringNotNullValidation.description" value="" />
+  <string key="Composite.Web.Client.BrowserPlatform.description" value="" />
+  <string key="Composite.Web.Client.BrowserString.description" value="" />
+  <string key="Composite.Web.Client.BrowserType.description" value="" />
+  <string key="Composite.Web.Client.BrowserVersion.description" value="" />
+  <string key="Composite.Web.Client.EcmaScriptVersion.description" value="" />
+  <string key="Composite.Web.Client.IsCrawler.description" value="Vrai si la requête courante est identifiée comme provenant d'un robot (moteur de recherche)." />
+  <string key="Composite.Web.Client.IsMobileDevice.description" value="Vrai si la requête courante est identifiée comme provenant d'un appareil mobile." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.description" value="Balises Meta communes que vous désirez probablement dans la balise 'HEAD'" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.label" value="Type de contenu" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="Par défaut, c'est 'text / html; charset = utf-8 '. Si vous servez quelque chose que vous devriez remplacer cela." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.label" value="Créateur" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Qui a conçu ce site? Montrez-le dans le 'designer' meta tag. Défaut est de ne pas émettre de la balise meta." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.label" value="Afficher le générateur" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.help" value="Montrez au monde que vous soutenez composite C1 - open source gratuit!" />
+  <string key="Composite.Web.Html.Template.LangAttribute.description" value="Ajoute un attribut lang = '(code de langue)' à l'élément parent, ce qui reflète la langue de la page en cours. Vous pouvez mettre cette attribut juste en dessous de la balise &lt;html  /&gt;." />
+  <string key="Composite.Web.Html.Template.PageTemplateFeature.description" value="Comprend une fonctionnalité de modèle de page à cet emplacement.  Les modèles de page peuvent contenir des balises HTML et des fonctionnalités.  Ils sont gérés dans la section Mise en page." />
   <string key="Composite.Web.Html.Template.PageTemplateFeature.param.FeatureName.label" value="Nom du composant" />
-  <string key="Composite.Web.Html.Template.PageTemplateFeature.param.FeatureName.help" value="Le nom du mod&#232;le de composant que vous souhaitez inclure." />
-	<string key="Composite.Web.Html.Template.HtmlTitleValue.description" value="&#201;met le &#39;titre d&#233;finitif &#187;de la page en cours; la m&#234;me valeur qui se retrouve dans la balise page de titre. Ce titre peut provenir de la page en cours ou rendu d&#39;un contr&#244;le C1 Fonction / ASP.NET qui a chang&#233; le titre pour correspondre &#224; des donn&#233;es sp&#233;cifiques &#233;tant en vedette sur la page." />
-	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.label" value="Pr&#233;fixe &#224; retirer" />
-	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.help" value="Si le titre HTML a une valeur de pr&#233;fixe que vous souhaitez vous d&#233;barrasser, sp&#233;cifiez le pr&#233;fixe ici. Si le pr&#233;fixe n&#39;est pas trouv&#233; dans le titre, cette valeur est ignor&#233;e." />
-	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.label" value="Suffixe &#224; retirer" />
-	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.help" value="Si le titre HTML a une valeur de suffixe dont vous souhaitez vous d&#233;barrasser, sp&#233;cifiez le suffixe ici. Si le suffixe n&#39;est pas trouv&#233; dans le titre, cette valeur est ignor&#233;e." />
-	<string key="Composite.Web.Html.Template.MetaDescriptionValue.description" value="&#201;met la &#171;description d&#233;finitive&#187; de la page en cours; la m&#234;me valeur qui se retrouve dans la page meta description tag. Cette valeur peut provenir de la page en cours ou rendu d&#39;un contr&#244;le C1 Fonction / ASP.NET qui a chang&#233; la description en fonction des donn&#233;es sp&#233;cifiques &#233;tant en vedette sur la page." />
-	<string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.label" value="&#201;l&#233;ment pour envelopper la description" />
-	<string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.help" value="Pour avoir la description envelopp&#233;e dans un &#233;l&#233;ment (comme &lt;p class=&quot;description&quot; /&gt;) sp&#233;cifier le ici. L&#39;&#233;l&#233;ment sera affich&#233; uniquement quand le texte de descripion sera pr&#233;sent." />
-
-
-  <string key="Composite.Web.Request.CookieValue.description" value="Obtient une valeur de la collection de cookies de l&#39;utilisateur courant." />
-	<string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
-	<string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Nom de Cookie" />
-	<string key="Composite.Web.Request.CookieValue.param.FallbackValue.help" value="Si l&#39;utilisateur ne dispose pas de ce cookie, utiliser ce champ pour sp&#233;cifier la valeur par d&#233;faut." />
-	<string key="Composite.Web.Request.CookieValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.FormPostBoolValue.description" value="Obtient une valeur bool&#233;enne d&#39;un POST de formulaire (HTTP POST)" />
-	<string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.FormPostDecimalValue.description" value="Obtient une valeur d&#233;cimale d&#39;un POST de formulaire (HTTP POST)" />
-	<string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.FormPostGuidValue.description" value="Obtient une valeur Guid POST de formulaire (HTTP POST)" />
-	<string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.FormPostIntegerValue.description" value="Obtient une valeur enti&#232;re &#224; partir d&#39;un POST de formulaire (HTTP POST)" />
-	<string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.FormPostValue.description" value="Obtient une valeur de cha&#238;ne &#224; partir d&#39;un POST de formulaire (HTTP POST)" />
-	<string key="Composite.Web.Request.FormPostValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.FormPostValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.FormPostValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.description" value="Obtient une valeur de date et heure d&#39;un POST de formulaire (HTTP POST). La cha&#238;ne de date d&#39;entr&#233;e devrait &#234;tre de format XML (comme &quot;2003-09-26T13:30:00&quot;)" />
-	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.help" value="La valeur &#224; utiliser si le POST ne contient pas le nom du param&#232;tre sp&#233;cifi&#233;." />
-	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.QueryStringBoolValue.description" value="Obtient une valeur bool&#233;enne &#224; partir d&#39;un param&#232;tre d&#39;URL (HTTP GET)" />
-	<string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.QueryStringDecimalValue.description" value="Obtient une valeur d&#233;cimale d&#39;un param&#232;tre d&#39;URL (HTTP GET)" />
-	<string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.QueryStringGuidValue.description" value="Obtient une valeur Guid d&#39;un param&#232;tre d&#39;URL (HTTP GET)" />
-	<string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.QueryStringIntegerValue.description" value="Obtient une valeur enti&#232;re &#224; partir d&#39;un param&#232;tre d&#39;URL (HTTP GET)" />
-	<string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.QueryStringValue.description" value="Obtient une valeur de cha&#238;ne &#224; partir d&#39;un param&#232;tre d&#39;URL (HTTP GET)" />
-	<string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.QueryStringValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.description" value="Obtient une valeur de date et heure d&#39;un param&#232;tre Url (HTTP GET). La cha&#238;ne de date d&#39;entr&#233;e devrait &#234;tre de format XML (comme &quot;2003-09-26T13:30:00&quot;)" />
-	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.help" value="La valeur &#224; utiliser si l&#39;URL ne contient pas le nom du param&#232;tre sp&#233;cifi&#233;." />
-	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Nom du param&#232;tre" />
-	<string key="Composite.Web.Request.PathInfo.description" value="Retourne des informations suppl&#233;mentaires pass&#233;es dans un URL avec le lien de la page." />
-	<string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Le segment de l&#39;information de chemin pour r&#233;cup&#233;rer, en utilisant le format &#39;/ (0) / (1) / (2) / ... &#187;. Sp&#233;cifiez -1 pour obtenir la cha&#238;ne enti&#232;re." />
-	<string key="Composite.Web.Request.PathInfo.param.Segment.label" value="Segment" />
-	<string key="Composite.Web.Request.PathInfo.param.AutoApprove.help" value="Lorsque vrai, Composite C1 sera charg&#233; d&#39;accepter n&#39;importe quelle cha&#238;ne info de chemin. Par d&#233;faut est true." />
-	<string key="Composite.Web.Request.PathInfo.param.AutoApprove.label" value="Approbation automatique" />
-	<string key="Composite.Web.Request.PathInfo.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.PathInfo.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.PathInfoInt.description" value="Extrait une valeur enti&#232;re &#224; partir d&#39;un segment de PathInfo." />
-	<string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Le segment de l&#39;information de chemin pour r&#233;cup&#233;rer, en utilisant le format &#39;/ (0) / (1) / (2) / ... &#187;." />
-	<string key="Composite.Web.Request.PathInfoInt.param.Segment.label" value="Segment" />
-	<string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.help" value="Lorsque vrai, Composite C1 sera charg&#233; d&#39;accepter n&#39;importe quelle cha&#238;ne info de chemin. Par d&#233;faut est true." />
-	<string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.label" value="Approbation automatique" />
-	<string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.PathInfoGuid.description" value="Extrait une GUID d&#39;un segment PathInfo." />
-	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Le segment de l&#39;information de chemin pour r&#233;cup&#233;rer, en utilisant le format &#39;/ (0) / (1) / (2) / ... &#187;." />
-	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.label" value="Segment" />
-	<string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.help" value="Lorsque vrai, Composite C1 sera charg&#233; d&#39;accepter n&#39;importe quelle cha&#238;ne info de chemin. Par d&#233;faut est true." />
-	<string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.label" value="Approbation automatique" />
-	<string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Avertit le syst&#232;me de PathInfo utilis&#233;, de sorte que la demande n&#39;est pas redirig&#233; vers la page &#171;Page non trouv&#233;e&#187;." />
-	<string key="Composite.Web.Request.SessionVariable.description" value="R&#233;cup&#232;re une variable de la session en cours de l&#39;utilisateur sous forme de cha&#238;ne." />
-	<string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="La valeur &#224; utiliser si la variable de session n&#39;a pas &#233;t&#233; trouv&#233;e" />
-	<string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Request.SessionVariable.param.VariableName.help" value="" />
-	<string key="Composite.Web.Request.SessionVariable.param.VariableName.label" value="Nom de la variable" />
-	<string key="Composite.Web.Response.Redirect.description" value="Redirige le visiteur du site vers une autre URL. Redirections URL sont supprim&#233;s lorsque cette fonction s&#39;ex&#233;cute dans la console de C1." />
-	<string key="Composite.Web.Response.Redirect.param.Url.help" value="L&#39;URL vers lequel l&#39;utilisateur doit &#234;tre redirig&#233; soit absolu (http://contoso.com/default.aspx) ou relatif (/ Login.aspx))." />
-	<string key="Composite.Web.Response.Redirect.param.Url.label" value="URL" />
-	<string key="Composite.Web.Response.SetCookieValue.description" value="D&#233;finit une valeur de cookie pour l&#39;utilisateur actuel" />
-	<string key="Composite.Web.Response.SetCookieValue.param.CookieName.help" value="Le nom du cookie &#224; initialiser / remplacer" />
-	<string key="Composite.Web.Response.SetCookieValue.param.CookieName.label" value="Nom de Cookie" />
-	<string key="Composite.Web.Response.SetCookieValue.param.Value.help" value="La valeur &#224; stocker dans le cookie" />
-	<string key="Composite.Web.Response.SetCookieValue.param.Value.label" value="Valeur du cookie" />
-	<string key="Composite.Web.Response.SetCookieValue.param.Expires.help" value="Lorsque le cookie doit expirer (arr&#234;ter d&#39;exister). La valeur par d&#233;faut est &#171;session&#187;, lorsque l&#39;utilisateur ferme le navigateur." />
-	<string key="Composite.Web.Response.SetCookieValue.param.Expires.label" value="Expiration" />
-
-	<string key="Composite.Web.Response.SetServerPageCacheDuration.description" value="D&#233;finit le nombre maximum de secondes la page en cours devrait &#234;tre mis en cache sur le serveur public. Pour s&#39;assurer que la r&#233;ponse de la page n&#39;est pas mise en cache d&#233;finir les secondes maximum &#224; 0. Si plusieurs sources r&#233;gler la dur&#233;e de cache du serveur, le plus petit nombre est utilis&#233;. Notez que le fichier ~ / Renderers / Page.aspx contient une valeur par d&#233;faut pour la dur&#233;e de cache - vous pouvez &#233;diter ce fichier pour changer la valeur par d&#233;faut." />
-	<string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.help" value="Le nombre maximum de secondes la page en cours de rendu doit &#234;tre mis en cache au public. Une valeur &#233;lev&#233;e donn&#233; de bonnes performances, une faible valeur faire des changements apparaissent plus rapidement. Une valeur de &#39;0 &#39;assurer que tous les visiteurs obtiennent une r&#233;ponse unique." />
-	<string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.label" value="Secondes maximum" />
-
-	<string key="Composite.Web.Response.SetSessionVariable.description" value="D&#233;finit une variable de session pour l&#39;utilisateur actuel" />
-	<string key="Composite.Web.Response.SetSessionVariable.param.Value.help" value="" />
-	<string key="Composite.Web.Response.SetSessionVariable.param.Value.label" value="Valeur" />
-	<string key="Composite.Web.Response.SetSessionVariable.param.VariableName.help" value="Le nom de la variable de session &#224; initialiser" />
-	<string key="Composite.Web.Response.SetSessionVariable.param.VariableName.label" value="Nom de la variable" />
-	<string key="Composite.Web.Server.ApplicationPath.description" value="Obtient le chemin d&#39;acc&#232;s virtuel de l&#39;application Web. G&#233;n&#233;ralement, il s&#39;agit&#39;&#39; - la cha&#238;ne vide, lors de l&#39;ex&#233;cution dans la racine du site, mais si Composite C1 est en cours d&#39;ex&#233;cution dans un sous-dossier, cela peut &#234;tre &#171;/ mysubfolder. Vous pouvez utiliser cette valeur pour pr&#233;fixe URL si ils vont travailler, peu importe est compos&#233; C1 est en cours d&#39;ex&#233;cution est un sous-dossier ou pas. Exemple de l&#39;utilisation de XSLT: &lt;img src={/in:inputs/in:result[@name=&#39;ApplicationPath&#39;]}/images/myImage.png /&gt;" />
-	<string key="Composite.Web.Server.ApplicationVariable.description" value="Obtient une variable d&#39;application IIS" />
-	<string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.help" value="Valeur &#224; utiliser si la variable d&#39;application n&#39;a pas &#233;t&#233; localis&#233;e" />
-	<string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.label" value="Valeur de repli" />
-	<string key="Composite.Web.Server.ApplicationVariable.param.VariableName.help" value="" />
-	<string key="Composite.Web.Server.ApplicationVariable.param.VariableName.label" value="Nom de la variable" />
-	<string key="Composite.Web.Server.ServerVariable.description" value="Obtient la valeur d&#39;une variable serveur IIS" />
-	<string key="Composite.Web.Server.ServerVariable.param.VariableName.help" value="La variable serveur IIS &#224; obtenir." />
-	<string key="Composite.Web.Server.ServerVariable.param.VariableName.label" value="Nom de la variable" />
-	<string key="Composite.Xml.LoadFile.description" value="Charge un fichier XML local selon un chemin relatif" />
-	<string key="Composite.Xml.LoadFile.param.RelativePath.help" value="Le chemin relatif du fichier XML &#224; charger" />
-	<string key="Composite.Xml.LoadFile.param.RelativePath.label" value="Chemin relatif" />
-	<string key="Composite.Xml.LoadXhtmlFile.description" value="Charge un fichier XHTML local selon un chemin relatif" />
-	<string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.help" value="Le chemin relatif du fichier XHTML &#224; charger" />
-	<string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.label" value="Chemin relatif" />
-	<string key="Composite.Xml.LoadUrl.description" value="Charge un fichier XML distant selon un Url" />
-	<string key="Composite.Xml.LoadUrl.param.Url.help" value="" />
-	<string key="Composite.Xml.LoadUrl.param.Url.label" value="Url" />
-	<string key="Composite.Xml.LoadUrl.param.CacheTime.help" value="P&#233;riode en secondes pendant laquelle le r&#233;sultat devrait &#234;tre cach&#233;. Par d&#233;faut est 0 (pas de mise en cache)." />
-	<string key="Composite.Xml.LoadUrl.param.CacheTime.label" value="Secondes en cache" />
-	<string key="Composite.Xslt.Extensions.DateFormatting.description" value="Fournit des fonctions de formatage de date localis&#233;e pour l&#39;utilisation de XSLT." />
-	<string key="Composite.Xslt.Extensions.Globalization.description" value="Fournit des fonctions de globalisation pour l&#39;utilisation de XSLT." />
-	<string key="Composite.Xslt.Extensions.MarkupParser.description" value="Fournit des fonctions qui analysent les documents XML cod&#233;s ou des fragments de XHTML en nœuds. Utilisez cette extension lorsque vous avez XML ou XHTML comme une cha&#238;ne et que vous devez copier &#224; la sortie ou faire des transformations sur elle." />
-
-	<string key="Composite.Mail.SendMail.description" value="Envoie un courriel. Ne pas oublier de configurer la connexion au serveur SMTP dans le fichier web.config." />
-	<string key="Composite.Mail.SendMail.param.From.label" value="&#192; partir de" />
-	<string key="Composite.Mail.SendMail.param.From.help" value="L&#39;adresse de l&#39;exp&#233;diteur." />
-	<string key="Composite.Mail.SendMail.param.To.label" value="&#192;" />
-	<string key="Composite.Mail.SendMail.param.To.help" value="Destinataire. Une liste d&#39;adresses de courriels s&#233;par&#233;e par des virgules." />
-	<string key="Composite.Mail.SendMail.param.Subject.label" value="Sujet" />
-	<string key="Composite.Mail.SendMail.param.Subject.help" value="Sujet du courriel." />
-	<string key="Composite.Mail.SendMail.param.Body.label" value="Contenu" />
-	<string key="Composite.Mail.SendMail.param.Body.help" value="Contenu du courriel" />
-	<string key="Composite.Mail.SendMail.param.IsHtml.label" value="estHTML" />
-	<string key="Composite.Mail.SendMail.param.IsHtml.help" value="D&#233;finit si le courriel &#224; envoyer est un courriel HTML ou un courriel texte." />
-	<string key="Composite.Mail.SendMail.param.CC.label" value="CC" />
-	<string key="Composite.Mail.SendMail.param.CC.help" value="Copie conforme. Une liste d&#39;adresses de courriel s&#233;par&#233;s par des virgules." />
-	<string key="Composite.Mail.SendMail.param.ReplyTo.label" value="R&#233;pondre &#224;" />
-	<string key="Composite.Mail.SendMail.param.ReplyTo.help" value="Adresse qui doit &#234;tre utilis&#233;e pour r&#233;pondre au message." />
-	<string key="Composite.Mail.SendMail.param.BCC.label" value="CCC" />
-	<string key="Composite.Mail.SendMail.param.BCC.help" value="Copie comforme cach&#233;e. Une liste de destinataires qui recevront un courriel, mais leur adresse sera cach&#233;e." />
-	<string key="Composite.Mail.SendMail.param.Attachment.label" value="Attachement" />
-	<string key="Composite.Mail.SendMail.param.Attachment.help" value="Liste des fichiers attach&#233;s. \ N Format il la [{name} =] {filepath} [, {type mime] suivante [| ....]. \ N chemin du fichier peut &#234;tre relatif ou un chemin absolu fe C: \ someimage.jpg ou / coolpicture.jpg \ n Si le chemin du fichier commence par Composite /, il sera reconnu comme un chemin du support composite, fe &#171;Composite / MediaArchive: someImage.gif &#39;\ n Exemples \ n \ n / attachment.jpg \ n image.jpg = / attachment.jpg \ n image.jpg = / attachment.jpg, image / jpg \ n image1.jpg = / attachment1.jpg, image / jpg | image2.jpg = / attachment2.jpg, image / jpg" />
-
-	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="Attachement de m&#233;dia" />
-	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.help" value="Un fichier de biblioth&#232;que de m&#233;dias &#224; &#234;tre joint." />
-
-	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.description" value="Filtre les images par son chemin de dossier" />
-	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.label" value="Dossier de presse" />
-	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.help" value="Une r&#233;f&#233;rence &#224; un dossier multim&#233;dia" />
-	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Inclure les sous-dossiers" />
-	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.help" value="D&#233;termine si les images des sous-dossiers doivent &#234;tre incluses." />
-
-	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.description" value="Filtre les images par son chemin de dossier" />
-	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.label" value="Dossier de presse" />
-	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.help" value="Une r&#233;f&#233;rence &#224; un dossier multim&#233;dia" />
-	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Inclure les sous-dossiers" />
-	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.help" value="D&#233;termine si les fichiers multim&#233;dia &#224; partir de sous-dossiers doivent &#234;tre inclus." />
-
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Convertit un  XElements &#233;num&#233;rable &#224; un dictionnaire en utilisant les attributs nomm&#233;s pour les cl&#233;s et les valeurs." />
+  <string key="Composite.Web.Html.Template.PageTemplateFeature.param.FeatureName.help" value="Le nom du modèle de composant que vous souhaitez inclure." />
+  <string key="Composite.Web.Html.Template.HtmlTitleValue.description" value="Émet le 'titre définitif »de la page en cours; la même valeur qui se retrouve dans la balise page de titre. Ce titre peut provenir de la page en cours ou rendu d'un contrôle C1 Fonction / ASP.NET qui a changé le titre pour correspondre à des données spécifiques étant en vedette sur la page." />
+  <string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.label" value="Préfixe à retirer" />
+  <string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.help" value="Si le titre HTML a une valeur de préfixe que vous souhaitez vous débarrasser, spécifiez le préfixe ici. Si le préfixe n'est pas trouvé dans le titre, cette valeur est ignorée." />
+  <string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.label" value="Suffixe à retirer" />
+  <string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.help" value="Si le titre HTML a une valeur de suffixe dont vous souhaitez vous débarrasser, spécifiez le suffixe ici. Si le suffixe n'est pas trouvé dans le titre, cette valeur est ignorée." />
+  <string key="Composite.Web.Html.Template.MetaDescriptionValue.description" value="Émet la «description définitive» de la page en cours; la même valeur qui se retrouve dans la page meta description tag. Cette valeur peut provenir de la page en cours ou rendu d'un contrôle C1 Fonction / ASP.NET qui a changé la description en fonction des données spécifiques étant en vedette sur la page." />
+  <string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.label" value="Élément pour envelopper la description" />
+  <string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.help" value="Pour avoir la description enveloppée dans un élément (comme &lt;p class=&quot;description&quot; /&gt;) spécifier le ici. L'élément sera affiché uniquement quand le texte de descripion sera présent." />
+  <string key="Composite.Web.Request.CookieValue.description" value="Obtient une valeur de la collection de cookies de l'utilisateur courant." />
+  <string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
+  <string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Nom de Cookie" />
+  <string key="Composite.Web.Request.CookieValue.param.FallbackValue.help" value="Si l'utilisateur ne dispose pas de ce cookie, utiliser ce champ pour spécifier la valeur par défaut." />
+  <string key="Composite.Web.Request.CookieValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.FormPostBoolValue.description" value="Obtient une valeur booléenne d'un POST de formulaire (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.description" value="Obtient une valeur décimale d'un POST de formulaire (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.FormPostGuidValue.description" value="Obtient une valeur Guid POST de formulaire (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.description" value="Obtient une valeur entière à partir d'un POST de formulaire (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.FormPostValue.description" value="Obtient une valeur de chaîne à partir d'un POST de formulaire (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.FormPostValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.description" value="Obtient une valeur de date et heure d'un POST de formulaire (HTTP POST). La chaîne de date d'entrée devrait être de format XML (comme &quot;2003-09-26T13:30:00&quot;)" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.help" value="La valeur à utiliser si le POST ne contient pas le nom du paramètre spécifié." />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.description" value="Obtient une valeur booléenne à partir d'un paramètre d'URL (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.description" value="Obtient une valeur décimale d'un paramètre d'URL (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.description" value="Obtient une valeur Guid d'un paramètre d'URL (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.description" value="Obtient une valeur entière à partir d'un paramètre d'URL (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.QueryStringValue.description" value="Obtient une valeur de chaîne à partir d'un paramètre d'URL (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.QueryStringValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.description" value="Obtient une valeur de date et heure d'un paramètre Url (HTTP GET). La chaîne de date d'entrée devrait être de format XML (comme &quot;2003-09-26T13:30:00&quot;)" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.help" value="La valeur à utiliser si l'URL ne contient pas le nom du paramètre spécifié." />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Nom du paramètre" />
+  <string key="Composite.Web.Request.PathInfo.description" value="Retourne des informations supplémentaires passées dans un URL avec le lien de la page." />
+  <string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Le segment de l'information de chemin pour récupérer, en utilisant le format '/ (0) / (1) / (2) / ... ». Spécifiez -1 pour obtenir la chaîne entière." />
+  <string key="Composite.Web.Request.PathInfo.param.Segment.label" value="Segment" />
+  <string key="Composite.Web.Request.PathInfo.param.AutoApprove.help" value="Lorsque vrai, Composite C1 sera chargé d'accepter n'importe quelle chaîne info de chemin. Par défaut est true." />
+  <string key="Composite.Web.Request.PathInfo.param.AutoApprove.label" value="Approbation automatique" />
+  <string key="Composite.Web.Request.PathInfo.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfo.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.PathInfoInt.description" value="Extrait une valeur entière à partir d'un segment de PathInfo." />
+  <string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Le segment de l'information de chemin pour récupérer, en utilisant le format '/ (0) / (1) / (2) / ... »." />
+  <string key="Composite.Web.Request.PathInfoInt.param.Segment.label" value="Segment" />
+  <string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.help" value="Lorsque vrai, Composite C1 sera chargé d'accepter n'importe quelle chaîne info de chemin. Par défaut est true." />
+  <string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.label" value="Approbation automatique" />
+  <string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.PathInfoGuid.description" value="Extrait une GUID d'un segment PathInfo." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Le segment de l'information de chemin pour récupérer, en utilisant le format '/ (0) / (1) / (2) / ... »." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.Segment.label" value="Segment" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.help" value="Lorsque vrai, Composite C1 sera chargé d'accepter n'importe quelle chaîne info de chemin. Par défaut est true." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.label" value="Approbation automatique" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Avertit le système de PathInfo utilisé, de sorte que la demande n'est pas redirigé vers la page «Page non trouvée»." />
+  <string key="Composite.Web.Request.SessionVariable.description" value="Récupère une variable de la session en cours de l'utilisateur sous forme de chaîne." />
+  <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="La valeur à utiliser si la variable de session n'a pas été trouvée" />
+  <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Request.SessionVariable.param.VariableName.help" value="" />
+  <string key="Composite.Web.Request.SessionVariable.param.VariableName.label" value="Nom de la variable" />
+  <string key="Composite.Web.Response.Redirect.description" value="Redirige le visiteur du site vers une autre URL. Redirections URL sont supprimés lorsque cette fonction s'exécute dans la console de C1." />
+  <string key="Composite.Web.Response.Redirect.param.Url.help" value="L'URL vers lequel l'utilisateur doit être redirigé soit absolu (http://contoso.com/default.aspx) ou relatif (/ Login.aspx))." />
+  <string key="Composite.Web.Response.Redirect.param.Url.label" value="URL" />
+  <string key="Composite.Web.Response.SetCookieValue.description" value="Définit une valeur de cookie pour l'utilisateur actuel" />
+  <string key="Composite.Web.Response.SetCookieValue.param.CookieName.help" value="Le nom du cookie à initialiser / remplacer" />
+  <string key="Composite.Web.Response.SetCookieValue.param.CookieName.label" value="Nom de Cookie" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Value.help" value="La valeur à stocker dans le cookie" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Value.label" value="Valeur du cookie" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Expires.help" value="Lorsque le cookie doit expirer (arrêter d'exister). La valeur par défaut est «session», lorsque l'utilisateur ferme le navigateur." />
+  <string key="Composite.Web.Response.SetCookieValue.param.Expires.label" value="Expiration" />
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.description" value="Définit le nombre maximum de secondes la page en cours devrait être mis en cache sur le serveur public. Pour s'assurer que la réponse de la page n'est pas mise en cache définir les secondes maximum à 0. Si plusieurs sources régler la durée de cache du serveur, le plus petit nombre est utilisé. Notez que le fichier ~ / Renderers / Page.aspx contient une valeur par défaut pour la durée de cache - vous pouvez éditer ce fichier pour changer la valeur par défaut." />
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.help" value="Le nombre maximum de secondes la page en cours de rendu doit être mis en cache au public. Une valeur élevée donné de bonnes performances, une faible valeur faire des changements apparaissent plus rapidement. Une valeur de '0 'assurer que tous les visiteurs obtiennent une réponse unique." />
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.label" value="Secondes maximum" />
+  <string key="Composite.Web.Response.SetSessionVariable.description" value="Définit une variable de session pour l'utilisateur actuel" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.Value.help" value="" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.Value.label" value="Valeur" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.VariableName.help" value="Le nom de la variable de session à initialiser" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.VariableName.label" value="Nom de la variable" />
+  <string key="Composite.Web.Server.ApplicationPath.description" value="Obtient le chemin d'accès virtuel de l'application Web. Généralement, il s'agit'' - la chaîne vide, lors de l'exécution dans la racine du site, mais si Composite C1 est en cours d'exécution dans un sous-dossier, cela peut être «/ mysubfolder. Vous pouvez utiliser cette valeur pour préfixe URL si ils vont travailler, peu importe est composé C1 est en cours d'exécution est un sous-dossier ou pas. Exemple de l'utilisation de XSLT: &lt;img src={/in:inputs/in:result[@name='ApplicationPath']}/images/myImage.png /&gt;" />
+  <string key="Composite.Web.Server.ApplicationVariable.description" value="Obtient une variable d'application IIS" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.help" value="Valeur à utiliser si la variable d'application n'a pas été localisée" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.label" value="Valeur de repli" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.VariableName.help" value="" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.VariableName.label" value="Nom de la variable" />
+  <string key="Composite.Web.Server.ServerVariable.description" value="Obtient la valeur d'une variable serveur IIS" />
+  <string key="Composite.Web.Server.ServerVariable.param.VariableName.help" value="La variable serveur IIS à obtenir." />
+  <string key="Composite.Web.Server.ServerVariable.param.VariableName.label" value="Nom de la variable" />
+  <string key="Composite.Xml.LoadFile.description" value="Charge un fichier XML local selon un chemin relatif" />
+  <string key="Composite.Xml.LoadFile.param.RelativePath.help" value="Le chemin relatif du fichier XML à charger" />
+  <string key="Composite.Xml.LoadFile.param.RelativePath.label" value="Chemin relatif" />
+  <string key="Composite.Xml.LoadXhtmlFile.description" value="Charge un fichier XHTML local selon un chemin relatif" />
+  <string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.help" value="Le chemin relatif du fichier XHTML à charger" />
+  <string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.label" value="Chemin relatif" />
+  <string key="Composite.Xml.LoadUrl.description" value="Charge un fichier XML distant selon un Url" />
+  <string key="Composite.Xml.LoadUrl.param.Url.help" value="" />
+  <string key="Composite.Xml.LoadUrl.param.Url.label" value="Url" />
+  <string key="Composite.Xml.LoadUrl.param.CacheTime.help" value="Période en secondes pendant laquelle le résultat devrait être caché. Par défaut est 0 (pas de mise en cache)." />
+  <string key="Composite.Xml.LoadUrl.param.CacheTime.label" value="Secondes en cache" />
+  <string key="Composite.Xslt.Extensions.DateFormatting.description" value="Fournit des fonctions de formatage de date localisée pour l'utilisation de XSLT." />
+  <string key="Composite.Xslt.Extensions.Globalization.description" value="Fournit des fonctions de globalisation pour l'utilisation de XSLT." />
+  <string key="Composite.Xslt.Extensions.MarkupParser.description" value="Fournit des fonctions qui analysent les documents XML codés ou des fragments de XHTML en nœuds. Utilisez cette extension lorsque vous avez XML ou XHTML comme une chaîne et que vous devez copier à la sortie ou faire des transformations sur elle." />
+  <string key="Composite.Mail.SendMail.description" value="Envoie un courriel. Ne pas oublier de configurer la connexion au serveur SMTP dans le fichier web.config." />
+  <string key="Composite.Mail.SendMail.param.From.label" value="À partir de" />
+  <string key="Composite.Mail.SendMail.param.From.help" value="L'adresse de l'expéditeur." />
+  <string key="Composite.Mail.SendMail.param.To.label" value="À" />
+  <string key="Composite.Mail.SendMail.param.To.help" value="Destinataire. Une liste d'adresses de courriels séparée par des virgules." />
+  <string key="Composite.Mail.SendMail.param.Subject.label" value="Sujet" />
+  <string key="Composite.Mail.SendMail.param.Subject.help" value="Sujet du courriel." />
+  <string key="Composite.Mail.SendMail.param.Body.label" value="Contenu" />
+  <string key="Composite.Mail.SendMail.param.Body.help" value="Contenu du courriel" />
+  <string key="Composite.Mail.SendMail.param.IsHtml.label" value="estHTML" />
+  <string key="Composite.Mail.SendMail.param.IsHtml.help" value="Définit si le courriel à envoyer est un courriel HTML ou un courriel texte." />
+  <string key="Composite.Mail.SendMail.param.CC.label" value="CC" />
+  <string key="Composite.Mail.SendMail.param.CC.help" value="Copie conforme. Une liste d'adresses de courriel séparés par des virgules." />
+  <string key="Composite.Mail.SendMail.param.ReplyTo.label" value="Répondre à" />
+  <string key="Composite.Mail.SendMail.param.ReplyTo.help" value="Adresse qui doit être utilisée pour répondre au message." />
+  <string key="Composite.Mail.SendMail.param.BCC.label" value="CCC" />
+  <string key="Composite.Mail.SendMail.param.BCC.help" value="Copie comforme cachée. Une liste de destinataires qui recevront un courriel, mais leur adresse sera cachée." />
+  <string key="Composite.Mail.SendMail.param.Attachment.label" value="Attachement" />
+  <string key="Composite.Mail.SendMail.param.Attachment.help" value="Liste des fichiers attachés. \ N Format il la [{name} =] {filepath} [, {type mime] suivante [| ....]. \ N chemin du fichier peut être relatif ou un chemin absolu fe C: \ someimage.jpg ou / coolpicture.jpg \ n Si le chemin du fichier commence par Composite /, il sera reconnu comme un chemin du support composite, fe «Composite / MediaArchive: someImage.gif '\ n Exemples \ n \ n / attachment.jpg \ n image.jpg = / attachment.jpg \ n image.jpg = / attachment.jpg, image / jpg \ n image1.jpg = / attachment1.jpg, image / jpg | image2.jpg = / attachment2.jpg, image / jpg" />
+  <string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="Attachement de média" />
+  <string key="Composite.Mail.SendMail.param.AttachmentFromMedia.help" value="Un fichier de bibliothèque de médias à être joint." />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.description" value="Filtre les images par son chemin de dossier" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.label" value="Dossier de presse" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.help" value="Une référence à un dossier multimédia" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Inclure les sous-dossiers" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Détermine si les images des sous-dossiers doivent être incluses." />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.description" value="Filtre les images par son chemin de dossier" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.label" value="Dossier de presse" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.help" value="Une référence à un dossier multimédia" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Inclure les sous-dossiers" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Détermine si les fichiers multimédia à partir de sous-dossiers doivent être inclus." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Convertit un  XElements énumérable à un dictionnaire en utilisant les attributs nommés pour les clés et les valeurs." />
   <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.label" value="XElements" />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.help" value="Un XElements &#233;num&#233;rable qui sera utilis&#233; pour cr&#233;er un dictionnaire de." />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.label" value="Nom de l&#39;attribut cl&#233;" />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Le nom de l&#39;attribut sur chaque XElement dont la valeur sera utilis&#233;e pour les cl&#233;s dans le dictionnaire." />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.label" value="Nom de la valeur de l&#39;attribut" />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Le nom de l&#39;attribut sur chaque XElement dont la valeur sera utilis&#233;e pour les valeurs dans le dictionnaire." />
-
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Convertit un &#233;num&#233;rable d&#39;objets &#224; un dictionnaire en utilisant des noms de propri&#233;t&#233; nomm&#233;s pour les cl&#233;s et les valeurs." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.help" value="Un XElements énumérable qui sera utilisé pour créer un dictionnaire de." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.label" value="Nom de l'attribut clé" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Le nom de l'attribut sur chaque XElement dont la valeur sera utilisée pour les clés dans le dictionnaire." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.label" value="Nom de la valeur de l'attribut" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Le nom de l'attribut sur chaque XElement dont la valeur sera utilisée pour les valeurs dans le dictionnaire." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Convertit un énumérable d'objets à un dictionnaire en utilisant des noms de propriété nommés pour les clés et les valeurs." />
   <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.label" value="Objets" />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.help" value="Une &#233;num&#233;ration d&#39;objets qui seront utilis&#233;s pour cr&#233;er un dictionnaire de." />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.label" value="Nom de la propri&#233;t&#233; de la cl&#233;" />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Le nom de la propri&#233;t&#233; de chaque objet dont la valeur sera utilis&#233;e pour les cl&#233;s dans le dictionnaire." />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.label" value="Nom de la valeur de la propri&#233;t&#233;" />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Le nom de la propri&#233;t&#233; de chaque objet dont la valeur sera utilis&#233;e pour les valeurs dans le dictionnaire." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.help" value="Une énumération d'objets qui seront utilisés pour créer un dictionnaire de." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.label" value="Nom de la propriété de la clé" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Le nom de la propriété de chaque objet dont la valeur sera utilisée pour les clés dans le dictionnaire." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.label" value="Nom de la valeur de la propriété" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Le nom de la propriété de chaque objet dont la valeur sera utilisée pour les valeurs dans le dictionnaire." />
 </strings>
