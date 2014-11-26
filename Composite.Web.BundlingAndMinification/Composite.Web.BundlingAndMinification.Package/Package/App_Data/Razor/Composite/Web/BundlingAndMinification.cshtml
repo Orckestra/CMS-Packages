@@ -110,7 +110,7 @@
         var registeredIds = new List<string>();
         var registeredSources = new List<string>();
 
-        var styleElements = page.Descendants(Namespaces.Xhtml + "link").Where(l => l.Attribute("rel").Value == "stylesheet" || l.Attribute("type").Value == "text/css").ToList();
+        var styleElements = page.Descendants(Namespaces.Xhtml + "link").Where(l => l.Attribute("rel") != null && l.Attribute("rel").Value == "stylesheet").ToList();
 
         foreach (var link in styleElements)
         {
