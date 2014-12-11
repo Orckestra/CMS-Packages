@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web.Hosting;
 using Composite.C1Console.Events;
+using Composite.Core;
 using Composite.Core.Configuration;
 
 namespace Composite.Web.Css.Less
@@ -15,8 +17,10 @@ namespace Composite.Web.Css.Less
     /// </summary>
     public static class StylesHashing
     {
-        private static readonly ConcurrentDictionary<string, FileHashCalculator> 
-            _hashCalculators = new ConcurrentDictionary<string, FileHashCalculator>();
+        private static readonly string LogTitle = "LessCss";
+
+        private static readonly ConcurrentDictionary<string, Lazy<FileHashCalculator>>
+            _hashCalculators = new ConcurrentDictionary<string, Lazy<FileHashCalculator>>();
 
         public static DateTime GetLastStyleUpdateTimeUtc(string mask)
         {
@@ -27,21 +31,22 @@ namespace Composite.Web.Css.Less
 
         private static FileHashCalculator GetCalculator(string mask)
         {
-            return _hashCalculators.GetOrAdd(mask, m => new FileHashCalculator(m));
+            return _hashCalculators.GetOrAdd(mask, m => new Lazy<FileHashCalculator>(() => new FileHashCalculator(m))).Value;
         }
 
 
         private class FileHashCalculator
         {
-            private string _mask;
+            private readonly string _mask;
             private readonly string _hashFilePath;
 
             Guid? _hash;
             DateTime? _lastFileChangeTime;
 
             private readonly object _calculationLock = new object();
+            private readonly string _rootFolder;
 
-            private readonly FileSystemWatcher _fileSystemWatcher;
+            private readonly List<FileSystemWatcher> _fileSystemWatchers = new List<FileSystemWatcher>();
 
             public DateTime LastStyleChangeTimeUtc
             {
@@ -94,13 +99,65 @@ namespace Composite.Web.Css.Less
                 }
 
 
-                _fileSystemWatcher = new FileSystemWatcher(GetRootFolder(), _mask);
-                _fileSystemWatcher.IncludeSubdirectories = true;
-                _fileSystemWatcher.Created += (a, b) => InvalidateCache();
-                _fileSystemWatcher.Changed += (a, b) => InvalidateCache();
-                _fileSystemWatcher.Deleted += (a, b) => InvalidateCache();
-                _fileSystemWatcher.Renamed += (a, b) => InvalidateCache();
-                _fileSystemWatcher.EnableRaisingEvents = true;
+                _rootFolder = GetRootFolder();
+
+                AddFileWatcher(_rootFolder);
+
+                AddWatchesForSymboliclyLinkedSubfolders(_rootFolder);
+
+            }
+
+            private void AddWatchesForSymboliclyLinkedSubfolders(string folder)
+            {
+                if (!ReparsePointUtils.DirectoryIsReparsePoint(folder))
+                {
+                    foreach (var subfolder in Directory.GetDirectories(folder))
+                    {
+                        AddWatchesForSymboliclyLinkedSubfolders(subfolder);
+                    }
+                    return;
+                }
+                
+                string target;
+
+                try
+                {
+                    target = ReparsePointUtils.GetDirectoryReparsePointTarget(folder);
+                }
+                catch (Exception ex)
+                {
+                    Log.LogError(LogTitle, "Failed to get symbolic link or junction target");
+                    Log.LogError(LogTitle, ex);
+                    return;
+                }
+
+                if (target.StartsWith(_rootFolder + @"\", StringComparison.OrdinalIgnoreCase))
+                {
+                    return;
+                }
+
+                Log.LogInformation(LogTitle, "Adding a file system watcher for linked directory {0}", target);
+
+                try
+                {
+                    AddFileWatcher(target);
+                }
+                catch (Exception ex)
+                {
+                    Log.LogError(LogTitle, ex);
+                }
+            }
+
+            private void AddFileWatcher(string directory)
+            {
+                var fileSystemWatcher = new FileSystemWatcher(directory, _mask) { IncludeSubdirectories = true };
+                fileSystemWatcher.Created += (a, b) => InvalidateCache();
+                fileSystemWatcher.Changed += (a, b) => InvalidateCache();
+                fileSystemWatcher.Deleted += (a, b) => InvalidateCache();
+                fileSystemWatcher.Renamed += (a, b) => InvalidateCache();
+                fileSystemWatcher.EnableRaisingEvents = true;
+
+                _fileSystemWatchers.Add(fileSystemWatcher);
             }
 
             private void InvalidateCache()
