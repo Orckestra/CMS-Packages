@@ -73,10 +73,15 @@
     <Content Include="Package\Web.config\Uninstall.xsl">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="_PackageCreator\Composite.Web.BundlingAndMinification.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Composite.Web.BundlingAndMinification\Composite.Web.BundlingAndMinification.csproj">
+      <Project>{cb22269a-9006-43dd-8ad1-0dcd0cf179ca}</Project>
+      <Name>Composite.Web.BundlingAndMinification</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -104,11 +109,20 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>
-"$(DevEnvDir)\TF.exe" checkout /lock:Checkout  "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
-</PreBuildEvent>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
+
+COPY "$(TargetDir)\*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)..\..\Public\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
