@@ -10,7 +10,7 @@ namespace Widgets.FontIconSelector
     {
         public static IEnumerable<string> GetIconsNames()
         {
-            string pathtocss = System.Web.HttpContext.Current.Server.MapPath("/Frontend/Styles/includes/font-awesome.css");
+            string pathtocss = System.Web.HttpContext.Current.Server.MapPath("/Frontend/Styles/font-awesome/font-awesome.css");
             if (File.Exists(pathtocss))
             {
                 string text = File.ReadAllText(pathtocss);
