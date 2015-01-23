@@ -1,9 +1,7 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Web;
 using System.Xml.Linq;
@@ -22,21 +20,23 @@ namespace Composite.Tools.LinkChecker
 {
     public class BrokenLinksReport
     {
-        private static readonly string LogTitle = typeof(BrokenLinksReport).FullName;
+        // private static readonly string LogTitle = typeof(BrokenLinksReport).FullName;
 
         private readonly XName PageElementName = "Page";
 
-        private const int PageRenderingTimeout = 5000;
-        private const int UrlCheckingTimeout = 5000;
 
-        
+        private readonly string _serverUrl;
 
-        private readonly Hashtable<string, BrokenLinkType?> _brokenLinks = new Hashtable<string, BrokenLinkType?>();
-        private readonly Hashtable<string, object> _hostnameSync = new Hashtable<string, object>();
+        private readonly ConcurrentDictionary<string, BrokenLinkType> _brokenLinks = new ConcurrentDictionary<string, BrokenLinkType>();
+        private readonly ConcurrentDictionary<string, object> _hostnameSync = new ConcurrentDictionary<string, object>();
+
+        private readonly HashSet<string> _bindedHostnames;
 
         public BrokenLinksReport(HttpContext context)
         {
             _serverUrl = new UrlBuilder(context.Request.Url.ToString()).ServerUrl;
+
+            _bindedHostnames = new HashSet<string>(DataFacade.GetData<IHostnameBinding>().AsEnumerable().Select(h => h.Hostname.ToLowerInvariant()));
         }
 
         public bool BuildBrokenLinksReport(XElement infoDocumentRoot)
@@ -60,7 +60,7 @@ namespace Composite.Tools.LinkChecker
                         userGroupPermissions)
                         .Contains(PermissionType.Read)).ToList();
 
-                HashSet<Guid> pageIdsWithAccessTo = new HashSet<Guid>(actionRequiredPages.Select(p => p.Id));
+                var pageIdsWithAccessTo = new HashSet<Guid>(actionRequiredPages.Select(p => p.Id));
 
 
                 var allSitemapElements = PageStructureInfo.GetSiteMap().DescendantsAndSelf();
@@ -70,10 +70,11 @@ namespace Composite.Tools.LinkChecker
                 var minimalTree =
                     relevantElements.AncestorsAndSelf().Where(f => f.Name.LocalName == "Page").Distinct().ToList();
 
-                Hashtable<Guid, XElement> reportElements = new Hashtable<Guid, XElement>();
+                var reportElements = new Hashtable<Guid, XElement>();
 
                 var linksToCheck = new List<LinkToCheck>();
 
+                // Rendering all the C1 pages and collecting links
                 foreach (XElement pageElement in minimalTree)
                 {
                     Guid pageId = new Guid(pageElement.Attribute("Id").Value);
@@ -85,14 +86,12 @@ namespace Composite.Tools.LinkChecker
                         ? pageElement.Attribute("MenuTitle").Value
                         : pageElement.Attribute("Title").Value;
 
-                    XElement resultPageElement = new XElement(PageElementName,
+                    var resultPageElement = new XElement(PageElementName,
                         new XAttribute("Id", pageId),
                         new XAttribute("Title", pageTitle));
 
-                    lock (reportElements)
-                    {
-                        reportElements[pageId] = resultPageElement;
-                    }
+                    reportElements[pageId] = resultPageElement;
+                    
 
                     string htmlDocument, errorCode;
 
@@ -128,68 +127,25 @@ namespace Composite.Tools.LinkChecker
                         continue;
                     }
 
-                    linksToCheck.AddRange(document.Descendants(Namespaces.Xhtml + "a")
-                        .Select(
-                            a =>
-                                new LinkToCheck
-                                {
-                                    LinkNode = a,
-                                    ReportPageNode = resultPageElement,
-                                    PageServerUrl = pageServerUrl
-                                }));
+                    linksToCheck.AddRange(CollectLinksToCheck(document, resultPageElement, pageServerUrl));
                 }
 
                 linksToCheck = linksToCheck.OrderBy(o => Guid.NewGuid()).ToList(); // Shuffling links
 
                 ParallelFacade.ForEach(linksToCheck, linkToCheck =>
                 {
-                    XElement a = linkToCheck.LinkNode;
-
-                    if (a.Attribute("href") == null)
-                    {
-                        return;
-                    }
-
-
-                    string urlStr = a.Attribute("href").Value;
-
-                    var href = HttpUtility.UrlDecode(urlStr).Trim();
-                    if (NotHttpLink(href))
-                    {
-                        return;
-                    }
-
-                    string previousnode = ToPreviewString(a.PreviousNode);
-                    string nextnode = ToPreviewString(a.NextNode);
-
-                    if (previousnode.Length > 50)
-                    {
-                        previousnode = "..." + previousnode.Substring(previousnode.Length - 40);
-                    }
-                    if (nextnode.Length > 50)
-                    {
-                        nextnode = nextnode.Substring(nextnode.Length - 40) + "...";
-                    }
-
                     BrokenLinkType brokenLinkType;
 
-                    if (HttpLinkIsValid(href, linkToCheck.PageServerUrl, out brokenLinkType))
+                    if (HttpLinkIsValid(linkToCheck.Href, linkToCheck.PageServerUrl, out brokenLinkType))
                     {
                         return;
                     }
 
-                    string errorText = Describe(brokenLinkType);
-
-                    XElement invalidContent = new XElement("invalidContent",
-                        new XAttribute("previousNode", previousnode),
-                        new XAttribute("originalText", a.Value),
-                        new XAttribute("originalLink", href),
-                        new XAttribute("nextNode", nextnode),
-                        new XAttribute("errorType", errorText));
+                    var brokenLinkDescriptionElement = DescribeBrokenLink(linkToCheck.LinkNode, linkToCheck.Href, brokenLinkType);
 
                     lock (linkToCheck.ReportPageNode)
                     {
-                        linkToCheck.ReportPageNode.Add(invalidContent);
+                        linkToCheck.ReportPageNode.Add(brokenLinkDescriptionElement);
                     }
                     noInvalidLinksFound = false;
                 });
@@ -200,9 +156,67 @@ namespace Composite.Tools.LinkChecker
             }
         }
 
+        private XElement DescribeBrokenLink(XElement a, string link, BrokenLinkType brokenLinkType)
+        {
+            string previousnode = ToPreviewString(a.PreviousNode);
+            string nextnode = ToPreviewString(a.NextNode);
+
+            if (previousnode.Length > 50)
+            {
+                previousnode = "..." + previousnode.Substring(previousnode.Length - 40);
+            }
+            if (nextnode.Length > 50)
+            {
+                nextnode = nextnode.Substring(nextnode.Length - 40) + "...";
+            }
+
+            string errorText = Describe(brokenLinkType);
+
+            return new XElement("invalidContent",
+                new XAttribute("previousNode", previousnode),
+                new XAttribute("originalText", a.Value),
+                new XAttribute("originalLink", link),
+                new XAttribute("nextNode", nextnode),
+                new XAttribute("errorType", errorText));
+        }
+
+        private IEnumerable<LinkToCheck> CollectLinksToCheck(XDocument document, XElement reportElement, string pageServerUrl)
+        {
+            var result = new List<LinkToCheck>();
+
+            foreach (var a in document.Descendants(Namespaces.Xhtml + "a"))
+            {
+                var hrefAttr = a.Attribute("href");
+                if (hrefAttr == null)
+                {
+                    continue;
+                }
+
+                string urlStr = a.Attribute("href").Value;
+
+                var href = HttpUtility.UrlDecode(urlStr).Trim();
+                if (NotHttpLink(href))
+                {
+                    continue;
+                }
+
+                var item = new LinkToCheck
+                {
+                    Href = href,
+                    LinkNode = a,
+                    ReportPageNode = reportElement,
+                    PageServerUrl = pageServerUrl
+                };
+
+                result.Add(item);
+            }
+
+            return result;
+        } 
 
         private class LinkToCheck
         {
+            public string Href;
             public XElement LinkNode;
             public XElement ReportPageNode;
             public string PageServerUrl;
@@ -266,10 +280,11 @@ namespace Composite.Tools.LinkChecker
 
         private bool HttpLinkIsValid(string url, string serverUrl, out BrokenLinkType brokenLinkType)
         {
-            BrokenLinkType? cachedResult = _brokenLinks[url];
-            if (cachedResult != null)
+            BrokenLinkType cachedResult;
+
+            if (_brokenLinks.TryGetValue(url, out cachedResult))
             {
-                brokenLinkType = cachedResult.Value;
+                brokenLinkType = cachedResult;
                 return brokenLinkType == BrokenLinkType.None;
             }
 
@@ -322,7 +337,7 @@ namespace Composite.Tools.LinkChecker
                     return true;
                 }
 
-                // If there's pathInfo -> making a request to check whether the link is actuall broken
+                // If there's pathInfo -> making a request to check whether the link is actually broken
                 brokenLinkType = ValidateByRequest(url, serverUrl, BrokenLinkType.Page);
                 return brokenLinkType == BrokenLinkType.None;
             }
@@ -381,8 +396,7 @@ namespace Composite.Tools.LinkChecker
                 return true;
             }
 
-            // Can be optimized
-            return DataFacade.GetData<IHostnameBinding>().AsEnumerable().Any(b => b.Hostname == hostname);
+            return _bindedHostnames.Contains(hostname);
         }
 
         private string Describe(BrokenLinkType brokenLinkType)
@@ -413,7 +427,7 @@ namespace Composite.Tools.LinkChecker
         {
             if (url.StartsWith("/"))
             {
-                url = UrlUtils.Combine(serverUrl ?? ServerUrl, url);
+                url = UrlUtils.Combine(serverUrl ?? _serverUrl, url);
             }
 
             string hostname;
@@ -431,10 +445,10 @@ namespace Composite.Tools.LinkChecker
 
             lock (hostNameSyncRoot)
             {
-                var cachedResult = _brokenLinks[url];
-                if (cachedResult != null) return cachedResult.Value;
+                BrokenLinkType cachedResult;
+                if (_brokenLinks.TryGetValue(url, out cachedResult)) return cachedResult;
 
-                bool success = MakeHeadRequest(url);
+                bool success = HttpRequestHelper.MakeHeadRequest(url);
 
                 var result = success ? BrokenLinkType.None : brokenLinkType;
                 SaveLinkCheckResult(url, result);
@@ -444,79 +458,19 @@ namespace Composite.Tools.LinkChecker
         }
 
 
-        private bool MakeHeadRequest(string url)
-        {
-            Log.LogVerbose(LogTitle, url);
 
-            try
-            {
-                HttpWebRequest request = HttpWebRequest.Create(url) as HttpWebRequest;
-
-                request.UserAgent = @"Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5";
-                request.Timeout = UrlCheckingTimeout;
-
-                // Get only the header information -- no need to download any content
-                request.Method = "HEAD";
-                // Get the response
-                HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-                // Get the status code
-                int statusCode = (int)response.StatusCode;
-                // Good requests
-                if (statusCode >= 100 && statusCode < 400)
-                {
-                    return true;
-                }
-
-                // Server Errors
-                if (statusCode >= 500 && statusCode <= 510)
-                {
-                    Debug.Write(String.Format("The remote server has thrown an internal error. Url is not valid: {0}", url));
-                    return false;
-                }
-            }
-            catch (WebException ex)
-            {
-                // 400 errors
-                if (ex.Status == WebExceptionStatus.ProtocolError)
-                {
-                    return false;
-                }
-
-                Debug.Write(String.Format("Unhandled status [{0}] returned for url: {1}", ex.Status, url));
-            }
-            catch (Exception ex)
-            {
-                Debug.Write(String.Format("Could not test url {0}; throws : {1}", url, ex));
-            }
-
-            return false;
-        }
 
         private object GetHostNameSyncObject(string hostname)
         {
             hostname = hostname.ToLowerInvariant();
 
-            object result = _hostnameSync[hostname];
-            if (result == null)
-            {
-                lock (_hostnameSync)
-                {
-                    result = _hostnameSync[hostname];
-                    if (result == null)
-                    {
-                        _hostnameSync[hostname] = result = new object();
-                    }
-                }
-            }
-            return result;
+            return _hostnameSync.GetOrAdd(hostname, h => new object());
         }
 
         private bool SaveLinkCheckResult(string url, BrokenLinkType brokenLinkType)
         {
-            lock (_brokenLinks)
-            {
-                _brokenLinks[url] = brokenLinkType;
-            }
+            _brokenLinks.TryAdd(url, brokenLinkType);
+            
             return brokenLinkType == BrokenLinkType.None;
         }
 
@@ -530,98 +484,26 @@ namespace Composite.Tools.LinkChecker
             MediaLibrary = 5
         }
 
-        private enum PageRenderingResult
-        {
-            Failed = 0,
-            Successful = 1,
-            Redirect = 2,
-            NotFound = 3
-        }
+        
 
         private PageRenderingResult RenderPage(string url, out string responseBody, out string errorMessage)
         {
             if (!url.StartsWith("http"))
             {
-                url = UrlUtils.Combine(ServerUrl, url);
+                url = UrlUtils.Combine(_serverUrl, url);
             }
 
             // Marking the link as valid, so it won't be shown multiple places and there won't be any additional requests
-            lock (_brokenLinks)
+            _brokenLinks.TryAdd(url, BrokenLinkType.None);
+
+            var result = HttpRequestHelper.RenderPage(url, out responseBody, out errorMessage);
+
+            if (result == PageRenderingResult.NotFound)
             {
-                _brokenLinks[url] = BrokenLinkType.None;
+                _brokenLinks.TryAdd(url, BrokenLinkType.Relative);
             }
 
-            try
-            {
-                var request = WebRequest.Create(url) as HttpWebRequest;
-
-                request.UserAgent = @"Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5";
-                request.Timeout = PageRenderingTimeout;
-                request.AllowAutoRedirect = false; // Some pages may contain redirects to other pages/different websites
-                request.Method = "GET";
-
-
-                HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-                int statusCode = (int)response.StatusCode;
-
-                if (statusCode == 200)
-                {
-                    using (var responseStream = response.GetResponseStream())
-                    {
-                        responseBody = new StreamReader(responseStream).ReadToEnd();
-                    }
-                    errorMessage = null;
-                    return PageRenderingResult.Successful;
-                }
-
-                if (statusCode == 301 || statusCode == 302)
-                {
-                    responseBody = null;
-                    errorMessage = null;
-                    return PageRenderingResult.Redirect;
-                }
-
-                errorMessage = Localization.BrokenLinkReport_HttpStatus(statusCode);
-            }
-            catch (WebException ex)
-            {
-                var webResponse = ex.Response as HttpWebResponse;
-                if (webResponse != null && webResponse.StatusCode != HttpStatusCode.OK)
-                {
-                    if (webResponse.StatusCode == HttpStatusCode.NotFound)
-                    {
-                        lock (_brokenLinks)
-                        {
-                            _brokenLinks[url] = BrokenLinkType.Relative;
-                        }
-
-                        errorMessage = responseBody = null;
-                        return PageRenderingResult.NotFound;
-                    }
-                    errorMessage = Localization.BrokenLinkReport_HttpStatus((int)webResponse.StatusCode + " " + webResponse.StatusCode);
-                }
-                else
-                {
-                    errorMessage = ex.ToString();
-                }
-            }
-
-            responseBody = null;
-            return PageRenderingResult.Failed;
-        }
-
-
-        private string _serverUrl;
-        private string ServerUrl
-        {
-            get
-            {
-                /*if (_serverUrl == null)
-                {
-                    _serverUrl = new UrlBuilder(Context.Request.Url.ToString()).ServerUrl;
-                }*/
-                return _serverUrl;
-            }
+            return result;
         }
     }
 }

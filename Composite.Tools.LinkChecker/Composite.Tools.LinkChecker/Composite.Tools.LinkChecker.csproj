@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrokenLinksReport.cs" />
+    <Compile Include="HttpRequestHelper.cs" />
     <Compile Include="LinkCheckerActionProvider.cs" />
     <Compile Include="LinkCheckerActionToken.cs" />
     <Compile Include="Localization.cs">
@@ -61,6 +62,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Localization.tt</DependentUpon>
     </Compile>
+    <Compile Include="PageRenderingResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
