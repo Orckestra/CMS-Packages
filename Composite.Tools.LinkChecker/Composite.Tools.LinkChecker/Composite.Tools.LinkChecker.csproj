@@ -35,8 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Composite">
-      <HintPath>..\..\References\Composite\3.2\Composite.dll</HintPath>
+    <Reference Include="Composite, Version=4.0.4897.31550, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\References\Composite\4.0\Composite.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
       <HintPath>..\..\References\Composite\3.0\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
@@ -52,9 +53,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrokenLinksReport.cs" />
     <Compile Include="LinkCheckerActionProvider.cs" />
     <Compile Include="LinkCheckerActionToken.cs" />
+    <Compile Include="Localization.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Localization.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Localization.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

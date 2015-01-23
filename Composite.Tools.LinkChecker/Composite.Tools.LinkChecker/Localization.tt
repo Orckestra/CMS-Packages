@@ -1,0 +1,174 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Configuration" #> 
+<#@ assembly name="System.Core" #> 
+<#@ assembly name="System.Xml" #> 
+<#@ assembly name="System.Xml.Linq" #> 
+<#@ import namespace="System.IO" #> 
+<#@ import namespace="System.Globalization" #> 
+<#@ import namespace="System.Configuration" #> 
+<#@ import namespace="System.Linq" #> 
+<#@ import namespace="System.Text" #> 
+<#@ import namespace="System.Xml.Linq" #> 
+
+<# var pathToCurrentFolder = Host.ResolvePath(@""); 
+   // var pathToSolutionFolder = pathToCurrentFolder.Substring(0, pathToCurrentFolder.Length - 1);
+   var pathToLocalizationFiles = pathToCurrentFolder + @".Package\Package\Composite\InstalledPackages\localization";
+#>
+
+using Composite.Core.ResourceSystem;
+
+namespace Composite.Tools.LinkChecker
+{
+	/// <summary>    
+	/// Class generated from localization files  
+    /// </summary>
+    /// <exclude />
+    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)] 
+	public static class Localization
+	{
+		<#= GenerateCode(pathToLocalizationFiles) #>
+	}
+}
+
+
+<#+
+
+    public static string GenerateCode(string folder) {  
+
+	var propertyDefinitions = new StringBuilder();
+	var classDefinitions = new StringBuilder();
+
+	string[] files = Directory.GetFiles(folder,  @"*.en-us.xml");
+
+	foreach(string filePath in files) {
+	    string friendlyFileName = filePath.Substring(folder.Length + 1, filePath.Length - folder.Length - ".en-us.xml".Length - 1);
+		string fileIdentifier = friendlyFileName.Replace(".", "_");
+
+
+		string className = fileIdentifier;
+
+/*
+		propertyDefinitions.Append(@" 
+    /// <exclude />
+  public static %classname% %propertyname% { get { return new %classname%(); } }"
+						  .Replace("%classname%", className)
+						  .Replace("%propertyname%", fileIdentifier));
+
+*/
+
+/*
+
+	   classDefinitions.Append(@"
+    /// <exclude />
+    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)] 
+	   public static class %classname% {
+"
+	                           .Replace("%classname%", className));
+*/
+
+       GenerateLocalizationProperties(filePath, friendlyFileName, classDefinitions);
+
+/*
+	   classDefinitions.Append("} \r\n");
+*/
+}
+
+	
+
+    return propertyDefinitions.ToString() + classDefinitions.ToString();
+}
+
+        private static void GenerateLocalizationProperties(string filePath, string friendlyFileName, StringBuilder output)
+        {
+			var constants = new StringBuilder();
+
+            XDocument xdoc = XDocument.Load(filePath);
+            foreach(var element in xdoc.Root.Elements())
+            {
+                var keyAttr = element.Attribute("key");
+                if(keyAttr == null)
+                {
+                    throw new InvalidOperationException("Missing 'key' attribute. File: " + filePath);
+                }
+
+				var valueAttr = element.Attribute("value");
+                if(valueAttr == null)
+                {
+                    throw new InvalidOperationException("Missing 'value' attribute. File: " + filePath);
+                }
+
+                string key = keyAttr.Value;
+				string value = valueAttr.Value;
+
+                string propertyName = key.Replace(".", "_").Replace("-", "_");
+				if (char.IsDigit(propertyName[0])) propertyName = "_" + propertyName;
+
+				int parametersCount = 0;
+
+				while(value.Contains("{" + parametersCount + "}")) {
+					parametersCount++;
+				}
+
+
+				string xmlComment = " /// <summary>&quot;%comment%&quot;</summary> \r\n"
+									.Replace("%comment%", XmlEncode(value).Replace("\r\n", "\r\n ///"));
+				output.Append(xmlComment);
+
+				if( parametersCount == 0 ) {
+					output.Append(" public static string %property% { get { return T(\"%key%\"); } } \r\n"
+								   .Replace("%comment%", XmlEncode(value).Replace("\r\n", "\r\n ///"))
+								   .Replace("%key%", key)
+								   .Replace("%property%", propertyName));
+				}
+                else {
+					string[] parametersDefinitions = new string[parametersCount];
+					string[] parametersReferences = new string[parametersCount];
+
+					for(int i=0; i<parametersCount; i++) {
+						parametersDefinitions[i] = "object parameter" + i;
+						parametersReferences[i] = "parameter" + i;
+					}
+
+					string parametersDefinitionsStr = string.Join(",", parametersDefinitions);
+					string parametersReferencesStr = string.Join(",", parametersReferences);
+
+					output.Append(" public static string %property%(%parametersDef%) { return string.Format(T(\"%key%\"), %parametersRef%); } \r\n"
+								   .Replace("%key%", key)
+								   .Replace("%property%", propertyName)
+								   .Replace("%parametersDef%", parametersDefinitionsStr)
+								   .Replace("%parametersRef%", parametersReferencesStr));
+				}
+
+				constants.Append(xmlComment);
+				constants.Append( "public const string %property% = \"${%filename%,%key%}\"; \r\n"
+								  .Replace("%key%", key)
+								  .Replace("%property%", propertyName)
+								  .Replace("%filename%", friendlyFileName));
+            }
+
+            output.Append(
+@"     private static string T(string key) 
+       { 
+            return StringResourceSystemFacade.GetString(""" + friendlyFileName + @""", key);
+        }
+");
+
+            output.Append(
+@"     public static class Constants 
+		{
+");
+
+			output.Append(constants.ToString());
+
+output.Append(@"
+		}
+");
+
+        }
+
+	private static string XmlEncode(string text)
+    {
+        return text.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;").Replace("'", "&apos;");
+    }
+#>
