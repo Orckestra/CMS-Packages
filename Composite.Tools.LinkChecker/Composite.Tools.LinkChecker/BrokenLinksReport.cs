@@ -28,7 +28,7 @@ namespace Composite.Tools.LinkChecker
         private readonly string _serverUrl;
 
         private readonly ConcurrentDictionary<string, BrokenLinkType> _brokenLinks = new ConcurrentDictionary<string, BrokenLinkType>();
-        private readonly ConcurrentDictionary<string, object> _hostnameSync = new ConcurrentDictionary<string, object>();
+        //private readonly ConcurrentDictionary<string, object> _hostnameSync = new ConcurrentDictionary<string, object>();
 
         private readonly HashSet<string> _bindedHostnames;
 
@@ -98,11 +98,13 @@ namespace Composite.Tools.LinkChecker
                     string url = pageElement.Attribute("URL").Value;
                     string pageServerUrl = null;
 
-                    if (url.StartsWith("http"))
+                    if (url.StartsWith("http://") || (url.StartsWith("https://"))) 
                     {
                         pageServerUrl = new UrlBuilder(url).ServerUrl;
                         if (pageServerUrl == string.Empty) pageServerUrl = url; /* Bug in versions < C1 4.0 beta 2 */
                     }
+
+                    pageServerUrl = pageServerUrl ?? _serverUrl;
 
                     PageRenderingResult result = RenderPage(url, out htmlDocument, out errorCode);
                     if (result == PageRenderingResult.Failed)
@@ -127,28 +129,42 @@ namespace Composite.Tools.LinkChecker
                         continue;
                     }
 
-                    linksToCheck.AddRange(CollectLinksToCheck(document, resultPageElement, pageServerUrl));
+                    linksToCheck.AddRange(CollectLinksToCheck(document, resultPageElement, url, pageServerUrl));
                 }
 
                 linksToCheck = linksToCheck.OrderBy(o => Guid.NewGuid()).ToList(); // Shuffling links
 
-                ParallelFacade.ForEach(linksToCheck, linkToCheck =>
+                // Checking external and internall links in parrallel tasks - one per hostname
+                var linksGroupedByHostname = linksToCheck.Where(l => l.RequestValidationInfo != null)
+                    .GroupBy(link => link.RequestValidationInfo.Hostname).ToList();
+
+
+                ParallelFacade.ForEach(linksGroupedByHostname, linkGroup =>
                 {
-                    BrokenLinkType brokenLinkType;
-
-                    if (HttpLinkIsValid(linkToCheck.Href, linkToCheck.PageServerUrl, out brokenLinkType))
+                    foreach (var linkToCheck in linkGroup)
                     {
-                        return;
+                        linkToCheck.BrokenLinkType = ValidateByRequest(linkToCheck.RequestValidationInfo);
+                        // linkToCheck.RequestValidationInfo = null;
                     }
-
-                    var brokenLinkDescriptionElement = DescribeBrokenLink(linkToCheck.LinkNode, linkToCheck.Href, brokenLinkType);
-
-                    lock (linkToCheck.ReportPageNode)
-                    {
-                        linkToCheck.ReportPageNode.Add(brokenLinkDescriptionElement);
-                    }
-                    noInvalidLinksFound = false;
                 });
+
+
+                // Having 100 tasks running in parallel would fill the app pool and make the site unresponsive
+                foreach(var link in linksToCheck)
+                {
+                    BrokenLinkType brokenLinkType = link.BrokenLinkType.Value;
+
+                    if (brokenLinkType == BrokenLinkType.None)
+                    {
+                        continue;
+                    }
+
+                    var brokenLinkDescriptionElement = DescribeBrokenLink(link.LinkNode, link.Href, brokenLinkType);
+
+                    link.ReportPageNode.Add(brokenLinkDescriptionElement);
+                    
+                    noInvalidLinksFound = false;
+                }
 
                 BuildReportTreeRec(infoDocumentRoot, Guid.Empty, reportElements);
 
@@ -180,7 +196,7 @@ namespace Composite.Tools.LinkChecker
                 new XAttribute("errorType", errorText));
         }
 
-        private IEnumerable<LinkToCheck> CollectLinksToCheck(XDocument document, XElement reportElement, string pageServerUrl)
+        private IEnumerable<LinkToCheck> CollectLinksToCheck(XDocument document, XElement reportElement, string pageUrl, string pageServerUrl)
         {
             var result = new List<LinkToCheck>();
 
@@ -195,7 +211,16 @@ namespace Composite.Tools.LinkChecker
                 string urlStr = a.Attribute("href").Value;
 
                 var href = HttpUtility.UrlDecode(urlStr).Trim();
-                if (NotHttpLink(href))
+                if (!UrlHelper.IsHttpLink(href))
+                {
+                    continue;
+                }
+
+                BrokenLinkType brokenLinkType;
+                RequestValidationInfo rvi;
+
+                var preprocessingResult = PreprocessUrl(href, pageUrl, pageServerUrl, out brokenLinkType, out rvi);
+                if (preprocessingResult == UrlPreprocessResult.Valid)
                 {
                     continue;
                 }
@@ -205,7 +230,8 @@ namespace Composite.Tools.LinkChecker
                     Href = href,
                     LinkNode = a,
                     ReportPageNode = reportElement,
-                    PageServerUrl = pageServerUrl
+                    PageServerUrl = pageServerUrl,
+                    RequestValidationInfo = rvi
                 };
 
                 result.Add(item);
@@ -220,24 +246,28 @@ namespace Composite.Tools.LinkChecker
             public XElement LinkNode;
             public XElement ReportPageNode;
             public string PageServerUrl;
+            public string PageUrl;
+            public BrokenLinkType? BrokenLinkType;
+
+            public RequestValidationInfo RequestValidationInfo;
         }
 
-
-
-        private bool NotHttpLink(string link)
+        private class RequestValidationInfo
         {
-            if (string.IsNullOrEmpty(link) || link.StartsWith("#")) return true;
-
-            if (link.StartsWith("/")
-                || link.StartsWith("http://")
-                || link.StartsWith("https://"))
-            {
-                return false;
-            }
-
-            string[] parts = link.Split('/');
-            return parts[0].Contains(":");
+            public string Hostname;
+            public string Url;
+            public string BaseUrl;
+            public bool IsSecure;
+            public BrokenLinkType LinkType;
         }
+
+        private enum UrlPreprocessResult
+        {
+            Valid = 0,
+            Broken = 1,
+            NeedToBeValidatedByRequest = 2
+        }
+
 
         private XElement GetRenderingErrorNode(string message)
         {
@@ -278,14 +308,23 @@ namespace Composite.Tools.LinkChecker
             }
         }
 
-        private bool HttpLinkIsValid(string url, string serverUrl, out BrokenLinkType brokenLinkType)
+        /// <summary>
+        /// Pasres the url, and checks if the urls can be validated without making an http request (for internal urls=.
+        /// </summary>
+        private UrlPreprocessResult PreprocessUrl(
+            string url,
+            string pageUrl,
+            string serverUrl, 
+            out BrokenLinkType brokenLinkType, 
+            out RequestValidationInfo requestValidationInfo)
         {
             BrokenLinkType cachedResult;
+            requestValidationInfo = null;
 
             if (_brokenLinks.TryGetValue(url, out cachedResult))
             {
                 brokenLinkType = cachedResult;
-                return brokenLinkType == BrokenLinkType.None;
+                return brokenLinkType == BrokenLinkType.None ? UrlPreprocessResult.Valid : UrlPreprocessResult.Broken;
             }
 
             // Trying to parse as a page url first
@@ -321,25 +360,32 @@ namespace Composite.Tools.LinkChecker
                             if (PageManager.GetPageById(linkedPageId) != null)
                             {
                                 brokenLinkType = BrokenLinkType.PageNotPublished;
-                                return SaveLinkCheckResult(url, brokenLinkType);
+                                return SaveLinkCheckResult(url, brokenLinkType) ? UrlPreprocessResult.Valid : UrlPreprocessResult.Broken;
                             }
                         }
                     }
 
                     brokenLinkType = BrokenLinkType.Page;
-                    return SaveLinkCheckResult(url, brokenLinkType);
+                    return SaveLinkCheckResult(url, brokenLinkType) ? UrlPreprocessResult.Valid : UrlPreprocessResult.Broken;
                 }
 
                 // If no PathInfo - page link is already valid
                 if (string.IsNullOrEmpty(pageUrlData.PathInfo))
                 {
                     brokenLinkType = BrokenLinkType.None;
-                    return true;
+                    return UrlPreprocessResult.Valid;
                 }
 
                 // If there's pathInfo -> making a request to check whether the link is actually broken
-                brokenLinkType = ValidateByRequest(url, serverUrl, BrokenLinkType.Page);
-                return brokenLinkType == BrokenLinkType.None;
+                requestValidationInfo = GetRequestValidationInfo(url, pageUrl, serverUrl, BrokenLinkType.Page);
+                if (requestValidationInfo == null)
+                {
+                    brokenLinkType = BrokenLinkType.Page;
+                    return UrlPreprocessResult.Broken;
+                }
+
+                brokenLinkType = BrokenLinkType.None;
+                return UrlPreprocessResult.NeedToBeValidatedByRequest;
             }
 
             MediaUrlData mediaUrlData = MediaUrls.ParseUrl(url);
@@ -352,13 +398,20 @@ namespace Composite.Tools.LinkChecker
                 bool mediaExist = DataFacade.GetData<IMediaFile>().Any(f => f.StoreId == mediastore && f.Id == mediaId);
 
                 brokenLinkType = mediaExist ? BrokenLinkType.None : BrokenLinkType.MediaLibrary;
-                return SaveLinkCheckResult(url, brokenLinkType);
+                return SaveLinkCheckResult(url, brokenLinkType) ? UrlPreprocessResult.Valid : UrlPreprocessResult.Broken;
             }
 
-            bool urlIsInternal = url.StartsWith("/");
+            var linkType = UrlHelper.IsAbsoluteLink(url) ? BrokenLinkType.External : BrokenLinkType.Relative;
 
-            brokenLinkType = ValidateByRequest(url, serverUrl, urlIsInternal ? BrokenLinkType.Relative : BrokenLinkType.External);
-            return brokenLinkType == BrokenLinkType.None;
+            requestValidationInfo = GetRequestValidationInfo(url, pageUrl, serverUrl, linkType);
+            if (requestValidationInfo == null)
+            {
+                brokenLinkType = linkType;
+                return UrlPreprocessResult.Broken;
+            }
+
+            brokenLinkType = BrokenLinkType.None;
+            return UrlPreprocessResult.NeedToBeValidatedByRequest;
         }
 
         private bool IsKnownHostname(string href)
@@ -415,20 +468,13 @@ namespace Composite.Tools.LinkChecker
                     return Localization.BrokenLink_Relative;
             }
 
-            throw new InvalidOperationException("not supported link type " + brokenLinkType.ToString());
+            throw new InvalidOperationException("not supported link type " + brokenLinkType);
         }
 
-        /// <summary>
-        /// This method will check a url to see that it does not return server or protocol errors
-        /// </summary>
-        /// <param name="url">The path to check</param>
-        /// <returns></returns>
-        private BrokenLinkType ValidateByRequest(string url, string serverUrl, BrokenLinkType brokenLinkType)
+
+        private RequestValidationInfo GetRequestValidationInfo(string url, string baseUrl, string serverUrl, BrokenLinkType brokenLinkType)
         {
-            if (url.StartsWith("/"))
-            {
-                url = UrlUtils.Combine(serverUrl ?? _serverUrl, url);
-            }
+            url = UrlHelper.ToAbsoluteUrl(url, baseUrl, serverUrl ?? _serverUrl);
 
             string hostname;
             try
@@ -437,20 +483,32 @@ namespace Composite.Tools.LinkChecker
             }
             catch (UriFormatException)
             {
-                return brokenLinkType;
+                return null;
             }
 
-            // Allowing only one request to the same hostname at a time. Along with cache also ensures that the same url won't be requested to twice
-            object hostNameSyncRoot = GetHostNameSyncObject(hostname);
+            return new RequestValidationInfo { Hostname = hostname, LinkType = brokenLinkType, Url = url};
+        }
 
-            lock (hostNameSyncRoot)
+        /// <summary>
+        /// This method will check a url to see that it does not return server or protocol errors
+        /// </summary>
+        /// <param name="url">The path to check</param>
+        /// <returns></returns>
+        private BrokenLinkType ValidateByRequest(RequestValidationInfo rvi)
+        {
+            string url = rvi.Url;
+
+            // Allowing only one request to the same hostname at a time. Along with cache also ensures that the same url won't be requested to twice
+            //object hostNameSyncRoot = GetHostNameSyncObject(rvi.Hostname);
+
+            // lock (hostNameSyncRoot)
             {
                 BrokenLinkType cachedResult;
                 if (_brokenLinks.TryGetValue(url, out cachedResult)) return cachedResult;
 
                 bool success = HttpRequestHelper.MakeHeadRequest(url);
 
-                var result = success ? BrokenLinkType.None : brokenLinkType;
+                var result = success ? BrokenLinkType.None : rvi.LinkType;
                 SaveLinkCheckResult(url, result);
 
                 return result;
@@ -460,12 +518,12 @@ namespace Composite.Tools.LinkChecker
 
 
 
-        private object GetHostNameSyncObject(string hostname)
-        {
-            hostname = hostname.ToLowerInvariant();
+        //private object GetHostNameSyncObject(string hostname)
+        //{
+        //    hostname = hostname.ToLowerInvariant();
 
-            return _hostnameSync.GetOrAdd(hostname, h => new object());
-        }
+        //    return _hostnameSync.GetOrAdd(hostname, h => new object());
+        //}
 
         private bool SaveLinkCheckResult(string url, BrokenLinkType brokenLinkType)
         {

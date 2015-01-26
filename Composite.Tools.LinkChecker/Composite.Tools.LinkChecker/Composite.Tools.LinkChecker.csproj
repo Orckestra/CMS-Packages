@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="PageRenderingResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UrlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Localization.tt">

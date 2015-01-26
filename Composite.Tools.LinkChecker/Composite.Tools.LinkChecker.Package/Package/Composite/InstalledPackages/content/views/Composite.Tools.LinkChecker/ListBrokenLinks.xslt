@@ -30,6 +30,8 @@
                   ( <xsl:value-of select="@errorType" /> )
                 </xsl:if>
 
+                &quot; <xsl:value-of select="@originalLink" /> &quot;
+
               </xsl:attribute>
 
             </ui:treenode>
