@@ -54,5 +54,10 @@ namespace Composite.Tools.LinkChecker
 
             return UrlUtils.Combine(serverUrl, link);
         }
+
+        public static bool ToBeIgnored(string link)
+        {
+            return link.StartsWith(UrlUtils.AdminRootPath, StringComparison.OrdinalIgnoreCase);
+        }
     }
 }

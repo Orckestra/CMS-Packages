@@ -28,7 +28,18 @@ public partial class ListBrokenLinks : System.Web.UI.Page
 
             int tickCount = Environment.TickCount;
 
-            bool noBrokenLinks = new BrokenLinksReport(Context).BuildBrokenLinksReport(infoDocumentRoot);
+            bool noBrokenLinks;
+
+            try
+            {
+                noBrokenLinks = new BrokenLinksReport(Context).BuildBrokenLinksReport(infoDocumentRoot);
+            }
+            catch (Exception ex)
+            {
+                Log.LogError("Composite.Tools.LinkChecker", ex);
+
+                throw;
+            }
 
             Log.LogInformation(LogTitle, "Time spent: " + (Environment.TickCount - tickCount) + " ms");
 

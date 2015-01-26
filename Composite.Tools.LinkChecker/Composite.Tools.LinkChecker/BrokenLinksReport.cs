@@ -20,7 +20,7 @@ namespace Composite.Tools.LinkChecker
 {
     public class BrokenLinksReport
     {
-        // private static readonly string LogTitle = typeof(BrokenLinksReport).FullName;
+        private static readonly string LogTitle = typeof(BrokenLinksReport).FullName;
 
         private readonly XName PageElementName = "Page";
 
@@ -152,8 +152,14 @@ namespace Composite.Tools.LinkChecker
                 // Having 100 tasks running in parallel would fill the app pool and make the site unresponsive
                 foreach(var link in linksToCheck)
                 {
-                    BrokenLinkType brokenLinkType = link.BrokenLinkType.Value;
+                    if (!link.BrokenLinkType.HasValue)
+                    {
+                        Log.LogWarning(LogTitle, "Incorrectly processed link: " + link.Href);
 
+                        link.BrokenLinkType = BrokenLinkType.Relative;
+                    }
+
+                    BrokenLinkType brokenLinkType = link.BrokenLinkType.Value;
                     if (brokenLinkType == BrokenLinkType.None)
                     {
                         continue;
@@ -211,7 +217,7 @@ namespace Composite.Tools.LinkChecker
                 string urlStr = a.Attribute("href").Value;
 
                 var href = HttpUtility.UrlDecode(urlStr).Trim();
-                if (!UrlHelper.IsHttpLink(href))
+                if (!UrlHelper.IsHttpLink(href) || UrlHelper.ToBeIgnored(href))
                 {
                     continue;
                 }

@@ -7,8 +7,8 @@ namespace Composite.Tools.LinkChecker
 {
     static class HttpRequestHelper
     {
-        private const int PageRenderingTimeout = 5000;
-        private const int UrlCheckingTimeout = 5000;
+        private const int PageRenderingTimeout = 7000;
+        private const int UrlCheckingTimeout = 7000;
 
         public static bool MakeHeadRequest(string url)
         {
@@ -41,7 +41,7 @@ namespace Composite.Tools.LinkChecker
             catch (WebException ex)
             {
                 // 400 errors
-                if (ex.Status == WebExceptionStatus.ProtocolError)
+                if (ex.Status == WebExceptionStatus.ProtocolError || ex.Status == WebExceptionStatus.Timeout)
                 {
                     return false;
                 }
