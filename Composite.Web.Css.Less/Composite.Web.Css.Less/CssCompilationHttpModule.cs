@@ -62,8 +62,8 @@ namespace Composite.Web.Css.Less
 
                 var errorInfo = _filesWithErrors[fileKey];
                 // Not recompiling a file if previous compilations failed
-                if (cssFileExists && errorInfo != null 
-                    && errorInfo.LastModificationDateUtc == lastTimeUpdatedUtc 
+                if (cssFileExists && errorInfo != null
+                    && errorInfo.LastModificationDateUtc == lastTimeUpdatedUtc
                     && !(errorInfo.IsCssCompilationException && UserValidationFacade.IsLoggedIn()))
                 {
                     context.Response.ContentType = "text/css";
@@ -141,7 +141,7 @@ namespace Composite.Web.Css.Less
 
         private void EmitCssMakrupForException(HttpResponse response, string requestPath, Exception exception)
         {
-            response.Write(string.Format(@"
+            var output = string.Format(@"
 /* 
 CSS COMPILE ERROR:
 {2}
@@ -162,13 +162,15 @@ body:before {{
    background-color: InfoBackground;
    content: 'Error in {0}:\A\A {1}';
    z-index: 10000;
-}}", requestPath, EncodeCssContent(exception.Message), EncodeCssComment(exception.Message)));
+}}", requestPath, EncodeCssContent(exception.Message), EncodeCssComment(exception.Message));
+
+            response.Write(output);
 
         }
 
         private string EncodeCssContent(string text)
         {
-            return text.Replace("'", "\"").Replace(@"\", @"\\").Replace("\n", @"\A ");
+            return text.Replace("'", "\"").Replace(@"\", @"\\").Replace("\n", @"\A ").Replace("\r", "");
         }
 
         private string EncodeCssComment(string text)
