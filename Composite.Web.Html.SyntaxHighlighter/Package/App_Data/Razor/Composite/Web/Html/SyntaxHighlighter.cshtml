@@ -1,0 +1,90 @@
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Highlights source code and markup samples in C#, XML etc"; }
+    }
+
+    [FunctionParameter(Label = "Source Code", Help = "The source code or markup sample to highlight.You can also load source code from a file or from the Media Archive by using Composite.Web.Html.SyntaxHighlighter.Functions.LoadFile() or Composite.Web.Html.SyntaxHighlighter.Functions.LoadFileFromMedia() functions respectively.", WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+    public string SourceCode { get; set; }
+
+    [FunctionParameter(Label = "Code Type", Help = "The type of code or markup to highlight: C#, CSS, C++, JS, Java, PHP, Visual Basic, SQL, XML or plain text", WidgetFactoryMethod = "GeCodeTypeWidget")]
+    public string CodeType { get; set; }
+
+    private const string themeWidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.Selector"">
+		<f:param name=""Options"">
+			<f:function name=""Composite.Utils.String.Split"">
+				<f:param name=""String"" value=""shThemeDefault.css,shThemeDjango.css,shThemeEclipse.css,shThemeEmacs.css,shThemeFadeToGrey.css,shThemeMidnight.css,shThemeRDark.css"" />
+				<f:param name=""Separator"" value="","" />
+			</f:function>
+		</f:param>
+	</f:widgetfunction>";
+
+    [FunctionParameter(Label = "CSS Theme", Help = "A CSS file-based theme to change the look and feel of the highlighted syntax.", WidgetMarkup = themeWidgetMarkup, DefaultValue = "shThemeDefault.css")]
+    public string Themes { get; set; }
+
+    private static Dictionary<string, Tuple<string, string>> CodeTypes = new Dictionary<string, Tuple<string, string>> {
+    {"shBrushAS3", new Tuple<string, string> ("ActionScript3", "as3") },
+    {"shBrushBash", new Tuple<string, string> ("Bash/shell", "bash")},
+    {"shBrushColdFusion", new Tuple<string, string> ("ColdFusion", "coldfusion") },
+    {"shBrushCSharp", new Tuple<string, string> ("C#", "csharp")},
+    {"shBrushCpp", new Tuple<string, string> ("C++", "cpp")},
+    {"shBrushCss", new Tuple<string, string> ("CSS", "css")},
+    {"shBrushDelphi", new Tuple<string, string> ("Delphi", "delphi") },
+    {"shBrushDiff", new Tuple<string, string> ("Diff", "diff") },
+    {"shBrushErlang", new Tuple<string, string> ("Erlang", "erlang") },
+    {"shBrushGroovy", new Tuple<string, string> ("Groovy", "groovy") },
+    {"shBrushJScript", new Tuple<string, string> ("JavaScript", "js")},
+    {"shBrushJava", new Tuple<string, string> ("Java", "java")},
+    {"shBrushJavaFX", new Tuple<string, string> ("JavaFX", "javafx")},
+    {"shBrushPerl", new Tuple<string, string> ("Perl", "perl")},
+    {"shBrushPhp", new Tuple<string, string> ("PHP", "php")},
+    {"shBrushPlain", new Tuple<string, string> ("Plain Text", "text")},
+    {"shBrushPowerShell", new Tuple<string, string> ("PowerShell", "ps")},
+    {"shBrushPython", new Tuple<string, string> ("Python", "python")},
+    {"shBrushRuby", new Tuple<string, string> ("Ruby", "ruby")},
+    {"shBrushScala", new Tuple<string, string> ("Scala", "scala")},
+    {"shBrushSql", new Tuple<string, string> ("SQL", "sql")},
+    {"shBrushVb", new Tuple<string, string> ("Visual Basic", "vb")},
+    {"shBrushXml", new Tuple<string, string> ("XML", "xml")}
+    };
+
+    public static WidgetFunctionProvider GeCodeTypeWidget()
+    {
+        Expression<Func<object>> expression = () => GetCodeTypeOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Key", "Value", false, false);
+    }
+
+    public static Dictionary<string, string> GetCodeTypeOptions()
+    {
+        return CodeTypes.ToDictionary(p => p.Key, p => p.Value.Item1);
+    }
+
+
+}
+@{
+    var codeType = CodeTypes.ContainsKey(CodeType) ? CodeType : "shBrush" + CodeType;
+    var brush = CodeTypes[CodeType].Item2;
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <link id="shCoreDefault" type="text/css" rel="stylesheet" href="~/Frontend/Composite/Web/Html/SyntaxHighlighter/styles/shCoreDefault.css" />
+    <link id="shTheme" type="text/css" rel="stylesheet" href="~/Frontend/Composite/Web/Html/SyntaxHighlighter/styles/@Themes" />
+    <link id="shStyles" type="text/css" rel="stylesheet" href="~/Frontend/Composite/Web/Html/SyntaxHighlighter/SyntaxHighlighter.css" />
+    <script id="shCore" type="text/javascript" src="~/Frontend/Composite/Web/Html/SyntaxHighlighter/scripts/shCore.js"></script>
+    <script id="@codeType" type="text/javascript" src="~/Frontend/Composite/Web/Html/SyntaxHighlighter/scripts/@(codeType).js"></script>
+    <script id="initializeSyntaxHighlighter" type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.all();
+    </script>
+</head>
+<body>
+    <pre class="brush: @brush">
+         @SourceCode
+    </pre>
+</body>
+</html>

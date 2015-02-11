@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3947.24461" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Web.Html.SyntaxHighlighter" groupName="Composite.Web" version="1.0.3" author="Composite A/S" website="http://www.composite.net/" readMoreUrl="http://docs.composite.net/Packages/CompositeC1Web/SyntaxHighlighter" id="0134d5d1-30ce-46a6-8eef-c777faa4352d" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="4.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Web.Html.SyntaxHighlighter" groupName="Composite.Web" version="1.0.4" author="Composite A/S" website="http://www.composite.net/" readMoreUrl="http://docs.composite.net/Packages/CompositeC1Web/SyntaxHighlighter" id="0134d5d1-30ce-46a6-8eef-c777faa4352d" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Highlights source code and markup samples with SyntaxHighlighter (http://alexgorbatchev.com/SyntaxHighlighter/)</Description>
     <TechnicalDetails>Highlights source code and markup samples with SyntaxHighlighter (http://alexgorbatchev.com/SyntaxHighlighter/)</TechnicalDetails>
 	</mi:PackageInformation>
@@ -9,7 +9,7 @@
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
-				<File sourceFilename="~\App_Data\Xslt\Composite\Web\Html\SyntaxHighlighter.xsl" targetFilename="~\App_Data\Xslt\Composite\Web\Html\SyntaxHighlighter.xsl" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Razor\Composite\Web\Html\SyntaxHighlighter.cshtml" targetFilename="~\App_Data\Razor\Composite\Web\Html\SyntaxHighlighter.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Code\Composite\Web\Html\SyntaxHighlighter\Functions.cs" targetFilename="~\App_Code\Composite\Web\Html\SyntaxHighlighter\Functions.cs" allowOverwrite="false" />
 			</Files>
 			<Directories>
@@ -20,12 +20,6 @@
 			<Types>
 				<Type type="Composite.Data.Types.IMethodBasedFunctionInfo,Composite">
 					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IParameter,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IXsltFunction,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
 				</Type>
 			</Types>
 		</mi:Add>
