@@ -1,9 +1,4 @@
-﻿.syntaxhighlighter {
-    padding-bottom: 30px;
-    max-height: 550px;
-}
-
-.syntaxhighlighter .container:before, .syntaxhighlighter .container:after {
+﻿.syntaxhighlighter .container:before, .syntaxhighlighter .container:after {
     content: normal;
     display: block;
 }

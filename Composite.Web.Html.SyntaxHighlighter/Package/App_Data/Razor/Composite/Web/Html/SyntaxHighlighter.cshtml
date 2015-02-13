@@ -54,7 +54,6 @@
     {
         Expression<Func<object>> expression = () => GetCodeTypeOptions();
         var method = (expression.Body as MethodCallExpression).Method;
-
         return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Key", "Value", false, false);
     }
 
@@ -63,10 +62,13 @@
         return CodeTypes.ToDictionary(p => p.Key, p => p.Value.Item1);
     }
 
-
 }
 @{
-    var codeType = CodeTypes.ContainsKey(CodeType) ? CodeType : "shBrush" + CodeType;
+    if (!CodeTypes.ContainsKey(CodeType))
+    {
+        //compatible with previous package version
+        CodeType = CodeTypes.FirstOrDefault(kv => kv.Value.Item1 == CodeType).Key;
+    }
     var brush = CodeTypes[CodeType].Item2;
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
@@ -75,7 +77,7 @@
     <link id="shTheme" type="text/css" rel="stylesheet" href="~/Frontend/Composite/Web/Html/SyntaxHighlighter/styles/@Themes" />
     <link id="shStyles" type="text/css" rel="stylesheet" href="~/Frontend/Composite/Web/Html/SyntaxHighlighter/SyntaxHighlighter.css" />
     <script id="shCore" type="text/javascript" src="~/Frontend/Composite/Web/Html/SyntaxHighlighter/scripts/shCore.js"></script>
-    <script id="@codeType" type="text/javascript" src="~/Frontend/Composite/Web/Html/SyntaxHighlighter/scripts/@(codeType).js"></script>
+    <script id="@CodeType" type="text/javascript" src="~/Frontend/Composite/Web/Html/SyntaxHighlighter/scripts/@(CodeType).js"></script>
     <script id="initializeSyntaxHighlighter" type="text/javascript">
         SyntaxHighlighter.defaults['toolbar'] = false;
         SyntaxHighlighter.defaults['gutter'] = true;
@@ -83,8 +85,6 @@
     </script>
 </head>
 <body>
-    <pre class="brush: @brush">
-         @SourceCode
-    </pre>
+    <pre class="brush: @brush">@SourceCode</pre>
 </body>
 </html>
