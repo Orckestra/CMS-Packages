@@ -67,6 +67,13 @@
                 registeredInlineScripts.Add(scriptElement);
                 continue;
             }
+            var bundleSkipAtr = scriptElement.Attribute("data-c1-nobundle");
+            if (bundleSkipAtr != null)
+            {
+                bundleSkipAtr.Remove();
+                registeredInlineScripts.Add(scriptElement);
+                continue;
+            }
 
             if (id != null) registeredIds.Add(id);
 
