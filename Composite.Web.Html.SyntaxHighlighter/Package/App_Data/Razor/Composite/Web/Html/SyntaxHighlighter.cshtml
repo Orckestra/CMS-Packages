@@ -67,7 +67,7 @@
     if (!CodeTypes.ContainsKey(CodeType))
     {
         //compatible with previous package version
-        CodeType = CodeTypes.FirstOrDefault(kv => kv.Value.Item1 == CodeType).Key;
+        CodeType = CodeTypes.FirstOrDefault(kv => kv.Value.Item1.ToLower() == CodeType.ToLower()).Key;
     }
     var brush = CodeTypes[CodeType].Item2;
 }
