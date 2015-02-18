@@ -28,8 +28,8 @@
 				<add:mimeMap add:key="fileExtension" fileExtension=".ogv" mimeType="video/ogg" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".oga" mimeType="audio/ogg" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".spx" mimeType="audio/ogg" />
-				<add:mimeMap add:key="fileExtension" fileExtension=".svg" mimeType="images/svg+xml" />
-				<add:mimeMap add:key="fileExtension" fileExtension=".svgz" mimeType="images/svg+xml" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".svg" mimeType="image/svg+xml" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".svgz" mimeType="image/svg+xml" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".eot" mimeType="application/vnd.ms-fontobject" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".otf" mimeType="font/otf" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".woff" mimeType="font/x-woff" />
