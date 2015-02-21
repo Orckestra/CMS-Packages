@@ -101,7 +101,7 @@
         }
 
         var bundlerUrl = BundleTable.Bundles.ResolveBundleUrl(bundleVirtualPath);
-        var bundlerScriptElement = new XElement("script", new XAttribute("src", bundlerUrl), new XAttribute("type", "text/javascript"));
+        var bundlerScriptElement = new XElement(Namespaces.Xhtml + "script", new XAttribute("src", bundlerUrl), new XAttribute("type", "text/javascript"));
 
         page.Body.Add(bundlerScriptElement);
         foreach (var inline in registeredInlineScripts)
@@ -156,7 +156,7 @@
         }
 
         var bundlerUrl = BundleTable.Bundles.ResolveBundleUrl(bundleVirtualPath);
-        var bundlerStylesElement = new XElement("link", new XAttribute("href", bundlerUrl), new XAttribute("type", "text/css"), new XAttribute("rel", "stylesheet"));
+        var bundlerStylesElement = new XElement(Namespaces.Xhtml + "link", new XAttribute("href", bundlerUrl), new XAttribute("type", "text/css"), new XAttribute("rel", "stylesheet"));
 
         page.Head.Add(bundlerStylesElement);
     }
