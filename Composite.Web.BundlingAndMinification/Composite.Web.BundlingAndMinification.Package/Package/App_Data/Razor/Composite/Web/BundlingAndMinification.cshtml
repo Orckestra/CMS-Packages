@@ -121,6 +121,13 @@
 
         foreach (var link in styleElements)
         {
+            var bundleSkipAtr = link.Attribute("data-c1-nobundle");
+            if (bundleSkipAtr != null)
+            {
+                bundleSkipAtr.Remove();
+                continue;
+            }
+            
             var id = (string)link.Attribute("id");
             var href = (string)link.Attribute("href");
 
