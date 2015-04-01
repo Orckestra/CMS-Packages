@@ -1,8 +1,8 @@
 ﻿(function ($) {
-    var countryCookieName = 'Composite.Web.Html.CountrySpecificContent.ClientCountry';
+    var countryCookiesName = 'Composite.Web.Html.CountrySpecificContent.ClientCountry';
 
     function getActiveCountry() {
-        var country = $.cookie(countryCookieName);
+        var country = getCookies(countryCookiesName);
         if (country == undefined) {
             $.ajax({
                 async: false,
@@ -10,11 +10,24 @@
                 dataType: 'json',
                 success: function (json) {
                     country = json.country_code;
-                    $.cookie(countryCookieName, country);
+                    setCookies(countryCookiesName, country);
                 }
             });
         }
         return country;
+    }
+
+    function getCookies(cookiesName) {
+        if (typeof (Storage) !== "undefined") {
+            return sessionStorage.getItem(cookiesName);
+        }
+        return undefined;
+    }
+
+    function setCookies(cookiesName, value) {
+        if (typeof (Storage) !== "undefined") {
+            sessionStorage.setItem(cookiesName, value);
+        }
     }
 
     $(document).ready(function () {
