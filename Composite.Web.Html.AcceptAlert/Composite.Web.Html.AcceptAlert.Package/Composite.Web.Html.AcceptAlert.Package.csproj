@@ -64,13 +64,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\Frontend\Composite\Web\Html\AcceptAlert\jquery.cookie.js" />
     <Content Include="Package\Frontend\Composite\Web\Html\AcceptAlert\script.js" />
     <Content Include="Package\Frontend\Composite\Web\Html\AcceptAlert\styles.css" />
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="_PackageCreator\Composite.Web.Html.AcceptAlert.xml" />
+    <Content Include="_PackageCreator\Composite.Web.Html.AcceptAlert.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\Razor\Composite\Web\Html\AcceptAlert.cshtml" />

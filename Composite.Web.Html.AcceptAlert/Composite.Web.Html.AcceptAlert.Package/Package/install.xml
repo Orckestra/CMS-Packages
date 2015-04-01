@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Web.Html.AcceptAlert" groupName="Composite.Web" version="1.0.2" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Web.Html.AcceptAlert" id="1b9c1f82-d242-4bb6-9b2b-ca6f8fe549c4" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.Web.Html.AcceptAlert" groupName="Composite.Web" version="1.0.3" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Web.Html.AcceptAlert" id="1b9c1f82-d242-4bb6-9b2b-ca6f8fe549c4" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Shows an alert that is dismissed with a cookie when accepted.</TechnicalDetails>
 		<Description>Shows an alert that is dismissed with a cookie when accepted.</Description>
 	</mi:PackageInformation>
