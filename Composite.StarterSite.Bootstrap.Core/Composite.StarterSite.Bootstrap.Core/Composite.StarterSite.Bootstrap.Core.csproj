@@ -92,7 +92,9 @@
     <Content Include="Package\Frontend\Config\VisualEditor\common.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Package\Frontend\Scripts\libs\bootstrap\bootstrap.min.js" />
+    <Content Include="Package\Frontend\Scripts\bootstrap\bootstrap.js" />
+    <Content Include="Package\Frontend\Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Package\Frontend\Scripts\ie10-viewport-bug-workaround.js" />
     <Content Include="Package\Frontend\Styles\bootstrap\bootstrap.css">
       <DependentUpon>bootstrap.less</DependentUpon>
     </Content>
@@ -176,6 +178,39 @@
     <Content Include="Package\Frontend\Styles\bootstrap\wells.less" />
     <Content Include="Package\Frontend\Styles\includes\fixes.less" />
     <Content Include="Package\Frontend\Styles\includes\service-nav.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\.csscomb.json" />
+    <Content Include="Package\Frontend\Styles\bootstrap\.csslintrc" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\alerts.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\background-variant.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\border-radius.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\buttons.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\center-block.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\clearfix.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\forms.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\gradients.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\grid.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\hide-text.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\image.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\labels.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\list-group.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\opacity.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\pagination.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\panels.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\resize.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\size.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\table-row.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Package\Frontend\Styles\bootstrap\responsive-embed.less" />
+    <Content Include="Package\Frontend\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Package\Frontend\Styles\style.less" />
     <None Include="Package\Frontend\Styles\VisualEditor.common.less" />
     <None Include="Package\Frontend\Styles\VisualEditor.less" />
