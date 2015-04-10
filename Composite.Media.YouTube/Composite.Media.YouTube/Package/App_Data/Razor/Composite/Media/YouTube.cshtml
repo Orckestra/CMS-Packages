@@ -9,6 +9,15 @@
     [FunctionParameter(Label = "YouTube URL", Help = "Paste the URL to the video you wish to show.")]
     public string YouTubeURL { get; set; }
 
+    private const string aspectRatioWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+  <f:param name='Options'>
+   <f:function name='Composite.Utils.String.Split'>
+    <f:param name='String' value='16:9,4:3' />
+   </f:function>
+  </f:param>
+ </f:widgetfunction>";
+    [FunctionParameter(Label = "Aspect Ratio", Help = "16:9 aspect ratio by default", WidgetMarkup = aspectRatioWidgetMarkup, DefaultValue = "16:9")]
+    public string AspectRatio { get; set; }
 }
 @{
     string pattern = @"(?:https?:\/\/)?(?:www\.)?(?:(?:(?:youtube.com\/watch\?[^?]*v=|youtu.be\/|youtube.com\/v\/)([\w\-]+))(?:[^\s?]+)?)";
@@ -22,27 +31,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <style id="youtube-video" type="text/css">
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            padding-top: 30px;
-            height: 0;
-            overflow: hidden;
-        }
-
-            .video-container iframe, .video-container object, .video-container embed {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-    </style>
-</head>
+ </head>
 <body>
-    <div class="video-container">
-        <iframe src="http://www.youtube.com/embed/@(match.Groups[1].Value)?fs=1" frameborder="0" width="560" height="315"></iframe>
+    <div class="embed-responsive embed-responsive-@AspectRatio.Replace(":", "by")">
+        <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/@(match.Groups[1].Value)?fs=1"></iframe>
     </div>
 </body>
 </html>
