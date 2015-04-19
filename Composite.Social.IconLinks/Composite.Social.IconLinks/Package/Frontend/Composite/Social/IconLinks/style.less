@@ -1,0 +1,215 @@
+﻿@light-bg-color: #fafafa;
+@light-color: #333;
+@dark-bg-color: #333;
+@dark-color: #fafafa;
+
+@twitter-color: #55acee;
+@skype-color: #00aff0;
+@linkedin-color: #0976b4;
+@googleplus-color: #dd4b39;
+@youtube-color: #b31217;
+@flickr-color: #ff0084;
+@facebook-color: #3b5998;
+@pinterest-color: #cb2027;
+@instagram-color: #517fa4;
+@vimeo-color: #aad450;
+@tumblr-color: #32506d;
+@soundcloud-color: #ff3a00;
+@foursquare-color: #0072b1;
+@dribbble-color: #ea4c89;
+@behance-color: #053eff;
+@vine-color: #00a478;
+@stumbleupon-color: #f74425;
+@mailto-color: #666;
+
+.social-il {
+    list-style: none;
+    font-size: 0;
+    padding: 0;
+    margin: 20px 0;
+
+    li {
+        display: inline-block;
+        margin: 0 2px 2px 0;
+
+
+        &.twitter a:hover {
+            color: @twitter-color;
+        }
+
+        &.skype a:hover {
+            color: @skype-color;
+        }
+
+        &.linkedin a:hover {
+            color: @linkedin-color;
+        }
+
+        &.googleplus a:hover {
+            color: @googleplus-color;
+        }
+
+        &.youtube a:hover {
+            color: @youtube-color;
+        }
+
+        &.flickr a:hover {
+            color: @flickr-color;
+        }
+
+        &.facebook a:hover {
+            color: @facebook-color;
+        }
+
+        &.pinterest a:hover {
+            color: @pinterest-color;
+        }
+
+        &.instagram a:hover {
+            color: @instagram-color;
+        }
+
+        &.vimeo a:hover {
+            color: @vimeo-color;
+        }
+
+        &.tumblr a:hover {
+            color: @tumblr-color;
+        }
+
+        &.soundcloud a:hover {
+            color: @soundcloud-color;
+        }
+
+        &.foursquare a:hover {
+            color: @foursquare-color;
+        }
+
+        &.dribbble a:hover {
+            color: @dribbble-color;
+        }
+
+        &.behance a:hover {
+            color: @behance-color;
+        }
+
+        &.vine a:hover {
+            color: @vine-color;
+        }
+
+        &.stumbleupon a:hover {
+            color: @stumbleupon-color;
+        }
+
+        &.mailto a:hover {
+            color: @mailto-color;
+        }
+
+        a {
+            width: 45px;
+            height: 45px;
+            display: block;
+            text-align: center;
+            font-size: 20px;
+
+            i {
+                line-height: 44px;
+            }
+        }
+    }
+
+    &.s-large li a {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+
+        i {
+            line-height: 60px;
+        }
+    }
+
+    &.s-small li a {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+
+        i {
+            line-height: 25px;
+        }
+    }
+
+    &.circle li a {
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+    }
+
+    &.radius-5px li a {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    &.light li a {
+        background: @light-bg-color;
+        border: 1px solid darken(@light-bg-color, 5%);
+        color: @light-color;
+
+        &:hover {
+            background: darken(@light-bg-color, 5%);
+        }
+    }
+
+    &.dark li a {
+        background: @dark-bg-color;
+        border: 1px solid darken(@dark-bg-color, 5%);
+        color: @dark-color;
+
+        &:hover {
+            background: lighten(@dark-bg-color, 80%);
+            border: 1px solid lighten(@dark-bg-color, 70%);
+        }
+    }
+
+    .dropdown {
+    }
+}
+
+.social-il-dropdown {
+    > button {
+        padding: 6px 15px 5px;
+        font-size: 16px;
+        color: #999;
+        text-align: center;
+        min-width: 0;
+        margin: 0;
+        background-color: transparent;
+        -moz-box-shadow: none !important;
+        -o-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+
+        i {
+            width: 15px;
+        }
+    }
+
+    &.open {
+        > button > i:before {
+            content: "\f00d";
+            color: #333;
+        }
+    }
+
+    .dropdown-menu {
+        padding: 0px;
+        min-width: 272px;
+        width: auto;
+        margin-top: 0;
+
+        li, li a, li a i {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}

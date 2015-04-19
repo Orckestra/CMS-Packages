@@ -1,0 +1,203 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Social Icon Links"; }
+    }
+
+    [FunctionParameter(Label = "Facebook", DefaultValue = null)]
+    public string Facebook { get; set; }
+
+    [FunctionParameter(Label = "Twitter", DefaultValue = null)]
+    public string Twitter { get; set; }
+
+    [FunctionParameter(Label = "Google Plus", DefaultValue = null)]
+    public string GooglePlus { get; set; }
+
+    [FunctionParameter(Label = "Skype", DefaultValue = null)]
+    public string Skype { get; set; }
+
+    [FunctionParameter(Label = "Instagram", DefaultValue = null)]
+    public string Instagram { get; set; }
+
+    [FunctionParameter(Label = "LinkedIn", DefaultValue = null)]
+    public string LinkedIn { get; set; }
+
+    [FunctionParameter(Label = "Pinterest", DefaultValue = null)]
+    public string Pinterest { get; set; }
+
+    [FunctionParameter(Label = "Flickr", DefaultValue = null)]
+    public string Flickr { get; set; }
+
+    [FunctionParameter(Label = "YouTube", DefaultValue = null)]
+    public string YouTube { get; set; }
+
+    [FunctionParameter(Label = "Foursquare", DefaultValue = null)]
+    public string FourSquare { get; set; }
+
+    [FunctionParameter(Label = "SoundCloud", DefaultValue = null)]
+    public string SoundCloud { get; set; }
+
+    [FunctionParameter(Label = "Tumblr", DefaultValue = null)]
+    public string Tumblr { get; set; }
+
+    [FunctionParameter(Label = "Vimeo", DefaultValue = null)]
+    public string Vimeo { get; set; }
+
+    [FunctionParameter(Label = "Dribbble", DefaultValue = null)]
+    public string Dribbble { get; set; }
+
+    [FunctionParameter(Label = "Behance", DefaultValue = null)]
+    public string Behance { get; set; }
+
+    [FunctionParameter(Label = "Vine", DefaultValue = null)]
+    public string Vine { get; set; }
+
+    [FunctionParameter(Label = "StumbleUpon", DefaultValue = null)]
+    public string Stumbleupon { get; set; }
+
+    [FunctionParameter(Label = "MailTo", DefaultValue = null)]
+    public string MailTo { get; set; }
+
+    private const string sizeOptionsWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+    <f:param name='Options'>
+       <f:function name='Composite.Utils.String.Split'>
+            <f:param name='String' value='default,small,large' />
+       </f:function>
+      </f:param>
+     </f:widgetfunction>";
+
+    [FunctionParameter(Label = "Size", WidgetMarkup = sizeOptionsWidgetMarkup, DefaultValue = "default")]
+    public string Size{ get; set; }
+    
+    private const string optionsWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+    <f:param name='Options'>
+       <f:function name='Composite.Utils.String.Split'>
+            <f:param name='String' value='light,dark,colored' />
+       </f:function>
+      </f:param>
+     </f:widgetfunction>";
+
+    [FunctionParameter(Label = "Color Style", WidgetMarkup = optionsWidgetMarkup, DefaultValue = "light")]
+    public string ColorStyle { get; set; }
+
+    private const string formStyleOptionsWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+    <f:param name='Options'>
+       <f:function name='Composite.Utils.String.Split'>
+            <f:param name='String' value='square,radius-5px,circle' />
+       </f:function>
+      </f:param>
+     </f:widgetfunction>";
+
+    [FunctionParameter(Label = "Form Style", WidgetMarkup = formStyleOptionsWidgetMarkup, DefaultValue = "square")]
+    public string FormStyle { get; set; }
+
+    [FunctionParameter(Label = "Is Collapsed", Help = "If True then links will be collapsed into dropdown on small screens.", DefaultValue = false)]
+    public bool IsCollapsed { get; set; }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+        <link id="font-awesome-css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+        <link id="social-il-css" rel="stylesheet" href="~/Frontend/Composite/Social/IconLinks/style.less"/>
+        @if (ColorStyle == "colored")
+        {
+              <link id="social-il-colored-theme-css" rel="stylesheet" href="~/Frontend/Composite/Social/IconLinks/colored-theme.less"/>
+        }
+    </head>
+<body>
+    @{
+        var classname = string.Format("social-il clearfix {0} {1} s-{2} {3}", ColorStyle, FormStyle, Size, (IsCollapsed ? " hidden-xs" : string.Empty));
+        @SocialLinks_List(classname)
+    }
+    @if (IsCollapsed)
+    {
+        <div class="hidden-lg hidden-md hidden-sm">
+            <div class="social-il-dropdown btn-group dropdown">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt"></i></button>
+                @SocialLinks_List(string.Format("social-il dropdown-menu {0} {1} s-{2}", ColorStyle, FormStyle, Size))
+            </div>
+        </div>
+    }
+</body>
+</html>
+
+
+@helper SocialLinks_List(string className)
+{
+    <ul class="@className">
+        @if (!String.IsNullOrEmpty(Facebook))
+        {
+            <li class="facebook"><a target="_blank" href="@Facebook"><i class="fa fa-facebook"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(Twitter))
+        {
+            <li class="twitter"><a target="_blank" href="@Twitter"><i class="fa fa-twitter"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(GooglePlus))
+        {
+            <li class="googleplus"><a target="_blank" href="@GooglePlus"><i class="fa fa-google-plus"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(Skype))
+        {
+            <li class="skype"><a target="_blank" href="@Skype"><i class="fa fa-skype"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(Instagram))
+        {
+            <li class="instagram"><a target="_blank" href="@Instagram"><i class="fa fa-instagram"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(LinkedIn))
+        {
+            <li class="linkedin"><a target="_blank" href="@LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(Pinterest))
+        {
+            <li class="pinterest"><a target="_blank" href="@Pinterest"><i class="fa fa-pinterest"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(Flickr))
+        {
+            <li class="flickr"><a target="_blank" href="@Flickr"><i class="fa fa-flickr"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(YouTube))
+        {
+            <li class="youtube"><a target="_blank" href="@YouTube"><i class="fa fa-youtube"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(FourSquare))
+        {
+            <li class="foursquare"><a target="_blank" href="@FourSquare"><i class="fa fa-foursquare"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(SoundCloud))
+        {
+            <li class="soundcloud"><a target="_blank" href="@SoundCloud"><i class="fa fa-soundcloud"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(Tumblr))
+        {
+            <li class="tumblr"><a target="_blank" href="@Tumblr"><i class="fa fa-tumblr"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(Vimeo))
+        {
+            <li class="vimeo"><a target="_blank" href="@Vimeo"><i class="fa fa-vimeo-square"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(Dribbble))
+        {
+            <li class="dribbble"><a target="_blank" href="@Dribbble"><i class="fa fa-dribbble"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(Behance))
+        {
+            <li class="behance"><a target="_blank" href="@Behance"><i class="fa fa-behance"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(Vine))
+        {
+            <li class="vine"><a target="_blank" href="@Vine"><i class="fa fa-vine"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(Stumbleupon))
+        {
+            <li class="stumbleupon"><a target="_blank" href="@Stumbleupon"><i class="fa fa-stumbleupon"></i></a></li>
+        }
+        @if (!String.IsNullOrEmpty(MailTo))
+        {
+            <li class="mailto"><a href="@MailTo"><i class="fa fa-envelope-o"></i></a></li>
+        }
+    </ul>
+}
