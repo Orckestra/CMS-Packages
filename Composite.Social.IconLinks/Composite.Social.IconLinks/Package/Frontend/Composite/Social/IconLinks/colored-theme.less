@@ -17,176 +17,92 @@
 @stumbleupon-color: #f74425;
 @mailto-color: #666;
 
+.icon-variant(@color) {
+    background-color: @color;
+    &:hover {
+        background-color: darken(@color, 10%);
+    }
+}
+
 .social-il {
     &.colored {
         li a {
             color: #fff;
-
             &:hover {
                 color: #fff;
             }
         }
 
         .twitter a {
-            background-color: @twitter-color;
-            border-color: darken(@twitter-color, 5%);
-
-            &:hover {
-                background-color: darken(@twitter-color, 5%);
-            }
+            .icon-variant(@twitter-color);
         }
 
         .skype a {
-            background-color: @skype-color;
-            border-color: darken(@skype-color, 5%);
-
-            &:hover {
-                background-color: darken(@skype-color, 5%);
-            }
+            .icon-variant(@skype-color);
         }
 
         .linkedin a {
-            background-color: @linkedin-color;
-            border-color: darken(@linkedin-color, 5%);
-
-            &:hover {
-                background-color: darken(@linkedin-color, 5%);
-            }
+            .icon-variant(@linkedin-color);
         }
 
         .googleplus a {
-            background-color: @googleplus-color;
-            border-color: darken(@googleplus-color, 5%);
-
-            &:hover {
-                background-color: darken(@googleplus-color, 5%);
-            }
+            .icon-variant(@googleplus-color);
         }
 
         .youtube a {
-            background-color: @youtube-color;
-            border-color: darken(@youtube-color, 5%);
-
-            &:hover {
-                background-color: darken(@youtube-color, 5%);
-            }
+            .icon-variant(@youtube-color);
         }
 
         .flickr a {
-            background-color: @flickr-color;
-            border-color: darken(@flickr-color, 5%);
-
-            &:hover {
-                background-color: darken(@flickr-color, 5%);
-            }
+            .icon-variant(@flickr-color);
         }
 
         .facebook a {
-            background-color: @facebook-color;
-            border-color: darken(@facebook-color, 5%);
-
-            &:hover {
-                background-color: darken(@facebook-color, 5%);
-            }
+            .icon-variant(@facebook-color);
         }
 
         .pinterest a {
-            background-color: @pinterest-color;
-            border-color: darken(@pinterest-color, 5%);
-
-            &:hover {
-                background-color: darken(@pinterest-color, 5%);
-            }
+            .icon-variant(@pinterest-color);
         }
 
         .instagram a {
-            background-color: @instagram-color;
-            border-color: darken(@instagram-color, 5%);
-
-            &:hover {
-                background-color: darken(@instagram-color, 5%);
-            }
+            .icon-variant(@instagram-color);
         }
 
         .vimeo a {
-            background-color: @vimeo-color;
-            border-color: darken(@vimeo-color, 5%);
-
-            &:hover {
-                background-color: darken(@vimeo-color, 5%);
-            }
+            .icon-variant(@vimeo-color);
         }
 
         .tumblr a {
-            background-color: @tumblr-color;
-            border-color: darken(@tumblr-color, 5%);
-
-            &:hover {
-                background-color: darken(@tumblr-color, 5%);
-            }
+            .icon-variant(@tumblr-color);
         }
 
         .soundcloud a {
-            background-color: @soundcloud-color;
-            border-color: darken(@soundcloud-color, 5%);
-
-            &:hover {
-                background-color: darken(@soundcloud-color, 5%);
-            }
+            .icon-variant(@soundcloud-color);
         }
 
         .foursquare a {
-            background-color: @foursquare-color;
-            border-color: darken(@foursquare-color, 5%);
-
-            &:hover {
-                background-color: darken(@foursquare-color, 5%);
-            }
+            .icon-variant(@foursquare-color);
         }
 
         .dribbble a {
-            background-color: @dribbble-color;
-            border-color: darken(@dribbble-color, 5%);
-
-            &:hover {
-                background-color: darken(@dribbble-color, 5%);
-            }
+            .icon-variant(@dribbble-color);
         }
 
         .behance a {
-            background-color: @behance-color;
-            border-color: darken(@behance-color, 5%);
-
-            &:hover {
-                background-color: darken(@behance-color, 5%);
-            }
+            .icon-variant(@behance-color);
         }
 
         .vine a {
-            background-color: @vine-color;
-            border-color: darken(@vine-color, 5%);
-
-            &:hover {
-                background-color: darken(@vine-color, 5%);
-            }
+            .icon-variant(@vine-color);
         }
 
         .stumbleupon a {
-            background-color: @stumbleupon-color;
-            border-color: darken(@stumbleupon-color, 5%);
-
-            &:hover {
-                background-color: darken(@stumbleupon-color, 5%);
-            }
+            .icon-variant(@stumbleupon-color);
         }
 
         .mailto a {
-            background-color: @mailto-color;
-            border-color: darken(@mailto-color, 5%);
-
-            &:hover {
-                background-color: darken(@mailto-color, 5%);
-            }
+            .icon-variant(@mailto-color);
         }
     }
 }
