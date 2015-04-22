@@ -1,48 +1,49 @@
 <?xml version="1.0"?>
 <pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
-  <pc:Functions>
-    <Add name="Composite.Community.Blog.TagValidatorContainer.TagValidator" />
-  </pc:Functions>
-  <pc:PageTypes>
-    <Add name="Blog" />
-  </pc:PageTypes>
-  <pc:DynamicDataTypesData>
-    <Add name="Composite.Community.Blog.Authors" />
-    <Add name="Composite.Community.Blog.Tags" />
-  </pc:DynamicDataTypesData>
-  <pc:XsltFunctions />
-  <pc:CSharpFunctions />
-  <pc:DynamicDataTypes>
-    <Add name="Composite.Community.Blog.Authors" />
-    <Add name="Composite.Community.Blog.Tags" />
-    <Add name="Composite.Community.Blog.Entries" />
-  </pc:DynamicDataTypes>
-  <mi:PackageFragmentInstallerBinaries>
-    <mi:Add path="~\Bin\Composite.Community.Blog.dll" />
-  </mi:PackageFragmentInstallerBinaries>
-  <pc:Directories>
-    <Add name="Frontend\Composite\Community\Blog\" />
-    <Add name="App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\" />
-    <Add name="App_Data\Razor\Composite\Community\Blog\" />
-  </pc:Directories>
-  <pc:Files>
-    <Add name="Bin\CookComputing.XmlRpcV2.dll" />
-    <Add name="Bin\Composite.Community.Blog.dll" />
-    <Add name="BlogRssFeed.ashx" />
-    <Add name="App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" />
-    <Add name="App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Settings.xml" />
-    <Add name="BlogMetaWeblog.ashx" />
-  </pc:Files>
-  <pc:PackageFragmentInstallers>
-    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite" Ordering="10">
-      <XslFiles>
-        <XslFile pathXml="~\Web.config" installXsl="~\Config\Install.xsl" />
-      </XslFiles>
-    </mi:Add>
-  </pc:PackageFragmentInstallers>
-  <mi:PackageRequirements minimumCompositeVersion="4.1.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-  <mi:PackageInformation name="Composite.Community.Blog" groupName="Composite.Community" version="2.1.3" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Community.Blog" id="303b7865-055b-4fe7-a429-907b32bb6776" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
-    <Description>Allows you to set up one or more blogs on a website. Entries can be filtered by month/year or tag, commented on, shared with popular online communities and services. Supports RSS export.</Description>
-    <TechnicalDetails>Allows you to set up one or more blogs on a website. Entries can be filtered by month/year or tag, commented on, shared with popular online communities and services. Supports RSS export.</TechnicalDetails>
-  </mi:PackageInformation>
+	<pc:Functions>
+		<Add name="Composite.Community.Blog.TagValidatorContainer.TagValidator" />
+	</pc:Functions>
+	<pc:PageTypes>
+		<Add name="Blog" />
+	</pc:PageTypes>
+	<pc:DynamicDataTypesData>
+		<Add name="Composite.Community.Blog.Authors" />
+		<Add name="Composite.Community.Blog.Tags" />
+	</pc:DynamicDataTypesData>
+	<pc:XsltFunctions />
+	<pc:CSharpFunctions />
+	<pc:DynamicDataTypes>
+		<Add name="Composite.Community.Blog.Authors" />
+		<Add name="Composite.Community.Blog.Tags" />
+		<Add name="Composite.Community.Blog.Entries" />
+	</pc:DynamicDataTypes>
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Composite.Community.Blog.dll" />
+	</mi:PackageFragmentInstallerBinaries>
+	<pc:Directories>
+		<Add name="Frontend\Composite\Community\Blog\" />
+		<Add name="App_Data\Razor\Composite\Community\Blog\" />
+		<Add name="Composite\InstalledPackages\content\forms\Composite.Community.Blog\" />
+	</pc:Directories>
+	<pc:Files>
+		<Add name="Bin\CookComputing.XmlRpcV2.dll" />
+		<Add name="Bin\Composite.Community.Blog.dll" />
+		<Add name="BlogRssFeed.ashx" />
+		<Add name="App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" />
+		<Add name="App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Settings.xml" />
+		<Add name="BlogMetaWeblog.ashx" />
+	</pc:Files>
+	<pc:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite" Ordering="10">
+			<XslFiles>
+				<XslFile pathXml="~\Web.config" installXsl="~\Config\Install.xsl" />
+				<XslFile pathXml="~\App_Data\Composite\Composite.config" installXsl="~\Composite.Config\Install.xsl" uninstallXsl="~\Composite.Config\Uninstall.xsl" />
+			</XslFiles>
+		</mi:Add>
+	</pc:PackageFragmentInstallers>
+	<mi:PackageRequirements minimumCompositeVersion="4.1.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Community.Blog" groupName="Composite.Community" version="2.2.0" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Community.Blog" id="303b7865-055b-4fe7-a429-907b32bb6776" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+		<Description>Allows you to set up one or more blogs on a website. Entries can be filtered by month/year or tag, commented on, shared with popular online communities and services. Supports RSS export.</Description>
+		<TechnicalDetails>Allows you to set up one or more blogs on a website. Entries can be filtered by month/year or tag, commented on, shared with popular online communities and services. Supports RSS export.</TechnicalDetails>
+	</mi:PackageInformation>
 </pc:PackageCreator>

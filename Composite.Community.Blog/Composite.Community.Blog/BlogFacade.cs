@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Configuration;
 using Composite.Community.Blog.Models;
 using Composite.Core;
 using Composite.Core.Logging;
@@ -20,6 +21,22 @@ namespace Composite.Community.Blog
 {
     public class BlogFacade
     {
+	    public static string PathSpecial = "_";
+
+	    private static string _requestPathInvalidCharacters = null;
+		public static string RequestPathInvalidCharacters {
+			get
+			{
+				if(_requestPathInvalidCharacters == null)
+				{
+					var section = HttpContext.Current.GetSection("system.web/httpRuntime") as System.Web.Configuration.HttpRuntimeSection;
+					_requestPathInvalidCharacters = (section.RequestPathInvalidCharacters ?? string.Empty).Replace(",","");
+				}
+				return _requestPathInvalidCharacters;
+			}
+		}
+		
+
         public static IEnumerable<Tag> GetTagCloud(double minFontSize, double maxFontSize, DataReference<IPage> blogPage,
                                                    bool isGlobal)
         {
@@ -112,7 +129,7 @@ namespace Composite.Community.Blog
                 }
                 else
                 {
-                    string tag = pathInfoParts[1];
+                    string tag = Decode(pathInfoParts[1]);
 
                     // filter below replaced becauase of LINQ2SQL problems
                     //filter = f => f.Tags.Split(',').Any(t => t == tag) && f.PageId == currentPageId;
@@ -337,10 +354,20 @@ namespace Composite.Community.Blog
             entry.TitleUrl = GetUrlFromTitle(entry.Title);
         }
 
+
+		public static string Decode(string text)
+		{
+			text = text.Replace(PathSpecial + PathSpecial, PathSpecial + "00");
+			text = RequestPathInvalidCharacters.Aggregate(text, (current, c) => current.Replace(PathSpecial + Convert.ToByte(c).ToString("x2"), c.ToString()));
+			text = text.Replace(PathSpecial+"00", PathSpecial);
+			return text;
+		}
+
         public static string Encode(string text)
         {
-            text = HttpContext.Current.Server.UrlEncode(text);
-            return text.Replace("+", "%20");
+			text = text.Replace(PathSpecial, PathSpecial + PathSpecial);
+			text = RequestPathInvalidCharacters.Aggregate(text, (current, c) => current.Replace(c.ToString(), PathSpecial + Convert.ToByte(c).ToString("x2")));
+	        return Uri.EscapeDataString(text);
         }
 
         public static void ClearRssFeedCache(object sender, DataEventArgs dataEventArgs)

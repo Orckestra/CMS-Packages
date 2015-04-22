@@ -9,6 +9,9 @@
 		</Actions>
 		<Children>
 			<Element Label="Blog Entries" Id="Root">
+				<Actions>
+					<WorkflowAction Label="Import From RSS Feed" WorkflowType="Composite.Community.Blog.Workflows.ImportFromRssWorkflow,Composite.Community.Blog"/>
+				</Actions>
 				<Children>
 					<DataFolderElements Type="Composite.Community.Blog.Entries" DateFormat="yyyy MMMM" FieldGroupingName="Date" Display="Compact" SortDirection="Descending">
 						<Children>

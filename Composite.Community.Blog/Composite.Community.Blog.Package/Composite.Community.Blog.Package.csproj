@@ -56,12 +56,17 @@
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Entries.xml" />
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" />
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Settings.xml" />
+    <Content Include="Package\Bin\Composite.Community.Blog.dll" />
     <Content Include="Package\Bin\CookComputing.XmlRpcV2.dll" />
+    <Content Include="Package\Composite.Config\Install.xsl" />
+    <Content Include="Package\Composite.Config\Uninstall.xsl" />
+    <Content Include="Package\Composite\InstalledPackages\content\forms\Composite.Community.Blog\ImportFromRss.xml" />
     <Content Include="Package\Config\Install.xsl">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Package\Datas\Composite.Community.Blog.Authorss_public.xml" />
     <Content Include="Package\Datas\Composite.Community.Blog.Tagss_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypeDefaultPageContents_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypeTreeLinks_public.xml" />
@@ -136,20 +141,13 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>DEL "$(TargetDir)\*.dll"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
-
-COPY "$(TargetDir)\*.dll" "$(TargetDir)_Package\Bin\"
-DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
-DEL "$(TargetDir)_Package\Bin\Composite.Generated.dll"
-
-DEL "$(TargetDir)$(SolutionName).zip"
-
-"$(SolutionDir)..\..\Public\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
-
-"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
-COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"</PostBuildEvent>
+    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\..\Public\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\..\Public\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
+</PostBuildEvent>
   </PropertyGroup>
 </Project>
