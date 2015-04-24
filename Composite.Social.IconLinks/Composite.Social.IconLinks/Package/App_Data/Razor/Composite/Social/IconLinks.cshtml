@@ -1,74 +1,75 @@
-﻿@inherits RazorFunction
+﻿@using System.ComponentModel.Design
+@inherits RazorFunction
 
 @functions {
     public override string FunctionDescription
     {
-        get { return "Social Icon Links"; }
+        get { return "Displays social links as icons on a page"; }
     }
 
-    [FunctionParameter(Label = "Facebook", DefaultValue = null)]
+    [FunctionParameter(Label = "Facebook", Help = "A full link to your Facebook page", DefaultValue = null)]
     public string Facebook { get; set; }
 
-    [FunctionParameter(Label = "Twitter", DefaultValue = null)]
+    [FunctionParameter(Label = "Twitter", Help = "A full link to your Twitter", DefaultValue = null)]
     public string Twitter { get; set; }
 
-    [FunctionParameter(Label = "Google Plus", DefaultValue = null)]
+    [FunctionParameter(Label = "Google Plus", Help = "A full link to your Google+", DefaultValue = null)]
     public string GooglePlus { get; set; }
 
-    [FunctionParameter(Label = "Skype", DefaultValue = null)]
+    [FunctionParameter(Label = "Skype", Help = "Your Skype URI Link", DefaultValue = null)]
     public string Skype { get; set; }
 
-    [FunctionParameter(Label = "Instagram", DefaultValue = null)]
+    [FunctionParameter(Label = "Instagram", Help = "A full link to your Instagram", DefaultValue = null)]
     public string Instagram { get; set; }
 
-    [FunctionParameter(Label = "LinkedIn", DefaultValue = null)]
+    [FunctionParameter(Label = "LinkedIn", Help = "A full link to your LinkedIn page", DefaultValue = null)]
     public string LinkedIn { get; set; }
 
-    [FunctionParameter(Label = "Pinterest", DefaultValue = null)]
+    [FunctionParameter(Label = "Pinterest", Help = "A full link to your Pinterest", DefaultValue = null)]
     public string Pinterest { get; set; }
 
-    [FunctionParameter(Label = "Flickr", DefaultValue = null)]
+    [FunctionParameter(Label = "Flickr", Help = "A full link to your Flickr", DefaultValue = null)]
     public string Flickr { get; set; }
 
-    [FunctionParameter(Label = "YouTube", DefaultValue = null)]
+    [FunctionParameter(Label = "YouTube", Help = " A full link to your YouTube channel", DefaultValue = null)]
     public string YouTube { get; set; }
 
-    [FunctionParameter(Label = "Foursquare", DefaultValue = null)]
+    [FunctionParameter(Label = "FourSquare", Help = "A full link to your FourSuare", DefaultValue = null)]
     public string FourSquare { get; set; }
 
-    [FunctionParameter(Label = "SoundCloud", DefaultValue = null)]
+    [FunctionParameter(Label = "SoundCloud", Help = "A full link to your SoundCloud", DefaultValue = null)]
     public string SoundCloud { get; set; }
 
-    [FunctionParameter(Label = "Tumblr", DefaultValue = null)]
+    [FunctionParameter(Label = "Tumblr", Help = "A full link to your Tumblr blog", DefaultValue = null)]
     public string Tumblr { get; set; }
 
-    [FunctionParameter(Label = "Vimeo", DefaultValue = null)]
+    [FunctionParameter(Label = "Vimeo", Help = "A full link to your Vimeo channel", DefaultValue = null)]
     public string Vimeo { get; set; }
 
-    [FunctionParameter(Label = "Dribbble", DefaultValue = null)]
+    [FunctionParameter(Label = "Dribbble", Help = "A full link to your Dribbble", DefaultValue = null)]
     public string Dribbble { get; set; }
 
-    [FunctionParameter(Label = "Behance", DefaultValue = null)]
+    [FunctionParameter(Label = "Behance", Help = "A full link to your Behance", DefaultValue = null)]
     public string Behance { get; set; }
 
-    [FunctionParameter(Label = "Vine", DefaultValue = null)]
+    [FunctionParameter(Label = "Vine", Help = "A full link to your Vine", DefaultValue = null)]
     public string Vine { get; set; }
 
-    [FunctionParameter(Label = "StumbleUpon", DefaultValue = null)]
+    [FunctionParameter(Label = "StumbleUpon", Help = "A full link to your StumbleUpon", DefaultValue = null)]
     public string Stumbleupon { get; set; }
 
-    [FunctionParameter(Label = "MailTo", DefaultValue = null)]
+    [FunctionParameter(Label = "MailTo", Help = "Your email address (mailto:your-name@email-address.com)", DefaultValue = null)]
     public string MailTo { get; set; }
 
     private const string sizeOptionsWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
     <f:param name='Options'>
        <f:function name='Composite.Utils.String.Split'>
-            <f:param name='String' value='default,small,large' />
+            <f:param name='String' value='small,medium,large' />
        </f:function>
       </f:param>
      </f:widgetfunction>";
 
-    [FunctionParameter(Label = "Size", WidgetMarkup = sizeOptionsWidgetMarkup, DefaultValue = "default")]
+    [FunctionParameter(Label = "Size", Help = "The size of social media icons: small, medium, large", WidgetMarkup = sizeOptionsWidgetMarkup, DefaultValue = "medium")]
     public string Size{ get; set; }
     
     private const string optionsWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
@@ -79,7 +80,7 @@
       </f:param>
      </f:widgetfunction>";
 
-    [FunctionParameter(Label = "Color Style", WidgetMarkup = optionsWidgetMarkup, DefaultValue = "light")]
+    [FunctionParameter(Label = "Color Style", Help = "The color style of the social media icons: light, dark, colored", WidgetMarkup = optionsWidgetMarkup, DefaultValue = "light")]
     public string ColorStyle { get; set; }
 
     private const string formStyleOptionsWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
@@ -90,10 +91,10 @@
       </f:param>
      </f:widgetfunction>";
 
-    [FunctionParameter(Label = "Form Style", WidgetMarkup = formStyleOptionsWidgetMarkup, DefaultValue = "square")]
+    [FunctionParameter(Label = "Form Style", Help = "The form style of the social media icons: square, rounded, circle", WidgetMarkup = formStyleOptionsWidgetMarkup, DefaultValue = "square")]
     public string FormStyle { get; set; }
 
-    [FunctionParameter(Label = "Is Collapsed", Help = "If True then links will be collapsed into dropdown on small screens.", DefaultValue = false)]
+    [FunctionParameter(Label = "Is Collapsed", Help = "If checked, the links will be collapsed into a single drop-down button on small screens.", DefaultValue = false)]
     public bool IsCollapsed { get; set; }
 }
 
@@ -129,75 +130,75 @@
     <ul class="@className">
         @if (!String.IsNullOrEmpty(Facebook))
         {
-            <li class="facebook"><a target="_blank" href="@Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li class="facebook"><a target="_blank" href="@Facebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(Twitter))
         {
-            <li class="twitter"><a target="_blank" href="@Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li class="twitter"><a target="_blank" href="@Twitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(GooglePlus))
         {
-            <li class="googleplus"><a target="_blank" href="@GooglePlus"><i class="fa fa-google-plus"></i></a></li>
+            <li class="googleplus"><a target="_blank" href="@GooglePlus" title="GooglePlus"><i class="fa fa-google-plus"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(Skype))
         {
-            <li class="skype"><a target="_blank" href="@Skype"><i class="fa fa-skype"></i></a></li>
+            <li class="skype"><a target="_blank" href="@Skype" title="Skype"><i class="fa fa-skype"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(Instagram))
         {
-            <li class="instagram"><a target="_blank" href="@Instagram"><i class="fa fa-instagram"></i></a></li>
+            <li class="instagram"><a target="_blank" href="@Instagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(LinkedIn))
         {
-            <li class="linkedin"><a target="_blank" href="@LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+            <li class="linkedin"><a target="_blank" href="@LinkedIn" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(Pinterest))
         {
-            <li class="pinterest"><a target="_blank" href="@Pinterest"><i class="fa fa-pinterest"></i></a></li>
+            <li class="pinterest"><a target="_blank" href="@Pinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(Flickr))
         {
-            <li class="flickr"><a target="_blank" href="@Flickr"><i class="fa fa-flickr"></i></a></li>
+            <li class="flickr"><a target="_blank" href="@Flickr" title="Flickr"><i class="fa fa-flickr"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(YouTube))
         {
-            <li class="youtube"><a target="_blank" href="@YouTube"><i class="fa fa-youtube"></i></a></li>
+            <li class="youtube"><a target="_blank" href="@YouTube" title="YouTube"><i class="fa fa-youtube"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(FourSquare))
         {
-            <li class="foursquare"><a target="_blank" href="@FourSquare"><i class="fa fa-foursquare"></i></a></li>
+            <li class="foursquare"><a target="_blank" href="@FourSquare" title="FourSquare"><i class="fa fa-foursquare"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(SoundCloud))
         {
-            <li class="soundcloud"><a target="_blank" href="@SoundCloud"><i class="fa fa-soundcloud"></i></a></li>
+            <li class="soundcloud"><a target="_blank" href="@SoundCloud" title="SoundCloud"><i class="fa fa-soundcloud"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(Tumblr))
         {
-            <li class="tumblr"><a target="_blank" href="@Tumblr"><i class="fa fa-tumblr"></i></a></li>
+            <li class="tumblr"><a target="_blank" href="@Tumblr" title="Tumblr"><i class="fa fa-tumblr"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(Vimeo))
         {
-            <li class="vimeo"><a target="_blank" href="@Vimeo"><i class="fa fa-vimeo-square"></i></a></li>
+            <li class="vimeo"><a target="_blank" href="@Vimeo" title="Vimeo"><i class="fa fa-vimeo-square"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(Dribbble))
         {
-            <li class="dribbble"><a target="_blank" href="@Dribbble"><i class="fa fa-dribbble"></i></a></li>
+            <li class="dribbble"><a target="_blank" href="@Dribbble" title="Dribbble"><i class="fa fa-dribbble"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(Behance))
         {
-            <li class="behance"><a target="_blank" href="@Behance"><i class="fa fa-behance"></i></a></li>
+            <li class="behance"><a target="_blank" href="@Behance" title="Behance"><i class="fa fa-behance"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(Vine))
         {
-            <li class="vine"><a target="_blank" href="@Vine"><i class="fa fa-vine"></i></a></li>
+            <li class="vine"><a target="_blank" href="@Vine" title="Vine"><i class="fa fa-vine"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(Stumbleupon))
         {
-            <li class="stumbleupon"><a target="_blank" href="@Stumbleupon"><i class="fa fa-stumbleupon"></i></a></li>
+            <li class="stumbleupon"><a target="_blank" href="@Stumbleupon" title="Stumbleupon"><i class="fa fa-stumbleupon"></i></a></li>
         }
         @if (!String.IsNullOrEmpty(MailTo))
         {
-            <li class="mailto"><a href="@MailTo"><i class="fa fa-envelope-o"></i></a></li>
+            <li class="mailto"><a href="@MailTo" title="Mail"><i class="fa fa-envelope-o"></i></a></li>
         }
     </ul>
 }
