@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Files>
+		<Add name="Frontend\Composite\Lists\Tabs\styles.less" />
+		<Add name="Frontend\Composite\Lists\Tabs\theme-light.less" />
+	</pc:Files>
+	<pc:Functions>
+		<Add name="Composite.Lists.Tabs" />
+	</pc:Functions>
+	<pc:DynamicDataTypes>
+		<Add name="Composite.Lists.Tabs.Item" />
+		<Add name="Composite.Lists.Tabs.Group" />
+	</pc:DynamicDataTypes>
+	<mi:PackageRequirements minimumCompositeVersion="4.3.5555.25838" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Lists.Tabs" groupName="Composite.Lists" version="1.0.0" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Lists.Tabs" id="79485603-765e-4eab-b4d4-7ea91d34c742" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>Shows vertical or horizontal tabs on the page.</TechnicalDetails>
+		<Description>Shows vertical or horizontal tabs on the page.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

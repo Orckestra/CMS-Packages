@@ -1,0 +1,54 @@
+﻿<?xml version="1.0"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+  <ElementStructure.AutoAttachments>
+    <NamedParent Name="Content" Position="Bottom" />
+  </ElementStructure.AutoAttachments>
+  <ElementRoot>
+    <Children>
+      <Element Label="Tabs" Id="Composite.Lists.Tabs.Root" Icon="editor-formatselector">
+        <Children>
+          <Element Label="Tabs" Id="Composite.Lists.Tabs">
+            <Actions>
+              <AddDataAction Type="Composite.Lists.Tabs.Item" Label="Add Tab Item" />
+            </Actions>
+            <Children>
+              <DataFolderElements Type="Composite.Lists.Tabs.Item" FieldGroupingName="Group" Display="Compact" SortDirection="Descending" Icon="folder">
+                <Actions>
+                  <AddDataAction Type="Composite.Lists.Tabs.Item" Label="Add Tab Item" />
+                </Actions>
+                <Children>
+                  <DataElements Type="Composite.Lists.Tabs.Item" Display="Auto">
+                    <Actions>
+                      <EditDataAction Label="Edit" />
+                      <DeleteDataAction Label="Delete" />
+                    </Actions>
+                    <OrderBy>
+                      <Field FieldName="Ordering"></Field>
+                    </OrderBy>
+                  </DataElements>
+                </Children>
+              </DataFolderElements>
+            </Children>
+          </Element>
+          <Element Label="Tabs Groups" Id="Composite.Lists.Tabs.Group" ToolTip="Tabs Groups" Icon="dataassociation-rootfolder-open">
+            <Actions>
+              <AddDataAction Type="Composite.Lists.Tabs.Group" Label="Add Group" />
+            </Actions>
+            <Children>
+              <DataElements Type="Composite.Lists.Tabs.Group"  Display="Auto">
+                <Actions>
+                  <EditDataAction Label="Edit" />
+                  <DeleteDataAction Label="Delete" />
+                </Actions>
+                <OrderBy>
+                  <Field FieldName="Title" />
+                </OrderBy>
+              </DataElements>
+            </Children>
+          </Element>
+        </Children>
+      </Element>
+
+    </Children>
+  </ElementRoot>
+</ElementStructure>

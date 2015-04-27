@@ -1,0 +1,95 @@
+﻿@using System.Activities.Expressions
+@using Composite.Lists.Tabs
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Tabs"; }
+    }
+
+    [FunctionParameter(Label = "Tabs Group")]
+    public DataReference<Group> TabsGroup { get; set; }
+
+    private const string orientationWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+  <f:param name='Options'>
+   <f:function name='Composite.Utils.String.Split'>
+    <f:param name='String' value='Horizontal,Vertical' />
+   </f:function>
+  </f:param>
+ </f:widgetfunction>";
+    [FunctionParameter(Label = "Orientation", WidgetMarkup = orientationWidgetMarkup, DefaultValue = "Horizontal")]
+    public string Orientation { get; set; }
+
+    private const string themeOptionsWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+    <f:param name='Options'>
+       <f:function name='Composite.Utils.String.Split'>
+            <f:param name='String' value='bootstrap_default,light' />
+       </f:function>
+      </f:param>
+     </f:widgetfunction>";
+
+    [FunctionParameter(Label = "Style Theme", WidgetMarkup = themeOptionsWidgetMarkup, DefaultValue = "light")]
+    public string Theme { get; set; }
+    
+
+    private string GetTabId(int uniqueCode, int tabCode)
+    {
+        return "tab" + (tabCode - uniqueCode);
+    }
+}
+@{
+    var tabs = Data.Get<Item>().Where(t => t.Group == TabsGroup.Data.Id).OrderBy(t => t.Ordering).ToList();
+
+    if (!tabs.Any())
+    {
+        return;
+    }
+    var uniqueCode = Guid.NewGuid().GetHashCode();
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <link id="tabs-css" rel="stylesheet" href="~/Frontend/Composite/Lists/Tabs/styles.less" />
+    @if (Theme == "light")
+    {
+          <link id="tabs--light-css" rel="stylesheet" href="~/Frontend/Composite/Lists/Tabs/theme-light.less" />
+    } 
+</head>
+<body>
+
+    <div class="tabs tabs-@(Orientation.ToLower()) @Theme">
+        <ul class="nav nav-tabs" role="tablist">
+            @for (var i = 0; i < tabs.Count; i++)
+            {
+                var tab = tabs[i];
+                var id = GetTabId(uniqueCode, tab.Id.GetHashCode());
+                <li
+                    @if (i == 0)
+                    {
+                        @: class="active"
+                    }>
+                    <a href="#@(id)" role="tab" data-toggle="tab">
+                        @if (!string.IsNullOrEmpty(tab.Icon))
+                        {
+                            <i class="fa fa-@tab.Icon"></i>
+                        }
+                         @tab.Title
+                    </a>
+                </li>
+            }
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            @for (var i = 0; i < tabs.Count; i++)
+            {
+                var tab = tabs[i];
+                var id = GetTabId(uniqueCode, tab.Id.GetHashCode());
+                <div role="tabpanel" class="tab-pane @(i == 0 ? "active in" : string.Empty) fade" id="@id">
+                    @Html.Raw(tab.Content)
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
