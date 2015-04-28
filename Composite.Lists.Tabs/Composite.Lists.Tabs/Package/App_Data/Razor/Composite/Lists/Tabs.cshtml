@@ -5,10 +5,10 @@
 @functions {
     public override string FunctionDescription
     {
-        get { return "Tabs"; }
+        get { return "Shows content on horizontal or vertical tabs."; }
     }
 
-    [FunctionParameter(Label = "Tabs Group")]
+    [FunctionParameter(Label = "Tab Group", Help = "The tab group to show.")]
     public DataReference<Group> TabsGroup { get; set; }
 
     private const string orientationWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
@@ -18,18 +18,18 @@
    </f:function>
   </f:param>
  </f:widgetfunction>";
-    [FunctionParameter(Label = "Orientation", WidgetMarkup = orientationWidgetMarkup, DefaultValue = "Horizontal")]
+    [FunctionParameter(Label = "Orientation", Help="The orientation of tabs: horizontal (default) or vertical.", WidgetMarkup = orientationWidgetMarkup, DefaultValue = "Horizontal")]
     public string Orientation { get; set; }
 
     private const string themeOptionsWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
     <f:param name='Options'>
        <f:function name='Composite.Utils.String.Split'>
-            <f:param name='String' value='bootstrap_default,light' />
+            <f:param name='String' value='bootstrap,light' />
        </f:function>
       </f:param>
      </f:widgetfunction>";
 
-    [FunctionParameter(Label = "Style Theme", WidgetMarkup = themeOptionsWidgetMarkup, DefaultValue = "light")]
+    [FunctionParameter(Label = "Style Theme", Help="The style theme to use with tabs: light (default) or bootstrap.", WidgetMarkup = themeOptionsWidgetMarkup, DefaultValue = "light")]
     public string Theme { get; set; }
     
 

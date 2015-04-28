@@ -1,0 +1,51 @@
+﻿<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:ff="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+  <cms:bindings>
+    <cms:binding name="Id" type="System.Guid" />
+    <cms:binding name="Title" type="System.String" />
+    <cms:binding name="Icon" type="System.String" optional="true" />
+    <cms:binding name="Content" type="System.String" />
+    <cms:binding name="Group" type="System.Guid" />
+    <cms:binding name="Ordering" type="System.Nullable`1[System.Int32]" optional="true" />
+    <cms:binding name="SourceCultureName" type="System.String" />
+  </cms:bindings>
+  <cms:layout>
+    <cms:layout.label>
+      <cms:read source="Title" />
+    </cms:layout.label>
+    <TabPanels>
+      <FieldGroup Label="Tab Item">
+        <TextBox Label="Title" Help="The title of the tab." SpellCheck="true">
+          <TextBox.Text>
+            <cms:bind source="Title" />
+          </TextBox.Text>
+        </TextBox>
+        <FontIconSelector Label="Icon" Help="The icon to show on the tab." StylesheetPath="~/Frontend/Styles/font-awesome/font-awesome.css" ClassNamePrefix=" fa fa-">
+          <FontIconSelector.SelectedClassName>
+            <cms:bind source="Icon" />
+          </FontIconSelector.SelectedClassName>
+          <FontIconSelector.ClassNameOptions>
+            <f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Widgets.FontIconSelector.GetIconsNames" />
+          </FontIconSelector.ClassNameOptions>
+        </FontIconSelector>
+        <KeySelector Label="Group" Help=" The group the tab belongs to." OptionsKeyField="Key" OptionsLabelField="Label" Required="true">
+          <KeySelector.Selected>
+            <cms:bind source="Group" />
+          </KeySelector.Selected>
+          <KeySelector.Options>
+            <ff:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=4.3.5555.25838, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Lists.Tabs.Group&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" Method="GetOptions" Parameters="Composite.Lists.Tabs.Group" />
+          </KeySelector.Options>
+        </KeySelector>
+        <TextBox Label="Ordering" Help="The position of the tab within a group." Type="Integer">
+          <TextBox.Text>
+            <cms:bind source="Ordering" />
+          </TextBox.Text>
+        </TextBox>
+      </FieldGroup>
+      <XhtmlEditor Label="Tab Content" Help="The content of the tag item." ClassConfigurationName="common">
+        <XhtmlEditor.Xhtml>
+          <cms:bind source="Content" />
+        </XhtmlEditor.Xhtml>
+      </XhtmlEditor>
+    </TabPanels>
+  </cms:layout>
+</cms:formdefinition>

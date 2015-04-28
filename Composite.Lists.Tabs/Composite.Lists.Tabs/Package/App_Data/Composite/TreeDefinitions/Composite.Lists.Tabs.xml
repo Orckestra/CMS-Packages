@@ -30,7 +30,7 @@
               </DataFolderElements>
             </Children>
           </Element>
-          <Element Label="Tabs Groups" Id="Composite.Lists.Tabs.Group" ToolTip="Tabs Groups" Icon="dataassociation-rootfolder-open">
+          <Element Label="Tab Group" Id="Composite.Lists.Tabs.Group" ToolTip="Tabs Groups" Icon="dataassociation-rootfolder-open">
             <Actions>
               <AddDataAction Type="Composite.Lists.Tabs.Group" Label="Add Group" />
             </Actions>
