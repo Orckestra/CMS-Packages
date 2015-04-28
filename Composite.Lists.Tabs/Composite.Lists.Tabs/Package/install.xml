@@ -2,8 +2,8 @@
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2" maximumCompositeVersion="9.9999.9999.9999" />
 	<mi:PackageInformation name="Composite.Lists.Tabs" groupName="Composite.Lists" version="1.0.1" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Lists.Tabs" id="79485603-765e-4eab-b4d4-7ea91d34c742" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" reloadConsoleOnCompletion="true">
-		<TechnicalDetails>Shows vertical or horizontal tabs on the page.</TechnicalDetails>
-		<Description>Shows vertical or horizontal tabs on the page.</Description>
+		<TechnicalDetails>To look properly, it requires Bootstrap on the website.</TechnicalDetails>
+		<Description>Shows content on a page on vertical or horizontal tabs.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
