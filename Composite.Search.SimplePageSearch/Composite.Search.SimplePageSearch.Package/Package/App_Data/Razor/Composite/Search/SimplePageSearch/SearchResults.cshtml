@@ -115,7 +115,7 @@
         @if (!string.IsNullOrWhiteSpace(searchQuery))
         {
             <p>
-                Found <strong>@TotalCount</strong> results for "@searchQuery"
+                @Html.Raw(string.Format(Resources.SimplePageSearch.SearchResults_TotalCount, TotalCount, searchQuery))
             </p>
         }
         <ol class="simplepagesearch-results" start="@(PageSize*(PageNumber-1)+1)">

@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A5BE077C-4885-4C3B-9B79-AC7F482E9815}</ProjectGuid>
+    <ProjectGuid>{570E1C47-3E5C-4779-9B61-E92DD9C19FF4}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Composite.Search.SimplePageSearch.Package</RootNamespace>
-    <AssemblyName>Composite.Search.SimplePageSearch.Package</AssemblyName>
+    <RootNamespace>Composite.StarterSite.PageBlock.DeviceSpecificContent</RootNamespace>
+    <AssemblyName>Composite.StarterSite.PageBlock.DeviceSpecificContent</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -61,26 +61,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\App_Data\Razor\PageBlocks\DeviceSpecificContent.cshtml" />
+    <Content Include="Release\Composite.StarterSite.PageBlock.DeviceSpecificContent.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\install.xml" />
+    <Content Include="_PackageCreator\Composite.StarterSite.PageBlock.DeviceSpecificContent.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Package\install.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="_PackageCreator\Composite.Search.SimplePageSearch.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Package\App_Data\Razor\Composite\Search\SimplePageSearch\SearchForm.cshtml" />
-    <Content Include="Package\App_Data\Razor\Composite\Search\SimplePageSearch\SearchResults.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Release\Composite.Search.SimplePageSearch.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Package\App_Data\Razor\Composite\Search\SimplePageSearch\NavbarSearchForm.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Package\App_GlobalResources\Composite\Search\SimplePageSearch.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -95,9 +84,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>64986</DevelopmentServerPort>
+          <DevelopmentServerPort>54452</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64986/</IISUrl>
+          <IISUrl>http://localhost:54452/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -108,10 +97,10 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:Checkout  "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
-</PostBuildEvent>
+    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:Checkout  "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\Public\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
+"$(SolutionDir)..\Public\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
+</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

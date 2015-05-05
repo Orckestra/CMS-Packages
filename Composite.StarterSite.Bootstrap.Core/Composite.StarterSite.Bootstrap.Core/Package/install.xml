@@ -10,6 +10,7 @@
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
 				<File sourceFilename="~\Frontend\Scripts\script.js" targetFilename="~\Frontend\Scripts\script.js" allowOverwrite="false" />
+        <File sourceFilename="~\Frontend\Scripts\ie10-viewport-bug-workaround.js" targetFilename="~\Frontend\Scripts\ie10-viewport-bug-workaround.js" allowOverwrite="false" />
 				<File sourceFilename="~\Frontend\Styles\style.less" targetFilename="~\Frontend\Styles\style.less" allowOverwrite="false" />
 				<File sourceFilename="~\Frontend\Styles\VisualEditor.common.less" targetFilename="~\Frontend\Styles\VisualEditor.common.less" allowOverwrite="false" />
 				<File sourceFilename="~\Frontend\Styles\VisualEditor.less" targetFilename="~\Frontend\Styles\VisualEditor.less" allowOverwrite="false" />
@@ -25,8 +26,9 @@
 			</Files>
 			<Directories>
 				<Directory sourceDirectory="~\Frontend\Scripts\libs\" targetDirectory="~\Frontend\Scripts\libs\" allowOverwrite="true" deleteTargetDirectory="false" />
-				<Directory sourceDirectory="~\Frontend\Images\" targetDirectory="~\Frontend\Images\" allowOverwrite="true" deleteTargetDirectory="false" />
-				<Directory sourceDirectory="~\Frontend\fonts\" targetDirectory="~\Frontend\fonts\" allowOverwrite="true" deleteTargetDirectory="false" />
+        <Directory sourceDirectory="~\Frontend\Scripts\bootstrap\" targetDirectory="~\Frontend\Scripts\bootstrap\" allowOverwrite="true" deleteTargetDirectory="false" />
+        <Directory sourceDirectory="~\Frontend\Images\" targetDirectory="~\Frontend\Images\" allowOverwrite="true" deleteTargetDirectory="false" />
+        <Directory sourceDirectory="~\Frontend\fonts\" targetDirectory="~\Frontend\fonts\" allowOverwrite="true" deleteTargetDirectory="false" />
 				<Directory sourceDirectory="~\Frontend\Styles\bootstrap\" targetDirectory="~\Frontend\Styles\bootstrap\" allowOverwrite="true" deleteTargetDirectory="false" />
         <Directory sourceDirectory="~\Frontend\Styles\includes\" targetDirectory="~\Frontend\Styles\includes\" allowOverwrite="true" deleteTargetDirectory="false" />
 				<Directory sourceDirectory="~\App_Data\PageTemplateFeatures\" targetDirectory="~\App_Data\PageTemplateFeatures\" allowOverwrite="true" deleteTargetDirectory="false" />

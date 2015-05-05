@@ -27,7 +27,7 @@
         <div class="dropdown-menu dropdown-menu-right">
             <form action="@pageNode.Url" method="get" role="search">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" id="searchText" name="q" value="@Request.QueryString["q"]" />
+                    <input type="text" class="form-control" placeholder="@Resources.SimplePageSearch.NavbarSearchForm_InputPlaceholder" id="searchText" name="q" value="@Request.QueryString["q"]" />
                 </div>
             </form>
         </div>
