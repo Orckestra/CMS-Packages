@@ -17,13 +17,19 @@
     [FunctionParameter(Label = "Show Current", Help = "Show the link to the current page (default)", DefaultValue = true)]
     public bool ShowCurrent { get; set; }
 
-    [FunctionParameter(Help = "This text will be displayed next to the menu links if any exists (blank, by default)", DefaultValue = " ")]
+    [FunctionParameter(Label = "Select Format",
+                   DefaultValue = "TwoLetterISOLanguageName",
+                   WidgetMarkup = "<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector' label='' bindingsourcename=''><f:helpdefinition helptext='' /><f:param name='Options'><f:function name='Composite.Utils.String.Split'><f:param name='String' value='DisplayName,EnglishName,Name,NativeName,ThreeLetterISOLanguageName,ThreeLetterWindowsLanguageName,TwoLetterISOLanguageName,Image,Empty' /></f:function></f:param></f:widgetfunction>")]
+    public string Format { get; set; }
+
+    [FunctionParameter(Label = "Select Style",
+               DefaultValue = "CollapsedOnSmallScreen",
+               WidgetMarkup = "<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector' label='' bindingsourcename=''><f:helpdefinition helptext='' /><f:param name='Options'><f:function name='Composite.Utils.String.Split'><f:param name='String' value='Inline,Collapsed,CollapsedOnSmallScreen' /></f:function></f:param></f:widgetfunction>")]
+    public string Style { get; set; }
+
+    [FunctionParameter(Help = "This text will be displayed next to the menu links if any exists (blank, by default)", DefaultValue = null)]
     public string Description { get; set; }
 
-    [FunctionParameter(Label = "Select Format",
-                       DefaultValue = "TwoLetterISOLanguageName",
-                       WidgetMarkup = "<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector' label='' bindingsourcename=''><f:helpdefinition helptext='' /><f:param name='Options'><f:function name='Composite.Utils.String.Split'><f:param name='String' value='DisplayName,EnglishName,Name,NativeName,ThreeLetterISOLanguageName,ThreeLetterWindowsLanguageName,TwoLetterISOLanguageName,Image,Empty' /></f:function></f:param></f:widgetfunction>")]
-    public string Format { get; set; }
 
     [FunctionParameter(Label = "Include query in URL",
                        Help = "When true, path and query parts of the original URL will be included in the URL to other language versions. This is on by default.",
@@ -57,77 +63,90 @@
     {
         return;
     }
+    var generalStyleString = string.Format("language-switcher format-{0}", Format);
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
-    <script type="text/javascript">
-        $(window).on("resize load", function () {
-            if ($(".language-switcher-dropdown-toggle").is(":visible")) {
-                $(".language-switcher ul").removeClass().addClass("language-switcher dropdown-menu");
-            } else {
-                $(".language-switcher ul").removeClass().addClass("language-switcher list-inline list-unstyled visible-sm visible-md visible-lg");
-            }
-        });
-    </script>
 </head>
 <body>
-    @if (isLanguages)
+
+    @if (Style == "Inline")
     {
-        <div class="language-switcher format-@Format">
-            <a href="#" class="language-switcher-dropdown-toggle hidden-sm hidden-md hidden-lg dropdown-toggle" data-toggle="dropdown"><span class="icon fa fa-globe"></span></a>
-            <ul class="list-inline list-unstyled visible-sm visible-md visible-lg">
-                @if (!string.IsNullOrWhiteSpace(Description))
-                {
-                    <li class="description">@Description</li>
-                }
-                @{
-                var currentHomeID = SitemapNavigator.CurrentHomePageId;
-                var currentPageID = SitemapNavigator.CurrentPageId;
-
-                SwitcherMode mode = (SwitcherMode)Enum.Parse(typeof(SwitcherMode), Mode);
-
-                foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
-                {
-                    if (ShowCurrent || (!ShowCurrent && !culture.Equals(CurrentCulture)))
-                    {
-                        using (DataConnection conn = new DataConnection(culture))
-                        {
-                            var homeNode = conn.SitemapNavigator.GetPageNodeById(currentHomeID);
-                            var pageNode = conn.SitemapNavigator.GetPageNodeById(currentPageID);
-                            var url = string.Empty;
-
-                            if (pageNode != null && (mode == SwitcherMode.TranslatedPages || mode == SwitcherMode.TranslatedOrHomePages))
-                            {
-                                url = (IncludeQuery && Request.QueryString.Count > 0) ? string.Format("{0}{1}", pageNode.Url, Request.Url.Query) : pageNode.Url;
-                            }
-                            else if (homeNode != null && (mode == SwitcherMode.HomePages || mode == SwitcherMode.TranslatedOrHomePages))
-                            {
-                                url = homeNode.Url;
-                            }
-                            if (!string.IsNullOrEmpty(url))
-                            {
-                                <li class="@(culture.Equals(CurrentCulture) ? "active" : string.Empty)">
-                                    @LinkElement(culture, url)
-                                </li>
-                            }
-                        }
-                    }
-                }
-
-                }
-            </ul>
+        <div class="@generalStyleString style-inline">
+            @ListElement("list-inline list-unstyled")
+        </div>
+    }
+    @if (Style == "Collapsed")
+    {
+        <div class="@generalStyleString style-collapsed dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-globe"></i></a>
+            @ListElement("dropdown-menu")
+        </div>
+    }
+    @if (Style == "CollapsedOnSmallScreen")
+    {
+        <div class="@generalStyleString style-inline hidden-xs">
+            @ListElement("list-inline list-unstyled")
+        </div>
+        <div class="@generalStyleString style-collapsed visible-xs-inline-block dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-globe"></i></a>
+            @ListElement("dropdown-menu")
         </div>
     }
 </body>
 </html>
+
+@helper ListElement(string className)
+{
+    <ul class="@className">
+        @if (!string.IsNullOrWhiteSpace(Description))
+        {
+            <li class="description">@Description</li>
+        }
+        @{
+            var currentHomeID = SitemapNavigator.CurrentHomePageId;
+            var currentPageID = SitemapNavigator.CurrentPageId;
+
+            var mode = (SwitcherMode)Enum.Parse(typeof(SwitcherMode), Mode);
+
+            foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
+            {
+                if (ShowCurrent || (!ShowCurrent && !culture.Equals(CurrentCulture)))
+                {
+                    using (var conn = new DataConnection(culture))
+                    {
+                        var homeNode = conn.SitemapNavigator.GetPageNodeById(currentHomeID);
+                        var pageNode = conn.SitemapNavigator.GetPageNodeById(currentPageID);
+                        var url = string.Empty;
+
+                        if (pageNode != null && (mode == SwitcherMode.TranslatedPages || mode == SwitcherMode.TranslatedOrHomePages))
+                        {
+                            url = (IncludeQuery && Request.QueryString.Count > 0) ? string.Format("{0}{1}", pageNode.Url, Request.Url.Query) : pageNode.Url;
+                        }
+                        else if (homeNode != null && (mode == SwitcherMode.HomePages || mode == SwitcherMode.TranslatedOrHomePages))
+                        {
+                            url = homeNode.Url;
+                        }
+                        if (!string.IsNullOrEmpty(url))
+                        {
+                            <li class="@(culture.Equals(CurrentCulture) ? "active" : string.Empty)">
+                                @LinkElement(culture, url)
+                            </li>
+                        }
+                    }
+                }
+            }
+        }
+    </ul>
+}
+
 @helper LinkElement(CultureInfo c, string url)
 {
     <a href="@url" class="@c.Name" lang="@c.Name.Substring(0, c.Name.IndexOf("-"))">@CultureFormat(c)</a>
 }
 @helper CultureFormat(CultureInfo c)
 {
-    SwitcherFormat format = (SwitcherFormat)Enum.Parse(typeof(SwitcherFormat), Format);
+    var format = (SwitcherFormat)Enum.Parse(typeof(SwitcherFormat), Format);
     switch (format)
     {
         case SwitcherFormat.DisplayName:
