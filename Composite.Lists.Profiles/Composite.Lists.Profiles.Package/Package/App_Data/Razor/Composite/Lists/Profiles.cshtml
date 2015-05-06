@@ -15,7 +15,7 @@
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
-	 <link id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+    <link id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
 </head>
 <body>
     @if (ProfileGroup != null || groups.Count() == 1)
@@ -40,7 +40,7 @@
 @helper ProfilesList(List<Profile> profiles)
 {
     var rowsCount = Math.Ceiling((double)profiles.Count() / 3);
-    <section class="profiles-list">
+    <div class="profiles-list">
         @for (var i = 0; i < rowsCount; i++)
         {
             <div class="row">
@@ -49,54 +49,60 @@
                     var index = i * 3 + j;
                     if (index >= profiles.Count) { break; }
                     var profile = profiles[index];
-                    <div class="col-xs-12 col-sm-4 col-md-4 profiles-list-item">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
                         <div class="thumbnail">
-							@if (!string.IsNullOrEmpty(profile.Image))
+                            @if (!string.IsNullOrEmpty(profile.Image))
                             {
-								<img alt="@profile.Name" src="@Html.C1().MediaUrl(@profile.Image)" class="img-responsive" />
-							}
-                            <div class="item-body caption">
-                                <p class="item-title text-muted">
+                                <img alt="@profile.Name" src="@Html.C1().MediaUrl(@profile.Image)" class="img-responsive" />
+                            }
+                            <div class="caption text-center">
+                                <p class="text-muted">
                                     @profile.Title
                                 </p>
-                                <h3 class="item-name">
+                                <h3>
                                     @profile.Name
                                 </h3>
                                 @if (!string.IsNullOrEmpty(profile.Statement))
                                 {
-                                    <p class="item-statement">
+                                    <p>
                                         <em><q>@profile.Statement</q></em>
                                     </p>
                                 }
                                 @if (!string.IsNullOrEmpty(profile.Description))
                                 {
-                                    <p class="item-description">@profile.Description</p>
+                                    <p>@profile.Description</p>
                                 }
 
                                 @if (!string.IsNullOrEmpty(profile.Email))
                                 {
-                                    <p><a href="mailto:@profile.Email" class="item-email">@profile.Email</a></p>
+                                    <p><a href="mailto:@profile.Email">@profile.Email</a></p>
                                 }
 
-                                <div class="item-social">
+                                <ul class="list-inline">
                                     @if (!string.IsNullOrEmpty(profile.TwitterUsername))
                                     {
-                                        <a href="https://twitter.com/@profile.TwitterUsername" title="Twitter"><i class="fa fa-twitter" ></i></a>
+                                        <li>
+                                            <a href="https://twitter.com/@profile.TwitterUsername" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                        </li>
                                     }
                                     @if (!string.IsNullOrEmpty(profile.LinkedInLink))
                                     {
-                                        <a href="@profile.LinkedInLink" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                                        <li>
+                                            <a href="@profile.LinkedInLink" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                                        </li>
                                     }
                                     @if (!string.IsNullOrEmpty(profile.FacebookLink))
                                     {
-                                        <a href="@profile.FacebookLink" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                        <li>
+                                            <a href="@profile.FacebookLink" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                        </li>
                                     }
-                                </div>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 }
             </div>
         }
-    </section>
+    </div>
 }
