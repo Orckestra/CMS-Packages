@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0"?>
 <ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
   <ElementStructure.AutoAttachments>
-    <NamedParent Name="Content" Position="Bottom" />
+    <NamedParent Name="Content.WebsiteItems" Position="Bottom" />
   </ElementStructure.AutoAttachments>
   <ElementRoot>
     <Children>
-      <Element Label="Tabs" Id="Composite.Lists.Tabs.Root" Icon="editor-formatselector">
+      <Element Label="Tabbed Сontent" Id="Composite.Lists.Tabs.Root" Icon="editor-formatselector">
         <Children>
           <Element Label="Tabs" Id="Composite.Lists.Tabs">
             <Actions>
