@@ -842,41 +842,41 @@ namespace Composite.Tools.PackageCreator
         {
             using (new DataScope(dataScopeIdentifier))
             {
-                if (DataLocalizationFacade.IsLocalized(type))
-                {
-                    switch (LocaleAction)
-                    {
-                        case LocaleActions.AllLocales:
-                            foreach (var locale in DataLocalizationFacade.ActiveLocalizationCultures)
-                            {
-                                using (new DataScope(locale))
-                                {
-                                    foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
-                                    {
-                                        AddData(data);
-                                    }
-                                }
-                            }
-                            break;
-                        case LocaleActions.DefaultLocalesToCurrentLocale:
-                        case LocaleActions.DefaultLocalesToAllLocales:
-                            using (new DataScope(DataLocalizationFacade.DefaultLocalizationCulture))
-                            {
-                                foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
-                                {
-                                    AddData(data);
-                                }
-                            }
-                            break;
-                    }
-                }
-                else
-                {
+				//if (DataLocalizationFacade.IsLocalized(type))
+				//{
+				//	switch (LocaleAction)
+				//	{
+				//		case LocaleActions.AllLocales:
+				//			foreach (var locale in DataLocalizationFacade.ActiveLocalizationCultures)
+				//			{
+				//				using (new DataScope(locale))
+				//				{
+				//					foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
+				//					{
+				//						AddData(data);
+				//					}
+				//				}
+				//			}
+				//			break;
+				//		case LocaleActions.DefaultLocalesToCurrentLocale:
+				//		case LocaleActions.DefaultLocalesToAllLocales:
+				//			using (new DataScope(DataLocalizationFacade.DefaultLocalizationCulture))
+				//			{
+				//				foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
+				//				{
+				//					AddData(data);
+				//				}
+				//			}
+				//			break;
+				//	}
+				//}
+				//else
+				//{
                     foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
                     {
                         AddData(data);
                     }
-                }
+				//}
             }
         }
 
