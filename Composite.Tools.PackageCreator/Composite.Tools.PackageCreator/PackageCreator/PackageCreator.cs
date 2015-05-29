@@ -72,21 +72,6 @@ namespace Composite.Tools.PackageCreator
                 return packageName;
             }
         }
-#warning TODO: Make work locales
-        public enum LocaleActions
-        {
-            DefaultLocalesToAllLocales,
-            DefaultLocalesToCurrentLocale,
-            AllLocales
-        }
-
-        public LocaleActions LocaleAction
-        {
-            get
-            {
-                return LocaleActions.DefaultLocalesToCurrentLocale;
-            }
-        }
 
         internal PackageCreator(string path, string packageName)
         {
@@ -159,10 +144,6 @@ namespace Composite.Tools.PackageCreator
 
                 XElement XPackageInformation = config.Descendants(mi + "PackageInformation").FirstOrDefault();
 
-
-
-                var packageId = XPackageInformation.Attribute("id").Value;
-                // var installedPackageFilename = Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), "App_Data\\Composite\\Packages", packageId, "package.zip");
 
                 XPackageInstaller.Add(XPackageInformation);
 
@@ -291,7 +272,6 @@ namespace Composite.Tools.PackageCreator
                     foreach (XElement item in blockElement.Elements("Type"))
                     {
                         var dataTypeName = item.Attribute("type").Value;
-						//var dataScopeIdentifier = item.Element("Data").Attribute("dataScopeIdentifier").Value;
 
                         Func<XElement, Func<IData, bool>> trueAttributes = e => e.Attributes().Where(x => x.Name.Namespace == XNamespace.None)
                             .Aggregate(new Func<IData, bool>(d => true), (f, x) => new Func<IData, bool>(d => (d.GetProperty(x.Name.LocalName) == x.Value) && f(d)));
@@ -365,7 +345,7 @@ namespace Composite.Tools.PackageCreator
                     #region DynamicDataTypesData
 
                     XElement element = config.Descendants(pc + "DynamicDataTypesData").FirstOrDefault();
-                    //XElement DynamicDataTypePackageFragmentInstaller = null;
+
                     if (element != null)
                     {
 
@@ -842,41 +822,11 @@ namespace Composite.Tools.PackageCreator
         {
             using (new DataScope(dataScopeIdentifier))
             {
-				//if (DataLocalizationFacade.IsLocalized(type))
-				//{
-				//	switch (LocaleAction)
-				//	{
-				//		case LocaleActions.AllLocales:
-				//			foreach (var locale in DataLocalizationFacade.ActiveLocalizationCultures)
-				//			{
-				//				using (new DataScope(locale))
-				//				{
-				//					foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
-				//					{
-				//						AddData(data);
-				//					}
-				//				}
-				//			}
-				//			break;
-				//		case LocaleActions.DefaultLocalesToCurrentLocale:
-				//		case LocaleActions.DefaultLocalesToAllLocales:
-				//			using (new DataScope(DataLocalizationFacade.DefaultLocalizationCulture))
-				//			{
-				//				foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
-				//				{
-				//					AddData(data);
-				//				}
-				//			}
-				//			break;
-				//	}
-				//}
-				//else
-				//{
-                    foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
-                    {
-                        AddData(data);
-                    }
-				//}
+				foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
+                {
+                    AddData(data);
+                }
+
             }
         }
 
@@ -937,19 +887,7 @@ namespace Composite.Tools.PackageCreator
             ILocalizedControlled localizedData = data as ILocalizedControlled;
             if (localizedData != null)
             {
-                if (LocaleActions.AllLocales == LocaleAction)
-                {
-					cultureName = localizedData.SourceCultureName;
-                }
-                else if (LocaleActions.DefaultLocalesToAllLocales == LocaleAction)
-                {
-                    cultureName = "*";
-                }
-                else if (LocaleActions.DefaultLocalesToCurrentLocale == LocaleAction)
-                {
-                    cultureName = "?";
-                }
-
+                cultureName = "?";
             }
 
             var dataTypeKey = dataTypeName + dataScopeIdentifier + (string.IsNullOrEmpty(cultureName) ? string.Empty : ("_" + cultureName));
@@ -980,13 +918,6 @@ namespace Composite.Tools.PackageCreator
                             )
                         )
                     );
-                //x = new XElement("Data");
-                //string targetDirectory = Path.GetDirectoryName(filePath);
-                //if (Directory.Exists(targetDirectory) == false)
-                //{
-                //    Directory.CreateDirectory(targetDirectory);
-                //}
-                //x.Save(filePath);
             }
 
             DataFiles.Add(filePath,
@@ -998,18 +929,6 @@ namespace Composite.Tools.PackageCreator
                     select new XAttribute(s.Name, SerializeDataField(val))
                 )
             );
-            //x = XElement.Load(filePath);
-            //x.Add(
-            //    new XElement("Add",
-            //        from s in TypeManager.GetType(dataTypeName).GetPropertiesRecursively()
-
-            //        where s.CanWrite && s.CanRead
-            //        let val = s.GetValue(data, null)
-            //        where val != null
-            //        select new XAttribute(s.Name, SerializeDataField(val))
-            //    )
-            //);
-            //x.Save(filePath);
         }
 
         private static string SerializeDataField(object o)

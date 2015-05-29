@@ -74,28 +74,17 @@ namespace Composite.Tools.PackageCreator.Types
             if (Id == _pagesName)
             {
                 #region All Pages
-                if (creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToAllLocales || creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToCurrentLocale)
+                HashSet<Guid> pages;
+                using (var scope = new DataScope(DataScopeIdentifier.Administrated))
                 {
-                    HashSet<Guid> pages;
-                    using (var locale = new DataScope(DataLocalizationFacade.DefaultLocalizationCulture))
-                    {
-                        using (var scope = new DataScope(DataScopeIdentifier.Administrated))
-                        {
-                            pages = DataFacade.GetData<IPage>().Select(p => p.Id).ToHashSet();
-                        }
+                    pages = DataFacade.GetData<IPage>().Select(p => p.Id).ToHashSet();
+                }
 
-                        creator.AddData(typeof(IPage), DataScopeIdentifier.Public, d => pages.Contains((d as IPage).Id));
-                        creator.AddData(typeof(IPage), DataScopeIdentifier.Administrated, d => pages.Contains((d as IPage).Id));
-                        creator.AddData(typeof(IPagePlaceholderContent), DataScopeIdentifier.Public, d => pages.Contains((d as IPagePlaceholderContent).PageId));
-                        creator.AddData(typeof(IPagePlaceholderContent), DataScopeIdentifier.Administrated, d => pages.Contains((d as IPagePlaceholderContent).PageId));
-                        creator.AddData(typeof(IPageStructure), DataScopeIdentifier.Public, d => pages.Contains((d as IPageStructure).Id));
-                    }
-                }
-                else
-                {
-#warning TODO: Make for adding pages to all locales;
-                    throw new NotImplementedException();
-                }
+                creator.AddData(typeof(IPage), DataScopeIdentifier.Public, d => pages.Contains((d as IPage).Id));
+                creator.AddData(typeof(IPage), DataScopeIdentifier.Administrated, d => pages.Contains((d as IPage).Id));
+                creator.AddData(typeof(IPagePlaceholderContent), DataScopeIdentifier.Public, d => pages.Contains((d as IPagePlaceholderContent).PageId));
+                creator.AddData(typeof(IPagePlaceholderContent), DataScopeIdentifier.Administrated, d => pages.Contains((d as IPagePlaceholderContent).PageId));
+                creator.AddData(typeof(IPageStructure), DataScopeIdentifier.Public, d => pages.Contains((d as IPageStructure).Id));
                 #endregion
 
             }
@@ -107,23 +96,18 @@ namespace Composite.Tools.PackageCreator.Types
             }
             else if (Id == _datatypesName)
             {
-                if (creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToAllLocales || creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToCurrentLocale)
-                {
-                    using (new DataScope(DataLocalizationFacade.DefaultLocalizationCulture))
-                    {
-                        IEnumerable<Type> pageDataTypeInterfaces = PageFolderFacade.GetAllFolderTypes();
-                        IEnumerable<Type> pageMetaTypeInterfaces = PageMetaDataFacade.GetAllMetaDataTypes();
+                IEnumerable<Type> pageDataTypeInterfaces = PageFolderFacade.GetAllFolderTypes();
+                IEnumerable<Type> pageMetaTypeInterfaces = PageMetaDataFacade.GetAllMetaDataTypes();
 
-                        foreach (var pageDataType in pageDataTypeInterfaces)
-                        {
-                            creator.AddDinamicDataTypeData(pageDataType);
-                        }
-                        foreach (var pageMetaType in pageMetaTypeInterfaces)
-                        {
-                            creator.AddDinamicDataTypeData(pageMetaType);
-                        }
-                    }
+                foreach (var pageDataType in pageDataTypeInterfaces)
+                {
+                    creator.AddDinamicDataTypeData(pageDataType);
                 }
+                foreach (var pageMetaType in pageMetaTypeInterfaces)
+                {
+                    creator.AddDinamicDataTypeData(pageMetaType);
+                }
+
             }
             else if (Id == _applicationsName)
             {
@@ -131,18 +115,14 @@ namespace Composite.Tools.PackageCreator.Types
             }
 			else if (Id == _metatypesName)
 			{
-				if (creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToAllLocales || creator.LocaleAction == PackageCreator.LocaleActions.DefaultLocalesToCurrentLocale)
-				{
-					using (new DataScope(DataLocalizationFacade.DefaultLocalizationCulture))
-					{
-						IEnumerable<Type> pageMetaTypeInterfaces = PageMetaDataFacade.GetAllMetaDataTypes();
+				
+				IEnumerable<Type> pageMetaTypeInterfaces = PageMetaDataFacade.GetAllMetaDataTypes();
 
-						foreach (var pageMetaType in pageMetaTypeInterfaces)
-						{
-							creator.AddDinamicDataTypeData(pageMetaType);
-						}
-					}
+				foreach (var pageMetaType in pageMetaTypeInterfaces)
+				{
+					creator.AddDinamicDataTypeData(pageMetaType);
 				}
+
 			}
             return;
         }
