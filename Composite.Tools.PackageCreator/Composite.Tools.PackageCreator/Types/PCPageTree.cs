@@ -92,22 +92,13 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public void Pack(PackageCreator pc)
 		{
-			var pageId = new Guid(this.Name);
-			if (pc.ExludedIds.Contains(pageId))
-				return;
-			PackPageTree(pc, pageId);
-			if (this.IsRoot)
+			using (new DataScope(DataScopeIdentifier.Administrated))
 			{
-				var pageStructure = DataFacade.BuildNew<IPageStructure>();
-				pageStructure.Id = pageId;
-				pageStructure.ParentId = Guid.Empty;
-				pageStructure.LocalOrdering = PageManager.GetLocalOrdering(pageId);
-				pc.AddData(pageStructure);
-
-			}
-			else
-			{
-				pc.AddData<IPageStructure>(d => d.Id == pageId);
+				var pageId = new Guid(this.Name);
+				if (pc.ExludedIds.Contains(pageId))
+					return;
+				PackPageTree(pc, pageId, IsRoot);
+				
 			}
 		}
 
@@ -130,46 +121,59 @@ namespace Composite.Tools.PackageCreator.Types
 			Tree.Page.ClearCache();
 		}
 
-		private void PackPageTree(PackageCreator pc, Guid pageId)
+		private void PackPageTree(PackageCreator pc, Guid pageId, bool isRoot = false)
 		{
+			var page = PageManager.GetPageById(pageId, true);
+			if (page == null) // Page does not exists in current locale 
+				return; 
+
 			foreach (var childPageId in PageManager.GetChildrenIDs(pageId))
 			{
 				if (pc.ExludedIds.Contains(childPageId))
 					continue;
+
 				PackPageTree(pc, childPageId);
-				pc.AddData<IPageStructure>(d => d.ParentId == pageId && d.Id == childPageId);
 			}
 
 			foreach (var dataScopeIdentifier in DataFacade.GetSupportedDataScopes(typeof(IPage)))
 			{
 				using (new DataScope(dataScopeIdentifier))
 				{
-					var page = PageManager.GetPageById(pageId, true);
-					if (page != null)
+					var pageinScope = PageManager.GetPageById(pageId, true);
+					if (pageinScope != null)
 					{
-						pc.AddData(page);
+						pc.AddData(pageinScope);
 						pc.AddData<IPagePlaceholderContent>(dataScopeIdentifier, d => d.PageId == pageId);
 					}
 				}
+			}
+
+			if (isRoot)
+			{
+				using (new DataScope(DataScopeIdentifier.Public))
+				{
+					var pageStructure = DataFacade.BuildNew<IPageStructure>();
+					pageStructure.Id = pageId;
+					pageStructure.ParentId = Guid.Empty;
+					pageStructure.LocalOrdering = PageManager.GetLocalOrdering(pageId);
+					pc.AddData(pageStructure);
+				}
+			}
+			else
+			{
+				pc.AddData<IPageStructure>(d => d.Id == pageId);
 			}
 
 			if (IncludeData)
 			{
 				pc.AddData<IDataItemTreeAttachmentPoint>(d => d.KeyValue == ValueTypeConverter.Convert<string>(pageId));
 				pc.AddData<IPageFolderDefinition>(d => d.PageId == pageId);
-				using (new DataScope(DataScopeIdentifier.Administrated))
-				{
-					var page = PageManager.GetPageById(pageId, true);
-					foreach (Type folderType in page.GetDefinedFolderTypes())
-					{
-						pc.AddData(folderType, d => (d as IPageFolderData).PageId == pageId);
-					}
 
+				foreach (Type folderType in page.GetDefinedFolderTypes())
+				{
+					pc.AddData(folderType, d => (d as IPageFolderData).PageId == pageId);
 				}
 			}
-
-
-			
 		}
 
 		public string ActionTokenName
