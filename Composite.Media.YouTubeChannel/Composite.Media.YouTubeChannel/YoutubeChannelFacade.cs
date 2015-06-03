@@ -24,7 +24,7 @@ namespace Composite.Media.YouTubeChannel
 
         public static string ParseYouTubeChannelReference(string reference)
         {
-            string urlUserPattern = @"http://www.youtube.com/user/(?<1>[^\s/]*)";
+            string urlUserPattern = @"(?:http?:\/\/)?(?:www\.)?youtube.com/user/(?<1>[^\s/]*)";
             var m = Regex.Match(reference, urlUserPattern,
                       RegexOptions.IgnoreCase | RegexOptions.Compiled,
                       TimeSpan.FromSeconds(1));
