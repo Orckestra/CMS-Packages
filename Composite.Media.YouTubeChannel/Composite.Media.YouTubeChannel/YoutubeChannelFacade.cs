@@ -54,7 +54,7 @@ namespace Composite.Media.YouTubeChannel
 
         public static List GetYouTubeChannel(string user,int maxResults,string pageToken, string apiKey)
         {
-            var cacheKey = string.Format("YOUTUBECHANNEL_{0}_{1}_{2}", apiKey, user, pageToken);
+            var cacheKey = string.Format("YOUTUBECHANNEL_{0}_{1}_{2}_{3}", apiKey, user, maxResults, pageToken);
             var result = GetFromCache(cacheKey);
             if (result == null)
             {
@@ -97,7 +97,7 @@ namespace Composite.Media.YouTubeChannel
 
         public static List GetYouTubePlayListItems(string playlistId, int maxResults, string pageToken, string apiKey)
         {
-            var cacheKey = string.Format("YOUTUBEPLAYLISTITEMS_{0}_{1}_{2}", apiKey, playlistId, pageToken);
+            var cacheKey = string.Format("YOUTUBEPLAYLISTITEMS_{0}_{1}_{2}_{3}", apiKey, playlistId, pageToken, maxResults);
             var result = GetFromCache(cacheKey);
             if (result == null)
             {
