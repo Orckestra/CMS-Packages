@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
 	<pc:Files>
-		<Add name="Frontend\Composite\Media\YouTubePlayLists\Script.js" />
-		<Add name="Frontend\Composite\Media\YouTubePlayLists\Styles.less" />
-		<Add name="Frontend\Composite\Media\YouTubePlayLists\Styles.min.css" />
 		<Add name="App_GlobalResources\Composite\Media\YouTubeChannel.resx" />
 		<Add name="Bin\Composite.Media.YouTubeChannel.dll" />
 	</pc:Files>

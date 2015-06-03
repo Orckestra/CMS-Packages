@@ -1,5 +1,6 @@
 ﻿@inherits RazorFunction
-@using Composite.Media.YouTube;
+@using Composite.Media.YouTubeChannel
+
 @functions {
     public override string FunctionDescription
     {
@@ -8,112 +9,112 @@
 
     [FunctionParameter(Label = "YouTube Channel", Help = "The user name or URL of the YouTube channel")]
     public string YouTubeChannel { get; set; }
+
+    [FunctionParameter(Label = "API Key", Help = "API Key")]
+    public string APIKey { get; set; }
+
+    [FunctionParameter(Label = "Page Size", Help = "The count of videos per page.", DefaultValue = 10)]
+    public int PageSize { get; set; }
 }
 @{
-    string resourcesFolder = "~/Frontend/Composite/Media/YouTubeChannel";
 
-    var pageIndex = 1;
-    if (Request.QueryString["index"] == null || !int.TryParse(Request.QueryString["index"], out pageIndex))
-    {
-        pageIndex = 1;
-    }
     YouTubeChannel = YoutubeChannelFacade.ParseYouTubeChannelReference(YouTubeChannel);
 
-    var Channel = YoutubeChannelFacade.GetYouTubeChannel(YouTubeChannel, 50, pageIndex);
+    var pageToken = Request["pagetoken"] ?? string.Empty;
 
-    if (!Channel.Videos.Any())
+    var playlist = YoutubeChannelFacade.GetYouTubeChannel(YouTubeChannel, PageSize, pageToken, APIKey);
+
+    if (playlist == null)
     {
         <div class="alert alert-warning">@Resources.YouTubeChannel.NoItemsMessage</div>
         return;
     }
 
-
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
-    <link id="youtube-channel-player-css" rel="stylesheet" type="text/css" href="@Href(resourcesFolder)/Styles.min.css" />
-    <script id="youtube-channel-player-js" type="text/javascript" src="@Href(resourcesFolder)/Script.js"></script>
 </head>
 <body>
-    <div class="youtube-channel-player">
-        @*The Google Player*@
-        <div class="youtube-channel">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-7">
-                    <div class="media-object">
-                        <div id="ytplayer" class="player-window"></div>
-                        <div class="media-body">
-                            <h3 class="media-heading">@Channel.Videos.First().Title</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-5">
-                    <div class="list-group">
-                        @foreach (var video in Channel.Videos)
-                        {
-                            var duration = TimeSpan.FromSeconds(video.Duration);
-                            <a href="#@video.Id" title="@video.Title" class="list-group-item clearfix" data-title="@video.Title" data-views="@video.ViewCount">
-                                <img class="img-responsive pull-left" src="http://img.youtube.com/vi/@video.Id/0.jpg" alt="@video.Title" />
-                                <h5 class="list-group-item-heading">@video.Title</h5>
-                                <small>@video.ViewCount @(video.ViewCount == 1 ? Resources.YouTubeChannel.VideoOneViewText : Resources.YouTubeChannel.VideoViewsText)</small><br />
-                                <small class="text-muted">@duration.ToString()</small>
-                            </a>
-                        }
-                    </div>
-                    @if (Channel.TotalResults > Channel.ItemsPerPage)
-                    {
-                        var nextIndex = Channel.StartIndex + Channel.ItemsPerPage;
-                        var prevIndex = Channel.StartIndex - Channel.ItemsPerPage;
-                        var curEndIndex = Channel.StartIndex + Channel.ItemsPerPage - 1;
-                        curEndIndex = curEndIndex < Channel.TotalResults ? curEndIndex : Channel.TotalResults;
-                        <ul class="pagination">
-                            @if (Channel.StartIndex > 1)
-                            {
-                                <li><a href="?index=@prevIndex" title="Previous">«</a></li>
-                            }
-                            else
-                            {
-                                <li class="disabled"><a href="#">«</a></li>
-                            }
-                            <li><a><strong>@Channel.StartIndex</strong> - <strong>@curEndIndex</strong> of about <strong>@Channel.TotalResults</strong></a></li>
-                            @if (nextIndex <= Channel.TotalResults)
-                            {
-                                <li><a href="?index=@nextIndex" title="Next">»</a></li>
-                            }
-                            else
-                            {
-                                <li class="disabled"><a href="#">»</a></li>
-                            }
-                        </ul>
-                    }
-                </div>
-            </div>
+
+    <div class="youtube-channel row">
+        <div class="col-xs-12 col-sm-12 col-md-7">
+            <div id="ytplayer"></div>
+            <h3 id="js-player-title">
+                @playlist.items[0].snippet.title
+            </h3>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-5">
+            <div class="list-group">
+                @foreach (var video in playlist.items)
+                {
+                    <a href="#@video.snippet.resourceId.videoId" title="" class="list-group-item clearfix" data-title="@video.snippet.title" data-id="@video.snippet.resourceId.videoId">
+                        <img class="img-responsive pull-left" src="@video.snippet.thumbnails["default"].url" alt="img" />
+                        <h5 class="list-group-item-heading">@video.snippet.title</h5>
+                    </a>
+                }
+            </div>
 
-        <script type="text/javascript">
-            // Load the IFrame Player API code asynchronously.
-            var tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/player_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-
-            var player;
-            function onYouTubePlayerAPIReady() {
-                player = new YT.Player('ytplayer', {
-                    height: '390',
-                    width: '100%',
-                    videoId: window.location.hash.substr(1) || '@Channel.Videos.First().Id'
-                });
+            @if (playlist.pageinfo.totalResults > PageSize)
+            {
+                <ul class="pagination">
+                    @if (!string.IsNullOrEmpty(playlist.prevPageToken))
+                    {
+                        <li><a href="?pagetoken=@playlist.prevPageToken" title="Previous">«</a></li>
+                    }
+                    else
+                    {
+                        <li class="disabled"><a>«</a></li>
+                    }
+                    <li>
+                        <a>
+                            about <strong>@playlist.pageinfo.totalResults</strong>
+                        </a>
+                    </li>
+                    @if (!string.IsNullOrEmpty(playlist.nextPageToken))
+                    {
+                        <li><a href="?pagetoken=@playlist.nextPageToken" title="Next">»</a></li>
+                    }
+                    else
+                    {
+                        <li class="disabled"><a>»</a></li>
+                    }
+                </ul>
             }
-
-            $(window).on('hashchange', function () {
-                //https://developers.google.com/youtube/iframe_api_reference#loadVideoById
-                player.loadVideoById({ 'videoId': window.location.hash.substr(1), 'startSeconds': 5, 'suggestedQuality': 'large' })
-            });
-        </script>
+        </div>
     </div>
+    <script id="youtube-player-id" type="text/javascript">
+
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+        var YouTubeChannelPlayer;
+        function onYouTubePlayerAPIReady() {
+            var id = window.location.hash.substr(1);
+            YouTubeChannelPlayer = new YT.Player('ytplayer', {
+                height: '390',
+                width: '100%',
+                videoId: id || '@playlist.items[0].snippet.resourceId.videoId'
+            });
+
+            if (id) {
+                var $item = $('[data-id=' + id + ']');
+                $('#js-player-title').text($item.data("title"));
+            }
+        }
+
+        $(window).on('hashchange', function () {
+            var id = window.location.hash.substr(1);
+            YouTubeChannelPlayer.loadVideoById({ 'videoId': id, 'suggestedQuality': 'large' });
+            var $item = $('[data-id=' + id + ']');
+            $('#js-player-title').text($item.data("title"));
+            $('html, body').animate({ scrollTop: "0" });
+        });
+    </script>
+
 </body>
 
 </html>

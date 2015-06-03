@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.1.5058.34326" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Media.YouTubeChannel" groupName="Composite.Media" version="2.0.6" author="Composite A/S" website="http://composite.net" readMoreUrl="http://www.composite.net/Add-on-Market/Packages" id="5a06f424-e058-402a-973b-9f8e6629438c" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.Media.YouTubeChannel" groupName="Composite.Media" version="2.0.7" author="Composite A/S" website="http://composite.net" readMoreUrl="http://www.composite.net/Add-on-Market/Packages" id="5a06f424-e058-402a-973b-9f8e6629438c" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>-</TechnicalDetails>
 		<Description>-</Description>
 	</mi:PackageInformation>
@@ -14,9 +14,6 @@
 				<File sourceFilename="~\App_Data/Razor/Composite/Media/YouTubeChannel/PlayListsViewer.cshtml" targetFilename="~\App_Data/Razor/Composite/Media/YouTubeChannel/PlayListsViewer.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\Composite.Media.YouTubeChannel.dll" targetFilename="~\Bin\Composite.Media.YouTubeChannel.dll" allowOverwrite="false" />
 			</Files>
-			<Directories>
-				<Directory sourceDirectory="~\Frontend\Composite\Media\YouTubeChannel\" targetDirectory="~\Frontend\Composite\Media\YouTubeChannel\" allowOverwrite="true" deleteTargetDirectory="false" />
-			</Directories>
 		</mi:Add>
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>
