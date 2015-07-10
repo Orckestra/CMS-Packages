@@ -149,11 +149,15 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 
         private XhtmlDocument ExecuteRoute(RouteData routeData, ParameterList parameters, ref bool routeResolved)
         {
+            var parentContext = HttpContext.Current;
+
             using (var writer = new StringWriter())
             {
                 var httpResponse = new HttpResponse(writer);
-                var httpContext = new HttpContext(HttpContext.Current.Request, httpResponse);
+                var httpContext = new HttpContext(parentContext.Request, httpResponse);
                 var requestContext = new RequestContext(new HttpContextWrapper(httpContext), routeData);
+
+                httpContext.User = parentContext.User;
 
                 var handler = routeData.RouteHandler.GetHttpHandler(requestContext);
                 Verify.IsNotNull(handler, "No handler found for the function '{0}'", Namespace + "." + Name);
