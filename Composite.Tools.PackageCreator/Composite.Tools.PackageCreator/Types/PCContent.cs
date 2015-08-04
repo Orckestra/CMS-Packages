@@ -101,11 +101,11 @@ namespace Composite.Tools.PackageCreator.Types
 
                 foreach (var pageDataType in pageDataTypeInterfaces)
                 {
-                    creator.AddDinamicDataTypeData(pageDataType);
+                    creator.AddDataTypeData(pageDataType);
                 }
                 foreach (var pageMetaType in pageMetaTypeInterfaces)
                 {
-                    creator.AddDinamicDataTypeData(pageMetaType);
+                    creator.AddDataTypeData(pageMetaType);
                 }
 
             }
@@ -120,7 +120,7 @@ namespace Composite.Tools.PackageCreator.Types
 
 				foreach (var pageMetaType in pageMetaTypeInterfaces)
 				{
-					creator.AddDinamicDataTypeData(pageMetaType);
+					creator.AddDataTypeData(pageMetaType);
 				}
 
 			}

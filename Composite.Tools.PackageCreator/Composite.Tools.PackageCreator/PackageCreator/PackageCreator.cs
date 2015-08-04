@@ -351,7 +351,7 @@ namespace Composite.Tools.PackageCreator
 
                         foreach (XElement item in element.Elements("Add"))
                         {
-                            AddDinamicDataTypeData(TypeManager.TryGetType(item.IndexAttributeValue()));
+                            AddDataTypeData(TypeManager.TryGetType(item.IndexAttributeValue()));
                         }
                     }
                 }
@@ -831,27 +831,33 @@ namespace Composite.Tools.PackageCreator
         }
 
 
-        internal void AddDinamicDataTypeData(Type type)
+        internal void AddDataTypeData(Type type)
         {
-            IEnumerable<Type> globalDataTypeInterfaces = DataFacade.GetGeneratedInterfaces().OrderBy(t => t.FullName);
-            globalDataTypeInterfaces = globalDataTypeInterfaces.Except(PageFolderFacade.GetAllFolderTypes());
-            globalDataTypeInterfaces = globalDataTypeInterfaces.Except(PageMetaDataFacade.GetAllMetaDataTypes());
+            IEnumerable<Type> globalDataTypeInterfaces = DataFacade
+                .GetAllInterfaces(UserType.Developer)
+                .Where(interfaceType => interfaceType.Assembly != typeof(IData).Assembly)
+                .OrderBy(t => t.FullName)
+                .Except(PageFolderFacade.GetAllFolderTypes())
+                .Except(PageMetaDataFacade.GetAllMetaDataTypes());
 
             IEnumerable<Type> pageDataTypeInterfaces = PageFolderFacade.GetAllFolderTypes();
             IEnumerable<Type> pageMetaTypeInterfaces = PageMetaDataFacade.GetAllMetaDataTypes();
 
             DataTypeDescriptor dataTypeDescriptor = DynamicTypeManager.GetDataTypeDescriptor(type);
-            //todo make by assosiation
-            if (globalDataTypeInterfaces.Contains(dataTypeDescriptor.GetInterfaceType()))
+
+            var resolvedType = dataTypeDescriptor.GetInterfaceType();
+
+            // TODO: make by association
+            if (globalDataTypeInterfaces.Contains(resolvedType))
             {
                 AddData(type);
             }
-            else if (pageDataTypeInterfaces.Contains(dataTypeDescriptor.GetInterfaceType()))
+            else if (pageDataTypeInterfaces.Contains(resolvedType))
             {
                 AddData<IPageFolderDefinition>(d => d.FolderTypeId == dataTypeDescriptor.DataTypeId);
                 AddData(type);
             }
-            else if (pageMetaTypeInterfaces.Contains(dataTypeDescriptor.GetInterfaceType()))
+            else if (pageMetaTypeInterfaces.Contains(resolvedType))
             {
                 foreach (var j in DataFacade.GetData<IPageMetaDataDefinition>(d => d.MetaDataTypeId == dataTypeDescriptor.DataTypeId))
                 {
