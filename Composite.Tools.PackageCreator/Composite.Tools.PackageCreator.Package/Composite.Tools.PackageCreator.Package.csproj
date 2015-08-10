@@ -77,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\Bin\Composite.Localization.C1Console.FragmentInstaller.dll" />
-    <Content Include="Package\Bin\Composite.Tools.PackageCreator.dll" />
     <Content Include="Package\Composite\content\forms\InstalledPackages\Composite.Tools.PackageCreator\DeletePackage.xml" />
     <Content Include="Package\Composite\content\forms\InstalledPackages\Composite.Tools.PackageCreator\PackageInfo.xml" />
     <Content Include="Package\Composite\content\forms\InstalledPackages\Composite.Tools.PackageCreator\PackageInfoToolbar.xml" />
@@ -136,11 +135,17 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\..\Public\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\..\Public\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
-</PostBuildEvent>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"</PreBuildEvent>
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
+
+COPY "$(TargetDir)\*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)..\..\Public\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"</PostBuildEvent>
   </PropertyGroup>
 </Project>

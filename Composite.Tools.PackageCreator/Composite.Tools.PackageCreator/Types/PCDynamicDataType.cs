@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Composite.C1Console.Security;
 using Composite.Core.Types;
+using Composite.Data;
 using Composite.Plugins.Elements.ElementProviders.GeneratedDataTypesElementProvider;
 
 namespace Composite.Tools.PackageCreator.Types
@@ -15,9 +17,10 @@ namespace Composite.Tools.PackageCreator.Types
             {
                 if (Name == null)
                 {
-                    if (_entityToken is GeneratedDataTypesElementProviderTypeEntityToken)
+                    var castedEntityToken = _entityToken as GeneratedDataTypesElementProviderTypeEntityToken;
+                    if (castedEntityToken != null)
                     {
-                        Type type = TypeManager.GetType(((GeneratedDataTypesElementProviderTypeEntityToken)_entityToken).SerializedTypeName);
+                        Type type = TypeManager.GetType(castedEntityToken.SerializedTypeName);
                         Name = type.FullName;
                     }
                 }
@@ -37,10 +40,19 @@ namespace Composite.Tools.PackageCreator.Types
 
         public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
-            if (entityToken is GeneratedDataTypesElementProviderTypeEntityToken)
+            var castedEntityToken = entityToken as GeneratedDataTypesElementProviderTypeEntityToken;
+            if (castedEntityToken == null)
             {
-                yield return new PCDynamicDataType(entityToken);
+                return Enumerable.Empty<IPackItem>();
             }
+            
+            Type type = TypeManager.GetType(castedEntityToken.SerializedTypeName);
+            if (!type.IsGenerated())
+            {
+                return Enumerable.Empty<IPackItem>();
+            }
+            
+            return new[] { new PCDynamicDataType(entityToken) };
         }
 
     }

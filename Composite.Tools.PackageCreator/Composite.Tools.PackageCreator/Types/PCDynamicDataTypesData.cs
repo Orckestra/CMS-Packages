@@ -15,9 +15,10 @@ namespace Composite.Tools.PackageCreator.Types
             {
                 if (Name == null)
                 {
-                    if (_entityToken is GeneratedDataTypesElementProviderTypeEntityToken)
+                    var castedEntityToken = _entityToken as GeneratedDataTypesElementProviderTypeEntityToken;
+                    if (castedEntityToken != null)
                     {
-                        Type type = TypeManager.GetType(((GeneratedDataTypesElementProviderTypeEntityToken)_entityToken).SerializedTypeName);
+                        Type type = TypeManager.GetType(castedEntityToken.SerializedTypeName);
                         Name = type.FullName;
                     }
                 }
@@ -49,8 +50,7 @@ namespace Composite.Tools.PackageCreator.Types
         {
             if (entityToken is GeneratedDataTypesElementProviderTypeEntityToken)
             {
-                if (entityToken.Id == "GlobalDataTypeFolder")
-                    yield return new PCDynamicDataTypesData(entityToken);
+                yield return new PCDynamicDataTypesData(entityToken);
             }
         }
 
