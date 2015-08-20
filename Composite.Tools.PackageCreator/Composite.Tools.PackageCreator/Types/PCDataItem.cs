@@ -5,8 +5,6 @@ using Composite.Data.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace Composite.Tools.PackageCreator.Types
@@ -153,25 +151,26 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public static IEnumerable<IPackItem> Create(EntityToken entityToken)
 		{
-			if (entityToken is DataEntityToken)
-			{
-				DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
-				if (dataEntityToken.Data is IPageFolderData)
-				{
-					var data = dataEntityToken.Data as IPageFolderData;
-					yield return new PCDataItem(data);
-				}
-				else if (SkipTypes.Contains(dataEntityToken.InterfaceType)){
-					// Nothing
-				}
-				else
-				{
-					var data = dataEntityToken.Data;
-					var id = PCExclude.GetId(data);
-					if (id != Guid.Empty)
-						yield return new PCDataItem(data);
-				}
-			}
+            var dataEntityToken = entityToken as DataEntityToken;
+            if (dataEntityToken == null) yield break;
+
+#pragma warning disable 618
+		    if (typeof(IPageFolderData).IsAssignableFrom(dataEntityToken.InterfaceType)
+#pragma warning restore 618
+                 || typeof(IPageDataFolder).IsAssignableFrom(dataEntityToken.InterfaceType))
+		    {
+		        yield return new PCDataItem(dataEntityToken.Data);
+		    }
+		    else if (SkipTypes.Contains(dataEntityToken.InterfaceType)){
+		        // Nothing
+		    }
+		    else
+		    {
+		        var data = dataEntityToken.Data;
+		        var id = PCExclude.GetId(data);
+		        if (id != Guid.Empty)
+		            yield return new PCDataItem(data);
+		    }
 		}
 	}
 
@@ -189,7 +188,6 @@ namespace Composite.Tools.PackageCreator.Types
 					yield return new PCDataItem(item.ToString(), dataType, item.Value);
 				}
 			}
-			yield break;
 		}
 
 		public IPackItem GetItem(Type type, string id)

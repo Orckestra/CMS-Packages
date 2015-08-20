@@ -155,7 +155,9 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                 IEnumerable<string> packages = PackageCreatorFacade.GetPackageNames();
                 foreach (var package in packages)
                 {
-                    var icon = (PackageCreatorFacade.ActivePackageName == package) ? GenericPublishProcessController.Publish : new ResourceHandle("Composite.Icons", "page-publication");
+                    bool isActivePackage = PackageCreatorFacade.ActivePackageName == package;
+
+                    var icon = isActivePackage ? GenericPublishProcessController.Publish : new ResourceHandle("Composite.Icons", "page-publication");
                     var element = new Element(_context.CreateElementHandle(new PackageCreatorPackageElementProviderEntityToken(package)))
                     {
                         VisualData = new ElementVisualizedData()
@@ -168,7 +170,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                         }
                     };
 
-                    element.AddAction(new ElementAction(new ActionHandle(new WorkflowActionToken(typeof(EditPackageWorkflow), new PermissionType[] { PermissionType.Administrate })))
+                    element.AddAction(new ElementAction(new ActionHandle(new WorkflowActionToken(typeof(EditPackageWorkflow), new[] { PermissionType.Administrate })))
                     {
                         VisualData = new ActionVisualizedData
                         {
@@ -185,22 +187,25 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                         }
                     });
 
-                    element.AddAction(new ElementAction(new ActionHandle(new SetActivePackageActionToken()))
+                    if (!isActivePackage)
                     {
-                        VisualData = new ActionVisualizedData
+                        element.AddAction(new ElementAction(new ActionHandle(new SetActivePackageActionToken()))
                         {
-                            Label = PackageCreatorFacade.GetLocalization("SetActivePackage.Label"),
-                            ToolTip = PackageCreatorFacade.GetLocalization("SetActivePackage.ToolTip"),
-                            Icon = new ResourceHandle("Composite.Icons", "accept"),
-                            ActionLocation = new ActionLocation
+                            VisualData = new ActionVisualizedData
                             {
-                                ActionType = ActionType.Other,
-                                IsInFolder = false,
-                                IsInToolbar = true,
-                                ActionGroup = new ActionGroup("Develop", ActionGroupPriority.PrimaryLow)
+                                Label = PackageCreatorFacade.GetLocalization("SetActivePackage.Label"),
+                                ToolTip = PackageCreatorFacade.GetLocalization("SetActivePackage.ToolTip"),
+                                Icon = new ResourceHandle("Composite.Icons", "accept"),
+                                ActionLocation = new ActionLocation
+                                {
+                                    ActionType = ActionType.Other,
+                                    IsInFolder = false,
+                                    IsInToolbar = true,
+                                    ActionGroup = new ActionGroup("Develop", ActionGroupPriority.PrimaryLow)
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
 
                     element.AddAction(new ElementAction(new ActionHandle(new ConfirmWorkflowActionToken("Are you sure?", typeof(DeleteConfigPackageCreatorActionToken))))
                     {

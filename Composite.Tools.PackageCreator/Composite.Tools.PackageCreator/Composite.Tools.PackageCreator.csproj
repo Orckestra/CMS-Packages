@@ -41,9 +41,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Composite, Version=4.0.4897.31550, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Composite, Version=4.2.5287.17495, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Public\References\Composite\4.2\Composite.dll</HintPath>
+      <HintPath>..\..\References\Composite\5.0\Composite.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\..\Public\References\Composite\2.1.1\ICSharpCode.SharpZipLib.dll</HintPath>

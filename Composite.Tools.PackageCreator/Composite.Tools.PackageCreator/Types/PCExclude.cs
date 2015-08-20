@@ -129,44 +129,47 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public static IEnumerable<IPackItem> Create(EntityToken entityToken)
 		{
-			if (entityToken is DataEntityToken)
-			{
-				var dataEntityToken = (DataEntityToken)entityToken;
-				if (dataEntityToken.Data is IPage)
-				{
-					var page = dataEntityToken.Data as IPage;
-					if (page.GetParentId() != Guid.Empty)
-						yield return new PCExclude(page.Id.ToString(), Exclude.Page);
-				}
-				else if (dataEntityToken.Data is IMediaFileFolder)
-				{
-					var mediaFolder = dataEntityToken.Data as IMediaFileFolder;
-					yield return new PCExclude(mediaFolder.Path, Exclude.MediaFolder);
-				}
-				else if (dataEntityToken.Data is IPageFolderData)
-				{
-					var data = dataEntityToken.Data as IPageFolderData;
-					yield return new PCExclude(data.Id.ToString(), Exclude.DataItem, data.GetLabel());
+            var dataEntityToken = entityToken as DataEntityToken;
+		    if (dataEntityToken == null)
+		    {
+		        yield break;
+		    }
 
-				}
-				else if (dataEntityToken.Data is IPackageServerSource)
-				{
-				}
-				else if (PCDataItem.SkipTypes.Contains(dataEntityToken.InterfaceType))
-				{
-					// Nothnig
-				}
-				else
-				{
-					var data = dataEntityToken.Data;
-					var id = GetId(data);
-					if (id != Guid.Empty)
-						yield return new PCExclude(id.ToString(), Exclude.DataItem, data.GetLabel());
-				}
-			}
+		    if (dataEntityToken.Data is IPage)
+		    {
+		        var page = dataEntityToken.Data as IPage;
+		        if (page.GetParentId() != Guid.Empty)
+		            yield return new PCExclude(page.Id.ToString(), Exclude.Page);
+		    }
+		    else if (dataEntityToken.Data is IMediaFileFolder)
+		    {
+		        var mediaFolder = dataEntityToken.Data as IMediaFileFolder;
+		        yield return new PCExclude(mediaFolder.Path, Exclude.MediaFolder);
+		    }
+#pragma warning disable 618
+		    else if (dataEntityToken.Data is IPageFolderData)
+		    {
+		        var data = dataEntityToken.Data as IPageFolderData;
+		        yield return new PCExclude(data.Id.ToString(), Exclude.DataItem, data.GetLabel());
+            }
+#pragma warning restore 618
+            else if (dataEntityToken.Data is IPackageServerSource)
+		    {
+		    }
+		    else if (PCDataItem.SkipTypes.Contains(dataEntityToken.InterfaceType))
+		    {
+		        // Nothing
+		    }
+		    else
+		    {
+		        var data = dataEntityToken.Data;
+		        var id = GetId(data);
+		        if (id != Guid.Empty)
+		            yield return new PCExclude(id.ToString(), Exclude.DataItem, data.GetLabel());
+		    }
 		}
 
-		public override void AddToConfiguration(XElement config)
+	    public override void AddToConfiguration(XElement config)
 		{
 			RemoveFromConfiguration(config);
 			var category = config.ForceElement(ns + this.CategoryName);

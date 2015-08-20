@@ -6,7 +6,6 @@ using Composite.Core.Collections;
 using Composite.Data;
 using Composite.Data.Types;
 using System.Xml.Linq;
-using System.Linq;
 using Composite.Core.Types;
 
 namespace Composite.Tools.PackageCreator.Types
@@ -79,7 +78,7 @@ namespace Composite.Tools.PackageCreator.Types
 		{
 			if (entityToken is DataEntityToken)
 			{
-				DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
+				var dataEntityToken = (DataEntityToken)entityToken;
 				if (dataEntityToken.Data is IPage)
 				{
 					var page = dataEntityToken.Data as IPage;
@@ -171,7 +170,7 @@ namespace Composite.Tools.PackageCreator.Types
 
 				foreach (Type folderType in page.GetDefinedFolderTypes())
 				{
-					pc.AddData(folderType, d => (d as IPageFolderData).PageId == pageId);
+					pc.AddData(folderType, d => (d as IPageRelatedData).PageId == pageId);
 				}
 			}
 		}
@@ -200,7 +199,6 @@ namespace Composite.Tools.PackageCreator.Types
 					case TreeState.NotIncluded:
 					case TreeState.IncludedTree:
 						return false;
-						break;
 				}
 				return true;
 			}
