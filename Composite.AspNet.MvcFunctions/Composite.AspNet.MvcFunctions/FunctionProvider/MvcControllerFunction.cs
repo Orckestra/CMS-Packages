@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Composite.AspNet.MvcFunctions;
 using Composite.Core.Routing.Pages;
 using Composite.Functions;
 
@@ -14,7 +15,8 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
         private readonly ReflectedControllerDescriptor _controllerDescriptor;
 
         public MvcControllerFunction(ReflectedControllerDescriptor controllerDescriptor,
-            string @namespace, string name, string description) : base(@namespace, name, description)
+            string @namespace, string name, string description, FunctionCollection functionCollection)
+            : base(@namespace, name, description, functionCollection)
         {
             Verify.ArgumentNotNull(controllerDescriptor, "controllerDescriptor");
 

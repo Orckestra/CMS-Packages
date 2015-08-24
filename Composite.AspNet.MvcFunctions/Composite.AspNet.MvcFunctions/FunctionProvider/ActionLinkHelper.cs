@@ -3,7 +3,6 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Xml.Linq;
-using Composite.AspNet.MvcFunctions;
 using Composite.Core;
 using Composite.Core.Routing;
 using Composite.Core.WebClient.Renderings.Page;
@@ -20,7 +19,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
             return href.StartsWith("/?");
         }
 
-        public static void ConvertActionLinks(XhtmlDocument document, RequestContext requestContext)
+        public static void ConvertActionLinks(XhtmlDocument document, RequestContext requestContext, RouteCollection routeCollection)
         {
             var aTags = document.Descendants().Where(e => e.Name.LocalName == "a");
             var linkAttributes = aTags.Select(a => a.Attribute(HrefAttributeName))
@@ -28,7 +27,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 
             foreach (var linkAttr in linkAttributes)
             {
-                string url = ConvertActionLink((string) linkAttr, requestContext);
+                string url = ConvertActionLink((string)linkAttr, requestContext, routeCollection);
                 if (url != null && !url.StartsWith("/?"))
                 {
                     linkAttr.Value = url;
@@ -36,7 +35,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
             }
         }
 
-        public static string ConvertActionLink(string link, RequestContext requestContext)
+        public static string ConvertActionLink(string link, RequestContext requestContext, RouteCollection routeCollection)
         {
             var urlBuilder = new UrlBuilder(link);
             var parameters = urlBuilder.GetQueryParameters();
@@ -56,7 +55,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 routeValueDictionary.Add(key, parameters[key]);
             }
 
-            return UrlHelper.GenerateUrl(null, actionName, controllerName, routeValueDictionary, FunctionCollection.RouteCollection, requestContext, false);   
+            return UrlHelper.GenerateUrl(null, actionName, controllerName, routeValueDictionary, routeCollection, requestContext, false);   
         }
 
         public static string ControllerLinkToC1PageLink(string link, string baseControllerUrl)

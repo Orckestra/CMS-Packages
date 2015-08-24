@@ -24,16 +24,19 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 {
     internal abstract class MvcFunctionBase: IFunction
     {
+        protected readonly FunctionCollection _functionCollection;
         private readonly IList<ParameterProfile> _parameters = new List<ParameterProfile>();
 
-        protected MvcFunctionBase(string @namespace, string name, string description)
+        protected MvcFunctionBase(string @namespace, string name, string description, FunctionCollection functionCollection)
         {
             Verify.ArgumentNotNullOrEmpty(@namespace, "namespace");
             Verify.ArgumentNotNullOrEmpty(name, "name");
+            Verify.ArgumentNotNull(functionCollection, "functionCollection");
 
             Namespace = @namespace;
             Name = @name;
             Description = description;
+            _functionCollection = functionCollection;
         }
 
         public string Name { get; protected set; }
@@ -194,7 +197,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                     string redirectUrl = httpResponse.RedirectLocation;
                     if (ActionLinkHelper.IsActionLink(redirectUrl))
                     {
-                        redirectUrl = ActionLinkHelper.ConvertActionLink(redirectUrl, requestContext);
+                        redirectUrl = ActionLinkHelper.ConvertActionLink(redirectUrl, requestContext, _functionCollection.RouteCollection);
                         redirectUrl = ActionLinkHelper.ControllerLinkToC1PageLink(redirectUrl, GetBaseMvcRoute(parameters));
                     }
 
@@ -203,7 +206,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 }
 
                 var document = ParseOutput(xhtml);
-                ActionLinkHelper.ConvertActionLinks(document, requestContext);
+                ActionLinkHelper.ConvertActionLinks(document, requestContext, _functionCollection.RouteCollection);
 
                 ProcessDocument(document, parameters);
 
@@ -291,7 +294,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 
         private RouteData GetRouteData(string virtualUrl, ParameterList parameters)
         {
-            var routeData = RouteUtils.GetRouteDataByUrl(FunctionCollection.RouteCollection, virtualUrl);
+            var routeData = RouteUtils.GetRouteDataByUrl(_functionCollection.RouteCollection, virtualUrl);
 
             foreach (var parameterName in parameters.AllParameterNames)
             {

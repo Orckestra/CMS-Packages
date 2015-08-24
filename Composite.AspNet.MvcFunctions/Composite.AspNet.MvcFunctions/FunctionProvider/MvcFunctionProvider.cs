@@ -16,7 +16,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 
         public IEnumerable<IFunction> Functions
         {
-            get { return FunctionCollection.Functions; }
+            get { return MvcFunctionRegistry.Functions; }
         }
 
         public static void Reload()

@@ -17,7 +17,9 @@ namespace Composite.AspNet.MvcFunctions.FunctionProvider
         private readonly string _routeToRender;
         private bool _handlePathInfo;
 
-        public MvcActionFunction(Type controllerType, string actionName, string @namespace, string name, string description) : base(@namespace, name, description)
+        public MvcActionFunction(Type controllerType, string actionName, string @namespace, string name, string description,
+            FunctionCollection functionCollection)
+            : base(@namespace, name, description, functionCollection)
         {
             _controllerDescriptor = new ReflectedControllerDescriptor(controllerType);
             _actionName = actionName;

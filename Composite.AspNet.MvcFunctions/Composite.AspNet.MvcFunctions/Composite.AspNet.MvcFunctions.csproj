@@ -83,6 +83,7 @@
     <Compile Include="FunctionProvider\MvcActionFunction.cs" />
     <Compile Include="FunctionProvider\MvcControllerFunction.cs" />
     <Compile Include="MvcFunctionBuilder.cs" />
+    <Compile Include="MvcFunctions.cs" />
     <Compile Include="StaticReflection.cs" />
     <Compile Include="Views\C1HtmlHelper.cs" />
     <Compile Include="RouteUtils.cs" />

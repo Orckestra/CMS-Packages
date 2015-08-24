@@ -14,18 +14,15 @@ using Composite.Plugins.Functions.FunctionProviders.MvcFunctions;
 
 namespace Composite.AspNet.MvcFunctions
 {
-    public static class FunctionCollection
+    public class FunctionCollection
     {
-        public static RouteCollection RouteCollection = new RouteCollection();
-
-        internal static IList<MvcFunctionBase> Functions { get; private set; }
-
-        static FunctionCollection()
+        internal FunctionCollection()
         {
-            Functions = new List<MvcFunctionBase>();
         }
 
-        public static void AutoDiscoverFunctions(Assembly assembly)
+        public RouteCollection RouteCollection = new RouteCollection();
+
+        public void AutoDiscoverFunctions(Assembly assembly)
         {
             foreach (var type in assembly.GetTypes().Where(IsController))
             {
@@ -65,7 +62,7 @@ namespace Composite.AspNet.MvcFunctions
             MvcFunctionProvider.Reload();
         }
 
-        private static MvcActionFunction RegisterActionFunction(Type controllerType, string actionName, C1FunctionAttribute attribute, IEnumerable<ParameterProfile> functionParameters)
+        private MvcActionFunction RegisterActionFunction(Type controllerType, string actionName, C1FunctionAttribute attribute, IEnumerable<ParameterProfile> functionParameters)
         {
             var controllerDescriptor = new ReflectedControllerDescriptor(controllerType);
 
@@ -73,7 +70,7 @@ namespace Composite.AspNet.MvcFunctions
             string name = String.IsNullOrEmpty(attribute.Name) ? controllerDescriptor.ControllerName : attribute.Name;
             string description = attribute.Description ?? String.Empty;
 
-            var function = new MvcActionFunction(controllerType, actionName, @namespace, name, description);
+            var function = new MvcActionFunction(controllerType, actionName, @namespace, name, description, this);
 
             if (functionParameters != null)
             {
@@ -83,7 +80,7 @@ namespace Composite.AspNet.MvcFunctions
                 }
             }
 
-            Functions.Add(function);
+            MvcFunctionRegistry.Functions.Add(function);
 
             return function;
         }
@@ -93,7 +90,7 @@ namespace Composite.AspNet.MvcFunctions
             return type.IsPublic && type.Name.EndsWith("Controller") && typeof (Controller).IsAssignableFrom(type);
         }
 
-        public static MvcFunctionBuilder RegisterAction<T>(string actionName, string functionName = null, string description = null) where T : Controller
+        public MvcFunctionBuilder RegisterAction<T>(string actionName, string functionName = null, string description = null) where T : Controller
         {
             var controllerType = typeof (T);
 
@@ -127,9 +124,9 @@ namespace Composite.AspNet.MvcFunctions
             }
            
 
-            var function = new MvcActionFunction(controllerType, actionName, @namespace, name, description);
+            var function = new MvcActionFunction(controllerType, actionName, @namespace, name, description, this);
 
-            Functions.Add(function);
+            MvcFunctionRegistry.Functions.Add(function);
 
             MvcFunctionProvider.Reload();
 
@@ -148,12 +145,12 @@ namespace Composite.AspNet.MvcFunctions
             name = parts.Last();
         }
 
-        public static MvcFunctionBuilder RegisterController<T>(string functionName = null, string description = null) where T : Controller
+        public MvcFunctionBuilder RegisterController<T>(string functionName = null, string description = null) where T : Controller
         {
             return RegisterController(typeof (T), functionName, description);
         }
 
-        public static MvcFunctionBuilder RegisterController(Type controllerType, string functionName = null, string description = null)
+        public MvcFunctionBuilder RegisterController(Type controllerType, string functionName = null, string description = null)
         {
             string @namespace = null, name = null;
             if(functionName != null) ParseFunctionName(functionName, out @namespace, out name);
@@ -172,7 +169,7 @@ namespace Composite.AspNet.MvcFunctions
             return new MvcFunctionBuilder(function);
         }
 
-        private static MvcControllerFunction RegisterController(Type controllerType, C1FunctionAttribute attribute, IEnumerable<ParameterProfile> functionParameters)
+        private MvcControllerFunction RegisterController(Type controllerType, C1FunctionAttribute attribute, IEnumerable<ParameterProfile> functionParameters)
         {
             var controllerDescriptor = new ReflectedControllerDescriptor(controllerType);
 
@@ -180,7 +177,7 @@ namespace Composite.AspNet.MvcFunctions
             string name = String.IsNullOrEmpty(attribute.Name) ? controllerDescriptor.ControllerName : attribute.Name;
             string description = attribute.Description ?? String.Empty;
 
-            var function = new MvcControllerFunction(controllerDescriptor, @namespace, name, description);
+            var function = new MvcControllerFunction(controllerDescriptor, @namespace, name, description, this);
 
             if (functionParameters != null)
             {
@@ -190,7 +187,7 @@ namespace Composite.AspNet.MvcFunctions
                 }
             }
 
-            Functions.Add(function);
+            MvcFunctionRegistry.Functions.Add(function);
 
             return function;
         }
