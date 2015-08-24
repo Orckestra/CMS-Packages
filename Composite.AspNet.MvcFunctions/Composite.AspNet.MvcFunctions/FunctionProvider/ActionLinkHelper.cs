@@ -13,6 +13,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
     internal static class ActionLinkHelper
     {
         private static readonly XName HrefAttributeName = "href";
+        private static readonly XName ActionAttributeName = "action";
 
         public static bool IsActionLink(string href)
         {
@@ -21,9 +22,16 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 
         public static void ConvertActionLinks(XhtmlDocument document, RequestContext requestContext, RouteCollection routeCollection)
         {
-            var aTags = document.Descendants().Where(e => e.Name.LocalName == "a");
-            var linkAttributes = aTags.Select(a => a.Attribute(HrefAttributeName))
-                .Where(a => a != null && IsActionLink((string)a));
+            var hrefAttributes = document.Descendants()
+                .Where(e => e.Name.LocalName == "a")
+                .Select(a => a.Attribute(HrefAttributeName));
+
+            var actionAttributes = document.Descendants()
+                .Where(e => e.Name.LocalName == "form")
+                .Select(a => a.Attribute(ActionAttributeName));
+
+            var linkAttributes = hrefAttributes.Concat(actionAttributes)
+                                 .Where(a => a != null && IsActionLink((string) a));
 
             foreach (var linkAttr in linkAttributes)
             {
