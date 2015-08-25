@@ -189,13 +189,12 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 }
                 
                 string xhtml = writer.ToString();
-                routeResolved = true;
-
+                routeResolved = httpResponse.StatusCode != 404;
 
                 if (httpResponse.IsRequestBeingRedirected)
                 {
                     string redirectUrl = httpResponse.RedirectLocation;
-                    if (ActionLinkHelper.IsActionLink(redirectUrl))
+                    if (ActionLinkHelper.IsRawActionLink(redirectUrl))
                     {
                         redirectUrl = ActionLinkHelper.ConvertActionLink(redirectUrl, requestContext, _functionCollection.RouteCollection);
                         redirectUrl = ActionLinkHelper.ControllerLinkToC1PageLink(redirectUrl, GetBaseMvcRoute(parameters));

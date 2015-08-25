@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -15,12 +16,26 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
         private static readonly XName HrefAttributeName = "href";
         private static readonly XName ActionAttributeName = "action";
 
-        public static bool IsActionLink(string href)
+        public static bool IsRawActionLink(string href)
         {
             return href.StartsWith("/?");
         }
 
         public static void ConvertActionLinks(XhtmlDocument document, RequestContext requestContext, RouteCollection routeCollection)
+        {
+            var actionLinks = GetLinkContainingAttributes(document).Where(a => IsRawActionLink((string) a));
+
+            foreach (var linkAttr in actionLinks)
+            {
+                string url = ConvertActionLink((string)linkAttr, requestContext, routeCollection);
+                if (url != null && !url.StartsWith("/?"))
+                {
+                    linkAttr.Value = url;
+                }
+            }
+        }
+
+        private static IEnumerable<XAttribute> GetLinkContainingAttributes(XDocument document)
         {
             var hrefAttributes = document.Descendants()
                 .Where(e => e.Name.LocalName == "a")
@@ -30,17 +45,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 .Where(e => e.Name.LocalName == "form")
                 .Select(a => a.Attribute(ActionAttributeName));
 
-            var linkAttributes = hrefAttributes.Concat(actionAttributes)
-                                 .Where(a => a != null && IsActionLink((string) a));
-
-            foreach (var linkAttr in linkAttributes)
-            {
-                string url = ConvertActionLink((string)linkAttr, requestContext, routeCollection);
-                if (url != null && !url.StartsWith("/?"))
-                {
-                    linkAttr.Value = url;
-                }
-            }
+            return hrefAttributes.Concat(actionAttributes).Where(a => a != null);
         }
 
         public static string ConvertActionLink(string link, RequestContext requestContext, RouteCollection routeCollection)
@@ -90,12 +95,10 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
             var replacementRule = GetReplacementRule(pageUrl, baseControllerUrl);
 
             // Replacing action links
-            foreach (var anchor in document.Descendants().Where(e => e.Name.LocalName == "a"))
+            var linkAttributes = GetLinkContainingAttributes(document);
+            foreach (var linkAttr in linkAttributes)
             {
-                var hrefAttr = anchor.Attribute(HrefAttributeName);
-                if (hrefAttr == null) continue;
-
-                hrefAttr.Value = ReplacePrefix(hrefAttr.Value, replacementRule);
+                linkAttr.Value = ReplacePrefix(linkAttr.Value, replacementRule);
             }
         }
 
