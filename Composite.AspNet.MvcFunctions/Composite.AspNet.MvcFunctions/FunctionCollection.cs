@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Composite.AspNet.MvcFunctions.FunctionProvider;
+using Composite.AspNet.MvcFunctions.Routing;
 using Composite.Core.Extensions;
 using Composite.Core.Linq;
 using Composite.Functions;
@@ -26,33 +27,58 @@ namespace Composite.AspNet.MvcFunctions
             {
                 // Searching for [C1Function] attribute on controller or on its methods
                 var attribute = type.GetCustomAttributes<C1FunctionAttribute>(false).SingleOrDefault();
+
+                MvcControllerFunction controllerFunction = null;
                 if (attribute != null)
                 {
-                    RegisterController(type, attribute, null);
+                    controllerFunction = RegisterController(type, attribute, null);
                 }
+
 
                 foreach (var method in type.GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
                 {
+                    var dynamicUrlMapperAttributes = method.GetCustomAttributes<DynamicUrlMapperAttribute>(false).ToList();
+
+                    var actionNameAttribute = method.GetCustomAttributes<ActionNameAttribute>(false).SingleOrDefault();
+                    string actionName = actionNameAttribute != null ? actionNameAttribute.Name : method.Name;
+
                     attribute = method.GetCustomAttributes<C1FunctionAttribute>(false).SingleOrDefault();
-                    if (attribute == null) continue;
-
-                    var routeAttribute = method.GetCustomAttributes<RouteAttribute>(false)
-                        .SingleOrDefaultOrException("Multiple [Route] attributes defined on method '{0}' of controller class '{1}'", 
-                                                     method.Name, type.FullName);
-
-                    // If [Route()] attribute is present, registering a "controller function", otherwise - an "action function"
-                    if (routeAttribute != null)
+                    if (attribute != null)
                     {
-                        var parameters = GetFunctionParameters(method, routeAttribute);
-                        RegisterController(type, attribute, parameters);
+                        var routeAttribute = method.GetCustomAttributes<RouteAttribute>(false)
+                            .SingleOrDefaultOrException(
+                                "Multiple [Route] attributes defined on method '{0}' of controller class '{1}'",
+                                method.Name, type.FullName);
+
+                        MvcFunctionBase methodBasedMvcFunction;
+                        // If [Route()] attribute is present, registering a "controller function", otherwise - an "action function"
+                        if (routeAttribute != null)
+                        {
+                            var parameters = GetFunctionParameters(method, routeAttribute);
+                            methodBasedMvcFunction = RegisterController(type, attribute, parameters);
+                        }
+                        else
+                        {
+                            var parameters = GetFunctionParameters(method);
+                            methodBasedMvcFunction = RegisterActionFunction(type, actionName, attribute, parameters);
+                        }
+
+                        foreach (var mapperAttr in dynamicUrlMapperAttributes)
+                        {
+                            var mapper = new MvcFunctionDataUrlMapper(mapperAttr.DataType, null, null, mapperAttr.FieldName);
+                            methodBasedMvcFunction.AssignDynamicUrlMapper(mapperAttr.DataType, mapper);
+                        }
                     }
                     else
                     {
-                        var actionNameAttribute = method.GetCustomAttributes<ActionNameAttribute>(false).SingleOrDefault();
-                        string actionName = actionNameAttribute != null ? actionNameAttribute.Name : method.Name;
-
-                        var parameters = GetFunctionParameters(method);
-                        RegisterActionFunction(type, actionName, attribute, parameters);
+                        if (controllerFunction != null)
+                        {
+                            foreach (var mapperAttr in dynamicUrlMapperAttributes)
+                            {
+                                var mapper = new MvcFunctionDataUrlMapper(mapperAttr.DataType, null, actionName, mapperAttr.FieldName);
+                                controllerFunction.AssignDynamicUrlMapper(mapperAttr.DataType, mapper);
+                            }
+                        }
                     }
                 }
             }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using Composite.AspNet.MvcFunctions.Routing;
+using Composite.Core.Routing;
 using Composite.Functions;
 using Composite.Plugins.Functions.FunctionProviders.MvcFunctions;
 
@@ -81,6 +83,26 @@ namespace Composite.AspNet.MvcFunctions
                 DefaultValue = parameterInfo.RawDefaultValue,
                 Type = parameterInfo.ParameterType
             };
+        }
+
+        public void AddUrlMapping<T>(string actionName = null, string fieldName = null)
+        {
+            AddUrlMapping(typeof (T), actionName, fieldName);
+        }
+
+        public void AddUrlMapping<T>(Guid pageId, string actionName = null, string fieldName = null)
+        {
+            AddUrlMapping(typeof(T), actionName, fieldName);
+        }
+
+        public void AddUrlMapping(Type dataType, string actionName = null, string fieldName = null)
+        {
+            _function.AssignDynamicUrlMapper(dataType, new MvcFunctionDataUrlMapper(dataType, null, actionName, fieldName));
+        }
+
+        public void AddUrlMapping(Type dataType, Guid pageId, string actionName = null, string fieldName = null)
+        {
+            DataUrls.RegisterGlobalDataUrlMapper(dataType, new MvcFunctionDataUrlMapper(dataType, pageId, actionName, fieldName));
         }
     }
 

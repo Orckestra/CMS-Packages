@@ -15,7 +15,9 @@ using Composite.AspNet.MvcFunctions;
 using Composite.C1Console.Security;
 using Composite.Core.Extensions;
 using Composite.Core.IO;
+using Composite.Core.Routing;
 using Composite.Core.Routing.Pages;
+using Composite.Core.WebClient.Renderings.Page;
 using Composite.Core.Xml;
 using Composite.Data;
 using Composite.Functions;
@@ -26,6 +28,8 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
     {
         protected readonly FunctionCollection _functionCollection;
         private readonly IList<ParameterProfile> _parameters = new List<ParameterProfile>();
+
+        protected List<Tuple<Type, IDataUrlMapper>> _dataUrlMappers = new List<Tuple<Type, IDataUrlMapper>>();
 
         protected MvcFunctionBase(string @namespace, string name, string description, FunctionCollection functionCollection)
         {
@@ -152,6 +156,8 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 
         private XhtmlDocument ExecuteRoute(RouteData routeData, ParameterList parameters, ref bool routeResolved)
         {
+            AttachDynamicDataUrlMappers();
+
             var parentContext = HttpContext.Current;
 
             using (var writer = new StringWriter())
@@ -210,6 +216,20 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 ProcessDocument(document, parameters);
 
                 return document;
+            }
+        }
+
+        private void AttachDynamicDataUrlMappers()
+        {
+            var currentPageId = PageRenderer.CurrentPageId;
+            if (currentPageId == Guid.Empty)
+            {
+                return;
+            }
+
+            foreach (var mapperInfo in _dataUrlMappers)
+            {
+                DataUrls.RegisterDynamicDataUrlMapper(currentPageId, mapperInfo.Item1, mapperInfo.Item2);
             }
         }
 
@@ -372,6 +392,11 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
         public virtual void UsePathInfoForRouting()
         {
             throw new NotSupportedException();
+        }
+
+        public virtual void AssignDynamicUrlMapper(Type dataType, IDataUrlMapper dataUrlMapper)
+        {
+            _dataUrlMappers.Add(new Tuple<Type, IDataUrlMapper>(dataType, dataUrlMapper));
         }
     }
 }
