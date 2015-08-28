@@ -8,6 +8,7 @@ using Composite.AspNet.MvcFunctions.FunctionProvider;
 using Composite.AspNet.MvcFunctions.Routing;
 using Composite.Core.Extensions;
 using Composite.Core.Linq;
+using Composite.Core.Routing;
 using Composite.Functions;
 using Composite.Plugins.Functions.FunctionProviders.MvcFunctions;
 
@@ -37,10 +38,11 @@ namespace Composite.AspNet.MvcFunctions
 
                 foreach (var method in type.GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
                 {
-                    var dynamicUrlMapperAttributes = method.GetCustomAttributes<DynamicUrlMapperAttribute>(false).ToList();
-
                     var actionNameAttribute = method.GetCustomAttributes<ActionNameAttribute>(false).SingleOrDefault();
                     string actionName = actionNameAttribute != null ? actionNameAttribute.Name : method.Name;
+
+                    MvcFunctionBase controlerToAttachUrlMapperTo = controllerFunction;
+                    string urlMapperAction = actionName;
 
                     attribute = method.GetCustomAttributes<C1FunctionAttribute>(false).SingleOrDefault();
                     if (attribute != null)
@@ -63,21 +65,26 @@ namespace Composite.AspNet.MvcFunctions
                             methodBasedMvcFunction = RegisterActionFunction(type, actionName, attribute, parameters);
                         }
 
+                        controlerToAttachUrlMapperTo = methodBasedMvcFunction;
+                        urlMapperAction = null;
+                    }
+
+                    // Attaching url mappers
+                    if (controlerToAttachUrlMapperTo != null)
+                    {
+                        var dynamicUrlMapperAttributes = method.GetCustomAttributes<DynamicUrlMapperAttribute>(false).ToList();
+                        var globalUrlMapperAttributes = method.GetCustomAttributes<GlobalUrlMapperAttribute>(false).ToList();
+                        
                         foreach (var mapperAttr in dynamicUrlMapperAttributes)
                         {
-                            var mapper = new MvcFunctionDataUrlMapper(mapperAttr.DataType, null, null, mapperAttr.FieldName);
-                            methodBasedMvcFunction.AssignDynamicUrlMapper(mapperAttr.DataType, mapper);
+                            var mapper = new MvcFunctionDataUrlMapper(mapperAttr.DataType, null, urlMapperAction, mapperAttr.FieldName);
+                            controlerToAttachUrlMapperTo.AssignDynamicUrlMapper(mapperAttr.DataType, mapper);
                         }
-                    }
-                    else
-                    {
-                        if (controllerFunction != null)
+
+                        foreach (var mapperAttr in globalUrlMapperAttributes)
                         {
-                            foreach (var mapperAttr in dynamicUrlMapperAttributes)
-                            {
-                                var mapper = new MvcFunctionDataUrlMapper(mapperAttr.DataType, null, actionName, mapperAttr.FieldName);
-                                controllerFunction.AssignDynamicUrlMapper(mapperAttr.DataType, mapper);
-                            }
+                            var mapper = new MvcFunctionDataUrlMapper(mapperAttr.DataType, mapperAttr.PageId, urlMapperAction, mapperAttr.FieldName);
+                            DataUrls.RegisterGlobalDataUrlMapper(mapperAttr.DataType, mapper);
                         }
                     }
                 }

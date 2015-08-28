@@ -83,6 +83,7 @@
     <Compile Include="FunctionProvider\MvcControllerFunction.cs" />
     <Compile Include="MvcFunctionBuilder.cs" />
     <Compile Include="MvcFunctions.cs" />
+    <Compile Include="Routing\GlobalUrlMapperAttribute.cs" />
     <Compile Include="Routing\DynamicUrlMapperAttribute.cs" />
     <Compile Include="Routing\MvcFunctionDataUrlMapper.cs" />
     <Compile Include="StaticReflection.cs" />
