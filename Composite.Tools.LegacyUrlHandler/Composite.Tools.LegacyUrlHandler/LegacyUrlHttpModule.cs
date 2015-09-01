@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web;
 using Composite.Core;
-using Composite.Core.Logging;
+using Composite.Core.Routing;
 using Composite.Core.WebClient;
 
 namespace Composite.Tools.LegacyUrlHandler
@@ -20,8 +19,7 @@ namespace Composite.Tools.LegacyUrlHandler
 		public void Init(HttpApplication context)
 		{
 			context.BeginRequest += context_BeginRequest;
-			context.Error += new EventHandler(ErrorHandler);
-			
+			context.Error += ErrorHandler;
 		}
 
 		private void ErrorHandler(object sender, EventArgs eventArgs)
@@ -49,7 +47,9 @@ namespace Composite.Tools.LegacyUrlHandler
 			const string cacheKey = "LegacyUrlHandler";
 			var application = (HttpApplication)sender;
 			var context = application.Context;
-			var requestPath = context.Request.Path;
+            var request = context.Request;
+            
+			var requestPath = request.Path;
 			var requestPathInfo = "";
 
 			int pathInfoTokenIndex = requestPath.IndexOf(PathInfoToken);
@@ -60,7 +60,7 @@ namespace Composite.Tools.LegacyUrlHandler
 			}
 
 			//LoggingService.LogInformation("Legacy URL in:", string.Format("{0} - {1}", requestPath, requestPathInfo));
-			Dictionary<string, string> legacyUrlMappings;
+			LegacyUrlHandlerFacade.UrlMappings legacyUrlMappings;
 
 			if (!Cache.Get(cacheKey, out legacyUrlMappings))
 			{
@@ -68,21 +68,22 @@ namespace Composite.Tools.LegacyUrlHandler
 				Cache.Add(cacheKey, legacyUrlMappings, LegacyUrlHandlerFacade.XmlFileName);
 			}
 
-			if (!legacyUrlMappings.ContainsKey(requestPath))
+		    string mappingPath = legacyUrlMappings.GetMappedUrl(request.Url.Host, requestPath);
+            if (mappingPath == null)
 			{
 				return;
 			}
 
-			var mappingPath = legacyUrlMappings[requestPath];
+			
 			if (PageUrlHelper.IsInternalUrl(mappingPath) || PageUrlHelper.IsPublicUrl(mappingPath))
 			{
-				var pageUrlOptions = PageUrlHelper.ParseUrl(mappingPath);
+				var pageUrlOptions = PageUrls.ParseUrl(mappingPath);
 				if (pageUrlOptions != null)
 				{
-					var publicUrl = PageUrlHelper.BuildUrl(UrlType.Public, pageUrlOptions).ToString();
+                    var publicUrl = PageUrls.BuildUrl(pageUrlOptions, UrlKind.Public, new UrlSpace());
 					if (publicUrl != requestPath)
 					{
-						if (string.IsNullOrEmpty(requestPathInfo) == false)
+						if (!string.IsNullOrEmpty(requestPathInfo))
 							publicUrl = string.Format("{0}{1}", publicUrl, requestPathInfo);
 
 						var queryString = context.Request.QueryString;

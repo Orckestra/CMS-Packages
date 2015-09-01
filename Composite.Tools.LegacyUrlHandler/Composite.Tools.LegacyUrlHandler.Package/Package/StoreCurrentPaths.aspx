@@ -19,7 +19,7 @@
 				<div class="title"><img src="/Frontend/Composite/Tools/LegacyUrlHandler/Images/CompositeC1.png" alt="Composite C1" /> Legacy Url Handler: Store Current Paths</div>
 				<h4>Using this page, you can save all current paths to xml file.</h4>
 				<fieldset>
-					<div>Please press "Start" button to begin the process or <a title="Remove Redunant Paths" href="RemoveRedunantPaths.aspx">Remove Redunant Paths</a>.</div>
+					<div>Please press "Start" button to begin the process or <a title="Remove Redundant Paths" href="RemoveRedundantPaths.aspx">Remove Redundant Paths</a>.</div>
 					<table width="100%">
 					<tr>
 						<td>

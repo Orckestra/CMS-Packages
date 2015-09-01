@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
+using Composite.Core.Extensions;
 using Composite.Core.IO;
-using Composite.Core.WebClient.Renderings.Page;
+using Composite.Core.Routing;
+using Composite.Core.WebClient;
 using Composite.Core.Xml;
 using Composite.Data;
 using Composite.Data.Types;
@@ -42,7 +45,7 @@ namespace Composite.Tools.LegacyUrlHandler
 		public static void WriteXmlElement(string key, string value)
 		{
 			if (!C1File.Exists(XmlFileName))
-				WriteXml(new Dictionary<string, string>() { { key, value } });
+				WriteXml(new Dictionary<string, string> { { key, value } });
 			else
 			{
 				var doc = XDocument.Load(XmlFileName);
@@ -69,9 +72,39 @@ namespace Composite.Tools.LegacyUrlHandler
 		}
 
 
-		public static Dictionary<string, string> GetMappingsFromXml()
+	    public class UrlMappings
+	    {
+	        public Dictionary<string, string> RawLinks { get; set; }
+            public Dictionary<string, string> RelativeLinks { get; set; }
+            public Dictionary<string, Dictionary<string, string>> RelativeLinksPerHostname { get; set; }
+
+	        public string GetMappedUrl(string hostname, string relativePath)
+	        {
+	            string result;
+	            if (RelativeLinks.TryGetValue(relativePath, out result))
+	            {
+	                return result;
+	            }
+
+	            Dictionary<string, string> hostnameBindings;
+	            if (RelativeLinksPerHostname.TryGetValue(hostname, out hostnameBindings)
+	                && hostnameBindings.TryGetValue(relativePath, out result))
+	            {
+	                return result;
+	            }
+
+                return null;
+	        }
+	    }
+
+        public static UrlMappings GetMappingsFromXml()
 		{
-			var mappings = new Dictionary<string, string>();
+		    var result = new UrlMappings
+		    {
+		        RawLinks = new Dictionary<string, string>(),
+                RelativeLinks = new Dictionary<string, string>(),
+                RelativeLinksPerHostname = new Dictionary<string, Dictionary<string, string>>()
+		    };
 
 			if (C1File.Exists(XmlFileName))
 			{
@@ -82,40 +115,121 @@ namespace Composite.Tools.LegacyUrlHandler
 					var oldPath = m.Attribute("OldPath").Value;
 					var newPath = m.Attribute("NewPath").Value;
 
-					if (!mappings.ContainsKey(oldPath))
+					if (!result.RawLinks.ContainsKey(oldPath))
 					{
-						mappings.Add(oldPath, newPath);
+                        result.RawLinks.Add(oldPath, newPath);
 					}
-				}
+
+				    if (oldPath.StartsWith("http://") || oldPath.StartsWith("https://") || oldPath.StartsWith("//"))
+				    {
+				        int hostnameOffset = oldPath.IndexOf("//") + 2;
+				        int hostnameEndOffset = oldPath.IndexOf('/', hostnameOffset);
+
+				        if (hostnameEndOffset > 0)
+				        {
+				            string hostname = oldPath.Substring(hostnameOffset, hostnameEndOffset - hostnameOffset);
+				            string relativeUrl = oldPath.Substring(hostnameEndOffset);
+
+				            Dictionary<string, string> linksPerHostname;
+				            if (!result.RelativeLinksPerHostname.TryGetValue(hostname, out linksPerHostname))
+				            {
+				                result.RelativeLinksPerHostname.Add(hostname, linksPerHostname = new Dictionary<string, string>());
+				            }
+
+				            if (!linksPerHostname.ContainsKey(relativeUrl))
+				            {
+				                linksPerHostname.Add(relativeUrl, newPath);
+				            }
+				        }
+				    }
+                    else
+                    {
+                        result.RelativeLinks.Add(oldPath, newPath);
+                    }
+                }
 			}
-			return mappings;
+            return result;
 		}
 
-		public static Dictionary<string, string> GetMappingsFromSiteMap()
+		public static Dictionary<string, Guid> GetMappingsFromSiteMap()
 		{
-			var mappings = new Dictionary<string, string>();
+			var result = new Dictionary<string, Guid>();
 
-			foreach (var dataScopeIdentifier in DataFacade.GetSupportedDataScopes(typeof(IPage)).Where(c => c.Name == DataScopeIdentifier.Public.Name))
+		    var urlSpace = new UrlSpace();
+
+            // TODO: support for multiple languages as well
+            var hostnameBindings = DataFacade.GetData<IHostnameBinding>().ToList();
+
+		    var rootToHostnameMap = hostnameBindings.ToDictionary(h => h.HomePageId, h => h.Hostname);
+
+			foreach (var cultureInfo in DataLocalizationFacade.ActiveLocalizationCultures.ToArray())
 			{
-				foreach (var cultureInfo in DataLocalizationFacade.ActiveLocalizationCultures.ToArray())
-				{
-					using (new DataScope(dataScopeIdentifier, cultureInfo))
+                using (new DataScope(DataScopeIdentifier.Public, cultureInfo))
+                {
+                    var pages = DataFacade.GetData<IPage>().ToList();
+
+					foreach (var page in pages)
 					{
-						var siteMap = PageStructureInfo.GetUrlToIdLookup();
-						foreach (var x in siteMap)
+                        var url = PageUrls.BuildUrl(new PageUrlData(page), UrlKind.Public, urlSpace);
+						if (url != null && !result.ContainsKey(url))
 						{
-							var id = x.Value.ToString();
-							var url = x.Key;
-							if (!mappings.ContainsKey(url))
-							{
-								mappings.Add(url, id);
-							}
+							result.Add(url, page.Id);
 						}
+
+					    var rootPageId = GetRootPageId(page.Id);
+
+					    string hostname;
+                        if (rootToHostnameMap.TryGetValue(rootPageId, out hostname))
+					    {
+					        if (urlSpace.Hostname != hostname)
+					        {
+                                var hostnameBasedUrlSpace = new UrlSpace { ForceRelativeUrls = false, Hostname = hostname };
+                                url = PageUrls.BuildUrl(new PageUrlData(page), UrlKind.Public, hostnameBasedUrlSpace);
+                            }
+
+					        if (url != null)
+					        {
+					            if (url.StartsWith("/"))
+					            {
+					                url = "http://{0}{1}".FormatWith(hostname, url);
+					            }
+
+					            if (!result.ContainsKey(url))
+					            {
+					                result.Add(url, page.Id);
+					            }
+					        }
+					    }
 					}
 				}
 			}
-
-			return mappings;
+			
+			return result;
 		}
+
+	    private static Guid GetRootPageId(Guid id)
+	    {
+	        Guid currentId = id;
+	        Guid parentId = PageManager.GetParentId(id);
+
+	        while (parentId != Guid.Empty)
+	        {
+	            currentId = parentId;
+	            parentId = PageManager.GetParentId(currentId);
+	        }
+
+	        return currentId;
+	    }
+
+	    internal static void RedirectToLoginPage()
+	    {
+	        var context = HttpContext.Current;
+
+	        var url = context.Request.RawUrl;
+
+	        string loginUrl = UrlUtils.PublicRootPath + "/Composite/Login.aspx?ReturnUrl=" + HttpUtility.UrlEncode(url, Encoding.UTF8);
+
+            context.Response.Redirect(loginUrl, true);
+	    }
 	}
 }

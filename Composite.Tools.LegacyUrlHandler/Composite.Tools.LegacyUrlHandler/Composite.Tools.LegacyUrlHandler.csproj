@@ -38,9 +38,11 @@
     <Reference Include="Composite, Version=2.1.4087.22991, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\Composite\3.1\Composite.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Composite.Generated">
       <HintPath>..\Composite.Tools.LegacyUrlHandler.Package\DLL\Composite.Generated.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -72,12 +74,12 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(SolutionDir)\$(SolutionName).Package\Package\Bin\$(TargetFileName)"
+    <PreBuildEvent>
 </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)$(SolutionName).Package\Package\Bin\
-</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

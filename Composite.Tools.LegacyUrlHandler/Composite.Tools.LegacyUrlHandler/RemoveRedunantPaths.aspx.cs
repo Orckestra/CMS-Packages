@@ -1,22 +1,26 @@
 ﻿using System;
 using System.Web.UI.WebControls;
+using Composite.C1Console.Security;
 
 namespace Composite.Tools.LegacyUrlHandler
 {
-	public partial class RemoveRedunantPaths : System.Web.UI.Page
+	public partial class RemoveRedundantPaths : System.Web.UI.Page
 	{
-		protected Button btnRemoveRedunantPaths;
+		protected Button btnRemoveRedundantPaths;
 		protected Label lblResult;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+            if (!UserValidationFacade.IsLoggedIn())
+            {
+                LegacyUrlHandlerFacade.RedirectToLoginPage();
+            }
 		}
 
-		protected void btnRemoveRedunantPaths_Click(object sender, EventArgs e)
+		protected void btnRemoveRedundantPaths_Click(object sender, EventArgs e)
 		{
-			var mappings = LegacyUrlHandlerFacade.GetMappingsFromXml();
-			var siteMap = LegacyUrlHandlerFacade.GetMappingsFromSiteMap();
+			var mappings = LegacyUrlHandlerFacade.GetMappingsFromXml().RawLinks;
+			var siteMap = LegacyUrlHandlerFacade.GetMappingsFromSiteMap();      
 
 			foreach (var m in siteMap)
 			{
@@ -29,8 +33,8 @@ namespace Composite.Tools.LegacyUrlHandler
 			}
 
 			LegacyUrlHandlerFacade.WriteXml(mappings);
-			btnRemoveRedunantPaths.Visible = false;
-			lblResult.Text = "Redunant paths are removed.";
+			btnRemoveRedundantPaths.Visible = false;
+			lblResult.Text = "Redundant paths are removed.";
 		}
 	}
 

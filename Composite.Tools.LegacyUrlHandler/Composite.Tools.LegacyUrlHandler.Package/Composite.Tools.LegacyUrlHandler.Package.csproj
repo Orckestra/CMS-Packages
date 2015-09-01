@@ -24,6 +24,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,7 +49,7 @@
   <ItemGroup>
     <Reference Include="Composite.Tools.LegacyUrlHandler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Package\Bin\Composite.Tools.LegacyUrlHandler.dll</HintPath>
+      <HintPath>..\Composite.Tools.LegacyUrlHandler\bin\Debug\Composite.Tools.LegacyUrlHandler.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
@@ -72,7 +76,6 @@
     <Content Include="Package\App_Data\Composite.Tools.LegacyUrlHandler\Config.xml" />
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Composite\Tools\LegacyUrlHandler\BrokenLink.xml" />
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Tools.LegacyUrlHandler.BrokenLink.xml" />
-    <Content Include="Package\Bin\Composite.Tools.LegacyUrlHandler.dll" />
     <Content Include="Package\Config\Install.xsl" />
     <Content Include="Package\Config\Uninstall.xsl" />
     <Content Include="Package\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
@@ -88,11 +91,13 @@
     <Content Include="Package\Frontend\Composite\Tools\LegacyUrlHandler\Images\topright.png" />
     <Content Include="Package\Frontend\Composite\Tools\LegacyUrlHandler\Styles.css" />
     <Content Include="Package\install.xml" />
-    <Content Include="Package\RemoveRedunantPaths.aspx" />
+    <Content Include="Package\RemoveRedundantPaths.aspx" />
     <Content Include="Package\StoreCurrentPaths.aspx" />
     <Content Include="_PackageCreator\Composite.Tools.LegacyUrlHandler.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Package\Bin\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Release\Composite.Tools.LegacyUrlHandler.zip" />
   </ItemGroup>
@@ -123,9 +128,22 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:Checkout  "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PostBuildEvent>
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
+
+DEL "$(TargetDir)\Composite.Generated.dll"
+
+COPY "$(TargetDir)\*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)..\..\Public\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

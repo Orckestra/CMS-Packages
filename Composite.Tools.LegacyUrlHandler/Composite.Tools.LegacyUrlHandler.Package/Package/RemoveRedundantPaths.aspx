@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="Composite.Tools.LegacyUrlHandler.RemoveRedunantPaths" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="Composite.Tools.LegacyUrlHandler.RemoveRedundantPaths" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-	<title>Legacy Url Handler: Remove Redunant Paths</title>
+	<title>Legacy Url Handler: Remove Redundant Paths</title>
 	<link href="/Frontend/Composite/Tools/LegacyUrlHandler/Styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -16,8 +16,8 @@
 		<tr>
 			<td class="left"></td>
 			<td class="backgroundfill">
-				<div class="title"><img src="/Frontend/Composite/Tools/LegacyUrlHandler/Images/CompositeC1.png" alt="Composite C1" /> Legacy Url Handler: Remove Redunant Paths</div>
-				<h4>Using this page, you can remove redunant paths from xml file.</h4>
+				<div class="title"><img src="/Frontend/Composite/Tools/LegacyUrlHandler/Images/CompositeC1.png" alt="Composite C1" /> Legacy Url Handler: Remove Redundant Paths</div>
+				<h4>Using this page, you can remove redundant paths from xml file.</h4>
 				<fieldset>
 					<div>Please press "Start" button to begin the process or <a title="Store Current Paths" href="StoreCurrentPaths.aspx">Store Current Paths</a>.</div>
 					<table width="100%">
@@ -29,7 +29,7 @@
 					</tr>
 					<tr>
 						<td align="right">
-							<asp:Button ID="btnRemoveRedunantPaths" OnClick="btnRemoveRedunantPaths_Click" runat="server" Text="Start" />
+							<asp:Button ID="btnRemoveRedundantPaths" OnClick="btnRemoveRedundantPaths_Click" runat="server" Text="Start" />
 						</td>
 					</tr>
 				</table>
