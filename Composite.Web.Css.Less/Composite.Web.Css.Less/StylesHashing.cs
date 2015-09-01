@@ -103,17 +103,22 @@ namespace Composite.Web.Css.Less
 
                 AddFileWatcher(_rootFolder);
 
-                AddWatchesForSymboliclyLinkedSubfolders(_rootFolder);
+                AddWatchesForSymbolicallyLinkedSubfolders(_rootFolder);
 
             }
 
-            private void AddWatchesForSymboliclyLinkedSubfolders(string folder)
+            private void AddWatchesForSymbolicallyLinkedSubfolders(string folder)
             {
+                if (folder.Contains(":\\") && folder.Length >= 248)
+                {
+                    return;
+                }
+
                 if (!ReparsePointUtils.DirectoryIsReparsePoint(folder))
                 {
                     foreach (var subfolder in Directory.GetDirectories(folder))
                     {
-                        AddWatchesForSymboliclyLinkedSubfolders(subfolder);
+                        AddWatchesForSymbolicallyLinkedSubfolders(subfolder);
                     }
                     return;
                 }
