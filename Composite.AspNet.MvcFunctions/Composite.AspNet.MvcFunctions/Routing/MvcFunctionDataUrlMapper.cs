@@ -35,7 +35,7 @@ namespace Composite.AspNet.MvcFunctions.Routing
                 fieldName = dataType.GetKeyProperties().Single().Name;
             }
 
-            var propertyInfo = dataType.GetProperty(fieldName);
+            var propertyInfo = dataType.GetPropertiesRecursively().FirstOrDefault(p => p.Name == fieldName);
             Verify.IsNotNull(propertyInfo, "Failed to get property '{0}' on type '{1}'", fieldName, dataType);
 
             return propertyInfo;
