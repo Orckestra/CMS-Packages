@@ -78,7 +78,7 @@ namespace Composite.Community.Blog
 
         public bool IsReusable
         {
-            get { return false; }
+            get { return true; }
         }
     }
 }

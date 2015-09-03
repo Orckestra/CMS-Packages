@@ -1,4 +1,6 @@
-﻿@using Composite.Community.Blog
+﻿@using System.Linq
+@using Composite.Community.Blog
+@using Composite.Core.Routing.Pages
 @using Composite.Core.WebClient.Renderings.Page
 @inherits RazorFunction
 @functions {
@@ -28,19 +30,35 @@
 }
 @{
     int pageSize = BlogEntriesCount;
-    var pageCurrent = 1;
-    pageCurrent = int.TryParse(Request.QueryString["p"], out pageCurrent) ? pageCurrent : 1;
+    int pageCurrent;
+    if (!int.TryParse(Request.QueryString["p"], out pageCurrent))
+    {
+        pageCurrent = 1;
+    }
 
     var entries = BlogFacade.GetEntries(IsGlobal);
-    var pageCount = (entries.Count() + pageSize - 1) / pageSize;
-    entries = entries.Skip(pageSize * (pageCurrent - 1)).Take(pageSize);
+    if (entries == null)
+    {
+        return;
+    }
+    
     int entriesCount = entries.Count();
+
+    var pageCount = (entriesCount + pageSize - 1) / pageSize;
+    entries = entries.Skip(pageSize * (pageCurrent - 1)).Take(pageSize);
+    
     var pageId = PageRenderer.CurrentPageId;
-    var authors = BlogFacade.GetAuthours();
+    var authors = BlogFacade.GetAuthors();
     if (IsBlogItem)
     {
-        CurrentBlogItem = entries.First();
+        CurrentBlogItem = entries.FirstOrDefault();
+        if (CurrentBlogItem == null)
+        {
+            return;
+        }
     }
+    
+    C1PageRoute.RegisterPathInfoUsage();
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 

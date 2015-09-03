@@ -14,14 +14,14 @@
     public bool IsGlobal { get; set; }
 }
 @{
-    var landingPageId = (BlogPage == null && IsGlobal) ? PageRenderer.CurrentPageId : BlogPage == null ? PageRenderer.CurrentPageId : BlogPage.Data.Id;
+    Guid landingPageId = BlogPage != null ? BlogPage.Data.Id : PageRenderer.CurrentPageId;
     var entries = BlogFacade.GetArchive(BlogPage, IsGlobal);
 
-    var PathInfo = Composite.Core.Routing.Pages.C1PageRoute.GetPathInfo();
+    var pathInfo = Composite.Core.Routing.Pages.C1PageRoute.GetPathInfo();
     int year = 0, month = 0;
-    if (PathInfo != null)
+    if (pathInfo != null)
     {
-        var parts = PathInfo.Split('/');
+        var parts = pathInfo.Split('/');
         if (parts.Length == 3)
         {
             int.TryParse(parts[1], out year);

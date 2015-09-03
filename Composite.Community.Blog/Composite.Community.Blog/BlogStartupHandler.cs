@@ -1,7 +1,6 @@
-using System;
-using System.Reflection;
-using Composite.Core;
+using Composite.C1Console.Elements;
 using Composite.Core.Application;
+using Composite.Core.Routing;
 using Composite.Data;
 
 namespace Composite.Community.Blog
@@ -15,20 +14,15 @@ namespace Composite.Community.Blog
 
         public static void OnInitialized()
         {
-            try
-            {
-                DataEventSystemFacade.SubscribeToDataBeforeUpdate<Entries>(BlogFacade.SetTitleUrl, true);
-                DataEventSystemFacade.SubscribeToDataBeforeAdd<Entries>(BlogFacade.SetTitleUrl, true);
+            DataEventSystemFacade.SubscribeToDataBeforeUpdate<Entries>(BlogFacade.SetTitleUrl, true);
+            DataEventSystemFacade.SubscribeToDataBeforeAdd<Entries>(BlogFacade.SetTitleUrl, true);
 
-                DataEventSystemFacade.SubscribeToDataAfterAdd<Entries>(BlogFacade.ClearRssFeedCache, true);
-                DataEventSystemFacade.SubscribeToDataAfterUpdate<Entries>(BlogFacade.ClearRssFeedCache, true);
-                DataEventSystemFacade.SubscribeToDataDeleted<Entries>(BlogFacade.ClearRssFeedCache, true);
-            }
-            catch (Exception exception)
-            {
-                Log.LogError(Assembly.GetExecutingAssembly().GetName().Name,
-                             string.Format("BlogStartupHandler OnInitialized exception: {0}", exception.Message));
-            }
+            DataEventSystemFacade.SubscribeToDataAfterAdd<Entries>(BlogFacade.ClearRssFeedCache, true);
+            DataEventSystemFacade.SubscribeToDataAfterUpdate<Entries>(BlogFacade.ClearRssFeedCache, true);
+            DataEventSystemFacade.SubscribeToDataDeleted<Entries>(BlogFacade.ClearRssFeedCache, true);
+
+            DataUrls.RegisterGlobalDataUrlMapper<Entries>(new BlogEntryDataUrlMapper());
+            UrlToEntityTokenFacade.Register(new BlogUrlToEntityTokenMapper());
         }
     }
 }
