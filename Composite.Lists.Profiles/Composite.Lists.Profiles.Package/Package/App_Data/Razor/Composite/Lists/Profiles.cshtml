@@ -10,36 +10,55 @@
     public DataReference<Group> ProfileGroup { get; set; }
 }
 @{
-    var groups = Data.Get<Group>().OrderBy(gr => gr.Title).ToList();
-
+    var routedData = new RoutedData.ByLabel<Profile>();
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
     <link id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
 </head>
-<body>
-    @if (ProfileGroup != null || groups.Count() == 1)
-    {
-        var profiles = Data.Get<Profile>().Where(p => ProfileGroup == null || p.Group == ProfileGroup.Data.Id).OrderBy(p => p.Priority).ToList();
-        @ProfilesList(profiles);
-    }
-    else
-    {
-        foreach (var gr in groups)
+    <body>
+        @if (routedData.IsItem)
         {
-            var profiles = Data.Get<Profile>().Where(p => p.Group == gr.Id).OrderBy(p => p.Priority).ToList();
-            <h2>@gr.Title</h2>
-            @ProfilesList(profiles);
-
+            @ProfilesList(new[] {routedData.Item})
         }
-    }
-</body>
+        else
+        {
+            var groups = Data.Get<Group>().OrderBy(gr => gr.Title).ToList();
 
+            if (ProfileGroup != null || groups.Count == 1)
+            {
+                var profiles = Data.Get<Profile>();
+
+                if (ProfileGroup != null)
+                {
+                    Guid groupId = (Guid)ProfileGroup.KeyValue;
+                    profiles = profiles.Where(p => p.Group == groupId);
+                }
+
+                profiles = profiles.OrderBy(p => p.Priority);
+
+                @ProfilesList(profiles.ToList())
+            }
+            else
+            {
+                var allProfiles = Data.Get<Profile>().OrderBy(p => p.Priority).ToList();
+
+                foreach (var group in groups)
+                {
+                    <h2>@group.Title</h2>
+
+                    var profiles = allProfiles.Where(p => p.Group == group.Id).ToList();
+                    @ProfilesList(profiles)
+                }
+            }
+        }
+
+    </body>
 </html>
 
-@helper ProfilesList(List<Profile> profiles)
+@helper ProfilesList(IList<Profile> profiles)
 {
-    var rowsCount = Math.Ceiling((double)profiles.Count() / 3);
+    var rowsCount = Math.Ceiling((double)profiles.Count / 3);
     <div class="profiles-list">
         @for (var i = 0; i < rowsCount; i++)
         {
