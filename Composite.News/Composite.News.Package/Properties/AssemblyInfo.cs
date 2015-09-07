@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Composite.News")]
+[assembly: AssemblyTitle("Composite.News.Package")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Composite A/S")]
-[assembly: AssemblyProduct("Composite.News")]
-[assembly: AssemblyCopyright("Copyright © Composite A/S 2009")]
+[assembly: AssemblyProduct("Composite.News.Package")]
+[assembly: AssemblyCopyright("Copyright © Composite A/S 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

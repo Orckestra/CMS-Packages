@@ -5,10 +5,11 @@ using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Web;
 using System.Xml;
-using Composite.Core.WebClient.Renderings.Page;
+using Composite.Core.Linq;
+using Composite.Core.Routing;
 using Composite.Data;
 using Composite.Data.Types;
-using System.Linq.Expressions;
+
 
 namespace Composite.News
 {
@@ -18,50 +19,66 @@ namespace Composite.News
 		{
 			context.Response.ContentType = "text/xml";
 			CultureInfo culture = DataLocalizationFacade.DefaultLocalizationCulture;
-			if (context.Request.PathInfo.Length > 0)
+
+		    string pathInfo = context.Request.PathInfo;
+            if (pathInfo.Length > 1)
 			{
-				culture = new CultureInfo(context.Request.PathInfo.Substring(1));
+                culture = new CultureInfo(pathInfo.Substring(1));
 			}
-			using (DataConnection con = new DataConnection(culture))
+
+			using (var con = new DataConnection(culture))
 			{
-				SyndicationFeed feed = new SyndicationFeed();
-				feed.Title = new TextSyndicationContent("News List");
-				List<SyndicationItem> items = new List<SyndicationItem>();
-				IEnumerable<NewsItem> latestNews;
+				var feed = new SyndicationFeed
+				{
+				    Title = new TextSyndicationContent("News List")
+				};
+			    var items = new List<SyndicationItem>();
+
+			    IQueryable<NewsItem> allNews = con.Get<NewsItem>();
 
 				string hostname = context.Request.Url.Host;
-				Guid homepageId = Guid.Empty;
-				var hostnameBinding = con.Get<IHostnameBinding>().Where(h => h.Hostname == hostname).FirstOrDefault();
+			    var hostnameBinding = con.Get<IHostnameBinding>().FirstOrDefault(h => h.Hostname == hostname);
 				if (hostnameBinding != null)
 				{
-					homepageId = hostnameBinding.HomePageId;
-					SitemapNavigator sm = new SitemapNavigator(con);
-					var pagesFilter = sm.GetPageNodeById(homepageId).GetPageNodes(SitemapScope.DescendantsAndCurrent).Select(p => p.Id);
-					latestNews = con.Get<NewsItem>().Where(n => pagesFilter.Contains(n.PageId)).OrderByDescending(d => d.Date).Take(10);
-				}
-				else
-					latestNews = con.Get<NewsItem>().OrderByDescending(d => d.Date).Take(10);
+					Guid homepageId = hostnameBinding.HomePageId;
+					var sm = new SitemapNavigator(con);
+					var pagesFilter = new HashSet<Guid>(
+                        sm.GetPageNodeById(homepageId)
+                          .GetPageNodes(SitemapScope.DescendantsAndCurrent)
+                          .Select(p => p.Id));
 
-				foreach (var news in latestNews)
+                    allNews = allNews.Evaluate().Where(n => pagesFilter.Contains(n.PageId)).ToList().AsQueryable();
+				}
+
+			    IEnumerable<NewsItem> latestNews = allNews.OrderByDescending(d => d.Date).Take(10);
+
+				foreach (var news in latestNews.Evaluate())
 				{
-					string pageUrl;
-					if (PageStructureInfo.TryGetPageUrl(news.PageId, out pageUrl))
-					{
-						SyndicationItem item = new SyndicationItem(
-							news.Title,
-							news.Teaser,
-							context.GetPath(pageUrl + NewsFacade.GetPathInfo(news.TitleUrl, news.Date)),
-							news.Id.ToString(),
-							news.Date
-							);
-						item.Categories.Add(
-							new SyndicationCategory(news.PageId.ToString())
-							);
-						items.Add(item);
-					}
+				    var page = PageManager.GetPageById(news.PageId);
+				    if (page == null)
+				    {
+				        continue;
+				    }
+
+				    var pageUrlData = new PageUrlData(page) {PathInfo = NewsFacade.GetPathInfo(news.TitleUrl, news.Date)};
+                    string pageUrl = PageUrls.BuildUrl(pageUrlData);
+				    if (pageUrl == null)
+				    {
+				        continue;
+				    }
+
+					var item = new SyndicationItem(
+						news.Title,
+						news.Teaser,
+						context.GetPath(pageUrl),
+						news.Id.ToString(),
+						news.Date
+						);
+					item.Categories.Add( new SyndicationCategory(news.PageId.ToString()) );
+					items.Add(item);
 				}
 				feed.Items = items;
-				XmlTextWriter writer = new XmlTextWriter(context.Response.Output);
+				var writer = new XmlTextWriter(context.Response.Output);
 				feed.SaveAsRss20(writer);
 			}
 		}
@@ -70,7 +87,7 @@ namespace Composite.News
 		{
 			get
 			{
-				return false;
+				return true;
 			}
 		}
 

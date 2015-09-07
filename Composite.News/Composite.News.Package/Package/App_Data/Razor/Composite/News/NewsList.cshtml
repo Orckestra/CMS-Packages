@@ -1,6 +1,9 @@
 @inherits RazorFunction
+@using System.Linq
+@using Composite.Core.Routing.Pages
 @using Composite.News;
 @using System.Threading;
+
 @functions {
     public override string FunctionDescription
     {
@@ -31,11 +34,33 @@
         get { return (int)Math.Ceiling((decimal)TotalCount / PageSize); }
     }
 
+    
 }
+
 @{
-    var newsItems = Data.Get<NewsItem>().OrderByDescending(n => n.Date).Where(NewsFacade.GetNewsFilterFromUrl());
-    TotalCount = newsItems.Count();
-    newsItems = newsItems.Skip(PageSize * (NewsFacade.PageNumber - 1)).Take(PageSize);
+    bool pathInfoResolved;
+    var filter = NewsFacade.GetNewsFilterFromUrl(out pathInfoResolved);
+    if (pathInfoResolved && !NewsFacade.IsNewsItem)
+    {
+        C1PageRoute.RegisterPathInfoUsage();
+    }
+    
+    var newsQuery = Data.Get<NewsItem>().Where(filter).OrderByDescending(n => n.Date);
+    TotalCount = newsQuery.Count();
+
+    var newsItems = newsQuery.Skip(PageSize * (NewsFacade.PageNumber - 1)).Take(PageSize).ToArray();
+
+    if (NewsFacade.IsNewsItem)
+    {
+        var newsItem = newsItems.SingleOrDefault();
+        if (newsItem == null)
+        {
+            return;
+        }
+
+        C1PageRoute.RegisterPathInfoUsage();
+    }
+    
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
@@ -54,7 +79,9 @@
     @if (NewsFacade.IsNewsItem && ItemOptions.Contains("Back to News"))
     {
         <hr />
-        <a class="btn btn-default" title="@Resources.News.labelBackToNews" href="@Html.C1().PageUrl(CurrentPageNode.Id.ToString())">@Resources.News.labelBackToNews</a>
+        <a class="btn btn-default" title="@Resources.News.labelBackToNews" href="@Html.C1().PageUrl(CurrentPageNode.Id)">
+            @Resources.News.labelBackToNews
+        </a>
     }
     @if (TotalPages > 1)
     {
@@ -68,7 +95,7 @@
                 }
                 else
                 {
-                    <li>  <a href="@Html.C1().PageUrl(CurrentPageNode.Id.ToString())/@i">@i</a> </li>
+                    <li>  <a href="@Html.C1().PageUrl(CurrentPageNode.Id)/@i">@i</a> </li>
                 }
             }
         </ul>
@@ -78,7 +105,7 @@
 
 @helper NewsItem(NewsItem entry, string itemOptions)
 {
-    var newsPathInfo = NewsFacade.GetPathInfo(entry.TitleUrl, entry.Date);
+    var newsPathInfo = NewsFacade.GetPathInfo(entry);
     <div class="news-item media">
         <div class="media-heading">
             @if (NewsFacade.IsNewsItem)
@@ -88,7 +115,7 @@
             else
             {
                 <h2>
-                    <a href="@Html.C1().PageUrl(CurrentPageNode.Id.ToString())@newsPathInfo" title="@entry.Title">@entry.Title</a>
+                    <a href="@Html.C1().PageUrl(CurrentPageNode.Id)@newsPathInfo" title="@entry.Title">@entry.Title</a>
                 </h2>
             }
             <div class="news-info">
@@ -105,6 +132,7 @@
             {
                 <p class="@(NewsFacade.IsNewsItem ? "lead" : string.Empty)">@entry.Teaser</p>
             }
+            
             @if (itemOptions.Contains("Show news story"))
             {
                 <div class="news-content">

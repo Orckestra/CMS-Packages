@@ -1,4 +1,5 @@
 ﻿using Composite.Core.Application;
+using Composite.Core.Routing;
 using Composite.Data;
 
 namespace Composite.News
@@ -12,6 +13,8 @@ namespace Composite.News
         {
             DataEventSystemFacade.SubscribeToDataBeforeUpdate<NewsItem>(NewsFacade.SetTitleUrl, true);
             DataEventSystemFacade.SubscribeToDataBeforeAdd<NewsItem>(NewsFacade.SetTitleUrl, true);
+
+            DataUrls.RegisterGlobalDataUrlMapper<NewsItem>(new NewsDataUrlMapper());
         }
     }
 }

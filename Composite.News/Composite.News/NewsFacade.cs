@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
-using System.Reflection;
 using System.Text.RegularExpressions;
-using System.Web;
-using Composite.Core;
-using Composite.Core.WebClient.Renderings.Page;
+using Composite.Core.Routing.Pages;
 using Composite.Data;
 
 namespace Composite.News
@@ -26,68 +23,67 @@ namespace Composite.News
             news.TitleUrl = GetUrlFromTitle(news.Title);
         }
 
+        public static string GetPathInfo(NewsItem newsItem)
+        {
+            Verify.ArgumentNotNull(newsItem, "newsItem");
+
+            return GetPathInfo(newsItem.TitleUrl, newsItem.Date);
+        }
+
+
         public static string GetPathInfo(string titleUrl, DateTime dateTime)
         {
             return string.Format("/{0:yyyy}/{0:MM}/{0:dd}/{1}", dateTime, titleUrl);
         }
 
-        public static string GetPathInfo()
-        {
-            var pathInfo = Composite.Core.Routing.Pages.C1PageRoute.GetPathInfo();
 
-            if (pathInfo != null)
-            {
-                Composite.Core.Routing.Pages.C1PageRoute.RegisterPathInfoUsage();
-            }
-
-            return pathInfo;
-        }
-
-        public static Expression<Func<NewsItem, bool>> GetNewsFilterFromUrl()
+        public static Expression<Func<NewsItem, bool>> GetNewsFilterFromUrl(out bool pathInfoResolved)
         {
             var currentPageId = SitemapNavigator.CurrentPageId;
-            Expression<Func<NewsItem, bool>> filter = f => f.PageId == currentPageId;
             IsNewsItem = false;
             PageNumber = 1;
+
             var pathInfoParts = GetPathInfoParts();
+            pathInfoResolved = false;
             if (pathInfoParts != null)
             {
-                if (pathInfoParts.Length > 4)
+                if (pathInfoParts.Length == 5)
                 {
                     IsNewsItem = true;
-                    int year, month, day = 0;
+                    int year, month, day;
                     if (
                         int.TryParse(pathInfoParts[1], out year)
                         && int.TryParse(pathInfoParts[2], out month)
                         && int.TryParse(pathInfoParts[3], out day)
+                        && DateTimeUtils.IsValidDate(year, month, day)
                         )
                     {
                         var titleUrl = pathInfoParts[4];
-                        DateTime date = new DateTime(year, month, day);
-                        filter = f => f.Date.Date == date && f.TitleUrl == titleUrl && f.PageId == currentPageId;
+                        var date = new DateTime(year, month, day);
+                        pathInfoResolved = true;
+                        return f => f.Date.Date == date && f.TitleUrl == titleUrl && f.PageId == currentPageId;
                     }
                 }
+
                 if (pathInfoParts.Length == 2)
                 {
-                    int pageNamberValue;
-                    if (!int.TryParse(pathInfoParts[1], out pageNamberValue))
+                    int pageNumberValue;
+                    if (int.TryParse(pathInfoParts[1], out pageNumberValue) && pageNumberValue > 0)
                     {
-                        PageNumber = 1;
-                    }
-                    else
-                    {
-                        PageNumber = pageNamberValue;
+                        PageNumber = pageNumberValue;
+                        pathInfoResolved = true;
                     }
                 }
             }
-            return filter;
+
+            return f => f.PageId == currentPageId;
         }
 
-        public static string[] GetPathInfoParts()
+
+        private static string[] GetPathInfoParts()
         {
-            var pathInfo = GetPathInfo();
-            return pathInfo != null && pathInfo.Contains("/") ? pathInfo.Split('/') : null;
+            var pathInfo = C1PageRoute.GetPathInfo() ?? string.Empty;
+            return pathInfo.Contains("/") ? pathInfo.Split('/') : null;
         }
-
     }
 }
