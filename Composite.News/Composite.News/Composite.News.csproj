@@ -62,8 +62,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="DateTimeUtils.cs" />
+    <Compile Include="NewsDataUrlMapper.cs" />
     <Compile Include="NewsRssFeed.cs" />
     <Compile Include="NewsFacade.cs" />
     <Compile Include="NewsStartupHandler..cs" />
