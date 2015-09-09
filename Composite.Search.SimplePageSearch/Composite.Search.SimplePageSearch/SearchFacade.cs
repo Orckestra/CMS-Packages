@@ -29,6 +29,12 @@ namespace Composite.Search.SimplePageSearch
 
         public static ICollection<SearchResultEntry> Search(string[] keywords, bool currentSiteOnly)
         {
+            // If there's only one website, no need to check whether the results belong to current site only
+            if (currentSiteOnly && PageManager.GetChildrenIDs(Guid.Empty).Count < 2)
+            {
+                currentSiteOnly = false;
+            }
+
             keywords = keywords.Distinct().OrderByDescending(keyword => keyword.Length).Take(MaximumTermCount).ToArray();
 
             return SearchPages(keywords, currentSiteOnly)
@@ -128,7 +134,6 @@ namespace Composite.Search.SimplePageSearch
 
         private static IEnumerable<SearchResultEntry> SearchInType<T>(string[] keywords, bool currentWebsiteOnly) where T : class, IData
         {
-            
             var stringFields = typeof (T).GetPropertiesRecursively()
                 .Where(p => p.PropertyType == typeof(string)
                             && p.ReflectedType != typeof(IPublishControlled)
@@ -198,7 +203,26 @@ namespace Composite.Search.SimplePageSearch
                     continue;
                 }
 
-                string url = InternalUrls.TryBuildInternalUrl(data.ToDataReference());
+                var dataReference = data.ToDataReference();
+
+                string url;
+
+                if (currentWebsiteOnly && !(data is IPageRelatedData))
+                {
+                    // Getting public url data to see if it is pointing to the website
+                    var pageUrlData = DataUrls.TryGetPageUrlData(dataReference);
+                    if (pageUrlData == null || !pagesIdsOfCurrentSite.Contains(pageUrlData.PageId))
+                    {
+                        continue;
+                    }
+
+                    url = PageUrls.BuildUrl(pageUrlData);
+                }
+                else
+                {
+                    url = InternalUrls.TryBuildInternalUrl(dataReference);
+                }
+                
                 if (url == null)
                 {
                     continue;
