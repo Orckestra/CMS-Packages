@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Composite.Core;
 using Composite.Core.Linq;
 using Composite.Core.Routing;
 using Composite.Core.Types;
@@ -15,6 +14,9 @@ namespace Composite.Search.SimplePageSearch
 {
     public class SearchFacade
     {
+        const int MaximumTermCount = 10;
+        const int ResultsMaxLength = 200;
+
         private static readonly MethodInfo String_ToLower;
         private static readonly MethodInfo String_Contains;
 
@@ -27,25 +29,13 @@ namespace Composite.Search.SimplePageSearch
 
         public static ICollection<SearchResultEntry> Search(string[] keywords, bool currentSiteOnly)
         {
-            return SearchPages(keywords, currentSiteOnly).Concat(SearchInData(keywords, currentSiteOnly)).ToList();
+            keywords = keywords.Distinct().OrderByDescending(keyword => keyword.Length).Take(MaximumTermCount).ToArray();
+
+            return SearchPages(keywords, currentSiteOnly)
+                .Concat(SearchInData(keywords, currentSiteOnly))
+                .Take(ResultsMaxLength)
+                .ToList();
         }
-
-        private static Expression<Func<T, bool>> PredicateOr<T>(Expression<Func<T, bool>> expr1, Expression<Func<T, bool>> expr2)
-        {
-            if(expr1 == null) return expr2;
-
-            var invokedExpr = Expression.Invoke(expr2, expr1.Parameters);
-            return Expression.Lambda<Func<T, bool>>(Expression.Or(expr1.Body, invokedExpr), expr1.Parameters);
-        }
-
-        private static Expression<Func<T, bool>> PredicateAnd<T>(Expression<Func<T, bool>> expr1, Expression<Func<T, bool>> expr2)
-        {
-            if (expr1 == null) return expr2;
-
-            var invokedExpr = Expression.Invoke(expr2, expr1.Parameters);
-            return Expression.Lambda<Func<T, bool>>(Expression.And(expr1.Body, invokedExpr), expr1.Parameters);
-        }
-
 
         public static IEnumerable<SearchResultEntry> SearchPages(string[] keywords, bool currentSiteOnly)
         {
@@ -55,30 +45,39 @@ namespace Composite.Search.SimplePageSearch
                 return Enumerable.Empty<SearchResultEntry>();
             } 
 
-            using (var conn = new DataConnection())
+            using (new DataConnection())
             {
-                // Build dynamic where clause
-                Expression<Func<IPage, bool>> predicate1 = null;
-                Expression<Func<IPagePlaceholderContent, bool>> predicate2 = null;
+                var pages = DataFacade.GetData<IPage>(false);
+                var placeholders = DataFacade.GetData<IPagePlaceholderContent>(false);
+
+                bool isInMemoryQuery = IsCachedQuery(pages) && IsCachedQuery(placeholders);
+
+                var searchQuery = from page in pages
+                                  join placeholder in placeholders on page.Id equals placeholder.PageId
+                                  group new {page, placeholder} by page into groups
+                                  let page = groups.Key
+                                  select new { page, placeholders = groups.Select(g => g.placeholder) };
 
                 foreach (string keyword in keywords)
                 {
-                    string temp = keyword;
-                    predicate1 = PredicateOr(predicate1, p => p.Title.ToLower().Contains(temp)
-                                                        || p.Description.ToLower().Contains(temp));
-
-                    //predicate2 = PredicateOr(predicate2, p => p.Content.IndexOf(temp,  StringComparison.OrdinalIgnoreCase) >= 0);
-                    predicate2 = PredicateOr(predicate2, p => p.Content.ToLower().Contains(temp));
+                    if (!isInMemoryQuery)
+                    {
+                        searchQuery = searchQuery.Where(pair =>
+                            pair.page.Title.ToLower().Contains(keyword)
+                            || pair.page.Description.ToLower().Contains(keyword)
+                            || pair.placeholders.Any(p => p.Content.ToLower().Contains(keyword)));
+                    }
+                    else
+                    {
+                        // optimized for in-memory queries xml
+                        searchQuery = searchQuery.Where(pair =>
+                            pair.page.Title.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0
+                            || pair.page.Description.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0
+                            || pair.placeholders.Any(p => p.Content.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0));
+                    }
                 }
 
-                var pages = conn.Get<IPage>();//DataFacade.GetData<IPage>(); 
-                var placeholders = conn.Get<IPagePlaceholderContent>();
-
-                var pagesIdsByPredicate1 = pages.Where(predicate1).Select(p => p.Id).ToList();
-                var pagesIdsByPredicate2 = placeholders.Where(predicate2).Select(p => p.PageId).ToList();
-
-                // Union the different resultsets (and thereby eliminate duplicates)
-                var combinedSearchResult = pagesIdsByPredicate1.Union(pagesIdsByPredicate2).ToList();
+                var combinedSearchResult = searchQuery.Select(s => s.page.Id).ToList();
 
                 if (currentSiteOnly)
                 {
@@ -101,6 +100,11 @@ namespace Composite.Search.SimplePageSearch
                     })
                     .Evaluate();
             }
+        }
+
+        private static bool IsCachedQuery(IQueryable query)
+        {
+            return query.GetType().FullName.StartsWith("Composite.Data.Caching");
         }
 
         private static ICollection<SearchResultEntry> SearchInData(string[] keywords, bool currentWebsiteOnly)
