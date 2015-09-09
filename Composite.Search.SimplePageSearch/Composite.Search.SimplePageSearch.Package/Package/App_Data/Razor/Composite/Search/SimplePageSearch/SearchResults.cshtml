@@ -1,4 +1,5 @@
-﻿@inherits RazorFunction
+﻿@using Composite.Search.SimplePageSearch
+@inherits RazorFunction
 @functions {
     public override string FunctionDescription
     {
@@ -20,31 +21,15 @@
     [FunctionParameter(Label = "Show Descriptions", Help = "If checked search results will have descriptions (when available) shown below the title.", DefaultValue = "false")]
     public bool ShowDescriptions { get; set; }
 
-    private Expression<Func<T, bool>> PredicatTrue<T>() { return f => true; }
-    private Expression<Func<T, bool>> PredicatFalse<T>() { return f => false; }
-
-    private Expression<Func<T, bool>> PredicatOr<T>(Expression<Func<T, bool>> expr1, Expression<Func<T, bool>> expr2)
-    {
-        var invokedExpr = Expression.Invoke(expr2, expr1.Parameters.Cast<Expression>());
-        return Expression.Lambda<Func<T, bool>>(Expression.Or(expr1.Body, invokedExpr), expr1.Parameters);
-    }
+   
 
     private int TotalCount;
     private int PageNumber
     {
         get
         {
-            var page = 1;
-            if (!int.TryParse(Request["p"], out page))
-            {
-                page = 1;
-            }
-
-            if (page < 1 || page > TotalPages)
-            {
-                page = 1;
-            }
-            return page;
+            int page;
+            return int.TryParse(Request["p"], out page) && page >= 1 && page <= TotalPages ? page : 1;
         }
     }
 
@@ -59,40 +44,17 @@
 
     var searchQuery = Request.QueryString["q"] ?? string.Empty;
 
-    var searchResults = new List<IPage>();
+    var searchResults = new List<SearchResultEntry>();
 
     if (!string.IsNullOrWhiteSpace(searchQuery) && searchQuery.Length > 1)
     {
         // Tokenize
         searchQuery = searchQuery.Trim().ToLower();
-        string[] keywords = searchQuery.Split(' ');
+        string[] keywords = searchQuery.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-        // Build dynamic where clause
-        Expression<Func<IPage, bool>> predicate1 = PredicatFalse<IPage>();
-        Expression<Func<IPagePlaceholderContent, bool>> predicate2 = PredicatFalse<IPagePlaceholderContent>();
-
-        foreach (string keyword in keywords)
-        {
-            string temp = keyword;
-            predicate1 = PredicatOr(predicate1, p => p.Title.ToLower().Contains(temp) || p.Description.ToLower().Contains(temp));
-            predicate2 = PredicatOr(predicate2, p => p.Content.ToLower().Contains(temp));
-        }
-
-        var pages = Data.Get<IPage>();
-        var pagesIdsByPredicate1 = pages.Where(predicate1).Select(p => p.Id).ToList();
-        var pagesIdsByPredicate2 = Data.Get<IPagePlaceholderContent>().Where(predicate2).Select(p => p.PageId).ToList();
-
-        // Union the different resultsets (and thereby eliminitate duplicates)
-        var combinedSearchResult = (pagesIdsByPredicate1.Union(pagesIdsByPredicate2)).ToList();
-
-        if (CurrentSite)
-        {
-            List<Guid> pagesIdsOfCurrentSite = CurrentPageNode.GetPageIds(SitemapScope.Level1AndDescendants).ToList();
-            combinedSearchResult = pagesIdsOfCurrentSite.Intersect(combinedSearchResult).ToList();
-        }
-
-        pages = pages.Where(p => combinedSearchResult.Contains(p.Id));
-        TotalCount = pages.Count();
+        var pages = SearchFacade.Search(keywords, CurrentSite);
+        
+        TotalCount = pages.Count;
 
         searchResults = pages.Skip(PageSize * (PageNumber - 1)).Take(PageSize).ToList();
     }
@@ -119,16 +81,16 @@
             </p>
         }
         <ol class="simplepagesearch-results" start="@(PageSize*(PageNumber-1)+1)">
-            @foreach (var item in searchResults)
+            @foreach (var entry in searchResults)
             {
                 <li>
-                    <a href="@Html.C1().PageUrl(item.Id.ToString())">
-                        @item.Title
+                    <a href="@entry.Url">
+                        @entry.Title
                     </a>
-					@if(ShowDescriptions && !string.IsNullOrEmpty(item.Description))
+					@if (ShowDescriptions && !string.IsNullOrEmpty(entry.Description))
 					{
 						<br />
-						@item.Description
+						@entry.Description
 					}
                 </li>
             }

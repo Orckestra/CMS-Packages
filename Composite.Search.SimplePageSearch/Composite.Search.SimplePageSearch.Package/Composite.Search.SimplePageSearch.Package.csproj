@@ -82,6 +82,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Package\App_GlobalResources\Composite\Search\SimplePageSearch.resx" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Composite.Search.SimplePageSearch\Composite.Search.SimplePageSearch.csproj">
+      <Project>{1ead3346-1809-4b68-8bd7-67ea4cc289f8}</Project>
+      <Name>Composite.Search.SimplePageSearch</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Package\Bin\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -108,10 +117,20 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:Checkout  "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
-</PostBuildEvent>
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
+
+COPY "$(TargetDir)\*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)..\..\Public\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
