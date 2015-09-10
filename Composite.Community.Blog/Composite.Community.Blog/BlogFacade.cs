@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using Composite.Community.Blog.Models;
 using Composite.Core;
+using Composite.Core.Routing;
 using Composite.Core.Routing.Pages;
 using Composite.Core.WebClient.Renderings.Page;
 using Composite.Data;
@@ -235,11 +236,22 @@ namespace Composite.Community.Blog
             return url;
         }
 
+        internal static string GetBlogInternalPageUrl(DateTime date, string title, Guid pageId)
+        {
+            return string.Format("~/page({0}){1}", pageId, GetBlogPath(date, title));
+        }
+
         public static string GetBlogUrl(DateTime date, string title, Guid pageId, string pageUrl = "")
         {
             if (string.IsNullOrEmpty(pageUrl))
             {
-                pageUrl = GetPageUrlById(pageId);
+                var page = PageManager.GetPageById(pageId);
+                if (page == null)
+                {
+                    return null;
+                }
+
+                pageUrl = PageUrls.BuildUrl(page);
             }
 
             return string.Format("{0}{1}", pageUrl, GetBlogPath(date, title));
@@ -401,7 +413,7 @@ namespace Composite.Community.Blog
             Guid pageId = SitemapNavigator.CurrentPageId;
             string pageUrl = GetPageUrlById(pageId);
             pageUrl = GetFullPath(pageUrl);
-            return GetBlogUrl(date, title, pageId, pageUrl);
+            return GetBlogInternalPageUrl(date, title, pageId);
         }
 
         public static List<string> GetBlogTags(string tags)

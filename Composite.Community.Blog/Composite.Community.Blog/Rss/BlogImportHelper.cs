@@ -46,11 +46,11 @@ namespace Composite.Community.Blog
 
 		public void Import(string rssPath, Guid pageId)
 		{
-			using (var connnection = new DataConnection(PublicationScope.Unpublished))
+			using (var conn = new DataConnection(PublicationScope.Unpublished))
 			{
 				var mapLinks = new Dictionary<string, string>();
 
-				WebClient client = new WebClient();
+				var client = new WebClient();
 				XmlReader reader = new SyndicationFeedXmlReader(client.OpenRead(rssPath));
 
 
@@ -70,7 +70,7 @@ namespace Composite.Community.Blog
 						var itemDate = item.PublishDate == DateTimeOffset.MinValue ? DateTime.Now : item.PublishDate.DateTime;
 						foreach (var itemLink in item.Links)
 						{
-							mapLinks[itemLink.Uri.OriginalString] = BlogFacade.GetBlogUrl(itemDate, item.Title.Text, pageId);
+							mapLinks[itemLink.Uri.OriginalString] = BlogFacade.GetBlogInternalPageUrl(itemDate, item.Title.Text, pageId);
 						}
 					}
 				}
@@ -79,7 +79,7 @@ namespace Composite.Community.Blog
 				{
 					try
 					{
-						XDocument content = new XDocument();
+						var content = new XDocument();
 						string text = null;
 						var itemDate = item.PublishDate == DateTimeOffset.MinValue ? DateTime.Now : item.PublishDate.DateTime;
 						
@@ -106,7 +106,7 @@ namespace Composite.Community.Blog
 
 						content = MarkupTransformationServices.TidyHtml(text).Output;
 
-						//sommewhere empty <title></title> created
+						//somewhere empty <title></title> created
 						foreach (var title in content.Descendants(Namespaces.Xhtml + "title").ToList())
 						{
 							if(string.IsNullOrWhiteSpace(title.Value))
@@ -303,23 +303,28 @@ namespace Composite.Community.Blog
 				ImportedImages[src] = null;
 				ForceMediaFolder(folder);
 
-				var client = new WebClient();
-				client.Encoding = System.Text.Encoding.UTF8;
-				client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+				var client = new WebClient
+				{
+				    Encoding = System.Text.Encoding.UTF8
+				};
+			    client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
 
 				var stream = client.OpenRead(src);
 
 				var filename = CleanFileName(Path.GetFileName(src));
 				var title = Path.GetFileNameWithoutExtension(src);
 
-				var mediaFile = new WorkflowMediaFile();
-				mediaFile.FileName = Path.GetFileName(filename);
-				mediaFile.FolderPath = folder;
-				mediaFile.Title = title;
-				mediaFile.Description = string.Empty;
-				mediaFile.Culture = Composite.C1Console.Users.UserSettings.ActiveLocaleCultureInfo.Name;
-				mediaFile.MimeType = MimeTypeInfo.GetCanonicalFromExtension(Path.GetExtension(filename));
-				if (mediaFile.MimeType == MimeTypeInfo.Default)
+				var mediaFile = new WorkflowMediaFile
+				{
+				    FileName = Path.GetFileName(filename),
+				    FolderPath = folder,
+				    Title = title,
+				    Description = string.Empty,
+				    Culture = Composite.C1Console.Users.UserSettings.ActiveLocaleCultureInfo.Name,
+				    MimeType = MimeTypeInfo.GetCanonicalFromExtension(Path.GetExtension(filename))
+				};
+
+			    if (mediaFile.MimeType == MimeTypeInfo.Default)
 				{
 					mediaFile.MimeType = MimeTypeInfo.GetCanonical(client.ResponseHeaders["content-type"]);
 				}
@@ -399,7 +404,7 @@ namespace Composite.Community.Blog
 			return folder;
 		}
 
-		private Func<string, string> GetParentPath = (path) => path.Substring(0, path.LastIndexOf("/") > 0 ? path.LastIndexOf("/") : 0);
+		private Func<string, string> GetParentPath = path => path.Substring(0, path.LastIndexOf("/") > 0 ? path.LastIndexOf("/") : 0);
 
 	}
 }
