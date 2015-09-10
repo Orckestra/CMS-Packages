@@ -19,14 +19,14 @@ namespace Composite.Community.Blog.MetaWeblog
 
         public string NewMediaObject(FileData mediaObject)
         {
-            var mediaFile = new WorkflowMediaFile();
-            mediaFile.FileName = mediaObject.name;
-
-            mediaFile.Title = mediaObject.name;
-            ;
-            mediaFile.Culture = DataLocalizationFacade.DefaultLocalizationCulture.Name;
-            mediaFile.Length = mediaObject.bits.Count();
-            mediaFile.MimeType = MimeTypeInfo.GetCanonical(mediaObject.type);
+            var mediaFile = new WorkflowMediaFile
+            {
+                FileName = mediaObject.name,
+                Title = mediaObject.name,
+                Culture = DataLocalizationFacade.DefaultLocalizationCulture.Name,
+                Length = mediaObject.bits.Count(),
+                MimeType = MimeTypeInfo.GetCanonical(mediaObject.type)
+            };
 
             if (mediaFile.MimeType == MimeTypeInfo.Default)
             {
@@ -43,7 +43,7 @@ namespace Composite.Community.Blog.MetaWeblog
             string folderPath = string.Format("/Blog/{0}/{1:yyyy-MM-dd}", Author.Name, DateTime.Now);
             mediaFile.FolderPath = ForceGetMediaFolderPath(folderPath);
             var addedFile = DataFacade.AddNew<IMediaFile>(mediaFile);
-            return BlogFacade.GetFullPath(MediaUrlHelper.GetUrl(addedFile));
+            return MediaUrlHelper.GetUrl(addedFile);
         }
 
         private string ForceGetMediaFolderPath(string path)

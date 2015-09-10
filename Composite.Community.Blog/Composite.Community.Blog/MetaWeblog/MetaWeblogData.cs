@@ -33,13 +33,14 @@ namespace Composite.Community.Blog.MetaWeblog
         {
             Verify.ArgumentNotNullOrEmpty(username, "username");
             Verify.ArgumentNotNullOrEmpty(password, "password");
+
             Authors author =
                 DataFacade.GetData<Authors>(d => d.Name == username && d.Password == password).FirstOrDefault();
             if (author != null)
             {
                 return author;
             }
-            throw new XmlRpcFaultException(0, "User is not valid!");
+            throw new XmlRpcFaultException(0, "Author's name or password are incorrect.");
         }
 
         public IEnumerable<IPage> GetBlogPages()

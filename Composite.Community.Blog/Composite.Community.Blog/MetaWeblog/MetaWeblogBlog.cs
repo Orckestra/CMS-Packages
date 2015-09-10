@@ -12,13 +12,13 @@ namespace Composite.Community.Blog.MetaWeblog
 {
     internal class MetaWeblogBlog : MetaWeblogData
     {
-        private readonly Expression<Func<Entries, bool>> predicate;
+        private readonly Expression<Func<Entries, bool>> _predicate;
 
         public MetaWeblogBlog(string username, string password, string blogid)
             : base(username, password)
         {
             PageId = ParsePageId(blogid);
-            predicate = d => d.PageId == PageId && d.Author == Author.Id;
+            _predicate = d => d.PageId == PageId && d.Author == Author.Id;
         }
 
         protected Guid PageId { get; private set; }
@@ -61,7 +61,7 @@ namespace Composite.Community.Blog.MetaWeblog
 
         public IEnumerable<Entries> GetRecentPosts()
         {
-            return DataFacade.GetData(predicate).OrderByDescending(d => d.Date);
+            return DataFacade.GetData(_predicate).OrderByDescending(d => d.Date);
         }
     }
 }

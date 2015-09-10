@@ -76,10 +76,7 @@ namespace Composite.Community.Blog.MetaWeblog
             using (var metaWeblog = new MetaWeblogMedia(username, password))
             {
                 string url = metaWeblog.NewMediaObject(mediaObject);
-                return new UrlData
-                    {
-                        url = url
-                    };
+                return new UrlData { url = url };
             }
         }
 
@@ -98,7 +95,6 @@ namespace Composite.Community.Blog.MetaWeblog
                 var userBlogs = new List<BlogInfo>();
                 foreach (IPage page in metaWeblog.GetBlogPages())
                 {
-                    string pageUrl = string.Empty;
                     userBlogs.Add(
                         new BlogInfo
                             {
