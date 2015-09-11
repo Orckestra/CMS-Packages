@@ -36,16 +36,19 @@ namespace Composite.Community.Blog
                 return null;
             }
 
-            var page = PageManager.GetPageById(entry.PageId);
-            if (page == null)
+            using (new DataScope(entry.DataSourceId.LocaleScope))
             {
-                return null;
-            }
+                var page = PageManager.GetPageById(entry.PageId);
+                if (page == null)
+                {
+                    return null;
+                }
 
-            return new PageUrlData(page)
-            {
-                PathInfo = BlogFacade.GetBlogPath(entry.Date, entry.Title)
-            };
+                return new PageUrlData(page)
+                {
+                    PathInfo = BlogFacade.GetBlogPath(entry)
+                };
+            }
         }
     }
 }

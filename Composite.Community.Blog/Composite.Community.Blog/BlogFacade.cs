@@ -257,6 +257,11 @@ namespace Composite.Community.Blog
             return string.Format("{0}{1}", pageUrl, GetBlogPath(date, title));
         }
 
+        public static string GetBlogPath(Entries entry)
+        {
+            return GetBlogPath(entry.Date, entry.Title);
+        }
+
         public static string GetBlogPath(DateTime date, string title)
         {
             return string.Format("/{0}/{1}", CustomDateFormatCulture(date, "yyyy/MM/dd", "en-US"),
