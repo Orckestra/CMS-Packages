@@ -49,8 +49,8 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     Label = PackageCreatorFacade.GetLocalization("PackageCreatorElementProviderEntityToken.Label"),
                     ToolTip = PackageCreatorFacade.GetLocalization("PackageCreatorElementProviderEntityToken.ToolTip"),
                     HasChildren = true,
-                    Icon = new ResourceHandle("Composite.Icons", "package-element-closed-availableitem"),
-                    OpenedIcon = new ResourceHandle("Composite.Icons", "package-element-closed-availableitem")
+                    Icon = new ResourceHandle("Composite.Icons", "blocks"),
+                    OpenedIcon = new ResourceHandle("Composite.Icons", "blocks")
                 }
             };
          
@@ -60,7 +60,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                 {
                     Label = PackageCreatorFacade.GetLocalization("CreatePackage.Label"),
                     ToolTip = PackageCreatorFacade.GetLocalization("CreatePackage.ToolTip"),
-                    Icon = new ResourceHandle("Composite.Icons", "package-element-closed-availableitem"),
+                    Icon = new ResourceHandle("Composite.Icons", "blocks"),
                     ActionLocation = new ActionLocation
                     {
                         ActionType = PackageCreatorFacade.ActionType,
@@ -157,7 +157,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                 {
                     bool isActivePackage = PackageCreatorFacade.ActivePackageName == package;
 
-                    var icon = isActivePackage ? GenericPublishProcessController.Publish : new ResourceHandle("Composite.Icons", "page-publication");
+                    var icon = isActivePackage ? (new ResourceHandle("Composite.Icons", "inbox-green")) : new ResourceHandle("Composite.Icons", "inbox");
                     var element = new Element(_context.CreateElementHandle(new PackageCreatorPackageElementProviderEntityToken(package)))
                     {
                         VisualData = new ElementVisualizedData()

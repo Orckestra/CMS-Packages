@@ -25,7 +25,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@name='Composite.Tools.PackageCreator'])=0">
-				<add id="Composite.Tools.PackageCreator" order="100" parentId="ID01" providerName="Composite.Tools.PackageCreator" label="Package Creator" closeFolderIconName="Composite.Icons.tools" openFolderIconName="Composite.Icons.tools" type="Composite.Plugins.Elements.ElementProviders.VirtualElementProvider.ProviderHookingElementConfigurationElement, Composite" name="Composite.Tools.PackageCreator" />
+				<add id="Composite.Tools.PackageCreator" order="100" parentId="ID01" providerName="Composite.Tools.PackageCreator" label="Package Creator" closeFolderIconName="Composite.Icons.blocks" openFolderIconName="Composite.Icons.blocks" type="Composite.Plugins.Elements.ElementProviders.VirtualElementProvider.ProviderHookingElementConfigurationElement, Composite" name="Composite.Tools.PackageCreator" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -33,7 +33,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" />
       <xsl:if test="count(add[@name='Composite.Tools.PackageCreator'])=0">
-        <add name="Composite.Tools.PackageCreator" label="Package Creator" closeFolderIconName="Composite.Icons.tools" type="Composite.Plugins.Elements.ElementProviders.VirtualElementProvider.SimpleVirtualElement, Composite">
+        <add name="Composite.Tools.PackageCreator" label="Package Creator" closeFolderIconName="Composite.Icons.blocks" type="Composite.Plugins.Elements.ElementProviders.VirtualElementProvider.SimpleVirtualElement, Composite">
           <Elements>
             <add providerName="Composite.Tools.PackageCreator" name="Composite.Tools.PackageCreator" type="Composite.Plugins.Elements.ElementProviders.VirtualElementProvider.AttachProviderVirtualElement, Composite" />
           </Elements>
