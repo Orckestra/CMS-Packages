@@ -4,7 +4,7 @@
 		<cms:binding name="Package" type="Composite.Tools.PackageCreator.PackageInformation"/>
 	</cms:bindings>
 	<cms:layout iconhandle="package-element-closed-availableitem" label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.CreatePackage}">
-				<FieldGroup Label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.PackageInfo}">
+				<FieldGroup>
 					<TextBox Label="${Composite.Tools.PackageCreator, Package.Name.Label}" Type="ProgrammingNamespace">
 						<cms:bind source="Package.Name" />
 					</TextBox>
