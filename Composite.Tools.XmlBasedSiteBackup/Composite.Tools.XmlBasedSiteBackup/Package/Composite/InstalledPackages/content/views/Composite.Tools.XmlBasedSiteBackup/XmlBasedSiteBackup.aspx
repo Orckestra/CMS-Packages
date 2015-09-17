@@ -1,100 +1,86 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="XmlBasedSiteBackup.aspx.cs"
-	Inherits="XmlBasedSiteBackup" %>
+    Inherits="XmlBasedSiteBackup" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:control="http://www.composite.net/ns/uicontrol" xmlns:ui="http://www.w3.org/1999/xhtml">
+<control:httpheaders runat="server" />
 <head runat="server">
-	<title>XmlBasedSiteBackup</title>
-	<link href="Styles.css" rel="stylesheet"
-		type="text/css" />
-		
+    <title>XmlBasedSiteBackup</title>
+    <control:styleloader runat="server" />
+    <control:scriptloader type="sub" runat="server" />
+    <script type="text/javascript">
+        var theatre = top.bindingMap.offlinetheatre;
+        if (theatre) {
+            theatre.stop();
+        }
+
+        function confirmDeleteXMLBasedBackup(fileName) {
+            if (confirm("Do you want to delete the '" + fileName + "' backup?")) {
+                document.getElementById("commandName").value = "delete";
+                document.getElementById("deleteXMLBackupFile").value = fileName;
+                document.forms["xmlBasedBackupForm"].submit();
+            };
+        };
+
+        function createXMLBackup() {
+            if (theatre) {
+                theatre.play(true);
+            }
+            document.getElementById("commandName").value = "create";
+            document.forms["xmlBasedBackupForm"].submit();
+        };
+    </script>
 </head>
-<body>	
-	<form id="form1" runat="server">
-	<table cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto;"
-		width="560px">
-		<tr>
-			<td class="corner">
-				<img src="Images/topleft.png" alt="" />
-			</td>
-			<td class="top">
-			</td>
-			<td class="corner">
-				<img src="Images/topright.png" alt="" />
-			</td>
-		</tr>
-		<tr>
-			<td class="left">
-			</td>
-			<td class="backgroundfill">
-				<div class="title">
-					<img src="Images/CompositeC1.png" alt="Composite C1" />
-					XmlBasedSiteBackup</div>
-				<h4>
-					This package allows you to back up your XML-based website.</h4>
-				<fieldset>
-					<div>
-						<asp:Button ID="CreateBackupButton" runat="server" Text="Create Backup Now" 
-							OnClick="CreateBackup_Click" 
-							onclientclick="this.value='Backup may take several minutes...'; self = this; window.setTimeout( function (){self.disabled = true;}, 10 ); " />
-					</div>
-					<br />
-					<asp:ValidationSummary ID="ValidationSummary1" runat="server" />
-					<br />
-					<table border="0" cellpadding="3"  cellspacing="0" width="100%" class="list">
-						<asp:Repeater ID="BackupList" runat="server" 
-							onitemcommand="BackupList_ItemCommand">
-							<HeaderTemplate>
-								<tr>
-									<th>
-										Filename
-									</th>
-									<th>
-										Date Created
-									</th>
-									<th>
-										Size
-									</th>
-									<th>
-									</th>
-								</tr>
-							</HeaderTemplate>
-							<ItemTemplate>
-								<tr>
-									<td align="left">
-										<a href="<%# DataBinder.Eval(Container.DataItem, "Filepath") %>">
-											<%# DataBinder.Eval(Container.DataItem, "Filename") %></a>
-									</td>
-									<td>
-										<%# DataBinder.Eval(Container.DataItem, "DateCreated") %>
-									</td>
-									<td>
-										<%# DataBinder.Eval(Container.DataItem, "Filesize") %>
-										KB
-									</td>
-									<td>
-										<asp:ImageButton ID="DeleteImageButton" runat="server" ImageUrl="~/composite/services/Icon/GetIcon.ashx?resourceName=dataassociation-remove-association&resourceNamespace=Composite.Icons" CommandName="<%# this._deleteCommand %>" CommandArgument='<%# Eval("Filename") %>' OnClientClick='return confirm("Do you want to delete the backup?")' AlternateText="Delete" />
-									</td>
-								</tr>
-							</ItemTemplate>
-						</asp:Repeater>
-					</table>
-				</fieldset>
-			</td>
-			<td class="right">
-			</td>
-		</tr>
-		<tr>
-			<td class="corner">
-				<img src="Images/bottomleft.png" alt="" />
-			</td>
-			<td class="bottom">
-			</td>
-			<td class="corner">
-				<img src="Images/bottomright.png" alt="" />
-			</td>
-		</tr>
-	</table>
-	</form>
+<body>
+    <form id="xmlBasedBackupForm" runat="server">
+        <ui:page id="page" image="${icon:save}">
+            <ui:toolbar>
+                <ui:toolbarbody>
+                    <ui:toolbargroup>
+                        <ui:toolbarbutton id="CreateBackupButton" label="Create Backup Now" image="${icon:mimetype-zip}"
+                            oncommand="createXMLBackup()" />
+                    </ui:toolbargroup>
+                </ui:toolbarbody>
+            </ui:toolbar>
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+            <table class="table table-bordered table-hover">
+                <tbody>
+                    <asp:Repeater ID="BackupList" runat="server">
+                        <HeaderTemplate>
+                            <tr class="head">
+                                <th>Filename
+                                </th>
+                                <th>Date Created
+                                </th>
+                                <th>Size
+                                </th>
+                                <th></th>
+                            </tr>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <tr>
+                                <td>
+                                    <a href="<%# DataBinder.Eval(Container.DataItem, "Filepath") %>" title="Download">
+                                        <%# DataBinder.Eval(Container.DataItem, "Filename") %>
+                                    </a>
+                                </td>
+                                <td>
+                                    <%# DataBinder.Eval(Container.DataItem, "DateCreated") %>
+                                </td>
+                                <td>
+                                    <%# DataBinder.Eval(Container.DataItem, "Filesize") %>KB
+                                </td>
+                                <td>
+                                    <ui:clickbutton id="delete" tooltip="Delete" image="${icon:delete}" oncommand="<%# GetConfirmationCode( Eval("Filename")) %>" class="simple-icon">
+                                    </ui:clickbutton>
+                                </td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </tbody>
+            </table>
+            <input type="hidden" id="commandName" name="commandName" />
+            <input type="hidden" id="deleteXMLBackupFile" name="deleteXMLBackupFile" />
+        </ui:page>
+    </form>
 </body>
 </html>
