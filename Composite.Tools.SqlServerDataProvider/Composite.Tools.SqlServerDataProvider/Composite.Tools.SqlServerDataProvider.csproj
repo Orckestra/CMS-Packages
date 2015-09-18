@@ -23,6 +23,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,21 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\Composite\TreeDefinitions\Composite.Tools.SqlServerDataProvider.xml" />
-    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\js\jquery.blockUI.js" />
     <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\SetConnectionString.xslt" />
-    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\Images\bottom.png" />
-    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\Images\bottomleft.png" />
-    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\Images\bottomright.png" />
-    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\Images\CompositeC1.png" />
-    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\Images\left.png" />
-    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\Images\right.png" />
-    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\Images\top.png" />
-    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\Images\topleft.png" />
-    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\Images\topright.png" />
     <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\SetDefaultDynamicTypeDataProvider.xslt" />
     <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\SetDynamicSqlDataProvider.xslt" />
     <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\SqlServerDataProvider.aspx" />
-    <Content Include="Package\Composite\InstalledPackages\content\views\Composite.Tools.SqlServerDataProvider\Styles.css" />
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.Tools.SqlServerDataProvider.xml" />
   </ItemGroup>
