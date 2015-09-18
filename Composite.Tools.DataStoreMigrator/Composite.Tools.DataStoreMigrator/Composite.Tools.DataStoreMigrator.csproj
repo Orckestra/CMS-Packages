@@ -22,6 +22,11 @@
     <OldToolsVersion>4.0</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -74,16 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\DataStoreMigrator.aspx" />
-    <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Images\bottom.png" />
-    <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Images\bottomleft.png" />
-    <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Images\bottomright.png" />
-    <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Images\CompositeC1.png" />
-    <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Images\left.png" />
-    <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Images\right.png" />
-    <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Images\top.png" />
-    <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Images\topleft.png" />
-    <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Images\topright.png" />
-    <Content Include="Package\Frontend\Composite\Tools\DataStoreMigrator\Styles.css" />
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.Tools.DataStoreMigrator.xml">
       <SubType>Designer</SubType>
