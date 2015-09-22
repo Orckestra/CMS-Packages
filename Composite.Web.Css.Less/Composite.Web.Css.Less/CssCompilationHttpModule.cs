@@ -122,6 +122,11 @@ namespace Composite.Web.Css.Less
             {
                 context.Response.Cache.SetExpires(DateTime.Now.AddDays(1.0));
             }
+            else
+            {
+                context.Response.Cache.SetExpires(DateTime.Now.AddMinutes(15));
+            }
+
 
             context.Response.ContentType = "text/css";
 
