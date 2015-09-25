@@ -1,0 +1,70 @@
+@using System.Security.Policy
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "Adds the Like button to a page for users to share content with their Facebook friends."; }
+    }
+
+    [FunctionParameter(Label = "URL to like", Help = "The URL to like. If not specified, it defaults to the current page.", DefaultValue= null)]
+    public string URL { get; set; }
+
+    [FunctionParameter(Label = "Layout style", Help = "The size and amount of social context next to the button ('standard' by default).", DefaultValue = "standard",
+                     WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""standard,button_count,button,box_count"" /></f:function></f:param></f:widgetfunction>")]
+    public string LayoutStyle { get; set; }
+
+    [FunctionParameter(Label = "Width", Help = "The width of the Like button, in pixels (450 by default).", DefaultValue = 450)]
+    public int Width { get; set; }
+
+    [FunctionParameter(Label = "Verb to display", Help = "The verb to display on the button. Options: 'like', 'recommend'. Default is 'like'.", DefaultValue = "like",
+                     WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""like,recommend"" /></f:function></f:param></f:widgetfunction>")]
+    public string VerbToDisplay { get; set; }
+
+    [FunctionParameter(Label = "Color scheme", Help = "The color scheme for the Like button. Options: 'light', 'dark'. Default is 'light'.", DefaultValue = "light",
+                     WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""light,dark"" /></f:function></f:param></f:widgetfunction>")]
+    public string ColorScheme { get; set; }
+
+    [FunctionParameter(Label = "Font", Help = "The font used in the button.", DefaultValue = null,
+                     WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""arial,lucida grande,segoe ui,tahoma,trebuchet ms,verdana"" /></f:function></f:param><f:param name=""Required"" value=""False"" /></f:widgetfunction>")]
+    public string Font { get; set; }
+
+    [FunctionParameter(Label = "Send button", Help = "If 'True',  the Send button is included along with the Like button ('True' by default).", DefaultValue = true)]
+    public bool SendButton { get; set; }
+
+    [FunctionParameter(Label = "Show faces", Help = "If 'True', profile pictures are displayed below the button (standard layout only). 'True' by default.", DefaultValue = true)]
+    public bool ShowFaces { get; set; }
+}
+
+@{
+
+    var currentCulture = Functions.ExecuteFunction("Composite.Utils.Globalization.CurrentCulture").ToString().Replace("-","_");;
+    var supportedCultures = Functions.ExecuteFunction("Composite.Xml.LoadUrl", new { Url = "http://www.facebook.com/translations/FacebookLocales.xml", CacheTime = 3600}) as XElement;
+    var isSupported = supportedCultures.Descendants().Where(el => el.Name == "representation" && el.Value == currentCulture).FirstOrDefault() != null;
+    if (isSupported)
+    {
+        currentCulture = "en_US";
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+        <script id="facebook-all-js" src="http://connect.facebook.net/@(currentCulture)/all.js#xfbml=1"></script>
+    </head>
+    <body>
+        <div id="fb-root"></div>
+        <!-- Your like button code -->
+        <div class="fb-like"
+            @if (!string.IsNullOrEmpty(URL)) {
+                @: data-href="@URL"
+            }
+             data-layout="@LayoutStyle"
+             data-action="@VerbToDisplay"
+             data-show-faces="@(ShowFaces ? "true": "false")"
+             data-colorscheme="@ColorScheme"
+             data-send="@(SendButton ? "true" : "false")"
+             data-font="@Font"
+             data-width="@Width">
+        </div>
+    </body>
+</html>
