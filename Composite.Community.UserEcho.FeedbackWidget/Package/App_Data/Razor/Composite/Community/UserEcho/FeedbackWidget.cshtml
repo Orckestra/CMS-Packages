@@ -1,0 +1,107 @@
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Adds a UserEcho community-based feedback widget (a tab and/or a link) on a page."; }
+    }
+
+    [FunctionParameter(Label = "URL", Help = "Your project's URL at UserEcho")]
+    public string URL { get; set; }
+
+    [FunctionParameter(Label = "Forum ID", Help = "Your Forum's ID at UserEcho")]
+    public int ForumID { get; set; }
+
+    [FunctionParameter(Label = "Language", Help = "The language of the widget (the current page's language if suported or 'en' by default)", DefaultValue = null)]
+    public string Language { get; set; }
+
+    [FunctionParameter(Label = "Link text", Help = "The caption on the widget and/or the feedback link ('Feedback' by default)", DefaultValue = "Feedback")]
+    public string LinkText { get; set; }
+
+    private const string widgetTypeWidgatMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""tab,link"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>";
+    [FunctionParameter(Label = "Widget type", Help = "The widget type: a tab, a link or both ('tab' by default)", DefaultValue = "tab", WidgetMarkup = widgetTypeWidgatMarkup)]
+    public string WidgetType { get; set; }
+
+    [FunctionParameter(Label = "Open forum by click action", Help = "If 'True', the forum link at UserEcho will open when the tab/link is clicked; otherwise (default), the feedback form will open in a popup. 'False' by default.", DefaultValue = false)]
+    public bool OpenForumByClick { get; set; }
+
+    [FunctionParameter(Label = "Text color on tab", Help = "The text color of the tab ('#FFFFFF' by default)", DefaultValue = "#FFFFFF")]
+    public string TextColor { get; set; }
+
+    [FunctionParameter(Label = "Tab text font size", Help = "The font size of the text on the tab ('20' by default)", DefaultValue = 20)]
+    public int FontSize { get; set; }
+
+    [FunctionParameter(Label = "Tab background color", Help = "The background color of the tab ('#FF000' by default)", DefaultValue = "#FF0000")]
+    public string BackgroundColor { get; set; }
+
+    [FunctionParameter(Label = "Tab hover color", Help = "The background color of the tab   when hovered over ('#F45C5C' by default)", DefaultValue = "#F45C5C")]
+    public string HoverColor { get; set; }
+
+    private const string alignmentWidgatMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""left,right"" /></f:function></f:param></f:widgetfunction>";
+    [FunctionParameter(Label = "Tab alignment", Help = "The alignment of the tab on a  page  ('left' by default).", DefaultValue = "left", WidgetMarkup = alignmentWidgatMarkup)]
+    public string Alignment { get; set; }
+
+    [FunctionParameter(Label = "Show icon", Help = "If 'True' (default), the tab will show an icon.", DefaultValue = true)]
+    public bool ShowIcon { get; set; }
+
+    [FunctionParameter(Label = "Corner tab radius", Help = "The radius of the corners on the tab ('10' by default)", DefaultValue = 10)]
+    public int CornerRadius { get; set; }
+
+    public static string EncodeToBase64(string input)
+    {
+        return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(input));
+    }
+}
+
+@{ 
+    var currentCulture = Functions.ExecuteFunction("Composite.Utils.Globalization.CurrentCulture").ToString();
+    currentCulture = currentCulture.Substring(currentCulture.IndexOf('-'));
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+    @if (WidgetType.Contains("link"))
+    {
+        if (OpenForumByClick)
+        {
+            <a onmouseover="UE.Popin.preload();" href="http://@URL" target="_blank">
+                @LinkText
+            </a>
+        }
+        else
+        {
+            <a onmouseover="UE.Popin.preload();" href="#" onclick="UE.Popin.show(); return false;">
+                @LinkText
+            </a>
+        }
+    }
+    <script type="text/javascript">
+        var _ues = {
+            host:'@URL',
+            forum:'@ForumID',
+            lang:'@(!string.IsNullOrWhiteSpace(Language) ? Language : currentCulture)',
+            no_dialog: @(OpenForumByClick ? "true" : "false"),
+            @if(WidgetType.Contains("tab"))  {
+                @: tab_corner_radius: @CornerRadius,
+                @: tab_font_size: @FontSize,
+                @: tab_icon_show: @(ShowIcon ? "true": "false"),
+                @: tab_image_hash: encodeURIComponent('@(EncodeToBase64(LinkText))'),
+                @: tab_alignment: '@(Alignment)',
+                @: tab_text_color: '@(TextColor)',
+                @: tab_bg_color: '@(BackgroundColor)',
+                @: tab_hover_color: '@(HoverColor)',
+                @: tab_top:  '220px'
+            } else {
+                @: tab_show:  false
+           }
+        };
+        (function() {
+            var _ue = document.createElement('script'); _ue.type = 'text/javascript'; _ue.async = true;
+            _ue.src = ('https:' == document.location.protocol ? 'https://s3.amazonaws.com/' : 'http://') + 'cdn.userecho.com/js/widget-1.4.gz.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(_ue, s);
+        })();
+    </script>
+</body>
+</html>
