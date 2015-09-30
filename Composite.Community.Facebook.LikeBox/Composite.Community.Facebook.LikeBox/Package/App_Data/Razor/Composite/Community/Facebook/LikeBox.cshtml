@@ -1,5 +1,6 @@
 ﻿@inherits RazorFunction
 @using System.Web.Caching
+@using Composite.Core.WebClient.Renderings.Page
 @functions {
     public override string FunctionDescription
     {
@@ -34,6 +35,10 @@
     }
 }
 @{
+    if (PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration)
+    {
+        return;
+    }
     var cultures = GetXml("http://www.facebook.com/translations/FacebookLocales.xml");
     var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name.Replace("-", "_");
     currentCulture = cultures.Descendants("representation").Any(c => c.Value == currentCulture) ? currentCulture : "en_US";
