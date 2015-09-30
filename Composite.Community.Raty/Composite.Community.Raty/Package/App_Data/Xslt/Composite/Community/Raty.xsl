@@ -66,6 +66,7 @@ exclude-result-prefixes="xsl in lang f msxsl csharp">
 					hintList: ['1', '2', '3', '4', '5'],
 					half:  <xsl:value-of select="$half" />,
 					number: <xsl:value-of select="$number" />,
+          size: 20,
 					<xsl:choose>
 						<xsl:when test="contains($cookie,$ratyId)">
 							readOnly: true,
