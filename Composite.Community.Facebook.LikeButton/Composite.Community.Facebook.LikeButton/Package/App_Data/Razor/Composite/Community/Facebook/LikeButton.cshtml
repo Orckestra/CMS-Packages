@@ -1,4 +1,5 @@
 @using System.Security.Policy
+@using Composite.Core.WebClient.Renderings.Page
 @inherits RazorFunction
 
 @functions {
@@ -37,7 +38,10 @@
 }
 
 @{
-
+    if (PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration)
+    {
+        return;
+    }
     var currentCulture = Functions.ExecuteFunction("Composite.Utils.Globalization.CurrentCulture").ToString().Replace("-","_");;
     var supportedCultures = Functions.ExecuteFunction("Composite.Xml.LoadUrl", new { Url = "http://www.facebook.com/translations/FacebookLocales.xml", CacheTime = 3600}) as XElement;
     var isSupported = supportedCultures.Descendants().Where(el => el.Name == "representation" && el.Value == currentCulture).FirstOrDefault() != null;
