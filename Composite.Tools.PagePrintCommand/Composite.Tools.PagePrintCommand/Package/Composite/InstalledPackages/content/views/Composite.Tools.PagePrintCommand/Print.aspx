@@ -5,23 +5,31 @@
 xmlns:control="http://www.composite.net/ns/uicontrol">
 <control:httpheaders id="Httpheaders1" runat="server" />
 <head runat="server">
-	<title></title>
-	<control:styleloader id="Styleloader1" runat="server" />
-	<control:scriptloader id="Scriptloader1" type="sub" runat="server" />
+    <title></title>
+    <control:styleloader id="Styleloader1" runat="server" />
+    <control:scriptloader id="Scriptloader1" type="sub" runat="server" />
 </head>
 <body>
-	<form id="form1" runat="server">
-	<ui:page id="page" image="${icon:report}">
-		<ui:scrollbox id="scrollbox">
-			<script type="text/javascript" language="javascript">
-				function PrintFrame() {
-					printFrame.focus();
-					printFrame.print();
-				}
-			</script>
-			<asp:Literal ID="lPrintFrame" runat="server" />
-		</ui:scrollbox>
-	</ui:page>
-	</form>
+    <form id="form1" runat="server">
+        <ui:page id="page" image="${icon:report}">
+            <ui:scrollbox id="scrollbox">
+                <script type="text/javascript" language="javascript">
+                    function PrintFrame(frame) {
+                        var win = frame.contentWindow;
+                        win.focus();
+                        try {
+                            var result = win.document.execCommand('print', false, null); // IE
+                            if (!result) {
+                                win.print(); // FireFix
+                            }
+                        } catch (e) {
+                            win.print(); // Chrome
+                        }
+                    }
+                </script>
+                <asp:Literal ID="lPrintFrame" runat="server" />
+            </ui:scrollbox>
+        </ui:page>
+    </form>
 </body>
 </html>
