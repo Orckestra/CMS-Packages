@@ -24,7 +24,7 @@
 			<body>
 				<embed
 				type="application/x-shockwave-flash"
-				src="https://picasaweb.google.com/s/c/bin/slideshow.swf"
+				src="https://photos.gstatic.com/media/slideshow.swf"
 				width="{$width}" height="{$height}"
 				pluginspage="http://www.macromedia.com/go/getflashplayer">
 					<xsl:attribute name="flashvars">
