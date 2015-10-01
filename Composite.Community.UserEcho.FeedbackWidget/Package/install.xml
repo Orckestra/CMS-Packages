@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.UserEcho.FeedbackWidget" groupName="Composite.Community" version="1.0.2" author="Composite A/S" website="http://composite.net" id="adf2ffc1-7314-4947-b8b9-0cf7b5d2459a" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Community.UserEcho.FeedbackWidget" groupName="Composite.Community" version="1.0.3" author="Composite A/S" website="http://composite.net" id="adf2ffc1-7314-4947-b8b9-0cf7b5d2459a" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>Adds a widget (a tab and/or a link) to a website to collect user feedback such as suggestions, ideas, bug reports  and more. Based on the UserEcho community widget (http://www.userecho.com/)</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />

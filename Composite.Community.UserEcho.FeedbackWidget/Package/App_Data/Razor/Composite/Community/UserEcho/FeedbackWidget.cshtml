@@ -53,9 +53,12 @@
     }
 }
 
-@{ 
-    var currentCulture = Functions.ExecuteFunction("Composite.Utils.Globalization.CurrentCulture").ToString();
-    currentCulture = currentCulture.Substring(currentCulture.IndexOf('-'));
+@{
+    if (string.IsNullOrWhiteSpace(Language))
+    {
+        Language = Functions.ExecuteFunction("Composite.Utils.Globalization.CurrentCulture").ToString();
+        Language = Language.Substring(Language.IndexOf('-'));
+    }
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
@@ -81,7 +84,7 @@
         var _ues = {
             host:'@URL',
             forum:'@ForumID',
-            lang:'@(!string.IsNullOrWhiteSpace(Language) ? Language : currentCulture)',
+            lang:'@(Language.ToLower())',
             no_dialog: @(OpenForumByClick ? "true" : "false"),
             @if(WidgetType.Contains("tab"))  {
                 @: tab_corner_radius: @CornerRadius,
