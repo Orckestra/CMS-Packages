@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Web.BundlingAndMinification" groupName="Composite.Web" version="1.0.9" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Web.BundlingAndMinification" id="83472ca2-e38e-44f3-9d10-8194b23fdee8" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.Web.BundlingAndMinification" groupName="Composite.Web" version="1.0.10" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Web.BundlingAndMinification" id="83472ca2-e38e-44f3-9d10-8194b23fdee8" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Package is based on Microsoft ASP.NET Web Optimization framework. Requires Composite.Web.Css.Less be installed for processing LESS files.</TechnicalDetails>
 		<Description>Bundling and Minification of the Style and Javascript  resources to improve site page request load time.</Description>
 	</mi:PackageInformation>
@@ -9,11 +9,11 @@
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
-				<File sourceFilename="~\Bin\WebGrease.dll" targetFilename="~\Bin\WebGrease.dll" allowOverwrite="false" />
-        <File sourceFilename="~\Bin\Composite.Web.BundlingAndMinification.dll" targetFilename="~\Bin\Composite.Web.BundlingAndMinification.dll" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\Razor\Composite\Web\BundlingAndMinification.cshtml" targetFilename="~\App_Data\Razor\Composite\Web\BundlingAndMinification.cshtml" allowOverwrite="false" />
-				<File sourceFilename="~\Bin\Antlr3.Runtime.dll" targetFilename="~\Bin\Antlr3.Runtime.dll" allowOverwrite="false" />
-				<File sourceFilename="~\Bin\System.Web.Optimization.dll" targetFilename="~\Bin\System.Web.Optimization.dll" allowOverwrite="false" />
+				<File sourceFilename="~\Bin\WebGrease.dll" targetFilename="~\Bin\WebGrease.dll" allowOverwrite="true" />
+        <File sourceFilename="~\Bin\Composite.Web.BundlingAndMinification.dll" targetFilename="~\Bin\Composite.Web.BundlingAndMinification.dll" allowOverwrite="true" />
+				<File sourceFilename="~\App_Data\Razor\Composite\Web\BundlingAndMinification.cshtml" targetFilename="~\App_Data\Razor\Composite\Web\BundlingAndMinification.cshtml" allowOverwrite="true" />
+				<File sourceFilename="~\Bin\Antlr3.Runtime.dll" targetFilename="~\Bin\Antlr3.Runtime.dll" allowOverwrite="true" />
+				<File sourceFilename="~\Bin\System.Web.Optimization.dll" targetFilename="~\Bin\System.Web.Optimization.dll" allowOverwrite="true" />
 			</Files>
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
