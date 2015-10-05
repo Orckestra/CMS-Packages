@@ -1,0 +1,49 @@
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Implements a search form on page for Google Custom Search."; }
+    }
+    [FunctionParameter(Label = "Search engine unique ID", Help = "A unique code that identifies a custom search engine for your website.")]
+    public string EngineID { get; set; }
+
+    [FunctionParameter(Label = "Show search results", Help = "If 'True' (by default) a search box and search results, displayed in the same page. If 'False' a 'Search results Page' parameter is required.", DefaultValue = true)]
+    public bool ShowResults { get; set; }
+
+    [FunctionParameter(Label = "Search results page", Help = "A page that displays search results", DefaultValue = null, WidgetFunctionName = "Composite.Widgets.String.UrlComboBox")]
+    public string ResultsPage { get; set; }
+
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+    <script>
+        (function () {
+            var cx = '@(EngineID)'; // Insert your own Custom Search engine ID here
+            var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+            gcse.src = (document.location.protocol == 'https' ? 'https:' : 'http:') +
+                '//cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>
+    @if (ShowResults)
+    {
+        <div class="gcse-search" data-queryParameterName="search"></div>
+    }
+
+    @if (!ShowResults)
+    {
+        if (string.IsNullOrEmpty(ResultsPage))
+        {
+            <div class="alert">Specify a "Search results page" parameter.</div>
+        }
+        else
+        {
+            <div class="gcse-searchbox-only" data-resultsUrl="@ResultsPage" data-newWindow="true" data-queryParameterName="search"></div>
+        }
+    }
+</body>
+</html>

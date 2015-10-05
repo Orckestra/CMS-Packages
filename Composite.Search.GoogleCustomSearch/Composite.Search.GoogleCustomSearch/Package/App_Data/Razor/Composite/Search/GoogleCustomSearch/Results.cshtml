@@ -1,0 +1,28 @@
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "Displays the search results returned by Google Custom Search"; }
+    }
+
+    [FunctionParameter(Label = "Search engine unique ID", Help = "A unique code that identifies a custom search engine for your website.")]
+    public string EngineID { get; set; }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+    </head>
+    <body>
+        <script>
+        (function () {
+            var cx = '@(EngineID)'; // Insert your own Custom Search engine ID here
+            var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+            gcse.src = (document.location.protocol == 'https' ? 'https:' : 'http:') +
+                '//cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+        })();
+        </script>
+        <div class="gcse-searchresults-only" data-queryParameterName="search"></div>
+</body>
+</html>
