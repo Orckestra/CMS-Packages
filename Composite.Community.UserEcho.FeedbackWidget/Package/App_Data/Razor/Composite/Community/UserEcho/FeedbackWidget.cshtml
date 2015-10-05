@@ -6,7 +6,7 @@
         get { return "Adds a UserEcho community-based feedback widget (a tab and/or a link) on a page."; }
     }
 
-    [FunctionParameter(Label = "URL", Help = "Your project's URL at UserEcho")]
+    [FunctionParameter(Label = "URL", Help = "Your project's URL at UserEcho without http(s):// (e.g. 'YOUR_ALIAS.userecho.com')")]
     public string URL { get; set; }
 
     [FunctionParameter(Label = "Forum ID", Help = "Your Forum's ID at UserEcho")]
