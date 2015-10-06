@@ -1,8 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="2.0.3947.24461" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Tools.PagePrintCommand" groupName="Composite.Tools" version="1.0.4" author="Composite A/S" website="http://composite.net" id="7eda36bb-13dd-422f-aa6b-46f4458556e7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Tools.PagePrintCommand" groupName="Composite.Tools" version="1.0.5" author="Composite A/S" readMoreUrl="http://docs.composite.net/Composite.Tools.PagePrintCommand" website="http://composite.net" id="7eda36bb-13dd-422f-aa6b-46f4458556e7" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows users to print pages directly from the Administrative console.</Description>
+		<TechnicalDetails>Allows users to print pages directly from the C1 console.</TechnicalDetails>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallers>
 		
