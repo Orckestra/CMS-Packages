@@ -23,6 +23,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,18 +70,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\Xslt\Composite\Media\ImageRotator.xsl" />
-    <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.Media.ImageRotator.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Composite\Media\ImageRotator.cshtml" />
     <None Include="Release\Composite.Media.ImageRotator.zip" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Package\Frontend\Composite\Media\ImageRotator\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

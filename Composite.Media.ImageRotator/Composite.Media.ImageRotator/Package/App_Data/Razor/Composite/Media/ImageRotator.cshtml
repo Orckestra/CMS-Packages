@@ -1,0 +1,104 @@
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Displays one or more random images from a media folder on a page."; }
+    }
+
+    [FunctionParameter(Label = "Media Folder", Help = "Folder for images rotation")]
+    public DataReference<IMediaFileFolder> MediaFolder { get; set; }
+
+    [FunctionParameter(Label = "Image Count", Help = "The number of image to show at a time.", DefaultValue = 1)]
+    public int ImageCount { get; set; }
+
+    [FunctionParameter(Label = "Use Animated Rotation", Help = "When 'True' and Image Count > 1, these images will rotate without a page being refreshed.", DefaultValue = false)]
+    public bool UseAnimatedRotation { get; set; }
+
+    [FunctionParameter(Label = "Animation Interval", Help = "Animation Interval in seconds. Default is 5 seconds.", DefaultValue = 5)]
+    public int AnimationInterval { get; set; }
+}
+
+@{
+    string mediaFolderPath = MediaFolder.Data.Path;
+    var images = Data.Get<IImageFile>().Where(m => m.FolderPath == mediaFolderPath).OrderBy(x => Guid.NewGuid()).Take(ImageCount).ToList();
+
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    @if (UseAnimatedRotation)
+    {
+
+        <style type="text/css">
+            .image-rotator {
+                position: relative;
+            }
+
+                .image-rotator img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                }
+
+                    .image-rotator img.active {
+                        z-index: 3;
+                    }
+
+                    .image-rotator img.first-loaded {
+                        position: relative;
+                    }
+
+                    .image-rotator img.last-active {
+                        z-index: 2;
+                    }
+        </style>
+        <script type="text/javascript">
+            var $rotator, $active;
+            var interval = @(AnimationInterval * 1000);
+            $(function () {
+                $rotator = $('.image-rotator');
+                $active = $rotator.find('img.active').removeClass("first-loaded");
+                if ($active.length == 0) {
+                    $active = $rotator.find('img:last').addClass('active');
+                }
+                $rotator.css('height', $active.height());
+
+                setInterval("slideSwitch()", interval);
+            });
+            function slideSwitch() {
+
+                $active = $rotator.find('img.active');
+                $rotator.css('height', $active.height());
+
+                var $next = $active.next().length ? $active.next() : $rotator.find('img:first');
+
+                $active.addClass('last-active');
+
+                $next.css({ opacity: 0.0 })
+                     .addClass('active')
+                     .animate({ opacity: 1.0 }, 1000, function () {
+                         $active.removeClass('active last-active');
+                     });
+            }
+        </script>
+    }
+</head>
+<body>
+    <div class="image-rotator">
+        @for (var i = 0; i < images.Count; i++)
+        {
+            var img = images[i];
+            @RenderImage(img, i == 0)
+        }
+    </div>
+</body>
+</html>
+
+@helper RenderImage(IImageFile img, bool isActive)
+{
+    <img alt="image" title="@img.Title" src="~/media(@img.KeyPath)"
+         @if (isActive) { @: class="active first-loaded"
+                    } />
+}
