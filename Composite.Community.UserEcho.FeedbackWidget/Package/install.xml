@@ -1,9 +1,10 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.UserEcho.FeedbackWidget" groupName="Composite.Community" version="1.0.5" author="Composite A/S" website="http://composite.net" id="adf2ffc1-7314-4947-b8b9-0cf7b5d2459a" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
-		<Description>Adds a widget (a tab and/or a link) to a website to collect user feedback such as suggestions, ideas, bug reports  and more. Based on the UserEcho community widget (http://www.userecho.com/)</Description>
-	</mi:PackageInformation>
+	<mi:PackageInformation name="Composite.Community.UserEcho.FeedbackWidget" groupName="Composite.Community" version="1.0.6" author="Composite A/S" readMoreUrl="http://docs.composite.net/Composite.Community.UserEcho.FeedbackWidget" website="http://composite.net" id="adf2ffc1-7314-4947-b8b9-0cf7b5d2459a" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+    <Description>Adds a widget (a tab and/or a link) to a website to collect user feedback such as suggestions, ideas, bug reports and more.</Description>
+    <TechnicalDetails>Based on the UserEcho community widget (http://www.userecho.com/)</TechnicalDetails>
+  </mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
