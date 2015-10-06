@@ -57,7 +57,7 @@
     if (string.IsNullOrWhiteSpace(Language))
     {
         Language = Functions.ExecuteFunction("Composite.Utils.Globalization.CurrentCulture").ToString();
-        Language = Language.Substring(Language.IndexOf('-'));
+        Language = Language.Substring(Language.IndexOf('-') + 1);
     }
 }
 
