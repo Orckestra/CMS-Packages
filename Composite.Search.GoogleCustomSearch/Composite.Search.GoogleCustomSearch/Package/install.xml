@@ -1,8 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Search.GoogleCustomSearch" groupName="Composite.Search" version="1.0.3" author="Composite A\S" website="http://www.composite.net" id="71883f2b-7bc1-4154-9acd-cb9880b7f291" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Search.GoogleCustomSearch" groupName="Composite.Search" version="1.0.4" author="Composite A\S" readMoreUrl="http://docs.composite.net/Composite.Search.GoogleCustomSearch" website="http://www.composite.net" id="71883f2b-7bc1-4154-9acd-cb9880b7f291" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows visitors to search a website with the free edition of Google Custom Search.</Description>
+		<TechnicalDetails>Allows visitors to search a website with the free edition of Google Custom Search.</TechnicalDetails>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
