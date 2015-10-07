@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Routing;
 using System.Xml;
-using System.Xml.Linq;
 using Composite.AspNet.MvcFunctions;
 using Composite.C1Console.Security;
 using Composite.Core.Extensions;
@@ -338,7 +337,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
         {
             try
             {
-                return OutputToXhtmlDocument(xhtml);
+                return XhtmlDocument.ParseXhtmlFragment(xhtml);
             }
             catch (XmlException ex)
             {
@@ -351,44 +350,6 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
         }
 
        
-        private static XhtmlDocument OutputToXhtmlDocument(string output)
-        {
-            var nodes = new List<XNode>();
-
-            using (var stringReader = new StringReader(output))
-            {
-                var xmlReaderSettings = new XmlReaderSettings
-                {
-                    IgnoreWhitespace = true,
-                    DtdProcessing = DtdProcessing.Parse,
-                    MaxCharactersFromEntities = 10000000,
-                    XmlResolver = null,
-                    ConformanceLevel = ConformanceLevel.Fragment // Allows multiple XNode-s
-                };
-
-                using (var xmlReader = XmlReader.Create(stringReader, xmlReaderSettings))
-                {
-                    xmlReader.MoveToContent();
-
-                    while (!xmlReader.EOF)
-                    {
-                        XNode node = XNode.ReadFrom(xmlReader);
-                        nodes.Add(node);
-                    }
-                }
-            }
-
-            if (nodes.Count == 1 && nodes[0] is XElement && (nodes[0] as XElement).Name.LocalName == "html")
-            {
-                return new XhtmlDocument(nodes[0] as XElement);
-            }
-
-            var document = new XhtmlDocument();
-            document.Body.Add(nodes);
-
-            return document;
-        }
-
         public virtual void UsePathInfoForRouting()
         {
             throw new NotSupportedException();
