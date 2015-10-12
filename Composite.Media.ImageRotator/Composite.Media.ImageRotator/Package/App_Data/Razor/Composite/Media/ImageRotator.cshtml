@@ -6,10 +6,10 @@
         get { return "Displays one or more random images from a media folder on a page."; }
     }
 
-    [FunctionParameter(Label = "Media Folder", Help = "Folder for images rotation")]
+    [FunctionParameter(Label = "Media Folder", Help = "A folder with images to rotate.")]
     public DataReference<IMediaFileFolder> MediaFolder { get; set; }
 
-    [FunctionParameter(Label = "Image Count", Help = "The number of image to show at a time.", DefaultValue = 1)]
+    [FunctionParameter(Label = "Image Count", Help = "The number of images to show at a time.", DefaultValue = 1)]
     public int ImageCount { get; set; }
 
     [FunctionParameter(Label = "Use Animated Rotation", Help = "When 'True' and Image Count > 1, these images will rotate without a page being refreshed.", DefaultValue = false)]

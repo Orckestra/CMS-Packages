@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Media.ImageRotator" groupName="Composite.Media" version="1.1.5" author="Composite A/S" readMoreUrl="http://docs.composite.net/Composite.Media.ImageRotator" website="www.composite.net" id="252252E6-BC1C-477d-BCD1-6F817B8172AE" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Media.ImageRotator" groupName="Composite.Media" version="1.1.6" author="Composite A/S" readMoreUrl="http://docs.composite.net/Composite.Media.ImageRotator" website="www.composite.net" id="252252E6-BC1C-477d-BCD1-6F817B8172AE" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Displays one or more random images from a media folder on a page.</Description>
 		<TechnicalDetails>Implemented as Razor function that randomly displays (rotates) images from a media folder. At least one media folder with images is required.</TechnicalDetails>
 	</mi:PackageInformation>
