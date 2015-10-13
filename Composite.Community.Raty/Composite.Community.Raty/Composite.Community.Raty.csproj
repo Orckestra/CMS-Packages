@@ -23,6 +23,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -74,10 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\Composite.Generated.dll" />
-    <Content Include="Package\App_Data\Xslt\Composite\Community\Raty.xsl" />
-    <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
     <Content Include="Package\Frontend\Composite\Community\Raty\jquery.raty-1.4.0\changelog.txt" />
     <Content Include="Package\Frontend\Composite\Community\Raty\jquery.raty-1.4.0\img\background.gif" />
     <Content Include="Package\Frontend\Composite\Community\Raty\jquery.raty-1.4.0\img\cancel-off-big.png" />
@@ -110,7 +111,6 @@
     <Content Include="Package\Frontend\Composite\Community\Raty\jquery.raty-1.4.0\__MACOSX\img\._star-off-big.png" />
     <Content Include="Package\Frontend\Composite\Community\Raty\Scripts\jquery.raty.min.js" />
     <Content Include="Package\Frontend\Composite\Community\Raty\Scripts\json2.js" />
-    <Content Include="Package\Frontend\Composite\Community\Raty\Styles\Raty.css" />
     <Content Include="Package\install.xml" />
     <Content Include="Package\Raty.asmx" />
     <Content Include="_PackageCreator\Composite.Community.Raty.xml" />
@@ -119,10 +119,15 @@
     <Content Include="Release\Composite.Community.Raty.zip" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Composite\Community\Raty.cshtml" />
     <None Include="Package\Frontend\Composite\Community\Raty\jquery.raty-1.4.0\img\.DS_Store" />
     <None Include="Package\Frontend\Composite\Community\Raty\jquery.raty-1.4.0\js\.DS_Store" />
     <None Include="Package\Frontend\Composite\Community\Raty\jquery.raty-1.4.0\__MACOSX\img\._.DS_Store" />
     <None Include="Package\Frontend\Composite\Community\Raty\jquery.raty-1.4.0\__MACOSX\js\._.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Package\App_GlobalResources\Composite\Community\Raty.resx" />
+    <EmbeddedResource Include="Package\App_GlobalResources\Composite\Community\Raty.ru-RU.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,86 @@
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Inserts a star rating to allow visitors to rate content (pages, images etc)."; }
+    }
+
+    [FunctionParameter(Label = "Raty ID", Help = "The GUID of a data item (a page, an image, a media file etc) to rate. The current page ID by default.", DefaultValue = null)]
+    public Nullable<Guid> RatyId { get; set; }
+
+    [FunctionParameter(Label = "Half star", Help = "When 'True', a half - star can be displayed and selected; otherwise, a single star. A half-star ('True') by default.", DefaultValue = true)]
+    public bool Half { get; set; }
+
+    [FunctionParameter(Label = "Number of stars", Help = "The number of stars to present. 5 by default.", DefaultValue = 5)]
+    public int Number { get; set; }
+
+    [FunctionParameter(Label = "Read Only", Help = "When 'True', the stars are read-only and cannot be selected. 'False' by default.", DefaultValue = false)]
+    public bool ReadOnly { get; set; }
+
+}
+
+@{
+    HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+    var cookie = HttpContext.Current.Request.Cookies["Composite.Community.Raty"];
+    if (RatyId == null)
+    {
+        RatyId = CurrentPageNode.Id;
+    }
+    var rates = Data.Get<Composite.Community.Raty.Results>().FirstOrDefault(r => r.RatyId == RatyId);
+    var isRates = rates != null;
+    var isVoted = cookie != null && cookie.Value.Contains(RatyId.ToString());
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <script id="json2" src="/Frontend/Composite/Community/Raty/Scripts/json2.js" type="text/javascript"></script>
+    <script id="jquery-raty-1-4-0" type="text/javascript" src="/Frontend/Composite/Community/Raty/Scripts/jquery.raty.min.js"></script>
+    <style type="text/css" id="raty-css">
+            .rating .results {
+                margin-right: 8px;
+            }
+
+            .rating div {
+                float: left;
+                font-size: 80%;
+            }
+
+            .rating img {
+                display: inline;
+            }
+    </style>
+</head>
+<body>
+    <div class="rating clearfix">
+        <div id="id@(RatyId.ToString())" class="results"></div>
+        @if (isRates)
+        {
+            <div>
+                @Html.Raw(string.Format(Resources.Raty.RatingsCount_Text, "<strong class='count'>" + rates.Count + "</strong>", "<strong class='avr'></strong>"))
+                @if (isVoted)
+                {
+                    <em class="text-info">@Resources.Raty.Voted_Text</em>
+                }
+            </div>
+        }
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var ratyId = '@RatyId';
+                var count = '@(isRates ? rates.Count: 0)';
+                var total= '@(isRates ? rates.TotalValue.ToString(System.Globalization.CultureInfo.InvariantCulture.NumberFormat): "0")';
+                $('#id' + ratyId ).raty({
+                    hintList: ['1', '2', '3', '4', '5'],
+                    half:  @(Half ? "true": "false"),
+                    number: @Number,
+                    size: 17,
+                    readOnly: @(ReadOnly || isVoted ? "true": "false"),
+                    path: '/Frontend/Composite/Community/Raty/jquery.raty-1.4.0/img',
+                    click: function(score,evt){rate(score, ratyId);}
+                });
+                setAvr(ratyId, total, count);
+            });
+        </script>
+    </div>
+</body>
+</html>
