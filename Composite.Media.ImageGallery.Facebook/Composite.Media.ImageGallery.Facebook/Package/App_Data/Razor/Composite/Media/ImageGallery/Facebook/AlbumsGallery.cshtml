@@ -7,14 +7,13 @@
     {
         get { return "Display images from Facebook albums on a page."; }
     }
+    [FunctionParameter(Label = "Access token", Help = "The Facebook access token")]
+    public string AccessToken { get; set; }
 
     [FunctionParameter(Label = "Object unique ID", Help = "The unique ID of a Facebook public page or user account")]
     public string ObjectUniqueID { get; set; }
 
-    [FunctionParameter(Label = "Access token", Help = "The Facebook access token", DefaultValue = "")]
-    public string AccessToken { get; set; }
-
-    [FunctionParameter(Label = "Album types", Help = "One or more types of albums to show on a page: normal, wall, profile.", DefaultValue = "normal,wall,profile", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""normal,wall,profile"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
+    [FunctionParameter(Label = "Album types", Help = "One or more types of albums to show on a page: normal, wall, profile.", DefaultValue = "normal,wall,profile,mobile,cover,app", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""normal,wall,profile,mobile,cover,app"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
     public string AlbumTypes { get; set; }
 
     [FunctionParameter(Label = "Use Facebook links to albums", Help = "When 'true', albums will be opened externally on their dedicated Facebook pages; otherwise, on the current page ('false' by default)", DefaultValue = false)]
@@ -57,7 +56,12 @@
     dynamic albums = null;
     try
     {
-        albums = GetData(ObjectUniqueID + "/albums?limit=1000&offset=0");
+        albums = GetData(ObjectUniqueID + "/albums");
+    }
+    catch (FacebookOAuthException)
+    {
+        <p class="alert alert-danger">The access token expired</p>
+        return;
     }
     catch (Exception ex)
     {
@@ -104,9 +108,9 @@
                 <p class="fb-album-item-img" style="background-image: url(https://graph.facebook.com/@(album.cover_photo)/picture?type=album&amp;access_token=@(AccessToken))"></p>
                 <p class="fb-album-item-caption">
                     @(album.name.ToString().Length > 13 ? album.name.ToString().Substring(0, 13) + "..." : album.name)
-                <br /><small class="text-muted">@album.count items</small>
-            </p>
-        </a>
+                    <br /><small class="text-muted">@album.count items</small>
+                </p>
+            </a>
         }
     </div>
 </body>

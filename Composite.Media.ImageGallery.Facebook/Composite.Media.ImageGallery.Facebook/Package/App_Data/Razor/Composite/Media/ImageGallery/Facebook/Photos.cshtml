@@ -8,11 +8,13 @@
         get { return "Display images from a specific Facebook album on a page."; }
     }
 
+    [FunctionParameter(Label = "Access token", Help = "The Facebook access token")]
+    public string AccessToken { get; set; }
+
     [FunctionParameter(Label = "Album ID", Help = "The ID of a Facebook album with images to display.")]
     public string AlbumID { get; set; }
 
-    [FunctionParameter(Label = "Access token", Help = "The Facebook access token", DefaultValue = "")]
-    public string AccessToken { get; set; }
+
 
     private dynamic GetData(string url)
     {
@@ -38,6 +40,11 @@
     try
     {
         photos = GetData(AlbumID + "/photos?limit=1000&offset=0");
+    }
+    catch (FacebookOAuthException)
+    {
+        <p class="alert alert-danger">The access token expired</p>
+        return;
     }
     catch (Exception ex)
     {
