@@ -27,7 +27,7 @@
 
             if (ProfileGroup != null || groups.Count == 1)
             {
-                var profiles = Data.Get<Profile>();
+                var profiles = Data.Get<Profile>().Where(p => p.PageId == CurrentPageNode.Id);
 
                 if (ProfileGroup != null)
                 {
@@ -41,7 +41,7 @@
             }
             else
             {
-                var allProfiles = Data.Get<Profile>().OrderBy(p => p.Priority).ToList();
+                var allProfiles = Data.Get<Profile>().Where(p => p.PageId == CurrentPageNode.Id).OrderBy(p => p.Priority).ToList();
 
                 foreach (var group in groups)
                 {
