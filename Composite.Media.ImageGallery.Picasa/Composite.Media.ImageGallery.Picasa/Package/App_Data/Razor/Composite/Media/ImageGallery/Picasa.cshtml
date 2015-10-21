@@ -1,0 +1,44 @@
+@inherits RazorFunction
+@using Composite.Core.WebClient.Renderings.Page
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Embeds a Flash slideshow of a web album from Google Picasa Web on a page."; }
+    }
+
+    [FunctionParameter(Label = "Album RSS URL", Help = "The RSS feed URL of a Picasa Web album.")]
+    public string AlbumRss { get; set; }
+
+    [FunctionParameter(Label = "Slideshow width", Help = "The width of the slideshow player in pixels. 600 by default.", DefaultValue = 600)]
+    public int Width { get; set; }
+
+    [FunctionParameter(Label = "Slideshow height", Help = "The height of the slideshow player in pixels. 400 by default.", DefaultValue = 400)]
+    public int Height { get; set; }
+
+    [FunctionParameter(Label = "Slideshow options", Help = "Additional slideshow options.", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"" label="""" bindingsourcename=""""><f:helpdefinition xmlns:f=""http://www.composite.net/ns/function/1.0"" helptext="""" /><f:param xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Options""><f:function xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Show Captions,AutoPlay"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>", DefaultValue = "AutoPlay")]
+    public string Options { get; set; }
+
+    [FunctionParameter(Label = "Background color", Help = "The background color (RGB) of the slideshow. '000000' (black) by default.", DefaultValue = "000000")]
+    public string BackgroundColor { get; set; }
+}
+@{
+    if (PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration)
+    {
+        return;
+    }
+
+    var AutoPlay = Options.Contains("AutoPlay");
+    var ShowCaptions = Options.Contains("Show Captions");
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+    <embed type="application/x-shockwave-flash"
+           src="https://photos.gstatic.com/media/slideshow.swf"
+           width="@Width" height="@Height"
+           pluginspage="http://www.macromedia.com/go/getflashplayer"
+           flashvars="host=picasaweb.google.com&amp;hl=en_US&amp;feat=flashalbum&amp;RGB=0x@(BackgroundColor)&amp;feed=@(HttpUtility.UrlEncode(AlbumRss.Replace("/base/", "/api/")))@(ShowCaptions? "&captions=1": string.Empty)@(!AutoPlay ? "&noautoplay=1": string.Empty)" />
+</body>
+</html>

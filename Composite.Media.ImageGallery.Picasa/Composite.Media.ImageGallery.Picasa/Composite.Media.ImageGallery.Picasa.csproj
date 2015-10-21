@@ -23,6 +23,12 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,16 +66,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Xslt\Composite\Media\ImageGallery\Picasa.xsl" />
-    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
-    <Content Include="Package\install.xml" />
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_PackageCreator\Composite.Media.ImageGallery.Picasa.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Composite\Media\ImageGallery\Picasa.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Release\Composite.Media.ImageGallery.Picasa.zip" />
   </ItemGroup>
