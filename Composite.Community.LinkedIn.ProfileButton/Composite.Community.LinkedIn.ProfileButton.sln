@@ -1,18 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Community.LinkedIn.ProfileButton", "Composite.Community.LinkedIn.ProfileButton\Composite.Community.LinkedIn.ProfileButton.csproj", "{61AFEEC0-5C2D-4ADB-BDC4-CE21734E27B7}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Composite.Community.LinkedIn.ProfileButton\\Composite.Community.LinkedIn.ProfileButton.csproj
-		SccProjectName1 = Composite.Community.LinkedIn.ProfileButton
-		SccLocalPath1 = Composite.Community.LinkedIn.ProfileButton
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -18,6 +19,16 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,19 +68,31 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Package\App_Data\Xslt\Composite\Community\LinkedIn\ProfileButton.xsl" />
-    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+    <Content Include="Package\App_Data\Razor\Composite\Community\LinkedIn\ProfileButton.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\Frontend\Composite\Community\LinkedIn\ProfileButton\btn_in_20x15.png" />
+    <Content Include="Package\Frontend\Composite\Community\LinkedIn\ProfileButton\btn_liprofile_blue_80x15.png" />
+    <Content Include="Package\Frontend\Composite\Community\LinkedIn\ProfileButton\btn_myprofile_160x33.png" />
+    <Content Include="Package\Frontend\Composite\Community\LinkedIn\ProfileButton\btn_profile_bluetxt_80x15.png" />
+    <Content Include="Package\Frontend\Composite\Community\LinkedIn\ProfileButton\btn_profile_greytxt_80x15.png" />
+    <Content Include="Package\Frontend\Composite\Community\LinkedIn\ProfileButton\btn_viewmy_120x33.png" />
+    <Content Include="Package\Frontend\Composite\Community\LinkedIn\ProfileButton\btn_viewmy_160x25.png" />
+    <Content Include="Package\Frontend\Composite\Community\LinkedIn\ProfileButton\btn_viewmy_160x33.png" />
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.Community.LinkedIn.ProfileButton.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Release\Composite.Community.LinkedIn.ProfileButton.zip" />
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">

@@ -1,0 +1,56 @@
+@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Adds a LinkedIn profile button to a web page."; }
+	}
+
+	[FunctionParameter(Label = "Profile URL", Help = "A public profile URL")]
+	public string ProfileUrl { get; set; }
+
+	[FunctionParameter(Label = "Button Style", Help = "The style for the button. 'ViewMy_160x33' by default.", WidgetMarkup = @"<f:widgetfunction xmlns:f =""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"" label="""" bindingsourcename=""""><f:helpdefinition xmlns:f=""http://www.composite.net/ns/function/1.0"" helptext="""" /><f:param xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Options""><f:function xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Utils.String.Split""><f:param name=""String"" value=""ViewMy_160x33,MyProfile_160x33,ViewMy_160x25,ViewMy_120x33,ProfileGreyText_80x15,ProfileBlueText_80x15,ProfileBlue_80x15,In_20x15"" /></f:function></f:param></f:widgetfunction>", DefaultValue = "ViewMy_160x33")]
+	public string ButtonStyle { get; set; }
+
+	[FunctionParameter(Label = "Button Title", Help = "The tooltip text that pops up on hovering over the button. 'View my profile on LinkedIn' by default", DefaultValue = "View my profile on LinkedIn")]
+	public string ButtonTitle { get; set; }
+}
+@{ 
+	var imgFolder = "~/Frontend/Composite/Community/LinkedIn";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+	<a href="@ProfileUrl" title="@ButtonTitle">
+		@switch (ButtonStyle)
+		{
+			case "ViewMy_160x33":
+				<img src="@imgFolder/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="@ButtonTitle" />
+				break;
+			case "MyProfile_160x33":
+				<img src="@imgFolder/btn_myprofile_160x33.png" width="160" height="33" border="0" alt="@ButtonTitle" />
+				break;
+			case "ViewMy_160x25":
+				<img src="@imgFolder/btn_viewmy_160x25.png" width="160" height="35" border="0" alt="@ButtonTitle" />
+				break;
+			case "ViewMy_120x33":
+				<img src="@imgFolder/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="@ButtonTitle" />
+				break;
+			case "ProfileGreyText_80x15":
+				<img src="@imgFolder/btn_profile_greytxt_80x15.png" width="80" height="15" border="0" alt="@ButtonTitle" />
+				break;
+			case "ProfileBlueText_80x15":
+				<img src="@imgFolder/btn_profile_bluetxt_80x15.png" width="80" height="15" border="0" alt="@ButtonTitle" />
+				break;
+			case "ProfileBlue_80x15":
+				<img src="@imgFolder/btn_liprofile_blue_80x15.png" width="80" height="15" border="0" alt="@ButtonTitle" />
+				break;
+			case "In_20x15":
+				<img src="@imgFolder/btn_in_20x15.png" width="20" height="15" border="0" alt="@ButtonTitle" style="vertical-align:middle" />
+				break;
+		}
+	</a>
+</body>
+</html>
