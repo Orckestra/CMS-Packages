@@ -23,6 +23,12 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,10 +69,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Xslt\Composite\Media\ImageGallery\ADGallery.xsl" />
-    <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
     <Content Include="Package\Frontend\Composite\Media\ImageGallery\ADGallery\ad_next.png" />
     <Content Include="Package\Frontend\Composite\Media\ImageGallery\ADGallery\ad_prev.png" />
     <Content Include="Package\Frontend\Composite\Media\ImageGallery\ADGallery\ad_scroll_back.png" />
@@ -79,7 +81,9 @@
     <Content Include="Package\install.xml" />
     <Content Include="_PackageCreator\Composite.Media.ImageGallery.ADGallery.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Composite\Media\ImageGallery\ADGallery.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Release\Composite.Media.ImageGallery.ADGallery.zip" />
   </ItemGroup>

@@ -9,7 +9,7 @@
  */
 (function($) {
   $.fn.adGallery = function(options) {
-    var defaults = { loader_image: 'loader.gif',
+    var defaults = { loader_image: '/Frontend/Composite/Media/ImageGallery/ADGallery/loader.gif',
                      start_at_index: 0,
                      description_wrapper: false,
                      thumb_opacity: 0.7,
@@ -563,7 +563,7 @@
         if(desc) {
           if(!this.settings.description_wrapper) {
             img_container.append(desc);
-            var width = size.width - parseInt(desc.css('padding-left'), 10) - parseInt(desc.css('padding-right'), 10);
+            var width = size.width;
             desc.css('width', width +'px');
           } else {
             this.settings.description_wrapper.append(desc);
