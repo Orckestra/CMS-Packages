@@ -92,7 +92,7 @@ namespace Composite.Tools.PackageCreator.Types
             {
                 creator.AddData(typeof(IMediaFileData));
                 creator.AddData(typeof(IMediaFolderData));
-                creator.AddFilesinDirectory(@"App_Data\Media\");
+                creator.AddFilesInDirectory(@"App_Data\Media\");
             }
             else if (Id == _datatypesName)
             {

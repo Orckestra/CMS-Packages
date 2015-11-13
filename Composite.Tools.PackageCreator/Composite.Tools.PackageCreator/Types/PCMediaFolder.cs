@@ -95,8 +95,8 @@ namespace Composite.Tools.PackageCreator.Types
 		{
 			var path = Path;
 
-			Func<IMediaFileData, bool> fileFilter = file => TestFile(file, path) && !creator.ExludedPaths.Any(p => TestFile(file, p));
-			Func<IMediaFolderData, bool> folderFilter = folder => TestFolder(folder, path) && !creator.ExludedPaths.Any(p => TestFolder(folder, p));
+			Func<IMediaFileData, bool> fileFilter = file => TestFile(file, path) && !creator.ExcludedPaths.Any(p => TestFile(file, p));
+			Func<IMediaFolderData, bool> folderFilter = folder => TestFolder(folder, path) && !creator.ExcludedPaths.Any(p => TestFolder(folder, p));
 
 			creator.AddData(fileFilter);
 			creator.AddData(folderFilter);

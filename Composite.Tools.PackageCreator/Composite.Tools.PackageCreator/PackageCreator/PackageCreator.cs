@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
@@ -13,13 +14,14 @@ using Composite.Data.ProcessControlled;
 using Composite.Data.Types;
 using Composite.Tools.PackageCreator.Actions;
 using Composite.Tools.PackageCreator.Types;
-using ICSharpCode.SharpZipLib.Zip;
 using Utility.IO;
 
 namespace Composite.Tools.PackageCreator
 {
     public sealed class PackageCreator
     {
+        private static readonly CompressionLevel PackageCompressionLevel = CompressionLevel.Optimal;
+
         public static readonly XNamespace mi = "http://www.composite.net/ns/management/packageinstaller/1.0";
         public static readonly XNamespace pc = "http://www.composite.net/ns/management/packagecreator/2.0";
         public static readonly XNamespace help = "http://www.composite.net/ns/help/1.0";
@@ -35,11 +37,12 @@ namespace Composite.Tools.PackageCreator
         public static readonly XName orderingAttributeName = "Ordering";
 
 
-        private string serviceDirectoryPath;
-        private string packageDirectoryPath;
-        private string zipDirectoryPath;
-		public HashSet<Guid> ExludedIds = new HashSet<Guid>();
-		public HashSet<string> ExludedPaths = new HashSet<string>();
+        private string _serviceDirectoryPath;
+        private string _packageDirectoryPath;
+        private string _zipDirectoryPath;
+
+		public HashSet<Guid> ExcludedIds = new HashSet<Guid>();
+		public HashSet<string> ExcludedPaths = new HashSet<string>();
         private List<XElement> Files = new List<XElement>();
         private List<XElement> Directories = new List<XElement>();
         private List<XElement> XslFiles = new List<XElement>();
@@ -64,22 +67,22 @@ namespace Composite.Tools.PackageCreator
 </xsl:stylesheet>";
 
 
-        private string packageName;
+        private string _packageName;
         public string PackageName
         {
             get
             {
-                return packageName;
+                return _packageName;
             }
         }
 
         internal PackageCreator(string path, string packageName)
         {
-            this.serviceDirectoryPath = path;
-            this.packageName = packageName;
-            if (!Directory.Exists(serviceDirectoryPath))
+            this._serviceDirectoryPath = path;
+            this._packageName = packageName;
+            if (!Directory.Exists(_serviceDirectoryPath))
             {
-                Directory.CreateDirectory(serviceDirectoryPath);
+                Directory.CreateDirectory(_serviceDirectoryPath);
             }
 
             BuildDataPosition();
@@ -91,31 +94,31 @@ namespace Composite.Tools.PackageCreator
             using (new DataScope(DataScopeIdentifier.Public))
             {
                 #region Init
-                if (packageName == string.Empty)
+                if (_packageName == string.Empty)
                 {
                     return "";
                 }
 
-                packageDirectoryPath = Path.Combine(serviceDirectoryPath, packageName);
-                if (Directory.Exists(packageDirectoryPath))
+                _packageDirectoryPath = Path.Combine(_serviceDirectoryPath, _packageName);
+                if (Directory.Exists(_packageDirectoryPath))
                 {
-                    Directory.Delete(packageDirectoryPath, true);
+                    Directory.Delete(_packageDirectoryPath, true);
                 }
 
-                var dataPackageDirectoryPath = Path.Combine(serviceDirectoryPath, packageName + "_Data");
+                var dataPackageDirectoryPath = Path.Combine(_serviceDirectoryPath, _packageName + "_Data");
 
-                zipDirectoryPath = Path.Combine(packageDirectoryPath, "Release");
-                packageDirectoryPath = Path.Combine(packageDirectoryPath, "Package");
+                _zipDirectoryPath = Path.Combine(_packageDirectoryPath, "Release");
+                _packageDirectoryPath = Path.Combine(_packageDirectoryPath, "Package");
 
-                Directory.CreateDirectory(packageDirectoryPath);
-                Directory.CreateDirectory(zipDirectoryPath);
+                Directory.CreateDirectory(_packageDirectoryPath);
+                Directory.CreateDirectory(_zipDirectoryPath);
 
                 if (Directory.Exists(dataPackageDirectoryPath))
                 {
-                    FileSystem.copyDirectory(dataPackageDirectoryPath, packageDirectoryPath);
+                    FileSystem.CopyDirectory(dataPackageDirectoryPath, _packageDirectoryPath);
                 }
 
-                string packageConfigFilePath = Path.Combine(serviceDirectoryPath, packageName + ".xml");
+                string packageConfigFilePath = Path.Combine(_serviceDirectoryPath, _packageName + ".xml");
 
                 XDocument config = XDocument.Load(packageConfigFilePath);
 
@@ -227,7 +230,7 @@ namespace Composite.Tools.PackageCreator
                     {
 
                         var path = item.IndexAttributeValue();
-                        AddFilesinDirectory(path);
+                        AddFilesInDirectory(path);
 
 
                     }
@@ -422,7 +425,7 @@ namespace Composite.Tools.PackageCreator
                         installXsl.Root.Add(templates);
                     }
 
-                    var configDirectory = Path.Combine(packageDirectoryPath, source);
+                    var configDirectory = Path.Combine(_packageDirectoryPath, source);
                     if (!Directory.Exists(configDirectory))
                         Directory.CreateDirectory(configDirectory);
                     installXsl.SaveTabbed(Path.Combine(configDirectory, configInstallFileName));
@@ -530,59 +533,50 @@ namespace Composite.Tools.PackageCreator
 
                 XPackage.Add(XPackageInstaller);
 
-                XPackage.SaveTabbed(Path.Combine(packageDirectoryPath, InstallFilename));
+                XPackage.SaveTabbed(Path.Combine(_packageDirectoryPath, InstallFilename));
 
-                var zipFilename = packageName + ".zip";
+                var zipFilename = _packageName + ".zip";
 
 
                 #region Zipping
-                var filenames = Directory.GetFiles(packageDirectoryPath, "*", SearchOption.AllDirectories);
-                var directories = Directory.GetDirectories(packageDirectoryPath, "*", SearchOption.AllDirectories);
-                using (var s = new ZipOutputStream(File.Create(Path.Combine(zipDirectoryPath, zipFilename))))
-                {
-                    s.SetLevel(9); // 0 - store only to 9 - means best compression
-                    var buffer = new byte[4096];
+                var filenames = Directory.GetFiles(_packageDirectoryPath, "*", SearchOption.AllDirectories);
+                var directories = Directory.GetDirectories(_packageDirectoryPath, "*", SearchOption.AllDirectories);
 
+
+                using(var archiveFileStream = File.Create(Path.Combine(_zipDirectoryPath, zipFilename)))
+                using (var archive = new ZipArchive(archiveFileStream, ZipArchiveMode.Create))
+                {
                     foreach (string directory in directories)
                     {
-                        var entry = new ZipEntry(directory.Replace(packageDirectoryPath + "\\", "").Replace("\\", "/") + "/")
-                                        {
-                                            IsUnicodeText = true,
-                                            DateTime = DateTime.Now
-                                        };
-                        s.PutNextEntry(entry);
-                        s.CloseEntry();
+                        string directoryEntryName = directory.Replace(_packageDirectoryPath + "\\", "").Replace("\\", "/") + "/";
+
+                        var dirEntry = archive.CreateEntry(directoryEntryName);
+                        dirEntry.LastWriteTime = Directory.GetLastWriteTime(directory);
                     }
 
                     foreach (string file in filenames)
                     {
-                        var entry = new ZipEntry(file.Replace(packageDirectoryPath + "\\", "").Replace("\\", "/"))
-                                        {
-                                            IsUnicodeText = true,
-                                            DateTime = DateTime.Now
-                                        };
-                        s.PutNextEntry(entry);
+                        string fileEntryName = file.Replace(_packageDirectoryPath + "\\", "").Replace("\\", "/");
 
-                        using (var fs = File.OpenRead(file))
+                        var entry = archive.CreateEntry(fileEntryName, PackageCompressionLevel);
+
+                        using (var fileStream = File.OpenRead(file))
+                        using (var entryStream = entry.Open())
                         {
-                            int sourceBytes;
-                            do
-                            {
-                                sourceBytes = fs.Read(buffer, 0, buffer.Length);
-                                s.Write(buffer, 0, sourceBytes);
-                            } while (sourceBytes > 0);
+                            fileStream.CopyTo(entryStream);
                         }
                     }
-                    s.Finish();
-                    s.Close();
                 }
                 #endregion
 
+                var packageCreatorDirectory = Path.Combine(_packageDirectoryPath, "../_" + CREATOR_DRECTORY);
                 try
                 {
-                    Directory.CreateDirectory(Path.Combine(packageDirectoryPath, "../_" + CREATOR_DRECTORY + ""));
-                    File.Copy(packageConfigFilePath, Path.Combine(packageDirectoryPath, "../_" + CREATOR_DRECTORY + "/" + packageName + ".xml"));
-                    SetFileReadAccess(Path.Combine(packageDirectoryPath, "../_" + CREATOR_DRECTORY + "/" + packageName + ".xml"), false);
+                    Directory.CreateDirectory(packageCreatorDirectory);
+
+                    var packageCopyFilePath = packageCreatorDirectory + @"\" + _packageName + ".xml";
+                    File.Copy(packageConfigFilePath, packageCopyFilePath);
+                    SetFileReadAccess(packageCopyFilePath, false);
 
                 }
                 catch { }
@@ -591,24 +585,26 @@ namespace Composite.Tools.PackageCreator
                 {
                     if (Directory.Exists(dataPackageDirectoryPath))
                     {
-                        FileSystem.copyDirectory(dataPackageDirectoryPath, Path.Combine(packageDirectoryPath, "../_" + CREATOR_DRECTORY + "/" + packageName + "_Data"));
+                        FileSystem.CopyDirectory(dataPackageDirectoryPath, packageCreatorDirectory + @"\" + _packageName + "_Data");
                     }
                 }
                 catch { }
 
-                return Path.Combine(packageName, "Release", zipFilename);
+                return Path.Combine(_packageName, "Release", zipFilename);
             }
 
         }
 
         public void AddDirectory(string filename)
         {
-            var targetFilename = Path.Combine(packageDirectoryPath, filename);
-            if (Directory.Exists(Path.GetDirectoryName(targetFilename)) == false)
+            var targetFilename = Path.Combine(_packageDirectoryPath, filename);
+            var targetDirectory = Path.GetDirectoryName(targetFilename);
+            if (!Directory.Exists(targetDirectory))
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(targetFilename));
+                Directory.CreateDirectory(targetDirectory);
             }
-            FileSystem.copyDirectory(Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), filename), targetFilename);
+
+            FileSystem.CopyDirectory(Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), filename), targetFilename);
 
             Directories.Add(
                 new XElement("Directory",
@@ -620,11 +616,12 @@ namespace Composite.Tools.PackageCreator
             );
         }
 
-        internal void AddFilesinDirectory(string path)
+        internal void AddFilesInDirectory(string path)
         {
-            foreach (var filename in Directory.GetFiles(Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), path), "*", SearchOption.AllDirectories))
+            var baseDirectory = PathUtil.Resolve(PathUtil.BaseDirectory);
+            foreach (var filename in Directory.GetFiles(Path.Combine(baseDirectory, path), "*", SearchOption.AllDirectories))
             {
-                AddFile(filename.Replace(PathUtil.Resolve(PathUtil.BaseDirectory), ""));
+                AddFile(filename.Replace(baseDirectory, ""));
             }
         }
 
@@ -692,7 +689,7 @@ namespace Composite.Tools.PackageCreator
                 List<Type> toremove = new List<Type>();
                 foreach (var type in foreignTypes)
                 {
-                    if (type.Value.Count() == 0)
+                    if (!type.Value.Any())
                     {
                         dataPosition.Add(type.Key, i);
                         toremove.Add(type.Key);
@@ -878,11 +875,11 @@ namespace Composite.Tools.PackageCreator
                     return;
             }
 
-			var keyProperies = data.GetKeyProperties();
-			if (keyProperies.Count == 1 && keyProperies.First().Name == "Id" && keyProperies.First().PropertyType == typeof(Guid))
+			var keyProperties = data.GetKeyProperties();
+			if (keyProperties.Count == 1 && keyProperties.First().Name == "Id" && keyProperties.First().PropertyType == typeof(Guid))
 			{
 				var id = data.GetProperty<Guid>("Id");
-				if (ExludedIds.Contains(id))
+				if (ExcludedIds.Contains(id))
 					return;
 			}
 
@@ -908,7 +905,7 @@ namespace Composite.Tools.PackageCreator
             }
 
             var shortFilePath = "Datas\\" + dataTypeFileName;
-            var filePath = Path.Combine(packageDirectoryPath, shortFilePath);
+            var filePath = Path.Combine(_packageDirectoryPath, shortFilePath);
 
             if (!Datas.ContainsKey(dataTypeKey))
             {
@@ -969,12 +966,14 @@ namespace Composite.Tools.PackageCreator
                 filename = filename.Substring(2);
             if (newFilename.StartsWith("~"))
                 newFilename = newFilename.Substring(2);
-            string targetFilename = Path.Combine(packageDirectoryPath, newFilename);
+
+            string targetFilename = Path.Combine(_packageDirectoryPath, newFilename);
             string targetDirectory = Path.GetDirectoryName(targetFilename);
-            if (Directory.Exists(targetDirectory) == false)
+            if (!Directory.Exists(targetDirectory))
             {
                 Directory.CreateDirectory(targetDirectory);
             }
+
             File.Copy(Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), filename), targetFilename, true);
             Files.Add(
                 new XElement("File",

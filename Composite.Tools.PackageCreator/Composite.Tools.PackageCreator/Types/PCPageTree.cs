@@ -94,7 +94,7 @@ namespace Composite.Tools.PackageCreator.Types
 			using (new DataScope(DataScopeIdentifier.Administrated))
 			{
 				var pageId = new Guid(this.Name);
-				if (pc.ExludedIds.Contains(pageId))
+				if (pc.ExcludedIds.Contains(pageId))
 					return;
 				PackPageTree(pc, pageId, IsRoot);
 				
@@ -128,7 +128,7 @@ namespace Composite.Tools.PackageCreator.Types
 
 			foreach (var childPageId in PageManager.GetChildrenIDs(pageId))
 			{
-				if (pc.ExludedIds.Contains(childPageId))
+				if (pc.ExcludedIds.Contains(childPageId))
 					continue;
 
 				PackPageTree(pc, childPageId);

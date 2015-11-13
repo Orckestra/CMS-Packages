@@ -46,10 +46,6 @@
       <HintPath>..\..\References\Composite\5.0\Composite.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\..\..\Public\References\Composite\2.1.1\ICSharpCode.SharpZipLib.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
       <HintPath>..\..\..\Public\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
       <Private>False</Private>
@@ -59,6 +55,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.configuration" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Workflow.Activities">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>

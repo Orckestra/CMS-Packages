@@ -9,7 +9,7 @@ namespace Utility.IO
 	public class FileSystem
 	{
 		// Copy directory structure recursively
-		public static void copyDirectory(string Src, string Dst)
+		public static void CopyDirectory(string Src, string Dst)
 		{
 			String[] Files;
 
@@ -22,7 +22,7 @@ namespace Utility.IO
 				// Sub directories
 				if (Directory.Exists(Element))
 				{
-					copyDirectory(Element, Dst + Path.GetFileName(Element));
+                    CopyDirectory(Element, Dst + Path.GetFileName(Element));
 				}
 				// Files in directory
 				else

@@ -200,7 +200,7 @@ namespace Composite.Tools.PackageCreator.Types
 			switch (Type)
 			{
 				case Exclude.MediaFolder:
-					creator.ExludedPaths.Add(this.Name);
+					creator.ExcludedPaths.Add(this.Name);
 					break;
 				case Exclude.DataItem:
 				case Exclude.Page:
@@ -208,7 +208,7 @@ namespace Composite.Tools.PackageCreator.Types
 					Guid id;
 					if (Guid.TryParse(this.Name, out id))
 					{
-						creator.ExludedIds.Add(id);
+						creator.ExcludedIds.Add(id);
 					}
 					break;
 			}
