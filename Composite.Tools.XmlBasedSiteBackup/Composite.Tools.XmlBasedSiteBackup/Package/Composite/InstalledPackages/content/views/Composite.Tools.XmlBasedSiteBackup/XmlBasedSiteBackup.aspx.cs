@@ -1,21 +1,21 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using Composite.C1Console.Security;
 using Composite.Core.IO;
-using ICSharpCode.SharpZipLib.Zip;
 
 public partial class XmlBasedSiteBackup : Page
 {
-    const string backupDirectoryRelativePath = "App_Data\\Backups";
-    protected readonly string _deleteCommand = "DeleteCommand";
+    private static readonly CompressionLevel BackupCompressionLevel = CompressionLevel.Fastest;
 
-    readonly string[] TemporaryDirectories = new[]
+    const string BackupDirectoryRelativePath = "App_Data\\Backups";
+    private const int ScriptTimeoutInSeconds = 600;  // 10 minutes
+
+    readonly string[] TemporaryDirectories = 
         {
             "\\App_Data\\Composite\\Cache\\Assemblies",
             "\\App_Data\\Composite\\Cache\\Resized images", 
@@ -24,7 +24,7 @@ public partial class XmlBasedSiteBackup : Page
             "\\App_Data\\Composite\\ApplicationState\\SerializedConsoleMessages"
         };
 
-    private static object _lock = new object();
+    private static readonly object _lock = new object();
 
     public string BackupFilename
     {
@@ -46,7 +46,7 @@ public partial class XmlBasedSiteBackup : Page
     {
         get
         {
-            return PathCombine(PathUtil.BaseDirectory, backupDirectoryRelativePath, "XmlBasedSiteBackup");
+            return PathCombine(PathUtil.BaseDirectory, BackupDirectoryRelativePath, "XmlBasedSiteBackup");
         }
     }
 
@@ -68,23 +68,30 @@ public partial class XmlBasedSiteBackup : Page
             TransmitBackup(Path.Combine(BackupDirectory, Path.GetFileName(backupFile)));
         }
 
-        if (Page.IsPostBack && !string.IsNullOrWhiteSpace(Request["deleteXMLBackupFile"]) && Request["commandName"] == "delete")
+        if (Page.IsPostBack)
         {
-            try
+            string commandName = Request["commandName"];
+            if (commandName == "delete")
             {
-                C1File.Delete(Path.Combine(BackupDirectory, Request["deleteXMLBackupFile"]));
+                string deleteXMLBackupFile = Request["deleteXMLBackupFile"];
+                if (!string.IsNullOrWhiteSpace(deleteXMLBackupFile))
+                {
+                    try
+                    {
+                        C1File.Delete(Path.Combine(BackupDirectory, deleteXMLBackupFile));
+                    }
+                    catch (Exception ex)
+                    {
+                        this.Validators.Add(new ErrorSummary(ex.Message));
+                    }
+                }
             }
-            catch (Exception ex)
+
+            if (commandName == "create")
             {
-                this.Validators.Add(new ErrorSummary(ex.Message));
+                CreateBackup();
             }
         }
-
-        if (Page.IsPostBack && !string.IsNullOrWhiteSpace(Request["commandName"]) && Request["commandName"] == "create")
-        {
-            CreateBackup();
-        }
-
     }
 
     protected void Page_PreRender(object sender, EventArgs e)
@@ -128,59 +135,61 @@ public partial class XmlBasedSiteBackup : Page
     protected string CreateBackup()
     {
         var Url = Request.Url;
-        string zipFilename = Url.Scheme + "_" + Url.Host + (Url.IsDefaultPort ? "" : (" " + Url.Port)) + "_" + DateTime.Now.ToString("yyyy_MM.dd_HHmm") + ".zip";
+        string zipFilename = Url.Scheme + "_" + Url.Host + (Url.IsDefaultPort ? "" : (" " + Url.Port)) + "_" +
+                             DateTime.Now.ToString("yyyy_MM.dd_HHmm") + ".zip";
         string zipFilePath = PathCombine(BackupDirectory, zipFilename);
-        if (!C1Directory.Exists(Path.GetDirectoryName(zipFilePath)))
-            C1Directory.CreateDirectory(Path.GetDirectoryName(zipFilePath));
 
-        #region Zipping
+        string backupDirectory = Path.GetDirectoryName(zipFilePath);
+        if (!C1Directory.Exists(backupDirectory))
+        {
+            C1Directory.CreateDirectory(backupDirectory);
+        }
+            
 
         var filenames = GetFilesRecursive(BaseDirectory);
         var directories = GetDirectoriesRecursive(BaseDirectory);
 
-        using (ZipOutputStream s = new ZipOutputStream(FileCreate(zipFilePath)))
+        lock (_lock)
         {
-            lock (_lock)
+            using(var archiveFileStream = FileCreate(zipFilePath))
+            using (var archive = new ZipArchive(archiveFileStream, ZipArchiveMode.Create))
             {
                 int oldScriptTimeOut = Server.ScriptTimeout;
-                Server.ScriptTimeout = 600; // 10 minutes
-
-                s.SetLevel(1); // 0 - store only to 9 - means best compression
-                byte[] buffer = new byte[4096];
+                Server.ScriptTimeout = ScriptTimeoutInSeconds;
 
                 foreach (string directory in directories)
                 {
-                    if (directory.Contains(backupDirectoryRelativePath))
+                    if (directory.Contains(BackupDirectoryRelativePath))
                         continue;
-                    ZipEntry entry = new ZipEntry(directory.Replace(BaseDirectory, "").Replace("\\", "/") + "/");
-                    entry.DateTime = DateTime.Now;
-                    s.PutNextEntry(entry);
-                    s.CloseEntry();
+
+                    string directoryEntryName = directory.Replace(BaseDirectory, "").Replace("\\", "/") + "/";
+
+                    var dirEntry = archive.CreateEntry(directoryEntryName);
+                    dirEntry.LastWriteTime = Directory.GetLastWriteTime(directory);
                 }
 
                 foreach (string file in filenames)
                 {
-                    if (file.Contains(backupDirectoryRelativePath)
-                        || IsTemporaryDirectory(file))
+                    if (file.Contains(BackupDirectoryRelativePath) || IsTemporaryDirectory(file))
+                    {
                         continue;
-                    ZipEntry entry = new ZipEntry(file.Replace(BaseDirectory, "").Replace("\\", "/"));
+                    }
+
+                    string fileEntryName = file.Replace(BaseDirectory, "").Replace("\\", "/");
+
+                    var entry = archive.CreateEntry(fileEntryName, BackupCompressionLevel);
+
                     try
                     {
                         var fi = new C1FileInfo(file);
-                        entry.DateTime = fi.LastWriteTime;
-                        entry.Size = fi.Length;
+                        entry.LastWriteTime = fi.LastWriteTime;
 
-                        using (C1FileStream fs = C1File.OpenRead(file))
+                        using (var fileStream = C1File.OpenRead(file))
+                        using (var entryStream = entry.Open())
                         {
-                            s.PutNextEntry(entry);
-                            int sourceBytes;
-                            do
-                            {
-                                sourceBytes = fs.Read(buffer, 0, buffer.Length);
-                                s.Write(buffer, 0, sourceBytes);
-                            } while (sourceBytes > 0);
+                            fileStream.CopyTo(entryStream);
                         }
-                    }
+                   }
                     catch (Exception e)
                     {
                         if (!file.Contains("App_Data\\Composite\\LogFiles"))
@@ -192,31 +201,26 @@ public partial class XmlBasedSiteBackup : Page
 
                 Server.ScriptTimeout = oldScriptTimeOut;
             }
-            s.Finish();
-            s.Close();
         }
-        #endregion
+  
         return zipFilename;
     }
 
     private static C1FileStream FileCreate(string filePath)
     {
-        lock (_lock)
+        var index = 0;
+        if (C1File.Exists(filePath))
         {
-            var index = 0;
-            if (C1File.Exists(filePath))
+            var path = Path.GetDirectoryName(filePath);
+            var name = Path.GetFileNameWithoutExtension(filePath);
+            var ext = Path.GetExtension(filePath);
+            do
             {
-                var path = Path.GetDirectoryName(filePath);
-                var name = Path.GetFileNameWithoutExtension(filePath);
-                var ext = Path.GetExtension(filePath);
-                do
-                {
-                    filePath = Path.Combine(path, name + "." + (++index) + ext);
-                } while (C1File.Exists(filePath));
-            }
-
-            return C1File.Create(filePath);
+                filePath = Path.Combine(path, name + "." + (++index) + ext);
+            } while (C1File.Exists(filePath));
         }
+
+        return C1File.Create(filePath);
     }
 
 
@@ -282,14 +286,14 @@ public partial class XmlBasedSiteBackup : Page
 
     private bool IsTemporaryDirectory(string fileOrDirectoryPath)
     {
-        return TemporaryDirectories.Any(tempDir => fileOrDirectoryPath.IndexOf(tempDir, StringComparison.OrdinalIgnoreCase) > 0);
+        return TemporaryDirectories.Any(tempDir => fileOrDirectoryPath.IndexOf(tempDir, StringComparison.OrdinalIgnoreCase) > -1);
     }
 
 }
 
 public class ErrorSummary : IValidator
 {
-    string _message;
+    readonly string _message;
 
     public ErrorSummary(string message)
     {
