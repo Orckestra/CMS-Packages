@@ -5,7 +5,10 @@
 		<cms:binding name="Answer" type="System.String" optional="true" />
 		<cms:binding name="DateAdded" type="System.DateTime" optional="true" />
 		<cms:binding name="QuestionCategory" type="System.Guid" optional="true" />
-		<cms:binding name="PublicationStatus" type="System.String" optional="true" />
+		<cms:binding name="PublicationStatus" type="System.String" />
+		<cms:binding name="PublicationStatusOptions" type="System.Object" />
+		<cms:binding name="PublishDate" type="System.DateTime" optional="true" />
+		<cms:binding name="UnpublishDate" type="System.DateTime" optional="true" />
 		<cms:binding name="Id" type="System.Guid" optional="true" />
 		<cms:binding name="PageId" type="System.Guid" optional="true" />
 	</cms:bindings>
@@ -44,6 +47,22 @@
 					<cms:bind source="Answer" />
 				</XhtmlEditor.Xhtml>
 			</XhtmlEditor>
+			<FieldGroup Label="Publication settings">
+				<KeySelector OptionsKeyField="Key" OptionsLabelField="Value" Label="Status" Help="Send the data to another publication status.">
+					<KeySelector.Selected>
+						<cms:bind source="PublicationStatus" />
+					</KeySelector.Selected>
+					<KeySelector.Options>
+						<cms:read source="PublicationStatusOptions" />
+					</KeySelector.Options>
+				</KeySelector>
+				<DateTimeSelector Label="Publish date" Help="Specify at which date and time you want the data to be published automatically.">
+					<cms:bind source="PublishDate" />
+				</DateTimeSelector>
+				<DateTimeSelector Label="Unpublish date" Help="Specify at which date and time you want the data to be unpublished automatically.">
+					<cms:bind source="UnpublishDate" />
+				</DateTimeSelector>
+			</FieldGroup>
 		</TabPanels>
 	</cms:layout>
 </cms:formdefinition>

@@ -1,17 +1,15 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Lists.FAQ" groupName="Composite.Lists" version="1.2.3" readMoreUrl="http://docs.composite.net/Composite.Lists.FAQ" author="Composite A/S" website="http://composite.net" id="59f6c759-4f9c-4bae-9220-d440825abfff" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Lists.FAQ" groupName="Composite.Lists" version="1.3.0" readMoreUrl="http://docs.composite.net/Composite.Lists.FAQ" author="Composite A/S" website="http://composite.net" id="59f6c759-4f9c-4bae-9220-d440825abfff" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows visitors to browse useful information as a list of questions and answers (FAQ)</Description>
-		<TechnicalDetails>Stores FAQ items in a global data type. Supports types and target audiences on items. Implements a list of items and an item detailed view as XSLT functions.</TechnicalDetails>
+		<TechnicalDetails>Stores FAQ items in a global data type. Implements a list of items and an item detailed view as Razor function. Require Bootstrap and Jquery.</TechnicalDetails>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
-				<File sourceFilename="~\App_Data\Xslt\Composite\Lists\FAQ\LinksToDetails.xsl" targetFilename="~\App_Data\Xslt\Composite\Lists\FAQ\LinksToDetails.xsl" allowOverwrite="false" />
-				<File sourceFilename="~\Frontend\Composite\Lists\FAQ\Styles.css" targetFilename="~\Frontend\Composite\Lists\FAQ\Styles.css" allowOverwrite="false" />
-				<File sourceFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Lists\FAQ.xml" targetFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Lists\FAQ.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Razor\Composite\Lists\FAQ.cshtml" targetFilename="~\App_Data\Razor\Composite\Lists\FAQ.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Lists\FAQ.xml" targetFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Lists\FAQ.xml" allowOverwrite="false" />
 			</Files>
 			<Directories />
@@ -27,17 +25,8 @@
 				<Type type="Composite.Data.Types.IGeneratedTypeWhiteList,Composite">
 					<Data dataScopeIdentifier="administrated" dataFilename="~\Datas\Composite.Data.Types.IGeneratedTypeWhiteLists_administrated.xml" />
 				</Type>
-				<Type type="Composite.Data.Types.INamedFunctionCall,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
-				</Type>
 				<Type type="Composite.Data.Types.IPageType,Composite">
 					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IPageTypes_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IParameter,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
-				</Type>
-				<Type type="Composite.Data.Types.IXsltFunction,Composite">
-					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
 				</Type>
 				<Type isDynamicAdded="true" type="Composite.Lists.FAQCategory">
 					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Lists.FAQCategorys_public.xml" />
