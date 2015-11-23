@@ -63,6 +63,14 @@ namespace Composite.Community.Blog
             return null;
         }
 
+        public BrowserViewSettings TryGetBrowserViewSettings(EntityToken entityToken, bool showPublishedView)
+        {
+            using (new DataConnection(showPublishedView ? PublicationScope.Published : PublicationScope.Unpublished))
+            {
+                return new BrowserViewSettings { Url = TryGetUrl(entityToken), ToolingOn = true };
+            }
+        }
+
         public EntityToken TryGetEntityToken(string url)
         {
             return null;
