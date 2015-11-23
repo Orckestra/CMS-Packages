@@ -67,7 +67,8 @@ namespace Composite.Community.Blog
         {
             using (new DataConnection(showPublishedView ? PublicationScope.Published : PublicationScope.Unpublished))
             {
-                return new BrowserViewSettings { Url = TryGetUrl(entityToken), ToolingOn = true };
+                string url = TryGetUrl(entityToken);
+                return url == null ? null : new BrowserViewSettings { Url = TryGetUrl(entityToken), ToolingOn = true };
             }
         }
 
