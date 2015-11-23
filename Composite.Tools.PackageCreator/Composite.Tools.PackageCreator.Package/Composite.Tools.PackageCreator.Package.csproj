@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -54,7 +54,7 @@
   <ItemGroup>
     <Reference Include="Composite, Version=4.2.5168.23520, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Public\References\Composite\4.2\Composite.dll</HintPath>
+      <HintPath>..\..\References\Composite\4.2\Composite.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -144,9 +144,9 @@ DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
 
 DEL "$(TargetDir)$(SolutionName).zip"
 
-"$(SolutionDir)..\..\Public\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+"$(SolutionDir)..\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
 
-"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(ProjectDir)Release\$(SolutionName).zip"
+
 COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"</PostBuildEvent>
   </PropertyGroup>
 </Project>

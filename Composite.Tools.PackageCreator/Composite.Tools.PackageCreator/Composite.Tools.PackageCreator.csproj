@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -47,11 +47,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
-      <HintPath>..\..\..\Public\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <HintPath>..\..\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation">
-      <HintPath>..\..\..\Public\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+      <HintPath>..\..\References\Composite\2.1.1\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.configuration" />
@@ -205,7 +205,6 @@
       <PackageVersion>$([System.Text.RegularExpressions.Regex]::Match($(InstallXml),"PackageInformation[^&gt;]+version=.([0-9\.]+).").Groups[1].Value)</PackageVersion>
       <AssemblyFileVersionAttribute>[assembly:System.Reflection.AssemblyFileVersion("$(PackageVersion)")]</AssemblyFileVersionAttribute>
     </PropertyGroup>
-    <Exec Command="&quot;$(DevEnvDir)\TF.exe&quot; checkout /lock:none  &quot;$(ProjectDir)Properties\AssemblyFileVersion.cs&quot;" IgnoreExitCode="true" />
     <WriteLinesToFile File="Properties\AssemblyFileVersion.cs" Lines="$(AssemblyFileVersionAttribute)" Overwrite="true">
     </WriteLinesToFile>
   </Target>

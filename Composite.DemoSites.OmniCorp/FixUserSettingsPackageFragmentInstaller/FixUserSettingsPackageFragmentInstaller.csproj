@@ -53,8 +53,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(SolutionDir)Composite.DemoSites.OmniCorp\Package\bin\$(TargetFileName)"
-copy "$(TargetPath)" "$(SolutionDir)Composite.DemoSites.OmniCorp\Package\bin\</PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)Composite.DemoSites.OmniCorp\Package\bin\</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

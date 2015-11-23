@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -37,13 +37,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Composite">
-      <HintPath>..\..\..\Public\References\Composite\3.2\Composite.dll</HintPath>
+      <HintPath>..\..\References\Composite\3.2\Composite.dll</HintPath>
     </Reference>
     <Reference Include="Composite.Versioning.ContentVersioning">
       <HintPath>..\..\..\Commercial\Composite.Versioning.ContentVersioning\Composite.Versioning.ContentVersioning.Package\Package\Bin\Composite.Versioning.ContentVersioning.dll</HintPath>
     </Reference>
     <Reference Include="Composite.Workflows">
-      <HintPath>..\..\..\Public\References\Composite\3.2\Composite.Workflows.dll</HintPath>
+      <HintPath>..\..\References\Composite\3.2\Composite.Workflows.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -81,14 +81,13 @@
       <PackageVersion>$([System.Text.RegularExpressions.Regex]::Match($(InstallXml),"PackageInformation[^&gt;]+version=.([0-9\.]+).").Groups[1].Value)</PackageVersion>
       <AssemblyFileVersionAttribute>[assembly:System.Reflection.AssemblyFileVersion("$(PackageVersion)")]</AssemblyFileVersionAttribute>
     </PropertyGroup>
-    <Exec Command="&quot;$(DevEnvDir)\TF.exe&quot; checkout /lock:none  &quot;$(ProjectDir)Properties\VersionInfo.cs&quot;" IgnoreExitCode="true" />
     <WriteLinesToFile File="Properties\VersionInfo.cs" Lines="$(AssemblyFileVersionAttribute)" Overwrite="true">
     </WriteLinesToFile>
   </Target>
   <Target Name="AfterBuild">
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>"$(DevEnvDir)\TF.exe" checkout /lock:none  "$(SolutionDir)$(SolutionName).Package\Package\Bin\$(TargetFileName)"
+    <PostBuildEvent>
 copy "$(TargetPath)" "$(SolutionDir)$(SolutionName).Package\Package\Bin\"</PostBuildEvent>
   </PropertyGroup>
 </Project>
