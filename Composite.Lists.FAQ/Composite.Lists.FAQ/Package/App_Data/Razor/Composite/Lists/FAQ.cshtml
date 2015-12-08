@@ -1,3 +1,4 @@
+@using System.ComponentModel.Design
 @using Composite.Lists
 @inherits RazorFunction
 
@@ -8,13 +9,13 @@
 		get { return "Display FAQ items on a page"; }
 	}
 
-	[FunctionParameter(Label = "Group by Category", DefaultValue = false)]
+	[FunctionParameter(Label = "Group by Category", Help = "If checked, the FAQ items will be grouped by category. Grouped by default.",  DefaultValue = true)]
 	public bool GroupByCategory { get; set; }
 
-	[FunctionParameter(Label = "Order By", Help = "The field to order FAQ questions by.", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Question Heading,Date Added"" /></f:function></f:param></f:widgetfunction>", DefaultValue = "Date Added")]
-	public string OrderBy { get; set; }
+	[FunctionParameter(Label = "Order by", Help = "The field to order FAQ items by: 'Question Heading' or 'Date Added' (default).", WidgetMarkup = @" <f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Question Heading,Date Added"" /></f:function></f:param></f:widgetfunction>", DefaultValue = "Date Added")]
+    public string OrderBy { get; set; }
 
-	[FunctionParameter(Label = "Sort Order", Help = "The order to sort data in (ascending or descending)", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.Bool.BoolSelector""><f:param name=""FalseLabel"" value=""Descending"" /><f:param name=""TrueLabel"" value=""Ascending"" /></f:widgetfunction>", DefaultValue = true)]
+	[FunctionParameter(Label = "Sort Order", Help = "The order to sort FAQ items by: ascending (default) or descending.", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.Bool.BoolSelector""><f:param name=""FalseLabel"" value=""Descending"" /><f:param name=""TrueLabel"" value=""Ascending"" /></f:widgetfunction>", DefaultValue = true)]
 	public bool OrderByAscending { get; set; }
 }
 
