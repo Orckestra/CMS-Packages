@@ -1,157 +1,191 @@
 ﻿@inherits RazorFunction
+@using Composite.Core.WebClient.Renderings.Page
 @using Composite.Media.YouTubeChannel
 @using Composite.Media.YouTubeChannel.JSonData
 @functions {
-    public override string FunctionDescription
-    {
-        get { return "A Youtube Channel Playlists Viewer"; }
-    }
+	public override string FunctionDescription
+	{
+		get { return "A Youtube Channel Playlists Viewer"; }
+	}
 
-    [FunctionParameter(Label = "YouTube Channel", Help = "The user name or URL of the YouTube channel")]
-    public string YouTubeChannel { get; set; }
+	[FunctionParameter(Label = "YouTube Channel", Help = "The user name or URL of the YouTube channel")]
+	public string YouTubeChannel { get; set; }
 
-    [FunctionParameter(Label = "API Key", Help = "API Key")]
-    public string APIKey { get; set; }
+	[FunctionParameter(Label = "API Key", Help = "API Key")]
+	public string APIKey { get; set; }
 
-    [FunctionParameter(Label = "Page Size", Help = "The count of videos per page.", DefaultValue = 10)]
-    public int PageSize { get; set; }
+	[FunctionParameter(Label = "Page Size", Help = "The count of videos per page.", DefaultValue = 10)]
+	public int PageSize { get; set; }
 }
 @{
-    YouTubeChannel = YoutubeChannelFacade.ParseYouTubeChannelReference(YouTubeChannel);
+	YouTubeChannel = YoutubeChannelFacade.ParseYouTubeChannelReference(YouTubeChannel);
 
-    // var pageToken = Request["pagetoken"] ?? string.Empty;
-    var playLists = YoutubeChannelFacade.GetYouTubePlayLists(APIKey, YouTubeChannel, 50, null);
+	// var pageToken = Request["pagetoken"] ?? string.Empty;
+	var playLists = YoutubeChannelFacade.GetYouTubePlayLists(APIKey, YouTubeChannel, 50, null);
 
-    if (playLists == null)
-    {
-        <p class="alert alert-warning">@Resources.YouTubeChannel.ChannelNotFound</p>
-        return;
-    }
+	if (playLists == null)
+	{
+		<p class="alert alert-warning">@Resources.YouTubeChannel.ChannelNotFound</p>
+		return;
+	}
 
-    if (!playLists.items.Any())
-    {
-        <div class="alert alert-warning">@Resources.YouTubeChannel.NoItemsMessage</div>
-        return;
-    }
-    var playlistId = Request["id"];
-    ListItem currentPlaylist = null;
-    if (!string.IsNullOrEmpty(playlistId))
-    {
-        currentPlaylist = playLists.items.FirstOrDefault(p => p.id == playlistId);
-    }
+	if (!playLists.items.Any())
+	{
+		<div class="alert alert-warning">@Resources.YouTubeChannel.NoItemsMessage</div>
+		return;
+	}
+	var playlistId = Request["id"];
+	ListItem currentPlaylist = null;
+	if (!string.IsNullOrEmpty(playlistId))
+	{
+		currentPlaylist = playLists.items.FirstOrDefault(p => p.id == playlistId);
+	}
 
-    if (currentPlaylist == null)
-    {
-        currentPlaylist = playLists.items[0];
-    }
-    var pageToken = Request["pagetoken"] ?? string.Empty;
-    var playlistItems = YoutubeChannelFacade.GetYouTubePlayListItems(currentPlaylist.id, PageSize, pageToken, APIKey);
+	if (currentPlaylist == null)
+	{
+		currentPlaylist = playLists.items[0];
+	}
+	var pageToken = Request["pagetoken"] ?? string.Empty;
+	var playlistItems = YoutubeChannelFacade.GetYouTubePlayListItems(currentPlaylist.id, PageSize, pageToken, APIKey);
 
 
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
+	@if (PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration)
+	{
+		<style type="text/css">
+			.screenshot {
+				position: relative;
+			}
+
+				.screenshot div {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					width: 68px;
+					height: 48px;
+					margin-left: -34px;
+					margin-top: -24px;
+				}
+		</style>
+	}
 </head>
 <body>
-    <div class="youtube-playlists">
+	<div class="youtube-playlists">
 
-        <h2>@currentPlaylist.snippet.title <small>@currentPlaylist.contentDetails["itemCount"] @(currentPlaylist.contentDetails["itemCount"] == "1" ? Resources.YouTubeChannel.VideoOneCountText : Resources.YouTubeChannel.VideoCountText)</small></h2>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-7">
-                <div class="media-object">
-                    <div id="ytplayer" class="player-window"></div>
-                    <div class="media-body">
-                        <h3 id="js-player-title" class="media-heading">
-                            @playlistItems.items[0].snippet.title
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-5">
-                <div class="list-group">
-                    @foreach (var item in playlistItems.items)
-                    {
-                        <a href="#@item.snippet.resourceId.videoId" title="@item.snippet.title" class="list-group-item clearfix" data-title="@item.snippet.title" data-id="@item.snippet.resourceId.videoId">
-                            <img class="img-responsive pull-left" src="@item.snippet.thumbnails["default"].url" alt="img" />
-                            <h5 class="list-group-item-heading">@item.snippet.title</h5>
-                        </a>
-                    }
-                </div>
-                @if (playlistItems.pageinfo.totalResults > PageSize)
-                {
-                    <ul class="pagination">
-                        @if (!string.IsNullOrEmpty(playlistItems.prevPageToken))
-                        {
-                            <li><a href="?id=@(currentPlaylist.id)&amp;pagetoken=@(playlistItems.prevPageToken)" title="Previous">«</a></li>
-                        }
-                        else
-                        {
-                            <li class="disabled"><a>«</a></li>
-                        }
+		<h2>@currentPlaylist.snippet.title <small>@currentPlaylist.contentDetails["itemCount"] @(currentPlaylist.contentDetails["itemCount"] == "1" ? Resources.YouTubeChannel.VideoOneCountText : Resources.YouTubeChannel.VideoCountText)</small></h2>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-7">
+				<div class="media-object">
+					@if (PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration)
+					{
+						<div class="screenshot pull-left">
+							<div>
+								<svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%"><path class="ytp-large-play-button-bg" d="m .66,37.62 c 0,0 .66,4.70 2.70,6.77 2.58,2.71 5.98,2.63 7.49,2.91 5.43,.52 23.10,.68 23.12,.68 .00,-1.3e-5 14.29,-0.02 23.81,-0.71 1.32,-0.15 4.22,-0.17 6.81,-2.89 2.03,-2.07 2.70,-6.77 2.70,-6.77 0,0 .67,-5.52 .67,-11.04 l 0,-5.17 c 0,-5.52 -0.67,-11.04 -0.67,-11.04 0,0 -0.66,-4.70 -2.70,-6.77 C 62.03,.86 59.13,.84 57.80,.69 48.28,0 34.00,0 34.00,0 33.97,0 19.69,0 10.18,.69 8.85,.84 5.95,.86 3.36,3.58 1.32,5.65 .66,10.35 .66,10.35 c 0,0 -0.55,4.50 -0.66,9.45 l 0,8.36 c .10,4.94 .66,9.45 .66,9.45 z" fill="#1f1f1e" fill-opacity="0.81"></path><path d="m 26.96,13.67 18.37,9.62 -18.37,9.55 -0.00,-19.17 z" fill="#fff"></path><path d="M 45.02,23.46 45.32,23.28 26.96,13.67 43.32,24.34 45.02,23.46 z" fill="#ccc"></path></svg>
+							</div>
+							<img class="img-responsive" src="http://img.youtube.com/vi/@(playlistItems.items[0].snippet.resourceId.videoId)/0.jpg" alt="img" />
+						</div>
+						
+					}
+					else
+					{
+						<div id="ytplayer" class="player-window"></div>
+					}
+					<div class="media-body">
+						<h3 id="js-player-title" class="media-heading">
+							@playlistItems.items[0].snippet.title
+						</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5">
+				<div class="list-group">
+					@foreach (var item in playlistItems.items)
+					{
+						<a href="#@item.snippet.resourceId.videoId" title="@item.snippet.title" class="list-group-item clearfix" data-title="@item.snippet.title" data-id="@item.snippet.resourceId.videoId">
+							<img class="img-responsive pull-left" src="@item.snippet.thumbnails["default"].url" alt="img" />
+							<h5 class="list-group-item-heading">@item.snippet.title</h5>
+						</a>
+					}
+				</div>
+				@if (playlistItems.pageinfo.totalResults > PageSize)
+				{
+					<ul class="pagination">
+						@if (!string.IsNullOrEmpty(playlistItems.prevPageToken))
+						{
+							<li><a href="?id=@(currentPlaylist.id)&amp;pagetoken=@(playlistItems.prevPageToken)" title="Previous">«</a></li>
+						}
+						else
+						{
+							<li class="disabled"><a>«</a></li>
+						}
 
-                        @if (!string.IsNullOrEmpty(playlistItems.nextPageToken))
-                        {
-                            <li><a href="?id=@(currentPlaylist.id)&amp;pagetoken=@(playlistItems.nextPageToken)" title="Next">»</a></li>
-                        }
-                        else
-                        {
-                            <li class="disabled"><a>»</a></li>
-                        }
-                    </ul>
-                }
-            </div>
-        </div>
-        <hr />
-        <h3>@Resources.YouTubeChannel.PlayListsTitle</h3>
-        <hr />
-        <div class="list-group">
-            @foreach (var playlist in playLists.items)
+						@if (!string.IsNullOrEmpty(playlistItems.nextPageToken))
+						{
+							<li><a href="?id=@(currentPlaylist.id)&amp;pagetoken=@(playlistItems.nextPageToken)" title="Next">»</a></li>
+						}
+						else
+						{
+							<li class="disabled"><a>»</a></li>
+						}
+					</ul>
+				}
+			</div>
+		</div>
+		<hr />
+		<h3>@Resources.YouTubeChannel.PlayListsTitle</h3>
+		<hr />
+		<div class="list-group">
+			@foreach (var playlist in playLists.items)
             {
-                <a href="?id=@playlist.id" title="@playlist.snippet.title" class="list-group-item clearfix @(currentPlaylist.id == playlist.id ? "active": string.Empty)">
-                    <img class="img-responsive pull-left" src="@playlist.snippet.thumbnails["default"].url" alt="@playlist.snippet.title" />
-                    <h4 class="list-group-item-heading">@playlist.snippet.title</h4>
-                    <p class="list-group-item-text">@playlist.snippet.description</p>
-                    <p class="list-group-item-text">
-                        <small>
-                            @playlist.contentDetails["itemCount"] @(playlist.contentDetails["itemCount"] == "1" ? Resources.YouTubeChannel.VideoOneCountText : Resources.YouTubeChannel.VideoCountText)
-                            <span class="text-muted"> @playlist.snippet.publishedAt.ToShortDateString()</span>
-                        </small>
-                    </p>
-                </a>
+				<a href="?id=@playlist.id" title="@playlist.snippet.title" class="list-group-item clearfix @(currentPlaylist.id == playlist.id ? "active": string.Empty)">
+					<img class="img-responsive pull-left" src="@playlist.snippet.thumbnails["default"].url" alt="@playlist.snippet.title" />
+					<h4 class="list-group-item-heading">@playlist.snippet.title</h4>
+					<p class="list-group-item-text">@playlist.snippet.description</p>
+					<p class="list-group-item-text">
+						<small>
+							@playlist.contentDetails["itemCount"] @(playlist.contentDetails["itemCount"] == "1" ? Resources.YouTubeChannel.VideoOneCountText : Resources.YouTubeChannel.VideoCountText)
+							<span class="text-muted"> @playlist.snippet.publishedAt.ToShortDateString()</span>
+						</small>
+					</p>
+				</a>
             }
-        </div>
-        <script type="text/javascript">
-            // Load the IFrame Player API code asynchronously.
-            var tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/player_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		</div>
+		<script type="text/javascript">
+			// Load the IFrame Player API code asynchronously.
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/player_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-            var player;
+			var player;
 
-            function onYouTubePlayerAPIReady() {
-                var id = window.location.hash.substr(1);
-                player = new YT.Player('ytplayer', {
-                    height: '390',
-                    width: '100%',
-                    videoId: window.location.hash.substr(1)
-                });
+			function onYouTubePlayerAPIReady() {
+				var id = window.location.hash.substr(1);
+				player = new YT.Player('ytplayer', {
+					height: '390',
+					width: '100%',
+					videoId: id || '@playlistItems.items[0].snippet.resourceId.videoId'
+				});
 
-                if (id) {
-                    var $item = $('[data-id=' + id + ']');
-                    $('#js-player-title').text($item.data("title"));
-                }
-            }
+				if (id) {
+					var $item = $('[data-id=' + id + ']');
+					$('#js-player-title').text($item.data("title"));
+				}
+			}
 
-            $(window).on('hashchange', function () {
-                var id = window.location.hash.substr(1);
-                player.loadVideoById({ 'videoId': id, 'suggestedQuality': 'large' });
-                var $item = $('[data-id=' + id + ']');
-                $('#js-player-title').text($item.data("title"));
-                $('html, body').animate({ scrollTop: "0" });
-            });
-        </script>
-    </div>
+			$(window).on('hashchange', function () {
+				var id = window.location.hash.substr(1);
+				player.loadVideoById({ 'videoId': id, 'suggestedQuality': 'large' });
+				var $item = $('[data-id=' + id + ']');
+				$('#js-player-title').text($item.data("title"));
+				$('html, body').animate({ scrollTop: "0" });
+			});
+		</script>
+	</div>
 </body>
+
+
 
 </html>
