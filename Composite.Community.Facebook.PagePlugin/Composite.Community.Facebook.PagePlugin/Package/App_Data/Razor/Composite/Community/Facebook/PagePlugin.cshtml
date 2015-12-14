@@ -12,7 +12,7 @@
 
 
 	[FunctionParameter(Label = "Options", Help = "Options to customize the Page Plugin's appearance.", DefaultValue = "Adapt to plugin container width,Show Friends’ Faces,Show Posts",
-					 WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Adapt to plugin container width,Show Friends’ Faces,Use Small Header,Hide Cover Photo,Show Posts"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
+					 WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Adapt to plugin container width,Show Friends’ Faces,Use Small Header,Hide Cover Photo,Show Posts"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /><f:param name=""Required"" value=""False"" /></f:widgetfunction>")]
 	public string Options { get; set; }
 
 

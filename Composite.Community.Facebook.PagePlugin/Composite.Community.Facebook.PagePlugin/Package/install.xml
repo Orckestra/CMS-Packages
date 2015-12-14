@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.Facebook.PagePlugin" groupName="Composite.Community.Facebook" version="1.0.0" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Community.Facebook.PagePlugin" id="4b4953d5-1a73-417d-b012-7761fe4f78cc" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Community.Facebook.PagePlugin" groupName="Composite.Community.Facebook" version="1.0.1" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Community.Facebook.PagePlugin" id="4b4953d5-1a73-417d-b012-7761fe4f78cc" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<TechnicalDetails>Read more here - https://developers.facebook.com/docs/plugins/page-plugin#how-to</TechnicalDetails>
 		<Description>The Page plugin lets you easily embed and promote any Facebook Page on your website. Just like on Facebook, your visitors can like and share the Page without having to leave your site.</Description>
 	</mi:PackageInformation>
