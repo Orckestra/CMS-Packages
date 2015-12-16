@@ -1,0 +1,26 @@
+﻿@using Composite.Core.WebClient.Renderings.Page
+@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Embeds a forum hosted on nabble.com."; }
+	}
+
+	[FunctionParameter(Label = "Embed Code", Help = "Code that embeds the forum on the page", WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+	public string EmbedCode { get; set; }
+
+}
+@{
+	if (PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration)
+	{
+		return;
+	}
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+	@Html.Raw(EmbedCode);
+</body>
+</html>
