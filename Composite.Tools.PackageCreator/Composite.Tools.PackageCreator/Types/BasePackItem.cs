@@ -86,7 +86,7 @@ namespace Composite.Tools.PackageCreator.Types
             var category = config.ForceElement(ns + this.CategoryName);
             category.Add(
                 new XElement(itemName,
-                    new XAttribute(category.IndexAttributeName(), this.Id)
+                    new XAttribute(category.IndexAttributeName(), Id)
                 )
             );
 
@@ -95,7 +95,7 @@ namespace Composite.Tools.PackageCreator.Types
         {
             foreach (var name in this.CategoryAllNames)
             {
-                config.Elements(ns + name).Elements(itemName).Where(x => x.IndexAttributeValue() == this.Name).Remove();
+                config.Elements(ns + name).Elements(itemName).Where(x => x.IndexAttributeValue() == Id).Remove();
             }
         }
 
