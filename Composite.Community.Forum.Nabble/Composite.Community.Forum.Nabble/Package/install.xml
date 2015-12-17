@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.Forum.Nabble" groupName="Composite.Community" readMoreUrl="http://docs.composite.net/Composite.Community.Forum.Nabble" version="1.0.4" author="Composite A/S" website="http://composite.net" id="571dc4a9-de13-4ba3-97db-45ec73072f3d" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.Community.Forum.Nabble" groupName="Composite.Community" readMoreUrl="http://docs.composite.net/Composite.Community.Forum.Nabble" version="1.0.5" author="Composite A/S" website="http://composite.net" id="571dc4a9-de13-4ba3-97db-45ec73072f3d" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Embeds a forum hosted on nabble.com</Description>
 		<TechnicalDetails>Embeds a forum hosted on nabble.com</TechnicalDetails>
 	</mi:PackageInformation>
