@@ -3,115 +3,149 @@
 @using System.Web.Caching;
 
 @functions {
-    public override string FunctionDescription
-    {
-        get { return "Display images from Facebook albums on a page."; }
-    }
-    [FunctionParameter(Label = "Access token", Help = "The Facebook access token")]
-    public string AccessToken { get; set; }
+	public override string FunctionDescription
+	{
+		get { return "Display images from Facebook albums on a page."; }
+	}
 
-    [FunctionParameter(Label = "Object unique ID", Help = "The unique ID of a Facebook public page or user account")]
-    public string ObjectUniqueID { get; set; }
+	[FunctionParameter(Label = "Access token", Help = "The Facebook access token")]
+	public string AccessToken { get; set; }
 
-    [FunctionParameter(Label = "Album types", Help = "One or more types of albums to show on a page: normal, wall, profile.", DefaultValue = "normal,wall,profile,mobile,cover,app", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""normal,wall,profile,mobile,cover,app"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
-    public string AlbumTypes { get; set; }
+	[FunctionParameter(Label = "Object unique ID", Help = "The unique ID of a Facebook public page or user account.", DefaultValue = "me")]
+	public string ObjectUniqueID { get; set; }
 
-    [FunctionParameter(Label = "Use Facebook links to albums", Help = "When 'true', albums will be opened externally on their dedicated Facebook pages; otherwise, on the current page ('false' by default)", DefaultValue = false)]
-    public bool UseFacebookLinksToAlbums { get; set; }
+	[FunctionParameter(Label = "Album types", Help = "One or more types of albums to show on a page: normal, wall, profile.", DefaultValue = "normal,wall,profile", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""normal,wall,profile,mobile,cover,app"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /></f:widgetfunction>")]
+	public string AlbumTypes { get; set; }
 
-    private string GetName(dynamic data, string id)
-    {
-        foreach (var item in data)
-        {
-            if (item.id == id)
-            {
-                return item.name;
-            }
-        }
-        return string.Empty;
-    }
+	[FunctionParameter(Label = "Use Facebook links to albums", Help = "When 'true', albums will be opened externally on their dedicated Facebook pages; otherwise, on the current page ('false' by default)", DefaultValue = false)]
+	public bool UseFacebookLinksToAlbums { get; set; }
 
-    private dynamic GetData(string url)
-    {
+	private string GetName(dynamic data, string id)
+	{
+		foreach (var item in data)
+		{
+			if (item.id == id)
+			{
+				return item.name;
+			}
+		}
+		return string.Empty;
+	}
 
-        if (HttpContext.Current.Cache[url] == null)
-        {
-            var fb = new FacebookClient();
-            if (!string.IsNullOrEmpty(AccessToken.Trim()))
-            {
-                fb = new FacebookClient(HttpUtility.UrlDecode(AccessToken));
-            }
-            HttpContext.Current.Cache.Add(url, fb.Get(url),
-                                 null, DateTime.Now.AddSeconds(60),
-                                 Cache.NoSlidingExpiration,
-                                 CacheItemPriority.Default,
-                                 null);
-        }
-        return HttpContext.Current.Cache[url];
-    }
+	private dynamic GetData(string url)
+	{
+
+		if (HttpContext.Current.Cache[url] == null)
+		{
+			var fb = new FacebookClient();
+			if (!string.IsNullOrEmpty(AccessToken.Trim()))
+			{
+				fb = new FacebookClient(HttpUtility.UrlDecode(AccessToken));
+			}
+			HttpContext.Current.Cache.Add(url, fb.Get(url),
+								 null, DateTime.Now.AddSeconds(60),
+								 Cache.NoSlidingExpiration,
+								 CacheItemPriority.Default,
+								 null);
+		}
+		return HttpContext.Current.Cache[url];
+	}
+
+	private string GetAlbumCoverPhoto(string coverPhotoId)
+	{
+		var coverPhotoCacheName = "AlbumCoverPhoto" + coverPhotoId;
+		if (HttpContext.Current.Cache[coverPhotoCacheName] == null)
+		{
+			var fb = new FacebookClient();
+			if (!string.IsNullOrEmpty(AccessToken.Trim()))
+			{
+				fb = new FacebookClient(HttpUtility.UrlDecode(AccessToken));
+			}
+			dynamic data = fb.Get(coverPhotoId + "?fields=images");
+			HttpContext.Current.Cache.Add(coverPhotoCacheName, data.images[data.images.Count - 1].source.Replace("https:", ""),
+								 null, DateTime.Now.AddSeconds(360),
+								 Cache.NoSlidingExpiration,
+								 CacheItemPriority.Default,
+								 null);
+		}
+		return HttpContext.Current.Cache[coverPhotoCacheName].ToString();
+	}
+
+
+	private string AlbumCoverInlineStyle(dynamic coverPhoto)
+	{
+		if (coverPhoto != null)
+		{
+			return "background-image: url(" + GetAlbumCoverPhoto(coverPhoto.id) + ");";
+		}
+		return string.Empty;
+	}
 
 }
 @{
 
-    dynamic albums = null;
-    try
-    {
-        albums = GetData(ObjectUniqueID + "/albums");
-    }
-    catch (FacebookOAuthException)
-    {
-        <p class="alert alert-danger">The access token expired</p>
-        return;
-    }
-    catch (Exception ex)
-    {
-        <p class="alert alert-danger">@ex.Message</p>
-        return;
-    }
+	dynamic albums = null;
+	try
+	{
+		albums = GetData(ObjectUniqueID + "/albums?fields=name,link,cover_photo,type,count&amp;limit=1000");
+	}
+	catch (Exception ex)
+	{
+		<p class="alert alert-danger">@ex.Message</p>
+		return;
+	}
 
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
-    <style type="text/css">
-        .fb-album-item {
-            margin: 0 15px 15px 0;
-        }
+	<style type="text/css">
+		.fb-album-item {
+			float: left;
+			margin: 0 10px 10px 0;
+			display: block;
+			border: solid 1px #ddd;
+			padding: 0;
+		}
 
-        .fb-album-item-img {
-            display: block;
-            width: 130px;
-            height: 100px;
-            background-position: center 25%;
-            background-repeat: no-repeat;
-        }
-    </style>
+		.fb-album-item-img {
+			display: block;
+			width: 200px;
+			height: 200px;
+			margin: 0;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+	</style>
 </head>
 <body>
-    @if (!string.IsNullOrEmpty(Request.QueryString["album"]) && Request.QueryString["id"] == ObjectUniqueID)
-    {
-        <div class="fb-photos">
-            <h2 id="@ObjectUniqueID" class="anchor">@GetName(albums.data, Request.QueryString["album"])</h2>
-            @Html.C1().Function("Composite.Media.ImageGallery.Facebook.Photos", new { AlbumID = Request.QueryString["album"], AccessToken = AccessToken })
-        </div>
-        <hr />
-    }
-    <div class="fb-albums clearfix">
-        @foreach (var album in albums.data)
-        {
-            if (string.IsNullOrEmpty(album.cover_photo) || !AlbumTypes.Contains(album.type))
-            {
-                continue;
-            }
+	@if (!string.IsNullOrEmpty(Request.QueryString["album"]) && Request.QueryString["id"] == ObjectUniqueID)
+	{
+		<div class="fb-photos">
+			<h2 id="@ObjectUniqueID" class="anchor">@GetName(albums.data, Request.QueryString["album"])</h2>
+			@Html.C1().Function("Composite.Media.ImageGallery.Facebook.Photos", new { AlbumID = Request.QueryString["album"], AccessToken = AccessToken })
+		</div>
+		<hr />
+	}
+	<div class="fb-albums clearfix">
+		@foreach (var album in albums.data)
+		{
+			if (album.count == 0 || !AlbumTypes.Contains(album.type))
+			{
+				continue;
+			}
 
-            <a href="@(UseFacebookLinksToAlbums ? album.link : "?album=" + album.id + "&id="  + ObjectUniqueID + "#" + ObjectUniqueID)" class="pull-left fb-album-item thumbnail text-center @(album.id == Request.QueryString["album"] ? "active" : "")" title="@album.name">
-                <p class="fb-album-item-img" style="background-image: url(https://graph.facebook.com/@(album.cover_photo)/picture?type=album&amp;access_token=@(AccessToken))"></p>
-                <p class="fb-album-item-caption">
-                    @(album.name.ToString().Length > 13 ? album.name.ToString().Substring(0, 13) + "..." : album.name)
-                    <br /><small class="text-muted">@album.count items</small>
-                </p>
-            </a>
-        }
-    </div>
+			<a href="@(UseFacebookLinksToAlbums ? album.link : "?album=" + album.id + "&id="  + ObjectUniqueID + "#" + ObjectUniqueID)" class="fb-album-item text-center @(album.id == Request.QueryString["album"] ? "active" : "")" title="@album.name">
+				<p class="fb-album-item-img" style="@AlbumCoverInlineStyle(album.cover_photo)"></p>
+				<p class="fb-album-item-caption">
+					@(album.name.ToString().Length > 20 ? album.name.ToString().Substring(0, 20) + "..." : album.name)
+					<br /><small class="text-muted">@album.count items</small>
+				</p>
+			</a>
+		}
+	</div>
 </body>
 </html>
