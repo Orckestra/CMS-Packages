@@ -95,8 +95,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 
             try
             {
-
-                result = ExecuteRoute(routeData, parameters, ref routeResolved);
+                result = ExecuteRoute(routeData, parameters, out routeResolved);
             }
             catch (Exception ex)
             {
@@ -153,7 +152,13 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
         public bool SupportsAsync { get; private set; }
 
 
-        private XhtmlDocument ExecuteRoute(RouteData routeData, ParameterList parameters, ref bool routeResolved)
+        private void CopyHttpContextData(HttpContext copyFrom, HttpContext copyTo)
+        {
+            copyTo.User = copyFrom.User;
+            copyTo.Items["AspSession"] = copyFrom.Items["AspSession"];
+        }
+
+        private XhtmlDocument ExecuteRoute(RouteData routeData, ParameterList parameters, out bool routeResolved)
         {
             AttachDynamicDataUrlMappers();
 
@@ -165,7 +170,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 var httpContext = new HttpContext(parentContext.Request, httpResponse);
                 var requestContext = new RequestContext(new HttpContextWrapper(httpContext), routeData);
 
-                httpContext.User = parentContext.User;
+                CopyHttpContextData(parentContext, httpContext);
 
                 var handler = routeData.RouteHandler.GetHttpHandler(requestContext);
                 Verify.IsNotNull(handler, "No handler found for the function '{0}'", Namespace + "." + Name);
@@ -276,6 +281,8 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 var httpContext = new HttpContext(parentContext.Request, httpResponse);
                 var requestContext = new RequestContext(new HttpContextWrapper(httpContext), routeData);
 
+                CopyHttpContextData(parentContext, httpContext);
+
                 var handler = routeData.RouteHandler.GetHttpHandler(requestContext);
                 Verify.IsNotNull(handler, "No handler found for the function '{0}'", Namespace + "." + Name);
 
@@ -343,7 +350,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
             {
                 string[] codeLines = xhtml.Split(new[] { Environment.NewLine, "\n" }, StringSplitOptions.None);
 
-                XhtmlErrorFormatter.EmbedSouceCodeInformation(ex, codeLines, ex.LineNumber);
+                XhtmlErrorFormatter.EmbedSourceCodeInformation(ex, codeLines, ex.LineNumber);
 
                 throw;
             }
