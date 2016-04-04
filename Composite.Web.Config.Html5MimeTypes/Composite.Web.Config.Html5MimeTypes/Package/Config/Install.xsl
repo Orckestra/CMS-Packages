@@ -20,7 +20,7 @@
 				<add:remove add:key="fileExtension" fileExtension=".eot" />
 				<add:remove add:key="fileExtension" fileExtension=".otf" />
 				<add:remove add:key="fileExtension" fileExtension=".woff" />
-        <add:remove add:key="fileExtension" fileExtension=".woff2" />
+				<add:remove add:key="fileExtension" fileExtension=".woff2" />
 				<add:remove add:key="fileExtension" fileExtension=".appcache" />
 				<add:remove add:key="fileExtension" fileExtension=".less" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".mp4" mimeType="video/mp4" />
@@ -34,7 +34,7 @@
 				<add:mimeMap add:key="fileExtension" fileExtension=".eot" mimeType="application/vnd.ms-fontobject" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".otf" mimeType="font/otf" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".woff" mimeType="font/x-woff" />
-        <add:mimeMap add:key="fileExtension" fileExtension=".woff2" mimeType="application/font-woff2" />
+				<add:mimeMap add:key="fileExtension" fileExtension=".woff2" mimeType="font/woff2" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".appcache" mimeType="text/cache-manifest" />
 				<add:mimeMap add:key="fileExtension" fileExtension=".less" mimeType="text/css" />
 			</staticContent>
