@@ -16,7 +16,6 @@
   <string key="AddNewPageStep1.LabelAddToBottom" value="Insérer au bas" />
   <string key="AddNewPageStep1.LabelAddAlphabetic" value="Insérer en ordre alphabétique" />
   <string key="AddNewPageStep1.LabelAddBelowOtherPage" value="Sélectionner la position ..." />
-  <string key="AddNewPageStep2.LabelFieldGroup" value="Paramètres avancés" />
   <string key="AddNewPageStep2.LabelUrlTitle" value="Titre de l'URL" />
   <string key="AddNewPageStep2.HelpUrlTitle" value="L'entrée spécifié dans ce champ est affichée dans la barre d'adresse du navigateur. Le champ est utilisé par les moteurs de recherche" />
   <string key="AddNewPageStep2.LabelMenuTitle" value="Titre du menu" />
@@ -64,6 +63,7 @@
   <string key="PageElementProvider.RootLabel" value="Sites Web" />
   <string key="PageElementProvider.RootLabelToolTip" value="Sites Web" />
   <string key="PageElementProvider.AddPageAtRoot" value="Ajouter un site Web ..." />
+  <string key="PageElementProvider.AddPageAtRootFormat" value="Ajouter une page ..." />
   <string key="PageElementProvider.AddPageAtRootToolTip" value="Ajouter une nouvelle page d'accueil" />
   <string key="PageElementProvider.ViewUnpublishedItems" value="Lister les pages non publiées" />
   <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="Obtenir un aperçu des pages et du dossier de données de page qui n'ont pas encore été publiés." />
@@ -76,11 +76,8 @@
   <string key="PageElementProvider.LocalizePage" value="Traduire la page" />
   <string key="PageElementProvider.LocalizePageToolTip" value="Traduire la page sélectionnée" />
   <string key="PageElementProvider.AddSubPage" value="Ajouter une page ..." />
+  <string key="PageElementProvider.AddSubPageFormat" value="Ajouter une {0}" />
   <string key="PageElementProvider.AddSubPageToolTip" value="Ajouter une nouvelle page en dessous de celle sélectionnée" />
-  <string key="PageElementProvider.ViewPublicPage" value="Parcourir les pages publiées" />
-  <string key="PageElementProvider.ViewPublicToolTip" value="Voir la dernière version publiée" />
-  <string key="PageElementProvider.ViewDraftPage" value="Parcourir les pages sauvegardées" />
-  <string key="PageElementProvider.ViewDraftToolTip" value="Voir les changements récents" />
   <string key="PageElementProvider.DisplayLocalOrderingLabel" value="Afficher la page dans l'ordre 'local'" />
   <string key="PageElementProvider.DisplayLocalOrderingToolTip" value="Afficher la page dans l'ordre 'local'" />
   <string key="PageElementProvider.DisabledPage" value="Pas encore approuvé ou publié" />
@@ -107,8 +104,6 @@
   <string key="ManageHostNames.Remove.FieldGroupLabel" value="Retirer du nom d'hôte associé à la page" />
   <string key="ManageHostNames.Remove.MultiSelectorLabel" value="Noms d'hôtes à retirer" />
   <string key="ManageHostNames.Remove.MultiSelectorHelp" value="Les noms d'hôte que vous avez sélectionnés ne seront plus associés à la page" />
-  <string key="Preview.PublishedPage.NotPublishedTitle" value="La page sélectionnée n'est pas publiée" />
-  <string key="Preview.PublishedPage.NotPublishedMessage" value="La page sélectionnée n'est pas publiée" />
   <string key="DeletePageWorkflow.MissingConfirmErrorMessage" value="S'il vous plaît confirmer la suppression de tous les sous-pages" />
   <string key="DeletePageWorkflow.CascadeDeleteErrorTitle" value="Erreur de suppression en cascade" />
   <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="La page est référencée par un autre type qui ne permet pas une suppression en cascade. Cette opération a été annulée" />

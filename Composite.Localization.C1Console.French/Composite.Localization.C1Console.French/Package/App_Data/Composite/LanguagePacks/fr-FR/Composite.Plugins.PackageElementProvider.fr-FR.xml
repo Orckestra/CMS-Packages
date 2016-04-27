@@ -12,6 +12,10 @@
   <string key="PackageSourcesFolderToolTip" value="Source du package" />
   <string key="ViewAvailableInformationLabel" value="Information du package" />
   <string key="ViewAvailableInformationToolTip" value="Afficher les informations du package" />
+  
+
+  
+
   <string key="ViewInstalledInformationLabel" value="Information du package" />
   <string key="ViewInstalledInformationToolTip" value="Afficher les informations du package" />
   <string key="InstallLocalPackageLabel" value="Installer le package local..." />
@@ -40,6 +44,8 @@
 
 
   <string key="ViewAvailableInformation.PriceTextLabel" value="Prix ​​(USD)" />
+  
+
   <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="Installer" />
   <string key="ViewAvailableInformation.Toolbar.ReadMoreLabel" value="Lire la suite" />
   <string key="ViewAvailableInformation.ShowError.MessageTitle" value="D&#233;j&#224; install&#233;" />
@@ -86,7 +92,6 @@
   <string key="InstallRemotePackage.ShowWarning.LayoutLabel" value="Le package n&#39;a pas &#233;t&#233; valid&#233;" />
   <string key="InstallRemotePackage.ShowWarning.InfoTableCaption" value="Le package n&#39;a pas &#233;t&#233; valid&#233;" />
   <string key="InstallLocalPackage.Step1.LayoutLabel" value="Installer le package locale" />
-  <string key="InstallLocalPackage.Step1.FieldGroupLabel" value="Chemin d&#39;acc&#232;s au package local" />
   <string key="InstallLocalPackage.Step1.FileUploadLabel" value="Fichier du package" />
   <string key="InstallLocalPackage.Step1.FileUploadHelp" value="Rechercher et s&#233;lectionner le fichier du package local" />
   <string key="InstallLocalPackage.Step2.LayoutLabel" value="Installer le package locale" />
@@ -109,8 +114,8 @@
   <string key="UninstallRemotePackage.Step3.LayoutLabel" value="Package d&#233;sinstall&#233;" />
   <string key="UninstallRemotePackage.Step3.HeadingTitle" value="Package d&#233;sinstall&#233; avec succ&#232;s" />
   <string key="UninstallRemotePackage.Step3.HeadingDescription" value="Package d&#233;sinstall&#233; avec succ&#232;s." />
-  <string key="UninstallRemotePackage.ShowError.LayoutLabel" value="La d&#233;sinstallation du package a &#233;chou&#233;" />
-  <string key="UninstallRemotePackage.ShowError.InfoTableCaption" value="La d&#233;sinstallation du package a &#233;chou&#233;" />
+  <string key="UninstallRemotePackage.ShowError.LayoutLabel" value="La  d&#233;sinstallation du package a &#233;chou&#233;" />
+  <string key="UninstallRemotePackage.ShowError.InfoTableCaption" value="La  d&#233;sinstallation du package a &#233;chou&#233;" />
   <string key="UninstallRemotePackage.ShowError.MessageTitle" value="Message" />
   <string key="UninstallRemotePackage.ShowUnregistre.LayoutLabel" value="D&#233;sinstaller le package" />
   <string key="UninstallRemotePackage.ShowUnregistre.HeadingTitle" value="L&#39;enregistrement de la d&#233;sinstallation a &#233;chou&#233;" />
@@ -124,8 +129,8 @@
   <string key="UninstallLocalPackage.Step3.LayoutLabel" value="Package d&#233;sinstall&#233;" />
   <string key="UninstallLocalPackage.Step3.HeadingTitle" value="Package d&#233;sinstall&#233; avec succ&#232;s" />
   <string key="UninstallLocalPackage.Step3.HeadingDescription" value="Package d&#233;sinstall&#233; avec succ&#232;s." />
-  <string key="UninstallLocalPackage.ShowError.LayoutLabel" value="La d&#233;sinstallation du package a &#233;chou&#233;" />
-  <string key="UninstallLocalPackage.ShowError.InfoTableCaption" value="La d&#233;sinstallation du package a &#233;chou&#233;" />
+  <string key="UninstallLocalPackage.ShowError.LayoutLabel" value="La  d&#233;sinstallation du package a &#233;chou&#233;" />
+  <string key="UninstallLocalPackage.ShowError.InfoTableCaption" value="La  d&#233;sinstallation du package a &#233;chou&#233;" />
   <string key="UninstallLocalPackage.ShowError.MessageTitle" value="Message" />
   <string key="AddPackageSource.Step1.LayoutLabel" value="Nouvelle source de package" />
   <string key="AddPackageSource.Step1.FieldGroupLabel" value="Donn&#233;es source du package" />
@@ -134,7 +139,7 @@
   <string key="AddPackageSource.Step1.UrlNotValid" value="Le texte entr&#233; n&#39;est pas un URL valide" />
   <string key="AddPackageSource.Step1.UrlNonPackageServer" value="Le serveur n&#39;est pas un serveur de package Composite C1" />
   <string key="AddPackageSource.Step2.LayoutLabel" value="Ajouter une source de serveur de packages" />
-  <string key="AddPackageSource.Step2.HeadingTitle" value="L&#39;URL du serveur est valide" />
+  <string key="AddPackageSource.Step2.HeadingTitle" value="L&#39; URL du serveur est valide" />
   <string key="AddPackageSource.Step2.HeadingNoHttpsDescription" value="Notez que le protocole HTTP est utilis&#233; pour cette connexion. Cela implique que toutes les informations vous seront envoy&#233;s en clair. Cliquer sur Terminer pour ajouter la source." />
   <string key="AddPackageSource.Step2.HeadingWithHttpsDescription" value="Cliquer sur Terminer pour ajouter la source." />
   <string key="DeletePackageSource.Step1.LayoutLabel" value="Confirmation de la suppression" />

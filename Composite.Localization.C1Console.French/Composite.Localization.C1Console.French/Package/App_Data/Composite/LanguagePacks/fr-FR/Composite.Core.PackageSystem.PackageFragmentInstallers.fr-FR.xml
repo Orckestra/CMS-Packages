@@ -69,6 +69,8 @@
   <string key="FilePackageFragmentInstaller.AssemblyLoadNotAllowed" value="L&#39;attribut &#39;AssemblyLoad&#39; ne peut &#234;tre appliqu&#233; qu&#39;aux fichiers et non aux r&#233;pertoires" />
   <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowed" value="L&#39;attribut &#39;onlyUpdate&#39; ne peut &#234;tre appliqu&#233; qu&#39;aux fichiers et non aux r&#233;pertoires" />
   <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowedWithLoadAssemlby" value="L&#39;attribut &#39;onlyUpdate&#39; n&#39;est pas autoris&#233;e en combinaison avec l&#39;attribut &#39;loadAssembly&#39;" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateAndOnlyAddNotAllowed" value="attributs Le &#39;onlyUpdate&#39; et &#39;onlyAdd&#39; sont d&#233;sormais autoris&#233;s sur le m&#234;me &#233;l&#233;ment" />
+  <string key="FilePackageFragmentInstaller.OnlyAddAndAllowOverwriteNotAllowed" value="Le &#39;onlyAdd&#39; et les attributs &#39;AllowOverwrite&#39; sont maintenant autoris&#233;s sur le m&#234;me &#233;l&#233;ment" />
   <string key="FilePackageFragmentInstaller.MissingDirectory" value="Le fichier zip d&#39;installation ne contient pas le r&#233;pertoire &#39;{0}&#39;" />
   <string key="FilePackageFragmentInstaller.WrongBasePath" value="Uninstall.xml contient chemins de fichiers, binded &#224; l&#39;emplacement d&#39;origine du site, et donc le paquet ne peut pas &#234;tre d&#233;sinstall&#233; en toute s&#233;curit&#233;." />
   <string key="FilePackageFragmentUninstaller.OnlyOneFilesElement" value="Un seul &#233;l&#233;ment &#171;Fichiers&#187; est permis" />
@@ -81,16 +83,26 @@
   <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnly" value="Fichier &#39;{0}&#39; est marqu&#233; &#39;lecture seule&#39; et ne peut donc pas &#234;tre remplac&#233;." />
   <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnlyOverride" value="Le fichier &#39;{0}&#39; a &#233;t&#233; marqu&#233; comme &#39;lecture seule&#39;. Cet attribut de fichier a &#233;t&#233; supprim&#233; explicitement et le dossier a &#233;t&#233; mis &#224; jour normalement." />
 
-  <string key="PackageVersionBumberFragmentInstaller.OnlyOneElement" value="Un seul &#233;l&#233;ment &#39;PackageVersions&#39; est permis" />
-  <string key="PackageVersionBumberFragmentInstaller.MissingAttribute" value="Attribut {0} manquant dans la configuration" />
-  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeGuidFormat" value="Mauvais format de valeur d&#39;attribut, la valeur Guid est attendue" />
-  <string key="PackageVersionBumberFragmentInstaller.PackageIdDuplicate" value="Duplication de l&#39;id du &#39;package&#39; : &#39;{0}&#39;" />
-  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeVersionFormat" value="Mauvais format de la valeur de l&#39;attribut. Valeur de la version attendue (x.y.z)" />
-  <string key="PackageVersionBumberFragmentUninstaller.OnlyOneElement" value="Un seul &#233;l&#233;ment &#39;PackageVersions&#39; est permis" />
-  <string key="PackageVersionBumberFragmentUninstaller.MissingAttribute" value="Attribut {0} manquant dans la configuration" />
-  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeGuidFormat" value="Mauvais format de valeur d&#39;attribut, la valeur Guid est attendue" />
-  <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="Duplication de l&#39;id du &#39;package&#39; : &#39;{0}&#39;" />
-  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeVersionFormat" value="Mauvais format de la valeur de l&#39;attribut. Valeur de la version attendue (x.y.z)" />
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   <string key="PackageLicenseFragmentInstaller.MissingPublicKeyElement" value="Une cl&#233; publique RSA est manquant dans la configuration du &#39;package&#39;" />
 
   <string key="FileModifyPackageFragmentInstaller.FileDoesNotExist" value="Fichier &#39;{0}&#39; n&#39;existe pas." />

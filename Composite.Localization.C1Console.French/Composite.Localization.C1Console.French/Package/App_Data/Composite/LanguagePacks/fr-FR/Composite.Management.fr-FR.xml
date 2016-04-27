@@ -270,7 +270,6 @@
   <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Redémarrer le serveur" />
   <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Redémarrer le serveur" />
   <string key="SendMessageToConsolesWorkflow.Layout.Label" value="Message diffusé à toutes les consoles C1" />
-  <string key="SendMessageToConsolesWorkflow.FieldGroup.Label" value="Message à diffuser" />
   <string key="SendMessageToConsolesWorkflow.TitleTextBox.Label" value="Titre" />
   <string key="SendMessageToConsolesWorkflow.TitleTextBox.Help" value="Titre du dialogue du message de diffusion" />
   <string key="SendMessageToConsolesWorkflow.MessageTextArea.Label" value="Message" />
@@ -522,7 +521,6 @@
   <string key="Website.App.LabelHelp" value="Aide" />
   <string key="Website.App.LabelHelpContents" value="Contenu de l'aide" />
   <string key="Website.App.LabelFeedback" value="Faire un commentaire ..." />
-  <string key="Website.App.LabelAboutComposite" value="À propos de Composite C1" />
   <string key="Website.App.LabelCut" value="Couper" />
   <string key="Website.App.LabelCopy" value="Copier" />
   <string key="Website.App.LabelPaste" value="Coller" />
@@ -545,7 +543,6 @@
   <string key="Website.App.StatusBar.Ready" value="Prêt!" />
   <string key="Website.App.StatusBar.ErrorInField" value="Erreur dans" />
   <string key="Website.Forms.Administrative.AddNewMediaFile.Layout.Label" value="Ajouter un nouveau fichier média" />
-  <string key="Website.Forms.Administrative.AddNewMediaFile.FieldGroup.Label" value="Propriétés du média" />
   <string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Label" value="Nom du fichier" />
   <string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Help" value="Sélectionner le fichier à téléverser" />
   <string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Label" value="Autoriser le remplacement" />
@@ -570,7 +567,6 @@
   <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="La longueur totale du nom de dossier est trop longue" />
   <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Le nom du dossier ne peut pas seulement être '/' ou '\'" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Téléverser plusieurs fichiers via un fichier Zip" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFieldGroup" value="Sélectionner le fichier Zip contenant  les fichiers à extraire" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Fichier Zip" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.HelpFile" value="Créer un fichier Zip (clic droit dossier local et sélectionner Envoyer vers -&gt; dossier compressé) et sélectionnez-le en utilisant le bouton Parcourir" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructure" value="Créer des dossiers" />

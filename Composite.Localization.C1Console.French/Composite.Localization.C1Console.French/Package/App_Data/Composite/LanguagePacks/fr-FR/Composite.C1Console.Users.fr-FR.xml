@@ -1,41 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
-	<!-- change password -->
-	<string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Changer le mot de passe ..." />
-	<string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Changer votre mot de passe" />
-	<string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Changer le mot de passe" />
-	<string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="Changer votre mot de passe" />
-	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Mot de passe existant" />
-	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="Pour des raisons de s&#233;curit&#233;, vous devez inscrire votre mot de passe existant avant de pouvoir continuer." />
-	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Nouveau mot de passe" />
-	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="Le mot de passe sp&#233;cifi&#233; dans ce champ doit correspondre &#224; la confirmation ci-dessous." />
-	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="Confirmer le nouveau mot de passe" />
-	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="Le mot de passe sp&#233;cifi&#233; dans ce champ doit correspondre &#224; celui indiqu&#233; ci-dessus." />
-
-	<!-- change culture -->
-	<string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Param&#232;tres r&#233;gionaux ..." />
-	<string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="D&#233;finissez la langue et le format des nombres, dates et heures de la console C1" />
-	<string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Param&#232;tres r&#233;gionaux et linguistiques" />
-	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Param&#232;tres r&#233;gionaux" />
-	<string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="Pour changer la fa&#231;on dont les num&#233;ros, les dates et heures sont affich&#233;s, s&#233;lectionnez une entr&#233;e dans la liste." />
+  <!-- change password -->
+  <string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Changer le mot de passe ..." />
+  <string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Changer votre mot de passe" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Changer le mot de passe" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Mot de passe existant" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="Pour des raisons de sécurité, vous devez inscrire votre mot de passe existant avant de pouvoir continuer." />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Nouveau mot de passe" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="Le mot de passe spécifié dans ce champ doit correspondre à la confirmation ci-dessous." />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="Confirmer le nouveau mot de passe" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="Le mot de passe spécifié dans ce champ doit correspondre à celui indiqué ci-dessus." />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Validation.IncorrectPassword" value="Le mot de passe est incorrect." />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Validation.NewPasswordFieldsNotMatch" value="Les nouveaux mots de passe que vous avez saisi ne correspond pas." />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Validation.PasswordsAreTheSame" value="Les vieux et les nouveaux mots de passe sont les mêmes." />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Validation.NewPasswordIsEmpty" value="Le nouveau mot de passe ne peut pas être une chaîne vide." />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Validation.NewPasswordTooShort" value="Le nouveau mot de passe doit être au moins {0} caractères." />
+  <string key="ChangeOwnPasswordWorkflow.NotSupportedErrorLabel" value="le changement de mot de passe ne sont pas pris en charge." />
+  <!-- change culture -->
+  <string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Paramètres régionaux ..." />
+  <string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Définissez la langue et le format des nombres, dates et heures de la console C1" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Paramètres régionaux et linguistiques" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Label" value="Paramètres régionaux" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.CultureSelector.Help" value="Pour changer la façon dont les numéros, les dates et heures sont affichés, sélectionnez une entrée dans la liste." />
   <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Label" value="Langue de la console C1" />
-  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Help" value="S&#233;lectionnez la langue &#224; utiliser pour les &#233;tiquettes, les textes d&#39;aide, les bo&#238;tes de dialogue, etc Les options disponibles ici sont limit&#233;s &#224; des langues install&#233;es. Vous pouvez installer d&#39;autres langues via le syst&#232;me de package, voir Composite.Localization." />
-  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="Changer la langue de l&#39;application" />
-  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="&#202;tes-vous certain de vouloir modifier les param&#232;tres? L&#39;application red&#233;marrera et toutes les modifications non enregistr&#233;es seront perdues." />
-	<string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="Param&#232;tres r&#233;gionaux" />
-	<string key="AdministratorAutoCreator.DefaultGroupName" value="Administrateurs" />
-
-	<!-- change own active and foreign locale -->
-	<string key="ChangeForeignLocaleWorkflow.ActionLabel" value="Traduction ..." />
-	<string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="Changer la langue de la source" />
-	<string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="Aucun" />
-	<string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="Traduction" />
-	<string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="S&#233;lectionner la langue &#224; traduire de" />
-	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="Plusieurs langues non install&#233;s" />
-	<string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="Deux ou plusieurs langues doivent &#234;tre install&#233;es afin de soutenir les traductions. Les administrateurs peuvent ajouter d&#39;autres langues dans la section &#171;Syst&#232;me&#187;." />
-	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="De la langue" />
-	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Les pages &#233;crites dans la langue &quot;de&quot; seront marqu&#233;es par des ic&#244;nes de globe dans l&#39;arborescence de contenu. L&#39;action associ&#233;e &#224; la page traduite importe la page dans la langue de travail en cours." />
-
-
-  <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="La langue en cours a &#233;t&#233; modifi&#233;e" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Help" value="Sélectionnez la langue à utiliser pour les étiquettes, les textes d'aide, les boîtes de dialogue, etc Les options disponibles ici sont limités à des langues installées. Vous pouvez installer d'autres langues via le système de package, voir Composite.Localization." />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="Changer la langue de l'application" />
+  <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="Êtes-vous certain de vouloir modifier les paramètres? L'application redémarrera et toutes les modifications non enregistrées seront perdues." />
+  <string key="AdministratorAutoCreator.DefaultGroupName" value="Administrateurs" />
+  <!-- change own active and foreign locale -->
+  <string key="ChangeForeignLocaleWorkflow.ActionLabel" value="Traduction ..." />
+  <string key="ChangeForeignLocaleWorkflow.ActionToolTip" value="Changer la langue de la source" />
+  <string key="ChangeForeignLocaleWorkflow.NoForeignLocaleLabel" value="Aucun" />
+  <string key="ChangeForeignLocaleWorkflow.Dialog.Label" value="Traduction" />
+  <string key="ChangeForeignLocaleWorkflow.FieldGroup.Label" value="Sélectionner la langue à traduire de" />
+  <string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Title" value="Plusieurs langues non installés" />
+  <string key="ChangeForeignLocaleWorkflow.NoOrOneActiveLocales.Description" value="Deux ou plusieurs langues doivent être installées afin de soutenir les traductions. Les administrateurs peuvent ajouter d'autres langues dans la section «Système»." />
+  <string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="De la langue" />
+  <string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Les pages écrites dans la langue &quot;de&quot; seront marquées par des icônes de globe dans l'arborescence de contenu. L'action associée à la page traduite importe la page dans la langue de travail en cours." />
+  <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="La langue en cours a été modifiée" />
+  <string key="ChangeOwnPasswordWorkflow.NotSupportedErrorText" value="le changement de mot de passe ne sont pas pris en charge dans la configuration actuelle." />
+  <string key="ChangePasswordForm.ChangePasswordButton" value="Changer le mot de passe" />
+  <string key="ChangePasswordForm.Username" value="Nom d'utilisateur" />
 </strings>
