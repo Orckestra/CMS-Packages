@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
@@ -65,7 +66,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 
         public Type ReturnType
         {
-            get { return typeof (XhtmlDocument); } 
+            get { return typeof (XhtmlDocument); }
         }
 
         public virtual IEnumerable<ParameterProfile> ParameterProfiles
@@ -76,7 +77,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 
         public EntityToken EntityToken
         {
-            get { return new MvcFunctionEntityToken(this); } 
+            get { return new MvcFunctionEntityToken(this); }
         }
 
         public object Execute(ParameterList parameters, FunctionContextContainer context)
@@ -181,13 +182,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 }
                 catch (HttpException httpException)
                 {
-                    if (httpException.GetHttpCode() == 404)
-                    {
-                        routeResolved = false;
-                        return null;
-                    }
-
-                    routeResolved = true;
+                    routeResolved = httpException.GetHttpCode() != 404;
                     throw;
                 }
                 catch (Exception ex)
@@ -197,9 +192,15 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 
                     throw;
                 }
-                
+
                 string xhtml = writer.ToString();
                 routeResolved = httpResponse.StatusCode != 404;
+
+                if (!routeResolved)
+                {
+                    parentContext.Response.StatusCode = 404;
+                    throw new HttpException((Int32)HttpStatusCode.NotFound, "Controller returns '404' http response code");
+                }
 
                 if (httpResponse.IsRequestBeingRedirected)
                 {
@@ -213,6 +214,8 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                     HttpContext.Current.Response.Redirect(redirectUrl, false);
                     return null;
                 }
+
+                // TODO: Handle other HTTP Response Codes
 
                 var document = ParseOutput(xhtml);
                 ActionLinkHelper.ConvertActionLinks(document, requestContext, _functionCollection.RouteCollection);
@@ -249,7 +252,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 
             var stackTrace = new StackTrace(ex, true);
 
-            
+
             foreach (var frame in stackTrace.GetFrames())
             {
                 string fileName = frame.GetFileName();
@@ -356,7 +359,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
             }
         }
 
-       
+
         public virtual void UsePathInfoForRouting()
         {
             throw new NotSupportedException();
