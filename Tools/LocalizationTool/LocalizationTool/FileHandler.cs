@@ -531,7 +531,28 @@ namespace LocalizationTool
 			}
 		}
 
-		private static XDocument GetSourceDocument(string fileStem)
+        internal static void UpdateSourceString(string fileStem, string key, string newValue)
+        {
+            var sourceDoc = GetSourceDocument(fileStem);
+            var stringNodes = sourceDoc.Root.Elements("string").Where(f => (string)f.Attribute("key") == key);
+            if (stringNodes.Any() && stringNodes.Count() == 1)
+            {
+                var stringNode = stringNodes.First();
+                stringNode.Attribute("value").Value = newValue;
+            }
+            else
+            {
+                throw new InvalidOperationException("I could not change the string as desired - please sanity check input document or contact the dev team");
+            }
+
+            sourceDoc.Save(GetSourceDocumentPath(fileStem));
+
+            _sourceFilesBySterm.Remove(fileStem);
+            _sourceFilesBySterm.Add(fileStem, sourceDoc);
+        }
+
+
+        private static XDocument GetSourceDocument(string fileStem)
 		{
 			return XDocument.Load(GetSourceDocumentPath(fileStem));
 		}

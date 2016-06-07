@@ -439,12 +439,22 @@ namespace LocalizationTool
 			}
 		}
 
-		#endregion
+        #endregion
 
-	}
+        private void sourceLanguageTextBox_DoubleClick(object sender, EventArgs e)
+        {
+            string updatedString = Prompt.ShowDialog("Update source string", "Update string", sourceLanguageTextBox.Text);
+            if (!string.IsNullOrEmpty(updatedString) && updatedString != sourceLanguageTextBox.Text)
+            {
+                var activeKey = (KeysListItem)keysListBox.SelectedValue;
+                FileHandler.UpdateSourceString(activeKey.File, activeKey.Name, updatedString);
+                UpdateStringTextBoxes();
+            }
+        }
+    }
 
-	#region ListBoxItem Classes
-	public class ListItemNotificationObject : INotifyPropertyChanged
+    #region ListBoxItem Classes
+    public class ListItemNotificationObject : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
 
