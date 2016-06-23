@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="AddNewPageStep1.DialogLabel" value="Ajouter une nouvelle page" />
+  <string key="AddNewPageStep1.DialogLabelFormat" value="Ajouter un nouveau {0}" />
   <string key="GeneralSettings.FieldGroupLabel" value="Paramètres généraux" />
   <string key="PublicationSettings.FieldGroupLabel" value="Paramètres de publication" />
   <string key="AdvancedSettings.FieldGroupLabel" value="Paramètres avancés" />
@@ -66,9 +67,9 @@
   <string key="PageElementProvider.AddPageAtRootFormat" value="Ajouter une page ..." />
   <string key="PageElementProvider.AddPageAtRootToolTip" value="Ajouter une nouvelle page d'accueil" />
   <string key="PageElementProvider.ViewUnpublishedItems" value="Lister les pages non publiées" />
-  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="Obtenir un aperçu des pages et du dossier de données de page qui n'ont pas encore été publiés." />
+  <string key="PageElementProvider.ViewUnpublishedItemsToolTip" value="Obtenir un aperçu des dossiers de données de pages et des pages non publiés." />
   <string key="PageElementProvider.ViewUnpublishedItems-document-title" value="Contenu non publié" />
-  <string key="PageElementProvider.ViewUnpublishedItems-document-description" value="La liste ci-dessous affiche les pages et les données de pages qui sont actuellement en cours d'édition ou prêtes à être approuvées / publiés." />
+  <string key="PageElementProvider.ViewUnpublishedItems-document-description" value="La liste ci-dessous affiche les pages et les données qui sont en cours de modification ou qui sont en cours d'approbation ou de publication." />
   <string key="PageElementProvider.EditPage" value="Modifier la page" />
   <string key="PageElementProvider.EditPageToolTip" value="Modifier la page sélectionnée" />
   <string key="PageElementProvider.Delete" value="Effacer" />
@@ -109,4 +110,15 @@
   <string key="DeletePageWorkflow.CascadeDeleteErrorMessage" value="La page est référencée par un autre type qui ne permet pas une suppression en cascade. Cette opération a été annulée" />
   <string key="DeletePageWorkflow.HasCompositionsTitle" value="Vous ne pouvez pas supprimer la page" />
   <string key="DeletePageWorkflow.HasCompositionsMessage" value="Cette page contient un ou plusieurs dossiers de page ou des champs de métadonnées définis. Supprimer d'abord ces derniers." />
+  <string key="ViewUnpublishedItems.PageTitleLabel" value="Titre de la page" />
+  <string key="ViewUnpublishedItems.VersionLabel" value="Version" />
+  <string key="ViewUnpublishedItems.StatusLabel" value="Statut" />
+  <string key="ViewUnpublishedItems.PublishDateLabel" value="Date de publication" />
+  <string key="ViewUnpublishedItems.PublishDateHelp" value="La date et l'heure prévues pour la publication automatique de la page. Pour modifier cette configuration, consulter l'Horaire de publication dans la page de l'éditeur." />
+  <string key="ViewUnpublishedItems.UnpublishDateLabel" value="Date de retrait" />
+  <string key="ViewUnpublishedItems.UnpublishDateHelp" value="La date et l'heure prévues du retrait automatique de la page. Pour modifier cette configuration, consulter l'Horaire de publication dans la page de l'éditeur" />
+  <string key="ViewUnpublishedItems.DateCreatedLabel" value="Date de création" />
+  <string key="ViewUnpublishedItems.DateModifiedLabel" value="Date de modification" />
+  <string key="ViewUnpublishedItems.PublishConfirmTitle" value="Publier les pages" />
+  <string key="ViewUnpublishedItems.PublishConfirmText" value="Vous êtes sur le point de publier ces pages. Voulez-vous continuer?" />
 </strings>
