@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Modifier les autorisations" />
-  <string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Modifier les autorisations" />
-  <string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Autorisations globales" />
-  <string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Gérer les autorisations des utilisateurs" />
+  <string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Modifier les permissions" />
+  <string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Modifier les permissions" />
+  <string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Permissions globales" />
+  <string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Gérer les permissions des utilisateurs" />
   <string key="DataCompositionVisabilityFacade.DefaultContainerLabel" value="Métadonnées" />
   <string key="Website.Forms.Administrative.DeleteUserStep1.LabelFieldGroup" value="Supprimer l'utilisateur?" />
   <string key="Website.Forms.Administrative.DeleteUserStep1.Text" value="Supprimer l'utilisateur sélectionné?" />
@@ -355,7 +355,7 @@
   <string key="Website.Dialogs.LabelAccept" value="OK" />
   <string key="Website.Dialogs.LabelCancel" value="Annuler" />
   <string key="Website.Dialogs.LabelDisclosure" value="Plus d'information" />
-  <string key="Website.Dialogs.About.Title" value="À propos de Composite C1" />
+  <string key="Website.Dialogs.About.Title" value="À propos de {applicationname}" />
   <string key="Website.Dialogs.About.LabelCredits" value="Crédits" />
   <string key="Website.Dialogs.About.LabelBack" value="Précédent" />
   <string key="Website.Dialogs.About.LabelCredits2" value="Crédits" />
@@ -670,4 +670,6 @@
   <string key="Browser.ToolTip" value="Parcourir les pages non publiées" />
   <string key="ServerLog.LogEntriesRemovedBrowserViewLabel" value="Seul le {0} entrées de journal les plus récents sont affichés. Ouvrez le journal pour plus d'entrées." />
   <string key="ServerLog.LogEntriesRemovedLabel" value="Seul le {0} entrées de journal les plus récents sont affichés. {1} entrées existent pour la recherche en cours. Soit affiner la recherche ou utiliser l'outil de visualisation de journal à partir de http://docs.composite.net/Configuration/Logging pour l'accès journal complet." />
+  <string key="Website.App.LabelSettings" value="Paramètres" />
+  <string key="Website.App.LabelAbout" value="À propos de {applicationname}" />
 </strings>
