@@ -45,7 +45,26 @@ namespace LocalizationTool
 			}
 		}
 
-		#endregion
+	    public static void UpdateFileHandler()
+	    {
+            _sourceFileStems = GetSourceFileStems();
+            _sourceFilesBySterm = new Dictionary<string, XDocument>();
+            _sourceFilesAsStringsBySterm = new Dictionary<string, string>();
+            _stringsCurrentDataSource = new Dictionary<string, List<string>>();
+
+            _totalCountOfSourceTranstations = 0;
+            foreach (var sterm in _sourceFileStems)
+            {
+                var sourceDoc = GetSourceDocument(sterm);
+                _sourceFilesBySterm.Add(sterm, sourceDoc);
+                _sourceFilesAsStringsBySterm.Add(sterm, GetSourceDocumentAsString(sterm));
+                _totalCountOfSourceTranstations += sourceDoc.Root.Elements("string").Count();
+                _stringsCurrentDataSource.Add(sterm, GetStringKeys(sterm).ToList());
+            }
+
+        }
+
+	    #endregion
 
 		#region Public Static Properties
 		public static readonly string SourceFileEnding = string.Format(".{0}.xml", Settings.SourceCulture.Name);
@@ -103,6 +122,8 @@ namespace LocalizationTool
 
 		public static bool SaveTargetString(string fileStem, string key, string newValue)
 		{
+		    if (fileStem == null || key == null)
+		        return false;
 			bool isNeedToSave = false;
 			var targetFilePath = GetTargetDocumentPath(fileStem);
 
@@ -512,11 +533,17 @@ namespace LocalizationTool
 			string sourceFileNamePattern = string.Format("*{0}", FileHandler.SourceFileEnding);
 			int sourceFileEndingLength = FileHandler.SourceFileEnding.Length;
 
-			foreach (string filePath in Directory.GetFiles(Settings.LocalizationDirectory, sourceFileNamePattern))
-			{
-				string fullFileName = Path.GetFileName(filePath);
-				yield return fullFileName.Substring(0, fullFileName.Length - sourceFileEndingLength);
-			}
+		    if (Directory.Exists(Settings.LocalizationDirectory))
+		    {
+		        foreach (
+		            string filePath in
+		                Directory.GetFiles(Settings.LocalizationDirectory, sourceFileNamePattern))
+		                    
+		        {
+		            string fullFileName = Path.GetFileName(filePath);
+		            yield return fullFileName.Substring(0, fullFileName.Length - sourceFileEndingLength);
+		        }
+		    }
 		}
 
 		private static IEnumerable<string> GetTargetFileStems()
@@ -525,7 +552,7 @@ namespace LocalizationTool
 			int targetFileEndingLength = FileHandler.TargetFileEnding.Length;
 
 			foreach (string filePath in Directory.GetFiles(Settings.TargetLocalizationDirectory, targetFileNamePattern))
-			{
+            {
 				string fullFileName = Path.GetFileName(filePath);
 				yield return fullFileName.Substring(0, fullFileName.Length - targetFileEndingLength);
 			}

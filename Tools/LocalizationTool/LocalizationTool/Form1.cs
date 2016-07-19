@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,10 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.IO;
 using System.Diagnostics;
+using System.Drawing;
+using System.Management.Automation;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace LocalizationTool
 {
@@ -36,7 +41,12 @@ namespace LocalizationTool
 					MessageBox.Show(string.Format("The strings with invalid keys have been found and cleaned up. The strings have been moved to {0}", Settings.UnknownStringsFilePath));
 				}
 
-				if (!Directory.Exists(Settings.TargetLocalizationDirectory))
+                if (!Directory.Exists(Settings.LocalizationDirectory))
+                {
+                    Directory.CreateDirectory(Settings.LocalizationDirectory);
+                }
+
+                if (!Directory.Exists(Settings.TargetLocalizationDirectory))
 				{
 					Directory.CreateDirectory(Settings.TargetLocalizationDirectory);
 				}
@@ -313,7 +323,7 @@ namespace LocalizationTool
 				return;
 			}
 
-			isSaved = FileHandler.SaveTargetString(_selectedFile.Name, _selectedKey.Name, targetString);
+			isSaved = FileHandler.SaveTargetString(_selectedFile?.Name, _selectedKey?.Name, targetString);
 
 			//if a Source string gets translated, and this string exists for other keys, those keys gets automatically updated (saving the user time)
 			if (!string.IsNullOrEmpty(sourceLanguageTextBox.Text))
@@ -451,7 +461,131 @@ namespace LocalizationTool
                 UpdateStringTextBoxes();
             }
         }
-    }
+
+	    private PowerShell PowerShellInstance;
+
+	    private async Task<bool> RunScript(string path)
+	    {
+            PowerShellInstance = PowerShell.Create();
+
+            PowerShellInstance.AddScript(LoadScript(path));
+
+            PowerShellInstance.AddArgument(CredentialHelper.GetFormRegistery(CredentialHelper.SourceRepoUserName));
+            PowerShellInstance.AddArgument(CredentialHelper.GetFormRegistery(CredentialHelper.SourceRepoPassword));
+            PowerShellInstance.AddArgument(CredentialHelper.GetFormRegistery(CredentialHelper.TargetRepoUserName));
+            PowerShellInstance.AddArgument(CredentialHelper.GetFormRegistery(CredentialHelper.TargetRepoPassword));
+
+            PSDataCollection<PSObject> outputCollection = new PSDataCollection<PSObject>();
+            outputCollection.DataAdded += outputCollection_DataAdded;
+
+            PowerShellInstance.Streams.Error.DataAdded += Error_DataAdded;
+
+            IAsyncResult result = PowerShellInstance.BeginInvoke<PSObject,PSObject>(null, outputCollection);
+
+	        while (result.IsCompleted == false)
+	        {
+                await Task.Delay(100);
+	        }
+	        return PowerShellInstance.HadErrors;
+	    }
+
+	    private async void checkoutButton_Click(object sender, EventArgs e)
+	    {
+            toolStripStatusLabel1.Text = "Wait For check out to complete";
+            DisableSourceControlButtons(false);
+            var result = await RunScript("CheckoutSource.ps1");
+            DisableSourceControlButtons(true);
+            toolStripStatusLabel1.Text = "";
+            MessageBox.Show(result? "Check Out Finished with errors":"Check Out Finished");
+	        FileHandler.UpdateFileHandler();
+            FileHandler.FilterDataSource("", false);
+            _filesListSource.Clear();
+            foreach (var s in FileHandler.StringsCurrentDataSource)
+            {
+                _filesListSource.Add(new FilesListItem(s.Key));
+            }
+            _selectedFile = (FilesListItem)filesListBox.SelectedValue;
+            PopulateStringKeysListBox();
+
+	    }
+
+        private async void commitButton_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Wait For Commit to complete";
+            DisableSourceControlButtons(false);
+            var result = await RunScript("CommitChanges.ps1");
+            DisableSourceControlButtons(true);
+            toolStripStatusLabel1.Text = "";
+            MessageBox.Show(result ? "Commit Finished with errors":"Commit Finished");
+        }
+
+        void outputCollection_DataAdded(object sender, DataAddedEventArgs e)
+        {
+            using (StreamWriter w = File.AppendText("log.txt"))
+            {
+                w.WriteLine(((PSDataCollection<PSObject>)sender)[e.Index].ToString());
+            }
+        }
+
+        void Error_DataAdded(object sender, DataAddedEventArgs e)
+        {
+            using (StreamWriter w = File.AppendText("log.txt"))
+            {
+                w.WriteLine(((PSDataCollection<ErrorRecord>)sender)[e.Index].ToString());
+            }
+        }
+
+        private string LoadScript(string filename)
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader(filename))
+                {
+                    StringBuilder fileContents = new StringBuilder();
+
+                    string curLine;
+
+                    while ((curLine = sr.ReadLine()) != null)
+                    {
+                        fileContents.Append(curLine + "\n");
+                    }
+
+                    return fileContents.ToString();
+                }
+            }
+            catch (Exception e)
+            {
+                string errorText = "The file could not be read:";
+                errorText += e.Message + "\n";
+                return errorText;
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CredentialForm credentialForm = new CredentialForm();
+            credentialForm.Show();
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Copying files to Live Website";
+            DisableSourceControlButtons(false);
+            var result = await RunScript("CopyToLiveWebsite.ps1");
+            DisableSourceControlButtons(true);
+            toolStripStatusLabel1.Text = "";
+            MessageBox.Show(result ? "Copying Finished with errors" : "Copying Finished");
+        }
+
+	    private void DisableSourceControlButtons(bool b)
+	    {
+	        commitButton.Enabled = b;
+	        checkoutButton.Enabled = b;
+	        CredentialButton.Enabled = b;
+	        LiveButton.Enabled = b;
+	    }
+	}
 
     #region ListBoxItem Classes
     public class ListItemNotificationObject : INotifyPropertyChanged

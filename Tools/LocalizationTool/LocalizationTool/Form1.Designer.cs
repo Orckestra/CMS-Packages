@@ -53,6 +53,11 @@
             this.btnFlagThis = new System.Windows.Forms.Button();
             this.btnEditRemoveFlag = new System.Windows.Forms.Button();
             this.chbShowFlaggedOnly = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.commitButton = new System.Windows.Forms.Button();
+            this.checkoutButton = new System.Windows.Forms.Button();
+            this.CredentialButton = new System.Windows.Forms.Button();
+            this.LiveButton = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +68,7 @@
             this.filesListBox.FormattingEnabled = true;
             this.filesListBox.Location = new System.Drawing.Point(171, 71);
             this.filesListBox.Name = "filesListBox";
-            this.filesListBox.Size = new System.Drawing.Size(394, 82);
+            this.filesListBox.Size = new System.Drawing.Size(391, 82);
             this.filesListBox.TabIndex = 0;
             this.filesListBox.Click += new System.EventHandler(this.filesListBox_Click);
             this.filesListBox.SelectedIndexChanged += new System.EventHandler(this.filesListBox_SelectedIndexChanged);
@@ -84,7 +89,7 @@
             this.keysListBox.FormattingEnabled = true;
             this.keysListBox.Location = new System.Drawing.Point(172, 187);
             this.keysListBox.Name = "keysListBox";
-            this.keysListBox.Size = new System.Drawing.Size(394, 95);
+            this.keysListBox.Size = new System.Drawing.Size(391, 95);
             this.keysListBox.TabIndex = 2;
             this.keysListBox.Click += new System.EventHandler(this.stringKeysListBox_Click);
             this.keysListBox.SelectedIndexChanged += new System.EventHandler(this.stringKeysListBox_SelectedIndexChanged);
@@ -107,7 +112,7 @@
             this.sourceLanguageTextBox.Multiline = true;
             this.sourceLanguageTextBox.Name = "sourceLanguageTextBox";
             this.sourceLanguageTextBox.ReadOnly = true;
-            this.sourceLanguageTextBox.Size = new System.Drawing.Size(394, 73);
+            this.sourceLanguageTextBox.Size = new System.Drawing.Size(391, 73);
             this.sourceLanguageTextBox.TabIndex = 4;
             this.sourceLanguageTextBox.DoubleClick += new System.EventHandler(this.sourceLanguageTextBox_DoubleClick);
             // 
@@ -122,14 +127,13 @@
             // 
             // targetLanguageTextBox
             // 
-            this.targetLanguageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.targetLanguageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.targetLanguageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.targetLanguageTextBox.Location = new System.Drawing.Point(171, 396);
             this.targetLanguageTextBox.Multiline = true;
             this.targetLanguageTextBox.Name = "targetLanguageTextBox";
-            this.targetLanguageTextBox.Size = new System.Drawing.Size(394, 73);
+            this.targetLanguageTextBox.Size = new System.Drawing.Size(391, 73);
             this.targetLanguageTextBox.TabIndex = 6;
             this.targetLanguageTextBox.TextChanged += new System.EventHandler(this.targetLanguageTextBox_TextChanged);
             this.targetLanguageTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.targetLanguageTextBox_KeyDown);
@@ -150,9 +154,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 558);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 592);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(581, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(578, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -164,7 +168,7 @@
             // findFirstMissing
             // 
             this.findFirstMissing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.findFirstMissing.Location = new System.Drawing.Point(458, 288);
+            this.findFirstMissing.Location = new System.Drawing.Point(455, 288);
             this.findFirstMissing.Name = "findFirstMissing";
             this.findFirstMissing.Size = new System.Drawing.Size(107, 23);
             this.findFirstMissing.TabIndex = 9;
@@ -174,7 +178,7 @@
             // 
             // enterSavesAndMovesCheckBox
             // 
-            this.enterSavesAndMovesCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.enterSavesAndMovesCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.enterSavesAndMovesCheckBox.AutoSize = true;
             this.enterSavesAndMovesCheckBox.Checked = true;
@@ -188,11 +192,9 @@
             // 
             // cbFromGoogleTranslate
             // 
-            this.cbFromGoogleTranslate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.cbFromGoogleTranslate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbFromGoogleTranslate.AutoSize = true;
-            this.cbFromGoogleTranslate.Checked = true;
-            this.cbFromGoogleTranslate.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbFromGoogleTranslate.Location = new System.Drawing.Point(171, 504);
             this.cbFromGoogleTranslate.Name = "cbFromGoogleTranslate";
             this.cbFromGoogleTranslate.Size = new System.Drawing.Size(198, 17);
@@ -202,7 +204,7 @@
             // 
             // cbRegisterInCompositeConfig
             // 
-            this.cbRegisterInCompositeConfig.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.cbRegisterInCompositeConfig.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbRegisterInCompositeConfig.AutoSize = true;
             this.cbRegisterInCompositeConfig.Checked = true;
@@ -234,7 +236,7 @@
             // printForComparison
             // 
             this.printForComparison.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.printForComparison.Location = new System.Drawing.Point(415, 158);
+            this.printForComparison.Location = new System.Drawing.Point(412, 158);
             this.printForComparison.Name = "printForComparison";
             this.printForComparison.Size = new System.Drawing.Size(150, 23);
             this.printForComparison.TabIndex = 19;
@@ -257,7 +259,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Location = new System.Drawing.Point(171, 25);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(394, 20);
+            this.txtSearch.Size = new System.Drawing.Size(391, 20);
             this.txtSearch.TabIndex = 21;
             this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearchTextChanged);
             // 
@@ -267,8 +269,8 @@
             // 
             // btnFlagThis
             // 
-            this.btnFlagThis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFlagThis.Location = new System.Drawing.Point(490, 475);
+            this.btnFlagThis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFlagThis.Location = new System.Drawing.Point(487, 475);
             this.btnFlagThis.Name = "btnFlagThis";
             this.btnFlagThis.Size = new System.Drawing.Size(75, 23);
             this.btnFlagThis.TabIndex = 22;
@@ -278,8 +280,8 @@
             // 
             // btnEditRemoveFlag
             // 
-            this.btnEditRemoveFlag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditRemoveFlag.Location = new System.Drawing.Point(454, 475);
+            this.btnEditRemoveFlag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditRemoveFlag.Location = new System.Drawing.Point(451, 475);
             this.btnEditRemoveFlag.Name = "btnEditRemoveFlag";
             this.btnEditRemoveFlag.Size = new System.Drawing.Size(111, 23);
             this.btnEditRemoveFlag.TabIndex = 23;
@@ -298,12 +300,67 @@
             this.chbShowFlaggedOnly.UseVisualStyleBackColor = true;
             this.chbShowFlaggedOnly.CheckedChanged += new System.EventHandler(this.ChbShowFlaggedOnlyCheckedChanged);
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Location = new System.Drawing.Point(0, 551);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(594, 2);
+            this.label3.TabIndex = 25;
+            // 
+            // commitButton
+            // 
+            this.commitButton.Location = new System.Drawing.Point(490, 562);
+            this.commitButton.Name = "commitButton";
+            this.commitButton.Size = new System.Drawing.Size(75, 23);
+            this.commitButton.TabIndex = 26;
+            this.commitButton.Text = "Commit";
+            this.commitButton.UseVisualStyleBackColor = true;
+            this.commitButton.Click += new System.EventHandler(this.commitButton_Click);
+            // 
+            // checkoutButton
+            // 
+            this.checkoutButton.Location = new System.Drawing.Point(409, 562);
+            this.checkoutButton.Name = "checkoutButton";
+            this.checkoutButton.Size = new System.Drawing.Size(75, 23);
+            this.checkoutButton.TabIndex = 27;
+            this.checkoutButton.Text = "Check Out";
+            this.checkoutButton.UseVisualStyleBackColor = true;
+            this.checkoutButton.Click += new System.EventHandler(this.checkoutButton_Click);
+            // 
+            // CredentialButton
+            // 
+            this.CredentialButton.Location = new System.Drawing.Point(328, 562);
+            this.CredentialButton.Name = "CredentialButton";
+            this.CredentialButton.Size = new System.Drawing.Size(75, 23);
+            this.CredentialButton.TabIndex = 28;
+            this.CredentialButton.Text = "Credentials";
+            this.CredentialButton.UseVisualStyleBackColor = true;
+            this.CredentialButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // LiveButton
+            // 
+            this.LiveButton.Location = new System.Drawing.Point(247, 562);
+            this.LiveButton.Name = "LiveButton";
+            this.LiveButton.Size = new System.Drawing.Size(75, 23);
+            this.LiveButton.TabIndex = 29;
+            this.LiveButton.Text = "Live Website";
+            this.LiveButton.UseVisualStyleBackColor = true;
+            this.LiveButton.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(581, 580);
+            this.ClientSize = new System.Drawing.Size(578, 614);
+            this.Controls.Add(this.LiveButton);
+            this.Controls.Add(this.CredentialButton);
+            this.Controls.Add(this.checkoutButton);
+            this.Controls.Add(this.commitButton);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.filesListBox);
             this.Controls.Add(this.chbShowFlaggedOnly);
             this.Controls.Add(this.btnFlagThis);
@@ -363,6 +420,11 @@
         private System.Windows.Forms.Button btnFlagThis;
         private System.Windows.Forms.Button btnEditRemoveFlag;
 		private System.Windows.Forms.CheckBox chbShowFlaggedOnly;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button commitButton;
+        private System.Windows.Forms.Button checkoutButton;
+        private System.Windows.Forms.Button CredentialButton;
+        private System.Windows.Forms.Button LiveButton;
     }
 }
 
