@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -27,6 +27,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -89,6 +90,8 @@
     <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.RazorPageTemplate.fr-FR.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.SqlFunction.fr-FR.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.StandardFunctions.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.TimezoneAbbreviations.fr-FR.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.TimezoneDisplayNames.fr-FR.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.UserControlFunction.fr-FR.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.UserGroupElementProvider.fr-FR.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\fr-FR\Composite.Plugins.VisualFunction.fr-FR.xml" />
