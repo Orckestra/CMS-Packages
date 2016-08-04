@@ -12,24 +12,29 @@ namespace LocalizationTool
 {
 	public static class Settings
 	{
-		public static string ApplicationDirectory
+	    public static string ApplicationDirectory
 		{
 			get { return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); }
 		}
 
 		public static string LocalizationDirectory
 		{
-			get { return Path.Combine(Settings.ApplicationDirectory, Settings.CompositeSiteRelativePath + "\\Composite\\localization"); }
+			get
+			{
+			    return Path.Combine(Settings.ApplicationDirectory,
+			        Settings.CompositeSiteRelativePath , Settings.LocalSourcePath);
+			}
 		}
 
 		public static string TargetLocalizationDirectory
 		{
-			get
-			{
-				return Path.Combine(Settings.ApplicationDirectory,
-									Settings.CompositeSiteRelativePath + "\\App_Data\\Composite\\LanguagePacks",
-									ConfigurationManager.AppSettings["targetCultureName"]);
-			}
+		    get
+		    {
+		        return Path.Combine(Settings.ApplicationDirectory,
+		            Settings.CompositeSiteRelativePath , Settings.LocalTargetPath);
+
+
+		    }
 		}
 
 		public static CultureInfo SourceCulture
@@ -87,5 +92,8 @@ namespace LocalizationTool
 		{
 			get { return Path.Combine(ApplicationDirectory, "Flags.xml"); }
 		}
+
+        public static string LocalSourcePath => ConfigurationManager.AppSettings["LocalSourcePath"];
+	    public static string LocalTargetPath => ConfigurationManager.AppSettings["LocalTargetPath"]??Settings.LocalSourcePath;
 	}
 }
