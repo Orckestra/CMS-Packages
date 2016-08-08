@@ -74,7 +74,7 @@ namespace LocalizationTool
 				}
 				else
 				{
-					MessageBox.Show(string.Format("No localization files ending with {0} found in {1}", FileHandler.SourceFileEnding, Settings.LocalizationDirectory));
+					MessageBox.Show(string.Format("No localization files ending with {0} found in {1}, Please Check Out", FileHandler.SourceFileEnding, Settings.LocalizationDirectory));
 				}
 			}
 			catch (Exception ex)

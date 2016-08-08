@@ -480,6 +480,9 @@ namespace LocalizationTool
 			var targetCulture = Settings.TargetCulture.Name;
 			const string defaultCulture = "en-US";
 
+		    if (!File.Exists(Settings.CompositeConfigRelativePath))
+		        return;
+
 			var config = XDocument.Load(Settings.CompositeConfigRelativePath);
 			var fileNameCultureResource = (from xml2 in config.Root.Descendants("ResourceProviderPlugins").Elements("add")
 											where xml2.Attribute("type").Value == "Composite.Plugins.ResourceSystem.XmlStringResourceProvider.XmlStringResourceProvider, Composite"
@@ -518,8 +521,11 @@ namespace LocalizationTool
 		public static void ResaveWebConfig()
 		{
 			//re-save web.config
-			var webconfig = XDocument.Load(Settings.WebConfigRelativePath);
-			webconfig.Save(Settings.WebConfigRelativePath);
+		    if (File.Exists(Settings.WebConfigRelativePath))
+		    {
+		        var webconfig = XDocument.Load(Settings.WebConfigRelativePath);
+		        webconfig.Save(Settings.WebConfigRelativePath);
+		    }
 		}
 
 		#endregion
