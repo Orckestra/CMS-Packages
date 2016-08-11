@@ -19,6 +19,10 @@
   <string key="Website.Media.SelectDialog.Title" value="Selectionner un média" />
   <string key="Website.Image.SelectDialog.Title" value="Sélectionner une image" />
   <string key="Website.Folder.SelectDialog.Title" value="Sélectionner un dossier" />
+  <string key="PublishingStatus.draft" value="Brouillon" />
+  <string key="PublishingStatus.awaitingApproval" value="En attente d'approbation" />
+  <string key="PublishingStatus.awaitingPublication" value="En attente de publication" />
+  <string key="PublishingStatus.published" value="Publiée" />
   <string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Paramètres généraux" />
   <string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Nom d'utilisateur" />
   <string key="Website.Forms.Administrative.EditUserStep1.UserNameHelp" value="Les noms d'utilisateur ne peuvent pas être modifiés. Il s'agit d'un champ en lecture seule." />
@@ -54,8 +58,12 @@
   <string key="Website.Forms.Administrative.EditUserStep1.PerspectivesTabLabel" value="Sections" />
   <string key="Website.Forms.Administrative.EditUserStep1.UserGroupsFieldLabel" value="Groupes d'utilisateurs" />
   <string key="Website.Forms.Administrative.EditUserStep1.UserGroupsMultiSelectHelp" value="Sélectionner les groupes d'utilisateurs que l'utilisateur sélectionné doit être membre de." />
+  <string key="Website.Forms.Administrative.EditUserStep1.IsLockedLabel" value="Est verrouillé" />
+  <string key="Website.Forms.Administrative.EditUserStep1.IsLockedItemLabel" value="L'utilisateur ne peut pas se connecter" />
+  <string key="Website.Forms.Administrative.EditUserStep1.IsLockedHelp" value="Lorsqu'elle est cochée, l'utilisateur sera interdit de se connecter." />
   <string key="EditUserWorkflow.EditErrorTitle" value="Erreur" />
   <string key="EditUserWorkflow.EditOwnAccessToSystemPerspective" value="Vous ne pouvez pas supprimer vos propres droits d'accès à la section «Système»." />
+  <string key="EditUserWorkflow.LockingOwnUserAccount" value="Vous ne pouvez pas verrouiller votre propre compte." />
   <string key="UserElementProvider.RootLabel" value="Utilisateurs" />
   <string key="UserElementProvider.RootToolTip" value="Utilisateurs" />
   <string key="UserElementProvider.AddUserLabel" value="Ajouter un utilisateur ..." />
@@ -655,4 +663,6 @@
   <string key="Validation.Int32.Overflow" value="La valeur spécifiée est trop grande ou trop petite. La plage acceptable est de -2147483648 à 2147483647" />
   <string key="Browser.Label" value="Navigateur de pages" />
   <string key="Browser.ToolTip" value="Parcourir les pages non publiées" />
+  <string key="ServerLog.LogEntriesRemovedBrowserViewLabel" value="Seul le {0} entrées de journal les plus récents sont affichés. Ouvrez le journal pour plus d'entrées." />
+  <string key="ServerLog.LogEntriesRemovedLabel" value="Seul le {0} entrées de journal les plus récents sont affichés. {1} entrées existent pour la recherche en cours. Soit affiner la recherche ou utiliser l'outil de visualisation de journal à partir de http://docs.composite.net/Configuration/Logging pour l'accès journal complet." />
 </strings>

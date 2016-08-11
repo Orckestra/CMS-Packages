@@ -10,27 +10,36 @@
 	<xsl:template match="/configuration">
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
-			<xsl:if test="count(connectionStrings)=0">
-				<connectionStrings>
-					<add name="{$ConnectionStringName}" connectionString="{$ConnectionString}" />
-				</connectionStrings>
-			</xsl:if>
+
+			<xsl:if test="count(connectionStrings)=0" xml:space="preserve">
+	<connectionStrings>
+		<add name="{$ConnectionStringName}" connectionString="{$ConnectionString}" />
+	</connectionStrings>
+</xsl:if>
 		</xsl:copy>
 	</xsl:template>
 
 	<xsl:template match="/configuration/connectionStrings">
 		<xsl:copy>
-			<xsl:if test="count(add[@name='$ConnectionStringName'])=0">
+			<xsl:apply-templates select="@* | node()" />
+
+			<xsl:if test="count(add[@name=$ConnectionStringName])=0" xml:space="preserve">
 				<add name="{$ConnectionStringName}" connectionString="{$ConnectionString}" />
 			</xsl:if>
-			<xsl:apply-templates select="@* | node()" />
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="/configuration/connectionStrings/add[@name='$ConnectionStringName']/@connectionString">
-		<xsl:attribute name="connectionString">
-			<xsl:value-of select="$ConnectionString"/>
-		</xsl:attribute>
+	<xsl:template match="/configuration/connectionStrings/add">
+		<xsl:choose>
+			<xsl:when test="@name=$ConnectionStringName">
+				<add name="{$ConnectionStringName}" connectionString="{$ConnectionString}" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:copy>
+					<xsl:apply-templates select="@* | node()" />
+				</xsl:copy>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<xsl:template match="@* | node()">
