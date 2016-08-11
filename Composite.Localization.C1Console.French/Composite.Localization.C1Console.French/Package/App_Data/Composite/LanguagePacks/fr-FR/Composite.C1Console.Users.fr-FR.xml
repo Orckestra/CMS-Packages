@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <!-- change password -->
-  <string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Changer le mot de passe ..." />
-  <string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Changer votre mot de passe" />
-  <string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Changer le mot de passe" />
+  <string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Modifier le mot de passe ..." />
+  <string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Modifie votre mot de passe" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Modifier le mot de passe" />
   <string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Mot de passe existant" />
   <string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="Pour des raisons de sécurité, vous devez inscrire votre mot de passe existant avant de pouvoir continuer." />
   <string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Nouveau mot de passe" />
@@ -39,6 +39,16 @@
   <string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Les pages écrites dans la langue &quot;de&quot; seront marquées par des icônes de globe dans l'arborescence de contenu. L'action associée à la page traduite importe la page dans la langue de travail en cours." />
   <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="La langue en cours a été modifiée" />
   <string key="ChangeOwnPasswordWorkflow.NotSupportedErrorText" value="le changement de mot de passe ne sont pas pris en charge dans la configuration actuelle." />
-  <string key="ChangePasswordForm.ChangePasswordButton" value="Changer le mot de passe" />
+  <string key="ChangePasswordForm.ChangePasswordButton" value="Modifier le mot de passe" />
   <string key="ChangePasswordForm.Username" value="Nom d'utilisateur" />
+  <string key="PasswordRules.MinimumLength" value="Le mot de passe doit contenir au moins {0} caractères" />
+  <string key="PasswordRules.EnforcePasswordHistory" value="Le mot de passe doit ne pas correspondre à aucun des {0} mots de passe utilisé auparavant." />
+  <string key="PasswordRules.DifferentCharacterGroups" value="Le mot de passe doit contenir au moins 3/4 des éléments suivants : majuscules, minuscules, chiffres et symboles." />
+  <string key="PasswordRules.DoNotUseUserName" value="Le mot de passe ne doit pas être inspiré d'un nom d'utilisateur" />
+  <string key="ChangePasswordForm.ConfirmationPasswordMimatch" value="Les mots de passe ne correspondent pas." />
+  <string key="ChangePasswordForm.OldPassword" value="Mot de passe précédent" />
+  <string key="ChangePasswordForm.NewPassword" value="Nouveau mot de passe" />
+  <string key="ChangePasswordForm.ConfirmPassword" value="Confirmer le mot de passe" />
+  <string key="ChangePasswordForm.PasswordExpiredMessage" value="Le mot de passe a plus de {0}. Veuillez modifier votre mot de passe." />
+  <string key="ChangePasswordForm.IncorrectOldPassword" value="Le mot de passe précédent est incorrect." />
 </strings>

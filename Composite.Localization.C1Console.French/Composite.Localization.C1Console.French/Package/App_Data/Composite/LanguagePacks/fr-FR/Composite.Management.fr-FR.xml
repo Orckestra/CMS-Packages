@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Modifier les autorisations" />
-  <string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Modifier les autorisations" />
-  <string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Autorisations globales" />
-  <string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Gérer les autorisations des utilisateurs" />
+  <string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Modifier les permissions" />
+  <string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Modifier les permissions" />
+  <string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Permissions globales" />
+  <string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Gérer les permissions des utilisateurs" />
   <string key="DataCompositionVisabilityFacade.DefaultContainerLabel" value="Métadonnées" />
   <string key="Website.Forms.Administrative.DeleteUserStep1.LabelFieldGroup" value="Supprimer l'utilisateur?" />
   <string key="Website.Forms.Administrative.DeleteUserStep1.Text" value="Supprimer l'utilisateur sélectionné?" />
@@ -275,6 +275,9 @@
   <string key="VirtualElementProviderElementProvider.XsltBasedFunctionPerspective" value="Fonctions basée sur le Xslt" />
   <string key="VirtualElementProviderElementProvider.RootActions.SendMessageLabel" value="Message diffusé" />
   <string key="VirtualElementProviderElementProvider.RootActions.SendMessageTooltip" value="Envoyer un message à toutes les consoles ouvertes" />
+  <string key="VirtualElementProviderElementProvider.RootActions.SetTimezoneLabel" value="Paramètres de fuseau horaire" />
+  <string key="VirtualElementProviderElementProvider.RootActions.SetTimezoneTooltip" value="Fuseau horaire à afficher pour tous les utilisateurs de la console" />
+  <string key="VirtualElementProviderElementProvider.RootActions.GlobalSetting" value="Paramètres globaux" />
   <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Redémarrer le serveur" />
   <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Redémarrer le serveur" />
   <string key="SendMessageToConsolesWorkflow.Layout.Label" value="Message diffusé à toutes les consoles C1" />
@@ -282,6 +285,12 @@
   <string key="SendMessageToConsolesWorkflow.TitleTextBox.Help" value="Titre du dialogue du message de diffusion" />
   <string key="SendMessageToConsolesWorkflow.MessageTextArea.Label" value="Message" />
   <string key="SendMessageToConsolesWorkflow.MessageTextArea.Help" value="Le message à diffuser" />
+  <string key="SendMessageToConsolesWorkflow.SuccessMessage.TimezoneChangedTitle" value="Fuseau horaire modifié" />
+  <string key="SendMessageToConsolesWorkflow.SuccessMessage.TimezoneChangedMessage" value="Le fuseau horaire a été modifié avec succès" />
+  <string key="SetTimezoneWorkflow.Layout.Label" value="Configurer l'affichage du fuseau horaire" />
+  <string key="SetTimezoneWorkflow.TitleTextBox.Label" value="Sélectionner un fuseau horaire" />
+  <string key="SetTimezoneWorkflow.TitleTextBox.Help" value="Fuseau horaire à afficher pour tous les utilisateurs de la console" />
+  <string key="SetTimezoneWorkflow.WarningText.Text" value="En modifiant le fuseau horaire, la console sera redémarrée. Veuillez enregistrer vos modifications avant d'effectuer ce changement." />
   <string key="LoginWebRequestHandler.Login" value="Authentification" />
   <string key="LoginWebRequestHandler.Header" value="Connectez-vous à {0}" />
   <string key="LoginWebRequestHandler.LoginFailed" value="Nom d'utilisateur ou mot de passe incorrect" />
@@ -350,7 +359,7 @@
   <string key="Website.Dialogs.LabelAccept" value="OK" />
   <string key="Website.Dialogs.LabelCancel" value="Annuler" />
   <string key="Website.Dialogs.LabelDisclosure" value="Plus d'information" />
-  <string key="Website.Dialogs.About.Title" value="À propos de Composite C1" />
+  <string key="Website.Dialogs.About.Title" value="À propos de {applicationname}" />
   <string key="Website.Dialogs.About.LabelCredits" value="Crédits" />
   <string key="Website.Dialogs.About.LabelBack" value="Précédent" />
   <string key="Website.Dialogs.About.LabelCredits2" value="Crédits" />
@@ -665,4 +674,6 @@
   <string key="Browser.ToolTip" value="Parcourir les pages non publiées" />
   <string key="ServerLog.LogEntriesRemovedBrowserViewLabel" value="Seul le {0} entrées de journal les plus récents sont affichés. Ouvrez le journal pour plus d'entrées." />
   <string key="ServerLog.LogEntriesRemovedLabel" value="Seul le {0} entrées de journal les plus récents sont affichés. {1} entrées existent pour la recherche en cours. Soit affiner la recherche ou utiliser l'outil de visualisation de journal à partir de http://docs.composite.net/Configuration/Logging pour l'accès journal complet." />
+  <string key="Website.App.LabelSettings" value="Paramètres" />
+  <string key="Website.App.LabelAbout" value="À propos de {applicationname}" />
 </strings>
