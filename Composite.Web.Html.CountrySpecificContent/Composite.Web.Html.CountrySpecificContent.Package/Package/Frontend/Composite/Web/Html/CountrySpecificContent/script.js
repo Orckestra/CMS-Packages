@@ -36,10 +36,10 @@
 			var countries = $(this).data("countries").split(',');
 			if ($.inArray(activeCountry.country_code, countries) >= 0) {
 				var newhtml = $(this).html()
-				.replace("{country_name}", activeCountry.country_name)
-				.replace("{country_code}", activeCountry.country_code)
-				.replace("{city}", activeCountry.city)
-				.replace("{region_name}", activeCountry.region_name);
+				.replace(/{country_name}/g, activeCountry.country_name)
+				.replace(/{country_code}/g, activeCountry.country_code)
+				.replace(/{city}/g, activeCountry.city)
+				.replace(/{region_name}/g, activeCountry.region_name);
 				$(this).html(newhtml).show();
 			} else {
 				$(this).remove();
