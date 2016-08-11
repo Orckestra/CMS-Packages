@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Web.Html.CountrySpecificContent" groupName="Composite.Web" version="1.0.3" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Web.Html.CountrySpecificContent" id="89ea2fb5-b0d0-4fa4-8f5b-f03c33c97396" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Composite.Web.Html.CountrySpecificContent" groupName="Composite.Web" version="1.0.4" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Web.Html.CountrySpecificContent" id="89ea2fb5-b0d0-4fa4-8f5b-f03c33c97396" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Shows content specific to the country a visitor on the website is from.</TechnicalDetails>
 		<Description>Shows content specific to the country a visitor on the website is from.</Description>
 	</mi:PackageInformation>
