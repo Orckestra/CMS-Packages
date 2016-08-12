@@ -38,7 +38,7 @@
   <string key="EditPage.UrlTitleFormattedMessage" value="Selon les règles de remplacement d'URL actuelles, le titre de l'URL a été changé pour '{0}'" />
   <string key="EditPage.HelpUrlTitle" value="L'entrée précisée &#xD;dans ce champ est affichée dans la barre d'adresse du navigateur en tant que partie de l'adresse URL. Le champ est utilisé par les moteurs de recherche" />
   <string key="EditPage.LabelFriendlyUrl" value="URL convivial" />
-  <string key="EditPage.HelpFriendlyUrl" value="L'entrée précisée dans ce champ est une version plus courte de l'URL réel de la page URL et redirige vers cette dernière lorsqu'il est entré dans la barre d'adresse du navigateur. Notez que certains serveurs peuvent être configurés pour supporter cette fonctionnalité." />
+  <string key="EditPage.HelpFriendlyUrl" value="L'entrée précisée &#xD;dans ce champ est une version plus courte de l'URL réel de la page URL et redirige vers cette dernière lorsqu'il est entré dans la barre d'adresse du navigateur. Notez que certains serveurs peuvent être configurés pour supporter cette fonctionnalité." />
   <string key="EditPage.LabelAbstract" value="Description" />
   <string key="EditPage.LabelAbstractHelp" value="Utiliser ce champ pour une courte description de la page" />
   <string key="EditPage.LabelPublishDate" value="Date de début de publication" />
@@ -121,4 +121,7 @@
   <string key="ViewUnpublishedItems.DateModifiedLabel" value="Date de modification" />
   <string key="ViewUnpublishedItems.PublishConfirmTitle" value="Publier les pages" />
   <string key="ViewUnpublishedItems.PublishConfirmText" value="Vous êtes sur le point de publier ces pages. Voulez-vous continuer?" />
+  <string key="DeletePageWorkflow.ConfirmAllVersionsDeletion.DialogLabel" value="Suppression des versions de page" />
+  <string key="DeletePageWorkflow.ConfirmAllVersionsDeletion.DeleteAllVersions" value="Supprimer toutes les versions" />
+  <string key="DeletePageWorkflow.ConfirmAllVersionsDeletion.DeleteCurrentVersion" value="Supprimer la version actuelle" />
 </strings>
