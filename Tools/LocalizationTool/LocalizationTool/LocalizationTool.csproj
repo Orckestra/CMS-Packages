@@ -114,6 +114,9 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="UpdateSource.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="CheckoutSource.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
