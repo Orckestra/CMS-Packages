@@ -1,44 +1,49 @@
 ﻿(function ($) {
-    var countryCookiesName = 'Composite.Web.Html.CountrySpecificContent.ClientCountry';
+	var countryCookiesName = 'Composite.Web.Html.CountrySpecificContent.UserCountry';
 
-    function getActiveCountry() {
-        var country = getCookies(countryCookiesName);
-        if (country == undefined) {
-            $.ajax({
-                async: false,
-                url: "http://www.telize.com/geoip",
-                dataType: 'json',
-                success: function (json) {
-                    country = json.country_code;
-                    setCookies(countryCookiesName, country);
-                }
-            });
-        }
-        return country;
-    }
+	function getActiveCountry() {
+		var country = getCookies(countryCookiesName);
+		if (country == undefined) {
+			$.ajax({
+				async: false,
+				url: "//freegeoip.net/json/",
+				dataType: 'json',
+				success: function (json) {
+					country = JSON.stringify(json);
+					setCookies(countryCookiesName, country);
+				}
+			});
+		}
+		return JSON.parse(country);
+	}
 
-    function getCookies(cookiesName) {
-        if (typeof (Storage) !== "undefined") {
-            return sessionStorage.getItem(cookiesName);
-        }
-        return undefined;
-    }
+	function getCookies(cookiesName) {
+		if (typeof (Storage) !== "undefined") {
+			return sessionStorage.getItem(cookiesName);
+		}
+		return undefined;
+	}
 
-    function setCookies(cookiesName, value) {
-        if (typeof (Storage) !== "undefined") {
-            sessionStorage.setItem(cookiesName, value);
-        }
-    }
+	function setCookies(cookiesName, value) {
+		if (typeof (Storage) !== "undefined") {
+			sessionStorage.setItem(cookiesName, value);
+		}
+	}
 
-    $(document).ready(function () {
-        var activeCountry = getActiveCountry();
-        $(".content-for-country").each(function () {
-            var countries = $(this).data("countries").split(',');
-            if ($.inArray(activeCountry, countries) >= 0) {
-                $(this).show();
-            } else {
-                $(this).remove();
-            }
-        });
-    });
+	$(document).ready(function () {
+		var activeCountry = getActiveCountry();
+		$(".content-for-country").each(function () {
+			var countries = $(this).data("countries").split(',');
+			if ($.inArray(activeCountry.country_code, countries) >= 0) {
+				var newhtml = $(this).html()
+				.replace(/{country_name}/g, activeCountry.country_name)
+				.replace(/{country_code}/g, activeCountry.country_code)
+				.replace(/{city}/g, activeCountry.city)
+				.replace(/{region_name}/g, activeCountry.region_name);
+				$(this).html(newhtml).show();
+			} else {
+				$(this).remove();
+			}
+		});
+	});
 })(jQuery)
