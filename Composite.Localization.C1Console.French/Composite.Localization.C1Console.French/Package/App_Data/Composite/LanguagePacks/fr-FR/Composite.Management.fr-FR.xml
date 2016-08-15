@@ -671,6 +671,17 @@
   <string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Seulement {0} chiffres(s) avant la virgule décimale sont permis" />
   <string key="Validation.DateTime.InvalidDateFormat" value="Date invalide : '{0}'. Utiliser le format '{1}'." />
   <string key="Validation.Int32.Overflow" value="La valeur spécifiée est trop grande ou trop petite. La plage acceptable est de -2147483648 à 2147483647" />
+  <string key="Validation.Required" value="Requis" />
+  <string key="Validation.InvalidField.Number" value="Nombres seulement" />
+  <string key="Validation.InvalidField.Integer" value="Nombres entiers seulement" />
+  <string key="Validation.InvalidField.ProgrammingIdentifier" value="Identifiant non valide" />
+  <string key="Validation.InvalidField.ProgrammingNamespace" value="Espace de nom non valide" />
+  <string key="Validation.InvalidField.Url" value="URL non valide" />
+  <string key="Validation.InvalidField.Currency" value="Notation non valide" />
+  <string key="Validation.InvalidField.Email" value="Courriel non valide" />
+  <string key="Validation.InvalidField.Guid" value="GUID non valide" />
+  <string key="Validation.StringLength.Min" value="{0} caractères minimum" />
+  <string key="Validation.StringLength.Max" value="{0} caractères maximum" />
   <string key="Browser.Label" value="Navigateur de pages" />
   <string key="Browser.ToolTip" value="Parcourir les pages non publiées" />
 </strings>
