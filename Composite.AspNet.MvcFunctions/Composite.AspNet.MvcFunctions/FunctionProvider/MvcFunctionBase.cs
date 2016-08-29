@@ -329,7 +329,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 object value;
                 if (parameters.TryGetParameter(parameterName, out value))
                 {
-                    routeData.Values.Add(parameterName, value);
+                    routeData.Values[parameterName] = value;
                 }
             }
 
