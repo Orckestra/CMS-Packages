@@ -10,6 +10,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Drawing;
 using System.Management.Automation;
+using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -491,12 +492,14 @@ namespace LocalizationTool
 
 	    private async void checkoutButton_Click(object sender, EventArgs e)
 	    {
-            toolStripStatusLabel1.Text = "Wait For check out to complete";
+	        var script = GetScriptName();
+
+	        toolStripStatusLabel1.Text = "Wait For check out/Update to complete";
             DisableSourceControlButtons(false);
-            var result = await RunScript("CheckoutSource.ps1");
+            var result = await RunScript(script);
             DisableSourceControlButtons(true);
             toolStripStatusLabel1.Text = "";
-            MessageBox.Show(result? "Check Out Finished with errors":"Check Out Finished");
+            MessageBox.Show(result? "Check Out/Update Finished with errors":"Check Out/Update Finished");
 	        FileHandler.UpdateFileHandler();
             FileHandler.FilterDataSource("", false);
             _filesListSource.Clear();
@@ -509,7 +512,28 @@ namespace LocalizationTool
 
 	    }
 
-        private async void commitButton_Click(object sender, EventArgs e)
+	    private static string GetScriptName()
+	    {
+	        string script;
+	        SHA1 sha = new SHA1CryptoServiceProvider();
+	        using (var stream = File.OpenRead(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile))
+	        {
+	            var hash = BitConverter.ToString(sha.ComputeHash(stream));
+
+	            if (hash == CredentialHelper.GetFormRegistery("ConfigHash"))
+	            {
+	                script = "UpdateSource.ps1";
+	            }
+	            else
+	            {
+	                CredentialHelper.SaveInRegistery("ConfigHash", hash);
+	                script = "CheckoutSource.ps1";
+	            }
+	        }
+	        return script;
+	    }
+
+	    private async void commitButton_Click(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "Wait For Commit to complete";
             DisableSourceControlButtons(false);
