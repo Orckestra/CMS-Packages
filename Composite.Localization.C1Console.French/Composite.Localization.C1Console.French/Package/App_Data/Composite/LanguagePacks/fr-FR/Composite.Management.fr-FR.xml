@@ -445,6 +445,8 @@
   <string key="ServerLog.LabelButtonDeleteOld" value="Supprimer l'ancien" />
   <string key="ServerLog.LabelButtonRefresh" value="Actualiser" />
   <string key="ServerLog.EmptyLabel" value="Aucune donnée de journal disponible ..." />
+  <string key="ServerLog.LogEntriesRemovedBrowserViewLabel" value="Seul le {0} entrées de journal les plus récents sont affichés. Ouvrez le journal pour plus d'entrées." />
+  <string key="ServerLog.LogEntriesRemovedLabel" value="Seul le {0} entrées de journal les plus récents sont affichés. {1} entrées existent pour la recherche en cours. Soit affiner la recherche ou utiliser l'outil de visualisation de journal à partir de http://docs.composite.net/Configuration/Logging pour l'accès journal complet." />
   <string key="ServerLog.LogEntry.DateLabel" value="Date" />
   <string key="ServerLog.LogEntry.MessageLabel" value="Message" />
   <string key="ServerLog.LogEntry.TitleLabel" value="Titre" />
@@ -536,8 +538,10 @@
   <string key="Website.App.LabelDeveloperPanel" value="Panneau de développeur" />
   <string key="Website.App.LabelTools" value="Outils" />
   <string key="Website.App.LabelHelp" value="Aide" />
+  <string key="Website.App.LabelSettings" value="Paramètres" />
   <string key="Website.App.LabelHelpContents" value="Contenu de l'aide" />
   <string key="Website.App.LabelFeedback" value="Faire un commentaire ..." />
+  <string key="Website.App.LabelAbout" value="À propos de {applicationname}" />
   <string key="Website.App.LabelCut" value="Couper" />
   <string key="Website.App.LabelCopy" value="Copier" />
   <string key="Website.App.LabelPaste" value="Coller" />
@@ -612,7 +616,7 @@
   <string key="Website.Forms.Administrative.EditMediaFile.LabelTitle" value="Titre" />
   <string key="Website.Forms.Administrative.EditMediaFile.HelpTitle" value="Utiliser ce champ pour le titre de l'image" />
   <string key="Website.Forms.Administrative.EditMediaFile.LabelFileName" value="Nom du fichier" />
-  <string key="Website.Forms.Administrative.EditMediaFile.HelpFileName" value="L'entrée spécifiée dans ce champ est une partie de l'ID de l'image" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpFileName" value="L'entrée précisée dans ce champ est utilisée quand le fichier média est téléchargé." />
   <string key="Website.Forms.Administrative.EditMediaFile.LabelDescription" value="Description" />
   <string key="Website.Forms.Administrative.EditMediaFile.HelpDescription" value="Utiliser ce champ pour en courte description de l'image" />
   <string key="Website.Forms.Administrative.EditMediaFile.TotalFilenameToLong.Message" value="La longueur totale du nom de fichier (dossier et nom de fichier) est trop longue" />
@@ -625,9 +629,6 @@
   <string key="Website.Forms.Administrative.EditMediaFolder.LabelDescription" value="Description" />
   <string key="Website.Forms.Administrative.EditMediaFolder.HelpDescription" value="" />
   <string key="Website.Forms.Administrative.EditMediaFolder.TotalFilenameToLong.Message" value="Le dossier contient un fichier dont la longueur totale du nom du fichier et le nom du nouveau dossier est trop long" />
-  <string key="Website.Forms.Administrative.EditPage.DraftTransition" value="Brouillon" />
-  <string key="Website.Forms.Administrative.EditPage.AwaitingApprovalTransition" value="En attente d'approbation" />
-  <string key="Website.Forms.Administrative.EditPage.AwaitingPublicationTransition" value="En attente de publication" />
   <string key="Website.Forms.Administrative.EditPage.PublishDatePreventPublishTitle" value="Enregistré, mais non publié" />
   <string key="Website.Forms.Administrative.EditPage.PublishDatePreventPublish" value="Votre page a été enregistrée, mais non publié, puisque vous avez inscrit une date de publication dans le futur dans l'onglet 'Paramètres'." />
   <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelFieldGroup" value="Recherche" />
@@ -658,6 +659,7 @@
   <string key="Website.Misc.Trees.DialogTitle.PasteTypeNotAllowed" value="Non autorisé" />
   <string key="Website.Misc.Trees.DialogText.PasteTypeNotAllowed" value="Le dossier n'accepte par le type de document" />
   <string key="Website.Misc.MultiSelector.LabelEditSelections" value="Modifier la sélection" />
+  <string key="Website.Misc.Toolbar.LabelShowMoreActions" value="Plus" />
   <string key="GenericVersionProcessController.Version" value="Information de la version" />
   <string key="GenericVersionProcessController.VersionToolTip" value="Afficher les informations de la version" />
   <string key="AspNetUiControl.Selector.SelectValueLabel" value="Sélectionner une valeur ..." />
@@ -670,10 +672,17 @@
   <string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Seulement {0} chiffres(s) avant la virgule décimale sont permis" />
   <string key="Validation.DateTime.InvalidDateFormat" value="Date invalide : '{0}'. Utiliser le format '{1}'." />
   <string key="Validation.Int32.Overflow" value="La valeur spécifiée est trop grande ou trop petite. La plage acceptable est de -2147483648 à 2147483647" />
+  <string key="Validation.Required" value="Requis" />
+  <string key="Validation.InvalidField.Number" value="Nombres seulement" />
+  <string key="Validation.InvalidField.Integer" value="Nombres entiers seulement" />
+  <string key="Validation.InvalidField.ProgrammingIdentifier" value="Identifiant non valide" />
+  <string key="Validation.InvalidField.ProgrammingNamespace" value="Espace de nom non valide" />
+  <string key="Validation.InvalidField.Url" value="URL non valide" />
+  <string key="Validation.InvalidField.Currency" value="Notation non valide" />
+  <string key="Validation.InvalidField.Email" value="Courriel non valide" />
+  <string key="Validation.InvalidField.Guid" value="GUID non valide" />
+  <string key="Validation.StringLength.Min" value="{0} caractères minimum" />
+  <string key="Validation.StringLength.Max" value="{0} caractères maximum" />
   <string key="Browser.Label" value="Navigateur de pages" />
   <string key="Browser.ToolTip" value="Parcourir les pages non publiées" />
-  <string key="ServerLog.LogEntriesRemovedBrowserViewLabel" value="Seul le {0} entrées de journal les plus récents sont affichés. Ouvrez le journal pour plus d'entrées." />
-  <string key="ServerLog.LogEntriesRemovedLabel" value="Seul le {0} entrées de journal les plus récents sont affichés. {1} entrées existent pour la recherche en cours. Soit affiner la recherche ou utiliser l'outil de visualisation de journal à partir de http://docs.composite.net/Configuration/Logging pour l'accès journal complet." />
-  <string key="Website.App.LabelSettings" value="Paramètres" />
-  <string key="Website.App.LabelAbout" value="À propos de {applicationname}" />
 </strings>
