@@ -2,7 +2,7 @@
 <%@ Import Namespace="Composite.Plugins.Forms.WebChannel.UiControlFactories" %>
 
 <script runat="server">
-    private string _currentStringValue = null;
+    private string _currentStringValue;
 
     protected void Page_Init(object sender, EventArgs e)
     {
@@ -10,7 +10,7 @@
 
         if (_currentStringValue == null)
         {
-            if (this.Date.HasValue == false)
+            if (!this.Date.HasValue)
             {
                 _currentStringValue = "";
             }
@@ -22,7 +22,7 @@
         }
     }
 
-    protected override void BindStateToProperties()
+    public override void BindStateToProperties()
     {
         try
         {
@@ -41,7 +41,7 @@
         }
     }
 
-    protected override void InitializeViewState()
+    public override void InitializeViewState()
     {
 
     }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,10 +46,7 @@
   <ItemGroup>
     <Reference Include="Composite">
       <HintPath>..\..\References\Composite\2.1\Composite.dll</HintPath>
-    </Reference>
-    <Reference Include="Composite.Forms.Renderer, Version=1.3.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Package\Bin\Composite.Forms.Renderer.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -78,6 +75,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Release\Composite.Forms.Renderer.zip" />
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +86,6 @@
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Widgets\Selectors\DataReferenceTreeSelector.ascx" />
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Widgets\Selectors\MultiKeySelector.ascx" />
     <Content Include="_PackageCreator\Composite.Forms.Renderer.xml" />
-    <Content Include="Package\Bin\Composite.Forms.Renderer.dll" />
     <Content Include="Package\Config\Install.xsl" />
     <Content Include="Package\Config\Uninstall.xsl" />
     <Content Include="Package\Frontend\Composite\Forms\Renderer\Controls\FormsRender.ascx" />
@@ -108,6 +105,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Package\Frontend\Composite\Forms\Renderer\Localization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Composite.Forms.Renderer\Composite.Forms.Renderer.csproj">
+      <Project>{b7e8937b-b1d7-4271-be53-2e06d0aa9614}</Project>
+      <Name>Composite.Forms.Renderer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -133,9 +136,18 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>
-"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs
-</PreBuildEvent>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
+
+COPY "$(TargetDir)\*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)..\..\Public\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"</PostBuildEvent>
   </PropertyGroup>
 </Project>

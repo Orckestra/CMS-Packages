@@ -11,22 +11,22 @@
         _selectedKey = HttpContext.Current.Request.Form[this.ClientName];
     }
 
-    protected override void BindStateToProperties()
+    public override void BindStateToProperties()
     {
         this.SelectedKeys = new List<string> { _selectedKey };
     }
 
-    protected override void InitializeViewState()
+    public override void InitializeViewState()
     {
         List<KeyLabelPair> options = this.GetOptions();
         optionsRepeater.DataSource = options;
         optionsRepeater.DataBind();
 
-        List<string> selectedKeys = new List<string>(this.SelectedKeys);
+        var selectedKeys = new List<string>(this.SelectedKeys);
 
         if (selectedKeys.Count > 0)
         {
-            if (selectedKeys.Count() > 1) throw new InvalidOperationException("Multiple elements selected. This was unexpected");
+            if (selectedKeys.Count > 1) throw new InvalidOperationException("Multiple elements selected. This was unexpected");
             if (options.Select(o => o.Key).Contains(selectedKeys[0]))
                 _selectedKey = selectedKeys[0];
         }

@@ -33,23 +33,12 @@
 
 
 
-    protected override void BindStateToProperties()
+    public override void BindStateToProperties()
     {
-        List<string> result = new List<string>();
-
-
-
-        foreach (ListItem item in MultiKeyCheckBoxList.Items)
-        {
-            if (item.Selected)
-            {
-                result.Add(item.Value);
-            }
-        }
-
-        this.SelectedKeys = result;
-
-
+	    this.SelectedKeys = MultiKeyCheckBoxList.Items
+			.Cast<ListItem>()
+			.Where(item => item.Selected)
+			.Select(item => item.Value).ToList();
     }
 
     public override string GetDataFieldClientName()
@@ -57,7 +46,7 @@
         return this.ClientID.Replace("_", "$");
     }
 
-    protected override void InitializeViewState()
+    public override void InitializeViewState()
     {
     }
 

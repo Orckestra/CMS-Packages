@@ -22,17 +22,10 @@
 
     protected override void InitializeViewState()
     {
-        if (string.IsNullOrEmpty(this.Xhtml) == false)
-        {
-            _currentStringValue = this.Xhtml;
-        }
-        else
-        {
-            _currentStringValue = "";
-        }
+	    _currentStringValue = !string.IsNullOrEmpty(this.Xhtml) ? this.Xhtml : "";
     }
 
-    public override string GetDataFieldClientName()
+	public override string GetDataFieldClientName()
     {
         return this.ClientID;
     }
