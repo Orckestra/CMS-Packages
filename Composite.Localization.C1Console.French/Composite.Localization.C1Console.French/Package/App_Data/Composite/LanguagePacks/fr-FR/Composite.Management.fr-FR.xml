@@ -75,7 +75,7 @@
   <string key="UserElementProvider.ChangeOtherActiveLocaleTitle" value="Avertissement" />
   <string key="UserElementProvider.ChangeOtherActiveLocaleMessage" value="Vous avez changé la langue active pour un utilisateur qui est actuellement connecté. La console de l'utilisateur sera rechargée et les données peuvent être perdues." />
   <string key="UserElementProvider.ChangeOtherActiveLocaleDialogTitle" value="Nettoyage obligatoire" />
-  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogText" value="Cela nécessite un nettoyage. Les diteurs actifs seront enregistrés et fermés." />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogText" value="Cette action nécessite un nettoyage. Les éditeurs actifs seront enregistrés et fermés." />
   <string key="AddNewUserWorkflow.UsernameDuplicateError" value="Un utilisateur avec le même nom existe déjà" />
   <string key="Website.Forms.Administrative.AddNewUserStep1.LabelFieldGroup" value="Ajouter un nouvel utilisateur" />
   <string key="Website.Forms.Administrative.AddNewUserStep1.UserNameLabel" value="Nom d'utilisateur" />
@@ -103,6 +103,7 @@
   <string key="AssociatedDataElementProviderHelper.EditAssociatedDataToolTip" value="Modifier les données" />
   <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataLabel" value="Supprimer les données" />
   <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataToolTip" value="Supprimer les données" />
+  <string key="AssociatedDataElementProviderHelper.DuplicateAssociatedDataLabel" value="Dupliquer les données" />
   <string key="AssociatedDataElementProviderHelper.LocalizeData" value="Localiser" />
   <string key="AssociatedDataElementProviderHelper.LocalizeDataToolTip" value="Localiser données" />
   <string key="AssociatedDataElementProviderHelper.DisabledData" value="Pas encore approuvé ou publié" />
@@ -659,7 +660,6 @@
   <string key="Website.Misc.Trees.DialogTitle.PasteTypeNotAllowed" value="Non autorisé" />
   <string key="Website.Misc.Trees.DialogText.PasteTypeNotAllowed" value="Le dossier n'accepte par le type de document" />
   <string key="Website.Misc.MultiSelector.LabelEditSelections" value="Modifier la sélection" />
-  <string key="Website.Misc.Toolbar.LabelShowMoreActions" value="Plus" />
   <string key="GenericVersionProcessController.Version" value="Information de la version" />
   <string key="GenericVersionProcessController.VersionToolTip" value="Afficher les informations de la version" />
   <string key="AspNetUiControl.Selector.SelectValueLabel" value="Sélectionner une valeur ..." />
@@ -685,4 +685,5 @@
   <string key="Validation.StringLength.Max" value="{0} caractères maximum" />
   <string key="Browser.Label" value="Navigateur de pages" />
   <string key="Browser.ToolTip" value="Parcourir les pages non publiées" />
+  <string key="Duplication.Text" value="Copie{count} de {0}" />
 </strings>
