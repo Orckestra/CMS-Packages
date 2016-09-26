@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Composite.Web.Html.DeviceSpecificContent</RootNamespace>
-    <AssemblyName>Composite.Web.Html.DeviceSpecificContent</AssemblyName>
+    <RootNamespace>Orckestra.Web.Html.DeviceSpecificContent</RootNamespace>
+    <AssemblyName>Orckestra.Web.Html.DeviceSpecificContent</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -66,10 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\install.xml" />
-    <Content Include="_PackageCreator\Composite.Web.Html.DeviceSpecificContent.xml" />
+    <Content Include="_PackageCreator\Orckestra.Web.Html.DeviceSpecificContent.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Razor\Composite\Web\Html\DeviceSpecificContent.cshtml" />
+    <Content Include="Package\App_Data\Razor\Orckestra\Web\Html\DeviceSpecificContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

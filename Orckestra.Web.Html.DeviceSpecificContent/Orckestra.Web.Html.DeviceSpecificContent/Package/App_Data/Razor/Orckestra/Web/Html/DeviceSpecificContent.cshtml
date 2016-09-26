@@ -21,7 +21,7 @@
 
 	private static bool IsMobileClient(HttpContext context)
 	{
-		var debugMobile = UserValidationFacade.IsLoggedIn() && (context.Request["c1displaymode"] == "mobile");
+		var debugMobile = UserValidationFacade.IsLoggedIn() && (context.Request["cmsdisplaymode"] == "mobile");
 		var myBrowserCaps = context.Request.Browser;
 
 		return debugMobile || ((HttpCapabilitiesBase)myBrowserCaps).IsMobileDevice;
