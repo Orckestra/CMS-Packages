@@ -1,0 +1,188 @@
+﻿@using Composite.Core.Routing
+@using Orckestra.Lists
+@using Resources
+@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Portfolio Item Details"; }
+	}
+
+	[FunctionParameter(DefaultValue = "Project")]
+	public PortfolioProject Project { get; set; }
+
+	private string GetDetailsUrl(PortfolioProject project)
+	{
+		var pageUrlData = RoutedData.GetRoutedByLabelDataUrlMapper(project.PageId, typeof(PortfolioProject)).GetPageUrlData(project.ToDataReference());
+		return PageUrls.BuildUrl(pageUrlData, UrlKind.Internal);
+	}
+}
+
+@{
+	if (Project == null)
+	{
+		return;
+	}
+	var category = Data.Get<PortfolioCategory>().FirstOrDefault(c => c.Id == Project.Category);
+	var projectImagesFolder = Data.Get<IMediaFileFolder>().FirstOrDefault(f => Project.ImagesFolder != null && Project.ImagesFolder.Contains(f.Id.ToString()));
+	var projectImages = Data.Get<IImageFile>().Where(i => projectImagesFolder != null && i.FolderPath == projectImagesFolder.Path).ToList();
+
+	var relatedItems = Data.Get<PortfolioProject>().Where(p => p.Id != Project.Id && p.Category == Project.Category).ToList();
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<title>@Project.Title</title>
+	<meta name="description" content="@Project.TeaserDescription" />
+	<link rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Lists/Portfolio/styles.css" />
+	<script id="jquery-cycle2-js" type="text/javascript" src="~/Frontend/Orckestra/Lists/Portfolio/jquery.cycle2.min.js"></script>
+	@if (relatedItems.Any() && relatedItems.Count > 1)
+	{
+		<script id="jquery-cycle2-carousel-js" type="text/javascript" src="~/Frontend/Orckestra/Lists/Portfolio/jquery.cycle2.carousel.min.js"></script>
+	}
+</head>
+<body>
+	<div class="row">
+		<div class="main col-xs-12">
+			<h1 class="page-header">@Project.Title</h1>
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					@Html.Raw(Project.Content)
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<!-- Nav tabs -->
+					<ul class="nav nav-pills white space-top" role="tablist">
+						@if (projectImages.Any())
+						{
+							<li class="active">
+								<a href="#portfolio-images" role="tab" data-toggle="tab" title="images"><i class="fa fa-camera pr-5"></i> @Portfolio.Details_Tabs_PhotoText</a>
+							</li>
+						}
+						@if (!string.IsNullOrEmpty(Project.VideoUrl))
+						{
+							<li>
+								<a href="#portfolio-video" role="tab" data-toggle="tab" title="video"><i class="fa fa-video-camera pr-5"></i> @Portfolio.Details_Tabs_VideoText</a>
+							</li>
+						}
+
+					</ul>
+					<!-- Tab panes -->
+					<div class="tab-content clear-style">
+						@if (projectImages.Any())
+						{
+							<div class="tab-pane active" id="portfolio-images">
+								<div class="cycle-slideshow">
+									<a class="cycle-prev"><i class="fa fa-chevron-circle-left "></i></a>
+									<a class="cycle-next"><i class="fa fa-chevron-circle-right "></i></a>
+									@foreach (var image in projectImages)
+									{
+										<img src="@Html.C1().MediaUrl(image.Id)?w=760" alt="image" />
+									}
+								</div>
+							</div>
+						}
+
+						@if (!string.IsNullOrEmpty(Project.VideoUrl))
+						{
+							<div class="tab-pane" id="portfolio-video">
+								@if (Project.VideoUrl.Contains("youtube"))
+								{
+									@Html.C1().Function("Composite.Media.YouTube", new { YouTubeURL = Project.VideoUrl })
+								}
+								@if (Project.VideoUrl.Contains("vimeo"))
+								{
+									@Html.C1().Function("Composite.Media.Vimeo", new { VimeoURL = Project.VideoUrl })
+								}
+
+							</div>
+						}
+					</div>
+
+					<h4>@Portfolio.Details_ProjectInfo_Title</h4>
+					<ul class="list-unstyled">
+						@ProjectInfoRow(Portfolio.Details_ProjectInfo_Client, Project.Client)
+						@ProjectInfoRow(Portfolio.Details_ProjectInfo_Date, Project.Date.Value.ToShortDateString())
+						@ProjectInfoRow(Portfolio.Details_ProjectInfo_In, category.Title)
+						@ProjectInfoRow(Portfolio.Details_ProjectInfo_Place, Project.Place)
+						@if (!string.IsNullOrEmpty(Project.URL))
+						{
+							<li><strong>@Portfolio.Details_ProjectInfo_URL </strong> | <a href="@Project.URL">@Project.URL.Replace("http://", "").Replace("https://", "")</a></li>
+						}
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr />
+
+	@if (relatedItems.Any())
+	{
+		@RelatedProjects(relatedItems)
+	}
+</body>
+</html>
+
+@helper ProjectInfoRow(string title, string value)
+{
+if (!string.IsNullOrEmpty(value))
+{
+		<li><strong>@title </strong> | @value</li>
+    }
+}
+
+@helper RelatedProjects(List<PortfolioProject> relatedItems)
+{
+	<div class="row">
+		<div class="col-md-12">
+			<h2>@Portfolio.Details_Related_Title</h2>
+		</div>
+		<div class="col-md-12">
+			@if (relatedItems.Count > 1)
+			{
+				<div class="cycle-slideshow"
+					 data-cycle-fx="carousel"
+					 data-cycle-timeout="0"
+					 data-cycle-slides="> div"
+					 data-allow-wrap="false"
+					 data-cycle-next="#rp-next"
+					 data-cycle-prev="#rp-prev">
+					@foreach (var item in relatedItems)
+					{
+						<div class="thumbnail text-center">
+							<a href="@GetDetailsUrl(item)" title="@item.Title">
+								<img src="@Html.C1().MediaUrl(item.TeaserImage)?mw=300" alt="img" />
+							</a>
+							<div class="caption">
+								<h4>
+									<a href="@GetDetailsUrl(item)" title="@item.Title">
+										@item.Title
+									</a>
+								</h4>
+							</div>
+						</div>
+					}
+				</div>
+				<a id="rp-prev" class="cycle-prev"><i class="fa fa-chevron-circle-left "></i></a>
+				<a id="rp-next" class="cycle-next"><i class="fa fa-chevron-circle-right "></i></a>
+			}
+			else
+			{
+				var item = relatedItems[0];
+				<div class="thumbnail text-center pull-left">
+					<a href="@GetDetailsUrl(item)" title="@item.Title">
+						<img src="@Html.C1().MediaUrl(item.TeaserImage)?mw=300" alt="img" />
+					</a>
+					<div class="caption">
+						<h4>
+							<a href="@GetDetailsUrl(item)" title="@item.Title">
+								@item.Title
+							</a>
+						</h4>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+}

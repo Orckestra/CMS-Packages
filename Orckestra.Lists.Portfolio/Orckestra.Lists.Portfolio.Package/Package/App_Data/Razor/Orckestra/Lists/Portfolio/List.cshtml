@@ -1,0 +1,79 @@
+﻿@inherits RazorFunction
+@using Orckestra.Lists
+@using Resources
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Lists portfolio items on a page."; }
+	}
+
+	[FunctionParameter(Label = "Intro Text", DefaultValue = null)]
+	public XhtmlDocument IntroText { get; set; }
+
+	[FunctionParameter]
+	public RoutedData.ByLabel<PortfolioProject> ViewModel { get; set; }
+}
+
+@{
+	if (ViewModel.IsItem)
+	{
+		@Html.C1().Function("Orckestra.Lists.Portfolio.Details", new { Project = ViewModel.Item })
+		return;
+	}
+
+	var categories = Data.Get<PortfolioCategory>().OrderBy(gr => gr.Ordering).ToList();
+	var allItems = Data.Get<PortfolioProject>().OrderByDescending(gr => gr.Date).ToList();
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<script id="jquery-shuffle-modernizr" type="text/javascript" src="~/Frontend/Orckestra/Lists/Portfolio/modernizr.custom.js"></script>
+	<script id="jquery-shuffle-js" type="text/javascript" src="~/Frontend/Orckestra/Lists/Portfolio/jquery.shuffle.min.js"></script>
+	<script id="jquery-shuffle-filter-js" type="text/javascript" src="~/Frontend/Orckestra/Lists/Portfolio/jquery.shuffle.filter.js"></script>
+</head>
+<body>
+
+	@if (IntroText != null && IntroText.Body.HasElements)
+	{
+		@Html.Raw(IntroText)
+	}
+	<div class="filter">
+		<ul class="nav nav-pills">
+			<li class="active">
+				<a href="#" data-filter="all">@Portfolio.List_Tabs_AllText</a>
+			</li>
+			@foreach (var cat in categories)
+            {
+                var id = "cat" + cat.Id.GetHashCode();
+				<li>
+					<a href="#" data-filter="@id">@cat.Title</a>
+				</li>
+            }
+		</ul>
+
+		<div class="collection row">
+			@ProjectsList(allItems)
+		</div>
+	</div>
+</body>
+</html>
+
+@helper ProjectsList(List<PortfolioProject> items)
+{
+foreach (var item in items)
+{
+	var category = "cat" + item.Category.GetHashCode();
+		<div class="col-xs-12 col-sm-6 col-md-3 mt-20 collection-item" data-groups="@category">
+			<div class="thumbnail">
+				<a href="@ViewModel.ItemUrl(item)"><img src="/media(@item.TeaserImage)?w=718" alt="img" /></a>
+				<div class="caption">
+					<h3>@item.Title</h3>
+					<p>@Html.Raw(item.TeaserDescription)</p>
+					<p>
+						<a href="@ViewModel.ItemUrl(item)" class="btn btn-sm btn-default"><span>@Portfolio.List_ReadMoreText</span></a>
+					</p>
+				</div>
+			</div>
+		</div>
+    }
+}

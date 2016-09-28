@@ -1,0 +1,55 @@
+﻿<?xml version="1.0"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+  <ElementStructure.AllowedAttachments ApplicationName="Portfolio">
+    <DataType Type="Composite.Data.Types.IPage"/>
+  </ElementStructure.AllowedAttachments>
+  <ElementRoot>
+    <Actions>
+      <AddDataAction Type="Orckestra.Lists.PortfolioProject" Label="Add Portfolio Item" />
+      <AddDataAction Type="Orckestra.Lists.PortfolioCategory" Label="Add Portfolio Category" />
+    </Actions>
+    <Children>
+      <Element Label="Projects" Id="Portfolio.Projects" Icon="perspectivetools">
+        <Children>
+          <DataFolderElements Type="Orckestra.Lists.PortfolioProject" FieldGroupingName="Category" Display="Compact" SortDirection="Descending" Icon="folder">
+            <Actions>
+              <AddDataAction Type="Orckestra.Lists.PortfolioProject" Label="Add Portfolio Item" />
+            </Actions>
+            <Children>
+
+              <DataElements Type="Orckestra.Lists.PortfolioProject" Display="Auto">
+                <Actions>
+                  <EditDataAction Label="Edit Project" />
+                  <DeleteDataAction Label="Delete Project" />
+                </Actions>
+                <Filters>
+                  <ParentIdFilter ParentType="Composite.Data.Types.IPage" ReferenceFieldName="PageId" />
+                </Filters>
+                <OrderBy>
+                  <Field FieldName="Date" Direction="descending"></Field>
+                </OrderBy>
+              </DataElements>
+
+            </Children>
+          </DataFolderElements>
+        </Children>
+      </Element>
+      <Element Label="Categories" Id="Orckestra.Lists.PortfolioCategory" ToolTip="Categories" Icon="dataassociation-rootfolder-open">
+        <Actions>
+          <AddDataAction Type="Orckestra.Lists.PortfolioCategory" Label="Add Category" />
+        </Actions>
+        <Children>
+          <DataElements Type="Orckestra.Lists.PortfolioCategory"  Display="Auto">
+            <Actions>
+              <EditDataAction Label="Edit Category" />
+              <DeleteDataAction Label="Delete Category" />
+            </Actions>
+            <OrderBy>
+              <Field FieldName="Ordering" />
+            </OrderBy>
+          </DataElements>
+        </Children>
+      </Element>
+    </Children>
+  </ElementRoot>
+</ElementStructure>

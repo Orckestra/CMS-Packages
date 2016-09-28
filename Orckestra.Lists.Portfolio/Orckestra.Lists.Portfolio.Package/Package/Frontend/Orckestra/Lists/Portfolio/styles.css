@@ -1,0 +1,18 @@
+﻿.portfolio-latest {
+	position: relative;
+}
+
+.cycle-prev, .cycle-next {
+    font-size: 34px;
+    position: absolute;
+    z-index: 1000;
+    top: 45%;
+}
+
+.cycle-prev {
+    left: 2px;
+}
+
+.cycle-next {
+    right: 2px;
+}

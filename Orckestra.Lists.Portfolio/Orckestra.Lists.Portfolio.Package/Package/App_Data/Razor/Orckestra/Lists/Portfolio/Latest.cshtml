@@ -1,0 +1,59 @@
+﻿@using Composite.Core.Routing
+@using Orckestra.Lists
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Portfolio Latest Projects"; }
+    }
+
+    [FunctionParameter(DefaultValue = 9)]
+    public int Count { get; set; }
+
+    private string GetDetailsUrl(PortfolioProject project)
+    {
+        var pageUrlData = RoutedData.GetRoutedByLabelDataUrlMapper(project.PageId, typeof(PortfolioProject)).GetPageUrlData(project.ToDataReference());
+        return PageUrls.BuildUrl(pageUrlData, UrlKind.Internal);
+    }
+}
+
+@{
+    var latest = Data.Get<PortfolioProject>().OrderByDescending(p => p.Date).Take(Count).ToList();
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<link rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Lists/Portfolio/styles.css" />
+	<script id="jquery-cycle2-js" type="text/javascript" src="~/Frontend/Orckestra/Lists/Portfolio/jquery.cycle2.min.js"></script>
+	<script id="jquery-cycle2-carousel-js" type="text/javascript" src="~/Frontend/Orckestra/Lists/Portfolio/jquery.cycle2.carousel.min.js"></script>
+</head>
+<body>
+    <div class="portfolio-latest container">
+        <div class="cycle-slideshow"
+             data-cycle-fx="carousel"
+             data-cycle-timeout="0"
+             data-cycle-slides="> div"
+             data-allow-wrap="false"
+             data-cycle-next="#rp-next"
+             data-cycle-prev="#rp-prev">
+            @foreach (var item in latest)
+            {
+
+                    <div class="thumbnail text-center">
+                        <a href="@GetDetailsUrl(item)" title="@item.Title">
+                            <img src="@Html.C1().MediaUrl(item.TeaserImage)?mw=300" alt="img" />
+                        </a>
+                        <h4>
+                            <a href="@GetDetailsUrl(item)" title="@item.Title">
+                                @item.Title
+                            </a>
+                        </h4>
+                    </div>
+            }
+        </div>
+        <a id="rp-prev" class="cycle-prev"><i class="fa fa-chevron-circle-left "></i></a>
+        <a id="rp-next" class="cycle-next"><i class="fa fa-chevron-circle-right "></i></a>
+    </div>
+</body>
+
+</html>
