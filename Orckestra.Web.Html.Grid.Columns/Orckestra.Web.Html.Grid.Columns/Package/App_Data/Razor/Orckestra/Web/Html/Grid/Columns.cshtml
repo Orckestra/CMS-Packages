@@ -1,0 +1,120 @@
+﻿@using Composite.Core.WebClient.Renderings.Page
+@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Display the content in columns and use different layout options."; }
+	}
+
+	[FunctionParameter(Label = "Column 1", DefaultValue = null)]
+	public XhtmlDocument Column1 { get; set; }
+
+	[FunctionParameter(Label = "Column 2", DefaultValue = null)]
+	public XhtmlDocument Column2 { get; set; }
+
+	[FunctionParameter(Label = "Column 3", DefaultValue = null)]
+	public XhtmlDocument Column3 { get; set; }
+
+	[FunctionParameter(Label = "Column 4", DefaultValue = null)]
+	public XhtmlDocument Column4 { get; set; }
+
+	private const string optionsWidgetMarkup = @"<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+		<f:param name='Options'>
+			<f:function name='Composite.Utils.String.Split'>
+				<f:param name='String' value='1:1,1:2,2:1,1:3,3:1,1:1:1,1:1:2,1:2:1,2:1:1' />
+			</f:function>
+		</f:param>
+		<f:param name='Required' value='False' />
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Layout Options", Help = "Optional", DefaultValue = null, WidgetMarkup = optionsWidgetMarkup)]
+	public string LayoutOptions { get; set; }
+
+
+	public int ColumnsCount;
+	public int GridColumnsCount = 12;
+	private List<XhtmlDocument> ColumnsList = new List<XhtmlDocument>();
+
+	public void GetColumnsList(XhtmlDocument content)
+	{
+		if (content != null && content.Body.HasElements)
+		{
+			ColumnsList.Add(content);
+		}
+	}
+
+}
+
+@{
+	GetColumnsList(Column1);
+	GetColumnsList(Column2);
+	GetColumnsList(Column3);
+	GetColumnsList(Column4);
+
+	ColumnsCount = ColumnsList.Count;
+
+	if (ColumnsCount == 0)
+	{
+		return;
+	}
+
+	var colIndex = GridColumnsCount / ColumnsCount;
+
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+	<div class="row">
+
+		@if (string.IsNullOrEmpty(LayoutOptions))
+		{
+			foreach (var column in ColumnsList)
+			{
+				@RenderColumn(column, colIndex)
+			}
+		}
+		else
+		{
+			var partsIndexes = LayoutOptions.Split(':').ToArray();
+			var sumOfPartsIndexes = partsIndexes.Aggregate(0, (current, index) => current + int.Parse(index));
+			var ignoreLayoutOptions = false;
+
+			if (ColumnsCount > partsIndexes.Length)
+			{
+				var extraSumOfPartsIndexes = sumOfPartsIndexes + (ColumnsCount - partsIndexes.Length);
+				if (GridColumnsCount % extraSumOfPartsIndexes > 0)
+				{
+					ignoreLayoutOptions = true;
+					if (RenderingReason.ScreenshotGeneration == PageRenderer.RenderingReason)
+					{
+						<strong class="text-danger">@LayoutOptions layout option is ignored for @ColumnsList.Count columns content.</strong>
+					}
+				}
+				else
+				{
+					sumOfPartsIndexes = sumOfPartsIndexes + (ColumnsCount - partsIndexes.Length);
+				}
+			}
+
+			var parts = ignoreLayoutOptions ? GridColumnsCount / ColumnsCount : GridColumnsCount / sumOfPartsIndexes;
+			var counter = 1;
+
+			foreach (var column in ColumnsList)
+			{
+				var columnIndex = counter > partsIndexes.Length || ignoreLayoutOptions ? 1 : int.Parse(partsIndexes[counter - 1]);
+				@RenderColumn(column, columnIndex * parts)
+				counter++;
+			}
+		}
+	</div>
+</body>
+</html>
+
+@helper RenderColumn(XhtmlDocument column, int index)
+{
+	<div class="col-xs-12 col-md-@index">
+		@Markup(column)
+	</div>
+}

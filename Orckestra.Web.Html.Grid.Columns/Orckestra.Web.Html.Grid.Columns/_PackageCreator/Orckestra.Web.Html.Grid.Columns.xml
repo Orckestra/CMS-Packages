@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Functions>
+		<Add name="Orckestra.Web.Html.Grid.Columns" />
+	</pc:Functions>
+	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Html.Grid.Columns" groupName="Orckestra.Web" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com" readMoreUrl="http://docs.composite.net/Composite.Web.Html.Grid.Columns" id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<TechnicalDetails>Display the content in columns and use different layout options.</TechnicalDetails>
+		<Description>Display the content in columns and use different layout options.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

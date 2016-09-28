@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Html.Grid.Columns" groupName="Orckestra.Web" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com" readMoreUrl="http://docs.composite.net/Composite.Web.Html.Grid.Columns" id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<TechnicalDetails>The site should use Bootstrap</TechnicalDetails>
+		<Description>Display the content in columns and use different layout options.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/Grid/Columns.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/Grid/Columns.cshtml" allowOverwrite="false" />
+			</Files>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
