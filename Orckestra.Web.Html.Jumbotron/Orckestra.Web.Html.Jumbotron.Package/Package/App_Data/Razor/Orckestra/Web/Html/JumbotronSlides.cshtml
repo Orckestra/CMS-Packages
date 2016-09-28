@@ -1,0 +1,99 @@
+﻿@using Orckestra.Web.Html
+@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Jumbotron Slides"; }
+	}
+
+	private const string optionsWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+	  <f:param name='Options'>
+	   <f:function name='Composite.Utils.String.Split'>
+		<f:param name='String' value='none,fade,fadeout,scrollHorz,scrollVert,tileSlide,tileBlind,tileSlide horizontal,tileBlind horizontal,random' />
+	   </f:function>
+	  </f:param>
+	 </f:widgetfunction>";
+
+	[FunctionParameter(Label = "Transition Effect", Help = "Random effects by default", WidgetMarkup = optionsWidgetMarkup, DefaultValue = "random")]
+	public string Transition { get; set; }
+
+	private const string navigationWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+	  <f:param name='Options'>
+	   <f:function name='Composite.Utils.String.Split'>
+		<f:param name='String' value='Pager,Prev/Next' />
+	   </f:function>
+	  </f:param>
+	 </f:widgetfunction>";
+	[FunctionParameter(Label = "Navigation Style", WidgetMarkup = navigationWidgetMarkup, DefaultValue = "Pager")]
+	public string Navigation { get; set; }
+
+	protected string JumbotronInlineStyle(string backgroundImage)
+	{
+		return (backgroundImage != null ? "background-image:url('/media(" + backgroundImage + ")');" : "");
+	}
+
+}
+
+@{
+	var slides = Data.Get<JumbotronSlide>().Where(s => s.PageId == CurrentPageNode.Id).OrderBy(s => s.Priority).ToList();
+	if (!slides.Any()) { return; }
+
+	var isRandomTransition = Transition == "random";
+	var transitions = "fade,fadeout,scrollHorz,scrollVert,tileSlide,tileBlind,tileSlide horizontal,tileBlind horizontal".Split(',');
+	var random = new Random();
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<link id="jumbotron-css" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/Jumbotron/Jumbotron.css"/>
+	<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script id="modernizr-custom.-js" type="text/javascript" src="~/Frontend/Orckestra/Web/Html/Jumbotron/modernizr.custom.js"></script>
+	<script id="jquery-cycle2-js" type="text/javascript" src="~/Frontend/Orckestra/Web/Html/Jumbotron/jquery.cycle2.min.js"></script>
+	@if (Transition.StartsWith("tile") || Transition == "random")
+	{
+		<script id="jquery-cycle2-tile-js" type="text/javascript" src="~/Frontend/Orckestra/Web/Html/Jumbotron/jquery.cycle2.tile.js"></script>
+	}
+	<script id="jumbotron-slides-js" type="text/javascript" src="~/Frontend/Orckestra/Web/Html/Jumbotron/JumbotronSlides.js"></script>
+</head>
+<body>
+	<div class="jumbotron jumbotron-slides container-fluid">
+		<div id="jumbotronSlides" class="cycle"
+			 data-cycle-pager=".cycle-pager"
+		     data-cycle-timeout="8000"
+			 data-cycle-next=".cycle-next"
+			 data-cycle-prev=".cycle-prev"
+			 data-cycle-delay="0"
+			 @if (!isRandomTransition) { @: data-cycle-fx="@Transition.Replace(" horizontal", "")"
+			              }
+			 @if (!isRandomTransition && Transition.Contains("horizontal")) { @: data-cycle-tile-vertical="false"
+			              }
+			 data-cycle-slides="> div">
+
+			@for (var i = 0; i < slides.Count(); i++)
+            {
+                var slide = slides[i];
+				<div class="slide slide-@i bg-cover @(slide.BgOverlay)-translucent-bg"
+					 style="@JumbotronInlineStyle(slide.BackgroundImage)"
+					 @if (isRandomTransition) { var transition = transitions[random.Next(0, transitions.Length)]; @: data-cycle-fx="@transition.Replace(" horizontal", "")"
+					                         if (transition.Contains("horizontal")) { @: data-cycle-tile-vertical="false"
+					                         } }>
+					<div class="container">
+						<div class="slide-content centered-Y">
+							@Html.Raw(slide.Content)
+						</div>
+					</div>
+				</div>
+            }
+		</div>
+		@if (Navigation == "Pager")
+		{
+			<div class="cycle-pager"></div>
+		}
+		else
+		{
+			<a class="cycle-prev"><i class="fa fa-chevron-circle-left "></i></a>
+			<a class="cycle-next"><i class="fa fa-chevron-circle-right "></i></a>
+		}
+	</div>
+</body>
+</html>

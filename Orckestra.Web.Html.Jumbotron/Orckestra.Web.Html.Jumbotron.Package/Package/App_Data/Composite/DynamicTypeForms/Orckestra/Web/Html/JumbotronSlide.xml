@@ -1,0 +1,68 @@
+﻿<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:ff="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<cms:bindings>
+		<cms:binding name="Title" type="System.String" />
+		<cms:binding name="Content" type="System.String" />
+		<cms:binding name="BackgroundImage" type="System.String" />
+		<cms:binding name="BgOverlay" type="System.String" optional="true" />
+		<cms:binding name="Priority" type="System.Nullable`1[System.Int32]" optional="true" />
+		<cms:binding name="PublicationStatus" type="System.String" />
+		<cms:binding name="Id" type="System.Guid" />
+		<cms:binding name="PageId" type="System.Guid" />
+		<cms:binding name="PublicationStatusOptions" type="System.Object" />
+		<cms:binding name="PublishDate" type="System.DateTime" optional="true" />
+		<cms:binding name="UnpublishDate" type="System.DateTime" optional="true" />
+	</cms:bindings>
+	<cms:layout>
+		<cms:layout.label>
+			<cms:read source="Title" />
+		</cms:layout.label>
+		<TabPanels>
+			<FieldGroup Label="Slide">
+				<TextBox Label="Title" Help="" SpellCheck="true">
+					<TextBox.Text>
+						<cms:bind source="Title" />
+					</TextBox.Text>
+				</TextBox>
+				<DataReferenceTreeSelector Label="Background Image" Help="" Handle="Composite.Management.ImageSelectorDialog" SearchToken="Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider.MediaFileSearchToken,Composite|MimeTypes=',\ \'image/gif\',\ \'image/jpeg\',\ \'image/png\',\ \'image/bmp\',\ \'image/svg\\\+xml\'', Extensions=null, Folder=null, HideSubfolders='False', Keyword=null" DataType="Composite.Data.Types.IImageFile,Composite" NullValueAllowed="true">
+					<DataReferenceTreeSelector.Selected>
+						<cms:bind source="BackgroundImage" />
+					</DataReferenceTreeSelector.Selected>
+				</DataReferenceTreeSelector>
+				<KeySelector Label="Background Overlay" Help="" OptionsKeyField="Key" OptionsLabelField="Label" Required="true">
+					<KeySelector.Selected>
+						<cms:bind source="BgOverlay" />
+					</KeySelector.Selected>
+					<KeySelector.Options>
+						<ff:StaticMethodCall Type="Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.String.SelectorWidgetFunction,Composite" Method="GetOptions" Parameters="&lt;SelectorOptionsSource KeyFieldName=&quot;&quot; LabelFieldName=&quot;&quot;&gt;&#xD;&#xA;  &lt;TreeNode&gt;&#xD;&#xA;    &lt;f:param xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Options&quot;&gt;&#xD;&#xA;      &lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Utils.String.Split&quot;&gt;&#xD;&#xA;        &lt;f:param name=&quot;String&quot; value=&quot;none,light,dark&quot; /&gt;&#xD;&#xA;      &lt;/f:function&gt;&#xD;&#xA;    &lt;/f:param&gt;&#xD;&#xA;  &lt;/TreeNode&gt;&#xD;&#xA;&lt;/SelectorOptionsSource&gt;" />
+					</KeySelector.Options>
+				</KeySelector>
+				<TextBox Label="List priority" Help="" Type="Integer">
+					<TextBox.Text>
+						<cms:bind source="Priority" />
+					</TextBox.Text>
+				</TextBox>
+			</FieldGroup>
+			<XhtmlEditor Label="Slide Content" Help="The content of the slide item." ClassConfigurationName="common">
+				<XhtmlEditor.Xhtml>
+					<cms:bind source="Content" />
+				</XhtmlEditor.Xhtml>
+			</XhtmlEditor>
+			<FieldGroup Label="Publication settings">
+				<KeySelector OptionsKeyField="Key" OptionsLabelField="Value" Label="Status" Help="Send the data to another publication status.">
+					<KeySelector.Selected>
+						<cms:bind source="PublicationStatus" />
+					</KeySelector.Selected>
+					<KeySelector.Options>
+						<cms:read source="PublicationStatusOptions" />
+					</KeySelector.Options>
+				</KeySelector>
+				<DateTimeSelector Label="Publish date" Help="Specify at which date and time you want the data to be published automatically.">
+					<cms:bind source="PublishDate" />
+				</DateTimeSelector>
+				<DateTimeSelector Label="Unpublish date" Help="Specify at which date and time you want the data to be unpublished automatically.">
+					<cms:bind source="UnpublishDate" />
+				</DateTimeSelector>
+			</FieldGroup>
+		</TabPanels>
+	</cms:layout>
+</cms:formdefinition>

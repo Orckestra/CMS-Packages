@@ -1,0 +1,40 @@
+﻿@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "A Jumbotron page block."; }
+	}
+
+	[FunctionParameter(Label = "Сontent")]
+	public XhtmlDocument Content { get; set; }
+
+	[FunctionParameter(Label = "Is Slim", DefaultValue = false)]
+	public bool IsSlim { get; set; }
+
+	private const string ContentTextColorWidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""none,light,dark"" /></f:function></f:param></f:widgetfunction>";
+	[FunctionParameter(Label = "Background Overlay", DefaultValue = "dark", WidgetMarkup = ContentTextColorWidgetMarkup)]
+	public string BackgroundOverlay { get; set; }
+
+	[FunctionParameter(Label = "Background Image", DefaultValue = null)]
+	public DataReference<IImageFile> BackgroundImage { get; set; }
+
+	private string JumbotronInlineStyle()
+	{
+		return (BackgroundImage != null ? "background-image:url('" + Composite.Core.Routing.MediaUrls.BuildUrl(BackgroundImage.Data) + "');" : "");
+	}
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<link id="jumbotron-css" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/Jumbotron/Jumbotron.css" />
+</head>
+<body>
+	<div class="jumbotron @(IsSlim ? "slim" : "") bg-cover @(BackgroundOverlay)-translucent-bg" style="@JumbotronInlineStyle()">
+		<div class="container">
+			<div class="jumbotron-content centered-Y">@Markup(Content)</div>
+		</div>
+	</div>
+</body>
+</html>
+
