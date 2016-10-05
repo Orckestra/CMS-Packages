@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Web.Html.Jumbotron" groupName="Orckestra.Web" version="1.0.1" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="https://cms.orckestra.com/" id="40c17ce5-df89-458d-93a9-d09f80b475ec" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Orckestra.Web.Html.Jumbotron" groupName="Orckestra.Web" version="1.0.1" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.Jumbotron" id="40c17ce5-df89-458d-93a9-d09f80b475ec" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>The Jumbotron Slides function uses Cycle2 JQuery Plugin</TechnicalDetails>
 		<Description>Show Jumbotron or Jumbotron Slides page blocks.</Description>
 	</mi:PackageInformation>

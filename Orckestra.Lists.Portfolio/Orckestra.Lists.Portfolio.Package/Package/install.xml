@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Lists.Portfolio" groupName="Orckestra.List" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="https://cms.orckestra.com/" id="d56dffb5-eae1-4b11-8b54-3c7ddb7db94a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Orckestra.Lists.Portfolio" groupName="Orckestra.List" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Lists.Portfolio" id="d56dffb5-eae1-4b11-8b54-3c7ddb7db94a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Show your portfolio</TechnicalDetails>
 		<Description>Show your portfolio</Description>
 	</mi:PackageInformation>
