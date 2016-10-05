@@ -30,9 +30,9 @@
 	<link id="jumbotron-css" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/Jumbotron/Jumbotron.css" />
 </head>
 <body>
-	<div class="jumbotron @(IsSlim ? "slim" : "") bg-cover @(BackgroundOverlay)-translucent-bg" style="@JumbotronInlineStyle()">
+	<div class="jumbotron @(IsSlim ? "slim" : "") bg-cover translucent-bg @(BackgroundOverlay)" style="@JumbotronInlineStyle()">
 		<div class="container">
-			<div class="jumbotron-content centered-Y">@Markup(Content)</div>
+			<div class="jumbotron-content centered-XY">@Markup(Content)</div>
 		</div>
 	</div>
 </body>

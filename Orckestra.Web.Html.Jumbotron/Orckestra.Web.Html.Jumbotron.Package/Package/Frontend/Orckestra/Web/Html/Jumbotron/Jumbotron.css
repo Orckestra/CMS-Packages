@@ -1,7 +1,23 @@
 ﻿.jumbotron {
     position: relative;
-    padding: 0;
+    padding: 0 !important;
     margin: 0;
+}
+
+.jumbotron-content {
+	padding: 0 15px;
+}
+
+@media (min-width: 992px) {
+.jumbotron-content {
+		min-width: 970px;
+	}
+}
+
+  @media (min-width:  1200px) {
+	.jumbotron-content {
+		min-width: 1170px;
+	}
 }
 
 .jumbotron, .jumbotron .slide {
@@ -32,9 +48,6 @@
 			min-height: 400px;
 		}
 
-	.jumbotron-content {
-		max-width: 50%;
-	}
 }
 
 .container .jumbotron {
@@ -105,25 +118,36 @@
     right: 2px;
 }
 
-  .bg-cover {
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+.bg-cover {
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
 }
 
 .centered-Y {
     position: absolute;
+	z-index: 3;
     top: 50%;
-    z-index: 3;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
-.light-translucent-bg:after,
-.dark-translucent-bg:after {
+.centered-XY {
+    position: absolute;
+	z-index: 3;
+    top: 50%;
+    left: 50%;
+	margin-right: -50%;
+	max-width: 1170px;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.translucent-bg:after {
     content: "";
     position: absolute;
     top: 0;
@@ -133,19 +157,22 @@
     height: 100%;
 }
 
-.light-translucent-bg {
+.translucent-bg.light {
 	color: #000;
 	}
 
-.light-translucent-bg:after {
-	background-color: rgba(255, 255, 255, 0.7);
+.translucent-bg.light:after {
+	background-color: rgba(255, 255, 255, 0.6);
 }
 
-
-.dark-translucent-bg  {
+.translucent-bg.dark, .translucent-bg.darker  {
 	color: #fff;
 }
 
-.dark-translucent-bg:after {
+.translucent-bg.dark:after {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+.translucent-bg.darker:after {
         background-color: rgba(0, 0, 0, 0.7);
     }

@@ -62,7 +62,8 @@
 		     data-cycle-timeout="8000"
 			 data-cycle-next=".cycle-next"
 			 data-cycle-prev=".cycle-prev"
-			 data-cycle-delay="0"
+		     data-cycle-delay="0"
+			 data-cycle-pause-on-hover="true"
 			 @if (!isRandomTransition) { @: data-cycle-fx="@Transition.Replace(" horizontal", "")"
 			              }
 			 @if (!isRandomTransition && Transition.Contains("horizontal")) { @: data-cycle-tile-vertical="false"
@@ -72,7 +73,7 @@
 			@for (var i = 0; i < slides.Count(); i++)
             {
                 var slide = slides[i];
-				<div class="slide slide-@i bg-cover @(slide.BgOverlay)-translucent-bg"
+				<div class="slide slide-@i bg-cover translucent-bg @(slide.BgOverlay)"
 					 style="@JumbotronInlineStyle(slide.BackgroundImage)"
 					 @if (isRandomTransition) { var transition = transitions[random.Next(0, transitions.Length)]; @: data-cycle-fx="@transition.Replace(" horizontal", "")"
 					                         if (transition.Contains("horizontal")) { @: data-cycle-tile-vertical="false"
