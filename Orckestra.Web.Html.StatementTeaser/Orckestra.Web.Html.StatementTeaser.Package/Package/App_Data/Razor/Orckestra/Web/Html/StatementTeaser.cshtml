@@ -1,0 +1,33 @@
+﻿@inherits RazorFunction
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "A statement page block"; }
+	}
+
+	[FunctionParameter(Label = "Statement content")]
+	public XhtmlDocument Statement { get; set; }
+
+	private const string backgroundStyleWidgetMarkup = @"<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+		<f:param name='Options'>
+			<f:function name='Orckestra.Web.Html.GetStyleOptionsFromFile' />
+		</f:param>
+		<f:param name='Required' value='False' />
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Text Background Color", Help = "", DefaultValue = "bg-none", WidgetMarkup = backgroundStyleWidgetMarkup)]
+	public string BackgroundStyle { get; set; }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<link id="teaser-statement-css" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/StatementTeaser/styles.css"/>
+	<link id="background-options-css" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/GetStyleOptionsFromFile/BackgroundOptions.css" />
+</head>
+<body>
+    <div class="teaser-statement @BackgroundStyle">
+        <div class="container">
+            @Markup(Statement)
+        </div>
+    </div>
+</body>
+</html>
