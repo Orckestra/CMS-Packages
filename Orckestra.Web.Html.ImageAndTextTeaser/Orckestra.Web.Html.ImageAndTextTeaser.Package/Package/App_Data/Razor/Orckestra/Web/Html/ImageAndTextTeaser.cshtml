@@ -1,0 +1,85 @@
+@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "A page block which shows an Image and Text"; }
+	}
+
+	[FunctionParameter(Label = "Image", Help = "The Image component for this block.")]
+	public DataReference<IImageFile> Image { get; set; }
+
+	[FunctionParameter(Label = "Text", Help = "The Text component for this block.")]
+	public XhtmlDocument Text { get; set; }
+
+	private const string backgroundStyleWidgetMarkup = @"<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+		<f:param name='Options'>
+			<f:function name='Orckestra.Web.Html.GetStyleOptionsFromFile' />
+		</f:param>
+		<f:param name='Required' value='False' />
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Text Background Color", Help = "", DefaultValue = "bg-none", WidgetMarkup = backgroundStyleWidgetMarkup)]
+	public string BackgroundStyle { get; set; }
+
+	private const string optionsMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
+		<f:param name=""Options"">
+			<f:function name=""Composite.Utils.String.Split"">
+				<f:param name=""String"" value=""Is Image at the Right,Is block Full Wide,Is space at top,Is space at bottom"" />
+			</f:function>
+		</f:param>
+		<f:param name=""Required"" value=""False"" />
+		<f:param name=""Multiple"" value=""True"" />
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Options", Help = "By default the Image at the Left", DefaultValue = "Is space at top,Is space at bottom", WidgetMarkup = optionsMarkup)]
+	public string Options { get; set; }
+
+}
+
+@{
+	var ImageAtTheRight = Options.Contains("Is Image at the Right");
+	var IsFullWide = Options.Contains("Is block Full Wide");
+	var spaceCSS = string.Empty;
+	if (Options.Contains("Is space at bottom") && Options.Contains("Is space at top"))
+	{
+		spaceCSS = "push-both";
+	}
+	else
+	{
+		if (Options.Contains("Is space at bottom"))
+		{
+			spaceCSS = "push-bottom";
+		}
+
+		if (Options.Contains("Is space at top"))
+		{
+			spaceCSS = "push-top";
+		}
+	}
+
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<link id="teaser-image-amd-text-css" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/ImageAndTextTeaser/styles.css" />
+	<link id="background-options-css" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/GetStyleOptionsFromFile/BackgroundOptions.css" />
+</head>
+<body>
+	<div class="image-and-text @spaceCSS @(ImageAtTheRight ? "image-right" : "")">
+		<div class="@(IsFullWide ? "full-wide cms-fullwidth" : "container")">
+			<div class="image">
+				<img src="/media(@Image)" alt="image" class="img-responsive" />
+			</div>
+			<div class="text @BackgroundStyle">
+				@Html.Raw(Text)
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+@helper RenderImage()
+{
+	<div class="image">
+		<img src="/media(@Image)" alt="image" class="img-responsive" />
+	</div>
+}
