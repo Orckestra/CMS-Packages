@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Html.GetStyleOptionsFromFile" groupName="Orckestra.Web.Html" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="https://cms.orckestra.com/" id="47cd15a3-10ee-4940-b4d0-9791381004bd" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>-</TechnicalDetails>
+		<Description>-</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+            <Files>
+                <File sourceFilename="~\App_Data\Composite\InlineCSharpFunctions\Orckestra.Web.Html.GetStyleOptionsFromFile.cs" targetFilename="~\App_Data\Composite\InlineCSharpFunctions\Orckestra.Web.Html.GetStyleOptionsFromFile.cs" allowOverwrite="false" />
+            </Files>
+            <Directories>
+                <Directory sourceDirectory="~\Frontend\Orckestra\Web\Html\GetStyleOptionsFromFile\" targetDirectory="~\Frontend\Orckestra\Web\Html\GetStyleOptionsFromFile\" allowOverwrite="true" deleteTargetDirectory="false" />
+            </Directories>
+		</mi:Add>
+        <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+            <Types>
+                <Type type="Composite.Data.Types.IInlineFunction,Composite">
+                    <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctions_public.xml" />
+                </Type>
+                <Type type="Composite.Data.Types.IInlineFunctionAssemblyReference,Composite">
+                    <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctionAssemblyReferences_public.xml" />
+                </Type>
+                <Type type="Composite.Data.Types.IParameter,Composite">
+                    <Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IParameters_public.xml" />
+                </Type>
+            </Types>
+        </mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
