@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="5.0.5827.21806" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Html.TeaserCards" groupName="Orckestra.Web" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.TeaserCards" id="3cc59684-bd70-4ce9-a444-b9b102b018fe" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>To display teasers in columns, use Orckestra.Web.Html.Grid.Columns package</TechnicalDetails>
+		<Description>Display Teaser Cards on the page.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/TeaserCards/IconTeaser.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/TeaserCards/IconTeaser.cshtml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/TeaserCards/ImageTeaser.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/TeaserCards/ImageTeaser.cshtml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Composite\InlineCSharpFunctions\Orckestra.Web.Html.TeaserCards.GetIconNames.cs" targetFilename="~\App_Data\Composite\InlineCSharpFunctions\Orckestra.Web.Html.TeaserCards.GetIconNames.cs" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Orckestra\Web\Html\TeaserCards\" targetDirectory="~\Frontend\Orckestra\Web\Html\TeaserCards\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IInlineFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctions_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IInlineFunctionAssemblyReference,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctionAssemblyReferences_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

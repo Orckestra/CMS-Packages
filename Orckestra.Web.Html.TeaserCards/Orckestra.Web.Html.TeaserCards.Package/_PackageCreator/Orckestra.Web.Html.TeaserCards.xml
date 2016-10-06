@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="Frontend\Orckestra\Web\Html\TeaserCards\" />
+	</pc:Directories>
+	<pc:Functions>
+		<Add name="Orckestra.Web.Html.TeaserCards.IconTeaser" />
+		<Add name="Orckestra.Web.Html.TeaserCards.ImageTeaser" />
+		<Add name="Orckestra.Web.Html.TeaserCards.GetIconNames" />
+	</pc:Functions>
+	<mi:PackageRequirements minimumCompositeVersion="5.0.5827.21806" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Html.TeaserCards" groupName="Orckestra.Web" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.TeaserCards" id="3cc59684-bd70-4ce9-a444-b9b102b018fe" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>To display teasers in columns, use Orckestra.Web.Html.Grid.Columns package</TechnicalDetails>
+		<Description>Display Teaser Cards on the page.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

@@ -1,0 +1,59 @@
+﻿@inherits RazorFunction
+
+@functions {
+
+	public override string FunctionDescription
+	{
+		get { return "Image Teaser"; }
+	}
+
+	[FunctionParameter(Label = "Image")]
+	public DataReference<IImageFile> Image { get; set; }
+
+	[FunctionParameter(Label = "Title", DefaultValue = null)]
+	public string Title { get; set; }
+
+	[FunctionParameter(Label = "Description", DefaultValue = null, WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+	public string Description { get; set; }
+
+	[FunctionParameter(Label = "Read More Url", DefaultValue = null, WidgetFunctionName = "Composite.Widgets.String.UrlComboBox")]
+	public string ReadMoreUrl { get; set; }
+
+	[FunctionParameter(Label = "Read More Text", DefaultValue = "Read More")]
+	public string ReadMoreText { get; set; }
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<link id="tteaser-cards-css" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/TeaserCards/styles.css" />
+</head>
+<body>
+    <div class="teaser-card card-image">
+        <img src="/media(@Image)?w=718" alt="img" class="image" />
+	    <div class="teaser-body">
+		    @if (!string.IsNullOrEmpty(Title))
+		    {
+			    <h3 class="teaser-title">
+				    @if (!string.IsNullOrWhiteSpace(ReadMoreUrl))
+				    {
+					    <a href="@ReadMoreUrl">@Title</a>
+				    }
+				    else
+				    {
+					    @Title
+				    }
+			    </h3>
+		    }
+		    @if (!string.IsNullOrEmpty(Description))
+		    {
+			    <p class="teaser-text">@Html.Raw(Server.HtmlEncode(Description).Replace("\r\n", "<br />").Replace("\n", "<br/>"))</p>
+		    }
+
+		    @if (!string.IsNullOrWhiteSpace(ReadMoreUrl))
+		    {
+			    <a href="@ReadMoreUrl" class="btn btn-sm btn-default"><span>@ReadMoreText</span></a>
+		    }
+	    </div>
+    </div>
+</body>
+</html>

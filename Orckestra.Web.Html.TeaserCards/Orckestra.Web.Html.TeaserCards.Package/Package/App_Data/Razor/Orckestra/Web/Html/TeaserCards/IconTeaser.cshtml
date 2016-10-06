@@ -1,0 +1,78 @@
+﻿@using System.Web.UI.WebControls
+@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Icon Teaser"; }
+	}
+
+	private const string iconWidget = @"
+    <f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.FontIconSelector"">
+		<f:param name=""ClassNameOptions"">
+			<f:function name=""Orckestra.Web.Html.TeaserCards.GetIconNames"" />
+		</f:param>
+		<f:param name=""StylesheetPath"" value=""~/Frontend/Orckestra/Web/Html/TeaserCards/font-awesome/css/font-awesome.css"" />
+		<f:param name=""ClassNamePrefix"" value=""fa fa-"" />
+	</f:widgetfunction>";
+
+	[FunctionParameter(Label = "Icon", WidgetMarkup = iconWidget)]
+	public string Icon { get; set; }
+
+	private const string iconColorWidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""default,muted,info,primary,success,warning,danger"" /></f:function></f:param></f:widgetfunction>";
+	[FunctionParameter(Label = "Icon Color", DefaultValue = "info", WidgetMarkup = iconColorWidgetMarkup)]
+	public string IconColor { get; set; }
+
+
+	[FunctionParameter(Label = "Title", DefaultValue = null)]
+	public string Title { get; set; }
+
+	[FunctionParameter(Label = "Description", DefaultValue = null, WidgetFunctionName = "Composite.Widgets.String.TextArea")]
+	public string Description { get; set; }
+
+	[FunctionParameter(Label = "Read More Url", DefaultValue = null, WidgetFunctionName = "Composite.Widgets.String.UrlComboBox")]
+	public string ReadMoreUrl { get; set; }
+
+	[FunctionParameter(Label = "Read More Text", DefaultValue = "Read More")]
+	public string ReadMoreText { get; set; }
+
+	private const string bgStyleWidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""none,light,dark"" /></f:function></f:param></f:widgetfunction>";
+	[FunctionParameter(Label = "Background Style", DefaultValue = "none", WidgetMarkup = bgStyleWidgetMarkup)]
+	public string BackgroundStyle { get; set; }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<link id="teaser-cards-css" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/TeaserCards/styles.css"/>
+	<link id="font-awesome-css" rel="stylesheet" href="~/Frontend/Orckestra/Web/Html/TeaserCards/font-awesome/css/font-awesome.min.css" />
+</head>
+<body>
+    <div class="teaser-card card-icon bg-@BackgroundStyle">
+        <i class="image text-@IconColor fa fa-@Icon"></i>
+	    <div class="teaser-body">
+		    @if (!string.IsNullOrEmpty(Title))
+			{
+				<h3 class="teaser-title">
+					@if (!string.IsNullOrWhiteSpace(ReadMoreUrl))
+					{
+						<a href="@ReadMoreUrl">@Title</a>
+					}
+					else
+					{
+						@Title
+					}
+				</h3>
+			}
+
+		    @if (!string.IsNullOrEmpty(Description))
+		    {
+			    <p class="teaser-text">@Html.Raw(Server.HtmlEncode(Description).Replace("\r\n", "<br />").Replace("\n", "<br/>"))</p>
+		    }
+		    @if (!string.IsNullOrWhiteSpace(ReadMoreUrl))
+		    {
+			    <a href="@ReadMoreUrl" class="btn-default btn">@ReadMoreText</a>
+		    }
+	    </div>
+    </div>
+</body>
+</html>
