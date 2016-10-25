@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Media.StaticFileLinkMediaProvider", "Orckestra.Media.StaticFileLinkMediaProvider\Orckestra.Media.StaticFileLinkMediaProvider.csproj", "{24F83D2F-D3F5-409F-B5F5-2BBE4CB56BA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Media.StaticFileLinkMediaProvider.Package", "Orckestra.Media.StaticFileLinkMediaProvider.Package\Orckestra.Media.StaticFileLinkMediaProvider.Package.csproj", "{6C99BC25-D7AC-4B77-AD8A-BC85F55FBD04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{24F83D2F-D3F5-409F-B5F5-2BBE4CB56BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24F83D2F-D3F5-409F-B5F5-2BBE4CB56BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24F83D2F-D3F5-409F-B5F5-2BBE4CB56BA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C99BC25-D7AC-4B77-AD8A-BC85F55FBD04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C99BC25-D7AC-4B77-AD8A-BC85F55FBD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C99BC25-D7AC-4B77-AD8A-BC85F55FBD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C99BC25-D7AC-4B77-AD8A-BC85F55FBD04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
