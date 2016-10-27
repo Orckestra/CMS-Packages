@@ -1,0 +1,86 @@
+﻿<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:ff="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+  <cms:bindings>
+    <cms:binding name="Id" type="System.Guid" />
+    <cms:binding name="Title" type="System.String" />
+    <cms:binding name="Image" type="System.String" optional="true" />
+    <cms:binding name="Location" type="System.String" optional="true" />
+    <cms:binding name="Description" type="System.String" />
+    <cms:binding name="Content" type="System.String" />
+    <cms:binding name="StartDate" type="System.DateTime" />
+    <cms:binding name="EndDate" type="System.DateTime" />
+    <cms:binding name="ExternalUrl" type="System.String" optional="true" />
+    <cms:binding name="PublicationStatus" type="System.String" />
+    <cms:binding name="SourceCultureName" type="System.String" />
+    <cms:binding name="PageId" type="System.Guid" />
+    <cms:binding name="PublicationStatusOptions" type="System.Object" />
+    <cms:binding name="PublishDate" type="System.DateTime" optional="true" />
+    <cms:binding name="UnpublishDate" type="System.DateTime" optional="true" />
+  </cms:bindings>
+  <cms:layout>
+    <cms:layout.label>
+      <cms:read source="Title" />
+    </cms:layout.label>
+      <TabPanels>
+          <PlaceHolder Label="Settings">
+              <FieldGroup Label="Event Calendar">
+                  <DataReferenceTreeSelector Label="Event Image" Help="" Handle="Composite.Management.ImageSelectorDialog" SearchToken="Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider.MediaFileSearchToken,Composite|MimeTypes=',\ \'image/gif\',\ \'image/jpeg\',\ \'image/png\',\ \'image/bmp\',\ \'image/svg\\\+xml\'', Extensions=null, Folder=null, HideSubfolders='False', Keyword=null" DataType="Composite.Data.Types.IImageFile,Composite" NullValueAllowed="true">
+                      <DataReferenceTreeSelector.Selected>
+                          <cms:bind source="Image" />
+                      </DataReferenceTreeSelector.Selected>
+                  </DataReferenceTreeSelector>
+                  <TextBox Label="Title" Help="" SpellCheck="true">
+                      <TextBox.Text>
+                          <cms:bind source="Title" />
+                      </TextBox.Text>
+                  </TextBox>
+                  <TextArea Label="Short Description" Help="" SpellCheck="true">
+                      <TextArea.Text>
+                          <cms:bind source="Description" />
+                      </TextArea.Text>
+                  </TextArea>
+                  <DateSelector Label="Start Date" Help="">
+                      <DateSelector.Date>
+                          <cms:bind source="StartDate" />
+                      </DateSelector.Date>
+                  </DateSelector>
+                  <DateSelector Label="End Date" Help="">
+                      <DateSelector.Date>
+                          <cms:bind source="EndDate" />
+                      </DateSelector.Date>
+                  </DateSelector>
+                  <TextBox Label="Event Location" Help="" SpellCheck="true">
+                      <TextBox.Text>
+                          <cms:bind source="Location" />
+                      </TextBox.Text>
+                  </TextBox>
+                  <TextBox Label="External Url to Details" Help="" SpellCheck="true">
+                      <TextBox.Text>
+                          <cms:bind source="ExternalUrl" />
+                      </TextBox.Text>
+                  </TextBox>
+              </FieldGroup>
+              <FieldGroup Label="Publication settings">
+                  <KeySelector OptionsKeyField="Key" OptionsLabelField="Value" Label="Status" Help="Send the data to another publication status.">
+                      <KeySelector.Selected>
+                          <cms:bind source="PublicationStatus" />
+                      </KeySelector.Selected>
+                      <KeySelector.Options>
+                          <cms:read source="PublicationStatusOptions" />
+                      </KeySelector.Options>
+                  </KeySelector>
+                  <DateTimeSelector Label="Publish date" Help="Specify at which date and time you want the data to be published automatically.">
+                      <cms:bind source="PublishDate" />
+                  </DateTimeSelector>
+                  <DateTimeSelector Label="Unpublish date" Help="Specify at which date and time you want the data to be unpublished automatically.">
+                      <cms:bind source="UnpublishDate" />
+                  </DateTimeSelector>
+              </FieldGroup>
+          </PlaceHolder>
+          <XhtmlEditor Label="Event Details" Help="The content of the event entry." ClassConfigurationName="common">
+              <XhtmlEditor.Xhtml>
+                  <cms:bind source="Content" />
+              </XhtmlEditor.Xhtml>
+          </XhtmlEditor>
+      </TabPanels>
+  </cms:layout>
+</cms:formdefinition>

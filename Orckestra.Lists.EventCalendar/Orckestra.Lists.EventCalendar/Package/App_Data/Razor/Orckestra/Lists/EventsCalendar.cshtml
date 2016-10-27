@@ -1,0 +1,136 @@
+@inherits RazorFunction
+@using Composite.Core.Routing.Pages
+
+@functions {
+	public override string FunctionDescription
+	{
+		get  { return "Display past events or current and coming events"; }
+	}
+
+
+	[FunctionParameter(Label = "Heading", Help = "Heading is displayed only for List of Events",  DefaultValue = "Upcoming Events")]
+	public string Heading { get; set; }
+
+	private const string displayModeWidget = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.Bool.BoolSelector"">
+		<f:param name = ""FalseLabel"" value=""Past Events"" />
+		<f:param name = ""TrueLabel"" value=""Current and Coming Events"" />
+	</f:widgetfunction>";
+
+	[FunctionParameter(Label = "DisplayMode", Help = "Choose events mode: Past events or Current and Coming events", WidgetMarkup = displayModeWidget, DefaultValue = true)]
+	public bool DisplayMode { get; set; }
+
+	[FunctionParameter(Label = "Date Format", Help = "Example: {day} {month}, {year}", DefaultValue = "{day} {month}, {year}")]
+	public string DateFormat { get; set; }
+
+	[FunctionParameter(Label = "Date Range Format", Help = "Example: {day1} {month1} to {day2} {month2}, {year}. If {month1} = {month2}, then just {month2} will be displayed.", DefaultValue = "{day1} {month1} to {day2} {month2}, {year}")]
+	public string DateRangeFormat { get; set; }
+
+
+	public RoutedData<Orckestra.Lists.Event> EventsData { get; set; }
+
+	public string GetDateDisplayName(Orckestra.Lists.Event item)
+	{
+
+		var isDateRange = item.EndDate != null && item.EndDate != item.StartDate;
+
+		var startMonthStr = item.StartDate.ToString("MMMM");
+		var startDayStr = item.StartDate.ToString("dd");
+		var startYearStr = item.StartDate.Year.ToString();
+
+		if (isDateRange)
+		{
+			var endMonthStr = item.StartDate.Month != item.EndDate.Month ? item.EndDate.ToString("MMMM") : string.Empty;
+			var endDayStr = item.EndDate.ToString("dd");
+
+			return DateRangeFormat.Replace("{year}", startYearStr)
+					.Replace("{month1}", endMonthStr)
+					.Replace("{month2}", startMonthStr)
+					.Replace("{day1}", startDayStr)
+					.Replace("{day2}", endDayStr);
+
+		}
+
+
+		return DateFormat.Replace("{year}", startYearStr)
+			.Replace("{month}", startMonthStr)
+			.Replace("{day}", startDayStr);
+	}
+
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+
+	@if (!EventsData.IsList)
+	{
+		var item = EventsData.Item;
+		<div class="event-head">
+			<h2 class="event-title">@item.Title</h2>
+			<p class="text-muted">
+				<span class="event-date"><i class="fa fa-calendar text-info"></i>&#160;@GetDateDisplayName(item)</span>
+				@if (!string.IsNullOrEmpty(item.Location))
+				{
+					<span class="event-location">, <i class="fa fa-map-marker  text-info"></i>&#160;@item.Location</span>
+				}
+			</p>
+		</div>
+		<div class="event-content">
+			@Html.Raw(EventsData.Item.Content)
+		</div>
+	}
+	else
+	{
+		var items = EventsData.List.ToList();
+		if (DisplayMode)
+		{
+			items = items.Where(i => i.StartDate >= DateTime.Today || i.EndDate >= DateTime.Today).OrderByDescending(i => i.StartDate).ToList();
+		}
+		else
+		{
+			items = items.Where(i => i.StartDate < DateTime.Today).OrderByDescending(i => i.StartDate).ToList();
+		}
+		<div class="events-list">
+			@if (!string.IsNullOrEmpty(Heading))
+			{
+				<div class="row">
+					<div class="col-xs-12">
+						<h1>@Heading</h1>
+					</div>
+				</div>
+			}
+			@foreach (var item in items)
+			{
+				var isExternalUrl = !string.IsNullOrEmpty(item.ExternalUrl);
+				var url  = isExternalUrl ? item.ExternalUrl : EventsData.ItemUrl(item);
+				var target = isExternalUrl ? "_blank" : "_self";
+				<hr />
+				<div class="row">
+					<div class="col-xs-12 col-sm-3 event-image">
+						@if (!string.IsNullOrEmpty(item.Image))
+						{
+							<a href="@url" title="@item.Title" target="@target">
+								<img class="img-responsive" src="~/media(@item.Image)" alt="event" />
+							</a>
+						}
+					</div>
+					<div class="col-xs-12 col-sm-9 event-body">
+						<h4 class="event-title"><a href="@url" target="@target">@item.Title</a></h4>
+						<p class="text-muted">
+							<span class="event-date"><i class="fa fa-calendar text-info"></i>&#160;@GetDateDisplayName(item)</span>
+							@if (!string.IsNullOrEmpty(item.Location))
+							{
+								<span class="event-location">, <i class="fa fa-map-marker  text-info"></i>&#160;@item.Location</span>
+							}
+						</p>
+						<p>@item.Description</p>
+					</div>
+				</div>
+			}
+		</div>
+	}
+</body>
+</html>
+
+

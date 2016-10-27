@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AllowedAttachments ApplicationName="EventCalendar">
+		<DataType Type="Composite.Data.Types.IPage"/>
+	</ElementStructure.AllowedAttachments>
+	<ElementRoot>
+		<Actions>
+			<AddDataAction Label="Add Event" Type="Orckestra.Lists.Event"/>
+		</Actions>
+		<Children>
+			<Element Label="Event Calendar" Id="EventCalendarRoot">
+				<Actions>
+				</Actions>
+				<Children>
+					<DataFolderElements Type="Orckestra.Lists.Event" DateFormat="yyyy MMMM" FieldGroupingName="StartDate" Display="Compact" SortDirection="Descending">
+                        <Actions>
+                            <AddDataAction Label="Add Event" Type="Orckestra.Lists.Event"/>
+                        </Actions>
+						<Children>
+							<DataElements Type="Orckestra.Lists.Event" Label="${C1:Data:Orckestra.Lists.Event:Title}" Display="Auto">
+								<Actions>
+									<EditDataAction Label="Edit Event" />
+									<DeleteDataAction Label="Delete Event" />
+								</Actions>
+								<Filters>
+									<ParentIdFilter ParentType="Composite.Data.Types.IPage" ReferenceFieldName="PageId" />
+								</Filters>
+								<OrderBy>
+                                    <Field FieldName="StartDate" Direction="descending"></Field>
+								</OrderBy>
+							</DataElements>
+						</Children>
+					</DataFolderElements>
+				</Children>
+			</Element>
+		</Children>
+	</ElementRoot>
+</ElementStructure>

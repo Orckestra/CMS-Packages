@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Files>
+		<Add name="App_Data\Composite\TreeDefinitions\Orckestra.Lists.EventCalendar.xml" />
+		<Add name="App_Data\Composite\DynamicTypeForms\Orckestra\Lists\Event.xml" />
+	</pc:Files>
+	<pc:Functions>
+		<Add name="Orckestra.Lists.EventsCalendar" />
+	</pc:Functions>
+	<pc:DynamicDataTypes>
+		<Add name="Orckestra.Lists.Event" />
+	</pc:DynamicDataTypes>
+	<mi:PackageRequirements minimumCompositeVersion="5.0.5886.5494" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Lists.EventCalendar" groupName="Orckestra.Lists" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Lists.EventCalendar" id="83d388e5-dc1d-4403-980b-e4448e46d056" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<TechnicalDetails>List important past, current or upcoming events</TechnicalDetails>
+		<Description>List important past, current or upcoming events</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

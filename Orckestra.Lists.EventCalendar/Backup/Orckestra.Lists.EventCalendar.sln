@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Lists.EventCalendar", "Orckestra.Lists.EventCalendar\Orckestra.Lists.EventCalendar.csproj", "{799A33C3-ED66-4407-8BEB-03AA55A57F83}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://core03:8080/tfs/compositecore03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Orckestra.Lists.EventCalendar\\Orckestra.Lists.EventCalendar.csproj
+		SccProjectName1 = Orckestra.Lists.EventCalendar
+		SccLocalPath1 = Orckestra.Lists.EventCalendar
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{799A33C3-ED66-4407-8BEB-03AA55A57F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{799A33C3-ED66-4407-8BEB-03AA55A57F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{799A33C3-ED66-4407-8BEB-03AA55A57F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{799A33C3-ED66-4407-8BEB-03AA55A57F83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
