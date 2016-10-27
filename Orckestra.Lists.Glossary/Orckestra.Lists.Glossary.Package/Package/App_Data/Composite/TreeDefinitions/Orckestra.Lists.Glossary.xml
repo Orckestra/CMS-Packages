@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+	<ElementStructure.AllowedAttachments ApplicationName="Glossary">
+		<DataType Type="Composite.Data.Types.IPage"/>
+	</ElementStructure.AllowedAttachments>
+	<ElementRoot>
+		<Actions>
+			<AddDataAction Label="Add Glossary Term" Type="Orckestra.Lists.Glossary.Term"/>
+		</Actions>
+		<Children>
+			<Element Label="Glossary Terms" Id="Root">
+				<Actions>
+				</Actions>
+				<Children>
+					<DataFolderElements Type="Orckestra.Lists.Glossary.Term" FieldGroupingName="Title" FirstLetterOnly="true" Display="Compact">
+                        <Actions>
+                            <AddDataAction Label="Add Glossary Term" Type="Orckestra.Lists.Glossary.Term"/>
+                        </Actions>
+						<Children>
+							<DataElements Type="Orckestra.Lists.Glossary.Term" Label="${C1:Data:Orckestra.Lists.Glossary.Term:Title}" Display="Auto">
+								<Actions>
+									<EditDataAction Label="Edit Term" />
+									<DeleteDataAction Label="Delete Term" />
+								</Actions>
+								<Filters>
+									<ParentIdFilter ParentType="Composite.Data.Types.IPage" ReferenceFieldName="PageId" />
+								</Filters>
+								<OrderBy>
+									<Field FieldName="Title"></Field>
+								</OrderBy>
+							</DataElements>
+						</Children>
+					</DataFolderElements>
+				</Children>
+			</Element>
+		</Children>
+	</ElementRoot>
+</ElementStructure>

@@ -1,0 +1,113 @@
+@inherits RazorFunction
+@using Composite.Core.Routing.Pages
+@using Orckestra.Lists.Glossary
+
+@functions {
+	public override string FunctionDescription
+	{
+		get  { return "Glossary term details"; }
+	}
+
+	[FunctionParameter(Label = "Alphabet", DefaultValue = "abcdefghijklmnopqrstuvwxyz")]
+	public string Alphabet { get; set; }
+
+	[FunctionParameter(Label = "Show Link to Term Details", DefaultValue = true)]
+	public bool ShowLinkToTermDetails { get; set; }
+
+
+
+	public RoutedData<Orckestra.Lists.Glossary.Term> TermsData { get; set; }
+
+	public string SelectedLetter;
+}
+
+@{
+	var PathInfo = C1PageRoute.GetPathInfo();
+
+	if (PathInfo != null)
+	{
+		var parts = PathInfo.Split('/');
+
+		if (parts.Length == 2 && parts[1].Length == 1)
+		{
+			SelectedLetter = parts[1];
+			C1PageRoute.RegisterPathInfoUsage();
+		}
+	}
+
+	if (TermsData.IsList && SelectedLetter == null)
+	{
+		SelectedLetter = Alphabet[0].ToString();
+	}
+
+	var terms = Data.Get<Orckestra.Lists.Glossary.Term>().Where(t => t.PageId == CurrentPageNode.Id).ToList();
+}
+
+@if (!TermsData.IsList && SelectedLetter == null)
+{
+	<h3>@TermsData.Item.Title</h3>
+	@Html.Raw(TermsData.Item.Description)
+	return;
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+<div class="glossary-list">
+	<div class="row">
+		<div class="col-xs-12">
+			@RenderAlphabet(terms)
+		</div>
+		<div class="col-xs-12">
+
+			@if(SelectedLetter != null)
+			{
+				var items = terms.Where(t=> t.Title.StartsWith(SelectedLetter, StringComparison.InvariantCultureIgnoreCase)).OrderBy(t=> t.Title).ToList();
+				foreach (var item in items)
+				{
+
+					<h3>
+						@if (ShowLinkToTermDetails)
+						{
+							<a href="@TermsData.ItemUrl(item)">
+								@item.Title
+							</a>
+						}
+						else
+						{
+							@item.Title
+						}
+					</h3>
+					@Html.Raw(item.Description)
+				}
+			}
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+
+@helper RenderAlphabet(List<Term> terms)
+{
+	<ul class="nav nav-pills">
+		@foreach (var c in Alphabet)
+		{
+			var letter = c.ToString();
+			var isActive = terms.Any(t => t.Title.StartsWith(letter, StringComparison.InvariantCultureIgnoreCase));
+			<li class="@(string.Compare(SelectedLetter, letter, StringComparison.CurrentCultureIgnoreCase) == 0 ? "active" : "") @(!isActive ? "disabled" : "")">
+				@if (isActive)
+				{
+					<a href="@CurrentPageNode.Url/@letter">@letter.ToUpper()</a>
+				}
+				else
+				{
+					<a>@letter.ToUpper()</a>
+				}
+
+			</li>
+		}
+	</ul>
+}
