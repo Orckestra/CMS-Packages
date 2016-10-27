@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:DynamicDataTypesData>
+		<Add name="Orckestra.Lists.FAQCategory" />
+	</pc:DynamicDataTypesData>
+	<pc:PageTypes>
+		<Add name="FAQ Page" />
+	</pc:PageTypes>
+	<pc:Files>
+		<Add name="Frontend\Composite\Lists\FAQ\Styles.css" />
+		<Add name="App_Data\Composite\DynamicTypeForms\Composite\Lists\FAQ.xml" />
+	</pc:Files>
+	<pc:DynamicDataTypes>
+		<Add name="Composite.Lists.FAQ" />
+		<Add name="Composite.Lists.FAQCategory" />
+	</pc:DynamicDataTypes>
+	<pc:XsltFunctions>
+		<Add name="Composite.Lists.FAQ.LinksToDetails" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3890.28460" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Lists.FAQ" groupName="Orckestra.Lists" version="1.2.3" author="Orckestra" website="https://cms.orckestra.com" id="59f6c759-4f9c-4bae-9220-d440825abfff" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Allows visitors to browse useful information as a list of questions and answers (FAQ)</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

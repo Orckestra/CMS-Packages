@@ -1,5 +1,4 @@
-@using System.ComponentModel.Design
-@using Composite.Lists
+@using Orckestra.Lists
 @inherits RazorFunction
 
 @functions {
@@ -9,14 +8,30 @@
 		get { return "Display FAQ items on a page"; }
 	}
 
-	[FunctionParameter(Label = "Group by Category", Help = "If checked, the FAQ items will be grouped by category. Grouped by default.",  DefaultValue = true)]
+	public RoutedData<FAQ> FAQData { get; set; }
+
+	[FunctionParameter(Label = "Group by Category", Help = "If checked, the FAQ items will be grouped by category. Grouped by default.", DefaultValue = true)]
 	public bool GroupByCategory { get; set; }
 
 	[FunctionParameter(Label = "Order by", Help = "The field to order FAQ items by: 'Question Heading' or 'Date Added' (default).", WidgetMarkup = @" <f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Question Heading,Date Added"" /></f:function></f:param></f:widgetfunction>", DefaultValue = "Date Added")]
-    public string OrderBy { get; set; }
+	public string OrderBy { get; set; }
 
 	[FunctionParameter(Label = "Sort Order", Help = "The order to sort FAQ items by: ascending (default) or descending.", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.Bool.BoolSelector""><f:param name=""FalseLabel"" value=""Descending"" /><f:param name=""TrueLabel"" value=""Ascending"" /></f:widgetfunction>", DefaultValue = true)]
 	public bool OrderByAscending { get; set; }
+
+}
+
+@{
+	if (!FAQData.IsList)
+	{
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">@FAQData.Item.QuestionHeading</h4>
+			</div>
+			<div class="panel-body">@Html.Raw(FAQData.Item.Answer)</div>
+		</div>
+		return;
+	}
 }
 
 @{
@@ -40,52 +55,53 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script id="faqListJs" type="text/javascript">
+	$(document).ready(function() {
+		if (location.hash) {
+			$('.collapse').removeClass('in');
+			$(location.hash + '.collapse').collapse('show');
+		}
+	});
+	</script>
 </head>
 <body>
-	<div id="faq" class="panel-group" role="tablist" aria-multiselectable="true">
-		@if (GroupByCategory)
+<div id="faq" class="panel-group" role="tablist" aria-multiselectable="true">
+	@if (GroupByCategory)
+	{
+		var categories = Data.Get<FAQCategory>().OrderBy(c => c.Name).ToList();
+		foreach (var category in categories)
 		{
-			var categories = Data.Get<FAQCategory>().OrderBy(c => c.Name).ToList();
-			foreach (var category in categories)
+			var itemsByCategory = list.Where(f => f.QuestionCategory == category.Id).ToList();
+			if (itemsByCategory.Any())
 			{
-				var itemsByCategory = list.Where(f => f.QuestionCategory == category.Id).ToList();
-				if (itemsByCategory.Any())
+				<h3>@category.Name</h3>
+				foreach (var item in itemsByCategory)
 				{
-					<h3>@category.Name</h3>
-					foreach (var item in itemsByCategory)
-					{
-						@ItemDetails(item)
-					}
+					@ItemDetails(item)
 				}
 			}
 		}
-		else
+	}
+	else
+	{
+		foreach (var item in list)
 		{
-			foreach (var item in list)
-			{
-				@ItemDetails(item)
-			}
+			@ItemDetails(item)
 		}
-	</div>
-	<script id="faqListJs" type="text/javascript">
-		$(document).ready(function () {
-			if (location.hash) {
-				$('.collapse').removeClass('in');
-				$(location.hash + '.collapse').collapse('show');
-			}
-		});
-	</script>
+	}
+</div>
 </body>
 </html>
 
 @helper ItemDetails(FAQ item)
-{
-var itemRef = "id" + item.Id.GetHashCode().ToString();
+				{
+	var itemRef = "id" + item.Id.GetHashCode().ToString();
 	<div class="panel panel-default">
 		<div class="panel-heading" role="tab" id="heading-@item.Id">
 			<h4 class="panel-title">
 				<a class="collapsed" data-toggle="collapse" data-parent="#faq" href="#@itemRef" aria-expanded="false" aria-controls="@item.Id">
-					@Html.Raw(item.QuestionDetails)
+					@Html.Raw(item.QuestionHeading)
 				</a>
 			</h4>
 		</div>

@@ -1,7 +1,6 @@
 ﻿<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:ff="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
 	<cms:bindings>
 		<cms:binding name="QuestionHeading" type="System.String" optional="true" />
-		<cms:binding name="QuestionDetails" type="System.String" optional="true" />
 		<cms:binding name="Answer" type="System.String" optional="true" />
 		<cms:binding name="DateAdded" type="System.DateTime" optional="true" />
 		<cms:binding name="QuestionCategory" type="System.Guid" optional="true" />
@@ -18,11 +17,11 @@
 		</cms:layout.label>
 		<TabPanels>
 			<FieldGroup Label="Settings">
-				<TextBox Label="Question Heading" Help="The question that serves as a title of a FAQ item on a page an in an URL.">
-					<TextBox.Text>
-						<cms:bind source="QuestionHeading" />
-					</TextBox.Text>
-				</TextBox>
+                <TextArea Label="Question" Help="The question that serves as a title of a FAQ item on a page an in an URL." SpellCheck="true">
+                    <TextArea.Text>
+                        <cms:bind source="QuestionHeading" />
+                    </TextArea.Text>
+                </TextArea>
 				<DateSelector Label="Date Added" Help="The date the FAQ item was added.">
 					<DateSelector.Date>
 						<cms:bind source="DateAdded" />
@@ -33,15 +32,10 @@
 						<cms:bind source="QuestionCategory" />
 					</KeySelector.Selected>
 					<KeySelector.Options>
-						<ff:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=3.0.4332.33416, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Lists.FAQCategory&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" Method="GetOptions" Parameters="Composite.Lists.FAQCategory" />
+						<ff:StaticMethodCall Type="&lt;t n=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.DataReference.DataReferenceSelectorWidgetFunction`1, Composite, Version=3.0.4332.33416, Culture=neutral, PublicKeyToken=null&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Orckestra.Lists.FAQCategory&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" Method="GetOptions" Parameters="Orckestra.Lists.FAQCategory" />
 					</KeySelector.Options>
 				</KeySelector>
 			</FieldGroup>
-			<XhtmlEditor Label="Question" Help="Question" ClassConfigurationName="common">
-				<XhtmlEditor.Xhtml>
-					<cms:bind source="QuestionDetails" />
-				</XhtmlEditor.Xhtml>
-			</XhtmlEditor>
 			<XhtmlEditor Label="Answer" Help="Answer" ClassConfigurationName="common">
 				<XhtmlEditor.Xhtml>
 					<cms:bind source="Answer" />
