@@ -1,51 +1,62 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
-	<string key="WebsiteFilesRootElement.Label" value="/" />
-	<string key="LayoutResourcesRootElement.Label" value="/" /> <!-- Layout Resources -->
-	<string key="LayoutResourcesKeyNameLabel" value="Mettre en page" />
-	
-	<string key="DeleteFile.LabelFieldGroup" value="Supprimer le fichier?" />
-	<string key="DeleteFile.Text" value="Supprimer le fichier?" />
-	<string key="DeleteFolder.LabelFieldGroup" value="Supprimer le dossier?" />
-	<string key="DeleteFolder.Text" value="Supprimer le dossier?" />
-	<string key="AddNewFolder.LabelFieldGroup" value="Ajouter un nouveau dossier" />
-	<string key="AddNewFolder.Text" value="Nom du dossier" />
-	<string key="AddNewFolder.Help" value="Entrer le nom du nouveau dossier" />
-	<string key="AddNewFolder.Error.FolderExist" value="Un dossier avec le m&#234;me nom existe d&#233;j&#224;" />
-	<string key="AddNewFile.LabelFieldGroup" value="Ajouter un nouveau fichier" />
-	<string key="AddNewFile.Text" value="Nom du fichier" />
-	<string key="AddNewFile.Help" value="Entrer le nom du nouveau fichier" />
-	<string key="AddNewFile.Error.FileExist" value="Un fichier avec le m&#234;me nom existe d&#233;j&#224;" />
-	<string key="UploadNewWebsiteFile.LabelFieldGroup" value="T&#233;l&#233;verser un fichier" />
-	<string key="UploadNewWebsiteFile.LabelFile" value="S&#233;lectionner le fichier" />
-	<string key="UploadNewWebsiteFile.HelpFile" value="S&#233;lectionner le fichier &#224; t&#233;l&#233;verser" />
-  <string key="UploadNewWebsiteFile.ConfirmOverwriteTitle" value="Remplacer le fichier existant" />
-  <string key="UploadNewWebsiteFile.ConfirmOverwriteDescription" value="Un fichier avec le m&#234;me nom existe d&#233;j&#224;.  Remplacer?" />
-	<string key="UploadFile.Error.WrongTypeTitle" value="Mauvais type de fichier" />
-	<string key="UploadFile.Error.WrongTypeMessage" value="Mauvais type de fichier" />
-	
-
-	<string key="AddWebsiteFolderTitle" value="Nouveau dossier" />
-	<string key="AddWebsiteFolderToolTip" value="Ajouter un nouveau dossier" />
-	<string key="AddWebsiteFileTitle" value="Nouveau fichier" />
-	<string key="AddWebsiteFileToolTip" value="Cr&#233;er un nouveau fichier" />
-	<string key="DeleteWebsiteFileTitle" value="Supprimer le fichier" />
-	<string key="DeleteWebsiteFileToolTip" value="Supprimer le fichier" />
-  <string key="DownloadFileTitle" value="T&#233;l&#233;charger" />
-  <string key="DownloadFileToolTip" value="T&#233;l&#233;charger le fichier" />
+  <string key="WebsiteFilesRootElement.Label" value="/" />
+  <string key="LayoutResourcesRootElement.Label" value="/" />
+  <!-- Layout Resources -->
+  <string key="LayoutResourcesKeyNameLabel" value="Mettre en page" />
+  <string key="DeleteFile.LabelFieldGroup" value="Supprimer le fichier?" />
+  <string key="DeleteFile.Text" value="Supprimer le fichier?" />
+  <string key="DeleteFolder.LabelFieldGroup" value="Supprimer le dossier?" />
+  <string key="DeleteFolder.Text" value="Supprimer le dossier?" />
+  <string key="AddNewFolder.LabelFieldGroup" value="Ajouter un nouveau dossier" />
+  <string key="AddNewFolder.Text" value="Nom du dossier" />
+  <string key="AddNewFolder.Help" value="Entrer le nom du nouveau dossier" />
+  <string key="AddNewFolder.Error.FolderExist" value="Un dossier avec le même nom existe déjà" />
+  <string key="AddNewFile.LabelFieldGroup" value="Ajouter un nouveau fichier" />
+  <string key="AddNewFile.Text" value="Nom du fichier" />
+  <string key="AddNewFile.Help" value="Entrer le nom du nouveau fichier" />
+  <string key="AddNewFile.Error.FileExist" value="Un fichier avec le même nom existe déjà" />
+  <string key="UploadNewWebsiteFile.LabelFieldGroup" value="Téléverser un fichier" />
+  <string key="UploadNewWebsiteFile.LabelFile" value="Sélectionner le fichier" />
+  <string key="UploadNewWebsiteFile.HelpFile" value="Sélectionner le fichier à téléverser" />
+  <string key="UploadNewWebsiteFile.ConfirmOverwriteTitle" value="Écraser le fichier existant" />
+  <string key="UploadNewWebsiteFile.ConfirmOverwriteDescription" value="Un fichier avec le même nom existe déjà.  Remplacer?" />
+  <string key="UploadFile.Error.WrongTypeTitle" value="Mauvais type de fichier" />
+  <string key="UploadFile.Error.WrongTypeMessage" value="Mauvais type de fichier" />
+  <string key="AddWebsiteFolderTitle" value="Nouveau dossier" />
+  <string key="AddWebsiteFolderToolTip" value="Ajouter un nouveau dossier" />
+  <string key="AddWebsiteFileTitle" value="Nouveau fichier" />
+  <string key="AddWebsiteFileToolTip" value="Créer un nouveau fichier" />
+  <string key="DeleteWebsiteFileTitle" value="Supprimer le fichier" />
+  <string key="DeleteWebsiteFileToolTip" value="Supprimer le fichier" />
+  <string key="DownloadFileTitle" value="Télécharger" />
+  <string key="DownloadFileToolTip" value="Télécharger le fichier" />
   <string key="DeleteWebsiteFolderTitle" value="Supprimer le dossier" />
-	<string key="DeleteWebsiteFolderToolTip" value="Supprimer le dossier" />
-	<string key="EditWebsiteFileTitle" value="Modifier le fichier" />
-	<string key="EditWebsiteFileToolTip" value="Modifier le fichier" />
-	<string key="UploadWebsiteFileTitle" value="T&#233;l&#233;verser un fichier" />
-	<string key="UploadWebsiteFileToolTip" value="T&#233;l&#233;verser un fichier" />
-	<string key="AddFolderToWhiteListTitle" value="Voir dans {0}" />
-	<string key="AddFolderToWhiteListToolTip" value="D&#233;termine si ce dossier doit &#234;tre visible dans &quot;{0}&quot;" />
-	<string key="RemoveFolderFromWhiteListTitle" value="Voir dans {0}" />
-	<string key="RemoveFolderFromWhiteListToolTip" value="D&#233;termine si ce dossier doit &#234;tre visible dans &quot;{0}&quot;" />
-
-	<string key="DeleteWebsiteFileWorkflow.DeleteErrorTitle" value="Erreur" />
-	<string key="DeleteWebsiteFileWorkflow.DeleteErrorMessage" value="Impossible de supprimer le fichier" />
-	<string key="DeleteWebsiteFolderWorkflow.DeleteErrorTitle" value="Erreur" />
-	<string key="DeleteWebsiteFolderWorkflow.DeleteErrorMessage" value="Impossible de supprimer le dossier" />
+  <string key="DeleteWebsiteFolderToolTip" value="Supprimer le dossier" />
+  <string key="EditWebsiteFileTitle" value="Modifier le fichier" />
+  <string key="EditWebsiteFileToolTip" value="Modifier le fichier" />
+  <string key="UploadWebsiteFileTitle" value="Téléverser un fichier" />
+  <string key="UploadWebsiteFileToolTip" value="Téléverser un fichier" />
+  <string key="AddFolderToWhiteListTitle" value="Voir dans {0}" />
+  <string key="AddFolderToWhiteListToolTip" value="Détermine si ce dossier doit être visible dans &quot;{0}&quot;" />
+  <string key="RemoveFolderFromWhiteListTitle" value="Voir dans {0}" />
+  <string key="RemoveFolderFromWhiteListToolTip" value="Détermine si ce dossier doit être visible dans &quot;{0}&quot;" />
+  <string key="DeleteWebsiteFileWorkflow.DeleteErrorTitle" value="Erreur" />
+  <string key="DeleteWebsiteFileWorkflow.DeleteErrorMessage" value="Impossible de supprimer le fichier" />
+  <string key="DeleteWebsiteFolderWorkflow.DeleteErrorTitle" value="Erreur" />
+  <string key="DeleteWebsiteFolderWorkflow.DeleteErrorMessage" value="Impossible de supprimer le dossier" />
+  <string key="UploadAndExtractZipFileTitle" value="Téléverser et dézipper" />
+  <string key="UploadAndExtractZipFileToolTip" value="Téléversez plusieurs fichiers et dossiers dans un fichier ZIP" />
+  <string key="UploadAndExtractZipFile.DialogLabel" value="Téléverser et dézipper le fichier" />
+  <string key="UploadAndExtractZipFile.FileLabel" value="Fichier ZIP" />
+  <string key="UploadAndExtractZipFile.FileHelp" value="La structure des fichiers et des dossiers du fichier ZIP que vous avez sélectionné sera décompressé et copier sur le site web" />
+  <string key="UploadAndExtractZipFile.OverwriteExistingLabel" value="Écraser le fichier existant" />
+  <string key="UploadAndExtractZipFile.OverwriteExistingHelp" value="En sélectionnant cette option, les fichiers existants seront écrasés" />
+  <string key="UploadAndExtractZipFile.OverwriteExistingItemLabel" value="Écraser les fichiers existants" />
+  <string key="UploadAndExtractZipFile.FileNotUploaded" value="Le fichier n'a pas été téléversé" />
+  <string key="UploadAndExtractZipFile.NotZip" value="Le fichier téléversé n'a pas un format ZIP valide" />
+  <string key="UploadAndExtractZipFile.ErrorDialogLabel" value="Le téléversement du fichier ZIP n'a pas été complété" />
+  <string key="UploadAndExtractZipFile.UnexpectedError" value="Le téléversement a échoué. Consultez les fichiers journaux pour plus de détails" />
+  <string key="UploadAndExtractZipFile.ExistingFileReadOnly" value="Le fichier existant '{0}' est en lecture seule. Aucun fichier n'a été téléversé" />
+  <string key="UploadAndExtractZipFile.FileExistsError" value="Le fichier  '{0}' existe dans le ZIP et sur le site web. Veuillez sélectionner l'option Écraser le fichier existant pour compléter cette action." />
 </strings>

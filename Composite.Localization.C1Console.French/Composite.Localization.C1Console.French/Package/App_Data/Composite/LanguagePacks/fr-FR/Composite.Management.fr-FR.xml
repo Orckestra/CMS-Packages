@@ -588,15 +588,15 @@
   <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="La longueur totale du nom de dossier est trop longue" />
   <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Le nom du dossier ne peut pas seulement être '/' ou '\'" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Téléverser plusieurs fichiers via un fichier Zip" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Fichier Zip" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Fichier ZIP" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.HelpFile" value="Créer un fichier Zip (clic droit dossier local et sélectionner Envoyer vers -&gt; dossier compressé) et sélectionnez-le en utilisant le bouton Parcourir" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructure" value="Créer des dossiers" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.HelpRecreateStructure" value="La sélection de cette option copiera la structure exacte de votre fichier Zip" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructureCheckBox" value="Extraire les dossiers de fichier Zip" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsisting" value="Remplacement" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsisting" value="Écraser le fichier existant" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.HelpOverwriteExsisting" value="La sélection de cette option remplacera les fichiers existants dans les archives de médias avec des noms de fichiers" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.Error.Title" value="Erreur" />
-  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Remplacer les fichiers existants" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Écraser les fichiers existants" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.MissingUploadedFile.Message" value="S'il vous plaît sélectionner un fichier à téléverser" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.CannotUploadDocxFile" value="S'il vous plaît utilisez la commande de téléversement normale pour téléverser un fichier .docx" />
   <string key="Website.Forms.Administrative.AddZipMediaFile.WrongUploadedFile.Message" value="Le fichier sélectionné n'est pas un fichier zip conforme" />
@@ -685,4 +685,5 @@
   <string key="Validation.StringLength.Max" value="{0} caractères maximum" />
   <string key="Browser.Label" value="Navigateur de pages" />
   <string key="Browser.ToolTip" value="Parcourir les pages non publiées" />
+  <string key="Selector.Count" value="sélectionnés" />
 </strings>
