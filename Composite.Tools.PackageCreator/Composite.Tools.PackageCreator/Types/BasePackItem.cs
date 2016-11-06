@@ -13,7 +13,7 @@ namespace Composite.Tools.PackageCreator.Types
     /// </summary>
     public abstract class BasePackItem : IPackItem
     {
-       
+
         protected EntityToken _entityToken;
         protected virtual XNamespace ns
         {
@@ -37,6 +37,17 @@ namespace Composite.Tools.PackageCreator.Types
         protected BasePackItem(string name)
         {
             this.Name = name;
+        }
+
+        protected BasePackItem(XElement element)
+        {
+            this.Name = element.IndexAttributeValue();
+
+            var isOverwritable = this as IPackOverwriteItem;
+            if (isOverwritable != null)
+            {
+                isOverwritable.AllowOverwrite = element.AllowOverwriteAttributeValue();
+            }
         }
 
         protected BasePackItem(EntityToken entityToken)
@@ -99,6 +110,18 @@ namespace Composite.Tools.PackageCreator.Types
             }
         }
 
+        public virtual void ToggleAllowOverwrite(XElement config)
+        {
+            foreach (var name in this.CategoryAllNames)
+            {
+                var element = config.Elements(ns + name).Elements(itemName).FirstOrDefault(x => x.IndexAttributeValue() == Id);
+
+                if (element == null) {continue;}
+
+                element.SetAttributeValue("allowOverwrite", !element.AllowOverwriteAttributeValue());
+            }
+        }
+
         public static IEnumerable<IPackItem> GetItems(Type type, XElement config)
         {
             return GetItems(type, config, PackageCreator.pc, "Add");
@@ -108,14 +131,23 @@ namespace Composite.Tools.PackageCreator.Types
         {
             foreach (var category in type.GetCategoryAllNames())
             {
-                foreach (var name in config.Elements(ns + category).Elements(itemName).Select(d => d.IndexAttributeValue()).Where(d => d != null))
+                foreach (var element in config.Elements(ns + category).Elements(itemName).Where(d => d.IndexAttributeValue() !=null))
                 {
-                    object item = Activator.CreateInstance(type, new object[] { name });
+                    object item = null;
+                    try
+                    {
+                        item = Activator.CreateInstance(type, new object[] { element });
+                    }
+                    catch {}
+
+                    if (item == null)
+                    {
+                        item = Activator.CreateInstance(type, new object[] {element.IndexAttributeValue()});
+                    }
                     yield return (IPackItem)item;
                 }
             }
         }
-
 
         public string CategoryName
         {

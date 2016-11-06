@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using Composite.C1Console.Security;
 using Composite.Core.IO;
 using Composite.Core.PageTemplates;
@@ -11,10 +12,14 @@ using Composite.Data.Types;
 namespace Composite.Tools.PackageCreator.Types
 {
     [PackCategory("PageTemplates")]
-    internal class PCPageTemplate : BasePackItem, IPack
+    internal class PCPageTemplate : BasePackItem, IPack, IPackOverwriteItem
     {
         public PCPageTemplate(string name)
             : base(name)
+        {
+        }
+
+        public PCPageTemplate(XElement element): base(element)
         {
         }
 
@@ -75,17 +80,18 @@ namespace Composite.Tools.PackageCreator.Types
             {
                 var codeBehindFilePath = pageTemplate.GetProperty("CodeBehindFilePath");
                 var filePath = pageTemplate.GetProperty("FilePath");
-                creator.AddFile("~" + PathUtil.GetWebsitePath(codeBehindFilePath));
-                creator.AddFile("~" + PathUtil.GetWebsitePath(filePath));
+                creator.AddFile("~" + PathUtil.GetWebsitePath(codeBehindFilePath), this.AllowOverwrite);
+                creator.AddFile("~" + PathUtil.GetWebsitePath(filePath), this.AllowOverwrite);
             }
             else if (pageTemplate.GetType().Name.Contains("RazorPageTemplateDescriptor"))
             {
                 var virtualPath = pageTemplate.GetProperty("VirtualPath");
-                creator.AddFile(virtualPath);
+                creator.AddFile(virtualPath, this.AllowOverwrite);
             }
 
 
         }
 
+        public bool AllowOverwrite { get; set; }
     }
 }

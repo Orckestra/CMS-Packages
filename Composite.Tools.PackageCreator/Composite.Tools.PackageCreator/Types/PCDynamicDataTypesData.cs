@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using Composite.C1Console.Security;
 using Composite.Core.Types;
 using Composite.Plugins.Elements.ElementProviders.GeneratedDataTypesElementProvider;
@@ -7,8 +8,12 @@ using Composite.Plugins.Elements.ElementProviders.GeneratedDataTypesElementProvi
 namespace Composite.Tools.PackageCreator.Types
 {
     [PackCategory("DynamicDataTypesData")]
-    public class PCDynamicDataTypesData : BasePackItem
+    public class PCDynamicDataTypesData : BasePackItem, IPackOverwriteItem
     {
+        public PCDynamicDataTypesData(XElement element): base(element)
+        {
+        }
+
         public override string Id
         {
             get
@@ -54,6 +59,7 @@ namespace Composite.Tools.PackageCreator.Types
             }
         }
 
+        public bool AllowOverwrite { get; set; }
     }
 
 }

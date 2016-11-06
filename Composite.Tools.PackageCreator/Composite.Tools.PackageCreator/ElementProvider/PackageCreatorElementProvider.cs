@@ -39,7 +39,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
         {
             set { _context = value; }
         }
-        
+
         public IEnumerable<Element> GetRoots(SearchToken seachToken)
         {
             Element element = new Element(_context.CreateElementHandle(new PackageCreatorElementProviderEntityToken()))
@@ -53,7 +53,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     OpenedIcon = new ResourceHandle("Composite.Icons", "blocks")
                 }
             };
-         
+
             element.AddAction(new ElementAction(new ActionHandle(new WorkflowActionToken(typeof(CreatePackageWorkflow), new PermissionType[] { PermissionType.Administrate })))
             {
                 VisualData = new ActionVisualizedData
@@ -223,7 +223,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             }
                         }
                     });
-                    
+
                     element.AddAction(new ElementAction(new ActionHandle(new DownloadPackageActionToken("package")))
                     {
                         VisualData = new ActionVisualizedData
@@ -314,6 +314,29 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             }
                         }
                     });
+
+                    var isOverwritable = item as IPackOverwriteItem;
+                    if (isOverwritable != null)
+                    {
+                        element.AddAction(new ElementAction(new ActionHandle(new OverwriteOnInstallItemPackageCreatorActionToken()))
+                        {
+                            VisualData = new ActionVisualizedData
+                            {
+                                Label = PackageCreatorFacade.GetLocalization("OverwriteOnInstallItem.Label"),
+                                ToolTip = PackageCreatorFacade.GetLocalization("OverwriteOnInstallItem.Label"),
+                                Icon = new ResourceHandle("Composite.Icons", "page-edit-page"),
+                                ActionCheckedStatus = isOverwritable.AllowOverwrite ? ActionCheckedStatus.Checked : ActionCheckedStatus.Unchecked,
+                                ActionLocation = new ActionLocation
+                                {
+                                    ActionType = ActionType.Other,
+                                    IsInFolder = false,
+                                    IsInToolbar = true,
+                                    ActionGroup = new ActionGroup("Develop", ActionGroupPriority.PrimaryLow)
+                                }
+                            }
+                        });
+                    }
+
 
                     yield return element;
                 }
