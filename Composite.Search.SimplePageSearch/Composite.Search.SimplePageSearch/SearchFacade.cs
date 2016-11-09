@@ -102,7 +102,8 @@ namespace Composite.Search.SimplePageSearch
                     {
                         Url = PageUrls.BuildUrl(page, UrlKind.Internal),
                         Title = page.Title,
-                        Description = page.Description
+                        Description = page.Description,
+                        PageId = page.Id
                     })
                     .Evaluate();
             }
@@ -204,7 +205,7 @@ namespace Composite.Search.SimplePageSearch
                 }
 
                 var dataReference = data.ToDataReference();
-
+                Guid? pageId = null;
                 string url;
 
                 if (currentWebsiteOnly && !(data is IPageRelatedData))
@@ -215,7 +216,7 @@ namespace Composite.Search.SimplePageSearch
                     {
                         continue;
                     }
-
+                    pageId = pageUrlData.PageId;
                     url = PageUrls.BuildUrl(pageUrlData);
                 }
                 else
@@ -234,7 +235,8 @@ namespace Composite.Search.SimplePageSearch
                 result.Add(new SearchResultEntry
                 {
                     Url = url,
-                    Title = label
+                    Title = label,
+                    PageId = pageId
                 });
             }
 
