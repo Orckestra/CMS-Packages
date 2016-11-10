@@ -40,10 +40,10 @@ namespace Composite.Tools.PackageCreator.Types
             var newXslFilePath = "\\" + xsltFunction.Namespace.Replace(".", "\\") + "\\" + xsltFunction.Name + ".xsl";
 
 
-            pc.AddFile("App_Data\\Xslt" + xsltFunction.XslFilePath, "App_Data\\Xslt" + newXslFilePath);
+            pc.AddFile("App_Data\\Xslt" + xsltFunction.XslFilePath, "App_Data\\Xslt" + newXslFilePath, this.AllowOverwrite);
             xsltFunction.XslFilePath = newXslFilePath;
 
-            pc.AddData(xsltFunction);
+            pc.AddData(xsltFunction, this.AllowOverwrite);
 
             var parameters = from i in DataFacade.GetData<IParameter>()
                              where i.OwnerId == xsltFunction.Id
@@ -57,7 +57,7 @@ namespace Composite.Tools.PackageCreator.Types
                                      orderby i.Name
                                      select i;
 
-            foreach (var namedFunctionCall in namedFunctionCalls) pc.AddData(namedFunctionCall);
+            foreach (var namedFunctionCall in namedFunctionCalls) pc.AddData(namedFunctionCall, this.AllowOverwrite);
         }
     }
 }

@@ -57,7 +57,7 @@ namespace Composite.Tools.PackageCreator
 					var datas = DataFacade.GetData(type);
 					foreach (IData item in datas)
 					{
-						list[item.DataSourceId] = item.GetReferees(type).Select(d => d.DataSourceId).ToList();
+						list[item.DataSourceId] = item.GetReferees(type).Where(d=> d.DataSourceId.PublicationScope == item.DataSourceId.PublicationScope).Select(d => d.DataSourceId).ToList();
 					}
 
 					var prevCount = list.Count;

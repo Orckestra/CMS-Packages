@@ -35,7 +35,7 @@ namespace Composite.Tools.PackageCreator.Types
                     string codeFile = virtualPath + ".cs";
                     if (C1File.Exists(PathUtil.Resolve(codeFile)))
                     {
-                        pc.AddFile(codeFile);
+                        pc.AddFile(codeFile, this.AllowOverwrite);
                     }
                 }
             }

@@ -29,7 +29,7 @@ namespace Composite.Tools.PackageCreator.Types
                 if (functionEntityToken.FunctionProviderName == PackageCreatorFacade.RazorFunctionProviderName)
                 {
                     var virtualPath = function.GetProperty("VirtualPath");
-                    pc.AddFile(virtualPath);
+                    pc.AddFile(virtualPath, this.AllowOverwrite);
                 }
             }
         }

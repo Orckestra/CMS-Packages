@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
+using Composite.C1Console.Elements;
 using Composite.C1Console.Security;
 using Composite.Core.IO;
 using Composite.Plugins.Elements.ElementProviders.WebsiteFileElementProvider;
@@ -7,10 +9,14 @@ using Composite.Plugins.Elements.ElementProviders.WebsiteFileElementProvider;
 namespace Composite.Tools.PackageCreator.Types
 {
     [PackCategory("Files")]
-    internal class PCFile : BasePackItem
+    internal class PCFile : BasePackItem, IPackOverwriteItem
     {
         public PCFile(string name)
             : base(name)
+        {
+        }
+
+        public PCFile(XElement element): base(element)
         {
         }
 
@@ -25,6 +31,8 @@ namespace Composite.Tools.PackageCreator.Types
                 }
             };
         }
+
+        public bool AllowOverwrite { get; set; }
 
     }
 }

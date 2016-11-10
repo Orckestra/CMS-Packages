@@ -180,7 +180,7 @@ namespace Composite.Tools.PackageCreator
 				}
 				#endregion
 
-                #region PageTemplates
+                #region XML PageTemplates
                 XElement PageTemplates = config.Descendants(pc + "PageTemplates").FirstOrDefault();
                 if (PageTemplates != null)
                 {
@@ -194,7 +194,7 @@ namespace Composite.Tools.PackageCreator
                         {
                             var newPageTemplateFilePath = "\\" + pageTemplate.Title + ".xml";
 
-                            AddFile("App_Data\\PageTemplates" + pageTemplate.PageTemplateFilePath, "App_Data\\PageTemplates" + newPageTemplateFilePath);
+                            AddFile("App_Data\\PageTemplates" + pageTemplate.PageTemplateFilePath, "App_Data\\PageTemplates" + newPageTemplateFilePath, item.AllowOverwriteAttributeValue());
                             pageTemplate.PageTemplateFilePath = newPageTemplateFilePath;
                             AddData(pageTemplate);
                         }
@@ -210,14 +210,15 @@ namespace Composite.Tools.PackageCreator
                 {
                     foreach (XElement item in InstallFiles.Elements("Add"))
                     {
-                        string filename = item.IndexAttributeValue();
+                        var filename = item.IndexAttributeValue();
+                        var allowOverwrite = item.AllowOverwriteAttributeValue();
 
                         if (string.IsNullOrEmpty(filename))
                         {
                             throw new InvalidOperationException("Files->Add attribute 'name' must be spesified");
                         }
 
-                        AddFile(filename);
+                        AddFile(filename, allowOverwrite);
                     }
                 }
                 #endregion
@@ -281,7 +282,7 @@ namespace Composite.Tools.PackageCreator
                         Func<IData, bool> where = item.Elements("Add")
                             .Aggregate(new Func<IData, bool>(d => false), (f, e) => new Func<IData, bool>(d => trueAttributes(e)(d) || f(d)));
 
-                        AddData(dataTypeName, where);
+                        AddData(dataTypeName, where, item.AllowOverwriteAttributeValue());
                     }
                 }
                 #endregion
@@ -306,11 +307,11 @@ namespace Composite.Tools.PackageCreator
                         DataTypeDescriptor dataTypeDescriptor = DynamicTypeManager.GetDataTypeDescriptor(type);
                         dataTypes.Add(new XElement("Type",
                                        new XAttribute("providerName", "GeneratedDataTypesElementProvider"),
-                                       new XAttribute("dataTypeDescriptor", dataTypeDescriptor.ToXml().ToString())
-                                       )
+                                       new XAttribute("dataTypeDescriptor", dataTypeDescriptor.ToXml().ToString()),
+                                       new XAttribute("allowOverwrite", item.AllowOverwriteAttributeValue()))
                                    );
 
-                        AddFileIfExists("App_Data\\Composite\\DynamicTypeForms\\" + item.IndexAttributeValue().Replace('.', '\\') + ".xml");
+                        AddFileIfExists("App_Data\\Composite\\DynamicTypeForms\\" + item.IndexAttributeValue().Replace('.', '\\') + ".xml", item.AllowOverwriteAttributeValue());
                     }
 
 
@@ -354,7 +355,18 @@ namespace Composite.Tools.PackageCreator
 
                         foreach (XElement item in element.Elements("Add"))
                         {
-                            AddDataTypeData(TypeManager.TryGetType(item.IndexAttributeValue()));
+                            var indexAttrValue = item.IndexAttributeValue();
+                            AddDataTypeData(TypeManager.TryGetType(indexAttrValue));
+
+                            if (item.AllowOverwriteAttributeValue())
+                            {
+                                var typeElement = Datas.Values.FirstOrDefault(el => el.Attribute("type").Value == indexAttrValue);
+                                if (typeElement != null)
+                                {
+                                    typeElement.Add(new XAttribute("allowOverwrite", true));
+                                }
+
+                            }
                         }
                     }
                 }
@@ -595,7 +607,7 @@ namespace Composite.Tools.PackageCreator
 
         }
 
-        public void AddDirectory(string filename)
+        public void AddDirectory(string filename, bool allowoverwrite = true)
         {
             var targetFilename = Path.Combine(_packageDirectoryPath, filename);
             var targetDirectory = Path.GetDirectoryName(targetFilename);
@@ -610,7 +622,7 @@ namespace Composite.Tools.PackageCreator
                 new XElement("Directory",
                     new XAttribute("sourceDirectory", "~\\" + filename),
                     new XAttribute("targetDirectory", "~\\" + filename),
-                    new XAttribute("allowOverwrite", "true"),
+                    new XAttribute("allowOverwrite", allowoverwrite),
                     new XAttribute("deleteTargetDirectory", "false")
                 )
             );
@@ -785,17 +797,17 @@ namespace Composite.Tools.PackageCreator
             AddData(typeof(T), f);
         }
 
-        internal void AddData(Type type, Func<IData, bool> where)
+        internal void AddData(Type type, Func<IData, bool> where, bool allowOverwrite = false)
         {
             foreach (var dataScopeIdentifier in DataFacade.GetSupportedDataScopes(type))
             {
-                AddData(type, dataScopeIdentifier, where);
+                AddData(type, dataScopeIdentifier, where, allowOverwrite);
             }
         }
 
-        internal void AddData(string dataTypeName, Func<IData, bool> where)
+        internal void AddData(string dataTypeName, Func<IData, bool> where, bool allowoverwrite = false)
         {
-            AddData(TypeManager.TryGetType(dataTypeName), where);
+            AddData(TypeManager.TryGetType(dataTypeName), where, allowoverwrite);
         }
 
         internal void AddData(string dataTypeName, string dataScopeIdentifier)
@@ -815,13 +827,13 @@ namespace Composite.Tools.PackageCreator
 			AddData(typeof(T), dataScopeIdentifier, f);
 		}
 
-        internal void AddData(Type type, DataScopeIdentifier dataScopeIdentifier, Func<IData, bool> where)
+        internal void AddData(Type type, DataScopeIdentifier dataScopeIdentifier, Func<IData, bool> where, bool allowoverwrite = false)
         {
             using (new DataScope(dataScopeIdentifier))
             {
 				foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
                 {
-                    AddData(data);
+                    AddData(data, allowoverwrite);
                 }
 
             }
@@ -866,7 +878,7 @@ namespace Composite.Tools.PackageCreator
             }
         }
 
-        public void AddData(IData data)
+        public void AddData(IData data, bool allowOverwrite = false)
         {
 #warning #3102 Do not export ICompositionContainer with id eb210a75-be25-401f-b0d4-b3787bce36fa
             if (data is ICompositionContainer)
@@ -913,6 +925,7 @@ namespace Composite.Tools.PackageCreator
                     dataTypeKey
                     , new XElement("Type",
                         (installDataTypeNamesList.Contains(dataTypeName)) ? new XAttribute("isDynamicAdded", "true") : null,
+                         (allowOverwrite) ? new XAttribute("allowOverwrite", "true") : null,
                         new XAttribute("type", dataTypeName),
                         new XElement("Data",
                             new XAttribute("dataScopeIdentifier", dataScopeIdentifier),
@@ -948,19 +961,24 @@ namespace Composite.Tools.PackageCreator
         #region AddFile
 
 
-        internal void AddFileIfExists(string filename)
+        internal void AddFileIfExists(string filename, bool allowOverwrite = false)
         {
             if (File.Exists(Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), filename)))
-                AddFile(filename);
+                AddFile(filename, allowOverwrite);
         }
 
 
         public void AddFile(string filename)
         {
-            AddFile(filename, filename);
+            AddFile(filename, filename, false);
         }
 
-        internal void AddFile(string filename, string newFilename)
+        public void AddFile(string filename, bool allowOverwrite)
+        {
+            AddFile(filename, filename, allowOverwrite);
+        }
+
+        internal void AddFile(string filename, string newFilename, bool allowOverwrite)
         {
             if (filename.StartsWith("~"))
                 filename = filename.Substring(2);
@@ -979,7 +997,7 @@ namespace Composite.Tools.PackageCreator
                 new XElement("File",
                     new XAttribute("sourceFilename", "~\\" + newFilename),
                     new XAttribute("targetFilename", "~\\" + newFilename),
-                    new XAttribute("allowOverwrite", "false")
+                    new XAttribute("allowOverwrite", allowOverwrite)
                 )
             );
         }

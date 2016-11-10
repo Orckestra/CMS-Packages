@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using Composite.C1Console.Security;
 using Composite.Core.ResourceSystem;
 using Composite.Functions;
@@ -9,11 +10,16 @@ using Composite.Functions;
 namespace Composite.Tools.PackageCreator.Types
 {
     [PackCategory("Functions", AliasNames = new[] { "CSharpFunctions", "InlineFunctions", "RazorFunctions", "VisualFunctions", "XsltFunctions" })]
-    partial class PCFunctions : BasePackItem, IPack
+    partial class PCFunctions : BasePackItem, IPack, IPackOverwriteItem
     {
 
         public PCFunctions(string name)
             : base(name)
+        {
+        }
+
+        public PCFunctions(XElement element)
+           : base(element)
         {
         }
 
@@ -71,6 +77,8 @@ namespace Composite.Tools.PackageCreator.Types
                 throw new InvalidOperationException(string.Format("Function '{0}' does not exists", this.Name));
             }
         }
+
+        public bool AllowOverwrite { get; set; }
     }
 
 }

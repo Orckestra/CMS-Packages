@@ -334,6 +334,16 @@ namespace Composite.Tools.PackageCreator
             }
         }
 
+        internal static void ToggleAllowOverwriteItemOnInstall(IPackItem item, string packageName)
+        {
+            lock (_lockEditPackage)
+            {
+                var packageXml = GetPackageXml(packageName);
+                item.ToggleAllowOverwrite(packageXml.Root);
+                packageXml.SaveTabbed(GetPackageConfigPath(packageName));
+            }
+        }
+
         internal static IEnumerable<PackCategoryAttribute> GetCategories(string packageName)
         {
             XDocument packageXml;
@@ -547,6 +557,15 @@ namespace Composite.Tools.PackageCreator
                     return value;
             }
             return null;
+        }
+
+        public static bool AllowOverwriteAttributeValue(this XElement element)
+        {
+            var value = element.AttributeValue("allowOverwrite");
+                if (value != null)
+                    return bool.Parse(value);
+
+            return false;
         }
 
         public static string IndexAttributeName(this XElement element)
