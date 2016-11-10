@@ -330,7 +330,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                                 {
                                     ActionType = ActionType.Other,
                                     IsInFolder = false,
-                                    IsInToolbar = true,
+                                    IsInToolbar = !isOverwritable.AllowOverwrite,
                                     ActionGroup = new ActionGroup("Develop", ActionGroupPriority.PrimaryLow)
                                 }
                             }

@@ -282,7 +282,7 @@ namespace Composite.Tools.PackageCreator
                         Func<IData, bool> where = item.Elements("Add")
                             .Aggregate(new Func<IData, bool>(d => false), (f, e) => new Func<IData, bool>(d => trueAttributes(e)(d) || f(d)));
 
-                        AddData(dataTypeName, where);
+                        AddData(dataTypeName, where, item.AllowOverwriteAttributeValue());
                     }
                 }
                 #endregion
@@ -797,17 +797,17 @@ namespace Composite.Tools.PackageCreator
             AddData(typeof(T), f);
         }
 
-        internal void AddData(Type type, Func<IData, bool> where)
+        internal void AddData(Type type, Func<IData, bool> where, bool allowOverwrite = false)
         {
             foreach (var dataScopeIdentifier in DataFacade.GetSupportedDataScopes(type))
             {
-                AddData(type, dataScopeIdentifier, where);
+                AddData(type, dataScopeIdentifier, where, allowOverwrite);
             }
         }
 
-        internal void AddData(string dataTypeName, Func<IData, bool> where)
+        internal void AddData(string dataTypeName, Func<IData, bool> where, bool allowoverwrite = false)
         {
-            AddData(TypeManager.TryGetType(dataTypeName), where);
+            AddData(TypeManager.TryGetType(dataTypeName), where, allowoverwrite);
         }
 
         internal void AddData(string dataTypeName, string dataScopeIdentifier)
@@ -827,13 +827,13 @@ namespace Composite.Tools.PackageCreator
 			AddData(typeof(T), dataScopeIdentifier, f);
 		}
 
-        internal void AddData(Type type, DataScopeIdentifier dataScopeIdentifier, Func<IData, bool> where)
+        internal void AddData(Type type, DataScopeIdentifier dataScopeIdentifier, Func<IData, bool> where, bool allowoverwrite = false)
         {
             using (new DataScope(dataScopeIdentifier))
             {
 				foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
                 {
-                    AddData(data);
+                    AddData(data, allowoverwrite);
                 }
 
             }

@@ -11,13 +11,13 @@ namespace Composite.Tools.PackageCreator.Types
 {
 	[PackCategory("DataItems", "Data Items")]
 	[ItemManager(typeof(PcDataPackItemManager))]
-	public class PCDataItem : BasePackItem
+	public class PCDataItem : BasePackItem, IPackOverwriteItem
 	{
-		public string DataType { get; set; }
+        public string DataType { get; set; }
 		public string Params { get; set; }
 		public string Label { get; set; }
 
-		public static HashSet<Type> SkipTypes = new HashSet<Type>() { 
+		public static HashSet<Type> SkipTypes = new HashSet<Type>() {
 			typeof(IPage),
 			typeof(IMethodBasedFunctionInfo),
 			typeof(IInlineFunction),
@@ -31,16 +31,17 @@ namespace Composite.Tools.PackageCreator.Types
 			typeof(IUser),
 			typeof(IUserGroup),
 			typeof(IPageTypeMetaDataTypeLink)
-			
+
 		};
 
 		private static Dictionary<string, Type> _typeCache = new Dictionary<string, Type>();
-		
-		public PCDataItem(string name, string type, string label)
+
+		public PCDataItem(string name, string type, string label, bool allowoverwrite = false)
 			:base(name)
 		{
 			DataType = type;
 			Label = label;
+		    AllowOverwrite = allowoverwrite;
 		}
 		public PCDataItem(IData data)
 		{
@@ -52,14 +53,14 @@ namespace Composite.Tools.PackageCreator.Types
 			{
 				Label = data.GetLabel();
 			}
-			
+
 			var dataId = data.DataSourceId.DataId;
 			Name = new XElement(itemName,
 				dataId.GetType().GetProperties()
 				.Select(p => new XAttribute(p.Name, dataId.GetProperty(p.Name)))
 				).ToString();
 			DataType = data.DataSourceId.InterfaceType.ToString();
-			
+
 		}
 
 		public override string Id
@@ -70,7 +71,9 @@ namespace Composite.Tools.PackageCreator.Types
 			}
 		}
 
-		public override string GetLabel()
+        public bool AllowOverwrite { get;set; }
+
+        public override string GetLabel()
 		{
 			return string.IsNullOrWhiteSpace(Label) ? Name : Label;
 		}
@@ -127,7 +130,15 @@ namespace Composite.Tools.PackageCreator.Types
 
 		}
 
-		private Dictionary<string, string> GetAttrbuteArray(XElement element) {
+	    public override void ToggleAllowOverwrite(XElement config)
+	    {
+            var category = config.ForceElement(ns + this.CategoryName);
+            var typeElement = ForceTypeElement(category, DataType);
+
+            typeElement.SetAttributeValue("allowOverwrite", !typeElement.AllowOverwriteAttributeValue());
+        }
+
+	    private Dictionary<string, string> GetAttrbuteArray(XElement element) {
 			return element.Attributes().Where(x => x.Name.Namespace == XNamespace.None)
 				.ToDictionary(a => a.Name.LocalName, a => a.Value);
 		}
@@ -183,9 +194,9 @@ namespace Composite.Tools.PackageCreator.Types
 			foreach (var element in config.Elements(ns + typeof(PCDataItem).GetCategoryName()).Elements("Type"))
 			{
 				var dataType = element.AttributeValue("type");
-				foreach (var item in element.Elements(itemName))
+			    foreach (var item in element.Elements(itemName))
 				{
-					yield return new PCDataItem(item.ToString(), dataType, item.Value);
+					yield return new PCDataItem(item.ToString(), dataType, item.Value, element.AllowOverwriteAttributeValue());
 				}
 			}
 		}
