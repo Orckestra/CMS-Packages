@@ -2,6 +2,9 @@
 @using Composite.C1Console.Security
 @using Composite.Core
 @using Composite.Web.Css.Less
+@using Composite.Web.BundlingAndMinification
+@using Composite.Web.BundlingAndMinification.Extensions
+
 @inherits RazorFunction
 
 @functions {
@@ -92,12 +95,12 @@
         var bundleVirtualPath = "~/Bundles/Scripts" + scriptsKey;
         if (BundleTable.Bundles.GetBundleFor(bundleVirtualPath) == null)
         {
-            var sb = new ScriptBundle(bundleVirtualPath);
+            var sb = new Bundle(bundleVirtualPath);
             foreach (var source in registeredScripts)
             {
                 sb.Include(source);
             }
-            BundleTable.Bundles.Add(sb);
+            BundleTable.Bundles.Add(sb.ForceOrdered());
         }
 
         var bundlerUrl = BundleTable.Bundles.ResolveBundleUrl(bundleVirtualPath);
