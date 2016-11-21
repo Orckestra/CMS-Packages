@@ -249,7 +249,7 @@ namespace Composite.Tools.PackageCreator
                         {
                             var filename = item.IndexAttributeValue();
 
-                            AddDirectory(filename);
+                            AddDirectory(filename, item.AllowOverwriteAttributeValue());
                         }
                         catch { }
                     }
