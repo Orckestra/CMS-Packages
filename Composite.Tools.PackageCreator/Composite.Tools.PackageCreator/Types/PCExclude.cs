@@ -184,8 +184,11 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public override void RemoveFromConfiguration(XElement config)
 		{
-			base.RemoveFromConfiguration(config);
-			if (Type == Exclude.Page)
+            foreach (var name in this.CategoryAllNames)
+            {
+                config.Elements(ns + name).Elements(itemName).Where(x => x.IndexAttributeValue() == Name).Remove();
+            }
+            if (Type == Exclude.Page)
 			{
 				Tree.Page.ClearCache();
 			}

@@ -5,6 +5,7 @@ using Composite.C1Console.Security;
 using Composite.Core.Collections;
 using Composite.Data;
 using Composite.Data.Types;
+using System.Linq;
 using System.Xml.Linq;
 using Composite.Core.Types;
 
@@ -97,7 +98,7 @@ namespace Composite.Tools.PackageCreator.Types
 				if (pc.ExcludedIds.Contains(pageId))
 					return;
 				PackPageTree(pc, pageId, IsRoot);
-				
+
 			}
 		}
 
@@ -116,15 +117,18 @@ namespace Composite.Tools.PackageCreator.Types
 
 		public override void RemoveFromConfiguration(XElement config)
 		{
-			base.RemoveFromConfiguration(config);
-			Tree.Page.ClearCache();
+            foreach (var name in this.CategoryAllNames)
+            {
+                config.Elements(ns + name).Elements(itemName).Where(x => x.IndexAttributeValue() == Name).Remove();
+            }
+            Tree.Page.ClearCache();
 		}
 
 		private void PackPageTree(PackageCreator pc, Guid pageId, bool isRoot = false)
 		{
 			var page = PageManager.GetPageById(pageId, true);
-			if (page == null) // Page does not exists in current locale 
-				return; 
+			if (page == null) // Page does not exists in current locale
+				return;
 
 			foreach (var childPageId in PageManager.GetChildrenIDs(pageId))
 			{
