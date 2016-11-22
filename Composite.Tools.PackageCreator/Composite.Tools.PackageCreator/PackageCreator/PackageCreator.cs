@@ -358,16 +358,6 @@ namespace Composite.Tools.PackageCreator
                         {
                             var indexAttrValue = item.IndexAttributeValue();
                             AddDataTypeData(TypeManager.TryGetType(indexAttrValue));
-
-                            if (AllowOverwriteDataOnInstall)
-                            {
-                                var typeElement = Datas.Values.FirstOrDefault(el => el.Attribute("type").Value == indexAttrValue);
-                                if (typeElement != null)
-                                {
-                                    typeElement.Add(new XAttribute("allowOverwrite", true));
-                                }
-
-                            }
                         }
                     }
                 }
