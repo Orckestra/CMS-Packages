@@ -10,7 +10,7 @@ using Composite.Functions;
 namespace Composite.Tools.PackageCreator.Types
 {
     [PackCategory("Functions", AliasNames = new[] { "CSharpFunctions", "InlineFunctions", "RazorFunctions", "VisualFunctions", "XsltFunctions" })]
-    partial class PCFunctions : BasePackItem, IPack, IPackOverwriteItem
+    partial class PCFunctions : BasePackItem, IPack
     {
 
         public PCFunctions(string name)
@@ -77,8 +77,6 @@ namespace Composite.Tools.PackageCreator.Types
                 throw new InvalidOperationException(string.Format("Function '{0}' does not exists", this.Name));
             }
         }
-
-        public bool AllowOverwrite { get; set; }
     }
 
 }

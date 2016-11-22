@@ -36,7 +36,7 @@ namespace Composite.Tools.PackageCreator.Types
             {
                 throw new ArgumentException(string.Format(@"Visual Function '{0}' doesn't exists", this.Id));
             }
-            pc.AddData(visualFunction, this.AllowOverwrite);
+            pc.AddData(visualFunction);
         }
     }
 }

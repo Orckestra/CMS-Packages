@@ -178,6 +178,7 @@ namespace Composite.Tools.PackageCreator
                 packageInformation.SetAttributeValue("canBeUninstalled", package.CanBeUninstalled);
                 packageInformation.SetAttributeValue("systemLocking", package.SystemLockingType);
                 packageInformation.SetAttributeValue("flushOnCompletion", package.FlushOnCompletion);
+                packageInformation.SetAttributeValue("allowOverwrite", package.OverwriteDataOnInstall);
                 if (package.ReloadConsoleOnCompletion)
                 {
                     packageInformation.SetAttributeValue("reloadConsoleOnCompletion", "true");
@@ -230,7 +231,8 @@ namespace Composite.Tools.PackageCreator
             package.CanBeUninstalled = bool.Parse(packageInformation.AttributeValue("canBeUninstalled") ?? true.ToString());
             package.SystemLockingType = packageInformation.AttributeValue("systemLocking") ?? "hard";
 
-            package.ReloadConsoleOnCompletion = bool.Parse(packageInformation.AttributeValue("reloadConsoleOnCompletion") ?? false.ToString()); ;
+            package.ReloadConsoleOnCompletion = bool.Parse(packageInformation.AttributeValue("reloadConsoleOnCompletion") ?? false.ToString());
+            package.OverwriteDataOnInstall = bool.Parse(packageInformation.AttributeValue("allowOverwrite") ?? false.ToString()); ;
 
             package.MinCompositeVersionSupported = (packageRequirements.AttributeValue("minimumCompositeVersion") != null) ? new Version(packageRequirements.AttributeValue("minimumCompositeVersion")) : RuntimeInformation.ProductVersion;
             package.MaxCompositeVersionSupported = new Version(packageRequirements.AttributeValue("maximumCompositeVersion") ?? "9.9999.9999.9999");
@@ -334,14 +336,27 @@ namespace Composite.Tools.PackageCreator
             }
         }
 
-        internal static void ToggleAllowOverwriteItemOnInstall(IPackItem item, string packageName)
+        internal static void ToggleAllowOverwrite(string packageName)
         {
             lock (_lockEditPackage)
             {
                 var packageXml = GetPackageXml(packageName);
-                item.ToggleAllowOverwrite(packageXml.Root);
+                var element = packageXml.Root.Elements(PackageCreator.mi + "PackageInformation").FirstOrDefault();
+                if (element == null) { return; }
+                element.SetAttributeValue("allowOverwrite", !element.AllowOverwriteAttributeValue());
                 packageXml.SaveTabbed(GetPackageConfigPath(packageName));
             }
+        }
+
+        internal static bool IsAllowOverwrite(string packageName)
+        {
+            var packageXml = GetPackageXml(packageName);
+            var element = packageXml.Root.Elements(PackageCreator.mi + "PackageInformation").FirstOrDefault();
+            if (element == null)
+            {
+                return false;
+            }
+            return element.AllowOverwriteAttributeValue();
         }
 
         internal static IEnumerable<PackCategoryAttribute> GetCategories(string packageName)

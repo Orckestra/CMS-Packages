@@ -37,7 +37,7 @@ namespace Composite.Tools.PackageCreator.Types
                 creator.AddData<IInlineFunctionAssemblyReference>(d => d.Function == inlineFunctionId);
                 creator.AddData<IParameter>(d => d.OwnerId == inlineFunctionId);
 
-                creator.AddFile(string.Format(@"App_Data\Composite\InlineCSharpFunctions\{0}", inlineFunction.CodePath), this.AllowOverwrite);
+                creator.AddFile(string.Format(@"App_Data\Composite\InlineCSharpFunctions\{0}", inlineFunction.CodePath));
             }
         }
     }

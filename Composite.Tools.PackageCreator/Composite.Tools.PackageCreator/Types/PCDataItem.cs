@@ -11,7 +11,7 @@ namespace Composite.Tools.PackageCreator.Types
 {
 	[PackCategory("DataItems", "Data Items")]
 	[ItemManager(typeof(PcDataPackItemManager))]
-	public class PCDataItem : BasePackItem, IPackOverwriteItem
+	public class PCDataItem : BasePackItem
 	{
         public string DataType { get; set; }
 		public string Params { get; set; }
@@ -36,12 +36,11 @@ namespace Composite.Tools.PackageCreator.Types
 
 		private static Dictionary<string, Type> _typeCache = new Dictionary<string, Type>();
 
-		public PCDataItem(string name, string type, string label, bool allowoverwrite = false)
+		public PCDataItem(string name, string type, string label)
 			:base(name)
 		{
 			DataType = type;
 			Label = label;
-		    AllowOverwrite = allowoverwrite;
 		}
 		public PCDataItem(IData data)
 		{
@@ -70,8 +69,6 @@ namespace Composite.Tools.PackageCreator.Types
 				return Name + "*" + DataType;
 			}
 		}
-
-        public bool AllowOverwrite { get;set; }
 
         public override string GetLabel()
 		{
@@ -129,14 +126,6 @@ namespace Composite.Tools.PackageCreator.Types
 			catch { }
 
 		}
-
-	    public override void ToggleAllowOverwrite(XElement config)
-	    {
-            var category = config.ForceElement(ns + this.CategoryName);
-            var typeElement = ForceTypeElement(category, DataType);
-
-            typeElement.SetAttributeValue("allowOverwrite", !typeElement.AllowOverwriteAttributeValue());
-        }
 
 	    private Dictionary<string, string> GetAttrbuteArray(XElement element) {
 			return element.Attributes().Where(x => x.Name.Namespace == XNamespace.None)
@@ -196,7 +185,7 @@ namespace Composite.Tools.PackageCreator.Types
 				var dataType = element.AttributeValue("type");
 			    foreach (var item in element.Elements(itemName))
 				{
-					yield return new PCDataItem(item.ToString(), dataType, item.Value, element.AllowOverwriteAttributeValue());
+					yield return new PCDataItem(item.ToString(), dataType, item.Value);
 				}
 			}
 		}

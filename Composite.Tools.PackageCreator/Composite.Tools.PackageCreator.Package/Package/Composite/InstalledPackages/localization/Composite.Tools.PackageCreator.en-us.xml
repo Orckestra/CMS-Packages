@@ -61,8 +61,8 @@
   <string key="Composite.Tools.PackageCreator.DeleteItemPackageCreator.Label" value="Delete" />
   <string key="Composite.Tools.PackageCreator.DeleteItemPackageCreator.ToolTip" value="Delete" />
 
-  <string key="Composite.Tools.PackageCreator.OverwriteOnInstallItem.Label" value="Overwrite on Install" />
-  <string key="Composite.Tools.PackageCreator.OverwriteOnInstallItem.ToolTip" value="Overwrite on Install" />
+  <string key="Composite.Tools.PackageCreator.OverwriteOnInstall.Label" value="Overwrite Data on Install" />
+  <string key="Composite.Tools.PackageCreator.OverwriteOnInstall.ToolTip" value="Overwrite Data on Install" />
 
   <string key="Composite.Tools.PackageCreator.PackageCreatorElementProviderEntityToken.Label" value="Packages" />
   <string key="Composite.Tools.PackageCreator.PackageCreatorElementProviderEntityToken.ToolTip" value="Packages" />
@@ -91,6 +91,7 @@
   <string key="Package.CanBeUninstalled.Label" value="Can be uninstalled" />
   <string key="Package.SystemLockingType.Label" value="System locking type" />
   <string key="Package.ReloadConsoleOnCompletion.Label" value="Reload console on completion" />
+  <string key="Package.OverwriteOnInstall.Label" value="Overwrite Data on Install" />
 
   <string key="Composite.Tools.PackageCreator.Requirements" value="Composite version requirements" />
   <string key="Package.MinCompositeVersionSupported.Label" value="Minimum version" />

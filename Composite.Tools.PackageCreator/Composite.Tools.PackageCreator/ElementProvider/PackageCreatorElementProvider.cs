@@ -207,6 +207,28 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                         });
                     }
 
+                    var isAllowOverwrite = PackageCreatorFacade.IsAllowOverwrite(package);
+                    element.AddAction(
+                        new ElementAction(new ActionHandle(new OverwriteOnInstallPackageCreatorActionToken()))
+                        {
+                            VisualData = new ActionVisualizedData
+                            {
+                                Label = PackageCreatorFacade.GetLocalization("OverwriteOnInstall.Label"),
+                                ToolTip = PackageCreatorFacade.GetLocalization("OverwriteOnInstall.Label"),
+                                Icon = new ResourceHandle("Composite.Icons", "page-edit-page"),
+                                ActionCheckedStatus =
+                                    isAllowOverwrite ? ActionCheckedStatus.Checked : ActionCheckedStatus.Unchecked,
+                                ActionLocation = new ActionLocation
+                                {
+                                    ActionType = ActionType.Other,
+                                    IsInFolder = false,
+                                    IsInToolbar = false,
+                                    ActionGroup = new ActionGroup("Develop", ActionGroupPriority.PrimaryLow)
+                                }
+                            }
+                        });
+
+
                     element.AddAction(new ElementAction(new ActionHandle(new ConfirmWorkflowActionToken("Are you sure?", typeof(DeleteConfigPackageCreatorActionToken))))
                     {
                         VisualData = new ActionVisualizedData
@@ -314,29 +336,6 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             }
                         }
                     });
-
-                    var isOverwritable = item as IPackOverwriteItem;
-                    if (isOverwritable != null)
-                    {
-                        element.AddAction(new ElementAction(new ActionHandle(new OverwriteOnInstallItemPackageCreatorActionToken()))
-                        {
-                            VisualData = new ActionVisualizedData
-                            {
-                                Label = PackageCreatorFacade.GetLocalization("OverwriteOnInstallItem.Label"),
-                                ToolTip = PackageCreatorFacade.GetLocalization("OverwriteOnInstallItem.Label"),
-                                Icon = new ResourceHandle("Composite.Icons", "page-edit-page"),
-                                ActionCheckedStatus = isOverwritable.AllowOverwrite ? ActionCheckedStatus.Checked : ActionCheckedStatus.Unchecked,
-                                ActionLocation = new ActionLocation
-                                {
-                                    ActionType = ActionType.Other,
-                                    IsInFolder = false,
-                                    IsInToolbar = !isOverwritable.AllowOverwrite,
-                                    ActionGroup = new ActionGroup("Develop", ActionGroupPriority.PrimaryLow)
-                                }
-                            }
-                        });
-                    }
-
 
                     yield return element;
                 }

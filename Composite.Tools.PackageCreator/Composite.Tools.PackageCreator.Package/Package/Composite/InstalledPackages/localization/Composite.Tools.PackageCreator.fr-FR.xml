@@ -53,8 +53,8 @@
   <string key="Composite.Tools.PackageCreator.DeleteItemPackageCreator.Label" value="Effacer" />
   <string key="Composite.Tools.PackageCreator.DeleteItemPackageCreator.ToolTip" value="Effacer" />
 
-  <string key="Composite.Tools.PackageCreator.OverwriteOnInstallItem.Label" value="Overwrite on Install" />
-  <string key="Composite.Tools.PackageCreator.OverwriteOnInstallItem.ToolTip" value="Overwrite on Install" />
+  <string key="Composite.Tools.PackageCreator.OverwriteOnInstall.Label" value="Overwrite Data on Install" />
+  <string key="Composite.Tools.PackageCreator.OverwriteOnInstall.ToolTip" value="Overwrite Data on Install" />
 
   <string key="Composite.Tools.PackageCreator.PackageCreatorElementProviderEntityToken.Label" value="Packages" />
   <string key="Composite.Tools.PackageCreator.PackageCreatorElementProviderEntityToken.ToolTip" value="Packages" />
@@ -83,6 +83,7 @@
   <string key="Package.CanBeUninstalled.Label" value="Peut &#234;tre d&#233;sinstall&#233;" />
   <string key="Package.SystemLockingType.Label" value="Type de verrouillage du syst&#232;me" />
   <string key="Package.ReloadConsoleOnCompletion.Label" value="Recharger la console &#224; la fin" />
+  <string key="Package.OverwriteOnInstall.Label" value="Overwrite Data on Install" />
 
   <string key="Composite.Tools.PackageCreator.Requirements" value="Exigence de la version de Composite" />
   <string key="Package.MinCompositeVersionSupported.Label" value="Version minimale" />

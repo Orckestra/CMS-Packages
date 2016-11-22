@@ -9,7 +9,7 @@ using Composite.Plugins.Elements.ElementProviders.WebsiteFileElementProvider;
 namespace Composite.Tools.PackageCreator.Types
 {
     [PackCategory("Directories")]
-    internal class PCDirectory : BasePackItem, IPackOverwriteItem
+    internal class PCDirectory : BasePackItem
     {
         public PCDirectory(string name)
             : base(name)
@@ -18,18 +18,6 @@ namespace Composite.Tools.PackageCreator.Types
 
         public PCDirectory(XElement element): base(element)
         {
-        }
-
-        public override void AddToConfiguration(XElement config)
-        {
-            base.AddToConfiguration(config);
-            var element = config.ForceElement(ns + this.CategoryName)
-                .Elements(itemName)
-                .FirstOrDefault(el => el.IndexAttributeValue() == Id);
-            if (element != null)
-            {
-                element.Add(new XAttribute("allowOverwrite", true));
-            }
         }
 
         public static IEnumerable<IPackItem> Create(EntityToken entityToken)
@@ -45,6 +33,5 @@ namespace Composite.Tools.PackageCreator.Types
             }
         }
 
-        public bool AllowOverwrite { get; set; }
     }
 }

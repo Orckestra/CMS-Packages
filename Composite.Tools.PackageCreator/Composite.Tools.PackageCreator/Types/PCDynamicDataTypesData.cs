@@ -8,7 +8,7 @@ using Composite.Plugins.Elements.ElementProviders.GeneratedDataTypesElementProvi
 namespace Composite.Tools.PackageCreator.Types
 {
     [PackCategory("DynamicDataTypesData")]
-    public class PCDynamicDataTypesData : BasePackItem, IPackOverwriteItem
+    public class PCDynamicDataTypesData : BasePackItem
     {
         public PCDynamicDataTypesData(XElement element): base(element)
         {
@@ -58,8 +58,6 @@ namespace Composite.Tools.PackageCreator.Types
                 yield return new PCDynamicDataTypesData(entityToken);
             }
         }
-
-        public bool AllowOverwrite { get; set; }
     }
 
 }

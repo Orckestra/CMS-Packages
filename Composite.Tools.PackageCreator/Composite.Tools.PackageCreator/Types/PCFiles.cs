@@ -9,14 +9,10 @@ using Composite.Plugins.Elements.ElementProviders.WebsiteFileElementProvider;
 namespace Composite.Tools.PackageCreator.Types
 {
     [PackCategory("Files")]
-    internal class PCFile : BasePackItem, IPackOverwriteItem
+    internal class PCFile : BasePackItem
     {
         public PCFile(string name)
             : base(name)
-        {
-        }
-
-        public PCFile(XElement element): base(element)
         {
         }
 
@@ -31,8 +27,6 @@ namespace Composite.Tools.PackageCreator.Types
                 }
             };
         }
-
-        public bool AllowOverwrite { get; set; }
 
     }
 }

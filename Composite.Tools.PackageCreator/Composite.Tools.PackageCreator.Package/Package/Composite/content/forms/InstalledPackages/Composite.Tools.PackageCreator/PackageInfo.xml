@@ -63,6 +63,11 @@
 							<cms:bind source="Package.ReloadConsoleOnCompletion" />
 						</BoolSelector.IsTrue>
 					</BoolSelector>
+                    <BoolSelector Label="${Composite.Tools.PackageCreator, Package.OverwriteOnInstall.Label}" Help="" TrueLabel="True" FalseLabel="False">
+                        <BoolSelector.IsTrue>
+                            <cms:bind source="Package.OverwriteDataOnInstall" />
+                        </BoolSelector.IsTrue>
+                    </BoolSelector>
 				</FieldGroup>
 				<FieldGroup Label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.Requirements}">
 					<TextBox Label="${Composite.Tools.PackageCreator, Package.MinCompositeVersionSupported.Label}">

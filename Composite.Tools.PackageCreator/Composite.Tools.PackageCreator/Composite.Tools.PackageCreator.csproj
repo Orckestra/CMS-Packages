@@ -93,7 +93,7 @@
     <Compile Include="Actions\PackageCreatorActionToken.cs" />
     <Compile Include="Actions\PackageCreatorElementActionProvider.cs" />
     <Compile Include="Actions\PackageCreatorElementProviderActionExecutor.cs" />
-    <Compile Include="ElementProvider\Actions\OverwriteOnInstallItemPackageCreatorActionToken.cs" />
+    <Compile Include="ElementProvider\Actions\OverwriteOnInstallPackageCreatorActionToken.cs" />
     <Compile Include="ElementProvider\Actions\DownloadPackageActionToken.cs" />
     <Compile Include="ElementProvider\Actions\SetActivePackageActionToken.cs" />
     <Compile Include="ElementProvider\EntityTokens\Interfaces\PackageCreatorEntityToken.cs" />
@@ -112,7 +112,6 @@
     <Compile Include="Types\Functions\PCUserControlFunction.cs" />
     <Compile Include="Types\Interfaces\IPackInit.cs" />
     <Compile Include="Types\Interfaces\IPackItemManager.cs" />
-    <Compile Include="Types\Interfaces\IPackOverwriteItem.cs" />
     <Compile Include="Types\Interfaces\IPackToggle.cs" />
     <Compile Include="Types\Interfaces\ItemManagerAttribute.cs" />
     <Compile Include="Types\Interfaces\ItemManagerCache.cs" />

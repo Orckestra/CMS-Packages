@@ -42,12 +42,6 @@ namespace Composite.Tools.PackageCreator.Types
         protected BasePackItem(XElement element)
         {
             this.Name = element.IndexAttributeValue();
-
-            var isOverwritable = this as IPackOverwriteItem;
-            if (isOverwritable != null)
-            {
-                isOverwritable.AllowOverwrite = element.AllowOverwriteAttributeValue();
-            }
         }
 
         protected BasePackItem(EntityToken entityToken)
@@ -107,18 +101,6 @@ namespace Composite.Tools.PackageCreator.Types
             foreach (var name in this.CategoryAllNames)
             {
                 config.Elements(ns + name).Elements(itemName).Where(x => x.IndexAttributeValue() == Id).Remove();
-            }
-        }
-
-        public virtual void ToggleAllowOverwrite(XElement config)
-        {
-            foreach (var name in this.CategoryAllNames)
-            {
-                var element = config.Elements(ns + name).Elements(itemName).FirstOrDefault(x => x.IndexAttributeValue() == Id);
-
-                if (element == null) {continue;}
-
-                element.SetAttributeValue("allowOverwrite", !element.AllowOverwriteAttributeValue());
             }
         }
 

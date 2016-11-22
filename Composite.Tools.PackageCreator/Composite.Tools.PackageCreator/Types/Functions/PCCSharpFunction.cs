@@ -38,7 +38,7 @@ namespace Composite.Tools.PackageCreator.Types
                 throw new ArgumentException(string.Format(@"C# Function '{0}' doesn't exists", this.Id));
             }
 
-            pc.AddData(csharpFunction, this.AllowOverwrite);
+            pc.AddData(csharpFunction);
         }
     }
 

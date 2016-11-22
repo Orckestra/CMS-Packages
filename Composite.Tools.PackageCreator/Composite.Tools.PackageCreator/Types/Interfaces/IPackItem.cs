@@ -71,11 +71,5 @@ namespace Composite.Tools.PackageCreator.Types
         /// <param name="config">The config.</param>
         void RemoveFromConfiguration(XElement config);
 
-        /// <summary>
-        /// Toggle AllowOverwrite attribute
-        /// </summary>
-        /// <param name="config"></param>
-        /// <param name="value"></param>
-        void ToggleAllowOverwrite(XElement config);
     }
 }
