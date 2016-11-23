@@ -42,7 +42,8 @@ namespace Composite.Tools.PackageCreator
         private string _zipDirectoryPath;
 
 		public HashSet<Guid> ExcludedIds = new HashSet<Guid>();
-		public HashSet<string> ExcludedPaths = new HashSet<string>();
+        public HashSet<Guid> AlreadyAddedIds = new HashSet<Guid>();
+        public HashSet<string> ExcludedPaths = new HashSet<string>();
         private List<XElement> Files = new List<XElement>();
         private List<XElement> Directories = new List<XElement>();
         private List<XElement> XslFiles = new List<XElement>();
