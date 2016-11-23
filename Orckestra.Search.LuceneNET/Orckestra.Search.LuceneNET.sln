@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Search.LuceneNET", "Orckestra.Search.LuceneNET\Orckestra.Search.LuceneNET.csproj", "{68759896-9070-4B68-AE82-E1031010310D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Package", "Package\Package.csproj", "{85EE3BC9-049D-4433-85C6-509B97E8F372}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68759896-9070-4B68-AE82-E1031010310D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68759896-9070-4B68-AE82-E1031010310D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68759896-9070-4B68-AE82-E1031010310D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68759896-9070-4B68-AE82-E1031010310D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85EE3BC9-049D-4433-85C6-509B97E8F372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85EE3BC9-049D-4433-85C6-509B97E8F372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85EE3BC9-049D-4433-85C6-509B97E8F372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85EE3BC9-049D-4433-85C6-509B97E8F372}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
