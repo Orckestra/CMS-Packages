@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BoboBrowse.Net;
+using BoboBrowse.Net.Facets;
 using BoboBrowse.Net.Facets.Impl;
 using Composite;
 using Composite.C1Console.Search;
@@ -45,8 +46,11 @@ namespace Orckestra.Search.LuceneNET
             var facetFields = searchQuery.Facets?.Evaluate() ??
                               Enumerable.Empty<KeyValuePair<string, DocumentFieldFacet>>();
 
-            var facetHandlers = facetFields.Select(f => f.Key)
-                .Select(name => new SimpleFacetHandler(Constants.FacetFieldPrefix + name));
+            var facetHandlers = from facetField in facetFields
+                let name = Constants.FacetFieldPrefix + facetField.Key
+                let info = facetField.Value
+                select GetFacetHandler(name, info);
+                
 
             var query = GetTextQuery(searchQuery.Query);
 
@@ -86,7 +90,9 @@ namespace Orckestra.Search.LuceneNET
                         {
                             MinHitCount = facetField.Value.MinHitCount,
                             MaxCount = facetField.Value.Limit,
-                            OrderBy = FacetSpec.FacetSortSpec.OrderHitsDesc
+                            OrderBy = facetField.Value.FacetSorting == FacetSorting.HitCount 
+                                ? FacetSpec.FacetSortSpec.OrderHitsDesc
+                                : FacetSpec.FacetSortSpec.OrderValueAsc
                         });
                     }
 
@@ -122,6 +128,19 @@ namespace Orckestra.Search.LuceneNET
                     }
                 }
             }
+        }
+
+        private IFacetHandler GetFacetHandler(string fieldName, DocumentFieldFacet info)
+        {
+            switch (info.FacetType)
+            {
+                case FacetType.SingleValue:
+                    return new SimpleFacetHandler(fieldName);
+                case FacetType.MultipleValues:
+                    return new MultiValueFacetHandler(fieldName, fieldName);
+            }
+
+            throw new NotImplementedException("Not supported facet type: " + info.FacetType);
         }
 
         private Query GetTextQuery(string query)

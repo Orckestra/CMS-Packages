@@ -189,16 +189,15 @@ namespace Orckestra.Search.LuceneNET
                 foreach (var customField in customFields.Where(f => f.FacetedSearchEnabled))
                 {
                     string[] facetValues;
-                    if (document.FacetFieldValues.TryGetValue(customField.Name, out facetValues) && facetValues != null && facetValues.Any())
+                    if (document.FacetFieldValues.TryGetValue(customField.Name, out facetValues) 
+                        && facetValues != null)
                     {
-                        if (facetValues.Length > 1)
+                        foreach (var value in facetValues)
                         {
-                            // TODO: handle multiple values
-                        }
-
-                        fields.Add(new Field(Constants.FacetFieldPrefix + customField.Name,
-                            facetValues.First(),
+                            fields.Add(new Field(Constants.FacetFieldPrefix + customField.Name,
+                            value,
                             Field.Store.NO, Field.Index.NOT_ANALYZED_NO_NORMS));
+                        }
                     }
                 }
             }
