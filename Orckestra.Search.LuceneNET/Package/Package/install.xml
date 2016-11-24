@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="5.5.6169.31103" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageRequirements minimumCompositeVersion="5.5.6172.27703" maximumCompositeVersion="9.9999.9999.9999" />
 	<mi:PackageInformation name="Orckestra.Search.LuceneNET" groupName="Composite.Search" version="1.0.0" author="Orckestra A/S" website="https://cms.orckestra.com" readMoreUrl="https://cms.orckestra.com" id="62a2e5bd-b54f-4d3c-8dfd-70fbb7902285" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>-</TechnicalDetails>
 		<Description>Contains LuceneNET implementation of content search in console as well as provides search api to use on frontend.</Description>
@@ -16,6 +16,7 @@
 				<File sourceFilename="~\Bin\Lucene.Net.dll" targetFilename="~\bin\Lucene.Net.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\Common.Logging.dll" targetFilename="~\bin\Common.Logging.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\BoboBrowse.Net.dll" targetFilename="~\bin\BoboBrowse.Net.dll" allowOverwrite="false" />
+				<File sourceFilename="~\Bin\Orckestra.Search.dll" targetFilename="~\bin\Orckestra.Search.dll" allowOverwrite="true" />
 				<File sourceFilename="~\Bin\Orckestra.Search.LuceneNET.dll" targetFilename="~\bin\Orckestra.Search.LuceneNET.dll" allowOverwrite="true" />
 			</Files>
 		</mi:Add>

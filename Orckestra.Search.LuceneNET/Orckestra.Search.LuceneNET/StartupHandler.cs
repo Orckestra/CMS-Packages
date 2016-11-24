@@ -1,10 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using Composite.C1Console.Elements;
-using Composite.C1Console.Search;
-using Composite.Core;
+﻿using Composite.C1Console.Search;
 using Composite.Core.Application;
 using Microsoft.Extensions.DependencyInjection;
+
 
 namespace Orckestra.Search.LuceneNET
 {
@@ -13,7 +10,7 @@ namespace Orckestra.Search.LuceneNET
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton(typeof(IIndexContainer), typeof(LuceneSearchIndex));
+            services.AddSingleton(typeof(ISearchIndex), typeof(LuceneSearchIndex));
             services.AddSingleton(typeof(ISearchProvider), typeof(LuceneSearchProvider));
         }
 
@@ -21,22 +18,8 @@ namespace Orckestra.Search.LuceneNET
         {
         }
 
-        public void OnInitialized(IIndexContainer indexContainer)
+        public void OnInitialized()
         {
-            UrlToEntityTokenFacade.Register(new SearchUrlToEntityTokenMapper());
-
-            Task.Run(() =>
-            {
-                try
-                {
-                    indexContainer.Initialize();
-                    indexContainer.SubscribeToSources();
-                }
-                catch (Exception ex)
-                {
-                    Log.LogError(nameof(LuceneSearchIndex), ex);
-                }
-            });
         }
     }
 }

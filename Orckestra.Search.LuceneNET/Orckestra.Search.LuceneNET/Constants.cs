@@ -4,6 +4,8 @@ namespace Orckestra.Search.LuceneNET
 {
     internal static class Constants
     {
+        public const string IndexFolderRelativePath = "~/App_Data/Search/LuceneNET";
+
         public static readonly Version LuceneVersion = Version.LUCENE_30;
 
         public static readonly string PreviewFieldPrefix = "p_";

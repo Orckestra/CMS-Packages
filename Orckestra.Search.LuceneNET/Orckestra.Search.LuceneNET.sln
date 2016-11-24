@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Search.LuceneNET"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Package", "Package\Package.csproj", "{85EE3BC9-049D-4433-85C6-509B97E8F372}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Search", "Orckestra.Search\Orckestra.Search.csproj", "{FA946885-DF5B-4BD9-89D2-B1FB20213FA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{85EE3BC9-049D-4433-85C6-509B97E8F372}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85EE3BC9-049D-4433-85C6-509B97E8F372}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85EE3BC9-049D-4433-85C6-509B97E8F372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA946885-DF5B-4BD9-89D2-B1FB20213FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA946885-DF5B-4BD9-89D2-B1FB20213FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA946885-DF5B-4BD9-89D2-B1FB20213FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA946885-DF5B-4BD9-89D2-B1FB20213FA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

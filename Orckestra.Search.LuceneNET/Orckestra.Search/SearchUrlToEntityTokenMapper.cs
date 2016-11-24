@@ -3,7 +3,7 @@ using Composite.C1Console.Security;
 using Composite.C1Console.Trees;
 using Composite.Core.WebClient;
 
-namespace Orckestra.Search.LuceneNET
+namespace Orckestra.Search
 {
     internal class SearchUrlToEntityTokenMapper: IUrlToEntityTokenMapper
     {

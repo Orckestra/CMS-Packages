@@ -19,10 +19,9 @@ using Version = Lucene.Net.Util.Version;
 
 namespace Orckestra.Search.LuceneNET
 {
-    internal class LuceneSearchIndex: IDocumentSourceListener, IIndexContainer
+    internal class LuceneSearchIndex: ISearchIndex
     {
         private const string LogTitle = nameof(LuceneSearchIndex);
-        private const string RootIndexPath = "~/App_Data/Lucene.net/index";
 
         private readonly ISearchDocumentSourceProvider[] _sourceProviders;
        
@@ -34,14 +33,9 @@ namespace Orckestra.Search.LuceneNET
             _sourceProviders = sourceProviders.ToArray();
         }
 
-        public void SubscribeToSources()
-        {
-            var sources = _sourceProviders.SelectMany(sp => sp.GetDocumentSources());
-            foreach (var source in sources)
-            {
-                source.Subscribe(this);
-            }
-        }
+        private IEnumerable<ISearchDocumentSource> DocumentSources =>
+            _sourceProviders.SelectMany(sp => sp.GetDocumentSources());
+
 
         public void Initialize()
         {
@@ -57,7 +51,7 @@ namespace Orckestra.Search.LuceneNET
             _directories = activeCultures.ToDictionary(c => c, c => new RAMDirectory() as Directory);
             culturesToPopulate.AddRange(activeCultures);
 #else
-            var indexRoot = PathUtil.Resolve(RootIndexPath);
+            var indexRoot = PathUtil.Resolve(Constants.IndexFolderRelativePath);
 
             _directories = new Dictionary<CultureInfo, Directory>();
 
@@ -82,26 +76,22 @@ namespace Orckestra.Search.LuceneNET
 
         private void PopulateIndex(ICollection<CultureInfo> cultures)
         {
+            var sources = DocumentSources.Evaluate();
+
             foreach (var culture in cultures)
             {
-                Log.LogInformation(LogTitle, $"Building index for culture '{culture.Name}'");
-
-                var stopWatch = new Stopwatch();
-                stopWatch.Start();
-
-                var sources = _sourceProviders.SelectMany(sp => sp.GetDocumentSources());
-                foreach (var source in sources)
+                using (new MeasureTime($"Building index for culture '{culture.Name}'"))
                 {
-                    var customFields = source.CustomFields.Evaluate();
+                    foreach (var source in sources)
+                    {
+                        var customFields = source.CustomFields.Evaluate();
 
-                    IndexDocuments(culture, source.GetAllSearchDocuments(culture), customFields);
+                        IndexDocuments(culture, source.GetAllSearchDocuments(culture), customFields);
+                    }
+
+                    // TODO: optimize the index here?
                 }
-                stopWatch.Stop();
-
-                Log.LogInformation(LogTitle, $"Completed in {stopWatch.ElapsedMilliseconds} ms");
             }
-
-            // TODO: optimize the index here?
         }
 
 
@@ -208,8 +198,7 @@ namespace Orckestra.Search.LuceneNET
             return doc;
         }
 
-
-        public void Create(CultureInfo cultureInfo, SearchDocument document)
+        public void AddDocument(CultureInfo cultureInfo, SearchDocument document)
         {
             var doc = ToLuceneDocument(document);
             if (doc == null) return;
@@ -220,7 +209,8 @@ namespace Orckestra.Search.LuceneNET
             });
         }
 
-        public void Update(CultureInfo cultureInfo, SearchDocument document)
+
+        public void UpdateDocument(CultureInfo cultureInfo, SearchDocument document)
         {
             var doc = ToLuceneDocument(document);
             if(doc == null) return;
@@ -241,7 +231,7 @@ namespace Orckestra.Search.LuceneNET
             return ToLuceneDocument(document, fields);
         }
 
-        public void Delete(CultureInfo cultureInfo, string documentId)
+        public void RemoveDocument(CultureInfo cultureInfo, string documentId)
         {
             UpdateDirectory(cultureInfo, writer =>
             {
@@ -254,6 +244,16 @@ namespace Orckestra.Search.LuceneNET
             throw new NotImplementedException();
         }
 
+        public T GetCollection<T>(CultureInfo cultureInfo) where T : class
+        {
+            if (typeof (T) != typeof (Directory))
+            {
+                throw new InvalidOperationException($"The only supported type is '{typeof(Directory).FullName}'");
+            }
+
+            return GetDirectory(cultureInfo) as T;
+        }
+
         public Directory GetDirectory(CultureInfo culture)
         {
             Directory directory;
@@ -263,6 +263,82 @@ namespace Orckestra.Search.LuceneNET
             }
 
             return directory;
+        }
+
+        public void RebuildAll()
+        {
+            foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
+            {
+                UpdateDirectory(culture, writer =>
+                {
+                    writer.DeleteAll();
+                });
+
+                PopulateIndex(new[] {culture});
+            }
+        }
+
+        public void PopulateCollection(CultureInfo culture)
+        {
+            PopulateIndex(new [] {culture});
+        }
+
+        public void DropCollection(CultureInfo culture)
+        {
+            UpdateDirectory(culture, writer =>
+            {
+                writer.DeleteAll();
+            });
+        }
+
+        public void DeleteDocumentsBySource(string sourceName)
+        {
+            using (new MeasureTime($"Deleting documents from source '{sourceName}'"))
+            {
+                foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
+                {
+                    UpdateDirectory(culture, writer =>
+                    {
+                        writer.DeleteDocuments(new Term(Constants.FieldNames.source, sourceName));
+                    });
+                }
+            }
+        }
+
+        public void PopulateDocumentsFromSource(string sourceName)
+        {
+            var source = DocumentSources.FirstOrDefault(ds => ds.Name == sourceName);
+            if (source == null)
+            {
+                return;
+            }
+
+            var customFields = source.CustomFields.Evaluate();
+
+            foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
+            {
+                using (new MeasureTime($"Indexing documents from source '{sourceName}' for '{culture.Name}' culture"))
+                {
+                    IndexDocuments(culture, source.GetAllSearchDocuments(culture), customFields);
+                }
+            }
+        }
+
+        private class MeasureTime : IDisposable
+        {
+            private readonly Stopwatch _stopwatch = new Stopwatch();
+
+            public MeasureTime(string message)
+            {
+                Log.LogInformation(LogTitle, message);
+                _stopwatch.Start();
+            }
+
+            public void Dispose()
+            {
+                _stopwatch.Stop();
+                Log.LogInformation(LogTitle, $"Completed in {_stopwatch.ElapsedMilliseconds} ms");
+            }
         }
     }
 }

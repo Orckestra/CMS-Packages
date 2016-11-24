@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85EE3BC9-049D-4433-85C6-509B97E8F372}</ProjectGuid>
+    <ProjectGuid>{FA946885-DF5B-4BD9-89D2-B1FB20213FA2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Composite.ConsoleSearch.LuceneNET.Package</RootNamespace>
-    <AssemblyName>Package</AssemblyName>
+    <RootNamespace>Orckestra.Search</RootNamespace>
+    <AssemblyName>Orckestra.Search</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,11 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    <Reference Include="Composite, Version=5.5.6172.27703, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OrckestraCmsFoundation.Assemblies.5.5.6172.27703\lib\Composite.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.1.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,53 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandQueue.cs" />
+    <Compile Include="Commands\AddDocumentCommand.cs" />
+    <Compile Include="Commands\DropCollectionCommand.cs" />
+    <Compile Include="Commands\IIndexUpdateCommand.cs" />
+    <Compile Include="Commands\PopulateCollectionCommand.cs" />
+    <Compile Include="Commands\PopulateFromDataSourceCommand.cs" />
+    <Compile Include="Commands\RebuildIndexCommand.cs" />
+    <Compile Include="Commands\RemoveDataSourceCommand.cs" />
+    <Compile Include="Commands\RemoveDocumentCommand.cs" />
+    <Compile Include="Commands\UpdateDocumentCommand.cs" />
+    <Compile Include="ISearchIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Package\App_Data\Composite\TreeDefinitions\ContentSearch.xml" />
-    <Content Include="Package\install.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Orckestra.Search.LuceneNET\Orckestra.Search.LuceneNET.csproj">
-      <Project>{68759896-9070-4b68-ae82-e1031010310d}</Project>
-      <Name>Orckestra.Search.LuceneNET</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Orckestra.Search\Orckestra.Search.csproj">
-      <Project>{fa946885-df5b-4bd9-89d2-b1fb20213fa2}</Project>
-      <Name>Orckestra.Search</Name>
-    </ProjectReference>
+    <Compile Include="SearchIndexUpdater.cs" />
+    <Compile Include="SearchUrlToEntityTokenMapper.cs" />
+    <Compile Include="StartupHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Release\Orckestra.Search.LuceneNET.zip" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>DEL "$(TargetDir)\*.dll"</PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>SET PackageName=Orckestra.Search.LuceneNET
-
-ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
-
-if not exist "$(TargetDir)_Package\Bin" (
- mkdir "$(TargetDir)_Package\Bin"
-)
-
-COPY "$(TargetDir)\*.dll" "$(TargetDir)_Package\Bin\"
-DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
-
-DEL "$(TargetDir)%25PackageName%25.zip"
-
-"$(SolutionDir)packages\7-Zip.CommandLine.9.20.0\tools\7za.exe"  a "$(TargetDir)%25PackageName%25.zip" "$(TargetDir)_Package\*"
-
-if not exist "$(ProjectDir)Release" (
- mkdir "$(ProjectDir)Release"
-)
-
-COPY "$(TargetDir)%25PackageName%25.zip" "$(ProjectDir)Release\%25PackageName%25.zip"</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

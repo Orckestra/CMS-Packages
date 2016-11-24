@@ -18,11 +18,11 @@ namespace Orckestra.Search.LuceneNET
 {
     internal class LuceneSearchProvider : ISearchProvider
     {
-        private readonly IIndexContainer _indexContainer;
+        private readonly ISearchIndex _searchIndex;
 
-        public LuceneSearchProvider(IIndexContainer indexContainer)
+        public LuceneSearchProvider(ISearchIndex searchIndex)
         {
-            _indexContainer = indexContainer;
+            _searchIndex = searchIndex;
         }
 
         public Task<SearchResult> SearchAsync(SearchQuery searchQuery)
@@ -35,7 +35,7 @@ namespace Orckestra.Search.LuceneNET
             var culture = searchQuery.CultureInfo;
             Verify.ArgumentCondition(culture != null, nameof(searchQuery), $"Property {nameof(searchQuery.CultureInfo)} is not set");
 
-            var directory = _indexContainer.GetDirectory(culture);
+            var directory = _searchIndex.GetCollection<Directory>(culture);
 
             return Search(searchQuery, directory);
         }
