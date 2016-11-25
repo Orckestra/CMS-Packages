@@ -130,8 +130,6 @@ namespace Orckestra.Search
                 }
             }
             catch { }
-            
-            throw new NotImplementedException();
         }
     }
 }

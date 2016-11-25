@@ -89,7 +89,10 @@ namespace Orckestra.Search.LuceneNET
                         IndexDocuments(culture, source.GetAllSearchDocuments(culture), customFields);
                     }
 
-                    // TODO: optimize the index here?
+                    UpdateDirectory(culture, writer =>
+                    {
+                        writer.Optimize();
+                    });
                 }
             }
         }
@@ -98,8 +101,6 @@ namespace Orckestra.Search.LuceneNET
         private void UpdateDirectory(CultureInfo culture, Action<IndexWriter> action, bool optimize = false)
         {
             var directory = _directories[culture];
-
-            // TODO: cache and reuse the writer instance
 
             lock (this)
             {
