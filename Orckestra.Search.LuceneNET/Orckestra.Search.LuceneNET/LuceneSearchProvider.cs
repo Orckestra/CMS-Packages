@@ -101,8 +101,10 @@ namespace Orckestra.Search.LuceneNET
                     {
                         foreach (var sortOption in searchQuery.SortOptions)
                         {
-                            // TODO: support different field types
-                            sortFields.Add(new SortField(Constants.PreviewFieldPrefix + sortOption.FieldName, SortField.STRING, sortOption.ReverseOrder));
+                            sortFields.Add(new SortField(
+                                Constants.PreviewFieldPrefix + sortOption.FieldName,
+                                ToFieldTypeId(sortOption.SortTermsAs), 
+                                sortOption.ReverseOrder));
                         }
                     }
 
@@ -128,6 +130,25 @@ namespace Orckestra.Search.LuceneNET
                     }
                 }
             }
+        }
+
+        private int ToFieldTypeId(SortTermsAs sortTermsAs)
+        {
+            switch (sortTermsAs)
+            {
+                case SortTermsAs.String:
+                    return SortField.STRING;
+                case SortTermsAs.Int:
+                    return SortField.INT;
+                case SortTermsAs.Long:
+                    return SortField.LONG;
+                case SortTermsAs.Float:
+                    return SortField.FLOAT;
+                case SortTermsAs.Double:
+                    return SortField.DOUBLE;
+            }
+
+            throw new InvalidOperationException($"Unexpected {nameof(SortTermsAs)} value: {sortTermsAs}");
         }
 
         private IFacetHandler GetFacetHandler(string fieldName, DocumentFieldFacet info)
