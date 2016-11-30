@@ -17,12 +17,12 @@
 @{
 	if (ViewModel.IsItem)
 	{
-		@Html.C1().Function("Orckestra.Lists.Portfolio.Details", new { Project = ViewModel.Item })
+		@Html.C1().Function("Orckestra.Lists.Portfolio.Details", new { ProjectReference = ViewModel.Item })
 		return;
 	}
 
 	var categories = Data.Get<PortfolioCategory>().OrderBy(gr => gr.Ordering).ToList();
-	var allItems = Data.Get<PortfolioProject>().OrderByDescending(gr => gr.Date).ToList();
+	var allItems = Data.Get<PortfolioProject>().Where(p => p.PageId == CurrentPageNode.Id).OrderByDescending(gr => gr.Date).ToList();
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
