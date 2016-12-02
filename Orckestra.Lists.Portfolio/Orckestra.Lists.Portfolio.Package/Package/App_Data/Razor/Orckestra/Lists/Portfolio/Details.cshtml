@@ -9,7 +9,7 @@
 		get { return "Portfolio Item Details"; }
 	}
 
-	[FunctionParameter(DefaultValue = "Project")]
+	[FunctionParameter(Label = "Project")]
 	public DataReference<PortfolioProject> ProjectReference { get; set; }
 
 	private string GetDetailsUrl(PortfolioProject project)
@@ -20,7 +20,7 @@
 }
 
 @{
-	if (ProjectReference == null)
+	if (ProjectReference == null || ProjectReference.Data == null)
 	{
 		return;
 	}
@@ -31,7 +31,7 @@
 	var projectImagesFolder = Data.Get<IMediaFileFolder>().FirstOrDefault(f => Project.ImagesFolder != null && Project.ImagesFolder.Contains(f.Id.ToString()));
 	var projectImages = Data.Get<IImageFile>().Where(i => projectImagesFolder != null && i.FolderPath == projectImagesFolder.Path).ToList();
 
-	var relatedItems = Data.Get<PortfolioProject>().Where(p => p.Id != Project.Id && p.Category == Project.Category).ToList();
+	var relatedItems = Data.Get<PortfolioProject>().Where(p => p.Id != Project.Id && p.PageId == Project.PageId && p.Category == Project.Category).ToList();
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
@@ -142,7 +142,7 @@ if (!string.IsNullOrEmpty(value))
 {
 	<div class="row">
 		<div class="col-md-12">
-			<h2>@Portfolio.Details_Related_Title</h2>
+			<h3>@Portfolio.Details_Related_Title</h3>
 		</div>
 		<div class="col-md-12">
 			@if (relatedItems.Count > 1)
