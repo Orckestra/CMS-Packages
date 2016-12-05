@@ -1,9 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Web.Html.GetStyleOptionsFromFile" groupName="Orckestra.Web.Html" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="https://cms.orckestra.com/" id="47cd15a3-10ee-4940-b4d0-9791381004bd" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
-		<TechnicalDetails>-</TechnicalDetails>
-		<Description>-</Description>
+	<mi:PackageInformation name="Orckestra.Web.Html.GetStyleOptionsFromFile" groupName="Orckestra.Web" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="https://docs.composite.net/Orckestra.Web.Html.GetStyleOptionsFromFile" id="47cd15a3-10ee-4940-b4d0-9791381004bd" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>Other add-ons may depend on it, e.g. Orckestra.Web.Html.ImageAndTextTeaser, Orckestra.Web.Html.StatementTeaser.</TechnicalDetails>
+		<Description>Provides a widget function used on function parameters to present style options as a list to choose from.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
