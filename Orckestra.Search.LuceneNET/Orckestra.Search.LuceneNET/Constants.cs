@@ -19,6 +19,7 @@ namespace Orckestra.Search.LuceneNET
             public const string version = nameof(version);
             public const string fulltext = nameof(fulltext);
             public const string source = nameof(source);
+            public const string url = nameof(url);
         }
     }
 }

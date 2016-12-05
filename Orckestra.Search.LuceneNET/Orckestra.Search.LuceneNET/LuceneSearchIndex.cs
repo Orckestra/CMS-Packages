@@ -143,6 +143,11 @@ namespace Orckestra.Search.LuceneNET
                     new Field(Constants.FieldNames.label, document.Label, Field.Store.YES, Field.Index.ANALYZED)
                 });
 
+            if (!string.IsNullOrWhiteSpace(document.Url))
+            {
+                fields.Add(new Field(Constants.FieldNames.url, document.Url, Field.Store.YES, Field.Index.NOT_ANALYZED));
+            }
+
             if (!string.IsNullOrWhiteSpace(document.ElementBundleName))
             {
                 fields.Add(new Field(Constants.FieldNames.version, document.ElementBundleName, Field.Store.YES, Field.Index.NO));

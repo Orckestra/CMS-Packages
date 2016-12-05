@@ -50,7 +50,17 @@ namespace Orckestra.Search.LuceneNET
                 let name = Constants.FacetFieldPrefix + facetField.Key
                 let info = facetField.Value
                 select GetFacetHandler(name, info);
-                
+
+            var selectedValues = searchQuery.Selection ?? Enumerable.Empty<SearchQuerySelection>();
+            foreach (var selection in selectedValues)
+            {
+                if (!facetFields.Any(f => f.Key == selection.FieldName))
+                {
+                    throw new ArgumentException($"Search query contains a selection for field '{selection.FieldName}'"
+                     + $", which is not specified in the '{nameof(searchQuery)}.{nameof(SearchQuery.Facets)}' collection.", 
+                     nameof(searchQuery));
+                }
+            }
 
             var query = GetTextQuery(searchQuery.Query);
 
@@ -206,7 +216,8 @@ namespace Orckestra.Search.LuceneNET
                     getString(Constants.FieldNames.entityToken))
                 {
                     ElementBundleName = getString(Constants.FieldNames.version),
-                    FieldValues = fieldValues
+                    Url = getString(Constants.FieldNames.url),
+                    FieldValues = fieldValues,
                 });
             }
 
