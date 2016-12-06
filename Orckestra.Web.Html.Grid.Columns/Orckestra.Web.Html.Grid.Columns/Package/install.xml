@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Web.Html.Grid.Columns" groupName="Orckestra.Web" version="1.0.1" author="Orckestra" website="https://cms.orckestra.com" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.Grid.Columns" id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Orckestra.Web.Html.Grid.Columns" groupName="Orckestra.Web" version="1.0.2" author="Orckestra" website="https://cms.orckestra.com" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.Grid.Columns" id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<TechnicalDetails>Requires Bootstrap installed on the website.</TechnicalDetails>
 		<Description>Displays content on a page in columns with different layout options.</Description>
 	</mi:PackageInformation>

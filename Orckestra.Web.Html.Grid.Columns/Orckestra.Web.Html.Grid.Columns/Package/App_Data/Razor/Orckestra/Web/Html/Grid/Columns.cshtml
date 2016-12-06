@@ -30,6 +30,18 @@
 	[FunctionParameter(Label = "Layout Options", Help = "Optional", DefaultValue = null, WidgetMarkup = optionsWidgetMarkup)]
 	public string LayoutOptions { get; set; }
 
+	private const string displayOptionsMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
+		<f:param name=""Options"">
+			<f:function name=""Composite.Utils.String.Split"">
+				<f:param name=""String"" value=""Is the block full-width,Has spacing at the top,Has spacing at the bottom"" />
+			</f:function>
+		</f:param>
+		<f:param name=""Required"" value=""False"" />
+		<f:param name=""Multiple"" value=""True"" />
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Display Options", DefaultValue = "", WidgetMarkup = displayOptionsMarkup)]
+	public string Options { get; set; }
+
 
 	public int ColumnsCount;
 	public int GridColumnsCount = 12;
@@ -46,6 +58,10 @@
 }
 
 @{
+	var IsFullWide = Options.Contains("Is the block full-width");
+	var IsTopSpace = Options.Contains("Has spacing at the top");
+	var IsBottomSpace = Options.Contains("Has spacing at the bottom");
+
 	GetColumnsList(Column1);
 	GetColumnsList(Column2);
 	GetColumnsList(Column3);
@@ -64,50 +80,61 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
+	<style type="text/css">
+		.grid-columns.push-top {
+			margin-top: 40px;
+		}
+
+		.grid-columns.push-bottom {
+			margin-bottom: 40px;
+		}
+	</style>
 </head>
 <body>
-	<div class="row">
+	<div class="grid-columns @(IsFullWide ? "container-fluid": "") @(IsTopSpace ? "push-top" : "") @(IsBottomSpace ? "push-bottom": "")">
+		<div class="row">
 
-		@if (string.IsNullOrEmpty(LayoutOptions))
-		{
-			foreach (var column in ColumnsList)
+			@if (string.IsNullOrEmpty(LayoutOptions))
 			{
-				@RenderColumn(column, colIndex)
-			}
-		}
-		else
-		{
-			var partsIndexes = LayoutOptions.Split(':').ToArray();
-			var sumOfPartsIndexes = partsIndexes.Aggregate(0, (current, index) => current + int.Parse(index));
-			var ignoreLayoutOptions = false;
-
-			if (ColumnsCount > partsIndexes.Length)
-			{
-				var extraSumOfPartsIndexes = sumOfPartsIndexes + (ColumnsCount - partsIndexes.Length);
-				if (GridColumnsCount % extraSumOfPartsIndexes > 0)
+				foreach (var column in ColumnsList)
 				{
-					ignoreLayoutOptions = true;
-					if (RenderingReason.ScreenshotGeneration == PageRenderer.RenderingReason)
+					@RenderColumn(column, colIndex)
+				}
+			}
+			else
+			{
+				var partsIndexes = LayoutOptions.Split(':').ToArray();
+				var sumOfPartsIndexes = partsIndexes.Aggregate(0, (current, index) => current + int.Parse(index));
+				var ignoreLayoutOptions = false;
+
+				if (ColumnsCount > partsIndexes.Length)
+				{
+					var extraSumOfPartsIndexes = sumOfPartsIndexes + (ColumnsCount - partsIndexes.Length);
+					if (GridColumnsCount % extraSumOfPartsIndexes > 0)
 					{
-						<strong class="text-danger">@LayoutOptions layout option is ignored for @ColumnsList.Count columns content.</strong>
+						ignoreLayoutOptions = true;
+						if (RenderingReason.ScreenshotGeneration == PageRenderer.RenderingReason)
+						{
+							<strong class="text-danger">@LayoutOptions layout option is ignored for @ColumnsList.Count columns content.</strong>
+						}
+					}
+					else
+					{
+						sumOfPartsIndexes = sumOfPartsIndexes + (ColumnsCount - partsIndexes.Length);
 					}
 				}
-				else
+
+				var parts = ignoreLayoutOptions ? GridColumnsCount / ColumnsCount : GridColumnsCount / sumOfPartsIndexes;
+				var counter = 1;
+
+				foreach (var column in ColumnsList)
 				{
-					sumOfPartsIndexes = sumOfPartsIndexes + (ColumnsCount - partsIndexes.Length);
+					var columnIndex = counter > partsIndexes.Length || ignoreLayoutOptions ? 1 : int.Parse(partsIndexes[counter - 1]);
+					@RenderColumn(column, columnIndex * parts)
+					counter++;
 				}
 			}
-
-			var parts = ignoreLayoutOptions ? GridColumnsCount / ColumnsCount : GridColumnsCount / sumOfPartsIndexes;
-			var counter = 1;
-
-			foreach (var column in ColumnsList)
-			{
-				var columnIndex = counter > partsIndexes.Length || ignoreLayoutOptions ? 1 : int.Parse(partsIndexes[counter - 1]);
-				@RenderColumn(column, columnIndex * parts)
-				counter++;
-			}
-		}
+		</div>
 	</div>
 </body>
 </html>
