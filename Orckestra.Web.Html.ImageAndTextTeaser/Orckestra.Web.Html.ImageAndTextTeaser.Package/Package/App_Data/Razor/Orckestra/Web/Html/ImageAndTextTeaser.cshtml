@@ -24,33 +24,33 @@
 	private const string optionsMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
 		<f:param name=""Options"">
 			<f:function name=""Composite.Utils.String.Split"">
-				<f:param name=""String"" value=""Is Image at the Right,Is block Full Wide,Is space at top,Is space at bottom"" />
+				<f:param name=""String"" value=""Is the image on the right,Is the block full-width,Has spacing at the top,Has spacing at the bottom"" />
 			</f:function>
 		</f:param>
 		<f:param name=""Required"" value=""False"" />
 		<f:param name=""Multiple"" value=""True"" />
 	</f:widgetfunction>";
-	[FunctionParameter(Label = "Options", Help = "By default the Image at the Left", DefaultValue = "Is space at top,Is space at bottom", WidgetMarkup = optionsMarkup)]
+	[FunctionParameter(Label = "Options", Help = "By default the Image at the Left", DefaultValue = "Has spacing at the top,Has spacing at the bottom", WidgetMarkup = optionsMarkup)]
 	public string Options { get; set; }
 
 }
 
 @{
-	var ImageAtTheRight = Options.Contains("Is Image at the Right");
-	var IsFullWide = Options.Contains("Is block Full Wide");
+	var ImageAtTheRight = Options.Contains("Is the image on the right");
+	var IsFullWide = Options.Contains("Is the block full-width");
 	var spaceCSS = string.Empty;
-	if (Options.Contains("Is space at bottom") && Options.Contains("Is space at top"))
+	if (Options.Contains("Has spacing at the top") && Options.Contains("Has spacing at the bottom"))
 	{
 		spaceCSS = "push-both";
 	}
 	else
 	{
-		if (Options.Contains("Is space at bottom"))
+		if (Options.Contains("Has spacing at the bottom"))
 		{
 			spaceCSS = "push-bottom";
 		}
 
-		if (Options.Contains("Is space at top"))
+		if (Options.Contains("Has spacing at the top"))
 		{
 			spaceCSS = "push-top";
 		}
