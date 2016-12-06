@@ -33,7 +33,7 @@
 	private const string displayOptionsMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
 		<f:param name=""Options"">
 			<f:function name=""Composite.Utils.String.Split"">
-				<f:param name=""String"" value=""Is the block full-width,Has spacing at the top,Has spacing at the bottom"" />
+				<f:param name=""String"" value=""Use full page width,Add spacing at the top,Add spacing at the bottom"" />
 			</f:function>
 		</f:param>
 		<f:param name=""Required"" value=""False"" />
@@ -58,9 +58,9 @@
 }
 
 @{
-	var IsFullWide = Options.Contains("Is the block full-width");
-	var IsTopSpace = Options.Contains("Has spacing at the top");
-	var IsBottomSpace = Options.Contains("Has spacing at the bottom");
+	var IsFullWide = Options.Contains("Use full page width");
+	var IsTopSpace = Options.Contains("Add spacing at the top");
+	var IsBottomSpace = Options.Contains("Add spacing at the bottom");
 
 	GetColumnsList(Column1);
 	GetColumnsList(Column2);
