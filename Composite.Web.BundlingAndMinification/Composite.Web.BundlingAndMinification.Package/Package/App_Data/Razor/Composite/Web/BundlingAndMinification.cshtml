@@ -2,6 +2,8 @@
 @using Composite.C1Console.Security
 @using Composite.Core
 @using Composite.Web.Css.Less
+@using Composite.Web.BundlingAndMinification
+
 @inherits RazorFunction
 
 @functions {
@@ -93,6 +95,8 @@
         if (BundleTable.Bundles.GetBundleFor(bundleVirtualPath) == null)
         {
             var sb = new ScriptBundle(bundleVirtualPath);
+			sb.Orderer = new AsIsBundleOrderer();
+
             foreach (var source in registeredScripts)
             {
                 sb.Include(source);
@@ -127,7 +131,7 @@
                 bundleSkipAtr.Remove();
                 continue;
             }
-            
+
             var id = (string)link.Attribute("id");
             var href = (string)link.Attribute("href");
 
