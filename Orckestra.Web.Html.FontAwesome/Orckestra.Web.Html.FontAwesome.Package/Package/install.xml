@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Html.FontAwesome" groupName="Orckestra.Web" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.FontAwesome" id="41a3542b-41fb-4c42-984d-4b92f66b2088" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>Some packages require that package.</TechnicalDetails>
+		<Description>Install Font Awesome CSS, font files and C# inline function "GetIconNames" to be used in FontIconSelector</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data\Composite\InlineCSharpFunctions\Orckestra.Web.Html.FontAwesome.GetIconNames.cs" targetFilename="~\App_Data\Composite\InlineCSharpFunctions\Orckestra.Web.Html.FontAwesome.GetIconNames.cs" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Orckestra\Web\Html\FontAwesome\" targetDirectory="~\Frontend\Orckestra\Web\Html\FontAwesome\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IInlineFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctions_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IInlineFunctionAssemblyReference,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctionAssemblyReferences_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

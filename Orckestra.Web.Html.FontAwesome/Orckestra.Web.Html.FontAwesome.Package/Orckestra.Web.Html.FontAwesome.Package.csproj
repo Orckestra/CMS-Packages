@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C99BC25-D7AC-4B77-AD8A-BC85F55FBD04}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Orckestra.Web.Html.FontAwesome.Package</RootNamespace>
+    <AssemblyName>Orckestra.Web.Html.FontAwesome.Package</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\Datas\Composite.Data.Types.IInlineFunctionAssemblyReferences_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IInlineFunctions_public.xml" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\css\font-awesome.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\css\font-awesome.min.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="_PackageCreator\Orckestra.Lists.Portfolio.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Package\App_Data\Composite\InlineCSharpFunctions\Orckestra.Web.Html.FontAwesome.GetIconNames.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\fonts\FontAwesome.otf" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\animated.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\bordered-pulled.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\core.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\fixed-width.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\font-awesome.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\icons.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\larger.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\list.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\mixins.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\path.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\rotated-flipped.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\screen-reader.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\stacked.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\less\variables.less" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\font-awesome.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_animated.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_bordered-pulled.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_core.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_fixed-width.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_icons.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_larger.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_list.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_mixins.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_path.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_rotated-flipped.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_screen-reader.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_stacked.scss" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\FontAwesome\scss\_variables.scss" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53412</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53412/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)Package" "$(TargetDir)_Package"  /MIR
+
+COPY "$(TargetDir)*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)packages\7-Zip.CommandLine.9.20.0\tools\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
