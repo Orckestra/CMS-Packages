@@ -62,14 +62,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\Datas\Composite.Data.Types.IInlineFunctionAssemblyReferences_public.xml" />
-    <Content Include="Package\Datas\Composite.Data.Types.IInlineFunctions_public.xml" />
     <Content Include="_PackageCreator\Orckestra.Web.Html.TeaserCards.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\font-awesome\css\font-awesome.css" />
-    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\font-awesome\css\font-awesome.min.css" />
-    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\styles.css" />
     <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\styles.min.css" />
     <Content Include="Package\install.xml">
@@ -77,7 +72,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Package\App_Data\Composite\InlineCSharpFunctions\Orckestra.Web.Html.TeaserCards.GetIconNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -93,11 +87,6 @@
     <Content Include="Package\App_Data\Razor\Orckestra\Web\Html\TeaserCards\ImageTeaser.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\font-awesome\fonts\FontAwesome.otf" />
     <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\styles.less" />
   </ItemGroup>
   <PropertyGroup>

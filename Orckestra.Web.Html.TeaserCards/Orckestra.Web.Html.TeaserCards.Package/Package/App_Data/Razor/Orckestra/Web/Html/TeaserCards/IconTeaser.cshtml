@@ -10,9 +10,9 @@
 	private const string iconWidget = @"
     <f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.FontIconSelector"">
 		<f:param name=""ClassNameOptions"">
-			<f:function name=""Orckestra.Web.Html.TeaserCards.GetIconNames"" />
+			<f:function name=""Orckestra.Web.Html.FontAwesome.GetIconNames"" />
 		</f:param>
-		<f:param name=""StylesheetPath"" value=""~/Frontend/Orckestra/Web/Html/TeaserCards/font-awesome/css/font-awesome.css"" />
+		<f:param name=""StylesheetPath"" value=""~/Frontend/Orckestra/Web/Html/FontAwesome/css/font-awesome.css"" />
 		<f:param name=""ClassNamePrefix"" value=""fa fa-"" />
 	</f:widgetfunction>";
 
@@ -44,7 +44,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
 	<link id="teaser-cards-css" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/TeaserCards/styles.css"/>
-	<link id="font-awesome-css" rel="stylesheet" href="~/Frontend/Orckestra/Web/Html/TeaserCards/font-awesome/css/font-awesome.min.css" />
+	<link id="font-awesome-css" rel="stylesheet" href="~/Frontend/Orckestra/Web/Html/FontAwesome/css/font-awesome.min.css" />
 </head>
 <body>
     <div class="teaser-card card-icon bg-@BackgroundStyle">
