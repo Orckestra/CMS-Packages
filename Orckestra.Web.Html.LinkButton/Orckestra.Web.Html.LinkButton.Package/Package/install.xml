@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Html.LinkButton" groupName="Orckestra.Web.Html" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.LinkButton" id="4d59f41b-92fd-4a51-a164-7731556a85b8" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>Use Bootstrap classes.</TechnicalDetails>
+		<Description>Display Link Button with different styles ans sizes.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/LinkButton.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/LinkButton.cshtml" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Orckestra\Web\Html\LinkButton\" targetDirectory="~\Frontend\Orckestra\Web\Html\LinkButton\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

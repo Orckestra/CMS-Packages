@@ -1,0 +1,117 @@
+﻿@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get  { return "Display Link Button"; }
+	}
+
+	[FunctionParameter(Label = "Button Text")]
+	public string ButtonText { get; set; }
+
+	[FunctionParameter(Label = "Button Url", WidgetFunctionName = "Composite.Widgets.String.UrlComboBox", DefaultValue = "")]
+	public string ButtonUrl { get; set; }
+
+	private const string buttonStyleWidgetMarkup = @"<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+		<f:param name='Options'>
+			<f:function name='Orckestra.Web.Html.GetStyleOptionsFromFile'>
+				<f:param name='OptionsXMLFilePath' value='Frontend/Orckestra/Web/Html/LinkButton/StyleOptions.xml' />
+			</f:function>
+		</f:param>
+		<f:param name='Required' value='False' />
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Button Style", DefaultValue = "btn-default", WidgetMarkup = buttonStyleWidgetMarkup)]
+	public string ButtonStyle { get; set; }
+
+	private const string buttonSizeWidgetMarkup = @"<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+		<f:param name='Options'>
+			<f:function name='Orckestra.Web.Html.GetStyleOptionsFromFile'>
+				<f:param name='OptionsXMLFilePath' value='Frontend/Orckestra/Web/Html/LinkButton/SizeOptions.xml' />
+			</f:function>
+		</f:param>
+		<f:param name='Required' value='False' />
+	</f:widgetfunction>";
+
+	[FunctionParameter(Label = "Button Size", DefaultValue = "btn-nr", WidgetMarkup = buttonSizeWidgetMarkup)]
+	public string ButtonSize { get; set; }
+
+	private const string iconWidget = @"
+    <f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.FontIconSelector"">
+		<f:param name=""ClassNameOptions"">
+			<f:function name=""Orckestra.Web.Html.FontAwesome.GetIconNames"" />
+		</f:param>
+		<f:param name=""StylesheetPath"" value=""~/Frontend/Orckestra/Web/Html/FontAwesome/css/font-awesome.css"" />
+		<f:param name=""ClassNamePrefix"" value=""fa fa-"" />
+	</f:widgetfunction>";
+
+	[FunctionParameter(Label = "Icon", DefaultValue = null, WidgetMarkup = iconWidget)]
+	public string Icon { get; set; }
+
+	private const string buttonPositionWidgetMarkup = @"<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+		<f:param name='Options'>
+			<f:function name='Composite.Utils.String.Split'>
+				<f:param name='String' value='Inline,Centered Block,Full Width' />
+			</f:function>
+		</f:param>
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Button Position", DefaultValue = "Centered Block", WidgetMarkup = buttonPositionWidgetMarkup)]
+	public string ButtonPosition { get; set; }
+
+	private const string optionsMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
+		<f:param name=""Options"">
+			<f:function name=""Composite.Utils.String.Split"">
+				<f:param name=""String"" value=""Animated,Icon at the left"" />
+			</f:function>
+		</f:param>
+		<f:param name=""Required"" value=""False"" />
+		<f:param name=""Multiple"" value=""True"" />
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Display Options",  DefaultValue = "", WidgetMarkup = optionsMarkup)]
+	public string Options { get; set; }
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<link id="link-button-css" rel="stylesheet"  href="~/Frontend/Orckestra/Web/Html/LinkButton/styles.css"/>
+</head>
+<body>
+		@if (ButtonPosition == "Centered Block")
+		{
+			<div class="text-center">
+				@LinkButton()
+			</div>
+		}
+		else
+		{
+			@LinkButton()
+		}
+</body>
+</html>
+
+@helper LinkButton() {
+	var isIcon = !string.IsNullOrEmpty(Icon);
+	var iconAtTheLeft = Options.Contains("Icon at the left");
+	var isAnimated = Options.Contains("Animated");
+
+	<a  class="link-btn mb-10 mt-10 btn @ButtonSize @ButtonStyle @(ButtonPosition == "Full Width" ? "btn-block" : "") @(isAnimated ? "btn-animated" : "")"
+		href="@ButtonUrl">
+
+		@if (isIcon)
+		{
+			if (iconAtTheLeft)
+			{
+				<i class="fa fa-@Icon pr-10"></i>
+				@ButtonText
+			}
+			else
+			{
+				@ButtonText
+				<i class="fa fa-@Icon pl-10"></i>
+			}
+		}
+		else
+		{
+			@ButtonText
+		}
+	</a>
+}
