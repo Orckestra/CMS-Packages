@@ -16,7 +16,7 @@
 		<f:param name=""ClassNamePrefix"" value=""fa fa-"" />
 	</f:widgetfunction>";
 
-	[FunctionParameter(Label = "Icon", WidgetMarkup = iconWidget)]
+	[FunctionParameter(Label = "Icon", WidgetMarkup = iconWidget, DefaultValue = null)]
 	public string Icon { get; set; }
 
 	private const string iconColorWidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""default,muted,info,primary,success,warning,danger"" /></f:function></f:param></f:widgetfunction>";
