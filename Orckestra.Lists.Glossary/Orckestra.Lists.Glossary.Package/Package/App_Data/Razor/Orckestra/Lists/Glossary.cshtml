@@ -100,7 +100,7 @@
 			<li class="@(string.Compare(SelectedLetter, letter, StringComparison.CurrentCultureIgnoreCase) == 0 ? "active" : "") @(!isActive ? "disabled" : "")">
 				@if (isActive)
 				{
-					<a href="@CurrentPageNode.Url/@HttpUtility.UrlEncode(letter)">@letter.ToUpper()</a>û
+					<a href="@CurrentPageNode.Url/@HttpUtility.UrlEncode(letter)">@letter.ToUpper()</a>
 				}
 				else
 				{
