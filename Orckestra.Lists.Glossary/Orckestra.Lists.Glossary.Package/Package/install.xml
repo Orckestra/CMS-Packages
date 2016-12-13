@@ -1,9 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Lists.Glossary" groupName="Orckestra.Lists" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Lists.Glossary" id="5856fe4b-b7ac-43e8-ac79-e3d86437812f" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
-		<TechnicalDetails>Display a collection of the terms categorized with letters.</TechnicalDetails>
-		<Description>Display a collection of the terms categorized with letters.</Description>
+	<mi:PackageInformation name="Orckestra.Lists.Glossary" groupName="Orckestra.Lists" version="1.0.1" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Lists.Glossary" id="5856fe4b-b7ac-43e8-ac79-e3d86437812f" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+		<TechnicalDetails>Displays a collection of terms grouped by the first character.</TechnicalDetails>
+		<Description>Displays a collection of terms grouped by the first character.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
