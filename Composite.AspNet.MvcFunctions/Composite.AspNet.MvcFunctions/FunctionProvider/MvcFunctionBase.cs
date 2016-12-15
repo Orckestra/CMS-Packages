@@ -13,7 +13,6 @@ using System.Web.Routing;
 using System.Xml;
 using Composite.AspNet.MvcFunctions;
 using Composite.C1Console.Security;
-using Composite.Core.Extensions;
 using Composite.Core.IO;
 using Composite.Core.Routing;
 using Composite.Core.Routing.Pages;
@@ -64,21 +63,12 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
             _parameters.Add(parameterProfile);
         }
 
-        public Type ReturnType
-        {
-            get { return typeof (XhtmlDocument); }
-        }
+        public Type ReturnType => typeof (XhtmlDocument);
 
-        public virtual IEnumerable<ParameterProfile> ParameterProfiles
-        {
-            get { return _parameters; }
-        }
+        public virtual IEnumerable<ParameterProfile> ParameterProfiles => _parameters;
 
 
-        public EntityToken EntityToken
-        {
-            get { return new MvcFunctionEntityToken(this); }
-        }
+        public EntityToken EntityToken => new MvcFunctionEntityToken(this);
 
         public object Execute(ParameterList parameters, FunctionContextContainer context)
         {
@@ -109,7 +99,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                     throw;
                 }
 
-                throw new InvalidOperationException("Error executing route '{0}'".FormatWith(route), ex);
+                throw new InvalidOperationException($"Error executing route '{route}'", ex);
             }
             finally
             {
@@ -324,12 +314,24 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
         {
             var routeData = RouteUtils.GetRouteDataByUrl(_functionCollection.RouteCollection, virtualUrl);
 
+            var routeDataToUpdate = new List<RouteData> {routeData};
+
+            object directRouteMatches;
+            if (routeData.Values.TryGetValue("MS_DirectRouteMatches", out directRouteMatches))
+            {
+                var directMatchRouteData = (directRouteMatches as ICollection<RouteData>)?.FirstOrDefault();
+                if (directMatchRouteData != null)
+                {
+                    routeDataToUpdate.Add(directMatchRouteData);
+                }
+            }
+
             foreach (var parameterName in parameters.AllParameterNames)
             {
                 object value;
                 if (parameters.TryGetParameter(parameterName, out value))
                 {
-                    routeData.Values[parameterName] = value;
+                    routeDataToUpdate.ForEach(r => r.Values[parameterName] = value);
                 }
             }
 
