@@ -9,7 +9,7 @@
 	[FunctionParameter(Label = "Button Text")]
 	public string ButtonText { get; set; }
 
-	[FunctionParameter(Label = "Button Url", WidgetFunctionName = "Composite.Widgets.String.UrlComboBox", DefaultValue = "")]
+	[FunctionParameter(Label = "Button URL", WidgetFunctionName = "Composite.Widgets.String.UrlComboBox", DefaultValue = "")]
 	public string ButtonUrl { get; set; }
 
 	private const string buttonStyleWidgetMarkup = @"<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
@@ -60,7 +60,7 @@
 	private const string optionsMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
 		<f:param name=""Options"">
 			<f:function name=""Composite.Utils.String.Split"">
-				<f:param name=""String"" value=""Animated,Icon at the left"" />
+				<f:param name=""String"" value=""Animate the button,Show the icon on the left"" />
 			</f:function>
 		</f:param>
 		<f:param name=""Required"" value=""False"" />
@@ -90,8 +90,8 @@
 
 @helper LinkButton() {
 	var isIcon = !string.IsNullOrEmpty(Icon);
-	var iconAtTheLeft = Options.Contains("Icon at the left");
-	var isAnimated = Options.Contains("Animated");
+	var iconAtTheLeft = Options.Contains("Show the icon on the left");
+	var isAnimated = Options.Contains("Animate the button");
 
 	<a  class="link-btn mb-10 mt-10 btn @ButtonSize @ButtonStyle @(ButtonPosition == "Full Width" ? "btn-block" : "") @(isAnimated ? "btn-animated" : "")"
 		href="@ButtonUrl">
