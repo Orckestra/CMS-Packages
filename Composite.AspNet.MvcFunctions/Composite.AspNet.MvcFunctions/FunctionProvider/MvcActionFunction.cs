@@ -55,7 +55,7 @@ namespace Composite.AspNet.MvcFunctions.FunctionProvider
             return _routeToRender;
         }
 
-        protected override bool HandlesPathInfo { get { return _handlePathInfo; } }
+        protected override bool HandlesPathInfo => _handlePathInfo;
 
         public override void UsePathInfoForRouting()
         {

@@ -42,7 +42,7 @@ namespace Composite.AspNet.MvcFunctions
                 helpText = String.Empty;
             }
 
-            bool isRequired2 = isRequired != null ? isRequired.Value : (reflectedInfo != null && reflectedInfo.IsRequired);
+            bool isRequired2 = isRequired ?? reflectedInfo?.IsRequired ?? false;
 
             if (defaultValueProvider == null)
             {

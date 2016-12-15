@@ -61,6 +61,6 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
             return "~/" + _controllerDescriptor.ControllerName + GetParametersUrlString(parameterList);
         }
 
-        protected override bool HandlesPathInfo { get { return true; } }
+        protected override bool HandlesPathInfo => true;
     }
 }
