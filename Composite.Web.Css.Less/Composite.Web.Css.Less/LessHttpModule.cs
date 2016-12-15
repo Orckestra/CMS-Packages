@@ -2,7 +2,7 @@
 {
     public class LessHttpModule : CssCompilationHttpModule
     {
-        public LessHttpModule() : base(".less", "*.less", CompressFiles.CompressLess)
+        public LessHttpModule() : base(".less", "*.less", LessCssCompiler.CompileCss)
         {
         }
     }
