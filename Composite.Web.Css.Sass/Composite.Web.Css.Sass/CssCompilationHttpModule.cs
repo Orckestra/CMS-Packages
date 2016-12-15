@@ -15,9 +15,9 @@ namespace Composite.Web.Css.Sass
 
         private readonly string _extension;
         private readonly string _fileWatcherMask;
-        private readonly Action<string, string, DateTime> _compileAction;
+        private readonly Action<string, string, DateTime?> _compileAction;
 
-        public CssCompilationHttpModule(string extension, string fileWatcherMask, Action<string, string, DateTime> compileAction)
+        public CssCompilationHttpModule(string extension, string fileWatcherMask, Action<string, string, DateTime?> compileAction)
         {
             _extension = extension;
             _fileWatcherMask = fileWatcherMask;

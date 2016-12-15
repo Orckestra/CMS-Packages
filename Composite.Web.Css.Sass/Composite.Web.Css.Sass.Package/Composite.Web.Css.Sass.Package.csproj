@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,12 +9,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Composite.Web.Css.Sass</RootNamespace>
     <AssemblyName>Composite.Web.Css.Sass.Package</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,21 +47,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\Bin\Composite.Web.BundlingAndMinification.Api.dll" />
     <Content Include="Package\Bin\Composite.Web.Css.Sass.dll" />
-    <Content Include="Package\Frontend\Composite\Web\Css\Sass\node.exe" />
-    <Content Include="Package\Frontend\Composite\Web\Css\Sass\sass\lib\middleware.js" />
-    <Content Include="Package\Frontend\Composite\Web\Css\Sass\sass\node_modules\mkdirp\index.js" />
-    <Content Include="Package\Frontend\Composite\Web\Css\Sass\sass\sass.js" />
-    <Content Include="Package\install.xml" />
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Package\Web.config\Install.xsl" />
     <Content Include="Package\Web.config\Uninstall.xsl" />
     <Content Include="_PackageCreator\Composite.Web.Css.Sass.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Package\Frontend\Composite\Web\Css\Sass\sassc.cmd" />
-    <None Include="Package\Frontend\Composite\Web\Css\Sass\sass\precompiled\win32-ia32\binding.node" />
-    <None Include="Package\Frontend\Composite\Web\Css\Sass\sass\precompiled\win32-x64\binding.node" />
-    <None Include="Package\Frontend\Composite\Web\Css\Sass\sass\sassc" />
+    <None Include="packages.config" />
     <None Include="Release\Composite.Web.Css.Sass.zip" />
   </ItemGroup>
   <ItemGroup>
@@ -72,9 +69,21 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>
-"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)Package" "$(TargetDir)_Package"  /MIR
+
+COPY "$(TargetDir)*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)packages\7-Zip.CommandLine.9.20.0\tools\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

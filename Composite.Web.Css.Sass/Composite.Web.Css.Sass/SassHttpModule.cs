@@ -2,7 +2,7 @@
 {
     public class SassHttpModule : CssCompilationHttpModule
     {
-        public SassHttpModule(): base(".scss", "*.scss", CompressFiles.CompressSass)
+        public SassHttpModule(): base(".scss", "*.scss", SassCssCompiler.CompileCss)
         {
         }
     }
