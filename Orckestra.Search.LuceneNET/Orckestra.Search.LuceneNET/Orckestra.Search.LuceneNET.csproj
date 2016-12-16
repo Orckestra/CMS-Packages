@@ -47,8 +47,8 @@
       <HintPath>..\..\C1\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Composite">
-      <HintPath>..\packages\OrckestraCmsFoundation.Assemblies.5.5.6172.27703\lib\Composite.dll</HintPath>
+    <Reference Include="Composite, Version=5.5.6194.19135, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OrckestraCmsFoundation.Assemblies.5.5.6194.19135\lib\Composite.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
@@ -65,7 +65,6 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />

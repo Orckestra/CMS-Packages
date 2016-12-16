@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
 using Composite.C1Console.Search;
 using Composite.Core;
 using Composite.Core.IO;
@@ -37,7 +38,7 @@ namespace Orckestra.Search.LuceneNET
             _sourceProviders.SelectMany(sp => sp.GetDocumentSources());
 
 
-        public void Initialize()
+        public void Initialize(CancellationToken cancellationToken)
         {
             ICollection<CultureInfo> activeCultures;
             var culturesToPopulate = new List<CultureInfo>();

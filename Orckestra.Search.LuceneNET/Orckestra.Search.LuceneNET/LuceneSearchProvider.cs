@@ -18,11 +18,11 @@ namespace Orckestra.Search.LuceneNET
 {
     internal class LuceneSearchProvider : ISearchProvider
     {
-        private readonly ISearchIndex _searchIndex;
+        private readonly LuceneSearchIndex _searchIndex;
 
         public LuceneSearchProvider(ISearchIndex searchIndex)
         {
-            _searchIndex = searchIndex;
+            _searchIndex = (LuceneSearchIndex) searchIndex;
         }
 
         public Task<SearchResult> SearchAsync(SearchQuery searchQuery)
@@ -116,11 +116,6 @@ namespace Orckestra.Search.LuceneNET
                                 ToFieldTypeId(sortOption.SortTermsAs), 
                                 sortOption.ReverseOrder));
                         }
-                    }
-
-                    if (searchQuery.SortByRelevance)
-                    {
-                        // TODO: sort by weight here
                     }
 
                     browseRequest.Sort = sortFields.ToArray();

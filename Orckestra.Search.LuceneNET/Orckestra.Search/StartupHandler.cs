@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Hosting;
 using Composite.C1Console.Elements;
+using Composite.C1Console.Events;
 using Composite.C1Console.Search;
 using Composite.Core;
 using Composite.Core.Application;
@@ -34,6 +36,8 @@ namespace Orckestra.Search
             {
                 try
                 {
+                    if (IsRestarting) return;
+
                     var listener = new SearchIndexUpdater();
 
                     var sources = sourceProviders.SelectMany(s => s.GetDocumentSources());
@@ -41,8 +45,11 @@ namespace Orckestra.Search
                     {
                         source.Subscribe(listener);
                     }
-                    
-                    searchIndex.Initialize();
+
+                    var ctSource = new CancellationTokenSource();
+                    GlobalEventSystemFacade.SubscribeToPrepareForShutDownEvent(a => ctSource.Cancel());
+
+                    searchIndex.Initialize(ctSource.Token);
 
                     ProcessCommandQueue();
                 }
@@ -53,11 +60,11 @@ namespace Orckestra.Search
             });
         }
 
+        private static bool IsRestarting => HostingEnvironment.ApplicationHost.ShutdownInitiated();
+
         private void ProcessCommandQueue()
         {
-            Func<bool> shutdownInitiated = () => HostingEnvironment.ApplicationHost.ShutdownInitiated();
-
-            while (!shutdownInitiated())
+            while (!IsRestarting)
             {
                 var message = CommandQueue.Dequeue();
 
@@ -65,7 +72,7 @@ namespace Orckestra.Search
                 {
                     while (!CommandQueue.NewMessages.WaitOne(500))
                     {
-                        if(shutdownInitiated()) break;
+                        if(IsRestarting) break;
                     }
                     continue;
                 }
