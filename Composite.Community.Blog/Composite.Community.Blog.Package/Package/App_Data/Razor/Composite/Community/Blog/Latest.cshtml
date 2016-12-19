@@ -10,7 +10,7 @@
     public int Count { get; set; }// TODO: convert default value function markup
 }
 @{
-    var entries = BlogFacade.GetEntries(true).Take(Count);
+	var entries = Data.Get<Entries>().OrderByDescending(e => e.Date).Take(Count);
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml">
