@@ -34,7 +34,7 @@ namespace Composite.Community.Blog
 				return _requestPathInvalidCharacters;
 			}
 		}
-		
+
 
         public static IEnumerable<Tag> GetTagCloud(double minFontSize, double maxFontSize, DataReference<IPage> blogPage,
                                                    bool isGlobal)
@@ -114,6 +114,29 @@ namespace Composite.Community.Blog
             {
                 return dataConnection.Get<Authors>().ToList();
             }
+        }
+
+        public static List<BlogTagsByTypeModel> GetTagsByType(string entryTags)
+        {
+            var result = new List<BlogTagsByTypeModel>();
+            using (var con = new DataConnection())
+            {
+                var types = con.Get<TagType>().ToList();
+                foreach (var tagType in types)
+                {
+                    var tagsByType = con.Get<Tags>().Where(t => t.Type == tagType.Id).OrderBy(t => t.Position).Select(t => BlogFacade.Decode(t.Tag)).ToList();
+                    var tags = Enumerable.Intersect(entryTags.Split(','), tagsByType).ToList();
+                    if (tags.Any())
+                    {
+                        result.Add(new BlogTagsByTypeModel()
+                        {
+                            TypeName = tagType.Name,
+                            Tags = string.Join(",", tags.ToArray())
+                        });
+                    }
+                }
+            }
+            return result;
         }
 
 
@@ -212,12 +235,12 @@ namespace Composite.Community.Blog
 
             // filter below replaced becase of LINQ2SQL problems
             // filter = f => f.Tags.Split(',').Any(t => t == tag) && f.PageId == currentPageId;
-            return 
+            return
                 f =>
                     (pageId == Guid.Empty || f.PageId == pageId)
                     && (f.Tags.Contains("," + tag + ",")
-                      || f.Tags.StartsWith(tag + ",") 
-                      || f.Tags.EndsWith("," + tag) 
+                      || f.Tags.StartsWith(tag + ",")
+                      || f.Tags.EndsWith("," + tag)
                       || f.Tags.Equals(tag));
         }
 
@@ -294,7 +317,6 @@ namespace Composite.Community.Blog
             return pathInfo != null && pathInfo.Contains("/") ? pathInfo.Split('/') : null;
         }
 
-        
         public static string GetFullPath(string path)
         {
             HttpRequest request = HttpContext.Current.Request;
@@ -320,7 +342,7 @@ namespace Composite.Community.Blog
 
             string stringValue = value.ToString();
             return !String.IsNullOrEmpty(stringValue) && Regex.IsMatch(stringValue, regularExpression);
-            
+
         }
 
         public static void SendMail(string to, string from, string subject, string body)
