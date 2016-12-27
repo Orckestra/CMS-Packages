@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Web.Hosting;
 
 namespace Orckestra.Web.Html.Animate
 {
@@ -8,7 +9,7 @@ namespace Orckestra.Web.Html.Animate
     {
         public static IEnumerable<string> GetAnimationNames()
         {
-            var pathtocss = System.Web.HttpContext.Current.Server.MapPath("/Frontend/Orckestra/Web/Html/Animate/animate.css");
+            var pathtocss = HostingEnvironment.MapPath("/Frontend/Orckestra/Web/Html/Animate/animate.css");
             if (File.Exists(pathtocss))
             {
                 var text = File.ReadAllText(pathtocss);

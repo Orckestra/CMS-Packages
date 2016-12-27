@@ -1,9 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Web.Html.Animate" groupName="Orckestra.Web" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.Animate" id="76403b3b-3ffd-46a3-88fc-23cf4529886c" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true" allowOverwrite="false">
+	<mi:PackageInformation name="Orckestra.Web.Html.Animate" groupName="Orckestra.Web" version="1.0.1" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.Animate" id="76403b3b-3ffd-46a3-88fc-23cf4529886c" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true" allowOverwrite="false">
 		<TechnicalDetails>Based on https://daneden.github.io/animate.css/ and https://github.com/morr/jquery.appear</TechnicalDetails>
-		<Description>Animate any content on the page.</Description>
+		<Description>Animates any content on a page.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
