@@ -27,10 +27,17 @@ namespace Orckestra.Search
         }
 
         public void OnInitialized(
-            ISearchIndex searchIndex, 
+            IServiceProvider serviceProvider,
             IEnumerable<ISearchDocumentSourceProvider> sourceProviders)
         {
             UrlToEntityTokenFacade.Register(new SearchUrlToEntityTokenMapper());
+
+            var searchIndex = serviceProvider.GetService<ISearchIndex>();
+            if (searchIndex == null)
+            {
+                Log.LogWarning("Orckestra.Search", $"Search services are disabled as there's no registered instance of {typeof(ISearchIndex).FullName}");
+                return;
+            }
 
             Task.Run(() =>
             {

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Orckestra.C1CMS.Search</id>
+    <version>$version$</version>
+    <authors>Orckestra A/S</authors>
+    <owners>Orckestra A/S</owners>
+    <licenseUrl>http://cms.orckestra.com/MPL11</licenseUrl>
+    <projectUrl>https://github.com/Orckestra/CMS-Foundation</projectUrl>
+    <!--iconUrl></iconUrl-->
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Contains Orckesta.Search.dll which serves as a base class for implementing a custom search provider.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>OrckestraCms</tags>
+    <dependencies>
+	  <group targetFramework=".NETFramework4.6.1">
+        <dependency id="OrckestraCmsFoundation.Assemblies" version="5.5.6194.19135" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Orckestra.Search\Bin\Debug\Orckestra.Search.dll" target="lib\net461\Orckestra.Search.dll" />
+  </files>
+</package>

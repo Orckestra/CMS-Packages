@@ -71,7 +71,7 @@ namespace Orckestra.Search.LuceneNET
                     var browseRequest = new BrowseRequest
                     {
                         Query = query,
-                        Offset = searchQuery.SearchResultOffest,
+                        Offset = searchQuery.SearchResultOffset,
                         Count = searchQuery.MaxDocumentsNumber
                     };
 
