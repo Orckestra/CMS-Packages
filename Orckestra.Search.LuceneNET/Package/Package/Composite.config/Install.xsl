@@ -11,7 +11,7 @@
 			<xsl:apply-templates select="@* | node()" />
 			
 			<xsl:if test="count(add[@name='SearchPerspective'])=0">
-				<add name="SearchPerspective" tag="Search" label="Search" closeFolderIconName="Composite.Icons.generic-search" type="Composite.Plugins.Elements.ElementProviders.VirtualElementProvider.PlaceholderVirtualElement, Composite" path="/Composite/console/index.html?pageId=search">
+				<add name="SearchPerspective" tag="Search" label="Search" closeFolderIconName="Composite.Icons.generic-search" type="Composite.Plugins.Elements.ElementProviders.VirtualElementProvider.PlaceholderVirtualElement, Composite" path="${root}/console/index.html?pageId=search">
 					<Elements />
 				</add>
 			</xsl:if>

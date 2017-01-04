@@ -44,8 +44,12 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Package\AddDefaultUserGroupPermissionsUninstaller.cs" />
+    <Compile Include="Package\AddDefaultUserGroupPermissionsInstaller.cs" />
     <Compile Include="CommandQueue.cs" />
     <Compile Include="Commands\AddDocumentCommand.cs" />
     <Compile Include="Commands\DropCollectionCommand.cs" />

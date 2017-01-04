@@ -3,9 +3,13 @@
 	<mi:PackageRequirements minimumCompositeVersion="6.0.6212.20229" maximumCompositeVersion="9.9999.9999.9999" />
 	<mi:PackageInformation name="Orckestra.Search.LuceneNET" groupName="Composite.Search" version="1.0.0" author="Orckestra A/S" website="https://cms.orckestra.com" readMoreUrl="https://cms.orckestra.com" id="62a2e5bd-b54f-4d3c-8dfd-70fbb7902285" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>-</TechnicalDetails>
-		<Description>Contains LuceneNET implementation of content search in console as well as provides search api to use on frontend.</Description>
+		<Description>Contains Lucene.NET implementation of content search in console as well as provides search api to use on frontend.</Description>
 	</mi:PackageInformation>
-	<mi:PackageFragmentInstallerBinaries />
+	
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Orckestra.Search.dll" />
+	</mi:PackageFragmentInstallerBinaries>
+		
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
@@ -31,5 +35,9 @@
 			<Install xsltFilePath="~\Composite.config\Install.xsl" />
 			<Uninstall xsltFilePath="~\Composite.config\Uninstall.xsl" />
 		</mi:Add>
+
+		<mi:Add installerType="Orckestra.Search.Package.AddDefaultUserGroupPermissionsInstaller, Orckestra.Search" 
+						uninstallerType="Orckestra.Search.Package.AddDefaultUserGroupPermissionsUninstaller, Orckestra.Search" />
+
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>
