@@ -7,6 +7,7 @@ using BoboBrowse.Net.Facets;
 using BoboBrowse.Net.Facets.Impl;
 using Composite;
 using Composite.C1Console.Search;
+using Composite.C1Console.Search.Crawling;
 using Composite.Core.Linq;
 using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Index;
@@ -41,13 +42,35 @@ namespace Orckestra.Search.LuceneNET
         }
 
 
+        private string ToFacetFieldName(string fieldName)
+        {
+            if (fieldName == DefaultDocumentFieldNames.Source)
+            {
+                return Constants.FieldNames.source;
+            }
+
+            return Constants.FacetFieldPrefix + fieldName;
+        }
+
+        private string FromFacetFieldName(string facetFieldName)
+        {
+            if (facetFieldName == Constants.FieldNames.source)
+            {
+                return DefaultDocumentFieldNames.Source;
+            }
+
+            Verify.That(facetFieldName.StartsWith(Constants.FacetFieldPrefix), $"Facet fields should start with prefix '{Constants.FacetFieldPrefix}'");
+
+            return facetFieldName.Substring(Constants.FacetFieldPrefix.Length);
+        }
+
         private SearchResult Search(SearchQuery searchQuery, Directory directory)
         {
             var facetFields = searchQuery.Facets?.Evaluate() ??
                               Enumerable.Empty<KeyValuePair<string, DocumentFieldFacet>>();
 
             var facetHandlers = from facetField in facetFields
-                let name = Constants.FacetFieldPrefix + facetField.Key
+                let name = ToFacetFieldName(facetField.Key)
                 let info = facetField.Value
                 select GetFacetHandler(name, info);
 
@@ -79,7 +102,7 @@ namespace Orckestra.Search.LuceneNET
                     {
                         foreach (var selection in searchQuery.Selection)
                         {
-                            string fieldName = Constants.FacetFieldPrefix + selection.FieldName;
+                            string fieldName = ToFacetFieldName(selection.FieldName);
                             var sel = new BrowseSelection(fieldName);
                             foreach (var value in selection.Values)
                             {
@@ -96,7 +119,7 @@ namespace Orckestra.Search.LuceneNET
                     // add the facet output specs
                     foreach (var facetField in facetFields)
                     {
-                        browseRequest.SetFacetSpec(Constants.FacetFieldPrefix + facetField.Key, new FacetSpec
+                        browseRequest.SetFacetSpec(ToFacetFieldName(facetField.Key), new FacetSpec
                         {
                             MinHitCount = facetField.Value.MinHitCount,
                             MaxCount = facetField.Value.Limit,
@@ -225,9 +248,7 @@ namespace Orckestra.Search.LuceneNET
 
             foreach (var key in browseResult.FacetMap.Keys)
             {
-                if (!key.StartsWith(Constants.FacetFieldPrefix)) continue;
-
-                string facetFieldName = key.Substring(Constants.FacetFieldPrefix.Length);
+                string facetFieldName = FromFacetFieldName(key);
 
                 var facetData = browseResult.FacetMap[key];
 
