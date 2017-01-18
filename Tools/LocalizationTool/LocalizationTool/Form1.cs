@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -8,10 +7,8 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.IO;
 using System.Diagnostics;
-using System.Drawing;
 using System.Management.Automation;
 using System.Security.Cryptography;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace LocalizationTool
@@ -36,8 +33,12 @@ namespace LocalizationTool
 		{
 			try
 			{
-				//On startup – locate strings in the translation that has “file+key” that do not exist in the English version (i.e. unused keys). If any are found, dump them to a single “UnknownStrings.xml” file and do a message box “Strings with invalid keys was found and has been cleaned up. Strings have been moved to UnknownStrings.xml
-				if (FileHandler.CleanUnknownStrings())
+                
+                ResxFileHandler.InitAllResxResources(Settings.CompositeSiteRelativePath + "\\" + Settings.LocalSourcePath
+                    , Settings.TargetCulture.IetfLanguageTag);
+                
+                //On startup – locate strings in the translation that has “file+key” that do not exist in the English version (i.e. unused keys). If any are found, dump them to a single “UnknownStrings.xml” file and do a message box “Strings with invalid keys was found and has been cleaned up. Strings have been moved to UnknownStrings.xml
+                if (FileHandler.CleanUnknownStrings())
 				{
 					MessageBox.Show(string.Format("The strings with invalid keys have been found and cleaned up. The strings have been moved to {0}", Settings.UnknownStringsFilePath));
 				}
@@ -89,10 +90,14 @@ namespace LocalizationTool
 			SaveString();
 
 			//re-save all changed target files to have the same structure as source files
-
+            
 			FileHandler.SaveTargetFilesStructureAsSource();
 
-		}
+            ResxFileHandler.CleanUpAll(Settings.CompositeSiteRelativePath + "\\" + Settings.LocalSourcePath
+                , Settings.TargetCulture.IetfLanguageTag);
+            
+
+        }
 
 		#endregion
 
@@ -352,7 +357,10 @@ namespace LocalizationTool
 			}
 			else
 				toolStripStatusLabel1.Text = string.Empty;
-		}
+
+            ResxFileHandler.UpdateAllResx(Settings.CompositeSiteRelativePath + "\\" + Settings.LocalSourcePath
+                , Settings.TargetCulture.IetfLanguageTag);
+        }
 
 		private void UpdateStringTextBoxes()
 		{
@@ -500,7 +508,9 @@ namespace LocalizationTool
             DisableSourceControlButtons(true);
             toolStripStatusLabel1.Text = "";
             MessageBox.Show(result? "Check Out/Update Finished with errors":"Check Out/Update Finished");
-	        FileHandler.UpdateFileHandler();
+            ResxFileHandler.InitAllResxResources(Settings.CompositeSiteRelativePath + "\\" + Settings.LocalSourcePath
+                    , Settings.TargetCulture.IetfLanguageTag);
+            FileHandler.UpdateFileHandler();
             FileHandler.FilterDataSource("", false);
             _filesListSource.Clear();
             foreach (var s in FileHandler.StringsCurrentDataSource)

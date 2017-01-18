@@ -582,6 +582,9 @@ namespace LocalizationTool
 
             _sourceFilesBySterm.Remove(fileStem);
             _sourceFilesBySterm.Add(fileStem, sourceDoc);
+
+            ResxFileHandler.UpdateAllResx(Settings.CompositeSiteRelativePath + "\\" + Settings.LocalSourcePath
+                , Settings.TargetCulture.IetfLanguageTag);
         }
 
 
@@ -633,7 +636,10 @@ namespace LocalizationTool
 					copyOfsourceDocAsString = copyOfsourceDocAsString.Replace(m.Value, Environment.NewLine);
 			}
 			File.WriteAllText(filePath, copyOfsourceDocAsString);
-		}
+
+            ResxFileHandler.UpdateAllResx(Settings.CompositeSiteRelativePath + "\\" + Settings.LocalSourcePath
+                , Settings.TargetCulture.IetfLanguageTag);
+        }
 
 		private static string GetSourceDocumentPath(string fileStem)
 		{

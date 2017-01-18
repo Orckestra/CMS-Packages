@@ -90,6 +90,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Prompt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResxFileHandler.cs" />
     <Compile Include="Translator.cs" />
     <EmbeddedResource Include="CredentialForm.resx">
       <DependentUpon>CredentialForm.cs</DependentUpon>

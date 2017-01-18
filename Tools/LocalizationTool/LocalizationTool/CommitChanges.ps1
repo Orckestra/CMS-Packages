@@ -38,6 +38,7 @@ If (-NOT(Test-Path $strFolderName)){
 		$OriginalTexts = Get-ChildItem .\$SourceFolder\$SourcePath
 		$IncludeItems += $OriginalTexts
 		$IncludeItems += $OriginalTexts -replace $Source, $Target
+		$IncludeItems += $OriginalTexts -replace ".resx", ".$Target.resx"
 	}
 copy-Item -Path .\$WebsitePath\$LocalSourcePath\*.* .\$SourceFolder\$SourcePath -Include $IncludeItems -Recurse -Force
 cd $SourceFolder
