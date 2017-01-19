@@ -76,7 +76,7 @@
   <string key="PageType.AddPageTypeDefaultPageContentWorkflow.NonExistingPlaceholderId.Message" value="S'il vous plaît noter que l'ID du 'placeholder' que vous avez spécifié '{0}' n'est actuellement dans aucun modèle de mise en page." />
   <string key="PageType.EditPageTypeDefaultPageContentWorkflow.Layout.Label" value="Modifier le contenu par défaut" />
   <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsPlaceHolder.Label" value="Paramètres" />
-  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsFieldGroup.Label" value="Informations du 'placeholder'" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.SettingsFieldGroup.Label" value="Paramètre substituable" />
   <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Label" value="ID du 'placeholder'" />
   <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderIdTextBox.Help" value="L'ID du 'placeholder'. Vous pouvez écrire un ID non-existant et créer un 'placeholder' par la suite (modifier le balisage du modèle de page)." />
   <string key="PageType.EditPageTypeDefaultPageContentWorkflow.ContentXhtmlEditor.Label" value="Contenu" />
@@ -111,4 +111,6 @@
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataContainerChangeNotAllowed" value="Il existe une ou plusieurs définitions avec le même nom. Le  changement de conteneur n'est pas autorisé" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Title" value="Le type de métadonnées a été supprimé" />
   <string key="PageType.EditPageTypeMetaDataFieldWorkflow.ValidationError.MetaDataTypeNotExisting.Message" value="Le type de métadonnées a été supprimé du système et ne peut plus être ajouté à tous les types de page" />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderContainerClassesTextBox.Help" value="Classes de conteneur additionnelles à ajouter à ce paramètre substiuable lorsqu'un utilisateur modifie ce type de page. Les classes de conteneur vous permettent de styliser l'éditeur et contrôler les composantes à ajouter." />
+  <string key="PageType.EditPageTypeDefaultPageContentWorkflow.PlaceHolderContainerClassesTextBox.Label" value="Classes de conteneur" />
 </strings>
