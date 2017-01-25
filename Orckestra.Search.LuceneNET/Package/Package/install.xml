@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="6.0.6212.20229" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Search.LuceneNET" groupName="Composite.Search" version="1.0.0" author="Orckestra A/S" website="https://cms.orckestra.com" readMoreUrl="https://cms.orckestra.com" id="62a2e5bd-b54f-4d3c-8dfd-70fbb7902285" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageRequirements minimumCompositeVersion="6.0.6234.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Search.LuceneNET" groupName="Composite.Search" version="1.0.0" author="Orckestra A/S" website="https://cms.orckestra.com" readMoreUrl="https://cms.orckestra.com" id="62a2e5bd-b54f-4d3c-8dfd-70fbb7902285" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" reloadConsoleOnCompletion="true">
 		<TechnicalDetails>-</TechnicalDetails>
 		<Description>Contains Lucene.NET implementation of content search in console as well as provides search api to use on frontend.</Description>
 	</mi:PackageInformation>
@@ -13,8 +13,6 @@
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
-				<!--<File sourceFilename="~\App_Data\Composite\TreeDefinitions\ContentSearch.xml" targetFilename="~\App_Data\Composite\TreeDefinitions\ContentSearch.xml" allowOverwrite="true" />-->
-
 				<File sourceFilename="~\Bin\C5.dll" targetFilename="~\bin\C5.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\Common.Logging.Core.dll" targetFilename="~\bin\Common.Logging.Core.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\Lucene.Net.dll" targetFilename="~\bin\Lucene.Net.dll" allowOverwrite="false" />

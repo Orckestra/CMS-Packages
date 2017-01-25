@@ -1,4 +1,4 @@
-﻿using Composite.C1Console.Search;
+﻿using Composite.Search;
 using Composite.Core.Application;
 using Microsoft.Extensions.DependencyInjection;
 

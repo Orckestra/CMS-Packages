@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using Composite.C1Console.Search;
+using Composite.Search;
 using Orckestra.Search.Commands;
 
 namespace Orckestra.Search

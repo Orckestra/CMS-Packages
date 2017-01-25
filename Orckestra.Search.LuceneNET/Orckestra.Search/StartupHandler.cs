@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Hosting;
 using Composite.C1Console.Elements;
 using Composite.C1Console.Events;
-using Composite.C1Console.Search;
+using Composite.Search;
 using Composite.Core;
 using Composite.Core.Application;
 using Composite.Core.Extensions;

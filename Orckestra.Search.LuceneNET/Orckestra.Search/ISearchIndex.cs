@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 using System.Threading;
-using Composite.C1Console.Search;
+using Composite.Search;
 
 namespace Orckestra.Search
 {

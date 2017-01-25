@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
-using Composite.C1Console.Search;
+using Composite.Search;
 using Composite.Core;
 using Composite.Core.IO;
 using Composite.Core.Linq;
