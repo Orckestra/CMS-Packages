@@ -4,11 +4,11 @@
 @functions {
 	public override string FunctionDescription
 	{
-		get  { return "Display past events or current and coming events"; }
+		get { return "Display past events or current and coming events"; }
 	}
 
 
-	[FunctionParameter(Label = "Heading", Help = "Heading is displayed only for List of Events",  DefaultValue = "Upcoming Events")]
+	[FunctionParameter(Label = "Heading", Help = "Heading is displayed only for List of Events", DefaultValue = "Upcoming Events")]
 	public string Heading { get; set; }
 
 	private const string displayModeWidget = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.Bool.BoolSelector"">
@@ -16,13 +16,13 @@
 		<f:param name = ""TrueLabel"" value=""Current and Coming Events"" />
 	</f:widgetfunction>";
 
-	[FunctionParameter(Label = "DisplayMode", Help = "Choose events mode: Past events or Current and Coming events", WidgetMarkup = displayModeWidget, DefaultValue = true)]
+	[FunctionParameter(Label = "Display Mode", Help = "Choose events mode: Past events or Current and Coming events", WidgetMarkup = displayModeWidget, DefaultValue = true)]
 	public bool DisplayMode { get; set; }
 
 	[FunctionParameter(Label = "Date Format", Help = "Example: {day} {month}, {year}", DefaultValue = "{day} {month}, {year}")]
 	public string DateFormat { get; set; }
 
-	[FunctionParameter(Label = "Date Range Format", Help = "Example: {day1} {month1} to {day2} {month2}, {year}. If {month1} = {month2}, then just {month2} will be displayed.", DefaultValue = "{day1} {month1} to {day2} {month2}, {year}")]
+	[FunctionParameter(Label = "Date Range Format", Help = "Example: {day1} {month1} {year1} to {day2} {month2}, {year2}. If {month1} = {month2} or {year1} = {year2}, then just {month2} and {year2} will be displayed.", DefaultValue = "{day1} {month1} {year1} to {day2} {month2}, {year2}")]
 	public string DateRangeFormat { get; set; }
 
 
@@ -31,7 +31,7 @@
 	public string GetDateDisplayName(Orckestra.Lists.Event item)
 	{
 
-		var isDateRange = item.EndDate != null && item.EndDate != item.StartDate;
+		var isDateRange = item.EndDate.HasValue && item.EndDate.Value != item.StartDate;
 
 		var startMonthStr = item.StartDate.ToString("MMMM");
 		var startDayStr = item.StartDate.ToString("dd");
@@ -39,14 +39,17 @@
 
 		if (isDateRange)
 		{
-			var endMonthStr = item.StartDate.Month != item.EndDate.Month ? item.EndDate.ToString("MMMM") : string.Empty;
-			var endDayStr = item.EndDate.ToString("dd");
+			var endDate = item.EndDate.Value;
+			var endMonthStr = endDate.ToString("MMMM");
+			var endDayStr = endDate.ToString("dd");
+			var endYearStr = endDate.Year.ToString();
 
-			return DateRangeFormat.Replace("{year}", startYearStr)
-					.Replace("{month1}", endMonthStr)
-					.Replace("{month2}", startMonthStr)
-					.Replace("{day1}", startDayStr)
-					.Replace("{day2}", endDayStr);
+			return DateRangeFormat.Replace("{year1}", item.StartDate.Year != endDate.Year ? startYearStr : string.Empty)
+			.Replace("{year2}", endYearStr)
+			.Replace("{month1}", item.StartDate.Month != endDate.Month ? startMonthStr : string.Empty)
+			.Replace("{month2}", endMonthStr)
+			.Replace("{day1}", startDayStr)
+			.Replace("{day2}", endDayStr);
 
 		}
 
@@ -85,7 +88,7 @@
 		var items = EventsData.List.ToList();
 		if (DisplayMode)
 		{
-			items = items.Where(i => i.StartDate >= DateTime.Today || i.EndDate >= DateTime.Today).OrderByDescending(i => i.StartDate).ToList();
+			items = items.Where(i => i.StartDate >= DateTime.Today || (i.EndDate.HasValue && i.EndDate.Value >= DateTime.Today)).OrderByDescending(i => i.StartDate).ToList();
 		}
 		else
 		{
@@ -103,7 +106,7 @@
 			@foreach (var item in items)
 			{
 				var isExternalUrl = !string.IsNullOrEmpty(item.ExternalUrl);
-				var url  = isExternalUrl ? item.ExternalUrl : EventsData.ItemUrl(item);
+				var url = isExternalUrl ? item.ExternalUrl : EventsData.ItemUrl(item);
 				var target = isExternalUrl ? "_blank" : "_self";
 				<hr />
 				<div class="row">

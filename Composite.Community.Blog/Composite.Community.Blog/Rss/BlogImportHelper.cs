@@ -82,7 +82,7 @@ namespace Composite.Community.Blog
 						var content = new XDocument();
 						string text = null;
 						var itemDate = item.PublishDate == DateTimeOffset.MinValue ? DateTime.Now : item.PublishDate.DateTime;
-						
+
 
 
 						if (text == null && item.Content != null)
@@ -112,7 +112,7 @@ namespace Composite.Community.Blog
 							if(string.IsNullOrWhiteSpace(title.Value))
 								title.Remove();
 						}
-						
+
 
 						foreach (var img in content.Descendants(Namespaces.Xhtml + "img"))
 						{
@@ -196,9 +196,17 @@ namespace Composite.Community.Blog
 
 						blogItem.Author = ImportAuthor(blogItemAuthor ?? blogAuthor ?? defaultAuthor);
 
+					    var tagType = DataFacade.GetData<TagType>().FirstOrDefault();
+					    if (tagType == null)
+					    {
+                            tagType = DataFacade.BuildNew<TagType>();
+                            tagType.Name = "Categories";
+                            DataFacade.AddNew(tagType);
+                        }
+
 						foreach (var tag in item.Categories)
 						{
-							ImportTag(tag.Name);
+							ImportTag(tag.Name, tagType.Id);
 						}
 						blogItem.Tags = string.Join(",", item.Categories.Select(d => d.Name));
 
@@ -210,7 +218,7 @@ namespace Composite.Community.Blog
 						blogItem.PublicationStatus = GenericPublishProcessController.Published;
 						DataFacade.Update(blogItem);
 
-						
+
 
 						//break;
 					}
@@ -352,11 +360,12 @@ namespace Composite.Community.Blog
 			return ImportedImages[src];
 		}
 
-		private void ImportTag(string tagName)
+		private void ImportTag(string tagName, Guid tagType)
 		{
 			if (!DataFacade.GetData<Tags>(d => d.Tag == tagName).Any())
 			{
 				var tag = DataFacade.BuildNew<Tags>();
+			    tag.Type = tagType;
 				tag.Tag = tagName;
 				DataFacade.AddNew(tag);
 			}

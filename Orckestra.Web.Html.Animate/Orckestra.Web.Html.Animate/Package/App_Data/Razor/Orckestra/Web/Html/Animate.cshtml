@@ -1,0 +1,57 @@
+@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Animate any content on the page."; }
+	}
+
+
+	[FunctionParameter(Label = "Content to Animate")]
+	public XhtmlDocument Content { get; set; }
+
+	private const string animationsWidgetMarkup = @"<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+		<f:param name='Options'>
+			<f:function name='Orckestra.Web.Html.Animate.GetAnimationNames' />
+		</f:param>
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Animation Name", DefaultValue = "shake", WidgetMarkup = animationsWidgetMarkup)]
+	public string Animation { get; set; }
+
+	private const string actionToAnimateWidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
+		<f:param name=""Options"">
+			<f:function name=""Composite.Utils.String.Split"">
+				<f:param name=""String"" value=""page-load,hover,appear"" />
+			</f:function>
+		</f:param>
+		<f:param name=""Required"" value=""False"" />
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Action to Animate", Help = "Select the action when animation will start. Page Load by default", DefaultValue = "page-load", WidgetMarkup = actionToAnimateWidgetMarkup)]
+	public string AnimateAction { get; set; }
+
+	[FunctionParameter(Label = "Animation Duration", Help = "In seconds", DefaultValue = "1")]
+	public int Duration { get; set; }
+
+	[FunctionParameter(Label = "Animation Delay", Help = "In milliseconds", DefaultValue = "0")]
+	public int Delay { get; set; }
+
+	[FunctionParameter(Label = "Loop Animation", DefaultValue = false)]
+	public bool IsInfinite { get; set; }
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<link id="animate-css" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/Animate/animate.min.css"/>
+	<script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script id="jquery-appear-js" src="~/Frontend/Orckestra/Web/Html/Animate/jquery.appear.js"></script>
+	<script id="animate-js" src="~/Frontend/Orckestra/Web/Html/Animate/animate.js"></script>
+</head>
+<body>
+<div class="animated-content @(IsInfinite ? "infinite": string.Empty) @("appear,page-load".Contains(AnimateAction) ? " object-non-visible" : string.Empty)"
+     data-animation="@Animation" data-animateaction="@AnimateAction" data-delay="@(Delay)" data-duration="@(Duration)s">
+	@Html.Raw(Content)
+</div>
+</body>
+</html>
+
+

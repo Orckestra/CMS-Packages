@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Html.Animate" groupName="Orckestra.Web" version="1.0.1" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.Animate" id="76403b3b-3ffd-46a3-88fc-23cf4529886c" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true" allowOverwrite="false">
+		<TechnicalDetails>Based on https://daneden.github.io/animate.css/ and https://github.com/morr/jquery.appear</TechnicalDetails>
+		<Description>Animates any content on a page.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/Animate.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/Animate.cshtml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Composite\InlineCSharpFunctions\Orckestra.Web.Html.Animate.GetAnimationNames.cs" targetFilename="~\App_Data\Composite\InlineCSharpFunctions\Orckestra.Web.Html.Animate.GetAnimationNames.cs" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Orckestra\Web\Html\Animate\" targetDirectory="~\Frontend\Orckestra\Web\Html\Animate\" allowOverwrite="false" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite">
+			<Types>
+				<Type type="Composite.Data.Types.IInlineFunction,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctions_public.xml" />
+				</Type>
+				<Type type="Composite.Data.Types.IInlineFunctionAssemblyReference,Composite">
+					<Data dataScopeIdentifier="public" dataFilename="~\Datas\Composite.Data.Types.IInlineFunctionAssemblyReferences_public.xml" />
+				</Type>
+			</Types>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

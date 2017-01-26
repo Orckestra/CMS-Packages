@@ -53,7 +53,7 @@
                           <cms:bind source="Location" />
                       </TextBox.Text>
                   </TextBox>
-                  <TextBox Label="External Url to Details" Help="" SpellCheck="true">
+                  <TextBox Label="External URL to Details" Help="" SpellCheck="true">
                       <TextBox.Text>
                           <cms:bind source="ExternalUrl" />
                       </TextBox.Text>

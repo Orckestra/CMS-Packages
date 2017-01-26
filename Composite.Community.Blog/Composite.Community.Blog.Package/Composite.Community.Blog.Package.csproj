@@ -52,6 +52,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Package\Bin\System.Web.Http.dll" />
+    <Content Include="Package\Composite\InstalledPackages\controls\FormsControls\Composite.Community.Blog\BlogTagMultiSelector.ascx.cs">
+      <DependentUpon>BlogTagMultiSelector.ascx</DependentUpon>
+    </Content>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,11 +69,13 @@
     <Content Include="Package\Composite.Config\Install.xsl" />
     <Content Include="Package\Composite.Config\Uninstall.xsl" />
     <Content Include="Package\Composite\InstalledPackages\content\forms\Composite.Community.Blog\ImportFromRss.xml" />
+    <Content Include="Package\Composite\InstalledPackages\controls\FormsControls\Composite.Community.Blog\BlogTagMultiSelector.ascx" />
     <Content Include="Package\Config\Install.xsl">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Package\Datas\Composite.Community.Blog.Authorss_public.xml" />
     <Content Include="Package\Datas\Composite.Community.Blog.Tagss_public.xml" />
+    <Content Include="Package\Datas\Composite.Community.Blog.TagTypes_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypeDefaultPageContents_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
@@ -108,6 +114,9 @@
       <Project>{86537839-e75d-42af-ab00-5f0a136eeb1d}</Project>
       <Name>Composite.Community.Blog</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Package\App_GlobalResources\Composite.Community.Blog\Blog.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

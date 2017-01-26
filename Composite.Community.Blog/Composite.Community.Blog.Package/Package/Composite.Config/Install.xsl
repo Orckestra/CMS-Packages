@@ -14,5 +14,13 @@
       </xsl:if>
     </xsl:copy>
   </xsl:template>
-  
+
+    <xsl:template match="/configuration/Composite.C1Console.Forms.Plugins.UiControlFactoryConfiguration/Channels/Channel[@name='AspNet.Management']/Namespaces/Namespace[@name='http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0']/Factories">
+        <xsl:copy>
+            <xsl:apply-templates select="@* | node()" />
+            <xsl:if test="count(add[@name='BlogTagMultiSelector'])=0">
+                <add userControlVirtualPath="~/Composite/InstalledPackages/controls/FormsControls/Composite.Community.Blog/BlogTagMultiSelector.ascx" name="BlogTagMultiSelector" cacheCompiledUserControlType="false" type="Composite.Plugins.Forms.WebChannel.UiControlFactories.UserControlBasedUiControlFactory, Composite" />
+            </xsl:if>
+        </xsl:copy>
+    </xsl:template>
 </xsl:stylesheet>
