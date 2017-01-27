@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="SqlFunctionElementProvider.RootLabel" value="SQL-funktioner" />
-  <string key="SqlFunctionElementProvider.RootLabelToolTip" value="Tilf&#248;j forbindelser og derefter foresp&#248;rgsler til tilslutninger" />
-  <string key="SqlFunctionElementProvider.AddConnection" value="Tilf&#248;j SQL-forbindelse" />
-  <string key="SqlFunctionElementProvider.AddConnectionToolTip" value="Tilf&#248;j ny SQL-forbindelse" />
-  <string key="SqlFunctionElementProvider.EditConnection" value="Redig&#233;r" />
-  <string key="SqlFunctionElementProvider.EditConnectionToolTip" value="Redig&#233;r SQL-forbindelse" />
+  <string key="SqlFunctionElementProvider.RootLabelToolTip" value="Tilføj først forbindelser og derefter forespørgsler til forbindelser" />
+  <string key="SqlFunctionElementProvider.AddConnection" value="Tilføj SQL-forbindelse" />
+  <string key="SqlFunctionElementProvider.AddConnectionToolTip" value="Tilføj ny SQL-forbindelse" />
+  <string key="SqlFunctionElementProvider.EditConnection" value="Rediger" />
+  <string key="SqlFunctionElementProvider.EditConnectionToolTip" value="Redigér SQL-forbindelse" />
   <string key="SqlFunctionElementProvider.DeleteConnection" value="Slet" />
   <string key="SqlFunctionElementProvider.DeleteConnectionToolTip" value="Slet SQL-forbindelse" />
-  <string key="SqlFunctionElementProvider.AddQuery" value="Tilf&#248;j ny SQL foresp&#248;rgsel" />
-  <string key="SqlFunctionElementProvider.AddQueryToolTip" value="Tilf&#248;j en ny SQL XML provider" />
-  <string key="SqlFunctionElementProvider.EditQuery" value="Redig&#233;r" />
-  <string key="SqlFunctionElementProvider.EditQueryToolTip" value="Redig&#233;r SQL foresp&#248;rgsel" />
+  <string key="SqlFunctionElementProvider.AddQuery" value="Tilføj ny SQL forespørgsel" />
+  <string key="SqlFunctionElementProvider.AddQueryToolTip" value="Tilføj en ny SQL XML provider" />
+  <string key="SqlFunctionElementProvider.EditQuery" value="Rediger" />
+  <string key="SqlFunctionElementProvider.EditQueryToolTip" value="Redigér SQL forespørgsel" />
   <string key="SqlFunctionElementProvider.DeleteQuery" value="Slet" />
-  <string key="SqlFunctionElementProvider.DeleteQueryToolTip" value="Slet SQL foresp&#248;rgsel" />
-  <string key="AddNewSqlFunction.LabelDialog" value="Tilf&#248;j ny SQL foresp&#248;rgsel" />
+  <string key="SqlFunctionElementProvider.DeleteQueryToolTip" value="Slet SQL forespørgsel" />
+  <string key="AddNewSqlFunction.LabelDialog" value="Tilføj ny SQL forespørgsel" />
   <string key="AddNewSqlFunction.LabelNamingPanel" value="Funktionsnavngivning" />
   <string key="AddNewSqlFunction.LabelName" value="Navn" />
   <string key="AddNewSqlFunction.HelpName" value="" />
@@ -27,18 +27,18 @@
   <string key="AddEditSqlFunction.LabelIsStoredProcedureCheckBox" value="Ja, kommandoen er en procedure" />
   <string key="AddEditSqlFunction.LabelReturnsXml" value="Returnerer resultatet som XML" />
   <string key="AddEditSqlFunction.LabelReturnsXmlCheckBox" value="Ja, kommandoen returnerer XML" />
-  <string key="AddEditSqlFunction.LabelIsQuery" value="Er en foresp&#248;rgsel" />
+  <string key="AddEditSqlFunction.LabelIsQuery" value="Er en forespørgsel" />
   <string key="AddEditSqlFunction.LabelIsQueryCheckBox" value="Ja, kommandoen returnerer data" />
-  <string key="AddEditSqlFunction.LabelCommandBehaviour" value="SQL kommandoadf&#230;rd" />
-  <string key="AddEditSqlFunctionConnection.LabelFieldGroup" value="SQL forbindelsesindstillinger" />
+  <string key="AddEditSqlFunction.LabelCommandBehaviour" value="SQL kommandoadfærd" />
   <string key="AddEditSqlFunction.LabelSqlEditor" value="SQL-kommando" />
-  <string key="AddNewSqlFunctionConnection.LabelDialog" value="Tilf&#248;j ny SQL-forbindelse" />
+  <string key="AddNewSqlFunctionConnection.LabelDialog" value="Tilføj ny SQL-forbindelse" />
   <string key="AddNewSqlFunctionConnection.LabelName" value="Navn" />
   <string key="AddNewSqlFunctionConnection.HelpName" value="" />
   <string key="AddNewSqlFunctionConnection.LabelConnectionString" value="Forbindelsesstreng" />
   <string key="AddNewSqlFunctionConnection.HelpConnectionString" value="" />
   <string key="AddNewSqlFunctionConnection.LabelIsMSSQL" value="MS SQL server" />
   <string key="AddNewSqlFunctionConnection.LabelIsMSSQLCheckBox" value="Databasen er en MS SQL server" />
+  <string key="EditSqlFunctionConnection.LabelFieldGroup" value="SQL Connection opsætning" />
   <string key="EditSqlFunction.LabelInputParameters" value="Inputparametre" />
   <string key="EditSqlFunction.LabelSettings" value="Indstillinger" />
   <string key="EditSqlFunction.LabelNamingAndDescription" value="Funktionsnavn og beskrivelse" />
@@ -48,7 +48,7 @@
   <string key="EditSqlFunction.HelpNamespace" value="" />
   <string key="EditSqlFunction.LabelDescription" value="Beskrivelse" />
   <string key="EditSqlFunction.HelpDescription" value="" />
-  <string key="EditSqlFunction.LabelPreview" value="Forh&#229;ndsvisning" />
+  <string key="EditSqlFunction.LabelPreview" value="Forhåndsvisning" />
   <string key="EditSqlFunctionConnection.LabelName" value="Navn" />
   <string key="EditSqlFunctionConnection.HelpName" value="" />
   <string key="EditSqlFunctionConnection.LabelConnectionString" value="Forbindelsesstreng" />

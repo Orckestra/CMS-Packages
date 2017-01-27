@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="RootFolderLabel" value="C# funktioner" />
   <string key="RootFolderToolTip" value="Metodefunktioner" />
   <string key="DeleteFunction.LabelFieldGroup" value="Slet denne funktion" />
   <string key="DeleteFunction.Text" value="Slet denne funktion" />
-  <string key="Add" value="Tilf&#248;j ekstern C# funktion" />
-  <string key="AddToolTip" value="Tilf&#248;j en ekstern C# metode baseret funktion" />
-  <string key="Create" value="Tilf&#248;j integreret C# funktion" />
-  <string key="CreateToolTip" value="Tilf&#248;j en integreret C# metode baseret funktion" />
-  <string key="Edit" value="Redig&#233;r" />
-  <string key="EditToolTip" value="Redig&#233;r funktion." />
+  <string key="Add" value="Tilføj ekstern C# funktion" />
+  <string key="AddToolTip" value="Tilføj en ekstern C# metode baseret funktion" />
+  <string key="Create" value="Tilføj integreret C# funktion" />
+  <string key="CreateToolTip" value="Tilføj en integreret C# metode baseret funktion" />
+  <string key="Edit" value="Rediger" />
+  <string key="EditToolTip" value="Redigér funktion." />
   <string key="Delete" value="Slet" />
   <string key="DeleteToolTip" value="Slet funktion." />
-  <string key="AddNewMethodBasedFunction.LabelFieldGroup" value="Tilf&#248;j ny metode baseret funktion" />
   <string key="AddNewMethodBasedFunctionStep1.LabelType" value="Type" />
-  <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="Variablen som indeholder den p&#229;g&#230;ldende metode" />
+  <string key="AddNewMethodBasedFunctionStep1.LabelTypeHelp" value="Variablen som indeholder den pågældende metode" />
   <string key="AddNewMethodBasedFunctionStep2.LabelMethodName" value="Metodenavn" />
   <string key="AddNewMethodBasedFunctionStep2.HelpMethodName" value="" />
   <string key="AddNewMethodBasedFunctionStep3.LabelMethodName" value="Metodenavn" />
@@ -26,41 +25,41 @@
   <string key="CascadeDeleteErrorMessage" value="Der er en anden type, som referer til typen, som ikke tillader kumulerede sletninger. Denne handling er stoppet" />
   <string key="AddFunction.CouldNotFindType" value="Kunne ikke finde typen" />
   <string key="AddFunction.TypeHasNoValidMethod" value="Typen indeholder ikke en gyldig metode" />
-  <string key="AddFunction.TypeIsAbstractOrStatic" value="Typen er markeret som enten abstrakt eller statisk. Det  underst&#248;ttes ikke at anvende metoder p&#229; abstrakte eller statiske typer." />
-  <string key="AddFunction.TypeMustNotHaveOverloads" value="Typen m&#229; ikke have overbelastninger" />
-  <string key="AddFunction.MethodNameIsEmpty" value="Metodenavn m&#229; ikke v&#230;re tomt" />
-  <string key="AddFunction.InvalidNamespace" value="Navnefeltet skal v&#230;re som A.B.C -  det m&#229; ikke starte og slutte med punktum" />
-  <string key="AddFunction.NameAlreadyUsed" value="Funktionsnavnet &#39;{0}&#39; er allerede i brug" />
-  <string key="EditMethodBasedFunction.LabelFieldGroup" value="Redig&#233;r  metodebaseret foresp&#248;rgsel" />
+  <string key="AddFunction.TypeIsAbstractOrStatic" value="Typen er markeret som enten abstrakt eller statisk. Det  understøttes ikke at anvende metoder på abstrakte eller statiske typer." />
+  <string key="AddFunction.TypeMustNotHaveOverloads" value="Typen må ikke have overbelastninger" />
+  <string key="AddFunction.MethodNameIsEmpty" value="Metodenavn må ikke være tomt" />
+  <string key="AddFunction.InvalidNamespace" value="Navnefeltet skal være som A.B.C -  det må ikke starte og slutte med punktum" />
+  <string key="AddFunction.NameAlreadyUsed" value="Funktionsnavnet '{0}' er allerede i brug" />
+  <string key="EditMethodBasedFunction.LabelFieldGroup" value="Redigér  metodebaseret forespørgsel" />
   <string key="EditMethodBasedFunction.LabelMethodName" value="Metodenavn" />
   <string key="EditMethodBasedFunction.LabelMethodNameHelp" value="Navnet som funktionen skal kendes under" />
   <string key="EditMethodBasedFunction.LabelNamespaceName" value="Navnefelts-navn" />
   <string key="EditMethodBasedFunction.LabelNamespaceNameHelp" value="Navnfeltet som metoden skal placeres under" />
   <string key="EditMethodBasedFunction.LabelType" value="Type" />
-  <string key="EditMethodBasedFunction.LabelTypeHelp" value="Typen som indeholder den p&#229;g&#230;ldende metode." />
+  <string key="EditMethodBasedFunction.LabelTypeHelp" value="Typen som indeholder den pågældende metode." />
   <string key="EditMethodBasedFunction.LabelMethod" value="Metode" />
-  <string key="EditMethodBasedFunction.LabelMethodHelp" value="Metoden som skal anvendes p&#229; typen." />
+  <string key="EditMethodBasedFunction.LabelMethodHelp" value="Metoden som skal anvendes på typen." />
   <string key="EditMethodBasedFunction.LabelError" value="Fejl" />
-  <string key="EditFunction.MethodNameEmpty" value="Metodenavn m&#229; ikke v&#230;re tomt" />
-  <string key="EditFunction.InvalidNamespace" value="Navnefeltet m&#229; ikke starte og slutte med .  - eksempel: A.B.C" />
+  <string key="EditFunction.MethodNameEmpty" value="Metodenavn må ikke være tomt" />
+  <string key="EditFunction.InvalidNamespace" value="Navnefeltet må ikke starte og slutte med .  - eksempel: A.B.C" />
   <string key="EditFunction.TypeNotFound" value="Kunne ikke finde typen" />
   <string key="EditFunction.MethodNotInType" value="Typen indeholder ikke metoden" />
   <string key="EditFunction.NoValidMethod" value="Typen indeholder ikke en gyldig metode" />
-  <string key="EditFunction.MethodOverloadsNotAllowed" value="Typen m&#229; ikke have overbelastninger" />
+  <string key="EditFunction.MethodOverloadsNotAllowed" value="Typen må ikke have overbelastninger" />
   <string key="AddInlineFunctionWorkflow.FieldGroup.Label" value="Indstillinger" />
   <string key="AddInlineFunctionWorkflow.MethodName.Label" value="Navn" />
-  <string key="AddInlineFunctionWorkflow.MethodName.Help" value="Navnet p&#229; den metode, du &#248;nsker at oprette" />
+  <string key="AddInlineFunctionWorkflow.MethodName.Help" value="Navnet på den metode, du ønsker at oprette" />
   <string key="AddInlineFunctionWorkflow.MethodNamespace.Label" value="Navnefelt" />
-  <string key="AddInlineFunctionWorkflow.MethodNamespace.Help" value="Navnefeltet til den metode, som du &#248;nsker at oprette" />
+  <string key="AddInlineFunctionWorkflow.MethodNamespace.Help" value="Navnefeltet til den metode, som du ønsker at oprette" />
   <string key="AddInlineFunctionWorkflow.MethodDescription.Label" value="Beskrivelse" />
   <string key="AddInlineFunctionWorkflow.MethodDescription.Help" value="En kort beskrivelse af funktionen" />
   <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Label" value="Skabelon" />
-  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Help" value="V&#230;lg den skabelon, du vil bruge til den nye metode." />
+  <string key="AddInlineFunctionWorkflow.InlineFunctionMethodTemplate.Help" value="Vælg den skabelon, du vil bruge til den nye metode." />
   <string key="EditInlineFunctionWorkflow.FieldGroup.Label" value="Indstillinger" />
   <string key="EditInlineFunctionWorkflow.MethodName.Label" value="Navn" />
-  <string key="EditInlineFunctionWorkflow.MethodName.Help" value="Navnet p&#229; den metode, du &#248;nsker at oprette" />
+  <string key="EditInlineFunctionWorkflow.MethodName.Help" value="Navnet på den metode, du ønsker at oprette" />
   <string key="EditInlineFunctionWorkflow.MethodNamespace.Label" value="Navnefelt" />
-  <string key="EditInlineFunctionWorkflow.MethodNamespace.Help" value="Navnefeltet til den metode, som du &#248;nsker at oprette" />
+  <string key="EditInlineFunctionWorkflow.MethodNamespace.Help" value="Navnefeltet til den metode, som du ønsker at oprette" />
   <string key="EditInlineFunctionWorkflow.MethodDescription.Label" value="Beskrivelse" />
   <string key="EditInlineFunctionWorkflow.MethodDescription.Help" value="En kort beskrivelse af funktionen" />
   <string key="EditInlineFunctionWorkflow.DebugFieldGroup.Label" value="Fejlfind" />
@@ -72,7 +71,7 @@
   <string key="EditInlineFunctionWorkflow.DebugActiveLocale.Help" value="Under fejlfinding bruges dette som det aktuelle sprog" />
   <string key="EditInlineFunctionWorkflow.Code.Label" value="Kilde" />
   <string key="EditInlineFunctionWorkflow.AssembliesFieldGroup.Label" value="Montage-referencer" />
-  <string key="EditInlineFunctionWorkflow.Preview.Label" value="Forh&#229;ndsvisning" />
+  <string key="EditInlineFunctionWorkflow.Preview.Label" value="Forhåndsvisning" />
   <string key="EditInlineFunctionWorkflow.ParameterFieldGroup.Label" value="Inputparametre" />
   <string key="EditInlineFunctionWorkflow.AdminitrativeScope.Label" value="Administrativ" />
   <string key="EditInlineFunctionWorkflow.PublicScope.Label" value="Offentlig" />
@@ -80,9 +79,9 @@
   <string key="InlineFunctionMethodTemplate.WithParameters" value="Metode med parametre" />
   <string key="InlineFunctionMethodTemplate.DataConnection" value="Metode som bruger dataforbindelse" />
   <string key="CSharpInlineFunction.OnMissingContainerType" value="En offentlig, statisk klasse ved navn {0} mangler i koden. Denne klasse skal indeholde funktionsmetoden." />
-  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="Navnefeltet i koden &#39;{0}&#39; svarer ikke til den givne funktions navnefelt &#39;{1}&#39;." />
-  <string key="CSharpInlineFunction.OnMissionMethod" value="Det given funktionsnavn &#39;{0}&#39; blev ikke fundet eller er ikke offentligt statisk i klassen &#39;{1}&#39;." />
-  <string key="CSharpInlineFunction.MissingParameterDefinition" value="Parametren &#39;{0}&#39; er ikke blevet tilf&#248;jet til &#39;input parametre&#39;. For at kalde din funktion, m&#229; du tilf&#248;je parametren og give den enten en test eller standardv&#230;rdi." />
-  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="Parametren &#39;{0}&#39; forventer en testv&#230;rdi af typen &#39;{1}&#39;, men fik en v&#230;rdi af typen &#39;{2}&#39;." />
-  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="Parametren &#39;{0}&#39; ,som er defineret i &#39;input parametre&#39;, skal have en test eller standardv&#230;rdi f&#248;r din funktion kan evalueres." />
+  <string key="CSharpInlineFunction.OnNamespaceMismatch" value="Navnefeltet i koden '{0}' svarer ikke til den givne funktions navnefelt '{1}'." />
+  <string key="CSharpInlineFunction.OnMissionMethod" value="Det given funktionsnavn '{0}' blev ikke fundet eller er ikke offentligt statisk i klassen '{1}'." />
+  <string key="CSharpInlineFunction.MissingParameterDefinition" value="Parametren '{0}' er ikke blevet tilføjet til 'input parametre'. For at kalde din funktion, må du tilføje parametren og give den enten en test eller standardværdi." />
+  <string key="CSharpInlineFunction.WrongParameterTestValueType" value="Parametren '{0}' forventer en testværdi af typen '{1}', men fik en værdi af typen '{2}'." />
+  <string key="CSharpInlineFunction.MissingParameterTestOrDefaultValue" value="Parametren '{0}' ,som er defineret i 'input parametre', skal have en test eller standardværdi før din funktion kan evalueres." />
 </strings>

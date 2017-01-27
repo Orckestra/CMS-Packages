@@ -1,656 +1,693 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
-	<string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Redig&#233;r rettigheder" />
-	<string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Redig&#233;r rettigheder" />
-	<string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Globale rettigheder" />
-	<string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Administr&#233;r brugerrettigheder" />
-	<string key="LogElementProvider.RootLabel" value="Log" />
-	<string key="LogElementProvider.RootLabelToolTip" value="System log" />
-	<string key="LogElementProvider.ShowLogLabel" value="Vis log" />
-	<string key="LogElementProvider.ShowLogToolTip" value="Vis systemets log" />
-	<string key="DataCompositionVisabilityFacade.DefaultContainerLabel" value="Metadata" />
-	<string key="Website.Forms.Administrative.DeleteUserStep1.LabelFieldGroup" value="Slet bruger?" />
-	<string key="Website.Forms.Administrative.DeleteUserStep1.Text" value="Slet den valgte bruger?" />
-	<string key="DeleteUserWorkflow.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
-	<string key="DeleteUserWorkflow.CascadeDeleteErrorMessage" value="Der er en anden type, som referer til typen, som ikke tillader kumulerede sletninger. Denne handling er stoppet" />
-	<string key="DeleteUserWorkflow.DeleteSelfTitle" value="Kan ikke slette en bruger" />
-	<string key="DeleteUserWorkflow.DeleteSelfErrorMessage" value="Du kan ikke slette en konto, som du er logget ind med." />
-
-	<string key="Website.Function.SelectDialog.Title" value="V&#230;lg funktion" />
-	<string key="Website.Widget.SelectDialog.Title" value="V&#230;lg widget" />
-	<string key="Website.ContentLink.SelectDialog.Title" value="V&#230;lg side eller fil" />
-	<string key="Website.Page.SelectDialog.Title" value="V&#230;lg side" />
-	<string key="Website.FrontendFile.SelectDialog.Title" value="V&#230;lg frontende-fil" />
-	<string key="Website.Media.SelectDialog.Title" value="V&#230;lg medier" />
-	<string key="Website.Image.SelectDialog.Title" value="V&#230;lg billede" />
-	<string key="Website.Folder.SelectDialog.Title" value="V&#230;lg mappe" />
-
-
-	<string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Generelle indstillinger" />
-	<string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Brugernavn" />
-	<string key="Website.Forms.Administrative.EditUserStep1.UserNameHelp" value="Brugernavne kan ikke &#230;ndres. Dette er et &#39;read only&#39; felt." />
-	<string key="Website.Forms.Administrative.EditUserStep1.PasswordLabel" value="Adgangskode" />
-	<string key="Website.Forms.Administrative.EditUserStep1.PasswordHelp" value="Adgangskoden skal v&#230;re p&#229; mere end 6 tegn." />
-	<string key="Website.Forms.Administrative.EditUserStep1.EmailLabel" value="E-mail" />
-	<string key="Website.Forms.Administrative.EditUserStep1.EmailHelp" value="Brugerens e-mail adresse (valgfri)." />
-	<string key="Website.Forms.Administrative.EditUserStep1.GroupLabel" value="Mappe" />
-	<string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Hvis du indtaster et mappenavn, som ikke allerede eksisterer, s&#229; vil en ny mappe blive oprettet." />
+  <string key="ManageUserPermissions.ManageUserPermissionsOnBranchLabel" value="Redigér rettigheder" />
+  <string key="ManageUserPermissions.ManageUserPermissionsOnItemLabel" value="Redigér rettigheder" />
+  <string key="ManageUserPermissions.ManageGlobalUserPermissionsLabel" value="Globale rettigheder" />
+  <string key="ManageUserPermissions.ManageUserPermissionsToolTip" value="Administrér brugerrettigheder" />
+  <string key="DataCompositionVisabilityFacade.DefaultContainerLabel" value="Metadata" />
+  <string key="Website.Forms.Administrative.DeleteUserStep1.LabelFieldGroup" value="Slet bruger?" />
+  <string key="Website.Forms.Administrative.DeleteUserStep1.Text" value="Slet den valgte bruger?" />
+  <string key="DeleteUserWorkflow.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
+  <string key="DeleteUserWorkflow.CascadeDeleteErrorMessage" value="Der er en anden type, som referer til typen, som ikke tillader kumulerede sletninger. Denne handling er stoppet" />
+  <string key="DeleteUserWorkflow.DeleteSelfTitle" value="Kan ikke slette en bruger" />
+  <string key="DeleteUserWorkflow.DeleteSelfErrorMessage" value="Du kan ikke slette en konto, som du er logget ind med." />
+  <string key="Website.Function.SelectDialog.Title" value="Vælg funktion" />
+  <string key="Website.Widget.SelectDialog.Title" value="Vælg widget" />
+  <string key="Website.ContentLink.SelectDialog.Title" value="Vælg side eller fil" />
+  <string key="Website.Page.SelectDialog.Title" value="Vælg side" />
+  <string key="Website.FrontendFile.SelectDialog.Title" value="Vælg frontende-fil" />
+  <string key="Website.Media.SelectDialog.Title" value="Vælg medier" />
+  <string key="Website.Image.SelectDialog.Title" value="Vælg billede" />
+  <string key="Website.Folder.SelectDialog.Title" value="Vælg mappe" />
+  <string key="PublishingStatus.draft" value="Udkast" />
+  <string key="PublishingStatus.awaitingApproval" value="Afventer godkendelse" />
+  <string key="PublishingStatus.awaitingPublication" value="Afventer publicering" />
+  <string key="PublishingStatus.published" value="Publiceret" />
+  <string key="Website.Forms.Administrative.EditUserStep1.LabelFieldGroup" value="Generelle indstillinger" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserNameLabel" value="Brugernavn" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserNameHelp" value="Brugernavne kan ikke ændres. Dette er et 'read only' felt." />
+  <string key="Website.Forms.Administrative.EditUserStep1.PasswordLabel" value="Adgangskode" />
+  <string key="Website.Forms.Administrative.EditUserStep1.PasswordHelp" value="Adgangskoden skal være på mere end 6 tegn." />
+  <string key="Website.Forms.Administrative.EditUserStep1.NameLabel" value="Navn" />
+  <string key="Website.Forms.Administrative.EditUserStep1.NameHelp" value="Det fulde navn på den person, der bruger denne konto." />
+  <string key="Website.Forms.Administrative.EditUserStep1.EmailLabel" value="E-mail" />
+  <string key="Website.Forms.Administrative.EditUserStep1.EmailHelp" value="Brugerens e-mail adresse (valgfri)." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GroupLabel" value="Mappe" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GroupHelp" value="Hvis du indtaster et mappenavn, som ikke allerede eksisterer, så vil en ny mappe blive oprettet." />
   <string key="Website.Forms.Administrative.EditUserStep1.LabelLocalizationFieldGroup" value="Lokalisering i C1 konsol" />
   <string key="Website.Forms.Administrative.EditUserStep1.CultureLabel" value="Regionale indstillinger" />
-	<string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="V&#230;lg et punkt p&#229; listen for at &#230;ndre den m&#229;de hvorp&#229; tal, datoer og tidspunkter vises" />
+  <string key="Website.Forms.Administrative.EditUserStep1.CultureHelp" value="Vælg et punkt på listen for at ændre den måde hvorpå tal, datoer og tidspunkter vises" />
   <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageLabel" value="Sprog i C1 konsol" />
-  <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageHelp" value="V&#230;lg det sprog, som skal anvendes til betegnelser, hj&#230;lpetekster, dialoger osv. De tilg&#230;ngelige indstillinger er her begr&#230;nset til de installerede sprog. Du kan installere flere sprog via  pakkesystemet. Se Composite lokalisering." />
+  <string key="Website.Forms.Administrative.EditUserStep1.C1ConsoleLanguageHelp" value="Vælg det sprog, som skal anvendes til betegnelser, hjælpetekster, dialoger osv. De tilgængelige indstillinger er her begrænset til de installerede sprog. Du kan installere flere sprog via  pakkesystemet. Se Composite lokalisering." />
   <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveFieldLabel" value="Perspektiver" />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectLabel" value="Synlige perspektiver" />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectHelp" value="V&#230;lg hvilke perspektiver som skal v&#230;re synlige, n&#229;r brugeren starter C1 konsollen." />
-	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsFieldLabel" value="Globale rettigheder" />
-	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectLabel" value="Globale rettigheder" />
-	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectHelp" value="Administratorrettighed giver brugeren adgang til at administrere brugerrettigheder og udf&#248;re andre administrative opgaver." />
-	<string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissions.IgnoredOwnAdministrativeRemoval" value="Fjernelse af ​​din egen administratorrettighed blev ignoreret. Du har stadig administratorrettigheder." />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesFieldLabel" value="Data-sprog adgang" />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectLabel" value="Data-sprog" />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectHelp" value="Brugeren har adgang til at administrere data p&#229; det valgte sprog." />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleLabel" value="Aktivt indholdssprog" />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Indholdssproget som denne bruger vil redigere." />
-	<string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleNotChecked" value="Det valgte sprog er ikke markeret i datasprog-sektionen." />
-	<string key="Website.Forms.Administrative.EditUserStep1.NoActiveLocaleSelected" value="Du skal v&#230;lge mindst &#233;t ​​aktivt sprog." />
-	<string key="Website.Forms.Administrative.EditUserStep1.GenerelTabLabel" value="Generelt" />
-	<string key="Website.Forms.Administrative.EditUserStep1.PermissionsTabLabel" value="Rettigheder" />
-	<string key="Website.Forms.Administrative.EditUserStep1.PerspectivesTabLabel" value="Perspektiver" />
-	<string key="Website.Forms.Administrative.EditUserStep1.UserGroupsFieldLabel" value="Brugergrupper" />
-	<string key="Website.Forms.Administrative.EditUserStep1.UserGroupsMultiSelectHelp" value="V&#230;lg de brugergrupper, som den valgte bruger skal v&#230;re medlem af." />
-	<string key="EditUserWorkflow.EditErrorTitle" value="Fejl" />
-	<string key="EditUserWorkflow.EditOwnAccessToSystemPerspective" value="Du kan ikke slette dine egne adgangsrettigheder til &#39;system&#39; perspektivet." />
-	<string key="UserElementProvider.RootLabel" value="Brugere" />
-	<string key="UserElementProvider.RootToolTip" value="Brugere" />
-	<string key="UserElementProvider.AddUserLabel" value="Tilf&#248;j bruger ..." />
-	<string key="UserElementProvider.AddUserToolTip" value="Tilf&#248;j ny bruger" />
-	<string key="UserElementProvider.EditUserLabel" value="Redig&#233;r bruger" />
-	<string key="UserElementProvider.EditUserToolTip" value="Redig&#233;r den valgte bruger" />
-	<string key="UserElementProvider.DeleteUserLabel" value="Slet bruger" />
-	<string key="UserElementProvider.DeleteUserToolTip" value="Slet den valgte bruger" />
-	<string key="UserElementProvider.ChangeOtherActiveLocaleTitle" value="Advarsel" />
-	<string key="UserElementProvider.ChangeOtherActiveLocaleMessage" value="Du har &#230;ndret det aktive sprog for en bruger, som er logget p&#229;. Brugerkonsollen vil blive genindl&#230;st og data kan g&#229; tabt." />
-	<string key="UserElementProvider.ChangeOtherActiveLocaleDialogTitle" value="Oprydning p&#229;kr&#230;vet" />
-	<string key="UserElementProvider.ChangeOtherActiveLocaleDialogText" value="Dette kr&#230;ver en sceneoprydning. Aktive redakt&#248;rer vil blive gemt og lukket." />
-	<string key="AddNewUserWorkflow.UsernameDuplicateError" value="En bruger med samme navn findes allerede" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.LabelFieldGroup" value="Tilf&#248;j ny bruger" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.UserNameLabel" value="Brugernavn" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.UserNameHelp" value="N&#229;r du har oprettet en ny bruger, kan brugernavnet ikke &#230;ndres" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.PasswordLabel" value="Adgangskode" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.PasswordHelp" value="Adgangskoden skal v&#230;re p&#229; mere end 6 tegn." />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.EmailLabel" value="E-mail adresse" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.EmailHelp" value="Brugerens e-mail adresse (valgfri)." />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.GroupLabel" value="Mappe" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.GroupHelp" value="Hvis du indtaster et mappenavn, som ikke allerede eksisterer, s&#229; vil en ny mappe blive oprettet." />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureLabel" value="Regionale indstillinger" />
-	<string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="V&#230;lg et punkt p&#229; listen for at &#230;ndre den m&#229;de hvorp&#229; tal, datoer og tidspunkter vises" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectLabel" value="Synlige perspektiver" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActivePerspectiveMultiSelectHelp" value="Vælg hvilke perspektiver som skal være synlige, når brugeren starter C1 konsollen." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsFieldLabel" value="Globale rettigheder" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectLabel" value="Globale rettigheder" />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissionsMultiSelectHelp" value="Administratorrettighed giver brugeren adgang til at administrere brugerrettigheder og udføre andre administrative opgaver." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GlobalPermissions.IgnoredOwnAdministrativeRemoval" value="Fjernelse af ​​din egen administratorrettighed blev ignoreret. Du har stadig administratorrettigheder." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesFieldLabel" value="Data-sprog adgang" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectLabel" value="Data-sprog" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocalesMultiSelectHelp" value="Brugeren har adgang til at administrere data på det valgte sprog." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleLabel" value="Aktivt indholdssprog" />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleHelp" value="Indholdssproget som denne bruger vil redigere." />
+  <string key="Website.Forms.Administrative.EditUserStep1.ActiveLocaleNotChecked" value="Det valgte sprog er ikke markeret i datasprog-sektionen." />
+  <string key="Website.Forms.Administrative.EditUserStep1.NoActiveLocaleSelected" value="Du skal vælge mindst ét ​​aktivt sprog." />
+  <string key="Website.Forms.Administrative.EditUserStep1.GenerelTabLabel" value="Generelt" />
+  <string key="Website.Forms.Administrative.EditUserStep1.PermissionsTabLabel" value="Rettigheder" />
+  <string key="Website.Forms.Administrative.EditUserStep1.PerspectivesTabLabel" value="Perspektiver" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserGroupsFieldLabel" value="Brugergrupper" />
+  <string key="Website.Forms.Administrative.EditUserStep1.UserGroupsMultiSelectHelp" value="Vælg de brugergrupper, som den valgte bruger skal være medlem af." />
+  <string key="Website.Forms.Administrative.EditUserStep1.IsLockedLabel" value="Er låst" />
+  <string key="Website.Forms.Administrative.EditUserStep1.IsLockedItemLabel" value="Brugeren kan ikke logge ind" />
+  <string key="Website.Forms.Administrative.EditUserStep1.IsLockedHelp" value="Hvis markeret kan brugeren ikke logge ind." />
+  <string key="EditUserWorkflow.EditErrorTitle" value="Fejl" />
+  <string key="EditUserWorkflow.EditOwnAccessToSystemPerspective" value="Du kan ikke slette dine egne adgangsrettigheder til 'system' perspektivet." />
+  <string key="EditUserWorkflow.LockingOwnUserAccount" value="Du kan ikke låse din egen konto." />
+  <string key="UserElementProvider.RootLabel" value="Brugere" />
+  <string key="UserElementProvider.RootToolTip" value="Brugere" />
+  <string key="UserElementProvider.AddUserLabel" value="Tilføj bruger ..." />
+  <string key="UserElementProvider.AddUserToolTip" value="Tilføj ny bruger" />
+  <string key="UserElementProvider.EditUserLabel" value="Redigér bruger" />
+  <string key="UserElementProvider.EditUserToolTip" value="Redigér den valgte bruger" />
+  <string key="UserElementProvider.DeleteUserLabel" value="Slet bruger" />
+  <string key="UserElementProvider.DeleteUserToolTip" value="Slet den valgte bruger" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleTitle" value="Advarsel" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleMessage" value="Du har ændret det aktive sprog for en bruger, som er logget på. Brugerkonsollen vil blive genindlæst og data kan gå tabt." />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogTitle" value="Oprydning påkrævet" />
+  <string key="UserElementProvider.ChangeOtherActiveLocaleDialogText" value="Dette kræver en sceneoprydning. Aktive redaktører vil blive gemt og lukket." />
+  <string key="AddNewUserWorkflow.UsernameDuplicateError" value="En bruger med samme navn findes allerede" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.LabelFieldGroup" value="Tilføj ny bruger" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.UserNameLabel" value="Brugernavn" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.UserNameHelp" value="Når du har oprettet en ny bruger, kan brugernavnet ikke ændres" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.PasswordLabel" value="Adgangskode" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.PasswordHelp" value="Adgangskoden skal være på mere end 6 tegn." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.NameLabel" value="Navn" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.NameHelp" value="Det fulde navn på den person, der bruger denne konto." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.EmailLabel" value="E-mail adresse" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.EmailHelp" value="Brugerens e-mail adresse (valgfri)." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.GroupLabel" value="Mappe" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.GroupHelp" value="Hvis du indtaster et mappenavn, som ikke allerede eksisterer, så vil en ny mappe blive oprettet." />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.CultureLabel" value="Regionale indstillinger" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.CultureHelp" value="Vælg et punkt på listen for at ændre den måde hvorpå tal, datoer og tidspunkter vises" />
   <string key="Website.Forms.Administrative.AddNewUserStep1.C1ConsoleLanguageLabel" value="Sprog i C1 konsol" />
-  <string key="Website.Forms.Administrative.AddNewUserStep1.C1ConsoleLanguageHelp" value="V&#230;lg det sprog, som skal anvendes til betegnelser, hj&#230;lpetekster, dialoger osv. De tilg&#230;ngelige indstillinger er her begr&#230;nset til de installerede sprog. Du kan installere flere sprog via  pakkesystemet. Se Composite lokalisering." />
-  <string key="UserElementProvider.MissingActiveLanguageTitle" value="Et sprog er p&#229;kr&#230;vet" />
-	<string key="UserElementProvider.MissingActiveLanguageMessage" value="For at oprette en bruger er det p&#229;kr&#230;vet at v&#230;lge et sprog, men der er endnu ikke valgt et sprog. Du kan tilf&#248;je et under &#39;system&#39; perspektivet." />
-	<string key="UserElementProvider.UserLoginIsAlreadyUsed" value="Der findes allerede en bruger med samme  login" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderTypeLabel" value="Tilf&#248;j datamappe" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderTypeToolTip" value="Tilf&#248;j datamappe" />
-	<string key="AssociatedDataElementProviderHelper.AddAssociatedDataLabel" value="Tilf&#248;j data" />
-	<string key="AssociatedDataElementProviderHelper.AddAssociatedDataToolTip" value="Tilf&#248;j data" />
-	<string key="AssociatedDataElementProviderHelper.EditAssociatedDataLabel" value="Redig&#233;r data" />
-	<string key="AssociatedDataElementProviderHelper.EditAssociatedDataToolTip" value="Redig&#233;r data" />
-	<string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataLabel" value="Slet data" />
-	<string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataToolTip" value="Slet data" />
-	<string key="AssociatedDataElementProviderHelper.LocalizeData" value="Lokalis&#233;r" />
-	<string key="AssociatedDataElementProviderHelper.LocalizeDataToolTip" value="Lokalis&#233;r data" />
-	<string key="AssociatedDataElementProviderHelper.DisabledData" value="Endnu ikke godkendt eller publiceret" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.FieldLabel" value="Tilf&#248;j datamappe" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorLabel" value="Datamappe-type" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorHelp" value="Opret en ny datatype eller brug en eksisterende datatypel (hvis det findes)." />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelNewType" value="Indstillinger" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeName" value="Typenavn" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeName" value="Den tekniske betegnelse for datatypen (fx. produkt). Denne bruges til at identificere typen i kode og b&#248;r ikke &#230;ndres, efter den er blevet anvendt eksternt." />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeNamespace" value="Typens navnefelt" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeNamespace" value="Typens navnefelt (modul / kategorinavn). Dette bruges til at identificere denne type i koden og b&#248;r ikke &#230;ndres." />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeTitle" value="Titel" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeTitle" value="Brug denne post til at angive et brugervenligt navn. Du kan &#230;ndre dette felt, som du vil." />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelFields" value="Felter" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ServicesLabel" value="Tjenester" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasPublishing" value="Har publiceringsarbejdsgang" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasLocalization" value="Har lokalisering" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesTitle" value="Der findes ingen side-datamapper" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Der er ikke oprettet nogen side-datamapper endnu. Du kan oprette en side-datamappe i &#39;data&#39; perspektiv." />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesTitle" value="Der findes ingen ubrugte side-datamapper" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Alle tilg&#230;ngelige side-datamapper er allerede blevet tilf&#248;jet. For at oprette en ny side-datamappe s&#229; g&#229; til &#39;data&#39; perspektiv." />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ErrorTitle" value="Fejl" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.FieldLabel" value="V&#230;lg og tilf&#248;j en eksisterende datamappe-type" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorLabel" value="Eksisterende datamappe-typer" />
-	<string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorHelp" value="V&#230;lg og tilf&#248;j en eksisterende datamappe-type" />
-	<string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeLabel" value="Fjern metadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeToolTip" value="Fjern metadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.LabelFieldGroup" value="Fjern datamappe fra siden" />
-	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.FieldGroupLabel" value="Dataoprydning" />
-	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataLabel" value="Slet data" />
-	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataCheckBoxLabel" value="Ja, slet mappedata" />
-	<string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataHelp" value="Hvis du &#248;nsker at data i denne mappe skal forblive i databasen, s&#229; skal du frav&#230;lge ​​denne mulighed" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.LayoutLabel" value="Tilf&#248;j metadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataTypeLabel" value="Tilf&#248;j metadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataTypeToolTip" value="Tilf&#248;j metadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.FieldLabel" value="V&#230;lg og tilf&#248;j en eksisterende metadata-type" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorLabel" value="Eksisterende metadata-typer" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorHelp" value="V&#230;lg og tilf&#248;j en eksisterende metadata-type" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesTitle" value="Der findes ingen sidemetadata-typer" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesMessage" value="Der er ikke oprettet nogen sidemetatyper endnu. Du kan oprette en sidemetatype i &#39;data&#39; perspektiv." />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.NamingFieldLabel" value="Navngivning af metadatafeltgruppe" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameLabel" value="Navn" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameHelp" value="Indtast et entydigt navn, som identificerer denne metadatafeltgruppe" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelLabel" value="Label" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelHelp" value="Indtast en brugervenlig label for denne metadatafeltgruppe" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.VisabilityFieldLabel" value="Visning af  metadatafeltgruppen" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorLabel" value="Fane" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorHelp" value="V&#230;lg fanen, som denne metadata skal tilh&#248;re" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorLabel" value="Start visning fra" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorHelp" value="Start visning fra" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorLabel" value="Nedarv visning" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorHelp" value="Nedarv visning" />
-	<string key="AssociatedDataElementProviderHelper.NoItems.Title" value="Der er ingen elementer indenfor metadatafeltgruppens r&#230;kkevidde" />
-	<string key="AssociatedDataElementProviderHelper.NoItems.Description" value="Der er i &#248;jeblikket ingen items indenfor den angivne visnings r&#230;kkevidde. Tryk p&#229; &#39;forrige&#39; for at &#230;ndre visningens r&#230;kkevidde eller tryk &#39;afslut&#39; for at oprette metadatafeltgruppen." />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption0" value="Dette element" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption1" value="B&#248;rn" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption2" value="2. generations efterkommere" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption3" value="3. generations efterkommere" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption4" value="4. generations efterkommere" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption5" value="5. generations efterkommere" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption0" value="M&#229; ikke nedarves" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption1" value="Nedarv  1. generation" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption2" value="Nedarv 2. generationer" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption3" value="Nedarv 3. generationer" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption4" value="Nedarv altid" />
-	<string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.FieldGroupNameNotValid" value="Feltgruppens navn er i brug" />
-	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectType.LayoutLabel" value="Fjern metadatafeltgruppe" />
-	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.FieldLabel" value="V&#230;lg og fjern en metadatafeltgruppe" />
-	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorLabel" value="Feltgruppe" />
-	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorHelp" value="V&#230;lg og fjern en metadatafeltgruppe" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataTypeLabel" value="Redig&#233;r metadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataTypeToolTip" value="Redig&#233;r metadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.Layout.Label" value="Redig&#233;r sidemetadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.FieldGroup.Label" value="Indstillinger for sidemetadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Label" value="Label" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Help" value="Metadatafeltets betegnelse. Bruges ved redigering af sider" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Label" value="Fane" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Help" value="V&#230;lg fanen, som denne metadata skal tilh&#248;re" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorLabel" value="Start visning fra" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorHelp" value="Start visning fra" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorLabel" value="Nedarv visning" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorHelp" value="Nedarv visning" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Label" value="Metadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Help" value="V&#230;lg og redig&#233;r metadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Title" value="Der findes ingen metadatafelter som skal redigeres" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Message" value="Der er ingen metadatafelter defineret for dette element, som skal rettes" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataFieldNameAlreadyUsed" value="Mettadata-typen er i brug et andet sted med samme navn, men under en anden betegnelse" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerChangeNotAllowed" value="Der findes en eller flere definitioner med samme navn. Forandring af container er ikke tilladt" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Title" value="Tryk p&#229; udf&#248;r for at gemme" />
-	<string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Description" value="Alle n&#248;dvendige oplysninger er indsamlet. Tryk p&#229; &#39;afslut&#39; for at opdatere metadatafelt" />
-	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Title" value="Der findes ingen metedatafelter, som kan fjernes" />
-	<string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Message" value="Der er ikke defineret nogen metedatafelter for dette element, som kan fjernes" />
-	<string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
-	<string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorMessage" value="Der er en anden type, som referer til typen, som ikke tillader kumulerede sletninger. Denne handling er stoppet" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelNewType" value="Indstillinger" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeName" value="Typenavn" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeName" value="Navnet p&#229; den nye type, som du opretter (fx. produkt)" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeNamespace" value="Typens navnefelt" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeNamespace" value="Navnet p&#229; modulet, kategorien eller det navnefelt, som du opretter" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeTitle" value="Titel" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeTitle" value="Brug denne post til at angive et brugervenligt navn" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelFields" value="Felter" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.ServicesLabel" value="Tjenester" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasVersioning" value="Har versionering" />
-	<string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasPublishing" value="Har publiceringsarbejdsgang" />
-	<string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.FieldGroupLabel" value="Slet data?" />
-	<string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.Text" value="Slet data?" />
-	<string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.FieldGroupLabel" value="Tilf&#248;j sidedata" />
-	<string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorLabel" value="V&#230;lg og tilf&#248;j en datatype" />
-	<string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorHelp" value="V&#230;lg og tilf&#248;j data til en af ​​de eksisterende typer" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeWorkflow.FieldGroupLabel" value="Tilf&#248;j side-datatype" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorLabel" value="V&#230;lg og tilf&#248;j type" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorHelp" value="V&#230;lg en af ​​de eksisterende typer i systemet" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorLabel" value="V&#230;lg en fremmed n&#248;gle" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorHelp" value="V&#230;lg et af felterne under den type, som du &#248;nsker at bruge som fremmed n&#248;gle" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorLabel" value="Tilf&#248;j en" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorHelp" value="Opret en ny type eller anvend en eksisterende type," />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorLabel" value="V&#230;lg type:" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorHelp" value="Normal data er en ny type, som er oprettet under en side. Metadata er et nyt felt, som er oprettet p&#229; en side" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameLabel" value="Regelnavn" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameHelp" value="Regelnavn gemmes med metadata og er en del af metadata-n&#248;glen. Navnet skal v&#230;re unikt." />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleLabelLabel" value="Regelbetegnelse" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleHelpHelp" value="Regelbetegnelsen bruges som et brugervenligt navn p&#229; eksemplet. Kan lokaliseres" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorLabel" value="V&#230;lg kompositionscontainer" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorHelp" value="V&#230;lg container til den nye regel." />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorLabel" value="V&#230;lg kompositionsomfang" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorHelp" value="V&#230;lg den nye kompositions omfang" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsLabel" value="Niveauer" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsHelp" value="Dybden af ​​undersider hvor komposition&#39;en vil v&#230;re synlig" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeLabel" value="Bekr&#230;ft ny datatype:" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeHelp" value="Metadata er et nyt felt, som er oprettet p&#229; en side" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Regelnavn for kompositionens omfang" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameHelp" value="Regelnavn gemmes med metadata og er en del af metadata-n&#248;glen. Navnet skal v&#230;re unikt." />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleLabelLabel" value="Regelbetegnelse for kompositionens omfang" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleHelpHelp" value="Regelbetegnelsen bruges som et brugervenligt navn p&#229; eksemplet. Kan lokaliseres" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeLabel" value="Kompositionens omfang" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeHelp" value="Dette er omfanget, indenfor hvilket den nye sammens&#230;tning vil v&#230;re synlig, n&#229;r du redigerer sider" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeLabel" value="Type tilf&#248;jes" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeHelp" value="Opret en ny type eller anvend en eksisterende type," />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameLabel" value="Eksisterende typenavn" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameHelp" value="Navnet p&#229; den valgte, eksisterende type findes i systemet og kan anvendes" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameLabel" value="Navn p&#229; fremmed n&#248;glefelt" />
-	<string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameHelp" value="Navnet p&#229; den eksisterende types felt, som skal anvendes som fremmed n&#248;gle" />
-	<string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeLabel" value="Fjern datamappe" />
-	<string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeToolTip" value="Fjern datamappe" />
-	<string key="Website.Forms.Administrative.RemoveAssociatedType.FieldGroupLabel" value="Fjern side-datatype" />
-	<string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.AssociationTypeLabel" value="Fjern side-datatype" />
-	<string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Regelnavn for kompositionens omfang" />
-	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorLabel" value="V&#230;lg en regel" />
-	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorHelp" value="Navnet p&#229; reglen, som skal fjernes" />
-	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorLabel" value="V&#230;lg side-datatype" />
-	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorHelp" value="" />
-	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorLabel" value="V&#230;lg datatype" />
-	<string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorHelp" value="V&#230;lg en af ​​de eksisterende typer" />
-	<string key="VirtualElementProviderElementProvider.ID01" value="Virtuel rod" />
+  <string key="Website.Forms.Administrative.AddNewUserStep1.C1ConsoleLanguageHelp" value="Vælg det sprog, som skal anvendes til betegnelser, hjælpetekster, dialoger osv. De tilgængelige indstillinger er her begrænset til de installerede sprog. Du kan installere flere sprog via  pakkesystemet. Se Composite lokalisering." />
+  <string key="UserElementProvider.MissingActiveLanguageTitle" value="Et sprog er påkrævet" />
+  <string key="UserElementProvider.MissingActiveLanguageMessage" value="For at oprette en bruger er det påkrævet at vælge et sprog, men der er endnu ikke valgt et sprog. Du kan tilføje et under 'system' perspektivet." />
+  <string key="UserElementProvider.UserLoginIsAlreadyUsed" value="Der findes allerede en bruger med samme  login" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderTypeLabel" value="Tilføj datamappe" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderTypeToolTip" value="Tilføj datamappe" />
+  <string key="AssociatedDataElementProviderHelper.AddAssociatedDataLabel" value="Tilføj data" />
+  <string key="AssociatedDataElementProviderHelper.AddAssociatedDataToolTip" value="Tilføj data" />
+  <string key="AssociatedDataElementProviderHelper.EditAssociatedDataLabel" value="Redigér data" />
+  <string key="AssociatedDataElementProviderHelper.EditAssociatedDataToolTip" value="Redigér data" />
+  <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataLabel" value="Slet data" />
+  <string key="AssociatedDataElementProviderHelper.DeleteAssociatedDataToolTip" value="Slet data" />
+  <string key="AssociatedDataElementProviderHelper.DuplicateAssociatedDataLabel" value="Kopier data" />
+  <string key="AssociatedDataElementProviderHelper.DuplicateAssociatedDataToolTip" value="Kopier data" />
+  <string key="AssociatedDataElementProviderHelper.LocalizeData" value="Lokalisér" />
+  <string key="AssociatedDataElementProviderHelper.LocalizeDataToolTip" value="Lokalisér data" />
+  <string key="AssociatedDataElementProviderHelper.DisabledData" value="Endnu ikke godkendt eller publiceret" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.FieldLabel" value="Tilføj datamappe" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorLabel" value="Datamappe-type" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExSelectType.SelectorHelp" value="Opret en ny datatype eller brug en eksisterende datatypel (hvis det findes)." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelNewType" value="Indstillinger" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeName" value="Typenavn" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeName" value="Den tekniske betegnelse for datatypen (fx. produkt). Denne bruges til at identificere typen i kode og bør ikke ændres, efter den er blevet anvendt eksternt." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeNamespace" value="Typens navnefelt" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeNamespace" value="Typens navnefelt (modul / kategorinavn). Dette bruges til at identificere denne type i koden og bør ikke ændres." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelTypeTitle" value="Titel" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HelpTypeTitle" value="Brug denne post til at angive et brugervenligt navn. Du kan ændre dette felt, som du vil." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.LabelFields" value="Felter" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ServicesLabel" value="Tjenester" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasPublishing" value="Har publiceringsarbejdsgang" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.HasLocalization" value="Har lokalisering" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesTitle" value="Der findes ingen side-datamapper" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoTypesMessage" value="Der er ikke oprettet nogen side-datamapper endnu. Du kan oprette en side-datamappe i 'data' perspektiv." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesTitle" value="Der findes ingen ubrugte side-datamapper" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExWorkflow.NoUnusedTypesMessage" value="Alle tilgængelige side-datamapper er allerede blevet tilføjet. For at oprette en ny side-datamappe så gå til 'data' perspektiv." />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderExCreateNewType.ErrorTitle" value="Fejl" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.FieldLabel" value="Vælg og tilføj en eksisterende datamappe-type" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorLabel" value="Eksisterende datamappe-typer" />
+  <string key="AssociatedDataElementProviderHelper.AddDataFolderSelectType.SelectorHelp" value="Vælg og tilføj en eksisterende datamappe-type" />
+  <string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeLabel" value="Fjern metadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.RemoveMetaDataTypeToolTip" value="Fjern metadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.LabelFieldGroup" value="Fjern datamappe fra siden" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.FieldGroupLabel" value="Dataoprydning" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataLabel" value="Slet data" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataCheckBoxLabel" value="Ja, slet mappedata" />
+  <string key="AssociatedDataElementProviderHelper.DeleteDataFolderWorkflow.DeleteFolderDataHelp" value="Hvis du ønsker at data i denne mappe skal forblive i databasen, så skal du fravælge ​​denne mulighed" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.LayoutLabel" value="Tilføj metadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataTypeLabel" value="Tilføj metadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataTypeToolTip" value="Tilføj metadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.FieldLabel" value="Vælg og tilføj en eksisterende metadata-type" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorLabel" value="Eksisterende metadata-typer" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataSelectType.SelectorHelp" value="Vælg og tilføj en eksisterende metadata-type" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesTitle" value="Der findes ingen sidemetadata-typer" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.NoTypesMessage" value="Der er ikke oprettet nogen sidemetatyper endnu. Du kan oprette en sidemetatype i 'data' perspektiv." />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.NamingFieldLabel" value="Navngivning af metadatafeltgruppe" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameLabel" value="Navn" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupNameHelp" value="Indtast et entydigt navn, som identificerer denne metadatafeltgruppe" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelLabel" value="Label" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.FieldGroupLabelHelp" value="Indtast en brugervenlig label for denne metadatafeltgruppe" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.VisabilityFieldLabel" value="Visning af  metadatafeltgruppen" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorLabel" value="Fane" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.ContainerSelectorHelp" value="Vælg fanen, som denne metadata skal tilhøre" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorLabel" value="Start visning fra" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.StartDisplaySelectorHelp" value="Start visning fra" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorLabel" value="Nedarv visning" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataCreateFieldGroup.InheritDisplaySelectorHelp" value="Nedarv visning" />
+  <string key="AssociatedDataElementProviderHelper.NoItems.Title" value="Der er ingen elementer indenfor metadatafeltgruppens rækkevidde" />
+  <string key="AssociatedDataElementProviderHelper.NoItems.Description" value="Der er i øjeblikket ingen items indenfor den angivne visnings rækkevidde. Tryk på 'forrige' for at ændre visningens rækkevidde eller tryk 'afslut' for at oprette metadatafeltgruppen." />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption0" value="Dette element" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption1" value="Børn" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption2" value="2. generations efterkommere" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption3" value="3. generations efterkommere" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption4" value="4. generations efterkommere" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.StartDisplayOption5" value="5. generations efterkommere" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption0" value="Må ikke nedarves" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption1" value="Nedarv  1. generation" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption2" value="Nedarv 2. generationer" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption3" value="Nedarv 3. generationer" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.InheritDisplayOption4" value="Nedarv altid" />
+  <string key="AssociatedDataElementProviderHelper.AddMetaDataWorkflow.FieldGroupNameNotValid" value="Feltgruppens navn er i brug" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectType.LayoutLabel" value="Fjern metadatafeltgruppe" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.FieldLabel" value="Vælg og fjern en metadatafeltgruppe" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorLabel" value="Feltgruppe" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataSelectFieldGroupName.SelectorHelp" value="Vælg og fjern en metadatafeltgruppe" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataTypeLabel" value="Redigér metadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataTypeToolTip" value="Redigér metadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.Layout.Label" value="Redigér sidemetadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.FieldGroup.Label" value="Indstillinger for sidemetadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Label" value="Label" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.LabelTextBox.Help" value="Metadatafeltets betegnelse. Bruges ved redigering af sider" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Label" value="Fane" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerSelector.Help" value="Vælg fanen, som denne metadata skal tilhøre" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorLabel" value="Start visning fra" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.StartDisplaySelectorHelp" value="Start visning fra" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorLabel" value="Nedarv visning" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.InheritDisplaySelectorHelp" value="Nedarv visning" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Label" value="Metadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataDefinitionSelector.Help" value="Vælg og redigér metadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Title" value="Der findes ingen metadatafelter som skal redigeres" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoMetaDataDefinitionsExists.Message" value="Der er ingen metadatafelter defineret for dette element, som skal rettes" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataFieldNameAlreadyUsed" value="Mettadata-typen er i brug et andet sted med samme navn, men under en anden betegnelse" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.MetaDataContainerChangeNotAllowed" value="Der findes en eller flere definitioner med samme navn. Forandring af container er ikke tilladt" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Title" value="Tryk på udfør for at gemme" />
+  <string key="AssociatedDataElementProviderHelper.EditMetaDataWorkflow.NoDefaultValuesNeeded.Description" value="Alle nødvendige oplysninger er indsamlet. Tryk på 'afslut' for at opdatere metadatafelt" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Title" value="Der findes ingen metedatafelter, som kan fjernes" />
+  <string key="AssociatedDataElementProviderHelper.DeleteMetaDataWorkflow.NoDefinedTypesExists.Message" value="Der er ikke defineret nogen metedatafelter for dette element, som kan fjernes" />
+  <string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
+  <string key="DeleteAssociatedDataWorkflow.CascadeDeleteErrorMessage" value="Der er en anden type, som referer til typen, som ikke tillader kumulerede sletninger. Denne handling er stoppet" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelNewType" value="Indstillinger" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeName" value="Typenavn" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeName" value="Navnet på den nye type, som du opretter (fx. produkt)" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeNamespace" value="Typens navnefelt" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeNamespace" value="Navnet på modulet, kategorien eller det navnefelt, som du opretter" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelTypeTitle" value="Titel" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HelpTypeTitle" value="Brug denne post til at angive et brugervenligt navn" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.LabelFields" value="Felter" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.ServicesLabel" value="Tjenester" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasVersioning" value="Har versionering" />
+  <string key="Website.Forms.Administrative.CreateNewAssociatedTypeStep1.HasPublishing" value="Har publiceringsarbejdsgang" />
+  <string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.FieldGroupLabel" value="Slet data?" />
+  <string key="Website.Forms.Administrative.DeleteAssociatedTypeDataStep1.Text" value="Slet data?" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.FieldGroupLabel" value="Tilføj sidedata" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorLabel" value="Vælg og tilføj en datatype" />
+  <string key="Website.Forms.Administrative.AddAssociatedDataWorkflow.TypeSelectorHelp" value="Vælg og tilføj data til en af ​​de eksisterende typer" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeWorkflow.FieldGroupLabel" value="Tilføj side-datatype" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorLabel" value="Vælg og tilføj type" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExisting.TypeSelectorHelp" value="Vælg en af ​​de eksisterende typer i systemet" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorLabel" value="Vælg en fremmed nøgle" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddExistingSelectForeignKey.KeySelectorHelp" value="Vælg et af felterne under den type, som du ønsker at bruge som fremmed nøgle" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorLabel" value="Tilføj en" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAddingTypeSelection.KeySelectorHelp" value="Opret en ny type eller anvend en eksisterende type," />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorLabel" value="Vælg type:" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeAssociationTypeSelection.KeySelectorHelp" value="Normal data er en ny type, som er oprettet under en side. Metadata er et nyt felt, som er oprettet på en side" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameLabel" value="Regelnavn" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleNameHelp" value="Regelnavn gemmes med metadata og er en del af metadata-nøglen. Navnet skal være unikt." />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleLabelLabel" value="Regelbetegnelse" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeRuleHelpHelp" value="Regelbetegnelsen bruges som et brugervenligt navn på eksemplet. Kan lokaliseres" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorLabel" value="Vælg kompositionscontainer" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ContainerKeySelectorHelp" value="Vælg container til den nye regel." />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorLabel" value="Vælg kompositionsomfang" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeCompositionScopeSelection.ScopeKeySelectorHelp" value="Vælg den nye kompositions omfang" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsLabel" value="Niveauer" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeLevelsScopeSelection.LevelsHelp" value="Dybden af ​​undersider hvor komposition'en vil være synlig" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeLabel" value="Bekræft ny datatype:" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AssociationTypeHelp" value="Metadata er et nyt felt, som er oprettet på en side" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Regelnavn for kompositionens omfang" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleNameHelp" value="Regelnavn gemmes med metadata og er en del af metadata-nøglen. Navnet skal være unikt." />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleLabelLabel" value="Regelbetegnelse for kompositionens omfang" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeRuleHelpHelp" value="Regelbetegnelsen bruges som et brugervenligt navn på eksemplet. Kan lokaliseres" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeLabel" value="Kompositionens omfang" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.CompositionScopeHelp" value="Dette er omfanget, indenfor hvilket den nye sammensætning vil være synlig, når du redigerer sider" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeLabel" value="Type tilføjes" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.AddingTypeHelp" value="Opret en ny type eller anvend en eksisterende type," />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameLabel" value="Eksisterende typenavn" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ExistingTypeNameHelp" value="Navnet på den valgte, eksisterende type findes i systemet og kan anvendes" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameLabel" value="Navn på fremmed nøglefelt" />
+  <string key="Website.Forms.Administrative.AddAssociatedTypeFinalInfo.ForeignKeyFieldNameHelp" value="Navnet på den eksisterende types felt, som skal anvendes som fremmed nøgle" />
+  <string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeLabel" value="Fjern datamappe" />
+  <string key="AssociatedDataElementProviderHelper.RemoveAssociatedTypeToolTip" value="Fjern datamappe" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedType.FieldGroupLabel" value="Fjern side-datatype" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.AssociationTypeLabel" value="Fjern side-datatype" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeFinalInfo.CompositionScopeRuleNameLabel" value="Regelnavn for kompositionens omfang" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorLabel" value="Vælg en regel" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectRuleName.KeySelectorHelp" value="Navnet på reglen, som skal fjernes" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorLabel" value="Vælg side-datatype" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectAssociationType.KeySelectorHelp" value="" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorLabel" value="Vælg datatype" />
+  <string key="Website.Forms.Administrative.RemoveAssociatedTypeSelectType.TypeSelectorHelp" value="Vælg en af ​​de eksisterende typer" />
+  <string key="VirtualElementProviderElementProvider.ID01" value="Virtuel rod" />
   <string key="VirtualElementProviderElementProvider.PermissionsPerspective" value="Brugere og rettigheder" />
-	<string key="VirtualElementProviderElementProvider.UserPerspective" value="Brugere" />
-	<string key="VirtualElementProviderElementProvider.DeveloperApplicationPerspective" value="Udvikler-Apps" />
-	<string key="VirtualElementProviderElementProvider.UserGroupPerspective" value="Brugergrupper" />
-	<string key="VirtualElementProviderElementProvider.SystemPerspective" value="System" />
-	<string key="VirtualElementProviderElementProvider.ContentPerspective" value="Indhold" />
-	<string key="VirtualElementProviderElementProvider.DatasPerspective" value="Data" />
-	<string key="VirtualElementProviderElementProvider.DesignPerspective" value="Layout" />
-	<string key="VirtualElementProviderElementProvider.FunctionsPerspective" value="Funktioner" />
-	<string key="VirtualElementProviderElementProvider.MediaFilePerspective" value="Alle mediefiler" />
-	<string key="VirtualElementProviderElementProvider.MediaPerspective" value="Medier" />
-	<string key="VirtualElementProviderElementProvider.ReadOnlyFunctionPerspective" value="Alle funktioner" />
-	<string key="VirtualElementProviderElementProvider.ReadOnlyWidgetFunctionPerspective" value="Alle widgetfunktioner" />
-	<string key="VirtualElementProviderElementProvider.SqlFunctionPerspective" value="SQL-funktioner" />
-	<string key="VirtualElementProviderElementProvider.XsltBasedFunctionPerspective" value="Xslt-baserede funktioner" />
-	<string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogLabel" value="Server log" />
-	<string key="VirtualElementProviderElementProvider.RootActions.ViewSystemLogTooltip" value="Se de seneste begivenheder p&#229; serveren" />
-	<string key="VirtualElementProviderElementProvider.RootActions.SendMessageLabel" value="Udsend meddelelse" />
-	<string key="VirtualElementProviderElementProvider.RootActions.SendMessageTooltip" value="Send en besked til alle aktive konsoller" />
-	<string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Genstart server" />
-	<string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Genstart serveren" />
-	<string key="SendMessageToConsolesWorkflow.Layout.Label" value="Send budskab til alle C1 konsoller" />
-	<string key="SendMessageToConsolesWorkflow.FieldGroup.Label" value="Besked som skal sendes" />
-	<string key="SendMessageToConsolesWorkflow.TitleTextBox.Label" value="Titel" />
-	<string key="SendMessageToConsolesWorkflow.TitleTextBox.Help" value="Dialogtitel p&#229; den besked, som skal udsendes" />
-	<string key="SendMessageToConsolesWorkflow.MessageTextArea.Label" value="Besked" />
-	<string key="SendMessageToConsolesWorkflow.MessageTextArea.Help" value="Den besked, som skal udsendes" />
-	<string key="LoginWebRequestHandler.Login" value="Login" />
-	<string key="LoginWebRequestHandler.Header" value="{0} login" />
-	<string key="LoginWebRequestHandler.LoginFailed" value="Forkert brugernavn eller password" />
-	<string key="LoginWebRequestHandler.Password" value="Adgangskode" />
-	<string key="LoginWebRequestHandler.Username" value="Brugernavn" />
-	<string key="LoginWebRequestHandler.LogInAsOtherUser" value="Log p&#229; som en anden bruger." />
-	<string key="LoginWebRequestHandler.WrongUserNameOrPassword" value="Forkert brugernavn eller adgangskode." />
-	<string key="LoginWebRequestHandler.UserNameNotRegistered" value="Det medf&#248;lgende Windows login, {0}\{1} er ikke registreret i brugerdatabasen. Du m&#229; anvende et andet login." />
-	<string key="DataInterfaceValidator.TypeNotAnInterface" value="Typen {0} er ikke et interface." />
-	<string key="DataInterfaceValidator.TypeDoesNotImplementInterface" value="Interfacetypen {0} implementerer ikke interfacet {1}." />
-	<string key="DataInterfaceValidator.NotAcceptedType" value="Egenskaben {0} p&#229; intefacetypen {1} er ikke en accepteret type." />
-	<string key="DataInterfaceValidator.NotValidIDataInterface" value="Interfacet {0} er ikke et gyldigt IData interface." />
-	<string key="DeleteMediaFileWorkflow.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
-	<string key="DeleteMediaFileWorkflow.CascadeDeleteErrorMessage" value="Der er en anden type, som referer til typen, som ikke tillader kumulerede sletninger. Denne handling er stoppet" />
-	<string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
-	<string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorMessage" value="Der er en anden type, som referer til typen, som ikke tillader kumulerede sletninger. Denne handling er stoppet" />
-	<string key="MediaFileProviderElementProvider.RootToolTip" value="Tilf&#248;j mapper og filer til mediearkivet" />
-	<string key="MediaFileProviderElementProvider.AddMediaFolder" value="Tilf&#248;j mappe" />
-	<string key="MediaFileProviderElementProvider.AddMediaFolderToolTip" value="Tilf&#248;j ny mediemappe" />
-	<string key="MediaFileProviderElementProvider.AddMediaFile" value="Upload fil" />
-	<string key="MediaFileProviderElementProvider.AddMediaFileToolTip" value="Tilf&#248;j ny mediefil" />
-	<string key="MediaFileProviderElementProvider.DeleteMediaFile" value="Slet fil" />
-	<string key="MediaFileProviderElementProvider.DeleteMediaFileToolTip" value="Slet den valgte mediefil" />
-	<string key="MediaFileProviderElementProvider.DeleteMediaFolder" value="Slet mappe" />
-	<string key="MediaFileProviderElementProvider.DeleteMediaFolderToolTip" value="Slet mediemappen og alle elementer under mappen." />
-	<string key="MediaFileProviderElementProvider.Download" value="Download" />
-	<string key="MediaFileProviderElementProvider.DownloadToolTip" value="Hent fil" />
-	<string key="MediaFileProviderElementProvider.EditMediaFile" value="Filegenskaber" />
-	<string key="MediaFileProviderElementProvider.EditMediaFileToolTip" value="Omd&#248;b den valgte mediefil" />
-	<string key="MediaFileProviderElementProvider.EditMediaFileTextContent" value="Redig&#233;r tekst" />
-	<string key="MediaFileProviderElementProvider.EditMediaFileTextContentToolTip" value="Redig&#233;r tekstindhold" />
-	<string key="MediaFileProviderElementProvider.EditImage" value="Billede editor" />
-	<string key="MediaFileProviderElementProvider.EditImageToolTip" value="&#197;bn den valgte mediefil i billedeeditoren" />
-	<string key="MediaFileProviderElementProvider.EditMediaFolder" value="Mappe-egenskaber" />
-	<string key="MediaFileProviderElementProvider.EditMediaFolderToolTip" value="Ret mediemappens egenskaber" />
-	<string key="MediaFileProviderElementProvider.ChangeMediaFile" value="Erstat fil" />
-	<string key="MediaFileProviderElementProvider.ChangeMediaFileToolTip" value="Erstat det valgte med en anden mediefil" />
-	<string key="MediaFileProviderElementProvider.UploadZipFile" value="Upload flere" />
-	<string key="MediaFileProviderElementProvider.UploadZipFileToolTip" value="Upload zip-fil" />
-	<string key="MediaFileProviderElementProvider.MediaFileItemToolTip" value="Medie-element" />
-	<string key="MediaFileProviderElementProvider.OrganizedFilesAndFoldersToolTip" value="Organis&#233;r mapper og filer" />
-	<string key="MediaFileProviderElementProvider.ErrorMessageTitle" value="Fejl" />
-	<string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Filen &#39;{0}&#39; findes allerede i mappen &#39;{1}&#39;" />
-	<string key="UploadNewMediaFileWorkflow.UploadFailure" value="Fejl" />
-	<string key="UploadNewMediaFileWorkflow.UploadFailureMessage" value="Den uploadede fil skal v&#230;re af samme type som den originale. Den fil, du har uploadet, er af en anden type." />
-	<string key="RelationshipGraphActionExecutor.ShowGraph" value="Vis graf" />
-	<string key="RelationshipGraphActionExecutor.ShowGraphToolTip" value="Vis relationsgraf" />
-	<string key="RelationshipGraphActionExecutor.ShowOrientedGraph" value="Vis orienteret graf" />
-	<string key="RelationshipGraphActionExecutor.ShowOrientedGraphToolTip" value="Vis orienteret relationsgraf" />
-	<string key="ShowElementInformationActionExecutor.ShowElementInformation.Label" value="Vis element informationer" />
-	<string key="ShowElementInformationActionExecutor.ShowElementInformation.ToolTip" value="Vis element informationer" />
-	<string key="RelationshipGraphActionExecutor.Search" value="S&#248;g i elementer" />
-	<string key="RelationshipGraphActionExecutor.SearchToolTip" value="S&#248;g efter elementer" />
-	<string key="RelationshipGraphActionExecutor.SearchElements" value="S&#248;g i elementer" />
-	<string key="RelationshipGraphActionExecutor.SearchElementsToolTip" value="S&#248;g efter elementer" />
-	<!-- WEBSITE -->
-	<string key="Website.General.LabelVersionNumber" value="Version nr." />
-	<string key="Website.Application.DialogReload.Title" value="Genstart ?" />
-	<string key="Website.Application.DialogReload.Text" value="Vil du genstarte Composite C1 ? Alle &#230;ndringer, som ikke er gemt, vil g&#229; tabt." />
-	<string key="WebSite.Application.DialogSaveResource.Title" value="Vil du gemme ressourcefilen ?" />
-	<string key="WebSite.Application.DialogSaveResource.Text" value="&quot;${resourcename}&quot; er blevet &#230;ndret. Gem &#230;ndringer?" />
-	<string key="Website.Dialogs.SaveAll.LabelSaveResources" value="Vil du gemme ressourcefilerne ?" />
-	<string key="Website.Dialogs.SaveAll.LabelUnsavedResources" value="Ressourcefiler som ikke er gemt" />
-	<string key="Website.Dialogs.LabelYes" value="Ja" />
-	<string key="Website.Dialogs.LabelNo" value="Nej" />
-	<string key="Website.Dialogs.LabelAccept" value="OK" />
-	<string key="Website.Dialogs.LabelCancel" value="Annull&#233;r" />
-	<string key="Website.Dialogs.LabelDisclosure" value="Mere info" />
-	<string key="Website.Dialogs.About.Title" value="Om Composite C1" />
-	<string key="Website.Dialogs.About.LabelCredits" value="Bidragydere" />
-	<string key="Website.Dialogs.About.LabelBack" value="Tilbage" />
-	<string key="Website.Dialogs.About.LabelCredits2" value="Bidragydere" />
-
-	<string key="Website.Dialogs.NoAccessTitle" value="Ingen adgang" />
-	<string key="Website.Dialogs.NoAccessText" value="Du har ikke f&#229;et tildelt adgangsrettigheder til systemet. Kontakt din administrator." />
-	<string key="Website.Dialogs.ImageEditor.ScaleImage.Unit" value="Enhed" />
-	<string key="Website.Dialogs.ImageEditor.ScaleImage.Width" value="Bredde" />
-	<string key="Website.Dialogs.ImageEditor.ScaleImage.Height" value="H&#248;jde" />
-	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelScaleImage" value="Skal&#233;r billede" />
-	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelDimensions" value="Dimensioner" />
-	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelImageSize" value="Billedst&#248;rrelse" />
-	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFixedRatio" value="Fast proportion" />
-	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFreeResize" value="Fri forandring af st&#248;rrelse" />
-	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPixels" value="Pixels" />
-	<string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPercent" value="Procent" />
-	<string key="Website.Dialogs.Options.LoginScreen" value="Login-sk&#230;rm" />
-	<string key="Website.Dialogs.Options.LabelOptions" value="Indstillinger" />
-	<string key="Website.Dialogs.Options.LabelGeneral" value="Generelt" />
-	<string key="Website.Dialogs.Options.LabelAdvanced" value="Avanceret" />
-	<string key="Website.Dialogs.Options.LabelLoginPreferences" value="Login-indstillinger" />
-	<string key="Website.Dialogs.Options.LabelFakeLoginScreen" value="Simuleret login-sk&#230;rm" />
-	<string key="Website.Dialogs.Options.LabelNoLoginScreen" value="Ingen login-sk&#230;rm" />
-	<string key="Website.Dialogs.WebServices.Error" value="Fejl i webservicemetode" />
-	<string key="Website.Dialogs.WebServices.LabelWebServiceError" value="Webservice fejl" />
-	<string key="Website.Dialogs.SystemTree.DetailedPaste.Title" value="Inds&#230;t hvor?" />
-	<string key="Website.Dialogs.SystemTree.DetailedPaste.LabelPosition" value="Placering" />
-	<string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertBefore" value="Inds&#230;t f&#248;r" />
-	<string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertAfter" value="Inds&#230;t efter" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTitle" value="Redig&#233;r billede" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFile" value="Fil" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSave" value="Gem" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSaveAs" value="Gem som ..." />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRevert" value="Fortryd" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelView" value="Vis" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoom" value="Zoom" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomIn" value="Zoom ind" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomOut" value="Zoom ud" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label800" value="800%" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label400" value="400%" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label200" value="200%" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label100" value="100%" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label50" value="50%" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label25" value="25%" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label12" value="12%" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelImage" value="Billede" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTransform" value="Foretag forandring" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipHorizontal" value="Spejlvend vandret" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipVertical" value="Spejlvend lodret" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CW" value="Rot&#233;r 90 grader med uret" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CCW" value="Rot&#233;r 90 grader mod uret" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate180" value="Drej 180 grader" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelScale" value="Skal&#233;r billede ..." />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelCrop" value="Besk&#230;r billede" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipSelect" value="V&#230;lg" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipZoom" value="Zoom" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelSave" value="Gem" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelScale" value="Skal&#233;r billede" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelCrop" value="Besk&#230;r billede" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelUndo" value="Fortryd" />
-	<string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelRedo" value="Gendan" />
-	<string key="Website.Content.Views.Editors.PermissionEditor.LabelTitle" value="Rettigheder" />
-	<string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUsers" value="Brugere" />
-	<string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUserGroups" value="Brugergrupper" />
-	<string key="Website.Content.Views.Editors.PermissionEditor.LabelButtonSave" value="Gem" />
-	<string key="Website.Content.Views.Help.ToolTipBack" value="G&#229; en side tilbage" />
-	<string key="Website.Content.Views.Help.ToolTipForward" value="G&#229; en side frem" />
-	<string key="Website.Content.Views.Help.ToolTipRefresh" value="Opdat&#233;r side" />
-	<string key="Website.Content.Views.Help.LabelContents" value="Indhold" />
-	<string key="Website.Content.Views.Help.ToolTipContents" value="Indhold af &#39;hj&#230;lp&#39;" />
-	<string key="Website.Content.Views.SystemView.ToolTipCollapseAll" value="Skjul alle" />
-	<string key="Website.Content.Views.SystemView.ToolTipLinkWithEditor" value="Link med redakt&#248;rfunktion" />
-	<string key="Website.Content.Views.Search.Search.LabelNewSearch" value="Ny s&#248;gning ..." />
-	<string key="Website.Content.Views.ViewSource.LabelFormatted" value="Formateret" />
-	<string key="Website.Content.Views.ViewSource.LabelRaw" value="Ubehandlet" />
-	<string key="ServerLog.LabelTitle" value="Server log" />
-	<string key="ServerLog.LabelButtonDeleteOld" value="Slet gammel" />
-	<string key="ServerLog.LabelButtonRefresh" value="Opdat&#233;r" />
-	<string key="ServerLog.EmptyLabel" value="Ingen log data er tilg&#230;ngelig ..." />
-	<string key="ServerLog.LogEntry.DateLabel" value="Dato" />
-	<string key="ServerLog.LogEntry.MessageLabel" value="Besked" />
-	<string key="ServerLog.LogEntry.TitleLabel" value="Titel" />
-	<string key="ServerLog.LogEntry.EventTypeLabel" value="H&#230;ndelsestype" />
+  <string key="VirtualElementProviderElementProvider.UserPerspective" value="Brugere" />
+  <string key="VirtualElementProviderElementProvider.DeveloperApplicationPerspective" value="Udvikler-Apps" />
+  <string key="VirtualElementProviderElementProvider.UserGroupPerspective" value="Brugergrupper" />
+  <string key="VirtualElementProviderElementProvider.SystemPerspective" value="System" />
+  <string key="VirtualElementProviderElementProvider.ContentPerspective" value="Indhold" />
+  <string key="VirtualElementProviderElementProvider.DatasPerspective" value="Data" />
+  <string key="VirtualElementProviderElementProvider.DesignPerspective" value="Layout" />
+  <string key="VirtualElementProviderElementProvider.FunctionsPerspective" value="Funktioner" />
+  <string key="VirtualElementProviderElementProvider.MediaFilePerspective" value="Alle mediefiler" />
+  <string key="VirtualElementProviderElementProvider.MediaPerspective" value="Medier" />
+  <string key="VirtualElementProviderElementProvider.ReadOnlyFunctionPerspective" value="Alle funktioner" />
+  <string key="VirtualElementProviderElementProvider.ReadOnlyWidgetFunctionPerspective" value="Alle widgetfunktioner" />
+  <string key="VirtualElementProviderElementProvider.SqlFunctionPerspective" value="SQL-funktioner" />
+  <string key="VirtualElementProviderElementProvider.XsltBasedFunctionPerspective" value="Xslt-baserede funktioner" />
+  <string key="VirtualElementProviderElementProvider.RootActions.SendMessageLabel" value="Udsend meddelelse" />
+  <string key="VirtualElementProviderElementProvider.RootActions.SendMessageTooltip" value="Send en besked til alle aktive konsoller" />
+  <string key="VirtualElementProviderElementProvider.RootActions.SetTimezoneLabel" value="Tidszoneindstillinger" />
+  <string key="VirtualElementProviderElementProvider.RootActions.SetTimezoneTooltip" value="Tidszone, der skal vises for alle brugere i konsollen" />
+  <string key="VirtualElementProviderElementProvider.RootActions.GlobalSetting" value="Globale indstillinger" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationLabel" value="Genstart server" />
+  <string key="VirtualElementProviderElementProvider.RootActions.RestartApplicationTooltip" value="Genstart serveren" />
+  <string key="SendMessageToConsolesWorkflow.Layout.Label" value="Send budskab til alle C1 konsoller" />
+  <string key="SendMessageToConsolesWorkflow.TitleTextBox.Label" value="Titel" />
+  <string key="SendMessageToConsolesWorkflow.TitleTextBox.Help" value="Dialogtitel på den besked, som skal udsendes" />
+  <string key="SendMessageToConsolesWorkflow.MessageTextArea.Label" value="Besked" />
+  <string key="SendMessageToConsolesWorkflow.MessageTextArea.Help" value="Den besked, som skal udsendes" />
+  <string key="SendMessageToConsolesWorkflow.SuccessMessage.TimezoneChangedTitle" value="Tidszonen er opdateret" />
+  <string key="SendMessageToConsolesWorkflow.SuccessMessage.TimezoneChangedMessage" value="Tidszonen er blevet opdateret" />
+  <string key="SetTimezoneWorkflow.Layout.Label" value="Indstil tidszonevisning" />
+  <string key="SetTimezoneWorkflow.TitleTextBox.Label" value="Vælg tidszone" />
+  <string key="SetTimezoneWorkflow.TitleTextBox.Help" value="Tidszone, der skal vises for alle brugere i konsollen. Konsollen genstarter, når tidszonen er opdateret. Eventuelle ikke-gemte ændringer vil gå tabt." />
+  <string key="SetTimezoneWorkflow.WarningText.Text" value="Tidszone opdatering kræver en konsol genstart. Eventuelle ikke-gemte ændringer vil gå tabt." />
+  <string key="LoginWebRequestHandler.Login" value="Login" />
+  <string key="LoginWebRequestHandler.Header" value="{0} login" />
+  <string key="LoginWebRequestHandler.LoginFailed" value="Forkert brugernavn eller password" />
+  <string key="LoginWebRequestHandler.Password" value="Adgangskode" />
+  <string key="LoginWebRequestHandler.Username" value="Brugernavn" />
+  <string key="LoginWebRequestHandler.LogInAsOtherUser" value="Log på som en anden bruger." />
+  <string key="LoginWebRequestHandler.WrongUserNameOrPassword" value="Forkert brugernavn eller adgangskode." />
+  <string key="LoginWebRequestHandler.UserNameNotRegistered" value="Det medfølgende Windows login, {0}\{1} er ikke registreret i brugerdatabasen. Du må anvende et andet login." />
+  <string key="DataInterfaceValidator.TypeNotAnInterface" value="Typen {0} er ikke et interface." />
+  <string key="DataInterfaceValidator.TypeDoesNotImplementInterface" value="Interfacetypen {0} implementerer ikke interfacet {1}." />
+  <string key="DataInterfaceValidator.NotAcceptedType" value="Egenskaben {0} på intefacetypen {1} er ikke en accepteret type." />
+  <string key="DataInterfaceValidator.NotValidIDataInterface" value="Interfacet {0} er ikke et gyldigt IData interface." />
+  <string key="DeleteMediaFileWorkflow.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
+  <string key="DeleteMediaFileWorkflow.CascadeDeleteErrorMessage" value="Der er en anden type, som referer til typen, som ikke tillader kumulerede sletninger. Denne handling er stoppet" />
+  <string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
+  <string key="DeleteMediaFolderWorkflow.CascadeDeleteErrorMessage" value="Der er en anden type, som referer til typen, som ikke tillader kumulerede sletninger. Denne handling er stoppet" />
+  <string key="MediaFileProviderElementProvider.RootToolTip" value="Tilføj mapper og filer til mediearkivet" />
+  <string key="MediaFileProviderElementProvider.AddMediaFolder" value="Tilføj mappe" />
+  <string key="MediaFileProviderElementProvider.AddMediaFolderToolTip" value="Tilføj ny mediemappe" />
+  <string key="MediaFileProviderElementProvider.AddMediaFile" value="Upload fil" />
+  <string key="MediaFileProviderElementProvider.AddMediaFileToolTip" value="Tilføj ny mediefil" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFile" value="Slet fil" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFileToolTip" value="Slet den valgte mediefil" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFolder" value="Slet mappe" />
+  <string key="MediaFileProviderElementProvider.DeleteMediaFolderToolTip" value="Slet mediemappen og alle elementer under mappen." />
+  <string key="MediaFileProviderElementProvider.Download" value="Download" />
+  <string key="MediaFileProviderElementProvider.DownloadToolTip" value="Hent fil" />
+  <string key="MediaFileProviderElementProvider.EditMediaFile" value="Filegenskaber" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileToolTip" value="Omdøb den valgte mediefil" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileTextContent" value="Redigér tekst" />
+  <string key="MediaFileProviderElementProvider.EditMediaFileTextContentToolTip" value="Redigér tekstindhold" />
+  <string key="MediaFileProviderElementProvider.EditImage" value="Billede editor" />
+  <string key="MediaFileProviderElementProvider.EditImageToolTip" value="Åbn den valgte mediefil i billedeeditoren" />
+  <string key="MediaFileProviderElementProvider.EditMediaFolder" value="Mappe-egenskaber" />
+  <string key="MediaFileProviderElementProvider.EditMediaFolderToolTip" value="Ret mediemappens egenskaber" />
+  <string key="MediaFileProviderElementProvider.ChangeMediaFile" value="Erstat fil" />
+  <string key="MediaFileProviderElementProvider.ChangeMediaFileToolTip" value="Erstat det valgte med en anden mediefil" />
+  <string key="MediaFileProviderElementProvider.UploadZipFile" value="Upload flere" />
+  <string key="MediaFileProviderElementProvider.UploadZipFileToolTip" value="Upload zip-fil" />
+  <string key="MediaFileProviderElementProvider.MediaFileItemToolTip" value="Medie-element" />
+  <string key="MediaFileProviderElementProvider.OrganizedFilesAndFoldersToolTip" value="Organisér mapper og filer" />
+  <string key="MediaFileProviderElementProvider.ErrorMessageTitle" value="Fejl" />
+  <string key="MediaFileProviderElementProvider.FileAlreadyExistsMessage" value="Filen '{0}' findes allerede i mappen '{1}'" />
+  <string key="UploadNewMediaFileWorkflow.UploadFailure" value="Fejl" />
+  <string key="UploadNewMediaFileWorkflow.UploadFailureMessage" value="Den uploadede fil skal være af samme type som den originale. Den fil, du har uploadet, er af en anden type." />
+  <string key="RelationshipGraphActionExecutor.ShowGraph" value="Vis graf" />
+  <string key="RelationshipGraphActionExecutor.ShowGraphToolTip" value="Vis relationsgraf" />
+  <string key="RelationshipGraphActionExecutor.ShowOrientedGraph" value="Vis orienteret graf" />
+  <string key="RelationshipGraphActionExecutor.ShowOrientedGraphToolTip" value="Vis orienteret relationsgraf" />
+  <string key="ShowElementInformationActionExecutor.ShowElementInformation.Label" value="Vis element informationer" />
+  <string key="ShowElementInformationActionExecutor.ShowElementInformation.ToolTip" value="Vis element informationer" />
+  <string key="RelationshipGraphActionExecutor.Search" value="Søg i elementer" />
+  <string key="RelationshipGraphActionExecutor.SearchToolTip" value="Søg efter elementer" />
+  <string key="RelationshipGraphActionExecutor.SearchElements" value="Søg i elementer" />
+  <string key="RelationshipGraphActionExecutor.SearchElementsToolTip" value="Søg efter elementer" />
+  <!-- WEBSITE -->
+  <string key="Website.General.LabelVersionNumber" value="Version nr." />
+  <string key="Website.Application.DialogReload.Title" value="Genstart ?" />
+  <string key="Website.Application.DialogReload.Text" value="Vil du genstarte Composite C1 ? Alle ændringer, som ikke er gemt, vil gå tabt." />
+  <string key="WebSite.Application.DialogSaveResource.Title" value="Vil du gemme ressourcefilen ?" />
+  <string key="WebSite.Application.DialogSaveResource.Text" value="&quot;${resourcename}&quot; er blevet ændret. Gem ændringer?" />
+  <string key="Website.Dialogs.SaveAll.LabelSaveResources" value="Vil du gemme ressourcefilerne ?" />
+  <string key="Website.Dialogs.SaveAll.LabelUnsavedResources" value="Ressourcefiler som ikke er gemt" />
+  <string key="Website.Dialogs.LabelYes" value="Ja" />
+  <string key="Website.Dialogs.LabelNo" value="Nej" />
+  <string key="Website.Dialogs.LabelAccept" value="OK" />
+  <string key="Website.Dialogs.LabelCancel" value="Fortryd" />
+  <string key="Website.Dialogs.LabelDisclosure" value="Mere info" />
+  <string key="Website.Dialogs.About.Title" value="Om {applicationname}" />
+  <string key="Website.Dialogs.About.LabelCredits" value="Bidragydere" />
+  <string key="Website.Dialogs.About.LabelBack" value="Tilbage" />
+  <string key="Website.Dialogs.About.LabelCredits2" value="Bidragydere" />
+  <string key="Website.Dialogs.NoAccessTitle" value="Ingen adgang" />
+  <string key="Website.Dialogs.NoAccessText" value="Du har ikke fået tildelt adgangsrettigheder til systemet. Kontakt din administrator." />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Unit" value="Enhed" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Width" value="Bredde" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.Height" value="Højde" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelScaleImage" value="Skalér billede" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelDimensions" value="Dimensioner" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelImageSize" value="Billedstørrelse" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFixedRatio" value="Fast proportion" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelFreeResize" value="Fri forandring af størrelse" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPixels" value="Pixels" />
+  <string key="Website.Dialogs.ImageEditor.ScaleImage.LabelPercent" value="Procent" />
+  <string key="Website.Dialogs.Options.LoginScreen" value="Login-skærm" />
+  <string key="Website.Dialogs.Options.LabelOptions" value="Indstillinger" />
+  <string key="Website.Dialogs.Options.LabelGeneral" value="Generelt" />
+  <string key="Website.Dialogs.Options.LabelAdvanced" value="Avanceret" />
+  <string key="Website.Dialogs.Options.LabelLoginPreferences" value="Login-indstillinger" />
+  <string key="Website.Dialogs.Options.LabelFakeLoginScreen" value="Simuleret login-skærm" />
+  <string key="Website.Dialogs.Options.LabelNoLoginScreen" value="Ingen login-skærm" />
+  <string key="Website.Dialogs.WebServices.Error" value="Fejl i webservicemetode" />
+  <string key="Website.Dialogs.WebServices.LabelWebServiceError" value="Webservice fejl" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.Title" value="Indsæt hvor?" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelPosition" value="Placering" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertBefore" value="Indsæt før" />
+  <string key="Website.Dialogs.SystemTree.DetailedPaste.LabelInsertAfter" value="Indsæt efter" />
+  <string key="Website.Dialogs.EditFunction.BasicView" value="Grundlæggende visning" />
+  <string key="Website.Dialogs.EditFunction.AdvancedView" value="Avanceret visning" />
+  <string key="Website.Dialogs.EditFunction.BasicView.NoParameters" value="Denne funktion har ingen parametre" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTitle" value="Redigér billede" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFile" value="Fil" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSave" value="Gem" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelSaveAs" value="Gem som ..." />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRevert" value="Fortryd" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelView" value="Vis" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoom" value="Zoom" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomIn" value="Zoom ind" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelZoomOut" value="Zoom ud" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label800" value="800%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label400" value="400%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label200" value="200%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label100" value="100%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label50" value="50%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label25" value="25%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.Label12" value="12%" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelImage" value="Billede" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelTransform" value="Foretag forandring" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipHorizontal" value="Spejlvend vandret" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelFlipVertical" value="Spejlvend lodret" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CW" value="Rotér 90 grader med uret" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate90CCW" value="Rotér 90 grader mod uret" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelRotate180" value="Drej 180 grader" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelScale" value="Skalér billede ..." />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.LabelCrop" value="Beskær billede" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipSelect" value="Vælg" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBox.ToolTipZoom" value="Zoom" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelSave" value="Gem" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelScale" value="Skalér billede" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelCrop" value="Beskær billede" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelUndo" value="Fortryd" />
+  <string key="Website.Content.Views.Editors.ImageEditor.ImageEditor.ToolBar.LabelRedo" value="Gendan" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTitle" value="Rettigheder" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUsers" value="Brugere" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelTabUserGroups" value="Brugergrupper" />
+  <string key="Website.Content.Views.Editors.PermissionEditor.LabelButtonSave" value="Gem" />
+  <string key="Website.Content.Views.Help.ToolTipBack" value="Gå en side tilbage" />
+  <string key="Website.Content.Views.Help.ToolTipForward" value="Gå en side frem" />
+  <string key="Website.Content.Views.Help.ToolTipRefresh" value="Opdatér side" />
+  <string key="Website.Content.Views.Help.LabelContents" value="Indhold" />
+  <string key="Website.Content.Views.Help.ToolTipContents" value="Indhold af 'hjælp'" />
+  <string key="Website.Content.Views.SystemView.ToolTipCollapseAll" value="Skjul alle" />
+  <string key="Website.Content.Views.SystemView.ToolTipLinkWithEditor" value="Link med redaktørfunktion" />
+  <string key="Website.Content.Views.Search.Search.LabelNewSearch" value="Ny søgning ..." />
+  <string key="Website.Content.Views.ViewSource.LabelFormatted" value="Formateret" />
+  <string key="Website.Content.Views.ViewSource.LabelRaw" value="Ubehandlet" />
+  <string key="ServerLog.Element.Label" value="Serverlog" />
+  <string key="ServerLog.Element.Tooltip" value="Serverloggen indeholder sikkerheds- og systemrelaterede beskeder." />
+  <string key="ServerLog.Element.View.Label" value="Vis serverlog" />
+  <string key="ServerLog.Element.View.Tooltip" value="Se de seneste poster i serverloggen" />
+  <string key="ServerLog.LabelTitle" value="Serverlog" />
+  <string key="ServerLog.LabelButtonDeleteOld" value="Slet gammel" />
+  <string key="ServerLog.LabelButtonRefresh" value="Opdatér" />
+  <string key="ServerLog.EmptyLabel" value="Ingen log data er tilgængelig ..." />
+  <string key="ServerLog.LogEntriesRemovedBrowserViewLabel" value="Kun de {0} seneste logregistreringer vises. Åbn loggen for flere poster." />
+  <string key="ServerLog.LogEntriesRemovedLabel" value="Kun de {0} seneste logregistreringer vises. {1} indgange findes for den nuværende søgning. Begræns søgningen eller brug logfremviser værktøjet fra http://docs.composite.net/Configuration/Logging for fuld log adgang." />
+  <string key="ServerLog.LogEntry.DateLabel" value="Dato" />
+  <string key="ServerLog.LogEntry.MessageLabel" value="Besked" />
+  <string key="ServerLog.LogEntry.TitleLabel" value="Titel" />
+  <string key="ServerLog.LogEntry.EventTypeLabel" value="Hændelsestype" />
   <string key="ServerLog.Severity.Verbose" value="Ordrig" />
   <string key="ServerLog.Severity.Information" value="Information" />
   <string key="ServerLog.Severity.Warning" value="Advarsel" />
   <string key="ServerLog.Severity.Error" value="Fejl" />
   <string key="ServerLog.Severity.Critical" value="Kritisk" />
-	<string key="FunctionDocumentation.LabelButtonRefresh" value="Opdat&#233;r" />
-	<string key="FunctionDocumentation.LabelButtonPrint" value="Udskriv" />
-	<string key="Website.FlowUICompleted.ExecutionEndedTitle" value="Udf&#248;relse sluttede" />
-	<string key="Website.FlowUICompleted.ExecutionEndedMessage" value="Handlingen, som blev udf&#248;rt i dette vindue, er afsluttet." />
-	<string key="Website.ServerError.ServerErrorTitle" value="Serverfejl" />
-	<string key="Website.ServerError.ServerErrorMessage" value="Der er opst&#229;et en uheldig fejl." />
-	<string key="Website.ServerError.ServerErrorDetails" value="Detaljer" />
-	<string key="Website.LicenseViolation.LicenseViolationTitle" value="Overtr&#230;delse af licens" />
-	<string key="Website.LicenseViolation.LicenseViolationMessage" value="Den handling, du anmoder om at gennemf&#248;re, er i strid med din nuv&#230;rende licens." />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelFlashOptions" value="Flashindstillinger" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelHigh" value="H&#248;j" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLow" value="Lav" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutohigh" value="Auto h&#248;j" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutolow" value="Auto lav" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelBest" value="Bedst" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelWindow" value="Vindue" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelOpaque" value="Uigennemsigtigt" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelTransparent" value="Transparent" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowall" value="Vis alle" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelNoborder" value="Ingen afgr&#230;nsning" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelExactfit" value="Passer pr&#230;cis" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutoPlay" value="Auto afspilning" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLoop" value="Loop" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowMenu" value="Vis menu" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelSWLiveConnect" value="SWLiveConnect" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelQuickTimeOptions" value="Quicktime muligheder" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelLoop" value="Loop" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelCache" value="Cache" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelNoCorrection" value="Ingen rettelse" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelKioskMode" value="Kiosk mode" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelPlayEveryFrame" value="Afspil alle frames" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoPlay" value="Auto afspilning" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelController" value="Kontroll&#248;r" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelEnableJavaScript" value="Aktiv&#233;r JavaScript" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoHRef" value="AutoHREF" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelTargetCache" value="Target cache" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShockWaveOptions" value="Shockwave muligheder" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelHigh" value="H&#248;j" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLow" value="Lav" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoHigh" value="Auto h&#248;j" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoLow" value="Auto lav" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelBest" value="Bedst" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelWindow" value="Vindue" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelOpaque" value="Uigennemsigtigt" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelTransparent" value="Transparent" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowAll" value="Vis alle" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelNoBorder" value="Ingen afgr&#230;nsning" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelExactFit" value="Passer pr&#230;cis" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoPlay" value="Auto afspilning" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLoop" value="Loop" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowMenu" value="Vis menu" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelSWLiveConnect" value="SWLiveConnect" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelQuickTimeOptions" value="Quicktime muligheder" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelAutoStart" value="Automatisk start" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelShowMenu" value="Vis menu" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelInvokeURLs" value="Henvis til URL&#39;er" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelStretchToFit" value="Str&#230;k til det passer" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelEnabled" value="Aktiveret" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelFullScreen" value="Fuld sk&#230;rm" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelMute" value="Lydl&#248;s" />
-	<string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelWindowLessVideo" value="Windowless video" />
-	<string key="Website.App.LabelSave" value="Gem" />
-	<string key="Website.App.LabelSaveAndPublish" value="Gem og public&#233;r" />
-	<string key="Website.App.LabelCloseTab" value="Luk faneblad" />
-	<string key="Website.App.LabelCloseOthers" value="Luk &#39;andre&#39;" />
-	<string key="Website.App.LabelRefreshView" value="Opdat&#233;r &#39;vis&#39;" />
-	<string key="Website.App.LabelMakeDirty" value="Simul&#233;r &#230;ndring" />
-	<string key="Website.App.LabelViewSource" value="Vis kilde" />
-	<string key="Website.App.LabelViewGenerated" value="Vis genereret" />
-	<string key="Website.App.LabelViewSerialized" value="Vis l&#248;bende" />
-	<string key="Website.App.LabelClose" value="Luk" />
-	<string key="Website.App.LabelFile" value="Fil" />
-	<string key="Website.App.LabelFileClose" value="Luk" />
-	<string key="Website.App.LabelFileCloseAll" value="Luk alle" />
-	<string key="Website.App.LabelFileSaveAll" value="Gem alle ..." />
-	<string key="Website.App.LabelFileExit" value="Afslut" />
-	<string key="Website.App.LabelView" value="Vis" />
-	<string key="Website.App.LabelViewCompositeStart" value="Composite start" />
-	<string key="Website.App.LabelSystemLog" value="System log" />
-	<string key="Website.App.LabelDeveloperPanel" value="Udviklerpanel" />
-	<string key="Website.App.LabelTools" value="V&#230;rkt&#248;jer" />
-	<string key="Website.App.LabelHelp" value="Hj&#230;lp" />
-	<string key="Website.App.LabelHelpContents" value="Hj&#230;lp" />
-	<string key="Website.App.LabelFeedback" value="Giv feedback ..." />
-	<string key="Website.App.LabelAboutComposite" value="Om Composite C1" />
-	<string key="Website.App.LabelCut" value="Klip" />
-	<string key="Website.App.LabelCopy" value="Kopi&#233;r" />
-	<string key="Website.App.LabelPaste" value="Inds&#230;t" />
-	<string key="Website.App.LabelRefresh" value="Opdat&#233;r" />
-	<string key="Website.App.LabelLoading" value="Indl&#230;ser..." />
-	<string key="Website.App.LabelLoaded" value="Indl&#230;st" />
-	<string key="Website.App.LabelSaved" value="Gemt" />
-	<string key="Website.App.ToolTipMinimize" value="Minim&#233;r" />
-	<string key="Website.App.ToolTipMaximize" value="Maksim&#233;r" />
-	<string key="Website.App.ToolTipUnMaximize" value="Gendan" />
-	<string key="Website.App.ToolTipUnMinimize" value="Gendan" />
-	<string key="Website.App.ToolTipClose" value="Luk" />
-	<string key="Website.App.StatusBar.Opening" value="&#197;bner {0} ..." />
-	<string key="Website.App.StatusBar.Refreshing" value="Opdaterer {0} ..." />
-	<string key="Website.App.StatusBar.Loading" value="Indl&#230;ser {0} ..." />
-	<string key="Website.App.StatusBar.Error" value="Fejl" />
-	<string key="Website.App.StatusBar.Warn" value="Advarsel" />
-	<string key="Website.App.StatusBar.Busy" value="Arbejder ..." />
-	<string key="Website.App.StatusBar.Ready" value="Klar !" />
-	<string key="Website.App.StatusBar.ErrorInField" value="Fejl i" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.Layout.Label" value="Tilf&#248;j ny mediefil" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.FieldGroup.Label" value="Medie-egenskaber" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Label" value="Filnavn" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Help" value="V&#230;lg fil du &#248;nsker at uploade" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Label" value="Tillad overskrivning" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Help" value="Erstat eksisterende fil" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Label" value="Filnavn" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Help" value="Navnet p&#229; filen i mediebiblioteket" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Label" value="Titel" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Help" value="Brug dette felt til en billedtitel" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Label" value="Beskrivelse" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Help" value="Brug dette felt til en kort beskrivelse af billedet" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.MissingUploadedFile.Message" value="V&#230;lg og upload en fil" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.FileExists.Message" value="Der findes allerede en fil med samme navn. Unders&#248;g om du har ret til at overskrive eller udskift filnavnet" />
-	<string key="Website.Forms.Administrative.AddNewMediaFile.TotalFilenameToLong.Message" value="Den samlede l&#230;ngde af filnavnet (mappe og filnavn) er for lang" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.Label.AddNewMediaFolder" value="Tilf&#248;j ny mediemappe" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelFolderName" value="Mappenavn" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpFolderName" value="" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelTitle" value="Titel" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpTitle" value="" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.LabelDescription" value="Beskrivelse" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.HelpDescription" value="" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameAlreadyUsed" value="Mappen eksisterer allerede" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="Mappenavnets samlede l&#230;ngde er for lang" />
-	<string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Mappens navn kan ikke kun v&#230;re &#39;/&#39; eller &#39;\&#39;" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Upload flere filer via en zip-fil" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFieldGroup" value="V&#230;lg den zip-fil, som indeholder filer der skal tr&#230;kkes ud" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Zip-fil" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.HelpFile" value="Opret en zip-fil (h&#248;jreklik p&#229; lokal mappe og v&#230;lg send til -&gt; komprimeret mappe), V&#230;lg den ved hj&#230;lp af knappen &#39;gennemse&#39;" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructure" value="Opret mapper" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.HelpRecreateStructure" value="Denne mulighed kopierer den n&#248;jagtige mappestruktur fra din zip-fil" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructureCheckBox" value="Udtr&#230;k mapper fra zip-fil" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsisting" value="Overskriv eksisterende" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.HelpOverwriteExsisting" value="Dennne mulighed vil overskrive eksisterende filer i mediearkivet med matchende filnavne" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.Error.Title" value="Fejl" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Overskriv eksisterende filer" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.MissingUploadedFile.Message" value="V&#230;lg og upload en fil" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.CannotUploadDocxFile" value="Brug venligst den normale upload-kommando til at uploade .docx filer" />
-	<string key="Website.Forms.Administrative.AddZipMediaFile.WrongUploadedFile.Message" value="Den valgte fil var ikke en korrekt zip-fil" />
-	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelFunctionSearch" value="Funktionss&#248;gning" />
-	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeyword" value="S&#248;geord" />
-	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeywordHelp" value="Indtast s&#248;geord" />
-	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnType" value="Returtype" />
-	<string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnTypeHelp" value="V&#230;lg en returtype til s&#248;gning" />
-	<string key="Website.Forms.Administrative.DeleteMediaFile.LabelFieldGroup" value="Slet denne fil?" />
-	<string key="Website.Forms.Administrative.DeleteMediaFile.Text" value="Slet denne fil?" />
-	<string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationHeader" value="Fil slettes" />
-	<string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationText" value="Der er nogle data, der refereres til, som ogs&#229; vil blive slettet. &#216;nsker du at forts&#230;tte?" />
-	<string key="Website.Forms.Administrative.DeleteMediaFolder.LabelFieldGroup" value="Slet mappe?" />
-	<string key="Website.Forms.Administrative.DeleteMediaFolder.Text" value="Slet denne mappe?" />
-	<string key="Website.Forms.Administrative.DeleteMediaFolder.HasChildringText" value="Denne mappe indeholder en eller flere filer eller undermapper. Hvis du sletter denne mappe, s&#229; sletter du ogs&#229; alle underfiler og undermapper. Vil du slette denne mappe?" />
-	<string key="Website.Forms.Administrative.EditMediaFile.LabelFieldGroup" value="Medie-egenskaber" />
-	<string key="Website.Forms.Administrative.EditMediaFile.LabelTitle" value="Titel" />
-	<string key="Website.Forms.Administrative.EditMediaFile.HelpTitle" value="Brug dette felt til en billedtitel" />
-	<string key="Website.Forms.Administrative.EditMediaFile.LabelFileName" value="Filnavn" />
-	<string key="Website.Forms.Administrative.EditMediaFile.HelpFileName" value="Det indtastede i dette felt indg&#229;r i billed-id&#39;et" />
-	<string key="Website.Forms.Administrative.EditMediaFile.LabelDescription" value="Beskrivelse" />
-	<string key="Website.Forms.Administrative.EditMediaFile.HelpDescription" value="Indtast en kort beskrivelse af billedet i feltet her" />
-	<string key="Website.Forms.Administrative.EditMediaFile.TotalFilenameToLong.Message" value="Den samlede l&#230;ngde af filnavnet (mappe og filnavn) er for lang" />
+  <string key="FunctionDocumentation.LabelButtonRefresh" value="Opdatér" />
+  <string key="FunctionDocumentation.LabelButtonPrint" value="Udskriv" />
+  <string key="Website.FlowUICompleted.ExecutionEndedTitle" value="Udførelse sluttede" />
+  <string key="Website.FlowUICompleted.ExecutionEndedMessage" value="Handlingen, som blev udført i dette vindue, er afsluttet." />
+  <string key="Website.ServerError.ServerErrorTitle" value="Serverfejl" />
+  <string key="Website.ServerError.ServerErrorMessage" value="Der er opstået en uheldig fejl." />
+  <string key="Website.ServerError.ServerErrorDetails" value="Detaljer" />
+  <string key="Website.LicenseViolation.LicenseViolationTitle" value="Overtrædelse af licens" />
+  <string key="Website.LicenseViolation.LicenseViolationMessage" value="Den handling, du anmoder om at gennemføre, er i strid med din nuværende licens." />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelFlashOptions" value="Flashindstillinger" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelHigh" value="Høj" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLow" value="Lav" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutohigh" value="Auto høj" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutolow" value="Auto lav" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelBest" value="Bedst" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelWindow" value="Vindue" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelOpaque" value="Uigennemsigtigt" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelTransparent" value="Transparent" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowall" value="Vis alle" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelNoborder" value="Ingen afgrænsning" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelExactfit" value="Passer præcis" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelAutoPlay" value="Auto afspilning" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelLoop" value="Loop" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelShowMenu" value="Vis menu" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaFlashOptions.LabelSWLiveConnect" value="SWLiveConnect" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelQuickTimeOptions" value="Quicktime muligheder" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelLoop" value="Loop" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelCache" value="Cache" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelNoCorrection" value="Ingen rettelse" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelKioskMode" value="Kiosk mode" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelPlayEveryFrame" value="Afspil alle frames" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoPlay" value="Auto afspilning" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelController" value="Kontrollør" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelEnableJavaScript" value="Aktivér JavaScript" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelAutoHRef" value="AutoHREF" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaQuickTimeOptions.LabelTargetCache" value="Target cache" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShockWaveOptions" value="Shockwave muligheder" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelHigh" value="Høj" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLow" value="Lav" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoHigh" value="Auto høj" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoLow" value="Auto lav" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelBest" value="Bedst" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelWindow" value="Vindue" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelOpaque" value="Uigennemsigtigt" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelTransparent" value="Transparent" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowAll" value="Vis alle" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelNoBorder" value="Ingen afgrænsning" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelExactFit" value="Passer præcis" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelAutoPlay" value="Auto afspilning" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelLoop" value="Loop" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelShowMenu" value="Vis menu" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaShockWaveOptions.LabelSWLiveConnect" value="SWLiveConnect" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelQuickTimeOptions" value="Quicktime muligheder" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelAutoStart" value="Automatisk start" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelShowMenu" value="Vis menu" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelInvokeURLs" value="Henvis til URL'er" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelStretchToFit" value="Stræk til det passer" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelEnabled" value="Aktiveret" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelFullScreen" value="Fuld skærm" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelMute" value="Lydløs" />
+  <string key="Website.Templates.WysiwygEditorPlugins.MediaWinMediaOptions.LabelWindowLessVideo" value="Windowless video" />
+  <string key="Website.App.LabelSave" value="Gem" />
+  <string key="Website.App.LabelSaveAndPublish" value="Gem og publicér" />
+  <string key="Website.App.LabelCloseTab" value="Luk faneblad" />
+  <string key="Website.App.LabelCloseOthers" value="Luk 'andre'" />
+  <string key="Website.App.LabelRefreshView" value="Opdatér 'vis'" />
+  <string key="Website.App.LabelMakeDirty" value="Simulér ændring" />
+  <string key="Website.App.LabelViewSource" value="Vis kilde" />
+  <string key="Website.App.LabelViewGenerated" value="Vis genereret" />
+  <string key="Website.App.LabelViewSerialized" value="Vis løbende" />
+  <string key="Website.App.LabelClose" value="Luk" />
+  <string key="Website.App.LabelFile" value="Fil" />
+  <string key="Website.App.LabelFileClose" value="Luk" />
+  <string key="Website.App.LabelFileCloseAll" value="Luk alle" />
+  <string key="Website.App.LabelFileSaveAll" value="Gem alle ..." />
+  <string key="Website.App.LabelFileExit" value="Afslut" />
+  <string key="Website.App.LabelView" value="Vis" />
+  <string key="Website.App.LabelViewCompositeStart" value="Composite start" />
+  <string key="Website.App.LabelSystemLog" value="System log" />
+  <string key="Website.App.LabelDeveloperPanel" value="Udviklerpanel" />
+  <string key="Website.App.LabelTools" value="Værktøjer" />
+  <string key="Website.App.LabelHelp" value="Hjælp" />
+  <string key="Website.App.LabelSettings" value="Indstillinger" />
+  <string key="Website.App.LabelHelpContents" value="Hjælp" />
+  <string key="Website.App.LabelFeedback" value="Giv feedback ..." />
+  <string key="Website.App.LabelAbout" value="Om {applicationname}" />
+  <string key="Website.App.LabelCut" value="Klip" />
+  <string key="Website.App.LabelCopy" value="Kopiér" />
+  <string key="Website.App.LabelPaste" value="Indsæt" />
+  <string key="Website.App.LabelRefresh" value="Opdatér" />
+  <string key="Website.App.LimitedElementsShown" value="Kun de første {0} elementer er vist i træet." />
+  <string key="Website.App.LabelLoading" value="Indlæser..." />
+  <string key="Website.App.LabelLoaded" value="Indlæst" />
+  <string key="Website.App.LabelSaved" value="Gemt" />
+  <string key="Website.App.ToolTipMinimize" value="Minimér" />
+  <string key="Website.App.ToolTipMaximize" value="Maksimér" />
+  <string key="Website.App.ToolTipUnMaximize" value="Gendan" />
+  <string key="Website.App.ToolTipUnMinimize" value="Gendan" />
+  <string key="Website.App.ToolTipClose" value="Luk" />
+  <string key="Website.App.StatusBar.Opening" value="Åbner {0} ..." />
+  <string key="Website.App.StatusBar.Refreshing" value="Opdaterer {0} ..." />
+  <string key="Website.App.StatusBar.Loading" value="Indlæser {0} ..." />
+  <string key="Website.App.StatusBar.Error" value="Fejl" />
+  <string key="Website.App.StatusBar.Warn" value="Advarsel" />
+  <string key="Website.App.StatusBar.Busy" value="Arbejder ..." />
+  <string key="Website.App.StatusBar.Ready" value="Klar !" />
+  <string key="Website.App.StatusBar.ErrorInField" value="Fejl i" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.Layout.Label" value="Tilføj ny mediefil" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Label" value="Filnavn" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FileUpload.Help" value="Vælg fil du ønsker at uploade" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Label" value="Tillad overskrivning" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.OverwriteCheckBox.Help" value="Erstat eksisterende fil" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Label" value="Filnavn" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FilenameTextBox.Help" value="Navnet på filen i mediebiblioteket" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Label" value="Titel" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.TitleTextBox.Help" value="Brug dette felt til en billedtitel" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Label" value="Beskrivelse" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.DescriptionTextBox.Help" value="Brug dette felt til en kort beskrivelse af billedet" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.MissingUploadedFile.Message" value="Vælg og upload en fil" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.FileExists.Message" value="Der findes allerede en fil med samme navn. Undersøg om du har ret til at overskrive eller udskift filnavnet" />
+  <string key="Website.Forms.Administrative.AddNewMediaFile.TotalFilenameToLong.Message" value="Den samlede længde af filnavnet (mappe og filnavn) er for lang" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.Label.AddNewMediaFolder" value="Tilføj ny mediemappe" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelFolderName" value="Mappenavn" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpFolderName" value="" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelTitle" value="Titel" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpTitle" value="" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.LabelDescription" value="Beskrivelse" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.HelpDescription" value="" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameAlreadyUsed" value="Mappen eksisterer allerede" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNameTooLong" value="Mappenavnets samlede længde er for lang" />
+  <string key="Website.Forms.Administrative.AddNewMediaFolder.FolderNotOnlySlash" value="Mappens navn kan ikke kun være '/' eller '\'" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelDialog" value="Upload flere filer via en zip-fil" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelFile" value="Zip-fil" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpFile" value="Opret en zip-fil (højreklik på lokal mappe og vælg send til -&gt; komprimeret mappe), Vælg den ved hjælp af knappen 'gennemse'" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructure" value="Opret mapper" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpRecreateStructure" value="Denne mulighed kopierer den nøjagtige mappestruktur fra din zip-fil" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelRecreateStructureCheckBox" value="Udtræk mapper fra zip-fil" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsisting" value="Overskriv eksisterende" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.HelpOverwriteExsisting" value="Dennne mulighed vil overskrive eksisterende filer i mediearkivet med matchende filnavne" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.Error.Title" value="Fejl" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.LabelOverwriteExsistingCheckBox" value="Overskriv eksisterende filer" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.MissingUploadedFile.Message" value="Vælg og upload en fil" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.CannotUploadDocxFile" value="Brug venligst den normale upload-kommando til at uploade .docx filer" />
+  <string key="Website.Forms.Administrative.AddZipMediaFile.WrongUploadedFile.Message" value="Den valgte fil var ikke en korrekt zip-fil" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelFunctionSearch" value="Funktionssøgning" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeyword" value="Søgeord" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelKeywordHelp" value="Indtast søgeord" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnType" value="Returtype" />
+  <string key="Website.Forms.Administrative.AllFunctionsElementProviderSearchForm.LabelReturnTypeHelp" value="Vælg en returtype til søgning" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.LabelFieldGroup" value="Slet denne fil?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.Text" value="Slet denne fil?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationHeader" value="Fil slettes" />
+  <string key="Website.Forms.Administrative.DeleteMediaFile.DeleteDataConfirmationText" value="Der er nogle data, der refereres til, som også vil blive slettet. Ønsker du at fortsætte?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.LabelFieldGroup" value="Slet mappe?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.Text" value="Slet denne mappe?" />
+  <string key="Website.Forms.Administrative.DeleteMediaFolder.HasChildringText" value="Denne mappe indeholder en eller flere filer eller undermapper. Hvis du sletter denne mappe, så sletter du også alle underfiler og undermapper. Vil du slette denne mappe?" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelFieldGroup" value="Medie-egenskaber" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelTitle" value="Titel" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpTitle" value="Brug dette felt til en billedtitel" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelFileName" value="Filnavn" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpFileName" value="Det indtastede i dette felt indgår i billed-id'et" />
+  <string key="Website.Forms.Administrative.EditMediaFile.LabelDescription" value="Beskrivelse" />
+  <string key="Website.Forms.Administrative.EditMediaFile.HelpDescription" value="Indtast en kort beskrivelse af billedet i feltet her" />
+  <string key="Website.Forms.Administrative.EditMediaFile.TotalFilenameToLong.Message" value="Den samlede længde af filnavnet (mappe og filnavn) er for lang" />
   <string key="Website.Forms.Administrative.EditMediaFile.FileExists.Message" value="Der eksisterer allerede en fil med samme navn i denne mappe" />
   <string key="Website.Forms.Administrative.EditMediaFolder.LabelFieldGroup" value="Mappe-egenskaber" />
-	<string key="Website.Forms.Administrative.EditMediaFolder.LabelFolderName" value="Mappenavn" />
-	<string key="Website.Forms.Administrative.EditMediaFolder.HelpFolderName" value="" />
-	<string key="Website.Forms.Administrative.EditMediaFolder.LabelTitle" value="Titel" />
-	<string key="Website.Forms.Administrative.EditMediaFolder.HelpTitle" value="Indtast en mappetitel i dette felt" />
-	<string key="Website.Forms.Administrative.EditMediaFolder.LabelDescription" value="Beskrivelse" />
-	<string key="Website.Forms.Administrative.EditMediaFolder.HelpDescription" value="" />
-	<string key="Website.Forms.Administrative.EditMediaFolder.TotalFilenameToLong.Message" value="Mappen indeholder en fil, hvor den samlede l&#230;ngde af filnavnet og den nye mappes navn er for langt" />
-	<string key="Website.Forms.Administrative.EditPage.DraftTransition" value="Udkast" />
-	<string key="Website.Forms.Administrative.EditPage.AwaitingApprovalTransition" value="Afventer godkendelse" />
-	<string key="Website.Forms.Administrative.EditPage.AwaitingPublicationTransition" value="Afventer publicering" />
-	<string key="Website.Forms.Administrative.ElementKeywordSearch.LabelFieldGroup" value="S&#248;g" />
-	<string key="Website.Forms.Administrative.ElementKeywordSearch.LabelKeyword" value="S&#248;geord" />
-	<string key="Website.Forms.Administrative.ElementKeywordSearch.LabelSearchKeyword" value="Indtast s&#248;geord" />
-	<string key="Website.Forms.Administrative.UploadMediaFile.LabelFieldGroup" value="Upload ny mediefil" />
-	<string key="Website.Forms.Administrative.UploadMediaFile.LabelFile" value="Filnavn:" />
-	<string key="Website.Forms.Administrative.UploadMediaFile.HelpFile" value="" />
-	<string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorTitle" value="Filen mangler eller er tom" />
-	<string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorMessage" value="Ingen fildata blev modtaget. Brug venligst knappen &#39;gennemse&#39; og tjek at den valgte fil ikke er tom." />
-	<string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFieldGroup" value="Upload ny mediefil til eksisterende fil" />
-	<string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFile" value="Filnavn:" />
-	<string key="Website.Forms.Administrative.UploadNewMediaFile.HelpFile" value="" />
-	<string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSave" value="Gem" />
-	<string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSaveAs" value="Gem som ..." />
-	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelPrevious" value="Forrige" />
-	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelNext" value="N&#230;ste" />
-	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelFinish" value="Afslut" />
-	<string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelCancel" value="Annull&#233;r" />
-	<string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelOk" value="OK" />
-	<string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelCancel" value="Annull&#233;r" />
-	<string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelOk" value="OK" />
-	<string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelCancel" value="Annull&#233;r" />
-	<string key="Website.Misc.SourceCodeViewer.LabelInput" value="Indgang" />
-	<string key="Website.Misc.SourceCodeViewer.LabelOutput" value="Udgang" />
-	<string key="Website.Misc.Trees.DialogTitle.PasteNotAllowed" value="Ikke tilladt." />
-	<string key="Website.Misc.Trees.DialogText.PasteNotAllowed" value="Det er ikke tilladt at inds&#230;tte noget kopieret i denne sammenh&#230;ng." />
-	<string key="Website.Misc.Trees.DialogTitle.PasteTypeNotAllowed" value="Ikke tilladt" />
-	<string key="Website.Misc.Trees.DialogText.PasteTypeNotAllowed" value="Mappen vil ikke acceptere dokumenttypen." />
-	<string key="Website.Misc.MultiSelector.LabelEditSelections" value="Redig&#233;r valgte" />
-	<string key="GenericVersionProcessController.Version" value="Versionsinformation" />
-	<string key="GenericVersionProcessController.VersionToolTip" value="Vis versionsinformation" />
-	<string key="AspNetUiControl.Selector.SelectValueLabel" value="V&#230;lg en v&#230;rdi ..." />
-	<string key="AspNetUiControl.Selector.BrokenReference" value="&lt;Brudt henvisning&gt; ..." />
-	<string key="AspNetUiControl.Selector.NoSelection" value="(Ingen markering)" />
-	<string key="AspNetUiControl.Selector.NoMatchesFor" value="Ingen resultater for &#39;{0}&#39;" />
-
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelFolderName" value="Mappenavn" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpFolderName" value="" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelTitle" value="Titel" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpTitle" value="Indtast en mappetitel i dette felt" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.LabelDescription" value="Beskrivelse" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.HelpDescription" value="" />
+  <string key="Website.Forms.Administrative.EditMediaFolder.TotalFilenameToLong.Message" value="Mappen indeholder en fil, hvor den samlede længde af filnavnet og den nye mappes navn er for langt" />
+  <string key="Website.Forms.Administrative.EditPage.PublishDatePreventPublishTitle" value="Gemt men ikke offentliggjort" />
+  <string key="Website.Forms.Administrative.EditPage.PublishDatePreventPublish" value="Siden er gemt, men ikke offentliggjort, eftersom du har angivet en fremtidig publiceringsdato på fanen Indstillinger." />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelFieldGroup" value="Søg" />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelKeyword" value="Søgeord" />
+  <string key="Website.Forms.Administrative.ElementKeywordSearch.LabelSearchKeyword" value="Indtast søgeord" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.LabelFieldGroup" value="Upload ny mediefil" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.LabelFile" value="Filnavn:" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.HelpFile" value="" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorTitle" value="Filen mangler eller er tom" />
+  <string key="Website.Forms.Administrative.UploadMediaFile.EmptyFileErrorMessage" value="Ingen fildata blev modtaget. Brug venligst knappen 'gennemse' og tjek at den valgte fil ikke er tom." />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFieldGroup" value="Upload ny mediefil til eksisterende fil" />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.LabelFile" value="Filnavn:" />
+  <string key="Website.Forms.Administrative.UploadNewMediaFile.HelpFile" value="" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSave" value="Gem" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Document.LabelSaveAs" value="Gem som ..." />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelPrevious" value="Forrige" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelNext" value="Næste" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelFinish" value="Afslut" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.Wizard.LabelCancel" value="Fortryd" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelOk" value="OK" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.DataDialog.LabelCancel" value="Fortryd" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelOk" value="OK" />
+  <string key="Website.Forms.Administrative.AdministrativeTemplates.ConfirmDialog.LabelCancel" value="Fortryd" />
+  <string key="Website.Misc.SourceCodeViewer.LabelInput" value="Indgang" />
+  <string key="Website.Misc.SourceCodeViewer.LabelOutput" value="Udgang" />
+  <string key="Website.Misc.Trees.DialogTitle.PasteNotAllowed" value="Ikke tilladt." />
+  <string key="Website.Misc.Trees.DialogText.PasteNotAllowed" value="Det er ikke tilladt at indsætte noget kopieret i denne sammenhæng." />
+  <string key="Website.Misc.Trees.DialogTitle.PasteTypeNotAllowed" value="Ikke tilladt" />
+  <string key="Website.Misc.Trees.DialogText.PasteTypeNotAllowed" value="Mappen vil ikke acceptere dokumenttypen." />
+  <string key="Website.Misc.MultiSelector.LabelEditSelections" value="Redigér valgte" />
+  <string key="Website.Misc.Toolbar.LabelShowMoreActions" value="Mere" />
+  <string key="GenericVersionProcessController.Version" value="Versionsinformation" />
+  <string key="GenericVersionProcessController.VersionToolTip" value="Vis versionsinformation" />
+  <string key="AspNetUiControl.Selector.SelectValueLabel" value="Vælg en værdi ..." />
+  <string key="AspNetUiControl.Selector.BrokenReference" value="&lt;Brudt henvisning&gt; ..." />
+  <string key="AspNetUiControl.Selector.NoSelection" value="(Ingen markering)" />
+  <string key="AspNetUiControl.Selector.NoMatchesFor" value="Ingen resultater for '{0}'" />
   <string key="Validation.BrokenReference" value="Dette felt indeholder en brudt henvisning" />
-  <string key="Validation.RequiredField" value="Dette felt er p&#229;kr&#230;vet." />
+  <string key="Validation.RequiredField" value="Dette felt er påkrævet." />
   <string key="Validation.Decimal.SymbolsAfterPointAllowed" value="Kun {0} cifre er tilladt  efter kommaet" />
-	<string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Kun {0} cifre er tilladt f&#248;r kommaet" />
-	<string key="Validation.Int32.Overflow" value="Den angivne v&#230;rdi er enten for h&#248;j eller for lav. Det accepterede interval g&#229;r fra -2.147.483.648 til 2.147.483.647" />
+  <string key="Validation.Decimal.SymbolsBeforePointAllowed" value="Kun {0} cifre er tilladt før kommaet" />
+  <string key="Validation.DateTime.InvalidDateFormat" value="Ugyldig dato: '{0}'. Brug formatet '{1}'." />
+  <string key="Validation.Int32.Overflow" value="Den angivne værdi er enten for høj eller for lav. Det accepterede interval går fra -2.147.483.648 til 2.147.483.647" />
+  <string key="Validation.Required" value="Påkrævet" />
+  <string key="Validation.InvalidField.Number" value="Kun tal" />
+  <string key="Validation.InvalidField.Integer" value="Kun heltal" />
+  <string key="Validation.InvalidField.ProgrammingIdentifier" value="Ugyldig identifikator" />
+  <string key="Validation.InvalidField.ProgrammingNamespace" value="Ugyldigt namespace" />
+  <string key="Validation.InvalidField.Url" value="Ugyldig URL" />
+  <string key="Validation.InvalidField.Currency" value="Ugyldigt format" />
+  <string key="Validation.InvalidField.Email" value="Ugyldig email" />
+  <string key="Validation.InvalidField.Guid" value="Ugyldig GUID" />
+  <string key="Validation.StringLength.Min" value="Minimum {0} tegn" />
+  <string key="Validation.StringLength.Max" value="Maksimum {0} tegn" />
+  <string key="Browser.Label" value="Sidetræ" />
+  <string key="Browser.ToolTip" value="Gennemse ikke-publicerede sider" />
+  <string key="Duplication.Text" value="Kopi {count} af {0}" />
+  <string key="DefaultVersionName" value="Original" />
+  <string key="Selector.Count" value="{0} valgt" />
 </strings>

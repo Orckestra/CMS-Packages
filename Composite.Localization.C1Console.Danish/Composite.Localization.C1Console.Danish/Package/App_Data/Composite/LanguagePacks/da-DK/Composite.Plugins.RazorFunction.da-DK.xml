@@ -1,36 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="RootElement.Label" value="Razor funktioner" />
   <string key="RootElement.ToolTip" value="Razor funktioner" />
-
-  <string key="AddNewRazorFunction.Label" value="Tilf&#248;j razor funktion" />
-  <string key="AddNewRazorFunction.ToolTip" value="Tilf&#248;j en ny razor funktion" />
-  <string key="EditRazorFunction.Label" value="Redig&#233;r" />
-  <string key="EditRazorFunction.ToolTip" value="Redig&#233;r razor funktion" />
+  <string key="AddNewRazorFunction.Label" value="Tilføj razor funktion" />
+  <string key="AddNewRazorFunction.ToolTip" value="Tilføj en ny razor funktion" />
+  <string key="EditRazorFunction.Label" value="Rediger" />
+  <string key="EditRazorFunction.ToolTip" value="Redigér razor funktion" />
   <string key="DeleteRazorFunction.Label" value="Slet" />
   <string key="DeleteRazorFunction.ToolTip" value="Slet denne razor funktion" />
-
-  <string key="AddNewRazorFunction.LabelDialog" value="Tilf&#248;j razor funktion" />
-  <string key="AddNewRazorFunction.LabelFieldGroup" value="Ny razor funktion" />
+  <string key="AddNewRazorFunction.LabelDialog" value="Tilføj razor funktion" />
   <string key="AddNewRazorFunction.LabelName" value="Navn" />
   <string key="AddNewRazorFunction.HelpName" value="" />
   <string key="AddNewRazorFunction.LabelNamespace" value="Navnefelt" />
   <string key="AddNewRazorFunction.HelpNamespace" value="" />
-  <string key="AddNewRazorFunction.LabelCopyFrom" value="Kopi&#233;r fra" />
-  <string key="AddNewRazorFunction.LabelCopyFromHelp" value="Du kan kopiere koden fra en anden razor funktion ved at v&#230;lge den p&#229; listen." />
+  <string key="AddNewRazorFunction.LabelCopyFrom" value="Kopiér fra" />
+  <string key="AddNewRazorFunction.LabelCopyFromHelp" value="Du kan kopiere koden fra en anden razor funktion ved at vælge den på listen." />
   <string key="AddNewRazorFunction.LabelCopyFromEmptyOption" value="(Ny razor funktion)" />
-
-
   <string key="AddNewRazorFunctionWorkflow.DuplicateName" value="Der findes allerede en C1-funktion med samme navn" />
   <string key="AddNewRazorFunctionWorkflow.EmptyName" value="Funktionens navn er tomt" />
   <string key="AddNewRazorFunctionWorkflow.NamespaceEmpty" value="Funktionens navnefelt er tomt" />
-  <string key="AddNewRazorFunctionWorkflow.InvalidNamespace" value="Navnefeltet m&#229; v&#230;re som A.B.C - alts&#229; hverken starte eller slutte med et punktum (.)" />
-  <string key="AddNewRazorFunctionWorkflow.TotalNameTooLang" value="Den samlede l&#230;ngde af navnet og navnefeltet er for lang (bruges til at navngive .cshtml filen)." />
-
+  <string key="AddNewRazorFunctionWorkflow.InvalidNamespace" value="Navnefeltet må være som A.B.C - altså hverken starte eller slutte med et punktum (.)" />
+  <string key="AddNewRazorFunctionWorkflow.TotalNameTooLang" value="Den samlede længde af navnet og navnefeltet er for lang (bruges til at navngive .cshtml filen)." />
   <string key="EditRazorFunctionWorkflow.Validation.DialogTitle" value="Valideringsfejl" />
   <string key="EditRazorFunctionWorkflow.Validation.CompilationFailed" value="Kompilering mislykkedes: {0}" />
-  <string key="EditRazorFunctionWorkflow.Validation.IncorrectBaseClass" value="Razor funktionen skal nedarve &#39;{0}&#39;" />
-
+  <string key="EditRazorFunctionWorkflow.Validation.IncorrectBaseClass" value="Razor funktionen skal nedarve '{0}'" />
   <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteTitle" value="Slet razor funktion?" />
   <string key="DeleteRazorFunctionWorkflow.ConfirmDeleteMessage" value="Slet den valgte razor funktion?" />
 </strings>

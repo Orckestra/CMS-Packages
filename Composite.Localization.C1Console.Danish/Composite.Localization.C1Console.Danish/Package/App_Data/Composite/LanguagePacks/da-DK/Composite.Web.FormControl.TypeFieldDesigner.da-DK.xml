@@ -7,6 +7,10 @@
   <string key="AddNewButtonLabel" value="Tilf&#248;j ny" />
   <string key="DeleteButtonLabel" value="Slet" />
   <string key="LabelDataTypeFields" value="Datatype-felter" />
+
+  <string key="KeyFieldDetailsGroupLabel" value="Feltegenskaber for prim&#230;rn&#248;gle" />
+  <string key="KeyFieldType" value="N&#248;glefeltets type" />
+  <string key="KeyFieldTypeHelp" value="Prim&#230;rn&#248;glens datatype. GUID-felter har optimal ydeevne. Tekststreng-felter er nyttige, n&#229;r id v&#230;rdier skal vises i URL&#39;er." />
   
   <string key="FieldDetailsGroupLabel" value="Feltegenskaber" />
   <string key="Name" value="Navn" />
@@ -69,6 +73,21 @@
   <string key="DefaultValue" value="Standardv&#230;rdi" />
   <string key="DefaultValueHelp" value="Du kan definere en standardv&#230;rdi for dette felt." />
   <string key="DefaultValueDialogLabel" value="Konfiguration af feltets standardv&#230;rdi" />
+
+
+  <string key="DataUrlGroupLabel" value="Data URL" />
+  <string key="AppearsInUrlLabel" value="Felt vises i data URL" />
+  <string key="AppearsInUrlItemLabel" value="Benyt i data URL&#39;er" />
+  <string key="AppearsInUrlHelp" value="Hvis markeret vises feltet i data URL&#39;er" />
+  <string key="DataUrlOrderLabel" value="R&#230;kkef&#248;lge" />
+  <string key="DataUrlOrderHelp" value="R&#230;kkef&#248;lge for hvor feltets vises i data URL&#39;er" />
+
+  <string key="DataUrlDateFormatLabel" value="Format" />
+  <string key="DataUrlDateFormatHelp" value="V&#230;lg i hvilket format datofeltet vises i URL&#39;er" />
+  <string key="DataUrlDateFormat_Year" value="&#197;r" />
+  <string key="DataUrlDateFormat_Month" value="M&#229;ned" />
+  <string key="DataUrlDateFormat_Day" value="Dag" />
+  
 
   <string key="StringMaximumLength" value="Strengens maks. l&#230;ngde" />
   <string key="16CharMax" value="Maksimum 16 tegn" />
