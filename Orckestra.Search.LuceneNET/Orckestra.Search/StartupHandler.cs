@@ -43,7 +43,7 @@ namespace Orckestra.Search
             {
                 try
                 {
-                    if (IsRestarting) return;
+                    if (HostingEnvironment.ApplicationHost.ShutdownInitiated()) return;
 
                     var listener = new SearchIndexUpdater();
 
@@ -58,34 +58,13 @@ namespace Orckestra.Search
 
                     searchIndex.Initialize(ctSource.Token);
 
-                    ProcessCommandQueue();
+                    CommandQueue.ProcessCommands();
                 }
                 catch (Exception ex)
                 {
                     Log.LogError(typeof(StartupHandler).FullName, ex);
                 }
             });
-        }
-
-        private static bool IsRestarting => HostingEnvironment.ApplicationHost.ShutdownInitiated();
-
-        private void ProcessCommandQueue()
-        {
-            while (!IsRestarting)
-            {
-                var message = CommandQueue.Dequeue();
-
-                if (message == null)
-                {
-                    while (!CommandQueue.NewMessages.WaitOne(500))
-                    {
-                        if(IsRestarting) break;
-                    }
-                    continue;
-                }
-
-                CommandQueue.ExecuteCommand(message);
-            }
         }
     }
 }

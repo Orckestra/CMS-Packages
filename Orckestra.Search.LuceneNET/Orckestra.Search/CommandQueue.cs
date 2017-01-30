@@ -17,13 +17,14 @@ namespace Orckestra.Search
     {
         public const string QueueFolderRelativePath = "~/App_Data/Search/queue";
 
-        const string MessageExtension = "command";
+        const string CommandExtension = "command";
         const string CorruptedMessageExtension = "bad";
 
         private static readonly string LogTitle = typeof (CommandQueue).FullName;
         private static readonly string QueueFolder;
 
-        public static AutoResetEvent NewMessages = new AutoResetEvent(false);
+        public static AutoResetEvent NewCommands = new AutoResetEvent(false);
+        private static bool _stopProcessingUpdates;
 
         static CommandQueue()
         {
@@ -43,7 +44,7 @@ namespace Orckestra.Search
 
             PersistCommand(command);
 
-            NewMessages.Set();
+            NewCommands.Set();
         }
 
         public static IIndexUpdateCommand Dequeue()
@@ -65,7 +66,7 @@ namespace Orckestra.Search
                 {
                     Log.LogError(LogTitle, ex);
                     
-                    File.WriteAllText(file.Replace(MessageExtension, CorruptedMessageExtension), serializedCommand);
+                    File.WriteAllText(file.Replace(CommandExtension, CorruptedMessageExtension), serializedCommand);
                 }
                 finally
                 {
@@ -79,7 +80,7 @@ namespace Orckestra.Search
         private static IEnumerable<string> GetFiles()
         {
             return Directory.Exists(QueueFolder) 
-                ? Directory.GetFiles(QueueFolder, "*." + MessageExtension).OrderBy(f => f).ToList()
+                ? Directory.GetFiles(QueueFolder, "*." + CommandExtension).OrderBy(f => f).ToList()
                 : Enumerable.Empty<string>();
         } 
 
@@ -92,7 +93,7 @@ namespace Orckestra.Search
             }
             catch (ThreadAbortException)
             {
-                if (IsRestarting())
+                if (QueueProcessingStopped)
                 {
                     // Saving the command if the thread was aborted
                     PersistCommand(command);
@@ -108,15 +109,19 @@ namespace Orckestra.Search
         {
             var serializedCommand = new JavaScriptSerializer(new SimpleTypeResolver()).Serialize(command);
 
-            var fileName = DateTime.Now.ToString("yyMMddHHmmssffffff") + "." + MessageExtension;
+            var fileName = DateTime.Now.ToString("yyMMddHHmmssffffff") + "." + CommandExtension;
 
             Directory.CreateDirectory(QueueFolder);
             File.WriteAllText(QueueFolder + "/" + fileName, serializedCommand);
         }
 
-        private static bool IsRestarting()
+        private static bool QueueProcessingStopped =>
+            _stopProcessingUpdates 
+            || HostingEnvironment.ApplicationHost.ShutdownInitiated();
+
+        public static void StopProcessingUpdates()
         {
-            return HostingEnvironment.ApplicationHost.ShutdownInitiated();
+            _stopProcessingUpdates = true;
         }
 
         public static void ClearCommands()
@@ -130,6 +135,25 @@ namespace Orckestra.Search
                 }
             }
             catch { }
+        }
+
+        public static void ProcessCommands()
+        {
+            while (!QueueProcessingStopped)
+            {
+                var command = Dequeue();
+
+                if (command == null)
+                {
+                    while (!NewCommands.WaitOne(500))
+                    {
+                        if (QueueProcessingStopped) break;
+                    }
+                    continue;
+                }
+
+                ExecuteCommand(command);
+            }
         }
     }
 }

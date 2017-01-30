@@ -53,5 +53,10 @@ namespace Orckestra.Search
             Remove(source);
             Populate(source);
         }
+
+        public void StopProcessingUpdates()
+        {
+            CommandQueue.StopProcessingUpdates();
+        }
     }
 }
