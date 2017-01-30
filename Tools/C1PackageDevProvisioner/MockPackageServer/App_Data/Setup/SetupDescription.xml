@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<setup xmlns="urn:Composte.C1.Setup" desc="&lt;p&gt;Choose your default setup - &lt;a href='http://docs.composite.net/StarterSites' target='_blank'&gt;read about them online&lt;/a&gt;. &lt;/p&gt;">
+  <!---
+ THIS IS NOT TO BE COPIED TO PRODUCTION
+
+-->
+  <radio label="Starter sites" key="1" desc="A set of minimalistic templates and content/images for starting a new site. Mobile friendly CSS and a design that is easy to skin.">
+    <radio label="Venus" key="9" desc="Modern mobile first website with blog, form builder (30-day trial), content search, link checker, image gallery, employee profile page and more. Build on ASP.NET Razor, Bootstrap and LESS CSS.">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.LanguageSwitcher.Razor\Release\Composite.Navigation.LanguageSwitcher.Razor.zip" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.Distributed.Razor\Release\Composite.Navigation.Distributed.Razor.zip" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Css.Less\Composite.Web.Css.Less.Package\Release\Composite.Web.Css.Less.zip" />
+        <package id="41a3542b-41fb-4c42-984d-4b92f66b2088" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.FontAwesome\Orckestra.Web.Html.FontAwesome.Package\Release\Orckestra.Web.Html.FontAwesome.zip" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.BundlingAndMinification\Composite.Web.BundlingAndMinification.Package\Release\Composite.Web.BundlingAndMinification.zip" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Config.Html5MimeTypes\Composite.Web.Config.Html5MimeTypes\Release\Composite.Web.Config.Html5MimeTypes.zip" />
+        <package id="b540f296-420d-44ef-b83e-d067850b2381" url="http://package.composite.net/Download.ashx?package=Composite.Forms.FormBuilder&amp;c1version=5.0" />
+        <package id="307927b4-600b-45d9-a61a-437d4ffe9ebf" url="http://package.composite.net/Download.ashx?package=Composite.Media.ImageCrop&amp;c1version=5.0" />
+        <package id="303b7865-055b-4fe7-a429-907b32bb6776" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Community.Blog\Composite.Community.Blog.Package\Release\Composite.Community.Blog.zip" />
+        <package id="f19a2878-d14d-431c-8f3e-14367b553c82" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Media.YouTube\Composite.Media.YouTube\Release\Composite.Media.YouTube.zip" />
+        <package id="e41ec59b-1e4c-42e9-8682-21806ae3072b" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Media.ImageGallery.Slimbox2\Release\Composite.Media.ImageGallery.Slimbox2.zip" />
+        <package id="eb94930c-4bdf-478b-b779-6ef617f3aec2" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Tools.LinkChecker\Composite.Tools.LinkChecker.Package\Release\Composite.Tools.LinkChecker.zip" />
+        <package id="76d60b61-8bd7-42ec-aaab-67efe4584c5f" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Search.SimplePageSearch\Composite.Search.SimplePageSearch.Package\Release\Composite.Search.SimplePageSearch.zip" />
+        <package id="4ddb9a49-3f1b-4f03-a54f-81a64f36f751" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Lists.Profiles\Composite.Lists.Profiles.Package\Release\Composite.Lists.Profiles.zip" />
+        <package id="47cd15a3-10ee-4940-b4d0-9791381004bd" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.GetStyleOptionsFromFile\Orckestra.Web.Html.GetStyleOptionsFromFile.Package\Release\Orckestra.Web.Html.GetStyleOptionsFromFile.zip" />
+        <package id="3ed89811-840d-42de-a118-4345eead2073" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.ImageAndTextTeaser\Orckestra.Web.Html.ImageAndTextTeaser.Package\bin\Orckestra.Web.Html.ImageAndTextTeaser.zip" />
+        <package id="3fff5817-2a8f-4722-88e6-1f174ed81bff" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.StatementTeaser\Orckestra.Web.Html.StatementTeaser.Package\bin\Orckestra.Web.Html.StatementTeaser.zip" />
+        <package id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.Grid.Columns\Orckestra.Web.Html.Grid.Columns\bin\Orckestra.Web.Html.Grid.Columns.zip" />
+        <package id="3cc59684-bd70-4ce9-a444-b9b102b018fe" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.TeaserCards\Orckestra.Web.Html.TeaserCards.Package\bin\Orckestra.Web.Html.TeaserCards.zip" />
+        <package id="4d59f41b-92fd-4a51-a164-7731556a85b8" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.LinkButton\Orckestra.Web.Html.LinkButton.Package\bin\Orckestra.Web.Html.LinkButton.zip" />
+        <package id="d56dffb5-eae1-4b11-8b54-3c7ddb7db94a" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Lists.Portfolio\Orckestra.Lists.Portfolio.Package\bin\Orckestra.Lists.Portfolio.zip" />
+        <package id="1136ef29-1bc5-4aac-94e8-7463ea857eb8" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Venus.Templates.Razor\Orckestra.StarterSite.Venus.Templates.Razor\Release\Orckestra.StarterSite.Venus.Templates.Razor.zip" />
+        <package id="65d06d1e-e810-49f4-98c8-4a336936f5cc" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Venus.Core\Orckestra.StarterSite.Venus.Core\Release\Orckestra.StarterSite.Venus.Core.zip" />
+        <package id="e9233fb0-75c3-47f5-9b91-97d4b632826e" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.SampleImages\Orckestra.StarterSite.SampleImages\Release\Orckestra.StarterSite.SampleImages.zip" />
+        <package id="19e37de4-c106-45d0-a8f2-fa99503dac85" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Venus.Content\Orckestra.StarterSite.Venus.Content\Release\Orckestra.StarterSite.Venus.Content.zip" />
+        <package id="6f078485-f7c3-40b2-8960-b075ccfaaaa3" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.SharedPages\Orckestra.StarterSite.SharedPages\Release\Orckestra.StarterSite.SharedPages.zip" />
+        <package id="3602f7a4-55bb-4173-b44c-f17e68ce1bf0" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\SimplePageSearch\Orckestra.Search.SimplePageSearch.DefaultContent\Release\Orckestra.Search.SimplePageSearch.DefaultContent.zip" />
+        <package id="0507ebc3-f3c8-426b-9d63-2a860175e835" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\ImageAndText\Orckestra.Web.Html.ImageAndTextTeaser.DefaultContent\Release\Orckestra.Web.Html.ImageAndTextTeaser.DefaultContent.zip" />
+        <package id="db8c9972-d880-46ab-aebe-1bfa6c3a65d3" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\TeaserCards\Orckestra.Web.Html.TeaserCards.DefaultContent\Release\Orckestra.Web.Html.TeaserCards.DefaultContent.zip" />
+        <package id="6e5ca364-0d37-43b6-8549-d17a054d3e4a" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\Profiles\Orckestra.Lists.Profiles.DefaultContent\Release\Orckestra.Lists.Profiles.DefaultContent.zip" />
+        <package id="abb7a0a1-8566-4dce-bcc6-d45894b64255" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\Blog\Orckestra.Community.Blog.DefaultContent\Release\Orckestra.Community.Blog.DefaultContent.zip" />
+        <package id="86dd94cb-086d-41d9-9b8b-650db7e9e6b6" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\LinkButton\Orckestra.Web.Html.LinkButton.DefaultContent\Release\Orckestra.Web.Html.LinkButton.DefaultContent.zip" />
+        <package id="3237ff22-6caf-4557-8525-1d6822e3529b" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\Slimbox2\Orckestra.Media.ImageGallery.Slimbox2.DefaultContent\Release\Orckestra.Media.ImageGallery.Slimbox2.DefaultContent.zip" />
+      </packages>
+    </radio>
+    <radio label="Neptune" key="13" desc="Modern mobile first website targets digital agencies, consultants and similar companies that provide a service and attract customers by showcasing work. Build on ASP.NET Razor, Bootstrap and LESS CSS.">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.LanguageSwitcher.Razor\Release\Composite.Navigation.LanguageSwitcher.Razor.zip" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.Distributed.Razor\Release\Composite.Navigation.Distributed.Razor.zip" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Css.Less\Composite.Web.Css.Less.Package\Release\Composite.Web.Css.Less.zip" />
+        <package id="41a3542b-41fb-4c42-984d-4b92f66b2088" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.FontAwesome\Orckestra.Web.Html.FontAwesome.Package\Release\Orckestra.Web.Html.FontAwesome.zip" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.BundlingAndMinification\Composite.Web.BundlingAndMinification.Package\Release\Composite.Web.BundlingAndMinification.zip" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Config.Html5MimeTypes\Composite.Web.Config.Html5MimeTypes\Release\Composite.Web.Config.Html5MimeTypes.zip" />
+        <package id="b540f296-420d-44ef-b83e-d067850b2381" url="http://package.composite.net/Download.ashx?package=Composite.Forms.FormBuilder&amp;c1version=5.0" />
+        <package id="307927b4-600b-45d9-a61a-437d4ffe9ebf" url="http://package.composite.net/Download.ashx?package=Composite.Media.ImageCrop&amp;c1version=5.0" />
+        <package id="f19a2878-d14d-431c-8f3e-14367b553c82" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Media.YouTube\Composite.Media.YouTube\Release\Composite.Media.YouTube.zip" />
+        <package id="eb94930c-4bdf-478b-b779-6ef617f3aec2" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Tools.LinkChecker\Composite.Tools.LinkChecker.Package\Release\Composite.Tools.LinkChecker.zip" />
+        <package id="76d60b61-8bd7-42ec-aaab-67efe4584c5f" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Search.SimplePageSearch\Composite.Search.SimplePageSearch.Package\Release\Composite.Search.SimplePageSearch.zip" />
+        <package id="4ddb9a49-3f1b-4f03-a54f-81a64f36f751" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Lists.Profiles\Composite.Lists.Profiles.Package\Release\Composite.Lists.Profiles.zip" />
+        <package id="d56dffb5-eae1-4b11-8b54-3c7ddb7db94a" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Lists.Portfolio\Orckestra.Lists.Portfolio.Package\bin\Orckestra.Lists.Portfolio.zip" />
+        <package id="e9233fb0-75c3-47f5-9b91-97d4b632826e" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.SampleImages\Orckestra.StarterSite.SampleImages\Release\Orckestra.StarterSite.SampleImages.zip" />
+        <package id="47cd15a3-10ee-4940-b4d0-9791381004bd" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.GetStyleOptionsFromFile\Orckestra.Web.Html.GetStyleOptionsFromFile.Package\Release\Orckestra.Web.Html.GetStyleOptionsFromFile.zip" />
+        <package id="3fff5817-2a8f-4722-88e6-1f174ed81bff" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.StatementTeaser\Orckestra.Web.Html.StatementTeaser.Package\bin\Orckestra.Web.Html.StatementTeaser.zip" />
+        <package id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.Grid.Columns\Orckestra.Web.Html.Grid.Columns\bin\Orckestra.Web.Html.Grid.Columns.zip" />
+        <package id="3cc59684-bd70-4ce9-a444-b9b102b018fe" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.TeaserCards\Orckestra.Web.Html.TeaserCards.Package\bin\Orckestra.Web.Html.TeaserCards.zip" />
+        <package id="7f48c4e9-68c7-40c2-9feb-75a30bb57740" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Neptune.Templates.Razor\Orckestra.StarterSite.Neptune.Templates.Razor\Release\Orckestra.StarterSite.Neptune.Templates.Razor.zip" />
+        <package id="cdd53142-6c0b-44dc-8648-562c24c23777" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Neptune.Core\Orckestra.StarterSite.Neptune.Core\Release\Orckestra.StarterSite.Neptune.Core.zip" />
+        <package id="adb3958f-01f3-412a-9cdd-978becc19c20" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Neptune.Content\Orckestra.StarterSite.Neptune.Content\Release\Orckestra.StarterSite.Neptune.Content.zip" />
+        <package id="6f078485-f7c3-40b2-8960-b075ccfaaaa3" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.SharedPages\Orckestra.StarterSite.SharedPages\Release\Orckestra.StarterSite.SharedPages.zip" />
+        <package id="3602f7a4-55bb-4173-b44c-f17e68ce1bf0" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\SimplePageSearch\Orckestra.Search.SimplePageSearch.DefaultContent\Release\Orckestra.Search.SimplePageSearch.DefaultContent.zip" />
+        <package id="6e5ca364-0d37-43b6-8549-d17a054d3e4a" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\Profiles\Orckestra.Lists.Profiles.DefaultContent\Release\Orckestra.Lists.Profiles.DefaultContent.zip" />
+      </packages>
+    </radio>
+    <radio label="Mercury" key="8" desc="Modern and animated mobile first website with portfolio, form builder (30-day trial), content search, employee profile page and more. Build on ASP.NET Razor, Bootstrap and LESS CSS.">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.LanguageSwitcher.Razor\Release\Composite.Navigation.LanguageSwitcher.Razor.zip" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.Distributed.Razor\Release\Composite.Navigation.Distributed.Razor.zip" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Css.Less\Composite.Web.Css.Less.Package\Release\Composite.Web.Css.Less.zip" />
+        <package id="41a3542b-41fb-4c42-984d-4b92f66b2088" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.FontAwesome\Orckestra.Web.Html.FontAwesome.Package\Release\Orckestra.Web.Html.FontAwesome.zip" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.BundlingAndMinification\Composite.Web.BundlingAndMinification.Package\Release\Composite.Web.BundlingAndMinification.zip" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Config.Html5MimeTypes\Composite.Web.Config.Html5MimeTypes\Release\Composite.Web.Config.Html5MimeTypes.zip" />
+        <package id="b540f296-420d-44ef-b83e-d067850b2381" url="http://package.composite.net/Download.ashx?package=Composite.Forms.FormBuilder&amp;c1version=5.0" />
+        <package id="f19a2878-d14d-431c-8f3e-14367b553c82" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Media.YouTube\Composite.Media.YouTube\Release\Composite.Media.YouTube.zip" />
+        <package id="b61446c4-cdd5-45c5-8d34-016fd6c74f31" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Media.Vimeo\Composite.Media.Vimeo\Release\Composite.Media.Vimeo.zip" />
+        <package id="76d60b61-8bd7-42ec-aaab-67efe4584c5f" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Search.SimplePageSearch\Composite.Search.SimplePageSearch.Package\Release\Composite.Search.SimplePageSearch.zip" />
+        <package id="4ddb9a49-3f1b-4f03-a54f-81a64f36f751" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Lists.Profiles\Composite.Lists.Profiles.Package\Release\Composite.Lists.Profiles.zip" />
+        <package id="79485603-765e-4eab-b4d4-7ea91d34c742" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Lists.Tabs\Composite.Lists.Tabs\Release\Composite.Lists.Tabs.zip" />
+        <package id="e48d51ae-6263-4375-8e27-a5b45ccef3e7" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Social.IconLinks\Composite.Social.IconLinks\Release\Composite.Social.IconLinks.zip" />
+        <package id="8302eb16-7c64-4aa5-aa8e-b27cc710b3c4" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.DeviceSpecificContent\Orckestra.Web.Html.DeviceSpecificContent\Release\Orckestra.Web.Html.DeviceSpecificContent.zip" />
+        <package id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.Grid.Columns\Orckestra.Web.Html.Grid.Columns\bin\Orckestra.Web.Html.Grid.Columns.zip" />
+        <package id="40c17ce5-df89-458d-93a9-d09f80b475ec" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.Jumbotron\Orckestra.Web.Html.Jumbotron.Package\bin\Orckestra.Web.Html.Jumbotron.zip" />
+        <package id="d56dffb5-eae1-4b11-8b54-3c7ddb7db94a" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Lists.Portfolio\Orckestra.Lists.Portfolio.Package\bin\Orckestra.Lists.Portfolio.zip" />
+        <package id="47cd15a3-10ee-4940-b4d0-9791381004bd" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.GetStyleOptionsFromFile\Orckestra.Web.Html.GetStyleOptionsFromFile.Package\Release\Orckestra.Web.Html.GetStyleOptionsFromFile.zip" />
+        <package id="3ed89811-840d-42de-a118-4345eead2073" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.ImageAndTextTeaser\Orckestra.Web.Html.ImageAndTextTeaser.Package\bin\Orckestra.Web.Html.ImageAndTextTeaser.zip" />
+        <package id="3fff5817-2a8f-4722-88e6-1f174ed81bff" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.StatementTeaser\Orckestra.Web.Html.StatementTeaser.Package\bin\Orckestra.Web.Html.StatementTeaser.zip" />
+        <package id="3cc59684-bd70-4ce9-a444-b9b102b018fe" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.TeaserCards\Orckestra.Web.Html.TeaserCards.Package\bin\Orckestra.Web.Html.TeaserCards.zip" />
+        <package id="4d59f41b-92fd-4a51-a164-7731556a85b8" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Orckestra.Web.Html.LinkButton\Orckestra.Web.Html.LinkButton.Package\bin\Orckestra.Web.Html.LinkButton.zip" />
+        <package id="635d3b31-a0c4-4f32-9368-0c2b7a010d8c" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Mercury.Templates.Razor\Orckestra.StarterSite.Mercury.Templates.Razor\Release\Orckestra.StarterSite.Mercury.Templates.Razor.zip" />
+        <package id="e9233fb0-75c3-47f5-9b91-97d4b632826e" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.SampleImages\Orckestra.StarterSite.SampleImages\Release\Orckestra.StarterSite.SampleImages.zip" />
+        <package id="75429558-8815-43bf-8eac-6c68d2725cb4" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Mercury.Core\Orckestra.StarterSite.Mercury.Core\Release\Orckestra.StarterSite.Mercury.Core.zip" />
+        <package id="0c532d79-673a-4557-ba84-c01b05895b47" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Mercury.Content\Orckestra.StarterSite.Mercury.Content\Release\Orckestra.StarterSite.Mercury.Content.zip" />
+        <package id="6f078485-f7c3-40b2-8960-b075ccfaaaa3" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.SharedPages\Orckestra.StarterSite.SharedPages\Release\Orckestra.StarterSite.SharedPages.zip" />
+        <package id="6e5ca364-0d37-43b6-8549-d17a054d3e4a" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\Profiles\Orckestra.Lists.Profiles.DefaultContent\Release\Orckestra.Lists.Profiles.DefaultContent.zip" />
+        <package id="0507ebc3-f3c8-426b-9d63-2a860175e835" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\ImageAndText\Orckestra.Web.Html.ImageAndTextTeaser.DefaultContent\Release\Orckestra.Web.Html.ImageAndTextTeaser.DefaultContent.zip" />
+        <package id="db8c9972-d880-46ab-aebe-1bfa6c3a65d3" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\TeaserCards\Orckestra.Web.Html.TeaserCards.DefaultContent\Release\Orckestra.Web.Html.TeaserCards.DefaultContent.zip" />
+        <package id="03ac4c69-f336-4321-bd52-a0b38db6aaf0" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\Portfolio\Orckestra.Lists.Portfolio.DefaultContent\Release\Orckestra.Lists.Portfolio.DefaultContent.zip" />
+        <package id="32c46159-8f4d-4777-b5e8-b1af7780525f" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\Tabs\Orckestra.Lists.Tabs.DefaultContent\Release\Orckestra.Lists.Tabs.DefaultContent.zip" />
+        <package id="3602f7a4-55bb-4173-b44c-f17e68ce1bf0" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\SimplePageSearch\Orckestra.Search.SimplePageSearch.DefaultContent\Release\Orckestra.Search.SimplePageSearch.DefaultContent.zip" />
+        <package id="86dd94cb-086d-41d9-9b8b-650db7e9e6b6" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\DefaultContents\LinkButton\Orckestra.Web.Html.LinkButton.DefaultContent\Release\Orckestra.Web.Html.LinkButton.DefaultContent.zip" />
+      </packages>
+    </radio>
+    <radio label="Open Cph - Razor" key="11" desc="Build on ASP.NET Razor, Bootstrap and LESS CSS.">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.LanguageSwitcher.Razor\Release\Composite.Navigation.LanguageSwitcher.Razor.zip" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.Distributed.Razor\Release\Composite.Navigation.Distributed.Razor.zip" />
+        <package id="4956d27e-3b71-40a8-9f4f-f72a8caa1dfe" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.Sitemap.Razor\Release\Composite.Navigation.Sitemap.Razor.zip" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Css.Less\Composite.Web.Css.Less.Package\Release\Composite.Web.Css.Less.zip" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.BundlingAndMinification\Composite.Web.BundlingAndMinification.Package\Release\Composite.Web.BundlingAndMinification.zip" />
+        <package id="47c974eb-acee-42b1-9e5c-a292644dd4a6" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Media.BootstrapCarousel.Razor\Composite.Media.BootstrapCarousel.Razor\Release\Composite.Media.BootstrapCarousel.Razor.zip" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Config.Html5MimeTypes\Composite.Web.Config.Html5MimeTypes\Release\Composite.Web.Config.Html5MimeTypes.zip" />
+        <package id="e9233fb0-75c3-47f5-9b91-97d4b632826e" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.SampleImages\Orckestra.StarterSite.SampleImages\Release\Orckestra.StarterSite.SampleImages.zip" />
+        <package id="8c8bcde7-bef0-4be3-87c8-ff42165d33d7" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Bootstrap.Templates.Razor\Orckestra.StarterSite.Bootstrap.Templates.Razor\Release\Orckestra.StarterSite.Bootstrap.Templates.Razor.zip" />
+        <package id="0f8684e9-fcf9-4053-a67d-669180fc0f07" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Bootstrap.Core\Orckestra.StarterSite.Bootstrap.Core\Release\Orckestra.StarterSite.Bootstrap.Core.zip" />
+        <package id="26489170-b5e4-4da0-ac98-c9e0835ea214" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Bootstrap.Content\Orckestra.StarterSite.Bootstrap.Content\Release\Orckestra.StarterSite.Bootstrap.Content.zip" />
+      </packages>
+    </radio>
+    <radio label="Open Cph - Master Pages" key="12" desc="Build on ASP.NET Master Pages, Bootstrap and LESS CSS. ">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.LanguageSwitcher.Razor\Release\Composite.Navigation.LanguageSwitcher.Razor.zip" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.Distributed.Razor\Release\Composite.Navigation.Distributed.Razor.zip" />
+        <package id="4956d27e-3b71-40a8-9f4f-f72a8caa1dfe" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.Sitemap.Razor\Release\Composite.Navigation.Sitemap.Razor.zip" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Css.Less\Composite.Web.Css.Less.Package\Release\Composite.Web.Css.Less.zip" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.BundlingAndMinification\Composite.Web.BundlingAndMinification.Package\Release\Composite.Web.BundlingAndMinification.zip" />
+        <package id="47c974eb-acee-42b1-9e5c-a292644dd4a6" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Media.BootstrapCarousel.Razor\Composite.Media.BootstrapCarousel.Razor\Release\Composite.Media.BootstrapCarousel.Razor.zip" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Config.Html5MimeTypes\Composite.Web.Config.Html5MimeTypes\Release\Composite.Web.Config.Html5MimeTypes.zip" />
+        <package id="e9233fb0-75c3-47f5-9b91-97d4b632826e" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.SampleImages\Orckestra.StarterSite.SampleImages\Release\Orckestra.StarterSite.SampleImages.zip" />
+        <package id="97d66bdb-56ce-4d81-a945-8e6c77ed1dd2" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Bootstrap.Templates.MasterPages\Orckestra.StarterSite.Bootstrap.Templates.MasterPages\Release\Orckestra.StarterSite.Bootstrap.Templates.MasterPages.zip" />
+        <package id="0f8684e9-fcf9-4053-a67d-669180fc0f07" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Bootstrap.Core\Orckestra.StarterSite.Bootstrap.Core\Release\Orckestra.StarterSite.Bootstrap.Core.zip" />
+        <package id="26489170-b5e4-4da0-ac98-c9e0835ea214" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Bootstrap.Content\Orckestra.StarterSite.Bootstrap.Content\Release\Orckestra.StarterSite.Bootstrap.Content.zip" />
+      </packages>
+    </radio>
+  </radio>
+  <radio label="Templates only" key="2" desc="A set of minimalistic templates for starting a new site. Mobile friendly CSS and a design that is easy to skin.">
+    <radio label="Tiny Cph - Razor" key="21" desc="Build on ASP.NET Razor, Bootstrap and LESS CSS.">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.LanguageSwitcher.Razor\Release\Composite.Navigation.LanguageSwitcher.Razor.zip" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.Distributed.Razor\Release\Composite.Navigation.Distributed.Razor.zip" />
+        <package id="4956d27e-3b71-40a8-9f4f-f72a8caa1dfe" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.Sitemap.Razor\Release\Composite.Navigation.Sitemap.Razor.zip" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Css.Less\Composite.Web.Css.Less.Package\Release\Composite.Web.Css.Less.zip" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.BundlingAndMinification\Composite.Web.BundlingAndMinification.Package\Release\Composite.Web.BundlingAndMinification.zip" />
+        <package id="47c974eb-acee-42b1-9e5c-a292644dd4a6" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Media.BootstrapCarousel.Razor\Composite.Media.BootstrapCarousel.Razor\Release\Composite.Media.BootstrapCarousel.Razor.zip" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Config.Html5MimeTypes\Composite.Web.Config.Html5MimeTypes\Release\Composite.Web.Config.Html5MimeTypes.zip" />
+        <package id="8c8bcde7-bef0-4be3-87c8-ff42165d33d7" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Bootstrap.Templates.Razor\Orckestra.StarterSite.Bootstrap.Templates.Razor\Release\Orckestra.StarterSite.Bootstrap.Templates.Razor.zip" />
+        <package id="0f8684e9-fcf9-4053-a67d-669180fc0f07" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Bootstrap.Core\Orckestra.StarterSite.Bootstrap.Core\Release\Orckestra.StarterSite.Bootstrap.Core.zip" />
+      </packages>
+    </radio>
+    <radio label="Tiny Cph - Master Pages" key="22" desc="Build on ASP.NET Master Pages, Bootstrap and LESS CSS. ">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.LanguageSwitcher.Razor\Release\Composite.Navigation.LanguageSwitcher.Razor.zip" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.Distributed.Razor\Release\Composite.Navigation.Distributed.Razor.zip" />
+        <package id="4956d27e-3b71-40a8-9f4f-f72a8caa1dfe" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Navigation.Sitemap.Razor\Release\Composite.Navigation.Sitemap.Razor.zip" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Css.Less\Composite.Web.Css.Less.Package\Release\Composite.Web.Css.Less.zip" />
+        <package id="47c974eb-acee-42b1-9e5c-a292644dd4a6" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Media.BootstrapCarousel.Razor\Composite.Media.BootstrapCarousel.Razor\Release\Composite.Media.BootstrapCarousel.Razor.zip" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\C1-Packages\Composite.Web.Config.Html5MimeTypes\Composite.Web.Config.Html5MimeTypes\Release\Composite.Web.Config.Html5MimeTypes.zip" />
+        <package id="97d66bdb-56ce-4d81-a945-8e6c77ed1dd2" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Bootstrap.Templates.MasterPages\Orckestra.StarterSite.Bootstrap.Templates.MasterPages\Release\Orckestra.StarterSite.Bootstrap.Templates.MasterPages.zip" />
+        <package id="0f8684e9-fcf9-4053-a67d-669180fc0f07" url="/Setup/Download.ashx?path=C:\Users\marcus.wendt\Source\Repos\CMS-StarterSites\Orckestra.StarterSite.Bootstrap.Core\Orckestra.StarterSite.Bootstrap.Core\Release\Orckestra.StarterSite.Bootstrap.Core.zip" />
+      </packages>
+    </radio>
+  </radio>
+  <radio label="Bare bones" key="3" desc="Minimal setup. For experts and uploading your own custom website packages.">
+    <packages>
+      <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+      <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+    </packages>
+  </radio>
+</setup>
