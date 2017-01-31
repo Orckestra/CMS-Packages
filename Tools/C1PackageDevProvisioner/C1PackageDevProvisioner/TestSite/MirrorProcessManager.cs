@@ -14,8 +14,11 @@ namespace C1PackageDevProvisioner.TestSite
         {
             // recycle web app - this should ensure that logs writes are not lingering (and written after we synced)
             var rootWebConfigPath = Path.Combine(Configration.C1SitePath, "web.config");
-            File.SetLastWriteTimeUtc(rootWebConfigPath, DateTime.UtcNow);
-            Thread.Sleep(500);
+            if (File.Exists(rootWebConfigPath))
+            {
+                File.SetLastWriteTimeUtc(rootWebConfigPath, DateTime.UtcNow);
+                Thread.Sleep(500);
+            }
 
             string baseImageDir = C1BaseImageProvider.GetBaseImagePath();
 
