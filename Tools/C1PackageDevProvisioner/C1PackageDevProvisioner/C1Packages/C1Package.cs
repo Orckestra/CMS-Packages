@@ -9,6 +9,8 @@ namespace C1PackageDevProvisioner.C1Packages
 {
     public class C1Package
     {
+        private static Dictionary<string, DateTime> _lastSolutionCompile = new Dictionary<string, DateTime>(); // for solutions with N packages, we use this to check if we already did a compile
+
         public C1Package(string installXmlPath, string projectPath)
         {
             this.InstallXmlPath = installXmlPath;
@@ -24,13 +26,24 @@ namespace C1PackageDevProvisioner.C1Packages
 
         private void Compile()
         {
+            // for solutions with N packages, we use this to check if we already did a compile
+            if (_lastSolutionCompile.ContainsKey(this.ProjectFilesBasePath))
+            {
+                if ((DateTime.Now - _lastSolutionCompile[this.ProjectFilesBasePath]).TotalSeconds < 15)
+                {
+                    return;
+                }
+                _lastSolutionCompile.Remove(this.ProjectFilesBasePath);
+
+            }
+
             var nugetExePath = Configration.NugetPath;
 
             Process nugetProcess = new Process();
             nugetProcess.StartInfo.FileName = nugetExePath;
             nugetProcess.StartInfo.Arguments = "restore";
             nugetProcess.StartInfo.WorkingDirectory = this.ProjectFilesBasePath;
-            nugetProcess.StartInfo.CreateNoWindow = true;
+            nugetProcess.StartInfo.CreateNoWindow = false;
             nugetProcess.StartInfo.UseShellExecute = false;
             nugetProcess.StartInfo.RedirectStandardInput = false;
             nugetProcess.StartInfo.RedirectStandardOutput = true;
@@ -57,6 +70,7 @@ namespace C1PackageDevProvisioner.C1Packages
                 EventInfo.Queue.Enqueue("MSBuild failed in " + this.ProjectFilesBasePath);
             }
 
+            _lastSolutionCompile.Add(this.ProjectFilesBasePath, DateTime.Now);
         }
 
 
@@ -98,7 +112,7 @@ namespace C1PackageDevProvisioner.C1Packages
                     var zipPath = zips.First();
                     var zipLastChange = (new FileInfo(zipPath)).LastWriteTime;
 
-                    var projectLastChange = Directory.GetFiles(this.ProjectFilesBasePath, "*.*", SearchOption.AllDirectories).Select(f => (new FileInfo(f)).LastWriteTime).Max();
+                    var projectLastChange = Directory.GetFiles(this.ProjectFilesBasePath, "*.*", SearchOption.AllDirectories).Where(f=>!f.EndsWith(".zip")).Select(f => (new FileInfo(f)).LastWriteTime).Max();
 
                     if (projectLastChange > zipLastChange.Add(TimeSpan.FromSeconds(5)))
                     {
@@ -121,7 +135,19 @@ namespace C1PackageDevProvisioner.C1Packages
 
         private List<string> GetPackageZips()
         {
-            return Directory.GetFiles(this.ProjectFilesBasePath, "*.zip", SearchOption.AllDirectories).Where(f => f.Contains("release") || f.Contains("Release") || f.ToLower().Contains(this.Name.ToLower())).ToList();
+            var zips = Directory.GetFiles(this.ProjectFilesBasePath, "*.zip", SearchOption.AllDirectories).Where(f => f.Contains("release") || f.Contains("Release") || f.ToLower().Contains(this.Name.ToLower())).ToList();
+
+            if (zips.Count()>1 && zips.Any(f=>f.Contains(@"\bin\")))
+            {
+                zips = zips.Where(f => !f.Contains(@"\bin\")).ToList();
+            }
+
+            if (zips.Count()>1 && zips.Where(f => f.ToLower().Contains(this.Name.ToLower())).Any())
+            {
+                return zips.Where(f => f.ToLower().Contains(this.Name.ToLower())).ToList();
+            }
+
+            return zips;
         }
 
 
