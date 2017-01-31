@@ -70,7 +70,9 @@ namespace Runner
                 catch (Exception ex)
                 {
                     Console.WriteLine();
-                    Console.WriteLine(ex);
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine();
+                    Console.WriteLine("You need to fix the package failing here and rerun this tool. Press any key to exit.");
                     Console.ReadLine();
                     return;
                 }
