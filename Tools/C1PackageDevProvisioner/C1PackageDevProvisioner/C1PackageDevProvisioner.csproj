@@ -45,14 +45,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TestSite\C1BaseImageProvider.cs" />
-    <Compile Include="Packages\C1Package.cs" />
+    <Compile Include="C1Packages\C1Package.cs" />
     <Compile Include="TestSite\CompositeConfigManager.cs" />
     <Compile Include="Configration.cs" />
     <Compile Include="EventInfo.cs" />
     <Compile Include="TestSite\FileChangeSyncManager.cs" />
     <Compile Include="TestSite\MirrorProcessManager.cs" />
-    <Compile Include="Packages\Namespaces.cs" />
-    <Compile Include="Packages\PackageManager.cs" />
+    <Compile Include="C1Packages\Namespaces.cs" />
+    <Compile Include="C1Packages\PackageManager.cs" />
     <Compile Include="FileUtil.cs" />
     <Compile Include="PackageServer\PackageServerProcessManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

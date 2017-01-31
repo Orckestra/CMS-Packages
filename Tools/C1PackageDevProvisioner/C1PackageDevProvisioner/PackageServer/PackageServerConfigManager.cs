@@ -1,11 +1,11 @@
-﻿using C1PackageDevProvisioner.Packages;
+﻿using C1PackageDevProvisioner.C1Packages;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace C1PackageDevProvisioner.PackageServer
+namespace C1PackageDevProvisioner.C1Packageserver
 {
     public static class PackageServerConfigManager
     {

@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace C1PackageDevProvisioner.PackageServer
+namespace C1PackageDevProvisioner.C1Packageserver
 {
     public static class PackageServerProcessManager
     {

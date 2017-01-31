@@ -2,9 +2,9 @@
 using System.Linq;
 
 using C1PackageDevProvisioner;
-using C1PackageDevProvisioner.PackageServer;
+using C1PackageDevProvisioner.C1Packageserver;
 using C1PackageDevProvisioner.TestSite;
-using C1PackageDevProvisioner.Packages;
+using C1PackageDevProvisioner.C1Packages;
 
 namespace Runner
 {

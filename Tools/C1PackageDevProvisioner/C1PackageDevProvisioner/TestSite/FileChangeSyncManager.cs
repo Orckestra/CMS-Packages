@@ -1,4 +1,4 @@
-﻿using C1PackageDevProvisioner.Packages;
+﻿using C1PackageDevProvisioner.C1Packages;
 using System;
 using System.Collections.Generic;
 using System.IO;
