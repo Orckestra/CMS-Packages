@@ -1,4 +1,4 @@
-﻿namespace Composite.Web.Css.Less
+﻿namespace Orckestra.Web.Css.Less
 {
     public class LessHttpModule : CssCompilationHttpModule
     {

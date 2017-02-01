@@ -10,7 +10,7 @@ using Composite.C1Console.Events;
 using Composite.Core;
 using Composite.Core.Configuration;
 
-namespace Composite.Web.Css.Less
+namespace Orckestra.Web.Css.Less
 {
     /// <summary>
     /// Style hashing designed to preserve last style file change time.
@@ -72,7 +72,7 @@ namespace Composite.Web.Css.Less
             {
                 _mask = mask;
 
-                _hashFilePath = HostingEnvironment.MapPath(GlobalSettingsFacade.CacheDirectory) 
+                _hashFilePath = HostingEnvironment.MapPath(GlobalSettingsFacade.CacheDirectory)
                         + "\\" + typeof(CssCompilationHttpModule).Name + mask.Replace("*", "") + ".hash";
 
                 _hash = CalculateStyleFilesHash();
@@ -122,7 +122,7 @@ namespace Composite.Web.Css.Less
                     }
                     return;
                 }
-                
+
                 string target;
 
                 try
@@ -201,7 +201,7 @@ namespace Composite.Web.Css.Less
                 {
                     sb.Append(Path.GetFileName(file)).Append(File.GetLastWriteTimeUtc(file));
                 }
-                
+
                 using (MD5 md5Hash = MD5.Create())
                 {
                     return new Guid(md5Hash.ComputeHash(Encoding.UTF8.GetBytes(sb.ToString())));

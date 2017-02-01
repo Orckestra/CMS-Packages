@@ -1,7 +1,7 @@
 ﻿using Composite.Core.Application;
 using Composite.Web.BundlingAndMinification.Api;
 
-namespace Composite.Web.Css.Less
+namespace Orckestra.Web.Css.Less
 {
     public static class StartupHandler
     {

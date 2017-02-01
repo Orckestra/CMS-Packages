@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Microsoft.Win32.SafeHandles;
 
-namespace Composite.Web.Css.Less
+namespace Orckestra.Web.Css.Less
 {
     internal static class ReparsePointUtils
     {
@@ -50,7 +50,7 @@ namespace Composite.Web.Css.Less
             // More information about "\\?\" here -> http://msdn.microsoft.com/en-us/library/aa365247(v=VS.85).aspx
             if (path[0] == '\\' && path[1] == '\\' && path[2] == '?' && path[3] == '\\')
             {
-                return path.ToString().Substring(4); 
+                return path.ToString().Substring(4);
             }
 
             return path.ToString();
