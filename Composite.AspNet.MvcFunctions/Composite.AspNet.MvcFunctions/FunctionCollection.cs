@@ -52,18 +52,9 @@ namespace Composite.AspNet.MvcFunctions
                                 "Multiple [Route] attributes defined on method '{0}' of controller class '{1}'",
                                 method.Name, type.FullName);
 
-                        MvcFunctionBase methodBasedMvcFunction;
-                        // If [Route()] attribute is present, registering a "controller function", otherwise - an "action function"
-                        if (routeAttribute != null)
-                        {
-                            var parameters = GetFunctionParameters(method, routeAttribute);
-                            methodBasedMvcFunction = RegisterController(type, attribute, parameters);
-                        }
-                        else
-                        {
-                            var parameters = GetFunctionParameters(method);
-                            methodBasedMvcFunction = RegisterActionFunction(type, actionName, attribute, parameters);
-                        }
+                        var parameters = routeAttribute != null ? GetFunctionParameters(method, routeAttribute) : GetFunctionParameters(method);
+
+                        var methodBasedMvcFunction = RegisterActionFunction(type, actionName, routeAttribute != null, attribute, parameters);
 
                         controlerToAttachUrlMapperTo = methodBasedMvcFunction;
                         urlMapperAction = null;
@@ -74,7 +65,7 @@ namespace Composite.AspNet.MvcFunctions
                     {
                         var dynamicUrlMapperAttributes = method.GetCustomAttributes<DynamicUrlMapperAttribute>(false).ToList();
                         var globalUrlMapperAttributes = method.GetCustomAttributes<GlobalUrlMapperAttribute>(false).ToList();
-                        
+
                         foreach (var mapperAttr in dynamicUrlMapperAttributes)
                         {
                             var mapper = new MvcFunctionDataUrlMapper(mapperAttr.DataType, null, urlMapperAction, mapperAttr.FieldName);
@@ -93,7 +84,7 @@ namespace Composite.AspNet.MvcFunctions
             MvcFunctionProvider.Reload();
         }
 
-        private MvcActionFunction RegisterActionFunction(Type controllerType, string actionName, C1FunctionAttribute attribute, IEnumerable<ParameterProfile> functionParameters)
+        private MvcActionFunction RegisterActionFunction(Type controllerType, string actionName, bool handlePathInfo, C1FunctionAttribute attribute, IEnumerable<ParameterProfile> functionParameters)
         {
             var controllerDescriptor = new ReflectedControllerDescriptor(controllerType);
 
@@ -102,6 +93,11 @@ namespace Composite.AspNet.MvcFunctions
             string description = attribute.Description ?? String.Empty;
 
             var function = new MvcActionFunction(controllerType, actionName, @namespace, name, description, this);
+
+            if (handlePathInfo)
+            {
+                function.UsePathInfoForRouting();
+            }
 
             if (functionParameters != null)
             {
@@ -153,7 +149,7 @@ namespace Composite.AspNet.MvcFunctions
             {
                 ParseFunctionName(functionName, out @namespace, out name);
             }
-           
+
 
             var function = new MvcActionFunction(controllerType, actionName, @namespace, name, description, this);
 
@@ -243,9 +239,9 @@ namespace Composite.AspNet.MvcFunctions
                 Verify.StringNotIsNullOrWhiteSpace(parameterAttribute.Name,
                     "Missing parameter name on [FunctionParameter] attribute. Method '{0}' of the controller class '{1}.",
                     methodInfo.Name, controllerType.FullName);
-                Verify.That(parameterIndex(parameterAttribute.Name) >= 0,
+               /* Verify.That(parameterIndex(parameterAttribute.Name) >= 0,
                     "The [Route] does not contain a reference to parameter named '{2}'. Method '{0}' of the controller class '{1}.",
-                    methodInfo.Name, controllerType.FullName, parameterName);
+                    methodInfo.Name, controllerType.FullName, parameterName);*/
 
                 var matchingParameter =
                     parameters.FirstOrDefault(
