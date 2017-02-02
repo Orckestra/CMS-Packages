@@ -85,10 +85,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Composite.Community.Blog.Package\Package\Bin\System.Web.Http.dll</HintPath>
-    </Reference>
     <Reference Include="System.Workflow.Activities" />
     <Reference Include="System.Workflow.ComponentModel">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
@@ -106,14 +102,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\BlogController.cs" />
     <Compile Include="BlogEntryDataUrlMapper.cs" />
     <Compile Include="BlogFacade.cs" />
     <Compile Include="BlogUrlToEntityTokenMapper.cs" />
     <Compile Include="Models\BlogTagsByTypeModel.cs" />
-    <Compile Include="Models\BlogListItemModel.cs" />
-    <Compile Include="Models\BlogListModel.cs" />
-    <Compile Include="Parameters\GetBlogEntriesParameter.cs" />
     <Compile Include="Rss\BlogImportHelper.cs" />
     <Compile Include="BlogRssFeed.ashx.cs" />
     <Compile Include="BlogCustomValidators.cs" />

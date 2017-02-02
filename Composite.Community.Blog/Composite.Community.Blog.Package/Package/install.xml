@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Community.Blog" groupName="Composite.Community" version="2.3.9" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Composite.Community.Blog" id="303b7865-055b-4fe7-a429-907b32bb6776" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
+	<mi:PackageInformation name="Composite.Community.Blog" groupName="Composite.Community" version="2.4.1" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Composite.Community.Blog" id="303b7865-055b-4fe7-a429-907b32bb6776" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" reloadConsoleOnCompletion="true">
 		<Description>Allows you to set up one or more blogs on a website. Entries can be filtered by month/year or tag, commented on, shared with popular online communities and services. Supports RSS export.</Description>
 		<TechnicalDetails>Allows you to set up one or more blogs on a website. Entries can be filtered by month/year or tag, commented on, shared with popular online communities and services. Supports RSS export.</TechnicalDetails>
 	</mi:PackageInformation>
@@ -11,22 +11,23 @@
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
-				<File sourceFilename="~\Bin\CookComputing.XmlRpcV2.dll" targetFilename="~\Bin\CookComputing.XmlRpcV2.dll" allowOverwrite="false" />
-                <File sourceFilename="~\Bin\System.Web.Http.dll" targetFilename="~\Bin\System.Web.Http.dll" allowOverwrite="true" />
-				<File sourceFilename="~\BlogRssFeed.ashx" targetFilename="~\BlogRssFeed.ashx" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" targetFilename="~\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Entries.xml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Settings.xml" targetFilename="~\App_Data\Composite\TreeDefinitions\Composite.Community.Blog.Settings.xml" allowOverwrite="false" />
-				<File sourceFilename="~\BlogMetaWeblog.ashx" targetFilename="~\BlogMetaWeblog.ashx" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Authors.xml" targetFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Authors.xml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Entries.xml" targetFilename="~\App_Data\Composite\DynamicTypeForms\Composite\Community\Blog\Entries.xml" allowOverwrite="false" />
+				
+				<File sourceFilename="~\BlogRssFeed.ashx" targetFilename="~\BlogRssFeed.ashx" allowOverwrite="false" />
+				<File sourceFilename="~\BlogMetaWeblog.ashx" targetFilename="~\BlogMetaWeblog.ashx" allowOverwrite="false" />
+				
+				<File sourceFilename="~\Bin\CookComputing.XmlRpcV2.dll" targetFilename="~\Bin\CookComputing.XmlRpcV2.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\Composite.Community.Blog.dll" targetFilename="~\Bin\Composite.Community.Blog.dll" allowOverwrite="false" />
 			</Files>
 			<Directories>
-				<Directory sourceDirectory="~\Frontend\Composite\Community\Blog\" targetDirectory="~\Frontend\Composite\Community\Blog\" allowOverwrite="true" deleteTargetDirectory="false" />
 				<Directory sourceDirectory="~\App_Data\Razor\Composite\Community\Blog\" targetDirectory="~\App_Data\Razor\Composite\Community\Blog\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\App_GlobalResources\Composite.Community.Blog\" targetDirectory="~\App_GlobalResources\Composite.Community.Blog\" allowOverwrite="true" deleteTargetDirectory="false" />
 				<Directory sourceDirectory="~\Composite\InstalledPackages\content\forms\Composite.Community.Blog\" targetDirectory="~\Composite\InstalledPackages\content\forms\Composite.Community.Blog\" allowOverwrite="true" deleteTargetDirectory="false" />
-                <Directory sourceDirectory="~\Composite\InstalledPackages\controls\FormsControls\Composite.Community.Blog\" targetDirectory="~\Composite\InstalledPackages\controls\FormsControls\Composite.Community.Blog\" allowOverwrite="true" deleteTargetDirectory="false" />
-                <Directory sourceDirectory="~\App_GlobalResources\Composite.Community.Blog\" targetDirectory="~\App_GlobalResources\Composite.Community.Blog\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\Composite\InstalledPackages\controls\FormsControls\Composite.Community.Blog\" targetDirectory="~\Composite\InstalledPackages\controls\FormsControls\Composite.Community.Blog\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\Frontend\Composite\Community\Blog\" targetDirectory="~\Frontend\Composite\Community\Blog\" allowOverwrite="true" deleteTargetDirectory="false" />
 			</Directories>
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite">
