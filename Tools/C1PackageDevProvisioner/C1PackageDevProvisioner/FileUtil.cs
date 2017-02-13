@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 
 namespace C1PackageDevProvisioner
 {
@@ -94,6 +95,7 @@ namespace C1PackageDevProvisioner
             }
             catch (IOException)
             {
+                Thread.Sleep(250); // Files in use - giving it a quarter of a second to fix itself
                 return false;
             }
 

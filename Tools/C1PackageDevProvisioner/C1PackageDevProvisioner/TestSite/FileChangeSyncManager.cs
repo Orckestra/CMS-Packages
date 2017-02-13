@@ -86,10 +86,17 @@ namespace C1PackageDevProvisioner.TestSite
                     {
                         if (!FileUtil.FilesAreEqual(projectFilePath, mapping))
                         {
-                            if (File.Exists(projectFilePath))
+                            try
                             {
-                                File.Copy(projectFilePath, mapping, true);
-                                EventInfo.Queue.Enqueue(string.Format("{0}: {1} copied to C1", affectedPackage.Name, Path.GetFileName(projectFilePath)));
+                                if (File.Exists(projectFilePath))
+                                {
+                                    File.Copy(projectFilePath, mapping, true);
+                                    EventInfo.Queue.Enqueue(string.Format("{0}: {1} copied to C1", affectedPackage.Name, Path.GetFileName(projectFilePath)));
+                                }
+                            }
+                            catch (IOException ex)
+                            {
+                                EventInfo.Queue.Enqueue(string.Format("{0}: {1} NOT copied - {2]", affectedPackage.Name, Path.GetFileName(projectFilePath), ex.Message));
                             }
                         }
                     }
