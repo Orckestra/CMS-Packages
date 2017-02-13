@@ -65,7 +65,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\install.xml" />
+    <Content Include="Package\App_Data\Components\Orckestra\Web\Html\Grid\Columns.xml" />
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_PackageCreator\Orckestra.Web.Html.Grid.Columns.xml" />
   </ItemGroup>
   <ItemGroup>
