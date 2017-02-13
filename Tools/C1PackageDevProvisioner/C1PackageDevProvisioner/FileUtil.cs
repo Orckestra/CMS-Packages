@@ -18,7 +18,7 @@ namespace C1PackageDevProvisioner
                 EnsureDirectoryExist(parentDirectoryInfo.FullName);
             }
 
-            if(!Directory.Exists(dirName))
+            if (!Directory.Exists(dirName))
             {
                 Directory.CreateDirectory(dirName);
             }
@@ -47,7 +47,7 @@ namespace C1PackageDevProvisioner
             relativePath = relativePath.Replace("/", "\\");
             relativePath = relativePath.Replace("~\\", "");
 
-            
+
             return Path.GetFullPath(Path.Combine(basePath, relativePath));
         }
 
@@ -74,20 +74,27 @@ namespace C1PackageDevProvisioner
 
             int iterations = (int)Math.Ceiling((double)first.Length / BYTES_TO_READ);
 
-            using (FileStream fs1 = first.OpenRead())
-            using (FileStream fs2 = second.OpenRead())
+            try
             {
-                byte[] one = new byte[BYTES_TO_READ];
-                byte[] two = new byte[BYTES_TO_READ];
-
-                for (int i = 0; i < iterations; i++)
+                using (FileStream fs1 = first.OpenRead())
+                using (FileStream fs2 = second.OpenRead())
                 {
-                    fs1.Read(one, 0, BYTES_TO_READ);
-                    fs2.Read(two, 0, BYTES_TO_READ);
+                    byte[] one = new byte[BYTES_TO_READ];
+                    byte[] two = new byte[BYTES_TO_READ];
 
-                    if (BitConverter.ToInt64(one, 0) != BitConverter.ToInt64(two, 0))
-                        return false;
+                    for (int i = 0; i < iterations; i++)
+                    {
+                        fs1.Read(one, 0, BYTES_TO_READ);
+                        fs2.Read(two, 0, BYTES_TO_READ);
+
+                        if (BitConverter.ToInt64(one, 0) != BitConverter.ToInt64(two, 0))
+                            return false;
+                    }
                 }
+            }
+            catch (IOException)
+            {
+                return false;
             }
 
             return true;
