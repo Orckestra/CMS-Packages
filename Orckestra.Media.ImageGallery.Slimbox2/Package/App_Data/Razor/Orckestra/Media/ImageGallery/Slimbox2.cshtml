@@ -1,0 +1,69 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Displays a gallery of images on a page using Slimbox 2."; }
+    }
+
+    [FunctionParameter(Label = "Media folder", Help = "A folder with images in the Media Archive to display as a gallery (not set by default). Do not use when the Media Image is set.", DefaultValue = null)]
+    public NullableDataReference<IMediaFileFolder> MediaFolder { get; set; }
+
+    [FunctionParameter(Label = "Media image", Help = " A single image file in the Media Archive to display (not set by default). Do not use when the Media Folder is set.", DefaultValue = null)]
+    public NullableDataReference<IImageFile> MediaImage { get; set; }
+
+    [FunctionParameter(Label = "Download link text", Help = "When the text is specified, a link to the image with this text is added to the slimbox (no link/text by default).", DefaultValue = "")]
+    public string DownloadLinkText { get; set; }
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    <script id="jquery-js" src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script id="slimbox2-js" src="~/Frontend/Orckestra/Media/ImageGallery/Slimbox-2/js/slimbox2.js" type="text/javascript"></script>
+    <link id="slimbox2-css" media="screen" type="text/css" href="~/Frontend/Orckestra/Media/ImageGallery/Slimbox-2/css/slimbox2.css" rel="stylesheet" />
+</head>
+<body>
+    @if (MediaImage != null)
+    {
+        @RenderImage(MediaImage.Data)
+    }
+    @if (MediaFolder != null && MediaImage == null)
+    {
+        string mediaFolderPath = MediaFolder.Data.Path;
+        var images = Data.Get<IImageFile>().Where(m => m.FolderPath == mediaFolderPath).ToList();
+
+        foreach (var img in images)
+        {
+            @RenderImage(img)
+        }
+    }
+
+</body>
+</html>
+
+@helper RenderImage(IImageFile img)
+{
+    <a title="@img.Title" href="@Html.C1().MediaUrl(img.KeyPath)?mw=1048&amp;mh=768" rel="lightbox-@(img.FolderPath)">
+        <img src="@Html.C1().MediaUrl(img.KeyPath)?w=173&amp;h=173&amp;action=crop" title="@img.Description" alt="@img.Title" />
+    </a>
+    <div class="slimbox-img-caption" style="display:none;">
+        @if (!string.IsNullOrEmpty(img.Title))
+        {
+            <h5>
+                @img.Title
+            </h5>
+        }
+        @if (!string.IsNullOrEmpty(img.Description))
+        {
+            <p>
+                @img.Description
+            </p>
+        }
+        @if (!string.IsNullOrEmpty(DownloadLinkText))
+        {
+            <a target="_blank" href="@Html.C1().MediaUrl(img.KeyPath)?download=true">
+                @DownloadLinkText
+            </a>
+        }
+    </div>
+}
