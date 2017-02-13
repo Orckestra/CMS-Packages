@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="5.0.5827.21806" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Web.Html.StatementTeaser" groupName="Orckestra.Web" version="1.0.2" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="https://docs.cms.orckestra.com/Orckestra.Web.Html.StatementTeaser" id="3fff5817-2a8f-4722-88e6-1f174ed81bff" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Orckestra.Web.Html.StatementTeaser" groupName="Orckestra.Web" version="1.0.3" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="https://docs.c1.orckestra.com/Orckestra.Web.Html.StatementTeaser" id="3fff5817-2a8f-4722-88e6-1f174ed81bff" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Requires the "Orckestra.Web.Html.GetStyleOptionsFromFile" package installed.</TechnicalDetails>
 		<Description>Shows a statement teaser with contextual background options.</Description>
 	</mi:PackageInformation>

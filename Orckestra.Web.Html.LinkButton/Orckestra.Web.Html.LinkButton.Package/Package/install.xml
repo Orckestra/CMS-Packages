@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Web.Html.LinkButton" groupName="Orckestra.Web" version="1.0.2" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.LinkButton" id="4d59f41b-92fd-4a51-a164-7731556a85b8" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Orckestra.Web.Html.LinkButton" groupName="Orckestra.Web" version="1.0.3" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="http://docs.c1.orckestra.com/Orckestra.Web.Html.LinkButton" id="4d59f41b-92fd-4a51-a164-7731556a85b8" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Requires Orckestra.Web.Html.GetStyleOptionsFromFile and Orckestra.Web.Html.FontAwesome pre-installed. Uses Bootstrap classes.</TechnicalDetails>
 		<Description>Displays links as styled buttons of different sizes.</Description>
 	</mi:PackageInformation>

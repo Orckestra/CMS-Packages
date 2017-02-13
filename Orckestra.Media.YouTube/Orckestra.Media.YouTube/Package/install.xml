@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Media.YouTube" groupName="Orckestra.Media" version="2.0.8" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Media.YouTube" id="f19a2878-d14d-431c-8f3e-14367b553c82" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Orckestra.Media.YouTube" groupName="Orckestra.Media" version="2.0.8" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="http://docs.c1.orckestra.com/Orckestra.Media.YouTube" id="f19a2878-d14d-431c-8f3e-14367b553c82" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<Description>Plays a YouTube video on your page using the specified video URL.</Description>
 		<TechnicalDetails>To look nice and be responsive the Bootstrap 3.3.0+ should be used on the site.</TechnicalDetails>
 	</mi:PackageInformation>
