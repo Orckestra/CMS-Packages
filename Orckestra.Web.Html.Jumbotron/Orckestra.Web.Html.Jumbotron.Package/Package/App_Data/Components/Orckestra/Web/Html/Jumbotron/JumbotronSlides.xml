@@ -1,0 +1,13 @@
+﻿<html pal:title="Jumbotron Slides"
+		pal:description="Show significant content in a Jumbotron Slides. Make sure to add the page data folder slides items to the page."
+		pal:tags="page blocks"
+		pal:container-anti-classes="aside"
+		pal:container-classes=""
+		pal:image="/Frontend/Orckestra/Web/Html/Jumbotron/jumbotron.png"
+		pal:icon="image"
+		xmlns="http://www.w3.org/1999/xhtml" xmlns:pal="http://www.composite.net/ns/components/1.0">
+	<body>
+		<f:function name="Orckestra.Web.Html.JumbotronSlides" xmlns:f="http://www.composite.net/ns/function/1.0">
+		</f:function>
+	</body>
+</html>
