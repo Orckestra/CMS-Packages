@@ -96,7 +96,7 @@ namespace C1PackageDevProvisioner.TestSite
                             }
                             catch (IOException ex)
                             {
-                                EventInfo.Queue.Enqueue(string.Format("{0}: {1} NOT copied - {2]", affectedPackage.Name, Path.GetFileName(projectFilePath), ex.Message));
+                                EventInfo.Queue.Enqueue(string.Format("{0}: {1} NOT copied - {2}", affectedPackage.Name, Path.GetFileName(projectFilePath), ex.Message));
                             }
                         }
                     }
