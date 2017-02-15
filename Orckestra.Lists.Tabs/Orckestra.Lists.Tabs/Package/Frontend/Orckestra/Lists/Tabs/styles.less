@@ -1,0 +1,68 @@
+﻿.tabs {
+    .nav-tabs {
+        margin-top: 25px;
+
+        i {
+            padding-right: 5px;
+        }
+    }
+
+    .tab-content {
+        margin-bottom: 25px;
+    }
+
+    &.tabs-vertical {
+
+        .nav-tabs, .tab-content {
+            @media (min-width: 768px) {
+                display: table-cell; margin: 0; vertical-align: top;
+            }
+        }
+
+        .nav-tabs {
+            border-bottom-color: transparent;
+
+            > li {
+                float: none;
+
+                a {
+                    margin: 0;
+                    padding: 15px 40px;
+                    white-space: nowrap;
+                }
+
+                &.active {
+                    > a, > a:hover, >a:focus {
+                        border-bottom-color: #ddd;
+                    }
+                }
+            }
+
+            i {
+                padding-right: 10px;
+            }
+        }
+
+        .tab-content {
+            padding: 20px 30px;
+        }
+    }
+}
+
+@media (max-width:480px) {
+    .tabs {
+        .nav-tabs {
+            border-bottom-color: transparent;
+
+            > li {
+                float: none;
+
+                &.active {
+                    > a, > a:hover, >a:focus {
+                        border-bottom-color: #ddd;
+                    }
+                }
+            }
+        }
+    }
+}
