@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Xml.Linq;
 
 namespace C1PackageDevProvisioner.C1Packages
@@ -163,8 +164,22 @@ namespace C1PackageDevProvisioner.C1Packages
 
         public void RefreshFileMappings()
         {
-            XDocument installXml = XDocument.Load(this.InstallXmlPath);
-            this.FileMappings = GetFileMappings(installXml);
+            int retry = 3;
+            bool mapped = false;
+
+            while (!mapped && retry-->0)
+            {
+                try
+                {
+                    XDocument installXml = XDocument.Load(this.InstallXmlPath);
+                    this.FileMappings = GetFileMappings(installXml);
+                    mapped = true;
+                }
+                catch (IOException)
+                {
+                    Thread.Sleep(100);
+                }
+            }
         }
 
 
