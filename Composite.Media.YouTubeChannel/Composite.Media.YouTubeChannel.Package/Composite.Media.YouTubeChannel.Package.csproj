@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -23,6 +23,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,6 +65,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\App_Data\Components\Orckestra\Media\YouTubeChannel\YouTubeChannel.xml" />
+    <Content Include="Package\App_Data\Components\Orckestra\Media\YouTubeChannel\YouTubePlayLists.xml" />
     <Content Include="Package\Bin\Composite.Media.YouTubeChannel.dll" />
     <Content Include="Package\Frontend\Composite\Media\YouTubeChannel\Script.js" />
     <Content Include="Package\Frontend\Composite\Media\YouTubeChannel\Styles.css" />
@@ -74,13 +77,18 @@
   <ItemGroup>
     <Content Include="Package\App_Data\Razor\Composite\Media\YouTubeChannel\ChannelViewer.cshtml" />
     <Content Include="Package\App_Data\Razor\Composite\Media\YouTubeChannel\PlayListsViewer.cshtml" />
-    <Content Include="Release\Composite.Media.YouTubeChannel.zip" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Package\App_GlobalResources\Composite\Media\YouTubeChannel.resx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\Frontend\Composite\Media\YouTubeChannel\Styles.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -108,9 +116,22 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>
-"$(SolutionDir)..\References\7za.exe" d "$(ProjectDir)Release\$(SolutionName).zip"
-"$(SolutionDir)..\References\7za.exe" a -tzip "$(ProjectDir)Release\$(SolutionName).zip" -r "$(ProjectDir)Package\*" -x!*designer.cs</PreBuildEvent>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)Package" "$(TargetDir)_Package"  /MIR
+
+COPY "$(TargetDir)*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)packages\7-Zip.CommandLine.9.20.0\tools\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"
+
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
