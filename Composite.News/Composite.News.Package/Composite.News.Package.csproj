@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -28,6 +28,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -86,7 +87,6 @@
     <Content Include="Package\NewsRssFeed.ashx" />
     <Content Include="Package\App_Data\Razor\Composite\News\NewsLatest.cshtml" />
     <Content Include="Package\App_Data\Razor\Composite\News\NewsList.cshtml" />
-    <None Include="Release\Composite.News.zip" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +101,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Package\Bin\" />
+    <Folder Include="Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -136,21 +140,20 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>DEL "$(TargetDir)\*.dll"</PreBuildEvent>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"
+</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)Package" "$(TargetDir)_Package"  /MIR
 
-DEL "$(TargetDir)\Composite.Generated.dll"
-
-COPY "$(TargetDir)\*.dll" "$(TargetDir)_Package\Bin\"
+COPY "$(TargetDir)*.dll" "$(TargetDir)_Package\Bin\"
 DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
 
 DEL "$(TargetDir)$(SolutionName).zip"
 
-"$(SolutionDir)..\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+"$(SolutionDir)packages\7-Zip.CommandLine.9.20.0\tools\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
 
-
-COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"</PostBuildEvent>
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\Orckestra.News.zip"
+</PostBuildEvent>
   </PropertyGroup>
 </Project>
