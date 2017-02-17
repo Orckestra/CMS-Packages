@@ -13,6 +13,9 @@
 				<File sourceFilename="~\App_Data/Razor/Composite/Media/ImageGallery/Facebook/AlbumsGallery.cshtml" targetFilename="~\App_Data/Razor/Composite/Media/ImageGallery/Facebook/AlbumsGallery.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data/Razor/Composite/Media/ImageGallery/Facebook/Photos.cshtml" targetFilename="~\App_Data/Razor/Composite/Media/ImageGallery/Facebook/Photos.cshtml" allowOverwrite="false" />
 			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\App_Data\Components\Orckestra\Media\ImageGallery\Facebook\" targetDirectory="~\App_Data\Components\Orckestra\Media\ImageGallery\Facebook\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
 		</mi:Add>
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>
