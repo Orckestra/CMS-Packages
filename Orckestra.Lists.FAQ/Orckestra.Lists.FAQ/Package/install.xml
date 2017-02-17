@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Lists.FAQ" groupName="Orckestra.Lists" version="2.0.0" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Lists.FAQ" author="Composite A/S" website="https://cms.orckestra.com" id="59f6c759-4f9c-4bae-9220-d440825abfff" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Orckestra.Lists.FAQ" groupName="Orckestra.Lists" version="2.0.1" readMoreUrl="http://docs.c1.orckestra.com/Orckestra.Lists.FAQ" author="Orckestra A/S" website="https://c1.orckestra.com" id="59f6c759-4f9c-4bae-9220-d440825abfff" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<Description>Allows visitors to browse useful information as a list of questions and answers (FAQ)</Description>
 		<TechnicalDetails>Stores FAQ items in a global data type. Implements a list of items and an item detailed view as a Razor function. Requires Bootstrap and Jquery.</TechnicalDetails>
 	</mi:PackageInformation>
