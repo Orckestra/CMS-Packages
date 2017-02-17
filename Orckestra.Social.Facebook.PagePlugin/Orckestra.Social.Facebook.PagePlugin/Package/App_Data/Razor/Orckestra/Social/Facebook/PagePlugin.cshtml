@@ -15,6 +15,10 @@
 					 WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Adapt to plugin container width,Show Friends’ Faces,Use Small Header,Hide Cover Photo,Show Posts"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /><f:param name=""Required"" value=""False"" /></f:widgetfunction>")]
 	public string Options { get; set; }
 
+	[FunctionParameter(Label = "Tabs", Help = "Tabs to render. Timeline by default.", DefaultValue = "Timeline",
+				 WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Timeline,Events,Messages"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /><f:param name=""Required"" value=""False"" /></f:widgetfunction>")]
+	public string Tabs { get; set; }
+
 
 	private XDocument GetXml(string url)
 	{
@@ -43,7 +47,7 @@
 	var useSmallHeader = Options.Contains("Use Small Header").ToString().ToLower();
 	var hideCover = Options.Contains("Hide Cover Photo").ToString().ToLower();
 	var adaptToContainerWidth = Options.Contains("Adapt to plugin container width").ToString().ToLower();
-	
+
 
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -57,7 +61,7 @@
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/@(currentCulture)/sdk.js#xfbml=1&version=v2.5";
+			js.src = "//connect.facebook.net/@(currentCulture)/sdk.js#xfbml=1&version=v2.8";
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 		/* ]]> */
@@ -69,7 +73,8 @@
 		 data-adapt-container-width="@adaptToContainerWidth"
 		 data-hide-cover="@hideCover"
 		 data-show-facepile="@showFaces"
-		 data-show-posts="@showStream">
+	     data-show-posts="@showStream"
+		 data-tabs="@Tabs.ToLower()">
 		<div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
 	</div>
 </body>

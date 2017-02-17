@@ -1,0 +1,16 @@
+﻿<html
+		pal:title="Facebook Page Plugin"
+		pal:description="The Page plugin lets you easily embed and promote any Facebook Page on your website."
+		pal:tags="social"
+		pal:icon="social-facebook"
+		pal:container-anti-classes=""
+		pal:container-classes=""
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:pal="http://www.composite.net/ns/components/1.0">
+	<head>
+	</head>
+	<body>
+		<f:function name="Orckestra.Social.Facebook.PagePlugin" xmlns:f="http://www.composite.net/ns/function/1.0">
+		</f:function>
+	</body>
+</html>
