@@ -1,0 +1,16 @@
+﻿<html
+		pal:title="Facebook Like Button"
+		pal:description="Adds the Like button to a page for users to share content with their Facebook friends."
+		pal:tags="social"
+		pal:icon="thumbs-up"
+		pal:container-anti-classes=""
+		pal:container-classes=""
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:pal="http://www.composite.net/ns/components/1.0">
+	<head>
+	</head>
+	<body>
+		<f:function name="Orckestra.Social.Facebook.LikeButton" xmlns:f="http://www.composite.net/ns/function/1.0">
+		</f:function>
+	</body>
+</html>
