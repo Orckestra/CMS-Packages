@@ -1,0 +1,71 @@
+﻿@inherits RazorFunction
+@using System.Web.Caching
+@using Composite.Core.WebClient.Renderings.Page
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Facebook's Comments Box"; }
+	}
+
+
+	[FunctionParameter(Label = "Width", Help = "The width of the comments plugin on the webpage. This can be either a pixel value or a percentage (such as 100%) for fluid width. ", DefaultValue = "100%")]
+	public string Width { get; set; }
+
+	[FunctionParameter(Label = "Color scheme", Help = "The color scheme for the plugin. Options: 'light', 'dark'. Default is 'light'.", DefaultValue = "light",
+					 WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""light,dark"" /></f:function></f:param></f:widgetfunction>")]
+	public string ColorScheme { get; set; }
+
+	[FunctionParameter(Label = "Posts Number", Help = "The number of comments to show by default.", DefaultValue = 10)]
+	public int PostsNumber { get; set; }
+
+	[FunctionParameter(Label = "Order By", Help = "The order to use when displaying comments. Default is 'social'.", DefaultValue = "social",
+				 WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""social,reverse_time,time"" /></f:function></f:param></f:widgetfunction>")]
+	public string OrderBy { get; set; }
+
+	private XDocument GetXml(string url)
+	{
+
+		if (HttpContext.Current.Cache[url] == null)
+		{
+			HttpContext.Current.Cache.Add(url, XDocument.Load(url),
+							 null, DateTime.Now.AddSeconds(3600),
+							 Cache.NoSlidingExpiration,
+							 CacheItemPriority.Default,
+							 null);
+		}
+		return HttpContext.Current.Cache[url] as XDocument;
+	}
+}
+@{
+
+	if (PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration)
+	{
+		return;
+	}
+
+	var cultures = GetXml("http://www.facebook.com/translations/FacebookLocales.xml");
+	var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name.Replace("-", "_");
+	currentCulture = cultures.Descendants("representation").Any(c => c.Value == currentCulture) ? currentCulture : "en_US";
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+	<div id="fb-root"></div>
+
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/@(currentCulture)/sdk.js#xfbml=1&version=v2.8";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		/* ]]> */
+	</script>
+
+	<div class="fb-comments" data-numposts="@PostsNumber" data-colorscheme="@ColorScheme" data-order-by="@OrderBy" data-width="@Width"></div>
+</body>
+</html>
