@@ -1,0 +1,22 @@
+﻿@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Adds one or more customizable AddThis buttons to share the URL of the current page with multiple online services such as FaceBook or Twitter."; }
+	}
+
+	[FunctionParameter(Label = "AddThis profile ID", Help = "Specify your AddThis profile ID, so that your shares can be tracked and viewed in the AddThis dashboard.")]
+	public string ProfileId { get; set; }
+
+
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<script id="add-this-js" type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=@ProfileId"></script>
+</head>
+<body>
+	<div class="addthis_inline_share_toolbox"></div>
+</body>
+</html>

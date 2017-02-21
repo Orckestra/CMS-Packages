@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="2.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Social.AddThis" groupName="Orckestra.Social" version="1.0.2" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="http://docs.c1.orckestra.com/Orckestra.Social.AddThis" id="493574e2-6f5a-44d2-b5b1-9c5c17f902c3" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Allows users to share the current web page with various online services such as FaceBook or Twitter by using AddThis (http://www.addthis.com/), the world's largest content sharing platform.</Description>
+		<TechnicalDetails>You need go to www.addthis.com/dashboard to customize your tools.</TechnicalDetails>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\App_Data\Components\Orckestra\Social\AddThis\" targetDirectory="~\App_Data\Components\Orckestra\Social\AddThis\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\App_Data\Razor\Orckestra\Social\AddThis\" targetDirectory="~\App_Data\Razor\Orckestra\Social\AddThis\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
