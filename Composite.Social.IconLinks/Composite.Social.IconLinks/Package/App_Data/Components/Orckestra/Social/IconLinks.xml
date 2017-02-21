@@ -1,0 +1,18 @@
+﻿<html
+		pal:title="Social Follow Links"
+		pal:description="Displays social follow links as icons on a page."
+		pal:tags="social"
+		pal:image="/Frontend/Composite/Social/IconLinks/socialiconLinks.png"
+		pal:icon="image"
+		pal:icon="social-share"
+		pal:container-anti-classes="aside"
+		pal:container-classes=""
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:pal="http://www.composite.net/ns/components/1.0">
+	<head>
+	</head>
+	<body>
+		<f:function name="Composite.Social.IconLinks" xmlns:f="http://www.composite.net/ns/function/1.0">
+		</f:function>
+	</body>
+</html>
