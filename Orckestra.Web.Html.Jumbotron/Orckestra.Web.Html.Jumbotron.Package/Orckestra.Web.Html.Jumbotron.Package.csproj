@@ -62,7 +62,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Components\Orckestra\Web\Html\Jumbotron\Jumbotron.xml" />
+    <Content Include="Package\App_Data\Components\Orckestra\Web\Html\Jumbotron\Jumbotron.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Package\App_Data\Components\Orckestra\Web\Html\Jumbotron\JumbotronSlides.xml" />
     <Content Include="Package\App_Data\Composite\DynamicTypeForms\Orckestra\Web\Html\JumbotronSlide.xml" />
     <Content Include="Package\Frontend\Orckestra\Web\Html\Jumbotron\jquery.cycle2.carousel.min.js" />
@@ -71,7 +73,6 @@
     <Content Include="Package\Frontend\Orckestra\Web\Html\Jumbotron\jumbotron.png" />
     <Content Include="Package\Frontend\Orckestra\Web\Html\Jumbotron\JumbotronSlides.js" />
     <Content Include="Package\Frontend\Orckestra\Web\Html\Jumbotron\modernizr.custom.js" />
-    <Content Include="_PackageCreator\Orckestra.Lists.Portfolio.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\install.xml">
@@ -87,6 +88,7 @@
   <ItemGroup>
     <Folder Include="Package\Datas\" />
     <Folder Include="Release\" />
+    <Folder Include="_PackageCreator\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\Razor\Orckestra\Web\Html\Jumbotron.cshtml" />
