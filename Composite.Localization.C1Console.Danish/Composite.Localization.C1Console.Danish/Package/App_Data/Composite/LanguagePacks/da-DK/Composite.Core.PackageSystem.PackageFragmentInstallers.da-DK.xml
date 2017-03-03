@@ -37,6 +37,8 @@
   <string key="DataPackageFragmentUninstaller.OnlyOneElement" value="Kun &#233;t &#39;typer&#39; element er tilladt" />
   <string key="DataPackageFragmentUninstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
   <string key="DataPackageFragmentUninstaller.MissingKeyProperty" value="Datatypen &#39;{0}&#39; indeholder ikke en vigtig egenskab ved navn &#39;{1}&#39;" />
+  <string key="DataPackageFragmentUninstaller.DataIsReferenced" value="Dataposten &#39;{0}&#39; af typen {1} er refereret fra en datapost &#39;{2}&#39; af typen &#39;{3}&#39;" />
+  <string key="DataPackageFragmentUninstaller.PageTypeIsReferenced" value="Sidetypen &#39;{0}&#39; er refereret af siden &#39;{1}&#39;" />
   <string key="DataTypePackageFragmentInstaller.OnlyOneElement" value="Kun &#233;t &#39;typer&#39; element er tilladt" />
   <string key="DataTypePackageFragmentInstaller.MissingElement" value="Manglende &#39;typer&#39; element" />
   <string key="DataTypePackageFragmentInstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
@@ -64,9 +66,11 @@
   <string key="FilePackageFragmentInstaller.MissingFile" value="Installerings zip-filen indeholder ikke filen &#39;{0}&#39;" />
   <string key="FilePackageFragmentInstaller.FileExists" value="Filen &#39;{0}&#39; findes allerede" />
   <string key="FilePackageFragmentInstaller.FileReadOnly" value="Filen &#39;{0}&#39; er markeret som Read Only og kan derfor ikke overskrives" />
-  <string key="FilePackageFragmentInstaller.AssemblyLoadNotAllowed" value="&#39;AssemblyLoad &#39;attributten kan kun anvendes p&#229; filer, ikke p&#229; mapper" />
-  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowed" value="&#39;OnlyUpdate &#39;attributent kan kun anvendes p&#229; filer, ikke p&#229; mapper" />
-  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowedWithLoadAssemlby" value="&#39;OnlyUpdate &#39;attributten er ikke tilladt i kombination med&#39; LoadAssembly &#39;attributten" />
+  <string key="FilePackageFragmentInstaller.AssemblyLoadNotAllowed" value="Attributten &#39;AssemblyLoad&#39; kan kun anvendes p&#229; filer, ikke p&#229; mapper" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowed" value="Attributten &#39;OnlyUpdate &#39; kan kun anvendes p&#229; filer, ikke p&#229; mapper" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateNotAllowedWithLoadAssemlby" value="Attributten &#39;OnlyUpdate&#39; er ikke tilladt i kombination med attributten &#39;LoadAssembly&#39;" />
+  <string key="FilePackageFragmentInstaller.OnlyUpdateAndOnlyAddNotAllowed" value="Attributterne &#39;onlyUpdate&#39; og &#39;onlyAdd&#39; er nu tilladt p&#229; det samme element" />
+  <string key="FilePackageFragmentInstaller.OnlyAddAndAllowOverwriteNotAllowed" value="Attributterne &#39;onlyAdd&#39; og  &#39;allowOverwrite&#39; er nu tilladt p&#229; det samme element" />
   <string key="FilePackageFragmentInstaller.MissingDirectory" value="Installerings zip-filen indeholder ikke mappen &#39;{0}&#39;" />
   <string key="FilePackageFragmentInstaller.WrongBasePath" value="Uninstall.xml indeholder filstier knyttet til den oprindelige hjemmesides placering, og derfor kan pakken ikke afinstalleres sikkert." />
   <string key="FilePackageFragmentUninstaller.OnlyOneFilesElement" value="Kun &#233;t &#39;filer&#39; element er tilladt" />
@@ -79,17 +83,19 @@
   <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnly" value="Filen &#39;{0}&#39; er markeret som Read Only og kan derfor ikke overskrives" />
   <string key="FileXslTransformationPackageFragmentInstaller.FileReadOnlyOverride" value="File &#39;{0}&#39; blev markeret som &#39;Read Only&#39;. Denne fil attribut blev fjernet, og filen blev opdateret normalt." />
 
-  <string key="PackageVersionBumberFragmentInstaller.OnlyOneElement" value="Kun &#233;t &#39;PackageVersions&#39; element er tilladt" />
-  <string key="PackageVersionBumberFragmentInstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
-  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeGuidFormat" value="Forkert attributv&#230;rdi format, Guide v&#230;rdi forventet" />
-  <string key="PackageVersionBumberFragmentInstaller.PackageIdDuplicate" value="Pakke id kopien: &#39;{0}&#39;" />
-  <string key="PackageVersionBumberFragmentInstaller.WrongAttributeVersionFormat" value="Forkert attribut v&#230;rdi format, version v&#230;rdi forventet (xyz)" />
-  <string key="PackageVersionBumberFragmentUninstaller.OnlyOneElement" value="Kun &#233;t &#39;PackageVersions&#39; element er tilladt" />
-  <string key="PackageVersionBumberFragmentUninstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
-  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeGuidFormat" value="Forkert attributv&#230;rdi format, Guide v&#230;rdi forventet" />
-  <string key="PackageVersionBumberFragmentUninstaller.PackageIdDuplicate" value="Pakke id kopien: &#39;{0}&#39;" />
-  <string key="PackageVersionBumberFragmentUninstaller.WrongAttributeVersionFormat" value="Forkert attribut v&#230;rdi format, version v&#230;rdi forventet (xyz)" />
+  <string key="PackageVersionBumperFragmentInstaller.OnlyOneElement" value="Kun &#233;t &#39;PackageVersions&#39;-element er tilladt" />
+  <string key="PackageVersionBumperFragmentInstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
+  <string key="PackageVersionBumperFragmentInstaller.WrongAttributeGuidFormat" value="Forkert format p&#229; v&#230;rdien i attributten, Guid forventes" />
+  <string key="PackageVersionBumperFragmentInstaller.PackageIdDuplicate" value="Pakkens id kopierer: &#39;{0}&#39;" />
+  <string key="PackageVersionBumperFragmentInstaller.WrongAttributeVersionFormat" value="Forkert format p&#229; attributtens v&#230;rdi. Version-v&#230;rdi forventet (x.y.z)" />
+  <string key="PackageVersionBumperFragmentUninstaller.OnlyOneElement" value="Kun &#233;t &#39;PackageVersions&#39;-element er tilladt" />
+  <string key="PackageVersionBumperFragmentUninstaller.MissingAttribute" value="Manglende {0} attribut i konfigurationen" />
+  <string key="PackageVersionBumperFragmentUninstaller.WrongAttributeGuidFormat" value="Forkert format p&#229; v&#230;rdien i attributten, Guid forventes" />
+  <string key="PackageVersionBumperFragmentUninstaller.PackageIdDuplicate" value="Pakkens id kopierer: &#39;{0}&#39;" />
+  <string key="PackageVersionBumperFragmentUninstaller.WrongAttributeVersionFormat" value="Forkert format p&#229; attributtens v&#230;rdi. Version-v&#230;rdi forventet (x.y.z)" />
   <string key="PackageLicenseFragmentInstaller.MissingPublicKeyElement" value="En offentlig RSA-n&#248;gle mangler i pakkekonfigurationen" />
+
+  <string key="FileModifyPackageFragmentInstaller.FileDoesNotExist" value="Filen &#39;{0}&#39; eksisterer ikke." />
 
   <string key="License.InvalidKeyTitle" value="Ugyldig licensn&#248;gle" />
   <string key="License.InvalidKeyMessage" value="Licensn&#248;glen er ugyldig. Du m&#229; skaffe en gyldig licensn&#248;gle." />

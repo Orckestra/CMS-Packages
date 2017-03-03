@@ -12,6 +12,8 @@
   <string key="PackageSourcesFolderToolTip" value="Pakkens kilder" />
   <string key="ViewAvailableInformationLabel" value="Pakkens info" />
   <string key="ViewAvailableInformationToolTip" value="Se pakkeinformation" />
+  <string key="InstallLabel" value="Installer" />
+  <string key="InstallToolTip" value="Installer denne C1 pakke" />
   <string key="ViewInstalledInformationLabel" value="Pakkens info" />
   <string key="ViewInstalledInformationToolTip" value="Se pakkeinformation" />
   <string key="InstallLocalPackageLabel" value="Install&#233;r lokal pakke ..." />
@@ -25,12 +27,16 @@
   <string key="ViewAvailableInformation.FieldGroupLabel" value="Pakkens info" />
   <string key="ViewAvailableInformation.NameTextLabel" value="Navn" />
   <string key="ViewAvailableInformation.DescriptionTextLabel" value="Beskrivelse" />
-  <string key="ViewAvailableInformation.AuthorTextLabel" value="Forfatter" />
+  <string key="ViewAvailableInformation.AuthorTextLabel" value="&#198;ndret af" />
 
   <string key="ViewAvailableInformation.TrialInfoFieldGroupLabel" value="Information om gratis pr&#248;veversion" />
   <string key="ViewAvailableInformation.TrialInformationLabel" value="Information om pr&#248;veversion" />
   <string key="ViewAvailableInformation.TrialInformationText" value="Dette er en kommerciel pakke, som er gratis i pr&#248;veperioden. N&#229;r pr&#248;veperioden er udl&#248;bet, vil funktionaliteten oph&#248;re, medmindre du v&#230;lger at k&#248;be en licens." />
   <string key="ViewAvailableInformation.TrialDaysLabel" value="Gratis pr&#248;veperiode (dage)" />
+	
+	<string key="ViewAvailableInformation.LicenseInformationGroupLabel" value="licensinformation" />
+	<string key="ViewAvailableInformation.SubscriptionNameLabel" value="Abonnementnavn" />
+	<string key="ViewAvailableInformation.LicenseExpirationDateLabel" value="Udl&#248;bsdato for licensen" />
 
 
   <string key="ViewAvailableInformation.InstallationInfoFieldGroupLabel" value="Installationsinfo" />
@@ -40,7 +46,8 @@
 
 
   <string key="ViewAvailableInformation.PriceTextLabel" value="Pris (USD)" />
-  <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="Install&#233;r" />
+  <string key="ViewAvailableInformation.SubscriptionListLabel" value="Abonnementer der indeholder denne pakke" />
+  <string key="ViewAvailableInformation.Toolbar.InstallLabel" value="Installer" />
   <string key="ViewAvailableInformation.Toolbar.ReadMoreLabel" value="L&#230;s mere" />
   <string key="ViewAvailableInformation.ShowError.MessageTitle" value="Allerede installeret" />
   <string key="ViewAvailableInformation.ShowError.MessageMessage" value="Pakken er allerede installeret. Den valgte pakke kan ikke installeres." />
@@ -50,12 +57,16 @@
   <string key="ViewInstalledInformation.NameTextLabel" value="Navn" />
   <string key="ViewInstalledInformation.DateTextLabel" value="Installationsdato" />
   <string key="ViewInstalledInformation.UserTextLabel" value="Installeret af" />
-  <string key="ViewInstalledInformation.AuthorTextLabel" value="Forfatter" />
+  <string key="ViewInstalledInformation.AuthorTextLabel" value="&#198;ndret af" />
   <string key="ViewInstalledInformation.VersionTextLabel" value="Version" />
   <string key="ViewInstalledInformation.TrialInfoFieldGroupLabel" value="Information om pr&#248;veperioden" />
   <string key="ViewInstalledInformation.TrialInformationLabel" value="Information om pr&#248;veversion" />
   <string key="ViewInstalledInformation.TrialInformationText" value="Dette er en kommerciel pakke, som er gratis i pr&#248;veperioden. N&#229;r pr&#248;veperioden er udl&#248;bet, vil funktionaliteten oph&#248;re, medmindre du v&#230;lger at k&#248;be en licens." />
   <string key="ViewInstalledInformation.TrialExpireLabel" value="Pr&#248;veperiodens udl&#248;bsdato" />
+	
+	<string key="ViewInstalledInformation.LicenseInformationGroupLabel" value="licensinformation" />
+	<string key="ViewInstalledInformation.SubscriptionNameLabel" value="Abonnementnavn" />
+	<string key="ViewInstalledInformation.LicenseExpirationDateLabel" value="Udl&#248;bsdato for licensen" />
 
   <string key="ViewInstalledInformation.Toolbar.UninstallLabel" value="Afinstall&#233;r" />
   <string key="ViewInstalledInformation.Toolbar.PurchaseLabel" value="K&#248;b denne !" />
@@ -86,7 +97,6 @@
   <string key="InstallRemotePackage.ShowWarning.LayoutLabel" value="Pakken blev ikke valideret" />
   <string key="InstallRemotePackage.ShowWarning.InfoTableCaption" value="Pakken blev ikke valideret" />
   <string key="InstallLocalPackage.Step1.LayoutLabel" value="Install&#233;r lokal pakke" />
-  <string key="InstallLocalPackage.Step1.FieldGroupLabel" value="Sti til den lokale pakke" />
   <string key="InstallLocalPackage.Step1.FileUploadLabel" value="Pakkefilen" />
   <string key="InstallLocalPackage.Step1.FileUploadHelp" value="Find og v&#230;lg den lokale pakkefil" />
   <string key="InstallLocalPackage.Step2.LayoutLabel" value="Install&#233;r lokal pakke" />

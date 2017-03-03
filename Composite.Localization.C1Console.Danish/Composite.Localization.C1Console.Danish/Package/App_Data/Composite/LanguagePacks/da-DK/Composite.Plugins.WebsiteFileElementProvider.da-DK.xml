@@ -23,9 +23,25 @@
   <string key="UploadNewWebsiteFile.ConfirmOverwriteDescription" value="Der findes allerede en fil med det samme navn, Overskriv?" />
 	<string key="UploadFile.Error.WrongTypeTitle" value="Forkert filtype" />
 	<string key="UploadFile.Error.WrongTypeMessage" value="Forkert filtype" />
-	
 
-	<string key="AddWebsiteFolderTitle" value="Ny mappe" />
+  <string key="UploadAndExtractZipFileTitle" value="Upload og udpak zip-fil" />
+  <string key="UploadAndExtractZipFileToolTip" value="Upload flere filer og mapper ved at sende en zip-fil" />
+  <string key="UploadAndExtractZipFile.DialogLabel" value="Upload og udpak zip-fil" />
+  <string key="UploadAndExtractZipFile.FileLabel" value="Zip-fil" />
+  <string key="UploadAndExtractZipFile.FileHelp" value="Fil-/mappestrukturen i zip-filen du v&#230;lger, vil blive kopieret til hjemmesiden" />
+  <string key="UploadAndExtractZipFile.OverwriteExistingLabel" value="Overskriv eksisterende" />
+  <string key="UploadAndExtractZipFile.OverwriteExistingHelp" value="Hvis du v&#230;lger denne mulighed, vil eksisterende filer blive overskrevet" />
+  <string key="UploadAndExtractZipFile.OverwriteExistingItemLabel" value="Overskriv eksisterende filer" />
+
+  <string key="UploadAndExtractZipFile.FileExistsError" value="Filen &#39;{0}&#39; findes b&#229;de i zip og p&#229; hjemmesiden. V&#230;lg at overskrive filer for at fuldf&#248;re denne handling" />
+  <string key="UploadAndExtractZipFile.FileNotUploaded" value="Ingen fil blev uploadet" />
+  <string key="UploadAndExtractZipFile.NotZip" value="Den uploadede fil er ikke en gyldig zip-fil" />
+  <string key="UploadAndExtractZipFile.ErrorDialogLabel" value="Upload af zip-fil kunne ikke gennemf&#248;res" />
+  <string key="UploadAndExtractZipFile.UnexpectedError" value="Upload fejlede. Se evt. detaljer i serverloggen" />
+  <string key="UploadAndExtractZipFile.ExistingFileReadOnly" value="Eksisterende fil &#39;{0}&#39; er markeret som skrivebeskyttet. Ingen filer blev uploadet" />
+
+
+  <string key="AddWebsiteFolderTitle" value="Ny mappe" />
 	<string key="AddWebsiteFolderToolTip" value="Tilf&#248;j ny mappe" />
 	<string key="AddWebsiteFileTitle" value="Ny fil" />
 	<string key="AddWebsiteFileToolTip" value="Opret ny fil" />

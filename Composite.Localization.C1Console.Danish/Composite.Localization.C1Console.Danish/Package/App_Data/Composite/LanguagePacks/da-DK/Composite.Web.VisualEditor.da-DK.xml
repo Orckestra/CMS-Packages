@@ -79,7 +79,6 @@
   <!-- general -->
   <string key="LabelTabBasic" value="Basal" />
   <string key="LabelTabAdvanced" value="Avanceret" />
-  <string key="LabelPresentation" value="Pr&#230;sentation" />
   <string key="LabelClass" value="Klasse" />
   <string key="HelpClass" value="Klassens attribut angiver et elements CSS klassenavn." />
   <string key="LabelId" value="Id" />
@@ -181,4 +180,17 @@
   <string key="SpellCheck.InfoCaption" value="Hvordan bruges stavekontrol i den visuelle editor" />
   <string key="SpellCheck.InfoText" value="For at f&#229; forslag til forkert stavede ord, skal du holde shift nede n&#229;r du aktiverer genvejsmenuen." />
 
+  <string key="Function.Edit" value="Rediger" />
+
+  <!-- inline editor button -->
+  <string key="LaunchButton.Label" value="Rediger {0}" />
+
+  <!-- Components -->
+  <string key="Components.LaunchButton.Label" value="Komponenter" />
+  <string key="ContextMenu.LabelComponent" value="Komponent..." />
+  <string key="Components.Window.Headline" value="V&#230;lg en komponent" />
+  <string key="Components.Window.NoItems" value="Ingen valgbare komponenter" />
+  <string key="Components.Window.DialogFilterPlaceholder" value="Filter..." />
+  <string key="Components.Window.Ok" value="OK" />
+  <string key="Components.Window.Cancel" value="Fortryd" />
 </strings>

@@ -1,476 +1,454 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
-	<string key="Composite.AspNet.LoadUserControl.description" value="Indl&#230;ser en ASP.NET brugerbetjening" />
-	<string key="Composite.AspNet.LoadUserControl.param.Path.help" value="Stien til brugerbetjeningens .ascx fil, som ~ / Controls / MyControl.ascx" />
-	<string key="Composite.AspNet.LoadUserControl.param.Path.label" value="Sti" />
-	<string key="Composite.Constant.Boolean.description" value="Tillader dig at specificere konstant boolsk v&#230;rdi" />
-	<string key="Composite.Constant.Boolean.param.Constant.help" value="" />
-	<string key="Composite.Constant.Boolean.param.Constant.label" value="V&#230;rdi" />
-	<string key="Composite.Constant.DateTime.description" value="Lader dig specificere konstant dato og tidsv&#230;rdi" />
-	<string key="Composite.Constant.DateTime.param.Constant.help" value="" />
-	<string key="Composite.Constant.DateTime.param.Constant.label" value="V&#230;rdi" />
-	<string key="Composite.Constant.Decimal.description" value="Tillader dig at specificere konstant decimalv&#230;rdi" />
-	<string key="Composite.Constant.Decimal.param.Constant.help" value="" />
-	<string key="Composite.Constant.Decimal.param.Constant.label" value="V&#230;rdi" />
-	<string key="Composite.Constant.Guid.description" value="Tillader dig at specificere konstant Guid-v&#230;rdi" />
-	<string key="Composite.Constant.Guid.param.Constant.help" value="" />
-	<string key="Composite.Constant.Guid.param.Constant.label" value="V&#230;rdi" />
-	<string key="Composite.Constant.Integer.description" value="Tillader dig at specificere konstant v&#230;rdi for heltal" />
-	<string key="Composite.Constant.Integer.param.Constant.help" value="" />
-	<string key="Composite.Constant.Integer.param.Constant.label" value="V&#230;rdi" />
-	<string key="Composite.Constant.String.description" value="Tillader dig at specificere konstant strengv&#230;rdi" />
-	<string key="Composite.Constant.String.param.Constant.help" value="" />
-	<string key="Composite.Constant.String.param.Constant.label" value="V&#230;rdi" />
-	<string key="Composite.Constant.XhtmlDocument.description" value="Tillader dig visuelt at specificere en xhtml-dokument konstant" />
-	<string key="Composite.Constant.XhtmlDocument.param.Constant.help" value="" />
-	<string key="Composite.Constant.XhtmlDocument.param.Constant.label" value="V&#230;rdi" />
-
-	<string key="Composite.IDataGenerated.AddDataInstance.description" value="Tilf&#248;jer et nyt eksempel af den givne type." />
-	<string key="Composite.IDataGenerated.UpdateDataInstance.description" value="Opdaterer eksempel/ eksempler med de givne v&#230;rdier." />
-	<string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.help" value="" />
-	<string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.label" value="Filter" />
-	<string key="Composite.IDataGenerated.DeleteDataInstance.description" value="Sletter eksempel/ eksempler med det givne filter." />
-	<string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.help" value="" />
-	<string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.label" value="Filter" />
-	<string key="Composite.IDataGenerated.GetDataReference.description" value="Opretter en datareference baseret p&#229; en central v&#230;rdi." />
-	<string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.help" value="Dataens centrale v&#230;rdi som skal refereres til" />
-	<string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.label" value="Central v&#230;rdi" />
-	<string key="Composite.IDataGenerated.GetNullableDataReference.description" value="Opretter en nulstilningsbar datareference baseret p&#229; en central v&#230;rdi. Standardv&#230;rdien er nul, ingen henvisning." />
-	<string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.help" value="Dataens centrale v&#230;rdi som skal refereres til" />
-	<string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.label" value="Central v&#230;rdi" />
-
-	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.description" value="Konverterer en datareference til et singul&#230;rt elementfilter. Dette filter vil udv&#230;lge h&#248;jst &#233;t ​​element." />
-	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.help" value="Datareference&#229;ret til brug ved udv&#230;lgelse af data." />
-	<string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.label" value="Datareference" />
-	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Giver dig mulighed for at v&#230;lge data baseret p&#229; dens henvisning til den aktuelt gengivne side." />
-	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.help" value="V&#230;lg hvilken relation den aktuelle side skal have til de data, som du &#248;nsker at hente." />
-	<string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.label" value="Sidens omfang" />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.description" value="Definerer en &#39;og&#39; eller en &#39;eller&#39; foresp&#248;rgsel, som kombinerer to andre filtre." />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.label" value="Og / eller filter" />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.help" value="Hvis du v&#230;lger &quot;og&quot;, vil begge filtre blive anvendt p&#229; data. Hvis du v&#230;lger &quot;eller&quot;, f&#229;r du data, som matcher et enkelt af filtrene." />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.help" value="&#201;t af de to filtre (det som skal evalueres f&#248;rst)" />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.label" value="Venstre filter" />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.help" value="&#201;t af de to filtre (det som skal evalueres sidst)" />
-	<string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.label" value="H&#248;jre filter" />
-	<string key="Composite.IDataGenerated.Filter.FieldPredicatesFilter.description" value="Tillader  dig at  specificere et filter p&#229; data ved at stille krav til de enkelte felter. Hvis du angiver krav for flere felter, bliver de alle h&#229;ndh&#230;vet (og foresp&#248;rgsel)." />
-	<string key="Composite.IDataGenerated.GetXml.description" value="Henter en XML-repr&#230;sentation af data." />
-	<string key="Composite.IDataGenerated.GetXml.param.ElementName.label" value="Elementnavn" />
-	<string key="Composite.IDataGenerated.GetXml.param.ElementNamespace.label" value="Elementets navnefelt" />
-	<string key="Composite.IDataGenerated.GetXml.param.Filter.help" value="" />
-	<string key="Composite.IDataGenerated.GetXml.param.Filter.label" value="Filter" />
-	<string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.help" value="N&#229;r dette er valgt, vil data  XML blive efterfulgt af et &lt;PagingInfo /&gt; element, som specificerer sideantal, elementer m.m." />
-	<string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.label" value="Medtag bladre-info" />
-	<string key="Composite.IDataGenerated.GetXml.param.OrderByField.help" value="Feltet som data sorteres efter" />
-	<string key="Composite.IDataGenerated.GetXml.param.OrderByField.label" value="Sort&#233;r efter" />
-	<string key="Composite.IDataGenerated.GetXml.param.OrderAscending.help" value="Hvis valgt, vil sande resultater blive leveret i stigende r&#230;kkef&#248;lge - ellers anvendes faldende r&#230;kkef&#248;lge. Standard er stigende r&#230;kkef&#248;lge." />
-	<string key="Composite.IDataGenerated.GetXml.param.OrderAscending.label" value="Bestil stigende" />
-	<string key="Composite.IDataGenerated.GetXml.param.PageNumber.help" value="Hvis antallet af dataelementer overstiger sidens st&#248;rrelse, kan du bruge bladring for at tilg&#229; de andre sider. Se sidest&#248;rrelsesparameter." />
-	<string key="Composite.IDataGenerated.GetXml.param.PageNumber.label" value="Sidetal" />
-	<string key="Composite.IDataGenerated.GetXml.param.PageSize.help" value="Antallet af emner som skal vises p&#229; &#233;n side - det maksimale antal elementer som skal returneres." />
-	<string key="Composite.IDataGenerated.GetXml.param.PageSize.label" value="Sidest&#248;rrelse" />
-	<string key="Composite.IDataGenerated.GetXml.param.PropertyNames.help" value="Datafelter til output i XML&#39;en. F&#230;rre felter kan resultere i hurtigere gengivelser." />
-	<string key="Composite.IDataGenerated.GetXml.param.PropertyNames.label" value="Valgte felter" />
-	<string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.help" value="Hvis du inkluderer referencedata i indstillingen &#39;udvalgte egenskaber&#39;, s&#229; kan du bruge denne indstilling til at kontrollere, hvordan referencedata er inkluderet.&#39; Integreret &#39;er let at anvende, men kan forst&#248;rre  ​XML-dokumentet." />
-	<string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.label" value="Vis referencedata integreret" />
-	<string key="Composite.IDataGenerated.GetXml.param.Randomized.help" value="N&#229;r sande data kan ordnes tilf&#230;ldigt. Angiv det antal tilf&#230;ldige resultater, som du har brug for ved at indstille &#39;sidest&#248;rrelse&#39;. Hvis et filter er angivet, s&#229; anvendes dette f&#248;r den tilf&#230;ldige udv&#230;lgelse. Hvis du angiver &#39;sort&#233;r efter v&#230;rdi&#39;, s&#229; skal du angive en lav &#39;sidest&#248;rrelse&#39;, ellers vil randomiseringen blive tom." />
-	<string key="Composite.IDataGenerated.GetXml.param.Randomized.label" value="Randomiseret" />
-	<string key="Composite.IDataGenerated.GetXml.param.CachePriority.help" value="Bestemmer, om XML resultatet skal caches, og hvilken prioritering disse cache-optegnelser skal have" />
-	<string key="Composite.IDataGenerated.GetXml.param.CachePriority.label" value="Cache prioritet" />
-	<string key="Composite.Pages.GetPageId.description" value="Henter den aktuelle sides id eller en side, som er relateret til den aktuelle side." />
-	<string key="Composite.Pages.GetPageId.param.SitemapScope.help" value="Hvilken side skal id&#39;et komme fra.  Standarden kommer fra den aktuelle side." />
-	<string key="Composite.Pages.GetPageId.param.SitemapScope.label" value="Sideassociation" />
-	<string key="Composite.Pages.QuickSitemap.description" value="Hurtig og r&#229; sitemap xhtml." />
-	<string key="Composite.Pages.SitemapXml.description" value="Returnerer en hierarkisk XML sidestruktur. Hvis udf&#248;rt som en del af en siderendering vil XML elementer, som repr&#230;senterer de aktuelle og forf&#230;dre-siderne, blive tildelt atributterne isopen=&quot;true&quot; og iscurrent=&quot;true&quot;" />
-	<string key="Composite.Pages.SitemapXml.param.SourcePage.label" value="Kildeside" />
-	<string key="Composite.Pages.SitemapXml.param.SourcePage.help" value="Kildesiden er som standard den side, som aktuelt gengives.  Angiv en v&#230;rdi, hvis du &#248;nsker at f&#229; sitemap information i forhold til en anden side. Kildesiden kontrollerer, hvordan sideelementer m&#230;rkes med med &#39;isopen&#39; og &#39;iscurrent&#39; - og den er udgangspunktet for beregningen af ​​sidens omfang." />
-	<string key="Composite.Pages.SitemapXml.param.SitemapScope.label" value="Sidens omfang" />
-	<string key="Composite.Pages.SitemapXml.param.SitemapScope.help" value="Omfanget af sider som skal tr&#230;kkes fra sitemap. Standarden er &#39;alle sider &#39;. Du kan bruge dette parameter til at tr&#230;kke den struktur, som du har brug for til at fuldf&#248;re din opgave." />
-	<string key="Composite.Pages.GetForeignPageInfo.description" value="F&#229;r oplysninger om den aktuelle side p&#229; alle sprog." />
-
-	<string key="Composite.Utils.Caching.PageObjectCache.description" value="Definerer en &#39;cache zone&#39; omkring en funktionsopgave eller markup (typisk omkring funktionsopgaver). Denne funktion kan bruges til at forbedre siderenderingens performance ved at cache sektioner af en hjemmeside. V&#230;rdien af  &#39;objekt  cache id&#39; skal v&#230;re unik for det indhold, der er cached." />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.label" value="Det som skal caches" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.help" value="D&#233;t du &#248;nsker at cache - det kan v&#230;re en enkelt funktionsopgave eller en del af en markup, som indeholder en eller flere funktionsopgaver." />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.label" value="Unikt cache-id" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.help" value="Angiv et id, som er er unikt for det indhold, som bliver cached. Denne v&#230;rdi anvendes, i forbindelse med sideomfang, til at definere en unik cache n&#248;gle." />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.label" value="Sidens omfang" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.help" value="Det sideomfang, som den cachede data skal deles p&#229;. Som standard er sideomfanget &#39;denne hjemmeside&#39;, men du kan &#230;ndre det til side-specifik caching m.m." />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.label" value="Cache varighed (sekunder)" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.help" value="Det antal sekunder det cachede objekt skal genbruges. Standard er 1 minut (60 sekunder)." />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.label" value="Specifikke sprog" />
-	<string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.help" value="V&#230;lg om det cachede objekt skal caches for hvert enkelt hjemmesidesprog eller deles ligeligt over sprog." />
-
-	<string key="Composite.Utils.Compare.AreEqual.description" value="Er lige" />
-	<string key="Composite.Utils.Compare.AreEqual.param.ValueA.help" value="Sammenligner to objekter i forhold til lighed. Returnerer som sand, hvis de to objekter er ens." />
-	<string key="Composite.Utils.Compare.AreEqual.param.ValueA.label" value="V&#230;rdien A som skal sammenlignes." />
-	<string key="Composite.Utils.Compare.AreEqual.param.ValueB.help" value="" />
-	<string key="Composite.Utils.Compare.AreEqual.param.ValueB.label" value="V&#230;rdien B som skal sammenlignes." />
-	<string key="Composite.Utils.Compare.IsLessThan.description" value="" />
-	<string key="Composite.Utils.Compare.IsLessThan.param.ValueA.help" value="" />
-	<string key="Composite.Utils.Compare.IsLessThan.param.ValueA.label" value="V&#230;rdien A som skal sammenlignes." />
-	<string key="Composite.Utils.Compare.IsLessThan.param.ValueB.help" value="" />
-	<string key="Composite.Utils.Compare.IsLessThan.param.ValueB.label" value="V&#230;rdien B som skal sammenlignes." />
-	<string key="Composite.Utils.Configuration.AppSettingsValue.description" value="L&#230;ser en streng fra applikationens konfigurationsfil (web.config eller app.config)" />
-	<string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.help" value="" />
-	<string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.label" value="Tastnavn" />
-	<string key="Composite.Utils.Date.AddDays.description" value="Tilf&#248;j et antal dage til den aktuelle dato og f&#229; den resulterende dato." />
-	<string key="Composite.Utils.Date.AddDays.param.DaysToAdd.help" value="Angiv et negativt eller positivt antal dage som skal tilf&#248;jes den aktuelle dato." />
-	<string key="Composite.Utils.Date.AddDays.param.DaysToAdd.label" value="Dage som skal tilf&#248;jes" />
-	<string key="Composite.Utils.Date.Now.description" value="Den aktuelle dato og tid" />
-	<string key="Composite.Utils.GetInputParameter.description" value="Returnerer en input-parameter fra udf&#248;relsen af funktionskontekst. Brug dette til at videref&#248;re v&#230;rdien af en parameter til et nyt funktionskald." />
-	<string key="Composite.Utils.GetInputParameter.param.InputParameterName.help" value="Angiv navnet p&#229; den input-parameter, hvis v&#230;rdi du &#248;nsker at anvende her." />
-	<string key="Composite.Utils.GetInputParameter.param.InputParameterName.label" value="Parameternavn" />
-
-	<string key="Composite.Utils.ParseStringToObject.description" value="Parser en streng til et objekt. Typen af objekt afh&#230;nger af modtageren. Brugen af denne funktion til at levere en v&#230;rdi til en DatoTid parameter, vil f&#229; systemet til at parse strengen som et DatoTid etc." />
-	<string key="Composite.Utils.ParseStringToObject.param.StringToParse.help" value="Angiv den streng som skal parses. Bem&#230;rk, at den skal v&#230;re formateret p&#229; en m&#229;de, som kan omdannes til den type objekt, som forventes." />
-	<string key="Composite.Utils.ParseStringToObject.param.StringToParse.label" value="Streng som skal parses" />
-
-	<string key="Composite.Utils.Guid.NewGuid.description" value="Returnerer en ny tilf&#230;ldig Guid." />
-	<string key="Composite.Utils.Globalization.AllCultures.description" value="En liste over alle kulturer" />
-	<string key="Composite.Utils.Globalization.CurrentCulture.description" value="Den aktuelle brugers / anmodnings kultur." />
-	<string key="Composite.Utils.Integer.Sum.description" value="Returnerer summen fra en liste af heltal" />
-	<string key="Composite.Utils.Integer.Sum.param.Ints.help" value="" />
-	<string key="Composite.Utils.Integer.Sum.param.Ints.label" value="Liste af heltal" />
-	<string key="Composite.Utils.Predicates.BoolEquals.description" value="Kontroll&#233;r, om en boolisk er sand eller falsk." />
-	<string key="Composite.Utils.Predicates.BoolEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.BoolEquals.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.DateTimeEquals.description" value="Kontroll&#233;r om en dato er lig en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.DateTimeGreaterThan.description" value="Kontroll&#233;r om en dato er st&#248;rre end en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.DateTimeLessThan.description" value="Kontroll&#233;r om en dato er mindre end en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.DecimalEquals.description" value="Kontroll&#233;r om et decimaltal har en vis v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.DecimalEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DecimalEquals.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.DecimalGreaterThan.description" value="Kontroll&#233;r om en decimal er st&#248;rre end en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.DecimalLessThan.description" value="Kontroll&#233;r, om en decimal er mindre end en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.GuidEquals.description" value="Kontroll&#233;r om en Guid svarer til en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.GuidEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.GuidEquals.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-
-	<string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.description" value="Kontroll&#233;r om en Guid findes i en kommasepareret strengliste" />
-	<string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.label" value="Liste over Guid" />
-	<string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.help" value="En streng, der indeholder nul eller flere Guid&#39;er adskilt af kommaer" />
-
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.description" value="Kontroll&#233;r om et strengfelt matcher et af vilk&#229;rene i en kommasepareret strengliste" />
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.label" value="S&#248;getermer" />
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="En tekststreng som indeholder s&#248;geord adskilt af kommaer, som &#39;C1, cms, LINQ&#39;" />
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.label" value="Ignor&#233;r tilf&#230;lde" />
-	<string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.help" value="Hvis falsk m&#229; alle bogstaver v&#230;re enten store eller sm&#229;. Standard er &#39;sand&#39;, s&#248;gning som tager hensyn til store og sm&#229; bogstaver." />
-
-	<string key="Composite.Utils.Predicates.StringInList.description" value="Kontroller, om en tekststrengs felt matcher en af tekststrengene i den medf&#248;lgende liste" />
-	<string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.label" value="S&#248;getermer" />
-	<string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.help" value="En liste af tekstrenge som skal matches med det afs&#248;gte tekststrengsfelt." />
-	<string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.label" value="Ignor&#233;r tilf&#230;lde" />
-	<string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.help" value="Hvis falsk m&#229; alle bogstaver v&#230;re enten store eller sm&#229;. Standard er &#39;sand&#39;, s&#248;gning som tager hensyn til store og sm&#229; bogstaver." />
-
-
-	<string key="Composite.Utils.Predicates.IntegerEquals.description" value="Kontroll&#233;r om et heltal er lig en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.IntegerEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.IntegerEquals.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.IntegerGreaterThan.description" value="Kontroll&#233;r om et heltal er st&#248;rre end en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.IntegerLessThan.description" value="Kontroll&#233;r om et heltal er mindre end en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.StringContains.description" value="Kontroll&#233;r om en tekststreng indeholder en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.StringContains.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.StringContains.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.StringEndsWith.description" value="Kontroll&#233;r om en tekststreng slutter med en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.StringEndsWith.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.StringEndsWith.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.StringEquals.description" value="Kontroll&#233;r om en tekststreng er lig med en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.StringEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.StringEquals.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.StringStartsWith.description" value="Kontroll&#233;r om en tekststreng starter med en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.StringStartsWith.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.StringStartsWith.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.NullableGuidEquals.description" value="Kontroll&#233;r om en Guid svarer til en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.NullableGuidNoValue.description" value="Kontroll&#233;r om en nulstilningsbar Guid ingen v&#230;rdi har" />
-	<string key="Composite.Utils.Predicates.NullableIntegerEquals.description" value="Kontroll&#233;r om et heltal er lig en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.NullableIntegerNoValue.description" value="Kontroll&#233;r om et nulstilningsbart heltal ingen v&#230;rdi har" />
-	<string key="Composite.Utils.Predicates.StringNoValue.description" value="Kontroll&#233;r om en tekststreng ingen v&#230;rdi har" />
-	<string key="Composite.Utils.Predicates.NullableBoolEquals.description" value="Kontroll&#233;r, om en boolisk er sand eller falsk." />
-	<string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.NullableBoolNoValue.description" value="Kontroll&#233;r om en nulstilningsbar boolisk ingen v&#230;rdi har" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeEquals.description" value="Kontroll&#233;r om en dato er lig en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.description" value="Kontroll&#233;r om en dato er st&#248;rre end en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeLessThan.description" value="Kontroll&#233;r om en dato er mindre end en bestemt v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.NullableDateTimeNoValue.description" value="Kontroll&#233;r om en nulstilningsbar dato ingen v&#230;rdi har" />
-	<string key="Composite.Utils.Predicates.NullableDecimalEquals.description" value="Kontroll&#233;r om et decimaltal har en vis v&#230;rdi" />
-	<string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.help" value="" />
-	<string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.label" value="V&#230;rdien som der skal sammenlignes med" />
-	<string key="Composite.Utils.Predicates.NullableDecimalNoValue.description" value="Kontroll&#233;r om en nulstilningsbar decimal ingen v&#230;rdi har" />
-
-	<string key="Composite.Utils.String.Join.description" value="Sammenslutter en liste af tekststrenge til en enkelt streng" />
-	<string key="Composite.Utils.String.Join.param.Separator.help" value="Separatoren som skal inds&#230;ttes mellem tekststrengene." />
-	<string key="Composite.Utils.String.Join.param.Separator.label" value="Separator" />
-	<string key="Composite.Utils.String.Join.param.Strings.help" value="Listen af tekst​​strenge som skal sammenf&#248;jes" />
-	<string key="Composite.Utils.String.Join.param.Strings.label" value="Tekststrenge som skal sammenf&#248;jes" />
-	<string key="Composite.Utils.String.JoinTwo.description" value="Sammenf&#248;jer to tekststrenge til en simpel streng" />
-	<string key="Composite.Utils.String.JoinTwo.param.StringA.help" value="Tekststrengen som skal komme f&#248;rst" />
-	<string key="Composite.Utils.String.JoinTwo.param.StringA.label" value="Streng A" />
-	<string key="Composite.Utils.String.JoinTwo.param.StringB.help" value="Tekststrengen som skal komme sidst" />
-	<string key="Composite.Utils.String.JoinTwo.param.StringB.label" value="Streng B" />
-	<string key="Composite.Utils.String.JoinTwo.param.Separator.help" value="En tekststreng som skal inds&#230;ttes mellem streng A og streng B. Standard er, at der ingen separator er." />
-	<string key="Composite.Utils.String.JoinTwo.param.Separator.label" value="Separator" />
-	<string key="Composite.Utils.String.Split.description" value="Opsplitter en tekststreng til en liste over strenge." />
-	<string key="Composite.Utils.String.Split.param.Separator.help" value="Den separator som skal bruges n&#229;r tekststrengen opdeles. Standard er komma (&quot;,&quot;)" />
-	<string key="Composite.Utils.String.Split.param.Separator.label" value="Separator" />
-	<string key="Composite.Utils.String.Split.param.String.help" value="Den tekststreng, som du &#248;nsker at opdele i en liste." />
-	<string key="Composite.Utils.String.Split.param.String.label" value="Tekststreng som skal opdeles" />
-	<string key="Composite.Utils.Validation.DateTimeNotNullValidation.description" value="" />
-	<string key="Composite.Utils.Validation.DecimalNotNullValidation.description" value="" />
-	<string key="Composite.Utils.Validation.DecimalPrecisionValidation.description" value="Validerer cifrenes pr&#230;cision (antallet af decimaler brugeren har specificeret)" />
-	<string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.help" value="Det maksimale antal cifre som skal tillades i decimalen" />
-	<string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.label" value="Max antal decimalcifre" />
-	<string key="Composite.Utils.Validation.GuidNotNullValidation.description" value="" />
-	<string key="Composite.Utils.Validation.Int32NotNullValidation.description" value="" />
-	<string key="Composite.Utils.Validation.IntegerRangeValidation.description" value="Validerer at et heltal ligger indenfor et bestemt interval." />
-	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.help" value="Det maksimale antal, som er tilladt i dette felt." />
-	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.label" value="Maksimalt antal" />
-	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.help" value="Det mindste antal, som er tilladt i dette felt." />
-	<string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.label" value="Mindste antal" />
-	<string key="Composite.Utils.Validation.RegularExpressionValidation.description" value="Validerer, at en tekststreng stemmer overens med det angivne regul&#230;re udtryk" />
-	<string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.help" value="Det regul&#230;re udtryksm&#248;nster, som skal bruges" />
-	<string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.label" value="RegEx m&#248;nster" />
-	<string key="Composite.Utils.Validation.StringLengthValidation.description" value="Validerer, at l&#230;ngden af ​​en tekststreng er indenfor det angivne omr&#229;de" />
-	<string key="Composite.Utils.Validation.StringLengthValidation.param.max.help" value="" />
-	<string key="Composite.Utils.Validation.StringLengthValidation.param.max.label" value="Maksimal l&#230;ngde" />
-	<string key="Composite.Utils.Validation.StringLengthValidation.param.min.help" value="" />
-	<string key="Composite.Utils.Validation.StringLengthValidation.param.min.label" value="Minimum l&#230;ngde" />
-	<string key="Composite.Utils.Validation.StringNotNullValidation.description" value="" />
-	<string key="Composite.Web.Client.BrowserPlatform.description" value="" />
-	<string key="Composite.Web.Client.BrowserString.description" value="" />
-	<string key="Composite.Web.Client.BrowserType.description" value="" />
-	<string key="Composite.Web.Client.BrowserVersion.description" value="" />
-	<string key="Composite.Web.Client.EcmaScriptVersion.description" value="" />
-	<string key="Composite.Web.Client.IsCrawler.description" value="Sand, hvis den aktuelle anmodning er identificeret som v&#230;rende fra en crawler (s&#248;gemaskine)." />
-	<string key="Composite.Web.Client.IsMobileDevice.description" value="Sand, hvis den aktuelle anmodning er identificeret som kommende fra en mobil enhed." />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.description" value="Almindelige HTML metatags, som du sandsynligvis &#248;nsker inkluderet i dit html hoved" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.label" value="Indholdstype" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="Som standard er dette &#39;text / html; charset = utf-8&#39;. Hvis du sender noget andet b&#248;r du overskrive dette." />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.label" value="Designer" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Hvem har designet denne hjemmeside? Vis det i &#39;designer&#39; metatag&#39;et. Standard er ikke at udsende dette metatag." />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.label" value="Vis generator" />
-	<string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.help" value="Vis verden at du st&#248;tter Composite C1 - gratis open source!" />
-	<string key="Composite.Web.Html.Template.LangAttribute.description" value="F&#248;jer en lang = &#39;(sprogkode)&#39; attribut, som afspejler den aktuelle sides sprog, til overelementet. Du kan inds&#230;tte dette lige under &lt;html /&gt; tag&#39;et." />
-  <string key="Composite.Web.Html.Template.PageTemplateFeature.description" value="Inkluderer en navngiven sideskabelonsegenskab p&#229; denne lokation. sideskabelonsegenskaber kan indeholde HTML og funktionelle bidder og forvaltes i layout perspektivet." />
+  <string key="Composite.AspNet.LoadUserControl.description" value="Indlæser en ASP.NET brugerkontrol" />
+  <string key="Composite.AspNet.LoadUserControl.param.Path.help" value="Stien til brugerkontrollens .ascx fil, fx ”~/ Controls/MyControl.ascx”" />
+  <string key="Composite.AspNet.LoadUserControl.param.Path.label" value="Sti" />
+  <string key="Composite.Constant.Boolean.description" value="Tillader dig at specificere en konstant boolsk værdi" />
+  <string key="Composite.Constant.Boolean.param.Constant.help" value="" />
+  <string key="Composite.Constant.Boolean.param.Constant.label" value="Værdi" />
+  <string key="Composite.Constant.DateTime.description" value="Tillader dig at specificere en konstant dato og tidsværdi" />
+  <string key="Composite.Constant.DateTime.param.Constant.help" value="" />
+  <string key="Composite.Constant.DateTime.param.Constant.label" value="Værdi" />
+  <string key="Composite.Constant.Decimal.description" value="Tillader dig at specificere en konstant decimalværdi" />
+  <string key="Composite.Constant.Decimal.param.Constant.help" value="" />
+  <string key="Composite.Constant.Decimal.param.Constant.label" value="Værdi" />
+  <string key="Composite.Constant.Guid.description" value="Tillader dig at specificere en konstant Guid-værdi" />
+  <string key="Composite.Constant.Guid.param.Constant.help" value="" />
+  <string key="Composite.Constant.Guid.param.Constant.label" value="Værdi" />
+  <string key="Composite.Constant.Integer.description" value="Tillader dig at specificere en konstant værdi for heltal" />
+  <string key="Composite.Constant.Integer.param.Constant.help" value="" />
+  <string key="Composite.Constant.Integer.param.Constant.label" value="Værdi" />
+  <string key="Composite.Constant.String.description" value="Tillader dig at specificere en konstant strengværdi" />
+  <string key="Composite.Constant.String.param.Constant.help" value="" />
+  <string key="Composite.Constant.String.param.Constant.label" value="Værdi" />
+  <string key="Composite.Constant.XhtmlDocument.description" value="Tillader dig visuelt at specificere en Xhtml document konstant" />
+  <string key="Composite.Constant.XhtmlDocument.param.Constant.help" value="" />
+  <string key="Composite.Constant.XhtmlDocument.param.Constant.label" value="Værdi" />
+  <string key="Composite.IDataGenerated.AddDataInstance.description" value="Tilføjer en ny instans af den givne type." />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.description" value="Opdaterer eksempel/eksempler med de givne værdier." />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.label" value="Filter" />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.description" value="Sletter eksempel/eksempler med det givne filter." />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.label" value="Filter" />
+  <string key="Composite.IDataGenerated.GetDataReference.description" value="Opretter en DataReference baseret på en primærnøgle." />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.help" value="Dataens primærnøgle som der skal refereres til" />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.label" value="Primærnøgle" />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.description" value="Opretter en NullableDataReference baseret på en primærnøgle. Standardværdien er 'null', ingen henvisning." />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.help" value="Dataens primærnøgle som der skal refereres til" />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.label" value="Primærnøgle" />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.description" value="Konverterer en DataReference til et singulært elementfilter. Dette filter vil udvælge højst ét ​​element." />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.help" value="Datareferencen til brug ved udvælgelse af data." />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.label" value="Datareference" />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Giver dig mulighed for at vælge data baseret på dens henvisning til den aktuelle side." />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.help" value="Vælg hvilken relation den aktuelle side skal have til de data, som du ønsker at hente." />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.label" value="Sidens omfang" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.description" value="Definerer en 'og' eller en 'eller' forespørgsel, som kombinerer to andre filtre." />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.label" value="Og / eller filter" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.IsAndQuery.help" value="Hvis du vælger &quot;og&quot;, vil begge filtre blive anvendt på data. Hvis du vælger &quot;eller&quot;, får du data, som matcher et enkelt af filtrene." />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.help" value="Ét af de to filtre (det som skal evalueres først)" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Left.label" value="Venstre filter" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.help" value="Ét af de to filtre (det som skal evalueres sidst)" />
+  <string key="Composite.IDataGenerated.Filter.CompoundFilter.param.Right.label" value="Højre filter" />
+  <string key="Composite.IDataGenerated.Filter.FieldPredicatesFilter.description" value="Tillader  dig at  specificere et filter på data ved at stille krav til de enkelte felter. Hvis du angiver krav for flere felter, bliver de alle håndhævet (og forespørgsel)." />
+  <string key="Composite.IDataGenerated.GetXml.description" value="Henter en XML-repræsentation af data." />
+  <string key="Composite.IDataGenerated.GetXml.param.ElementName.label" value="Elementnavn" />
+  <string key="Composite.IDataGenerated.GetXml.param.ElementNamespace.label" value="Elementets namespace" />
+  <string key="Composite.IDataGenerated.GetXml.param.Filter.help" value="" />
+  <string key="Composite.IDataGenerated.GetXml.param.Filter.label" value="Filter" />
+  <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.help" value="Når dette er valgt, vil data  XML blive efterfulgt af et &lt;PagingInfo /&gt; element, som specificerer sideantal, elementer m.m." />
+  <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.label" value="Medtag bladre-info" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderByField.help" value="Feltet som data sorteres efter" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderByField.label" value="Sortér efter" />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.help" value="Hvis sat til 'true' vil resultater blive leveret i stigende rækkefølge - ellers anvendes faldende rækkefølge. Standard er stigende rækkefølge." />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.label" value="Sortér stigende" />
+  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.help" value="Hvis antallet af dataelementer overstiger sidens størrelse, kan du bruge bladring for at tilgå de andre sider. Se parameteren Sidestørrelse." />
+  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.label" value="Sidetal" />
+  <string key="Composite.IDataGenerated.GetXml.param.PageSize.help" value="Antallet af emner som skal vises på én side - det maksimale antal elementer som skal returneres." />
+  <string key="Composite.IDataGenerated.GetXml.param.PageSize.label" value="Sidestørrelse" />
+  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.help" value="Datafelter til output i XML'en. Færre felter resulterer i hurtigere gengivelser." />
+  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.label" value="Valgte felter" />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.help" value="Hvis du inkluderer referencedata i indstillingen 'Udvalgte egenskaber', så kan du bruge denne indstilling til at kontrollere, hvordan referencedata er inkluderet. 'Integreret' er let at anvende, men kan forstørre  ​XML-dokumentet." />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.label" value="Vis referencedata 'inline'" />
+  <string key="Composite.IDataGenerated.GetXml.param.Randomized.help" value="Når 'true' kan kan sorteres tilfældigt. Angiv det antal tilfældige resultater, som du har brug for ved at indstille 'Sidestørrelse'. Hvis et filter er angivet, så anvendes dette før den tilfældige udvælgelse. Hvis du angiver 'sortér efter værdi', så skal du angive en lav 'Sidestørrelse' - ellers vil randomiseringen blive tom." />
+  <string key="Composite.IDataGenerated.GetXml.param.Randomized.label" value="Randomiseret" />
+  <string key="Composite.IDataGenerated.GetXml.param.CachePriority.help" value="Bestemmer, om XML resultatet skal caches, og hvilken prioritering disse cache-poster skal have" />
+  <string key="Composite.IDataGenerated.GetXml.param.CachePriority.label" value="Cache prioritet" />
+  <string key="Composite.Pages.GetPageId.description" value="Henter den aktuelle sides id eller en side, som er relateret til den aktuelle side." />
+  <string key="Composite.Pages.GetPageId.param.SitemapScope.help" value="Hvilken side skal id'et komme fra.  Standarden kommer fra den aktuelle side." />
+  <string key="Composite.Pages.GetPageId.param.SitemapScope.label" value="Sideassociation" />
+  <string key="Composite.Pages.QuickSitemap.description" value="Hurtig og rå sitemap xhtml." />
+  <string key="Composite.Pages.SitemapXml.description" value="Returnerer en hierarkisk XML sidestruktur. Hvis udført som en del af en siderendering vil XML elementer, som repræsenterer de aktuelle og forfædre-siderne, blive tildelt atributterne isopen=&quot;true&quot; og iscurrent=&quot;true&quot;" />
+  <string key="Composite.Pages.SitemapXml.param.SourcePage.label" value="Kildeside" />
+  <string key="Composite.Pages.SitemapXml.param.SourcePage.help" value="Kildesiden er som standard den side, som aktuelt gengives.  Angiv en værdi, hvis du ønsker at få sitemap information i forhold til en anden side. Kildesiden kontrollerer, hvordan sideelementer mærkes med med 'isopen' og 'iscurrent' - og den er udgangspunktet for beregningen af ​​sidens omfang." />
+  <string key="Composite.Pages.SitemapXml.param.SitemapScope.label" value="Sidens omfang" />
+  <string key="Composite.Pages.SitemapXml.param.SitemapScope.help" value="Omfanget af sider som skal trækkes fra sitemap. Standarden er 'alle sider '. Du kan bruge dette parameter til at trække den struktur, som du har brug for til at fuldføre din opgave." />
+  <string key="Composite.Pages.GetForeignPageInfo.description" value="Får oplysninger om den aktuelle side på alle sprog." />
+  <string key="Composite.Utils.Caching.PageObjectCache.description" value="Definerer en 'cache zone' omkring en funktionsopgave eller markup (typisk omkring funktionsopgaver). Denne funktion kan bruges til at forbedre siderenderingens performance ved at cache sektioner af en hjemmeside. Værdien af  'objekt  cache id' skal være unik for det indhold, der er cached." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.label" value="Det som skal caches" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectToCache.help" value="Dét du ønsker at cache - det kan være en enkelt funktionsopgave eller en del af en markup, som indeholder en eller flere funktionsopgaver." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.label" value="Unikt cache-id" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.ObjectCacheId.help" value="Angiv et id, som er er unikt for det indhold, som bliver cached. Denne værdi anvendes, i forbindelse med sideomfang, til at definere en unik cache nøgle." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.label" value="Sidens omfang" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SitemapScope.help" value="Det sideomfang, som den cachede data skal deles på. Som standard er sideomfanget 'denne hjemmeside', men du kan ændre det til side-specifik caching m.m." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.label" value="Cache varighed (sekunder)" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.SecondsToCache.help" value="Det antal sekunder det cachede objekt skal genbruges. Standard er 1 minut (60 sekunder)." />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.label" value="Specifikke sprog" />
+  <string key="Composite.Utils.Caching.PageObjectCache.param.LanguageSpecific.help" value="Vælg om det cachede objekt skal caches for hvert enkelt hjemmesidesprog eller deles ligeligt over sprog." />
+  <string key="Composite.Utils.Compare.AreEqual.description" value="Er lige" />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueA.help" value="Sammenligner to objekter i forhold til lighed. Returnerer som sand, hvis de to objekter er ens." />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueA.label" value="Værdien A som skal sammenlignes." />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueB.help" value="" />
+  <string key="Composite.Utils.Compare.AreEqual.param.ValueB.label" value="Værdien B som skal sammenlignes." />
+  <string key="Composite.Utils.Compare.IsLessThan.description" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueA.help" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueA.label" value="Værdien A som skal sammenlignes." />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueB.help" value="" />
+  <string key="Composite.Utils.Compare.IsLessThan.param.ValueB.label" value="Værdien B som skal sammenlignes." />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.description" value="Læser en streng fra applikationens konfigurationsfil (web.config eller app.config)" />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.help" value="" />
+  <string key="Composite.Utils.Configuration.AppSettingsValue.param.KeyName.label" value="Tastnavn" />
+  <string key="Composite.Utils.Date.AddDays.description" value="Tilføj et antal dage til den aktuelle dato og få den resulterende dato." />
+  <string key="Composite.Utils.Date.AddDays.param.DaysToAdd.help" value="Angiv et negativt eller positivt antal dage som skal tilføjes den aktuelle dato." />
+  <string key="Composite.Utils.Date.AddDays.param.DaysToAdd.label" value="Dage som skal tilføjes" />
+  <string key="Composite.Utils.Date.Now.description" value="Den aktuelle dato og tid" />
+  <string key="Composite.Utils.GetInputParameter.description" value="Returnerer en input-parameter fra udførelsen af funktionskontekst. Brug dette til at videreføre værdien af en parameter til et nyt funktionskald." />
+  <string key="Composite.Utils.GetInputParameter.param.InputParameterName.help" value="Angiv navnet på den input-parameter, hvis værdi du ønsker at anvende her." />
+  <string key="Composite.Utils.GetInputParameter.param.InputParameterName.label" value="Parameternavn" />
+  <string key="Composite.Utils.ParseStringToObject.description" value="Parser en streng til et objekt. Typen af objekt afhænger af modtageren. Brugen af denne funktion til at levere en værdi til en DatoTid parameter, vil få systemet til at parse strengen som et DatoTid etc." />
+  <string key="Composite.Utils.ParseStringToObject.param.StringToParse.help" value="Angiv den streng som skal parses. Bemærk, at den skal være formateret på en måde, som kan omdannes til den type objekt, som forventes." />
+  <string key="Composite.Utils.ParseStringToObject.param.StringToParse.label" value="Streng som skal parses" />
+  <string key="Composite.Utils.Guid.NewGuid.description" value="Returnerer en ny tilfældig Guid." />
+  <string key="Composite.Utils.Globalization.AllCultures.description" value="En liste over alle kulturer" />
+  <string key="Composite.Utils.Globalization.CurrentCulture.description" value="Den aktuelle brugers / anmodnings kultur." />
+  <string key="Composite.Utils.Integer.Sum.description" value="Returnerer summen fra en liste af heltal" />
+  <string key="Composite.Utils.Integer.Sum.param.Ints.help" value="" />
+  <string key="Composite.Utils.Integer.Sum.param.Ints.label" value="Liste af heltal" />
+  <string key="Composite.Utils.Predicates.BoolEquals.description" value="Kontrollér, om en boolisk er sand eller falsk." />
+  <string key="Composite.Utils.Predicates.BoolEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.BoolEquals.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.description" value="Kontrollér om en dato er lig en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeEquals.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.description" value="Kontrollér om en dato er større end en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeGreaterThan.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.description" value="Kontrollér om en dato er mindre end en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DateTimeLessThan.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.description" value="Kontrollér om et decimaltal har en vis værdi" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalEquals.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.description" value="Kontrollér om en decimal er større end en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalGreaterThan.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.description" value="Kontrollér, om en decimal er mindre end en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.DecimalLessThan.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.GuidEquals.description" value="Kontrollér om en Guid svarer til en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.GuidEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.GuidEquals.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.description" value="Kontrollér om en Guid findes i en kommasepareret strengliste" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.label" value="Liste over Guid" />
+  <string key="Composite.Utils.Predicates.GuidInCommaSeparatedList.param.CommaSeparatedGuids.help" value="En streng, der indeholder nul eller flere Guid'er adskilt af kommaer" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.description" value="Kontrollér om et strengfelt matcher et af vilkårene i en kommasepareret strengliste" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.label" value="Søgetermer" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.CommaSeparatedSearchTerms.help" value="En tekststreng som indeholder søgeord adskilt af kommaer, som 'C1, cms, LINQ'" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.label" value="Ignorér tilfælde" />
+  <string key="Composite.Utils.Predicates.StringInCommaSeparatedList.param.IgnoreCase.help" value="Hvis falsk må alle bogstaver være enten store eller små. Standard er 'sand', søgning som tager hensyn til store og små bogstaver." />
+  <string key="Composite.Utils.Predicates.StringInList.description" value="Kontroller, om en tekststrengs felt matcher en af tekststrengene i den medfølgende liste" />
+  <string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.label" value="Søgetermer" />
+  <string key="Composite.Utils.Predicates.StringInList.param.SearchTerms.help" value="En liste af tekstrenge som skal matches med det afsøgte tekststrengsfelt." />
+  <string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.label" value="Ignorér tilfælde" />
+  <string key="Composite.Utils.Predicates.StringInList.param.IgnoreCase.help" value="Hvis falsk må alle bogstaver være enten store eller små. Standard er 'sand', søgning som tager hensyn til store og små bogstaver." />
+  <string key="Composite.Utils.Predicates.IntegerEquals.description" value="Kontrollér om et heltal er lig en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerEquals.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.description" value="Kontrollér om et heltal er større end en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerGreaterThan.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.description" value="Kontrollér om et heltal er mindre end en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.IntegerLessThan.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.StringContains.description" value="Kontrollér om en tekststreng indeholder en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.StringContains.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringContains.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.description" value="Kontrollér om en tekststreng slutter med en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringEndsWith.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.StringEquals.description" value="Kontrollér om en tekststreng er lig med en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.StringEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringEquals.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.description" value="Kontrollér om en tekststreng starter med en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.StringStartsWith.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.description" value="Kontrollér om en Guid svarer til en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableGuidEquals.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.NullableGuidNoValue.description" value="Kontrollér om en nulstilningsbar Guid ingen værdi har" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.description" value="Kontrollér om et heltal er lig en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableIntegerEquals.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.NullableIntegerNoValue.description" value="Kontrollér om et nulstilningsbart heltal ingen værdi har" />
+  <string key="Composite.Utils.Predicates.StringNoValue.description" value="Kontrollér om en tekststreng ingen værdi har" />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.description" value="Kontrollér, om en boolisk er sand eller falsk." />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableBoolEquals.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.NullableBoolNoValue.description" value="Kontrollér om en nulstilningsbar boolisk ingen værdi har" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.description" value="Kontrollér om en dato er lig en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeEquals.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.description" value="Kontrollér om en dato er større end en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeGreaterThan.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.description" value="Kontrollér om en dato er mindre end en bestemt værdi" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeLessThan.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.NullableDateTimeNoValue.description" value="Kontrollér om en nulstilningsbar dato ingen værdi har" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.description" value="Kontrollér om et decimaltal har en vis værdi" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.help" value="" />
+  <string key="Composite.Utils.Predicates.NullableDecimalEquals.param.Value.label" value="Værdien som der skal sammenlignes med" />
+  <string key="Composite.Utils.Predicates.NullableDecimalNoValue.description" value="Kontrollér om en nulstilningsbar decimal ingen værdi har" />
+  <string key="Composite.Utils.String.Join.description" value="Sammenslutter en liste af tekststrenge til en enkelt streng" />
+  <string key="Composite.Utils.String.Join.param.Separator.help" value="Separatoren som skal indsættes mellem tekststrengene." />
+  <string key="Composite.Utils.String.Join.param.Separator.label" value="Separator" />
+  <string key="Composite.Utils.String.Join.param.Strings.help" value="Listen af tekst​​strenge som skal sammenføjes" />
+  <string key="Composite.Utils.String.Join.param.Strings.label" value="Tekststrenge som skal sammenføjes" />
+  <string key="Composite.Utils.String.JoinTwo.description" value="Sammenføjer to tekststrenge til en simpel streng" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringA.help" value="Tekststrengen som skal komme først" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringA.label" value="Streng A" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringB.help" value="Tekststrengen som skal komme sidst" />
+  <string key="Composite.Utils.String.JoinTwo.param.StringB.label" value="Streng B" />
+  <string key="Composite.Utils.String.JoinTwo.param.Separator.help" value="En tekststreng som skal indsættes mellem streng A og streng B. Standard er, at der ingen separator er." />
+  <string key="Composite.Utils.String.JoinTwo.param.Separator.label" value="Separator" />
+  <string key="Composite.Utils.String.Split.description" value="Opsplitter en tekststreng til en liste over strenge." />
+  <string key="Composite.Utils.String.Split.param.Separator.help" value="Den separator som skal bruges når tekststrengen opdeles. Standard er komma (&quot;,&quot;)" />
+  <string key="Composite.Utils.String.Split.param.Separator.label" value="Separator" />
+  <string key="Composite.Utils.String.Split.param.String.help" value="Den tekststreng, som du ønsker at opdele i en liste." />
+  <string key="Composite.Utils.String.Split.param.String.label" value="Tekststreng som skal opdeles" />
+  <string key="Composite.Utils.Validation.DateTimeNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.DecimalNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.description" value="Validerer cifrenes præcision (antallet af decimaler brugeren har specificeret)" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.help" value="Det maksimale antal cifre som skal tillades i decimalen" />
+  <string key="Composite.Utils.Validation.DecimalPrecisionValidation.param.MaxDigits.label" value="Max antal decimalcifre" />
+  <string key="Composite.Utils.Validation.GuidNotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.Int32NotNullValidation.description" value="" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.description" value="Validerer at et heltal ligger indenfor et bestemt interval." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.help" value="Det maksimale antal, som er tilladt i dette felt." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.max.label" value="Maksimalt antal" />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.help" value="Det mindste antal, som er tilladt i dette felt." />
+  <string key="Composite.Utils.Validation.IntegerRangeValidation.param.min.label" value="Mindste antal" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.description" value="Validerer, at en tekststreng stemmer overens med det angivne regulære udtryk" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.help" value="Det regulære udtryksmønster, som skal bruges" />
+  <string key="Composite.Utils.Validation.RegularExpressionValidation.param.pattern.label" value="RegEx mønster" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.description" value="Validerer, at længden af ​​en tekststreng er indenfor det angivne område" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.max.help" value="" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.max.label" value="Maksimal længde" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.min.help" value="" />
+  <string key="Composite.Utils.Validation.StringLengthValidation.param.min.label" value="Minimum længde" />
+  <string key="Composite.Utils.Validation.StringNotNullValidation.description" value="" />
+  <string key="Composite.Web.Client.BrowserPlatform.description" value="" />
+  <string key="Composite.Web.Client.BrowserString.description" value="" />
+  <string key="Composite.Web.Client.BrowserType.description" value="" />
+  <string key="Composite.Web.Client.BrowserVersion.description" value="" />
+  <string key="Composite.Web.Client.EcmaScriptVersion.description" value="" />
+  <string key="Composite.Web.Client.IsCrawler.description" value="Sand, hvis den aktuelle anmodning er identificeret som værende fra en crawler (søgemaskine)." />
+  <string key="Composite.Web.Client.IsMobileDevice.description" value="Sand, hvis den aktuelle anmodning er identificeret som kommende fra en mobil enhed." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.description" value="Almindelige HTML metatags, som du sandsynligvis ønsker inkluderet i dit html hoved" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.label" value="Indholdstype" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ContentType.help" value="Som standard er dette 'text / html; charset = utf-8'. Hvis du sender noget andet bør du overskrive dette." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.label" value="Designer" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.Designer.help" value="Hvem har designet denne hjemmeside? Vis det i 'designer' metatag'et. Standard er ikke at udsende dette metatag." />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.label" value="Vis generator" />
+  <string key="Composite.Web.Html.Template.CommonMetaTags.param.ShowGenerator.help" value="Vis verden at du støtter Composite C1 - gratis open source!" />
+  <string key="Composite.Web.Html.Template.LangAttribute.description" value="Føjer en lang = '(sprogkode)' attribut, som afspejler den aktuelle sides sprog, til overelementet. Du kan indsætte dette lige under &lt;html /&gt; tag'et." />
+  <string key="Composite.Web.Html.Template.PageTemplateFeature.description" value="Inkluderer en navngiven sideskabelonsegenskab på denne lokation. sideskabelonsegenskaber kan indeholde HTML og funktionelle bidder og forvaltes i layout perspektivet." />
   <string key="Composite.Web.Html.Template.PageTemplateFeature.param.FeatureName.label" value="Funktionens navn" />
-  <string key="Composite.Web.Html.Template.PageTemplateFeature.param.FeatureName.help" value="Navnet p&#229; den sideskabelonsegenskab, som du &#248;nsker at inkludere." />
-	<string key="Composite.Web.Html.Template.HtmlTitleValue.description" value="Skaber den aktuelle sides &#39;endelige&#39; titel; den samme v&#230;rdi, som forekommer i sidens titel tag. Denne titel kan stamme fra den gengivne side eller fra en C1 Funktion / ASP.NET styring, som &#230;ndrede overskriften, s&#229; den matcher specifikke data som vises p&#229; siden." />
-	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.label" value="Pr&#230;fiks, som skal fjernes" />
-	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.help" value="Hvis HTML-titlen har en pr&#230;fiks v&#230;rdi, som du &#248;nsker at slippe af med s&#229; angiv pr&#230;fikset her. Hvis pr&#230;fikset ikke findes i titlen, ignoreres denne v&#230;rdi." />
-	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.label" value="Postfix skal fjernes" />
-	<string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.help" value="Hvis HTML-titlen har en postfix v&#230;rdi,som du &#248;nsker at slippe af med s&#229; angiv postfixet her. Hvis postfixet ikke findes i titlen, s&#229; ignoreres denne v&#230;rdi." />
-	<string key="Composite.Web.Html.Template.MetaDescriptionValue.description" value="Skaber den &#39;endelige beskrivelse&#39; af den aktuelle side; den samme v&#230;rdi, som forekommer i sidens metabeskrivelsestag. Denne v&#230;rdi kan stamme fra den gengivne side eller fra en C1 Funktion / ASP.NET kontrol, som har &#230;ndret beskrivelsen, s&#229; den matcher specifkke data somvises p&#229; siden." />
-	<string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.label" value="Element til wrap beskrivelse" />
-	<string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.help" value="For at f&#229; beskrivelsen inkluderet i et element (ligesom &lt;p class=description /&gt;), s&#229; specific&#233;r det her. Elementet bliver kun udskrevet, n&#229;r der findes en sidebeskrivelse." />
-
-
-  <string key="Composite.Web.Request.CookieValue.description" value="Henter en v&#230;rdi fra den nuv&#230;rende brugers cookie-samling." />
-	<string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
-	<string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Cookie-navn" />
-	<string key="Composite.Web.Request.CookieValue.param.FallbackValue.help" value="Hvis brugeren ikke har denne cookie, s&#229; skal du bruge dette felt til at angive hvilken v&#230;rdi, der skal v&#230;re standard." />
-	<string key="Composite.Web.Request.CookieValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.FormPostBoolValue.description" value="F&#229;r en boolesk v&#230;rdi fra et formularindl&#230;g (HTTP POST)" />
-	<string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.FormPostDecimalValue.description" value="Henter en decimal v&#230;rdi fra et formularelement (HTTP POST)" />
-	<string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.FormPostGuidValue.description" value="Henter en Guid v&#230;rdi fra et formularelement (HTTP POST)" />
-	<string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.FormPostIntegerValue.description" value="Henter en heltalsv&#230;rdi fra et formularelement (HTTP POST)" />
-	<string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.FormPostValue.description" value="Henter en strengv&#230;rdi fra et formularelement (HTTP POST)" />
-	<string key="Composite.Web.Request.FormPostValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.FormPostValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.FormPostValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.description" value="Henter en dato og en tidsv&#230;rdi fra et formularelement (HTTP POST). Den indg&#229;ende data streng forventes at v&#230;re XML formateret (som &quot; 2003--09-26T13: 30:00&quot;)" />
-	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.help" value="Den v&#230;rdi, som skal bruges, hvis elementet ikke indeholdt det angivne parameternavn." />
-	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.QueryStringBoolValue.description" value="Henter en boolsk v&#230;rdi fra en Url parameter (HTTP GET)" />
-	<string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.QueryStringDecimalValue.description" value="Henter en decimalv&#230;rdi fra en Url parameter (HTTP GET)" />
-	<string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.QueryStringGuidValue.description" value="Henter en Guid v&#230;rdi fra en Url parameter (HTTP GET)" />
-	<string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.QueryStringIntegerValue.description" value="Henter en heltalsv&#230;rdi fra en Url parameter (HTTP GET)" />
-	<string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.QueryStringValue.description" value="Henter en strengv&#230;rdi fra en Url parameter (HTTP GET)" />
-	<string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.QueryStringValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.description" value="Henter en dato og en tidsv&#230;rdi fra en Url parameter (HTTP GET). Den indg&#229;ende data streng forventes at v&#230;re XML formateret (som &quot;2003--09-26T13: 30:00&quot;)" />
-	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.help" value="Den v&#230;rdi, som skal bruges, hvis URL&#39;en ikke indeholdt det angivne parameternavn." />
-	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
-	<string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameternavn" />
-	<string key="Composite.Web.Request.PathInfo.description" value="Returnerer yderligere oplysninger videregivet i en URL sammen med sidens link." />
-	<string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Sti-info segmentet som skal hentes ved hj&#230;lp af formatet &#39; / (0) / (1) / (2) /..&#39;. Angiv -1 for at f&#229; hele strengen." />
-	<string key="Composite.Web.Request.PathInfo.param.Segment.label" value="Segment" />
-	<string key="Composite.Web.Request.PathInfo.param.AutoApprove.help" value="Hvis sand, bliver Composite C1 bedt om at acceptere enhver sti-informationsstreng. Standard er sand." />
-	<string key="Composite.Web.Request.PathInfo.param.AutoApprove.label" value="Autogodkend" />
-	<string key="Composite.Web.Request.PathInfo.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.PathInfo.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.PathInfoInt.description" value="Uddrag en heltalsv&#230;rdi fra et sti-informationssegment." />
-	<string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Sti-informationssegmentet som skal hentes ved hj&#230;lp af formatet &#39; / (0) / (1) / (2) / ...&#39;." />
-	<string key="Composite.Web.Request.PathInfoInt.param.Segment.label" value="Segment" />
-	<string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.help" value="Hvis sand, bliver Composite C1 bedt om at acceptere enhver sti-informationsstreng. Standard er sand." />
-	<string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.label" value="Autogodkend" />
-	<string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.PathInfoGuid.description" value="Uddrag en Guid fra et sti-informationssegment." />
-	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Sti-informationssegmentet som skal hentes ved hj&#230;lp af formatet &#39; / (0) / (1) / (2) / ...&#39;." />
-	<string key="Composite.Web.Request.PathInfoGuid.param.Segment.label" value="Segment" />
-	<string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.help" value="Hvis sand, bliver Composite C1 bedt om at acceptere enhver sti-informationsstreng. Standard er sand." />
-	<string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.label" value="Autogodkend" />
-	<string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.help" value="" />
-	<string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Underretter det anvendte sti-info system, s&#229;ledes at anmodningen ikke bliver omdirigeret til &#39;side ikke fundet&#39; siden." />
-	<string key="Composite.Web.Request.SessionVariable.description" value="Henter en type fra den nuv&#230;rende brugers session som en streng." />
-	<string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="Den v&#230;rdi som skal bruges, hvis sessionens type ikke blev fundet" />
-	<string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Request.SessionVariable.param.VariableName.help" value="" />
-	<string key="Composite.Web.Request.SessionVariable.param.VariableName.label" value="Variablens navn" />
-	<string key="Composite.Web.Response.Redirect.description" value="Omdirigerer den bes&#248;gende p&#229; hjemmesiden til en anden URL. URL-omdirigeringer undertrykkes, n&#229;r denne funktion udf&#248;res inde i C1-konsollen." />
-	<string key="Composite.Web.Response.Redirect.param.Url.help" value="URL&#39;en som brugeren skal omdirigeres til, enten absolut (http://contoso.com/default.aspx) eller relativt (/ Login.aspx))." />
-	<string key="Composite.Web.Response.Redirect.param.Url.label" value="Url" />
-	<string key="Composite.Web.Response.SetCookieValue.description" value="Indstiller en cookie v&#230;rdi for den aktuelle bruger" />
-	<string key="Composite.Web.Response.SetCookieValue.param.CookieName.help" value="Navnet p&#229; den cookie som skal indstilles/ overskrives" />
-	<string key="Composite.Web.Response.SetCookieValue.param.CookieName.label" value="Cookie-navn" />
-	<string key="Composite.Web.Response.SetCookieValue.param.Value.help" value="V&#230;rdien, som skal gemmes i cookien" />
-	<string key="Composite.Web.Response.SetCookieValue.param.Value.label" value="Cookie-v&#230;rdi" />
-	<string key="Composite.Web.Response.SetCookieValue.param.Expires.help" value="N&#229;r cookien skal udl&#248;be (stoppe med at eksistere). Standardv&#230;rdien er &#39;session&#39;, n&#229;r brugeren lukker browseren." />
-	<string key="Composite.Web.Response.SetCookieValue.param.Expires.label" value="Udl&#248;b" />
-
-	<string key="Composite.Web.Response.SetServerPageCacheDuration.description" value="Indstiller det maksimale antal sekunder den aktuelle side skal caches offentligt p&#229; serveren. For at sikre, at sidens respons ikke er cachet, s&#229; indstil &quot;maksimum sekunder&quot; til 0. Hvis flere kilder angiver serverens cache varighed, da anvendes det mindste tal. Bem&#230;rk, at filen &quot; ~ / Renderers / Side.aspx&quot; indeholder en standardv&#230;rdi for cache varighed - du kan redigere denne fil, s&#229; den &#230;ndres til standard." />
-	<string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.help" value="Det maksimale antal sekunder som den gengivne side siden b&#248;r caches offentligt. En h&#248;j v&#230;rdi giver god performance, en lav v&#230;rdi f&#229;r hurtigere &#230;ndringer til at dukke op. En v&#230;rdi p&#229; &#39;0&#39; sikrer, at alle bes&#248;gende f&#229;r et unikt svar." />
-	<string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.label" value="Maksimalt antal sekunder" />
-
-	<string key="Composite.Web.Response.SetSessionVariable.description" value="Indstiller en sessions-type for den aktuelle bruger" />
-	<string key="Composite.Web.Response.SetSessionVariable.param.Value.help" value="" />
-	<string key="Composite.Web.Response.SetSessionVariable.param.Value.label" value="V&#230;rdi" />
-	<string key="Composite.Web.Response.SetSessionVariable.param.VariableName.help" value="Navnet p&#229; den sessions-type, som skal indstilles." />
-	<string key="Composite.Web.Response.SetSessionVariable.param.VariableName.label" value="Variablens navn" />
-	<string key="Composite.Web.Server.ApplicationPath.description" value="Giver webapplikationens virtuelle sti. Dette er typisk &#39;&#39; - den tomme streng, n&#229;r Composite C1 k&#248;rer i hjemmesidens rod, men hvis Composite C1 k&#248;rer i en undermappe kan dette v&#230;re &#39;/ MySubfolder&#39;. Du kan bruge denne v&#230;rdi til pr&#230;fiks p&#229;  Url&#39;er, s&#229; de fungerer ligemeget om Composite C1 k&#248;rer i en undermappe eller ej.  Sample XSLT brug: &lt;img src={/in:inputs/in:result[@name=&#39;ApplicationPath&#39;]}/images/myImage.png /&gt;" />
-	<string key="Composite.Web.Server.ApplicationVariable.description" value="Henter en IIS applikationsvariabel" />
-	<string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.help" value="Den v&#230;rdi som skal bruges hvis applikationsvariablen ikke blev fundet." />
-	<string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.label" value="Fallback v&#230;rdi" />
-	<string key="Composite.Web.Server.ApplicationVariable.param.VariableName.help" value="" />
-	<string key="Composite.Web.Server.ApplicationVariable.param.VariableName.label" value="Variablens navn" />
-	<string key="Composite.Web.Server.ServerVariable.description" value="Henter v&#230;rdien af ​​en IIS server variabel" />
-	<string key="Composite.Web.Server.ServerVariable.param.VariableName.help" value="IIS server variabel som skal hentes." />
-	<string key="Composite.Web.Server.ServerVariable.param.VariableName.label" value="Variablens navn" />
-	<string key="Composite.Xml.LoadFile.description" value="Indl&#230;ser en lokal XML-fil givet at stien er relativ" />
-	<string key="Composite.Xml.LoadFile.param.RelativePath.help" value="XML-filens relative sti, som skal indl&#230;ses" />
-	<string key="Composite.Xml.LoadFile.param.RelativePath.label" value="Relativ sti" />
-	<string key="Composite.Xml.LoadXhtmlFile.description" value="Indl&#230;ser en lokal XHTML fil, givet at stien er relativ" />
-	<string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.help" value="XHTML filens relative sti, som skal indl&#230;ses" />
-	<string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.label" value="Relativ sti" />
-	<string key="Composite.Xml.LoadUrl.description" value="Indl&#230;ser en ekstern XML-fil givet en URL" />
-	<string key="Composite.Xml.LoadUrl.param.Url.help" value="" />
-	<string key="Composite.Xml.LoadUrl.param.Url.label" value="Url" />
-	<string key="Composite.Xml.LoadUrl.param.CacheTime.help" value="Antal sekunder som resultatet skal caches. Standard er 0 (ingen caching)." />
-	<string key="Composite.Xml.LoadUrl.param.CacheTime.label" value="Antal sekunder som skal caches" />
-	<string key="Composite.Xslt.Extensions.DateFormatting.description" value="S&#248;rger for lokaliserede datoformateringsfunktioner til XSLT brug." />
-	<string key="Composite.Xslt.Extensions.Globalization.description" value="S&#248;rger for globaliseringsfunktioner til XSLT brug." />
-	<string key="Composite.Xslt.Extensions.MarkupParser.description" value="Indeholder funktioner, som parser kodede XML-dokumenter eller XHTML fragmenter i noder. Brug denne udvidelse, n&#229;r du har XML eller XHTML som en streng og har brug for at kopiere dette til output eller transformere det." />
-
-	<string key="Composite.Mail.SendMail.description" value="Sender en e-mail. Husk at konfigurere SMTP-server-forbindelse i web.config filen." />
-	<string key="Composite.Mail.SendMail.param.From.label" value="Fra" />
-	<string key="Composite.Mail.SendMail.param.From.help" value="Afsenderens adresse." />
-	<string key="Composite.Mail.SendMail.param.To.label" value="Til" />
-	<string key="Composite.Mail.SendMail.param.To.help" value="Modtager. En kommasepareret liste over e-mail adresser." />
-	<string key="Composite.Mail.SendMail.param.Subject.label" value="Emne" />
-	<string key="Composite.Mail.SendMail.param.Subject.help" value="E-mail emne." />
-	<string key="Composite.Mail.SendMail.param.Body.label" value="Krop" />
-	<string key="Composite.Mail.SendMail.param.Body.help" value="E-mail krop." />
-	<string key="Composite.Mail.SendMail.param.IsHtml.label" value="IsHtml" />
-	<string key="Composite.Mail.SendMail.param.IsHtml.help" value="Definerer, om den e-mail der skal sendes, er en HTML e-mail eller en tekst e-mail." />
-	<string key="Composite.Mail.SendMail.param.CC.label" value="CC" />
-	<string key="Composite.Mail.SendMail.param.CC.help" value="Carbon copy. En kommasepareret liste over e-mail-adresser, der er sekund&#230;re modtagere af en meddelelse." />
-	<string key="Composite.Mail.SendMail.param.ReplyTo.label" value="Svar til" />
-	<string key="Composite.Mail.SendMail.param.ReplyTo.help" value="Adressen, som skal bruges til at besvare meddelelsen." />
-	<string key="Composite.Mail.SendMail.param.BCC.label" value="Bcc" />
-	<string key="Composite.Mail.SendMail.param.BCC.help" value="Blind carbon copy. En liste over modtagere, som modtager en mail, men med deres individuelle e-mail-adresser skjulte for den komplette liste af modtagere." />
-	<string key="Composite.Mail.SendMail.param.Attachment.label" value="Vedh&#230;ftelse" />
-	<string key="Composite.Mail.SendMail.param.Attachment.help" value="List of attached files. \n     Format it the following [{name}=]{filepath}[,{mime-type] [ | .... ].  \n     File path can be either relative or absolute path f.e. &quot;C:\someimage.jpg&quot; or &quot;/coolpicture.jpg&quot;  \n     If file path starts with &quot;Composite/&quot;, it will be recognized as a path to Composite media, f.e. &#39;Composite/MediaArchive:someImage.gif&#39; \n      \n     Examples:  \n        /attachment.jpg \n       image.jpg=/attachment.jpg \n       image.jpg=/attachment.jpg,image/jpg \n       image1.jpg=/attachment1.jpg,image/jpg|image2.jpg=/attachment2.jpg,image/jpg" />
-
-	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="Vedh&#230;ftelse fra  medie" />
-	<string key="Composite.Mail.SendMail.param.AttachmentFromMedia.help" value="En fil fra mediebiblioteket, som skal vedh&#230;ftes." />
-
-	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.description" value="Filtrerer billeder i forhold til deres mappesti" />
-	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.label" value="Mediemappe" />
-	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.help" value="En reference til en mediemappe" />
-	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Inklud&#233;r undermapper" />
-	<string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Afg&#248;r om billeder fra undermapper skal medtages." />
-
-	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.description" value="Filtrerer billeder i forhold til deres mappesti" />
-	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.label" value="Mediemappe" />
-	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.help" value="En reference til en mediemappe" />
-	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Inklud&#233;r undermapper" />
-	<string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Bestemmer om mediefiler fra undermapper skal inkluderes." />
-
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Konverterer en enumerable  XElementer til en ordbog ved hj&#230;lp af navngivne attributter for n&#248;gler og v&#230;rdier." />
+  <string key="Composite.Web.Html.Template.PageTemplateFeature.param.FeatureName.help" value="Navnet på den sideskabelonsegenskab, som du ønsker at inkludere." />
+  <string key="Composite.Web.Html.Template.HtmlTitleValue.description" value="Skaber den aktuelle sides 'endelige' titel; den samme værdi, som forekommer i sidens titel tag. Denne titel kan stamme fra den gengivne side eller fra en C1 Funktion / ASP.NET styring, som ændrede overskriften, så den matcher specifikke data som vises på siden." />
+  <string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.label" value="Præfiks, som skal fjernes" />
+  <string key="Composite.Web.Html.Template.HtmlTitleValue.param.PrefixToRemove.help" value="Hvis HTML-titlen har en præfiks værdi, som du ønsker at slippe af med så angiv præfikset her. Hvis præfikset ikke findes i titlen, ignoreres denne værdi." />
+  <string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.label" value="Postfix skal fjernes" />
+  <string key="Composite.Web.Html.Template.HtmlTitleValue.param.PostfixToRemove.help" value="Hvis HTML-titlen har en postfix værdi,som du ønsker at slippe af med så angiv postfixet her. Hvis postfixet ikke findes i titlen, så ignoreres denne værdi." />
+  <string key="Composite.Web.Html.Template.MetaDescriptionValue.description" value="Skaber den 'endelige beskrivelse' af den aktuelle side; den samme værdi, som forekommer i sidens metabeskrivelsestag. Denne værdi kan stamme fra den gengivne side eller fra en C1 Funktion / ASP.NET kontrol, som har ændret beskrivelsen, så den matcher specifkke data somvises på siden." />
+  <string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.label" value="Element til wrap beskrivelse" />
+  <string key="Composite.Web.Html.Template.MetaDescriptionValue.param.Element.help" value="For at få beskrivelsen inkluderet i et element (ligesom &lt;p class=description /&gt;), så specificér det her. Elementet bliver kun udskrevet, når der findes en sidebeskrivelse." />
+  <string key="Composite.Web.Request.CookieValue.description" value="Henter en værdi fra den nuværende brugers cookie-samling." />
+  <string key="Composite.Web.Request.CookieValue.param.CookieName.help" value="" />
+  <string key="Composite.Web.Request.CookieValue.param.CookieName.label" value="Cookie-navn" />
+  <string key="Composite.Web.Request.CookieValue.param.FallbackValue.help" value="Hvis brugeren ikke har denne cookie, så skal du bruge dette felt til at angive hvilken værdi, der skal være standard." />
+  <string key="Composite.Web.Request.CookieValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.FormPostBoolValue.description" value="Får en boolesk værdi fra et formularindlæg (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostBoolValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.description" value="Henter en decimal værdi fra et formularelement (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostDecimalValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.FormPostGuidValue.description" value="Henter en Guid værdi fra et formularelement (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostGuidValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.description" value="Henter en heltalsværdi fra et formularelement (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostIntegerValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.FormPostValue.description" value="Henter en strengværdi fra et formularelement (HTTP POST)" />
+  <string key="Composite.Web.Request.FormPostValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.FormPostValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.FormPostValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.description" value="Henter en dato og en tidsværdi fra et formularelement (HTTP POST). Den indgående data streng forventes at være XML formateret (som &quot; 2003--09-26T13: 30:00&quot;)" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.help" value="Den værdi, som skal bruges, hvis elementet ikke indeholdt det angivne parameternavn." />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.FormPostXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.description" value="Henter en boolsk værdi fra en Url parameter (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringBoolValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.description" value="Henter en decimalværdi fra en Url parameter (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringDecimalValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.description" value="Henter en Guid værdi fra en Url parameter (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringGuidValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.description" value="Henter en heltalsværdi fra en Url parameter (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringIntegerValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.QueryStringValue.description" value="Henter en strengværdi fra en Url parameter (HTTP GET)" />
+  <string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.QueryStringValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.QueryStringValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.description" value="Henter en dato og en tidsværdi fra en Url parameter (HTTP GET). Den indgående data streng forventes at være XML formateret (som &quot;2003--09-26T13: 30:00&quot;)" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.help" value="Den værdi, som skal bruges, hvis URL'en ikke indeholdt det angivne parameternavn." />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.help" value="" />
+  <string key="Composite.Web.Request.QueryStringXmlFormattedDateTimeValue.param.ParameterName.label" value="Parameternavn" />
+  <string key="Composite.Web.Request.PathInfo.description" value="Returnerer yderligere oplysninger videregivet i en URL sammen med sidens link." />
+  <string key="Composite.Web.Request.PathInfo.param.Segment.help" value="Sti-info segmentet som skal hentes ved hjælp af formatet ' / (0) / (1) / (2) /..'. Angiv -1 for at få hele strengen." />
+  <string key="Composite.Web.Request.PathInfo.param.Segment.label" value="Segment" />
+  <string key="Composite.Web.Request.PathInfo.param.AutoApprove.help" value="Hvis sand, bliver Composite C1 bedt om at acceptere enhver sti-informationsstreng. Standard er sand." />
+  <string key="Composite.Web.Request.PathInfo.param.AutoApprove.label" value="Autogodkend" />
+  <string key="Composite.Web.Request.PathInfo.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfo.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.PathInfoInt.description" value="Uddrag en heltalsværdi fra et sti-informationssegment." />
+  <string key="Composite.Web.Request.PathInfoInt.param.Segment.help" value="Sti-informationssegmentet som skal hentes ved hjælp af formatet ' / (0) / (1) / (2) / ...'." />
+  <string key="Composite.Web.Request.PathInfoInt.param.Segment.label" value="Segment" />
+  <string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.help" value="Hvis sand, bliver Composite C1 bedt om at acceptere enhver sti-informationsstreng. Standard er sand." />
+  <string key="Composite.Web.Request.PathInfoInt.param.AutoApprove.label" value="Autogodkend" />
+  <string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfoInt.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.PathInfoGuid.description" value="Uddrag en Guid fra et sti-informationssegment." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.Segment.help" value="Sti-informationssegmentet som skal hentes ved hjælp af formatet ' / (0) / (1) / (2) / ...'." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.Segment.label" value="Segment" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.help" value="Hvis sand, bliver Composite C1 bedt om at acceptere enhver sti-informationsstreng. Standard er sand." />
+  <string key="Composite.Web.Request.PathInfoGuid.param.AutoApprove.label" value="Autogodkend" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.help" value="" />
+  <string key="Composite.Web.Request.PathInfoGuid.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.RegisterPathInfoUsage.description" value="Underretter det anvendte sti-info system, således at anmodningen ikke bliver omdirigeret til 'side ikke fundet' siden." />
+  <string key="Composite.Web.Request.SessionVariable.description" value="Henter en type fra den nuværende brugers session som en streng." />
+  <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.help" value="Den værdi som skal bruges, hvis sessionens type ikke blev fundet" />
+  <string key="Composite.Web.Request.SessionVariable.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Request.SessionVariable.param.VariableName.help" value="" />
+  <string key="Composite.Web.Request.SessionVariable.param.VariableName.label" value="Variablens navn" />
+  <string key="Composite.Web.Response.Redirect.description" value="Omdirigerer den besøgende på hjemmesiden til en anden URL. URL-omdirigeringer undertrykkes, når denne funktion udføres inde i C1-konsollen." />
+  <string key="Composite.Web.Response.Redirect.param.Url.help" value="URL'en som brugeren skal omdirigeres til, enten absolut (http://contoso.com/default.aspx) eller relativt (/ Login.aspx))." />
+  <string key="Composite.Web.Response.Redirect.param.Url.label" value="Url" />
+  <string key="Composite.Web.Response.SetCookieValue.description" value="Indstiller en cookie værdi for den aktuelle bruger" />
+  <string key="Composite.Web.Response.SetCookieValue.param.CookieName.help" value="Navnet på den cookie som skal indstilles/ overskrives" />
+  <string key="Composite.Web.Response.SetCookieValue.param.CookieName.label" value="Cookie-navn" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Value.help" value="Værdien, som skal gemmes i cookien" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Value.label" value="Cookie-værdi" />
+  <string key="Composite.Web.Response.SetCookieValue.param.Expires.help" value="Når cookien skal udløbe (stoppe med at eksistere). Standardværdien er 'session', når brugeren lukker browseren." />
+  <string key="Composite.Web.Response.SetCookieValue.param.Expires.label" value="Udløb" />
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.description" value="Indstiller det maksimale antal sekunder den aktuelle side skal caches offentligt på serveren. For at sikre, at sidens respons ikke er cachet, så indstil &quot;maksimum sekunder&quot; til 0. Hvis flere kilder angiver serverens cache varighed, da anvendes det mindste tal. Bemærk, at filen &quot; ~ / Renderers / Side.aspx&quot; indeholder en standardværdi for cache varighed - du kan redigere denne fil, så den ændres til standard." />
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.help" value="Det maksimale antal sekunder som den gengivne side siden bør caches offentligt. En høj værdi giver god performance, en lav værdi får hurtigere ændringer til at dukke op. En værdi på '0' sikrer, at alle besøgende får et unikt svar." />
+  <string key="Composite.Web.Response.SetServerPageCacheDuration.param.MaxSeconds.label" value="Maksimalt antal sekunder" />
+  <string key="Composite.Web.Response.SetSessionVariable.description" value="Indstiller en sessions-type for den aktuelle bruger" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.Value.help" value="" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.Value.label" value="Værdi" />
+  <string key="Composite.Web.Response.SetSessionVariable.param.VariableName.help" value="Navnet på den sessions-type, som skal indstilles." />
+  <string key="Composite.Web.Response.SetSessionVariable.param.VariableName.label" value="Variablens navn" />
+  <string key="Composite.Web.Server.ApplicationPath.description" value="Giver webapplikationens virtuelle sti. Dette er typisk '' - den tomme streng, når Composite C1 kører i hjemmesidens rod, men hvis Composite C1 kører i en undermappe kan dette være '/ MySubfolder'. Du kan bruge denne værdi til præfiks på  Url'er, så de fungerer ligemeget om Composite C1 kører i en undermappe eller ej.  Sample XSLT brug: &lt;img src={/in:inputs/in:result[@name='ApplicationPath']}/images/myImage.png /&gt;" />
+  <string key="Composite.Web.Server.ApplicationVariable.description" value="Henter en IIS applikationsvariabel" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.help" value="Den værdi som skal bruges hvis applikationsvariablen ikke blev fundet." />
+  <string key="Composite.Web.Server.ApplicationVariable.param.FallbackValue.label" value="Fallback værdi" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.VariableName.help" value="" />
+  <string key="Composite.Web.Server.ApplicationVariable.param.VariableName.label" value="Variablens navn" />
+  <string key="Composite.Web.Server.ServerVariable.description" value="Henter værdien af ​​en IIS server variabel" />
+  <string key="Composite.Web.Server.ServerVariable.param.VariableName.help" value="IIS server variabel som skal hentes." />
+  <string key="Composite.Web.Server.ServerVariable.param.VariableName.label" value="Variablens navn" />
+  <string key="Composite.Xml.LoadFile.description" value="Indlæser en lokal XML-fil givet at stien er relativ" />
+  <string key="Composite.Xml.LoadFile.param.RelativePath.help" value="XML-filens relative sti, som skal indlæses" />
+  <string key="Composite.Xml.LoadFile.param.RelativePath.label" value="Relativ sti" />
+  <string key="Composite.Xml.LoadXhtmlFile.description" value="Indlæser en lokal XHTML fil, givet at stien er relativ" />
+  <string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.help" value="XHTML filens relative sti, som skal indlæses" />
+  <string key="Composite.Xml.LoadXhtmlFile.param.RelativePath.label" value="Relativ sti" />
+  <string key="Composite.Xml.LoadUrl.description" value="Indlæser en ekstern XML-fil givet en URL" />
+  <string key="Composite.Xml.LoadUrl.param.Url.help" value="" />
+  <string key="Composite.Xml.LoadUrl.param.Url.label" value="Url" />
+  <string key="Composite.Xml.LoadUrl.param.CacheTime.help" value="Antal sekunder som resultatet skal caches. Standard er 0 (ingen caching)." />
+  <string key="Composite.Xml.LoadUrl.param.CacheTime.label" value="Antal sekunder som skal caches" />
+  <string key="Composite.Xslt.Extensions.DateFormatting.description" value="Sørger for lokaliserede datoformateringsfunktioner til XSLT brug." />
+  <string key="Composite.Xslt.Extensions.Globalization.description" value="Sørger for globaliseringsfunktioner til XSLT brug." />
+  <string key="Composite.Xslt.Extensions.MarkupParser.description" value="Indeholder funktioner, som parser kodede XML-dokumenter eller XHTML fragmenter i noder. Brug denne udvidelse, når du har XML eller XHTML som en streng og har brug for at kopiere dette til output eller transformere det." />
+  <string key="Composite.Mail.SendMail.description" value="Sender en e-mail. Husk at konfigurere SMTP-server-forbindelse i web.config filen." />
+  <string key="Composite.Mail.SendMail.param.From.label" value="Fra" />
+  <string key="Composite.Mail.SendMail.param.From.help" value="Afsenderens adresse." />
+  <string key="Composite.Mail.SendMail.param.To.label" value="Til" />
+  <string key="Composite.Mail.SendMail.param.To.help" value="Modtager. En kommasepareret liste over e-mail adresser." />
+  <string key="Composite.Mail.SendMail.param.Subject.label" value="Emne" />
+  <string key="Composite.Mail.SendMail.param.Subject.help" value="E-mail emne." />
+  <string key="Composite.Mail.SendMail.param.Body.label" value="Krop" />
+  <string key="Composite.Mail.SendMail.param.Body.help" value="E-mail krop." />
+  <string key="Composite.Mail.SendMail.param.IsHtml.label" value="IsHtml" />
+  <string key="Composite.Mail.SendMail.param.IsHtml.help" value="Definerer, om den e-mail der skal sendes, er en HTML e-mail eller en tekst e-mail." />
+  <string key="Composite.Mail.SendMail.param.CC.label" value="CC" />
+  <string key="Composite.Mail.SendMail.param.CC.help" value="Carbon copy. En kommasepareret liste over e-mail-adresser, der er sekundære modtagere af en meddelelse." />
+  <string key="Composite.Mail.SendMail.param.ReplyTo.label" value="Svar til" />
+  <string key="Composite.Mail.SendMail.param.ReplyTo.help" value="Adressen, som skal bruges til at besvare meddelelsen." />
+  <string key="Composite.Mail.SendMail.param.BCC.label" value="Bcc" />
+  <string key="Composite.Mail.SendMail.param.BCC.help" value="Blind carbon copy. En liste over modtagere, som modtager en mail, men med deres individuelle e-mail-adresser skjulte for den komplette liste af modtagere." />
+  <string key="Composite.Mail.SendMail.param.Attachment.label" value="Vedhæftelse" />
+  <string key="Composite.Mail.SendMail.param.Attachment.help" value="List of attached files. \n     Format it the following [{name}=]{filepath}[,{mime-type] [ | .... ].  \n     File path can be either relative or absolute path f.e. &quot;C:\someimage.jpg&quot; or &quot;/coolpicture.jpg&quot;  \n     If file path starts with &quot;Composite/&quot;, it will be recognized as a path to Composite media, f.e. 'Composite/MediaArchive:someImage.gif' \n      \n     Examples:  \n        /attachment.jpg \n       image.jpg=/attachment.jpg \n       image.jpg=/attachment.jpg,image/jpg \n       image1.jpg=/attachment1.jpg,image/jpg|image2.jpg=/attachment2.jpg,image/jpg" />
+  <string key="Composite.Mail.SendMail.param.AttachmentFromMedia.label" value="Vedhæftelse fra  medie" />
+  <string key="Composite.Mail.SendMail.param.AttachmentFromMedia.help" value="En fil fra mediebiblioteket, som skal vedhæftes." />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.description" value="Filtrerer billeder i forhold til deres mappesti" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.label" value="Mediemappe" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.MediaFolder.help" value="En reference til en mediemappe" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Inkludér undermapper" />
+  <string key="Composite.Data.Types.IImageFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Afgør om billeder fra undermapper skal medtages." />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.description" value="Filtrerer billeder i forhold til deres mappesti" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.label" value="Mediemappe" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.MediaFolder.help" value="En reference til en mediemappe" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.label" value="Inkludér undermapper" />
+  <string key="Composite.Data.Types.IMediaFile.MediaFolderFilter.param.IncludeSubfolders.help" value="Bestemmer om mediefiler fra undermapper skal inkluderes." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.description" value="Konverterer en enumerable  XElementer til en ordbog ved hjælp af navngivne attributter for nøgler og værdier." />
   <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.label" value="XElementer" />
   <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.XElements.help" value="En enumerable XElementer, som vil blive anvendt til at skabe en ordbog." />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.label" value="N&#248;glens attributnavn" />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Navnet p&#229; attributten p&#229; hvert  XElement, hvis v&#230;rdi vil blive anvendt til n&#248;gler i ordbogen." />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.label" value="V&#230;rdiens attributnavn" />
-  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Navnet p&#229; attributten p&#229; hvert XElement, hvis v&#230;rdi vil blive anvendt som v&#230;rdier i ordbogen." />
-
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Konverterer et enumerable objekter til en ordbog ved hj&#230;lp af navngivne egenskabsnavne for n&#248;gler og v&#230;rdier." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.label" value="Nøglens attributnavn" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.KeyAttributeName.help" value="Navnet på attributten på hvert  XElement, hvis værdi vil blive anvendt til nøgler i ordbogen." />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.label" value="Værdiens attributnavn" />
+  <string key="Composite.Utils.Dictionary.XElementsToDictionary.param.ValueAttributeName.help" value="Navnet på attributten på hvert XElement, hvis værdi vil blive anvendt som værdier i ordbogen." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.description" value="Konverterer et enumerable objekter til en ordbog ved hjælp af navngivne egenskabsnavne for nøgler og værdier." />
   <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.label" value="Objekter" />
   <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.Elements.help" value="Enumerable objekter, som vil blive brugt til at skabe en ordbog." />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.label" value="N&#248;glens egenskabsnavn" />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Navnet p&#229; egenskaben p&#229; hvert objekt, hvis v&#230;rdi vil blive anvendt til n&#248;gler i ordbogen." />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.label" value="V&#230;rdiens egenskabsnavn" />
-  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Navnet p&#229; egenskaben p&#229; hvert objekt, hvis v&#230;rdi vil blive anvendt for v&#230;rdierne i ordbogen." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.label" value="Nøglens egenskabsnavn" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.KeyPropertyName.help" value="Navnet på egenskaben på hvert objekt, hvis værdi vil blive anvendt til nøgler i ordbogen." />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.label" value="Værdiens egenskabsnavn" />
+  <string key="Composite.Utils.Dictionary.EnumerableToDictionary.param.ValuePropertyName.help" value="Navnet på egenskaben på hvert objekt, hvis værdi vil blive anvendt for værdierne i ordbogen." />
 </strings>
