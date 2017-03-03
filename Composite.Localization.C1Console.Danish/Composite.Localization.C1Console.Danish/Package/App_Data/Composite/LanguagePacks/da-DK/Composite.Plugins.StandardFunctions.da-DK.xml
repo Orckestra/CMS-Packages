@@ -1,46 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
-  <string key="Composite.AspNet.LoadUserControl.description" value="Indlæser en ASP.NET brugerbetjening" />
-  <string key="Composite.AspNet.LoadUserControl.param.Path.help" value="Stien til brugerbetjeningens .ascx fil, som ~ / Controls / MyControl.ascx" />
+  <string key="Composite.AspNet.LoadUserControl.description" value="Indlæser en ASP.NET brugerkontrol" />
+  <string key="Composite.AspNet.LoadUserControl.param.Path.help" value="Stien til brugerkontrollens .ascx fil, fx ”~/ Controls/MyControl.ascx”" />
   <string key="Composite.AspNet.LoadUserControl.param.Path.label" value="Sti" />
-  <string key="Composite.Constant.Boolean.description" value="Tillader dig at specificere konstant boolsk værdi" />
+  <string key="Composite.Constant.Boolean.description" value="Tillader dig at specificere en konstant boolsk værdi" />
   <string key="Composite.Constant.Boolean.param.Constant.help" value="" />
   <string key="Composite.Constant.Boolean.param.Constant.label" value="Værdi" />
-  <string key="Composite.Constant.DateTime.description" value="Lader dig specificere konstant dato og tidsværdi" />
+  <string key="Composite.Constant.DateTime.description" value="Tillader dig at specificere en konstant dato og tidsværdi" />
   <string key="Composite.Constant.DateTime.param.Constant.help" value="" />
   <string key="Composite.Constant.DateTime.param.Constant.label" value="Værdi" />
-  <string key="Composite.Constant.Decimal.description" value="Tillader dig at specificere konstant decimalværdi" />
+  <string key="Composite.Constant.Decimal.description" value="Tillader dig at specificere en konstant decimalværdi" />
   <string key="Composite.Constant.Decimal.param.Constant.help" value="" />
   <string key="Composite.Constant.Decimal.param.Constant.label" value="Værdi" />
-  <string key="Composite.Constant.Guid.description" value="Tillader dig at specificere konstant Guid-værdi" />
+  <string key="Composite.Constant.Guid.description" value="Tillader dig at specificere en konstant Guid-værdi" />
   <string key="Composite.Constant.Guid.param.Constant.help" value="" />
   <string key="Composite.Constant.Guid.param.Constant.label" value="Værdi" />
-  <string key="Composite.Constant.Integer.description" value="Tillader dig at specificere konstant værdi for heltal" />
+  <string key="Composite.Constant.Integer.description" value="Tillader dig at specificere en konstant værdi for heltal" />
   <string key="Composite.Constant.Integer.param.Constant.help" value="" />
   <string key="Composite.Constant.Integer.param.Constant.label" value="Værdi" />
-  <string key="Composite.Constant.String.description" value="Tillader dig at specificere konstant strengværdi" />
+  <string key="Composite.Constant.String.description" value="Tillader dig at specificere en konstant strengværdi" />
   <string key="Composite.Constant.String.param.Constant.help" value="" />
   <string key="Composite.Constant.String.param.Constant.label" value="Værdi" />
-  <string key="Composite.Constant.XhtmlDocument.description" value="Tillader dig visuelt at specificere en xhtml-dokument konstant" />
+  <string key="Composite.Constant.XhtmlDocument.description" value="Tillader dig visuelt at specificere en Xhtml document konstant" />
   <string key="Composite.Constant.XhtmlDocument.param.Constant.help" value="" />
   <string key="Composite.Constant.XhtmlDocument.param.Constant.label" value="Værdi" />
-  <string key="Composite.IDataGenerated.AddDataInstance.description" value="Tilføjer et nyt eksempel af den givne type." />
-  <string key="Composite.IDataGenerated.UpdateDataInstance.description" value="Opdaterer eksempel/ eksempler med de givne værdier." />
+  <string key="Composite.IDataGenerated.AddDataInstance.description" value="Tilføjer en ny instans af den givne type." />
+  <string key="Composite.IDataGenerated.UpdateDataInstance.description" value="Opdaterer eksempel/eksempler med de givne værdier." />
   <string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.help" value="" />
   <string key="Composite.IDataGenerated.UpdateDataInstance.param.Filter.label" value="Filter" />
-  <string key="Composite.IDataGenerated.DeleteDataInstance.description" value="Sletter eksempel/ eksempler med det givne filter." />
+  <string key="Composite.IDataGenerated.DeleteDataInstance.description" value="Sletter eksempel/eksempler med det givne filter." />
   <string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.help" value="" />
   <string key="Composite.IDataGenerated.DeleteDataInstance.param.Filter.label" value="Filter" />
-  <string key="Composite.IDataGenerated.GetDataReference.description" value="Opretter en datareference baseret på en central værdi." />
-  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.help" value="Dataens centrale værdi som skal refereres til" />
-  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.label" value="Central værdi" />
-  <string key="Composite.IDataGenerated.GetNullableDataReference.description" value="Opretter en nulstilningsbar datareference baseret på en central værdi. Standardværdien er nul, ingen henvisning." />
-  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.help" value="Dataens centrale værdi som skal refereres til" />
-  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.label" value="Central værdi" />
-  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.description" value="Konverterer en datareference til et singulært elementfilter. Dette filter vil udvælge højst ét ​​element." />
-  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.help" value="Datareferenceåret til brug ved udvælgelse af data." />
+  <string key="Composite.IDataGenerated.GetDataReference.description" value="Opretter en DataReference baseret på en primærnøgle." />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.help" value="Dataens primærnøgle som der skal refereres til" />
+  <string key="Composite.IDataGenerated.GetDataReference.param.KeyValue.label" value="Primærnøgle" />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.description" value="Opretter en NullableDataReference baseret på en primærnøgle. Standardværdien er 'null', ingen henvisning." />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.help" value="Dataens primærnøgle som der skal refereres til" />
+  <string key="Composite.IDataGenerated.GetNullableDataReference.param.KeyValue.label" value="Primærnøgle" />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.description" value="Konverterer en DataReference til et singulært elementfilter. Dette filter vil udvælge højst ét ​​element." />
+  <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.help" value="Datareferencen til brug ved udvælgelse af data." />
   <string key="Composite.IDataGenerated.Filter.DataReferenceFilter.param.DataReference.label" value="Datareference" />
-  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Giver dig mulighed for at vælge data baseret på dens henvisning til den aktuelt gengivne side." />
+  <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.description" value="Giver dig mulighed for at vælge data baseret på dens henvisning til den aktuelle side." />
   <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.help" value="Vælg hvilken relation den aktuelle side skal have til de data, som du ønsker at hente." />
   <string key="Composite.IDataGenerated.Filter.ActivePageReferenceFilter.param.SitemapScope.label" value="Sidens omfang" />
   <string key="Composite.IDataGenerated.Filter.CompoundFilter.description" value="Definerer en 'og' eller en 'eller' forespørgsel, som kombinerer to andre filtre." />
@@ -53,26 +53,26 @@
   <string key="Composite.IDataGenerated.Filter.FieldPredicatesFilter.description" value="Tillader  dig at  specificere et filter på data ved at stille krav til de enkelte felter. Hvis du angiver krav for flere felter, bliver de alle håndhævet (og forespørgsel)." />
   <string key="Composite.IDataGenerated.GetXml.description" value="Henter en XML-repræsentation af data." />
   <string key="Composite.IDataGenerated.GetXml.param.ElementName.label" value="Elementnavn" />
-  <string key="Composite.IDataGenerated.GetXml.param.ElementNamespace.label" value="Elementets navnefelt" />
+  <string key="Composite.IDataGenerated.GetXml.param.ElementNamespace.label" value="Elementets namespace" />
   <string key="Composite.IDataGenerated.GetXml.param.Filter.help" value="" />
   <string key="Composite.IDataGenerated.GetXml.param.Filter.label" value="Filter" />
   <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.help" value="Når dette er valgt, vil data  XML blive efterfulgt af et &lt;PagingInfo /&gt; element, som specificerer sideantal, elementer m.m." />
   <string key="Composite.IDataGenerated.GetXml.param.IncludePagingInfo.label" value="Medtag bladre-info" />
   <string key="Composite.IDataGenerated.GetXml.param.OrderByField.help" value="Feltet som data sorteres efter" />
   <string key="Composite.IDataGenerated.GetXml.param.OrderByField.label" value="Sortér efter" />
-  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.help" value="Hvis valgt, vil sande resultater blive leveret i stigende rækkefølge - ellers anvendes faldende rækkefølge. Standard er stigende rækkefølge." />
-  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.label" value="Bestil stigende" />
-  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.help" value="Hvis antallet af dataelementer overstiger sidens størrelse, kan du bruge bladring for at tilgå de andre sider. Se sidestørrelsesparameter." />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.help" value="Hvis sat til 'true' vil resultater blive leveret i stigende rækkefølge - ellers anvendes faldende rækkefølge. Standard er stigende rækkefølge." />
+  <string key="Composite.IDataGenerated.GetXml.param.OrderAscending.label" value="Sortér stigende" />
+  <string key="Composite.IDataGenerated.GetXml.param.PageNumber.help" value="Hvis antallet af dataelementer overstiger sidens størrelse, kan du bruge bladring for at tilgå de andre sider. Se parameteren Sidestørrelse." />
   <string key="Composite.IDataGenerated.GetXml.param.PageNumber.label" value="Sidetal" />
   <string key="Composite.IDataGenerated.GetXml.param.PageSize.help" value="Antallet af emner som skal vises på én side - det maksimale antal elementer som skal returneres." />
   <string key="Composite.IDataGenerated.GetXml.param.PageSize.label" value="Sidestørrelse" />
-  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.help" value="Datafelter til output i XML'en. Færre felter kan resultere i hurtigere gengivelser." />
+  <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.help" value="Datafelter til output i XML'en. Færre felter resulterer i hurtigere gengivelser." />
   <string key="Composite.IDataGenerated.GetXml.param.PropertyNames.label" value="Valgte felter" />
-  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.help" value="Hvis du inkluderer referencedata i indstillingen 'udvalgte egenskaber', så kan du bruge denne indstilling til at kontrollere, hvordan referencedata er inkluderet.' Integreret 'er let at anvende, men kan forstørre  ​XML-dokumentet." />
-  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.label" value="Vis referencedata integreret" />
-  <string key="Composite.IDataGenerated.GetXml.param.Randomized.help" value="Når sande data kan ordnes tilfældigt. Angiv det antal tilfældige resultater, som du har brug for ved at indstille 'sidestørrelse'. Hvis et filter er angivet, så anvendes dette før den tilfældige udvælgelse. Hvis du angiver 'sortér efter værdi', så skal du angive en lav 'sidestørrelse', ellers vil randomiseringen blive tom." />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.help" value="Hvis du inkluderer referencedata i indstillingen 'Udvalgte egenskaber', så kan du bruge denne indstilling til at kontrollere, hvordan referencedata er inkluderet. 'Integreret' er let at anvende, men kan forstørre  ​XML-dokumentet." />
+  <string key="Composite.IDataGenerated.GetXml.param.ShowReferencesInline.label" value="Vis referencedata 'inline'" />
+  <string key="Composite.IDataGenerated.GetXml.param.Randomized.help" value="Når 'true' kan kan sorteres tilfældigt. Angiv det antal tilfældige resultater, som du har brug for ved at indstille 'Sidestørrelse'. Hvis et filter er angivet, så anvendes dette før den tilfældige udvælgelse. Hvis du angiver 'sortér efter værdi', så skal du angive en lav 'Sidestørrelse' - ellers vil randomiseringen blive tom." />
   <string key="Composite.IDataGenerated.GetXml.param.Randomized.label" value="Randomiseret" />
-  <string key="Composite.IDataGenerated.GetXml.param.CachePriority.help" value="Bestemmer, om XML resultatet skal caches, og hvilken prioritering disse cache-optegnelser skal have" />
+  <string key="Composite.IDataGenerated.GetXml.param.CachePriority.help" value="Bestemmer, om XML resultatet skal caches, og hvilken prioritering disse cache-poster skal have" />
   <string key="Composite.IDataGenerated.GetXml.param.CachePriority.label" value="Cache prioritet" />
   <string key="Composite.Pages.GetPageId.description" value="Henter den aktuelle sides id eller en side, som er relateret til den aktuelle side." />
   <string key="Composite.Pages.GetPageId.param.SitemapScope.help" value="Hvilken side skal id'et komme fra.  Standarden kommer fra den aktuelle side." />

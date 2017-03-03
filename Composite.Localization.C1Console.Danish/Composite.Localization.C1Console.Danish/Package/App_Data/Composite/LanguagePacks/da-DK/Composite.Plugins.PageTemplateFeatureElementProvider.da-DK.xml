@@ -1,27 +1,25 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
-    <string key="ElementProvider.RootLabel" value="Sideskabelonselementer" />
-    <string key="ElementProvider.RootToolTip" value="Her kan du finde funktioner, uddrag af HTML og funktionalitet , som indg&#229;r i hjemmesideskabelonerne." />
-    <string key="ElementProvider.AddTemplateFeature" value="Tilf&#248;j skabelonsfunktion" />
-    <string key="ElementProvider.AddTemplateFeatureToolTip" value="Tilf&#248;j en ny funktion til brug p&#229; sideskabeloner" />
-    <string key="ElementProvider.DeleteTemplateFeature" value="Slet skabelonsfunktion" />
-    <string key="ElementProvider.DeleteTemplateFeatureToolTip" value="Slet denne skabelonsfunktion" />
-    <string key="ElementProvider.EditTemplateFeature" value="Redig&#233;r skabelonsfunktion" />
-    <string key="ElementProvider.EditTemplateFeatureToolTip" value="Redig&#233;r den valgte skabelonsfunktion" />
-    <string key="ElementProvider.EditVisually" value="Brug visuel editor" />
-    <string key="ElementProvider.EditVisuallyToolTip" value="N&#229;r den er aktiveret, vil den visuelle editor blive anvendt til kontrollere denne funktion" />
-
-    <string key="AddWorkflow.LabelDialog" value="Tilf&#248;j ny sideskabelonsfunktion" />
-    <string key="AddWorkflow.LabelTemplateFeatureName" value="Funktionens navn" />
-    <string key="AddWorkflow.LabelTemplateFeatureNameHelp" value="Navnet bruges til at identificere denne funktion, n&#229;r den indg&#229;r i skabeloner" />
-    <string key="AddWorkflow.LabelTemplateFeatureEditorType" value="Editortype" />
-    <string key="AddWorkflow.LabelTemplateFeatureEditorTypeHelp" value="V&#230;lg hvilken type editor du &#248;nsker at bruge til fastholdelse af denne funktion. Du kan altid skifte editortype i tr&#230;et senere." />
-    <string key="AddWorkflow.LabelTemplateFeatureEditorType.html" value="Visuel editor" />
-    <string key="AddWorkflow.LabelTemplateFeatureEditorType.xml" value="Markupeditor" />
-    <string key="AddWorkflow.NameInUse" value="Navnet bruges allerede af en anden funktion" />
-    <string key="AddWorkflow.NameTooLong" value="Titlen er for lang (maks. 50 tegn)" />
-    <string key="AddWorkflow.NameNotValidInFilename" value="Navnet skal v&#230;re brugbart i et filnavn - du har inkluderet ugyldige tegn, som skal fjernes" />
-
-    <string key="DeleteWorkflow.Title" value="Slet denne sideskabelonsfunktion ?" />
-    <string key="DeleteWorkflow.Text" value="Hvis denne funktion allerede bruges af sideskabeloner, s&#229; kan denne handling f&#248;re til fejl." />
+  <string key="ElementProvider.RootLabel" value="Sideskabelon-elementer" />
+  <string key="ElementProvider.RootToolTip" value="Her kan du finde funktioner, uddrag af HTML og funktionalitet, som indgår i hjemmesideskabelonerne." />
+  <string key="ElementProvider.AddTemplateFeature" value="Tilføj skabelonfunktion" />
+  <string key="ElementProvider.AddTemplateFeatureToolTip" value="Tilføj en ny funktion til brug på sideskabeloner" />
+  <string key="ElementProvider.DeleteTemplateFeature" value="Slet skabelonfunktion" />
+  <string key="ElementProvider.DeleteTemplateFeatureToolTip" value="Slet denne skabelonfunktion" />
+  <string key="ElementProvider.EditTemplateFeature" value="Redigér skabelonfunktion" />
+  <string key="ElementProvider.EditTemplateFeatureToolTip" value="Redigér den valgte skabelonfunktion" />
+  <string key="ElementProvider.EditVisually" value="Brug visuel editor" />
+  <string key="ElementProvider.EditVisuallyToolTip" value="Når den er aktiveret, vil den visuelle editor blive anvendt til håndtere denne funktion" />
+  <string key="AddWorkflow.LabelDialog" value="Tilføj ny sideskabelonfunktion" />
+  <string key="AddWorkflow.LabelTemplateFeatureName" value="Funktionens navn" />
+  <string key="AddWorkflow.LabelTemplateFeatureNameHelp" value="Navnet bruges til at identificere denne funktion, når den indgår i skabeloner" />
+  <string key="AddWorkflow.LabelTemplateFeatureEditorType" value="Editortype" />
+  <string key="AddWorkflow.LabelTemplateFeatureEditorTypeHelp" value="Vælg hvilken type editor du ønsker at bruge til fastholdelse af denne funktion. Du kan altid skifte editortype i træet senere." />
+  <string key="AddWorkflow.LabelTemplateFeatureEditorType.html" value="Visuel editor" />
+  <string key="AddWorkflow.LabelTemplateFeatureEditorType.xml" value="Markupeditor" />
+  <string key="AddWorkflow.NameInUse" value="Navnet bruges allerede af en anden funktion" />
+  <string key="AddWorkflow.NameTooLong" value="Titlen er for lang (maks. 50 tegn)" />
+  <string key="AddWorkflow.NameNotValidInFilename" value="Navnet skal være brugbart i et filnavn - du har inkluderet ugyldige tegn, som skal fjernes" />
+  <string key="DeleteWorkflow.Title" value="Slet denne sideskabelonfunktion ?" />
+  <string key="DeleteWorkflow.Text" value="Hvis denne funktion allerede bruges af sideskabeloner, så kan denne handling føre til fejl." />
 </strings>

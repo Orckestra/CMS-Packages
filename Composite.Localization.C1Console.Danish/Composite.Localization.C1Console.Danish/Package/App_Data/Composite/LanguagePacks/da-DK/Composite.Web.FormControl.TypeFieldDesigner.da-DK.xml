@@ -1,28 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <strings>
   <string key="BasicTabLabel" value="Basal" />
   <string key="AdvancedTabLabel" value="Avanceret" />
-
-  <string key="AddNewButtonLabel" value="Tilf&#248;j ny" />
+  <string key="AddNewButtonLabel" value="Tilføj ny" />
   <string key="DeleteButtonLabel" value="Slet" />
   <string key="LabelDataTypeFields" value="Datatype-felter" />
-
-  <string key="KeyFieldDetailsGroupLabel" value="Feltegenskaber for prim&#230;rn&#248;gle" />
-  <string key="KeyFieldType" value="N&#248;glefeltets type" />
-  <string key="KeyFieldTypeHelp" value="Prim&#230;rn&#248;glens datatype. GUID-felter har optimal ydeevne. Tekststreng-felter er nyttige, n&#229;r id v&#230;rdier skal vises i URL&#39;er." />
-  
+  <string key="KeyFieldDetailsGroupLabel" value="Feltegenskaber for primærnøgle" />
+  <string key="KeyFieldType" value="Nøglefeltets type" />
+  <string key="KeyFieldTypeHelp" value="Primærnøglens datatype. GUID-felter har optimal ydeevne. Tekststreng-felter er nyttige, når id værdier skal vises i URL'er." />
   <string key="FieldDetailsGroupLabel" value="Feltegenskaber" />
   <string key="Name" value="Navn" />
-  <string key="NameHelp" value="Feltets navn anvendes af systemet til at identificere dette felt. Navne skal v&#230;re unikke og m&#229; ikke indeholde mellemrum og andre specialtegn. Brug navne som &#39;Titel&#39;, &#39;StartDato&#39;, &#39;LargeImage&#39; osv." />
+  <string key="NameHelp" value="Feltets navn anvendes af systemet til at identificere dette felt. Navne skal være unikke og må ikke indeholde mellemrum og andre specialtegn. Brug navne som 'Titel', 'StartDato', 'LargeImage' osv." />
   <string key="Label" value="Label" />
-  <string key="LabelHelp" value="Labelteksten vises til brugerne, n&#229;r du tilf&#248;jer et nyt element baseret p&#229; datatypen." />
-  <string key="Help" value="Hj&#230;lp" />
-  <string key="HelpHelp" value="Brug dette indl&#230;g til en kort hj&#230;lpetekst til brugeren." />
-
+  <string key="LabelHelp" value="Labelteksten vises til brugerne, når du tilføjer et nyt element baseret på datatypen." />
+  <string key="Help" value="Hjælp" />
+  <string key="HelpHelp" value="Brug dette indlæg til en kort hjælpetekst til brugeren." />
   <string key="FieldTypeGroupLabel" value="Felt-type og krav" />
   <string key="FieldType" value="Felt-type" />
-  <string key="FieldTypeHelp" value="V&#230;lg en datatype til feltet. Typen afg&#248;r, hvilken slags data feltet kan indeholde." />
+  <string key="FieldTypeHelp" value="Vælg en datatype til feltet. Typen afgør, hvilken slags data feltet kan indeholde." />
   <string key="System.String" value="Streng" />
   <string key="System.Int32" value="Heltal" />
   <string key="System.Decimal" value="Decimaltal" />
@@ -32,64 +27,54 @@
   <string key="Reference" value="Datareference" />
   <string key="TypeDetailsHelp" value="Brug dette felt til yderligere at konfigurere din valgte type." />
   <string key="Optional" value="Valgfri" />
-  <string key="OptionalHelp" value="Valgfri felter kan st&#229; tomme." />
+  <string key="OptionalHelp" value="Valgfri felter kan stå tomme." />
   <string key="OptionalFalseLabel" value="Nej" />
   <string key="OptionalTrueLabel" value="Ja" />
   <string key="ValidationRules" value="Valideringsregler" />
-  <string key="ValidationRulesHelp" value="Du kan angive strenge regler for de data, som indtastes i dette felt, fx. &quot;skal v&#230;re p&#229; mindst 5 tegn&quot;, &quot;skal v&#230;re en gyldig e-mail adresse&quot;, &quot;skal v&#230;re en passeret dato&quot; osv." />
-  <string key="ValidationRulesAdd" value="Tilf&#248;j valideringsregler ..." />
-  <string key="ValidationRulesEdit" value="Redgi&#233;r valideringsregler" />
+  <string key="ValidationRulesHelp" value="Du kan angive strenge regler for de data, som indtastes i dette felt, fx. &quot;skal være på mindst 5 tegn&quot;, &quot;skal være en gyldig e-mail adresse&quot;, &quot;skal være en passeret dato&quot; osv." />
+  <string key="ValidationRulesAdd" value="Tilføj valideringsregler ..." />
+  <string key="ValidationRulesEdit" value="Redgiér valideringsregler" />
   <string key="ValidationRulesDialogLabel" value="Konfiguration af feltvalideringsregler" />
-
-  
   <string key="FieldValidationGroupLabel" value="Feltvalidering" />
-  <string key="FieldPresentationGroupLabel" value="Pr&#230;sentation af formularfelt" />
-  <string key="FieldStructureGroupLabel" value="Strukturel pr&#230;sentation" />
-  
+  <string key="FieldPresentationGroupLabel" value="Præsentation af formularfelt" />
+  <string key="FieldStructureGroupLabel" value="Strukturel præsentation" />
   <string key="Widget" value="Widget type" />
-  <string key="WidgetHelp" value="Du kan v&#230;lge, hvilken type input widget (ligesom en tekstboks) som skal bruges, n&#229;r du redigerer dette felt." />
+  <string key="WidgetHelp" value="Du kan vælge, hvilken type input widget (ligesom en tekstboks) som skal bruges, når du redigerer dette felt." />
   <string key="WidgetDialogLabel" value="Konfiguration af felt widget" />
   <string key="Position" value="Placering" />
   <string key="PositionLast" value="Sidste" />
-  <string key="PositionHelp" value="Feltets position. Dette kontrollerer felternes r&#230;kkef&#248;lge." />
-  <string key="GroupByPriority" value="Tr&#230;gruppering" />
+  <string key="PositionHelp" value="Feltets position. Dette kontrollerer felternes rækkefølge." />
+  <string key="GroupByPriority" value="Trægruppering" />
   <string key="GroupByPriorityNone" value="(ingen gruppering) ..." />
-  <string key="GroupByPriorityFirst" value="Grupp&#233;r efter dette felt" />
-  <string key="GroupByPriorityN" value="Grupp&#233;r som {0}. prioritet" />
-  <string key="GroupByPriorityHelp" value="Du kan angive, at et felt skal bruges til at gruppere data med - dette kan forbedre l&#230;sbarheden, ved visning af lange lister. Brug prioritet, n&#229;r flere felter bruges til gruppering." />
-  <string key="TreeOrdering" value="Tr&#230;r&#230;kkef&#248;lge" />
-  <string key="TreeOrderingNone" value="(Ingen r&#230;kkef&#248;lge) ..." />
-  <string key="TreeOrderingFirstAscending" value="Stigende r&#230;kkef&#248;lge (A-Z)" />
-  <string key="TreeOrderingFirstDescending" value="Faldende r&#230;kkef&#248;lge (Z-A)" />
-  <string key="TreeOrderingNAscending" value="R&#230;kkef&#248;lge {0}. stigende" />
-  <string key="TreeOrderingNDescending" value="R&#230;kkef&#248;lge {0}. faldende" />
-  <string key="TreeOrderingHelp" value="Du kan angive, at et felt skal bruges til at ordne data i tr&#230;visningen - det kan forbedre l&#230;sbarheden, n&#229;r et felt bruges til at placere elementer p&#229; hjemmesiden." />
+  <string key="GroupByPriorityFirst" value="Gruppér efter dette felt" />
+  <string key="GroupByPriorityN" value="Gruppér som {0}. prioritet" />
+  <string key="GroupByPriorityHelp" value="Du kan angive, at et felt skal bruges til at gruppere data med - dette kan forbedre læsbarheden, ved visning af lange lister. Brug prioritet, når flere felter bruges til gruppering." />
+  <string key="TreeOrdering" value="Trærækkefølge" />
+  <string key="TreeOrderingNone" value="(Ingen rækkefølge) ..." />
+  <string key="TreeOrderingFirstAscending" value="Stigende rækkefølge (A-Z)" />
+  <string key="TreeOrderingFirstDescending" value="Faldende rækkefølge (Z-A)" />
+  <string key="TreeOrderingNAscending" value="Rækkefølge {0}. stigende" />
+  <string key="TreeOrderingNDescending" value="Rækkefølge {0}. faldende" />
+  <string key="TreeOrderingHelp" value="Du kan angive, at et felt skal bruges til at ordne data i trævisningen - det kan forbedre læsbarheden, når et felt bruges til at placere elementer på hjemmesiden." />
   <string key="IsTitleField" value="Er titelfeltet" />
-  <string key="IsTitleFieldHelp" value="Mark&#233;r dette hvis du &#248;nsker at dette felt skal bruges som titelfelt. Titelfelter bruges ved opstilling af data, ligesom i tr&#230;et til venstre." />
+  <string key="IsTitleFieldHelp" value="Markér dette hvis du ønsker at dette felt skal bruges som titelfelt. Titelfelter bruges ved opstilling af data, ligesom i træet til venstre." />
   <string key="IsTitleFieldLabel" value="Brug dette som titelfelt i lister" />
-
-  
-  <string key="DefaultValueGroupLabel" value="Standardv&#230;rdi for felt" />
-  <string key="DefaultValue" value="Standardv&#230;rdi" />
-  <string key="DefaultValueHelp" value="Du kan definere en standardv&#230;rdi for dette felt." />
-  <string key="DefaultValueDialogLabel" value="Konfiguration af feltets standardv&#230;rdi" />
-
-
+  <string key="DefaultValueGroupLabel" value="Standardværdi for felt" />
+  <string key="DefaultValue" value="Standardværdi" />
+  <string key="DefaultValueHelp" value="Du kan definere en standardværdi for dette felt." />
+  <string key="DefaultValueDialogLabel" value="Konfiguration af feltets standardværdi" />
   <string key="DataUrlGroupLabel" value="Data URL" />
   <string key="AppearsInUrlLabel" value="Felt vises i data URL" />
-  <string key="AppearsInUrlItemLabel" value="Benyt i data URL&#39;er" />
-  <string key="AppearsInUrlHelp" value="Hvis markeret vises feltet i data URL&#39;er" />
-  <string key="DataUrlOrderLabel" value="R&#230;kkef&#248;lge" />
-  <string key="DataUrlOrderHelp" value="R&#230;kkef&#248;lge for hvor feltets vises i data URL&#39;er" />
-
+  <string key="AppearsInUrlItemLabel" value="Benyt i data URL'er" />
+  <string key="AppearsInUrlHelp" value="Hvis markeret vises feltet i data URL'er" />
+  <string key="DataUrlOrderLabel" value="Rækkefølge" />
+  <string key="DataUrlOrderHelp" value="Rækkefølge for hvor feltets vises i data URL'er" />
   <string key="DataUrlDateFormatLabel" value="Format" />
-  <string key="DataUrlDateFormatHelp" value="V&#230;lg i hvilket format datofeltet vises i URL&#39;er" />
-  <string key="DataUrlDateFormat_Year" value="&#197;r" />
-  <string key="DataUrlDateFormat_Month" value="M&#229;ned" />
+  <string key="DataUrlDateFormatHelp" value="Vælg i hvilket format datofeltet vises i URL'er" />
+  <string key="DataUrlDateFormat_Year" value="År" />
+  <string key="DataUrlDateFormat_Month" value="Måned" />
   <string key="DataUrlDateFormat_Day" value="Dag" />
-  
-
-  <string key="StringMaximumLength" value="Strengens maks. l&#230;ngde" />
+  <string key="StringMaximumLength" value="Strengens maks. længde" />
   <string key="16CharMax" value="Maksimum 16 tegn" />
   <string key="32CharMax" value="Maksimum 32 tegn" />
   <string key="64CharMax" value="Maksimum 64 tegn" />
@@ -97,24 +82,27 @@
   <string key="256CharMax" value="Maksimum 256 tegn" />
   <string key="512CharMax" value="Maksimum 512 tegn" />
   <string key="1024CharMax" value="Maksimum 1024 tegn" />
-  <string key="Unlimited" value="Ubegr&#230;nset l&#230;ngde" />
-  
+  <string key="Unlimited" value="Ubegrænset længde" />
   <string key="DecimalNumberFormat" value="Decimal talformat" />
   <string key="1DecimalPlace" value="1 decimal" />
   <string key="nDecimalPlaces" value="{0} decimaler" />
-
   <string key="ReferenceType" value="Henvisningstype" />
-  
   <string key="FieldNameSyntaxInvalid" value="Det angivne navn er ikke gyldigt." />
-  <string key="CannotSave" value="Kan ikke gemme ... Et andet felt har det samme navn. Navnet skal &#230;ndres." />
-
-  <string key="SpaceInNameError" value="Ugyldigt navn. Navne p&#229; datafelter kan ikke indeholde mellemrum. Du kan skrive et l&#230;sbart navn i labelfeltet nedenfor." />
-  <string key="NameEmptyError" value="Navne p&#229; datafelter kan ikke v&#230;re tomme. Angiv venligst et navn." />
-  <string key="NameAlreadyInUseError" value="Et andet felt bruger dette navn. Navne p&#229; datafelter skal v&#230;re entydige." />
-  <string key="NotAnOptionalTypeError" value="Den valgte type kan ikke v&#230;re frivillig." />
+  <string key="CannotSave" value="Kan ikke gemme ... Et andet felt har det samme navn. Navnet skal ændres." />
+  <string key="SpaceInNameError" value="Ugyldigt navn. Navne på datafelter kan ikke indeholde mellemrum. Du kan skrive et læsbart navn i labelfeltet nedenfor." />
+  <string key="NameEmptyError" value="Navne på datafelter kan ikke være tomme. Angiv venligst et navn." />
+  <string key="NameAlreadyInUseError" value="Et andet felt bruger dette navn. Navne på datafelter skal være entydige." />
+  <string key="NotAnOptionalTypeError" value="Den valgte type kan ikke være frivillig." />
   <string key="NoWidgetSelected" value="Husk at angive en widget ..." />
   <string key="NoWidgetSelectedLabel" value="(Ingen widget angivet)" />
+  <string key="SearchGroupLabel" value="Søg" />
+  <string key="Search.TextSearch" value="Tekstsøgning" />
+  <string key="Search.IndexText.Label" value="Indeksér tekstuelt indhold" />
+  <string key="Search.IndexText.Help" value="Afkryds hvis tekstindholdet af feltet skal være søgbart." />
+  <string key="Search.SearchResults" value="Søgeresultater" />
+  <string key="Search.FieldPreview.Label" value="Aktiver forhåndsvisning på feltet" />
+  <string key="Search.FieldPreview.Help" value="Afkryds hvis feltet skal vises som en kolonne i tabellen med søgeresultater." />
+  <string key="Search.FacetedSearch" value="Facetteret søgning" />
+  <string key="Search.Facet.Label" value="Aktivér facetteret søgning" />
+  <string key="Search.Facet.Help" value="Afkryds hvis feltet skal vises som en facet i&#xD; søgeresultaterne." />
 </strings>
-
-
-
