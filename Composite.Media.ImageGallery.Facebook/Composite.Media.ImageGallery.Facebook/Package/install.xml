@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.1.5058.34326" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Media.ImageGallery.Facebook" groupName="Composite.Media" version="1.1.0" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Media.ImageGallery.Facebook" id="bbb85547-8dec-4282-9190-1f49b756d1e5" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
+	<mi:PackageInformation name="Orckestra.Media.ImageGallery.Facebook" groupName="Orckestra.Media" version="1.1.1" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="http://docs.c1.orckestra.com/Orckestra.Media.ImageGallery.Facebook" id="bbb85547-8dec-4282-9190-1f49b756d1e5" canBeUninstalled="true" systemLocking="none" flushOnCompletion="true">
 		<TechnicalDetails>Package uses the Facebook SDK for .NET - http://facebooksdk.net/. To show a full-size image in a Facebook album in a light box on your website, we recommend that you install Composite.Media.ImageGallery.Slimbox2.</TechnicalDetails>
 		<Description>Display images from Facebook albums on your website.</Description>
 	</mi:PackageInformation>
@@ -13,6 +13,9 @@
 				<File sourceFilename="~\App_Data/Razor/Composite/Media/ImageGallery/Facebook/AlbumsGallery.cshtml" targetFilename="~\App_Data/Razor/Composite/Media/ImageGallery/Facebook/AlbumsGallery.cshtml" allowOverwrite="false" />
 				<File sourceFilename="~\App_Data/Razor/Composite/Media/ImageGallery/Facebook/Photos.cshtml" targetFilename="~\App_Data/Razor/Composite/Media/ImageGallery/Facebook/Photos.cshtml" allowOverwrite="false" />
 			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\App_Data\Components\Orckestra\Media\ImageGallery\Facebook\" targetDirectory="~\App_Data\Components\Orckestra\Media\ImageGallery\Facebook\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
 		</mi:Add>
 	</mi:PackageFragmentInstallers>
 </mi:PackageInstaller>

@@ -1,0 +1,16 @@
+﻿<html
+		pal:title="Facebook Comments Plugin"
+		pal:description="Lets people comment on content on your site using their Facebook account."
+		pal:tags="social"
+		pal:icon="message"
+		pal:container-anti-classes="aside"
+		pal:container-classes=""
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:pal="http://www.composite.net/ns/components/1.0">
+	<head>
+	</head>
+	<body>
+		<f:function name="Orckestra.Social.Facebook.Comments" xmlns:f="http://www.composite.net/ns/function/1.0">
+		</f:function>
+	</body>
+</html>

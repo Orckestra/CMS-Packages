@@ -7,11 +7,11 @@ using System.Web.Hosting;
 using Composite.Core.IO;
 using Composite.Web.BundlingAndMinification.Api;
 
-namespace Composite.Web.Css.Less
+namespace Orckestra.Web.Css.Less
 {
     public class LessCssCompiler: ICssCompiler
     {
-        private static readonly string LessCompilerFilePath = HostingEnvironment.MapPath("~/Frontend/Composite/Web/Css/Less/lessc.cmd");
+        private static readonly string LessCompilerFilePath = HostingEnvironment.MapPath("~/Frontend/Orckestra/Web/Css/Less/lessc.cmd");
         private const string FileExtention = ".less";
         public bool SupportsExtension(string extension)
         {

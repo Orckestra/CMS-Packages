@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<setup xmlns="urn:Composte.C1.Setup" desc="&lt;p&gt;Choose your default setup - &lt;a href='http://docs.composite.net/StarterSites' target='_blank'&gt;read about them online&lt;/a&gt;. &lt;/p&gt;">
+  <!---
+ THIS IS NOT TO BE COPIED TO PRODUCTION - This is a template for starter site packages. The tool will replace URL values with locally build package endpoints
+ URLs used for fallback for packages not found in your repos (defined in .config file)
+
+-->
+  <radio label="Starter sites" key="1" desc="A set of minimalistic templates and content/images for starting a new site. Mobile friendly CSS and a design that is easy to skin.">
+    <radio label="Venus" key="9" desc="Modern mobile first website with blog, form builder (30-day trial), content search, link checker, image gallery, employee profile page and more. Build on ASP.NET Razor, Bootstrap and LESS CSS.">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.LanguageSwitcher.Razor" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.Distributed.Razor" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Css.Less" />
+        <package id="41a3542b-41fb-4c42-984d-4b92f66b2088" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.FontAwesome" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.BundlingAndMinification" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="http://package.composite.net/Download.ashx?package=Composite.Web.Config.Html5MimeTypes" />
+        <package id="b540f296-420d-44ef-b83e-d067850b2381" url="http://package.composite.net/Download.ashx?package=Composite.Forms.FormBuilder&amp;c1version=5.0" />
+        <package id="307927b4-600b-45d9-a61a-437d4ffe9ebf" url="http://package.composite.net/Download.ashx?package=Composite.Media.ImageCrop&amp;c1version=5.0" />
+        <package id="303b7865-055b-4fe7-a429-907b32bb6776" url="http://package.composite.net/Download.ashx?package=Composite.Community.Blog" />
+        <package id="f19a2878-d14d-431c-8f3e-14367b553c82" url="http://package.composite.net/Download.ashx?package=Composite.Media.YouTube" />
+        <package id="e41ec59b-1e4c-42e9-8682-21806ae3072b" url="http://package.composite.net/Download.ashx?package=Composite.Media.ImageGallery.Slimbox2" />
+        <package id="eb94930c-4bdf-478b-b779-6ef617f3aec2" url="http://package.composite.net/Download.ashx?package=Composite.Tools.LinkChecker" />
+        <package id="76d60b61-8bd7-42ec-aaab-67efe4584c5f" url="http://package.composite.net/Download.ashx?package=Composite.Search.SimplePageSearch" />
+        <package id="4ddb9a49-3f1b-4f03-a54f-81a64f36f751" url="http://package.composite.net/Download.ashx?package=Composite.Lists.Profiles" />
+        <package id="47cd15a3-10ee-4940-b4d0-9791381004bd" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.GetStyleOptionsFromFile" />
+        <package id="3ed89811-840d-42de-a118-4345eead2073" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.ImageAndTextTeaser" />
+        <package id="3fff5817-2a8f-4722-88e6-1f174ed81bff" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.StatementTeaser" />
+        <package id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.Grid.Columns" />
+        <package id="3cc59684-bd70-4ce9-a444-b9b102b018fe" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.TeaserCards" />
+        <package id="4d59f41b-92fd-4a51-a164-7731556a85b8" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.LinkButton" />
+        <package id="d56dffb5-eae1-4b11-8b54-3c7ddb7db94a" url="http://package.composite.net/Download.ashx?package=Orckestra.Lists.Portfolio" />
+        <package id="1136ef29-1bc5-4aac-94e8-7463ea857eb8" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Venus.Templates.Razor" />
+        <package id="65d06d1e-e810-49f4-98c8-4a336936f5cc" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Venus.Core" />
+        <package id="e9233fb0-75c3-47f5-9b91-97d4b632826e" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.SampleImages" />
+        <package id="19e37de4-c106-45d0-a8f2-fa99503dac85" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Venus.Content" />
+        <package id="6f078485-f7c3-40b2-8960-b075ccfaaaa3" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.SharedPages" />
+        <package id="3602f7a4-55bb-4173-b44c-f17e68ce1bf0" url="http://package.composite.net/Download.ashx?package=Orckestra.Search.SimplePageSearch.DefaultContent" />
+        <package id="0507ebc3-f3c8-426b-9d63-2a860175e835" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.ImageAndTextTeaser.DefaultContent" />
+        <package id="db8c9972-d880-46ab-aebe-1bfa6c3a65d3" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.TeaserCards.DefaultContent" />
+        <package id="6e5ca364-0d37-43b6-8549-d17a054d3e4a" url="http://package.composite.net/Download.ashx?package=Orckestra.Lists.Profiles.DefaultContent" />
+        <package id="abb7a0a1-8566-4dce-bcc6-d45894b64255" url="http://package.composite.net/Download.ashx?package=Orckestra.Community.Blog.DefaultContent" />
+        <package id="86dd94cb-086d-41d9-9b8b-650db7e9e6b6" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.LinkButton.DefaultContent" />
+        <package id="3237ff22-6caf-4557-8525-1d6822e3529b" url="http://package.composite.net/Download.ashx?package=Orckestra.Media.ImageGallery.Slimbox2.DefaultContent" />
+      </packages>
+    </radio>
+    <radio label="Neptune" key="13" desc="Modern mobile first website targets digital agencies, consultants and similar companies that provide a service and attract customers by showcasing work. Build on ASP.NET Razor, Bootstrap and LESS CSS.">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.LanguageSwitcher.Razor" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.Distributed.Razor" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Css.Less" />
+        <package id="41a3542b-41fb-4c42-984d-4b92f66b2088" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.FontAwesome" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.BundlingAndMinification" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="http://package.composite.net/Download.ashx?package=Composite.Web.Config.Html5MimeTypes" />
+        <package id="b540f296-420d-44ef-b83e-d067850b2381" url="http://package.composite.net/Download.ashx?package=Composite.Forms.FormBuilder&amp;c1version=5.0" />
+        <package id="307927b4-600b-45d9-a61a-437d4ffe9ebf" url="http://package.composite.net/Download.ashx?package=Composite.Media.ImageCrop&amp;c1version=5.0" />
+        <package id="f19a2878-d14d-431c-8f3e-14367b553c82" url="http://package.composite.net/Download.ashx?package=Composite.Media.YouTube" />
+        <package id="eb94930c-4bdf-478b-b779-6ef617f3aec2" url="http://package.composite.net/Download.ashx?package=Composite.Tools.LinkChecker" />
+        <package id="76d60b61-8bd7-42ec-aaab-67efe4584c5f" url="http://package.composite.net/Download.ashx?package=Composite.Search.SimplePageSearch" />
+        <package id="4ddb9a49-3f1b-4f03-a54f-81a64f36f751" url="http://package.composite.net/Download.ashx?package=Composite.Lists.Profiles" />
+        <package id="d56dffb5-eae1-4b11-8b54-3c7ddb7db94a" url="http://package.composite.net/Download.ashx?package=Orckestra.Lists.Portfolio" />
+        <package id="e9233fb0-75c3-47f5-9b91-97d4b632826e" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.SampleImages" />
+        <package id="47cd15a3-10ee-4940-b4d0-9791381004bd" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.GetStyleOptionsFromFile" />
+        <package id="3fff5817-2a8f-4722-88e6-1f174ed81bff" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.StatementTeaser" />
+        <package id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.Grid.Columns" />
+        <package id="3cc59684-bd70-4ce9-a444-b9b102b018fe" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.TeaserCards" />
+        <package id="7f48c4e9-68c7-40c2-9feb-75a30bb57740" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Neptune.Templates.Razor" />
+        <package id="cdd53142-6c0b-44dc-8648-562c24c23777" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Neptune.Core" />
+        <package id="adb3958f-01f3-412a-9cdd-978becc19c20" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Neptune.Content" />
+        <package id="6f078485-f7c3-40b2-8960-b075ccfaaaa3" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.SharedPages" />
+        <package id="3602f7a4-55bb-4173-b44c-f17e68ce1bf0" url="http://package.composite.net/Download.ashx?package=Orckestra.Search.SimplePageSearch.DefaultContent" />
+        <package id="6e5ca364-0d37-43b6-8549-d17a054d3e4a" url="http://package.composite.net/Download.ashx?package=Orckestra.Lists.Profiles.DefaultContent" />
+      </packages>
+    </radio>
+    <radio label="Mercury" key="8" desc="Modern and animated mobile first website with portfolio, form builder (30-day trial), content search, employee profile page and more. Build on ASP.NET Razor, Bootstrap and LESS CSS.">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.LanguageSwitcher.Razor" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.Distributed.Razor" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Css.Less" />
+        <package id="41a3542b-41fb-4c42-984d-4b92f66b2088" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.FontAwesome" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.BundlingAndMinification" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="http://package.composite.net/Download.ashx?package=Composite.Web.Config.Html5MimeTypes" />
+        <package id="b540f296-420d-44ef-b83e-d067850b2381" url="http://package.composite.net/Download.ashx?package=Composite.Forms.FormBuilder&amp;c1version=5.0" />
+        <package id="f19a2878-d14d-431c-8f3e-14367b553c82" url="http://package.composite.net/Download.ashx?package=Composite.Media.YouTube" />
+        <package id="b61446c4-cdd5-45c5-8d34-016fd6c74f31" url="http://package.composite.net/Download.ashx?package=Composite.Media.Vimeo" />
+        <package id="76d60b61-8bd7-42ec-aaab-67efe4584c5f" url="http://package.composite.net/Download.ashx?package=Composite.Search.SimplePageSearch" />
+        <package id="4ddb9a49-3f1b-4f03-a54f-81a64f36f751" url="http://package.composite.net/Download.ashx?package=Composite.Lists.Profiles" />
+        <package id="79485603-765e-4eab-b4d4-7ea91d34c742" url="http://package.composite.net/Download.ashx?package=Composite.Lists.Tabs" />
+        <package id="e48d51ae-6263-4375-8e27-a5b45ccef3e7" url="http://package.composite.net/Download.ashx?package=Composite.Social.IconLinks" />
+        <package id="8302eb16-7c64-4aa5-aa8e-b27cc710b3c4" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.DeviceSpecificContent" />
+        <package id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.Grid.Columns" />
+        <package id="40c17ce5-df89-458d-93a9-d09f80b475ec" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.Jumbotron" />
+        <package id="d56dffb5-eae1-4b11-8b54-3c7ddb7db94a" url="http://package.composite.net/Download.ashx?package=Orckestra.Lists.Portfolio" />
+        <package id="47cd15a3-10ee-4940-b4d0-9791381004bd" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.GetStyleOptionsFromFile" />
+        <package id="3ed89811-840d-42de-a118-4345eead2073" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.ImageAndTextTeaser" />
+        <package id="3fff5817-2a8f-4722-88e6-1f174ed81bff" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.StatementTeaser" />
+        <package id="3cc59684-bd70-4ce9-a444-b9b102b018fe" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.TeaserCards" />
+        <package id="4d59f41b-92fd-4a51-a164-7731556a85b8" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.LinkButton" />
+        <package id="635d3b31-a0c4-4f32-9368-0c2b7a010d8c" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Mercury.Templates.Razor" />
+        <package id="e9233fb0-75c3-47f5-9b91-97d4b632826e" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.SampleImages" />
+        <package id="75429558-8815-43bf-8eac-6c68d2725cb4" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Mercury.Core" />
+        <package id="0c532d79-673a-4557-ba84-c01b05895b47" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Mercury.Content" />
+        <package id="6f078485-f7c3-40b2-8960-b075ccfaaaa3" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.SharedPages" />
+        <package id="6e5ca364-0d37-43b6-8549-d17a054d3e4a" url="http://package.composite.net/Download.ashx?package=Orckestra.Lists.Profiles.DefaultContent" />
+        <package id="0507ebc3-f3c8-426b-9d63-2a860175e835" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.ImageAndTextTeaser.DefaultContent" />
+        <package id="db8c9972-d880-46ab-aebe-1bfa6c3a65d3" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.TeaserCards.DefaultContent" />
+        <package id="03ac4c69-f336-4321-bd52-a0b38db6aaf0" url="http://package.composite.net/Download.ashx?package=Orckestra.Lists.Portfolio.DefaultContent" />
+        <package id="32c46159-8f4d-4777-b5e8-b1af7780525f" url="http://package.composite.net/Download.ashx?package=Orckestra.Lists.Tabs.DefaultContent" />
+        <package id="3602f7a4-55bb-4173-b44c-f17e68ce1bf0" url="http://package.composite.net/Download.ashx?package=Orckestra.Search.SimplePageSearch.DefaultContent" />
+        <package id="86dd94cb-086d-41d9-9b8b-650db7e9e6b6" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Html.LinkButton.DefaultContent" />
+      </packages>
+    </radio>
+    <radio label="Open Cph - Razor" key="11" desc="Build on ASP.NET Razor, Bootstrap and LESS CSS.">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.LanguageSwitcher.Razor" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.Distributed.Razor" />
+        <package id="4956d27e-3b71-40a8-9f4f-f72a8caa1dfe" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.Sitemap.Razor" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Css.Less" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.BundlingAndMinification" />
+        <package id="47c974eb-acee-42b1-9e5c-a292644dd4a6" url="http://package.composite.net/Download.ashx?package=Composite.Media.BootstrapCarousel.Razor" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="http://package.composite.net/Download.ashx?package=Composite.Web.Config.Html5MimeTypes" />
+        <package id="e9233fb0-75c3-47f5-9b91-97d4b632826e" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.SampleImages" />
+        <package id="8c8bcde7-bef0-4be3-87c8-ff42165d33d7" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Bootstrap.Templates.Razor" />
+        <package id="0f8684e9-fcf9-4053-a67d-669180fc0f07" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Bootstrap.Core" />
+        <package id="26489170-b5e4-4da0-ac98-c9e0835ea214" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Bootstrap.Content" />
+      </packages>
+    </radio>
+    <radio label="Open Cph - Master Pages" key="12" desc="Build on ASP.NET Master Pages, Bootstrap and LESS CSS. ">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.LanguageSwitcher.Razor" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.Distributed.Razor" />
+        <package id="4956d27e-3b71-40a8-9f4f-f72a8caa1dfe" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.Sitemap.Razor" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Css.Less" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.BundlingAndMinification" />
+        <package id="47c974eb-acee-42b1-9e5c-a292644dd4a6" url="http://package.composite.net/Download.ashx?package=Composite.Media.BootstrapCarousel.Razor" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="http://package.composite.net/Download.ashx?package=Composite.Web.Config.Html5MimeTypes" />
+        <package id="e9233fb0-75c3-47f5-9b91-97d4b632826e" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.SampleImages" />
+        <package id="97d66bdb-56ce-4d81-a945-8e6c77ed1dd2" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Bootstrap.Templates.MasterPages" />
+        <package id="0f8684e9-fcf9-4053-a67d-669180fc0f07" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Bootstrap.Core" />
+        <package id="26489170-b5e4-4da0-ac98-c9e0835ea214" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Bootstrap.Content" />
+      </packages>
+    </radio>
+  </radio>
+  <radio label="Templates only" key="2" desc="A set of minimalistic templates for starting a new site. Mobile friendly CSS and a design that is easy to skin.">
+    <radio label="Tiny Cph - Razor" key="21" desc="Build on ASP.NET Razor, Bootstrap and LESS CSS.">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.LanguageSwitcher.Razor" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.Distributed.Razor" />
+        <package id="4956d27e-3b71-40a8-9f4f-f72a8caa1dfe" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.Sitemap.Razor" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Css.Less" />
+        <package id="83472ca2-e38e-44f3-9d10-8194b23fdee8" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.BundlingAndMinification" />
+        <package id="47c974eb-acee-42b1-9e5c-a292644dd4a6" url="http://package.composite.net/Download.ashx?package=Composite.Media.BootstrapCarousel.Razor" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="http://package.composite.net/Download.ashx?package=Composite.Web.Config.Html5MimeTypes" />
+        <package id="8c8bcde7-bef0-4be3-87c8-ff42165d33d7" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Bootstrap.Templates.Razor" />
+        <package id="0f8684e9-fcf9-4053-a67d-669180fc0f07" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Bootstrap.Core" />
+      </packages>
+    </radio>
+    <radio label="Tiny Cph - Master Pages" key="22" desc="Build on ASP.NET Master Pages, Bootstrap and LESS CSS. ">
+      <packages>
+        <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+        <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+        <package id="e899e5e7-bbeb-40bd-b236-b77102718772" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.LanguageSwitcher.Razor" />
+        <package id="8b5441b9-4622-4392-a413-5a8f79c17032" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.Distributed.Razor" />
+        <package id="4956d27e-3b71-40a8-9f4f-f72a8caa1dfe" url="http://package.composite.net/Download.ashx?package=Composite.Navigation.Sitemap.Razor" />
+        <package id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" url="http://package.composite.net/Download.ashx?package=Orckestra.Web.Css.Less" />
+        <package id="47c974eb-acee-42b1-9e5c-a292644dd4a6" url="http://package.composite.net/Download.ashx?package=Composite.Media.BootstrapCarousel.Razor" />
+        <package id="00a9f643-684c-4fec-ae45-2d9d9547d747" url="http://package.composite.net/Download.ashx?package=Composite.Web.Config.Html5MimeTypes" />
+        <package id="97d66bdb-56ce-4d81-a945-8e6c77ed1dd2" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Bootstrap.Templates.MasterPages" />
+        <package id="0f8684e9-fcf9-4053-a67d-669180fc0f07" url="http://package.composite.net/Download.ashx?package=Orckestra.StarterSite.Bootstrap.Core" />
+      </packages>
+    </radio>
+  </radio>
+  <radio label="Bare bones" key="3" desc="Minimal setup. For experts and uploading your own custom website packages.">
+    <packages>
+      <package id="01292282-3CB3-4d87-851F-DA49EF547F8A" url="http://package.composite.net/Setup/Downloads/3.x/BaseConfiguration.zip" />
+      <package id="9B6B0EA9-1F21-4692-AFF8-BC9DD33CABEC" url="http://package.composite.net/Setup/Downloads/3.x/UserGroupsBaseConfiguration.zip" />
+    </packages>
+  </radio>
+</setup>

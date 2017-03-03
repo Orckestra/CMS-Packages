@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -27,6 +27,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -94,6 +95,7 @@
     <Content Include="Package\App_Data\Composite\LanguagePacks\da-DK\Composite.Plugins.VisualFunction.da-DK.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\da-DK\Composite.Plugins.WebsiteFileElementProvider.da-DK.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\da-DK\Composite.Plugins.XsltBasedFunction.da-DK.xml" />
+    <Content Include="Package\App_Data\Composite\LanguagePacks\da-DK\Composite.Search.da-dk.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\da-DK\Composite.Web.FormControl.FunctionCallsDesigner.da-DK.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\da-DK\Composite.Web.FormControl.FunctionParameterDesigner.da-DK.xml" />
     <Content Include="Package\App_Data\Composite\LanguagePacks\da-DK\Composite.Web.FormControl.TypeFieldDesigner.da-DK.xml" />

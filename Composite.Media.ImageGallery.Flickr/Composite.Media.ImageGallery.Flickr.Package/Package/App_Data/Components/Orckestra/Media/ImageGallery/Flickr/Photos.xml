@@ -1,0 +1,16 @@
+﻿<html
+		pal:title="Flickr Photos"
+		pal:description="Displays the photos from a specific account or photo set."
+		pal:tags="media,image galleries"
+		pal:icon="image"
+		pal:container-anti-classes="aside"
+		pal:container-classes=""
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:pal="http://www.composite.net/ns/components/1.0">
+	<head>
+	</head>
+	<body>
+		<f:function name="Composite.Media.ImageGallery.Flickr.Photos" xmlns:f="http://www.composite.net/ns/function/1.0">
+		</f:function>
+	</body>
+</html>

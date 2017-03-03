@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="4.1.5058.34326" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Media.Vimeo" groupName="Orckestra.Media" version="1.0.4" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="http://docs.c1.orckestra.com/Orckestra.Media.Vimeo" id="b61446c4-cdd5-45c5-8d34-016fd6c74f31" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>To look nice and be responsive the Bootstrap 3.3.0+ should be used on the site.</TechnicalDetails>
+		<Description>Plays a Vimeo video on your page using the specified URL.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Media/Vimeo.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Media/Vimeo.cshtml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Components/Orckestra/Media/Vimeo.xml" targetFilename="~\App_Data/Components/Orckestra/Media/Vimeo.xml" allowOverwrite="false" />
+			</Files>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

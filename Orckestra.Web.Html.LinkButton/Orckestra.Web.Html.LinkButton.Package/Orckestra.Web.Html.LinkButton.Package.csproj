@@ -62,6 +62,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\App_Data\Components\Orckestra\Web\Html\LinkButton.xml" />
     <Content Include="Package\Frontend\Orckestra\Web\Html\LinkButton\SizeOptions.xml" />
     <Content Include="Package\Frontend\Orckestra\Web\Html\LinkButton\StyleOptions.xml" />
     <Content Include="Package\Frontend\Orckestra\Web\Html\LinkButton\styles.css" />

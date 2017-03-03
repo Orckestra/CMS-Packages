@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Web.Html.Grid.Columns" groupName="Orckestra.Web" version="1.0.3" author="Orckestra" website="https://cms.orckestra.com" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Web.Html.Grid.Columns" id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Orckestra.Web.Html.Grid.Columns" groupName="Orckestra.Web" version="1.0.5" author="Orckestra A/S" website="https://c1.orckestra.com" readMoreUrl="http://docs.c1.orckestra.com/Orckestra.Web.Html.Grid.Columns" id="38fefd63-5db7-41aa-b0cd-2bdf13452aea" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
 		<TechnicalDetails>Requires Bootstrap installed on the website.</TechnicalDetails>
 		<Description>Displays content on a page in columns with different layout options.</Description>
 	</mi:PackageInformation>
@@ -10,6 +10,7 @@
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
 				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/Grid/Columns.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/Grid/Columns.cshtml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Components/Orckestra/Web/Html/Grid/Columns.xml" targetFilename="~\App_Data/Components/Orckestra/Web/Html/Grid/Columns.xml" allowOverwrite="false" />
 			</Files>
 		</mi:Add>
 	</mi:PackageFragmentInstallers>

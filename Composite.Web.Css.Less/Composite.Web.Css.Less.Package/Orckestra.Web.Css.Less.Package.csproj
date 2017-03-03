@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F210C9A4-5DC5-4313-BCE7-769BCAE94D1C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Orckestra.Web.Css.Less</RootNamespace>
+    <AssemblyName>Orckestra.Web.Css.Less.Package</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Package\Frontend\Orckestra\Web\Css\Less\lessc.cmd" />
+    <None Include="Package\Frontend\Orckestra\Web\Css\Less\less\lessc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\Bin\Composite.Web.BundlingAndMinification.Api.dll" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\browser.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\colors.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\env.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\extend-visitor.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\functions.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\import-visitor.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\index.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\join-selector-visitor.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\lessc_helper.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\parser.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\rhino.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\alpha.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\anonymous.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\assignment.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\call.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\color.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\comment.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\condition.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\dimension.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\directive.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\element.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\expression.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\extend.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\import.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\javascript.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\keyword.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\media.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\mixin.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\negative.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\operation.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\paren.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\quoted.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\ratio.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\rule.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\ruleset.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\selector.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\unicode-descriptor.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\url.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\value.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\tree\variable.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\visitor.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Css\Less\node.exe" />
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Package\Web.config\Install.xsl" />
+    <Content Include="Package\Web.config\Uninstall.xsl" />
+    <Content Include="_PackageCreator\Orckestra.Web.Css.Less.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Composite.Web.Css.Less\Orckestra.Web.Css.Less.csproj">
+      <Project>{63a67c65-43da-4517-8c00-aae5b0787e2e}</Project>
+      <Name>Orckestra.Web.Css.Less</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)Package" "$(TargetDir)_Package"  /MIR
+
+COPY "$(TargetDir)*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)packages\7-Zip.CommandLine.9.20.0\tools\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Media.ImageGallery.Flickr" groupName="Composite.Media" version="1.0.7" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Media.ImageGallery.Flickr" id="6e3014de-5f75-4260-971a-c2a49ea325d5" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
+	<mi:PackageInformation name="Orckestra.Media.ImageGallery.Flickr" groupName="Orckestra.Media" version="1.0.8" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="http://docs.c1.orckestra.com/Orckestra.Media.ImageGallery.Flickr" id="6e3014de-5f75-4260-971a-c2a49ea325d5" canBeUninstalled="true" systemLocking="none" flushOnCompletion="false">
 		<TechnicalDetails>To show a full-size image from a Flickr album in a light box on your website, we recommend that you install Composite.Media.ImageGallery.Slimbox2.</TechnicalDetails>
 		<Description>Displays photos from Flickr's photostreams, favorites, photo sets on your website.</Description>
 	</mi:PackageInformation>
@@ -17,6 +17,7 @@
 			</Files>
 			<Directories>
 				<Directory sourceDirectory="~\Frontend\Composite\Media\ImageGallery\Flickr\" targetDirectory="~\Frontend\Composite\Media\ImageGallery\Flickr\" allowOverwrite="true" deleteTargetDirectory="false" />
+				<Directory sourceDirectory="~\App_Data\Components\Orckestra\Media\ImageGallery\Flickr\" targetDirectory="~\App_Data\Components\Orckestra\Media\ImageGallery\Flickr\" allowOverwrite="true" deleteTargetDirectory="false" />
 			</Directories>
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite">

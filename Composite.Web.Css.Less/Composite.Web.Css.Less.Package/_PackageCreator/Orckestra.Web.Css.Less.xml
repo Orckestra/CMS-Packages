@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="Frontend\Composite\Web\Css\Less\" />
+	</pc:Directories>
+	<pc:Files>
+		<Add name="Bin\Orckestra.Web.Css.Less.dll" />
+	</pc:Files>
+	<pc:Web.config>
+		<Add name="/configuration/system.webServer/modules/add[@name='LessHttpModule']" />
+		<Add name="/configuration/system.web/httpModules/add[@name='LessHttpModule']" />
+	</pc:Web.config>
+	<mi:PackageRequirements minimumCompositeVersion="4.2.5168.19000" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Css.Less" groupName="Orckestra.Web" version="1.2.5" author="Composite A/S" website="http://www.composite.net" readMoreUrl="http://docs.composite.net/Composite.Web.Css.Less" id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<TechnicalDetails>Based on {less} version 1.4.2</TechnicalDetails>
+		<Description>Allows you to create and use dynamic CSS's  by integrating .less support on your C1 website (http://lesscss.org/)</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

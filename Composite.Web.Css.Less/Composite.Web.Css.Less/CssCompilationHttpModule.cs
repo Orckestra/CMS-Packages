@@ -6,7 +6,7 @@ using Composite.C1Console.Security;
 using Composite.Core;
 using Composite.Core.Collections.Generic;
 
-namespace Composite.Web.Css.Less
+namespace Orckestra.Web.Css.Less
 {
     public class CssCompilationHttpModule : IHttpModule
     {

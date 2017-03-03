@@ -1,0 +1,23 @@
+﻿@inherits RazorFunction
+
+@functions {
+
+     public override string FunctionDescription
+    {
+        get { return "Displays a gallery of images on a page using Slimbox 2."; }
+    }
+
+    [FunctionParameter(Label = "Media folder", Help = "A folder with images in the Media Archive to display as a gallery (not set by default). Do not use when the Media Image is set.")]
+    public NullableDataReference<IMediaFileFolder> MediaFolder { get; set; }
+
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+    </head>
+    <body>
+		<f:function name="Orckestra.Media.ImageGallery.Slimbox2" xmlns:f="http://www.composite.net/ns/function/1.0">
+			<f:param name="MediaFolder" value="@MediaFolder" />
+		</f:function>
+    </body>
+</html>

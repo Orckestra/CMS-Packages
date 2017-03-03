@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Composite.Web.Css.Less
+namespace Orckestra.Web.Css.Less
 {
     internal class CssCompileException : Exception
     {

@@ -39,6 +39,7 @@ namespace Composite.Web.Css.Sass
                 InputPath = sassFilePath,
                 OutputStyle = SassOutputStyle.Compact,
                 IncludeSourceComments = false,
+                IncludeSourceMapContents = true
             });
 
 
@@ -47,7 +48,7 @@ namespace Composite.Web.Css.Sass
 
             if (result.ErrorStatus != 0)
             {
-                throw new InvalidOperationException("Compiling sass caused a scripting host error. " +
+                throw new CssCompileException("Compiling sass caused a scripting host error. " +
                     string.Format("Error status: {0}. File: {1}. Line: {2}. Column: {3}. Message: {4}", result.ErrorStatus, result.ErrorFile, result.ErrorLine, result.ErrorColumn, result.ErrorMessage));
             }
 

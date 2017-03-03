@@ -133,14 +133,14 @@
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>ROBOCOPY "$(ProjectDir)Package" "$(TargetDir)_Package"  /MIR
-
+MKDIR "$(TargetDir)_Package\Bin\"
 COPY "$(TargetDir)*.dll" "$(TargetDir)_Package\Bin\"
 DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
 
 DEL "$(TargetDir)$(SolutionName).zip"
 
 "$(SolutionDir)packages\7-Zip.CommandLine.9.20.0\tools\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
-
+MKDIR "$(ProjectDir)Release\"
 COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"
 </PostBuildEvent>
   </PropertyGroup>

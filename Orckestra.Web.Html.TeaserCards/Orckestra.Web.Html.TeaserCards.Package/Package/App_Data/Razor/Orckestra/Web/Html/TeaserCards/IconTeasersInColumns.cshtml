@@ -1,0 +1,91 @@
+﻿@inherits RazorFunction
+
+@functions {
+
+	public override string FunctionDescription
+	{
+		get { return "Produce 3 Icon Teasers in columns"; }
+	}
+
+	private const string iconWidget = @"
+<f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.FontIconSelector' >
+<f:param name='ClassNameOptions' >
+    <f:function name='Orckestra.Web.Html.FontAwesome.GetIconNames' />
+</f:param>
+<f:param name='StylesheetPath' value='~/Frontend/Orckestra/Web/Html/FontAwesome/css/font-awesome.css' />
+<f:param name='ClassNamePrefix' value='fa fa-' />
+	</f:widgetfunction>";
+
+	[FunctionParameter(Label = "Column 1 Icon", WidgetMarkup = iconWidget, DefaultValue = "comment")]
+	public string Col1Icon { get; set; }
+
+	[FunctionParameter(Label = "Column 1 Title", DefaultValue = "Column 1")]
+	public string Col1Title { get; set; }
+
+	[FunctionParameter(Label = "Column 2 Icon", WidgetMarkup = iconWidget, DefaultValue = "comment")]
+	public string Col2Icon { get; set; }
+
+	[FunctionParameter(Label = "Column 2 Title", DefaultValue = "Column 2")]
+	public string Col2Title { get; set; }
+
+	[FunctionParameter(Label = "Column 3 Icon", WidgetMarkup = iconWidget, DefaultValue = "comment")]
+	public string Col3Icon { get; set; }
+
+	[FunctionParameter(Label = "Column 3 Title", DefaultValue = "Column 3")]
+	public string Col3Title { get; set; }
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+<div>
+	<f:function name="Orckestra.Web.Html.Grid.Columns" xmlns:f="http://www.composite.net/ns/function/1.0" xmlns="http://www.w3.org/1999/xhtml">
+		<f:param name="Column1">
+			<html>
+			<head>
+			</head>
+			<body>
+			<f:function name="Orckestra.Web.Html.TeaserCards.IconTeaser" xmlns:f="http://www.composite.net/ns/function/1.0">
+				<f:param name="Icon" value="@Col1Icon"/>
+				<f:param name="Title" value="@Col1Title"/>
+			</f:function>
+			</body>
+			</html>
+		</f:param>
+		<f:param name="Column2">
+			<html>
+			<head>
+			</head>
+			<body>
+			<f:function name="Orckestra.Web.Html.TeaserCards.IconTeaser" xmlns:f="http://www.composite.net/ns/function/1.0">
+				<f:param name="Icon" value="@Col2Icon"/>
+				<f:param name="Title" value="@Col2Title"/>
+			</f:function>
+			</body>
+			</html>
+		</f:param>
+		<f:param name="Column3">
+			<html>
+			<head>
+			</head>
+			<body>
+			<f:function name="Orckestra.Web.Html.TeaserCards.IconTeaser" xmlns:f="http://www.composite.net/ns/function/1.0">
+				<f:param name="Icon" value="@Col3Icon"/>
+				<f:param name="Title" value="@Col3Title"/>
+			</f:function>
+			</body>
+			</html>
+		</f:param>
+		<f:param name="Column4">
+			<html>
+			<head>
+			</head>
+			<body>
+			</body>
+			</html>
+		</f:param>
+	</f:function>
+</div>
+</body>
+</html>

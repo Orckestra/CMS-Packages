@@ -1,0 +1,85 @@
+﻿@inherits RazorFunction
+
+@functions {
+
+	public override string FunctionDescription
+	{
+		get { return "Produce 3 Image Teasers in columns"; }
+	}
+
+	[FunctionParameter(Label = "Column 1 Image")]
+	public DataReference<IImageFile> Col1Image { get; set; }
+
+
+	[FunctionParameter(Label = "Column 1 Title", DefaultValue = "Column 1")]
+	public string Col1Title { get; set; }
+
+	[FunctionParameter(Label = "Column 2 Image")]
+	public DataReference<IImageFile> Col2Image { get; set; }
+
+
+	[FunctionParameter(Label = "Column 2 Title", DefaultValue = "Column 2")]
+	public string Col2Title { get; set; }
+
+	[FunctionParameter(Label = "Column 3 Image")]
+	public DataReference<IImageFile> Col3Image { get; set; }
+
+
+	[FunctionParameter(Label = "Column 3 Title", DefaultValue = "Column 3")]
+	public string Col3Title { get; set; }
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+	<div>
+		<f:function name="Orckestra.Web.Html.Grid.Columns" xmlns:f="http://www.composite.net/ns/function/1.0" xmlns="http://www.w3.org/1999/xhtml">
+			<f:param name="Column1">
+				<html>
+				<head>
+				</head>
+				<body>
+					<f:function name="Orckestra.Web.Html.TeaserCards.ImageTeaser" xmlns:f="http://www.composite.net/ns/function/1.0">
+						<f:param name="Image" value="@Col1Image" />
+						<f:param name="Title" value="@Col1Title" />
+					</f:function>
+				</body>
+			</html>
+		</f:param>
+		<f:param name="Column2">
+			<html>
+			<head>
+			</head>
+			<body>
+				<f:function name="Orckestra.Web.Html.TeaserCards.ImageTeaser" xmlns:f="http://www.composite.net/ns/function/1.0">
+					<f:param name="Image" value="@Col2Image" />
+					<f:param name="Title" value="@Col2Title" />
+				</f:function>
+			</body>
+		</html>
+	</f:param>
+	<f:param name="Column3">
+		<html>
+		<head>
+		</head>
+		<body>
+			<f:function name="Orckestra.Web.Html.TeaserCards.ImageTeaser" xmlns:f="http://www.composite.net/ns/function/1.0">
+				<f:param name="Image" value="@Col3Image" />
+				<f:param name="Title" value="@Col3Title" />
+			</f:function>
+		</body>
+	</html>
+</f:param>
+<f:param name="Column4">
+	<html>
+	<head>
+	</head>
+	<body>
+	</body>
+</html>
+</f:param>
+</f:function>
+</div>
+</body>
+</html>

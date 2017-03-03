@@ -1,0 +1,16 @@
+﻿<html
+		pal:title="Country-specific content"
+		pal:description="Shows country-specific content."
+		pal:tags="page blocks"
+		pal:icon="earth"
+		pal:container-anti-classes=""
+		pal:container-classes=""
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:pal="http://www.composite.net/ns/components/1.0">
+	<head>
+	</head>
+	<body>
+		<f:function name="Composite.Web.Html.CountrySpecificContent" xmlns:f="http://www.composite.net/ns/function/1.0">
+		</f:function>
+	</body>
+</html>

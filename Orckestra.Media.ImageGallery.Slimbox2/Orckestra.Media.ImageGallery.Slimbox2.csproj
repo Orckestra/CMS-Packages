@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{314385B9-137E-4889-8DB2-10B77FFA28CB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Composite.Media.ImageGallery.Slimbox2</RootNamespace>
+    <AssemblyName>Composite.Media.ImageGallery.Slimbox2</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Components\Orckestra\Media\ImageGallery\Slimbox2\Slimbox2Gallery.xml" />
+    <Content Include="Package\App_Data\Components\Orckestra\Media\ImageGallery\Slimbox2\Slimbox2Image.xml" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\components\gallery.png" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\components\image.png" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css\closelabel.gif" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css\loading.gif" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css\nextlabel.gif" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css\prevlabel.gif" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css\slimbox2-rtl.css" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\css\slimbox2.css" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\example.html" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\example.jpg" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\extra\autoactivation.js" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\extra\fix-urls.js" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\extra\flickr.js" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\extra\picasaweb.js" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\js\slimbox2.js" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\README.txt" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\src\autoload.js" />
+    <Content Include="Package\Frontend\Orckestra\Media\ImageGallery\Slimbox-2\src\slimbox2.js" />
+    <Content Include="Package\install.xml" />
+    <Content Include="_PackageCreator\Orckestra.Media.ImageGallery.Slimbox2.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\Renderers\ShowMedia.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Orckestra\Media\ImageGallery\Slimbox2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Orckestra\Media\ImageGallery\Slimbox2\Gallery.cshtml" />
+    <Content Include="Package\App_Data\Razor\Orckestra\Media\ImageGallery\Slimbox2\Image.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54479</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)Package" "$(TargetDir)_Package"  /MIR
+
+COPY "$(TargetDir)*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)packages\7-Zip.CommandLine.9.20.0\tools\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

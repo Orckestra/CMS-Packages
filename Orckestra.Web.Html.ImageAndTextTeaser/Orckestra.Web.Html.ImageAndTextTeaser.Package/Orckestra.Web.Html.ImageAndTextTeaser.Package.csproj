@@ -62,6 +62,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\App_Data\Components\Orckestra\Web\Html\ImageAndTextTeaser.xml" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\ImageAndTextTeaser\imageandtextteaser.png" />
     <Content Include="Package\Frontend\Orckestra\Web\Html\ImageAndTextTeaser\styles.css" />
     <Content Include="_PackageCreator\Orckestra.Web.Html.ImageAndTextTeaser.xml" />
   </ItemGroup>

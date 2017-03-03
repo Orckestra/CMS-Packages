@@ -62,6 +62,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\App_Data\Components\Orckestra\Web\Html\TeaserCards\ColumnsWithIconTeasers.xml" />
+    <Content Include="Package\App_Data\Components\Orckestra\Web\Html\TeaserCards\ColumnsWithImageTeasers.xml" />
+    <Content Include="Package\App_Data\Components\Orckestra\Web\Html\TeaserCards\IconTeaser.xml" />
+    <Content Include="Package\App_Data\Components\Orckestra\Web\Html\TeaserCards\ImageTeaser.xml" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\columnswithiconteasers.png" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\columnswithimageteasers.png" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\iconteaser.png" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\imageteaser.png" />
     <Content Include="_PackageCreator\Orckestra.Web.Html.TeaserCards.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +96,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\Frontend\Orckestra\Web\Html\TeaserCards\styles.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Orckestra\Web\Html\TeaserCards\IconTeasersInColumns.cshtml" />
+    <Content Include="Package\App_Data\Razor\Orckestra\Web\Html\TeaserCards\ImageTeasersInColumns.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
