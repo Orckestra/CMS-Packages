@@ -1,0 +1,43 @@
+﻿<DataTypeDescriptor dataTypeId="60693bea-2993-4a84-9277-d65ced862ba1" name="Authors" namespace="Composite.Community.Blog" title="BlogAuthors" hasCustomPhysicalSortOrder="false" isCodeGenerated="true" cachable="false" labelFieldName="Name" typeManagerTypeName="Composite.Community.Blog.Authors">
+  <DataAssociations />
+  <DataScopes>
+    <DataScopeIdentifier name="public" />
+  </DataScopes>
+  <KeyPropertyNames>
+    <KeyPropertyName name="Id" />
+  </KeyPropertyNames>
+  <SuperInterfaces>
+    <SuperInterface type="Composite.Data.ProcessControlled.ILocalizedControlled,Composite" />
+    <SuperInterface type="Composite.Data.ProcessControlled.IProcessControlled,Composite" />
+  </SuperInterfaces>
+  <Fields>
+    <DataFieldDescriptor id="4022792f-7d94-450c-b8a0-cfc9b5c9e6af" name="Id" isNullable="false" position="-1" groupByPriority="0" inherited="false" instanceType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Guid'" isReadOnly="false">
+      <FormRenderingProfile />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="36d6ddc3-3416-4099-93b0-dc75a5223c62" name="Name" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='128'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile label="Name" helpText="The name of the blog's author. Also used as the username to post to the blog from external applications  (Windows Live Writer etc) via MetaWebBlog" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; label=&quot;&quot; bindingsourcename=&quot;&quot;&gt;&lt;f:helpdefinition xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; helptext=&quot;&quot; /&gt;&lt;/f:widgetfunction&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="e2fc2329-2814-4400-85d8-43253f62f3d8" name="Email" isNullable="true" position="1" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='128'" isReadOnly="false">
+      <FormRenderingProfile label="Email" helpText="The author’s email address." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; label=&quot;&quot; bindingsourcename=&quot;&quot;&gt;&lt;f:helpdefinition xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; helptext=&quot;&quot; /&gt;&lt;/f:widgetfunction&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="9c4992a8-60c1-4269-bc8a-b3d1bb583b83" name="Picture" isNullable="true" position="2" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='512'" isReadOnly="false" defaultValue="ValueType='Guid'Value='00000000-0000-0000-0000-000000000000'" foreignKeyReferenceTypeName="Composite.Data.Types.IImageFile,Composite">
+      <FormRenderingProfile label="Picture" helpText="The photo or image (avatar) to graphically represent the blog’s author." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.ImageSelector&quot; label=&quot;&quot; bindingsourcename=&quot;&quot;&gt;&lt;f:helpdefinition xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; helptext=&quot;&quot; /&gt;&lt;f:param name=&quot;Required&quot; value=&quot;False&quot; /&gt;&lt;/f:widgetfunction&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="63d415dd-105b-425a-ade8-1e2562062903" name="DisplayEmail" isNullable="false" position="3" groupByPriority="0" inherited="false" instanceType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Boolean'" isReadOnly="false" newInstanceDefaultFieldValue="&lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Constant.Boolean&quot;&gt;&lt;f:param name=&quot;Constant&quot; value=&quot;True&quot; /&gt;&lt;/f:function&gt;" defaultValue="ValueType='Boolean'Value='False'">
+      <FormRenderingProfile label="Display Email" helpText="Display the author's email address." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.Bool.CheckBox&quot; label=&quot;&quot; bindingsourcename=&quot;&quot;&gt;&lt;f:helpdefinition xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; helptext=&quot;&quot; /&gt;&lt;/f:widgetfunction&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="eef698d2-c78d-48db-9c44-9ebaecc71f7f" name="Password" isNullable="true" position="4" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Password" helpText="The password used by the author to post to the blog from external applications  (Windows Live Writer etc) via MetaWebBlog. External posting is impossible when the password is blank." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; label=&quot;&quot; bindingsourcename=&quot;&quot;&gt;&lt;f:helpdefinition xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; helptext=&quot;&quot; /&gt;&lt;/f:widgetfunction&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="0456ebb0-7fb1-46cd-9a23-4ae9aa3337fa" name="SourceCultureName" isNullable="false" position="1000" groupByPriority="0" inherited="true" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='16'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+  </Fields>
+</DataTypeDescriptor>

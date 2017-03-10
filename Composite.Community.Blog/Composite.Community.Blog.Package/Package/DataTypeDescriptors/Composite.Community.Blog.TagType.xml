@@ -1,0 +1,28 @@
+﻿<DataTypeDescriptor dataTypeId="e156b1c2-de05-46df-82d7-2507efb69d3d" name="TagType" namespace="Composite.Community.Blog" title="Blog Tag Types" hasCustomPhysicalSortOrder="false" isCodeGenerated="true" cachable="true" labelFieldName="Name" typeManagerTypeName="Composite.Community.Blog.TagType">
+  <DataAssociations />
+  <DataScopes>
+    <DataScopeIdentifier name="public" />
+  </DataScopes>
+  <KeyPropertyNames>
+    <KeyPropertyName name="Id" />
+  </KeyPropertyNames>
+  <SuperInterfaces>
+    <SuperInterface type="Composite.Data.ProcessControlled.ILocalizedControlled,Composite" />
+    <SuperInterface type="Composite.Data.ProcessControlled.IProcessControlled,Composite" />
+  </SuperInterfaces>
+  <Fields>
+    <DataFieldDescriptor id="d59bf46c-3954-4373-81c3-8c068ea69776" name="Id" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Guid'" isReadOnly="false">
+      <FormRenderingProfile label="Id" />
+      <DataUrlProfile Order="0" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="c6f449ad-1e89-448a-b7a7-b3e4579d14e8" name="Name" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile label="Name" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="0456ebb0-7fb1-46cd-9a23-4ae9aa3337fa" name="SourceCultureName" isNullable="false" position="1000" groupByPriority="0" inherited="true" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='16'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+  </Fields>
+</DataTypeDescriptor>
