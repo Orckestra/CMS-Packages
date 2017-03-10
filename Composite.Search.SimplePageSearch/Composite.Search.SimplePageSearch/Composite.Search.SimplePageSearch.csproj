@@ -9,12 +9,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Composite.Search.SimplePageSearch</RootNamespace>
     <AssemblyName>Composite.Search.SimplePageSearch</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,8 +36,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Composite">
-      <HintPath>..\..\References\Composite\5.0\Composite.dll</HintPath>
+    <Reference Include="Composite, Version=6.0.6248.33161, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\C1CMS.Assemblies.6.0.6248.33161\lib\net461\Composite.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -49,9 +51,15 @@
   <ItemGroup>
     <Compile Include="ExpressionExtensions.cs" />
     <Compile Include="ISearchResultEntry.cs" />
-    <Compile Include="SearchFacade.cs" />
+    <Compile Include="Properties\VersionInfo.cs" />
+    <Compile Include="SimpleSearchFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleSearchQuery.cs" />
+    <Compile Include="SimpleSearchResult.cs" />
     <Compile Include="StaticReflection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -61,4 +69,15 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="BeforeBuild">
+    <PropertyGroup>
+      <InstallXml>$([System.IO.File]::ReadAllText("$(SolutionDir)/$(SolutionName).Package/Package/install.xml"))</InstallXml>
+      <PackageVersion>$([System.Text.RegularExpressions.Regex]::Match($(InstallXml),"PackageInformation[^&gt;]+version=.([0-9\.]+).").Groups[1].Value)</PackageVersion>
+      <AssemblyFileVersionAttribute>[assembly:System.Reflection.AssemblyVersion("$(PackageVersion)")]
+[assembly:System.Reflection.AssemblyFileVersion("$(PackageVersion)")]
+			</AssemblyFileVersionAttribute>
+    </PropertyGroup>
+    <WriteLinesToFile File="Properties\VersionInfo.cs" Lines="$(AssemblyFileVersionAttribute)" Overwrite="true">
+    </WriteLinesToFile>
+  </Target>
 </Project>
