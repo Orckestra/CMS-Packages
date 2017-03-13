@@ -24,10 +24,17 @@ public class Setup : System.Web.Services.WebService
     [WebMethod]
     public XmlDocument GetSetupDescription(string version, string installationId)
     {
+	    var ver = Version.Parse(version);
+        Guid instId = Guid.Parse(installationId);
+
         string filepath = Server.MapPath("../App_Data/Setup/SetupDescription.xml");
 
-        XmlDocument doc = new XmlDocument();
-        doc.Load(filepath);
+	    var xml = File.ReadAllText(filepath)
+                      .Replace("$(version)", ver.ToString())
+                      .Replace("$(installationId)", instId.ToString());
+
+        var doc = new XmlDocument();
+        doc.LoadXml(xml);
 
         return doc;
     }
