@@ -4,15 +4,22 @@
 	<string key="ChangeOwnPasswordWorkflow.ElementActionLabel" value="Skift adgangskode ..." />
 	<string key="ChangeOwnPasswordWorkflow.ElementActionToolTip" value="Skift din adgangskode" />
 	<string key="ChangeOwnPasswordWorkflow.Dialog.Label" value="Skift adgangskode" />
-	<string key="ChangeOwnPasswordWorkflow.Dialog.FieldGroup.Label" value="Skift din adgangskode" />
 	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Label" value="Eksisterende adgangskode" />
 	<string key="ChangeOwnPasswordWorkflow.Dialog.ExistingPassword.Help" value="Af sikkerhedsm&#230;ssige &#229;rsager skal du indtaste din eksisterende adgangskode, f&#248;r du kan forts&#230;tte." />
 	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Label" value="Ny adgangskode" />
 	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPassword.Help" value="Adgangskoden angivet i dette felt, skal v&#230;re identitisk med den,  som bekr&#230;ftes nedenfor." />
 	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Label" value="Bekr&#230;ft ny adgangskode" />
 	<string key="ChangeOwnPasswordWorkflow.Dialog.NewPasswordConfirmed.Help" value="Adgangskoden angivet i dette felt skal tilsvare den, som er angivet ovenfor" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Validation.IncorrectPassword" value="Den angivne adgangskode er forkert" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Validation.NewPasswordFieldsNotMatch" value="De nye adgangskoder er ikke ens." />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Validation.PasswordsAreTheSame" value="Den gamle og den nye adgangskode er ens." />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Validation.NewPasswordIsEmpty" value="Den nye adgangskode m&#229; ikke v&#230;re tom" />
+  <string key="ChangeOwnPasswordWorkflow.Dialog.Validation.NewPasswordTooShort" value="Den nye adgangskode skal indeholde mindst {0} tegn." />
+  <string key="ChangeOwnPasswordWorkflow.NotSupportedErrorLabel" value="&#198;ndring af adgangskode er ikke underst&#248;ttet." />
+  <string key="ChangeOwnPasswordWorkflow.NotSupportedErrorText" value="&#198;ndring ad adgangskode er ikke underst&#248;ttet i den aktuelle konfiguration." />
 
-	<!-- change culture -->
+
+  <!-- change culture -->
 	<string key="ChangeOwnCultureWorkflow.ElementActionLabel" value="Regionale indstillinger ..." />
 	<string key="ChangeOwnCultureWorkflow.ElementActionToolTip" value="Indstil sprog i C1 konsol og formatering af tal, tidspunkter og datoer" />
 	<string key="ChangeOwnCultureWorkflow.Dialog.Label" value="Regionale indstillinger og sprog" />
@@ -22,7 +29,6 @@
   <string key="ChangeOwnCultureWorkflow.Dialog.C1ConsoleLanguageSelector.Help" value="V&#230;lg det sprog, som skal anvendes til betegnelser, hj&#230;lpetekster, dialoger osv. De tilg&#230;ngelige indstillinger er her begr&#230;nset til de installerede sprog. Du kan installere flere sprog via  pakkesystemet. Se Composite lokalisering." />
   <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Title" value="Skift applikationssprog" />
   <string key="ChangeOwnCultureWorkflow.Dialog.Confirm.Text" value="Er du sikker p&#229;, at du &#248;nsker at &#230;ndre indstillingerne? Applikationen genstartes, og alle de &#230;ndringer, som du ikke har gemt, vil g&#229; tabt." />
-	<string key="ChangeOwnCultureWorkflow.FieldGroup.Label" value="Regionale indstillinger" />
 	<string key="AdministratorAutoCreator.DefaultGroupName" value="Administratorer" />
 
 	<!-- change own active and foreign locale -->
@@ -36,6 +42,20 @@
 	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Label" value="Fra-sprog" />
 	<string key="ChangeForeignLocaleWorkflow.ForeignCultureSelector.Help" value="Sider skrevet p&#229; fra-sproget vil blive indikeret af klode-ikoner i indholdstr&#230;et. Den associerede &quot;overs&#230;ttelsesside&quot; handling importerer siden p&#229; d&#233;t sprog, som der aktuelt arbejdes p&#229;." />
 
-
   <string key="ChangeOwnActiveLocaleWorkflow.CloseAllViews.Message" value="Det aktive sprog er blevet &#230;ndret" />
+  
+  <string key="PasswordRules.MinimumLength" value="Adgangskoden skal indeholde mindst {0} tegn." />
+  <string key="PasswordRules.EnforcePasswordHistory" value="Adgangskoden m&#229; ikke v&#230;re den samme som de tidligere {0} anvende adgangskoder." />
+  <string key="PasswordRules.DifferentCharacterGroups" value="Adgangskoden skal indeholde 3 ud af 4 af f&#248;lgende typer af tegn: Store bogstaber, sm&#229; bogstaver, tal, symboler" />
+  <string key="PasswordRules.DoNotUseUserName" value="Adgangskoden m&#229; ikke ligne brugernavnet" />
+
+	<string key="ChangePasswordForm.ConfirmationPasswordMimatch" value="Adgangskode til bekr&#230;ftelse er ikke korrekt" />
+	<string key="ChangePasswordForm.Username" value="Brugernavn" />
+	<string key="ChangePasswordForm.OldPassword" value="Hidtidig adgangskode" />
+	<string key="ChangePasswordForm.NewPassword" value="Ny adgangskode" />
+	<string key="ChangePasswordForm.ConfirmPassword" value="Bekr&#230;ft adgangskode" />
+	<string key="ChangePasswordForm.ChangePasswordButton" value="Skift adgangskode" />
+	<string key="ChangePasswordForm.PasswordExpiredMessage" value="Din adgangskode er &#230;ldre end {0} dage. Du bedes skifte adgangskode." />
+  <string key="ChangePasswordForm.IncorrectOldPassword" value="Den hidtidige adgangskode er forkert." />
+
 </strings>
