@@ -11,9 +11,9 @@
   <string key="TreeValidationError.Common.MissingAttribute" value="Den p&#229;kr&#230;vede attribut &#39;{0}&#39; mangler" />
   <string key="TreeValidationError.Common.WrongAttributeValue" value="Attributten &#39;{0}&#39; har en v&#230;rdi, som ikke er tilladt" />  
   <string key="TreeValidationError.Common.MissingProperty" value="Typen &#39;{0}&#39; indeholder ikke en egenskab ved navn &#39;{1}&#39;" />
-  <string key="TreeValidationError.Common.UnkownInterfaceType" value="Typen &#39;{0}&#39; blev ikke fundet" />
+  <string key="TreeValidationError.Common.UnknownInterfaceType" value="Typen &#39;{0}&#39; blev ikke fundet" />
   <string key="TreeValidationError.Common.NotImplementingIData" value="Typen &#39;{0}&#39; implementerer ikke interfacet &#39;{1}&#39;" />
-  <string key="TreeValidationError.Common.WrongPermissinValue" value="V&#230;rdien &#39;{0}&#39; er ikke en tilladt adgangstypev&#230;rdi" />
+  <string key="TreeValidationError.Common.WrongPermissionValue" value="V&#230;rdien &#39;{0}&#39; er ikke tilladt som en rettighedstype v&#230;rdi" />
   <string key="TreeValidationError.Common.WrongLocationValue" value="V&#230;rdien &#39;{0}&#39; er ikke en tilladt lokationsv&#230;rdi" />
   <string key="TreeValidationError.Common.MissingFunctionMarkup" value="Manglende funktionsmarkup som underelement" />
   <string key="TreeValidationError.Common.WrongFunctionMarkup" value="Funktionen kunne ikke oprettes for den angivne funktionsmarkup" />
@@ -56,13 +56,12 @@
   <string key="TreeValidationError.FunctionFilter.WrongFunctionReturnType" value="Den af funktionen returnerede returtype er &#39;{0}&#39;, &#39;{1}&#39; var forventet" />
   <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterCount" value="Parameteropt&#230;llingen af tilkendegivelser returneret af funktionen er &#39;{0}&#39;, 1 var forventet" />
   <string key="TreeValidationError.FunctionFilter.WrongFunctionParameterType" value="Udtryksparametertypen som funktionen returnerer er &#39;{0}&#39;, &#39;{1}&#39; var forventet" />
-  
+
+	<string key="TreeValidationError.CustomFormMarkup.MissingFile" value="Filen &#39;{0}&#39; eksisterer ikke" />
+	<string key="TreeValidationError.CustomFormMarkup.BadMarkupPath" value="Den brugerdefinerede sti &#39;{0}&#39; er formateret forkert. Brug ~/Dir1/Dir2/File.xml" />
+	<string key="TreeValidationError.CustomFormMarkup.InvalidXml" value="Filen &#39;{0}&#39; indeholder ikke valid XML." />
   <string key="TreeValidationError.ReportFunctionAction.WrongReturnValue" value="Funktionen returnerer ikke v&#230;rdier med typen &#39;{0}&#39;" />
-  <string key="TreeValidationError.GenericAddDataAction.MissingMarkupFile" value="Filen &#39;{0}&#39; findes ikke" />
-  <string key="TreeValidationError.GenericAddDataAction.BadMarkupPath" value="Den brugerdefinerede markupsti &#39;{0}&#39; er forkert formateret. Brug ~ / Dir1/Dir2/File.xml" />
   <string key="TreeValidationError.GenericEditDataAction.OwnerIsNotDataNode" value="&#39;Edit data action only&#39; g&#230;lder kun for elementer, som producerer dataelementer" />
-  <string key="TreeValidationError.GenericEditDataAction.MissingMarkupFile" value="Filen &#39;{0}&#39; findes ikke" />
-  <string key="TreeValidationError.GenericEditDataAction.BadMarkupPath" value="Den brugerdefinerede markupsti &#39;{0}&#39; er forkert formateret. Brug ~ / Dir1/Dir2/File.xml" />
   <string key="TreeValidationError.GenericDeleteDataAction.OwnerIsNotDataNode" value="&#39;Delete data action only&#39; g&#230;lder kun for elementer, som  producerer dataelementer" />
   <string key="TreeValidationError.MessageBoxAction.UnknownDialogType" value="Dialogtypen &#39;{0}&#39; underst&#248;ttes ikke" />
   <string key="TreeValidationError.CustomUrlAction.TooManyPostParameterElements" value="For mange &#39;{0}&#39; elementer. Kun &#233;t er tilladt" />
@@ -96,8 +95,9 @@
   
   <!-- Other -->
   <string key="GenericAddDataAction.DefaultLabel" value="Tilf&#248;j" />
-  <string key="GenericEditDataAction.DefaultLabel" value="Redig&#233;r" />
+  <string key="GenericEditDataAction.DefaultLabel" value="Rediger" />
   <string key="GenericDeleteDataAction.DefaultLabel" value="Slet" />
+  <string key="GenericDuplicateDataAction.DefaultLabel" value="Kopier" />
   
   
   <string key="TreeGenericDelete.CascadeDeleteErrorTitle" value="Kumuleret slettefejl" />
@@ -127,7 +127,7 @@
   <string key="TreeDeleteTreeDefinition.Title" value="Slet valgte definition af tr&#230;" />
   <string key="TreeDeleteTreeDefinition.Description" value="Slet valgte definition af tr&#230;?" />
 
-  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.Label" value="Redig&#233;r" />
+  <string key="TreeDeleteTreeDefinitionWorkflow.Edit.Label" value="Rediger" />
   <string key="TreeDeleteTreeDefinitionWorkflow.Edit.ToolTip" value="Redig&#233;r definition af tr&#230;" />
 
   <string key="AddApplicationWorkflow.AddApplication.Label" value="Tilf&#248;j applikation" />

@@ -4,8 +4,6 @@
   <string key="GlobalDataFolderToolTip" value="Globale datatyper" />
   <string key="GlobalDataFolderLabel_OnlyGlobalData" value="Hjemmeside-elementer" />
   <string key="GlobalDataFolderToolTip_OnlyGlobalData" value="Hjemmeside-elementer (data)" />
-  <string key="StaticDataTypesFolderLabel" value="Statiske datatyper" />
-  <string key="StaticDataTypesFolderToolTip" value="Brugerdefinerede interfaces" />
   <string key="PageDataFolderDataFolderLabel" value="Side datamappe" />
   <string key="PageDataFolderDataFolderToolTip" value="Side datamappe" />
   <string key="PageMetaDataFolderLabel" value="Side metatyper" />
@@ -23,9 +21,9 @@
   <string key="AddMetaDataToolTip" value="Tilf&#248;j metatype" />
   <string key="Edit" value="Redig&#233;r datatype" />
   <string key="EditToolTip" value="Redig&#233;r den valgte datatype" />
-  <string key="EditDataFolderTypeLabel" value="Redig&#233;r" />
+  <string key="EditDataFolderTypeLabel" value="Rediger" />
   <string key="EditDataFolderTypeToolTip" value="Redig&#233;r valgte datafolder" />
-  <string key="EditMetaDataTypeLabel" value="Redig&#233;r" />
+  <string key="EditMetaDataTypeLabel" value="Rediger" />
   <string key="EditMetaDataTypeToolTip" value="Redig&#233;r de valgte metadata" />
   <string key="Delete" value="Slet datatype" />
   <string key="DeleteToolTip" value="Slet den valgte datatype" />
@@ -50,11 +48,21 @@
   <string key="EditDataToolTip" value="Redig&#233;r de valgte data" />
   <string key="DeleteData" value="Slet data" />
   <string key="DeleteDataToolTip" value="Slet de valgte data" />
+  <string key="DuplicateData" value="Kopier data" />
+  <string key="DuplicateDataToolTip" value="Kopier valgte data" />
   <string key="LocalizeData" value="Overs&#230;t data" />
   <string key="LocalizeDataToolTip" value="Overs&#230;t de valgte data" />
-  <string key="LabelPublicationState" value="Publiceringstilstand" />
-  <string key="DraftTransition" value="Udkast" />
-  <string key="AwaitingApprovalTransition" value="Afventer godkendelse" />
+  <string key="PublicationSettings.FieldGroupLabel" value="Publiceringsindstillinger" />
+  <string key="PublicationStatus.Label" value="Status" />
+  <string key="PublicationStatus.Help" value="Send data til en anden publiceringsstatus" />
+  <string key="PublishDate.Label" value="Publiceringsdato" />
+  <string key="PublishDate.Help" value="Angiv dato og klokkeslet for automatisk publicering" />
+  <string key="DateCreated.Label" value="Oprettelsedato" />
+  <string key="DateModified.Label" value="&#198;ndringsdato" />
+  <string key="CreatedBy.Label" value="&#198;ndret af" />
+  <string key="ChangedBy.Label" value="&#198;ndret af" />
+  <string key="UnpublishDate.Label" value="Afpubliceringsdato" />
+  <string key="UnpublishDate.Help" value="Angiv dato og klokkeslet for automatisk afpublicering" />
   <string key="AddNewInterfaceTypeStep1.DocumentTitle" value="Ny datatype" />
   <string key="AddNewCompositionTypeWorkflow.DocumentTitle" value="Ny side metatype" />
   <string key="AddNewAggregationTypeWorkflow.DocumentTitle" value="Ny side datamappe" />
@@ -69,8 +77,16 @@
   <string key="EditorCommon.LabelTitle" value="Titel" />
   <string key="EditorCommon.HelpTitle" value="Brug denne indtastning til at angive et brugervenligt navn. Dette navn bruges i de fleste UI." />
   <string key="EditorCommon.LabelFields" value="Felter" />
+  <string key="EditorCommon.KeyFieldTypeLabel" value="N&#248;glefeltets type" />
+  <string key="EditorCommon.KeyFieldTypeHelp" value="Brug standardtypen &#39;Guid&#39; for optimal ydeevne og &#39;RandomString&#39; for kortere data URL&#39;er." />
+  <string key="EditorCommon.KeyFieldType.Guid" value="Guid" />
+  <string key="EditorCommon.KeyFieldType.RandomString4" value="Tilf&#230;ldig tekststreng, 4 tegn lang" />
+  <string key="EditorCommon.KeyFieldType.RandomString8" value="Tilf&#230;ldig tekststreng, 8 tegn lang" />
   <string key="EditorCommon.ServicesLabel" value="Tjenester" />
+  <string key="EditorCommon.InternalUrlPrefixLabel" value="Kort URL-navn" />
+  <string key="EditorCommon.InternalUrlPrefixHelp" value="Hvis den angives, kan man referere datatypen poster via linkfunktionen i indholdsomr&#229;der. De interne links vil f&#229; formatet &#39;~/{ShortURLName}({id})&#39;, fx. &#39;~/produkt(aIkH34F)" />
   <string key="EditorCommon.HasCaching" value="Har caching" />
+	<string key="EditorCommon.IsSearchable" value="Er s&#248;gbar" />
   <string key="EditorCommon.HasPublishing" value="Har publiceringsarbejdsgang" />
   <string key="EditorCommon.HasLocalization" value="Er lokaliserb&#225;r data" />
   <string key="DeleteGeneratedDataStep1.LabelFieldGroup" value="Slet data?" />
@@ -115,11 +131,7 @@
   <string key="AddNewInterfaceTypeStep1.ErrorTitle" value="Fejl" />
   <string key="EditInterfaceTypeStep1.ErrorTitle" value="Fejl" />
   <string key="AddNewCompositionTypeWorkflow.ErrorTitle" value="Fejl" />
-  <string key="AddNewAggregationTypeWorkflow.ErrorTitle" value="Fejl" />
-
   <string key="EditCompositionTypeWorkflow.ErrorTitle" value="Fejl" />
-  <string key="EditAggregationTypeWorkflow.ErrorTitle" value="Fejl" />
-  
   <string key="DataTypeDescriptorToXmlLabel" value="XML resultat" />
 
   <string key="FormMarkupInfo.Dialog.Label" value="Denne type har en brugerdefineret formularmarkup" />

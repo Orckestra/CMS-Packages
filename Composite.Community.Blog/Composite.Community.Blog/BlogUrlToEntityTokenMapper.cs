@@ -2,7 +2,6 @@
 using Composite.C1Console.Elements;
 using Composite.C1Console.Security;
 using Composite.C1Console.Trees;
-using Composite.Core.Extensions;
 using Composite.Core.Routing;
 using Composite.Data;
 using Composite.Data.Types;
@@ -30,7 +29,7 @@ namespace Composite.Community.Blog
                     }
 
                     var date = (DateTime) dateTimeObject;
-                    string pathInfo = "/{0}/{1}".FormatWith(date.Year, date.Month);
+                    string pathInfo = $"/{date.Year}/{date.Month}";
 
                     return PageUrls.BuildUrl(new PageUrlData(page) {PathInfo = pathInfo},
                         UrlKind.Public,

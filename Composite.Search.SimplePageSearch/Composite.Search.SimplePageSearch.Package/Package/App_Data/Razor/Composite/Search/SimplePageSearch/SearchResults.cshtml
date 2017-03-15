@@ -1,63 +1,68 @@
 ﻿@using Composite.Search.SimplePageSearch
 @inherits RazorFunction
 @functions {
-    public override string FunctionDescription
-    {
-        get { return "Search results rendering"; }
-    }
+	public override string FunctionDescription
+	{
+		get { return "Search results rendering"; }
+	}
 
-    [FunctionParameter(Label = "Show Search Form", Help = "If checked, a search form will be shown above the search result.", DefaultValue = "true")]
-    public bool ShowSearchForm { get; set; }
+	[FunctionParameter(Label = "Show Search Form", Help = "If checked, a search form will be shown above the search result.", DefaultValue = "true")]
+	public bool ShowSearchForm { get; set; }
 
-    [FunctionParameter(Label = "Search Form Button Label", Help = "The text to show on the search form submit button. When left blank a generic search icon is used.", DefaultValue = "")]
-    public string SearchButtonLabel { get; set; }
+	[FunctionParameter(Label = "Search Form Button Label", Help = "The text to show on the search form submit button. When left blank a generic search icon is used.", DefaultValue = "")]
+	public string SearchButtonLabel { get; set; }
 
-    [FunctionParameter(Label = "Results Per Page", Help = "The maximum number of results to show at a time. If the search contains more results links will be provided to navigate results.", DefaultValue = "10")]
-    public int PageSize { get; set; }
+	[FunctionParameter(Label = "Results Per Page", Help = "The maximum number of results to show at a time. If the search contains more results links will be provided to navigate results.", DefaultValue = "10")]
+	public int PageSize { get; set; }
 
-    [FunctionParameter(Label = "Search Current Site Only", Help = "If checked only the current site will be searched. Uncheck to search all subsites.", DefaultValue = "true")]
-    public bool CurrentSite { get; set; }
+	[FunctionParameter(Label = "Search Current Site Only", Help = "If checked only the current site will be searched. Uncheck to search all subsites.", DefaultValue = "true")]
+	public bool CurrentSite { get; set; }
 
-    [FunctionParameter(Label = "Show Descriptions", Help = "If checked search results will have descriptions (when available) shown below the title.", DefaultValue = "false")]
-    public bool ShowDescriptions { get; set; }
+	[FunctionParameter(Label = "Show Descriptions", Help = "If checked search results will have descriptions (when available) shown below the title.", DefaultValue = "false")]
+	public bool ShowDescriptions { get; set; }
 
-   
+    SimpleSearchResult _searchResult;
 
-    private int TotalCount;
-    private int PageNumber
-    {
-        get
-        {
-            int page;
-            return int.TryParse(Request["p"], out page) && page >= 1 && page <= TotalPages ? page : 1;
-        }
-    }
 
-    protected int TotalPages
-    {
-        get { return (int)Math.Ceiling((decimal)TotalCount / PageSize); }
-    }
+	private int PageNumber
+	{
+		get
+		{
+			int page;
+			return int.TryParse(Request["p"], out page) && page >= 1 ? page : 1;
+		}
+	}
+
+	protected int TotalPages
+	{
+		get { return (int)Math.Ceiling((decimal)_searchResult.ResultsFound / PageSize); }
+	}
 
 }
 
 @{
 
-    var searchQuery = Request.QueryString["q"] ?? string.Empty;
+	var searchQuery = Request.QueryString["q"] ?? string.Empty;
 
-    var searchResults = new List<SearchResultEntry>();
+	if (!string.IsNullOrWhiteSpace(searchQuery) && searchQuery.Length > 1)
+	{
+		// Tokenize
+		searchQuery = searchQuery.Trim().ToLower();
+		string[] keywords = searchQuery.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
 
-    if (!string.IsNullOrWhiteSpace(searchQuery) && searchQuery.Length > 1)
-    {
-        // Tokenize
-        searchQuery = searchQuery.Trim().ToLower();
-        string[] keywords = searchQuery.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-        var pages = SearchFacade.Search(keywords, CurrentSite);
-        
-        TotalCount = pages.Count;
-
-        searchResults = pages.Skip(PageSize * (PageNumber - 1)).Take(PageSize).ToList();
-    }
+		_searchResult = SimpleSearchFacade.Search(new SimpleSearchQuery
+		{
+			Culture = Data.CurrentLocale,
+			Keywords = keywords,
+			CurrentSiteOnly = CurrentSite,
+			PageNumber = PageNumber - 1,
+			PageSize = PageSize
+		});
+	}
+	else
+	{
+	    _searchResult = new SimpleSearchResult();
+	}
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
@@ -77,11 +82,11 @@
         @if (!string.IsNullOrWhiteSpace(searchQuery))
         {
             <p>
-                @Html.Raw(string.Format(Resources.SimplePageSearch.SearchResults_TotalCount, TotalCount, searchQuery))
+                @Html.Raw(string.Format(Resources.SimplePageSearch.SearchResults_TotalCount, _searchResult.ResultsFound, searchQuery))
             </p>
         }
         <ol class="simplepagesearch-results" start="@(PageSize*(PageNumber-1)+1)">
-            @foreach (var entry in searchResults)
+            @foreach (var entry in _searchResult.Entries)
             {
                 <li>
                     <a href="@entry.Url">

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -9,10 +10,11 @@ using Composite.Core.Types;
 using Composite.Data;
 using Composite.Data.ProcessControlled;
 using Composite.Data.Types;
+using Composite.Search.Crawling;
 
 namespace Composite.Search.SimplePageSearch
 {
-    public class SearchFacade
+    public class SimpleSearchFacade
     {
         const int MaximumTermCount = 10;
         const int ResultsMaxLength = 200;
@@ -20,27 +22,91 @@ namespace Composite.Search.SimplePageSearch
         private static readonly MethodInfo String_ToLower;
         private static readonly MethodInfo String_Contains;
 
-        static SearchFacade()
+        static SimpleSearchFacade()
         {
             var stringMethods = typeof (string).GetMethods();
-            String_ToLower = stringMethods.Single(x => x.Name == "ToLower" && !x.GetParameters().Any());
-            String_Contains = stringMethods.Single(x => x.Name == "Contains" && x.GetParameters().Count() == 1);
+            String_ToLower = stringMethods.Single(x => x.Name == nameof(string.ToLower) && !x.GetParameters().Any());
+            String_Contains = stringMethods.Single(x => x.Name == nameof(string.Contains) && x.GetParameters().Length == 1);
         }
 
-        public static ICollection<SearchResultEntry> Search(string[] keywords, bool currentSiteOnly)
+        public static SimpleSearchResult Search(SimpleSearchQuery query)
         {
+            Verify.ArgumentNotNull(query, nameof(query));
+
             // If there's only one website, no need to check whether the results belong to current site only
-            if (currentSiteOnly && PageManager.GetChildrenIDs(Guid.Empty).Count < 2)
+            if (query.CurrentSiteOnly && NotMoreThanOneSitePresent(query.Culture))
             {
-                currentSiteOnly = false;
+                query.CurrentSiteOnly = false;
             }
+
+            // Current search api does not support searching for a given website only
+            if (SearchFacade.SearchEnabled && !query.CurrentSiteOnly)
+            {
+                return SearchUsingQueryProvider(query);
+            }
+
+            return SimpleSearch(query);
+        }
+
+        private static bool NotMoreThanOneSitePresent(CultureInfo queryCulture)
+        {
+            using (new DataConnection(queryCulture))
+            {
+                return PageManager.GetChildrenIDs(Guid.Empty).Count < 2;
+            }
+        }
+
+        private static SimpleSearchResult SearchUsingQueryProvider(SimpleSearchQuery query)
+        {
+            string text = string.Join(" ", query.Keywords);
+            var searchQuery = new SearchQuery(text, query.Culture)
+            {
+                MaxDocumentsNumber = query.PageSize,
+                SearchResultOffset = query.PageSize * query.PageNumber
+            };
+
+            searchQuery.ShowOnlyDocumentsWithUrls();
+
+            var result = SearchFacade.SearchProvider.SearchAsync(searchQuery).Result;
+            return new SimpleSearchResult
+            {
+                Entries = result.Documents.Select(ToSearchResultEntry).ToList(),
+                ResultsFound = result.TotalHits
+            };
+        }
+
+        private static SearchResultEntry ToSearchResultEntry(SearchDocument doc)
+        {
+            object desc;
+
+            doc.FieldValues.TryGetValue(DefaultDocumentFieldNames.Description, out desc);
+
+            return new SearchResultEntry
+            {
+                Title = doc.Label,
+                Description = desc as string,
+                Url = doc.Url
+            };
+        }
+
+        internal static SimpleSearchResult SimpleSearch(SimpleSearchQuery query)
+        {
+            var keywords = query.Keywords;
 
             keywords = keywords.Distinct().OrderByDescending(keyword => keyword.Length).Take(MaximumTermCount).ToArray();
 
-            return SearchPages(keywords, currentSiteOnly)
-                .Concat(SearchInData(keywords, currentSiteOnly))
-                .Take(ResultsMaxLength)
-                .ToList();
+            var allResults =
+                 SearchPages(keywords, query.CurrentSiteOnly)
+                .Concat(SearchInData(keywords, query.CurrentSiteOnly))
+                .Take(ResultsMaxLength).ToList();
+
+            return new SimpleSearchResult
+            {
+                Entries = allResults
+                    .Skip(query.PageSize * query.PageNumber)
+                    .Take(query.PageSize).ToList(),
+                ResultsFound = allResults.Count
+            };
         }
 
         public static IEnumerable<SearchResultEntry> SearchPages(string[] keywords, bool currentSiteOnly)
@@ -164,8 +230,8 @@ namespace Composite.Search.SimplePageSearch
                     var notNullExpression = Expression.NotEqual(propertyExpression, Expression.Constant(null, typeof(string)));
 
                     var toLowerExpression = Expression.Call(propertyExpression, String_ToLower);
-                    var containsExpression = Expression.Call(toLowerExpression, String_Contains,
-                        new Expression[] { Expression.Constant(keyword) });
+                    var containsExpression = Expression.Call(toLowerExpression, String_Contains, 
+                        Expression.Constant(keyword));
 
                     var andExpression = Expression.AndAlso(notNullExpression, containsExpression);
 
