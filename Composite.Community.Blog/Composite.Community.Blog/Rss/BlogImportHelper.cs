@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.ServiceModel.Syndication;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
@@ -70,7 +69,7 @@ namespace Composite.Community.Blog
 						var itemDate = item.PublishDate == DateTimeOffset.MinValue ? DateTime.Now : item.PublishDate.DateTime;
 						foreach (var itemLink in item.Links)
 						{
-							mapLinks[itemLink.Uri.OriginalString] = BlogFacade.GetBlogInternalPageUrl(itemDate, item.Title.Text, pageId);
+							mapLinks[itemLink.Uri.OriginalString] = BlogFacade.BuildBlogInternalPageUrl(itemDate, item.Title.Text, pageId);
 						}
 					}
 				}

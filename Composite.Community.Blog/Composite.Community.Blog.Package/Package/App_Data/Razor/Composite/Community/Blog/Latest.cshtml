@@ -20,8 +20,8 @@
     <div class="list-group">
         @foreach (var entry in entries)
         {
-            var blogPath = BlogFacade.GetBlogPath(entry.Date, entry.Title);
-            <a href="~/page(@entry.PageId)@blogPath" title="@entry.Title" class="list-group-item">
+            var blogUrl = BlogFacade.GetBlogUrl(entry);
+            <a href="@blogUrl" title="@entry.Title" class="list-group-item">
                 <h4 class="list-group-item-heading">@entry.Title</h4>
                 <small class="text-muted">@entry.Date.ToShortDateString()</small>
                 <p class="list-group-item-text">@entry.Teaser</p>

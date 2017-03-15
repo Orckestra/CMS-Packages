@@ -46,7 +46,7 @@ namespace Composite.Community.Blog
 
                 return new PageUrlData(page)
                 {
-                    PathInfo = BlogFacade.GetBlogPath(entry)
+                    PathInfo = BlogFacade.GetBlogLocalPath(entry)
                 };
             }
         }

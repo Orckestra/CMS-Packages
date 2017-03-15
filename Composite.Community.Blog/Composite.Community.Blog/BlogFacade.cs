@@ -11,6 +11,7 @@ using System.Web;
 using Composite.Community.Blog.Models;
 using Composite.Core;
 using Composite.Core.Routing;
+using Composite.Core.Routing.Foundation.PluginFacades;
 using Composite.Core.Routing.Pages;
 using Composite.Core.WebClient.Renderings.Page;
 using Composite.Data;
@@ -256,19 +257,19 @@ namespace Composite.Community.Blog
 
             string url = generated.ToString().Replace(' ', '-');
 
-            return url;
+            return UrlFormattersPluginFacade.FormatUrl(url, false);
         }
 
-        internal static string GetBlogInternalPageUrl(DateTime date, string title, Guid pageId)
+        internal static string BuildBlogInternalPageUrl(DateTime date, string title, Guid pageId)
         {
-            return string.Format("~/page({0}){1}", pageId, GetBlogPath(date, title));
+            return string.Format("~/page({0}){1}", pageId, GetBlogPath(date, GetUrlFromTitle(title)));
         }
 
-        public static string GetBlogUrl(DateTime date, string title, Guid pageId, string pageUrl = "")
+        public static string GetBlogUrl(Entries blogEntry, string pageUrl = "")
         {
             if (string.IsNullOrEmpty(pageUrl))
             {
-                var page = PageManager.GetPageById(pageId);
+                var page = PageManager.GetPageById(blogEntry.PageId);
                 if (page == null)
                 {
                     return null;
@@ -277,18 +278,23 @@ namespace Composite.Community.Blog
                 pageUrl = PageUrls.BuildUrl(page);
             }
 
-            return string.Format("{0}{1}", pageUrl, GetBlogPath(date, title));
+            return string.Format("{0}{1}", pageUrl, GetBlogLocalPath(blogEntry));
         }
 
-        public static string GetBlogPath(Entries entry)
+        internal static string GetBlogUrl(DateTime date, string titleUrl, string pageUrl)
         {
-            return GetBlogPath(entry.Date, entry.Title);
+            return string.Format("{0}{1}", pageUrl, GetBlogPath(date, titleUrl));
         }
 
-        public static string GetBlogPath(DateTime date, string title)
+        public static string GetBlogLocalPath(Entries entry)
+        {
+            return GetBlogPath(entry.Date, entry.TitleUrl);
+        }
+
+        private static string GetBlogPath(DateTime date, string titleUrl)
         {
             return string.Format("/{0}/{1}", date.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture),
-                                 GetUrlFromTitle(title));
+                     titleUrl);
         }
 
         public static string GetCurrentPageUrl()
@@ -433,14 +439,6 @@ namespace Composite.Community.Blog
                 HttpRuntime.Cache.Remove(string.Format(BlogRssFeed.CacheRSSKeyTemplate, entry.PageId,
                                                        GetCurrentCultureName()));
             }
-        }
-
-        public static string GetFullBlogUrl(DateTime date, string title)
-        {
-            Guid pageId = SitemapNavigator.CurrentPageId;
-            string pageUrl = GetPageUrlById(pageId);
-            pageUrl = GetFullPath(pageUrl);
-            return GetBlogInternalPageUrl(date, title, pageId);
         }
 
         public static List<string> GetBlogTags(string tags)

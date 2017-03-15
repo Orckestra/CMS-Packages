@@ -64,7 +64,6 @@
     <Compile Include="GetBlogEntriesParameter.cs" />
     <Compile Include="Models\BlogListItemModel.cs" />
     <Compile Include="Models\BlogListModel.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -74,6 +73,9 @@
       <Project>{86537839-e75d-42af-ab00-5f0a136eeb1d}</Project>
       <Name>Composite.Community.Blog</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

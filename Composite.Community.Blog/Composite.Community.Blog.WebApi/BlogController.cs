@@ -70,7 +70,7 @@ namespace Composite.Community.Blog.Api
                 var model = new BlogListItemModel
                 {
                     Title = entry.Title,
-                    Url = BlogFacade.GetBlogUrl(entry.Date, entry.Title, entry.PageId, blogPageUrl),
+                    Url = BlogFacade.GetBlogUrl(entry, blogPageUrl),
                     Tags = entry.Tags,
                     TagsByType = BlogFacade.GetTagsByType(entry.Tags),
                     ImageUrl = image != null ? BlogFacade.GetFullPath(MediaUrls.BuildUrl(image)) : string.Empty

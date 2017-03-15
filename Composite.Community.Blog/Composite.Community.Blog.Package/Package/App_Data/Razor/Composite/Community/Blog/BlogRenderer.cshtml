@@ -41,12 +41,12 @@
     {
         return;
     }
-    
+
     int entriesCount = entries.Count();
 
     var pageCount = (entriesCount + pageSize - 1) / pageSize;
     entries = entries.Skip(pageSize * (pageCurrent - 1)).Take(pageSize);
-    
+
     var pageId = PageRenderer.CurrentPageId;
     var authors = BlogFacade.GetAuthors();
     if (IsBlogItem)
@@ -57,7 +57,7 @@
             return;
         }
     }
-    
+
     C1PageRoute.RegisterPathInfoUsage();
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -131,10 +131,9 @@
 
 @helper BlogItem(Entries entry, Authors author, string blogItemOptions, string commentsServiceKey)
 {
-    var tags = BlogFacade.GetBlogTags(entry.Tags);
-    var displayComments = entry.DisplayComments;
-    var fullBlogUrl = BlogFacade.GetFullBlogUrl(entry.Date, entry.Title);
-    var blogUrl = BlogFacade.GetBlogUrl(entry.Date, entry.Title, entry.PageId);
+var tags = BlogFacade.GetBlogTags(entry.Tags);
+var displayComments = entry.DisplayComments;
+var blogUrl = BlogFacade.GetBlogUrl(entry);
 
 
     <div class="blog-item">
@@ -152,7 +151,7 @@
                 @if (displayComments && blogItemOptions.Contains("Show DISQUS Comment Count"))
                 {
                     <span class="blog-comments-count">
-                        <a href="@(fullBlogUrl)#disqus_thread">0</a>
+                        <a href="@(blogUrl)#disqus_thread">0</a>
                     </span>
                 }
             </h2>
@@ -201,82 +200,82 @@
             @if (blogItemOptions.Contains("Show share icons"))
             {
                 <div class="blog-addthis">
-                    @AddThis(fullBlogUrl, entry.Title)
+                    @AddThis(blogUrl, entry.Title)
                 </div>
             }
         </div>
     </div>
 
-    if (IsBlogItem)
+if (IsBlogItem)
+{
+    if (entry.DisplayComments)
     {
-        if (entry.DisplayComments)
-        {
             <hr />
             @Function("Composite.Community.Blog.Comments", new { CommentsServiceKey = commentsServiceKey })
-        }
     }
+}
 }
 
 @helper Paging(int pageCount, int pageCurrent)
 {
-    var groupsize = 10;
-    if (pageCurrent > groupsize)
-    {
+var groupsize = 10;
+if (pageCurrent > groupsize)
+{
         <li><a href="@BlogFacade.GetCurrentPageUrl()?p=1">&lt;&lt;</a></li>
-    }
-    if (pageCurrent > 1)
-    {
+}
+if (pageCurrent > 1)
+{
         <li><a href="@BlogFacade.GetCurrentPageUrl()?p=@(pageCurrent - 1)">&lt;</a></li>
-    }
-    var grouppage = (pageCurrent - 1) / groupsize;
-    for (int page = grouppage * groupsize + 1; page <= pageCount + 1 && page <= (grouppage + 1) * groupsize; page++)
+}
+var grouppage = (pageCurrent - 1) / groupsize;
+for (int page = grouppage * groupsize + 1; page <= pageCount + 1 && page <= (grouppage + 1) * groupsize; page++)
+{
+    if (page < pageCount + 1)
     {
-        if (page < pageCount + 1)
+        if (page == pageCurrent)
         {
-            if (page == pageCurrent)
-            {
                 <li class="active">
                     <span>
                         @page
                     </span>
                 </li>
-            }
-            else
-            {
+        }
+        else
+        {
                 <li><a href="@BlogFacade.GetCurrentPageUrl()?p=@page">@page</a></li>
-            }
         }
     }
-    if (pageCurrent + 1 <= pageCount)
-    {
+}
+if (pageCurrent + 1 <= pageCount)
+{
         <li><a href="@BlogFacade.GetCurrentPageUrl()?p=@(pageCurrent + 1)">&gt;</a></li>
-    }
-    if (grouppage < (pageCount - 1) / groupsize)
-    {
+}
+if (grouppage < (pageCount - 1) / groupsize)
+{
         <li><a href="@BlogFacade.GetCurrentPageUrl()?p=@pageCount">&gt;&gt;</a></li>
-    }
+}
 }
 
 @helper Author(Authors author)
 {
 
-    if (!string.IsNullOrEmpty(author.Picture))
-    {
+if (!string.IsNullOrEmpty(author.Picture))
+{
         <img class="blog-author-picture" src="~/Renderers/ShowMedia.ashx?i=@author.Picture" alt="@author.Name" />
-    }
-    else
-    {
+}
+else
+{
         <span class="text-muted glyphicon glyphicon-user"></span>
-    }
+}
 
-    if (!string.IsNullOrEmpty(author.Email) && author.DisplayEmail)
-    {
+if (!string.IsNullOrEmpty(author.Email) && author.DisplayEmail)
+{
         <a href="mailto:@author.Email">@author.Name</a>
-    }
-    else
-    {
+}
+else
+{
         @author.Name
-    }
+}
 
 }
 
@@ -308,7 +307,7 @@
         <span class="glyphicon glyphicon-tags"></span>
         @foreach (var tag in tags)
         {
-           <span>&#160;&#160;</span><a href="@CurrentPageNode.Url/@BlogFacade.Encode(tag)" title="@tag">@tag</a>
+            <span>&#160;&#160;</span><a href="@CurrentPageNode.Url/@BlogFacade.Encode(tag)" title="@tag">@tag</a>
         }
     </small>
 }

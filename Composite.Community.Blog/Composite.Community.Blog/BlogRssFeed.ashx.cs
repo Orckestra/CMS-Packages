@@ -44,14 +44,13 @@ namespace Composite.Community.Blog
                             var blogItems =
                                 conn.Get<Entries>()
                                     .Where(b => isGlobal ? b.PageId != null : b.PageId == pageId)
-                                    .Select(b => new {b.Id, b.Title, b.Date, b.Teaser, b.Tags, b.PageId})
+                                    .Select(b => new {b.Id, b.Title, b.TitleUrl, b.Date, b.Teaser, b.Tags, b.PageId})
                                     .OrderByDescending(b => b.Date)
                                     .ToList();
 
                             List<SyndicationItem> items = (from blog in blogItems
                                                            let blogUrl =
-                                                               BlogFacade.GetBlogUrl(blog.Date, blog.Title, blog.PageId,
-                                                                                     pageUrl)
+                                                               BlogFacade.GetBlogUrl(blog.Date, blog.TitleUrl, pageUrl)
                                                            select
                                                                new SyndicationItem(blog.Title, blog.Teaser,
                                                                                    new Uri(blogUrl), blog.Id.ToString(),
