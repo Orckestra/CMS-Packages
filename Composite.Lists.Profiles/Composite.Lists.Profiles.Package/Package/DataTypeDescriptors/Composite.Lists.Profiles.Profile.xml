@@ -1,0 +1,80 @@
+﻿<DataTypeDescriptor dataTypeId="b297cb23-23a9-4b05-8b51-fed9750c534f" name="Profile" namespace="Composite.Lists.Profiles" title="Profiles" hasCustomPhysicalSortOrder="false" isCodeGenerated="true" cachable="false" searchable="true" labelFieldName="Name" typeManagerTypeName="Composite.Lists.Profiles.Profile">
+	<DataAssociations />
+	<DataScopes>
+		<DataScopeIdentifier name="public" />
+		<DataScopeIdentifier name="administrated" />
+	</DataScopes>
+	<KeyPropertyNames>
+		<KeyPropertyName name="Id" />
+	</KeyPropertyNames>
+	<SuperInterfaces>
+		<SuperInterface type="Composite.Data.ProcessControlled.IProcessControlled,Composite" />
+		<SuperInterface type="Composite.Data.ProcessControlled.IPublishControlled,Composite" />
+		<SuperInterface type="Composite.Data.IPageData,Composite" />
+		<SuperInterface type="Composite.Data.IPageFolderData,Composite" />
+		<SuperInterface type="Composite.Data.ProcessControlled.ILocalizedControlled,Composite" />
+	</SuperInterfaces>
+	<Fields>
+		<DataFieldDescriptor id="ec9f5615-a1d1-4f94-b9fb-a288dc6c2817" name="Name" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+			<FormRenderingProfile label="Name" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+			<SearchProfile indexText="true" enablePreview="false" isFacet="false" />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="a0072898-8f09-4e22-81d0-626ca2948504" name="Group" isNullable="false" position="1" groupByPriority="1" inherited="false" instanceType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Guid'" isReadOnly="false" defaultValue="ValueType='Guid'Value='00000000-0000-0000-0000-000000000000'" foreignKeyReferenceTypeName="Composite.Lists.Profiles.Group">
+			<FormRenderingProfile label="Profile Group" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.DataReference.CompositeListsProfilesGroup.Selector&quot; /&gt;" />
+			<ValidationFunctionMarkups />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="12f9e60c-5533-44ff-b77c-7b6cb1557d39" name="Title" isNullable="true" position="2" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+			<FormRenderingProfile label="Title" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+			<SearchProfile indexText="true" enablePreview="false" isFacet="false" />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="c5c8afeb-59ca-4e09-8887-a2147ef8fd73" name="Image" isNullable="true" position="3" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='2048'" isReadOnly="false" foreignKeyReferenceTypeName="Composite.Data.Types.IImageFile,Composite">
+			<FormRenderingProfile label="Image" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.ImageSelector&quot;&gt;&lt;f:param name=&quot;Required&quot; value=&quot;False&quot; /&gt;&lt;/f:widgetfunction&gt;" />
+			<ValidationFunctionMarkups />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="6c99b459-7193-4dfb-a178-c75cab6e7c79" name="Priority" isNullable="true" position="4" groupByPriority="0" inherited="false" instanceType="&lt;t n=&quot;System.Nullable`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" storeType="PhysicalStoreType='Integer'" isReadOnly="false">
+			<FormRenderingProfile label="Priority" helpText="Priority is used for ordering" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.Integer.TextBox&quot; /&gt;" />
+			<TreeOrderingProfile orderPriority="1" orderDescending="false" />
+			<ValidationFunctionMarkups />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="3509f752-065a-424d-88bc-a482a06fb18a" name="Statement" isNullable="true" position="5" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+			<FormRenderingProfile label="Statement" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextArea&quot; /&gt;" />
+			<SearchProfile indexText="true" enablePreview="false" isFacet="false" />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="d26bc2d1-3d06-45f4-a788-b82a913374db" name="Description" isNullable="true" position="6" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='256'" isReadOnly="false">
+			<FormRenderingProfile label="Description" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextArea&quot; /&gt;" />
+			<SearchProfile indexText="true" enablePreview="true" isFacet="false" />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="a2c486ca-18f7-4bbe-bdb0-24d3f501c66b" name="Email" isNullable="true" position="7" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='128'" isReadOnly="false">
+			<FormRenderingProfile label="E-mail" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+			<SearchProfile indexText="true" enablePreview="false" isFacet="false" />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="86d4c1d7-bf89-4501-ad89-7d732a2de8a7" name="TwitterUsername" isNullable="true" position="8" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+			<FormRenderingProfile label="Twitter username" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+			<SearchProfile indexText="true" enablePreview="false" isFacet="false" />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="7010561d-eddf-46f7-a292-d36b3ecfed96" name="LinkedInLink" isNullable="true" position="9" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='256'" isReadOnly="false">
+			<FormRenderingProfile label="LinkedIn link" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+			<ValidationFunctionMarkups />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="c14e8aa8-3b8c-46c9-abe0-abcae39e5067" name="FacebookLink" isNullable="true" position="10" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='256'" isReadOnly="false">
+			<FormRenderingProfile label="Facebook link" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+			<ValidationFunctionMarkups />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="fab1cf0c-66b0-11dc-a47e-cf6356d89593" name="PublicationStatus" isNullable="false" position="50" groupByPriority="0" inherited="true" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+			<FormRenderingProfile />
+			<ValidationFunctionMarkups />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="f6df85e4-c577-49e5-acd9-8be8958736d6" name="Id" isNullable="false" position="1000" groupByPriority="0" inherited="true" instanceType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Guid'" isReadOnly="false">
+			<FormRenderingProfile />
+			<ValidationFunctionMarkups />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="f641ec01-75bb-49ec-b02a-969d6be59a5f" name="PageId" isNullable="false" position="1000" groupByPriority="0" inherited="true" instanceType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Guid'" isReadOnly="false" foreignKeyReferenceTypeName="Composite.Data.Types.IPage,Composite">
+			<FormRenderingProfile />
+			<ValidationFunctionMarkups />
+		</DataFieldDescriptor>
+		<DataFieldDescriptor id="0456ebb0-7fb1-46cd-9a23-4ae9aa3337fa" name="SourceCultureName" isNullable="false" position="1000" groupByPriority="0" inherited="true" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='16'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+			<FormRenderingProfile />
+			<ValidationFunctionMarkups />
+		</DataFieldDescriptor>
+	</Fields>
+</DataTypeDescriptor>
