@@ -1,22 +1,32 @@
 ﻿/* Default Facebook CSS */
+body {
+	padding: 0;
+	margin: 0;
+}
 .fbbody {
-	font-family: "lucida grande" ,tahoma,verdana,arial,sans-serif;
-	font-size: 11px;
-	color: #333333;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	color: #333;
+	background-color: #fff;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+	padding: 20px;
 }
 .fbbody h1 {
-	font-size: 14px;
+	font-size: 20px;
+	font-weight: 400;
 }
 .fbbody h2, .fbbody h3 {
-	font-size: 13px;
+	font-size: 16px;
 }
 /* Default Anchor Style */
 .fbbody a {
-	color: #3b5998;
+	color: #365899;
 	outline-style: none;
 	text-decoration: none;
-	font-size: 11px;
-	font-weight: bold;
 }
 .fbbody a:hover {
 	text-decoration: underline;
@@ -76,4 +86,23 @@
 	background-color: #3b5998;
 	color: #ffffff;
 	cursor: hand;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Buttons
+/*-----------------------------------------------------------------------------------*/
+.btn {
+    background-color:#ECEEF5;
+    border:1px solid #CAD4E7;
+    text-decoration:none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+	padding: 2px 10px;
+	margin-right:5px;
+}
+
+.btn:hover{
+    border:1px solid #9DACCE;
+    text-decoration:none;
 }

@@ -7,7 +7,7 @@
 		</title>
 		<f:function name="Composite.Web.Html.Template.CommonMetaTags" />
 		<rendering:page.metatag.description />
-		<link rel="stylesheet" type="text/css" href="/Frontend/Composite/Community/Facebook/Pages/Styles.css" />
+		<link rel="stylesheet" type="text/css" href="/Frontend/Orckestra/Social/Facebook/Pages/Styles.css" />
 	</head>
 	<body>
 		<div class="fbbody">
@@ -20,22 +20,22 @@
 			<div id="main">
 				<rendering:placeholder id="content" title="Content" default="true" />
 			</div>
-			<div class="fbinfobox">To customize the design of this page edit the Page Template (“Facebook Page”) and CSS styles (~\Frontend\Composite\Community\Facebook\Pages\Styles.css)</div>
-			<!-- *** Examples 
-			* Common Blue Box 
-			<div class="fbbluebox">  
-    			Recognize this common blue box?  
-			</div> 
-			
-			* Error Box  
-			<div class="fberrorbox">  
-       			 Recognize this error box?  
-    		</div>  
-			
+			<div class="fbinfobox">To customize the design of this page edit the Page Template (“Facebook Page”) and CSS styles (~\Frontend\Orckestra\Social\Facebook\Pages\Styles.css)</div>
+			<!-- *** Examples
+			* Common Blue Box
+			<div class="fbbluebox">
+    			Recognize this common blue box?
+			</div>
+
+			* Error Box
+			<div class="fberrorbox">
+       			 Recognize this error box?
+    		</div>
+
 			* Facebook Tabs
-			<a href="#" class="fbtab">Facebook Tab #1</a>  
-			<a href="#" class="fbtab">Facebook Tab #2</a>  
-			<a href="#" class="fbtab">Facebook Tab #3</a>  
+			<a href="#" class="fbtab">Facebook Tab #1</a>
+			<a href="#" class="fbtab">Facebook Tab #2</a>
+			<a href="#" class="fbtab">Facebook Tab #3</a>
 			-->
 		</div>
 	</body>

@@ -76,7 +76,9 @@
     <Content Include="Package\Datas\Composite.Data.Types.IXmlPageTemplate_public.xml" />
     <Content Include="Package\Datas\Composite.Data.Types.IPageTypes_public.xml" />
     <Content Include="Package\Frontend\Orckestra\Social\Facebook\Pages\Styles.css" />
-    <Content Include="Package\install.xml" />
+    <Content Include="Package\install.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_PackageCreator\Composite.Community.Facebook.Pages.xml" />
   </ItemGroup>
   <ItemGroup>
