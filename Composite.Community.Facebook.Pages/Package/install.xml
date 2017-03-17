@@ -2,8 +2,8 @@
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="4.0.4730.24232" maximumCompositeVersion="9.9999.9999.9999" />
 	<mi:PackageInformation name="Orckestra.Social.Facebook.Pages" groupName="Orckestra.Social" version="1.0.3" author="Orckestra A/S" website="https://c1.orckestra.com" readMoreUrl="http://docs.c1.orckestra.com/Orckestra.Social.Facebook.Pages" id="70344009-a5a0-4610-a73f-ac782dec0c78" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
-    <TechnicalDetails>Provides a necessary layout template and styles for a Composite C1 page  to be properly displayed as a Facebook page. The page will be installed as a Page Tab App.</TechnicalDetails>
-		<Description>Provides a necessary layout template and styles for a Composite C1 page  to be properly displayed as a Facebook page.</Description>
+    <TechnicalDetails>Provides a necessary layout template and styles for a C1 CMS page  to be properly displayed as a Facebook page. The page will be installed as a Page Tab App.</TechnicalDetails>
+		<Description>Provides a necessary layout template and styles for a C1 CMS page  to be properly displayed as a Facebook page.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
