@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Composite.Core;
 using Composite.Core.Configuration;
@@ -15,28 +16,65 @@ namespace Orckestra.Search.MediaContentIndexing
 {
     class MediaContentSearchExtension : ISearchDocumentBuilderExtension
     {
+        private const string BaseDir = "~/App_Data/Search/MediaContentIndexing";
+        private const string IFilterExecutableRelativePath = BaseDir + "/filtdump.exe";
+        private const string CacheDirectory = "~/App_Data/Composite/Cache/MediaContentIndexing";
+        
+
         private const string LogTitle = nameof(MediaContentSearchExtension);
 
-        private string IFilterExecutableRelativePath = "~/App_Data/Search/MediaContentIndexing/filtdump.exe";
+        private static readonly string[] ApplicationMimeTypesToIgnore = 
+        {
+            "application/octet-stream",
+            "application/zip",
+            "application/x-shockwave-flash"
+        };
+
+        private bool IsIndexableMimeType(string mimeType)
+        {
+            return mimeType.StartsWith("text/") 
+                || (mimeType.StartsWith("application/")
+                    && !ApplicationMimeTypesToIgnore.Contains(mimeType));
+        }
 
         public void Populate(SearchDocumentBuilder searchDocumentBuilder, IData data)
         {
             if (!(data is IMediaFile mediaFile)) return;
 
-            var extension = Path.GetExtension(mediaFile.FileName);
-            if(string.IsNullOrEmpty(extension)) return;
+            var text = GetTextToIndex(mediaFile);
 
-
-            var mimeType = MimeTypeInfo.GetCanonical(mediaFile.MimeType);
-            if (!mimeType.StartsWith("application/") && !mimeType.StartsWith("text/"))
+            if (string.IsNullOrWhiteSpace(text))
             {
                 return;
             }
 
-            // Saving the file to a temp directory (to be optimized)
-            //var tempFile1 = TempDirectoryFacade.Get
+            searchDocumentBuilder.TextParts.Add(text);
+            searchDocumentBuilder.Url = MediaUrls.BuildUrl(mediaFile);
+        }
+
+        private string GetTextToIndex(IMediaFile mediaFile)
+        {
+            var extension = Path.GetExtension(mediaFile.FileName);
+            if (string.IsNullOrEmpty(extension)) return null;
+
+            var mimeType = MimeTypeInfo.GetCanonical(mediaFile.MimeType);
+            if (!IsIndexableMimeType(mimeType))
+            {
+                return null;
+            }
+
+            var outputFilePath = GetTextOutputFilePath(mediaFile);
+            var lastWriteTime = mediaFile.LastWriteTime ?? mediaFile.CreationTime;
+
+            if (File.Exists(outputFilePath) 
+                && lastWriteTime != null 
+                && File.GetCreationTime(outputFilePath) == lastWriteTime)
+            {
+                return File.ReadAllText(outputFilePath);
+            }
+
+            // Saving the file to a temp directory
             var tempSourceFile = GetTempFileName(extension);
-            var tempTargetFile = GetTempFileName(null);
 
             using (var mediaStream = mediaFile.GetReadStream())
             using (var file = File.Create(tempSourceFile))
@@ -56,7 +94,7 @@ namespace Orckestra.Search.MediaContentIndexing
                 {
                     WorkingDirectory = workingDirectory,
                     FileName = "\"" + exePath + "\"",
-                    Arguments = $"\"{tempSourceFile}\" \"{tempTargetFile}\"",
+                    Arguments = $"\"{tempSourceFile}\" \"{outputFilePath}\"",
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
                     RedirectStandardInput = true,
@@ -83,39 +121,48 @@ namespace Orckestra.Search.MediaContentIndexing
             {
                 var msg = $"Failed to parse the content of the media file '{Path.GetFileName(mediaFile.FileName)}'.";
 
-                if ((uint) exitCode == 0x80004005 /*E_FAIL*/)
+                if ((uint)exitCode == 0x80004005 /*E_FAIL*/)
                 {
                     Log.LogVerbose(LogTitle, msg + " Unspecified error.");
-                    return;
+                    return null;
                 }
 
-                if ((uint) exitCode == 0x80004002 /*E_NOINTERFACE*/)
+                if ((uint)exitCode == 0x80004002 /*E_NOINTERFACE*/)
                 {
                     Log.LogWarning(LogTitle, msg + " IFilter not found for the given file extension.");
-                    return;
+                    return null;
                 }
 
                 Log.LogWarning(LogTitle,
                     msg +
-                    $"\r\nExit Code: {exitCode}\r\nOutput: {stdout}" 
+                    $"\r\nExit Code: {exitCode}\r\nOutput: {stdout}"
                     + (!string.IsNullOrEmpty(stderr) ? $"\r\nError: {stderr}" : ""));
-                return;
+                return null;
             }
 
-            if (!File.Exists(tempTargetFile)) return;
-            
-            var text = File.ReadAllText(tempTargetFile);
-
-            C1File.Delete(tempTargetFile);
-
-            if (string.IsNullOrWhiteSpace(text))
+            if (!File.Exists(outputFilePath))
             {
-                return;
+                return null;
             }
 
-            searchDocumentBuilder.TextParts.Add(text);
-            searchDocumentBuilder.Url = MediaUrls.BuildUrl(mediaFile);
+            if (lastWriteTime != null)
+            {
+                File.SetLastWriteTime(outputFilePath, lastWriteTime.Value);
+            }
+
+            return File.ReadAllText(outputFilePath);
         }
+
+        internal static string GetTextOutputFilePath(IMediaFile mediaFile)
+        {
+            var cacheDir = PathUtil.Resolve(CacheDirectory);
+
+            Directory.CreateDirectory(cacheDir);
+
+            string storeKey = mediaFile.StoreId == "MediaArchive" ? "" : mediaFile.StoreId + "_";
+            return $"{cacheDir}/{storeKey}{mediaFile.Id}.txt";
+        }
+
 
         internal static string GetTempFileName(string extension)
         {
