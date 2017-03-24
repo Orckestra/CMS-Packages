@@ -64,4 +64,15 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+	<Target Name="BeforeBuild">
+		<PropertyGroup>
+			<InstallXml>$([System.IO.File]::ReadAllText("$(SolutionDir)/Package/Package/install.xml"))</InstallXml>
+			<PackageVersion>$([System.Text.RegularExpressions.Regex]::Match($(InstallXml),"PackageInformation[^&gt;]+version=.([0-9\.]+).").Groups[1].Value)</PackageVersion>
+			<AssemblyFileVersionAttribute>[assembly:System.Reflection.AssemblyVersion("$(PackageVersion)")]
+[assembly:System.Reflection.AssemblyFileVersion("$(PackageVersion)")]
+			</AssemblyFileVersionAttribute>
+		</PropertyGroup>
+		<WriteLinesToFile File="Properties\VersionInfo.cs" Lines="$(AssemblyFileVersionAttribute)" Overwrite="true">
+		</WriteLinesToFile>
+	</Target>
 </Project>

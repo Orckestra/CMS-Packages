@@ -159,9 +159,13 @@ namespace Orckestra.Search.IFilterParser
         /// 
         E_NOTIMPL = 0x80004001,
         /// 
-        /// Unknown error
+        /// No such interface supported
         /// 
-        E_FAIL = 0x80000008,
+        E_NOINTERFACE = 0x80004002,
+        /// 
+        /// Unspecified failure
+        /// 
+        E_FAIL = 0x80004005,
         /// 
         /// File not filtered due to password protection
         /// 
@@ -294,13 +298,13 @@ namespace Orckestra.Search.IFilterParser
                                 if (sbBuffer.Length < pcwcBuffer) // Should never happen, but it happens !
                                     pcwcBuffer = (uint)sbBuffer.Length;
 
-                                string fragment = sbBuffer.ToString(0, (int)pcwcBuffer);
+                                string fragment = sbBuffer.ToString(0, (int) pcwcBuffer);
 
                                 streamWriter.Write(fragment);
                                 // Adding a space so the last word of the previous paragraph will not be merged with the
                                 // first word of the next paragraph
-                                streamWriter.Write(" ");
-
+                                streamWriter.Write(" "); 
+                                
                             }
 
                             sbBuffer.Clear();
@@ -323,7 +327,7 @@ namespace Orckestra.Search.IFilterParser
 
         public static string GetResposeMessage(int resultCode)
         {
-            return Enum.GetName(typeof(IFilterReturnCodes), (uint)resultCode)
+            return Enum.GetName(typeof(IFilterReturnCodes), (uint)resultCode) 
                 ?? ("0x" + ((uint)resultCode).ToString("x"));
         }
     }

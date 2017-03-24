@@ -1,6 +1,7 @@
 
 .vs
 bin
+obj
 packages
 */*/obj/Debug
 */*/obj/Release
@@ -11,3 +12,4 @@ packages
 *.zip
 /Tools/C1PackageDevProvisioner/C1PackageDevProvisioner/obj/Debug
 /Tools/C1PackageDevProvisioner/Runner/obj/Debug
+VersionInfo.cs
