@@ -53,7 +53,11 @@ namespace Orckestra.Search
 
             foreach (var file in files)
             {
-                string serializedCommand = File.ReadAllText(file);
+                string serializedCommand = null;
+                WithRetry(() =>
+                {
+                    serializedCommand = File.ReadAllText(file);
+                });
 
                 try
                 {
@@ -77,6 +81,26 @@ namespace Orckestra.Search
             return null;
         }
 
+        private static void WithRetry(Action action, int retries = 5)
+        {
+            for (int i = 0; i < retries; i++)
+            {
+                try
+                {
+                    action();
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    if (i == retries - 1)
+                    {
+                        throw;
+                    }
+                    Thread.Sleep(10);
+                }
+            }
+        }
+
         private static IEnumerable<string> GetFiles()
         {
             return Directory.Exists(QueueFolder) 
@@ -88,7 +112,7 @@ namespace Orckestra.Search
         {
             try
             {
-                var index = ServiceLocator.GetService<ISearchIndex>();
+                var index = ServiceLocator.GetService<CommandContext>();
                 command.Execute(index);
             }
             catch (ThreadAbortException)
@@ -109,10 +133,18 @@ namespace Orckestra.Search
         {
             var serializedCommand = new JavaScriptSerializer(new SimpleTypeResolver()).Serialize(command);
 
-            var fileName = DateTime.Now.ToString("yyMMddHHmmssffffff") + "." + CommandExtension;
-
             Directory.CreateDirectory(QueueFolder);
-            File.WriteAllText(QueueFolder + "/" + fileName, serializedCommand);
+            for (int i = 0; i < 100; i++)
+            {
+                var fileName = $"{DateTime.Now:yyMMddHHmmssffffff}{i}.{CommandExtension}";
+
+                var file = QueueFolder + "/" + fileName;
+                if(File.Exists(file)) continue; // It happens since DateTime.Now isn't precise enough
+                
+                File.WriteAllText(file, serializedCommand);
+                break;
+            }
+            
         }
 
         private static bool QueueProcessingStopped =>
@@ -122,6 +154,11 @@ namespace Orckestra.Search
         public static void StopProcessingUpdates()
         {
             _stopProcessingUpdates = true;
+        }
+
+        public static void CancelCurrentTasks()
+        {
+            // TODO: to be implemented
         }
 
         public static void ClearCommands()

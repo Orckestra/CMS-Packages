@@ -73,6 +73,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="LuceneSearchIndex.cs" />
     <Compile Include="LuceneSearchProvider.cs" />
+    <Compile Include="Properties\VersionInfo.cs" />
     <Compile Include="StartupHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,11 +90,19 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
+  <!-- 
   <Target Name="AfterBuild">
   </Target>
   -->
+	<Target Name="BeforeBuild">
+		<PropertyGroup>
+			<InstallXml>$([System.IO.File]::ReadAllText("$(ProjectDir)/../Package/Package/install.xml"))</InstallXml>
+			<PackageVersion>$([System.Text.RegularExpressions.Regex]::Match($(InstallXml),"PackageInformation[^&gt;]+version=.([0-9\.]+).").Groups[1].Value)</PackageVersion>
+			<AssemblyFileVersionAttribute>[assembly:System.Reflection.AssemblyVersion("$(PackageVersion)")]
+[assembly:System.Reflection.AssemblyFileVersion("$(PackageVersion)")]
+			</AssemblyFileVersionAttribute>
+		</PropertyGroup>
+		<WriteLinesToFile File="Properties\VersionInfo.cs" Lines="$(AssemblyFileVersionAttribute)" Overwrite="true">
+		</WriteLinesToFile>
+	</Target>
 </Project>

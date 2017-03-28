@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,7 +11,10 @@ using Composite.Search;
 using Composite.Core;
 using Composite.Core.Application;
 using Composite.Core.Extensions;
+using Composite.Core.Linq;
+using Composite.Data;
 using Microsoft.Extensions.DependencyInjection;
+using Orckestra.Search.Commands;
 
 namespace Orckestra.Search
 {
@@ -20,6 +24,7 @@ namespace Orckestra.Search
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(typeof(ISearchIndexUpdater), typeof (SearchIndexUpdater));
+            services.AddSingleton<CommandContext>();
         }
 
         public void OnBeforeInitialize()
@@ -56,7 +61,21 @@ namespace Orckestra.Search
                     var ctSource = new CancellationTokenSource();
                     GlobalEventSystemFacade.SubscribeToPrepareForShutDownEvent(a => ctSource.Cancel());
 
-                    searchIndex.Initialize(ctSource.Token);
+                    IEnumerable<CultureInfo> cultures;
+                    using (var dc = new DataConnection())
+                    {
+                        cultures = DataLocalizationFacade.ActiveLocalizationCultures.Evaluate();
+                    }
+
+                    searchIndex.Initialize(cultures, ctSource.Token, out ICollection<CultureInfo> newlyCreatedCollections);
+
+                    foreach (var culture in newlyCreatedCollections)
+                    {
+                        CommandQueue.Queue(new PopulateCollectionCommand
+                        {
+                            Culture = culture.Name
+                        });
+                    }
 
                     CommandQueue.ProcessCommands();
                 }

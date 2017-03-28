@@ -6,10 +6,21 @@ namespace Orckestra.Search.Commands
     {
         public string Culture { get; set; }
 
-        public void Execute(ISearchIndex index)
+        public void Execute(CommandContext context)
         {
             var culture = CultureInfo.GetCultureInfo(Culture);
-            index.PopulateCollection(culture);
+
+            context.Index.RemoveDocuments(culture);
+
+            foreach (var dataSource in context.DocumentSources)
+            {
+                CommandQueue.Queue(new PopulateFromDataSourceCommand
+                {
+                    DocumentSourceName = dataSource.Name,
+                    CultureName = Culture,
+                    ContinuationToken = null
+                });
+            }
         }
     }
 }

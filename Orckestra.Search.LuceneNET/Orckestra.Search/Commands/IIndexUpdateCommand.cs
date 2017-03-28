@@ -5,6 +5,6 @@
     /// </summary>
     interface IIndexUpdateCommand
     {
-        void Execute(ISearchIndex index);
+        void Execute(CommandContext index);
     }
 }

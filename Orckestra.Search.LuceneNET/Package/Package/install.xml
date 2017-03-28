@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="6.0.6242.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Search.LuceneNET" groupName="Orckestra.Search" version="1.0.0" author="Orckestra A/S" website="https://cms.orckestra.com" readMoreUrl="https://cms.orckestra.com" id="62a2e5bd-b54f-4d3c-8dfd-70fbb7902285" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" reloadConsoleOnCompletion="true">
+	<mi:PackageRequirements minimumCompositeVersion="6.1.6242.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Search.LuceneNET" groupName="Orckestra.Search" version="1.1.0" author="Orckestra A/S" website="https://cms.orckestra.com" readMoreUrl="https://cms.orckestra.com" id="62a2e5bd-b54f-4d3c-8dfd-70fbb7902285" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" reloadConsoleOnCompletion="true">
 		<TechnicalDetails>-</TechnicalDetails>
 		<Description>Contains Lucene.NET implementation of content search in console as well as provides search api to use on frontend.</Description>
 	</mi:PackageInformation>

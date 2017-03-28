@@ -1,12 +1,17 @@
-﻿namespace Orckestra.Search.Commands
+﻿using Composite.Data;
+
+namespace Orckestra.Search.Commands
 {
-    public class RemoveDataSourceCommand : IIndexUpdateCommand
+    class RemoveDataSourceCommand : IIndexUpdateCommand
     {
         public string DocumentSourceName { get; set; }
 
-        public void Execute(ISearchIndex container)
+        public void Execute(CommandContext context)
         {
-            container.DeleteDocumentsBySource(DocumentSourceName);
+            foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
+            {
+                context.Index.RemoveDocuments(culture, DocumentSourceName);
+            }
         }
     }
 }

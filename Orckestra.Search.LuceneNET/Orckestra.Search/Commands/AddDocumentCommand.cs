@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Linq;
 using Composite.Search;
 
 namespace Orckestra.Search.Commands
@@ -9,10 +10,15 @@ namespace Orckestra.Search.Commands
 
         public SearchDocument Document { get; set; }
 
-        public void Execute(ISearchIndex container)
+        public void Execute(CommandContext context)
         {
             var culture = CultureInfo.GetCultureInfo(Culture);
-            container.AddDocument(culture, Document);
+
+            var sourceName = Document.Source;
+            var documentSource = context.DocumentSources.FirstOrDefault(ds => ds.Name == sourceName);
+            if (documentSource == null) return;
+
+            context.Index.AddDocument(culture, Document, documentSource.CustomFields);
         }
     }
 }

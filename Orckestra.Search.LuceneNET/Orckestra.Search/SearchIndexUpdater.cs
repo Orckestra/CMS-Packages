@@ -1,4 +1,6 @@
 ﻿using System.Globalization;
+using Composite.Core;
+using Composite.Data;
 using Composite.Search;
 using Orckestra.Search.Commands;
 
@@ -6,11 +8,23 @@ namespace Orckestra.Search
 {
     internal class SearchIndexUpdater : ISearchIndexUpdater, IDocumentSourceListener
     {
+        private const string LogTitle = nameof(SearchIndexUpdater);
+
         public void Rebuild()
         {
+            CommandQueue.CancelCurrentTasks();
+
             CommandQueue.ClearCommands();
 
-            CommandQueue.Queue(new RebuildIndexCommand());
+            Log.LogInformation(LogTitle, "Rebuilding the search index");
+
+            foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
+            {
+                CommandQueue.Queue(new PopulateCollectionCommand
+                {
+                    Culture = culture.Name
+                });
+            }
         }
 
         public void Populate(string dataSource)

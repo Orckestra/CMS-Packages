@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Threading;
 using Composite.Search;
 
@@ -12,50 +14,58 @@ namespace Orckestra.Search
         /// <summary>
         /// Initializes the search index.
         /// </summary>
-        void Initialize(CancellationToken cancellationToken);
+        void Initialize(IEnumerable<CultureInfo> cultures, CancellationToken cancellationToken, out ICollection<CultureInfo> newlyCreatedCollections);
 
         /// <summary>
-        /// Reindexes all the documents for every culture.
+        /// Populates the index with the provided documents. 
+        /// Once the cancellation is requested by <paramref name="cancellationToken" />,
+        /// <paramref name="onCancel" /> will be invoked with a new continuation token as a parameter.
         /// </summary>
-        void RebuildAll(); 
+        /// <param name="cultureInfo">The collection that has to be updated.</param>
+        /// <param name="documents">The documents to be indexed.</param>
+        /// <param name="customFields">The custom fields.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <param name="onCancel">The action that's invoked when the cancellation is requested.</param>
+        void IndexDocuments<TContinuationToken>(CultureInfo cultureInfo,
+            IEnumerable<Tuple<SearchDocument, TContinuationToken>> documents,
+            IReadOnlyCollection<DocumentField> customFields,
+            CancellationToken cancellationToken,
+            Action<TContinuationToken> onCancel);
 
         /// <summary>
-        /// Populates the document collection for the given culture.
-        /// </summary>
-        /// <param name="culture"></param>
-        void PopulateCollection(CultureInfo culture);
-
-        /// <summary>
-        /// Populates the documents from the given data source for every culture. To be called when a new data source is added.
-        /// </summary>
-        /// <param name="documentSourceName"></param>
-        void PopulateDocumentsFromSource(string documentSourceName); // Replace with "Populate" method?
-
-        /// <summary>
-        /// Deletes all the documents for the given culture. To be called when a culture is removed from the cms.
+        /// Deletes all the documents for the given culture.
+        /// To be called when a culture is removed from the cms.
         /// </summary>
         /// <param name="culture">The culture.</param>
         void DropCollection(CultureInfo culture);
 
+
         /// <summary>
-        /// Deletes all the document populated from the given document source.
+        /// Removes all the documents for the given culture.
+        /// </summary>
+        /// <param name="cultureInfo"></param>
+        void RemoveDocuments(CultureInfo cultureInfo);
+
+        /// <summary>
+        /// Removes all the document populated from the given document source.
         /// </summary>
         /// <param name="documentSourceName"></param>
-        void DeleteDocumentsBySource(string documentSourceName);
+        /// <param name="cultureInfo">The culture.</param>
+        void RemoveDocuments(CultureInfo cultureInfo, string documentSourceName);
 
         /// <summary>
         /// Adds a new document to the collection.
         /// </summary>
         /// <param name="cultureInfo">The culture name.</param>
         /// <param name="document">The document.</param>
-        void AddDocument(CultureInfo cultureInfo, SearchDocument document);
+        void AddDocument(CultureInfo cultureInfo, SearchDocument document, IReadOnlyCollection<DocumentField> customFields);
 
         /// <summary>
         /// Updates a new document in the collection.
         /// </summary>
         /// <param name="cultureInfo">The culture name.</param>
         /// <param name="document">The document.</param>
-        void UpdateDocument(CultureInfo cultureInfo, SearchDocument document);
+        void UpdateDocument(CultureInfo cultureInfo, SearchDocument document, IReadOnlyCollection<DocumentField> customFields);
 
         /// <summary>
         /// Removes a document from the collection.

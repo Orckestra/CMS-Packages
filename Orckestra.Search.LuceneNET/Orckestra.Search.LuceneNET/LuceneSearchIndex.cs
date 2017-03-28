@@ -2,16 +2,12 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
 using Composite.Search;
-using Composite.Core;
 using Composite.Core.IO;
-using Composite.Core.Linq;
 using Composite.Core.Types;
-using Composite.Data;
 using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Documents;
 using Lucene.Net.Index;
@@ -24,29 +20,21 @@ namespace Orckestra.Search.LuceneNET
     {
         private const string LogTitle = nameof(LuceneSearchIndex);
 
-        private readonly ISearchDocumentSourceProvider[] _sourceProviders;
-       
+     
         private Dictionary<CultureInfo, Directory> _directories;
         public bool IsInitialized { get; private set; }
 
-        public LuceneSearchIndex(IEnumerable<ISearchDocumentSourceProvider> sourceProviders)
+        public LuceneSearchIndex()
         {
-            _sourceProviders = sourceProviders.ToArray();
         }
 
-        private IEnumerable<ISearchDocumentSource> DocumentSources =>
-            _sourceProviders.SelectMany(sp => sp.GetDocumentSources());
 
-
-        public void Initialize(CancellationToken cancellationToken)
+        public void Initialize(
+            IEnumerable<CultureInfo> activeCultures, 
+            CancellationToken cancellationToken,
+            out ICollection<CultureInfo> culturesToPopulate)
         {
-            ICollection<CultureInfo> activeCultures;
-            var culturesToPopulate = new List<CultureInfo>();
-
-            using (new DataConnection())
-            {
-                activeCultures = DataLocalizationFacade.ActiveLocalizationCultures.Evaluate();
-            }
+            culturesToPopulate = new List<CultureInfo>();
 
 #if IN_MEMORY_INDEX
             _directories = activeCultures.ToDictionary(c => c, c => new RAMDirectory() as Directory);
@@ -69,33 +57,7 @@ namespace Orckestra.Search.LuceneNET
             }
 #endif
 
-            PopulateIndex(culturesToPopulate);
-
             IsInitialized = true;
-        }
-
-
-        private void PopulateIndex(ICollection<CultureInfo> cultures)
-        {
-            var sources = DocumentSources.Evaluate();
-
-            foreach (var culture in cultures)
-            {
-                using (new MeasureTime($"Building index for culture '{culture.Name}'"))
-                {
-                    foreach (var source in sources)
-                    {
-                        var customFields = source.CustomFields.Evaluate();
-
-                        IndexDocuments(culture, source.GetAllSearchDocuments(culture), customFields);
-                    }
-
-                    UpdateDirectory(culture, writer =>
-                    {
-                        writer.Optimize();
-                    });
-                }
-            }
         }
 
 
@@ -121,20 +83,33 @@ namespace Orckestra.Search.LuceneNET
             }
         }
 
-        private void IndexDocuments(CultureInfo culture, IEnumerable<SearchDocument> documents, ICollection<DocumentField> customFields)
+        public void IndexDocuments<TContinuationToken>(CultureInfo cultureInfo,
+                    IEnumerable<Tuple<SearchDocument, TContinuationToken>> documents,
+                    IReadOnlyCollection<DocumentField> customFields,
+                    CancellationToken cancellationToken,
+                    Action<TContinuationToken> onCancel)
         {
-            UpdateDirectory(culture, writer =>
+            UpdateDirectory(cultureInfo, writer =>
             {
-                foreach (var document in documents)
+                foreach (var tuple in documents)
                 {
-                    var doc = ToLuceneDocument(document, customFields.Evaluate());
+                    var document = tuple.Item1;
+                    var continuationToken = tuple.Item2;
+
+                    var doc = ToLuceneDocument(document, customFields);
 
                     writer.AddDocument(doc);
+
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        onCancel?.Invoke(continuationToken);
+                        break;
+                    }
                 }
             }); 
         }
 
-        private Document ToLuceneDocument(SearchDocument document, ICollection<DocumentField> customFields)
+        private Document ToLuceneDocument(SearchDocument document, IReadOnlyCollection<DocumentField> customFields)
         {
             var fields = new List<Field>(new[]
                 {
@@ -205,9 +180,9 @@ namespace Orckestra.Search.LuceneNET
             return doc;
         }
 
-        public void AddDocument(CultureInfo cultureInfo, SearchDocument document)
+        public void AddDocument(CultureInfo cultureInfo, SearchDocument document, IReadOnlyCollection<DocumentField> customFields)
         {
-            var doc = ToLuceneDocument(document);
+            var doc = ToLuceneDocument(document, customFields);
             if (doc == null) return;
 
             UpdateDirectory(cultureInfo, writer =>
@@ -217,9 +192,9 @@ namespace Orckestra.Search.LuceneNET
         }
 
 
-        public void UpdateDocument(CultureInfo cultureInfo, SearchDocument document)
+        public void UpdateDocument(CultureInfo cultureInfo, SearchDocument document, IReadOnlyCollection<DocumentField> customFields)
         {
-            var doc = ToLuceneDocument(document);
+            var doc = ToLuceneDocument(document, customFields);
             if(doc == null) return;
 
             UpdateDirectory(cultureInfo, writer =>
@@ -228,15 +203,7 @@ namespace Orckestra.Search.LuceneNET
             });
         }
 
-        private Document ToLuceneDocument(SearchDocument document)
-        {
-            var source = document.Source;
-            var documentSource = SearchFacade.DocumentSources.FirstOrDefault(ds => ds.Name == source);
-            if (documentSource == null) return null;
 
-            var fields = documentSource.CustomFields.Evaluate();
-            return ToLuceneDocument(document, fields);
-        }
 
         public void RemoveDocument(CultureInfo cultureInfo, string documentId)
         {
@@ -244,11 +211,6 @@ namespace Orckestra.Search.LuceneNET
             {
                 writer.DeleteDocuments(new Term(Constants.FieldNames.id, documentId));
             });
-        }
-
-        public void Rebuild(CultureInfo cultureInfo, string source)
-        {
-            throw new NotImplementedException();
         }
 
         public T GetCollection<T>(CultureInfo cultureInfo) where T : class
@@ -272,24 +234,6 @@ namespace Orckestra.Search.LuceneNET
             return directory;
         }
 
-        public void RebuildAll()
-        {
-            foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
-            {
-                UpdateDirectory(culture, writer =>
-                {
-                    writer.DeleteAll();
-                });
-
-                PopulateIndex(new[] {culture});
-            }
-        }
-
-        public void PopulateCollection(CultureInfo culture)
-        {
-            PopulateIndex(new [] {culture});
-        }
-
         public void DropCollection(CultureInfo culture)
         {
             UpdateDirectory(culture, writer =>
@@ -298,54 +242,21 @@ namespace Orckestra.Search.LuceneNET
             });
         }
 
-        public void DeleteDocumentsBySource(string sourceName)
+        public void RemoveDocuments(CultureInfo culture)
         {
-            using (new MeasureTime($"Deleting documents from source '{sourceName}'"))
+            UpdateDirectory(culture, writer =>
             {
-                foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
-                {
-                    UpdateDirectory(culture, writer =>
-                    {
-                        writer.DeleteDocuments(new Term(Constants.FieldNames.source, sourceName));
-                    });
-                }
-            }
+                writer.DeleteAll();
+            });
         }
 
-        public void PopulateDocumentsFromSource(string sourceName)
+
+        public void RemoveDocuments(CultureInfo culture, string sourceName)
         {
-            var source = DocumentSources.FirstOrDefault(ds => ds.Name == sourceName);
-            if (source == null)
+            UpdateDirectory(culture, writer =>
             {
-                return;
-            }
-
-            var customFields = source.CustomFields.Evaluate();
-
-            foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
-            {
-                using (new MeasureTime($"Indexing documents from source '{sourceName}' for '{culture.Name}' culture"))
-                {
-                    IndexDocuments(culture, source.GetAllSearchDocuments(culture), customFields);
-                }
-            }
-        }
-
-        private class MeasureTime : IDisposable
-        {
-            private readonly Stopwatch _stopwatch = new Stopwatch();
-
-            public MeasureTime(string message)
-            {
-                Log.LogInformation(LogTitle, message);
-                _stopwatch.Start();
-            }
-
-            public void Dispose()
-            {
-                _stopwatch.Stop();
-                Log.LogInformation(LogTitle, $"Completed in {_stopwatch.ElapsedMilliseconds} ms");
-            }
+                writer.DeleteDocuments(new Term(Constants.FieldNames.source, sourceName));
+            });
         }
     }
 }

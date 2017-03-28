@@ -9,10 +9,10 @@ namespace Orckestra.Search.Commands
     {
         public string Culture { get; set; }
 
-        public void Execute(ISearchIndex index)
+        public void Execute(CommandContext context)
         {
             var culture = CultureInfo.GetCultureInfo(Culture);
-            index.DropCollection(culture);
+            context.Index.DropCollection(culture);
         }
     }
 }

@@ -8,10 +8,10 @@ namespace Orckestra.Search.Commands
 
         public string DocumentId { get; set; }
 
-        public void Execute(ISearchIndex container)
+        public void Execute(CommandContext context)
         {
             var culture = CultureInfo.GetCultureInfo(Culture);
-            container.RemoveDocument(culture, DocumentId);
+            context.Index.RemoveDocument(culture, DocumentId);
         }
     }
 }
