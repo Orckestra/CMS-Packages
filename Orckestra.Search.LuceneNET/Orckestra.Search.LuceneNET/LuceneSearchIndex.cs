@@ -89,24 +89,45 @@ namespace Orckestra.Search.LuceneNET
                     CancellationToken cancellationToken,
                     Action<TContinuationToken> onCancel)
         {
-            UpdateDirectory(cultureInfo, writer =>
+            var lastCommited = default(TContinuationToken);
+            var lastAdded = default(TContinuationToken);
+            try
             {
-                foreach (var tuple in documents)
+                foreach (var chunk in documents.ChunksOf(100))
                 {
-                    var document = tuple.Item1;
-                    var continuationToken = tuple.Item2;
+                    UpdateDirectory(cultureInfo, writer =>
+                    {
+                        foreach (var tuple in chunk)
+                        {
+                            var document = tuple.Item1;
 
-                    var doc = ToLuceneDocument(document, customFields);
+                            var doc = ToLuceneDocument(document, customFields);
 
-                    writer.AddDocument(doc);
+                            writer.AddDocument(doc);
+
+                            lastAdded = tuple.Item2;
+                            if (cancellationToken.IsCancellationRequested)
+                            {
+                                break;
+                            }
+                        }
+                    });
+                    lastCommited = lastAdded;
 
                     if (cancellationToken.IsCancellationRequested)
                     {
-                        onCancel?.Invoke(continuationToken);
+                        onCancel?.Invoke(lastCommited);
                         break;
                     }
                 }
-            }); 
+            }
+            catch (ThreadAbortException)
+            {
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    onCancel?.Invoke(lastCommited);
+                }
+            }
         }
 
         private Document ToLuceneDocument(SearchDocument document, IReadOnlyCollection<DocumentField> customFields)

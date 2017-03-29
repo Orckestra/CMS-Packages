@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandContext.cs" />
+    <Compile Include="Commands\ILongRunningCommand.cs" />
     <Compile Include="Package\AddDefaultUserGroupPermissionsUninstaller.cs" />
     <Compile Include="Package\AddDefaultUserGroupPermissionsInstaller.cs" />
     <Compile Include="CommandQueue.cs" />

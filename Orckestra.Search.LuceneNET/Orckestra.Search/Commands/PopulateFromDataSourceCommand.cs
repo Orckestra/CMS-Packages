@@ -9,9 +9,11 @@ using Composite.Search;
 
 namespace Orckestra.Search.Commands
 {
-    class PopulateFromDataSourceCommand : IIndexUpdateCommand
+    class PopulateFromDataSourceCommand : IIndexUpdateCommand, ILongRunningCommand
     {
         private const string LogTitle = "Orckestra.Search";
+
+        private bool _persistOnShutdown = true;
 
         public string CultureName { get; set; }
 
@@ -42,8 +44,10 @@ namespace Orckestra.Search.Commands
                 {
                     DocumentSourceName = DocumentSourceName,
                     CultureName = CultureName,
-                    ContinuationToken = conToken
+                    ContinuationToken = conToken ?? ContinuationToken
                 });
+
+                _persistOnShutdown = false;
             };
 
             var msg = $"Indexing document source '{DocumentSourceName}' for culture '{CultureName}'"
@@ -80,6 +84,9 @@ namespace Orckestra.Search.Commands
                 Log.LogInformation(LogTitle, message);
             }
         }
+
+        public bool ShouldBePersistedOnShutdown() => _persistOnShutdown;
+
 
         class EnumerableWithCounter<T> : IEnumerable<T>
         {

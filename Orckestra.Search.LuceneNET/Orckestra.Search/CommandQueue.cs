@@ -117,7 +117,8 @@ namespace Orckestra.Search
             }
             catch (ThreadAbortException)
             {
-                if (QueueProcessingStopped)
+                if (QueueProcessingStopped 
+                    && !(command is ILongRunningCommand lr && !lr.ShouldBePersistedOnShutdown()))
                 {
                     // Saving the command if the thread was aborted
                     PersistCommand(command);
