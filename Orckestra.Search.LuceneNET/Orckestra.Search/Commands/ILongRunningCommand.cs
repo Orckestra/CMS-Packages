@@ -2,6 +2,7 @@
 {
     interface ILongRunningCommand
     {
+        void Cancel();
         bool ShouldBePersistedOnShutdown();
     }
 }

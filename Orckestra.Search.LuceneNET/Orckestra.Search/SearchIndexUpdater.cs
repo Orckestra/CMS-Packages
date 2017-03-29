@@ -12,9 +12,9 @@ namespace Orckestra.Search
 
         public void Rebuild()
         {
-            CommandQueue.CancelCurrentTasks();
-
             CommandQueue.ClearCommands();
+
+            CommandQueue.CancelCurrentTask();
 
             Log.LogInformation(LogTitle, "Rebuilding the search index");
 

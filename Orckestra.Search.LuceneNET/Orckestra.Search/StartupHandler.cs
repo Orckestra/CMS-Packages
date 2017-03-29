@@ -67,7 +67,8 @@ namespace Orckestra.Search
                         cultures = DataLocalizationFacade.ActiveLocalizationCultures.Evaluate();
                     }
 
-                    searchIndex.Initialize(cultures, ctSource.Token, out ICollection<CultureInfo> newlyCreatedCollections);
+                    searchIndex.Initialize(cultures, ctSource.Token,
+                        out ICollection<CultureInfo> newlyCreatedCollections);
 
                     foreach (var culture in newlyCreatedCollections)
                     {
@@ -78,6 +79,10 @@ namespace Orckestra.Search
                     }
 
                     CommandQueue.ProcessCommands();
+                }
+                catch (ThreadAbortException)
+                {
+                    // Not logging as this exception normally occurs during website restarts
                 }
                 catch (Exception ex)
                 {

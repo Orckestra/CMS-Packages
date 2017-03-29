@@ -26,6 +26,8 @@ namespace Orckestra.Search
         public static AutoResetEvent NewCommands = new AutoResetEvent(false);
         private static bool _stopProcessingUpdates;
 
+        private static IIndexUpdateCommand _currentlyRunningCommand;
+
         static CommandQueue()
         {
             try
@@ -113,11 +115,14 @@ namespace Orckestra.Search
             try
             {
                 var index = ServiceLocator.GetService<CommandContext>();
+
+                _currentlyRunningCommand = command;
+
                 command.Execute(index);
             }
             catch (ThreadAbortException)
             {
-                if (QueueProcessingStopped 
+                if (QueueProcessingStopped
                     && !(command is ILongRunningCommand lr && !lr.ShouldBePersistedOnShutdown()))
                 {
                     // Saving the command if the thread was aborted
@@ -127,6 +132,10 @@ namespace Orckestra.Search
             catch (Exception ex)
             {
                 Log.LogError(LogTitle, ex);
+            }
+            finally
+            {
+                _currentlyRunningCommand = null;
             }
         }
 
@@ -157,9 +166,9 @@ namespace Orckestra.Search
             _stopProcessingUpdates = true;
         }
 
-        public static void CancelCurrentTasks()
+        public static void CancelCurrentTask()
         {
-            // TODO: to be implemented
+            (_currentlyRunningCommand as ILongRunningCommand)?.Cancel();
         }
 
         public static void ClearCommands()

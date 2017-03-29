@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
+using Composite.C1Console.Events;
 using Composite.Core;
 using Composite.Search;
 
@@ -14,6 +16,9 @@ namespace Orckestra.Search.Commands
         private const string LogTitle = "Orckestra.Search";
 
         private bool _persistOnShutdown = true;
+        private bool _suspendOnCancel = true;
+        private CancellationTokenSource _cancellationTokenSource;
+
 
         public string CultureName { get; set; }
 
@@ -38,14 +43,18 @@ namespace Orckestra.Search.Commands
             // will start from the current point.
             Action<string> onCancelAction = conToken =>
             {
-                Log.LogInformation("Orckestra.Search", $"Suspending indexing, continuation token = '{conToken}'");
-
-                CommandQueue.Queue(new PopulateFromDataSourceCommand
+                if (_suspendOnCancel)
                 {
-                    DocumentSourceName = DocumentSourceName,
-                    CultureName = CultureName,
-                    ContinuationToken = conToken ?? ContinuationToken
-                });
+                    Log.LogInformation("Orckestra.Search", $"Suspending indexing, continuation token = '{conToken ?? "(null)"}'");
+
+                    CommandQueue.Queue(new PopulateFromDataSourceCommand
+                    {
+                        DocumentSourceName = DocumentSourceName,
+                        CultureName = CultureName,
+                        ContinuationToken = conToken ?? ContinuationToken
+                    });
+
+                }
 
                 _persistOnShutdown = false;
             };
@@ -58,8 +67,15 @@ namespace Orckestra.Search.Commands
             EnumerableWithCounter<DocumentWithContinuationToken> documents = null;
 
             var stopwatch = new Stopwatch();
+
+            var ctSource = new CancellationTokenSource();
+            GlobalEventSystemFacade.PrepareForShutDownEventDelegate shutdownHandler = a => ctSource.Cancel();
+
             try
             {
+                GlobalEventSystemFacade.SubscribeToPrepareForShutDownEvent(shutdownHandler);
+                _cancellationTokenSource = ctSource;
+
                 stopwatch.Start();
                 documents = new EnumerableWithCounter<DocumentWithContinuationToken>(
                     dataSource.GetSearchDocuments(culture, ContinuationToken));
@@ -74,6 +90,9 @@ namespace Orckestra.Search.Commands
             {
                 stopwatch.Stop();
 
+                GlobalEventSystemFacade.UnsubscribeFromPrepareForShutDownEvent(shutdownHandler);
+                _cancellationTokenSource = null;
+
                 string message = "";
                 if (documents != null)
                 {
@@ -86,6 +105,12 @@ namespace Orckestra.Search.Commands
         }
 
         public bool ShouldBePersistedOnShutdown() => _persistOnShutdown;
+
+        public void Cancel()
+        {
+            _suspendOnCancel = false;
+            _cancellationTokenSource.Cancel();
+        }
 
 
         class EnumerableWithCounter<T> : IEnumerable<T>
