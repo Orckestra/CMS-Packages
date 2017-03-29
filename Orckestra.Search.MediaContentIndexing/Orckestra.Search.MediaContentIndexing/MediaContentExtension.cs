@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using Composite.Core;
 using Composite.Core.Configuration;
 using Composite.Core.IO;
@@ -19,7 +20,10 @@ namespace Orckestra.Search.MediaContentIndexing
         private const string BaseDir = "~/App_Data/Search/MediaContentIndexing";
         private const string IFilterExecutableRelativePath = BaseDir + "/filtdump.exe";
         private const string CacheDirectory = "~/App_Data/Composite/Cache/MediaContentIndexing";
-        
+
+        private const int MaxMissingFilesLogMessages = 100;
+        private static int _missingFilesLogged = 0;
+
 
         private const string LogTitle = nameof(MediaContentSearchExtension);
 
@@ -49,37 +53,73 @@ namespace Orckestra.Search.MediaContentIndexing
             }
 
             searchDocumentBuilder.TextParts.Add(text);
-            searchDocumentBuilder.Url = MediaUrls.BuildUrl(mediaFile);
+            searchDocumentBuilder.Url = MediaUrls.BuildUrl(mediaFile, UrlKind.Internal);
         }
 
         private string GetTextToIndex(IMediaFile mediaFile)
         {
-            var extension = Path.GetExtension(mediaFile.FileName);
-            if (string.IsNullOrEmpty(extension)) return null;
-
             var mimeType = MimeTypeInfo.GetCanonical(mediaFile.MimeType);
             if (!IsIndexableMimeType(mimeType))
             {
                 return null;
             }
 
+            // Checking if the parsing results are preserved in the cache
             var outputFilePath = GetTextOutputFilePath(mediaFile);
             var lastWriteTime = mediaFile.LastWriteTime ?? mediaFile.CreationTime;
 
-            if (File.Exists(outputFilePath) 
-                && lastWriteTime != null 
+            if (File.Exists(outputFilePath)
+                && lastWriteTime != null
                 && File.GetCreationTime(outputFilePath) == lastWriteTime)
             {
                 return File.ReadAllText(outputFilePath);
             }
 
+            string extension;
+            try
+            {
+                var fileName = mediaFile.FileName;
+                foreach(var ch in Path.GetInvalidFileNameChars())
+                {
+                    fileName = fileName.Replace(ch, '_');
+                }
+                extension = Path.GetExtension(fileName);
+            }
+            catch (ArgumentException)
+            {
+                Log.LogWarning(LogTitle, $"Failed to extract extension from file: '{mediaFile.FileName}', mime type: '{mediaFile.MimeType}' ");
+                return null;
+            }
+
+            if (string.IsNullOrEmpty(extension))
+            {
+                extension = MimeTypeInfo.GetExtensionFromMimeType(mediaFile.MimeType);
+            }
+
+            if (string.IsNullOrEmpty(extension))
+            {
+                Log.LogWarning(LogTitle, $"Failed to extract extension from file: '{mediaFile.FileName}', mime type: '{mediaFile.MimeType}' ");
+                return null;
+            }
+
             // Saving the file to a temp directory
             var tempSourceFile = GetTempFileName(extension);
 
-            using (var mediaStream = mediaFile.GetReadStream())
-            using (var file = File.Create(tempSourceFile))
+            try
             {
-                mediaStream.CopyTo(file);
+                using (var mediaStream = mediaFile.GetReadStream())
+                using (var file = File.Create(tempSourceFile))
+                {
+                    mediaStream.CopyTo(file);
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                if (Interlocked.Increment(ref _missingFilesLogged) <= MaxMissingFilesLogMessages)
+                {
+                    Log.LogWarning(LogTitle, $"Missing an underlying content file for the media file '{mediaFile.KeyPath}'");
+                }
+                return null;
             }
 
             var exePath = PathUtil.Resolve(IFilterExecutableRelativePath);
@@ -166,6 +206,11 @@ namespace Orckestra.Search.MediaContentIndexing
 
         internal static string GetTempFileName(string extension)
         {
+            if (!extension.StartsWith("."))
+            {
+                extension = "." + extension;
+            }
+
             return Path.Combine(PathUtil.Resolve(GlobalSettingsFacade.TempDirectory),
                 UrlUtils.CompressGuid(Guid.NewGuid()).Substring(0, 8)) + (extension ?? "");
         }
