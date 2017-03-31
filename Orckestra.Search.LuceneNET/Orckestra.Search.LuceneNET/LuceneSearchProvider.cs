@@ -52,6 +52,11 @@ namespace Orckestra.Search.LuceneNET
             return Constants.FacetFieldPrefix + fieldName;
         }
 
+        private string ToPreviewFieldName(string fieldName)
+        {
+            return Constants.PreviewFieldPrefix + fieldName;
+        }
+
         private string FromFacetFieldName(string facetFieldName)
         {
             if (facetFieldName == Constants.FieldNames.source)
@@ -84,6 +89,10 @@ namespace Orckestra.Search.LuceneNET
                      nameof(searchQuery));
                 }
             }
+
+            var sortOptions = searchQuery.SortOptions?.ToArray() ?? Array.Empty<SearchQuerySortOption>();
+            facetHandlers = facetHandlers.Concat(
+                sortOptions.Select(so => new SimpleFacetHandler(ToPreviewFieldName(so.FieldName))));
 
             var query = GetTextQuery(searchQuery.Query);
 
@@ -129,19 +138,12 @@ namespace Orckestra.Search.LuceneNET
                         });
                     }
 
-                    var sortFields = new List<SortField>();
-                    if (searchQuery.SortOptions != null)
-                    {
-                        foreach (var sortOption in searchQuery.SortOptions)
-                        {
-                            sortFields.Add(new SortField(
-                                Constants.PreviewFieldPrefix + sortOption.FieldName,
-                                ToFieldTypeId(sortOption.SortTermsAs), 
-                                sortOption.ReverseOrder));
-                        }
-                    }
-
-                    browseRequest.Sort = sortFields.ToArray();
+                    browseRequest.Sort = sortOptions
+                        .Select(sortOption => new SortField(
+                            ToPreviewFieldName(sortOption.FieldName),
+                            ToFieldTypeId(sortOption.SortTermsAs),
+                            sortOption.ReverseOrder))
+                        .ToArray();
 
                     // perform browse
                     using (IBrowsable browser = new BoboBrowser(boboReader))
