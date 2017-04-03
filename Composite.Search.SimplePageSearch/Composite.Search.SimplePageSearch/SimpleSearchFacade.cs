@@ -7,6 +7,7 @@ using System.Reflection;
 using Composite.Core.Linq;
 using Composite.Core.Routing;
 using Composite.Core.Types;
+using Composite.Core.WebClient.Renderings.Page;
 using Composite.Data;
 using Composite.Data.ProcessControlled;
 using Composite.Data.Types;
@@ -40,9 +41,9 @@ namespace Composite.Search.SimplePageSearch
             }
 
             // Current search api does not support searching for a given website only
-            if (SearchFacade.SearchEnabled && !query.CurrentSiteOnly)
+            if (SearchFacade.SearchEnabled)
             {
-                return SearchUsingQueryProvider(query);
+                return SearchUsingSearchProvider(query);
             }
 
             return SimpleSearch(query);
@@ -56,7 +57,7 @@ namespace Composite.Search.SimplePageSearch
             }
         }
 
-        private static SimpleSearchResult SearchUsingQueryProvider(SimpleSearchQuery query)
+        private static SimpleSearchResult SearchUsingSearchProvider(SimpleSearchQuery query)
         {
             string text = string.Join(" ", query.Keywords);
             var searchQuery = new SearchQuery(text, query.Culture)
@@ -67,12 +68,39 @@ namespace Composite.Search.SimplePageSearch
 
             searchQuery.ShowOnlyDocumentsWithUrls();
 
+            if (query.CurrentSiteOnly)
+            {
+                searchQuery.FilterByAncestors(GetRootPageEntityToken());
+            }
+
             var result = SearchFacade.SearchProvider.SearchAsync(searchQuery).Result;
             return new SimpleSearchResult
             {
                 Entries = result.Documents.Select(ToSearchResultEntry).ToList(),
                 ResultsFound = result.TotalHits
             };
+        }
+
+        private static DataEntityToken GetRootPageEntityToken()
+        {
+            var currentPageId = PageRenderer.CurrentPageId;
+
+            for(int i=0; i<100; i++)
+            {
+                var parentPageId = PageManager.GetParentId(currentPageId);
+                if (parentPageId == Guid.Empty)
+                {
+                    using (new DataConnection(PublicationScope.Unpublished))
+                    {
+                        var rootPage = PageManager.GetPageById(currentPageId);
+                        return rootPage?.GetDataEntityToken();
+                    }
+                }
+
+                currentPageId = parentPageId;
+            }
+
+            throw new InvalidOperationException("A page inheritance loop detected.");
         }
 
         private static SearchResultEntry ToSearchResultEntry(SearchDocument doc)
