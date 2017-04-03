@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using BoboBrowse.Net;
@@ -9,7 +10,6 @@ using Composite;
 using Composite.Search;
 using Composite.Search.Crawling;
 using Composite.Core.Linq;
-using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Index;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
@@ -20,10 +20,12 @@ namespace Orckestra.Search.LuceneNET
     internal class LuceneSearchProvider : ISearchProvider
     {
         private readonly LuceneSearchIndex _searchIndex;
+        private readonly AnalyzerFactory _analyzerFactory;
 
-        public LuceneSearchProvider(ISearchIndex searchIndex)
+        public LuceneSearchProvider(ISearchIndex searchIndex, AnalyzerFactory analyzerFactory)
         {
             _searchIndex = (LuceneSearchIndex) searchIndex;
+            _analyzerFactory = analyzerFactory;
         }
 
         public Task<SearchResult> SearchAsync(SearchQuery searchQuery)
@@ -94,7 +96,7 @@ namespace Orckestra.Search.LuceneNET
             facetHandlers = facetHandlers.Concat(
                 sortOptions.Select(so => new SimpleFacetHandler(ToPreviewFieldName(so.FieldName))));
 
-            var query = GetTextQuery(searchQuery.Query);
+            var query = GetTextQuery(searchQuery.Query, searchQuery.CultureInfo);
 
             using (var reader = IndexReader.Open(directory, true))
             {
@@ -194,9 +196,9 @@ namespace Orckestra.Search.LuceneNET
             throw new NotImplementedException("Not supported facet type: " + info.FacetType);
         }
 
-        private Query GetTextQuery(string query)
+        private Query GetTextQuery(string query, CultureInfo cultureInfo)
         {
-            using (var analyzer = new StandardAnalyzer(Constants.LuceneVersion))
+            using (var analyzer = _analyzerFactory.GetAnalyzer(cultureInfo))
             {
                 var searchFields = new[] { Constants.FieldNames.label, Constants.FieldNames.fulltext };
                 var boosts = new Dictionary<string, float>

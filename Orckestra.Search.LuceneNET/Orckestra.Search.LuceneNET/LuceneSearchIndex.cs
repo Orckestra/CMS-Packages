@@ -8,24 +8,24 @@ using System.Threading;
 using Composite.Search;
 using Composite.Core.IO;
 using Composite.Core.Types;
-using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Documents;
 using Lucene.Net.Index;
 using Lucene.Net.Store;
-using Version = Lucene.Net.Util.Version;
 
 namespace Orckestra.Search.LuceneNET
 {
     internal class LuceneSearchIndex: ISearchIndex
     {
         private const string LogTitle = nameof(LuceneSearchIndex);
+        private readonly AnalyzerFactory _analyzerFactory;
 
-     
+
         private Dictionary<CultureInfo, Directory> _directories;
         public bool IsInitialized { get; private set; }
 
-        public LuceneSearchIndex()
+        public LuceneSearchIndex(AnalyzerFactory analyzerFactory)
         {
+            _analyzerFactory = analyzerFactory ?? throw new ArgumentNullException(nameof(analyzerFactory));
         }
 
 
@@ -68,7 +68,7 @@ namespace Orckestra.Search.LuceneNET
             lock (this)
             {
                 using (var writer = new IndexWriter(directory,
-                    new StandardAnalyzer(Version.LUCENE_30),
+                    _analyzerFactory.GetAnalyzer(culture),
                     IndexWriter.MaxFieldLength.LIMITED))
                 {
                     action(writer);

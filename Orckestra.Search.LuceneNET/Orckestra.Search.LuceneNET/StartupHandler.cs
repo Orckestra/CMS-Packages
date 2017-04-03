@@ -12,6 +12,7 @@ namespace Orckestra.Search.LuceneNET
         {
             services.AddSingleton(typeof(ISearchIndex), typeof(LuceneSearchIndex));
             services.AddSingleton(typeof(ISearchProvider), typeof(LuceneSearchProvider));
+            services.AddSingleton(typeof(AnalyzerFactory));
         }
 
         public void OnBeforeInitialize()
