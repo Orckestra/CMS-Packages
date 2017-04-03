@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Web.Html.ImageAndTextTeaser" groupName="Orckestra.Web" version="1.0.3" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="https://docs.c1.orckestra.com/Orckestra.Web.Html.ImageAndTextTeaser" id="3ed89811-840d-42de-a118-4345eead2073" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Orckestra.Web.Html.ImageAndTextTeaser" groupName="Orckestra.Web" version="1.0.4" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="https://docs.c1.orckestra.com/Orckestra.Web.Html.ImageAndTextTeaser" id="3ed89811-840d-42de-a118-4345eead2073" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Requires the "Orckestra.Web.Html.GetStyleOptionsFromFile" package installed.</TechnicalDetails>
 		<Description>Displays an image with a text page block.</Description>
 	</mi:PackageInformation>

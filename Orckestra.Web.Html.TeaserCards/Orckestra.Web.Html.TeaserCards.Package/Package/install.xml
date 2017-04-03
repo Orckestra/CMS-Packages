@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="5.0.5827.21806" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Web.Html.TeaserCards" groupName="Orckestra.Web" version="1.0.5" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="http://docs.c1.orckestra.com/Orckestra.Web.Html.TeaserCards" id="3cc59684-bd70-4ce9-a444-b9b102b018fe" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageInformation name="Orckestra.Web.Html.TeaserCards" groupName="Orckestra.Web" version="1.0.6" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="http://docs.c1.orckestra.com/Orckestra.Web.Html.TeaserCards" id="3cc59684-bd70-4ce9-a444-b9b102b018fe" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>Requires the Orckestra.Web.Html.FontAwesome package. To display teasers in columns, use the Orckestra.Web.Html.Grid.Columns package.</TechnicalDetails>
 		<Description>Displays Teaser Cards on a page.</Description>
 	</mi:PackageInformation>

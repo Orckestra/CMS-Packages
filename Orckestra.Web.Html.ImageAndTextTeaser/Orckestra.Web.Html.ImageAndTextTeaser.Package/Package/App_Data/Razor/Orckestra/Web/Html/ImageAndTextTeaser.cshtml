@@ -67,7 +67,7 @@
 	<div class="image-and-text @spaceCSS @(ImageAtTheRight ? "image-right" : "")">
 		<div class="@(IsFullWide ? "full-wide cms-fullwidth" : "container")">
 			<div class="image">
-				<img src="/media(@Image)" alt="image" class="img-responsive" />
+				<img src="~/media(@Image)" alt="image" class="img-responsive" />
 			</div>
 			<div class="text @BackgroundStyle">
 				@Html.Raw(Text)
@@ -77,9 +77,3 @@
 </body>
 </html>
 
-@helper RenderImage()
-{
-	<div class="image">
-		<img src="/media(@Image)" alt="image" class="img-responsive" />
-	</div>
-}
