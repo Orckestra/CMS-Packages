@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using BoboBrowse.Net;
 using BoboBrowse.Net.Facets;
 using BoboBrowse.Net.Facets.Impl;
@@ -10,15 +11,20 @@ using Composite;
 using Composite.Search;
 using Composite.Search.Crawling;
 using Composite.Core.Linq;
+using Lucene.Net.Documents;
 using Lucene.Net.Index;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
+using Lucene.Net.Search.Highlight;
 using Lucene.Net.Store;
 
 namespace Orckestra.Search.LuceneNET
 {
     internal class LuceneSearchProvider : ISearchProvider
     {
+        private const string HighlightWordOpenTag = "<mark>";
+        private const string HighlightWordCloseTag = "</mark>";
+
         private readonly LuceneSearchIndex _searchIndex;
         private readonly AnalyzerFactory _analyzerFactory;
 
@@ -152,15 +158,56 @@ namespace Orckestra.Search.LuceneNET
                     {
                         using (var browseResult = browser.Browse(browseRequest))
                         {
+                            Action<SearchResultItem, Document> buildHighlights = null;
+
+                            if (searchQuery.IncludeHighlights)
+                            {
+                                buildHighlights = (line, doc) => AddHighlights(query, searchQuery.CultureInfo, doc, line);
+                            }
+
                             return new SearchResult
                             {
-                                Documents = ToSearchDocuments(reader, browseResult.Hits),
+                                Items = ToSearchDocuments(reader, browseResult.Hits, buildHighlights),
                                 Facets = GetFacets(browseResult),
                                 TotalHits = browseResult.NumHits
                             };
                         }
                     }
                 }
+            }
+        }
+
+        private void AddHighlights(Query query, CultureInfo culture, Document doc, SearchResultItem item)
+        {
+            var highlighter = new Highlighter(
+                new SimpleHTMLFormatter(HighlightWordOpenTag, HighlightWordCloseTag),
+                new SimpleHTMLEncoder(),
+                new QueryScorer(query));
+
+            var labelText = doc.GetField(Constants.FieldNames.label)?.StringValue;
+            var fullText = doc.GetField(Constants.FieldNames.fulltext)?.StringValue;
+
+            using (var analyzer = _analyzerFactory.GetAnalyzer(culture))
+            {
+                string[] labelHighlights = Array.Empty<string>();
+
+                if (!string.IsNullOrEmpty(labelText))
+                {
+                    labelHighlights = highlighter.GetBestFragments(analyzer, Constants.FieldNames.label, labelText, 1);
+                }
+
+                item.LabelHtmlHighlight = labelHighlights.Length > 0
+                    ? labelHighlights[0] 
+                    : HttpUtility. HtmlEncode(item.Document.Label);
+
+                // Text highlights
+                string[] textHighlights = null;
+                if (!string.IsNullOrEmpty(fullText))
+                {
+                    textHighlights = highlighter.GetBestFragments(analyzer, Constants.FieldNames.fulltext, fullText, 2);
+                }
+
+                item.FullTextHtmlHighlights = textHighlights ?? Array.Empty<string>();
             }
         }
 
@@ -215,9 +262,12 @@ namespace Orckestra.Search.LuceneNET
             }
         }
 
-        private ICollection<SearchDocument> ToSearchDocuments(IndexReader reader, BrowseHit[] hits)
+        private ICollection<SearchResultItem> ToSearchDocuments(
+            IndexReader reader, 
+            BrowseHit[] hits, 
+            Action<SearchResultItem, Document> buildHighlights)
         {
-            var resultDocs = new List<SearchDocument>(hits.Length);
+            var resultDocs = new List<SearchResultItem>(hits.Length);
             var docs = hits.Select(h => reader.Document(h.DocId));
 
             foreach (var document in docs)
@@ -230,17 +280,25 @@ namespace Orckestra.Search.LuceneNET
                     fieldValues[fieldName] = field.StringValue;
                 }
 
-                Func<string, string> getString = name => document.GetField(name)?.StringValue;
-                resultDocs.Add(new SearchDocument(
-                    getString(Constants.FieldNames.source),
-                    getString(Constants.FieldNames.id),
-                    getString(Constants.FieldNames.label),
-                    getString(Constants.FieldNames.entityToken))
+                string GetString(string name) => document.GetField(name)?.StringValue;
+
+                var resultLine = new SearchResultItem
                 {
-                    ElementBundleName = getString(Constants.FieldNames.version),
-                    Url = getString(Constants.FieldNames.url),
-                    FieldValues = fieldValues,
-                });
+                    Document = new SearchDocument(
+                        GetString(Constants.FieldNames.source),
+                        GetString(Constants.FieldNames.id),
+                        GetString(Constants.FieldNames.label),
+                        GetString(Constants.FieldNames.entityToken))
+                    {
+                        ElementBundleName = GetString(Constants.FieldNames.version),
+                        Url = GetString(Constants.FieldNames.url),
+                        FieldValues = fieldValues
+                    }
+                };
+
+                buildHighlights?.Invoke(resultLine, document);
+
+                resultDocs.Add(resultLine);
             }
 
             return resultDocs;

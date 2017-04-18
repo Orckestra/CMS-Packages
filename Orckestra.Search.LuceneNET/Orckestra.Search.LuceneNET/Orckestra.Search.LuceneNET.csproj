@@ -48,16 +48,15 @@
       <HintPath>..\..\C1\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Composite, Version=6.0.6248.33161, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\C1CMS.Assemblies.6.0.6248.33161\lib\net461\Composite.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
       <HintPath>..\..\C1\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Lucene.Net.Contrib.Analyzers">
       <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Analyzers.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Highlighter">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Highlighter.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net.Contrib.Snowball, Version=2.0.0.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
       <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Snowball.dll</HintPath>
@@ -92,6 +91,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\C1\Composite\Composite.csproj">
+      <Project>{f8d87a5f-d090-4d24-80c1-dbcd938c6cab}</Project>
+      <Name>Composite</Name>
+      <Private>False</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Orckestra.Search\Orckestra.Search.csproj">
       <Project>{fa946885-df5b-4bd9-89d2-b1fb20213fa2}</Project>
       <Name>Orckestra.Search</Name>

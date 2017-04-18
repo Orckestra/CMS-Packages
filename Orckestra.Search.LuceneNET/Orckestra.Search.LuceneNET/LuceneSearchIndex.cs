@@ -152,10 +152,11 @@ namespace Orckestra.Search.LuceneNET
 
             if (document.FullText != null)
             {
-                string fullText = string.Join(" ", document.FullText);
+                var filteredText = document.FullText.Where(line => line != document.Label);
+                string fullText = string.Join(" ", filteredText);
                 if (!string.IsNullOrWhiteSpace(fullText))
                 {
-                    fields.Add(new Field(Constants.FieldNames.fulltext, fullText, Field.Store.NO, Field.Index.ANALYZED));
+                    fields.Add(new Field(Constants.FieldNames.fulltext, fullText, Field.Store.YES, Field.Index.ANALYZED));
                 }
             }
 

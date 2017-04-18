@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="6.1.6242.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Search.LuceneNET" groupName="Orckestra.Search" version="1.1.0" 
+	<mi:PackageInformation name="Orckestra.Search.LuceneNET" groupName="Orckestra.Search" version="1.1.1" 
 				author="Orckestra A/S" website="https://cms.orckestra.com" readMoreUrl="https://docs.c1.orckestra.com/Orckestra.Search.LuceneNET" 
 				id="62a2e5bd-b54f-4d3c-8dfd-70fbb7902285" canBeUninstalled="true" systemLocking="hard" 
 				flushOnCompletion="true" reloadConsoleOnCompletion="true">
@@ -21,6 +21,8 @@
 				<File sourceFilename="~\Bin\Lucene.Net.dll" targetFilename="~\bin\Lucene.Net.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\Lucene.Net.Contrib.Analyzers.dll" targetFilename="~\bin\Lucene.Net.Contrib.Analyzers.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\Lucene.Net.Contrib.Snowball.dll" targetFilename="~\bin\Lucene.Net.Contrib.Snowball.dll" allowOverwrite="false" />
+				<File sourceFilename="~\Bin\Lucene.Net.Contrib.Memory.dll" targetFilename="~\bin\Lucene.Net.Contrib.Memory.dll" allowOverwrite="false" />
+				<File sourceFilename="~\Bin\Lucene.Net.Contrib.Highlighter.dll" targetFilename="~\bin\Lucene.Net.Contrib.Highlighter.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\Common.Logging.dll" targetFilename="~\bin\Common.Logging.dll" allowOverwrite="false" />
 				<File sourceFilename="~\Bin\BoboBrowse.Net.dll" targetFilename="~\bin\BoboBrowse.Net.dll" allowOverwrite="false" />
 				
