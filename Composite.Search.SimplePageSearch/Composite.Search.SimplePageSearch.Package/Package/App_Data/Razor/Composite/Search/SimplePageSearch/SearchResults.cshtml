@@ -90,12 +90,12 @@
             {
                 <li>
                     <a href="@entry.Url">
-                        @entry.Title
+                        @Html.Raw(entry.Title)
                     </a>
 					@if (ShowDescriptions && !string.IsNullOrEmpty(entry.Description))
 					{
 						<br />
-						@entry.Description
+						@Html.Raw(entry.Description)
 					}
                 </li>
             }

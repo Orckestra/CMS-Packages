@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Web;
 using Composite.Core.Linq;
 using Composite.Core.Routing;
 using Composite.Core.Types;
@@ -73,10 +74,12 @@ namespace Composite.Search.SimplePageSearch
                 searchQuery.FilterByAncestors(GetRootPageEntityToken());
             }
 
+            searchQuery.IncludeHighlights = true;
+
             var result = SearchFacade.SearchProvider.SearchAsync(searchQuery).Result;
             return new SimpleSearchResult
             {
-                Entries = result.Documents.Select(ToSearchResultEntry).ToList(),
+                Entries = result.Items.Select(ToSearchResultEntry).ToList(),
                 ResultsFound = result.TotalHits
             };
         }
@@ -103,16 +106,21 @@ namespace Composite.Search.SimplePageSearch
             throw new InvalidOperationException("A page inheritance loop detected.");
         }
 
-        private static SearchResultEntry ToSearchResultEntry(SearchDocument doc)
+        private static SearchResultEntry ToSearchResultEntry(SearchResultItem line)
         {
             object desc;
 
+            var doc = line.Document;
             doc.FieldValues.TryGetValue(DefaultDocumentFieldNames.Description, out desc);
 
             return new SearchResultEntry
             {
-                Title = doc.Label,
-                Description = desc as string,
+                Title = 
+                    line.LabelHtmlHighlight ?? HttpUtility.HtmlEncode(doc.Label),
+                Description = 
+                    line.FullTextHtmlHighlights != null && line.FullTextHtmlHighlights.Length > 0 
+                    ? string.Join("<br />", line.FullTextHtmlHighlights)
+                    : HttpUtility.HtmlEncode(desc as string),
                 Url = doc.Url
             };
         }
