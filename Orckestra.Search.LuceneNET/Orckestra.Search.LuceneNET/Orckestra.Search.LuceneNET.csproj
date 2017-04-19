@@ -79,6 +79,7 @@
     <Compile Include="AnalyzerFactory.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="HTMLEncoder.cs" />
     <Compile Include="LuceneSearchIndex.cs" />
     <Compile Include="LuceneSearchProvider.cs" />
     <Compile Include="Properties\VersionInfo.cs" />

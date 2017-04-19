@@ -181,7 +181,7 @@ namespace Orckestra.Search.LuceneNET
         {
             var highlighter = new Highlighter(
                 new SimpleHTMLFormatter(HighlightWordOpenTag, HighlightWordCloseTag),
-                new SimpleHTMLEncoder(),
+                new HTMLEncoder(),
                 new QueryScorer(query));
 
             var labelText = doc.GetField(Constants.FieldNames.label)?.StringValue;
