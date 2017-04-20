@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Xml.Linq;
@@ -65,6 +66,16 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
             var routeValueDictionary = new RouteValueDictionary();
             foreach (var key in parameters.AllKeys)
             {
+                var separator = key.IndexOf("=", StringComparison.Ordinal);
+                if (separator > 0)
+                {
+                    var name = key.Substring(0, separator);
+                    var value = HttpUtility.UrlDecode(key.Substring(separator + 1));
+                    routeValueDictionary.Add(name, value);
+
+                    continue;
+                }
+
                 routeValueDictionary.Add(key, parameters[key]);
             }
 

@@ -164,7 +164,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 CopyHttpContextData(parentContext, httpContext);
 
                 var handler = routeData.RouteHandler.GetHttpHandler(requestContext);
-                Verify.IsNotNull(handler, "No handler found for the function '{0}'", Namespace + "." + Name);
+                Verify.IsNotNull(handler, $"No handler found for the function '{Namespace}.{Name}'");
 
                 try
                 {
@@ -277,7 +277,7 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 CopyHttpContextData(parentContext, httpContext);
 
                 var handler = routeData.RouteHandler.GetHttpHandler(requestContext);
-                Verify.IsNotNull(handler, "No handler found for the function '{0}'", Namespace + "." + Name);
+                Verify.IsNotNull(handler, $"No handler found for the function '{Namespace}.{Name}'");
 
                 var asyncHandler = handler as IHttpAsyncHandler;
                 Verify.IsNotNull(asyncHandler, "The handler class '{0}' does not implement IHttpAsyncHandler interface", handler.GetType());
