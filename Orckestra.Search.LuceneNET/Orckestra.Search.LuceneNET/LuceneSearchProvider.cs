@@ -160,9 +160,9 @@ namespace Orckestra.Search.LuceneNET
                         {
                             Action<SearchResultItem, Document> buildHighlights = null;
 
-                            if (searchQuery.IncludeHighlights)
+                            if (searchQuery.HighlightSettings.Enabled)
                             {
-                                buildHighlights = (line, doc) => AddHighlights(query, searchQuery.CultureInfo, doc, line);
+                                buildHighlights = (line, doc) => AddHighlights(query, searchQuery.HighlightSettings, searchQuery.CultureInfo, doc, line);
                             }
 
                             return new SearchResult
@@ -177,12 +177,16 @@ namespace Orckestra.Search.LuceneNET
             }
         }
 
-        private void AddHighlights(Query query, CultureInfo culture, Document doc, SearchResultItem item)
+        private void AddHighlights(Query query, SearchQueryHighlightSettings settings, CultureInfo culture, Document doc, SearchResultItem item)
         {
             var highlighter = new Highlighter(
                 new SimpleHTMLFormatter(HighlightWordOpenTag, HighlightWordCloseTag),
                 new HTMLEncoder(),
-                new QueryScorer(query));
+                new QueryScorer(query))
+            {
+                MaxDocCharsToAnalyze = settings.MaxAnalyzedChars,
+                TextFragmenter = new SimpleFragmenter(settings.FragmentSize)
+            };
 
             var labelText = doc.GetField(Constants.FieldNames.label)?.StringValue;
             var fullText = doc.GetField(Constants.FieldNames.fulltext)?.StringValue;
@@ -204,7 +208,7 @@ namespace Orckestra.Search.LuceneNET
                 string[] textHighlights = null;
                 if (!string.IsNullOrEmpty(fullText))
                 {
-                    textHighlights = highlighter.GetBestFragments(analyzer, Constants.FieldNames.fulltext, fullText, 2);
+                    textHighlights = highlighter.GetBestFragments(analyzer, Constants.FieldNames.fulltext, fullText, settings.FragmentsCount);
                 }
 
                 item.FullTextHtmlHighlights = textHighlights ?? Array.Empty<string>();
