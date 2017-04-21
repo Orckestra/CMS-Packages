@@ -64,7 +64,13 @@ namespace Composite.Search.SimplePageSearch
             var searchQuery = new SearchQuery(text, query.Culture)
             {
                 MaxDocumentsNumber = query.PageSize,
-                SearchResultOffset = query.PageSize * query.PageNumber
+                SearchResultOffset = query.PageSize * query.PageNumber,
+                HighlightSettings =
+                {
+                    Enabled = true,
+                    FragmentsCount = 1,
+                    FragmentSize = 120
+                }
             };
 
             searchQuery.ShowOnlyDocumentsWithUrls();
@@ -74,7 +80,6 @@ namespace Composite.Search.SimplePageSearch
                 searchQuery.FilterByAncestors(GetRootPageEntityToken());
             }
 
-            searchQuery.IncludeHighlights = true;
 
             var result = SearchFacade.SearchProvider.SearchAsync(searchQuery).Result;
             return new SimpleSearchResult
