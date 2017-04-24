@@ -116,7 +116,7 @@ namespace Composite.Search.SimplePageSearch
             object desc;
 
             var doc = line.Document;
-            doc.FieldValues.TryGetValue(DefaultDocumentFieldNames.Description, out desc);
+            doc.FieldValues.TryGetValue(DocumentFieldNames.Description, out desc);
 
             return new SearchResultEntry
             {
