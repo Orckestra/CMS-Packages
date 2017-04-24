@@ -8,9 +8,9 @@ using BoboBrowse.Net;
 using BoboBrowse.Net.Facets;
 using BoboBrowse.Net.Facets.Impl;
 using Composite;
+using Composite.Core.Linq;
 using Composite.Search;
 using Composite.Search.Crawling;
-using Composite.Core.Linq;
 using Lucene.Net.Documents;
 using Lucene.Net.Index;
 using Lucene.Net.QueryParsers;
@@ -28,11 +28,17 @@ namespace Orckestra.Search.LuceneNET
         private readonly LuceneSearchIndex _searchIndex;
         private readonly AnalyzerFactory _analyzerFactory;
 
-        public LuceneSearchProvider(ISearchIndex searchIndex, AnalyzerFactory analyzerFactory)
+        private IEnumerable<ISearchDocumentSourceProvider> _dsProviders;
+
+        public LuceneSearchProvider(ISearchIndex searchIndex, AnalyzerFactory analyzerFactory, IEnumerable<ISearchDocumentSourceProvider> providers)
         {
             _searchIndex = (LuceneSearchIndex) searchIndex;
             _analyzerFactory = analyzerFactory;
+            _dsProviders = providers;
         }
+
+        private IEnumerable<DocumentField> AllDocumentFields =>
+            _dsProviders.SelectMany(sp => sp.GetDocumentSources()).SelectMany(ds => ds.CustomFields);
 
         public Task<SearchResult> SearchAsync(SearchQuery searchQuery)
         {
@@ -52,7 +58,7 @@ namespace Orckestra.Search.LuceneNET
 
         private string ToFacetFieldName(string fieldName)
         {
-            if (fieldName == DefaultDocumentFieldNames.Source)
+            if (fieldName == DocumentFieldNames.Source)
             {
                 return Constants.FieldNames.source;
             }
@@ -69,7 +75,7 @@ namespace Orckestra.Search.LuceneNET
         {
             if (facetFieldName == Constants.FieldNames.source)
             {
-                return DefaultDocumentFieldNames.Source;
+                return DocumentFieldNames.Source;
             }
 
             Verify.That(facetFieldName.StartsWith(Constants.FacetFieldPrefix), $"Facet fields should start with prefix '{Constants.FacetFieldPrefix}'");
@@ -79,24 +85,37 @@ namespace Orckestra.Search.LuceneNET
 
         private SearchResult Search(SearchQuery searchQuery, Directory directory)
         {
-            var facetFields = searchQuery.Facets?.Evaluate() ??
-                              Enumerable.Empty<KeyValuePair<string, DocumentFieldFacet>>();
+            var facetFields = searchQuery.Facets?.ToArray() ??
+                              Array.Empty<KeyValuePair<string, DocumentFieldFacet>>();
 
-            var facetHandlers = from facetField in facetFields
-                let name = ToFacetFieldName(facetField.Key)
-                let info = facetField.Value
-                select GetFacetHandler(name, info);
+            var fieldsForFacetHandlers = new List<KeyValuePair<string, DocumentFieldFacet>>(facetFields);
 
             var selectedValues = searchQuery.Selection ?? Enumerable.Empty<SearchQuerySelection>();
-            foreach (var selection in selectedValues)
+
+            // Adding facet handlers for the filtering by fields
+            var allFields = new Lazy<IEnumerable<DocumentField>>(() => AllDocumentFields);
+            foreach (var selection in selectedValues.Where(s => !facetFields.Any(f => f.Key == s.FieldName)))
             {
-                if (!facetFields.Any(f => f.Key == selection.FieldName))
+                var field = allFields.Value.FirstOrDefault(f => f.Name == selection.FieldName);
+
+                if (field == null)
+                {
+                    throw new ArgumentException($"Field with name '{selection.FieldName}' is not defined in the document sources");
+                }
+
+                if (field.Facet == null)
                 {
                     throw new ArgumentException($"Search query contains a selection for field '{selection.FieldName}'"
-                     + $", which is not specified in the '{nameof(searchQuery)}.{nameof(SearchQuery.Facets)}' collection.", 
-                     nameof(searchQuery));
+                     + ", which does not have facetted search enabled.");
                 }
+
+                fieldsForFacetHandlers.Add(new KeyValuePair<string, DocumentFieldFacet>(selection.FieldName, field.Facet));
             }
+
+            var facetHandlers = from facetField in fieldsForFacetHandlers
+                                let name = ToFacetFieldName(facetField.Key)
+                                let info = facetField.Value
+                                select GetFacetHandler(name, info);
 
             var sortOptions = searchQuery.SortOptions?.ToArray() ?? Array.Empty<SearchQuerySortOption>();
             facetHandlers = facetHandlers.Concat(
@@ -120,16 +139,15 @@ namespace Orckestra.Search.LuceneNET
                         foreach (var selection in searchQuery.Selection)
                         {
                             string fieldName = ToFacetFieldName(selection.FieldName);
-                            var sel = new BrowseSelection(fieldName);
-                            foreach (var value in selection.Values)
-                            {
-                                sel.AddValue(value);
-                            }
-                            sel.SelectionOperation = selection.Operation == SearchQuerySelectionOperation.Or
-                                ? BrowseSelection.ValueOperation.ValueOperationOr
-                                : BrowseSelection.ValueOperation.ValueOperationAnd;
 
-                            browseRequest.AddSelection(sel);
+                            browseRequest.AddSelection(new BrowseSelection(fieldName)
+                            {
+                                SelectionOperation = selection.Operation == SearchQuerySelectionOperation.Or
+                                    ? BrowseSelection.ValueOperation.ValueOperationOr
+                                    : BrowseSelection.ValueOperation.ValueOperationAnd,
+                                Values = selection.Values ?? Array.Empty<string>(),
+                                NotValues = selection.NotValues ?? Array.Empty<string>()
+                            });
                         }
                     }
 
