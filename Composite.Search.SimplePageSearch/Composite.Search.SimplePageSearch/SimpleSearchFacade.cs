@@ -80,8 +80,9 @@ namespace Composite.Search.SimplePageSearch
                 searchQuery.FilterByAncestors(GetRootPageEntityToken());
             }
 
-
             var result = SearchFacade.SearchProvider.SearchAsync(searchQuery).Result;
+            if (result == null) return new SimpleSearchResult();
+
             return new SimpleSearchResult
             {
                 Entries = result.Items.Select(ToSearchResultEntry).ToList(),
