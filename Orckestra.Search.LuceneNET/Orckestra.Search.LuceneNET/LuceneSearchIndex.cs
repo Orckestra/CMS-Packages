@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
+using Composite;
 using Composite.Search;
 using Composite.Core.IO;
 using Composite.Core.Types;
@@ -247,6 +248,8 @@ namespace Orckestra.Search.LuceneNET
 
         public Directory GetDirectory(CultureInfo culture)
         {
+            Verify.IsNotNull(_directories, "The search provider isn't initialized");
+
             Directory directory;
             if (!_directories.TryGetValue(culture, out directory))
             {

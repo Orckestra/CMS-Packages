@@ -8,7 +8,6 @@ using BoboBrowse.Net;
 using BoboBrowse.Net.Facets;
 using BoboBrowse.Net.Facets.Impl;
 using Composite;
-using Composite.Core.Linq;
 using Composite.Search;
 using Composite.Search.Crawling;
 using Lucene.Net.Documents;
@@ -28,7 +27,7 @@ namespace Orckestra.Search.LuceneNET
         private readonly LuceneSearchIndex _searchIndex;
         private readonly AnalyzerFactory _analyzerFactory;
 
-        private IEnumerable<ISearchDocumentSourceProvider> _dsProviders;
+        private readonly IEnumerable<ISearchDocumentSourceProvider> _dsProviders;
 
         public LuceneSearchProvider(ISearchIndex searchIndex, AnalyzerFactory analyzerFactory, IEnumerable<ISearchDocumentSourceProvider> providers)
         {
@@ -42,6 +41,11 @@ namespace Orckestra.Search.LuceneNET
 
         public Task<SearchResult> SearchAsync(SearchQuery searchQuery)
         {
+            if (!_searchIndex.IsInitialized)
+            {
+                return Task.FromResult<SearchResult>(null);
+            }
+
             return Task.FromResult(Search(searchQuery));
         }
 
@@ -85,6 +89,11 @@ namespace Orckestra.Search.LuceneNET
 
         private SearchResult Search(SearchQuery searchQuery, Directory directory)
         {
+            if (!TryParseTextQuery(searchQuery.Query, searchQuery.CultureInfo, out Query query))
+            {
+                return null;
+            }
+
             var facetFields = searchQuery.Facets?.ToArray() ??
                               Array.Empty<KeyValuePair<string, DocumentFieldFacet>>();
 
@@ -120,8 +129,6 @@ namespace Orckestra.Search.LuceneNET
             var sortOptions = searchQuery.SortOptions?.ToArray() ?? Array.Empty<SearchQuerySortOption>();
             facetHandlers = facetHandlers.Concat(
                 sortOptions.Select(so => new SimpleFacetHandler(ToPreviewFieldName(so.FieldName))));
-
-            var query = GetTextQuery(searchQuery.Query, searchQuery.CultureInfo);
 
             using (var reader = IndexReader.Open(directory, true))
             {
@@ -265,7 +272,7 @@ namespace Orckestra.Search.LuceneNET
             throw new NotImplementedException("Not supported facet type: " + info.FacetType);
         }
 
-        private Query GetTextQuery(string query, CultureInfo cultureInfo)
+        private bool TryParseTextQuery(string query, CultureInfo cultureInfo, out Query parsedQuery)
         {
             using (var analyzer = _analyzerFactory.GetAnalyzer(cultureInfo))
             {
@@ -280,7 +287,17 @@ namespace Orckestra.Search.LuceneNET
                 {
                     DefaultOperator = QueryParser.Operator.AND
                 };
-                return mfQP.Parse(query);
+
+                try
+                {
+                    parsedQuery = mfQP.Parse(query);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    parsedQuery = null;
+                    return false;
+                }
             }
         }
 
