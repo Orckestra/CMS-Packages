@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="Frontend\Orckestra\Web\Html\BootstrapCarousel\" />
+	</pc:Directories>
+	<pc:Functions>
+		<Add name="Orckestra.Web.Html.BootstrapCarousel" />
+	</pc:Functions>
+	<mi:PackageRequirements minimumCompositeVersion="4.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Html.BootstrapCarousel.Razor" groupName="Orckestra.Web" version="1.0.0" author="Orckestra A/S" website="http://www.composite.net/" readMoreUrl="http://docs.composite.net/Composite.Media.BootstrapCarousel" id="47c974eb-acee-42b1-9e5c-a292644dd4a6" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+		<TechnicalDetails>The slideshow below shows a generic plugin and component for cycling through elements like a carousel.</TechnicalDetails>
+		<Description>The slideshow below shows a generic plugin and component for cycling through elements like a carousel.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

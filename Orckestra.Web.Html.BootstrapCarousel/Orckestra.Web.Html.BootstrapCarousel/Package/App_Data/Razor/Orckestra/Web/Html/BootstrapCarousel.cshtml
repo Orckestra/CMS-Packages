@@ -1,0 +1,87 @@
+﻿@using Orckestra.Web>html
+@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "Bootstrap Carousel"; }
+	}
+
+
+	private const string optionsWidgetMarkup = @" <f:widgetfunction xmlns:f='http://www.composite.net/ns/function/1.0' name='Composite.Widgets.String.Selector'>
+	<f:param name='Options'>
+		<f:function name='Composite.Utils.String.Split'>
+			<f:param name='String' value='Use Full Page Width,Show Indicators,Show Navigation Controls' />
+		</f:function>
+	</f:param>
+	<f:param name=""Multiple"" value=""True"" />
+	<f:param name=""Required"" value=""False"" />
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Display Options", WidgetMarkup = optionsWidgetMarkup, DefaultValue = "Show Navigation Controls,Show Indicators")]
+	public string Options { get; set; }
+
+	[FunctionParameter(Label = "Include Bootstrap Carousel Styles and Javascript", Help="If your website doesn't use the Bootstrap Framework by default, then check that option.",  DefaultValue = false )]
+	public bool BootstrapStyles { get; set; }
+}
+
+@{
+	var slides = Data.Get<BootstrapCarousel>().Where(s => s.PageId == CurrentPageNode.Id).OrderBy(s => s.Order).ToList();
+	if (!slides.Any()) { return; }
+
+	var isIndicators = Options.Contains("Indicators");
+	var isControls = Options.Contains("Navigation Controls");
+	var isFullWidth = Options.Contains("Use Full Page Width");
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+	<link id="font-awesome-css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+	<link id="carousel-css" rel="stylesheet" href="~/Frontend/Orckestra/Media/BootstrapCarousel/styles.css" />
+	@if(BootstrapStyles)  {
+		<link id="bootstrapcarousel-css" rel="stylesheet" href="~/Frontend/Orckestra/Media/BootstrapCarousel/carousel.css" />
+		<script id="bootstrapcarousel-js" src="~/Frontend/Orckestra/Media/BootstrapCarousel/carousel.js" type="text/javascript"></script>
+   }
+</head>
+<body>
+	<div class="@(isFullWidth ? "cms-fullwidth" : "container") carousel-container">
+		<div id="bootstrapcarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			@if (isIndicators)
+			{
+				<ol class="carousel-indicators">
+					@for (var i = 0; i < slides.Count(); i++)
+					{
+						<li data-target="#bootstrapcarousel" data-slide-to="@i" class="@(i == 0 ? "active" : "")"></li>
+					}
+				</ol>
+			}
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				@for (var i = 0; i < slides.Count(); i++)
+				{
+					var slide = slides[i];
+					<div class="item @(i == 0 ? "active" : "")">
+						<img src="~/media(@slide.Image)" alt="slide" />
+						<div class="carousel-caption">
+							@Html.Raw(slide.Caption)
+						</div>
+					</div>
+				}
+			</div>
+			<!-- Controls -->
+			@if (isControls)
+			{
+				<a class="left carousel-control" href="#bootstrapcarousel" role="button" data-slide="prev">
+					<span class="fa fa-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#bootstrapcarousel" role="button" data-slide="next">
+					<span class="fa fa-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			}
+		</div>
+	</div>
+</body>
+</html>

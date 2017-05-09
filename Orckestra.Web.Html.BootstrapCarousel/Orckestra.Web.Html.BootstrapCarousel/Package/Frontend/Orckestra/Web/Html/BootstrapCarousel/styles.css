@@ -1,0 +1,14 @@
+.carousel-control .fa {
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	position: absolute;
+	top: 50%;
+	z-index: 5;
+}
+
+@media (max-width: 1024px) {
+	.carousel-container {
+		padding: 0;
+	}
+}
