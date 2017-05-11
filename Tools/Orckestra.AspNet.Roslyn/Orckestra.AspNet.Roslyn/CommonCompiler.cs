@@ -50,10 +50,7 @@ namespace Orckestra.AspNet.Roslyn
             }
             catch (Exception ex)
             {
-                if (outputWriter != null)
-                {
-                    outputWriter.WriteLine(CommonCompiler.GetErrorOutput(null, string.Format(Res.Internal_Compiler_Error, ex.Message)));
-                }
+                outputWriter?.WriteLine(GetErrorOutput(null, string.Format(Res.Internal_Compiler_Error, ex.Message)));
                 result = null;
             }
             return result;
@@ -70,10 +67,7 @@ namespace Orckestra.AspNet.Roslyn
             }
             catch (Exception ex)
             {
-                if (outputWriter != null)
-                {
-                    outputWriter.WriteLine(CommonCompiler.GetErrorOutput(null, string.Format(Res.Internal_Compiler_Error, ex.Message)));
-                }
+                outputWriter?.WriteLine(GetErrorOutput(null, string.Format(Res.Internal_Compiler_Error, ex.Message)));
                 result = null;
             }
             return result;
@@ -81,7 +75,7 @@ namespace Orckestra.AspNet.Roslyn
 
         public CompilerResults CompileAssemblyFromDom(CompilerParameters parameters, CodeCompileUnit compilationUnit)
         {
-            return this.CompileAssemblyFromDomBatch(parameters, new CodeCompileUnit[]
+            return this.CompileAssemblyFromDomBatch(parameters, new []
             {
                 compilationUnit
             });
@@ -89,6 +83,8 @@ namespace Orckestra.AspNet.Roslyn
 
         public CompilerResults CompileAssemblyFromDomBatch(CompilerParameters parameters, CodeCompileUnit[] compilationUnits)
         {
+            FixParameters(parameters);
+
             Func<CodeCompileUnit, SyntaxTree> func = null;
             CompilerResults result;
             try
@@ -114,10 +110,7 @@ namespace Orckestra.AspNet.Roslyn
 
         public CompilerResults CompileAssemblyFromFile(CompilerParameters parameters, string fileName)
         {
-            return this.CompileAssemblyFromFileBatch(parameters, new string[]
-            {
-                fileName
-            });
+            return this.CompileAssemblyFromFileBatch(parameters, new [] { fileName });
         }
 
         public CompilerResults CompileAssemblyFromFileBatch(CompilerParameters parameters, string[] fileNames)
@@ -166,6 +159,38 @@ namespace Orckestra.AspNet.Roslyn
             return result;
         }
 
+        private void FixParameters(CompilerParameters parameters)
+        {
+            for (int i = 0; i < parameters.ReferencedAssemblies.Count; i++)
+            {
+                const string dllExtension = ".dll";
+                var reference = parameters.ReferencedAssemblies[i];
+                if (reference.StartsWith("System.", StringComparison.OrdinalIgnoreCase) 
+                    && reference.EndsWith(dllExtension, StringComparison.OrdinalIgnoreCase))
+                {
+                    string assemblyName = reference.Substring(0, reference.Length - dllExtension.Length);
+
+                    var assembly = AppDomain.CurrentDomain.GetAssemblies()
+                        .FirstOrDefault(a => !a.IsDynamic && a.GetName().Name == assemblyName);
+
+                    if (assembly != null)
+                    {
+                        string location;
+                        try
+                        {
+                            location = assembly.Location;
+                        }
+                        catch (Exception)
+                        {
+                            continue;
+                        }
+
+                        parameters.ReferencedAssemblies[i] = location;
+                    }
+                }
+            }
+        }
+
         internal CompilerResults Compile(CompilerParameters parameters, IEnumerable<SyntaxTree> syntaxTrees)
         {
             CompilerResults result;
@@ -189,9 +214,12 @@ namespace Orckestra.AspNet.Roslyn
 
         internal CompilerResults Compile(CompilerParameters parameters, IEnumerable<SyntaxTree> syntaxTrees, TextWriter outputWriter)
         {
-            CompilerResults compilerResults = new CompilerResults(parameters.TempFiles);
-            compilerResults.NativeCompilerReturnValue = 1;
-            CommonCompilationArguments commonCompilationArguments = this.ArgumentsFromParametersNoThrow(parameters, outputWriter);
+            var compilerResults = new CompilerResults(parameters.TempFiles)
+            {
+                NativeCompilerReturnValue = 1
+            };
+
+            var commonCompilationArguments = this.ArgumentsFromParametersNoThrow(parameters, outputWriter);
             if (commonCompilationArguments == null)
             {
                 return compilerResults;

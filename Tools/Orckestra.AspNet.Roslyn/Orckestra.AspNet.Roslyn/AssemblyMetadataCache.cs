@@ -11,37 +11,37 @@ namespace Orckestra.AspNet.Roslyn
 {
     internal class AssemblyMetadataCache
     {
-        private const long MaxInactiveTicksAllowed = 1200000000L;
+        private const long MaxInactiveTicksAllowed = 120_0000000L; // 120 seconds
 
         private const long MillisecondsInOneMinutes = 60000L;
 
-        private static AssemblyMetadataCache instance = new AssemblyMetadataCache();
+        private static readonly AssemblyMetadataCache _instance = new AssemblyMetadataCache();
 
-        private ConcurrentDictionary<string, AssemblyMetadata> dictionary;
+        private readonly ConcurrentDictionary<string, AssemblyMetadata> _dictionary;
 
         private DateTime lastActiveTime;
 
         private volatile Timer timer;
 
-        private object lockObject;
+        private readonly object _lockObject;
 
         private AssemblyMetadataCache()
         {
-            this.dictionary = new ConcurrentDictionary<string, AssemblyMetadata>();
-            this.lockObject = new object();
+            this._dictionary = new ConcurrentDictionary<string, AssemblyMetadata>();
+            this._lockObject = new object();
             this.Activate();
         }
 
         public static AssemblyMetadataCache GetInstance()
         {
-            return AssemblyMetadataCache.instance;
+            return AssemblyMetadataCache._instance;
         }
 
         public AssemblyMetadata GetOrAdd(string key, Func<string, AssemblyMetadata> func)
         {
             this.Activate();
             this.StartTimer();
-            return this.dictionary.GetOrAdd(key, func);
+            return this._dictionary.GetOrAdd(key, func);
         }
 
         private void Activate()
@@ -53,11 +53,11 @@ namespace Orckestra.AspNet.Roslyn
         {
             if (this.timer == null)
             {
-                lock (this.lockObject)
+                lock (this._lockObject)
                 {
                     if (this.timer == null)
                     {
-                        this.timer = new Timer(new TimerCallback(this.ClearIfInactive), null, MillisecondsInOneMinutes, MillisecondsInOneMinutes);
+                        this.timer = new Timer(this.ClearIfInactive, null, MillisecondsInOneMinutes, MillisecondsInOneMinutes);
                     }
                 }
             }
@@ -77,14 +77,19 @@ namespace Orckestra.AspNet.Roslyn
                 {
                     timer.Dispose();
                 }
-                ICollection<string> keys = this.dictionary.Keys;
+
+                ICollection<string> keys = this._dictionary.Keys;
                 foreach (string current in keys)
                 {
-                    AssemblyMetadata assemblyMetadata;
-                    this.dictionary.TryRemove(current, out assemblyMetadata);
-                    if (assemblyMetadata != null)
+                    if (this._dictionary.TryRemove(current, out AssemblyMetadata assemblyMetadata))
                     {
-                        assemblyMetadata.Dispose();
+                        try
+                        {
+                            assemblyMetadata?.Dispose();
+                        }
+                        catch (Exception)
+                        {
+                        }
                     }
                 }
             }
