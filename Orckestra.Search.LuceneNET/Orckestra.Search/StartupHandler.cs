@@ -48,7 +48,7 @@ namespace Orckestra.Search
             {
                 try
                 {
-                    if (HostingEnvironment.ApplicationHost.ShutdownInitiated()) return;
+                    if (IsShuttingDown) return;
 
                     var listener = new SearchIndexUpdater();
 
@@ -62,13 +62,15 @@ namespace Orckestra.Search
                     GlobalEventSystemFacade.SubscribeToPrepareForShutDownEvent(a => ctSource.Cancel());
 
                     IEnumerable<CultureInfo> cultures;
-                    using (var dc = new DataConnection())
+                    using (new DataConnection())
                     {
                         cultures = DataLocalizationFacade.ActiveLocalizationCultures.Evaluate();
                     }
 
                     searchIndex.Initialize(cultures, ctSource.Token,
                         out ICollection<CultureInfo> newlyCreatedCollections);
+
+                    if (IsShuttingDown) return;
 
                     foreach (var culture in newlyCreatedCollections)
                     {
@@ -90,5 +92,7 @@ namespace Orckestra.Search
                 }
             });
         }
+
+        private bool IsShuttingDown => HostingEnvironment.ApplicationHost.ShutdownInitiated();
     }
 }

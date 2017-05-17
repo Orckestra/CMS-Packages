@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using Composite;
 using Composite.Search;
@@ -48,7 +49,9 @@ namespace Orckestra.Search.LuceneNET
             foreach (var culture in activeCultures)
             {
                 var directoryPath = $"{indexRoot}\\{culture.Name.Replace('/', '_')}";
-                if (!System.IO.Directory.Exists(directoryPath))
+                if (!System.IO.Directory.Exists(directoryPath)
+                    || (System.IO.Directory.GetCreationTimeUtc(directoryPath) < DateTime.UtcNow.AddMinutes(-10)
+                        && System.IO.Directory.GetFiles(directoryPath).Length == 0))
                 {
                     culturesToPopulate.Add(culture);
                 }
@@ -154,7 +157,7 @@ namespace Orckestra.Search.LuceneNET
             if (document.FullText != null)
             {
                 var filteredText = document.FullText.Where(line => line != document.Label);
-                string fullText = string.Join(" ", filteredText);
+                string fullText = GetFullTextToStore(filteredText);
                 if (!string.IsNullOrWhiteSpace(fullText))
                 {
                     fields.Add(new Field(Constants.FieldNames.fulltext, fullText, Field.Store.YES, Field.Index.ANALYZED));
@@ -201,6 +204,33 @@ namespace Orckestra.Search.LuceneNET
             fields.ForEach(doc.Add);
 
             return doc;
+        }
+
+        private string GetFullTextToStore(IEnumerable<string> lines)
+        {
+            var sb = new StringBuilder();
+            string previous = null;
+            foreach (var line in lines)
+            {
+                if (string.IsNullOrWhiteSpace(line))
+                {
+                    continue;
+                }
+
+                var trimmedLine = line.Trim();
+
+                if (previous != null)
+                {
+                    var lastChar = previous[previous.Length - 1];
+                    
+                    sb.Append(".,!:;?-".Contains(lastChar) ? " " : " · ");
+                }
+                sb.Append(trimmedLine);
+
+                previous = trimmedLine;
+            }
+
+            return sb.ToString();
         }
 
         public void AddDocument(CultureInfo cultureInfo, SearchDocument document, IReadOnlyCollection<DocumentField> customFields)
