@@ -223,6 +223,7 @@ namespace Orckestra.Search.LuceneNET
                 if (!string.IsNullOrEmpty(labelText))
                 {
                     labelHighlights = highlighter.GetBestFragments(analyzer, Constants.FieldNames.label, labelText, 1);
+                    labelHighlights = PrettifyHighlights(labelHighlights);
                 }
 
                 item.LabelHtmlHighlight = labelHighlights.Length > 0
@@ -234,10 +235,38 @@ namespace Orckestra.Search.LuceneNET
                 if (!string.IsNullOrEmpty(fullText))
                 {
                     textHighlights = highlighter.GetBestFragments(analyzer, Constants.FieldNames.fulltext, fullText, settings.FragmentsCount);
+                    textHighlights = PrettifyHighlights(textHighlights);
                 }
 
                 item.FullTextHtmlHighlights = textHighlights ?? Array.Empty<string>();
             }
+        }
+
+        private static string[] PrettifyHighlights(string[] lines)
+        {
+            if (lines == null) return null;
+
+            // Removing white spaces and punctuation characters form the beginning of the highlight
+            for (int i = 0; i < lines.Length; i++)
+            {
+                var line = lines[i];
+                int position = 0;
+                while(position < line.Length 
+                    && (char.IsPunctuation(line[position]) || char.IsWhiteSpace(line[position])))
+                {
+                    if (line[position] == '&')
+                    {
+                        break;
+                    }
+                    position++;
+                }
+
+                if (position < line.Length)
+                {
+                    lines[i] = line.Substring(position);
+                }
+            }
+            return lines;
         }
 
         private int ToFieldTypeId(SortTermsAs sortTermsAs)
