@@ -41,7 +41,6 @@ namespace Composite.Search.SimplePageSearch
                 query.CurrentSiteOnly = false;
             }
 
-            // Current search api does not support searching for a given website only
             if (SearchFacade.SearchEnabled)
             {
                 return SearchUsingSearchProvider(query);

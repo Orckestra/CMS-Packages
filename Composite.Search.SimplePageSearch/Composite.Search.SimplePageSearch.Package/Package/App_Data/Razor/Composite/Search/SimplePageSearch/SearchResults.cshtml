@@ -82,9 +82,9 @@
         @if (!string.IsNullOrWhiteSpace(searchQuery))
         {
             <p>
-                @Html.Raw(string.Format(Resources.SimplePageSearch.SearchResults_TotalCount, _searchResult.ResultsFound, searchQuery))
+                @Html.Raw(string.Format(Resources.SimplePageSearch.SearchResults_TotalCount, _searchResult.ResultsFound, Server.HtmlEncode(searchQuery)))
             </p>
-        }
+	}
         <ol class="simplepagesearch-results" start="@(PageSize*(PageNumber-1)+1)">
             @foreach (var entry in _searchResult.Entries)
             {
