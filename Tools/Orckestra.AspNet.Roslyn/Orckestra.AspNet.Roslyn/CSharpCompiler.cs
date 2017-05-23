@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using System;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using System.CodeDom.Compiler;
@@ -34,20 +35,24 @@ namespace Orckestra.AspNet.Roslyn
 
         internal override Microsoft.CodeAnalysis.Compilation CreateCompilation(CommonCompilationArguments arguments, IEnumerable<SyntaxTree> syntaxTrees)
         {
-            if (arguments.CmdArguments.CompilationName.ToLower().EndsWith(".dll"))
-            {
-                var a = 2;
-            }
             var provider = new DesktopStrongNameProvider(arguments.CmdArguments.KeyFileSearchPaths);
             var cSharpCompilationOptions = ((CSharpCommandLineArguments)arguments.CmdArguments)
                 .CompilationOptions
                 .WithAssemblyIdentityComparer(DesktopAssemblyIdentityComparer.Default)
                 .WithStrongNameProvider(provider);
 
-            return CSharpCompilation.Create(arguments.OutputFileName, 
+            return CSharpCompilation.Create(GetAssemblyName(arguments),
                 syntaxTrees
                 .Where(tree => tree != null),
                 arguments.MetadataReferences, cSharpCompilationOptions);
+        }
+
+        private string GetAssemblyName(CommonCompilationArguments arguments)
+        {
+            var fileName = arguments.OutputFileName;
+            return fileName.EndsWith(".dll", StringComparison.OrdinalIgnoreCase)
+                ? fileName.Substring(0, fileName.Length - 4)
+                : fileName;
         }
 
         internal override CompilerError CompilerErrorFromDiagnostic(Diagnostic diagnostic, TextWriter consoleOutput)

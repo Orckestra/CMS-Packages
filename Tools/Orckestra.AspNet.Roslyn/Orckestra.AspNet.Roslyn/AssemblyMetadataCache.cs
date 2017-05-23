@@ -40,7 +40,7 @@ namespace Orckestra.AspNet.Roslyn
         public AssemblyMetadata GetOrAdd(string key, Func<string, AssemblyMetadata> func)
         {
             this.Activate();
-            this.StartTimer();
+            //this.StartTimer();
             return this._dictionary.GetOrAdd(key, func);
         }
 
