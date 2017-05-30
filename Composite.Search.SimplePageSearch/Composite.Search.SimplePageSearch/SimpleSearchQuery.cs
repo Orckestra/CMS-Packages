@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
 namespace Composite.Search.SimplePageSearch
 {
@@ -8,6 +9,11 @@ namespace Composite.Search.SimplePageSearch
         public string[] Keywords { get; set; }
         public bool CurrentSiteOnly { get; set; }
         public int PageSize { get; set; } = 50;
+
+        /// <summary>
+        /// The data types that search results should be filtered by.
+        /// </summary>
+        public Type[] DataTypes { get; set; }
 
         /// <summary>
         /// A zero-based page number.

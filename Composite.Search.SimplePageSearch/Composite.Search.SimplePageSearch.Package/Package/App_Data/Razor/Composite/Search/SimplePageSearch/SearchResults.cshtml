@@ -1,4 +1,6 @@
-﻿@using Composite.Search.SimplePageSearch
+﻿@using Composite.Core.Routing
+@using Composite.Data.DynamicTypes
+@using Composite.Search.SimplePageSearch
 @inherits RazorFunction
 @functions {
 	public override string FunctionDescription
@@ -18,11 +20,48 @@
 	[FunctionParameter(Label = "Search Current Site Only", Help = "If checked only the current site will be searched. Uncheck to search all subsites.", DefaultValue = "true")]
 	public bool CurrentSite { get; set; }
 
-	[FunctionParameter(Label = "Show Descriptions", Help = "If checked search results will have descriptions (when available) shown below the title.", DefaultValue = "false")]
+	[FunctionParameter(Label = "Show Highlights", Help = "If checked search results will have highlights (when available) shown below the title.", DefaultValue = "false")]
 	public bool ShowDescriptions { get; set; }
 
-    SimpleSearchResult _searchResult;
+	[FunctionParameter(Label = "Data Types", DefaultValue = null,
+		Help = "Allows limiting the search results to the given data types.",
+		WidgetFactoryMethod = "SearchableDataTypeSelector")]
+	public IEnumerable<string> DataTypes { get; set; }
 
+	SimpleSearchResult _searchResult;
+
+
+
+	public static WidgetFunctionProvider SearchableDataTypeSelector()
+	{
+		Expression<Func<object>> expression = () => GetSearchableDataTypeOptions();
+		var method = (expression.Body as MethodCallExpression).Method;
+
+		return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Item1", "Item2", true, false);
+	}
+
+
+	public static Tuple<string, string>[] GetSearchableDataTypeOptions()
+	{
+		var result = new List<Tuple<string, string>>();
+
+		var dataTypes = DataFacade.GetAllInterfaces().Where(type =>
+			type.GetCustomAttributes(typeof(SearchableTypeAttribute), false).Length > 0
+			&& InternalUrls.DataTypeSupported(type)).ToList();
+
+		dataTypes.Add(typeof(IPage));
+		dataTypes.Add(typeof(IMediaFile));
+
+		foreach (var dataType in dataTypes)
+		{
+			var descriptor = DynamicTypeManager.GetDataTypeDescriptor(dataType);
+			result.Add(new Tuple<string, string>(
+				dataType.FullName,
+				descriptor.Title ?? dataType.Name));
+		}
+
+		return result.OrderBy(r => r.Item2).ToArray();
+	}
 
 	private int PageNumber
 	{
@@ -50,10 +89,17 @@
 		searchQuery = searchQuery.Trim().ToLower();
 		string[] keywords = searchQuery.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
 
+		var knowTypes = DataFacade.GetAllInterfaces().ToDictionary(t => t.FullName);
+
+		Type[] dataTypes = DataTypes != null
+			? DataTypes.Select(name => knowTypes[name]).ToArray()
+			: null;
+
 		_searchResult = SimpleSearchFacade.Search(new SimpleSearchQuery
 		{
 			Culture = Data.CurrentLocale,
 			Keywords = keywords,
+			DataTypes = dataTypes,
 			CurrentSiteOnly = CurrentSite,
 			PageNumber = PageNumber - 1,
 			PageSize = PageSize
@@ -61,7 +107,7 @@
 	}
 	else
 	{
-	    _searchResult = new SimpleSearchResult();
+		_searchResult = new SimpleSearchResult();
 	}
 }
 

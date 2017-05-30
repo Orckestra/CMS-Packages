@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
   <mi:PackageRequirements minimumCompositeVersion="6.1.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-  <mi:PackageInformation name="Composite.Search.SimplePageSearch" groupName="Composite.Search" version="2.4.1" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="https://docs.c1.orckestra.com/Composite.Search.SimplePageSearch" id="76d60b61-8bd7-42ec-aaab-67efe4584c5f" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+  <mi:PackageInformation name="Composite.Search.SimplePageSearch" groupName="Composite.Search" version="2.4.2" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="https://docs.c1.orckestra.com/Composite.Search.SimplePageSearch" id="76d60b61-8bd7-42ec-aaab-67efe4584c5f" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
     <TechnicalDetails>Implements the search form and search results view as Razor functions. Does not include media files, data types and dynamic content in search results.</TechnicalDetails>
     <Description>Allows visitors search static content on a website by keywords.</Description>
   </mi:PackageInformation>

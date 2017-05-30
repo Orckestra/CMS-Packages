@@ -10,6 +10,7 @@ using Composite.Core.Routing;
 using Composite.Core.Types;
 using Composite.Core.WebClient.Renderings.Page;
 using Composite.Data;
+using Composite.Data.DynamicTypes;
 using Composite.Data.ProcessControlled;
 using Composite.Data.Types;
 using Composite.Search.Crawling;
@@ -77,6 +78,11 @@ namespace Composite.Search.SimplePageSearch
             if (query.CurrentSiteOnly)
             {
                 searchQuery.FilterByAncestors(GetRootPageEntityToken());
+            }
+
+            if (query.DataTypes != null && query.DataTypes.Length > 0)
+            {
+                searchQuery.FilterByDataTypes(query.DataTypes);
             }
 
             var result = SearchFacade.SearchProvider.SearchAsync(searchQuery).Result;
