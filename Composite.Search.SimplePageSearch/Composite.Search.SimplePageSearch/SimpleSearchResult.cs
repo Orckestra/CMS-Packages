@@ -6,6 +6,8 @@ namespace Composite.Search.SimplePageSearch
     public class SimpleSearchResult
     {
         public IReadOnlyCollection<SearchResultEntry> Entries { get; set; } = Array.Empty<SearchResultEntry>();
+        public IReadOnlyCollection<SearchResultFacet> Facets { get; set; } = Array.Empty<SearchResultFacet>();
+
         public int ResultsFound { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Web;
 using Composite.Core.Linq;
+using Composite.Core.ResourceSystem;
 using Composite.Core.Routing;
 using Composite.Core.Types;
 using Composite.Core.WebClient.Renderings.Page;
@@ -73,6 +74,28 @@ namespace Composite.Search.SimplePageSearch
                 }
             };
 
+            var allFields = SearchFacade.DocumentSources.SelectMany(ds => ds.CustomFields).ToList();
+
+            foreach (var facet in query.Facets ?? Enumerable.Empty<SimpleSearchQueryFacet>())
+            {
+                // TODO: use an overload for SearchQuery.AddFieldFacet(...) once C1 6.2 is out
+                searchQuery.AddFieldFacet(facet.Name);
+
+                var field = allFields.Where(f => f.Facet != null).FirstOrDefault(f => f.Name == facet.Name);
+
+                if (facet.Selections != null && facet.Selections.Length > 0)
+                {
+                    searchQuery.Selection.Add(new SearchQuerySelection
+                    {
+                        FieldName = facet.Name,
+                        Values = facet.Selections,
+                        Operation = field.Facet.FacetType == FacetType.SingleValue 
+                        ? SearchQuerySelectionOperation.Or
+                        : SearchQuerySelectionOperation.And
+                    });
+                }
+            }
+
             searchQuery.ShowOnlyDocumentsWithUrls();
 
             if (query.CurrentSiteOnly)
@@ -91,8 +114,58 @@ namespace Composite.Search.SimplePageSearch
             return new SimpleSearchResult
             {
                 Entries = result.Items.Select(ToSearchResultEntry).ToList(),
+                Facets = GetFacets(query, result, allFields),
                 ResultsFound = result.TotalHits
             };
+        }
+
+        private static IReadOnlyCollection<SearchResultFacet> GetFacets(
+            SimpleSearchQuery query,
+            SearchResult result,
+            IEnumerable<DocumentField> allFields)
+        {
+            if (query.Facets == null || !query.Facets.Any()) return Array.Empty<SearchResultFacet>();
+
+            var facetFields = IgnoreDuplicates(
+                allFields
+                    .Where(f => f.FacetedSearchEnabled && f.Label != null),
+                f => f.Name).ToDictionary(f => f.Name);
+
+            // Returning exactly the requested fasets if no documents were found.
+            if (result.TotalHits == 0)
+            {
+                return (from facet in query.Facets
+                    let facetField = facetFields[facet.Name]
+                    let previewFunc = facetField.Facet.PreviewFunction ?? (value => value?.ToString())
+                    select new SearchResultFacet
+                    {
+                        Name = facet.Name,
+                        Hits = facet.Selections
+                            .Select(value => new SearchResultFacetHit
+                            {
+                                Value = value,
+                                Label = previewFunc(value),
+                                HitCount = 0
+                            })
+                            .ToArray()
+                    }).ToArray();
+            }
+
+            return (from facet in result.Facets
+                    let facetField = facetFields[facet.Key]
+                    let previeFunc = facetField.Facet.PreviewFunction ?? (value => value?.ToString())
+                    select new SearchResultFacet
+                    {
+                        Name = facet.Key,
+                        Hits = facet.Value
+                               .Select(v => new SearchResultFacetHit
+                               {
+                                    Value = v.Value,
+                                    Label = previeFunc(v.Value),
+                                    HitCount = v.HitCount
+                               })
+                               .ToArray()
+                    }).ToArray();
         }
 
         private static DataEntityToken GetRootPageEntityToken()
@@ -352,6 +425,66 @@ namespace Composite.Search.SimplePageSearch
             }
 
             return result;
+        }
+
+        public static Tuple<string, string>[] GetSearchableDataTypeOptions()
+        {
+            var result = new List<Tuple<string, string>>();
+
+            var dataTypes = DataFacade.GetAllInterfaces().Where(type =>
+                type.GetCustomAttributes(typeof(SearchableTypeAttribute), false).Length > 0
+                && InternalUrls.DataTypeSupported(type)).ToList();
+
+            dataTypes.Add(typeof(IPage));
+            dataTypes.Add(typeof(IMediaFile));
+
+            foreach (var dataType in dataTypes)
+            {
+                var descriptor = DynamicTypeManager.GetDataTypeDescriptor(dataType);
+                result.Add(new Tuple<string, string>(
+                    dataType.FullName,
+                    descriptor.Title ?? dataType.Name));
+            }
+
+            return result.OrderBy(r => r.Item2).ToArray();
+        }
+
+
+        public static Tuple<string, string>[] GetFacetOptions()
+        {
+            var toSkip = new []
+            {
+                DocumentFieldNames.GetFieldName(typeof(IPublishControlled),nameof(IPublishControlled.PublicationStatus)),
+                DocumentFieldNames.GetFieldName(typeof(IChangeHistory), nameof(IChangeHistory.ChangedBy)),
+                DocumentFieldNames.DataType
+            };
+
+            var facetFields = SearchFacade.DocumentSources
+                .SelectMany(ds => ds.CustomFields)
+                .Where(f => f.FacetedSearchEnabled && f.Label != null
+                    && !toSkip.Contains(f.Name))
+                .Select(f => new Tuple<string, string>(f.Name, GetFacetLabel(f)));
+
+            return IgnoreDuplicates(facetFields, t => t.Item1).OrderBy(t => t.Item2).ToArray();
+        }
+
+        private static string GetFacetLabel(DocumentField field)
+        {
+            return StringResourceSystemFacade.ParseString(field.Label);
+        }
+
+
+        private static IEnumerable<T> IgnoreDuplicates<T>(IEnumerable<T> items, Func<T, string> getKey)
+        {
+            var keys = new HashSet<string>();
+            foreach (var item in items)
+            {
+                string key = getKey(item);
+                if (keys.Contains(key)) continue;
+
+                keys.Add(key);
+                yield return item;
+            }
         }
     }
 }

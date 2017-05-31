@@ -1,11 +1,28 @@
-﻿@using Composite.Core.Routing
-@using Composite.Data.DynamicTypes
+﻿@using Composite.Search
 @using Composite.Search.SimplePageSearch
+
 @inherits RazorFunction
 @functions {
 	public override string FunctionDescription
 	{
 		get { return "Search results rendering"; }
+	}
+
+	public static WidgetFunctionProvider SearchableDataTypeSelector()
+	{
+		return GetMultiSelectorWidget(() => SimpleSearchFacade.GetSearchableDataTypeOptions());
+	}
+
+	public static WidgetFunctionProvider FacetSelector()
+	{
+		return GetMultiSelectorWidget(() => SimpleSearchFacade.GetFacetOptions());
+	}
+
+	private static WidgetFunctionProvider GetMultiSelectorWidget(Expression<Func<object>> optionsGetter)
+	{
+		var method = ((MethodCallExpression)optionsGetter.Body).Method;
+
+		return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Item1", "Item2", true, false);
 	}
 
 	[FunctionParameter(Label = "Show Search Form", Help = "If checked, a search form will be shown above the search result.", DefaultValue = "true")]
@@ -23,45 +40,25 @@
 	[FunctionParameter(Label = "Show Highlights", Help = "If checked search results will have highlights (when available) shown below the title.", DefaultValue = "false")]
 	public bool ShowDescriptions { get; set; }
 
+	public IEnumerable<ISearchDocumentSourceProvider> SearchDocumentSourceProviders { get; set; }
+
 	[FunctionParameter(Label = "Data Types", DefaultValue = null,
-		Help = "Allows limiting the search results to the given data types.",
+		Help = "Allows limiting the search results to the given data types. If none selected all the data types will be shown.",
 		WidgetFactoryMethod = "SearchableDataTypeSelector")]
 	public IEnumerable<string> DataTypes { get; set; }
 
+	[FunctionParameter(Label = "Facets", DefaultValue = null,
+		Help = "Select facets to be shown on the search result page.",
+		WidgetFactoryMethod = "FacetSelector")]
+	public IEnumerable<string> FacetFields { get; set; }
+
+	string GetFacetFieldCheckboxPrefix(string fieldName)
+	{
+		return "f_" + fieldName + "_";
+	}
+
 	SimpleSearchResult _searchResult;
 
-
-
-	public static WidgetFunctionProvider SearchableDataTypeSelector()
-	{
-		Expression<Func<object>> expression = () => GetSearchableDataTypeOptions();
-		var method = (expression.Body as MethodCallExpression).Method;
-
-		return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Item1", "Item2", true, false);
-	}
-
-
-	public static Tuple<string, string>[] GetSearchableDataTypeOptions()
-	{
-		var result = new List<Tuple<string, string>>();
-
-		var dataTypes = DataFacade.GetAllInterfaces().Where(type =>
-			type.GetCustomAttributes(typeof(SearchableTypeAttribute), false).Length > 0
-			&& InternalUrls.DataTypeSupported(type)).ToList();
-
-		dataTypes.Add(typeof(IPage));
-		dataTypes.Add(typeof(IMediaFile));
-
-		foreach (var dataType in dataTypes)
-		{
-			var descriptor = DynamicTypeManager.GetDataTypeDescriptor(dataType);
-			result.Add(new Tuple<string, string>(
-				dataType.FullName,
-				descriptor.Title ?? dataType.Name));
-		}
-
-		return result.OrderBy(r => r.Item2).ToArray();
-	}
 
 	private int PageNumber
 	{
@@ -77,11 +74,22 @@
 		get { return (int)Math.Ceiling((decimal)_searchResult.ResultsFound / PageSize); }
 	}
 
+	private string[] GetFacetSelection(string fieldName)
+	{
+		var prefix = GetFacetFieldCheckboxPrefix(fieldName);
+		return Request.QueryString.AllKeys
+			.Where(key => key.StartsWith(prefix))
+			.Select(key => key.Substring(prefix.Length))
+			.ToArray();
+	}
+
 }
 
 @{
 
 	var searchQuery = Request.QueryString["q"] ?? string.Empty;
+
+	bool showFacets = false;
 
 	if (!string.IsNullOrWhiteSpace(searchQuery) && searchQuery.Length > 1)
 	{
@@ -95,6 +103,15 @@
 			? DataTypes.Select(name => knowTypes[name]).ToArray()
 			: null;
 
+
+		var facetsToQuery = FacetFields ?? Array.Empty<string>();
+		showFacets = facetsToQuery.Any();
+
+		var facets = facetsToQuery.Select(fieldName => new SimpleSearchQueryFacet
+		{
+			Name = fieldName, Selections = GetFacetSelection(fieldName)
+		});
+
 		_searchResult = SimpleSearchFacade.Search(new SimpleSearchQuery
 		{
 			Culture = Data.CurrentLocale,
@@ -102,6 +119,7 @@
 			DataTypes = dataTypes,
 			CurrentSiteOnly = CurrentSite,
 			PageNumber = PageNumber - 1,
+			Facets = facets.ToArray(),
 			PageSize = PageSize
 		});
 	}
@@ -115,53 +133,143 @@
 <head>
 </head>
 <body>
-    <div class="simplepagesearch clearfix">
-        @if (ShowSearchForm)
-        {
-            <div class="clearfix">
-                @Html.C1().Function("Composite.Search.SimplePageSearch.SearchForm", 
-									new { SearchResultPage = new DataReference<IPage>(CurrentPageNode.Id),
-										  SearchButtonLabel = SearchButtonLabel})
-            </div>
-            if (!string.IsNullOrWhiteSpace(searchQuery)) { <hr/> }
-        }
-        @if (!string.IsNullOrWhiteSpace(searchQuery))
-        {
-            <p>
-                @Html.Raw(string.Format(Resources.SimplePageSearch.SearchResults_TotalCount, _searchResult.ResultsFound, Server.HtmlEncode(searchQuery)))
-            </p>
-	}
-        <ol class="simplepagesearch-results" start="@(PageSize*(PageNumber-1)+1)">
-            @foreach (var entry in _searchResult.Entries)
-            {
-                <li>
-                    <a href="@entry.Url">
-                        @Html.Raw(entry.Title)
-                    </a>
-					@if (ShowDescriptions && !string.IsNullOrEmpty(entry.Description))
+<div class="simplepagesearch clearfix">
+	@if (ShowSearchForm)
+	{
+		if (showFacets)
+		{
+			<form id="SearchForm" action="@CurrentPageNode.Url" class="search-form form-inline" method="get" role="search">
+				<div class="clearfix">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search" id="searchText" name="q" value="@searchQuery"/>
+					</div>
+
+					<button type="submit" class="btn btn-default">
+						@if (string.IsNullOrEmpty(@SearchButtonLabel))
+						{
+							<span class="glyphicon glyphicon-search"></span>
+						}
+						else
+						{
+							@SearchButtonLabel
+						}
+					</button>
+				</div>
+				
+				<div class="row" style="margin-top: 20px;">
+					<div class="col-md-4">
+						@ShowFacets(_searchResult)
+					</div>
+					<div class="col-md-8">
+						@ShowFoundDocuments(searchQuery)
+					</div>
+				</div>
+			</form>
+		}
+		else
+		{
+			<div class="clearfix">
+				@Function("Composite.Search.SimplePageSearch.SearchForm",
+					new
 					{
-						<br />
-						@Html.Raw(entry.Description)
-					}
-                </li>
-            }
-        </ol>
-        @if (TotalPages > 1)
-        {
-            <ul class="pagination">
-                @for (int i = 1; i <= TotalPages; i++)
-                {
-                    if (i == PageNumber)
-                    {
-                        <li class="active"><span>@i</span></li>
-                    }
-                    else
-                    {
-                        <li><a href="?p=@i&amp;q=@searchQuery">@i</a></li>
-                    }
-                }
-            </ul>
-        }
-    </div>
+						SearchResultPage = new DataReference<IPage>(CurrentPageNode.Id),
+						SearchButtonLabel = SearchButtonLabel,
+					})
+			</div>
+			if (!string.IsNullOrWhiteSpace(searchQuery))
+			{
+				<hr/>
+			}
+			@ShowFoundDocuments(searchQuery)
+		}
+	}
+	else
+	{
+		@ShowFoundDocuments(searchQuery)
+	}
+	
+</div>
 </body>
 </html>
+
+
+@helper ShowFoundDocuments(string searchQuery)
+{
+	if (string.IsNullOrWhiteSpace(searchQuery))
+	{
+		return;
+	}
+
+	<p>
+		@Html.Raw(string.Format(Resources.SimplePageSearch.SearchResults_TotalCount, _searchResult.ResultsFound, Server.HtmlEncode(searchQuery)))
+	</p>
+
+	<ol class="simplepagesearch-results" start="@(PageSize*(PageNumber-1)+1)">
+		@foreach (var entry in _searchResult.Entries)
+		{
+			<li>
+				<a href="@entry.Url">
+					@Html.Raw(entry.Title)
+				</a>
+				@if (ShowDescriptions && !string.IsNullOrEmpty(entry.Description))
+				{
+					<br />
+					@Html.Raw(entry.Description)
+				}
+			</li>
+		}
+	</ol>
+	if (TotalPages > 1)
+	 {
+		 <ul class="pagination">
+			 @for (int i = 1; i <= TotalPages; i++)
+			 {
+				 if (i == PageNumber)
+				 {
+					 <li class="active"><span>@i</span></li>
+				 }
+				 else
+				 {
+					 <li><a href="?p=@i&amp;q=@searchQuery">@i</a></li>
+				 }
+			 }
+		 </ul>
+	 }
+}
+
+@helper ShowFacets(SimpleSearchResult result)
+{
+	var labels = SimpleSearchFacade.GetFacetOptions().ToDictionary(t => t.Item1, t => t.Item2);
+
+	<div class="facets">
+		@foreach (var facet in result.Facets)
+		{
+			if (facet.Hits.Count == 0)
+			{
+				continue;
+			}
+
+			<div class="list-group">
+				<div class="list-group-item disabled">
+					@labels[facet.Name]
+				</div>
+				@foreach (var hit in facet.Hits)
+				{
+					string key = GetFacetFieldCheckboxPrefix(facet.Name) + hit.Value;
+					bool isChecked = Request.QueryString.AllKeys.Contains(key);
+
+					<div class="list-group-item">
+						<div class="checkbox">
+							<label for="@key">
+								<input type="checkbox" name="@key" value="1" id="@key"
+									   @if (isChecked) { <text> checked="checked" </text>   } />
+								@hit.Label
+							</label>
+						</div>
+						<span class="badge">@hit.HitCount</span>
+					</div>
+				}
+			</div>
+		}
+	</div>
+}
