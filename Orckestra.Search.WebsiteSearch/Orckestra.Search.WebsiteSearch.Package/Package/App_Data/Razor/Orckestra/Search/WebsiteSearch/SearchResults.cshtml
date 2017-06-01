@@ -4,7 +4,7 @@
 
 @inherits RazorFunction
 @functions {
-	public override string FunctionDescription
+	public override string FunctionDescription 
 	{
 		get { return "Search results rendering"; }
 	}
@@ -31,6 +31,9 @@
 
 	[FunctionParameter(Label = "Search Form Button Label", Help = "The text to show on the search form submit button. When left blank a generic search icon is used.", DefaultValue = "")]
 	public string SearchButtonLabel { get; set; }
+
+	[FunctionParameter(Label = "Search Form Teaser Text", Help = "The text to show as a placeholder in the search field.", DefaultValue = "Search")]
+	public string SearchFieldTeaserText { get; set; }
 
 	[FunctionParameter(Label = "Results Per Page", Help = "The maximum number of results to show at a time. If the search contains more results links will be provided to navigate results.", DefaultValue = "10")]
 	public int PageSize { get; set; }
@@ -154,7 +157,7 @@
 			<form id="SearchForm" action="@CurrentPageNode.Url" class="search-form form-inline" method="get" role="search">
 				<div class="clearfix">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search" id="searchText" name="q" value="@searchQuery"/>
+						<input type="text" class="form-control" placeholder="@SearchFieldTeaserText" id="searchText" name="q" value="@searchQuery"/>
 					</div>
 
 					<button type="submit" class="btn btn-default">
@@ -186,7 +189,8 @@
 					new
 					{
 						SearchResultPage = new DataReference<IPage>(CurrentPageNode.Id),
-						SearchButtonLabel = SearchButtonLabel
+						SearchButtonLabel = SearchButtonLabel,
+						SearchFieldTeaserText = SearchFieldTeaserText
 					})
 			</div>
 			if (!string.IsNullOrWhiteSpace(searchQuery))
