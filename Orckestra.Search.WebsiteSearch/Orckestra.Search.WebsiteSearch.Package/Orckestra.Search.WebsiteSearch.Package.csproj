@@ -84,9 +84,9 @@
     <EmbeddedResource Include="Package\App_GlobalResources\Composite\Search\SimplePageSearch.resx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Composite.Search.SimplePageSearch\Composite.Search.SimplePageSearch.csproj">
+    <ProjectReference Include="..\Orckestra.Search.WebsiteSearch\Orckestra.Search.WebsiteSearch.csproj">
       <Project>{1ead3346-1809-4b68-8bd7-67ea4cc289f8}</Project>
-      <Name>Composite.Search.SimplePageSearch</Name>
+      <Name>Orckestra.Search.WebsiteSearch</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
