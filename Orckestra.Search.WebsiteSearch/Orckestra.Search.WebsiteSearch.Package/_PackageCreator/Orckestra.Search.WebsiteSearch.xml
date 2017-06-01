@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+  <pc:Functions>
+    <Add name="Orckestra.Search.WebsiteSearch.SearchForm" />
+    <Add name="Orckestra.Search.WebsiteSearch.SearchResults" />
+    <Add name="Orckestra.Search.WebsiteSearch.NavbarSearchForm" />
+  </pc:Functions>
+  <mi:PackageRequirements minimumCompositeVersion="6.1.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+  <mi:PackageInformation name="Orckestra.Search.WebsiteSearch" groupName="Orckestra.Search" version="1.0.0" 
+	author="Orckestra A/S" website="https://c1.orckestra.com/" 
+	readMoreUrl="https://docs.c1.orckestra.com/Orckestra.Search.WebsiteSearch" 
+	id="443db04a-af4f-4eda-abdf-41bd052ded91"
+	canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+    <TechnicalDetails>Implements the search form and search results view as Razor functions. Does not include media files, data types and dynamic content in search results.</TechnicalDetails>
+    <Description>Allows visitors search static content on a website by keywords.</Description>
+  </mi:PackageInformation>
+</pc:PackageCreator>

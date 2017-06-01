@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Composite.Search.SimplePageSearch.Package</RootNamespace>
-    <AssemblyName>Composite.Search.SimplePageSearch.Package</AssemblyName>
+    <RootNamespace>Orckestra.Search.WebsiteSearch</RootNamespace>
+    <AssemblyName>Orckestra.Search.WebsiteSearch.Package</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -68,20 +68,10 @@
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="_PackageCreator\Composite.Search.SimplePageSearch.xml" />
+    <Content Include="_PackageCreator\Orckestra.Search.WebsiteSearch.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Razor\Composite\Search\SimplePageSearch\SearchForm.cshtml" />
-    <Content Include="Package\App_Data\Razor\Composite\Search\SimplePageSearch\SearchResults.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Release\Composite.Search.SimplePageSearch.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Package\App_Data\Razor\Composite\Search\SimplePageSearch\NavbarSearchForm.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Package\App_GlobalResources\Composite\Search\SimplePageSearch.resx" />
+    <EmbeddedResource Include="Package\App_GlobalResources\Orckestra\Search\WebsiteSearch.resx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Orckestra.Search.WebsiteSearch\Orckestra.Search.WebsiteSearch.csproj">
@@ -91,6 +81,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Package\Bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Release\Orckestra.Search.WebsiteSearch.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\App_Data\Razor\Orckestra\Search\WebsiteSearch\NavbarSearchForm.cshtml" />
+    <Content Include="Package\App_Data\Razor\Orckestra\Search\WebsiteSearch\SearchForm.cshtml" />
+    <Content Include="Package\App_Data\Razor\Orckestra\Search\WebsiteSearch\SearchResults.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

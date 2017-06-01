@@ -7,8 +7,8 @@
     <ProjectGuid>{1EAD3346-1809-4B68-8BD7-67EA4CC289F8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Composite.Search.SimplePageSearch</RootNamespace>
-    <AssemblyName>Composite.Search.SimplePageSearch</AssemblyName>
+    <RootNamespace>Orckestra.Search.WebsiteSearch</RootNamespace>
+    <AssemblyName>Orckestra.Search.WebsiteSearch</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -54,11 +54,11 @@
     <Compile Include="ISearchResultEntry.cs" />
     <Compile Include="Properties\VersionInfo.cs" />
     <Compile Include="SearchResultFacet.cs" />
-    <Compile Include="SimpleSearchFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleSearchQuery.cs" />
-    <Compile Include="SimpleSearchResult.cs" />
     <Compile Include="StaticReflection.cs" />
+    <Compile Include="WebsiteSearchFacade.cs" />
+    <Compile Include="WebsiteSearchQuery.cs" />
+    <Compile Include="WebsiteSearchResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

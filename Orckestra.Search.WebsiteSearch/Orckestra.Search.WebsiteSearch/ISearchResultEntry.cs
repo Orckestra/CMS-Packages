@@ -1,4 +1,4 @@
-﻿namespace Composite.Search.SimplePageSearch
+﻿namespace Orckestra.Search.WebsiteSearch
 {
     public class SearchResultEntry
     {

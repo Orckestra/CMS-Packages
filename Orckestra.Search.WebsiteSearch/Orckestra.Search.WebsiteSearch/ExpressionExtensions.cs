@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Composite.Search.SimplePageSearch
+namespace Orckestra.Search.WebsiteSearch
 {
     static class ExpressionExtensions
     {

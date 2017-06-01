@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Composite.Search.SimplePageSearch
+namespace Orckestra.Search.WebsiteSearch
 {
-    public class SimpleSearchQueryFacet
+    public class WebsiteSearchQueryFacet
     {
         public string Name { get; set; }
         public string[] Selections { get; set; }
     }
 
-    public class SimpleSearchQuery
+    public class WebsiteSearchQuery
     {
         public CultureInfo Culture { get; set; }
 
@@ -19,7 +19,7 @@ namespace Composite.Search.SimplePageSearch
 
         public int PageSize { get; set; } = 50;
 
-        public SimpleSearchQueryFacet[] Facets { get; set; } 
+        public WebsiteSearchQueryFacet[] Facets { get; set; } 
 
 
         /// <summary>

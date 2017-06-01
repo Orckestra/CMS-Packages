@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Composite.Search.SimplePageSearch
+namespace Orckestra.Search.WebsiteSearch
 {
     public class SearchResultFacet
     {

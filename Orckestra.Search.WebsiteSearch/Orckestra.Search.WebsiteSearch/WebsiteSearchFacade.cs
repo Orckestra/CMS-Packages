@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Web;
+using Composite;
 using Composite.Core.Linq;
 using Composite.Core.ResourceSystem;
 using Composite.Core.Routing;
@@ -14,11 +15,12 @@ using Composite.Data;
 using Composite.Data.DynamicTypes;
 using Composite.Data.ProcessControlled;
 using Composite.Data.Types;
+using Composite.Search;
 using Composite.Search.Crawling;
 
-namespace Composite.Search.SimplePageSearch
+namespace Orckestra.Search.WebsiteSearch
 {
-    public class SimpleSearchFacade
+    public class WebsiteSearchFacade
     {
         const int MaximumTermCount = 10;
         const int ResultsMaxLength = 200;
@@ -26,14 +28,14 @@ namespace Composite.Search.SimplePageSearch
         private static readonly MethodInfo String_ToLower;
         private static readonly MethodInfo String_Contains;
 
-        static SimpleSearchFacade()
+        static WebsiteSearchFacade()
         {
             var stringMethods = typeof (string).GetMethods();
             String_ToLower = stringMethods.Single(x => x.Name == nameof(string.ToLower) && !x.GetParameters().Any());
             String_Contains = stringMethods.Single(x => x.Name == nameof(string.Contains) && x.GetParameters().Length == 1);
         }
 
-        public static SimpleSearchResult Search(SimpleSearchQuery query)
+        public static WebsiteSearchResult Search(WebsiteSearchQuery query)
         {
             Verify.ArgumentNotNull(query, nameof(query));
 
@@ -59,7 +61,7 @@ namespace Composite.Search.SimplePageSearch
             }
         }
 
-        private static SimpleSearchResult SearchUsingSearchProvider(SimpleSearchQuery query)
+        private static WebsiteSearchResult SearchUsingSearchProvider(WebsiteSearchQuery query)
         {
             string text = string.Join(" ", query.Keywords);
             var searchQuery = new SearchQuery(text, query.Culture)
@@ -76,7 +78,7 @@ namespace Composite.Search.SimplePageSearch
 
             var allFields = SearchFacade.DocumentSources.SelectMany(ds => ds.CustomFields).ToList();
 
-            foreach (var facet in query.Facets ?? Enumerable.Empty<SimpleSearchQueryFacet>())
+            foreach (var facet in query.Facets ?? Enumerable.Empty<WebsiteSearchQueryFacet>())
             {
                 // TODO: use an overload for SearchQuery.AddFieldFacet(...) once C1 6.2 is out
                 searchQuery.AddFieldFacet(facet.Name);
@@ -109,9 +111,9 @@ namespace Composite.Search.SimplePageSearch
             }
 
             var result = SearchFacade.SearchProvider.SearchAsync(searchQuery).Result;
-            if (result == null) return new SimpleSearchResult();
+            if (result == null) return new WebsiteSearchResult();
 
-            return new SimpleSearchResult
+            return new WebsiteSearchResult
             {
                 Entries = result.Items.Select(ToSearchResultEntry).ToList(),
                 Facets = GetFacets(query, result, allFields),
@@ -120,7 +122,7 @@ namespace Composite.Search.SimplePageSearch
         }
 
         private static IReadOnlyCollection<SearchResultFacet> GetFacets(
-            SimpleSearchQuery query,
+            WebsiteSearchQuery query,
             SearchResult result,
             IEnumerable<DocumentField> allFields)
         {
@@ -209,7 +211,7 @@ namespace Composite.Search.SimplePageSearch
             };
         }
 
-        internal static SimpleSearchResult SimpleSearch(SimpleSearchQuery query)
+        internal static WebsiteSearchResult SimpleSearch(WebsiteSearchQuery query)
         {
             var keywords = query.Keywords;
 
@@ -220,7 +222,7 @@ namespace Composite.Search.SimplePageSearch
                 .Concat(SearchInData(keywords, query.CurrentSiteOnly))
                 .Take(ResultsMaxLength).ToList();
 
-            return new SimpleSearchResult
+            return new WebsiteSearchResult
             {
                 Entries = allResults
                     .Skip(query.PageSize * query.PageNumber)

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Reflection;
+using Composite;
 
-namespace Composite.Search.SimplePageSearch
+namespace Orckestra.Search.WebsiteSearch
 {
     internal static class StaticReflection
     {

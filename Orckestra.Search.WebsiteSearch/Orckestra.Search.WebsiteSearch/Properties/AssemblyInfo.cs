@@ -1,15 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Composite.Search.SimplePageSearch")]
+[assembly: AssemblyTitle("Orckestra.Search.WebsiteSearch")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Orckestra A/S")]
-[assembly: AssemblyProduct("Composite.Search.SimplePageSearch")]
+[assembly: AssemblyProduct("Orckestra.Search.WebsiteSearch")]
 [assembly: AssemblyCopyright("Orckestra A/S © 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]
 
-[assembly: Guid("1859a776-f20c-4873-ac93-c7790988b77c")]
+[assembly: Guid("443db04a-af4f-4eda-abdf-41bd052ded91")]
