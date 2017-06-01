@@ -117,7 +117,6 @@
 
 
 		var facetsToQuery = FacetFields ?? Array.Empty<string>();
-		showFacets = facetsToQuery.Any();
 
 		var facets = facetsToQuery.Select(fieldName => new SimpleSearchQueryFacet
 		{
@@ -134,6 +133,8 @@
 			Facets = facets.ToArray(),
 			PageSize = PageSize
 		});
+
+		showFacets = _searchResult.Facets.Any(f => f.Hits.Any());
 	}
 	else
 	{
@@ -185,7 +186,7 @@
 					new
 					{
 						SearchResultPage = new DataReference<IPage>(CurrentPageNode.Id),
-						SearchButtonLabel = SearchButtonLabel,
+						SearchButtonLabel = SearchButtonLabel
 					})
 			</div>
 			if (!string.IsNullOrWhiteSpace(searchQuery))
