@@ -4,289 +4,304 @@
 
 @inherits RazorFunction
 @functions {
-	public override string FunctionDescription 
-	{
-		get { return "Search results rendering"; }
-	}
+    public override string FunctionDescription
+    {
+        get { return "Search results rendering"; }
+    }
 
-	public static WidgetFunctionProvider SearchableDataTypeSelector()
-	{
-		return GetMultiSelectorWidget(() => WebsiteSearchFacade.GetSearchableDataTypeOptions());
-	}
+    public static WidgetFunctionProvider SearchableDataTypeSelector()
+    {
+        return GetMultiSelectorWidget(() => WebsiteSearchFacade.GetSearchableDataTypeOptions());
+    }
 
-	public static WidgetFunctionProvider FacetSelector()
-	{
-		return GetMultiSelectorWidget(() => WebsiteSearchFacade.GetFacetOptions());
-	}
+    public static WidgetFunctionProvider FacetSelector()
+    {
+        return GetMultiSelectorWidget(() => WebsiteSearchFacade.GetFacetOptions());
+    }
 
-	private static WidgetFunctionProvider GetMultiSelectorWidget(Expression<Func<object>> optionsGetter)
-	{
-		var method = ((MethodCallExpression)optionsGetter.Body).Method;
+    private static WidgetFunctionProvider GetMultiSelectorWidget(Expression<Func<object>> optionsGetter)
+    {
+        var method = ((MethodCallExpression)optionsGetter.Body).Method;
 
-		return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Item1", "Item2", true, false);
-	}
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Item1", "Item2", true, false);
+    }
 
-	[FunctionParameter(Label = "Show Search Form", Help = "If checked, a search form will be shown above the search result.", DefaultValue = "true")]
-	public bool ShowSearchForm { get; set; }
+    [FunctionParameter(Label = "Show Search Form", Help = "If checked, a search form will be shown above the search result.", DefaultValue = "true")]
+    public bool ShowSearchForm { get; set; }
 
-	[FunctionParameter(Label = "Search Form Button Label", Help = "The text to show on the search form submit button. When left blank a generic search icon is used.", DefaultValue = "")]
-	public string SearchButtonLabel { get; set; }
+    [FunctionParameter(Label = "Search Form Button Label", Help = "The text to show on the search form submit button. When left blank a generic search icon is used.", DefaultValue = "")]
+    public string SearchButtonLabel { get; set; }
 
-	[FunctionParameter(Label = "Search Form Teaser Text", Help = "The text to show as a placeholder in the search field.", DefaultValue = "Search")]
-	public string SearchFieldTeaserText { get; set; }
+    [FunctionParameter(Label = "Search Form Teaser Text", Help = "The text to show as a placeholder in the search field.", DefaultValue = "Search")]
+    public string SearchFieldTeaserText { get; set; }
 
-	[FunctionParameter(Label = "Results Per Page", Help = "The maximum number of results to show at a time. If the search contains more results links will be provided to navigate results.", DefaultValue = "10")]
-	public int PageSize { get; set; }
+    [FunctionParameter(Label = "Results Per Page", Help = "The maximum number of results to show at a time. If the search contains more results links will be provided to navigate results.", DefaultValue = "10")]
+    public int PageSize { get; set; }
 
-	[FunctionParameter(Label = "Search Current Site Only", Help = "If checked only the current site will be searched. Uncheck to search all subsites.", DefaultValue = "true")]
-	public bool CurrentSite { get; set; }
+    [FunctionParameter(Label = "Search Current Site Only", Help = "If checked only the current site will be searched. Uncheck to search all subsites.", DefaultValue = "true")]
+    public bool CurrentSite { get; set; }
 
-	[FunctionParameter(Label = "Show Highlights", Help = "If checked search results will have highlights (when available) shown below the title.", DefaultValue = "false")]
-	public bool ShowDescriptions { get; set; }
+    [FunctionParameter(Label = "Show Highlights", Help = "If checked search results will have highlights (when available) shown below the title.", DefaultValue = "false")]
+    public bool ShowDescriptions { get; set; }
 
-	public IEnumerable<ISearchDocumentSourceProvider> SearchDocumentSourceProviders { get; set; }
+    public IEnumerable<ISearchDocumentSourceProvider> SearchDocumentSourceProviders { get; set; }
 
-	[FunctionParameter(Label = "Data Types", DefaultValue = null,
-		Help = "Allows limiting the search results to the given data types. If none selected all the data types will be shown.",
-		WidgetFactoryMethod = "SearchableDataTypeSelector")]
-	public IEnumerable<string> DataTypes { get; set; }
+    [FunctionParameter(Label = "Data Types", DefaultValue = null,
+        Help = "Allows limiting the search results to the given data types. If none selected all the data types will be shown.",
+        WidgetFactoryMethod = "SearchableDataTypeSelector")]
+    public IEnumerable<string> DataTypes { get; set; }
 
-	[FunctionParameter(Label = "Facets", DefaultValue = null,
-		Help = "Select facets to be shown on the search result page.",
-		WidgetFactoryMethod = "FacetSelector")]
-	public IEnumerable<string> FacetFields { get; set; }
+    [FunctionParameter(Label = "Facets", DefaultValue = null,
+        Help = "Select facets to be shown on the search result page.",
+        WidgetFactoryMethod = "FacetSelector")]
+    public IEnumerable<string> FacetFields { get; set; }
 
-	string GetFacetFieldCheckboxPrefix(string fieldName)
-	{
-		return "f_" + fieldName + "_";
-	}
+    string GetFacetFieldCheckboxPrefix(string fieldName)
+    {
+        return "f_" + fieldName + "_";
+    }
 
-	string GetSearchResultPageUrl(int pageNumber)
-	{
-		var parts = new List<string> { "?p=" + pageNumber};
+    string GetSearchResultPageUrl(int pageNumber)
+    {
+        var parts = new List<string> { "?p=" + pageNumber };
 
-		var qs = Request.QueryString;
-		parts.AddRange(qs.AllKeys.Where(key=> key != "p")
-						 .Select(key => Server.UrlEncode(key) + "=" + Server.UrlEncode(qs[key])));
+        var qs = Request.QueryString;
+        parts.AddRange(qs.AllKeys.Where(key => key != "p")
+                         .Select(key => Server.UrlEncode(key) + "=" + Server.UrlEncode(qs[key])));
 
-		return string.Join("&", parts);
-	}
+        return string.Join("&", parts);
+    }
 
-	WebsiteSearchResult _searchResult;
+    WebsiteSearchResult _searchResult;
 
 
-	private int PageNumber
-	{
-		get
-		{
-			int page;
-			return int.TryParse(Request["p"], out page) && page >= 1 ? page : 1;
-		}
-	}
+    private int PageNumber
+    {
+        get
+        {
+            int page;
+            return int.TryParse(Request["p"], out page) && page >= 1 ? page : 1;
+        }
+    }
 
-	protected int TotalPages
-	{
-		get { return (int)Math.Ceiling((decimal)_searchResult.ResultsFound / PageSize); }
-	}
+    protected int TotalPages
+    {
+        get { return (int)Math.Ceiling((decimal)_searchResult.ResultsFound / PageSize); }
+    }
 
-	private string[] GetFacetSelection(string fieldName)
-	{
-		var prefix = GetFacetFieldCheckboxPrefix(fieldName);
-		return Request.QueryString.AllKeys
-			.Where(key => key.StartsWith(prefix))
-			.Select(key => key.Substring(prefix.Length))
-			.ToArray();
-	}
+    private string[] GetFacetSelection(string fieldName)
+    {
+        var prefix = GetFacetFieldCheckboxPrefix(fieldName);
+        return Request.QueryString.AllKeys
+            .Where(key => key.StartsWith(prefix))
+            .Select(key => key.Substring(prefix.Length))
+            .ToArray();
+    }
 
 }
 
 @{
 
-	var searchQuery = Request.QueryString["q"] ?? string.Empty;
+    var searchQuery = Request.QueryString["q"] ?? string.Empty;
 
-	bool showFacets = false;
+    bool showFacets = false;
 
-	if (!string.IsNullOrWhiteSpace(searchQuery) && searchQuery.Length > 1)
-	{
-		// Tokenize
-		searchQuery = searchQuery.Trim().ToLower();
-		string[] keywords = searchQuery.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+    if (!string.IsNullOrWhiteSpace(searchQuery) && searchQuery.Length > 1)
+    {
+        // Tokenize
+        searchQuery = searchQuery.Trim().ToLower();
+        string[] keywords = searchQuery.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-		var knowTypes = DataFacade.GetAllInterfaces().ToDictionary(t => t.FullName);
+        var knowTypes = DataFacade.GetAllInterfaces().ToDictionary(t => t.FullName);
 
-		Type[] dataTypes = DataTypes != null
-			? DataTypes.Select(name => knowTypes[name]).ToArray()
-			: null;
+        Type[] dataTypes = DataTypes != null
+            ? DataTypes.Select(name => knowTypes[name]).ToArray()
+            : null;
 
 
-		var facetsToQuery = FacetFields ?? Array.Empty<string>();
+        var facetsToQuery = FacetFields ?? Array.Empty<string>();
 
-		var facets = facetsToQuery.Select(fieldName => new WebsiteSearchQueryFacet
-		{
-			Name = fieldName, Selections = GetFacetSelection(fieldName)
-		});
+        var facets = facetsToQuery.Select(fieldName => new WebsiteSearchQueryFacet
+        {
+            Name = fieldName,
+            Selections = GetFacetSelection(fieldName)
+        });
 
-		_searchResult = WebsiteSearchFacade.Search(new WebsiteSearchQuery
-		{
-			Culture = Data.CurrentLocale,
-			Keywords = keywords,
-			DataTypes = dataTypes,
-			CurrentSiteOnly = CurrentSite,
-			PageNumber = PageNumber - 1,
-			Facets = facets.ToArray(),
-			PageSize = PageSize
-		});
+        _searchResult = WebsiteSearchFacade.Search(new WebsiteSearchQuery
+        {
+            Culture = Data.CurrentLocale,
+            Keywords = keywords,
+            DataTypes = dataTypes,
+            CurrentSiteOnly = CurrentSite,
+            PageNumber = PageNumber - 1,
+            Facets = facets.ToArray(),
+            PageSize = PageSize
+        });
 
-		showFacets = _searchResult.Facets.Any(f => f.Hits.Any());
-	}
-	else
-	{
-		_searchResult = new WebsiteSearchResult();
-	}
+        showFacets = _searchResult.Facets.Any(f => f.Hits.Any());
+    }
+    else
+    {
+        _searchResult = new WebsiteSearchResult();
+    }
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
 </head>
 <body>
-<div class="websitesearch clearfix">
-	@if (ShowSearchForm)
-	{
-		if (showFacets)
-		{
-			<form id="SearchForm" action="@CurrentPageNode.Url" class="search-form form-inline" method="get" role="search">
-				<div class="clearfix">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="@SearchFieldTeaserText" id="searchText" name="q" value="@searchQuery"/>
-					</div>
+    <div class="websitesearch clearfix">
+        @if (ShowSearchForm)
+        {
+            if (showFacets)
+            {
+                <form id="SearchForm" action="@CurrentPageNode.Url" class="search-form form-inline" method="get" role="search">
 
-					<button type="submit" class="btn btn-default">
-						@if (string.IsNullOrEmpty(@SearchButtonLabel))
-						{
-							<span class="glyphicon glyphicon-search"></span>
-						}
-						else
-						{
-							@SearchButtonLabel
-						}
-					</button>
-				</div>
-				
-				<div class="row" style="margin-top: 20px;">
-					<div class="col-md-4">
-						@ShowFacets(_searchResult)
-					</div>
-					<div class="col-md-8">
-						@ShowFoundDocuments(searchQuery)
-					</div>
-				</div>
-			</form>
-		}
-		else
-		{
-			<div class="clearfix">
-				@Function("Orckestra.Search.WebsiteSearch.SearchForm",
-					new
-					{
-						SearchResultPage = new DataReference<IPage>(CurrentPageNode.Id),
-						SearchButtonLabel = SearchButtonLabel,
-						SearchFieldTeaserText = SearchFieldTeaserText
-					})
-			</div>
-			if (!string.IsNullOrWhiteSpace(searchQuery))
-			{
-				<hr/>
-			}
-			@ShowFoundDocuments(searchQuery)
-		}
-	}
-	else
-	{
-		@ShowFoundDocuments(searchQuery)
-	}
-	
-</div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+
+                            @SearchForm(searchQuery)
+                            @ShowFoundDocuments(searchQuery)
+
+                        </div>
+                        <div class="col-md-4">
+                            @ShowFacets(_searchResult)
+
+                        </div>
+                    </div>
+                </form>}
+            else
+            {
+                <div class="clearfix">
+                    @Function("Orckestra.Search.WebsiteSearch.SearchForm",
+                    new
+                    {
+                        SearchResultPage = new DataReference<IPage>(CurrentPageNode.Id),
+                        SearchButtonLabel = SearchButtonLabel,
+                        SearchFieldTeaserText = SearchFieldTeaserText
+                    })
+                </div>
+
+                if (!string.IsNullOrWhiteSpace(searchQuery))
+                {
+                    <hr />
+                }
+
+                @ShowFoundDocuments(searchQuery)
+            }
+        }
+        else
+        {
+            @ShowFoundDocuments(searchQuery)
+        }
+
+    </div>
 </body>
 </html>
 
 
 @helper ShowFoundDocuments(string searchQuery)
 {
-	if (string.IsNullOrWhiteSpace(searchQuery))
-	{
-		return;
-	}
+    if (string.IsNullOrWhiteSpace(searchQuery))
+    {
+        return;
+    }
 
-	<p>
-		@Html.Raw(string.Format(Resources.WebsiteSearch.SearchResults_TotalCount, _searchResult.ResultsFound, Server.HtmlEncode(searchQuery)))
-	</p>
+    <p style="margin-top: 20px;">
+        @Html.Raw(string.Format(Resources.WebsiteSearch.SearchResults_TotalCount, _searchResult.ResultsFound, Server.HtmlEncode(searchQuery)))
+    </p>
 
-	<ol class="websitesearch-results" start="@(PageSize*(PageNumber-1)+1)">
-		@foreach (var entry in _searchResult.Entries)
-		{
-			<li>
-				<a href="@entry.Url">
-					@Html.Raw(entry.Title)
-				</a>
-				@if (ShowDescriptions && !string.IsNullOrEmpty(entry.Description))
-				{
-					<br />
-					@Html.Raw(entry.Description)
-				}
-			</li>
-		}
-	</ol>
-	if (TotalPages > 1)
-	 {
-		 <ul class="pagination">
-			 @for (int i = 1; i <= TotalPages; i++)
-			 {
-				 if (i == PageNumber)
-				 {
-					 <li class="active"><span>@i</span></li>
-				 }
-				 else
-				 {
-					 <li><a href="@GetSearchResultPageUrl(i)">@i</a></li>
-				 }
-			 }
-		 </ul>
-	 }
+    <ol class="websitesearch-results" start="@(PageSize*(PageNumber-1)+1)">
+        @foreach (var entry in _searchResult.Entries)
+        {
+            <li>
+                <a href="@entry.Url">
+                    @Html.Raw(entry.Title)
+                </a>
+                @if (ShowDescriptions && !string.IsNullOrEmpty(entry.Description))
+                {
+                    <br />
+                    @Html.Raw(entry.Description)
+                }
+            </li>
+        }
+    </ol>
+if (TotalPages > 1)
+{
+        <ul class="pagination">
+            @for (int i = 1; i <= TotalPages; i++)
+            {
+                if (i == PageNumber)
+                {
+                    <li class="active"><span>@i</span></li>
+                }
+                else
+                {
+                    <li><a href="@GetSearchResultPageUrl(i)">@i</a></li>
+                }
+            }
+        </ul>
+}
+}
+
+@helper SearchForm(string searchQuery)
+{
+
+    <div class="clearfix">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="@SearchFieldTeaserText" id="searchText" name="q" value="@searchQuery" />
+        </div>
+
+        <button type="submit" class="btn btn-default">
+            @if (string.IsNullOrEmpty(@SearchButtonLabel))
+            {
+                <span class="glyphicon glyphicon-search"></span>
+            }
+            else
+            {
+                @SearchButtonLabel
+            }
+        </button>
+    </div>
 }
 
 @helper ShowFacets(WebsiteSearchResult result)
 {
-	var labels = WebsiteSearchFacade.GetFacetOptions().ToDictionary(t => t.Item1, t => t.Item2);
+    var labels = WebsiteSearchFacade.GetFacetOptions().ToDictionary(t => t.Item1, t => t.Item2);
+    var index = 0;
+    <div class="facets">
+        @foreach (var facet in result.Facets)
+        {
+            index++;
+            if (facet.Hits.Count == 0)
+            {
+                continue;
+            }
+            <div class="panel panel-default">
+                <div class="panel-heading"><a href="#facet@(index)" data-toggle="collapse">@labels[facet.Name]</a></div>
+                <div id="facet@(index)" class="panel-collapse collapse in">
+                    <div class="list-group">
+                        @foreach (var hit in facet.Hits)
+                        {
+                            string key = GetFacetFieldCheckboxPrefix(facet.Name) + hit.Value;
+                            bool isChecked = Request.QueryString.AllKeys.Contains(key);
 
-	<div class="facets">
-		@foreach (var facet in result.Facets)
-		{
-			if (facet.Hits.Count == 0)
-			{
-				continue;
-			}
+                            <div class="list-group-item">
+                                <div class="checkbox">
+                                    <label for="@key">
+                                        <input type="checkbox" name="@key" value="1" id="@key"
+                                               @if (isChecked) { <text> checked="checked" </text>    } />
+                                        @hit.Label
+                                    </label>
+                                </div>
+                                <span class="badge">@hit.HitCount</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
 
-			<div class="list-group">
-				<div class="list-group-item disabled">
-					@labels[facet.Name]
-				</div>
-				@foreach (var hit in facet.Hits)
-				{
-					string key = GetFacetFieldCheckboxPrefix(facet.Name) + hit.Value;
-					bool isChecked = Request.QueryString.AllKeys.Contains(key);
-
-					<div class="list-group-item">
-						<div class="checkbox">
-							<label for="@key">
-								<input type="checkbox" name="@key" value="1" id="@key"
-									   @if (isChecked) { <text> checked="checked" </text>   } />
-								@hit.Label
-							</label>
-						</div>
-						<span class="badge">@hit.HitCount</span>
-					</div>
-				}
-			</div>
-		}
-	</div>
+        }
+    </div>
 }
