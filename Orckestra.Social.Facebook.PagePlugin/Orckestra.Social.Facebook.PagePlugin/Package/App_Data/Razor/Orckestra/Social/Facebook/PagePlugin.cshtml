@@ -19,29 +19,14 @@
 				 WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""Timeline,Events,Messages"" /></f:function></f:param><f:param name=""Multiple"" value=""True"" /><f:param name=""Required"" value=""False"" /></f:widgetfunction>")]
 	public string Tabs { get; set; }
 
-
-	private XDocument GetXml(string url)
-	{
-
-		if (HttpContext.Current.Cache[url] == null)
-		{
-			HttpContext.Current.Cache.Add(url, XDocument.Load(url),
-							 null, DateTime.Now.AddSeconds(3600),
-							 Cache.NoSlidingExpiration,
-							 CacheItemPriority.Default,
-							 null);
-		}
-		return HttpContext.Current.Cache[url] as XDocument;
-	}
 }
 @{
 	if (PageRenderer.RenderingReason == RenderingReason.ScreenshotGeneration)
 	{
 		return;
 	}
-	var cultures = GetXml("http://www.facebook.com/translations/FacebookLocales.xml");
+
 	var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name.Replace("-", "_");
-	currentCulture = cultures.Descendants("representation").Any(c => c.Value == currentCulture) ? currentCulture : "en_US";
 	var showFaces = Options.Contains("Show Friends’ Faces").ToString().ToLower();
 	var showStream = Options.Contains("Show Posts").ToString().ToLower();
 	var useSmallHeader = Options.Contains("Use Small Header").ToString().ToLower();
