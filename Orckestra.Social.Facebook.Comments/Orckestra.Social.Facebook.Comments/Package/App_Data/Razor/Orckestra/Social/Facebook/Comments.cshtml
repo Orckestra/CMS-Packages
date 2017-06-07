@@ -22,19 +22,6 @@
 				 WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector""><f:param name=""Options""><f:function name=""Composite.Utils.String.Split""><f:param name=""String"" value=""social,reverse_time,time"" /></f:function></f:param></f:widgetfunction>")]
 	public string OrderBy { get; set; }
 
-	private XDocument GetXml(string url)
-	{
-
-		if (HttpContext.Current.Cache[url] == null)
-		{
-			HttpContext.Current.Cache.Add(url, XDocument.Load(url),
-							 null, DateTime.Now.AddSeconds(3600),
-							 Cache.NoSlidingExpiration,
-							 CacheItemPriority.Default,
-							 null);
-		}
-		return HttpContext.Current.Cache[url] as XDocument;
-	}
 }
 @{
 
@@ -43,9 +30,7 @@
 		return;
 	}
 
-	var cultures = GetXml("http://www.facebook.com/translations/FacebookLocales.xml");
 	var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name.Replace("-", "_");
-	currentCulture = cultures.Descendants("representation").Any(c => c.Value == currentCulture) ? currentCulture : "en_US";
 
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
