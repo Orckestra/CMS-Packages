@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="6.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.AspNet.WebAPI" groupName="Composite.AspNet" version="1.0.3" author="Orckestra A/S" website="http://c1.orckestra.com" readMoreUrl="http://docs.composite.net/Composite.AspNet.WebAPI" id="d1a6a7bf-f11d-4607-a064-f69f9956a4d5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+	<mi:PackageInformation name="Composite.AspNet.WebAPI" groupName="Composite.AspNet" version="1.0.4" author="Orckestra A/S" website="http://c1.orckestra.com" readMoreUrl="http://docs.composite.net/Composite.AspNet.WebAPI" id="d1a6a7bf-f11d-4607-a064-f69f9956a4d5" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
     <TechnicalDetails>Installs the necessary DLLs and makes configuration changes to enable WebAPI and OData on a C1 CMS website.</TechnicalDetails>
     <Description>Enables WebAPI and OData on a Composite C1 website.</Description>
 	</mi:PackageInformation>
@@ -11,9 +11,9 @@
 			<Files>
         <File sourceFilename="~\Bin\Microsoft.Data.Edm.dll" targetFilename="~\Bin\Microsoft.Data.Edm.dll" allowOverwrite="true" />
         <File sourceFilename="~\Bin\Microsoft.Data.OData.dll" targetFilename="~\Bin\Microsoft.Data.OData.dll" allowOverwrite="true" />
-        <File sourceFilename="~\Bin\System.Net.Http.Formatting.dll" targetFilename="~\Bin\System.Net.Http.Formatting.dll" allowOverwrite="true" />
+        <File sourceFilename="~\Bin\System.Net.Http.Formatting.dll" targetFilename="~\Bin\System.Net.Http.Formatting.dll" allowOverwrite="true" addAssemblyBinding="true"/>
         <File sourceFilename="~\Bin\System.Spatial.dll" targetFilename="~\Bin\System.Spatial.dll" allowOverwrite="true" />
-        <File sourceFilename="~\Bin\System.Web.Http.dll" targetFilename="~\Bin\System.Web.Http.dll" allowOverwrite="true" />
+        <File sourceFilename="~\Bin\System.Web.Http.dll" targetFilename="~\Bin\System.Web.Http.dll" allowOverwrite="true" addAssemblyBinding="true"/>
         <File sourceFilename="~\Bin\System.Web.Http.WebHost.dll" targetFilename="~\Bin\System.Web.Http.WebHost.dll" allowOverwrite="true" />
         <File sourceFilename="~\Bin\System.Web.Http.OData.dll" targetFilename="~\Bin\System.Web.Http.OData.dll" allowOverwrite="true" />
 			</Files>
