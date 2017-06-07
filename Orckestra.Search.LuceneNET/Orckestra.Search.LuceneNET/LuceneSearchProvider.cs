@@ -167,7 +167,8 @@ namespace Orckestra.Search.LuceneNET
                             MaxCount = facetField.Value.Limit,
                             OrderBy = facetField.Value.FacetSorting == FacetSorting.HitCount 
                                 ? FacetSpec.FacetSortSpec.OrderHitsDesc
-                                : FacetSpec.FacetSortSpec.OrderValueAsc
+                                : FacetSpec.FacetSortSpec.OrderValueAsc,
+                            ExpandSelection = true
                         });
                     }
 
