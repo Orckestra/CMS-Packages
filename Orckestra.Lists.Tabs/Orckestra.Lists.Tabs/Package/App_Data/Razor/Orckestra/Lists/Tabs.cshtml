@@ -39,6 +39,20 @@
     }
     var uniqueCode = Guid.NewGuid().GetHashCode();
 
+    int selectedTabIndex = 0;
+    var selectedTabName = Request.QueryString["tab"];
+
+    if(!string.IsNullOrEmpty(selectedTabName)) {
+
+      for(int i=0; i<tabs.Count; i++) {
+         if(tabs[i].Title == selectedTabName) {
+             selectedTabIndex = i;
+             break;
+         }
+      }
+    }
+
+
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
@@ -56,7 +70,7 @@
             {
                 var tab = tabs[i];
                 var id = GetTabId(uniqueCode, tab.Id.GetHashCode());
-                <li @if (i == 0) { @: class="active"
+                <li @if (i == selectedTabIndex) { @: class="active"
                                                             }>
                     <a href="#@(id)" role="tab" data-toggle="tab">
                         @if (!string.IsNullOrEmpty(tab.Icon))
@@ -74,7 +88,7 @@
             {
                 var tab = tabs[i];
                 var id = GetTabId(uniqueCode, tab.Id.GetHashCode());
-                <div role="tabpanel" class="tab-pane @(i == 0 ? "active in" : string.Empty) fade" id="@id">
+                <div role="tabpanel" class="tab-pane @(i == selectedTabIndex ? "active in" : string.Empty) fade" id="@id">
                     @Html.Raw(tab.Content)
                 </div>
             }
