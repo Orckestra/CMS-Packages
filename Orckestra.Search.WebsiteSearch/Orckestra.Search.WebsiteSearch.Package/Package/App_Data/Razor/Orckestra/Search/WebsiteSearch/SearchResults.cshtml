@@ -158,6 +158,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
+	@if (ShowSearchForm && showFacets)
+	{
+		<script type="text/javascript">
+			function SubmitContentSearchForm() {
+				document.getElementById('SearchForm').submit();
+			}
+		</script>
+	}
 </head>
 <body>
     <div class="websitesearch clearfix">
@@ -300,7 +308,8 @@ if (TotalPages > 1)
                             <div class="list-group-item">
                                 <div class="checkbox">
                                     <label for="@key">
-                                        <input type="checkbox" name="@key" value="1" id="@key"
+	                                    <input type="checkbox" name="@key" value="1" id="@key"
+	                                           onchange="SubmitContentSearchForm()"
                                                @if (isChecked) { <text> checked="checked" </text>    } />
                                         @hit.Label
                                     </label>

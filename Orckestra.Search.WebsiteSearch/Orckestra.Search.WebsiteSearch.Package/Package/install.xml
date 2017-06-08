@@ -2,7 +2,7 @@
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
   <mi:PackageRequirements minimumCompositeVersion="6.1.0.0" maximumCompositeVersion="9.9999.9999.9999" />
   <mi:PackageInformation name="Orckestra.Search.WebsiteSearch" groupName="Orckestra.Search" 
-	version="1.0.3" author="Orckestra A/S" website="https://c1.orckestra.com/" 
+	version="1.0.4" author="Orckestra A/S" website="https://c1.orckestra.com/" 
 	readMoreUrl="https://docs.c1.orckestra.com/Orckestra.Search.WebsiteSearch" 
 	id="443db04a-af4f-4eda-abdf-41bd052ded91" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
     <TechnicalDetails>Implements the search form and search results view as Razor functions. Requirea a search package (such as Orckestra.Searrch.LuceneNET to be installed as well).</TechnicalDetails>
