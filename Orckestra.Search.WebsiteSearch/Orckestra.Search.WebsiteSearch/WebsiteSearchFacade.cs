@@ -203,11 +203,11 @@ namespace Orckestra.Search.WebsiteSearch
             {
                 Title = 
                     line.LabelHtmlHighlight ?? HttpUtility.HtmlEncode(doc.Label),
-                Description = 
+                Url = doc.Url,
+                Highlight = 
                     line.FullTextHtmlHighlights != null && line.FullTextHtmlHighlights.Length > 0 
                     ? string.Join("<br />", line.FullTextHtmlHighlights)
-                    : HttpUtility.HtmlEncode(desc as string),
-                Url = doc.Url
+                    : HttpUtility.HtmlEncode(desc as string)
             };
         }
 
@@ -288,9 +288,9 @@ namespace Orckestra.Search.WebsiteSearch
                     .Where(p => resultHashSet.Contains(p.Id))
                     .Select(page => new SearchResultEntry
                     {
-                        Url = PageUrls.BuildUrl(page, UrlKind.Internal),
                         Title = page.Title,
-                        Description = page.Description
+                        Url = PageUrls.BuildUrl(page, UrlKind.Internal),
+                        Highlight = page.Description
                     })
                     .Evaluate();
             }

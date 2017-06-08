@@ -42,7 +42,7 @@
     public bool CurrentSite { get; set; }
 
     [FunctionParameter(Label = "Show Highlights", Help = "If checked search results will have highlights (when available) shown below the title.", DefaultValue = "false")]
-    public bool ShowDescriptions { get; set; }
+    public bool ShowHighlights { get; set; }
 
     public IEnumerable<ISearchDocumentSourceProvider> SearchDocumentSourceProviders { get; set; }
 
@@ -219,10 +219,10 @@
                 <a href="@entry.Url">
                     @Html.Raw(entry.Title)
                 </a>
-                @if (ShowDescriptions && !string.IsNullOrEmpty(entry.Description))
+                @if (ShowHighlights && !string.IsNullOrEmpty(entry.Highlight))
                 {
                     <br />
-                    @Html.Raw(entry.Description)
+                    @Html.Raw(entry.Highlight)
                 }
             </li>
         }
