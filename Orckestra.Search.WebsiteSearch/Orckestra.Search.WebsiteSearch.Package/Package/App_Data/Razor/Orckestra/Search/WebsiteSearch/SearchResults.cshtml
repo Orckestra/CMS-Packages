@@ -6,7 +6,7 @@
 @functions {
     public override string FunctionDescription
     {
-        get { return "Search results rendering"; }
+        get { return "${Orckestra.Search.WebsiteSearch,Component.SearchResults.Destription}"; }
     }
 
     public static WidgetFunctionProvider SearchableDataTypeSelector()
@@ -26,33 +26,43 @@
         return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Item1", "Item2", true, false);
     }
 
-    [FunctionParameter(Label = "Show Search Form", Help = "If checked, a search form will be shown above the search result.", DefaultValue = "true")]
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.ShowSearchForm.Label}", 
+		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.ShowSearchForm.Help}", 
+		DefaultValue = true)]
     public bool ShowSearchForm { get; set; }
 
-    [FunctionParameter(Label = "Search Form Button Label", Help = "The text to show on the search form submit button. When left blank a generic search icon is used.", DefaultValue = "")]
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchButtonLabel.Label}", 
+		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchButtonLabel.Help}", 
+		DefaultValue = "")]
     public string SearchButtonLabel { get; set; }
 
-    [FunctionParameter(Label = "Search Form Teaser Text", Help = "The text to show as a placeholder in the search field.", DefaultValue = "Search")]
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchFieldTeaserText.Label}", 
+		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchFieldTeaserText.Help}",
+		DefaultValue = "Search")]
     public string SearchFieldTeaserText { get; set; }
 
-    [FunctionParameter(Label = "Results Per Page", Help = "The maximum number of results to show at a time. If the search contains more results links will be provided to navigate results.", DefaultValue = "10")]
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.PageSize.Label}",
+		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.PageSize.Help}", DefaultValue = 10)]
     public int PageSize { get; set; }
 
-    [FunctionParameter(Label = "Search Current Site Only", Help = "If checked only the current site will be searched. Uncheck to search all subsites.", DefaultValue = "true")]
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.CurrentSite.Label}",
+		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.CurrentSite.Help}", DefaultValue = true)]
     public bool CurrentSite { get; set; }
 
-    [FunctionParameter(Label = "Show Highlights", Help = "If checked search results will have highlights (when available) shown below the title.", DefaultValue = "false")]
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.ShowHighlights.Label}",
+		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.ShowHighlights.Help}",
+		DefaultValue = false)]
     public bool ShowHighlights { get; set; }
 
-    public IEnumerable<ISearchDocumentSourceProvider> SearchDocumentSourceProviders { get; set; }
-
-    [FunctionParameter(Label = "Data Types", DefaultValue = null,
-        Help = "Allows limiting the search results to the given data types. If none selected all the data types will be shown.",
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.DataTypes.Label}", 
+	    Help = "${Orckestra.Search.WebsiteSearch,SearchResults.DataTypes.Help}",
+		DefaultValue = null,
         WidgetFactoryMethod = "SearchableDataTypeSelector")]
     public IEnumerable<string> DataTypes { get; set; }
 
-    [FunctionParameter(Label = "Facets", DefaultValue = null,
-        Help = "Select facets to be shown on the search result page.",
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.FacetFields.Label}",
+        Help = "${Orckestra.Search.WebsiteSearch,SearchResults.FacetFields.Help}",
+	    DefaultValue = null,
         WidgetFactoryMethod = "FacetSelector")]
     public IEnumerable<string> FacetFields { get; set; }
 

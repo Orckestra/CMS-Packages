@@ -65,6 +65,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Package\App_Data\Components\Orckestra\Search\WebsiteSearch\SearchForm.xml" />
+    <Content Include="Package\App_Data\Components\Orckestra\Search\WebsiteSearch\SearchResults.xml" />
+    <Content Include="Package\Composite\InstalledPackages\localization\Orckestra.Search.WebsiteSearch.en-US.xml" />
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
