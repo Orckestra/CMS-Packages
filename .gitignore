@@ -2,6 +2,8 @@
 .vs
 bin
 obj
+Bin
+Obj
 packages
 */*/obj/Debug
 */*/obj/Release
@@ -10,6 +12,7 @@ packages
 *.suo
 *.csproj.user
 *.zip
+*.nupkg
 /Tools/C1PackageDevProvisioner/C1PackageDevProvisioner/obj/Debug
 /Tools/C1PackageDevProvisioner/Runner/obj/Debug
 VersionInfo.cs
