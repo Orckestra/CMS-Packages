@@ -22,7 +22,7 @@ namespace Orckestra.Search.MediaContentIndexing
         private const string CacheDirectory = "~/App_Data/Composite/Cache/MediaContentIndexing";
 
         private const int MaxMissingFilesLogMessages = 100;
-        private static int _missingFilesLogged = 0;
+        private static int _missingFilesLogged;
 
 
         private const string LogTitle = nameof(MediaContentSearchExtension);
@@ -72,30 +72,14 @@ namespace Orckestra.Search.MediaContentIndexing
                 && lastWriteTime != null
                 && File.GetCreationTime(outputFilePath) == lastWriteTime)
             {
-                return File.ReadAllText(outputFilePath);
-            }
-
-            string extension;
-            try
-            {
-                var fileName = mediaFile.FileName;
-                foreach(var ch in Path.GetInvalidFileNameChars())
+                string text = File.ReadAllText(outputFilePath);
+                if (!string.IsNullOrEmpty(text))
                 {
-                    fileName = fileName.Replace(ch, '_');
+                    return text;
                 }
-                extension = Path.GetExtension(fileName);
-            }
-            catch (ArgumentException)
-            {
-                Log.LogWarning(LogTitle, $"Failed to extract extension from file: '{mediaFile.FileName}', mime type: '{mediaFile.MimeType}' ");
-                return null;
             }
 
-            if (string.IsNullOrEmpty(extension))
-            {
-                extension = MimeTypeInfo.GetExtensionFromMimeType(mediaFile.MimeType);
-            }
-
+            string extension = GetExtension(mediaFile);
             if (string.IsNullOrEmpty(extension))
             {
                 Log.LogWarning(LogTitle, $"Failed to extract extension from file: '{mediaFile.FileName}', mime type: '{mediaFile.MimeType}' ");
@@ -122,6 +106,33 @@ namespace Orckestra.Search.MediaContentIndexing
                 return null;
             }
 
+            bool success = ExtractText(tempSourceFile, outputFilePath, mediaFile);
+
+            C1File.Delete(tempSourceFile);
+
+            if (!success)
+            {
+                return null;
+            }
+
+            if (lastWriteTime != null)
+            {
+                File.SetLastWriteTime(outputFilePath, lastWriteTime.Value);
+            }
+
+            var result = File.ReadAllText(outputFilePath);
+
+            if (result.Length == 0)
+            {
+                Log.LogWarning(LogTitle, $"Failed to extract text from media file '{mediaFile.FileName}', mime type: '{mediaFile.MimeType}', extension '{extension}'");
+            }
+
+            return result;
+        }
+
+
+        static bool ExtractText(string sourceFile, string targetFile, IMediaFile mediaFile)
+        {
             var exePath = PathUtil.Resolve(IFilterExecutableRelativePath);
             var workingDirectory = Path.GetDirectoryName(exePath);
 
@@ -134,7 +145,7 @@ namespace Orckestra.Search.MediaContentIndexing
                 {
                     WorkingDirectory = workingDirectory,
                     FileName = "\"" + exePath + "\"",
-                    Arguments = $"\"{tempSourceFile}\" \"{outputFilePath}\"",
+                    Arguments = $"\"{sourceFile}\" \"{targetFile}\"",
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
                     RedirectStandardInput = true,
@@ -155,42 +166,54 @@ namespace Orckestra.Search.MediaContentIndexing
                 exitCode = process.ExitCode;
             }
 
-            C1File.Delete(tempSourceFile);
-
             if (exitCode != 0)
             {
                 var msg = $"Failed to parse the content of the media file '{Path.GetFileName(mediaFile.FileName)}'.";
 
                 if ((uint)exitCode == 0x80004005 /*E_FAIL*/)
                 {
-                    Log.LogVerbose(LogTitle, msg + " Unspecified error.");
-                    return null;
+                    msg += " Unspecified error.";
                 }
-
-                if ((uint)exitCode == 0x80004002 /*E_NOINTERFACE*/)
+                else if ((uint) exitCode == 0x80004002 /*E_NOINTERFACE*/)
                 {
-                    Log.LogWarning(LogTitle, msg + " IFilter not found for the given file extension.");
-                    return null;
+                    msg += " IFilter not found for the given file extension.";
+                }
+                else
+                {
+                    msg += $"\r\nExit Code: {exitCode}\r\nOutput: {stdout}"
+                           + (!string.IsNullOrEmpty(stderr) ? $"\r\nError: {stderr}" : "");
                 }
 
-                Log.LogWarning(LogTitle,
-                    msg +
-                    $"\r\nExit Code: {exitCode}\r\nOutput: {stdout}"
-                    + (!string.IsNullOrEmpty(stderr) ? $"\r\nError: {stderr}" : ""));
-                return null;
+                Log.LogWarning(LogTitle, msg);
+                return false;
             }
 
-            if (!File.Exists(outputFilePath))
+            return File.Exists(targetFile);
+        }
+
+        static string GetExtension(IMediaFile mediaFile)
+        {
+            string extension;
+            try
+            {
+                var fileName = mediaFile.FileName;
+                foreach (var ch in Path.GetInvalidFileNameChars())
+                {
+                    fileName = fileName.Replace(ch, '_');
+                }
+                extension = Path.GetExtension(fileName);
+            }
+            catch (ArgumentException)
             {
                 return null;
             }
 
-            if (lastWriteTime != null)
+            if (string.IsNullOrEmpty(extension))
             {
-                File.SetLastWriteTime(outputFilePath, lastWriteTime.Value);
+                extension = MimeTypeInfo.GetExtensionFromMimeType(mediaFile.MimeType);
             }
 
-            return File.ReadAllText(outputFilePath);
+            return extension;
         }
 
         internal static string GetTextOutputFilePath(IMediaFile mediaFile)
