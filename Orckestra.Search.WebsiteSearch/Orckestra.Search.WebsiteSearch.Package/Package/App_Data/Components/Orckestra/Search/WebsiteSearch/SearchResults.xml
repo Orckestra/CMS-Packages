@@ -1,0 +1,16 @@
+﻿<html
+		pal:title="${Orckestra.Search.WebsiteSearch,Component.SearchResults.Title}"
+		pal:description="${Orckestra.Search.WebsiteSearch,Component.SearchResults.Destription}"
+		pal:tags="search"
+		pal:icon="generic-search"
+		pal:container-anti-classes="aside"
+		pal:container-classes=""
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:pal="http://www.composite.net/ns/components/1.0">
+	<head>
+	</head>
+	<body>
+		<f:function name="Orckestra.Search.WebsiteSearch.SearchResults" xmlns:f="http://www.composite.net/ns/function/1.0">
+		</f:function>
+	</body>
+</html>

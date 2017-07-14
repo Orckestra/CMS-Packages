@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="6.1.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Search.MediaContentIndexing" groupName="Orckestra.Search" version="1.0.0" author="Orckestra A/S" website="https://c1.orckestra.com" readMoreUrl="https://docs.c1.orckestra.com/Orckestra.Search.MediaContentIndexing" id="d6cacdc2-2f19-4472-a611-2bc6ad4b95e0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" allowOverwrite="false">
+	<mi:PackageInformation name="Orckestra.Search.MediaContentIndexing" groupName="Orckestra.Search" version="1.0.1" author="Orckestra A/S" website="https://c1.orckestra.com" readMoreUrl="https://docs.c1.orckestra.com/Orckestra.Search.MediaContentIndexing" id="d6cacdc2-2f19-4472-a611-2bc6ad4b95e0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false" allowOverwrite="false">
 		<TechnicalDetails>Indexing PDF files may require PDF IFilter being installed on the server machine.
 Remember to rebuild the search index after the installation.</TechnicalDetails>
 		<Description>Enables indexing media archive text content, such as DOCX and PDF.</Description>

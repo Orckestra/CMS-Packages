@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<string key="Component.SearchForm.Title" value="Website Search Form" />
+	<string key="Component.SearchForm.Destription" value="Contains search form: input textbox and submit button." />
+
+	<string key="Component.SearchResults.Title" value="Website Search Results" />
+	<string key="Component.SearchResults.Destription" value="Renders the search results. Optionally includes a search form as well." />
+
+	<string key="SearchForm.SearchResultPage.Label" value="Search Result Page" />
+	<string key="SearchForm.SearchResultPage.Help" value="Select the page where search results will be displayed. This should be a page which contains the 'Search Results' function." />
+	<string key="SearchForm.SearchFieldTeaserText.Label" value="Search Form Teaser Text" />
+	<string key="SearchForm.SearchFieldTeaserText.Help" value="The text to show as a placeholder in the search field." />
+	<string key="SearchForm.SearchButtonLabel.Label" value="Search Button Label" />
+	<string key="SearchForm.SearchButtonLabel.Help" value="Label for search button" />
+
+	<string key="NavbarSearchForm.SearchResultPage.Label" value="Search Result Page" />
+	<string key="NavbarSearchForm.SearchResultPage.Help" value="Select the page where search results will be displayed. This should be a page which contains the 'Search Results' function." />
+
+	<string key="SearchResults.ShowSearchForm.Label" value="Show Search Form" />
+	<string key="SearchResults.ShowSearchForm.Help" value="If checked, a search form will be shown above the search result." />
+	<string key="SearchResults.SearchButtonLabel.Label" value="Search Form Button Label" />
+	<string key="SearchResults.SearchButtonLabel.Help" value="The text to show on the search form submit button. When left blank a generic search icon is used." />
+	<string key="SearchResults.SearchFieldTeaserText.Label" value="Search Form Teaser Text" />
+	<string key="SearchResults.SearchFieldTeaserText.Help" value="The text to show as a placeholder in the search field." />
+	<string key="SearchResults.PageSize.Label" value="Results Per Page" />
+	<string key="SearchResults.PageSize.Help" value="The maximum number of results to show at a time. If the search contains more results links will be provided to navigate results." />
+	<string key="SearchResults.CurrentSite.Label" value="Search Current Site Only" />
+	<string key="SearchResults.CurrentSite.Help" value="If checked only the current site will be searched. Uncheck to search all subsites." />
+	<string key="SearchResults.ShowHighlights.Label" value="Show relevant excerpts" />
+	<string key="SearchResults.ShowHighlights.Help" value="If checked, search results will have excerpts shown below result titles." />
+	<string key="SearchResults.DataTypes.Label" value="Data Types" />
+	<string key="SearchResults.DataTypes.Help" value="Limit the search results to the given data types. If none are selected, all searchable data types will be included." />
+	<string key="SearchResults.FacetFields.Label" value="Facets" />
+	<string key="SearchResults.FacetFields.Help" value="Select facets to be shown on the search result page." />
+</strings>

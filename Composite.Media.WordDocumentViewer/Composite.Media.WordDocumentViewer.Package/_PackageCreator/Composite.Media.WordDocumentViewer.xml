@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Directories>
+		<Add name="Frontend\Composite\Media\WordDocumentViewer\" />
+	</pc:Directories>
+	<pc:Files>
+		<Add name="App_Data\Composite.Media.WordDocumentViewer\DocX2Html.xsl" />
+		<Add name="Bin\Composite.Media.WordDocumentViewer.dll" />
+		<Add name="Bin\DocumentFormat.OpenXml.dll" />
+		<Add name="Bin\DocumentFormat.OpenXml.xml" />
+	</pc:Files>
+	<pc:CSharpFunctions>
+		<Add name="Composite.Media.WordDocumentViewer.Render" />
+	</pc:CSharpFunctions>
+	<pc:XsltFunctions>
+		<Add name="Composite.Media.WordDocumentViewer" />
+	</pc:XsltFunctions>
+	<mi:PackageRequirements minimumCompositeVersion="2.0.3898.29851" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.Media.WordDocumentViewer" groupName="Composite.Media" version="2.4.9" author="Composite A/S" website="http://www.composite.net" id="a530492a-181c-4636-bc53-545ca4be7855" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Display Word Document 2007 as HTML text</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

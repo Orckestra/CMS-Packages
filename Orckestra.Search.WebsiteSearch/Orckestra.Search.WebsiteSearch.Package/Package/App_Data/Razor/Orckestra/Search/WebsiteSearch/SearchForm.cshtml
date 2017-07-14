@@ -3,16 +3,21 @@
 @functions {
 	public override string FunctionDescription
 	{
-		get { return "Contains search form: input textbox and submit button"; }
+		get { return "${Orckestra.Search.WebsiteSearch,Component.SearchForm.Destription}"; }
 	}
 
-	[FunctionParameter(Label = "Search Result Page", Help = "Select the page where search results will be displayed. This should be a page which contains the 'Search Results' function.")]
+	[FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchForm.SearchResultPage.Label}", 
+		Help = "${Orckestra.Search.WebsiteSearch,SearchForm.SearchResultPage.Help}")]
 	public DataReference<Composite.Data.Types.IPage> SearchResultPage { get; set; }
 
-	[FunctionParameter(Label = "Search Form Teaser Text", Help = "The text to show as a placeholder in the search field.", DefaultValue = "Search")]
+	[FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchForm.SearchFieldTeaserText.Label}", 
+		Help = "${Orckestra.Search.WebsiteSearch,SearchForm.SearchFieldTeaserText.Help}", 
+		DefaultValue = "Search")]
 	public string SearchFieldTeaserText { get; set; }
 
-	[FunctionParameter(Label = "Search Button Label", Help = "Label for search button", DefaultValue = "")]
+	[FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchForm.SearchButtonLabel.Label}", 
+		Help = "${Orckestra.Search.WebsiteSearch,SearchForm.SearchButtonLabel.Help}", 
+		DefaultValue = "")]
 	public string SearchButtonLabel { get; set; }
 }
 @{

@@ -6,7 +6,8 @@
         get { return "Shows a search icon button and a dropdown search box."; }
     }
 
-    [FunctionParameter(Label = "Search Result Page", Help = "Select the page where search results will be displayed. This should be a page which contains the 'Search Results' function.")]
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,NavbarSearchForm.SearchResultPage.Label}", 
+		Help = " ${Orckestra.Search.WebsiteSearch,NavbarSearchForm.SearchResultPage.Help}")]
     public DataReference<Composite.Data.Types.IPage> SearchResultPage { get; set; }
 
 }

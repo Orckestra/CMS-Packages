@@ -4,27 +4,25 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A5BE077C-4885-4C3B-9B79-AC7F482E9815}</ProjectGuid>
+    <ProjectGuid>{0615081A-142D-4597-B57D-DBDF77B6ACEB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Orckestra.Search.WebsiteSearch</RootNamespace>
-    <AssemblyName>Orckestra.Search.WebsiteSearch.Package</AssemblyName>
+    <RootNamespace>Composite.Media.WordDocumentViewer.Package</RootNamespace>
+    <AssemblyName>Composite.Media.WordDocumentViewer.Package</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
     <TargetFrameworkProfile />
-    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +32,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,16 +42,16 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -59,39 +59,39 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Components\Orckestra\Search\WebsiteSearch\SearchForm.xml" />
-    <Content Include="Package\App_Data\Components\Orckestra\Search\WebsiteSearch\SearchResults.xml" />
-    <Content Include="Package\Composite\InstalledPackages\localization\Orckestra.Search.WebsiteSearch.en-US.xml" />
-    <Content Include="Package\install.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="_PackageCreator\Orckestra.Search.WebsiteSearch.xml" />
+    <Content Include="Package\App_Data\Composite.Media.WordDocumentViewer\DocX2Html.xsl" />
+    <Content Include="Package\App_Data\Xslt\Composite\Media\WordDocumentViewer.xsl" />
+    <Content Include="Package\Bin\Composite.Media.WordDocumentViewer.dll" />
+    <Content Include="Package\Bin\DocumentFormat.OpenXml.dll" />
+    <Content Include="Package\Bin\DocumentFormat.OpenXml.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IMethodBasedFunctionInfos_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.INamedFunctionCalls_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IParameters_public.xml" />
+    <Content Include="Package\Datas\Composite.Data.Types.IXsltFunctions_public.xml" />
+    <Content Include="Package\install.xml" />
+    <Content Include="_PackageCreator\Composite.Media.WordDocumentViewer.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Package\App_GlobalResources\Orckestra\Search\WebsiteSearch.resx" />
+    <Content Include="Package\Frontend\Composite\Media\WordDocumentViewer\ImageHandler.ashx" />
+    <Content Include="packages.config" />
+    <None Include="Release\Composite.Media.WordDocumentViewer.zip" />
+    <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Orckestra.Search.WebsiteSearch\Orckestra.Search.WebsiteSearch.csproj">
-      <Project>{1ead3346-1809-4b68-8bd7-67ea4cc289f8}</Project>
-      <Name>Orckestra.Search.WebsiteSearch</Name>
+    <Folder Include="Dll\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Composite.Media.WordDocumentViewer\Composite.Media.WordDocumentViewer.csproj">
+      <Project>{82b8f48b-90aa-4f05-894e-bb1c896654f5}</Project>
+      <Name>Composite.Media.WordDocumentViewer</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Package\Bin\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Release\Orckestra.Search.WebsiteSearch.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Package\App_Data\Razor\Orckestra\Search\WebsiteSearch\NavbarSearchForm.cshtml" />
-    <Content Include="Package\App_Data\Razor\Orckestra\Search\WebsiteSearch\SearchForm.cshtml" />
-    <Content Include="Package\App_Data\Razor\Orckestra\Search\WebsiteSearch\SearchResults.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -100,40 +100,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
-        <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>64986</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64986/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-        </WebProjectProperties>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-  <PropertyGroup>
-    <PostBuildEvent>ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
-MKDIR "$(TargetDir)_Package\Bin\"
-COPY "$(TargetDir)\*.dll" "$(TargetDir)_Package\Bin\"
-DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
-
-DEL "$(TargetDir)$(SolutionName).zip"
-
-"$(SolutionDir)..\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
-
-MKDIR "$(ProjectDir)Release"
-COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"</PostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PreBuildEvent>DEL "$(TargetDir)\*.dll"</PreBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -141,4 +107,29 @@ COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>DEL "$(TargetDir)\Composite.Generated.dll"
+
+ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
+
+MD "$(TargetDir)_Package\Bin\"
+COPY "$(TargetDir)\*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)..\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"</PostBuildEvent>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"</PreBuildEvent>
+  </PropertyGroup>
 </Project>
