@@ -1,57 +1,47 @@
 @inherits RazorFunction
 
 @functions {
-    public override string FunctionDescription
-    {
-        get { return "Shows a static map for an address or the latitude/longitude using Google Maps"; }
-    }
+	public override string FunctionDescription
+	{
+		get { return "Shows a static map for an address or the latitude/longitude using Google Maps"; }
+	}
 
-    [FunctionParameter(Label = "Address", Help = "An address (e.g. 25 Some Street, Some City) or the latitude/longitude (e.g. 40.7813132127194,-73.9663660526276) to show on a map", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.TextArea"" />")]
-    public string Address { get; set; }
+	[FunctionParameter(Label = "Google Api Key", Help = "To use the Google Static Maps API, you must register your app project on the Google API Console and get a Google API key")]
+	public string ApiKey { get; set; }
 
-    [FunctionParameter(Label = "Zoom", Help = "The zoom level of the map from 1 to 21. 14 by default.", DefaultValue = 14)]
-    public int Zoom { get; set; }
+	[FunctionParameter(Label = "Address", Help = "An address (e.g. 25 Some Street, Some City) or the latitude/longitude (e.g. 40.7813132127194,-73.9663660526276) to show on a map", WidgetMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.TextArea"" />")]
+	public string Address { get; set; }
+
+	[FunctionParameter(Label = "Zoom", Help = "The zoom level of the map from 1 to 21 (1: World, 5: Landmass/continent, 10: City, 15: Streets, 20: Buildings). 14 by default.", DefaultValue = 14)]
+	public int Zoom { get; set; }
+
+	[FunctionParameter(Label = "Map Size", Help = "Defines the rectangular dimensions of the map image. This parameter takes a string of the form {horizontal_value}x{vertical_value}. For example, 500x400.", DefaultValue = "640x640")]
+	public string Size { get; set; }
+
+	private const string mapTypeMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
+		<f:param name=""Options"">
+			<f:function name=""Composite.Utils.String.Split"">
+				<f:param name=""String"" value=""roadmap,satellite,hybrid,terrain"" />
+			</f:function>
+		</f:param>
+		<f:param name=""Required"" value=""False"" />
+	</f:widgetfunction>";
+	[FunctionParameter(Label = "Map Type", Help = "Defines the type of map to construct", DefaultValue = "roadmap", WidgetMarkup = mapTypeMarkup)]
+	public string MapType { get; set; }
 
 }
 
 @{
-    Address = HttpUtility.UrlEncode(Address.Replace("\n", ", "));
-    var mapImgSrc = string.Format("http://maps.google.com/maps/api/staticmap?center={0}&size=640x640&zoom={1}&sensor=false&markers=color:blue|{0}", Address, Zoom);
-    var mapImgSrcScale2 = string.Format("http://maps.google.com/maps/api/staticmap?center={0}&size=640x640&zoom={1}&sensor=false&scale=2&markers=color:blue|{0}", Address, Zoom);
-    var mapId = "map" + Guid.NewGuid().GetHashCode().ToString();
+	Address = HttpUtility.UrlEncode(Address.Replace("\n", ", "));
+	var mapImgSrc = string.Format("//maps.google.com/maps/api/staticmap?center={0}&size={1}&zoom={2}&sensor=false&markers=color:blue|{0}&maptype={3}&key={4}", Address, Size, Zoom, MapType, ApiKey);
+	var mapId = "map" + Guid.NewGuid().GetHashCode().ToString();
 }
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
-    @*Responsive Google Map Images*@
-    <style id="google-static-map" type="text/css">
-        .google-static-map {
-            display: block;
-            max-width: 640px;
-            max-height: 640px;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            line-height: 0;
-            background-size: 640px 640px;
-        }
-
-            .google-static-map img {
-                opacity: 0;
-                width: 100%;
-            }
-    </style>
-    <style type="text/css">
-        /*<!--*/ @Html.Raw("#" + mapId + "{ background-image: url('" + mapImgSrc +"'); }") /*-->*/
-        @@media only screen and (min--moz-device-pixel-ratio: 2),
-                 only screen and (-o-min-device-pixel-ratio: 2/1),
-                 only screen and (-webkit-min-device-pixel-ratio: 2),
-                 only screen and (min-device-pixel-ratio: 2) {
-        /*<!--*/ @Html.Raw("#" + mapId + "{ background-image: url('" + mapImgSrcScale2 + "'); }") /*-->*/
-       }
-    </style>
 </head>
 <body>
-    <a id="@mapId" class="google-static-map" href="http://maps.google.com/maps?q=@Address&amp;z=@Zoom" target="_blank">
-        <img src="@mapImgSrc" alt="@Address" />
-    </a>
+	<a id="@mapId" class="google-static-map" href="//maps.google.com/maps?q=@Address&amp;z=@Zoom" target="_blank">
+		<img src="@mapImgSrc" alt="@Address" class="img-responsive" />
+	</a>
 </body>
 </html>

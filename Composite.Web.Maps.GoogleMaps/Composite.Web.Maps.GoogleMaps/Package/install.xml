@@ -1,15 +1,16 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="4.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Composite.Web.Maps.GoogleMaps" groupName="Composite.Web" version="1.0.7" author="Composite A/S" website="http://composite.net" readMoreUrl="http://docs.composite.net/Composite.Web.Maps.GoogleMaps" id="941de2b9-b1a2-4edf-9a67-b70dcdac39b8" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
-		<Description>Shows a static map for an address or the latitude/longitude using Google Maps</Description>
-		<TechnicalDetails>Shows a static map for an address or the latitude/longitude using Google Maps</TechnicalDetails>
+	<mi:PackageRequirements minimumCompositeVersion="5.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Maps.GoogleMaps" groupName="Orckestra.Web" version="1.0.8" author="Orckestra A/S" website="https://c1.orckestra.com" readMoreUrl="https://c1.orckestra.com/Add-ons/All/Composite.Web.Maps.GoogleMaps" id="941de2b9-b1a2-4edf-9a67-b70dcdac39b8" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Shows a static map image for an address or the latitude/longitude using Google Maps</Description>
+		<TechnicalDetails>To use the Google Static Maps API, you must register your app project on the Google API Console and get a Google API key</TechnicalDetails>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries />
 	<mi:PackageFragmentInstallers>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
       <Files>
         <File sourceFilename="~\App_Data/Razor/Composite/Web/Maps/GoogleStaticMap.cshtml" targetFilename="~\App_Data/Razor/Composite/Web/Maps/GoogleStaticMap.cshtml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data/Components/Orckestra/Web/Maps/GoogleStaticMap.xml" targetFilename="~\App_Data/Components/Orckestra/Web/Maps/GoogleStaticMap.xml" allowOverwrite="true" />
       </Files>
 		</mi:Add>
 	</mi:PackageFragmentInstallers>
