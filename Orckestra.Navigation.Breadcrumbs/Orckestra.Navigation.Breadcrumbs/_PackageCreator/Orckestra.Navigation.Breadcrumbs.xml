@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+	<pc:Files>
+		<Add name="App_Data\Razor\Orckestra\Navigation\Breadcrumbs.cshtml" />
+	</pc:Files>
+	<mi:PackageRequirements minimumCompositeVersion="4.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Navigation.Breadcrumbs" groupName="Orckestra.Navigation" version="1.0.8" author="Orckestra A/S" website="http://composite.net" id="6edcaef2-b8fc-41f7-9374-afa73d545262" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+		<Description>Allows visitors to navigate the website via “breadcrumbs” menu.</Description>
+	</mi:PackageInformation>
+</pc:PackageCreator>

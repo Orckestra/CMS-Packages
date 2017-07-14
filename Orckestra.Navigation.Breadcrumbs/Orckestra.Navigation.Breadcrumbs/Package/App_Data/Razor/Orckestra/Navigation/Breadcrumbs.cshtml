@@ -1,0 +1,62 @@
+﻿@inherits RazorFunction
+
+@functions {
+	override public string FunctionDescription
+	{
+		get { return "A function that displays a breadcrumbs menu"; }
+	}
+
+	[FunctionParameter(Label = "Level", Help = "Set from what level start to display items", DefaultValue = 1)]
+	public int Level { get; set; }
+
+	private IEnumerable<PageNode> OpenPages(PageNode selectedPageNode)
+	{
+		var openPages = new List<PageNode>();
+		var openPage = selectedPageNode;
+
+		while (openPage != null)
+		{
+			openPages.Add(openPage);
+			openPage = openPage.ParentPage; // crawl up
+		}
+
+		return openPages;
+	}
+}
+@{
+	var openpages = OpenPages(CurrentPageNode).ToList();
+	if (CurrentPageNode.Level == 1)
+	{
+		return;
+	}
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+	<ul class="breadcrumb">
+		@for (var i = (openpages.Count() - 1); i >= 0; i--)
+		{
+			var page = openpages[i];
+			var isActive = page.Id == CurrentPageNode.Id;
+			var title = !string.IsNullOrEmpty(page.MenuTitle) ? page.MenuTitle : page.Title;
+			if (page.Level < Level)
+			{
+				continue;
+			}
+			if (!isActive)
+			{
+				<li>
+					<span><a href="@page.Url">@title</a></span>
+				</li>
+			}
+			else
+			{
+				<li>
+					<span>@title</span>
+				</li>
+			}
+		}
+	</ul>
+</body>
+</html>
