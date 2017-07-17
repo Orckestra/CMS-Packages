@@ -51,9 +51,9 @@
 		return HttpContext.Current.Cache[url];
 	}
 
-	private string GetAlbumCoverPhoto(string coverPhotoId)
+	private string GetAlbumCoverPhoto(dynamic coverPhoto)
 	{
-		var coverPhotoCacheName = "AlbumCoverPhoto" + coverPhotoId;
+		var coverPhotoCacheName = "AlbumCoverPhoto" + coverPhoto.id;
 		if (HttpContext.Current.Cache[coverPhotoCacheName] == null)
 		{
 			var fb = new FacebookClient();
@@ -61,7 +61,7 @@
 			{
 				fb = new FacebookClient(HttpUtility.UrlDecode(AccessToken));
 			}
-			dynamic data = fb.Get(coverPhotoId + "?fields=images");
+			dynamic data = fb.Get(coverPhoto.id + "?fields=images");
 			HttpContext.Current.Cache.Add(coverPhotoCacheName, data.images[data.images.Count - 1].source.Replace("https:", ""),
 								 null, DateTime.Now.AddSeconds(360),
 								 Cache.NoSlidingExpiration,

@@ -72,7 +72,7 @@
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="_PackageCreator\Composite.Navigation.Path.xml" />
+    <Content Include="_PackageCreator\Orckestra.Navigation.Breadcrumbs.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
