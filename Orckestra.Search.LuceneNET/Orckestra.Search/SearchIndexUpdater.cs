@@ -29,7 +29,14 @@ namespace Orckestra.Search
 
         public void Populate(string dataSource)
         {
-            CommandQueue.Queue(new PopulateFromDataSourceCommand { DocumentSourceName = dataSource });
+            foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
+            {
+                CommandQueue.Queue(new PopulateFromDataSourceCommand
+                {
+                    DocumentSourceName = dataSource,
+                    CultureName = culture.Name
+                });
+            }
         }
 
         public void Remove(string dataSource)
