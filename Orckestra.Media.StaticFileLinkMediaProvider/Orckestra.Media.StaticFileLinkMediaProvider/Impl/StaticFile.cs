@@ -120,6 +120,18 @@ namespace Orckestra.Media.StaticFileLinkMediaProvider.Impl
             private set;
         }
 
+        public string Tags
+        {
+            get
+            {
+                return "";
+            }
+            set
+            {
+            }
+        }
+
+
         internal static Guid CalculateId(string websitePath)
         {
             return GetHashValue(websitePath);
