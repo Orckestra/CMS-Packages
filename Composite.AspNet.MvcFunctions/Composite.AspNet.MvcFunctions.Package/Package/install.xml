@@ -1,29 +1,29 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="5.0.5758.17663" maximumCompositeVersion="9.9999.9999.9999" />
-  <mi:PackageInformation name="Composite.AspNet.MvcFunctions" groupName="Composite.AspNet" version="1.0.14"
-     author="Orckestra A/S" website="https://c1.orckestra.com/" 
-     readMoreUrl="https://docs.c1.orckestra.com/Composite.AspNet.MvcFunctions" 
-     id="1a8895f2-280d-4fec-b8b0-f124b4198e3d" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+	<mi:PackageRequirements minimumCompositeVersion="6.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Composite.AspNet.MvcFunctions" groupName="Composite.AspNet" version="1.0.15"
+		 author="Orckestra A/S" website="https://c1.orckestra.com/" 
+		 readMoreUrl="https://docs.c1.orckestra.com/Composite.AspNet.MvcFunctions" 
+		 id="1a8895f2-280d-4fec-b8b0-f124b4198e3d" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
 		<TechnicalDetails>-</TechnicalDetails>
 		<Description>Allows you to turn your existing MVC controllers and actions into standard CMS Functions.</Description>
 	</mi:PackageInformation>
 	<mi:PackageFragmentInstallerBinaries>
-    <mi:Add path="~\Bin\Composite.AspNet.MvcFunctions.dll" />
-  </mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Composite.AspNet.MvcFunctions.dll" />
+	</mi:PackageFragmentInstallerBinaries>
 	<mi:PackageFragmentInstallers>
-    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentUninstaller, Composite">
-      <Files>
-        <File sourceFilename="~\Bin\System.Web.Mvc.dll" targetFilename="~\Bin\System.Web.Mvc.dll" allowOverwrite="true" addAssemblyBinding="true"/>
-      </Files>
-    </mi:Add>
-    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
-      <Files>
-        <File sourceFilename="~\Bin\Composite.AspNet.MvcFunctions.dll" targetFilename="~\Bin\Composite.AspNet.MvcFunctions.dll" allowOverwrite="true" />
-        <File sourceFilename="~\Views\web.config" targetFilename="~\Views\web.config" allowOverwrite="false" />
-      </Files>
-    </mi:Add>
-    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\Bin\System.Web.Mvc.dll" targetFilename="~\Bin\System.Web.Mvc.dll" allowOverwrite="true" addAssemblyBinding="true"/>
+			</Files>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\Bin\Composite.AspNet.MvcFunctions.dll" targetFilename="~\Bin\Composite.AspNet.MvcFunctions.dll" allowOverwrite="true" />
+				<File sourceFilename="~\Views\web.config" targetFilename="~\Views\web.config" allowOverwrite="false" />
+			</Files>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
 			<Install xsltFilePath="~\Composite.config\Install.xsl" />
 			<Uninstall xsltFilePath="~\Composite.config\Uninstall.xsl" />
 		</mi:Add>
