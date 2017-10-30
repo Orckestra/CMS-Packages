@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="6.2.6394.36351" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.ExperienceManagement.KeywordRedirect" groupName="Orckestra.ExperienceManagement" version="3.15.0" author="Orckestra Technologies" website="https://www.orckestra.com" readMoreUrl="https://www.orckestra.com" id="3fffb96f-2447-4056-a5a0-db1cef901d23" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" allowOverwrite="false">
+		<TechnicalDetails>Keyword Redirect</TechnicalDetails>
+		<Description>Keyword Redirect</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Orckestra.ExperienceManagement.KeywordRedirect.dll" />
+	</mi:PackageFragmentInstallerBinaries>
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\Composite\InstalledPackages\localization\Orckestra.ExperienceManagement.KeywordRedirect.en-US.xml" targetFilename="~\Composite\InstalledPackages\localization\Orckestra.ExperienceManagement.KeywordRedirect.en-US.xml" allowOverwrite="false" />
+				<File sourceFilename="~\Composite\InstalledPackages\localization\Orckestra.ExperienceManagement.KeywordRedirect.fr-FR.xml" targetFilename="~\Composite\InstalledPackages\localization\Orckestra.ExperienceManagement.KeywordRedirect.fr-FR.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Composite\TreeDefinitions\KeywordRedirect.xml" targetFilename="~\App_Data\Composite\TreeDefinitions\KeywordRedirect.xml" allowOverwrite="false" />
+				<File sourceFilename="~\Bin\Orckestra.ExperienceManagement.KeywordRedirect.dll" targetFilename="~\Bin\Orckestra.ExperienceManagement.KeywordRedirect.dll" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Composite\InstalledPackages\ExperienceManagement.KeywordRedirect\" targetDirectory="~\Composite\InstalledPackages\ExperienceManagement.KeywordRedirect\" allowOverwrite="false" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
