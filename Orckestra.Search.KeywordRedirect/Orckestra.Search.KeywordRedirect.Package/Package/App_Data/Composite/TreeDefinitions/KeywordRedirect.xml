@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+  <ElementStructure.AutoAttachments>
+    <NamedParent Name="SearchQueryPerspective" Position="Bottom" />
+    <NamedParent Name="Content.WebsiteItems" Position="Bottom" />
+  </ElementStructure.AutoAttachments>
+  <ElementRoot>
+    <Children>
+      <Element Label="${Orckestra.Search.KeywordRedirect,KeywordRedirect}" Id="OrckestraSearchKeywordRedirect">
+        <Actions>
+          <AddDataAction Label="${Orckestra.Search.KeywordRedirect,KeywordAdd}" Type="Orckestra.Search.KeywordRedirect.Data.Types.RedirectKeyword" />
+          <CustomUrlAction Icon="data" Label="${Orckestra.Search.KeywordRedirect,ViewKeywords}" Url="Composite/InstalledPackages/Orckestra.Search.KeywordRedirect/view/viewkeywords.html" ViewType="documentview" />
+        </Actions>
+        <Children>
+          <DataElements Type="Orckestra.Search.KeywordRedirect.Data.Types.RedirectKeyword">
+            <Actions>
+              <EditDataAction Label="${Orckestra.Search.KeywordRedirect,KeywordEdit}" />
+              <DeleteDataAction Label="${Orckestra.Search.KeywordRedirect,KeywordDelete}" />
+            </Actions>
+          </DataElements>
+        </Children>
+      </Element>
+    </Children>
+  </ElementRoot>
+</ElementStructure>

@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="6.2.6394.36351" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Search.KeywordRedirect" groupName="Orckestra.Search" version="1.0.0" author="Orckestra Technologies" website="https://c1.orckestra.com/" readMoreUrl="https://c1.orckestra.com/" id="3fffb96f-2447-4056-a5a0-db1cef901d23" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" allowOverwrite="false">
+		<TechnicalDetails>Keyword Redirect</TechnicalDetails>
+		<Description>Keyword Redirect</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries>
+		<mi:Add path="~\Bin\Orckestra.Search.KeywordRedirect.dll" />
+	</mi:PackageFragmentInstallerBinaries>
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\Composite\InstalledPackages\localization\Orckestra.Search.KeywordRedirect.en-US.xml" targetFilename="~\Composite\InstalledPackages\localization\Orckestra.Search.KeywordRedirect.en-US.xml" allowOverwrite="false" />
+				<File sourceFilename="~\Composite\InstalledPackages\localization\Orckestra.Search.KeywordRedirect.fr-FR.xml" targetFilename="~\Composite\InstalledPackages\localization\Orckestra.Search.KeywordRedirect.fr-FR.xml" allowOverwrite="false" />
+				<File sourceFilename="~\App_Data\Composite\TreeDefinitions\KeywordRedirect.xml" targetFilename="~\App_Data\Composite\TreeDefinitions\KeywordRedirect.xml" allowOverwrite="false" />
+				<File sourceFilename="~\Bin\Orckestra.Search.KeywordRedirect.dll" targetFilename="~\Bin\Orckestra.Search.KeywordRedirect.dll" allowOverwrite="false" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Composite\InstalledPackages\Orckestra.Search.KeywordRedirect\" targetDirectory="~\Composite\InstalledPackages\Orckestra.Search.KeywordRedirect\" allowOverwrite="false" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
