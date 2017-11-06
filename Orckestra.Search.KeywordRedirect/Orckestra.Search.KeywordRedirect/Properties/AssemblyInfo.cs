@@ -8,10 +8,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("Orckestra Inc.")]
 [assembly: AssemblyCopyright("Copyright © 2017")]
 [assembly: AssemblyTrademark("Orckestra Inc. 2017")]
-[assembly: AssemblyTitle("ExperienceManagement.KeywordRedirect")]
+[assembly: AssemblyTitle("Orckestra.Search.KeywordRedirect")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("ExperienceManagement.KeywordRedirect")]
+[assembly: AssemblyProduct("Orckestra.Search.KeywordRedirect")]
 [assembly: AssemblyCulture("")]
 
 

@@ -45,7 +45,7 @@ namespace Orckestra.Search.KeywordRedirect
 
         private static void RegisterFunctions(FunctionCollection functions)
         {
-            functions.RegisterAction<KeywordController>("RedirectByKeyword", "Composer.Search.RedirectByKeyword", "${Orckestra.ExperienceManagement.KeywordRedirect,RedirectByKeywordDescription}")
+            functions.RegisterAction<KeywordController>("RedirectByKeyword", "Composer.Search.RedirectByKeyword", "${Orckestra.Search.KeywordRedirect,RedirectByKeywordDescription}")
                 .AddParameter("ParamName",
                     typeof(string),
                     label: Localization.RedirectByKeywordParamLabel,

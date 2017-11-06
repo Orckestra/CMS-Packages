@@ -5,7 +5,7 @@
 
 # Develop
 1. Copy/Link Source folder to root folder
-2. Copy Link Package/Composite/InstalledPackages/ExperienceManagement.KeywordRedirect/view to Website
+2. Copy Link Package/Composite/InstalledPackages/Orckestra.Search.KeywordRedirect/view to Website
 
 
 # Develop new package
