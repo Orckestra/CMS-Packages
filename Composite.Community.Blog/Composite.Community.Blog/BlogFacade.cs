@@ -255,7 +255,7 @@ namespace Composite.Community.Blog
                 generated.Append(c);
             }
 
-            string url = generated.ToString().Replace(' ', '-');
+            string url = generated.ToString().Trim().Replace(' ', '-');
 
             return UrlFormattersPluginFacade.FormatUrl(url, false);
         }
