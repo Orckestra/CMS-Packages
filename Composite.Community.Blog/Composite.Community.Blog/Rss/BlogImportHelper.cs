@@ -81,10 +81,9 @@ namespace Composite.Community.Blog
 						var content = new XDocument();
 						string text = null;
 						var itemDate = item.PublishDate == DateTimeOffset.MinValue ? DateTime.Now : item.PublishDate.DateTime;
+                        string folder = string.Format(FolderFormat, itemDate, CleanFileName(item.Title.Text));
 
-
-
-						if (text == null && item.Content != null)
+                        if (text == null && item.Content != null)
 						{
 							var syndicationContent = item.Content as TextSyndicationContent;
 							if (syndicationContent != null)
@@ -122,7 +121,7 @@ namespace Composite.Community.Blog
 								{
 									if (src.StartsWith(link))
 									{
-										var newImage = ImportMedia(src, string.Format(FolderFormat, itemDate, item.Title.Text));
+										var newImage = ImportMedia(src, folder);
 										if (newImage != null)
 										{
 											img.SetAttributeValue("src", MediaUrlHelper.GetUrl(newImage, true));
@@ -157,7 +156,7 @@ namespace Composite.Community.Blog
 												case ".pdf":
 												case ".doc":
 												case ".docx":
-													var newMedia = ImportMedia(href, string.Format(FolderFormat, itemDate, item.Title.Text));
+													var newMedia = ImportMedia(href, folder);
 													a.SetAttributeValue("href", MediaUrlHelper.GetUrl(newMedia, true));
 													break;
 												default:
@@ -171,9 +170,17 @@ namespace Composite.Community.Blog
 							}
 						}
 
-						var blogItem = DataFacade.BuildNew<Entries>();
+                        string blogImage = null;
+                        var enclosureImage = item.Links.Where(f => f.RelationshipType == "enclosure" && f.MediaType.StartsWith("image/")).FirstOrDefault();
 
-						var match = Regex.Match(item.Id, @"\b[A-F0-9]{8}(?:-[A-F0-9]{4}){3}-[A-F0-9]{12}\b", RegexOptions.IgnoreCase);
+                        if (enclosureImage!=null)
+                        {
+                            blogImage = ImportMedia(enclosureImage.Uri.ToString(), folder).KeyPath;
+                        }
+
+                        var blogItem = DataFacade.BuildNew<Entries>();
+
+                        var match = Regex.Match(item.Id, @"\b[A-F0-9]{8}(?:-[A-F0-9]{4}){3}-[A-F0-9]{12}\b", RegexOptions.IgnoreCase);
 						if (match.Success)
 						{
 							var id = Guid.Empty;
@@ -211,8 +218,9 @@ namespace Composite.Community.Blog
 
 						blogItem.Content = content.ToString();
 						blogItem.Date = itemDate;
+                        blogItem.Image = blogImage;
 
-						blogItem.PublicationStatus = GenericPublishProcessController.Draft;
+                        blogItem.PublicationStatus = GenericPublishProcessController.Draft;
 						blogItem = DataFacade.AddNew(blogItem);
 						blogItem.PublicationStatus = GenericPublishProcessController.Published;
 						DataFacade.Update(blogItem);
@@ -308,7 +316,7 @@ namespace Composite.Community.Blog
 			if (!ImportedImages.ContainsKey("src"))
 			{
 				ImportedImages[src] = null;
-				ForceMediaFolder(folder);
+                ForceMediaFolder(folder);
 
 				var client = new WebClient
 				{
@@ -386,10 +394,10 @@ namespace Composite.Community.Blog
 
 		private static string CleanFileName(string fileName)
 		{
-			return Path.GetInvalidFileNameChars().Aggregate(fileName, (current, c) => current.Replace(c.ToString(), string.Empty));
+			return Path.GetInvalidFileNameChars().Aggregate(fileName.Trim(), (current, c) => current.Replace(c.ToString(), string.Empty));
 		}
 
-		private IMediaFileFolder ForceMediaFolder(string path)
+        private IMediaFileFolder ForceMediaFolder(string path)
 		{
 			if (string.IsNullOrWhiteSpace(path))
 			{
