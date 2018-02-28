@@ -11,18 +11,10 @@ using Composite.Data.PublishScheduling;
 using Microsoft.Extensions.DependencyInjection;
 using Orckestra.Search.KeywordRedirect.Data.Types;
 using Orckestra.Search.KeywordRedirect.Endpoint;
+using System.Collections.Concurrent;
 
 namespace Orckestra.Search.KeywordRedirect
 {
-    [ApplicationStartup()]
-    internal class KeywordManagerRegistrator
-    {
-        public void ConfigureServices(IServiceCollection serviceCollection)
-        {
-            serviceCollection.AddSingleton(typeof(KeywordManager));
-        }
-    }
-
     public class KeywordManager : IObserver<KeywordChange>
     {
 
@@ -35,7 +27,7 @@ namespace Orckestra.Search.KeywordRedirect
         private readonly ILog _log;
         private IDisposable _notifierUnsubscriber;
         private Dictionary<CultureInfo, List<Model.RedirectKeyword>> _keywordsCache = new Dictionary<CultureInfo, List<Model.RedirectKeyword>>();
-        private Dictionary<CultureInfo, Dictionary<string, string>> _keywordRedirectCache = new Dictionary<CultureInfo, Dictionary<string, string>>();
+        private ConcurrentDictionary<CultureInfo, Dictionary<string, string>> _keywordRedirectCache = new ConcurrentDictionary<CultureInfo, Dictionary<string, string>>();
 
         public void OnCompleted()
         {
@@ -114,15 +106,10 @@ namespace Orckestra.Search.KeywordRedirect
                 return null;
             }
 
-            if (!_keywordRedirectCache.ContainsKey(cultureInfo))
-            {
-                _keywordRedirectCache[cultureInfo] = new Dictionary<string, string>();
-            }
+            var keywords = _keywordRedirectCache.GetOrAdd(cultureInfo, _ => new Dictionary<string, string>());
 
-            var result = _keywordRedirectCache[cultureInfo].ContainsKey(keyword) ? _keywordRedirectCache[cultureInfo][keyword] : null;
-            if (result == null)
+            if (!keywords.TryGetValue(keyword, out string result))
             {
-
                 using (var connection = new DataConnection(PublicationScope.Published, cultureInfo))
                 {
                     var landingPage = connection.Get<RedirectKeyword>().Where(d => d.Keyword.Equals(keyword, StringComparison.InvariantCultureIgnoreCase)).Select(d => d.LandingPage).FirstOrDefault();

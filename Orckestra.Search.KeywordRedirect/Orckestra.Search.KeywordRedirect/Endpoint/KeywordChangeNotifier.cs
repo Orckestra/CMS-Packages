@@ -81,8 +81,7 @@ namespace Orckestra.Search.KeywordRedirect.Endpoint
         /// </summary>
         public void KeywordChange(object sender, DataEventArgs dataEventArgs)
         {
-            var localizedControlled = dataEventArgs.Data as ILocalizedControlled;
-            if (localizedControlled != null)
+            if (dataEventArgs.Data is ILocalizedControlled localizedControlled)
             {
                 var change = new KeywordChange { CultureInfo = new CultureInfo(localizedControlled.SourceCultureName) };
                 foreach (var observer in _observers)

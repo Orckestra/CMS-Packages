@@ -18,6 +18,7 @@ namespace Orckestra.Search.KeywordRedirect
     {
         public static void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton(typeof(KeywordManager));
         }
 
         public static void OnBeforeInitialize()
@@ -28,12 +29,12 @@ namespace Orckestra.Search.KeywordRedirect
         {
             DynamicTypeManager.EnsureCreateStore(typeof(RedirectKeyword));
 
-            DataEventSystemFacade.SubscribeToDataAfterAdd<RedirectKeyword>(keywordChangeNotifier.KeywordChange, true);
-            DataEventSystemFacade.SubscribeToDataAfterUpdate<RedirectKeyword>(keywordChangeNotifier.KeywordChange, true);
-            DataEventSystemFacade.SubscribeToDataDeleted<RedirectKeyword>(keywordChangeNotifier.KeywordChange, true);
-            DataEventSystemFacade.SubscribeToDataAfterAdd<IPage>(keywordChangeNotifier.KeywordChange, true);
-            DataEventSystemFacade.SubscribeToDataAfterUpdate<IPage>(keywordChangeNotifier.KeywordChange, true);
-            DataEventSystemFacade.SubscribeToDataDeleted<IPage>(keywordChangeNotifier.KeywordChange, true);
+            DataEvents<RedirectKeyword>.OnAfterAdd += keywordChangeNotifier.KeywordChange;
+            DataEvents<RedirectKeyword>.OnAfterUpdate += keywordChangeNotifier.KeywordChange;
+            DataEvents<RedirectKeyword>.OnDeleted += keywordChangeNotifier.KeywordChange;
+            DataEvents<IPage>.OnAfterAdd += keywordChangeNotifier.KeywordChange;
+            DataEvents<IPage>.OnAfterUpdate += keywordChangeNotifier.KeywordChange;
+            DataEvents<IPage>.OnDeleted += keywordChangeNotifier.KeywordChange;
 
             var functions = MvcFunctionRegistry.NewFunctionCollection();
             RegisterFunctions(functions);

@@ -25,5 +25,3 @@
 10. jspm install npm:redux-thunk
 11. jspm install immutable
 12. add polyfill for IE - "jspm install npm:es6-promise" and "jspm install npm:url-polyfill"
-
-
