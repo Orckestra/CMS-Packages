@@ -77,12 +77,6 @@
     <Content Include="Release\Orckestra.Search.KeywordRedirect.zip" />
     <Content Include="Sources\Orckestra.Search.KeywordRedirect\view\package.json" />
     <Content Include="Readme.md" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package\App_Data\Composite\TreeDefinitions\KeywordRedirect.xml">

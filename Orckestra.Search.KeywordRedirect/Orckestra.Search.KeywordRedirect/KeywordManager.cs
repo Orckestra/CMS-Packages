@@ -42,7 +42,7 @@ namespace Orckestra.Search.KeywordRedirect
         public void OnNext(KeywordChange value)
         {
             _keywordsCache.Remove(value.CultureInfo);
-            _keywordRedirectCache.Remove(value.CultureInfo);
+            _keywordRedirectCache.TryRemove(value.CultureInfo, out _);
         }
 
         public IEnumerable<Model.RedirectKeyword> GetKeywordRedirects(CultureInfo cultureInfo)
