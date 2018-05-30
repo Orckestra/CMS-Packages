@@ -49,7 +49,7 @@
 			    <p class="teaser-text">@Html.Raw(Server.HtmlEncode(Description).Replace("\r\n", "<br />").Replace("\n", "<br/>"))</p>
 		    }
 
-		    @if (!string.IsNullOrWhiteSpace(ReadMoreUrl))
+		    @if (!string.IsNullOrWhiteSpace(ReadMoreUrl) && !string.IsNullOrWhiteSpace(ReadMoreText))
 		    {
 			    <a href="@ReadMoreUrl" class="btn btn-sm btn-default"><span>@ReadMoreText</span></a>
 		    }
