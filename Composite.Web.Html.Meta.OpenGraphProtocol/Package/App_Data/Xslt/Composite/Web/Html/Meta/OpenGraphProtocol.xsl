@@ -14,6 +14,7 @@
     <msxsl:assembly name="System.Collections" />
     <msxsl:using namespace="Composite" />
     <![CDATA[public string GetUrl(string mediaId){
+    if(string.IsNullOrWhiteSpace(mediaId) ) {return string.Empty;}
     System.Collections.Specialized.NameValueCollection strCol = new System.Collections.Specialized.NameValueCollection();
 	  strCol.Add("id", mediaId);	  
 	  Composite.Data.Types.IMediaFile mediaFile = Composite.Core.WebClient.MediaUrlHelper.GetFileFromQueryString(strCol);
