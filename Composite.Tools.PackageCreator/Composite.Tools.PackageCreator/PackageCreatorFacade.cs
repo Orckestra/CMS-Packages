@@ -12,6 +12,7 @@ using Composite.C1Console.Users;
 using Composite.Core.IO;
 using Composite.Core.Logging;
 using Composite.Core.ResourceSystem;
+using Composite.Plugins.Elements.ElementProviders.VirtualElementProvider;
 using Composite.Tools.PackageCreator.Actions;
 using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
 using Composite.Tools.PackageCreator.Types;
@@ -123,10 +124,10 @@ namespace Composite.Tools.PackageCreator
                         _isHaveAccess = false;
                         if (UserValidationFacade.IsLoggedIn())
                         {
-                            EntityToken packageCreatorPerspective = UserPerspectiveFacade.GetEntityTokens(UserValidationFacade.GetUsername()).Where(e => e.Id == "Composite.Tools.PackageCreator").FirstOrDefault();
-
-                            //If user does no have access to the Package Creator Perspective
-                            if (packageCreatorPerspective != null)
+                            var entityToken = new VirtualElementProviderEntityToken("VirtualElementProvider", "Composite.Tools.PackageCreator");
+                            var permissions = PermissionsFacade.GetPermissionsForCurrentUser(entityToken);
+                          
+                            if (permissions.Any(p => p == PermissionType.Read))
                                 _isHaveAccess = true;
                         }
                     }
