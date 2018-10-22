@@ -14,6 +14,16 @@ namespace LogViewer
 		private string _hostName;
 		private int _port;
 
+        private static Binding CreateBasicHttpBinding(string url)
+        {
+            bool isSecureConnection = url.StartsWith("https", StringComparison.CurrentCultureIgnoreCase);
+            var bindingName = isSecureConnection
+                ? "BasicHttpBinding_Secure_ILogService"
+                : "BasicHttpBinding_ILogService";
+
+            return new BasicHttpBinding(bindingName);
+        }
+
 
 		public C1Connection(string url, AuthenticationInfo authenticationInfo)
 		{
@@ -23,7 +33,7 @@ namespace LogViewer
 
 			EndpointAddress = new EndpointAddress(GetServiceUrl());
 
-			Binding = new BasicHttpBinding("BasicHttpBinding_ILogService");
+			Binding = CreateBasicHttpBinding(url);
 		}
 
 		public C1Connection(string hostName, int port, AuthenticationInfo authenticationInfo)
@@ -105,9 +115,9 @@ namespace LogViewer
 
 		private static LogServiceClient CreateBasicHttpConnection(string url)
 		{
-			var uri = new Uri(url);
+            var uri = new Uri(url);
 
-			var binding = new BasicHttpBinding("BasicHttpBinding_ILogService");
+			var binding = CreateBasicHttpBinding(url);
 
 			var endPoindAddress = new EndpointAddress(uri);
 
