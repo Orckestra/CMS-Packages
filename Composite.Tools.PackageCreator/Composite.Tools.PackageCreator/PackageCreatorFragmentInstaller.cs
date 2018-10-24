@@ -1,11 +1,12 @@
-using System;
-using System.Collections.Generic;
 using Composite.C1Console.Security;
-using Composite.Core.Logging;
+using Composite.Core;
 using Composite.Core.PackageSystem.PackageFragmentInstallers;
 using Composite.Data;
 using Composite.Data.Types;
 using Composite.Plugins.Elements.ElementProviders.VirtualElementProvider;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Composite.Tools.PackageCreator
 {
@@ -15,17 +16,31 @@ namespace Composite.Tools.PackageCreator
         {
             // grant Perspective permissions to the current user
             string perspectiveName = "Composite.Tools.PackageCreator";
-            EntityToken entityToken = new VirtualElementProviderEntityToken("VirtualElementProvider", perspectiveName);
+            var entityToken = new VirtualElementProviderEntityToken("VirtualElementProvider", perspectiveName);
+            var serializedEntityToken = EntityTokenSerializer.Serialize(entityToken);
 
-            IUserActivePerspective activePerspective = DataFacade.BuildNew<IUserActivePerspective>();
-            string Username = Composite.C1Console.Users.UserSettings.Username;
-            activePerspective.Username = Username;
-            activePerspective.SerializedEntityToken = EntityTokenSerializer.Serialize(entityToken);
-            activePerspective.Id = Guid.NewGuid();
+            var sitemapPerspective = DataFacade.BuildNew<IUserGroupActivePerspective>();
+            var userGroup = DataFacade.GetData<IUserGroup>().FirstOrDefault(u => u.Name == "Administrator");
+            if (userGroup != null)
+            {
+                sitemapPerspective.UserGroupId = userGroup.Id;
+                sitemapPerspective.SerializedEntityToken = serializedEntityToken;
+                sitemapPerspective.Id = Guid.NewGuid();
+                DataFacade.AddNew(sitemapPerspective);
+                Log.LogInformation("Composite.Tools.PackageCreator", $"Access to the '{perspectiveName}' granted for user group '{userGroup.Name}'.");
+            }
 
-            DataFacade.AddNew<IUserActivePerspective>(activePerspective);
-            LoggingService.LogInformation("Composite.Tools.PackageCreator", String.Format("Access to the {0} granted for the {1}.", perspectiveName, Username));
+            if (UserValidationFacade.IsLoggedIn())
+            {
+                var activePerspective = DataFacade.BuildNew<IUserActivePerspective>();
+                activePerspective.Username = C1Console.Users.UserSettings.Username;
+                activePerspective.SerializedEntityToken = serializedEntityToken;
+                activePerspective.Id = Guid.NewGuid();
 
+                DataFacade.AddNew<IUserActivePerspective>(activePerspective);
+                Log.LogInformation("Composite.Tools.PackageCreator", $"Access to the '{perspectiveName}' granted for user '{C1Console.Users.UserSettings.Username}'.");
+
+            }
             yield break;
         }
 
