@@ -10,6 +10,10 @@
         <cms:binding name="Content" type="System.String" optional="true" />
         <cms:binding name="PageId" type="System.Guid" optional="true" />
         <cms:binding name="DisplayComments" type="System.Boolean" optional="true" />
+        <cms:binding name="PublicationStatus" type="System.String" />
+        <cms:binding name="PublicationStatusOptions" type="System.Object" />
+        <cms:binding name="PublishDate" type="System.DateTime" optional="true" />
+        <cms:binding name="UnpublishDate" type="System.DateTime" optional="true" />  
     </cms:bindings>
     <cms:layout>
         <cms:layout.label>
@@ -58,6 +62,22 @@
                             <cms:bind source="Tags" />
                         </BlogTagMultiSelector.SelectedAsString>
                     </BlogTagMultiSelector>
+                </FieldGroup>
+                <FieldGroup Label="Publication settings">
+                  <KeySelector OptionsKeyField="Key" OptionsLabelField="Value" Label="Status" Help="Send the data to another publication status.">
+                    <KeySelector.Selected>
+                      <cms:bind source="PublicationStatus" />
+                    </KeySelector.Selected>
+                    <KeySelector.Options>
+                      <cms:read source="PublicationStatusOptions" />
+                    </KeySelector.Options>
+                  </KeySelector>
+                  <DateTimeSelector Label="Publish date" Help="Specify at which date and time you want the data to be published automatically.">
+                    <cms:bind source="PublishDate" />
+                  </DateTimeSelector>
+                  <DateTimeSelector Label="Unpublish date" Help="Specify at which date and time you want the data to be unpublished automatically.">
+                    <cms:bind source="UnpublishDate" />
+                  </DateTimeSelector>
                 </FieldGroup>
             </PlaceHolder>
             <XhtmlEditor Label="Content" Help="The content of the blog entry." ClassConfigurationName="common">
