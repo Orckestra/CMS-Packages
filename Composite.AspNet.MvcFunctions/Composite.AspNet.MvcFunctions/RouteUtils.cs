@@ -8,6 +8,11 @@ namespace Composite.AspNet.MvcFunctions
     {
         public static RouteData GetRouteDataByUrl(RouteCollection routeCollection, string url)
         {
+            if (routeCollection.Count==0)
+            {
+                throw new InvalidOperationException("RouteCollection for C1 CMS MvcFunction is empty - did you call MapRoute? Please check MvcFunctionRegistry documentation.");
+            }
+
             return routeCollection.GetRouteData(new RewrittenHttpContextBase(url));
         }
 
