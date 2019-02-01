@@ -1,6 +1,8 @@
 ﻿@inherits RazorFunction
 
 @using System.Globalization;
+@using Composite.Core.Routing;
+@using Composite.Core.Routing.Pages;
 
 @functions {
 
@@ -104,46 +106,46 @@
             <li class="description">@Description</li>
         }
         @{
-			var currentHomeID = SitemapNavigator.CurrentHomePageId;
-			var currentPageID = SitemapNavigator.CurrentPageId;
+            var currentHomeID = SitemapNavigator.CurrentHomePageId;
+            var currentPageID = SitemapNavigator.CurrentPageId;
 
-			var mode = (SwitcherMode)Enum.Parse(typeof(SwitcherMode), Mode);
+            var mode = (SwitcherMode)Enum.Parse(typeof(SwitcherMode), Mode);
 
-			foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
-			{
-				if (ShowCurrent || (!ShowCurrent && !culture.Equals(CurrentCulture)))
-				{
-					using (var conn = new DataConnection(culture))
-					{
-						var homeNode = conn.SitemapNavigator.GetPageNodeById(currentHomeID);
-						var pageNode = conn.SitemapNavigator.GetPageNodeById(currentPageID);
-						var url = string.Empty;
+            var dataItem = Composite.Core.Routing.DataUrls.TryGetData(C1PageRoute.PageUrlData);
 
-						if (pageNode != null && (mode == SwitcherMode.TranslatedPages || mode == SwitcherMode.TranslatedOrHomePages))
-						{
-							url = pageNode.Url;
+            foreach (var culture in DataLocalizationFacade.ActiveLocalizationCultures)
+            {
+                if (ShowCurrent || (!ShowCurrent && !culture.Equals(CurrentCulture)))
+                {
+                    using (var conn = new DataConnection(culture))
+                    {
+                        var homeNode = conn.SitemapNavigator.GetPageNodeById(currentHomeID);
+                        var pageNode = conn.SitemapNavigator.GetPageNodeById(currentPageID);
+                        var url = string.Empty;
 
-							if (IncludeQuery)
-							{
+                        if (pageNode != null && (mode == SwitcherMode.TranslatedPages || mode == SwitcherMode.TranslatedOrHomePages))
+                        {
+                            url = (IncludeQuery && Request.QueryString.Count > 0) ? string.Format("{0}{1}", pageNode.Url, Request.Url.Query) : pageNode.Url;
+                        }
+                        else if (homeNode != null && (mode == SwitcherMode.HomePages || mode == SwitcherMode.TranslatedOrHomePages))
+                        {
+                            url = homeNode.Url;
+                        }
 
-								if (!string.IsNullOrWhiteSpace(Request.PathInfo))
-								{
-									url = url + Request.PathInfo;
-								}
+                        if (dataItem != null)
+                        {
+                            var d = DataFacade.TryGetDataByUniqueKey(dataItem.ReferencedType, dataItem.KeyValue);
+                            if (d != null)
+                            {
+                                var invariantDataReference = DataReferenceFacade.BuildDataReference(dataItem.ReferencedType, dataItem.KeyValue);
+                                var pageUrlData = DataUrls.TryGetPageUrlData(invariantDataReference);
+                                pageUrlData.LocalizationScope = culture;
+                                url = PageUrls.BuildUrl(pageUrlData);
+                            }
+                        }
 
-								if (Request.QueryString.Count > 0)
-								{
-									url = url + Request.Url.Query;
-								}
-
-							}
-						}
-						else if (homeNode != null && (mode == SwitcherMode.HomePages || mode == SwitcherMode.TranslatedOrHomePages))
-						{
-							url = homeNode.Url;
-						}
-						if (!string.IsNullOrEmpty(url))
-						{
+                        if (!string.IsNullOrEmpty(url))
+                        {
                             <li class="@(culture.Equals(CurrentCulture) ? "active" : string.Empty)">
                                 @LinkElement(culture, url)
                             </li>
@@ -166,22 +168,22 @@
     {
         case SwitcherFormat.DisplayName:
             if ((c.CultureTypes & CultureTypes.SpecificCultures) != 0)
-            {<text>@c.Parent.DisplayName</text>}
+               {<text>@c.Parent.DisplayName</text>}
             else
-            {<text>@c.DisplayName</text>}
+                {<text>@c.DisplayName</text>}
             break;
         case SwitcherFormat.EnglishName:
             if ((c.CultureTypes & CultureTypes.SpecificCultures) != 0)
-            {<text>@c.Parent.EnglishName</text>}
+                {<text>@c.Parent.EnglishName</text>}
             else
-            {<text>@c.EnglishName</text>}
+                {<text>@c.EnglishName</text>}
             break;
         case SwitcherFormat.Name:<text>@c.Name</text>break;
         case SwitcherFormat.NativeName:
         if ((c.CultureTypes & CultureTypes.SpecificCultures) != 0)
-        {<text>@c.Parent.NativeName</text>}
+            {<text>@c.Parent.NativeName</text>}
         else
-        {<text>@c.NativeName</text>}
+            {<text>@c.NativeName</text>}
         break;
         case SwitcherFormat.ThreeLetterISOLanguageName:<text>@c.ThreeLetterISOLanguageName</text>; break;
         case SwitcherFormat.ThreeLetterWindowsLanguageName:<text>@c.ThreeLetterWindowsLanguageName</text>; break;
