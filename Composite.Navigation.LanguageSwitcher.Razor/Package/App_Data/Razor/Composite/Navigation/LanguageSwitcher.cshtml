@@ -125,7 +125,22 @@
 
                         if (pageNode != null && (mode == SwitcherMode.TranslatedPages || mode == SwitcherMode.TranslatedOrHomePages))
                         {
-                            url = (IncludeQuery && Request.QueryString.Count > 0) ? string.Format("{0}{1}", pageNode.Url, Request.Url.Query) : pageNode.Url;
+                            url = pageNode.Url;
+
+                            if (IncludeQuery)
+                            {
+
+                                if (!string.IsNullOrWhiteSpace(Request.PathInfo))
+                                {
+                                    url = url + Request.PathInfo;
+                                }
+
+                                if (Request.QueryString.Count > 0)
+                                {
+                                    url = url + Request.Url.Query;
+                                }
+
+                            }
                         }
                         else if (homeNode != null && (mode == SwitcherMode.HomePages || mode == SwitcherMode.TranslatedOrHomePages))
                         {
