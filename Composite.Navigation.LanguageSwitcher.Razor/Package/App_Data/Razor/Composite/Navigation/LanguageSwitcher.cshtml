@@ -125,29 +125,14 @@
 
                         if (pageNode != null && (mode == SwitcherMode.TranslatedPages || mode == SwitcherMode.TranslatedOrHomePages))
                         {
-                            url = pageNode.Url;
-
-                            if (IncludeQuery)
-                            {
-
-                                if (!string.IsNullOrWhiteSpace(Request.PathInfo))
-                                {
-                                    url = url + Request.PathInfo;
-                                }
-
-                                if (Request.QueryString.Count > 0)
-                                {
-                                    url = url + Request.Url.Query;
-                                }
-
-                            }
+                            url = (IncludeQuery && Request.QueryString.Count > 0) ? string.Format("{0}{1}", pageNode.Url, Request.Url.Query) : pageNode.Url;
                         }
                         else if (homeNode != null && (mode == SwitcherMode.HomePages || mode == SwitcherMode.TranslatedOrHomePages))
                         {
                             url = homeNode.Url;
                         }
 
-                        if (dataItem != null)
+                        if (dataItem != null && (mode == SwitcherMode.TranslatedPages || mode == SwitcherMode.TranslatedOrHomePages))
                         {
                             var d = DataFacade.TryGetDataByUniqueKey(dataItem.ReferencedType, dataItem.KeyValue);
                             if (d != null)
