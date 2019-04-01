@@ -10,7 +10,7 @@ namespace Composite.Tools.PackageCreator.Actions
     [ActionExecutor(typeof(PackageCreatorElementProviderActionExecutor))]
     public class PackageCreatorActionToken : ActionToken
     {
-        static private IEnumerable<PermissionType> _permissionTypes = new PermissionType[] { PermissionType.Administrate };
+        static private IEnumerable<PermissionType> _permissionTypes = new PermissionType[] { PermissionType.Administrate, PermissionType.Configure };
 
         public override bool IgnoreEntityTokenLocking
         {

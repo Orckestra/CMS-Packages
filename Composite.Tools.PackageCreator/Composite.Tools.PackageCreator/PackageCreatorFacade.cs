@@ -80,14 +80,6 @@ namespace Composite.Tools.PackageCreator
             }
         }
 
-        public static bool IsHaveAccess
-        {
-            get
-            {
-                return CurrentContextItems.IsHaveAccess;
-            }
-        }
-
         internal class ContextItems
         {
             private int _contextHashCode;
@@ -111,27 +103,6 @@ namespace Composite.Tools.PackageCreator
                 if (HttpContext.Current != null)
                 {
                     _contextHashCode = HttpContext.Current.GetHashCode();
-                }
-            }
-
-            private bool? _isHaveAccess;
-            public bool IsHaveAccess
-            {
-                get
-                {
-                    if (_isHaveAccess == null)
-                    {
-                        _isHaveAccess = false;
-                        if (UserValidationFacade.IsLoggedIn())
-                        {
-                            var entityToken = new VirtualElementProviderEntityToken("VirtualElementProvider", "Composite.Tools.PackageCreator");
-                            var permissions = PermissionsFacade.GetPermissionsForCurrentUser(entityToken);
-                          
-                            if (permissions.Any(p => p == PermissionType.Read))
-                                _isHaveAccess = true;
-                        }
-                    }
-                    return _isHaveAccess.Value;
                 }
             }
         }
