@@ -15,7 +15,7 @@ public class GetPackage : IHttpHandler
 {
 	public void ProcessRequest(HttpContext context)
 	{
-		if (!PackageCreatorFacade.IsHaveAccess)
+		if (!Composite.C1Console.Security.UserValidationFacade.IsLoggedIn())
 		{
 			throw new Exception("Premission denied");
 		}
