@@ -10,9 +10,6 @@ namespace Composite.Tools.PackageCreator.Actions
     {
         public IEnumerable<ElementAction> GetActions(EntityToken entityToken)
         {
-            if (!PackageCreatorFacade.IsHaveAccess)
-                yield break;
-
             foreach (var item in PackageCreatorActionFacade.GetPackageCreatorItems(entityToken))
             {
 	            var name = string.Empty;

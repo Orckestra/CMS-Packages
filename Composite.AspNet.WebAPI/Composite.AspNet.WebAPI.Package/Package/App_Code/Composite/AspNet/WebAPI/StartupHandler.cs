@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
+using System.Web.Http;
 using Composite.Core.Application;
 
 namespace Composite.AspNet.WebAPI
@@ -14,6 +16,8 @@ namespace Composite.AspNet.WebAPI
         {
             GlobalConfiguration.Configure(WebApiRegister);
             GlobalConfiguration.Configuration.Formatters.Insert(0, new CustomIDataXmlFormatter());
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.MediaTypeMappings.Add(
+                new QueryStringMapping("type", "json", new MediaTypeHeaderValue("application/json")));
         }
 
         public static void WebApiRegister(HttpConfiguration config)

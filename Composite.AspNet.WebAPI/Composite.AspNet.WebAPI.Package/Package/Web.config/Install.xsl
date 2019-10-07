@@ -12,7 +12,7 @@
 			<xsl:if test="count(add[@assembly='System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'])=0">
 				<add assembly="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
 			</xsl:if>
-		</xsl:copy>
+    </xsl:copy>
 	</xsl:template>
 	<xsl:template match="/configuration/system.webServer/modules">
 		<xsl:copy>
@@ -31,7 +31,7 @@
 					<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
 						<dependentAssembly>
 							<assemblyIdentity name="System.Net.Http.Formatting" culture="neutral" publicKeyToken="31bf3856ad364e35" />
-							<bindingRedirect oldVersion="0.0.0.0-5.2.3.0" newVersion="5.2.3.0" />
+							<bindingRedirect oldVersion="0.0.0.0-5.2.7.0" newVersion="5.2.7.0" />
 						</dependentAssembly>
 					</assemblyBinding>
 			</runtime>
@@ -42,7 +42,7 @@
 					<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
 						<dependentAssembly>
 							<assemblyIdentity name="System.Web.Http" culture="neutral" publicKeyToken="31bf3856ad364e35" />
-							<bindingRedirect oldVersion="0.0.0.0-5.2.3.0" newVersion="5.2.3.0" />
+              <bindingRedirect oldVersion="0.0.0.0-5.2.7.0" newVersion="5.2.7.0" />
 						</dependentAssembly>
 					</assemblyBinding>
 				</runtime>

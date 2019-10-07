@@ -240,7 +240,7 @@
                 @if (ShowHighlights && !string.IsNullOrEmpty(entry.Highlight))
                 {
                     <br />
-                    @Html.Raw(entry.Highlight)
+                    @Html.Raw(HttpUtility.HtmlEncode(entry.Highlight))
                 }
             </li>
         }
