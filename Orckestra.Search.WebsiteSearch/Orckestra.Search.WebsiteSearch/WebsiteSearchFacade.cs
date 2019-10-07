@@ -207,7 +207,8 @@ namespace Orckestra.Search.WebsiteSearch
                 Highlight = 
                     line.FullTextHtmlHighlights != null && line.FullTextHtmlHighlights.Length > 0 
                     ? string.Join("<br />", line.FullTextHtmlHighlights)
-                    : HttpUtility.HtmlEncode(desc as string)
+                    : HttpUtility.HtmlEncode(desc as string),
+                FieldValues = doc.FieldValues
             };
         }
 
