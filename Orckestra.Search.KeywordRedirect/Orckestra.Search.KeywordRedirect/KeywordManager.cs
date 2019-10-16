@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Orckestra.Search.KeywordRedirect.Data.Types;
 using Orckestra.Search.KeywordRedirect.Endpoint;
 using System.Collections.Concurrent;
+using System.Diagnostics;
+using System.Runtime.Caching;
 
 namespace Orckestra.Search.KeywordRedirect
 {
@@ -23,6 +25,8 @@ namespace Orckestra.Search.KeywordRedirect
             _log = log;
             _notifierUnsubscriber = changeNotifier.Subscribe(this);
         }
+
+        private MemoryCache _cache;
 
         private readonly ILog _log;
         private IDisposable _notifierUnsubscriber;
@@ -41,13 +45,18 @@ namespace Orckestra.Search.KeywordRedirect
 
         public void OnNext(KeywordChange value)
         {
+            _cache = new MemoryCache("name");
+            _cache.AddOrGetExisting("123", "", new CacheItemPolicy
+            {
+                SlidingExpiration = TimeSpan.FromMinutes(30),
+            });
+
             _keywordsCache.Remove(value.CultureInfo);
             _keywordRedirectCache.TryRemove(value.CultureInfo, out _);
         }
 
         public IEnumerable<Model.RedirectKeyword> GetKeywordRedirects(CultureInfo cultureInfo)
         {
-
             var result = _keywordsCache.ContainsKey(cultureInfo) ? _keywordsCache[cultureInfo] : null;
             if (result == null)
             {
@@ -69,6 +78,7 @@ namespace Orckestra.Search.KeywordRedirect
                             {
                                 Keyword = redirectKeyword.Keyword,
                                 LandingPage = KeywordFacade.GetPageUrl(redirectKeyword.LandingPage, cultureInfo),
+                                HomePage = redirectKeyword.HomePage != null ? KeywordFacade.GetPageUrl(redirectKeyword.HomePage.Value, cultureInfo) : null,
                                 PublishDate = existingPublishSchedule?.PublishDate.ToTimeZoneDateTimeString(),
                                 UnpublishDate = existingUnpublishSchedule?.UnpublishDate.ToTimeZoneDateTimeString(),
 
@@ -81,10 +91,8 @@ namespace Orckestra.Search.KeywordRedirect
                             result.Add(new Model.RedirectKeyword
                             {
                                 Keyword = publishedredirectKeyword?.Keyword,
-                                LandingPage =
-                                    publishedredirectKeyword != null
-                                        ? KeywordFacade.GetPageUrl(publishedredirectKeyword.LandingPage, cultureInfo)
-                                        : null,
+                                LandingPage = publishedredirectKeyword != null ? KeywordFacade.GetPageUrl(publishedredirectKeyword.LandingPage, cultureInfo) : null,
+                                HomePage = publishedredirectKeyword?.HomePage != null ? KeywordFacade.GetPageUrl(publishedredirectKeyword.HomePage.Value, cultureInfo) : null,
                                 KeywordUnpublished = redirectKeyword.Keyword,
                                 LandingPageUnpublished = KeywordFacade.GetPageUrl(redirectKeyword.LandingPage, cultureInfo),
                                 PublishDate = existingPublishSchedule?.PublishDate.ToTimeZoneDateTimeString(),
@@ -113,10 +121,10 @@ namespace Orckestra.Search.KeywordRedirect
                 using (var connection = new DataConnection(PublicationScope.Published, cultureInfo))
                 {
                     var landingPage = connection.Get<RedirectKeyword>().Where(d => d.Keyword.Equals(keyword, StringComparison.InvariantCultureIgnoreCase)).Select(d => d.LandingPage).FirstOrDefault();
-                    if (landingPage != Guid.Empty)
+                    if (landingPage != Guid.Empty) // TODO: check if loading everytime when keyword is different?
                     {
                         result = Composite.Core.Routing.PageUrls.BuildUrl(new Composite.Core.Routing.PageUrlData(landingPage, PublicationScope.Published, System.Threading.Thread.CurrentThread.CurrentCulture));
-                        _keywordRedirectCache[cultureInfo][keyword] = result;
+                        keywords[keyword] = result;
                     }
                 }
             }

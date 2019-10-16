@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import configureStore from './viewkeywords/store.js';
 import Keywords from './viewkeywords/components/KeywordsContainer.js';
 import colors from 'c1-cms/console/components/colors.js';
-import { injectGlobal } from 'styled-components'; 
+import { injectGlobal } from 'styled-components';
 
 injectGlobal`
 *:focus {
@@ -49,15 +49,12 @@ body, input, textarea, select, button {
 }
 `;
 
-
-const initialState = {
-
-};
+const initialState = {};
 const store = configureStore(initialState);
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Keywords />
-    </Provider>,
-    document.querySelector('body > div.entry')
+  <Provider store={store}>
+    <Keywords />
+  </Provider>,
+  document.querySelector('body > div.entry')
 );

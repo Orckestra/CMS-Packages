@@ -34,7 +34,7 @@ SystemJS.config({
         "map": {
           "babel-runtime": "npm:babel-runtime@6.26.0",
           "esutils": "npm:esutils@2.0.2",
-          "lodash": "npm:lodash@4.17.4",
+          "lodash": "npm:lodash@4.17.15",
           "to-fast-properties": "npm:to-fast-properties@1.0.3"
         }
       }
@@ -78,6 +78,7 @@ SystemJS.config({
     "http": "npm:jspm-nodelibs-http@0.2.0",
     "https": "npm:jspm-nodelibs-https@0.2.2",
     "immutable": "npm:immutable@3.8.2",
+    "lodash": "npm:lodash@4.17.15",
     "os": "npm:jspm-nodelibs-os@0.2.2",
     "path": "npm:jspm-nodelibs-path@0.2.3",
     "process": "npm:jspm-nodelibs-process@0.2.1",
@@ -528,12 +529,12 @@ SystemJS.config({
         "invariant": "npm:invariant@2.2.2",
         "prop-types": "npm:prop-types@15.6.0",
         "loose-envify": "npm:loose-envify@1.3.1",
-        "lodash": "npm:lodash@4.17.4"
+        "lodash": "npm:lodash@4.17.15"
       }
     },
     "npm:redux@3.7.2": {
       "map": {
-        "lodash": "npm:lodash@4.17.4",
+        "lodash": "npm:lodash@4.17.15",
         "lodash-es": "npm:lodash-es@4.17.4",
         "loose-envify": "npm:loose-envify@1.3.1",
         "symbol-observable": "npm:symbol-observable@1.0.4"

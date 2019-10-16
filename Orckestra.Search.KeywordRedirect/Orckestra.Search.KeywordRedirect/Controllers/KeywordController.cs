@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using Composite.Core.Application;
+using Composite.Data;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Orckestra.Search.KeywordRedirect.Controllers
@@ -23,6 +24,7 @@ namespace Orckestra.Search.KeywordRedirect.Controllers
 
         public virtual ActionResult RedirectByKeyword(string paramName = "keywords")
         {
+            var sss = SitemapNavigator.CurrentHomePageId;
             var keyword = Request[paramName];
 
             var redirect = KeywordManager.GetPublicRedirect(keyword, System.Threading.Thread.CurrentThread.CurrentCulture);

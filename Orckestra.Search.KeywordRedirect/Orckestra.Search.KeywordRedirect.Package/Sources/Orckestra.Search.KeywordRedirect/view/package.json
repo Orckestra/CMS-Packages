@@ -9,6 +9,7 @@
       "c1-cms": "npm:c1-cms@^6.2.18",
       "es6-promise": "npm:es6-promise@^4.1.1",
       "immutable": "npm:immutable@^3.8.2",
+      "lodash": "npm:lodash@^4.17.15",
       "react-dom": "npm:react-dom@^16.0.0",
       "react-redux": "npm:react-redux@^5.0.6",
       "redux-thunk": "npm:redux-thunk@^2.2.0",
@@ -76,7 +77,7 @@
           "test.js"
         ]
       },
-      "npm:lodash@4.17.4": {
+      "npm:lodash@4.17.15": {
         "map": {
           "buffer": "@empty",
           "process": "@empty"
@@ -91,6 +92,7 @@
     }
   },
   "devDependencies": {
+    "babel-plugin-lodash": "^3.3.4",
     "jspm": "^0.17.0-beta.47"
   }
 }

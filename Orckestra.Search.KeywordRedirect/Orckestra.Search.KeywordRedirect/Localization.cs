@@ -41,6 +41,10 @@ namespace Orckestra.Search.KeywordRedirect
  public static string LandingPageLabel => T("LandingPageLabel");
  /// <summary>&quot;&quot;</summary> 
  public static string LandingPageTooltip => T("LandingPageTooltip");
+ /// <summary>&quot;Home Page&quot;</summary> 
+ public static string HomePageLabel => T("HomePageLabel");
+ /// <summary>&quot;&quot;</summary> 
+ public static string HomePageTooltip => T("HomePageTooltip");
  /// <summary>&quot;Query String Parameter&quot;</summary> 
  public static string RedirectByKeywordParamLabel => T("RedirectByKeywordParamLabel");
  /// <summary>&quot;Default value is &apos;keywords&apos;&quot;</summary> 

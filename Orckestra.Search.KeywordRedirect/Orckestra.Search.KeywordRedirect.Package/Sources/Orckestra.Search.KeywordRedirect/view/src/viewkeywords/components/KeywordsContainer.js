@@ -1,18 +1,24 @@
-
-import React from 'react';
 import { connect } from 'react-redux';
-import Keywords from './Keywords.js';
+import KeywordsGroup from './KeywordsGroup';
+import _ from 'lodash/fp';
 
-const mapStateToProps = (state) => {
-    return { 
-        keywords: state.keywords.get("items")
-    }
-}
+const mapStateToProps = state => {
+  const items = state.keywords.get('items').toArray();
+  console.log(items);
 
-const mapDispatchToProps = (dispatch) => {
-    return { }
-}
+  const keywordsGroups = _.flow(
+    _.groupBy('homePage'),
+    _.toPairs,
+    _.map(([key, value]) => ({ homePage: key, keywords: value }))
+  )(items);
 
-const container = connect(mapStateToProps, mapDispatchToProps)(Keywords)
+  console.log(keywordsGroups);
 
-export default container
+  return {
+    keywordsGroups
+  };
+};
+
+const container = connect(mapStateToProps)(KeywordsGroup);
+
+export default container;
