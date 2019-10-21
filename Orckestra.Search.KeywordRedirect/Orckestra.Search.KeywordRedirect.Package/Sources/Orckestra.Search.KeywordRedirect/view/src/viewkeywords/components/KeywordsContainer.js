@@ -1,21 +1,22 @@
-import { connect } from 'react-redux';
-import KeywordsGroup from './KeywordsGroup';
-import _ from 'lodash/fp';
+import { connect } from "react-redux";
+import KeywordsGroup from "./KeywordsGroup";
+import _ from "lodash/fp";
 
 const mapStateToProps = state => {
-  const items = state.keywords.get('items').toArray();
-  console.log(items);
-
+  const items = state.keywords.get("items").toArray();
   const keywordsGroups = _.flow(
-    _.groupBy('homePage'),
+    _.groupBy(item => item.homePage || item.homePageUnpublished),
     _.toPairs,
-    _.map(([key, value]) => ({ homePage: key, keywords: value }))
+    _.map(([key, keywords]) => ({
+      homePage: key,
+      keywords: _.sortBy("keyword", keywords)
+    })),
+    _.sortBy("homePage")
   )(items);
 
-  console.log(keywordsGroups);
-
   return {
-    keywordsGroups
+    keywordsGroups,
+    isLoading: state.keywords.get("isLoading")
   };
 };
 

@@ -10,6 +10,8 @@ using Composite.Data.PublishScheduling;
 using Orckestra.Search.KeywordRedirect.Data.Types;
 using Orckestra.Search.KeywordRedirect.Endpoint;
 using System.Collections.Concurrent;
+using System.Diagnostics;
+using Composite.C1Console.Users;
 using Composite.Core.Routing;
 using Composite.Core.WebClient.Renderings.Page;
 
@@ -155,19 +157,22 @@ namespace Orckestra.Search.KeywordRedirect
 
         private void FixMissingHomePages()
         {
-            using (var connection = new DataConnection(PublicationScope.Unpublished))
+            foreach (var cultureInfo in DataLocalizationFacade.ActiveLocalizationCultures)
             {
-                var keywords = connection
-                    .Get<RedirectKeyword>()
-                    .Where(k => k.HomePage == null)
-                    .ToList();
-
-                foreach (var keyword in keywords)
+                using (var connection = new DataConnection(PublicationScope.Unpublished, cultureInfo))
                 {
-                    keyword.HomePage = GetHomePageIdByPageId(keyword.LandingPage);
-                }
+                    var keywords = connection
+                        .Get<RedirectKeyword>()
+                        .Where(k => k.HomePage == null)
+                        .ToList();
 
-                connection.Update(keywords);
+                    foreach (var keyword in keywords)
+                    {
+                        keyword.HomePage = GetHomePageIdByPageId(keyword.LandingPage);
+                    }
+
+                    connection.Update(keywords);
+                }
             }
         }
 
