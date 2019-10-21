@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Package\App_Data\Composite\TreeDefinitions\KeywordRedirect.xml" />
     <Content Include="Package\Composite\InstalledPackages\Orckestra.Search.KeywordRedirect\view\ReleaseBuild.viewkeywords.html" />
     <Content Include="Package\Composite\InstalledPackages\Orckestra.Search.KeywordRedirect\view\viewkeywords.html" />
     <Content Include="Package\Composite\InstalledPackages\localization\Orckestra.Search.KeywordRedirect.en-US.xml">
@@ -79,9 +80,6 @@
     <Content Include="Readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Composite\TreeDefinitions\KeywordRedirect.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>

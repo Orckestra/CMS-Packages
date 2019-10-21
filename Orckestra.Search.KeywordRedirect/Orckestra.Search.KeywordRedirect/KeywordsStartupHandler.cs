@@ -25,7 +25,7 @@ namespace Orckestra.Search.KeywordRedirect
         {
         }
 
-        public static void OnInitialized(KeywordChangeNotifier keywordChangeNotifier)
+        public static void OnInitialized(KeywordChangeNotifier keywordChangeNotifier, BeforeKeywordChangeNotifier beforeKeywordChangeNotifier)
         {
             DynamicTypeManager.EnsureCreateStore(typeof(RedirectKeyword));
 
@@ -35,6 +35,8 @@ namespace Orckestra.Search.KeywordRedirect
             DataEvents<IPage>.OnAfterAdd += keywordChangeNotifier.KeywordChange;
             DataEvents<IPage>.OnAfterUpdate += keywordChangeNotifier.KeywordChange;
             DataEvents<IPage>.OnDeleted += keywordChangeNotifier.KeywordChange;
+            DataEvents<RedirectKeyword>.OnBeforeAdd += beforeKeywordChangeNotifier.BeforeKeywordChange;
+            DataEvents<RedirectKeyword>.OnBeforeUpdate += beforeKeywordChangeNotifier.BeforeKeywordChange;
 
             var functions = MvcFunctionRegistry.NewFunctionCollection();
             RegisterFunctions(functions);

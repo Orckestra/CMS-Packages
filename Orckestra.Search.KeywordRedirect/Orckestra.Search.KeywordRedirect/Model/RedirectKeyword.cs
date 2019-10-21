@@ -8,6 +8,7 @@
 
         public string KeywordUnpublished { get; set; }
         public string LandingPageUnpublished { get; set; }
+        public string HomePageUnpublished { get; set; }
 
         public string PublishDate { get; set; }
         public string UnpublishDate { get; set; }

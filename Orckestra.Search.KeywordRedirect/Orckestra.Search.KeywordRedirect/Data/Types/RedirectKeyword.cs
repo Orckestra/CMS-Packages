@@ -44,7 +44,6 @@ namespace Orckestra.Search.KeywordRedirect.Data.Types
         [FieldPosition(1)]
         [ForeignKey("Composite.Data.Types.IPage,Composite", AllowCascadeDeletes=true)]
         [GroupByPriority(1)]
-        //[GuidNotEmpty] // TODO: uncomment
         [FormRenderingProfile(Label = "${Orckestra.Search.KeywordRedirect,HomePageLabel}", HelpText = "${Orckestra.Search.KeywordRedirect,HomePageTooltip}")]
         Nullable<Guid> HomePage { get; set; }
 
