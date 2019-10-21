@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Composite.Search;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace Orckestra.Search.WebsiteSearch
@@ -19,8 +21,9 @@ namespace Orckestra.Search.WebsiteSearch
 
         public int PageSize { get; set; } = 50;
 
-        public WebsiteSearchQueryFacet[] Facets { get; set; } 
+        public WebsiteSearchQueryFacet[] Facets { get; set; }
 
+        public IEnumerable<SearchQuerySortOption> SortOptions { get; set; } = null;
 
         /// <summary>
         /// The data types that search results should be filtered by.

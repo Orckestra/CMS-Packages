@@ -68,6 +68,7 @@ namespace Orckestra.Search.WebsiteSearch
             {
                 MaxDocumentsNumber = query.PageSize,
                 SearchResultOffset = query.PageSize * query.PageNumber,
+                SortOptions = query.SortOptions,
                 HighlightSettings =
                 {
                     Enabled = true,
