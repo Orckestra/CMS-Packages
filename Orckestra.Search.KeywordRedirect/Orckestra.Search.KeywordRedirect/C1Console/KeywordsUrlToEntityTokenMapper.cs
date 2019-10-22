@@ -1,7 +1,10 @@
-﻿using Composite.C1Console.Elements;
+﻿using System;
+using System.Linq;
+using Composite.C1Console.Elements;
 using Composite.C1Console.Security;
 using Composite.C1Console.Trees;
 using Composite.Core.WebClient;
+using Orckestra.Search.KeywordRedirect.Data.Types;
 
 namespace Orckestra.Search.KeywordRedirect.C1Console
 {
@@ -9,18 +12,27 @@ namespace Orckestra.Search.KeywordRedirect.C1Console
     {
         public BrowserViewSettings TryGetBrowserViewSettings(EntityToken entityToken, bool showPublishedView)
         {
-            var castedEntityToken = entityToken as TreeSimpleElementEntityToken;
-
-            if (castedEntityToken == null || castedEntityToken.Id != "OrckestraSearchKeywordRedirect")
+            if (entityToken is TreeSimpleElementEntityToken castedEntityToken && castedEntityToken.Id == "OrckestraSearchKeywordRedirect")
             {
-                return null;
+                return new BrowserViewSettings
+                {
+                    Url = UrlUtils.Combine(UrlUtils.AdminRootPath, "/InstalledPackages/Orckestra.Search.KeywordRedirect/view/viewkeywords.html"),
+                    ToolingOn = false
+                };
             }
 
-            return new BrowserViewSettings
+            if (entityToken is TreeDataFieldGroupingElementEntityToken groupingEntityToken 
+                && groupingEntityToken.Type.StartsWith(typeof(RedirectKeyword).ToString()) 
+                && groupingEntityToken.GroupingValues?.FirstOrDefault().Value is Guid homepageId)
             {
-                Url = UrlUtils.Combine(UrlUtils.AdminRootPath, "/InstalledPackages/Orckestra.Search.KeywordRedirect/view/viewkeywords.html"),
-                ToolingOn = false
-            };
+                return new BrowserViewSettings
+                {
+                    Url = UrlUtils.Combine(UrlUtils.AdminRootPath, $"/InstalledPackages/Orckestra.Search.KeywordRedirect/view/viewkeywords.html?homePageId={homepageId}"),
+                    ToolingOn = false
+                };
+            }
+
+            return null;
         }
 
         public EntityToken TryGetEntityToken(string url)

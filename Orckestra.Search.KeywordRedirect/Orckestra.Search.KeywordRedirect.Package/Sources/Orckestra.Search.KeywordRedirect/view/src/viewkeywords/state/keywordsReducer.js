@@ -1,9 +1,15 @@
 import Immutable from "immutable";
+import _ from "lodash";
 import * as Actions from "./keywordsActions.js";
+import queryString from "querystring";
 
 const initialState = Immutable.Map({
   isLoading: false,
-  items: Immutable.Map()
+  items: Immutable.Map(),
+  homePageId: _.get(
+    queryString.parse(_.trimStart(location.search, "?")),
+    "homePageId"
+  )
 });
 
 const getProductsReducer = (state = initialState, action) => {

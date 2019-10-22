@@ -100,6 +100,7 @@ namespace Orckestra.Search.KeywordRedirect
                             PublishDate = existingPublishSchedule?.PublishDate.ToTimeZoneDateTimeString(),
                             UnpublishDate = existingUnpublishSchedule?.UnpublishDate.ToTimeZoneDateTimeString(),
                             HomePage = GetHomePageTitle(redirectKeyword.HomePage.GetValueOrDefault()),
+                            HomePageId = redirectKeyword.HomePage.GetValueOrDefault(),
                         };
                     }
                     else
@@ -112,8 +113,8 @@ namespace Orckestra.Search.KeywordRedirect
                             LandingPageUnpublished = KeywordFacade.GetPageUrl(redirectKeyword.LandingPage, cultureInfo),
                             PublishDate = existingPublishSchedule?.PublishDate.ToTimeZoneDateTimeString(),
                             UnpublishDate = existingUnpublishSchedule?.UnpublishDate.ToTimeZoneDateTimeString(),
-                            HomePage = GetHomePageTitle((publishedredirectKeyword?.HomePage).GetValueOrDefault()),
-                            HomePageUnpublished = GetHomePageTitle(redirectKeyword.HomePage.GetValueOrDefault()),
+                            HomePage = GetHomePageTitle((redirectKeyword.HomePage ?? publishedredirectKeyword?.HomePage).GetValueOrDefault()),
+                            HomePageId = (redirectKeyword.HomePage ?? publishedredirectKeyword?.HomePage).GetValueOrDefault(),
                         };
                     }
                     result.Add(keyword);
