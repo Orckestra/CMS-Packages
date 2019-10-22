@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import KeywordsGroup from "./KeywordsGroup";
+import KeywordsGroups from "./KeywordsGroups";
 import _ from "lodash/fp";
 
 const mapStateToProps = state => {
@@ -20,6 +20,6 @@ const mapStateToProps = state => {
   };
 };
 
-const container = connect(mapStateToProps)(KeywordsGroup);
+const container = connect(mapStateToProps)(KeywordsGroups);
 
 export default container;

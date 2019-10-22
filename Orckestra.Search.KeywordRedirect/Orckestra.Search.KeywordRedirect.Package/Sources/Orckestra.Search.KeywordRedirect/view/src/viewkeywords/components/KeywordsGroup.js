@@ -1,45 +1,74 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { getString } from "../../common/coreActions.js";
+import styled from "styled-components";
 import Keywords from "./Keywords";
 
-import styled from "styled-components";
-import colors from "c1-cms/console/components/colors.js";
-
-const Loading = styled.span`
-  font-style: italic;
-  font-size: 16px;
-  color: ${colors.mutedTextColor};
-  padding-top: 10px;
-  padding-left: 20px;
+const HomePageHeader = styled.div`
+  cursor: pointer;
+  padding: 10px 0 6px 12px;
   display: block;
+  color: #777;
+  :hover {
+    color: #000;
+  }
 `;
 
-const HomePageHeader = styled.span`
+const HomePageHeaderLabel = styled.span`
+  margin-left: 5px;
   font-size: 16px;
-  padding: 10px 0 6px 17px;
-  display: block;
 `;
 
-const KeywordsGroup = ({ keywordsGroups, isLoading }) => {
-  if (isLoading) return <Loading>{getString("LoadingLabel")}</Loading>;
+const HomePageHeaderExpanded = styled.span`
+  font-size: 14px;
+  ::after {
+    content: "▼";
+  }
+`;
 
-  return keywordsGroups.map(group => (
-    <div>
-      <HomePageHeader>{group.homePage}</HomePageHeader>
-      <Keywords keywords={group.keywords} />
-    </div>
-  ));
-};
+const HomePageHeaderCollapsed = styled.span`
+  font-size: 14px;
+  ::after {
+    content: "▲";
+  }
+`;
 
-KeywordsGroup.propTypes = {
-  keywordsGroups: PropTypes.arrayOf(
-    PropTypes.shape({
-      homePage: PropTypes.string.isRequired,
-      keywords: PropTypes.array
-    })
-  ),
-  isLoading: PropTypes.bool.isRequired
-};
+class KeywordsGroup extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: true
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  static propTypes = {
+    homePage: PropTypes.string.isRequired,
+    keywords: PropTypes.array
+  };
+
+  handleClick() {
+    this.setState(state => {
+      return {
+        ...state,
+        expanded: !state.expanded
+      };
+    });
+  }
+
+  render() {
+    const { homePage, keywords } = this.props;
+    const { expanded } = this.state;
+
+    return (
+      <div>
+        <HomePageHeader onClick={this.handleClick}>
+          {expanded ? <HomePageHeaderExpanded /> : <HomePageHeaderCollapsed />}
+          <HomePageHeaderLabel>{homePage}</HomePageHeaderLabel>
+        </HomePageHeader>
+        {expanded && <Keywords keywords={keywords} />}
+      </div>
+    );
+  }
+}
 
 export default KeywordsGroup;
