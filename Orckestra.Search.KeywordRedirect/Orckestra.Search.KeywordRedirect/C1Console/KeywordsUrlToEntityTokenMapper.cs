@@ -12,11 +12,13 @@ namespace Orckestra.Search.KeywordRedirect.C1Console
     {
         public BrowserViewSettings TryGetBrowserViewSettings(EntityToken entityToken, bool showPublishedView)
         {
+            const string ViewKeywordsUrl = "/InstalledPackages/Orckestra.Search.KeywordRedirect/view/viewkeywords.html";
+
             if (entityToken is TreeSimpleElementEntityToken castedEntityToken && castedEntityToken.Id == "OrckestraSearchKeywordRedirect")
             {
                 return new BrowserViewSettings
                 {
-                    Url = UrlUtils.Combine(UrlUtils.AdminRootPath, "/InstalledPackages/Orckestra.Search.KeywordRedirect/view/viewkeywords.html"),
+                    Url = UrlUtils.Combine(UrlUtils.AdminRootPath, ViewKeywordsUrl),
                     ToolingOn = false
                 };
             }
@@ -27,7 +29,7 @@ namespace Orckestra.Search.KeywordRedirect.C1Console
             {
                 return new BrowserViewSettings
                 {
-                    Url = UrlUtils.Combine(UrlUtils.AdminRootPath, $"/InstalledPackages/Orckestra.Search.KeywordRedirect/view/viewkeywords.html?homePageId={homepageId}"),
+                    Url = UrlUtils.Combine(UrlUtils.AdminRootPath, $"{ViewKeywordsUrl}?homePageId={homepageId}"),
                     ToolingOn = false
                 };
             }

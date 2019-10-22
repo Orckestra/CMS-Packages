@@ -10,10 +10,10 @@ using Composite.Data.PublishScheduling;
 using Orckestra.Search.KeywordRedirect.Data.Types;
 using Orckestra.Search.KeywordRedirect.Endpoint;
 using System.Collections.Concurrent;
-using System.Diagnostics;
-using Composite.C1Console.Users;
 using Composite.Core.Routing;
 using Composite.Core.WebClient.Renderings.Page;
+using KeywordAndUrlDictionary = System.Collections.Generic.Dictionary<string, string>;
+using HomepageDictionary = System.Collections.Generic.Dictionary<System.Guid, System.Collections.Generic.Dictionary<string, string>>;
 
 namespace Orckestra.Search.KeywordRedirect
 {
@@ -25,6 +25,7 @@ namespace Orckestra.Search.KeywordRedirect
             _keywordChangeNotifierUnsubscriber = keywordChangeNotifier.Subscribe(this);
             _beforeKeywordChangeNotifierUnsubscriber = beforeKeywordChangeNotifier.Subscribe(this);
 
+            // NOTE: should be executed once at startup to fixed already installed packages
             FixMissingHomePages();
         }
 
@@ -33,7 +34,7 @@ namespace Orckestra.Search.KeywordRedirect
         private readonly IDisposable _beforeKeywordChangeNotifierUnsubscriber;
 
         private readonly ConcurrentDictionary<CultureInfo, Lazy<List<Model.RedirectKeyword>>> _keywordsCache = new ConcurrentDictionary<CultureInfo, Lazy<List<Model.RedirectKeyword>>>();
-        private readonly ConcurrentDictionary<CultureInfo, Lazy<Dictionary<Guid, Dictionary<string, string>>>> _keywordRedirectCache = new ConcurrentDictionary<CultureInfo, Lazy<Dictionary<Guid, Dictionary<string, string>>>>();
+        private readonly ConcurrentDictionary<CultureInfo, Lazy<HomepageDictionary>> _keywordRedirectCache = new ConcurrentDictionary<CultureInfo, Lazy<HomepageDictionary>>();
         private readonly ConcurrentDictionary<Guid, Lazy<Guid>> _pageIdToHomePageIdCache = new ConcurrentDictionary<Guid, Lazy<Guid>>();
         private readonly ConcurrentDictionary<Guid, Lazy<string>> _homePageIdToTitleCache = new ConcurrentDictionary<Guid, Lazy<string>>();
 
@@ -117,6 +118,7 @@ namespace Orckestra.Search.KeywordRedirect
                             HomePageId = (redirectKeyword.HomePage ?? publishedredirectKeyword?.HomePage).GetValueOrDefault(),
                         };
                     }
+
                     result.Add(keyword);
                 }
             }
@@ -131,7 +133,7 @@ namespace Orckestra.Search.KeywordRedirect
             Guid GetHomePageId() => PageStructureInfo.GetAssociatedPageIds(pageId, SitemapScope.AncestorsAndCurrent).LastOrDefault();
         }
 
-        private Dictionary<Guid, Dictionary<string, string>> LoadKeywordRedirects(CultureInfo cultureInfo)
+        private HomepageDictionary LoadKeywordRedirects(CultureInfo cultureInfo)
         {
             using (var connection = new DataConnection(PublicationScope.Published, cultureInfo))
             {
@@ -142,7 +144,7 @@ namespace Orckestra.Search.KeywordRedirect
 
                 return result;
 
-                Dictionary<string, string> GetPageUrlByKeyword(IEnumerable<RedirectKeyword> redirectKeywords)
+                KeywordAndUrlDictionary GetPageUrlByKeyword(IEnumerable<RedirectKeyword> redirectKeywords)
                 {
                     return redirectKeywords
                         .GroupBy(x => x.Keyword, StringComparer.OrdinalIgnoreCase)
@@ -150,7 +152,7 @@ namespace Orckestra.Search.KeywordRedirect
                 }
 
                 string GetPageUrl(RedirectKeyword redirectKeyword)
-                { 
+                {
                     return PageUrls.BuildUrl(new PageUrlData(redirectKeyword.LandingPage, PublicationScope.Published, cultureInfo));
                 }
             }
@@ -189,5 +191,5 @@ namespace Orckestra.Search.KeywordRedirect
             _keywordChangeNotifierUnsubscriber.Dispose();
             _beforeKeywordChangeNotifierUnsubscriber.Dispose();
         }
-    }
+    };
 }
