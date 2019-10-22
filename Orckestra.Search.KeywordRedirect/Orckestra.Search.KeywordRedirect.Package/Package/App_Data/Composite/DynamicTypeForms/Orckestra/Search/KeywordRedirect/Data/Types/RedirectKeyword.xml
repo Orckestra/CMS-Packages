@@ -1,0 +1,48 @@
+﻿<cms:formdefinition xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0" xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:ff="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+  <cms:bindings>
+    <cms:binding name="Id" type="System.Guid" />
+    <cms:binding name="Keyword" type="System.String" />
+    <cms:binding name="HomePage" type="System.Nullable`1[System.Guid]" optional="true" />
+    <cms:binding name="LandingPage" type="System.Guid" />
+    <cms:binding name="PublicationStatus" type="System.String" />
+    <cms:binding name="SourceCultureName" type="System.String" />
+    <cms:binding name="PublicationStatusOptions" type="System.Object" />
+    <cms:binding name="PublishDate" type="System.DateTime" optional="true" />
+    <cms:binding name="UnpublishDate" type="System.DateTime" optional="true" />
+  </cms:bindings>
+  <cms:layout>
+    <cms:layout.label>
+      <cms:read source="Keyword" />
+    </cms:layout.label>
+    <PlaceHolder>
+      <FieldGroup Label="${Orckestra.Search.KeywordRedirect, KeywordTitle}">
+        <TextBox Label="${Orckestra.Search.KeywordRedirect,KeywordLabel}" Help="${Orckestra.Search.KeywordRedirect,KeywordTooltip}" SpellCheck="true">
+          <TextBox.Text>
+            <cms:bind source="Keyword" />
+          </TextBox.Text>
+        </TextBox>
+        <DataReferenceTreeSelector Label="${Orckestra.Search.KeywordRedirect,LandingPageLabel}" Help="${Orckestra.Search.KeywordRedirect,LandingPageTooltip}" Handle="Composite.Management.PageIdSelectorDialog" DataType="Composite.Data.Types.IPage,Composite" NullValueAllowed="false">
+          <DataReferenceTreeSelector.Selected>
+            <cms:bind source="LandingPage" />
+          </DataReferenceTreeSelector.Selected>
+        </DataReferenceTreeSelector>
+      </FieldGroup>
+      <FieldGroup Label="Publication settings">
+        <KeySelector OptionsKeyField="Key" OptionsLabelField="Value" Label="Status" Help="Send the data to another publication status.">
+          <KeySelector.Selected>
+            <cms:bind source="PublicationStatus" />
+          </KeySelector.Selected>
+          <KeySelector.Options>
+            <cms:read source="PublicationStatusOptions" />
+          </KeySelector.Options>
+        </KeySelector>
+        <DateTimeSelector Label="Publish date" Help="Specify at which date and time you want the data to be published automatically.">
+          <cms:bind source="PublishDate" />
+        </DateTimeSelector>
+        <DateTimeSelector Label="Unpublish date" Help="Specify at which date and time you want the data to be unpublished automatically.">
+          <cms:bind source="UnpublishDate" />
+        </DateTimeSelector>
+      </FieldGroup>
+    </PlaceHolder>
+  </cms:layout>
+</cms:formdefinition>

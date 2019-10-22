@@ -19,7 +19,6 @@ const Keywords = ({ keywords }) => (
     <Table>
       <thead>
         <tr className="head">
-          <th>{getString("HomePageLabel")}</th>
           <th>{getString("KeywordLabel")}</th>
           <th>{getString("LandingPageLabel")}</th>
           <th>
@@ -39,19 +38,6 @@ const Keywords = ({ keywords }) => (
         {keywords.length &&
           keywords.map((item, index) => (
             <tr key={index}>
-              <td>
-                <a href={item.homePage} target="_blank">
-                  {item.homePage}
-                </a>
-                {item.homePageUnpublished ? (
-                  <Unpublished>
-                    {" "}
-                    <a href={item.homePageUnpublished} target="_blank">
-                      {item.homePageUnpublished}
-                    </a>
-                  </Unpublished>
-                ) : null}
-              </td>
               <td>
                 {item.keyword}{" "}
                 {item.keywordUnpublished ? (
@@ -84,8 +70,6 @@ const Keywords = ({ keywords }) => (
 Keywords.propTypes = {
   keywords: PropTypes.arrayOf(
     PropTypes.shape({
-      homePage: PropTypes.string.isRequired,
-      homePageUnpublished: PropTypes.string,
       keyword: PropTypes.string.isRequired,
       landingPage: PropTypes.string.isRequired,
       landingPageUnpublished: PropTypes.string,
