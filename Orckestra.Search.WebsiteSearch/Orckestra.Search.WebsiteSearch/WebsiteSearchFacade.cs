@@ -101,7 +101,12 @@ namespace Orckestra.Search.WebsiteSearch
 
             searchQuery.ShowOnlyDocumentsWithUrls();
 
-            if (query.CurrentSiteOnly)
+            if (query.CurrentSiteOnly && query.MediaFolderToken != null)
+            {
+                var tokens = new Composite.C1Console.Security.EntityToken[] { GetRootPageEntityToken(), query.MediaFolderToken };
+                searchQuery.FilterByAncestors(tokens);
+
+            } else if (query.CurrentSiteOnly)
             {
                 searchQuery.FilterByAncestors(GetRootPageEntityToken());
             }
@@ -110,7 +115,7 @@ namespace Orckestra.Search.WebsiteSearch
             {
                 searchQuery.FilterByDataTypes(query.DataTypes);
             }
-
+            
             var result = SearchFacade.SearchProvider.SearchAsync(searchQuery).Result;
             if (result == null) return new WebsiteSearchResult();
 
@@ -133,7 +138,6 @@ namespace Orckestra.Search.WebsiteSearch
                 allFields
                     .Where(f => f.FacetedSearchEnabled && f.Label != null),
                 f => f.Name).ToDictionary(f => f.Name);
-
             // Returning exactly the requested fasets if no documents were found.
             if (result.TotalHits == 0)
             {

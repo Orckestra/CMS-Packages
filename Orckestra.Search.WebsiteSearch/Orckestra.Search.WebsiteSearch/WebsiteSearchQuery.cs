@@ -34,5 +34,7 @@ namespace Orckestra.Search.WebsiteSearch
         /// A zero-based page number.
         /// </summary>
         public int PageNumber { get; set; }
+
+        public Composite.C1Console.Security.EntityToken MediaFolderToken { get; set; } = null;
     }
 }
