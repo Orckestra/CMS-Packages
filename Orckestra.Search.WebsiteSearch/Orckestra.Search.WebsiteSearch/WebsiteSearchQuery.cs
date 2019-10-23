@@ -35,6 +35,6 @@ namespace Orckestra.Search.WebsiteSearch
         /// </summary>
         public int PageNumber { get; set; }
 
-        public Composite.C1Console.Security.EntityToken MediaFolderToken { get; set; } = null;
+        public Composite.C1Console.Security.EntityToken[] MediaFolderToken { get; set; } = null;
     }
 }

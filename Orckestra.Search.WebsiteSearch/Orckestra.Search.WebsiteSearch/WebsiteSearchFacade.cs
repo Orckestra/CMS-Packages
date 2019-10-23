@@ -103,7 +103,8 @@ namespace Orckestra.Search.WebsiteSearch
 
             if (query.CurrentSiteOnly && query.MediaFolderToken != null)
             {
-                var tokens = new Composite.C1Console.Security.EntityToken[] { GetRootPageEntityToken(), query.MediaFolderToken };
+                var tokens = new Composite.C1Console.Security.EntityToken[] { GetRootPageEntityToken()};
+                tokens = tokens.Concat(query.MediaFolderToken).ToArray();
                 searchQuery.FilterByAncestors(tokens);
 
             } else if (query.CurrentSiteOnly)
