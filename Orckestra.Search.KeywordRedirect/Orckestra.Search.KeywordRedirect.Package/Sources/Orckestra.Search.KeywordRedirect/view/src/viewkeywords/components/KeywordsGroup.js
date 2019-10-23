@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Keywords from "./Keywords";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Keywords from './Keywords';
 
 const HomePageHeader = styled.div`
   cursor: pointer;
@@ -21,14 +21,14 @@ const HomePageHeaderLabel = styled.span`
 const HomePageHeaderExpanded = styled.span`
   font-size: 14px;
   ::after {
-    content: "▼";
+    content: '▼';
   }
 `;
 
 const HomePageHeaderCollapsed = styled.span`
   font-size: 14px;
   ::after {
-    content: "▲";
+    content: '▲';
   }
 `;
 
@@ -36,21 +36,21 @@ class KeywordsGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expanded: true
+      expanded: true,
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   static propTypes = {
     homePage: PropTypes.string.isRequired,
-    keywords: PropTypes.array
+    keywords: PropTypes.array,
   };
 
   handleClick() {
     this.setState(state => {
       return {
         ...state,
-        expanded: !state.expanded
+        expanded: !state.expanded,
       };
     });
   }

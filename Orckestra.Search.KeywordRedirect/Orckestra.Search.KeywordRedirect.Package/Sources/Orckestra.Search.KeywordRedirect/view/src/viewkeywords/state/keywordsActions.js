@@ -1,9 +1,9 @@
-import WAMPClient from "c1-cms/console/access/wampClient.js";
+import WAMPClient from 'c1-cms/console/access/wampClient.js';
 
 /* Action types */
-const prefix = "KEYWORDS.";
-export const STORE_LOADING_KEYWORDS = prefix + "LOADING_KEYWORDS";
-export const STORE_LOAD_KEYWORDS = prefix + "LOAD_KEYWORDS";
+const prefix = 'KEYWORDS.';
+export const STORE_LOADING_KEYWORDS = prefix + 'LOADING_KEYWORDS';
+export const STORE_LOAD_KEYWORDS = prefix + 'LOAD_KEYWORDS';
 
 /* Action creators */
 function loadingKeywords() {
@@ -14,8 +14,8 @@ function loadKeywords(keywords) {
   return { type: STORE_LOAD_KEYWORDS, keywords };
 }
 
-const keywordEndpointURI = "keywords.get";
-const keywordTopic = "keywords.new";
+const keywordEndpointURI = 'keywords.get';
+const keywordTopic = 'keywords.new';
 
 export function loadKeywordsFromServer() {
   return dispatch => {

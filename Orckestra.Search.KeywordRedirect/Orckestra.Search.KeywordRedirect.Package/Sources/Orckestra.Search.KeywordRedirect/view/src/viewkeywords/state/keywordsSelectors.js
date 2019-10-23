@@ -1,19 +1,19 @@
-import { createSelector } from "reselect";
-import _ from "lodash/fp";
+import { createSelector } from 'reselect';
+import _ from 'lodash/fp';
 
 export const isLoadingSelector = createSelector(
   state => state.keywords,
-  keywords => keywords.get("isLoading")
+  keywords => keywords.get('isLoading')
 );
 
 export const homePageIdSelector = createSelector(
   state => state.keywords,
-  keywords => keywords.get("homePageId")
+  keywords => keywords.get('homePageId')
 );
 
 const itemsSelector = createSelector(
   state => state.keywords,
-  keywords => keywords.get("items").toArray()
+  keywords => keywords.get('items').toArray()
 );
 
 const filteredItemsSelector = createSelector(
@@ -29,8 +29,8 @@ export const keywordsGroupsSelector = createSelector(
     _.toPairs,
     _.map(([key, keywords]) => ({
       homePage: key,
-      keywords: _.sortBy("keyword", keywords)
+      keywords: _.sortBy('keyword', keywords),
     })),
-    _.sortBy("homePage")
+    _.sortBy('homePage')
   )
 );

@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { getString } from "../../common/coreActions.js";
-import styled from "styled-components";
-import colors from "c1-cms/console/components/colors.js";
-import KeywordsGroup from "./KeywordsGroup";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { getString } from '../../common/coreActions.js';
+import styled from 'styled-components';
+import colors from 'c1-cms/console/components/colors.js';
+import KeywordsGroup from './KeywordsGroup';
 
 const Loading = styled.span`
   font-style: italic;
@@ -15,14 +15,14 @@ const Loading = styled.span`
 `;
 
 const KeywordsGroups = ({ keywordsGroups, isLoading }) => {
-  if (isLoading) return <Loading>{getString("LoadingLabel")}</Loading>;
+  if (isLoading) return <Loading>{getString('LoadingLabel')}</Loading>;
 
   return keywordsGroups.map(group => <KeywordsGroup {...group} />);
 };
 
 KeywordsGroups.propTypes = {
   keywordsGroups: PropTypes.array,
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired,
 };
 
 export default KeywordsGroups;

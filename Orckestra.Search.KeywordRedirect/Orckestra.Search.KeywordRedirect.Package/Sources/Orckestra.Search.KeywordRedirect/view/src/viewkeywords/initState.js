@@ -1,7 +1,7 @@
 ﻿import {
   loadKeywordsFromServer,
-  subscribeForUpdates
-} from "./state/keywordsActions.js";
+  subscribeForUpdates,
+} from './state/keywordsActions.js';
 
 export default function initState(store) {
   store.dispatch(loadKeywordsFromServer());
