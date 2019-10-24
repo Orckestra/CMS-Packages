@@ -1,4 +1,5 @@
-﻿using Composite.Search;
+﻿using Composite.C1Console.Security;
+using Composite.Search;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -34,5 +35,7 @@ namespace Orckestra.Search.WebsiteSearch
         /// A zero-based page number.
         /// </summary>
         public int PageNumber { get; set; }
+
+        public EntityToken[] FilterByAncestorEntityTokens { get; set; } = null;
     }
 }

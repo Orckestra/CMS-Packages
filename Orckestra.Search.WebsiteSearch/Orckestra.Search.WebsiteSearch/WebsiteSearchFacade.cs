@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Web;
 using Composite;
+using Composite.C1Console.Security;
 using Composite.Core.Linq;
 using Composite.Core.ResourceSystem;
 using Composite.Core.Routing;
@@ -101,16 +102,27 @@ namespace Orckestra.Search.WebsiteSearch
 
             searchQuery.ShowOnlyDocumentsWithUrls();
 
+            var filterByAncestors = new List<EntityToken>();
             if (query.CurrentSiteOnly)
             {
-                searchQuery.FilterByAncestors(GetRootPageEntityToken());
+                filterByAncestors.Add(GetRootPageEntityToken());
+            }
+
+            if (query.FilterByAncestorEntityTokens?.Any() ?? false)
+            {
+                filterByAncestors.AddRange(query.FilterByAncestorEntityTokens);
+            }
+
+            if (filterByAncestors.Any())
+            {
+                searchQuery.FilterByAncestors(filterByAncestors.ToArray());
             }
 
             if (query.DataTypes != null && query.DataTypes.Length > 0)
             {
                 searchQuery.FilterByDataTypes(query.DataTypes);
             }
-
+            
             var result = SearchFacade.SearchProvider.SearchAsync(searchQuery).Result;
             if (result == null) return new WebsiteSearchResult();
 
@@ -133,7 +145,6 @@ namespace Orckestra.Search.WebsiteSearch
                 allFields
                     .Where(f => f.FacetedSearchEnabled && f.Label != null),
                 f => f.Name).ToDictionary(f => f.Name);
-
             // Returning exactly the requested fasets if no documents were found.
             if (result.TotalHits == 0)
             {
