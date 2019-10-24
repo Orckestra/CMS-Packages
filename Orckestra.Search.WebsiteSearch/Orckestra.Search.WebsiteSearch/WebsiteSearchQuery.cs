@@ -1,4 +1,5 @@
-﻿using Composite.Search;
+﻿using Composite.C1Console.Security;
+using Composite.Search;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -35,6 +36,6 @@ namespace Orckestra.Search.WebsiteSearch
         /// </summary>
         public int PageNumber { get; set; }
 
-        public Composite.C1Console.Security.EntityToken[] MediaFolderTokens { get; set; } = null;
+        public EntityToken[] FilterByAncestorEntityTokens { get; set; } = null;
     }
 }

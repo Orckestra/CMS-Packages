@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Web;
 using Composite;
+using Composite.C1Console.Security;
 using Composite.Core.Linq;
 using Composite.Core.ResourceSystem;
 using Composite.Core.Routing;
@@ -101,15 +102,20 @@ namespace Orckestra.Search.WebsiteSearch
 
             searchQuery.ShowOnlyDocumentsWithUrls();
 
-            if (query.CurrentSiteOnly && query.MediaFolderTokens != null)
+            var filterByAncestors = new List<EntityToken>();
+            if (query.CurrentSiteOnly)
             {
-                var tokens = new Composite.C1Console.Security.EntityToken[] { GetRootPageEntityToken()};
-                tokens = tokens.Concat(query.MediaFolderTokens).ToArray();
-                searchQuery.FilterByAncestors(tokens);
+                filterByAncestors.Add(GetRootPageEntityToken());
+            }
 
-            } else if (query.CurrentSiteOnly)
+            if (query.FilterByAncestorEntityTokens?.Any() ?? false)
             {
-                searchQuery.FilterByAncestors(GetRootPageEntityToken());
+                filterByAncestors.AddRange(query.FilterByAncestorEntityTokens);
+            }
+
+            if (filterByAncestors.Any())
+            {
+                searchQuery.FilterByAncestors(filterByAncestors.ToArray());
             }
 
             if (query.DataTypes != null && query.DataTypes.Length > 0)
