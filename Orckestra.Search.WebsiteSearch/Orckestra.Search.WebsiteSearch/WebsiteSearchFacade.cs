@@ -101,10 +101,10 @@ namespace Orckestra.Search.WebsiteSearch
 
             searchQuery.ShowOnlyDocumentsWithUrls();
 
-            if (query.CurrentSiteOnly && query.MediaFoldersToken != null)
+            if (query.CurrentSiteOnly && query.MediaFolderTokens != null)
             {
                 var tokens = new Composite.C1Console.Security.EntityToken[] { GetRootPageEntityToken()};
-                tokens = tokens.Concat(query.MediaFoldersToken).ToArray();
+                tokens = tokens.Concat(query.MediaFolderTokens).ToArray();
                 searchQuery.FilterByAncestors(tokens);
 
             } else if (query.CurrentSiteOnly)
