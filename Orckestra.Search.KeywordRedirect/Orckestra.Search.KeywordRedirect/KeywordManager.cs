@@ -17,12 +17,14 @@ using HomepageDictionary = System.Collections.Generic.Dictionary<System.Guid, Sy
 
 namespace Orckestra.Search.KeywordRedirect
 {
-    public class KeywordManager : IObserver<KeywordChange>, IObserver<RedirectKeyword>, IDisposable
+    public class KeywordManager : IObserver<KeywordChange>, IObserver<PageChange>, IObserver<RedirectKeyword>, IDisposable
     {
-        public KeywordManager(KeywordChangeNotifier keywordChangeNotifier, BeforeKeywordChangeNotifier beforeKeywordChangeNotifier, ILog log)
+        public KeywordManager(KeywordChangeNotifier keywordChangeNotifier, PageChangeNotifier pageChangeNotifier, 
+            BeforeKeywordChangeNotifier beforeKeywordChangeNotifier, ILog log)
         {
             _log = log;
             _keywordChangeNotifierUnsubscriber = keywordChangeNotifier.Subscribe(this);
+            _pageChangeNotifierUnsubscriber = pageChangeNotifier.Subscribe(this);
             _beforeKeywordChangeNotifierUnsubscriber = beforeKeywordChangeNotifier.Subscribe(this);
 
             // NOTE: should be executed once at startup to fixed already installed packages
@@ -31,6 +33,7 @@ namespace Orckestra.Search.KeywordRedirect
 
         private readonly ILog _log;
         private readonly IDisposable _keywordChangeNotifierUnsubscriber;
+        private readonly IDisposable _pageChangeNotifierUnsubscriber;
         private readonly IDisposable _beforeKeywordChangeNotifierUnsubscriber;
 
         private readonly ConcurrentDictionary<CultureInfo, Lazy<List<Model.RedirectKeyword>>> _keywordsCache = new ConcurrentDictionary<CultureInfo, Lazy<List<Model.RedirectKeyword>>>();
@@ -48,13 +51,21 @@ namespace Orckestra.Search.KeywordRedirect
             _log.LogError(nameof(KeywordManager), error);
         }
 
-        public void OnNext(KeywordChange value)
+        void IObserver<KeywordChange>.OnNext(KeywordChange value)
         {
             _keywordsCache.TryRemove(value.CultureInfo, out _);
             _keywordRedirectCache.TryRemove(value.CultureInfo, out _);
         }
 
-        public void OnNext(RedirectKeyword redirectKeyword)
+        void IObserver<PageChange>.OnNext(PageChange value)
+        {
+            _keywordsCache.TryRemove(value.CultureInfo, out _);
+            _keywordRedirectCache.TryRemove(value.CultureInfo, out _);
+            _pageIdToHomePageIdCache.Clear();
+            _homePageIdToTitleCache.Clear();
+        }
+
+        void IObserver<RedirectKeyword>.OnNext(RedirectKeyword redirectKeyword)
         {
             redirectKeyword.HomePage = GetHomePageIdByPageId(redirectKeyword.LandingPage);
         }
@@ -190,6 +201,7 @@ namespace Orckestra.Search.KeywordRedirect
         {
             _keywordChangeNotifierUnsubscriber.Dispose();
             _beforeKeywordChangeNotifierUnsubscriber.Dispose();
+            _pageChangeNotifierUnsubscriber.Dispose();
         }
     };
 }

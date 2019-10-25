@@ -25,18 +25,19 @@ namespace Orckestra.Search.KeywordRedirect
         {
         }
 
-        public static void OnInitialized(KeywordChangeNotifier keywordChangeNotifier, BeforeKeywordChangeNotifier beforeKeywordChangeNotifier)
+        public static void OnInitialized(KeywordChangeNotifier keywordChangeNotifier, PageChangeNotifier pageChangeNotifier,
+            BeforeKeywordChangeNotifier beforeKeywordChangeNotifier)
         {
             DynamicTypeManager.EnsureCreateStore(typeof(RedirectKeyword));
 
-            DataEvents<RedirectKeyword>.OnAfterAdd += keywordChangeNotifier.KeywordChange;
-            DataEvents<RedirectKeyword>.OnAfterUpdate += keywordChangeNotifier.KeywordChange;
-            DataEvents<RedirectKeyword>.OnDeleted += keywordChangeNotifier.KeywordChange;
-            DataEvents<IPage>.OnAfterAdd += keywordChangeNotifier.KeywordChange;
-            DataEvents<IPage>.OnAfterUpdate += keywordChangeNotifier.KeywordChange;
-            DataEvents<IPage>.OnDeleted += keywordChangeNotifier.KeywordChange;
-            DataEvents<RedirectKeyword>.OnBeforeAdd += beforeKeywordChangeNotifier.BeforeKeywordChange;
-            DataEvents<RedirectKeyword>.OnBeforeUpdate += beforeKeywordChangeNotifier.BeforeKeywordChange;
+            DataEvents<RedirectKeyword>.OnAfterAdd += keywordChangeNotifier.OnChange;
+            DataEvents<RedirectKeyword>.OnAfterUpdate += keywordChangeNotifier.OnChange;
+            DataEvents<RedirectKeyword>.OnDeleted += keywordChangeNotifier.OnChange;
+            DataEvents<IPage>.OnAfterAdd += pageChangeNotifier.OnChange;
+            DataEvents<IPage>.OnAfterUpdate += pageChangeNotifier.OnChange;
+            DataEvents<IPage>.OnDeleted += pageChangeNotifier.OnChange;
+            DataEvents<RedirectKeyword>.OnBeforeAdd += beforeKeywordChangeNotifier.OnChange;
+            DataEvents<RedirectKeyword>.OnBeforeUpdate += beforeKeywordChangeNotifier.OnChange;
 
             var functions = MvcFunctionRegistry.NewFunctionCollection();
             RegisterFunctions(functions);

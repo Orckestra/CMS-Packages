@@ -134,6 +134,8 @@
     <Compile Include="DictionaryExtensions.cs" />
     <Compile Include="Controllers\KeywordController.cs" />
     <Compile Include="Endpoint\BeforeKeywordChangeNotifier.cs" />
+    <Compile Include="Endpoint\ChangeNotifierBase.cs" />
+    <Compile Include="Endpoint\PageChangeNotifier.cs" />
     <Compile Include="KeywordManager.cs" />
     <Compile Include="KeywordsStartupHandler.cs" />
     <Compile Include="Localization.cs">
