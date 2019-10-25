@@ -38,11 +38,19 @@ namespace Orckestra.Search.KeywordRedirect.Data.Types
         [DefaultFieldStringValue("")]
         [FormRenderingProfile(Label = "${Orckestra.Search.KeywordRedirect,KeywordLabel}",HelpText = "${Orckestra.Search.KeywordRedirect,KeywordTooltip}")]
         string Keyword { get; set; }
-        
+
+        [ImmutableFieldId("a9b04b80-8cb2-483d-8520-e54e71b70763")]
+        [StoreFieldType(PhysicalStoreFieldType.Guid, IsNullable=true)]
+        [FieldPosition(1)]
+        [ForeignKey("Composite.Data.Types.IPage,Composite", AllowCascadeDeletes=true)]
+        [GroupByPriority(1)]
+        [FormRenderingProfile(Label = "${Orckestra.Search.KeywordRedirect,HomePageLabel}", HelpText = "${Orckestra.Search.KeywordRedirect,HomePageTooltip}")]
+        Nullable<Guid> HomePage { get; set; }
+
         [ImmutableFieldId("9dabdcb4-463a-467c-bcd5-a9cba2654386")]
         [StoreFieldType(PhysicalStoreFieldType.Guid)]
         [GuidNotEmpty]
-        [FieldPosition(1)]
+        [FieldPosition(2)]
         [DefaultFieldGuidValue("00000000-0000-0000-0000-000000000000")]
         [ForeignKey("Composite.Data.Types.IPage,Composite", AllowCascadeDeletes=true, NullReferenceValue="{00000000-0000-0000-0000-000000000000}")]
         [FormRenderingProfile(Label = "${Orckestra.Search.KeywordRedirect,LandingPageLabel}", HelpText = "${Orckestra.Search.KeywordRedirect,LandingPageTooltip}")]

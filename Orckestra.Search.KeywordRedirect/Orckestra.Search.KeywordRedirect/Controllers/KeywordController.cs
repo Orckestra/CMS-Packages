@@ -1,5 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading;
+using System.Web.Mvc;
 using Composite.Core.Application;
+using Composite.Data;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Orckestra.Search.KeywordRedirect.Controllers
@@ -25,7 +27,7 @@ namespace Orckestra.Search.KeywordRedirect.Controllers
         {
             var keyword = Request[paramName];
 
-            var redirect = KeywordManager.GetPublicRedirect(keyword, System.Threading.Thread.CurrentThread.CurrentCulture);
+            var redirect = KeywordManager.GetPublicRedirect(keyword, Thread.CurrentThread.CurrentCulture, SitemapNavigator.CurrentHomePageId);
 
             if (redirect != null) {
                 return Redirect(redirect);

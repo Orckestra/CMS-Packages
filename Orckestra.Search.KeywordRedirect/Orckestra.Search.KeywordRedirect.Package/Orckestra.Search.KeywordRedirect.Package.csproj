@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Orckestra.Search.KeywordRedirect.Package</RootNamespace>
     <AssemblyName>Orckestra.Search.KeywordRedirect.Package</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -57,9 +57,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -68,20 +68,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Package\App_Data\Composite\DynamicTypeForms\Orckestra\Search\KeywordRedirect\Data\Types\RedirectKeyword.xml" />
+    <Content Include="Package\App_Data\Composite\TreeDefinitions\KeywordRedirect.xml" />
     <Content Include="Package\Composite\InstalledPackages\Orckestra.Search.KeywordRedirect\view\ReleaseBuild.viewkeywords.html" />
     <Content Include="Package\Composite\InstalledPackages\Orckestra.Search.KeywordRedirect\view\viewkeywords.html" />
     <Content Include="Package\Composite\InstalledPackages\localization\Orckestra.Search.KeywordRedirect.en-US.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Package\Composite\InstalledPackages\localization\Orckestra.Search.KeywordRedirect.fr-FR.xml" />
-    <Content Include="Release\Orckestra.Search.KeywordRedirect.zip" />
     <Content Include="Sources\Orckestra.Search.KeywordRedirect\view\package.json" />
     <Content Include="Readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\App_Data\Composite\TreeDefinitions\KeywordRedirect.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -92,6 +90,7 @@
     <Content Include="Sources\Orckestra.Search.KeywordRedirect\view\src\viewkeywords.js" />
     <Content Include="Sources\Orckestra.Search.KeywordRedirect\view\src\viewkeywords\components\Keywords.js" />
     <Content Include="Sources\Orckestra.Search.KeywordRedirect\view\src\viewkeywords\components\KeywordsContainer.js" />
+    <Content Include="Sources\Orckestra.Search.KeywordRedirect\view\src\viewkeywords\components\KeywordsGroup.js" />
     <Content Include="Sources\Orckestra.Search.KeywordRedirect\view\src\viewkeywords\initState.js" />
     <Content Include="Sources\Orckestra.Search.KeywordRedirect\view\src\viewkeywords\state\keywordsActions.js" />
     <Content Include="Sources\Orckestra.Search.KeywordRedirect\view\src\viewkeywords\state\keywordsReducer.js" />
@@ -108,7 +107,9 @@
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Release\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

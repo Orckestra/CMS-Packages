@@ -1,8 +1,12 @@
-﻿namespace Orckestra.Search.KeywordRedirect.Model
+﻿using System;
+
+namespace Orckestra.Search.KeywordRedirect.Model
 {
     public class RedirectKeyword
     {
         public string Keyword { get; set; }
+        public Guid HomePageId { get; set; }
+        public string HomePage { get; set; }
         public string LandingPage { get; set; }
 
         public string KeywordUnpublished { get; set; }

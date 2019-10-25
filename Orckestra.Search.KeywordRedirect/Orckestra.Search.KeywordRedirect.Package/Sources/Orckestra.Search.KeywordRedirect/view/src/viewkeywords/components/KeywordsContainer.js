@@ -1,18 +1,18 @@
-
-import React from 'react';
 import { connect } from 'react-redux';
-import Keywords from './Keywords.js';
+import KeywordsGroups from './KeywordsGroups';
+import _ from 'lodash';
+import {
+  isLoadingSelector,
+  keywordsGroupsSelector,
+} from '../state/keywordsSelectors';
 
-const mapStateToProps = (state) => {
-    return { 
-        keywords: state.keywords.get("items")
-    }
-}
+const mapStateToProps = state => {
+  return {
+    keywordsGroups: keywordsGroupsSelector(state),
+    isLoading: isLoadingSelector(state),
+  };
+};
 
-const mapDispatchToProps = (dispatch) => {
-    return { }
-}
+const container = connect(mapStateToProps)(KeywordsGroups);
 
-const container = connect(mapStateToProps, mapDispatchToProps)(Keywords)
-
-export default container
+export default container;

@@ -39,14 +39,20 @@ namespace Orckestra.Search.KeywordRedirect
  public static string KeywordTooltip => T("KeywordTooltip");
  /// <summary>&quot;Landing Page&quot;</summary> 
  public static string LandingPageLabel => T("LandingPageLabel");
- /// <summary>&quot;&quot;</summary> 
+ /// <summary>&quot;Landing Page&quot;</summary> 
  public static string LandingPageTooltip => T("LandingPageTooltip");
+ /// <summary>&quot;Home Page&quot;</summary> 
+ public static string HomePageLabel => T("HomePageLabel");
+ /// <summary>&quot;Home Page&quot;</summary> 
+ public static string HomePageTooltip => T("HomePageTooltip");
  /// <summary>&quot;Query String Parameter&quot;</summary> 
  public static string RedirectByKeywordParamLabel => T("RedirectByKeywordParamLabel");
  /// <summary>&quot;Default value is &apos;keywords&apos;&quot;</summary> 
  public static string RedirectByKeywordParamTooltip => T("RedirectByKeywordParamTooltip");
  /// <summary>&quot;Redirect to the landing page by keyword&quot;</summary> 
  public static string RedirectByKeywordDescription => T("RedirectByKeywordDescription");
+ /// <summary>&quot;Loading...&quot;</summary> 
+ public static string LoadingLabel => T("LoadingLabel");
      private static string T(string key) 
        { 
             return StringResourceSystemFacade.GetString("Orckestra.Search.KeywordRedirect", key);
@@ -71,14 +77,20 @@ public const string KeywordLabel = "${Orckestra.Search.KeywordRedirect,KeywordLa
 public const string KeywordTooltip = "${Orckestra.Search.KeywordRedirect,KeywordTooltip}"; 
  /// <summary>&quot;Landing Page&quot;</summary> 
 public const string LandingPageLabel = "${Orckestra.Search.KeywordRedirect,LandingPageLabel}"; 
- /// <summary>&quot;&quot;</summary> 
+ /// <summary>&quot;Landing Page&quot;</summary> 
 public const string LandingPageTooltip = "${Orckestra.Search.KeywordRedirect,LandingPageTooltip}"; 
+ /// <summary>&quot;Home Page&quot;</summary> 
+public const string HomePageLabel = "${Orckestra.Search.KeywordRedirect,HomePageLabel}"; 
+ /// <summary>&quot;Home Page&quot;</summary> 
+public const string HomePageTooltip = "${Orckestra.Search.KeywordRedirect,HomePageTooltip}"; 
  /// <summary>&quot;Query String Parameter&quot;</summary> 
 public const string RedirectByKeywordParamLabel = "${Orckestra.Search.KeywordRedirect,RedirectByKeywordParamLabel}"; 
  /// <summary>&quot;Default value is &apos;keywords&apos;&quot;</summary> 
 public const string RedirectByKeywordParamTooltip = "${Orckestra.Search.KeywordRedirect,RedirectByKeywordParamTooltip}"; 
  /// <summary>&quot;Redirect to the landing page by keyword&quot;</summary> 
 public const string RedirectByKeywordDescription = "${Orckestra.Search.KeywordRedirect,RedirectByKeywordDescription}"; 
+ /// <summary>&quot;Loading...&quot;</summary> 
+public const string LoadingLabel = "${Orckestra.Search.KeywordRedirect,LoadingLabel}"; 
 
 		}
 
