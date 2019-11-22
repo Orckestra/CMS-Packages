@@ -145,12 +145,8 @@ namespace Composite.Tools.PackageCreator.Types
 			{
 				using (new DataScope(dataScopeIdentifier))
 				{
-					var pageinScope = PageManager.GetPageById(pageId, true);
-					if (pageinScope != null)
-					{
-						pc.AddData(pageinScope);
-						pc.AddData<IPagePlaceholderContent>(dataScopeIdentifier, d => d.PageId == pageId);
-					}
+                    pc.AddData<IPage>(dataScopeIdentifier, d => d.Id == pageId);
+                    pc.AddData<IPagePlaceholderContent>(dataScopeIdentifier, d => d.PageId == pageId);
 				}
 			}
 

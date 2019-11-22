@@ -773,11 +773,6 @@ namespace Composite.Tools.PackageCreator
             AddData(type, d => true);
         }
 
-        internal void AddData(string dataTypeName)
-        {
-            AddData(TypeManager.TryGetType(dataTypeName), d => true);
-        }
-
         internal void AddData<T>() where T : class, IData
         {
             AddData(typeof(T));
@@ -821,13 +816,14 @@ namespace Composite.Tools.PackageCreator
 
         internal void AddData(Type type, DataScopeIdentifier dataScopeIdentifier, Func<IData, bool> where)
         {
-            using (new DataScope(dataScopeIdentifier))
+            using (var conn = new DataConnection(dataScopeIdentifier.ToPublicationScope()))
             {
-				foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
+                conn.DisableServices();
+
+                foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition()))
                 {
                     AddData(data);
                 }
-
             }
         }
 
@@ -872,7 +868,7 @@ namespace Composite.Tools.PackageCreator
 
         public void AddData(IData data)
         {
-#warning #3102 Do not export ICompositionContainer with id eb210a75-be25-401f-b0d4-b3787bce36fa
+             // #3102 Do not export ICompositionContainer with id eb210a75-be25-401f-b0d4-b3787bce36fa - considered always installed
             if (data is ICompositionContainer)
             {
                 if ((data as ICompositionContainer).Id == new Guid("eb210a75-be25-401f-b0d4-b3787bce36fa"))
