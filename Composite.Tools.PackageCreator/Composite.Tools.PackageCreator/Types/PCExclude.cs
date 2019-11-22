@@ -114,14 +114,11 @@ namespace Composite.Tools.PackageCreator.Types
 				{
 					case Exclude.DataItem:
 						return new ResourceHandle("Composite.Icons", "data-disabled");
-						break;
 					case Exclude.MediaFolder:
 						return new ResourceHandle("Composite.Icons", "folder-disabled");
-						break;
 					case Exclude.Page:
 					default:
 						return new ResourceHandle("Composite.Icons", "page-disabled");
-						break;
 				}
 
 			}
@@ -243,7 +240,6 @@ namespace Composite.Tools.PackageCreator.Types
 					case Exclude.MediaFolder:
 						var state = GetState();
 						return (state == TreeState.ExcludedTree) ? ActionCheckedStatus.Checked : ActionCheckedStatus.Unchecked;
-						break;
 				}
 				return ActionCheckedStatus.Uncheckable;
 			}
@@ -263,10 +259,8 @@ namespace Composite.Tools.PackageCreator.Types
 							case TreeState.Included:
 							case TreeState.ExcludedTree:
 								return false;
-								break;
 						}
 						return true;
-						break;
 				}
 				return false;
 			}

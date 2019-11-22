@@ -127,7 +127,6 @@ namespace Composite.Tools.PackageCreator.Types
 					case TreeState.NotIncluded:
 					case TreeState.IncludedTree:
 						return false;
-						break;
 				}
 				return true;
 			}

@@ -824,6 +824,7 @@ namespace Composite.Tools.PackageCreator
                 {
                     AddData(data);
                 }
+
             }
         }
 
