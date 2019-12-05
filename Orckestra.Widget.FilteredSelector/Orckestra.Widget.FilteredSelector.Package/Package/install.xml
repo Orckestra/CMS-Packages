@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <mi:PackageRequirements minimumCompositeVersion="6.7.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+  <mi:PackageInformation name="Orckestra.Widget.FilteredSelector" groupName="Orckestra" version="1.0.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/" id="4c9310fe-f87b-4272-ba66-9fc4479e3697" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+    <TechnicalDetails>If you want to reinstall this package, restart website before new installation</TechnicalDetails>
+    <Description>Allows to create data elements selecting rules, depending on current element page reference.</Description>
+  </mi:PackageInformation>
+  <mi:PackageFragmentInstallerBinaries>
+    <mi:Add path="~\Bin\Orckestra.Widget.FilteredSelector.dll" />
+  </mi:PackageFragmentInstallerBinaries>
+  <mi:PackageFragmentInstallers>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentUninstaller, Composite">
+      <Files>
+        <File
+            sourceFilename="~\Bin\Orckestra.Widget.FilteredSelector.dll" targetFilename="~\Bin\Orckestra.Widget.FilteredSelector.dll" allowOverwrite="true" />
+      </Files>
+    </mi:Add>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
+      <Install xsltFilePath="~\Composite.config\Install.xsl" />
+      <Uninstall xsltFilePath="~\Composite.config\Uninstall.xsl" />
+    </mi:Add>
+  </mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
