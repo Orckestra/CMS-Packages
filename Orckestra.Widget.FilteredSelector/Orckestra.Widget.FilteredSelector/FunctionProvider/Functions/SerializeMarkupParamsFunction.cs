@@ -39,7 +39,7 @@ namespace Orckestra.Widget.FilteredSelector.FunctionProvider.Functions
                     new ConstantValueProvider(null),
                     tb,
                     null,
-                    Resources.default_text.SerializeMarkupParamsFuncPageIdLabel,
+                    "Page id",
                     new HelpDefinition(Resources.default_text.SerializeMarkupParamsFuncPageIdHelp)));
             
             AddParameterProfile(
@@ -50,7 +50,7 @@ namespace Orckestra.Widget.FilteredSelector.FunctionProvider.Functions
                     new ConstantValueProvider(null),
                     tb,
                     null,
-                    Resources.default_text.SerializeMarkupParamsFuncTypeNameLabel,
+                    "Type name",
                     new HelpDefinition(Resources.default_text.SerializeMarkupParamsFuncTypeNameHelp)));
 
             AddParameterProfile(
@@ -61,7 +61,7 @@ namespace Orckestra.Widget.FilteredSelector.FunctionProvider.Functions
                     new ConstantValueProvider(null),
                     tb,
                     null,
-                    Resources.default_text.SerializeMarkupParamsFuncSitemapScopeIdLabel,
+                    "Sitemap scope id",
                     new HelpDefinition(Resources.default_text.SerializeMarkupParamsFuncSitemapScopeIdHelp)));
         }
     }

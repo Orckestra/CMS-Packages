@@ -106,15 +106,6 @@ namespace Orckestra.Widget.FilteredSelector.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Page reference scope.
-        /// </summary>
-        internal static string SelectFilteredDataWidgetFuncSitescopeLabel {
-            get {
-                return ResourceManager.GetString("SelectFilteredDataWidgetFuncSitescopeLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Serializes page id, scope id and datatype name in markup to pass it as a composed param to a static function call.
         /// </summary>
         internal static string SerializeMarkupParamsFuncDescr {
@@ -142,15 +133,6 @@ namespace Orckestra.Widget.FilteredSelector.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Page id.
-        /// </summary>
-        internal static string SerializeMarkupParamsFuncPageIdLabel {
-            get {
-                return ResourceManager.GetString("SerializeMarkupParamsFuncPageIdLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Define int code of sitemap scope.
         /// </summary>
         internal static string SerializeMarkupParamsFuncSitemapScopeIdHelp {
@@ -160,29 +142,11 @@ namespace Orckestra.Widget.FilteredSelector.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sitemap scope id.
-        /// </summary>
-        internal static string SerializeMarkupParamsFuncSitemapScopeIdLabel {
-            get {
-                return ResourceManager.GetString("SerializeMarkupParamsFuncSitemapScopeIdLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Define full name of type including namespace.
         /// </summary>
         internal static string SerializeMarkupParamsFuncTypeNameHelp {
             get {
                 return ResourceManager.GetString("SerializeMarkupParamsFuncTypeNameHelp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Type name.
-        /// </summary>
-        internal static string SerializeMarkupParamsFuncTypeNameLabel {
-            get {
-                return ResourceManager.GetString("SerializeMarkupParamsFuncTypeNameLabel", resourceCulture);
             }
         }
         

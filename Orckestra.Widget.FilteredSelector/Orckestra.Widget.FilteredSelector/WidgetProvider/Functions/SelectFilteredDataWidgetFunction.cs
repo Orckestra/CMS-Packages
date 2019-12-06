@@ -146,7 +146,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
                     new ConstantValueProvider(SitemapScope.Current),
                     dropDown,
                     null,
-                    Resources.default_text.SelectFilteredDataWidgetFuncSitescopeLabel,
+                    "Sitemap scope",
                     new HelpDefinition(Resources.default_text.SelectFilteredDataWidgetFuncSitescopeHelp)));
         }
     }

@@ -137,10 +137,6 @@
     <value>Select sitemap scope for filtering</value>
     <comment>Orckestra.Widget.FilteredSelector.WidgetProvider.Functions</comment>
   </data>
-  <data name="SelectFilteredDataWidgetFuncSitescopeLabel" xml:space="preserve">
-    <value>Page reference scope</value>
-    <comment>Orckestra.Widget.FilteredSelector.WidgetProvider.Functions</comment>
-  </data>
   <data name="SerializeMarkupParamsFuncDescr" xml:space="preserve">
     <value>Serializes page id, scope id and datatype name in markup to pass it as a composed param to a static function call</value>
     <comment>Orckestra.Widget.FilteredSelector.FunctionProvider.Functions</comment>
@@ -153,24 +149,12 @@
     <value>Define guid of page</value>
     <comment>Orckestra.Widget.FilteredSelector.FunctionProvider.Functions</comment>
   </data>
-  <data name="SerializeMarkupParamsFuncPageIdLabel" xml:space="preserve">
-    <value>Page id</value>
-    <comment>Orckestra.Widget.FilteredSelector.FunctionProvider.Functions</comment>
-  </data>
   <data name="SerializeMarkupParamsFuncSitemapScopeIdHelp" xml:space="preserve">
     <value>Define int code of sitemap scope</value>
     <comment>Orckestra.Widget.FilteredSelector.FunctionProvider.Functions</comment>
   </data>
-  <data name="SerializeMarkupParamsFuncSitemapScopeIdLabel" xml:space="preserve">
-    <value>Sitemap scope id</value>
-    <comment>Orckestra.Widget.FilteredSelector.FunctionProvider.Functions</comment>
-  </data>
   <data name="SerializeMarkupParamsFuncTypeNameHelp" xml:space="preserve">
     <value>Define full name of type including namespace</value>
-    <comment>Orckestra.Widget.FilteredSelector.FunctionProvider.Functions</comment>
-  </data>
-  <data name="SerializeMarkupParamsFuncTypeNameLabel" xml:space="preserve">
-    <value>Type name</value>
     <comment>Orckestra.Widget.FilteredSelector.FunctionProvider.Functions</comment>
   </data>
   <data name="SitemapScope_All" xml:space="preserve">
