@@ -28,10 +28,7 @@ namespace Orckestra.Widget.FilteredSelector.FunctionProvider
                     InitializeStaticTypeFunctions();
                 }
 
-                foreach (IFunction function in _functions)
-                {
-                    yield return function;
-                }
+                return _functions;
             }
         }
 

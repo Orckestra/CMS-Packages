@@ -37,15 +37,15 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
             string optionsObjectLabelPropertyName,
             bool required)
         {
-            if (parameters.TryGetParameter(typeof(SitemapScope).Name, out SitemapScope sitemapScope) == false)
+            if (!parameters.TryGetParameter(nameof(SitemapScope), out SitemapScope sitemapScope))
             {
-                throw new ArgumentException(typeof(SitemapScope).Name);
+                throw new ArgumentException(nameof(SitemapScope);
             }
 
             string
                 keySelTag = "KeySelector",
                 statMethTag = "StaticMethodCall",
-                compFuncName = $"{Constants.serializeFuncNamespace}.{Resources.default_text.SerializeMarkupParamsFuncName}";
+                compFuncName = $"{Constants.SerializeFuncNamespace}.{Resources.default_text.SerializeMarkupParamsFuncName}";
 
             XNamespace
                 uc = Namespaces.BindingFormsStdUiControls10,
@@ -54,43 +54,27 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
                 ft = Namespaces.Function10;
 
             XElement keySelector = StandardWidgetFunctions.BuildBasicFormsMarkup(uc, keySelTag, "Selected", label, helpDefinition, bindingSourceName);
+
+            XElement keySelectorOptions = new XElement(uc + $"{keySelTag}.Options",
+                new XElement(f + statMethTag,
+                new XAttribute("Type", TypeManager.SerializeType(optionsGeneratingStaticType)),
+                new XAttribute("Method", optionsGeneratingStaticMethodName),
+                    new XElement(uc + $"{statMethTag}.Parameters",
+                        new XElement(ft + "function",
+                        new XAttribute("name", compFuncName),
+                            new XElement(ft + "param",
+                            new XAttribute("name", Constants.TypeNameParamName),
+                            new XAttribute("value", optionsGeneratingStaticMethodParameterValue)),
+                            new XElement(ft + "param", new XAttribute("name", Constants.PageIdParamName),
+                                new XElement(bf + "read", new XAttribute("source", "PageId"))),
+                            new XElement(ft + "param",
+                            new XAttribute("name", Constants.SitemapScopeIdParamName),
+                            new XAttribute("value", (int)sitemapScope))))));
             keySelector.Add(
                 new XAttribute("OptionsKeyField", optionsObjectKeyPropertyName),
                 new XAttribute("OptionsLabelField", optionsObjectLabelPropertyName),
-                new XAttribute("Required", required));
-
-            XElement keySelectorOptions = new XElement(uc + $"{keySelTag}.Options");
-            keySelector.Add(keySelectorOptions);
-
-            XElement staticMethodCall = new XElement(f + statMethTag);
-            staticMethodCall.Add(
-                new XAttribute("Type", TypeManager.SerializeType(optionsGeneratingStaticType)),
-                new XAttribute("Method", optionsGeneratingStaticMethodName));
-            keySelectorOptions.Add(staticMethodCall);
-
-            XElement staticMethodCallParams = new XElement(uc + $"{statMethTag}.Parameters");
-            staticMethodCall.Add(staticMethodCallParams);
-
-            XElement functionComposer = new XElement(ft + "function");
-            functionComposer.Add(new XAttribute("name", compFuncName));
-            staticMethodCallParams.Add(functionComposer);
-
-            XElement functionParamType = new XElement(ft + "param");
-            functionParamType.Add(
-                new XAttribute("name", Constants.typeNameParamName),
-                new XAttribute("value", optionsGeneratingStaticMethodParameterValue));
-            functionComposer.Add(functionParamType);
-
-            XElement functionPageId = new XElement(ft + "param");
-            functionPageId.Add(new XAttribute("name", Constants.pageIdParamName));
-            functionPageId.Add(new XElement(bf + "read", new XAttribute("source", "PageId")));
-            functionComposer.Add(functionPageId);
-
-            XElement functionSitescope = new XElement(ft + "param");
-            functionSitescope.Add(
-                new XAttribute("name", Constants.sitemapScopeIdParamName),
-                new XAttribute("value", (int)sitemapScope));
-            functionComposer.Add(functionSitescope);
+                new XAttribute("Required", required),
+                keySelectorOptions);
 
             return keySelector;
         }
@@ -146,7 +130,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
                     new ConstantValueProvider(SitemapScope.Current),
                     dropDown,
                     null,
-                    Resources.default_text.SelectFilteredDataWidgetFuncSitescopeLabel,
+                    "Sitemap scope",
                     new HelpDefinition(Resources.default_text.SelectFilteredDataWidgetFuncSitescopeHelp)));
         }
     }

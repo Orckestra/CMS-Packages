@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Orckestra.Widget.FilteredSelector.Package")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Orckestra A/S")]
 [assembly: AssemblyProduct("Orckestra.Widget.FilteredSelector.Package")]
-[assembly: AssemblyCopyright("Copyright © Orckestra 2019")]
+[assembly: AssemblyCopyright("Copyright © Orckestra A/S 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

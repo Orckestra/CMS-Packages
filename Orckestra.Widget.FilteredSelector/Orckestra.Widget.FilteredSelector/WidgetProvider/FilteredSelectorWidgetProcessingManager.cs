@@ -20,11 +20,21 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider
 
             using (DataConnection con = new DataConnection())
             {
+                IEnumerable<KeyValuePair> result = new List<KeyValuePair>();
                 MethodInfo generic = typeof(DataConnection).GetMethod("Get").MakeGenericMethod(t);
-                IEnumerable<KeyValuePair> result = from a in (IEnumerable<IPageRelatedData>)generic.Invoke(con, null)
-                                                   join b in availablePageIds
-                                                   on a.PageId equals b
-                                                   select new KeyValuePair(a.GetKeyProperties().First(k => k.Name == "Id").GetValue(a).ToString(), a.GetLabel());
+                IEnumerable<IPageRelatedData> availableObjects = (IEnumerable<IPageRelatedData>)generic.Invoke(con, null);
+                if (!availableObjects.Any())
+                {
+                    return result;
+                }
+
+                PropertyInfo idProperty = availableObjects.First().GetKeyProperties().First(k => k.Name == "Id");
+
+                result = from a in availableObjects
+                         join b in availablePageIds
+                         on a.PageId equals b
+                         select new KeyValuePair(idProperty.GetValue(a).ToString(), a.GetLabel());
+
                 return result;
             }
         }
@@ -32,9 +42,9 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider
         internal static IEnumerable GetParameters(string parameters)
         {
             Match match = Regex.Match(parameters, 
-                $"{Constants.pageIdParamName}:\"(.+?)\";{Constants.typeNameParamName}:\"(.+?)\";{Constants.sitemapScopeIdParamName}:\"([0-9]+)\"");
+                $"{Constants.PageIdParamName}:\"(.+?)\";{Constants.TypeNameParamName}:\"(.+?)\";{Constants.SitemapScopeIdParamName}:\"([0-9]+)\"");
 
-            if (match.Success == false)
+            if (!match.Success)
             {
                 throw new ArgumentException(string.Format(Resources.default_text.FilteredSelectorWidgetProcManEx1, parameters));
             }
@@ -43,10 +53,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider
             Guid pageId = new Guid(match.Groups[1].Value.ToString());
             SitemapScope sitemapScope = (SitemapScope)Enum.Parse(typeof(SitemapScope), match.Groups[3].Value.ToString());
 
-            foreach (KeyValuePair pageItem in GetOptionsForDefault(type, pageId, sitemapScope))
-            {
-                yield return new { pageItem.Key, Label = pageItem.Value };
-            }
+            return GetOptionsForDefault(type, pageId, sitemapScope);
         }
     }
 }
