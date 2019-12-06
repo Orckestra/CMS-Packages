@@ -46,10 +46,8 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider
                 {
                     InitializeDynamicTypeFunctions();
                 }
-                foreach (IWidgetFunction widgetFunction in _widgetDynamicTypeFunctions)
-                {
-                    yield return widgetFunction;
-                }
+
+                return _widgetDynamicTypeFunctions;
             }
         }
     }
