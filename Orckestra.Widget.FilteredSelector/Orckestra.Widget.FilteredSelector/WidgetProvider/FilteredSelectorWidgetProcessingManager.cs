@@ -44,7 +44,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider
             Match match = Regex.Match(parameters, 
                 $"{Constants.PageIdParamName}:\"(.+?)\";{Constants.TypeNameParamName}:\"(.+?)\";{Constants.SitemapScopeIdParamName}:\"([0-9]+)\"");
 
-            if (match.Success == false)
+            if (!match.Success)
             {
                 throw new ArgumentException(string.Format(Resources.default_text.FilteredSelectorWidgetProcManEx1, parameters));
             }
