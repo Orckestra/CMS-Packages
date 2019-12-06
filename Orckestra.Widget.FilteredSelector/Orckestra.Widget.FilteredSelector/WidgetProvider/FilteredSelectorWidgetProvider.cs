@@ -28,7 +28,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider
             _widgetDynamicTypeFunctions = new List<IWidgetFunction>();
 
             IEnumerable<Type> dataInterfaces = DataFacade.GetAllKnownInterfaces(UserType.Developer)
-                .Where(x => typeof(IPageRelatedData).IsAssignableFrom(x));
+                .Where(typeof(IPageRelatedData).IsAssignableFrom);
 
             object[] args = new object[] { _entityTokenFactory };
 
