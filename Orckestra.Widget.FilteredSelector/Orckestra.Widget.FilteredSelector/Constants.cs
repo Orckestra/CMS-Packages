@@ -2,9 +2,9 @@
 {
     public static class Constants
     {
-        public const string pageIdParamName = "PageId";
-        public const string sitemapScopeIdParamName = "SitemapScopeId";
-        public const string typeNameParamName = "TypeName";
-        public const string serializeFuncNamespace = "Orckestra.Markup";
+        public const string PageIdParamName = "PageId";
+        public const string SitemapScopeIdParamName = "SitemapScopeId";
+        public const string TypeNameParamName = "TypeName";
+        public const string SerializeFuncNamespace = "Orckestra.Markup";
     }
 }

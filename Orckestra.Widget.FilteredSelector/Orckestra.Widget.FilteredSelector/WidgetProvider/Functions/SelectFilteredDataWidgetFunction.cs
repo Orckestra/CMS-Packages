@@ -45,7 +45,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
             string
                 keySelTag = "KeySelector",
                 statMethTag = "StaticMethodCall",
-                compFuncName = $"{Constants.serializeFuncNamespace}.{Resources.default_text.SerializeMarkupParamsFuncName}";
+                compFuncName = $"{Constants.SerializeFuncNamespace}.{Resources.default_text.SerializeMarkupParamsFuncName}";
 
             XNamespace
                 uc = Namespaces.BindingFormsStdUiControls10,
@@ -77,18 +77,18 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
 
             XElement functionParamType = new XElement(ft + "param");
             functionParamType.Add(
-                new XAttribute("name", Constants.typeNameParamName),
+                new XAttribute("name", Constants.TypeNameParamName),
                 new XAttribute("value", optionsGeneratingStaticMethodParameterValue));
             functionComposer.Add(functionParamType);
 
             XElement functionPageId = new XElement(ft + "param");
-            functionPageId.Add(new XAttribute("name", Constants.pageIdParamName));
+            functionPageId.Add(new XAttribute("name", Constants.PageIdParamName));
             functionPageId.Add(new XElement(bf + "read", new XAttribute("source", "PageId")));
             functionComposer.Add(functionPageId);
 
             XElement functionSitescope = new XElement(ft + "param");
             functionSitescope.Add(
-                new XAttribute("name", Constants.sitemapScopeIdParamName),
+                new XAttribute("name", Constants.SitemapScopeIdParamName),
                 new XAttribute("value", (int)sitemapScope));
             functionComposer.Add(functionSitescope);
 

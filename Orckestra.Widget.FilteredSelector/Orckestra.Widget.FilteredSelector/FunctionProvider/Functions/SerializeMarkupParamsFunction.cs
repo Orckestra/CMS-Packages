@@ -10,7 +10,7 @@ namespace Orckestra.Widget.FilteredSelector.FunctionProvider.Functions
         public SerializeMarkupParamsFunction(EntityTokenFactory entityTokenFactory)
             : base(
                   Resources.default_text.SerializeMarkupParamsFuncName,
-                  Constants.serializeFuncNamespace,
+                  Constants.SerializeFuncNamespace,
                   Resources.default_text.SerializeMarkupParamsFuncDescr,
                   Resources.default_text.SerializeMarkupParamsFuncDescr,
                   typeof(string),
@@ -22,9 +22,9 @@ namespace Orckestra.Widget.FilteredSelector.FunctionProvider.Functions
         public override object Execute(ParameterList parameters, FunctionContextContainer context)
         {
             return
-            $"{Constants.pageIdParamName}:\"{parameters.GetParameter<string>(Constants.pageIdParamName)}\";" +
-            $"{Constants.typeNameParamName}:\"{parameters.GetParameter<string>(Constants.typeNameParamName)}\";" +
-            $"{Constants.sitemapScopeIdParamName}:\"{parameters.GetParameter<int>(Constants.sitemapScopeIdParamName)}\";";
+            $"{Constants.PageIdParamName}:\"{parameters.GetParameter<string>(Constants.PageIdParamName)}\";" +
+            $"{Constants.TypeNameParamName}:\"{parameters.GetParameter<string>(Constants.TypeNameParamName)}\";" +
+            $"{Constants.SitemapScopeIdParamName}:\"{parameters.GetParameter<int>(Constants.SitemapScopeIdParamName)}\";";
         }
 
         private void SetParameterProfiles()
@@ -33,7 +33,7 @@ namespace Orckestra.Widget.FilteredSelector.FunctionProvider.Functions
 
             AddParameterProfile(
                 new ParameterProfile(
-                    Constants.pageIdParamName,
+                    Constants.PageIdParamName,
                     typeof(string),
                     true,
                     new ConstantValueProvider(null),
@@ -44,7 +44,7 @@ namespace Orckestra.Widget.FilteredSelector.FunctionProvider.Functions
             
             AddParameterProfile(
                 new ParameterProfile(
-                    Constants.typeNameParamName,
+                    Constants.TypeNameParamName,
                     typeof(string),
                     true,
                     new ConstantValueProvider(null),
@@ -55,7 +55,7 @@ namespace Orckestra.Widget.FilteredSelector.FunctionProvider.Functions
 
             AddParameterProfile(
                 new ParameterProfile(
-                    Constants.sitemapScopeIdParamName,
+                    Constants.SitemapScopeIdParamName,
                     typeof(string),
                     true,
                     new ConstantValueProvider(null),

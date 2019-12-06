@@ -32,7 +32,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider
         internal static IEnumerable GetParameters(string parameters)
         {
             Match match = Regex.Match(parameters, 
-                $"{Constants.pageIdParamName}:\"(.+?)\";{Constants.typeNameParamName}:\"(.+?)\";{Constants.sitemapScopeIdParamName}:\"([0-9]+)\"");
+                $"{Constants.PageIdParamName}:\"(.+?)\";{Constants.TypeNameParamName}:\"(.+?)\";{Constants.SitemapScopeIdParamName}:\"([0-9]+)\"");
 
             if (match.Success == false)
             {
