@@ -37,9 +37,9 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
             string optionsObjectLabelPropertyName,
             bool required)
         {
-            if (!parameters.TryGetParameter(typeof(SitemapScope).Name, out SitemapScope sitemapScope))
+            if (!parameters.TryGetParameter(nameof(SitemapScope), out SitemapScope sitemapScope))
             {
-                throw new ArgumentException(typeof(SitemapScope).Name);
+                throw new ArgumentException(nameof(SitemapScope);
             }
 
             string
