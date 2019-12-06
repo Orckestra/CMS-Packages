@@ -39,7 +39,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
         {
             if (!parameters.TryGetParameter(nameof(SitemapScope), out SitemapScope sitemapScope))
             {
-                throw new ArgumentException(nameof(SitemapScope);
+                throw new ArgumentException(nameof(SitemapScope));
             }
 
             string
