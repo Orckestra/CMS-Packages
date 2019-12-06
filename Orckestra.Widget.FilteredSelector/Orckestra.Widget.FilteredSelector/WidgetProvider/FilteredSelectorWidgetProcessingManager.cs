@@ -20,11 +20,21 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider
 
             using (DataConnection con = new DataConnection())
             {
+                IEnumerable<KeyValuePair> result = new List<KeyValuePair>();
                 MethodInfo generic = typeof(DataConnection).GetMethod("Get").MakeGenericMethod(t);
-                IEnumerable<KeyValuePair> result = from a in (IEnumerable<IPageRelatedData>)generic.Invoke(con, null)
-                                                   join b in availablePageIds
-                                                   on a.PageId equals b
-                                                   select new KeyValuePair(a.GetKeyProperties().First(k => k.Name == "Id").GetValue(a).ToString(), a.GetLabel());
+                IEnumerable<IPageRelatedData> availableObjects = (IEnumerable<IPageRelatedData>)generic.Invoke(con, null);
+                if (!availableObjects.Any())
+                {
+                    return result;
+                }
+
+                PropertyInfo idProperty = availableObjects.First().GetKeyProperties().First(k => k.Name == "Id");
+
+                result = from a in availableObjects
+                         join b in availablePageIds
+                         on a.PageId equals b
+                         select new KeyValuePair(idProperty.GetValue(a).ToString(), a.GetLabel());
+
                 return result;
             }
         }
