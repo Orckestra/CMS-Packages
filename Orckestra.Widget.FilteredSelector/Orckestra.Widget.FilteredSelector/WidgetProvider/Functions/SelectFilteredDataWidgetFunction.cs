@@ -54,43 +54,27 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
                 ft = Namespaces.Function10;
 
             XElement keySelector = StandardWidgetFunctions.BuildBasicFormsMarkup(uc, keySelTag, "Selected", label, helpDefinition, bindingSourceName);
+
+            XElement keySelectorOptions = new XElement(uc + $"{keySelTag}.Options",
+                new XElement(f + statMethTag,
+                new XAttribute("Type", TypeManager.SerializeType(optionsGeneratingStaticType)),
+                new XAttribute("Method", optionsGeneratingStaticMethodName),
+                    new XElement(uc + $"{statMethTag}.Parameters",
+                        new XElement(ft + "function",
+                        new XAttribute("name", compFuncName),
+                            new XElement(ft + "param",
+                            new XAttribute("name", Constants.TypeNameParamName),
+                            new XAttribute("value", optionsGeneratingStaticMethodParameterValue)),
+                            new XElement(ft + "param", new XAttribute("name", Constants.PageIdParamName),
+                                new XElement(bf + "read", new XAttribute("source", "PageId"))),
+                            new XElement(ft + "param",
+                            new XAttribute("name", Constants.SitemapScopeIdParamName),
+                            new XAttribute("value", (int)sitemapScope))))));
             keySelector.Add(
                 new XAttribute("OptionsKeyField", optionsObjectKeyPropertyName),
                 new XAttribute("OptionsLabelField", optionsObjectLabelPropertyName),
-                new XAttribute("Required", required));
-
-            XElement keySelectorOptions = new XElement(uc + $"{keySelTag}.Options");
-            keySelector.Add(keySelectorOptions);
-
-            XElement staticMethodCall = new XElement(f + statMethTag);
-            staticMethodCall.Add(
-                new XAttribute("Type", TypeManager.SerializeType(optionsGeneratingStaticType)),
-                new XAttribute("Method", optionsGeneratingStaticMethodName));
-            keySelectorOptions.Add(staticMethodCall);
-
-            XElement staticMethodCallParams = new XElement(uc + $"{statMethTag}.Parameters");
-            staticMethodCall.Add(staticMethodCallParams);
-
-            XElement functionComposer = new XElement(ft + "function");
-            functionComposer.Add(new XAttribute("name", compFuncName));
-            staticMethodCallParams.Add(functionComposer);
-
-            XElement functionParamType = new XElement(ft + "param");
-            functionParamType.Add(
-                new XAttribute("name", Constants.TypeNameParamName),
-                new XAttribute("value", optionsGeneratingStaticMethodParameterValue));
-            functionComposer.Add(functionParamType);
-
-            XElement functionPageId = new XElement(ft + "param");
-            functionPageId.Add(new XAttribute("name", Constants.PageIdParamName));
-            functionPageId.Add(new XElement(bf + "read", new XAttribute("source", "PageId")));
-            functionComposer.Add(functionPageId);
-
-            XElement functionSitescope = new XElement(ft + "param");
-            functionSitescope.Add(
-                new XAttribute("name", Constants.SitemapScopeIdParamName),
-                new XAttribute("value", (int)sitemapScope));
-            functionComposer.Add(functionSitescope);
+                new XAttribute("Required", required),
+                keySelectorOptions);
 
             return keySelector;
         }
