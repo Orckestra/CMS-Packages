@@ -53,10 +53,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider
             Guid pageId = new Guid(match.Groups[1].Value.ToString());
             SitemapScope sitemapScope = (SitemapScope)Enum.Parse(typeof(SitemapScope), match.Groups[3].Value.ToString());
 
-            foreach (KeyValuePair pageItem in GetOptionsForDefault(type, pageId, sitemapScope))
-            {
-                yield return new { pageItem.Key, Label = pageItem.Value };
-            }
+            return GetOptionsForDefault(type, pageId, sitemapScope);
         }
     }
 }
