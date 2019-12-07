@@ -23,7 +23,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
             Name = Resources.default_text.SelectFilteredDataWidgetFuncName;
         }
 
-        public override string Description { get; } 
+        public override string Description { get; }
         public override string Name { get; }
         private XElement BuildFormMarkUp(
             ParameterList parameters,
@@ -82,27 +82,30 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
 
         public static IEnumerable<KeyValuePair<SitemapScope, string>> GetAssociationPageRestrictions()
         {
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Current, Resources.default_text.SitemapScope_Current);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.All, Resources.default_text.SitemapScope_All);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.AncestorsAndCurrent, Resources.default_text.SitemapScope_AncestorsAndCurrent);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Ancestors, Resources.default_text.SitemapScope_Ancestors);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Parent, Resources.default_text.SitemapScope_Parent);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Descendants, Resources.default_text.SitemapScope_Descendants);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.DescendantsAndCurrent, Resources.default_text.SitemapScope_DescendantsAndCurrent);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Children, Resources.default_text.SitemapScope_Children);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Siblings, Resources.default_text.SitemapScope_Siblings);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level1, Resources.default_text.SitemapScope_Level1);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level1AndDescendants, Resources.default_text.SitemapScope_Level1AndDescendants);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level1AndSiblings, Resources.default_text.SitemapScope_Level1AndSiblings);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level2, Resources.default_text.SitemapScope_Level2);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level2AndDescendants, Resources.default_text.SitemapScope_Level2AndDescendants);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level2AndSiblings, Resources.default_text.SitemapScope_Level2AndSiblings);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level3, Resources.default_text.SitemapScope_Level3);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level3AndDescendants, Resources.default_text.SitemapScope_Level3AndDescendants);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level3AndSiblings, Resources.default_text.SitemapScope_Level3AndSiblings);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level4, Resources.default_text.SitemapScope_Level4);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level4AndDescendants, Resources.default_text.SitemapScope_Level4AndDescendants);
-            yield return new KeyValuePair<SitemapScope, string>(SitemapScope.Level4AndSiblings, Resources.default_text.SitemapScope_Level4AndSiblings);
+            return new Dictionary<SitemapScope, string>() 
+            {
+                {SitemapScope.Current, Resources.default_text.SitemapScope_Current},
+                {SitemapScope.All, Resources.default_text.SitemapScope_All},
+                {SitemapScope.AncestorsAndCurrent, Resources.default_text.SitemapScope_AncestorsAndCurrent},
+                {SitemapScope.Ancestors, Resources.default_text.SitemapScope_Ancestors},
+                {SitemapScope.Parent, Resources.default_text.SitemapScope_Parent},
+                {SitemapScope.Descendants, Resources.default_text.SitemapScope_Descendants},
+                {SitemapScope.DescendantsAndCurrent, Resources.default_text.SitemapScope_DescendantsAndCurrent},
+                {SitemapScope.Children, Resources.default_text.SitemapScope_Children},
+                {SitemapScope.Siblings, Resources.default_text.SitemapScope_Siblings},
+                {SitemapScope.Level1, Resources.default_text.SitemapScope_Level1},
+                {SitemapScope.Level1AndDescendants, Resources.default_text.SitemapScope_Level1AndDescendants},
+                {SitemapScope.Level1AndSiblings, Resources.default_text.SitemapScope_Level1AndSiblings},
+                {SitemapScope.Level2, Resources.default_text.SitemapScope_Level2},
+                {SitemapScope.Level2AndDescendants, Resources.default_text.SitemapScope_Level2AndDescendants},
+                {SitemapScope.Level2AndSiblings, Resources.default_text.SitemapScope_Level2AndSiblings},
+                {SitemapScope.Level3, Resources.default_text.SitemapScope_Level3},
+                {SitemapScope.Level3AndDescendants, Resources.default_text.SitemapScope_Level3AndDescendants},
+                {SitemapScope.Level3AndSiblings, Resources.default_text.SitemapScope_Level3AndSiblings},
+                {SitemapScope.Level4, Resources.default_text.SitemapScope_Level4},
+                {SitemapScope.Level4AndDescendants, Resources.default_text.SitemapScope_Level4AndDescendants},
+                {SitemapScope.Level4AndSiblings, Resources.default_text.SitemapScope_Level4AndSiblings}
+};
         }
         public static IEnumerable GetOptions(string options) => FilteredSelectorWidgetProcessingManager.GetParameters(options);
         public override XElement GetWidgetMarkup(ParameterList parameters, string label, HelpDefinition helpDefinition, string bindingSourceName)
