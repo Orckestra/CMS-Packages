@@ -113,7 +113,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
             {
                 throw new ArgumentNullException(nameof(parameters));
             }
-            return BuildFormMarkUp(parameters, label, helpDefinition, bindingSourceName, GetType(), "GetOptions", TypeManager.SerializeType(typeof(T)), "Key", "Label", true);
+            return BuildFormMarkUp(parameters, label, helpDefinition, bindingSourceName, GetType(), nameof(GetOptions), TypeManager.SerializeType(typeof(T)), "Key", "Label", true);
         }
         internal static string GetWidgetName()
         {
@@ -122,7 +122,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
         }
         private void SetParameterProfiles()
         {
-            WidgetFunctionProvider dropDown = StandardWidgetFunctions.DropDownList(GetType(), "GetAssociationPageRestrictions", "Key", "Value", false, true);
+            WidgetFunctionProvider dropDown = StandardWidgetFunctions.DropDownList(GetType(), nameof(GetAssociationPageRestrictions), "Key", "Value", false, true);
 
             AddParameterProfile(
                 new ParameterProfile(
