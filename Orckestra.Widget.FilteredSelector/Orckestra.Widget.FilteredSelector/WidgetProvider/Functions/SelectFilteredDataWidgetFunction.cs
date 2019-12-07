@@ -104,8 +104,7 @@ namespace Orckestra.Widget.FilteredSelector.WidgetProvider.Functions
                 {SitemapScope.Level3AndSiblings, Resources.default_text.SitemapScope_Level3AndSiblings},
                 {SitemapScope.Level4, Resources.default_text.SitemapScope_Level4},
                 {SitemapScope.Level4AndDescendants, Resources.default_text.SitemapScope_Level4AndDescendants},
-                {SitemapScope.Level4AndSiblings, Resources.default_text.SitemapScope_Level4AndSiblings}
-};
+                {SitemapScope.Level4AndSiblings, Resources.default_text.SitemapScope_Level4AndSiblings}};
         }
         public static IEnumerable GetOptions(string options) => FilteredSelectorWidgetProcessingManager.GetParameters(options);
         public override XElement GetWidgetMarkup(ParameterList parameters, string label, HelpDefinition helpDefinition, string bindingSourceName)
