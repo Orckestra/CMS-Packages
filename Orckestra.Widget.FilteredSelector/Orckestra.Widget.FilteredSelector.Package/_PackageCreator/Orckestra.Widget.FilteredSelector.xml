@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<pc:PackageCreator xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0" xmlns:pc="http://www.composite.net/ns/management/packagecreator/2.0" xmlns:help="http://www.composite.net/ns/help/1.0">
+  <mi:PackageRequirements minimumCompositeVersion="6.7.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+  <mi:PackageInformation name="Orckestra.Widget.FilteredSelector" groupName="Orckestra" version="1.0.0" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="https://docs.c1.orckestra.com/" id="4c9310fe-f87b-4272-ba66-9fc4479e3697" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+    <TechnicalDetails>If you want to reinstall this package, restart website before new installation.</TechnicalDetails>
+    <Description>Allows to create data elements selecting rules, depending on current element page reference.</Description>
+  </mi:PackageInformation>
+</pc:PackageCreator>
