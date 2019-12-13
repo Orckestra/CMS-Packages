@@ -21,6 +21,20 @@ namespace Composite.Tools.PackageCreator.Types
             get { return new ResourceHandle("Composite.Icons", "base-function-function"); }
         }
 
+        // NOTE: do not remove, this method is used with reflection in PackageCreatorActionFacade
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
+        {
+            if (entityToken is DataEntityToken)
+            {
+                DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
+                if (dataEntityToken.Data is IPageType)
+                {
+                    var data = (IPageType)dataEntityToken.Data;
+                    yield return new PCPageType(data.Name);
+                }
+            }
+        }
+
         public void Pack(PackageCreator creator)
         {
             var pageType = DataFacade.GetData<IPageType>(d => d.Name == this.Name).FirstOrDefault();
