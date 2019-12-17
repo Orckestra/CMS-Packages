@@ -32,6 +32,11 @@ namespace Orckestra.Search.WebsiteSearch
         public Type[] DataTypes { get; set; }
 
         /// <summary>
+        /// The page types that search results should be filtered by.
+        /// </summary>
+        public string[] PageTypes { get; set; }
+
+        /// <summary>
         /// A zero-based page number.
         /// </summary>
         public int PageNumber { get; set; }

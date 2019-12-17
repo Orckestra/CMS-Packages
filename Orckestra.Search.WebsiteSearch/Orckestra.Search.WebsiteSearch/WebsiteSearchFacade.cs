@@ -23,8 +23,12 @@ namespace Orckestra.Search.WebsiteSearch
 {
     public class WebsiteSearchFacade
     {
+        public static string PageTypeIdFieldName = DocumentFieldNames.GetFieldName(typeof(IPage), nameof(IPage.PageTypeId));
+        
         const int MaximumTermCount = 10;
         const int ResultsMaxLength = 200;
+
+        
 
         private static readonly MethodInfo String_ToLower;
         private static readonly MethodInfo String_Contains;
@@ -98,6 +102,7 @@ namespace Orckestra.Search.WebsiteSearch
                         : SearchQuerySelectionOperation.And
                     });
                 }
+
             }
 
             searchQuery.ShowOnlyDocumentsWithUrls();
@@ -121,6 +126,16 @@ namespace Orckestra.Search.WebsiteSearch
             if (query.DataTypes != null && query.DataTypes.Length > 0)
             {
                 searchQuery.FilterByDataTypes(query.DataTypes);
+            }
+
+            if(query.PageTypes != null && query.PageTypes.Length > 0)
+            {
+                searchQuery.Selection.Add(new SearchQuerySelection
+                {
+                    FieldName = PageTypeIdFieldName,
+                    Operation = SearchQuerySelectionOperation.Or,
+                    Values = query.PageTypes
+                });
             }
             
             var result = SearchFacade.SearchProvider.SearchAsync(searchQuery).Result;
@@ -462,6 +477,22 @@ namespace Orckestra.Search.WebsiteSearch
             }
 
             return result.OrderBy(r => r.Item2).ToArray();
+        }
+
+        public static Tuple<string, string>[] GetSearchablePageTypesOptions()
+        {
+            var result = new List<Tuple<string, string>>();
+
+            var pageTypes = DataFacade.GetData<IPageType>().Where(p => p.Available);
+ 
+            foreach (var pageType in pageTypes)
+            {
+               result.Add(new Tuple<string, string>(
+                    pageType.Name,
+                    pageType.Id.ToString()));
+            }
+
+            return result.ToArray();
         }
 
 
