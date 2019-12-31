@@ -1,46 +1,50 @@
-﻿//using System;
-//using System.IO;
-//using System.Linq;
-//using System.Threading;
-//using System.Web;
-//using Composite.C1Console.Security;
-//using Composite.Core.Collections.Generic;
+﻿using System;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Web;
+using Composite.C1Console.Security;
+using Composite.Core.Collections.Generic;
 
-//namespace Composite.Web.Js.TypeScript
-//{
-//    public class TypeScriptCompilationHttpModule : IHttpModule
-//    {
-//        private static readonly ReaderWriterLockSlim _compilationLock = new ReaderWriterLockSlim();
-//        private static readonly Hashtable<string, CachedDirectoryInfo> _directoryInfo = new Hashtable<string, CachedDirectoryInfo>();
+namespace Composite.Web.Js.TypeScript
+{
+    public class TypeScriptHttpModule : IHttpModule
+    {
+        private static readonly ReaderWriterLockSlim _compilationLock = new ReaderWriterLockSlim();
+        private static readonly Hashtable<string, CachedDirectoryInfo> _directoryInfo = new Hashtable<string, CachedDirectoryInfo>();
 
-//        private readonly string _extension;
-//        private readonly string _fileWatcherMask;
-//        private readonly Action<string, string, DateTime?> _compileAction;
+        private readonly string _extension;
+        private readonly string _fileWatcherMask;
+        private readonly Action<string, string, DateTime?> _compileAction;
 
-//        public TypeScriptCompilationHttpModule()
-//        {
-//            _extension = ".ts";
-//            _fileWatcherMask = "*.ts";
-//        }
+        public TypeScriptHttpModule()
+        {
+            _extension = ".ts";
+            _fileWatcherMask = "*.ts";
+        }
 
-//        public void Init(HttpApplication application)
-//        {
-//            application.BeginRequest += (a, b) => context_BeginRequest(application.Context);
-//        }
+        public void Init(HttpApplication application)
+        {
+            
+            application.BeginRequest += (a, b) => context_BeginRequest(application.Context);
+        }
 
-//        private void context_BeginRequest(HttpContext context)
-//        {
-//            var requestPath = context.Request.Path;
-//            if (!requestPath.EndsWith(_extension))
-//            {
-//                return;
-//            }
+        private void context_BeginRequest(HttpContext context)
+        {
+            var requestPath = context.Request.Path;
+            //if (!requestPath.EndsWith(_extension))
+            //{
+            //    return;
+            //}
+            var baseDir = HttpContext.Current.Server.MapPath("~");
 
-//            var filePath = context.Server.MapPath(requestPath);
-//            if (!File.Exists(filePath))
-//            {
-//                return;
-//            }
+            TypeScriptCompiler.Compile(baseDir, "bundle.js", "--project tsconfig.json");
+
+            var filePath = context.Server.MapPath(requestPath);
+            if (!File.Exists(filePath))
+            {
+                return;
+            }
 
 //            string directory = Path.GetDirectoryName(filePath);
 
@@ -61,7 +65,7 @@
 //                            _compileAction(filePath, filePathCss, folderLastUpdatedUtc);
 //                        }
 //                    }
-//                    catch (CssCompileException ex)
+//                    catch (TypeScriptCompileException ex)
 //                    {
 //                        if (!UserValidationFacade.IsLoggedIn())
 //                        {
@@ -90,7 +94,7 @@
 //   background-color: InfoBackground;
 //   content: 'Error in {0}:\A\A {1}';
 //   z-index: 10000;
-//}}", requestPath, EncodeCssContent(ex.Message), EncodeCssComment(ex.Message)));
+//}}", requestPath, EncodeCssContent(ex.Message), EncodeCssComment(ex.Message + ex.Details)));
 //                        context.ApplicationInstance.CompleteRequest();
 //                        return;
 //                    }
@@ -108,89 +112,89 @@
 
 //            context.Response.ContentType = "text/css";
 
-//            try
-//            {
-//                _compilationLock.EnterReadLock();
+            try
+            {
+                _compilationLock.EnterReadLock();
 
-//                context.Response.WriteFile(filePathCss);
-//            }
-//            finally
-//            {
-//                _compilationLock.ExitReadLock();
-//            }
+                context.Response.WriteFile("bundle.js");
+            }
+            finally
+            {
+                _compilationLock.ExitReadLock();
+            }
 
-//            context.ApplicationInstance.CompleteRequest();
-//        }
+            context.ApplicationInstance.CompleteRequest();
+        }
 
-//        private string EncodeCssContent(string text)
-//        {
-//            return text.Replace("'", "\"").Replace(@"\", @"\\").Replace("\n", @"\A ");
-//        }
+        private string EncodeCssContent(string text)
+        {
+            return text.Replace("'", "\"").Replace(@"\", @"\\").Replace("\n", @"\A ");
+        }
 
-//        private string EncodeCssComment(string text)
-//        {
-//            return text.Replace("*", "");
-//        }
+        private string EncodeCssComment(string text)
+        {
+            return text.Replace("*", "");
+        }
 
-//        private DateTime GetCachedFolderLastUpdateDateUtc(string directory, string fileMask)
-//        {
-//            var cacheRecord = _directoryInfo[directory];
+        private DateTime GetCachedFolderLastUpdateDateUtc(string directory, string fileMask)
+        {
+            var cacheRecord = _directoryInfo[directory];
 
-//            if (cacheRecord == null)
-//            {
-//                lock (_directoryInfo)
-//                {
-//                    cacheRecord = _directoryInfo[directory];
-//                    if (cacheRecord == null)
-//                    {
-//                        cacheRecord = new CachedDirectoryInfo();
+            if (cacheRecord == null)
+            {
+                lock (_directoryInfo)
+                {
+                    cacheRecord = _directoryInfo[directory];
+                    if (cacheRecord == null)
+                    {
+                        cacheRecord = new CachedDirectoryInfo();
 
-//                        cacheRecord.FileSystemWatcher = new FileSystemWatcher(directory, fileMask);
-//                        cacheRecord.FileSystemWatcher.IncludeSubdirectories = true;
-//                        cacheRecord.FileSystemWatcher.Created += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
-//                        cacheRecord.FileSystemWatcher.Changed += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
-//                        cacheRecord.FileSystemWatcher.Deleted += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
-//                        cacheRecord.FileSystemWatcher.Renamed += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
+                        cacheRecord.FileSystemWatcher = new FileSystemWatcher(directory, fileMask);
+                        cacheRecord.FileSystemWatcher.IncludeSubdirectories = true;
+                        cacheRecord.FileSystemWatcher.Created += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
+                        cacheRecord.FileSystemWatcher.Changed += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
+                        cacheRecord.FileSystemWatcher.Deleted += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
+                        cacheRecord.FileSystemWatcher.Renamed += (a, b) => cacheRecord.LastTimeUpdatedUtc = null;
 
-//                        cacheRecord.FileSystemWatcher.EnableRaisingEvents = true;
+                        cacheRecord.FileSystemWatcher.EnableRaisingEvents = true;
 
-//                        _directoryInfo[directory] = cacheRecord;
-//                    }
-//                }
-//            }
+                        _directoryInfo[directory] = cacheRecord;
+                    }
+                }
+            }
 
-//            var cachedResult = cacheRecord.LastTimeUpdatedUtc;
+            var cachedResult = cacheRecord.LastTimeUpdatedUtc;
 
-//            if (cachedResult.HasValue) return cachedResult.Value;
+            if (cachedResult.HasValue) return cachedResult.Value;
 
-//            var files = Directory.GetFiles(directory, fileMask, SearchOption.AllDirectories);
+            var files = Directory.GetFiles(directory, fileMask, SearchOption.AllDirectories);
 
-//            if (files.Length == 0) return DateTime.Now;
+            if (files.Length == 0) return DateTime.Now;
 
-//            DateTime result = File.GetLastWriteTimeUtc(files[0]);
-//            foreach (var file in files.Skip(1))
-//            {
-//                DateTime lastUpdatedUtc = File.GetLastWriteTimeUtc(file);
-//                if (lastUpdatedUtc > result)
-//                {
-//                    result = lastUpdatedUtc;
-//                }
-//            }
+            DateTime result = File.GetLastWriteTimeUtc(files[0]);
+            foreach (var file in files.Skip(1))
+            {
+                DateTime lastUpdatedUtc = File.GetLastWriteTimeUtc(file);
+                if (lastUpdatedUtc > result)
+                {
+                    result = lastUpdatedUtc;
+                }
+            }
 
-//            cacheRecord.LastTimeUpdatedUtc = result;
+            cacheRecord.LastTimeUpdatedUtc = result;
 
-//            return result;
-//        }
+            return result;
+        }
 
-//        public void Dispose()
-//        {
-//        }
+        public void Dispose()
+        {
+        }
 
-//        private class CachedDirectoryInfo
-//        {
-//            public FileSystemWatcher FileSystemWatcher { get; set; }
-//            public DateTime? LastTimeUpdatedUtc { get; set; }
-//        }
-//    }
+        private class CachedDirectoryInfo
+        {
+            public FileSystemWatcher FileSystemWatcher { get; set; }
+            public DateTime? LastTimeUpdatedUtc { get; set; }
+        }
+    }
 
-//}
+}

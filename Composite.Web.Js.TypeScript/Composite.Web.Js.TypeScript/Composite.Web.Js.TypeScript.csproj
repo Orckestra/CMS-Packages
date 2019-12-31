@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SassCssCompiler.cs" />
+    <Compile Include="TypeScriptCompiler.cs" />
     <Compile Include="TypeScriptCompilationHttpModule.cs" />
     <Compile Include="TypeScriptCompileException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

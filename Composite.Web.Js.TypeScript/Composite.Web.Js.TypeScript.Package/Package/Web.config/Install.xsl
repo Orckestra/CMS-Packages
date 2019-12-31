@@ -9,7 +9,7 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
 			<xsl:if test="count(add[@name='TypeScriptHttpModule'])=0">
-				<add name="TypeScriptHttpModule" type="Composite.Web.Js.TypeScript.SassHttpModule, Composite.Web.Js.TypeScript" />
+				<add name="TypeScriptHttpModule" type="Composite.Web.Js.TypeScript.TypeScriptHttpModule, Composite.Web.Js.TypeScript" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noLib": false,
+    "removeComments": true,
+    "target": "ES5",
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "outFile": "bundle.js"
+  },
+  "include": [
+    "./Typescript/**/*.ts"
+  ],
+  "exclude": [
+  ]
+}

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Web.Js.TypeScript
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Web.Js.TypeScript", "Composite.Web.Js.TypeScript\Composite.Web.Js.TypeScript.csproj", "{3482DD2A-4149-4CCA-AC52-DCD956F8E41D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Web.Js.TypeScript.Tester", "Composite.Web.Js.TypeScript.Tester\Composite.Web.Js.TypeScript.Tester.csproj", "{A4581C5B-9306-4849-A1C8-8E2B958FBFCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3482DD2A-4149-4CCA-AC52-DCD956F8E41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3482DD2A-4149-4CCA-AC52-DCD956F8E41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3482DD2A-4149-4CCA-AC52-DCD956F8E41D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4581C5B-9306-4849-A1C8-8E2B958FBFCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4581C5B-9306-4849-A1C8-8E2B958FBFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4581C5B-9306-4849-A1C8-8E2B958FBFCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4581C5B-9306-4849-A1C8-8E2B958FBFCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
