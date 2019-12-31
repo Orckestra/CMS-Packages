@@ -10,5 +10,5 @@ namespace Composite.Web.Js.TypeScript
         }
 
         public string Details { get; }
-    }
+    };
 }

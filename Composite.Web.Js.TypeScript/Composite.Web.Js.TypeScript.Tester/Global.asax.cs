@@ -7,13 +7,9 @@ namespace Composite.Web.Js.TypeScript.Tester
     {
         protected void Application_Start()
         {
-            StartupHandler.OnBeforeInitialize();
-            
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            
-            StartupHandler.OnInitialized();
         }
     }
 }

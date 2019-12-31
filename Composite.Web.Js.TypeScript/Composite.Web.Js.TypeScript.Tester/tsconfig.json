@@ -5,8 +5,7 @@
     "removeComments": true,
     "target": "ES5",
     "preserveConstEnums": true,
-    "sourceMap": true,
-    "outFile": "bundle.js"
+    "sourceMap": true
   },
   "include": [
     "./Typescript/**/*.ts"

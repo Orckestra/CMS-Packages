@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -13,110 +14,102 @@ namespace Composite.Web.Js.TypeScript
         private static readonly ReaderWriterLockSlim _compilationLock = new ReaderWriterLockSlim();
         private static readonly Hashtable<string, CachedDirectoryInfo> _directoryInfo = new Hashtable<string, CachedDirectoryInfo>();
 
-        private readonly string _extension;
         private readonly string _fileWatcherMask;
-        private readonly Action<string, string, DateTime?> _compileAction;
 
         public TypeScriptHttpModule()
         {
-            _extension = ".ts";
             _fileWatcherMask = "*.ts";
         }
 
         public void Init(HttpApplication application)
         {
-            
             application.BeginRequest += (a, b) => context_BeginRequest(application.Context);
         }
 
+        // TODO: refactor and move common code from projects Composite.Web.Js.TypeScript Composite.Web.Css.Sass Composite.Web.Css.Less to separate project
         private void context_BeginRequest(HttpContext context)
         {
+            // TODO: don't read the config on each request
+            var typeScriptConfig = TypeScriptConfig.Get();
             var requestPath = context.Request.Path;
-            //if (!requestPath.EndsWith(_extension))
-            //{
-            //    return;
-            //}
-            var baseDir = HttpContext.Current.Server.MapPath("~");
+            var bundleLocation = typeScriptConfig.BundleLocation;
+            var bundleMapLocation = typeScriptConfig.BundleLocation + ".map";
 
-            TypeScriptCompiler.Compile(baseDir, "bundle.js", "--project tsconfig.json");
-
-            var filePath = context.Server.MapPath(requestPath);
-            if (!File.Exists(filePath))
+            if (!requestPath.EndsWith(bundleLocation) || requestPath.EndsWith(bundleMapLocation))
             {
                 return;
             }
 
-//            string directory = Path.GetDirectoryName(filePath);
+            var filePath = context.Server.MapPath(requestPath);
+            string directory = Path.GetDirectoryName(filePath);
+            DateTime folderLastUpdatedUtc = GetCachedFolderLastUpdateDateUtc(directory, _fileWatcherMask);
 
-//            DateTime folderLastUpdatedUtc = GetCachedFolderLastUpdateDateUtc(directory, _fileWatcherMask);
+            if (!File.Exists(filePath) || File.GetLastWriteTimeUtc(filePath) < folderLastUpdatedUtc)
+            {
+                try
+                {
+                    _compilationLock.EnterWriteLock();
 
-//            var filePathCss = filePath.Substring(0, filePath.Length - _extension.Length) + ".min.css";
+                    try
+                    {
+                        if (!File.Exists(filePath) || File.GetLastWriteTimeUtc(filePath) < folderLastUpdatedUtc)
+                        {
+                            var baseDir = HttpContext.Current.Server.MapPath("~");
+                            TypeScriptCompiler.Compile(TypeScriptConfig.Get(), baseDir);
+                        }
+                    }
+                    catch (TypeScriptCompileException ex)
+                    {
+                        if (!UserValidationFacade.IsLoggedIn())
+                        {
+                            throw;
+                        }
 
-//            if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < folderLastUpdatedUtc)
-//            {
-//                try
-//                {
-//                    _compilationLock.EnterWriteLock();
+                        // Showing a friendly error message for logged in users
+                        context.Response.Write(string.Format(@"
+/* 
+TYPESCRIPT COMPILE ERROR:
+{2}
+*/
+body:before {{
+   position: fixed;
+   top: 10px;
+   display: block;
+   width: 60%;
+   margin-left: 19%;
+   padding: 20px;
+   border: 2px solid red;
+   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+   font-size: 12px;
+   font-weight: bold;
+   color: InfoText;
+   white-space:pre;
+   background-color: InfoBackground;
+   content: 'Error in {0}:\A\A {1}';
+   z-index: 10000;
+}}", requestPath, EncodeContent(ex.Message), EncodeComment(ex.Message + ex.Details)));
+                        context.ApplicationInstance.CompleteRequest();
+                        return;
+                    }
+                }
+                finally
+                {
+                    _compilationLock.ExitWriteLock();
+                }
+            }
 
-//                    try
-//                    {
-//                        if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < folderLastUpdatedUtc)
-//                        {
-//                            _compileAction(filePath, filePathCss, folderLastUpdatedUtc);
-//                        }
-//                    }
-//                    catch (TypeScriptCompileException ex)
-//                    {
-//                        if (!UserValidationFacade.IsLoggedIn())
-//                        {
-//                            throw;
-//                        }
+            if ((DateTime.UtcNow - folderLastUpdatedUtc).Days >= 1 || !UserValidationFacade.IsLoggedIn())
+            {
+                context.Response.Cache.SetExpires(DateTime.Now.AddDays(1.0));
+            }
 
-//                        // Showing a friendly error message for logged in users
-//                        context.Response.Write(string.Format(@"
-///* 
-//CSS COMPILE ERROR:
-//{2}
-//*/
-//body:before {{
-//   position: fixed;
-//   top: 10px;
-//   display: block;
-//   width: 60%;
-//   margin-left: 19%;
-//   padding: 20px;
-//   border: 2px solid red;
-//   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-//   font-size: 12px;
-//   font-weight: bold;
-//   color: InfoText;
-//   white-space:pre;
-//   background-color: InfoBackground;
-//   content: 'Error in {0}:\A\A {1}';
-//   z-index: 10000;
-//}}", requestPath, EncodeCssContent(ex.Message), EncodeCssComment(ex.Message + ex.Details)));
-//                        context.ApplicationInstance.CompleteRequest();
-//                        return;
-//                    }
-//                }
-//                finally
-//                {
-//                    _compilationLock.ExitWriteLock();
-//                }
-//            }
-
-//            if ((DateTime.UtcNow - folderLastUpdatedUtc).Days >= 1 || !UserValidationFacade.IsLoggedIn())
-//            {
-//                context.Response.Cache.SetExpires(DateTime.Now.AddDays(1.0));
-//            }
-
-//            context.Response.ContentType = "text/css";
+            context.Response.ContentType = "text/javascript";
 
             try
             {
                 _compilationLock.EnterReadLock();
 
-                context.Response.WriteFile("bundle.js");
+                context.Response.WriteFile(filePath);
             }
             finally
             {
@@ -126,12 +119,12 @@ namespace Composite.Web.Js.TypeScript
             context.ApplicationInstance.CompleteRequest();
         }
 
-        private string EncodeCssContent(string text)
+        private string EncodeContent(string text)
         {
             return text.Replace("'", "\"").Replace(@"\", @"\\").Replace("\n", @"\A ");
         }
 
-        private string EncodeCssComment(string text)
+        private string EncodeComment(string text)
         {
             return text.Replace("*", "");
         }
@@ -195,6 +188,6 @@ namespace Composite.Web.Js.TypeScript
             public FileSystemWatcher FileSystemWatcher { get; set; }
             public DateTime? LastTimeUpdatedUtc { get; set; }
         }
-    }
+    };
 
 }

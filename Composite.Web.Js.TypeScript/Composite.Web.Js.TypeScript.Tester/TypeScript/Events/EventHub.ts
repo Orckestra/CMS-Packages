@@ -19,7 +19,7 @@ module Orckestra.Composer {
 
         constructor() {
             if (EventHub._instance) {
-                throw new Error('Error: Instantiation failed: Use EventHub.instance() instead of new.');
+                throw new Error('Error!: Instantiation failed: Use EventHub.instance() instead of new.');
             }
 
             EventHub._instance = this;
