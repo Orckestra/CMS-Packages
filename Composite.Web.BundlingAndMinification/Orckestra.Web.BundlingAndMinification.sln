@@ -1,13 +1,35 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Web.BundlingAndMinification.Package", "Composite.Web.BundlingAndMinification.Package\Composite.Web.BundlingAndMinification.Package.csproj", "{4A5A52FE-3F74-4C96-AC25-01244162B96F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Web.BundlingAndMinification", "Orckestra.Web.BundlingAndMinification\Orckestra.Web.BundlingAndMinification.csproj", "{11CC9B2D-EA0E-40A5-950D-B7FB013BAA55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Web.BundlingAndMinification", "Composite.Web.BundlingAndMinification\Composite.Web.BundlingAndMinification.csproj", "{CB22269A-9006-43DD-8AD1-0DCD0CF179CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Web.BundlingAndMinification.Package", "Orckestra.Web.BundlingAndMinification.Package\Orckestra.Web.BundlingAndMinification.Package.csproj", "{5D77A993-FE99-47E2-B896-2E5F0C9A7A5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite.Web.BundlingAndMinification.Api", "Composite.Web.BundlingAndMinification.Api\Composite.Web.BundlingAndMinification.Api.csproj", "{50823053-C426-4234-A57C-CCEAC48A3E14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Web.Css.CompileFoundation", "Orckestra.Web.Css.CompileFoundation\Orckestra.Web.Css.CompileFoundation.csproj", "{CFA12325-8684-4E00-81EB-D66B06B17B66}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C1.CMS.6.8", "..\C1.CMS.6.8\", "{D59BB33B-E1CB-4A77-B4A9-38215C4C365D}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.1"
+		ProjectReferences = "{11cc9b2d-ea0e-40a5-950d-b7fb013baa55}|Orckestra.Web.BundlingAndMinification.dll;{CFA12325-8684-4E00-81EB-D66B06B17B66}|Orckestra.Web.Css.CompileFoundation.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51006"
+		Debug.AspNetCompiler.PhysicalPath = "..\C1.CMS.6.8\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51006\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51006"
+		Release.AspNetCompiler.PhysicalPath = "..\C1.CMS.6.8\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51006\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51006"
+		SlnRelativePath = "..\C1.CMS.6.8\"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +37,28 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4A5A52FE-3F74-4C96-AC25-01244162B96F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A5A52FE-3F74-4C96-AC25-01244162B96F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A5A52FE-3F74-4C96-AC25-01244162B96F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A5A52FE-3F74-4C96-AC25-01244162B96F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB22269A-9006-43DD-8AD1-0DCD0CF179CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB22269A-9006-43DD-8AD1-0DCD0CF179CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB22269A-9006-43DD-8AD1-0DCD0CF179CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB22269A-9006-43DD-8AD1-0DCD0CF179CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50823053-C426-4234-A57C-CCEAC48A3E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50823053-C426-4234-A57C-CCEAC48A3E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50823053-C426-4234-A57C-CCEAC48A3E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50823053-C426-4234-A57C-CCEAC48A3E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11CC9B2D-EA0E-40A5-950D-B7FB013BAA55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CC9B2D-EA0E-40A5-950D-B7FB013BAA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11CC9B2D-EA0E-40A5-950D-B7FB013BAA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11CC9B2D-EA0E-40A5-950D-B7FB013BAA55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D77A993-FE99-47E2-B896-2E5F0C9A7A5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D77A993-FE99-47E2-B896-2E5F0C9A7A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D77A993-FE99-47E2-B896-2E5F0C9A7A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D77A993-FE99-47E2-B896-2E5F0C9A7A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA12325-8684-4E00-81EB-D66B06B17B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA12325-8684-4E00-81EB-D66B06B17B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA12325-8684-4E00-81EB-D66B06B17B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA12325-8684-4E00-81EB-D66B06B17B66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D59BB33B-E1CB-4A77-B4A9-38215C4C365D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59BB33B-E1CB-4A77-B4A9-38215C4C365D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D59BB33B-E1CB-4A77-B4A9-38215C4C365D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59BB33B-E1CB-4A77-B4A9-38215C4C365D}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AB0C92B-4CA1-4CF1-8E48-27F96C78D84F}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Validation.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal

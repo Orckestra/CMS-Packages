@@ -2,16 +2,16 @@
 using System.Resources;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Orckestra.Web.BundlingAndMinification")]
-[assembly: AssemblyDescription("Bundling and minification package library")]
+[assembly: AssemblyTitle("Orckestra.Web.Css.CompileFoundation")]
+[assembly: AssemblyDescription("Css compiling foundation library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Orckestra A/S")]
-[assembly: AssemblyProduct("Orckestra.Web.BundlingAndMinification")]
+[assembly: AssemblyProduct("Orckestra.Web.Css.CompileFoundation")]
 [assembly: AssemblyCopyright("Copyright © Orckestra A/S 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: Guid("11cc9b2d-ea0e-40a5-950d-b7fb013baa55")]
-[assembly: AssemblyVersion("2.0.0")]
-[assembly: AssemblyFileVersion("2.0.0")]
+[assembly: Guid("cfa12325-8684-4e00-81eb-d66b06b17b66")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: NeutralResourcesLanguage("en-US")]

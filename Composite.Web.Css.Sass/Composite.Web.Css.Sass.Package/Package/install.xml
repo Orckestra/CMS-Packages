@@ -1,25 +1,31 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="3.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Web.Css.Sass" groupName="Orckestra.Web" version="2.0.1" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Composite.Web.Css.Sass" id="d665fbe2-3ca1-4c3a-b25b-79e4760e0c16" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
-		<TechnicalDetails>Based on libsass-net (https://github.com/darrenkopp/libsass-net/).</TechnicalDetails>
-		<Description>Allows you to create and use dynamic CSS's  by integrating .scss support on your CMS website (http://sass-lang.com/)</Description>
-	</mi:PackageInformation>
-	<mi:PackageFragmentInstallerBinaries />
-	<mi:PackageFragmentInstallers>
-        <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
-            <Files>
-                <File sourceFilename="~\Bin\Composite.Web.Css.Sass.dll" targetFilename="~\Bin\Composite.Web.Css.Sass.dll" allowOverwrite="true" />
-                <File sourceFilename="~\Bin\LibSass.NET.dll" targetFilename="~\Bin\LibSass.NET.dll" allowOverwrite="true" />
-                <File sourceFilename="~\Bin\libsass32.dll" targetFilename="~\Bin\libsass32.dll" allowOverwrite="true" />
-                <File sourceFilename="~\Bin\libsass64.dll" targetFilename="~\Bin\libsass64.dll" allowOverwrite="true" />
-                <File sourceFilename="~\Bin\Composite.Web.BundlingAndMinification.Api.dll" targetFilename="~\Bin\Composite.Web.BundlingAndMinification.Api.dll" allowOverwrite="true" />
-            </Files>
-        </mi:Add>
-		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
-			<XslFiles>
-				<XslFile pathXml="~/Web.config" installXsl="~\Web.config\Install.xsl" uninstallXsl="~\Web.config\Uninstall.xsl" />
-			</XslFiles>
-		</mi:Add>
-	</mi:PackageFragmentInstallers>
+  <mi:PackageRequirements minimumCompositeVersion="6.8.0000.0000" maximumCompositeVersion="9.9999.9999.9999" />
+  <mi:PackageInformation name="Orckestra.Web.Css.Sass" groupName="Orckestra.Web" version="2.0.2" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="https://c1.orckestra.com/Add-ons/All/Orckestra.Web.Css.Sass" id="d665fbe2-3ca1-4c3a-b25b-79e4760e0c16" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" reloadConsoleOnCompletion="false">
+    <TechnicalDetails>Based on libsass-net (https://github.com/darrenkopp/libsass-net/).  Is not supported by Orckestra.Web.BundlingAndMinification package with versions below 2.0.0</TechnicalDetails>
+    <Description>Allows you to create and use dynamic CSS's  by integrating .scss support on your CMS website (http://sass-lang.com/)</Description>
+  </mi:PackageInformation>
+  <mi:PackageFragmentInstallerBinaries>
+  </mi:PackageFragmentInstallerBinaries>
+  <mi:PackageFragmentInstallers>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+      <Files>
+        <File sourceFilename="~\Bin\LibSass.NET.dll" targetFilename="~\Bin\LibSass.NET.dll" allowOverwrite="true" />
+        <File sourceFilename="~\Bin\libsass32.dll" targetFilename="~\Bin\libsass32.dll" allowOverwrite="true" />
+        <File sourceFilename="~\Bin\libsass64.dll" targetFilename="~\Bin\libsass64.dll" allowOverwrite="true" />
+        <File sourceFilename="~\Bin\Orckestra.Web.Css.Sass.dll" targetFilename="~\Bin\Orckestra.Web.Css.Sass.dll" allowOverwrite="true" />
+      </Files>
+    </mi:Add>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentUninstaller, Composite">
+      <Files>
+        <!-- Using DllPackageFragmentInstaller to keep Orckestra.Web.Css.CompileFoundation on uninstallatin, can be used by other modules-->
+        <File sourceFilename="~\Bin\Orckestra.Web.Css.CompileFoundation.dll" targetFilename="~\Bin\Orckestra.Web.Css.CompileFoundation.dll" allowOverwrite="true" />
+      </Files>
+    </mi:Add>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
+      <XslFiles>
+        <XslFile pathXml="~/Web.config" installXsl="~\Web.config\Install.xsl" uninstallXsl="~\Web.config\Uninstall.xsl" />
+      </XslFiles>
+    </mi:Add>
+  </mi:PackageFragmentInstallers>
 </mi:PackageInstaller>

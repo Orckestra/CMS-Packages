@@ -1,7 +1,8 @@
 ﻿using Composite.Core.Application;
-using Composite.Web.BundlingAndMinification.Api;
+using Microsoft.Extensions.DependencyInjection;
+using Orckestra.Web.Css.CompileFoundation;
 
-namespace Composite.Web.Css.Sass
+namespace Orckestra.Web.Css.Sass
 {
     public static class StartupHandler
     {
@@ -10,9 +11,9 @@ namespace Composite.Web.Css.Sass
         {
             public static void OnBeforeInitialize() { }
 
-            public static void OnInitialized()
+            public static void ConfigureServices(IServiceCollection services)
             {
-                CssCompilerRegistry.RegisterCssCompiler(new SassCssCompiler());
+                services.AddSingleton(typeof(ICssCompiler), typeof(SassCssCompiler));
             }
         }
     }

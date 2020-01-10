@@ -1,26 +1,105 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
-	<mi:PackageRequirements minimumCompositeVersion="4.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-	<mi:PackageInformation name="Orckestra.Web.BundlingAndMinification" groupName="Orckestra.Web" version="1.2.0" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Composite.Web.BundlingAndMinification" id="83472ca2-e38e-44f3-9d10-8194b23fdee8" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
-		<TechnicalDetails>The package is based on Microsoft ASP.NET Web Optimization framework. If you need support for SASS or LESS files,  install the Orckestra.Web.Css.Sass or Orckestra.Web.Css.Less packages.</TechnicalDetails>
-		<Description>Bundling and Minification of the Style and Javascript  resources to improve site page request load time.</Description>
+	<mi:PackageRequirements minimumCompositeVersion="6.8.0000.0000" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation 
+    name="Orckestra.Web.BundlingAndMinification" 
+    groupName="Orckestra.Web" 
+    version="2.0.0" 
+    author="Orckestra A/S" 
+    website="https://c1.orckestra.com/" 
+    readMoreUrl="https://c1.orckestra.com/" 
+    id="83472ca2-e38e-44f3-9d10-8194b23fdee8" 
+    canBeUninstalled="true" 
+    systemLocking="hard" 
+    flushOnCompletion="true" 
+    reloadConsoleOnCompletion="false">
+		<TechnicalDetails>
+      * Supports IIS starting from v.7.
+      
+      * Package supports servers with GZip, Deflate content encoding or without any encodings. 
+        In case your server uses other content encoding, bundling and minification will not work.
+      
+      * Before package installation be sure, that no other bundling and minification packages are installed.
+
+      * Be carefull, the following libraries will be added or overrided (if exist) on your site:
+      - Antlr.dll (version 3.4.1.9004);
+      - WebGrease.dll (version 1.5.2.14234);
+      - System.Web.Optimization.dll (version 1.1.40211.0).
+        To check, if your site uses this libraries, go to Bin folder of your website.
+        If your site uses the libraries above, install this package in test enviroment first.
+        In case of any problems you have manually configure assemply bindings in Web.config and update these libraries to 
+        needed versions.
+
+      * To turn on or off SCRIPTS bundling and minification do the following steps:
+      - Find Web.config file in the root of your web site, create a backup copy.
+      - Open original Web.config file and locate to the path 
+        configuration/appSettings/Orckestra.Web.BundlingAndMinification.BundleAndMinifyScripts
+      - Set up "true" or "false" value depending what do you need.
+
+      * To turn on or off STYLES bundling and minification provide the same steps as with scripts, but allocate to the path
+        configuration/appSettings/Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles
+
+      * To turn on or off page comments removing provide the same steps as with scripts, but allocate to the path
+        configuration/appSettings/Orckestra.Web.BundlingAndMinification.RemoveComments
+
+      * If your package installation was unsuccessful and causes problems with web site or for some reasons you need manually 
+        disable this package, provide the following steps:
+      - Find Web.config file in the root of your web site, create a backup copy.
+      - Open original Web.config file and locate to the path configuration/system.webServer/modules
+      - Find an element with a name OrckestraWebBundlingAndMinificationResponseFilter, comment or delete this element.
+      - Save Web.config. From now package will be disabled.
+    </TechnicalDetails>
+		<Description>
+      * To make your site works faster this package bundle and minificate onsite javascripts and styles files.
+
+      * Current version do not bundle and minificate inline or external javascripts and styles files.
+
+      * All javascripts moving to the end of body page part, and styles to the head page part to avoid resource render blockings.
+
+      * Unsupported styles will be removed from page.
+
+      * To enable bundling and minification support of specific style filetypes please install the appropriate packages of latest 
+        versions:
+      - Orckestra.Web.Css.Less with version 1.3.3 or more to support "less" filetype styles;
+      - Orckestra.Web.Css.Sass with version 2.0.2 or more to support "scss" filetype styles.
+
+      * To exclude specific scripts or styles from bundling and minification process and to keep them "as is" add to them 
+        "c1-not-bundleminify" attribute with "true" value.
+
+      * Bundling and minification will not work in the following cases:
+      - current user is logged in to admin console panel;
+      - it is a request to admin console;
+      - web site works in debugging mode (check "debug" attribute in Web.config file on path configuration\system.web\compilation);
+        If none of these condition is true, but you don't see bundling and minification on your site - be sure you don't see cached 
+        version of your site and check logs.
+    </Description>
 	</mi:PackageInformation>
-	<mi:PackageFragmentInstallerBinaries />
-	<mi:PackageFragmentInstallers>
-		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
-			<Files>
-				<File sourceFilename="~\Bin\WebGrease.dll" targetFilename="~\Bin\WebGrease.dll" allowOverwrite="true" />
-                <File sourceFilename="~\Bin\Composite.Web.BundlingAndMinification.dll" targetFilename="~\Bin\Composite.Web.BundlingAndMinification.dll" allowOverwrite="true" />
-                <File sourceFilename="~\Bin\Composite.Web.BundlingAndMinification.Api.dll" targetFilename="~\Bin\Composite.Web.BundlingAndMinification.Api.dll" allowOverwrite="true" />
-				<File sourceFilename="~\App_Data\Razor\Composite\Web\BundlingAndMinification.cshtml" targetFilename="~\App_Data\Razor\Composite\Web\BundlingAndMinification.cshtml" allowOverwrite="true" />
-				<File sourceFilename="~\Bin\Antlr3.Runtime.dll" targetFilename="~\Bin\Antlr3.Runtime.dll" allowOverwrite="true" />
-				<File sourceFilename="~\Bin\System.Web.Optimization.dll" targetFilename="~\Bin\System.Web.Optimization.dll" allowOverwrite="true" />
-			</Files>
-		</mi:Add>
-		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
-			<XslFiles>
-				<XslFile pathXml="~/Web.config" installXsl="~\Web.config\Install.xsl" uninstallXsl="~\Web.config\Uninstall.xsl" />
-			</XslFiles>
-		</mi:Add>
-	</mi:PackageFragmentInstallers>
+  <mi:PackageFragmentInstallerBinaries>
+    <mi:Add path="~\Bin\Orckestra.Web.BundlingAndMinification.dll" />
+  </mi:PackageFragmentInstallerBinaries>
+  <mi:PackageFragmentInstallers>
+    <mi:Add 
+      installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentInstaller, Composite" 
+      uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.DllPackageFragmentUninstaller, Composite">
+      <Files>
+        <File sourceFilename="~\Bin\Orckestra.Web.BundlingAndMinification.dll" 
+              targetFilename="~\Bin\Orckestra.Web.BundlingAndMinification.dll" allowOverwrite="true" />
+        <File sourceFilename="~\Bin\Antlr3.Runtime.dll" 
+              targetFilename="~\Bin\Antlr3.Runtime.dll" allowOverwrite="true" addAssemblyBinding="true"/>
+        <File sourceFilename="~\Bin\System.Web.Optimization.dll" 
+              targetFilename="~\Bin\System.Web.Optimization.dll" allowOverwrite="true" addAssemblyBinding="true"/>
+        <File sourceFilename="~\Bin\WebGrease.dll" 
+              targetFilename="~\Bin\WebGrease.dll" allowOverwrite="true" addAssemblyBinding="true"/>
+        <File sourceFilename="~\Bin\Orckestra.Web.Css.CompileFoundation.dll" 
+              targetFilename="~\Bin\Orckestra.Web.Css.CompileFoundation.dll" allowOverwrite="true"/>
+      </Files>
+    </mi:Add>
+    <mi:Add 
+      installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" 
+      uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
+      <XslFiles>
+        <XslFile pathXml="~/Web.config" installXsl="~\Web.config\Install.xsl" uninstallXsl="~\Web.config\Uninstall.xsl" />
+      </XslFiles>
+    </mi:Add>
+  </mi:PackageFragmentInstallers>
 </mi:PackageInstaller>

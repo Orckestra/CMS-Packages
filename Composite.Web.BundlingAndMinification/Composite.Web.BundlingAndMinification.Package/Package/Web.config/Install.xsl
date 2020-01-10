@@ -1,106 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-		xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl add set"
-		xmlns:add="http://www.composite.net/add/1.0"
-		xmlns:set="http://www.composite.net/set/1.0"
-		>
-  <xsl:output method="xml" indent="yes"/>
-
+﻿<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+                xmlns:ab="urn:schemas-microsoft-com:asm.v1"
+                exclude-result-prefixes="msxsl ab">
+  
+  <xsl:output method="xml"
+              omit-xml-declaration="yes"
+              indent="yes"/>
+  <xsl:strip-space elements="*"/>
+  
+  <!--
+  Expected end configuration structure.
+  Based on empty C1 solution, we expect, that following nodes will always exist:
+  * configuration/system.webServer/modules
+  * runtime/assemplyBinding
+  -->
+  
   <xsl:variable name="structure">
-    <runtime>
-      <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
-        <dependentAssembly>
-          <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" culture="neutral" />
-          <bindingRedirect oldVersion="0.0.0.0-1.5.2.14234" newVersion="1.5.2.14234" />
-        </dependentAssembly>
-      </assemblyBinding>
-    </runtime>
+    <configuration>
+      <system.webServer>
+        <modules runAllManagedModulesForAllRequests="true">
+          <add name="OrckestraWebBundlingAndMinificationResponseFilter"
+               type="Orckestra.Web.BundlingAndMinification.ResponseFilterHttpModule, Orckestra.Web.BundlingAndMinification" />
+        </modules>
+      </system.webServer>
+      <appSettings>
+        <add key="Orckestra.Web.BundlingAndMinification.BundleAndMinifyScripts" value="true"/>
+        <add key="Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles" value="true"/>
+        <add key="Orckestra.Web.BundlingAndMinification.RemoveComments" value="true"/>
+      </appSettings>
+      <runtime>
+        <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+          <dependentAssembly>
+            <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral"/>
+            <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+          </dependentAssembly>
+        </assemblyBinding>
+      </runtime>
+    </configuration>
   </xsl:variable>
-
-  <!--Start Engine 1.0.2-->
-  <xsl:template match="/">
-    <xsl:variable name="xml">
-      <xsl:apply-templates select="/" mode="Prepare" />
-    </xsl:variable>
-    <xsl:apply-templates select="msxsl:node-set($xml)/*" />
-  </xsl:template>
-
-  <xsl:template match="@* | node()" mode="Prepare">
-    <xsl:param name="nodes" select="$structure"/>
-    <xsl:copy>
-      <xsl:apply-templates select="@*" mode="Prepare" />
-      <xsl:variable name="input" select="." />
-      <xsl:apply-templates select="msxsl:node-set($nodes)/@set:*" mode="Copy" />
-      <xsl:for-each select="msxsl:node-set($nodes)/configSections">
-        <xsl:if test="count($input/configSections)=0">
-          <xsl:apply-templates select="." mode="Copy"/>
-        </xsl:if>
-      </xsl:for-each>
-      <xsl:for-each select="node()">
-        <xsl:variable name="name" select="name()" />
-        <xsl:choose>
-          <xsl:when test="string(@configSource)=''">
-            <xsl:apply-templates select="." mode="Prepare">
-              <xsl:with-param name="nodes" select="msxsl:node-set($nodes)/*[name()=$name]" />
-            </xsl:apply-templates>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:apply-templates select="." mode="Copy"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:for-each>
-      <xsl:for-each select="msxsl:node-set($nodes)/*[name()!='configSections']">
-        <xsl:variable name="name" select="name()" />
-        <xsl:if test="count($input/*[name()=$name])=0">
-          <xsl:choose>
-            <xsl:when test="namespace-uri() = '' ">
-              <xsl:apply-templates select="." mode="Copy" />
-            </xsl:when>
-            <xsl:when test="namespace-uri() = 'http://www.composite.net/add/1.0'">
-              <xsl:variable name="localName" select="local-name()" />
-              <xsl:variable name="keyName">
-                <xsl:choose>
-                  <xsl:when test="@add:key">
-                    <xsl:value-of select="@add:key" />
-                  </xsl:when>
-                  <xsl:otherwise>name</xsl:otherwise>
-                </xsl:choose>
-              </xsl:variable>
-              <xsl:variable name="keyValue" select="@*[name()=$keyName]" />
-              <xsl:if test="count($input/*[local-name()=$localName and @*[name()=$keyName]=$keyValue])=0">
-                <xsl:apply-templates mode="Copy" select="." />
-              </xsl:if>
-            </xsl:when>
-          </xsl:choose>
-        </xsl:if>
-      </xsl:for-each>
-    </xsl:copy>
-  </xsl:template>
-
-  <xsl:template match="@add:*" mode="Copy"/>
-
-  <xsl:template match="@set:*" mode="Copy">
-    <xsl:attribute name="{local-name()}">
-      <xsl:value-of select="."/>
-    </xsl:attribute>
-  </xsl:template>
-
-  <xsl:template match="*" mode="Copy">
-    <xsl:element name="{local-name()}">
-      <xsl:apply-templates select="@* | node()" mode="Copy"/>
-    </xsl:element>
-  </xsl:template>
-
-  <xsl:template match="@*" mode="Copy">
-    <xsl:copy>
-      <xsl:apply-templates select="@* | node()" mode="Copy"/>
-    </xsl:copy>
-  </xsl:template>
-
   <xsl:template match="@* | node()">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>
     </xsl:copy>
   </xsl:template>
-  <!--End Engine-->
+  <xsl:template match="/configuration">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()"/>
+      <xsl:if test="not(/configuration/appSettings)">
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/appSettings"/>
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+  <xsl:template match="/configuration/runtime/ab:assemblyBinding">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()"/>
+      <!--In case any other Newtonsoft.Json record exist, do nothing here. 
+      The binding version will be in any case > 6.0 because it is base C1 library version-->
+      <xsl:if test="not(/configuration/runtime/ab:assemblyBinding/ab:dependentAssembly[ab:assemblyIdentity[@name='Newtonsoft.Json']])">
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/runtime/ab:assemblyBinding/
+                     ab:dependentAssembly[ab:assemblyIdentity[@name='Newtonsoft.Json']]"/>
+      </xsl:if>
+      <xsl:if test="not(/configuration/runtime/ab:assemblyBinding/ab:dependentAssembly[ab:assemblyIdentity[@name='WebGrease']])">
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/runtime/ab:assemblyBinding/
+                     ab:dependentAssembly[ab:assemblyIdentity[@name='WebGrease']]"/>
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+  <xsl:template match="/configuration/appSettings">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()"/>
+      <xsl:if test="not(/configuration/appSettings/add[@key='Orckestra.Web.BundlingAndMinification.BundleAndMinifyScripts'])">
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/appSettings/
+                     add[@key='Orckestra.Web.BundlingAndMinification.BundleAndMinifyScripts']" />
+      </xsl:if>
+      <xsl:if test="not(/configuration/appSettings/add[@key='Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles'])">
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/appSettings/
+                     add[@key='Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles']" />
+      </xsl:if>
+      <xsl:if test="not(/configuration/appSettings/add[@key='Orckestra.Web.BundlingAndMinification.RemoveComments'])">
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/appSettings/
+                     add[@key='Orckestra.Web.BundlingAndMinification.RemoveComments']" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+  <xsl:template match="/configuration/system.webServer/modules">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()"/>
+      <xsl:if test="not(/configuration/system.webServer/modules/add[@name='OrckestraWebBundlingMinificationResponseFilter'])">
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/system.webServer/modules/
+                     add[@name='OrckestraWebBundlingAndMinificationResponseFilter']" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
 </xsl:stylesheet>

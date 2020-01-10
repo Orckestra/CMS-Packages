@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Web.Css.Sass.Package", "Composite.Web.Css.Sass.Package\Orckestra.Web.Css.Sass.Package.csproj", "{32CD2426-CB83-4BA9-847C-B5031EB02DFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Web.Css.Sass", "Composite.Web.Css.Sass\Orckestra.Web.Css.Sass.csproj", "{3482DD2A-4149-4CCA-AC52-DCD956F8E41D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32CD2426-CB83-4BA9-847C-B5031EB02DFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32CD2426-CB83-4BA9-847C-B5031EB02DFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32CD2426-CB83-4BA9-847C-B5031EB02DFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32CD2426-CB83-4BA9-847C-B5031EB02DFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3482DD2A-4149-4CCA-AC52-DCD956F8E41D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3482DD2A-4149-4CCA-AC52-DCD956F8E41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3482DD2A-4149-4CCA-AC52-DCD956F8E41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3482DD2A-4149-4CCA-AC52-DCD956F8E41D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5699452A-F6A6-4A3C-BB12-D10FF96D6E32}
+	EndGlobalSection
+EndGlobal
