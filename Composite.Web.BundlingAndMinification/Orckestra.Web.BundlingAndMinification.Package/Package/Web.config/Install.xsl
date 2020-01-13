@@ -12,23 +12,14 @@
   
   <!--
   Expected end configuration structure.
-  Based on empty C1 solution, we expect, that following nodes will always exist:
-  * configuration/system.webServer/modules
-  * runtime/assemplyBinding
+  Based on empty C1 solution, we expect, that runtime/assemplyBinding node will always exist:
   -->
   
   <xsl:variable name="structure">
     <configuration>
-      <system.webServer>
-        <modules runAllManagedModulesForAllRequests="true">
-          <add name="OrckestraWebBundlingAndMinificationResponseFilter"
-               type="Orckestra.Web.BundlingAndMinification.ResponseFilterHttpModule, Orckestra.Web.BundlingAndMinification" />
-        </modules>
-      </system.webServer>
       <appSettings>
         <add key="Orckestra.Web.BundlingAndMinification.BundleAndMinifyScripts" value="true"/>
         <add key="Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles" value="true"/>
-        <add key="Orckestra.Web.BundlingAndMinification.RemoveComments" value="true"/>
       </appSettings>
       <runtime>
         <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
@@ -78,19 +69,6 @@
       <xsl:if test="not(/configuration/appSettings/add[@key='Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles'])">
         <xsl:copy-of select="msxsl:node-set($structure)/configuration/appSettings/
                      add[@key='Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles']" />
-      </xsl:if>
-      <xsl:if test="not(/configuration/appSettings/add[@key='Orckestra.Web.BundlingAndMinification.RemoveComments'])">
-        <xsl:copy-of select="msxsl:node-set($structure)/configuration/appSettings/
-                     add[@key='Orckestra.Web.BundlingAndMinification.RemoveComments']" />
-      </xsl:if>
-    </xsl:copy>
-  </xsl:template>
-  <xsl:template match="/configuration/system.webServer/modules">
-    <xsl:copy>
-      <xsl:apply-templates select="@* | node()"/>
-      <xsl:if test="not(/configuration/system.webServer/modules/add[@name='OrckestraWebBundlingMinificationResponseFilter'])">
-        <xsl:copy-of select="msxsl:node-set($structure)/configuration/system.webServer/modules/
-                     add[@name='OrckestraWebBundlingAndMinificationResponseFilter']" />
       </xsl:if>
     </xsl:copy>
   </xsl:template>

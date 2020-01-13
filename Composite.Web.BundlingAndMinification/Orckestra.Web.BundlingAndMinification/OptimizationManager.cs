@@ -1,13 +1,9 @@
 ﻿using Composite.Core;
 using Composite.Core.Xml;
 using Orckestra.Web.Css.CompileFoundation;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
-using System.Net;
-using System.Text;
 using System.Web.Optimization;
 using System.Xml.Linq;
 using static Orckestra.Web.BundlingAndMinification.Helpers;
@@ -15,127 +11,12 @@ using static Orckestra.Web.BundlingAndMinification.Helpers;
 namespace Orckestra.Web.BundlingAndMinification
 {
     /// <summary>
-    /// Class to provide web page scripts and styles bundling and minification, and comments removing
+    /// Class to provide web page scripts and styles bundling and minification
     /// </summary>
     internal static class OptimizationManager
     {
-        /// <summary>
-        /// To compress page bytes according to selected compression method
-        /// </summary>
-        /// <param name="bytes">Bytes to process</param>
-        /// <param name="compressionMethod">Method to be used for compression</param>
-        /// <returns>Compressed bytes according to selected compression method</returns>
-        internal static byte[] GetCompressedBytes(byte[] bytes, DecompressionMethods compressionMethod)
-        {
-            if (compressionMethod == DecompressionMethods.GZip)
-            {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    using (GZipStream gzipStream = new GZipStream(ms, CompressionMode.Compress))
-                    {
-                        gzipStream.Write(bytes, 0, bytes.Length);
-                    }
-                    return ms.ToArray();
-                }
-            }
-            else if (compressionMethod == DecompressionMethods.Deflate)
-            {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    using (DeflateStream deflateStream = new DeflateStream(ms, CompressionMode.Compress))
-                    {
-                        deflateStream.Write(bytes, 0, bytes.Length);
-                    }
-                    return ms.ToArray();
-                }
-            }
-            return bytes;
-        }
-
-        /// <summary>
-        /// To return optimized page with bundled and minificated onsite file styles and scripts
-        /// </summary>
-        /// <param name="bytes">Original page bytes</param>
-        /// <param name="encoding">Encoding used by server to return a page</param>
-        /// <param name="bundleMinifyScripts">To process scripts or not</param>
-        /// <param name="bundleMinifyStyles">To process styles or not</param>
-        /// /// <param name="removeComments">To remove page comments or not</param>
-        /// <returns>Bytes of optimized page. In case something went wrong, original bytes will be returned.</returns>
-        internal static byte[] GetOptimizedBytes(
-            byte[] bytes,
-            Encoding encoding,
-            bool bundleMinifyScripts,
-            bool bundleMinifyStyles,
-            bool removeComments)
-        {
-            XhtmlDocument page;
-            try
-            {
-                page = XhtmlDocument.Parse(encoding.GetString(bytes));
-                /* Fixing XDocument parcing error, removing empty subset declaration, 
-                 * because it causes problems with styles on a page */
-                XDocumentType doctype = page.Document.DocumentType;
-                if (doctype.InternalSubset?.Trim() == string.Empty)
-                {
-                    doctype.InternalSubset = null;
-                }
-            }
-            catch (Exception ex)
-            {
-                /* Risk of logs trashing by repeatable errors, maybe a good idea to take
-                 * this into account on a logger level */
-                Log.LogError(nameof(OptimizationManager), ex);
-                return bytes;
-            }
-
-            Bundle bundle = default;
-
-            /* Attempts to optimize scripts and styles are divided. 
-             * In case some problems with scripts - at least to process styles, and visa versa */
-            if (bundleMinifyScripts)
-            {
-                try
-                {
-                    /* Processing page and outing bundle object, in case something went wrong 
-                     * to delete certain bundle, not to clear the whole table */
-                    page = GetPageWithOptimizedScripts(page, out bundle);
-                }
-                catch (Exception ex)
-                {
-                    Log.LogError(nameof(OptimizationManager), ex);
-                    if (bundle != null)
-                    {
-                        BundleTable.Bundles.Remove(bundle);
-                    }
-                }
-            }
-
-            if (bundleMinifyStyles)
-            {
-                try
-                {
-                    page = GetPageWithOptimizedStyles(page, out bundle);
-                }
-                catch (Exception ex)
-                {
-                    Log.LogError(nameof(OptimizationManager), ex);
-                    if (bundle != null)
-                    {
-                        BundleTable.Bundles.Remove(bundle);
-                    }
-                }
-            }
-
-            if (removeComments)
-            {
-                page.DescendantNodes().OfType<XComment>().Remove();
-            }
-
-            return encoding.GetBytes(page.ToString());
-        }
-
         #region scripts
-        private static XhtmlDocument GetPageWithOptimizedScripts(XhtmlDocument page, out Bundle bundle)
+        internal static XhtmlDocument GetPageWithOptimizedScripts(XhtmlDocument page, out Bundle bundle)
         {
             XhtmlDocument newPage = new XhtmlDocument(page);
 
@@ -186,7 +67,7 @@ namespace Orckestra.Web.BundlingAndMinification
         #endregion scripts
 
         #region styles
-        private static XhtmlDocument GetPageWithOptimizedStyles(XhtmlDocument page, out Bundle bundle)
+        internal static XhtmlDocument GetPageWithOptimizedStyles(XhtmlDocument page, out Bundle bundle)
         {
             XhtmlDocument newPage = new XhtmlDocument(page);
 
@@ -273,15 +154,15 @@ namespace Orckestra.Web.BundlingAndMinification
         #endregion styles
 
         private static void ProcessElements(
-            XElement insertArea, 
-            List<XElement> collection, 
-            string urlAttributeName, 
+            XElement insertArea,
+            List<XElement> collection,
+            string urlAttributeName,
             out SortedSet<string> internalRefElements)
         {
             List<string> ids = new List<string>();
             //to control dublicated inline elements
             HashSet<string> npHashes = new HashSet<string>();
-            //not to create new bundles in case styles or scripts on page will be the same but in diff. orders 
+            //sorted coll. not to create new bundles in case styles or scripts on page will be the same but in diff. orders 
             internalRefElements = new SortedSet<string>();
 
             foreach (XElement element in collection)
