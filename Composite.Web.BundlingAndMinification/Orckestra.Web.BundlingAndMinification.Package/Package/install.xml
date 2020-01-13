@@ -35,9 +35,6 @@
 
       * To turn on or off STYLES bundling and minification provide the same steps as with scripts, but allocate to the path
         configuration/appSettings/Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles
-
-      * If your package installation was unsuccessful and causes problems with web site or for some reasons you need manually 
-        disable this package, delete Orckestra.Web.BundlingAndMinification.dll file from Bin folder manually and restart Web server.
     </TechnicalDetails>
 		<Description>
       * To make your site works faster this package bundle and minificate onsite javascripts and styles files.
