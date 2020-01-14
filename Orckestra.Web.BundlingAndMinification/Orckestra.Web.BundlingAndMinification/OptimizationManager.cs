@@ -16,18 +16,13 @@ namespace Orckestra.Web.BundlingAndMinification
     internal static class OptimizationManager
     {
         #region scripts
-        internal static XhtmlDocument GetPageWithOptimizedScripts(XhtmlDocument page, out Bundle bundle)
+        internal static void OptimizeDocumentScripts(XhtmlDocument page)
         {
-            XhtmlDocument newPage = new XhtmlDocument(page);
-
-            GetScriptsToOptimize(newPage, out SortedSet<string> internalRefScripts);
-
-            bundle = default;
+            GetScriptsToOptimize(page, out SortedSet<string> internalRefScripts);
             if (internalRefScripts.Any())
             {
-                OptimizeInternalRefScripts(newPage, internalRefScripts, out bundle);
+                OptimizeInternalRefScripts(page, internalRefScripts);
             }
-            return newPage;
         }
 
         private static void GetScriptsToOptimize(XhtmlDocument page, out SortedSet<string> internalRefScripts)
@@ -36,12 +31,12 @@ namespace Orckestra.Web.BundlingAndMinification
             ProcessElements(page.Body, scriptElements, "src", out internalRefScripts);
         }
 
-        private static void OptimizeInternalRefScripts(XhtmlDocument page, SortedSet<string> internalRefScripts, out Bundle bundle)
+        private static void OptimizeInternalRefScripts(XhtmlDocument page, SortedSet<string> internalRefScripts)
         {
             //Using MD5 hash to avoid collisions which will be pretty critical here and in other usage places
             string pathKey = string.Join(string.Empty, internalRefScripts.ToArray()).GetMD5Hash();
             string bundleVirtualPath = "~/Bundles/Scripts_" + pathKey;
-            bundle = BundleTable.Bundles.GetBundleFor(bundleVirtualPath);
+            Bundle bundle = BundleTable.Bundles.GetBundleFor(bundleVirtualPath);
             if (bundle is null)
             {
                 bundle = new ScriptBundle(bundleVirtualPath);
@@ -67,18 +62,13 @@ namespace Orckestra.Web.BundlingAndMinification
         #endregion scripts
 
         #region styles
-        internal static XhtmlDocument GetPageWithOptimizedStyles(XhtmlDocument page, out Bundle bundle)
+        internal static void OptimizeDocumentStyles(XhtmlDocument page)
         {
-            XhtmlDocument newPage = new XhtmlDocument(page);
-
-            GetStylesToOptimize(newPage, out SortedSet<string> internalRefStyles);
-
-            bundle = default;
+            GetStylesToOptimize(page, out SortedSet<string> internalRefStyles);
             if (internalRefStyles.Any())
             {
-                OptimizeInternalRefStyles(newPage, internalRefStyles, out bundle);
+                OptimizeInternalRefStyles(page, internalRefStyles);
             }
-            return newPage;
         }
         private static void GetStylesToOptimize(XhtmlDocument page, out SortedSet<string> internalRefStyles)
         {
@@ -90,31 +80,29 @@ namespace Orckestra.Web.BundlingAndMinification
                                             path != null && rel != null && rel == "stylesheet"
                                             select obj)
                                             .Concat(page.Descendants(Namespaces.Xhtml + "style")).ToList();
-
             ProcessElements(page.Head, styleElements, "href", out internalRefStyles);
         }
 
-        private static void OptimizeInternalRefStyles(XhtmlDocument page, SortedSet<string> internalRefStyles, out Bundle bundle)
+        private static void OptimizeInternalRefStyles(XhtmlDocument page, SortedSet<string> internalRefStyles)
         {
             string pathKey = string.Join(string.Empty, internalRefStyles.ToArray()).GetMD5Hash();
             string bundleVirtualPath = "~/Bundles/Styles_" + pathKey;
-            bundle = BundleTable.Bundles.GetBundleFor(bundleVirtualPath);
+            Bundle bundle = BundleTable.Bundles.GetBundleFor(bundleVirtualPath);
             if (bundle is null)
             {
                 bundle = new StyleBundle(bundleVirtualPath);
                 List<ICssCompiler> cssCompilers = ServiceLocator.GetServices<ICssCompiler>().ToList();
-
                 List<string> notSupportedExtentions = new List<string>();
                 foreach (string source in internalRefStyles)
                 {
                     string extention = Path.GetExtension(source);
-                    if (notSupportedExtentions.Contains(extention))
-                    {
-                        continue;
-                    }
-                    else if (extention == ".css")
+                    if (extention == ".css")
                     {
                         bundle.Include(source, new CssRewriteUrlTransform());
+                    }
+                    else if (notSupportedExtentions.Contains(extention))
+                    {
+                        continue;
                     }
                     else
                     {
@@ -129,14 +117,11 @@ namespace Orckestra.Web.BundlingAndMinification
                         }
                     }
                 }
-
                 if (notSupportedExtentions.Any())
                 {
-                    Log.LogError(nameof(OptimizationManager),
-                        $"There are no available css compilers for " +
+                    Log.LogError(nameof(OptimizationManager), $"There are no available css compilers for " +
                         $"{string.Join(";", notSupportedExtentions.OrderBy(x => x))} extention(s), these styles will not work");
                 }
-
                 BundleTable.Bundles.Add(bundle);
             }
             string bundlerUrl = BundleTable.Bundles.ResolveBundleUrl(bundleVirtualPath);
@@ -148,7 +133,6 @@ namespace Orckestra.Web.BundlingAndMinification
                                         new XAttribute("href", bundlerUrl),
                                         new XAttribute("type", "text/css"),
                                         new XAttribute("rel", "stylesheet"));
-
             page.Head.Add(bundleXElement);
         }
         #endregion styles
@@ -180,7 +164,6 @@ namespace Orckestra.Web.BundlingAndMinification
 
                 string id = (string)element.Attribute("id");
                 string urlVal = (string)element.Attribute(urlAttributeName);
-
                 element.Remove();
 
                 if (ids.Any(f => f == id) || internalRefElements.Any(f => f == urlVal))
