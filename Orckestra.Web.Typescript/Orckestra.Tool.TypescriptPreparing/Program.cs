@@ -9,6 +9,7 @@ namespace Orckestra.Tool.TypescriptPreparing
 {
     /// <summary>
     /// One time code to move all typescripts to target folder, and to update files references after moving.
+    /// Execuable should be in Src folder
     /// Have not noticed on some improvements moments as it is 1 time run
     /// </summary>
     internal class Program
@@ -55,10 +56,10 @@ namespace Orckestra.Tool.TypescriptPreparing
             Dictionary<string, string> movements = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
             Log("#6. Moving typescripts to new destinations, saving moving history", ConsoleColor.DarkGreen);
-            MoveTypescripts(typescripts, _destPathTypescripts, movements);
+            MoveTypescripts(typescripts, _srcPath, _destPathTypescripts, movements);
 
              Log("#7. Moving typings to new destinations, saving moving history", ConsoleColor.DarkGreen);
-            MoveTypings(typings, _destPathTypings, movements);
+            MoveTypings(typings, _srcPathTypings, _destPathTypings, movements);
 
             Log("#8. Replacing references according to the moving history, creating relative pathes", ConsoleColor.DarkGreen);
             SetRelativeInsideReferences(movements);
@@ -180,17 +181,36 @@ namespace Orckestra.Tool.TypescriptPreparing
             Log($"{counter} references has been changed inside files to absolute", ConsoleColor.DarkGreen);
         }
 
-        //avoiding subdirectories inside abc.UI folder
-        private static void MoveTypescripts(List<string> files, string destPath, Dictionary<string, string> movements)
+        private static void MoveTypescripts(List<string> files, string sourcePath, string destPath, Dictionary<string, string> movements)
         {
             foreach (string el in files)
             {
-                string fileName = Path.GetFileName(el);
+                string newPath = el.Replace(sourcePath, destPath);
+                Match uip = Regex.Match(newPath, "\\\\(Source\\\\Typescript\\\\)", RegexOptions.IgnoreCase);
+                if (!uip.Success)
+                {
+                    throw new Exception("Cannot find source folder part");
+                }
+                newPath = newPath.Remove(uip.Groups[1].Index, uip.Groups[1].Value.Length);
 
-                string folder = el.Remove(0, _srcPath.Length + 1);
-                folder = folder.Remove(folder.IndexOf("\\"));
+                uip = Regex.Match(newPath, string.Concat(Regex.Escape(destPath), 
+                    "\\\\(Composer\\.).+?(\\.UI)"), RegexOptions.IgnoreCase);
+                if (!uip.Success)
+                {
+                    uip = Regex.Match(newPath, string.Concat(Regex.Escape(destPath), 
+                    "\\\\(Composer\\.UI\\\\)"), RegexOptions.IgnoreCase);
+                    if (!uip.Success)
+                    {
+                        throw new Exception("Cannot compine new path");
+                    }
+                    newPath = newPath.Remove(uip.Groups[1].Index, uip.Groups[1].Value.Length);
+                }
+                else
+                {
+                    newPath = newPath.Remove(uip.Groups[2].Index, uip.Groups[2].Value.Length)
+                        .Remove(uip.Groups[1].Index, uip.Groups[1].Value.Length);
+                }
 
-                string newPath = Path.Combine(destPath, folder, fileName);
                 if (File.Exists(newPath))
                 {
                     throw new Exception("File already exist, files conflict");
@@ -207,11 +227,12 @@ namespace Orckestra.Tool.TypescriptPreparing
             Log($"{files.Count()} files has been moved to new destination", ConsoleColor.DarkGreen);
         }
 
-        private static void MoveTypings(List<string> files, string destPath, Dictionary<string, string> movements)
+        private static void MoveTypings(List<string> files, string sourcePath, string destPath, Dictionary<string, string> movements)
         {
             foreach (string el in files)
             {
-                string newPath = el.Replace(_srcPathTypings, destPath);
+                string newPath = el.Replace(sourcePath, destPath);
+           
                 if (File.Exists(newPath))
                 {
                     throw new Exception("File already exist, files conflict");
