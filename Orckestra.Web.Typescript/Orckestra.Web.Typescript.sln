@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Web.Typescript", "Orckestra.Web.Typescript\Orckestra.Web.Typescript.csproj", "{9097655B-F2CF-4E1F-B9FC-EEBFBF75F927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orckestra.Web.Typescript.Package", "Orckestra.Web.Typescript.Package\Orckestra.Web.Typescript.Package.csproj", "{4D94C2C0-4F78-46C8-8EC1-919E1F853935}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orckestra.Tool.TypescriptPreparing", "Orckestra.Tool.TypescriptPreparing\Orckestra.Tool.TypescriptPreparing.csproj", "{71157236-E86E-4B96-AE57-E7FEFB655974}"
 EndProject
 Global
@@ -11,6 +15,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9097655B-F2CF-4E1F-B9FC-EEBFBF75F927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9097655B-F2CF-4E1F-B9FC-EEBFBF75F927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9097655B-F2CF-4E1F-B9FC-EEBFBF75F927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9097655B-F2CF-4E1F-B9FC-EEBFBF75F927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D94C2C0-4F78-46C8-8EC1-919E1F853935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D94C2C0-4F78-46C8-8EC1-919E1F853935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D94C2C0-4F78-46C8-8EC1-919E1F853935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D94C2C0-4F78-46C8-8EC1-919E1F853935}.Release|Any CPU.Build.0 = Release|Any CPU
 		{71157236-E86E-4B96-AE57-E7FEFB655974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{71157236-E86E-4B96-AE57-E7FEFB655974}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71157236-E86E-4B96-AE57-E7FEFB655974}.Release|Any CPU.ActiveCfg = Release|Any CPU

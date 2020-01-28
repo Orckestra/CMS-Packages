@@ -9,7 +9,6 @@ namespace Orckestra.Tool.TypescriptPreparing
 {
     /// <summary>
     /// One time code to move all typescripts to target folder, and to update files references after moving.
-    /// Execuable should be in Src folder
     /// Have not noticed on some improvements moments as it is 1 time run
     /// </summary>
     internal class Program
@@ -21,6 +20,8 @@ namespace Orckestra.Tool.TypescriptPreparing
         private static string _destPathTypings;
 
         private static string _destPathTypescripts;
+
+        private static string _destPathTests;
 
         static void Main()
         {
@@ -53,22 +54,34 @@ namespace Orckestra.Tool.TypescriptPreparing
             Log("#5. Transfering relative references inside typings to absolute according to the current paths", ConsoleColor.DarkGreen);
             SetAbsoluteInsideReferences(ref typings);
 
+            Log("#6. Getting tests to process", ConsoleColor.DarkGreen);
+            List<string> tests = GetFilesToProcess("tests");
+
+            Log("#7. Transfering relative references inside tests to absolute according to the current paths", ConsoleColor.DarkGreen);
+            SetAbsoluteInsideReferences(ref tests);
+
             Dictionary<string, string> movements = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
-            Log("#6. Moving typescripts to new destinations, saving moving history", ConsoleColor.DarkGreen);
+            Log("#8. Moving typescripts to new destinations, saving moving history", ConsoleColor.DarkGreen);
             MoveTypescripts(typescripts, _srcPath, _destPathTypescripts, movements);
 
-             Log("#7. Moving typings to new destinations, saving moving history", ConsoleColor.DarkGreen);
+            Log("#9. Moving typings to new destinations, saving moving history", ConsoleColor.DarkGreen);
             MoveTypings(typings, _srcPathTypings, _destPathTypings, movements);
 
-            Log("#8. Replacing references according to the moving history, creating relative pathes", ConsoleColor.DarkGreen);
+            Log("#10. Moving tests to new destinations, saving moving history", ConsoleColor.DarkGreen);
+            MoveTests(tests, _srcPath, _destPathTests, movements);
+
+            Log("#11. Replacing references according to the moving history, creating relative pathes", ConsoleColor.DarkGreen);
             SetRelativeInsideReferences(movements);
 
-            Log("#9. Deleting source Typescripts folders", ConsoleColor.DarkGreen);
+            Log("#12. Deleting source Typescripts folders", ConsoleColor.DarkGreen);
             DeleteSourceTypescriptsFolders(typescripts);
 
-            Log("#10. Deleting source Typings folder", ConsoleColor.DarkGreen);
+            Log("#10. Deleting source Typings folders", ConsoleColor.DarkGreen);
             DeleteSourceTypingsFolder();
+
+            Log("Deleting source Tests folders", ConsoleColor.DarkGreen);
+            DeleteSourceTestsFolders(tests);
 
             Log(new string('*', 30), ConsoleColor.DarkGreen);
             Log("Successfully completed, check the log", ConsoleColor.DarkGreen);
@@ -118,6 +131,15 @@ namespace Orckestra.Tool.TypescriptPreparing
                 Directory.CreateDirectory(_destPathTypescripts);
             }
             #endregion typescripts
+
+            #region tests
+            _destPathTests = Path.Combine(_destPath, "Tests");
+            if (!Directory.Exists(_destPathTests))
+            {
+                Log($"Directory {_destPathTests} does not exist. Creating it.", ConsoleColor.DarkCyan);
+                Directory.CreateDirectory(_destPathTests);
+            }
+            #endregion tests
 
             Log($"Successfully checked paths", ConsoleColor.DarkGreen);
         }
@@ -207,8 +229,7 @@ namespace Orckestra.Tool.TypescriptPreparing
                 }
                 else
                 {
-                    newPath = newPath.Remove(uip.Groups[2].Index, uip.Groups[2].Value.Length)
-                        .Remove(uip.Groups[1].Index, uip.Groups[1].Value.Length);
+                    newPath = newPath.Remove(uip.Groups[2].Index, uip.Groups[2].Value.Length);
                 }
 
                 if (File.Exists(newPath))
@@ -233,6 +254,51 @@ namespace Orckestra.Tool.TypescriptPreparing
             {
                 string newPath = el.Replace(sourcePath, destPath);
            
+                if (File.Exists(newPath))
+                {
+                    throw new Exception("File already exist, files conflict");
+                }
+
+                DirectoryInfo neededFolder = Directory.GetParent(newPath);
+                if (!neededFolder.Exists)
+                {
+                    Directory.CreateDirectory(neededFolder.FullName);
+                }
+                File.Move(el, newPath);
+                movements.Add(el, newPath);
+            }
+            Log($"{files.Count()} files has been moved to new destination", ConsoleColor.DarkGreen);
+        }
+
+        private static void MoveTests(List<string> files, string sourcePath, string destPath, Dictionary<string, string> movements)
+        {
+            foreach (string el in files)
+            {
+                string newPath = el.Replace(sourcePath, destPath);
+                Match uip = Regex.Match(newPath, "\\\\(Source\\\\Tests\\\\unit\\\\)", RegexOptions.IgnoreCase);
+                if (!uip.Success)
+                {
+                    throw new Exception("Cannot find source folder part");
+                }
+                newPath = newPath.Remove(uip.Groups[1].Index, uip.Groups[1].Value.Length);
+
+                uip = Regex.Match(newPath, string.Concat(Regex.Escape(destPath),
+                    "\\\\(Composer\\.).+?(\\.UI)"), RegexOptions.IgnoreCase);
+                if (!uip.Success)
+                {
+                    uip = Regex.Match(newPath, string.Concat(Regex.Escape(destPath),
+                    "\\\\(Composer\\.UI\\\\)"), RegexOptions.IgnoreCase);
+                    if (!uip.Success)
+                    {
+                        throw new Exception("Cannot compine new path");
+                    }
+                    newPath = newPath.Remove(uip.Groups[1].Index, uip.Groups[1].Value.Length);
+                }
+                else
+                {
+                    newPath = newPath.Remove(uip.Groups[2].Index, uip.Groups[2].Value.Length);
+                }
+
                 if (File.Exists(newPath))
                 {
                     throw new Exception("File already exist, files conflict");
@@ -317,6 +383,25 @@ namespace Orckestra.Tool.TypescriptPreparing
             }
         }
 
+        private static void DeleteSourceTestsFolders(List<string> files)
+        {
+            foreach (string el in files)
+            {
+                string sdr = "\\Source\\Tests\\";
+                int sIndex = el.LastIndexOf(sdr, StringComparison.OrdinalIgnoreCase);
+                if (sIndex == -1)
+                {
+                    throw new Exception("Cannot find path part");
+                }
+                string path = el.Remove(sIndex + sdr.Length);
+                if (Directory.Exists(path))
+                {
+                    Directory.Delete(path, true);
+                    Log($"Source directory {path} has been deleted", ConsoleColor.DarkGreen);
+                }
+            }
+        }
+
         private static void DeleteSourceTypingsFolder()
         {
             Directory.Delete(_srcPathTypings, true);
@@ -342,10 +427,7 @@ namespace Orckestra.Tool.TypescriptPreparing
             return absolutePath;
         }
 
-        private static string GetAbsolutePath(string relativePath)
-        {
-            return Path.GetFullPath(relativePath);
-        }
+        private static string GetAbsolutePath(string relativePath) => Path.GetFullPath(relativePath);
     }
 
     internal static class Logger

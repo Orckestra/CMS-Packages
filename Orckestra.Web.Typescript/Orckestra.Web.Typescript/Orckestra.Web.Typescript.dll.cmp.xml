@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- To affect any changes in this configuration file you have to restart an app. -->
+<settings 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="localhost Orckestra.Web.Typescript.dll.cmp.xsd">
+  <!-- Timeout in seconds to wait a compilation result, cannot be empty, zero or negative -->
+  <compilerTimeOutSeconds>15</compilerTimeOutSeconds>
+  <!--Compiling tasks, you can specify 1 or more compileTask-->
+  <typescriptTasks>
+    <typescriptTask>
+      <!--Possible mode values:
+      - "once" - typescripts will be compiled into javascript once on an application (website) startup.
+      - "dynamic" - typescripts will be compiled into javacrtipt on application startup and in case of watched typescripts changes.
+        In case of dynamic mode you have to set up path(s) to be watched in pathsToWatch section.
+      - "off" - in this case rule will be ignored.-->
+      <mode>once</mode>
+      <!-- If outFile from tsconfig.json is already exist and this value is true - compilation task will be aborted. To use 
+      this option you have to set up outFile in tsconfig.json, otherwise it will be ignored -->
+      <cancelIfOutFileExist>true</cancelIfOutFileExist>
+      <!-- If you use dynamic mode, specify the filepathes to be monitored for changes, otherwise will be an exception.
+      Notice, that files or folders to be included into compilation you have to specify in tsconfig.json file-->
+      <pathsToWatch>
+        <pathToWatch>./UI.Package/Typescript</pathToWatch>
+      </pathsToWatch>
+      <!-- A mask for extentions to be watched for changes. If you need multiple, use | : *.ts|*.js. Compulsory for dynamic mode-->
+      <fileMask>*.ts</fileMask>
+      <!-- A path to tsconfig.json file, which includes all typescript compilation options. Compulsory.
+      More about it here: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html -->
+      <pathTypescriptConfigFile>./tsconfig.json</pathTypescriptConfigFile>
+      <!-- Section if you need to provide minification of a compiled file. To use it, you must setup outFile value
+      in tsconfig.json -->
+      <minification>
+        <!-- To turn on or to turn off minification of a compiled file. 
+        If you use BundlingAndMinification package on your website, don't use this feature to save processor time-->
+        <useMinification>false</useMinification>
+        <!-- A file name of minified javascript. Compulsory if minification is turned on-->
+        <minifiedFileName>orckestra.composer.min.js</minifiedFileName>
+      </minification>
+    </typescriptTask>
+  </typescriptTasks>
+</settings>
