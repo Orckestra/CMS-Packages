@@ -77,7 +77,7 @@ module Orckestra.Composer {
                         container: $(item),
                         dataItemId: item.getAttribute('data-item-id'),
                         templateName: bladeName,
-                        viewModel: JSON.parse(item.getAttribute('data-context') || '{}'),
+                        viewModel: JSON.parse(item.getAttribute('data-context') || window[item.getAttribute('data-context-var')] || '{}'),
                         window: window
                     };
 

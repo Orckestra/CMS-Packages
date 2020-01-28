@@ -5,62 +5,62 @@
 ///<reference path='./Controller/SearchBoxController.ts' />
 ///<reference path='./Controller/PageNotFoundAnalyticsController.ts' />
 ///<reference path='./Controller/LanguageSwitchController.ts' />
-///<reference path='./Product/ProductSearch/SortBySearchController.ts' />
-///<reference path='./Product/ProductSearch/FacetSearchController.ts' />
-///<reference path='./Product/ProductSearch/SearchResultsController.ts' />
-///<reference path='./Product/ProductSearch/SearchSummaryController.ts' />
-///<reference path='./Product/ProductSearch/QuickViewController.ts' />
-///<reference path='./Product/ProductSearch/SelectedFacetSearchController.ts' />
-///<reference path='./Cart/AddToCartNotification/AddToCartNotificationController.ts' />
-///<reference path='./Cart/CartSummary/FullCartController.ts' />
-///<reference path='./Cart/MiniCart/MiniCartController.ts' />
-///<reference path='./Cart/MiniCart/MiniCartSummaryController.ts' />
-///<reference path='./Cart/Coupons/CouponController.ts' />
-///<reference path='./Product/ProductDetail/ProductDetailController.ts' />
-///<reference path='./Product/RelatedProducts/RelatedProductsController.ts' />
-///<reference path='./Product/ProductSpecification/ProductSpecificationsController.ts' />
-///<reference path='./Product/ProductDetail/ProductZoomController.ts' />
-///<reference path='./Cart/OrderSummary/OrderSummaryController.ts' />
-///<reference path='./Cart/CheckoutGuestCustomerInfo/GuestCustomerInfoCheckoutController.ts' />
-///<reference path='./Cart/CheckoutShippingAddress/ShippingAddressCheckoutController.ts' />
-///<reference path='./Cart/CheckoutShippingMethod/ShippingMethodCheckoutController.ts' />
-///<reference path='./Cart/CheckoutBillingAddress/BillingAddressCheckoutController.ts' />
-///<reference path='./Cart/CheckoutBillingAddressRegistered/BillingAddressRegisteredCheckoutController.ts' />
-///<reference path='./Cart/CheckoutOrderConfirmation/CheckoutOrderConfirmationController.ts' />
-///<reference path='./Cart/CheckoutComplete/CheckoutCompleteController.ts' />
-///<reference path='./MyAccount/AddressList/AddressListController.ts' />
-///<reference path='./MyAccount/ChangePassword/ChangePasswordController.ts' />
-///<reference path='./MyAccount/CreateAccount/CreateAccountController.ts' />
-///<reference path='./MyAccount/EditAddress/EditAddressController.ts' />
-///<reference path='./MyAccount/ForgotPassword/ForgotPasswordController.ts' />
-///<reference path='./MyAccount/AccountHeader/AccountHeaderController.ts' />
-///<reference path='./MyAccount/UpdateAccount/UpdateAccountController.ts' />
-///<reference path='./MyAccount/NewPassword/NewPasswordController.ts' />
-///<reference path='./MyAccount/ReturningCustomer/ReturningCustomerController.ts' />
-///<reference path='./MyAccount/WishList/MyWishListController.ts' />
-///<reference path='./MyAccount/WishListShared/SharedWishListController.ts' />
-///<reference path='./MyAccount/WishList/WishListInHeaderController.ts' />
-///<reference path='./Cart/CheckoutShippingAddressRegistered/ShippingAddressRegisteredController.ts' />
-///<reference path='./Cart/CheckoutOrderSummary/CheckoutOrderSummaryController.ts' />
-///<reference path='./Cart/CheckoutOrderSummary/CompleteCheckoutOrderSummaryController.ts' />
-///<reference path='./Cart/CheckoutPayment/CheckoutPaymentController.ts' />
-///<reference path='./Cart/CheckoutCommon/CheckoutNavigationController.ts' />
-///<reference path='./MyAccount/SignInHeader/SignInHeaderController.ts' />
-///<reference path='./MyAccount/MyAccount/MyAccountController.ts' />
-///<reference path='./Cart/OrderHistory/CurrentOrdersController.ts' />
-///<reference path='./Cart/OrderHistory/PastOrdersController.ts' />
-///<reference path='./Cart/OrderDetails/OrderDetailsController.ts' />
-///<reference path='./Cart/FindMyOrder/FindMyOrderController.ts' />
+///<reference path='./Composer.Product/ProductSearch/SortBySearchController.ts' />
+///<reference path='./Composer.Product/ProductSearch/FacetSearchController.ts' />
+///<reference path='./Composer.Product/ProductSearch/SearchResultsController.ts' />
+///<reference path='./Composer.Product/ProductSearch/SearchSummaryController.ts' />
+///<reference path='./Composer.Product/ProductSearch/QuickViewController.ts' />
+///<reference path='./Composer.Product/ProductSearch/SelectedFacetSearchController.ts' />
+///<reference path='./Composer.Cart/AddToCartNotification/AddToCartNotificationController.ts' />
+///<reference path='./Composer.Cart/CartSummary/FullCartController.ts' />
+///<reference path='./Composer.Cart/MiniCart/MiniCartController.ts' />
+///<reference path='./Composer.Cart/MiniCart/MiniCartSummaryController.ts' />
+///<reference path='./Composer.Cart/Coupons/CouponController.ts' />
+///<reference path='./Composer.Product/ProductDetail/ProductDetailController.ts' />
+///<reference path='./Composer.Product/RelatedProducts/RelatedProductsController.ts' />
+///<reference path='./Composer.Product/ProductSpecification/ProductSpecificationsController.ts' />
+///<reference path='./Composer.Product/ProductDetail/ProductZoomController.ts' />
+///<reference path='./Composer.Cart/OrderSummary/OrderSummaryController.ts' />
+///<reference path='./Composer.Cart/CheckoutGuestCustomerInfo/GuestCustomerInfoCheckoutController.ts' />
+///<reference path='./Composer.Cart/CheckoutShippingAddress/ShippingAddressCheckoutController.ts' />
+///<reference path='./Composer.Cart/CheckoutShippingMethod/ShippingMethodCheckoutController.ts' />
+///<reference path='./Composer.Cart/CheckoutBillingAddress/BillingAddressCheckoutController.ts' />
+///<reference path='./Composer.Cart/CheckoutBillingAddressRegistered/BillingAddressRegisteredCheckoutController.ts' />
+///<reference path='./Composer.Cart/CheckoutOrderConfirmation/CheckoutOrderConfirmationController.ts' />
+///<reference path='./Composer.Cart/CheckoutComplete/CheckoutCompleteController.ts' />
+///<reference path='./Composer.MyAccount/AddressList/AddressListController.ts' />
+///<reference path='./Composer.MyAccount/ChangePassword/ChangePasswordController.ts' />
+///<reference path='./Composer.MyAccount/CreateAccount/CreateAccountController.ts' />
+///<reference path='./Composer.MyAccount/EditAddress/EditAddressController.ts' />
+///<reference path='./Composer.MyAccount/ForgotPassword/ForgotPasswordController.ts' />
+///<reference path='./Composer.MyAccount/AccountHeader/AccountHeaderController.ts' />
+///<reference path='./Composer.MyAccount/UpdateAccount/UpdateAccountController.ts' />
+///<reference path='./Composer.MyAccount/NewPassword/NewPasswordController.ts' />
+///<reference path='./Composer.MyAccount/ReturningCustomer/ReturningCustomerController.ts' />
+///<reference path='./Composer.MyAccount/WishList/MyWishListController.ts' />
+///<reference path='./Composer.MyAccount/WishListShared/SharedWishListController.ts' />
+///<reference path='./Composer.MyAccount/WishList/WishListInHeaderController.ts' />
+///<reference path='./Composer.Cart/CheckoutShippingAddressRegistered/ShippingAddressRegisteredController.ts' />
+///<reference path='./Composer.Cart/CheckoutOrderSummary/CheckoutOrderSummaryController.ts' />
+///<reference path='./Composer.Cart/CheckoutOrderSummary/CompleteCheckoutOrderSummaryController.ts' />
+///<reference path='./Composer.Cart/CheckoutPayment/CheckoutPaymentController.ts' />
+///<reference path='./Composer.Cart/CheckoutCommon/CheckoutNavigationController.ts' />
+///<reference path='./Composer.MyAccount/SignInHeader/SignInHeaderController.ts' />
+///<reference path='./Composer.MyAccount/MyAccount/MyAccountController.ts' />
+///<reference path='./Composer.Cart/OrderHistory/CurrentOrdersController.ts' />
+///<reference path='./Composer.Cart/OrderHistory/PastOrdersController.ts' />
+///<reference path='./Composer.Cart/OrderDetails/OrderDetailsController.ts' />
+///<reference path='./Composer.Cart/FindMyOrder/FindMyOrderController.ts' />
 ///<reference path='./ErrorHandling/ErrorController.ts' />
 
-///<reference path='./Store/StoreLocator/StoreLocatorController.ts' />
-///<reference path='./Store/StoreLocator/StoreDetailsController.ts' />
-///<reference path='./Store/StoreDirectory/StoresDirectoryController.ts' />
-///<reference path='./Store/StoreInventory/StoreInventoryController.ts' />
-///<reference path='./MyAccount/RecurringSchedule/MyRecurringScheduleController.ts' />
-///<reference path='./MyAccount/RecurringSchedule/MyRecurringScheduleDetailsController.ts' />
-///<reference path='./MyAccount/RecurringCart/MyRecurringCartsController.ts' />
-///<reference path='./MyAccount/RecurringCart/MyRecurringCartDetailsController.ts' />
+///<reference path='./Composer.Store/StoreLocator/StoreLocatorController.ts' />
+///<reference path='./Composer.Store/StoreLocator/StoreDetailsController.ts' />
+///<reference path='./Composer.Store/StoreDirectory/StoresDirectoryController.ts' />
+///<reference path='./Composer.Store/StoreInventory/StoreInventoryController.ts' />
+///<reference path='./Composer.MyAccount/RecurringSchedule/MyRecurringScheduleController.ts' />
+///<reference path='./Composer.MyAccount/RecurringSchedule/MyRecurringScheduleDetailsController.ts' />
+///<reference path='./Composer.MyAccount/RecurringCart/MyRecurringCartsController.ts' />
+///<reference path='./Composer.MyAccount/RecurringCart/MyRecurringCartDetailsController.ts' />
 
 (() => {
     'use strict';
@@ -128,7 +128,6 @@
                 { name: 'MyAccount.NewPassword', controller: Orckestra.Composer.NewPasswordController },
                 { name: 'MyAccount.ReturningCustomer', controller: Orckestra.Composer.ReturningCustomerController },
                 { name: 'MyAccount.SignInHeader', controller: Orckestra.Composer.SignInHeaderController },
-                { name: 'MyAccount.MyAccountMenu', controller: Orckestra.Composer.MyAccountController },
                 { name: 'MyAccount.MyWishList', controller: Orckestra.Composer.MyWishListController },
                 { name: 'MyAccount.SharedWishList', controller: Orckestra.Composer.SharedWishListController },
                 { name: 'MyAccount.WishListInHeader', controller: Orckestra.Composer.WishListInHeaderController },
