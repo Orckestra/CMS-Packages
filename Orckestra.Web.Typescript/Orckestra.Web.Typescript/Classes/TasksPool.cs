@@ -48,7 +48,7 @@ namespace Orckestra.Web.Typescript.Classes
                         {
                             el.CompilerService.InvokeService();
                         }
-                        if (!el.WatcherService.IsInvoked())
+                        if (el.CompilerService.IsInvoked() && !el.WatcherService.IsInvoked())
                         {
                             el.WatcherService.InvokeService();
                         }
