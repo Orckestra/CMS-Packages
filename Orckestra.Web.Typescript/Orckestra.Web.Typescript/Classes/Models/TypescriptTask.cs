@@ -1,4 +1,4 @@
-﻿using Orckestra.Web.Typescript.Enums;
+﻿using Orckestra.Web.Typescript.Interfaces;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
@@ -7,23 +7,34 @@ namespace Orckestra.Web.Typescript.Classes.Models
     [XmlRoot("typescriptTask")]
     public class TypescriptTask
     {
-        [XmlElement("mode")]
-        public Mode Mode { get; set; }
+        [XmlElement("taskName")]
+        public string TaskName { get; set; }
 
-        [XmlElement("cancelIfOutFileExist")]
-        public bool CancelIfOutFileExist { get; set; }
+        [XmlElement("allowOverwrite")]
+        public bool AllowOverwrite { get; set; }
 
-        [XmlArray("pathsToWatch")]
-        [XmlArrayItem("pathToWatch")]
-        public List<string> PathsToWatch { get; set; }
+        [XmlArray("pathsToWatchForChanges")]
+        [XmlArrayItem("pathToWatchForChanges")]
+        public List<string> PathsToWatchForChanges { get; set; }
 
         [XmlElement("pathTypescriptConfigFile")]
         public string PathTypescriptConfigFile { get; set; }
 
+        [XmlElement("compilerTimeOutSeconds")]
+        public int CompilerTimeOutSeconds { get; set; }
+
         [XmlElement("fileMask")]
         public string FileMask { get; set; }
 
-        [XmlElement("minification")]
-        public Minification Minification { get; set; }
+        [XmlElement("useMinification")]
+        public bool UseMinification { get; set; }
+
+        [XmlElement("minifiedFileName")]
+        public string MinifiedFileName { get; set; }
+
+        [XmlIgnore]
+        public ITypescriptCompileService CompilerService { get; set; }
+        [XmlIgnore]
+        public ITypescriptWatcherService WatcherService { get; set; }
     }
 }

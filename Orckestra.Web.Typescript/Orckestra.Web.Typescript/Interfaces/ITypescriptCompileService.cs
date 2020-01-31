@@ -1,15 +1,14 @@
-﻿
-namespace Orckestra.Web.Typescript.Interfaces
+﻿namespace Orckestra.Web.Typescript.Interfaces
 {
-    public interface ITypescriptCompileService
+    public interface ITypescriptCompileService : ITypescriptService
     {
-        ITypescriptCompileService ConfigureService(
+        void ConfigureService(
+            string taskName,
             string baseDirPath, 
             int compilerTimeOutSeconds, 
             string pathConfigFile, 
-            bool cancelIfOutFileExist,
-            bool? useMinification, 
+            bool allowOverwrite,
+            bool useMinification, 
             string minifiedName);
-        ITypescriptCompileService InvokeService();
     }
 }

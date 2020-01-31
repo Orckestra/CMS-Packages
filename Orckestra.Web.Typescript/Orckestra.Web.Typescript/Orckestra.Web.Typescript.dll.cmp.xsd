@@ -1,35 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!--Schema of settings file-->
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="settings">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="compilerTimeOutSeconds" type="xs:unsignedByte" />
         <xs:element name="typescriptTasks">
           <xs:complexType>
             <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="typescriptTask">
+              <xs:element name="typescriptTask">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="mode" type="xs:string" />
-                    <xs:element name="cancelIfOutFileExist" type="xs:boolean" />
-                    <xs:element name="pathsToWatch">
+                    <xs:element name="compilerTimeOutSeconds" type="xs:unsignedByte" />
+                    <xs:element name="taskName" type="xs:string" />
+                    <xs:element name="allowOverwrite" type="xs:boolean" />
+                    <xs:element name="pathsToWatchForChanges">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element maxOccurs="unbounded" name="pathToWatch" type="xs:string" />
+                          <xs:element name="pathToWatchForChanges" type="xs:string" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="fileMask" type="xs:string" />
                     <xs:element name="pathTypescriptConfigFile" type="xs:string" />
-                    <xs:element name="minification">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="useMinification" type="xs:boolean" />
-                          <xs:element name="minifiedFileName" type="xs:string" />
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
+                    <xs:element name="useMinification" type="xs:boolean" />
+                    <xs:element name="minifiedFileName" type="xs:string" />
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>

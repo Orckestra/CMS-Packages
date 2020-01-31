@@ -17,32 +17,29 @@
       Package provides typescripts compilation into javascripts using Microsoft Typescript Compilator of version 3.1.5.
       Typescripts changes can critically influence on alive web site, therefore pretty recommended to provide any tests,
       changes or configurations both with this package and with your typescripts in test enviroment, not on alive web site.
-      In case you have a need to disable this package manually, move Orckestra.Web.Typescript.dll file from Bin folder of 
-      your website. 
     </TechnicalDetails>
 		<Description>
       Package is preconfigured to be ready to use on default RefApp application. By default, typescripts will be looking at
-      the folder ./UI.Package/Typescript and will be compiled into a file /UI.Package/Javascript/orckestra.composer.js. By
-      default, compilation will be provided on website startup in case there are existed no orckestra.composer.js file.
+      the folder ~/UI.Package/Typescript and will be compiled into a file ~/UI.Package/Javascript/orckestra.composer.js. 
 
       Package has 3 level of settings:
       - General settings;
       - Package settings;
       - Compilation settings.
 
-      General settings located in web.config of your site and allows you to turn on or to turn off this package.
+      General settings located in the root Web.config of your site and allows you to turn on or to turn off this package.
       To turn on or to turn off this package open web.config in the root of your site, locate to configuration/appSettings
       and find a key "Orckestra.Web.Typescripb.Enable". Here you can set up "true" or "false" value depending what you need.
 
-      Package settings allows you to create typescript tasks to be executed. There can be any amount of typescript tasks.
-      To manage your package settings, open Bin folder and locate to Orckestra.Web.Typescript.dll.cmp.xml file. Explanation
+      Package settings located in Bin folder of your site and allows you to change package settings and to create tasks.
+      To manage your package settings, open Bin folder and locate to the Orckestra.Web.Typescript.dll.cmp.xml file. Explanation
       about purpose of every setting you can find in this file in comments. Also a typescript task contains a path to a
       compilation settings file.
 
-      Compilation settings - it is a tsconfig.json file, originally used by TypescriptCompiler for compilation. In preconfigured
-      typescript task (package settings level) signed a path to a tsconfig.json file with minimum settings, but you can provide
-      any other compilation settings, which are available for tsconfig.json file. The only restriction, to use minification, you 
-      must set up outFile value. More about tsconfig read at https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+      Compilation settings defined in tsconfig.json file, originally used by TypescriptCompiler for compilation. The path to the
+      tsconfig.json file is configuring in tasks in package settings. Default tsconfig.json file has minimun settings, but you 
+      can specify any other compilation settings. The only restriction, you must set up outFile value there. 
+      More about tsconfig read at https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
     </Description>
 	</mi:PackageInformation>
   <mi:PackageFragmentInstallers>

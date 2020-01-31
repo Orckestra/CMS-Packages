@@ -59,5 +59,14 @@
       </xsl:if>
     </xsl:copy>
   </xsl:template>
+
+  <xsl:template match="/configuration/system.webServer/modules">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" />
+      <xsl:if test="not(add[@name='TypescriptHttpModule'])">
+        <add name="TypescriptHttpModule" type="Orckestra.Web.Typescript.TypescriptHttpModule, Orckestra.Web.TypeScript" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
   
 </xsl:stylesheet>

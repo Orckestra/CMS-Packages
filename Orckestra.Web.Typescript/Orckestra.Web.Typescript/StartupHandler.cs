@@ -3,11 +3,12 @@ using Composite.Core.Application;
 using Microsoft.Extensions.DependencyInjection;
 using Orckestra.Web.Typescript.Classes;
 using Orckestra.Web.Typescript.Classes.Models;
-using Orckestra.Web.Typescript.Enums;
+using Orckestra.Web.Typescript.Classes.Services;
 using Orckestra.Web.Typescript.Interfaces;
-using Orckestra.Web.Typescript.Services;
-using System.Configuration;
+using System;
+using System.Linq;
 using System.Web.Hosting;
+using static Orckestra.Web.Typescript.Classes.Helper;
 
 namespace Orckestra.Web.Typescript
 {
@@ -24,38 +25,73 @@ namespace Orckestra.Web.Typescript
 
         public static void OnInitialized()
         {
-            if (ConfigurationManager.AppSettings["Orckestra.Web.Typescript.Enable"] != "true")
+            if (!PackageEnabled)
             {
+                return;
+            }
+
+            Settings settings;
+            try
+            {
+                settings = GetSettings();
+            }
+            catch (Exception ex)
+            {
+                RegisterException(ex);
+                return;
+            }
+
+            if (settings.TypescriptTasks is null || !settings.TypescriptTasks.Any())
+            {
+                RegisterException("No typescript tasks in assembly config file", typeof(ArgumentException));
                 return;
             }
 
             string baseDirPath = HostingEnvironment.MapPath("~");
-            Settings settings = Helper.GetSettings();
-            if (settings.TypescriptTasks is null)
-            {
-                return;
-            }
-
             foreach (TypescriptTask el in settings.TypescriptTasks)
             {
-                ITypescriptCompileService compilerService = ServiceLocator
-                    .GetService<ITypescriptCompileService>()
-                    .ConfigureService(
-                    baseDirPath, 
-                    settings.CompilerTimeOutSeconds, 
-                    el.PathTypescriptConfigFile, 
-                    el.CancelIfOutFileExist,
-                    el.Minification?.UseMinification, 
-                    el.Minification?.MinifiedFileName)
-                    .InvokeService();
+                ITypescriptCompileService compilerService = ServiceLocator.GetService<ITypescriptCompileService>();
+                el.CompilerService = compilerService;
 
-                if (el.Mode == Mode.Dynamic)
+                ITypescriptWatcherService watcherService = ServiceLocator.GetService<ITypescriptWatcherService>();
+                el.WatcherService = watcherService;
+
+                TasksPool.Register(el);
+
+                compilerService.ConfigureService(
+                    el.TaskName,
+                    baseDirPath,
+                    el.CompilerTimeOutSeconds,
+                    el.PathTypescriptConfigFile,
+                    el.AllowOverwrite,
+                    el.UseMinification,
+                    el.MinifiedFileName);
+
+                if (!compilerService.IsConfigured())
                 {
-                    ServiceLocator
-                        .GetService<ITypescriptWatcherService>()
-                        .ConfigureService(() => compilerService.InvokeService(), el.FileMask, el.PathsToWatch)
-                        .InvokeService();
+                    TasksPool.Remove(el);
+                    return;
                 }
+
+                compilerService.InvokeService();
+
+                if (!compilerService.IsInvoked())
+                {
+                    return;
+                }
+
+                watcherService.ConfigureService(el.TaskName, () => el.CompilerService.ResetInvokeState(), el.FileMask, el.PathsToWatchForChanges);
+                if (!watcherService.IsConfigured())
+                {
+                    TasksPool.Remove(el);
+                    return;
+                }
+                watcherService.InvokeService();
+                if (!watcherService.IsInvoked())
+                {
+                    watcherService.ResetInvokeState();
+                    return;
+                }   
             }
         }
     }

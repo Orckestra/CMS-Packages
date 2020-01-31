@@ -1,92 +1,166 @@
-﻿using Composite.Core;
-using NUglify;
+﻿using NUglify;
 using NUglify.JavaScript;
-using Orckestra.Web.Typescript.Classes;
 using Orckestra.Web.Typescript.Interfaces;
 using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
+using System.Text.RegularExpressions;
+using System.Web.Hosting;
+using static Orckestra.Web.Typescript.Classes.Helper;
 
-namespace Orckestra.Web.Typescript.Services
+namespace Orckestra.Web.Typescript.Classes.Services
 {
-    public class TypescriptCompileService : ITypescriptCompileService
+    public class TypescriptCompileService : TypescriptService, ITypescriptCompileService
     {
+        private readonly object _locker = new object();
+
+        private string _taskName;
         private string _baseDirPath;
         private int _compilerTimeOutSeconds;
-        private string _pathConfigFile;
+        private string _absolutePathConfigFile;
         private string _pathOutFile;
-        private bool _cancelIfOutFileExist;
+        private bool _allowOverwrite;
         private bool _useMinification;
         private string _minifiedName;
-
-        public ITypescriptCompileService ConfigureService(
+        
+        public void ConfigureService(
+            string taskName,
             string baseDirPath,
             int compilerTimeOutSeconds,
             string pathConfigFile,
-            bool cancelIfOutFileExist,
-            bool? useMinification,
+            bool allowOverwrite,
+            bool useMinification,
             string minifiedName)
         {
-            _baseDirPath = baseDirPath ?? throw new ArgumentNullException(nameof(baseDirPath));
+            _configured = false;
+            _invoked = false;
+
+            string warnMessage = ComposeExceptionInfo(nameof(ConfigureService), _taskName);
+
+            _taskName = taskName;
+
+            if (string.IsNullOrEmpty(baseDirPath))
+            {
+                RegisterException($"{warnMessage} Param {nameof(baseDirPath)} is null or empty.", typeof(ArgumentNullException));
+                return;
+            }
+            else if (!Directory.Exists(baseDirPath))
+            {
+                RegisterException($"{warnMessage} Directory {baseDirPath} does not exist.", typeof(DirectoryNotFoundException));
+                return;
+            }
+            _baseDirPath = baseDirPath;
 
             if (compilerTimeOutSeconds <= 0)
             {
-                throw new ArgumentException("Compiler time out cannot be 0 or less, check package settings");
+                RegisterException($"{warnMessage} Param {compilerTimeOutSeconds} cannot be zero or negative.", typeof(ArgumentException));
+                return;
             }
             _compilerTimeOutSeconds = compilerTimeOutSeconds;
 
-            _pathConfigFile = Helper.GetAbsoluteServerPath(pathConfigFile) ?? throw new ArgumentNullException(nameof(pathConfigFile));
-
-            dynamic tsconfigObj = Newtonsoft.Json.JsonConvert
-                .DeserializeAnonymousType<dynamic>(File.ReadAllText(_pathConfigFile), new { outFile = string.Empty });
-
-            _pathOutFile = tsconfigObj?.compilerOptions?.outFile;
-            if (string.IsNullOrEmpty(_pathOutFile) && useMinification == true)
+            if (string.IsNullOrEmpty(pathConfigFile))
             {
-                throw new ArgumentException("Cannot use minification option if tsconfig.json outFile param is empty. " +
-                    $"Set up outFile value in {_pathConfigFile} or use BundlingAndMinification package for bundling and minification instead.");
-            }
-            else if (useMinification == true && string.IsNullOrEmpty(minifiedName))
-            {
-                throw new ArgumentException("To use minification you have to set up minified name in package settings file");
+                RegisterException($"{warnMessage} Param {nameof(pathConfigFile)} is null or empty.", typeof(ArgumentNullException));
+                return;
             }
 
-            _cancelIfOutFileExist = cancelIfOutFileExist;
-            _useMinification = useMinification is null ? false : (bool)useMinification;
+            _absolutePathConfigFile = HostingEnvironment.MapPath(pathConfigFile);
+            if (string.IsNullOrEmpty(_absolutePathConfigFile))
+            {
+                RegisterException($"{warnMessage} Cannot get absolute path of {nameof(pathConfigFile)}.", typeof(ArgumentNullException));
+                return;
+            }
+            else if (!File.Exists(_absolutePathConfigFile))
+            {
+                RegisterException($"{warnMessage} File {_absolutePathConfigFile} does not exist.", typeof(FileNotFoundException));
+                return;
+            }
+
+            try
+            {
+                dynamic tsconfigObj = Newtonsoft.Json.JsonConvert
+                    .DeserializeAnonymousType<dynamic>(File.ReadAllText(_absolutePathConfigFile), null);
+                _pathOutFile = tsconfigObj?.compilerOptions?.outFile;
+            }
+            catch (Exception ex)
+            {
+                RegisterException(ex);
+                return;
+            }
+            _allowOverwrite = allowOverwrite;
+            _useMinification = useMinification;
             _minifiedName = minifiedName;
-            return this;
-        }
-        public ITypescriptCompileService InvokeService()
-        {
-            if (_cancelIfOutFileExist && !string.IsNullOrEmpty(_pathOutFile) && File.Exists(Helper.GetAbsoluteServerPath(_pathOutFile)))
-            {
-                Log.LogWarning(nameof(TypescriptCompileService), $"File {_pathOutFile} already exist, compilation cancelled, check settings");
-                return this;
-            }
-            // Strict lock to avoid filesystem errors in case of too fast changes or dublicated filechanged events (writing in batches)
-            lock (this)
-            {
-                Process tscProcess = Process.Start(new ProcessStartInfo()
-                {
-                    FileName = Path.Combine(_baseDirPath, "Bin", "TypescriptCompiler", "tsc.exe"),
-                    Arguments = $"--project {_pathConfigFile}",
-                    RedirectStandardError = true,
-                    RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    WorkingDirectory = _baseDirPath,
-                    CreateNoWindow = true
-                });
 
-                StringBuilder output = new StringBuilder();
+            _configured = true;
+        }
+
+        public void InvokeService()
+        {
+            _invoked = false;
+
+            string warnMessage = ComposeExceptionInfo(nameof(InvokeService), _taskName);
+
+            if (!_configured)
+            {
+                RegisterException($"{warnMessage} Service is not configured.", typeof(InvalidOperationException));
+                return;
+            }
+            else if (!_allowOverwrite && !string.IsNullOrEmpty(_absolutePathConfigFile) && File.Exists(_absolutePathConfigFile))
+            {
+                _invoked = true;
+                return;
+            }
+
+            string compilatorPath = Path.Combine(_baseDirPath, "Bin", "TypescriptCompiler", "tsc.exe");
+            if (!File.Exists(compilatorPath))
+            {
+                RegisterException($"{warnMessage} Cannot find compilator exetuable on the path {compilatorPath}.", typeof(FileNotFoundException));
+                return;
+            }
+            // Strict lock to avoid filesystem errors in case of too fast changes or dublicated filechanged events (OS batches writing)
+            lock (_locker)
+            {
+                Process tscProcess;
+                try
+                {
+                    tscProcess = Process.Start(new ProcessStartInfo()
+                    {
+                        FileName = compilatorPath,
+                        Arguments = $"--project {_absolutePathConfigFile}",
+                        RedirectStandardError = true,
+                        RedirectStandardOutput = true,
+                        UseShellExecute = false,
+                        WorkingDirectory = _baseDirPath,
+                        CreateNoWindow = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    RegisterException(ex);
+                    return;
+                }
+
+                List<string> output = new List<string>();
                 //Output readings are separated to avoid deadlocks and perfomance issues
                 while (tscProcess.StandardOutput.Peek() > -1)
                 {
-                    output.AppendLine(tscProcess.StandardOutput.ReadLine());
+                    string line = tscProcess.StandardOutput.ReadLine();
+                    if (string.IsNullOrEmpty(line))
+                    {
+                        continue;
+                    }
+                    output.Add(line);
                 }
                 while (tscProcess.StandardError.Peek() > -1)
                 {
-                    output.AppendLine(tscProcess.StandardError.ReadLine());
+                    string line = tscProcess.StandardError.ReadLine();
+                    if (string.IsNullOrEmpty(line))
+                    {
+                        continue;
+                    }
+                    output.Add(line);
                 }
 
                 bool tscProcessResult = tscProcess.WaitForExit(_compilerTimeOutSeconds * 1000);
@@ -94,39 +168,79 @@ namespace Orckestra.Web.Typescript.Services
                 {
                     if (!tscProcess.HasExited)
                     {
-                        tscProcess.Kill();
+                        try
+                        {
+                            tscProcess.Kill();
+                        }
+                        catch (Exception ex)
+                        {
+                            RegisterException(ex);
+                            return;
+                        }
                     }
-                    string message = $"Typescript compiler timed out. Config file: {_pathConfigFile}";
-                    throw new Exception(message);
+                    RegisterException($"{warnMessage} Typescript timeouted. Config file: {_absolutePathConfigFile}.", 
+                        typeof(TimeoutException));
+                    return;
                 }
 
                 if (tscProcess.ExitCode != 0)
                 {
-                    string message = $"Typescript compiler ended a task with errors. Config file: {_pathConfigFile}, output: {output.ToString()}";
-                    throw new Exception(message);
+                    foreach(string el in output)
+                    {
+                        Match cl = Regex.Match(el, @"^(.+?\.ts)\(([0-9]+),([0-9]+)\)(.+)");
+                        if (cl.Success)
+                        {
+                            ConfigurationErrorsException cee = new ConfigurationErrorsException(
+                                    string.Concat(warnMessage, " Details ", cl.Groups[4].Value), 
+                                    Path.Combine(_baseDirPath, cl.Groups[1].Value.Replace("/", "\\")),
+                                    int.Parse(cl.Groups[2].Value));                            
+                            RegisterException(cee);
+                        }
+                        else
+                        {
+                            RegisterException($"{warnMessage} Compilation ended with code {tscProcess.ExitCode}. " +
+                                $"Config file: {_absolutePathConfigFile}. Additional info: {string.Join(",", output)}", typeof(Exception));
+                        }
+                    }
+                    return;
                 }
-                //kept minifing feature, but also BundlingAndMinification package can be used
+                //kept minifing feature, but also BundlingAndMinification package could be used
                 if (_useMinification)
                 {
-                    string originalFilePath = Path.Combine(
-                        _baseDirPath,
-                        Path.GetDirectoryName(_pathConfigFile),
-                        _pathOutFile);
-
-                    string minifiedFilePath = Path.Combine(
-                        Path.GetDirectoryName(originalFilePath),
-                        _minifiedName);
-
-                    string bundleContent = File.ReadAllText(originalFilePath);
-                    UglifyResult result = Uglify.Js(bundleContent, new CodeSettings { MinifyCode = true });
-                    if (result.HasErrors)
+                    if (string.IsNullOrEmpty(_minifiedName))
                     {
-                        throw new Exception(string.Join(",", result.Errors));
+                        RegisterException($"{warnMessage} Cannot minify file, no {nameof(_minifiedName)} value", typeof(ArgumentNullException));
+                        return;
                     }
-                    File.WriteAllText(minifiedFilePath, result.Code);
+                    try
+                    {
+                        string originalFilePath = Path.Combine(
+                            _baseDirPath,
+                            Path.GetDirectoryName(_absolutePathConfigFile),
+                            _pathOutFile);
+
+                        string minifiedFilePath = Path.Combine(
+                            Path.GetDirectoryName(originalFilePath),
+                            _minifiedName);
+
+                        string bundleContent = File.ReadAllText(originalFilePath);
+                        UglifyResult result = Uglify.Js(bundleContent, new CodeSettings { MinifyCode = true });
+                        if (result.HasErrors)
+                        {
+                            throw new Exception(string.Join(",", result.Errors));
+                        }
+                        File.WriteAllText(minifiedFilePath, result.Code);
+                    }
+                    catch (Exception ex)
+                    {
+                        RegisterException(ex);
+                        return;
+                    }
                 }
             }
-            return this;
+            _invoked = true;
         }
+
+        public void ResetInvokeState() => _invoked = false;
     }
 }

@@ -1,35 +1,87 @@
-﻿using Orckestra.Web.Typescript.Classes;
-using Orckestra.Web.Typescript.Interfaces;
+﻿using Orckestra.Web.Typescript.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Web.Hosting;
+using static Orckestra.Web.Typescript.Classes.Helper;
 
-namespace Orckestra.Web.Typescript.Services
+namespace Orckestra.Web.Typescript.Classes.Services
 {
-    public class TypescriptWatcherService : ITypescriptWatcherService
+    public class TypescriptWatcherService : TypescriptService, ITypescriptWatcherService
     {
+        private string _taskName;
         private Action _action;
         private string _fileMask;
         private IEnumerable<string> _pathsToWatch;
+        private List<FileSystemWatcher> _fileSystemWatchers = new List<FileSystemWatcher>();
 
-        public ITypescriptWatcherService ConfigureService(Action action, string fileMask, IEnumerable<string> pathsToWatch)
+        public void ConfigureService(string taskName, Action action, string fileMask, IEnumerable<string> pathsToWatch)
         {
-            _action = action ?? throw new ArgumentNullException(nameof(action));
-            _fileMask = fileMask ?? throw new ArgumentNullException(nameof(fileMask));
-            _pathsToWatch = pathsToWatch ?? throw new ArgumentNullException(nameof(pathsToWatch));
-            return this;
+            _configured = false;
+            _invoked = false;
+
+            string warnMessage = ComposeExceptionInfo(nameof(ConfigureService), _taskName);
+
+            _taskName = taskName;
+
+            if (action is null)
+            {
+                RegisterException($"{warnMessage} Param {nameof(action)} cannot be null.", typeof(ArgumentNullException));
+                return;
+            }
+            _action = action;
+
+            if (string.IsNullOrEmpty(fileMask))
+            {
+                RegisterException($"{warnMessage} Param {nameof(fileMask)} cannot be null or empty.", typeof(ArgumentNullException));
+                return;
+            }
+            _fileMask = fileMask;
+
+            if (pathsToWatch is null || !pathsToWatch.Any())
+            {
+                RegisterException($"{warnMessage} Param {nameof(pathsToWatch)} is null or has no values.", typeof(ArgumentNullException));
+                return;
+            }
+            _pathsToWatch = pathsToWatch;
+
+            _configured = true;
         }
 
-        public ITypescriptWatcherService InvokeService()
+        public void InvokeService()
         {
+            _invoked = false;
+
+            string warnMessage = ComposeExceptionInfo(nameof(InvokeService), _taskName);
+
+            if (!_configured)
+            {
+                RegisterException($"{warnMessage} Service is not configured.", typeof(InvalidOperationException));
+                return;
+            }
+
+            List<string> absolutePaths = new List<string>();
             foreach (string el in _pathsToWatch)
             {
-                string path = Helper.GetAbsoluteServerPath(el);
-                if (!Directory.Exists(path))
+                string path = HostingEnvironment.MapPath(el); 
+                if (string.IsNullOrEmpty(path))
                 {
-                    throw new FileNotFoundException($"Incorrect folder path {path}");
+                    RegisterException($"{warnMessage} {nameof(path)} value cannot be null or empty.", typeof(ArgumentNullException));
+                    return;
                 }
-                FileSystemWatcher fw = new FileSystemWatcher(path, _fileMask)
+                else if (!Directory.Exists(path))
+                {
+                    RegisterException($"{warnMessage} Folder path {path} does not exist.", typeof(DirectoryNotFoundException));
+                    return;
+                }
+                absolutePaths.Add(path);
+            }
+
+            //create filewatchers only if everything was okay as it disposable
+            foreach (string el in absolutePaths)
+            {
+                FileSystemWatcher fw = new FileSystemWatcher(el, _fileMask)
                 {
                     IncludeSubdirectories = true
                 };
@@ -38,11 +90,21 @@ namespace Orckestra.Web.Typescript.Services
                 fw.Deleted += FileSystemWatcherEvent;
                 fw.Renamed += FileSystemWatcherEvent;
                 fw.EnableRaisingEvents = true;
-                WatcherPool.Register(fw);
+                _fileSystemWatchers.Add(fw);
             }
-            return this;
+
+            _invoked = true;
         }
 
+        public void ResetInvokeState()
+        {
+            foreach(FileSystemWatcher el in _fileSystemWatchers)
+            {
+                el.Dispose();
+            }
+            _fileSystemWatchers = new List<FileSystemWatcher>();
+            _invoked = false;
+        }
         private void FileSystemWatcherEvent(object sender, FileSystemEventArgs e) => _action();
     }
 }

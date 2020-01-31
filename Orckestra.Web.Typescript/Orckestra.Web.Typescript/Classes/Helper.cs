@@ -1,31 +1,17 @@
-﻿using Orckestra.Web.Typescript.Classes.Models;
-using Orckestra.Web.Typescript.Enums;
+﻿using Composite.Core;
+using Orckestra.Web.Typescript.Classes.Models;
 using System;
+using System.Configuration;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Web;
 using System.Xml.Serialization;
 
 namespace Orckestra.Web.Typescript.Classes
 {
     internal static class Helper
     {
-        private static HttpServerUtility _ctxCache;
-        internal static string GetAbsoluteServerPath(string currentPath)
-        {
-            if (string.IsNullOrEmpty(currentPath))
-            {
-                return null;
-            }
-            _ctxCache = HttpContext.Current?.Server ?? _ctxCache;
-            return 
-                Path.IsPathRooted(currentPath) 
-                && !Path.GetPathRoot(currentPath).Equals(Path.DirectorySeparatorChar.ToString(), StringComparison.Ordinal)
-                ? currentPath
-                : _ctxCache.MapPath(currentPath);
-        }
-
+        private static readonly string _assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+        public static readonly bool PackageEnabled = ConfigurationManager.AppSettings["Orckestra.Web.Typescript.Enable"] == "true";
         internal static Settings GetSettings()
         {
             Settings settings;
@@ -36,17 +22,35 @@ namespace Orckestra.Web.Typescript.Classes
             {
                 settings = (Settings)serializer.Deserialize(fileStream);
             }
-
-            settings.TypescriptTasks = settings.TypescriptTasks.Where(x => x.Mode != Mode.Off).ToList();
-
-            foreach (TypescriptTask el in settings.TypescriptTasks)
-            {
-                if (el.Mode == Mode.Dynamic && (el.PathsToWatch is null || !el.PathsToWatch.Any()))
-                {
-                    throw new ArgumentException("To use dynamic mode you have to specify watching paths in the config file");
-                }
-            }
             return settings;
+        }
+
+        internal static void RegisterException(string message, Type type)
+        {
+            Exception instance = default;
+            try
+            {
+                instance = (Exception)Activator.CreateInstance(type, message);
+            }
+            catch (Exception ex)
+            {
+                Log.LogWarning(_assemblyName, ex);
+            }
+            RegisterException(instance);
+        }
+
+        internal static void RegisterException(Exception exception)
+        {
+            if (exception is null)
+            {
+                Log.LogWarning(_assemblyName, "No specified exception to be registered");
+                return;
+            }
+            Log.LogWarning(_assemblyName, exception);
+            if (TypescriptHttpModule.IsDebugMode)
+            {
+                throw exception;
+            }
         }
     }
 }
