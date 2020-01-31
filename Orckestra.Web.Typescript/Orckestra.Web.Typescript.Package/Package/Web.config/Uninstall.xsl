@@ -10,5 +10,6 @@
   </xsl:template>
   
   <xsl:template match="/configuration/appSettings/add[@key='Orckestra.Web.Typescript.Enable']" />
+  <xsl:template match="/configuration/system.webServer/modules/add[@name='TypescriptHttpModule']" />
   
 </xsl:stylesheet>
