@@ -17,9 +17,6 @@ namespace Orckestra.Web.Typescript
             application.BeginRequest += (a, b) => BeginReguest(application.Context);
         }
 
-        private void BeginReguest(HttpContext _)
-        {
-            TasksPool.CheckProcessTasks();
-        }
+        private void BeginReguest(HttpContext _) => TasksPool.CheckSourcesChanges();
     }
 }

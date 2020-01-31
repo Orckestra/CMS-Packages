@@ -112,7 +112,6 @@
     <Compile Include="TypescriptHttpModule.cs" />
     <Compile Include="Interfaces\ITypescriptCompileService.cs" />
     <Compile Include="Classes\TasksPool.cs" />
-    <Compile Include="Interfaces\ITypescriptService.cs" />
     <Compile Include="Interfaces\ITypescriptWatcherService.cs" />
     <Compile Include="Classes\Helper.cs" />
     <Compile Include="Classes\Models\Settings.cs" />

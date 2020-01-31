@@ -46,19 +46,13 @@ namespace Orckestra.Web.Typescript
                 RegisterException("No typescript tasks in assembly config file", typeof(ArgumentException));
                 return;
             }
-
             string baseDirPath = HostingEnvironment.MapPath("~");
             foreach (TypescriptTask el in settings.TypescriptTasks)
             {
-                ITypescriptCompileService compilerService = ServiceLocator.GetService<ITypescriptCompileService>();
-                el.CompilerService = compilerService;
+                ITypescriptCompileService compileService = ServiceLocator.GetService<ITypescriptCompileService>();
+                el.CompilerService = compileService;
 
-                ITypescriptWatcherService watcherService = ServiceLocator.GetService<ITypescriptWatcherService>();
-                el.WatcherService = watcherService;
-
-                TasksPool.Register(el);
-
-                compilerService.ConfigureService(
+                bool opR = compileService.ConfigureService(
                     el.TaskName,
                     baseDirPath,
                     el.CompilerTimeOutSeconds,
@@ -67,31 +61,28 @@ namespace Orckestra.Web.Typescript
                     el.UseMinification,
                     el.MinifiedFileName);
 
-                if (!compilerService.IsConfigured())
-                {
-                    TasksPool.Remove(el);
-                    return;
-                }
-
-                compilerService.InvokeService();
-
-                if (!compilerService.IsInvoked())
+                if (!opR)
                 {
                     return;
                 }
 
-                watcherService.ConfigureService(el.TaskName, () => el.CompilerService.ResetInvokeState(), el.FileMask, el.PathsToWatchForChanges);
-                if (!watcherService.IsConfigured())
+                ITypescriptWatcherService watcherService = ServiceLocator.GetService<ITypescriptWatcherService>();
+                el.WatcherService = watcherService;
+
+                opR = watcherService.ConfigureService(el.TaskName, () => el.CompilerService.SetSourceChanged(), el.FileMask, el.PathsToWatchForChanges);
+                if (!opR)
                 {
-                    TasksPool.Remove(el);
                     return;
                 }
-                watcherService.InvokeService();
-                if (!watcherService.IsInvoked())
+
+                opR = watcherService.InvokeService();
+                if (!opR)
                 {
-                    watcherService.ResetInvokeState();
+                    watcherService.Dispose();
                     return;
-                }   
+                }
+
+                TasksPool.Register(compileService, watcherService);
             }
         }
     }

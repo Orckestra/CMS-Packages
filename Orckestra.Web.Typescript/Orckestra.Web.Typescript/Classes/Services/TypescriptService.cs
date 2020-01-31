@@ -4,11 +4,6 @@ namespace Orckestra.Web.Typescript.Classes.Services
 {
     public abstract class TypescriptService
     {
-        protected bool _configured, _invoked;
-
-        public bool IsConfigured() => _configured;
-        public bool IsInvoked() => _invoked;
-
         public string ComposeExceptionInfo(string methodName, string taskName)
         {
             StringBuilder sb = new StringBuilder();

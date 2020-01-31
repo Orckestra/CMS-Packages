@@ -27,7 +27,7 @@ namespace Orckestra.Web.Typescript.Classes
 
         internal static void RegisterException(string message, Type type)
         {
-            Exception instance = default;
+            Exception instance;
             try
             {
                 instance = (Exception)Activator.CreateInstance(type, message);
@@ -35,6 +35,7 @@ namespace Orckestra.Web.Typescript.Classes
             catch (Exception ex)
             {
                 Log.LogWarning(_assemblyName, ex);
+                return;
             }
             RegisterException(instance);
         }

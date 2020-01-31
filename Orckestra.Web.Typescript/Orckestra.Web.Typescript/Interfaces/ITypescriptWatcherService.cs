@@ -3,8 +3,9 @@ using System.Collections.Generic;
 
 namespace Orckestra.Web.Typescript.Interfaces
 {
-    public interface ITypescriptWatcherService : ITypescriptService
+    public interface ITypescriptWatcherService: IDisposable
     {
-        void ConfigureService(string customName, Action watchAction, string fileMask, IEnumerable<string> pathsToWatch);
+        bool InvokeService();
+        bool ConfigureService(string customName, Action watchAction, string fileMask, IEnumerable<string> pathsToWatch);
     }
 }

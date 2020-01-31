@@ -1,4 +1,4 @@
-﻿using Orckestra.Web.Typescript.Classes.Models;
+﻿using Orckestra.Web.Typescript.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -9,28 +9,23 @@ namespace Orckestra.Web.Typescript.Classes
     {
         private static readonly ReaderWriterLockSlim _tasksLock = new ReaderWriterLockSlim();
 
-        private static readonly List<TypescriptTask> _tasks = new List<TypescriptTask>();
-        internal static void Register(TypescriptTask task)
+        private static readonly List<ITypescriptCompileService> _compilers = new List<ITypescriptCompileService>();
+        private static readonly List<ITypescriptWatcherService> _watchers = new List<ITypescriptWatcherService>();
+        internal static void Register(ITypescriptCompileService compileService, ITypescriptWatcherService watcherService)
         {
             _tasksLock.EnterWriteLock();
-             _tasks.Add(task);
-            _tasksLock.ExitWriteLock();
-        }
-        
-        internal static void Remove(TypescriptTask task)
-        {
-            _tasksLock.EnterWriteLock();
-            _tasks.Remove(task);
+            _compilers.Add(compileService);
+            _watchers.Add(watcherService);
             _tasksLock.ExitWriteLock();
         }
 
-        internal static void CheckProcessTasks()
+        internal static void CheckSourcesChanges()
         {
-            List<TypescriptTask> result;
+            List<ITypescriptCompileService> result;
             try
             {
                 _tasksLock.EnterReadLock();
-                result = _tasks.Where(x => !x.CompilerService.IsInvoked() || !x.WatcherService.IsInvoked()).ToList();
+                result = _compilers.Where(x => x.IsSourceChanged()).ToList();
             }
             finally
             {
@@ -42,15 +37,11 @@ namespace Orckestra.Web.Typescript.Classes
                 try
                 {
                     _tasksLock.EnterWriteLock();
-                    foreach (TypescriptTask el in result)
+                    foreach (ITypescriptCompileService el in result)
                     {
-                        if (!el.CompilerService.IsInvoked())
+                        if (el.IsSourceChanged())
                         {
-                            el.CompilerService.InvokeService();
-                        }
-                        if (el.CompilerService.IsInvoked() && !el.WatcherService.IsInvoked())
-                        {
-                            el.WatcherService.InvokeService();
+                            el.InvokeService();
                         }
                     }
                 }

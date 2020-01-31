@@ -14,13 +14,10 @@ namespace Orckestra.Web.Typescript.Classes.Services
         private Action _action;
         private string _fileMask;
         private IEnumerable<string> _pathsToWatch;
-        private List<FileSystemWatcher> _fileSystemWatchers = new List<FileSystemWatcher>();
+        private readonly List<FileSystemWatcher> _fileSystemWatchers = new List<FileSystemWatcher>();
 
-        public void ConfigureService(string taskName, Action action, string fileMask, IEnumerable<string> pathsToWatch)
+        public bool ConfigureService(string taskName, Action action, string fileMask, IEnumerable<string> pathsToWatch)
         {
-            _configured = false;
-            _invoked = false;
-
             string warnMessage = ComposeExceptionInfo(nameof(ConfigureService), _taskName);
 
             _taskName = taskName;
@@ -28,38 +25,30 @@ namespace Orckestra.Web.Typescript.Classes.Services
             if (action is null)
             {
                 RegisterException($"{warnMessage} Param {nameof(action)} cannot be null.", typeof(ArgumentNullException));
-                return;
+                return false;
             }
             _action = action;
 
             if (string.IsNullOrEmpty(fileMask))
             {
                 RegisterException($"{warnMessage} Param {nameof(fileMask)} cannot be null or empty.", typeof(ArgumentNullException));
-                return;
+                return false;
             }
             _fileMask = fileMask;
 
             if (pathsToWatch is null || !pathsToWatch.Any())
             {
                 RegisterException($"{warnMessage} Param {nameof(pathsToWatch)} is null or has no values.", typeof(ArgumentNullException));
-                return;
+                return false;
             }
             _pathsToWatch = pathsToWatch;
 
-            _configured = true;
+            return true;
         }
 
-        public void InvokeService()
+        public bool InvokeService()
         {
-            _invoked = false;
-
             string warnMessage = ComposeExceptionInfo(nameof(InvokeService), _taskName);
-
-            if (!_configured)
-            {
-                RegisterException($"{warnMessage} Service is not configured.", typeof(InvalidOperationException));
-                return;
-            }
 
             List<string> absolutePaths = new List<string>();
             foreach (string el in _pathsToWatch)
@@ -68,17 +57,17 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 if (string.IsNullOrEmpty(path))
                 {
                     RegisterException($"{warnMessage} {nameof(path)} value cannot be null or empty.", typeof(ArgumentNullException));
-                    return;
+                    return false;
                 }
                 else if (!Directory.Exists(path))
                 {
                     RegisterException($"{warnMessage} Folder path {path} does not exist.", typeof(DirectoryNotFoundException));
-                    return;
+                    return false;
                 }
                 absolutePaths.Add(path);
             }
 
-            //create filewatchers only if everything was okay as it disposable
+            //create filewatchers only if everything was okay as it is disposable
             foreach (string el in absolutePaths)
             {
                 FileSystemWatcher fw = new FileSystemWatcher(el, _fileMask)
@@ -92,18 +81,15 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 fw.EnableRaisingEvents = true;
                 _fileSystemWatchers.Add(fw);
             }
-
-            _invoked = true;
+            return true;
         }
 
-        public void ResetInvokeState()
+        public void Dispose()
         {
             foreach(FileSystemWatcher el in _fileSystemWatchers)
             {
                 el.Dispose();
             }
-            _fileSystemWatchers = new List<FileSystemWatcher>();
-            _invoked = false;
         }
         private void FileSystemWatcherEvent(object sender, FileSystemEventArgs e) => _action();
     }
