@@ -23,6 +23,11 @@
           </dependentAssembly>
         </assemblyBinding>
       </runtime>
+      <system.webServer>
+        <modules runAllManagedModulesForAllRequests="true">
+          <add name="TypescriptHttpModule" type="Orckestra.Web.Typescript.TypescriptHttpModule, Orckestra.Web.TypeScript" />
+        </modules>
+      </system.webServer>
     </configuration>
     
   </xsl:variable>
@@ -64,7 +69,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" />
       <xsl:if test="not(add[@name='TypescriptHttpModule'])">
-        <add name="TypescriptHttpModule" type="Orckestra.Web.Typescript.TypescriptHttpModule, Orckestra.Web.TypeScript" />
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/system.webServer/modules/add[@name='TypescriptHttpModule']"/>
       </xsl:if>
     </xsl:copy>
   </xsl:template>

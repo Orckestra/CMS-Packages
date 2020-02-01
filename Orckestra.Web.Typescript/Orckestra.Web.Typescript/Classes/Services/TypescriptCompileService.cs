@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Web;
 using System.Web.Hosting;
 using static Orckestra.Web.Typescript.Classes.Helper;
@@ -14,8 +15,6 @@ namespace Orckestra.Web.Typescript.Classes.Services
 {
     public class TypescriptCompileService : TypescriptService, ITypescriptCompileService
     {
-        private readonly object _locker = new object();
-
         private string _taskName;
         private string _baseDirPath;
         private int _compilerTimeOutSeconds;
@@ -25,7 +24,8 @@ namespace Orckestra.Web.Typescript.Classes.Services
         private bool _useMinification;
         private string _minifiedName;
 
-        private bool _toUpdate = true;
+        private readonly ReaderWriterLockSlim _lc = new ReaderWriterLockSlim();
+        private bool _recompile = true;
 
         public bool ConfigureService(
             string taskName,
@@ -97,8 +97,34 @@ namespace Orckestra.Web.Typescript.Classes.Services
 
         public bool InvokeService()
         {
-            _toUpdate = false;
+            if (!IsSourceChanged())
+            {
+                return false;
+            }
+            bool result = false;
+            try
+            {
+                _lc.EnterWriteLock();
+                if (!_recompile)
+                {
+                    return false;
+                }
+                result = ExecCompilation();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                _lc.ExitWriteLock();
+            }
+            return result;
+        }
 
+        private bool ExecCompilation()
+        {
+            _recompile = false;
             string warnMessage = ComposeExceptionInfo(nameof(InvokeService), _taskName);
 
             if (!_allowOverwrite && !string.IsNullOrEmpty(_absolutePathConfigFile) && File.Exists(_absolutePathConfigFile))
@@ -181,12 +207,13 @@ namespace Orckestra.Web.Typescript.Classes.Services
                     Match cl = Regex.Match(el, @"^(.+?\.ts)\(([0-9]+),([0-9]+)\)(.+)");
                     if (cl.Success)
                     {
-                        HttpParseException hpe = new HttpParseException(
-                                string.Concat(warnMessage, " Details ", cl.Groups[4].Value),
-                                null,
-                                Path.Combine(_baseDirPath, cl.Groups[1].Value.Replace("/", "\\")),
-                                null,
-                                int.Parse(cl.Groups[2].Value));
+                        string path = Path.Combine(_baseDirPath, cl.Groups[1].Value.Replace("/", "\\"));
+                        int line = int.Parse(cl.Groups[2].Value);
+                        HttpParseException hpe = new HttpParseException(string.Concat(
+                            warnMessage,
+                            "Message", cl.Groups[4].Value, Environment.NewLine,
+                            "Path: ", path, Environment.NewLine,
+                            "Error line: ", line), null, path, null, line);
 
                         RegisterException(hpe);
                     }
@@ -234,8 +261,26 @@ namespace Orckestra.Web.Typescript.Classes.Services
             return true;
         }
 
-        public void SetSourceChanged() => _toUpdate = true;
+        public void SetSourceLast()
+        {
+            _lc.EnterWriteLock();
+            _recompile = false;
+            _lc.ExitWriteLock();
+        }
 
-        public bool IsSourceChanged() => _toUpdate;
+        public void SetSourceChanged()
+        {
+            _lc.EnterWriteLock();
+            _recompile = true;
+            _lc.ExitWriteLock();
+        }
+
+        public bool IsSourceChanged()
+        {
+            _lc.EnterReadLock();
+            bool result = _recompile;
+            _lc.ExitReadLock();
+            return result;
+        }
     }
 }
