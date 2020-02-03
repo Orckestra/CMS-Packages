@@ -16,7 +16,7 @@ namespace Orckestra.Web.Typescript.Classes
 
         internal static void CheckSourcesChanges()
         {
-            List<ITypescriptCompileService> result = _compilers.Where(x => x.IsSourceChanged()).ToList();
+            IEnumerable<ITypescriptCompileService> result = _compilers.Where(x => x.IsSourceChanged());
             foreach (ITypescriptCompileService el in result)
             {
                 el.InvokeService();
