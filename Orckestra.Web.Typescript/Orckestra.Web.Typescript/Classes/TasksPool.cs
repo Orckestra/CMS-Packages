@@ -6,12 +6,14 @@ namespace Orckestra.Web.Typescript.Classes
 {
     internal static class TasksPool
     {
-        private static readonly List<ITypescriptCompileService> _compilers = new List<ITypescriptCompileService>();
-        private static readonly List<ITypescriptWatcherService> _watchers = new List<ITypescriptWatcherService>();
-        internal static void Register(ITypescriptCompileService compileService, ITypescriptWatcherService watcherService)
+        private static ITypescriptCompileService[] _compilers;
+        #pragma warning disable IDE0052
+        private static List<ITypescriptWatcherService> _watchers;
+        #pragma warning restore IDE0052
+        internal static void Register(List<ITypescriptCompileService> compileServices, List<ITypescriptWatcherService> watcherServices)
         {
-            _compilers.Add(compileService);
-            _watchers.Add(watcherService);
+            _compilers = compileServices.ToArray();
+            _watchers = new List<ITypescriptWatcherService>(watcherServices);
         }
 
         internal static void CheckSourcesChanges()

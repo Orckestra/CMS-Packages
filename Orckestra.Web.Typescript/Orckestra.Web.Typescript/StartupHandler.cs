@@ -6,6 +6,7 @@ using Orckestra.Web.Typescript.Classes.Models;
 using Orckestra.Web.Typescript.Classes.Services;
 using Orckestra.Web.Typescript.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Hosting;
 using static Orckestra.Web.Typescript.Classes.Helper;
@@ -47,6 +48,9 @@ namespace Orckestra.Web.Typescript
                 return;
             }
             string baseDirPath = HostingEnvironment.MapPath("~");
+
+            List<ITypescriptWatcherService> wsl = new List<ITypescriptWatcherService>();
+            List<ITypescriptCompileService> csl = new List<ITypescriptCompileService>();
             foreach (TypescriptTask el in settings.TypescriptTasks)
             {
                 ITypescriptCompileService compileService = ServiceLocator.GetService<ITypescriptCompileService>();
@@ -81,9 +85,11 @@ namespace Orckestra.Web.Typescript
                     watcherService.Dispose();
                     return;
                 }
-
-                TasksPool.Register(compileService, watcherService);
+                wsl.Add(watcherService);
+                csl.Add(compileService);
             }
+
+            TasksPool.Register(csl, wsl);
         }
     }
 }
