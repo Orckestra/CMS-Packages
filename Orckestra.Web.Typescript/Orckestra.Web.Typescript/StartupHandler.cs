@@ -54,7 +54,6 @@ namespace Orckestra.Web.Typescript
             foreach (TypescriptTask el in settings.TypescriptTasks)
             {
                 ITypescriptCompileService compileService = ServiceLocator.GetService<ITypescriptCompileService>();
-                el.CompilerService = compileService;
 
                 bool opR = compileService.ConfigureService(
                     el.TaskName,
@@ -71,9 +70,8 @@ namespace Orckestra.Web.Typescript
                 }
 
                 ITypescriptWatcherService watcherService = ServiceLocator.GetService<ITypescriptWatcherService>();
-                el.WatcherService = watcherService;
 
-                opR = watcherService.ConfigureService(el.TaskName, () => el.CompilerService.SetSourceChanged(), el.FileMask, el.PathsToWatchForChanges);
+                opR = watcherService.ConfigureService(el.TaskName, () => compileService.SetSourceChanged(), el.FileMask, el.PathsToWatchForChanges);
                 if (!opR)
                 {
                     return;

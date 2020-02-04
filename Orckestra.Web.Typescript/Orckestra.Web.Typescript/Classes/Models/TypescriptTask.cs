@@ -31,10 +31,5 @@ namespace Orckestra.Web.Typescript.Classes.Models
 
         [XmlElement("minifiedFileName")]
         public string MinifiedFileName { get; set; }
-
-        [XmlIgnore]
-        public ITypescriptCompileService CompilerService { get; set; }
-        [XmlIgnore]
-        public ITypescriptWatcherService WatcherService { get; set; }
     }
 }
