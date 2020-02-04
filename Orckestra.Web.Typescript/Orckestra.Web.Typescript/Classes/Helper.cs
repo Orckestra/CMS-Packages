@@ -44,7 +44,7 @@ namespace Orckestra.Web.Typescript.Classes
         {
             if (exception is null)
             {
-                Log.LogWarning(_assemblyName, "No specified exception to be registered");
+                Log.LogWarning(_assemblyName, $"No specified exception to be registered");
                 return;
             }
             Log.LogWarning(_assemblyName, exception);

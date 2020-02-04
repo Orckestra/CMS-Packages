@@ -101,6 +101,11 @@ namespace Orckestra.Web.Typescript.Classes.Services
             {
                 return false;
             }
+            else if (!_allowOverwrite && !string.IsNullOrEmpty(_absolutePathConfigFile) && File.Exists(_absolutePathConfigFile))
+            {
+                SetSourceLast();
+                return false;
+            }
             bool result = false;
             try
             {
@@ -126,11 +131,6 @@ namespace Orckestra.Web.Typescript.Classes.Services
         {
             _recompile = false;
             string warnMessage = ComposeExceptionInfo(nameof(InvokeService), _taskName);
-
-            if (!_allowOverwrite && !string.IsNullOrEmpty(_absolutePathConfigFile) && File.Exists(_absolutePathConfigFile))
-            {
-                return false;
-            }
 
             string compilatorPath = Path.Combine(_baseDirPath, "Bin", "TypescriptCompiler", "tsc.exe");
             if (!File.Exists(compilatorPath))
