@@ -160,7 +160,6 @@ namespace Orckestra.Web.Typescript.Classes.Services
             }
 
             List<string> output = new List<string>();
-            //Output readings are separated to avoid deadlocks and perfomance issues
             while (tscProcess.StandardOutput.Peek() > -1)
             {
                 string line = tscProcess.StandardOutput.ReadLine();
