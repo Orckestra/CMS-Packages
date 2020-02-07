@@ -20,6 +20,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
         private string _baseDirPath;
         private int _compilerTimeOutSeconds;
         private string _absolutePathConfigFile;
+        private string _absolutePathDestFile;
         private string _pathOutFile;
         private bool _allowOverwrite;
         private bool _useMinification;
@@ -70,7 +71,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
             _absolutePathConfigFile = HostingEnvironment.MapPath(pathConfigFile);
             if (string.IsNullOrEmpty(_absolutePathConfigFile))
             {
-                RegisterException($"{warnMessage} Cannot get absolute path of {nameof(pathConfigFile)}.", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Cannot get absolute path of the typescript config file from the path \"{pathConfigFile}\".", typeof(ArgumentNullException));
                 return false;
             }
             else if (!File.Exists(_absolutePathConfigFile))
@@ -84,12 +85,33 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 dynamic tsconfigObj = Newtonsoft.Json.JsonConvert
                     .DeserializeAnonymousType<dynamic>(File.ReadAllText(_absolutePathConfigFile), null);
                 _pathOutFile = tsconfigObj?.compilerOptions?.outFile;
+                if (string.IsNullOrEmpty(_pathOutFile))
+                {
+                    throw new ArgumentNullException($"No outFile parameter value in typescript config file. It is compulsory. Check and set this value.");
+                }
             }
             catch (Exception ex)
             {
                 RegisterException(ex);
                 return false;
             }
+
+            _absolutePathDestFile = Path.Combine(
+                _baseDirPath,
+                Path.GetDirectoryName(_absolutePathConfigFile),
+                _pathOutFile);
+
+            if (string.IsNullOrEmpty(_absolutePathDestFile))
+            {
+                RegisterException($"{warnMessage} Cannot get absolute path of out javascript file from the path \"{pathConfigFile}\". Check outFile parameter value in typescript config file.", typeof(ArgumentNullException));
+                return false;
+            }
+            else if (!File.Exists(_absolutePathDestFile))
+            {
+                RegisterException($"{warnMessage} File {_absolutePathDestFile} does not exist.", typeof(FileNotFoundException));
+                return false;
+            }
+
             _allowOverwrite = allowOverwrite;
             _useMinification = useMinification;
             _minifiedName = minifiedName;
@@ -103,7 +125,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
             {
                 return false;
             }
-            else if (!_allowOverwrite && !string.IsNullOrEmpty(_absolutePathConfigFile) && File.Exists(_absolutePathConfigFile))
+            else if (!_allowOverwrite && !string.IsNullOrEmpty(_absolutePathDestFile) && File.Exists(_absolutePathDestFile))
             {
                 SetSourceLast();
                 return false;
@@ -245,16 +267,11 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 }
                 try
                 {
-                    string originalFilePath = Path.Combine(
-                        _baseDirPath,
-                        Path.GetDirectoryName(_absolutePathConfigFile),
-                        _pathOutFile);
-
                     string minifiedFilePath = Path.Combine(
-                        Path.GetDirectoryName(originalFilePath),
+                        Path.GetDirectoryName(_absolutePathDestFile),
                         _minifiedName);
 
-                    string bundleContent = File.ReadAllText(originalFilePath);
+                    string bundleContent = File.ReadAllText(_absolutePathDestFile);
                     UglifyResult result = Uglify.Js(bundleContent, new CodeSettings { MinifyCode = true });
                     if (result.HasErrors)
                     {
