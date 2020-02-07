@@ -84,13 +84,6 @@ namespace Orckestra.Web.Typescript.Classes.Services
             return true;
         }
 
-        public void Dispose()
-        {
-            foreach(FileSystemWatcher el in _fileSystemWatchers)
-            {
-                el.Dispose();
-            }
-        }
         private void FileSystemWatcherEvent(object sender, FileSystemEventArgs e) => _action();
     }
 }
