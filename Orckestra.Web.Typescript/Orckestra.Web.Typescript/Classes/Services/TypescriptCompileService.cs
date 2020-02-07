@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
@@ -26,6 +27,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
 
         private readonly ReaderWriterLockSlim _lc = new ReaderWriterLockSlim();
         private bool _recompile = true;
+        private static readonly char[] _invalidPathChars = Path.GetInvalidPathChars();
 
         public bool ConfigureService(
             string taskName,
@@ -132,19 +134,20 @@ namespace Orckestra.Web.Typescript.Classes.Services
             _recompile = false;
             string warnMessage = ComposeExceptionInfo(nameof(InvokeService), _taskName);
 
-            string compilatorPath = Path.Combine(_baseDirPath, "Bin", "TypescriptCompiler", "tsc.exe");
-            if (!File.Exists(compilatorPath))
+            string compilerPath = Path.Combine(_baseDirPath, "Bin", "TypescriptCompiler", "tsc.exe");
+            if (!File.Exists(compilerPath))
             {
-                RegisterException($"{warnMessage} Cannot find compilator exetuable on the path {compilatorPath}.", typeof(FileNotFoundException));
+                RegisterException($"{warnMessage} Cannot find compiler executable on the path \"{compilerPath}\".", typeof(FileNotFoundException));
                 return false;
             }
 
             Process tscProcess;
+            
             try
             {
                 tscProcess = Process.Start(new ProcessStartInfo()
                 {
-                    FileName = compilatorPath,
+                    FileName = compilerPath,
                     Arguments = $"--project {_absolutePathConfigFile}",
                     RedirectStandardError = true,
                     RedirectStandardOutput = true,
@@ -158,7 +161,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 RegisterException(ex);
                 return false;
             }
-
+            
             List<string> output = new List<string>();
             while (tscProcess.StandardOutput.Peek() > -1)
             {
@@ -194,23 +197,30 @@ namespace Orckestra.Web.Typescript.Classes.Services
                         return false;
                     }
                 }
-                RegisterException($"{warnMessage} Typescript timeouted. Config file: {_absolutePathConfigFile}.",
+                RegisterException($"{warnMessage} Typescript compilation timeout expired. Config file: {_absolutePathConfigFile}.",
                     typeof(TimeoutException));
                 return false;
             }
 
             if (tscProcess.ExitCode != 0)
             {
+                if (!output.Any())
+                {
+                    RegisterException($"{warnMessage} Compilation ended with code {tscProcess.ExitCode}. No additional info.", typeof(Exception));
+                    return false;
+                }
                 foreach (string el in output)
                 {
-                    Match cl = Regex.Match(el, @"^(.+?\.ts)\(([0-9]+),([0-9]+)\)(.+)");
-                    if (cl.Success)
+                    Match match = Regex.Match(output[0], @"^(.+?\.ts)\(([0-9]+),([0-9]+)\)(.+)");
+                    string tpFile = match?.Groups[1]?.Value;
+                    
+                    if (match.Success & !tpFile.Where(x=> _invalidPathChars.Contains(x)).Any())
                     {
-                        string path = Path.Combine(_baseDirPath, cl.Groups[1].Value.Replace("/", "\\"));
-                        int line = int.Parse(cl.Groups[2].Value);
+                        string path = Path.Combine(_baseDirPath, match.Groups[1].Value.Replace("/", "\\"));
+                        int line = int.Parse(match.Groups[2].Value);
                         HttpParseException hpe = new HttpParseException(string.Concat(
                             warnMessage,
-                            "Message", cl.Groups[4].Value, Environment.NewLine,
+                            "Message", match.Groups[4].Value, Environment.NewLine,
                             "Path: ", path, Environment.NewLine,
                             "Error line: ", line), null, path, null, line);
 
@@ -220,11 +230,12 @@ namespace Orckestra.Web.Typescript.Classes.Services
                     {
                         RegisterException($"{warnMessage} Compilation ended with code {tscProcess.ExitCode}. " +
                             $"Config file: {_absolutePathConfigFile}. Additional info: {string.Join(Environment.NewLine, output)}", typeof(Exception));
+                        break;
                     }
                 }
                 return false;
             }
-            //kept minifing feature, but also BundlingAndMinification package could be used
+            //kept minifying feature, but also BundlingAndMinification package could be used
             if (_useMinification)
             {
                 if (string.IsNullOrEmpty(_minifiedName))

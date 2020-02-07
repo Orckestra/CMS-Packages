@@ -55,7 +55,7 @@ namespace Orckestra.Web.Typescript
             {
                 ITypescriptCompileService compileService = ServiceLocator.GetService<ITypescriptCompileService>();
 
-                bool opR = compileService.ConfigureService(
+                bool operationResult = compileService.ConfigureService(
                     el.TaskName,
                     baseDirPath,
                     el.CompilerTimeOutSeconds,
@@ -64,23 +64,22 @@ namespace Orckestra.Web.Typescript
                     el.UseMinification,
                     el.MinifiedFileName);
 
-                if (!opR)
+                if (!operationResult)
                 {
                     return;
                 }
 
                 ITypescriptWatcherService watcherService = ServiceLocator.GetService<ITypescriptWatcherService>();
 
-                opR = watcherService.ConfigureService(el.TaskName, () => compileService.SetSourceChanged(), el.FileMask, el.PathsToWatchForChanges);
-                if (!opR)
+                operationResult = watcherService.ConfigureService(el.TaskName, () => compileService.SetSourceChanged(), el.FileMask, el.PathsToWatchForChanges);
+                if (!operationResult)
                 {
                     return;
                 }
 
-                opR = watcherService.InvokeService();
-                if (!opR)
+                operationResult = watcherService.InvokeService();
+                if (!operationResult)
                 {
-                    watcherService.Dispose();
                     return;
                 }
                 wsl.Add(watcherService);
