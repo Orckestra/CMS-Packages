@@ -16,15 +16,15 @@ namespace Orckestra.Web.Typescript
             {
                 return;
             }
-            application.BeginRequest += (a, b) => BeginReguest(application.Context);
+            application.BeginRequest += (a, b) => BeginRequest(application.Context);
         }
 
-        private void BeginReguest(HttpContext httpContext)
+        private void BeginRequest(HttpContext httpContext)
         {
-            string relativeUrl = httpContext.Request.Path;
+            string url = httpContext.Request.Path;
             //skipping admin console requests
-            if (string.Equals(relativeUrl, UrlUtils.AdminRootPath, StringComparison.OrdinalIgnoreCase) ||
-                relativeUrl.StartsWith(UrlUtils.AdminRootPath + "/", StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(url, UrlUtils.AdminRootPath, StringComparison.OrdinalIgnoreCase)
+                || url.StartsWith(UrlUtils.AdminRootPath + "/", StringComparison.OrdinalIgnoreCase))
             {
                 return;
             }
