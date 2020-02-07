@@ -45,7 +45,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
 
             if (string.IsNullOrEmpty(baseDirPath))
             {
-                RegisterException($"{warnMessage} Param {nameof(baseDirPath)} is null or empty.", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Parameter {nameof(baseDirPath)} is null or empty. Cannot detect site root directory.", typeof(ArgumentNullException));
                 return false;
             }
             else if (!Directory.Exists(baseDirPath))
@@ -57,21 +57,22 @@ namespace Orckestra.Web.Typescript.Classes.Services
 
             if (compilerTimeOutSeconds <= 0)
             {
-                RegisterException($"{warnMessage} Param {compilerTimeOutSeconds} cannot be zero or negative.", typeof(ArgumentException));
+                RegisterException($"{warnMessage} Parameter {nameof(compilerTimeOutSeconds)} cannot be zero or negative. " +
+                    $"Current value: {compilerTimeOutSeconds}.", typeof(ArgumentException));
                 return false;
             }
             _compilerTimeOutSeconds = compilerTimeOutSeconds;
 
             if (string.IsNullOrEmpty(pathConfigFile))
             {
-                RegisterException($"{warnMessage} Param {nameof(pathConfigFile)} is null or empty.", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Parameter {nameof(pathConfigFile)} is null or empty.", typeof(ArgumentNullException));
                 return false;
             }
 
             _absolutePathConfigFile = HostingEnvironment.MapPath(pathConfigFile);
             if (string.IsNullOrEmpty(_absolutePathConfigFile))
             {
-                RegisterException($"{warnMessage} Cannot get absolute path of the typescript config file from the path \"{pathConfigFile}\".", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Cannot get absolute path of the typescript config file (tsconfig.json) for the path \"{pathConfigFile}\".", typeof(ArgumentNullException));
                 return false;
             }
             else if (!File.Exists(_absolutePathConfigFile))
@@ -87,7 +88,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 _pathOutFile = tsconfigObj?.compilerOptions?.outFile;
                 if (string.IsNullOrEmpty(_pathOutFile))
                 {
-                    throw new ArgumentNullException($"No outFile parameter value in typescript config file. It is compulsory. Check and set this value.");
+                    throw new ArgumentNullException($"No \"outFile\" parameter value in typescript config file (tsconfig.json). Check and set this value.");
                 }
             }
             catch (Exception ex)
@@ -95,24 +96,22 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 RegisterException(ex);
                 return false;
             }
-
-            _absolutePathDestFile = Path.Combine(
-                _baseDirPath,
-                Path.GetDirectoryName(_absolutePathConfigFile),
-                _pathOutFile);
+            string configDirectoryName = Path.GetDirectoryName(_absolutePathConfigFile);
+            _absolutePathDestFile = Path.Combine(configDirectoryName, _pathOutFile);
 
             if (string.IsNullOrEmpty(_absolutePathDestFile))
             {
-                RegisterException($"{warnMessage} Cannot get absolute path of out javascript file from the path \"{pathConfigFile}\". Check outFile parameter value in typescript config file.", typeof(ArgumentNullException));
-                return false;
-            }
-            else if (!File.Exists(_absolutePathDestFile))
-            {
-                RegisterException($"{warnMessage} File {_absolutePathDestFile} does not exist.", typeof(FileNotFoundException));
+                RegisterException($"{warnMessage} Cannot resolve absolute path of output javascript from the parts {configDirectoryName} and {_pathOutFile}.", typeof(ArgumentNullException));
                 return false;
             }
 
             _allowOverwrite = allowOverwrite;
+            
+            if (useMinification && string.IsNullOrEmpty(minifiedName))
+            {
+                RegisterException($"{warnMessage} To use minification, you have to set up {nameof(minifiedName)} parameter value.", typeof(ArgumentNullException));
+                return false;
+            }
             _useMinification = useMinification;
             _minifiedName = minifiedName;
 
@@ -228,7 +227,8 @@ namespace Orckestra.Web.Typescript.Classes.Services
             {
                 if (!output.Any())
                 {
-                    RegisterException($"{warnMessage} Compilation ended with code {tscProcess.ExitCode}. No additional info.", typeof(Exception));
+                    RegisterException($"{warnMessage} Compilation ended with code {tscProcess.ExitCode}. " +
+                        $"Config file: {_absolutePathConfigFile}. No additional info.", typeof(Exception));
                     return false;
                 }
                 foreach (string el in output)
@@ -236,7 +236,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
                     Match match = Regex.Match(output[0], @"^(.+?\.ts)\(([0-9]+),([0-9]+)\)(.+)");
                     string tpFile = match?.Groups[1]?.Value;
                     
-                    if (match.Success & !tpFile.Where(x=> _invalidPathChars.Contains(x)).Any())
+                    if (match.Success && !tpFile.Where(x=> _invalidPathChars.Contains(x)).Any())
                     {
                         string path = Path.Combine(_baseDirPath, match.Groups[1].Value.Replace("/", "\\"));
                         int line = int.Parse(match.Groups[2].Value);
@@ -260,11 +260,6 @@ namespace Orckestra.Web.Typescript.Classes.Services
             //kept minifying feature, but also BundlingAndMinification package could be used
             if (_useMinification)
             {
-                if (string.IsNullOrEmpty(_minifiedName))
-                {
-                    RegisterException($"{warnMessage} Cannot minify file, no {nameof(_minifiedName)} value", typeof(ArgumentNullException));
-                    return false;
-                }
                 try
                 {
                     string minifiedFilePath = Path.Combine(
