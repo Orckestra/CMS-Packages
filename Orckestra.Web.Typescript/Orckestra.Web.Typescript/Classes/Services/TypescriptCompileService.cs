@@ -45,34 +45,36 @@ namespace Orckestra.Web.Typescript.Classes.Services
 
             if (string.IsNullOrEmpty(baseDirPath))
             {
-                RegisterException($"{warnMessage} Parameter {nameof(baseDirPath)} is null or empty. Cannot detect site root directory.", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Parameter \"{nameof(baseDirPath)}\" is null or empty. Cannot detect the site root directory.", 
+                    typeof(ArgumentNullException));
                 return false;
             }
             else if (!Directory.Exists(baseDirPath))
             {
-                RegisterException($"{warnMessage} Directory {baseDirPath} does not exist.", typeof(DirectoryNotFoundException));
+                RegisterException($"{warnMessage} Directory \"{baseDirPath}\" does not exist.", typeof(DirectoryNotFoundException));
                 return false;
             }
             _baseDirPath = baseDirPath;
 
             if (compilerTimeOutSeconds <= 0)
             {
-                RegisterException($"{warnMessage} Parameter {nameof(compilerTimeOutSeconds)} cannot be zero or negative. " +
-                    $"Current value: {compilerTimeOutSeconds}.", typeof(ArgumentException));
+                RegisterException($"{warnMessage} Parameter \"{nameof(compilerTimeOutSeconds)}\" cannot be zero or negative. " +
+                    $"Current value: \"{compilerTimeOutSeconds}\".", typeof(ArgumentException));
                 return false;
             }
             _compilerTimeOutSeconds = compilerTimeOutSeconds;
 
             if (string.IsNullOrEmpty(pathConfigFile))
             {
-                RegisterException($"{warnMessage} Parameter {nameof(pathConfigFile)} is null or empty.", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Parameter \"{nameof(pathConfigFile)}\" is null or empty.", typeof(ArgumentNullException));
                 return false;
             }
 
             _absolutePathConfigFile = HostingEnvironment.MapPath(pathConfigFile);
             if (string.IsNullOrEmpty(_absolutePathConfigFile))
             {
-                RegisterException($"{warnMessage} Cannot get absolute path of the typescript config file (tsconfig.json) for the path \"{pathConfigFile}\".", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Cannot get absolute path of the typescript config file \"tsconfig.json\" for the path " +
+                    $"\"{pathConfigFile}\".", typeof(ArgumentNullException));
                 return false;
             }
             else if (!File.Exists(_absolutePathConfigFile))
@@ -88,7 +90,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 _pathOutFile = tsconfigObj?.compilerOptions?.outFile;
                 if (string.IsNullOrEmpty(_pathOutFile))
                 {
-                    throw new ArgumentNullException($"No \"outFile\" parameter value in typescript config file (tsconfig.json). Check and set this value.");
+                    throw new ArgumentNullException($"No \"outFile\" parameter value in \"tsconfig.json\". Check and set this value.");
                 }
             }
             catch (Exception ex)
@@ -101,7 +103,8 @@ namespace Orckestra.Web.Typescript.Classes.Services
 
             if (string.IsNullOrEmpty(_absolutePathDestFile))
             {
-                RegisterException($"{warnMessage} Cannot resolve absolute path of output javascript from the parts {configDirectoryName} and {_pathOutFile}.", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Cannot resolve absolute path of output javascript from the parts \"{configDirectoryName}\" " +
+                    $"and \"{_pathOutFile}\".", typeof(ArgumentNullException));
                 return false;
             }
 
@@ -109,7 +112,8 @@ namespace Orckestra.Web.Typescript.Classes.Services
             
             if (useMinification && string.IsNullOrEmpty(minifiedName))
             {
-                RegisterException($"{warnMessage} To use minification, you have to set up {nameof(minifiedName)} parameter value.", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} To use minification, you have to set up \"{nameof(minifiedName)}\" parameter value.", 
+                    typeof(ArgumentNullException));
                 return false;
             }
             _useMinification = useMinification;
@@ -158,7 +162,8 @@ namespace Orckestra.Web.Typescript.Classes.Services
             string compilerPath = Path.Combine(_baseDirPath, "Bin", "TypescriptCompiler", "tsc.exe");
             if (!File.Exists(compilerPath))
             {
-                RegisterException($"{warnMessage} Cannot find compiler executable on the path \"{compilerPath}\".", typeof(FileNotFoundException));
+                RegisterException($"{warnMessage} Cannot find the compiler executable on the path \"{compilerPath}\".", 
+                    typeof(FileNotFoundException));
                 return false;
             }
 
@@ -218,7 +223,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
                         return false;
                     }
                 }
-                RegisterException($"{warnMessage} Typescript compilation timeout expired. Config file: {_absolutePathConfigFile}.",
+                RegisterException($"{warnMessage} Typescript compilation timeout expired. Config file: \"{_absolutePathConfigFile}\".",
                     typeof(TimeoutException));
                 return false;
             }
@@ -228,7 +233,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 if (!output.Any())
                 {
                     RegisterException($"{warnMessage} Compilation ended with code {tscProcess.ExitCode}. " +
-                        $"Config file: {_absolutePathConfigFile}. No additional info.", typeof(Exception));
+                        $"Config file: \"{_absolutePathConfigFile}\". No additional info.", typeof(Exception));
                     return false;
                 }
                 foreach (string el in output)
@@ -251,7 +256,8 @@ namespace Orckestra.Web.Typescript.Classes.Services
                     else
                     {
                         RegisterException($"{warnMessage} Compilation ended with code {tscProcess.ExitCode}. " +
-                            $"Config file: {_absolutePathConfigFile}. Additional info: {string.Join(Environment.NewLine, output)}", typeof(Exception));
+                            $"Config file: \"{_absolutePathConfigFile}\". Additional info: {string.Join(Environment.NewLine, output)}", 
+                            typeof(Exception));
                         break;
                     }
                 }

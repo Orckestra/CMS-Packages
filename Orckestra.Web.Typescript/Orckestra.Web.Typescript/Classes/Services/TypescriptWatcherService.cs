@@ -24,21 +24,21 @@ namespace Orckestra.Web.Typescript.Classes.Services
 
             if (action is null)
             {
-                RegisterException($"{warnMessage} Param {nameof(action)} cannot be null.", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Parameter \"{nameof(action)}\" cannot be null.", typeof(ArgumentNullException));
                 return false;
             }
             _action = action;
 
             if (string.IsNullOrEmpty(fileMask))
             {
-                RegisterException($"{warnMessage} Param {nameof(fileMask)} cannot be null or empty.", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Parameter \"{nameof(fileMask)}\" cannot be null or empty.", typeof(ArgumentNullException));
                 return false;
             }
             _fileMask = fileMask;
 
             if (pathsToWatch is null || !pathsToWatch.Any())
             {
-                RegisterException($"{warnMessage} Param {nameof(pathsToWatch)} is null or has no values.", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Parameter \"{nameof(pathsToWatch)}\" is null or has no values.", typeof(ArgumentNullException));
                 return false;
             }
             _pathsToWatch = pathsToWatch;
@@ -56,18 +56,17 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 string path = HostingEnvironment.MapPath(el); 
                 if (string.IsNullOrEmpty(path))
                 {
-                    RegisterException($"{warnMessage} {nameof(path)} value cannot be null or empty.", typeof(ArgumentNullException));
+                    RegisterException($"{warnMessage} \"{nameof(path)}\" value cannot be null or empty.", typeof(ArgumentNullException));
                     return false;
                 }
                 else if (!Directory.Exists(path))
                 {
-                    RegisterException($"{warnMessage} Folder path {path} does not exist.", typeof(DirectoryNotFoundException));
+                    RegisterException($"{warnMessage} Folder path \"{path}\" does not exist.", typeof(DirectoryNotFoundException));
                     return false;
                 }
                 absolutePaths.Add(path);
             }
 
-            //create filewatchers only if everything was okay as it is disposable
             foreach (string el in absolutePaths)
             {
                 FileSystemWatcher fw = new FileSystemWatcher(el, _fileMask)

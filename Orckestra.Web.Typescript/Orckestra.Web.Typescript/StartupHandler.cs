@@ -44,7 +44,7 @@ namespace Orckestra.Web.Typescript
 
             if (settings.TypescriptTasks is null || !settings.TypescriptTasks.Any())
             {
-                RegisterException("No typescript tasks in assembly config file", typeof(ArgumentException));
+                RegisterException("No typescript tasks in assembly config file.", typeof(ArgumentException));
                 return;
             }
             string baseDirPath = HostingEnvironment.MapPath("~");

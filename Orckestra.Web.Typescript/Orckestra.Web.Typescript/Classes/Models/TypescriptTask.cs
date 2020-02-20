@@ -1,5 +1,4 @@
-﻿using Orckestra.Web.Typescript.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace Orckestra.Web.Typescript.Classes.Models
