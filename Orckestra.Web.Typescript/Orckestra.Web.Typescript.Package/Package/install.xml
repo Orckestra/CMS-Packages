@@ -33,10 +33,10 @@
 
       Level 1. General settings.
       They located in the root directory of a web site in the "Web.config" file.
-      They allow enabling or disabling of this package.
+      Settings allow enabling or disabling of this package.
       If this package is not using, recommended to turn it off.
       To turn on or to turn off this package:
-      - open "Web.config" file in the root directory of a web site;
+      - open the "Web.config" file in the root directory of a web site;
       - locate to the "configuration/appSettings" path;
       - find the key "Orckestra.Web.Typescript.Enable";
       - set up "true" or "false" value.
@@ -48,7 +48,7 @@
       - set up "true" or "false" value.
 
       Level 2. Package (assembly) settings.
-      They located in the "bin" folder of a site.
+      They located in the "bin" folder of a web site.
       These settings allow creating typescript compilation tasks.
       To manage package settings, open the "bin" folder and locate the "Orckestra.Web.Typescript.dll.cmp.xml" file.
       Explanation about settings usage it is possible to find in this file in comments.
