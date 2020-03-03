@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "outFile": "./UI.Package/JavaScript/orckestra.composer.js",
+    "sourceMap": true,
+    "removeComments": true
+  },
+  "include": [
+    "./UI.Package/Typescript/**/*.ts"
+  ]
+}

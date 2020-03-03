@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- To affect any changes in this configuration, restart the web app. -->
+<settings 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="localhost Orckestra.Web.Typescript.dll.cmp.xsd">
+  <typescriptTasks>
+    <typescriptTask>
+      <!-- Timeout in seconds to wait for a compilation result. Cannot be empty, zero or negative. -->
+      <compilerTimeOutSeconds>15</compilerTimeOutSeconds>
+      <!-- Custom name of a task, to be used for logs -->
+      <taskName>default task</taskName>
+      <!-- To overwrite files if they exist-->
+      <allowOverwrite>true</allowOverwrite>
+      <!-- Paths where typescripts located, to monitor for changes-->
+      <pathsToWatchForChanges>
+        <pathToWatchForChanges>~/UI.Package/Typescript</pathToWatchForChanges>
+      </pathsToWatchForChanges>
+      <!-- A mask for extensions to be watched for changes. If you need multiple,  use | : *.ts|*.js.-->
+      <fileMask>*.ts</fileMask>
+      <!-- A path to the "tsconfig.json" file, which includes all typescript compilation options.
+      More information here: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html -->
+      <pathTypescriptConfigFile>~/tsconfig.json</pathTypescriptConfigFile>
+      <!-- To turn on or to turn off the minification of a compiled file. Set up the "outFile" parameter 
+      value in the "tsconfig.json" file to use it-->
+      <useMinification>true</useMinification>
+      <!-- A filename of minified javascript-->
+      <minifiedFileName>orckestra.composer.min.js</minifiedFileName>
+    </typescriptTask>
+  </typescriptTasks>
+</settings>
