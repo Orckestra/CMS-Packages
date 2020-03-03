@@ -26,6 +26,8 @@ namespace Orckestra.Web.Typescript
 
         public static void OnInitialized()
         {
+            if (!HostingEnvironment.IsHosted) return;
+
             if (!PackageEnabled)
             {
                 return;
