@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Web.Hosting;
+using System.Web.Mvc;
 using Composite.AspNet.MvcFunctions;
 using Composite.C1Console.Elements;
 using Composite.Core.Application;
@@ -18,16 +19,20 @@ namespace Orckestra.Search.KeywordRedirect
     {
         public static void ConfigureServices(IServiceCollection services)
         {
+            if (!HostingEnvironment.IsHosted) return;
             services.AddSingleton(typeof(KeywordManager));
         }
 
         public static void OnBeforeInitialize()
         {
+            if (!HostingEnvironment.IsHosted) return;
         }
 
         public static void OnInitialized(KeywordChangeNotifier keywordChangeNotifier, PageChangeNotifier pageChangeNotifier,
             BeforeKeywordChangeNotifier beforeKeywordChangeNotifier)
         {
+            if (!HostingEnvironment.IsHosted) return;
+
             DynamicTypeManager.EnsureCreateStore(typeof(RedirectKeyword));
 
             DataEvents<RedirectKeyword>.OnAfterAdd += keywordChangeNotifier.OnChange;
