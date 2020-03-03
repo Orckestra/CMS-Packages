@@ -19,13 +19,11 @@ namespace Orckestra.Search.KeywordRedirect
     {
         public static void ConfigureServices(IServiceCollection services)
         {
-            if (!HostingEnvironment.IsHosted) return;
             services.AddSingleton(typeof(KeywordManager));
         }
 
         public static void OnBeforeInitialize()
         {
-            if (!HostingEnvironment.IsHosted) return;
         }
 
         public static void OnInitialized(KeywordChangeNotifier keywordChangeNotifier, PageChangeNotifier pageChangeNotifier,
