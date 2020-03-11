@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using System.Web.Hosting;
 using System.Web.Mvc;
 using Composite.Core.Application;
 using Composite.Data;
@@ -10,6 +11,8 @@ namespace Orckestra.Search.KeywordRedirect.Controllers
     public class KeywordControllerRegistrator {
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
+            if (!HostingEnvironment.IsHosted) return;
+
             serviceCollection.AddTransient(typeof(KeywordController));
         }
     }
