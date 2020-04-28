@@ -23,7 +23,7 @@ To turn on or to turn off all **styles** bundling and minification:
   - find the key `Orckestra.Web.BundlingAndMinification.BundleAndMinifyScripts`;
   - set up `true` or `false` value.
   
-  To turn on/off the package at all, turn on/off both styles and scripts settings.
+  To turn on/off the package at all, turn on/off both styles and scripts in settings as described above.
   
   There is a list of predefined cases when the package does not bundle and minify scripts and styles of a page:
   - A request appears when the current user logged in to the admin console panel.
