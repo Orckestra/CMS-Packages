@@ -3,7 +3,7 @@
 namespace Orckestra.Web.BundlingAndMinification
 {
 	/// <summary>
-	/// Class implementing custom styles bundling and minification
+	/// Class implementing custom styles bundling and minification since WebGrease has known issues with BootStrap 4 
 	/// </summary>
 	public class CustomStyleBundle : Bundle
 	{

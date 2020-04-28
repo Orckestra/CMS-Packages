@@ -5,6 +5,9 @@ using System.Web;
 
 namespace Orckestra.Web.BundlingAndMinification
 {
+    /// <summary>
+    /// Additional helper operations
+    /// </summary>
     internal static class Helpers
     {
         internal static string GetMD5Hash(this string text)

@@ -6,38 +6,8 @@
     readMoreUrl="https://docs.c1.orckestra.com/" id="83472ca2-e38e-44f3-9d10-8194b23fdee8" canBeUninstalled="true" systemLocking="hard" 
     flushOnCompletion="true" reloadConsoleOnCompletion="false">
 		<TechnicalDetails>
-			The package provides scripts and styles bundling and minification to increase the speed of the site.
-			Will be bundled and minified internal server script and styles files, but not inline elements.
-			Styles bundle will be added to the end of the head, while styles bundle will be added to the end of the page body.
-
-			Bundling and minification will not work in the following cases:
-			- current user is logged in to admin console panel;
-			- it is a request to admin console;
-			- web site works in debugging mode (check "debug" attribute in Web.config file on path configuration\system.web\compilation);
-			If none of these condition is true, but you don't see bundling and minification on your site - be sure you don't see cached
-			version of your site and check logs.
 		</TechnicalDetails>
 		<Description>
-			To enable compilation, bundling and minification support of specific styles filetypes install the appropriate packages of latest
-			versions:
-			- Orckestra.Web.Css.Less with version 1.3.3 or more to support "less" filetype styles;
-			- Orckestra.Web.Css.Sass with version 2.0.2 or more to support "scss" filetype styles.
-			Unsupported styles will be removed from page.
-
-			To exclude specific scripts or styles from bundling and minification process and to keep them "as is" and in definied position
-			add to them "c1-not-bundleminify" attribute with "true" value.
-
-			To turn on or turn off scripts bundling and minification:
-			open the Web.config file;
-			locate to the configuration/appSettings/compilation/BundlingAndMinification.BundleAndMinifyScripts path;
-			set up true or false value to the debug attribute.
-
-			To turn on or turn off scripts bundling and minification:
-			open the Web.config file;
-			locate to the configuration/appSettings/compilation/BundlingAndMinification.BundleAndMinifyStyles path;
-			set up true or false value to the debug attribute.
-
-      To turn off package at all delete it or turn off both scripts and styles bundling and minification.
 		</Description>
 	</mi:PackageInformation>
   <mi:PackageFragmentInstallerBinaries>

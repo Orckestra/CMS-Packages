@@ -14,8 +14,8 @@ namespace Orckestra.Web.BundlingAndMinification
 {
 	/// <summary>
 	/// Class to provide scripts and styles optimization. 
-	/// Modify the original document without allocating additional memory.
-	/// Page elements removing (if has to) appears in the end of <see cref="Invoke"/> call
+	/// It provides a modification of the original document without allocating additional memory.
+	/// Page elements removing (if has to) appears in the end of the <see cref="Invoke"/> call.
 	/// </summary>
 	internal class ActionContainer
 	{
@@ -62,7 +62,7 @@ namespace Orckestra.Web.BundlingAndMinification
 					bundle = BundleTable.Bundles.GetBundleFor(bundleVirtualPath);
 					if (bundle == null)
 					{
-						bundle = new Bundle(bundleVirtualPath);
+						bundle = new ScriptBundle(bundleVirtualPath);
 						bundle.Include(ScriptsPaths.ToArray());
 						BundleTable.Bundles.Add(bundle);
 					}
@@ -251,7 +251,7 @@ namespace Orckestra.Web.BundlingAndMinification
 				string virtualPath = GetVirtualPath(urlVal);
 				if (!string.IsNullOrEmpty(virtualPath))
 				{
-					//Original reference of an internal script, scheduling removing since it will be in the bundle
+					//Original reference of an internal file script, scheduling removing since it will be in the bundle
 					actions.Add(() => element.Remove());
 					paths.Add(virtualPath);
 				}

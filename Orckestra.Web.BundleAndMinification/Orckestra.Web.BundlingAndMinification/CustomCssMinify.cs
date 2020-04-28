@@ -5,7 +5,7 @@ using NUglify;
 namespace Orckestra.Web.BundlingAndMinification
 {
 	/// <summary>
-	/// Class implementing minification through NUglify since WebGrease has known issues with BootStrap 4
+	/// Class implementing styles minification through NUglify
 	/// </summary>
 	public class CustomCssMinify : IBundleTransform
 	{
