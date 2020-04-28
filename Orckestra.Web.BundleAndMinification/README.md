@@ -7,7 +7,7 @@ In case your site has specific styles filetypes, but you have not installed dema
 
 ## Description
 The package provides scripts and styles bundling and minification. It allows to reduce the number of requests that the browser needs to get all of the resource files, and also to reduce the size of such files and, as a result, to load pages faster. This package does not minify inline scripts, inline styles, or HTML code itself.
-A bundle with styles adding to the original page to the end of the HEAD part of the page. While a bundle with scripts adding to the end of the BODY part.
+A bundle with styles adding to the original page to the end of the HEAD part. While a bundle with scripts adding to the end of the BODY part.
 
 To exclude specific style or script from the bundling and minification process, add to such element c1-not-bundleminify attribute with "true" value.
 
