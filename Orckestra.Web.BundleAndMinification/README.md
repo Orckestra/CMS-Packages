@@ -2,6 +2,7 @@
 This package has no dependencies. But if your site uses specific styles filetypes, be sure you have installed the appropriate CSS compilers of the latest versions:
 - to support **LESS** styles filetypes install [**Orckestra.Web.Css.Less**](https://github.com/Orckestra/CMS-Packages/tree/master/Composite.Web.Css.Less) package of the version **1.3.3 or more**.
 - to support **SCSS** styles filetypes install [**Orckestra.Web.Css.Sass**](https://github.com/Orckestra/CMS-Packages/tree/master/Composite.Web.Css.Sass) package of the version **2.0.2 or more**.
+
 In case your site has specific styles filetypes, but you have not installed demanded compilers, such files not to be used on the page.
 
 ## Description
