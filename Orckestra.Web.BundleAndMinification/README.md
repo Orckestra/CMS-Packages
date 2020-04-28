@@ -11,13 +11,13 @@ A bundle with styles adding to the original page to the end of the HEAD part. Wh
 
 To exclude specific style or script from the bundling and minification process, add to such element c1-not-bundleminify attribute with "true" value.
 
-To turn on or to turn off **styles** bundling and minification:
+To turn on or to turn off all **styles** bundling and minification:
   - open the **Web.config** file in the root directory of a web site;
   - locate to the **configuration/appSettings** path;
   - find the key `Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles`;
   - set up `true` or `false` value.
   
-  To turn on or to turn off **scripts** bundling and minification:
+  To turn on or to turn off all **scripts** bundling and minification:
   - open the **Web.config** file in the root directory of a web site;
   - locate to the **configuration/appSettings** path;
   - find the key `Orckestra.Web.BundlingAndMinification.BundleAndMinifyScripts`;
