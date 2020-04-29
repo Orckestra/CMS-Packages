@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Orckestra.Web.Css.Less</RootNamespace>
     <AssemblyName>Orckestra.Web.Css.Less.Package</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -56,7 +56,6 @@
     <None Include="Package\Frontend\Orckestra\Web\Css\Less\less\lessc" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Package\Bin\Composite.Web.BundlingAndMinification.Api.dll" />
     <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\browser.js" />
     <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\colors.js" />
     <Content Include="Package\Frontend\Orckestra\Web\Css\Less\less\lib\less\env.js" />
@@ -103,11 +102,14 @@
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Package\Web.config\Install.xsl" />
+    <Content Include="Package\Web.config\Install.xsl">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Package\Web.config\Uninstall.xsl" />
     <Content Include="_PackageCreator\Orckestra.Web.Css.Less.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Package\Bin\" />
     <Folder Include="Release\" />
   </ItemGroup>
   <ItemGroup>
@@ -124,13 +126,14 @@
   <PropertyGroup>
     <PostBuildEvent>ROBOCOPY "$(ProjectDir)Package" "$(TargetDir)_Package"  /MIR
 
+MKDIR "$(TargetDir)_Package\Bin\"
 COPY "$(TargetDir)*.dll" "$(TargetDir)_Package\Bin\"
 DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
 
 DEL "$(TargetDir)$(SolutionName).zip"
 
 "$(SolutionDir)packages\7-Zip.CommandLine.9.20.0\tools\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
-
+MKDIR "$(ProjectDir)Release\
 COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"
 </PostBuildEvent>
   </PropertyGroup>

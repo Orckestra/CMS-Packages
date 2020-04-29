@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Orckestra.Web.Css.Less</RootNamespace>
     <AssemblyName>Orckestra.Web.Css.Less</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -35,12 +35,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Composite, Version=3.0.4358.29126, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\References\Composite\4.2\Composite.dll</HintPath>
+    <Reference Include="Composite, Version=6.8.7271.23834, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\C1CMS.Assemblies.6.8.7271.23834\lib\net471\Composite.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="Composite.Web.BundlingAndMinification.Api">
-      <HintPath>..\Composite.Web.Css.Less.Package\Package\Bin\Composite.Web.BundlingAndMinification.Api.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\C1CMS.Assemblies.6.8.7271.23834\lib\net471\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\C1CMS.Assemblies.6.8.7271.23834\lib\net471\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Orckestra.Web.Css.CompileFoundation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Composite.Web.Css.Less.Package\Package\Bin\Orckestra.Web.Css.CompileFoundation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,6 +69,9 @@
     <Compile Include="ReparsePointUtils.cs" />
     <Compile Include="StartupHandler.cs" />
     <Compile Include="StylesHashing.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
