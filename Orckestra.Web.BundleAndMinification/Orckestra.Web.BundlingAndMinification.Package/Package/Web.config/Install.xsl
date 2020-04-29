@@ -9,6 +9,18 @@
         <add key="Orckestra.Web.BundlingAndMinification.BundleAndMinifyScripts" value="true"/>
         <add key="Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles" value="true"/>
       </appSettings>
+      <runtime>
+        <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+          <dependentAssembly>
+            <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral"/>
+            <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+          </dependentAssembly>
+          <dependentAssembly>
+            <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+            <bindingRedirect oldVersion="0.0.0.0-1.5.2.14234" newVersion="1.5.2.14234" />
+          </dependentAssembly>
+        </assemblyBinding>
+      </runtime>
     </configuration>
   </xsl:variable>
 
@@ -26,7 +38,19 @@
       </xsl:if>
     </xsl:copy>
   </xsl:template>
-
+  <xsl:template match="/configuration/runtime/ab:assemblyBinding">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()"/>
+      <xsl:if test="not(/configuration/runtime/ab:assemblyBinding/ab:dependentAssembly[ab:assemblyIdentity[@name='Newtonsoft.Json']])">
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/runtime/ab:assemblyBinding/
+                     ab:dependentAssembly[ab:assemblyIdentity[@name='Newtonsoft.Json']]"/>
+      </xsl:if>
+      <xsl:if test="not(/configuration/runtime/ab:assemblyBinding/ab:dependentAssembly[ab:assemblyIdentity[@name='WebGrease']])">
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/runtime/ab:assemblyBinding/
+                     ab:dependentAssembly[ab:assemblyIdentity[@name='WebGrease']]"/>
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
   <xsl:template match="/configuration/appSettings">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>
