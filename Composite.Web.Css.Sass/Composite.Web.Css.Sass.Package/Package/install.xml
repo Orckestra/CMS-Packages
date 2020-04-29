@@ -19,6 +19,7 @@
         <!-- Using DllPackageFragmentInstaller to keep Orckestra.Web.Css.CompileFoundation on uninstallatin, can be used by other modules-->
         <File sourceFilename="~\Bin\Orckestra.Web.Css.CompileFoundation.dll" targetFilename="~\Bin\Orckestra.Web.Css.CompileFoundation.dll" allowOverwrite="true" />
       </Files>
+    </mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
 			<XslFiles>
 				<XslFile pathXml="~/Web.config" installXsl="~\Web.config\Install.xsl" uninstallXsl="~\Web.config\Uninstall.xsl" />
