@@ -5,6 +5,6 @@
 			<xsl:apply-templates select="@* | node()" />
 		</xsl:copy>
 	</xsl:template>
+  <xsl:template match="/configuration/system.webServer/modules/add[@name='SassHttpModule']" />
 	<xsl:template match="/configuration/system.web/httpModules/add[@name='SassHttpModule']" />
-	<xsl:template match="/configuration/system.webServer/modules/add[@name='SassHttpModule']" />
 </xsl:stylesheet>

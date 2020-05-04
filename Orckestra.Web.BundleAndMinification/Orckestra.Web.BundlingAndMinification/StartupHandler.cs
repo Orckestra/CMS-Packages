@@ -1,8 +1,8 @@
 ﻿using Composite.Core.Application;
+using Composite.Core.WebClient.Renderings.Page;
 using Microsoft.Extensions.DependencyInjection;
-using Orckestra.Web.Css.CompileFoundation;
 
-namespace Orckestra.Web.Css.Sass
+namespace Orckestra.Web.BundlingAndMinification
 {
     public static class StartupHandler
     {
@@ -13,7 +13,7 @@ namespace Orckestra.Web.Css.Sass
 
             public static void ConfigureServices(IServiceCollection services)
             {
-                services.AddSingleton(typeof(ICssCompiler), typeof(SassCssCompiler));
+                services.AddSingleton(typeof(IPageContentFilter), typeof(PageContentFilter));
             }
         }
     }

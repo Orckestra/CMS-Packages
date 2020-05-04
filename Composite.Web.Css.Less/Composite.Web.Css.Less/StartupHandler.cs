@@ -1,5 +1,6 @@
 ﻿using Composite.Core.Application;
-using Composite.Web.BundlingAndMinification.Api;
+using Microsoft.Extensions.DependencyInjection;
+using Orckestra.Web.Css.CompileFoundation;
 
 namespace Orckestra.Web.Css.Less
 {
@@ -10,9 +11,9 @@ namespace Orckestra.Web.Css.Less
         {
             public static void OnBeforeInitialize() { }
 
-            public static void OnInitialized()
+            public static void ConfigureServices(IServiceCollection services)
             {
-                CssCompilerRegistry.RegisterCssCompiler(new LessCssCompiler());
+                services.AddSingleton(typeof(ICssCompiler), typeof(LessCssCompiler));
             }
         }
     }
