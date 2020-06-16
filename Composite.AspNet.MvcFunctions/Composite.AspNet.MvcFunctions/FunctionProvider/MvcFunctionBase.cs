@@ -12,6 +12,7 @@ using System.Web;
 using System.Web.Routing;
 using System.Xml;
 using Composite.AspNet.MvcFunctions;
+using Composite.AspNet.MvcFunctions.FunctionProvider;
 using Composite.C1Console.Security;
 using Composite.Core.IO;
 using Composite.Core.Routing;
@@ -23,7 +24,7 @@ using Composite.Functions;
 
 namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
 {
-    internal abstract class MvcFunctionBase: IFunction
+    internal abstract class MvcFunctionBase: IFunction, IDynamicFunction
     {
         protected readonly FunctionCollection _functionCollection;
         private readonly IList<ParameterProfile> _parameters = new List<ParameterProfile>();
@@ -370,6 +371,12 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
         public virtual void AssignDynamicUrlMapper(Type dataType, IDataUrlMapper dataUrlMapper)
         {
             _dataUrlMappers.Add(new Tuple<Type, IDataUrlMapper>(dataType, dataUrlMapper));
+        }
+
+        public bool PreventFunctionOutputCaching
+        {
+            get;
+            set;
         }
     }
 }

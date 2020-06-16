@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
-using Composite.Core.Extensions;
 using Composite.Core.Routing.Pages;
 using Composite.Functions;
 using Composite.Plugins.Functions.FunctionProviders.MvcFunctions;
@@ -24,13 +23,20 @@ namespace Composite.AspNet.MvcFunctions.FunctionProvider
             _controllerDescriptor = new ReflectedControllerDescriptor(controllerType);
             _actionName = actionName;
 
-            var actions = _controllerDescriptor.GetCanonicalActions().Where(a => a.ActionName == actionName);
+            var actions = _controllerDescriptor.GetCanonicalActions().Where(a => a.ActionName == actionName).ToList();
             Verify.That(actions.Any(), "Action name '{0}' isn't recognized", actionName);
 
-            _routeToRender = "~/{0}/{1}".FormatWith(_controllerDescriptor.ControllerName, actionName);
+            PreventFunctionOutputCaching = actions.Any(attr =>
+            {
+                var customAttributes = attr.GetCustomAttributes(true);
+                return customAttributes.OfType<OutputCacheAttribute>().Any(profile => profile.NoStore || profile.Duration <= 0)
+                    || customAttributes.OfType<AuthorizeAttribute>().Any();
+            });
+
+            _routeToRender = $"~/{_controllerDescriptor.ControllerName}/{actionName}";
         }
 
-        override internal IEnumerable<ParameterInfo> GetParameterInformation()
+        internal override IEnumerable<ParameterInfo> GetParameterInformation()
         {
             return _controllerDescriptor
                 .GetCanonicalActions()
