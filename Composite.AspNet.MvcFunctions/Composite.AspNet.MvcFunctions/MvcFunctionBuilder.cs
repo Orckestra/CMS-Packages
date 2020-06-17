@@ -59,13 +59,23 @@ namespace Composite.AspNet.MvcFunctions
         }
 
         /// <summary>
-        /// When set to <value>true</value>, the path info value will be appended to the mvc route to be executed.
+        /// When called, the function will be configured, so the path info value will be appended to the mvc route to be executed.
         /// F.e. "{pageUrl}/a/b/c" will render execute the route  "{controller}/{action}/a/b/c" for action functions.
         /// </summary>
         /// <returns></returns>
         public MvcFunctionBuilder IncludePathInfo()
         {
             _function.UsePathInfoForRouting();
+            return this;
+        }
+
+        /// <summary>
+        /// When called, the function will be configured for its output to be excluded from the full-page caching.
+        /// </summary>
+        /// <returns></returns>
+        public MvcFunctionBuilder PreventOutputCaching()
+        {
+            _function.PreventFunctionOutputCaching = true;
             return this;
         }
 
