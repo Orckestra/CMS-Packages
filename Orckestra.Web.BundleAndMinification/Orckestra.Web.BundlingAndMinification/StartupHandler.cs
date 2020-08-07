@@ -4,17 +4,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Orckestra.Web.BundlingAndMinification
 {
-    public static class StartupHandler
-    {
-        [ApplicationStartup]
-        public static class StatupHandler
-        {
-            public static void OnBeforeInitialize() { }
+	[ApplicationStartup]
+	public static class StatupHandler
+	{
+		public static void OnBeforeInitialize() { }
 
-            public static void ConfigureServices(IServiceCollection services)
-            {
-                services.AddSingleton(typeof(IPageContentFilter), typeof(PageContentFilter));
-            }
-        }
-    }
+		public static void ConfigureServices(IServiceCollection services)
+		{
+			services.AddSingleton(typeof(IPageContentFilter), typeof(PageContentFilter));
+		}
+	}
 }
