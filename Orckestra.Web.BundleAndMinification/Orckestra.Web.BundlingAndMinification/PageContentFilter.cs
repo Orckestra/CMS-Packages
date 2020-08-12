@@ -29,10 +29,10 @@ namespace Orckestra.Web.BundlingAndMinification
             HttpContext httpContext = HttpContext.Current;
 
             if ((!BundleMinifyScripts && !BundleMinifyStyles)
-                || httpContext.Request["c1mode"] != "perf" &&
-                (httpContext.IsDebuggingEnabled
                 || IsAdminConsoleRequest(httpContext)
-                || UserValidationFacade.IsLoggedIn()))
+                || (httpContext.Request["c1mode"] != "perf" &&
+                (httpContext.IsDebuggingEnabled       
+                || UserValidationFacade.IsLoggedIn())))
             {
                 return;
             }
