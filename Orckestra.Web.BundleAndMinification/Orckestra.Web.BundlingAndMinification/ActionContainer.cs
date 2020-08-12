@@ -312,7 +312,6 @@ namespace Orckestra.Web.BundlingAndMinification
 
                 string virtualDirectoryOrigin = Path.GetDirectoryName(virtualPathOrigin);
 
-                var matches = Regex.Matches(input, pattern);
                 input = Regex.Replace(input, 
                     pattern, 
                     m=> m.Value.Replace(m.Groups[1].Value, 
