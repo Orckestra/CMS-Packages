@@ -27,8 +27,12 @@ namespace Orckestra.Web.BundlingAndMinification
         public void Filter(XhtmlDocument document, IPage page)
         {
             HttpContext httpContext = HttpContext.Current;
-            if ((!BundleMinifyScripts && !BundleMinifyStyles) || httpContext.IsDebuggingEnabled ||
-                IsAdminConsoleRequest(httpContext) || UserValidationFacade.IsLoggedIn())
+
+            if ((!BundleMinifyScripts && !BundleMinifyStyles)
+                || httpContext.Request["c1mode"] != "perf" &&
+                (httpContext.IsDebuggingEnabled
+                || IsAdminConsoleRequest(httpContext)
+                || UserValidationFacade.IsLoggedIn()))
             {
                 return;
             }
