@@ -306,7 +306,7 @@ namespace Orckestra.Web.BundlingAndMinification
                     && physicalFileInfoTemp.Exists 
                     && physicalFileInfoOrigin.LastWriteTimeUtc == physicalFileInfoTemp.LastWriteTimeUtc) return virtualPathTemp;
                  
-                var pattern = "url\\s*\\((?!\\s*['\"]?\\s*(?:data|http|\\/|.\\s*\\/)\\s*['\"]?)\\s*['\"]?\\s*(.+?)\\s*['\"]?\\s*\\)";
+                var pattern = "url\\s*\\((?!\\s*['\"]?\\s*(?:data:|http:|https:|\\/|.\\s*\\/)\\s*['\"]?)\\s*['\"]?\\s*(.+?)\\s*['\"]?\\s*\\)";
 
                 string input = File.ReadAllText(physicalPathOrigin);
 
