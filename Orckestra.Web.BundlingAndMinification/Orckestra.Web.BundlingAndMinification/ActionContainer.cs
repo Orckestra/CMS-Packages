@@ -186,7 +186,17 @@ namespace Orckestra.Web.BundlingAndMinification
                             new XAttribute("type", "text/css"),
                             new XAttribute("rel", "stylesheet"));
 
-                        Document.Head.Add(bundleXElement);
+                        // Add before the first link or at the end
+                        var element = Document.Head.Element(Namespaces.Xhtml + "link");
+                        if (element != null)
+                        {
+                            element.AddBeforeSelf(bundleXElement);
+                        }
+                        else
+                        {
+                            Document.Head.Add(bundleXElement);
+                        }
+                        
                     }
                 }
                 catch (Exception ex)

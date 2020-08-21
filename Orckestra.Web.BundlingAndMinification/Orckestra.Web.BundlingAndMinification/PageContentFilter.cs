@@ -21,8 +21,8 @@ namespace Orckestra.Web.BundlingAndMinification
             BundleMinifyStyles = AppSettings[$"{AppSettingsPath}.BundleAndMinifyStyles"].Equals("true", StringComparison.OrdinalIgnoreCase);
         }
 
-        //To be executed in the end, after all another filter
-        public int Order => int.MaxValue;
+        //To be executed in the end, after all another filter but before CdnPublisher
+        public int Order => 999;
 
         public void Filter(XhtmlDocument document, IPage page)
         {
