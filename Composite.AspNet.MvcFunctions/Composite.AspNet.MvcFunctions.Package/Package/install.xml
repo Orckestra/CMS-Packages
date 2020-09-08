@@ -20,7 +20,7 @@
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
 			<Files>
 				<File sourceFilename="~\Bin\Composite.AspNet.MvcFunctions.dll" targetFilename="~\Bin\Composite.AspNet.MvcFunctions.dll" allowOverwrite="true" />
-				<File sourceFilename="~\Views\web.config" targetFilename="~\Views\web.config" allowOverwrite="false" />
+				<File sourceFilename="~\Views\web.config" targetFilename="~\Views\web.config" allowOverwrite="false" onlyAdd="true" />
 			</Files>
 		</mi:Add>
 		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite">
