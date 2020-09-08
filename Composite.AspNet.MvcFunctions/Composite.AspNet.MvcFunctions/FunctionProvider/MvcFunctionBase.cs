@@ -13,6 +13,7 @@ using System.Web.Routing;
 using System.Xml;
 using Composite.AspNet.MvcFunctions;
 using Composite.C1Console.Security;
+using Composite.Core.Instrumentation;
 using Composite.Core.IO;
 using Composite.Core.Routing;
 using Composite.Core.Routing.Pages;
@@ -46,6 +47,8 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
         public string Namespace { get; protected set; }
         public string Description { get; protected set; }
         public bool RequireAsyncHandler { get; protected set; }
+
+        protected bool PreventPageCaching { get; set; }
 
         protected abstract bool HandlesPathInfo { get; }
 
@@ -106,6 +109,14 @@ namespace Composite.Plugins.Functions.FunctionProviders.MvcFunctions
                 if (routeResolved && HandlesPathInfo && C1PageRoute.GetPathInfo() != null)
                 {
                     C1PageRoute.RegisterPathInfoUsage();
+                }
+
+                if (routeResolved && PreventPageCaching)
+                {
+                    using (Profiler.Measure("MvcFunctionBase: Disabling HTTP cache"))
+                    {
+                        HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                    }
                 }
             }
 
