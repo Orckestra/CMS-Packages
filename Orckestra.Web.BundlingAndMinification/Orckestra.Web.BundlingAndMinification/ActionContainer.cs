@@ -2,11 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.Remoting.Channels;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Web;
-using System.Web.Hosting;
 using System.Web.Optimization;
 using System.Xml.Linq;
 using Composite.Core;
@@ -130,12 +125,12 @@ namespace Orckestra.Web.BundlingAndMinification
 
             if (StylesPaths.Any())
             {
-                Bundle bundle = null;
+                CustomStyleBundle bundle = null;
                 try
                 {
                     string pathKey = string.Join(string.Empty, StylesPaths).GetMD5Hash();
                     string bundleVirtualPath = "~/Bundles/Styles_" + pathKey;
-                    bundle = BundleTable.Bundles.GetBundleFor(bundleVirtualPath);
+                    bundle = (CustomStyleBundle)BundleTable.Bundles.GetBundleFor(bundleVirtualPath);
 
                     if (bundle == null)
                     {
@@ -147,8 +142,7 @@ namespace Orckestra.Web.BundlingAndMinification
                             string extention = Path.GetExtension(source);
                             if (extention.Equals(".css", StringComparison.OrdinalIgnoreCase))
                             {
-                                var tempPath = PrepareTempFile(source);
-                                bundle.Include(tempPath);
+                                bundle.Include(source);
                             }
                             else if (notSupportedExtentions.Contains(extention))
                             {
@@ -164,8 +158,7 @@ namespace Orckestra.Web.BundlingAndMinification
                                 else
                                 {
                                     var compiledFilePath = compiler.CompileCss(source);
-                                    var tempPath = PrepareTempFile(compiledFilePath);
-                                    bundle.Include(tempPath);
+                                    bundle.Include(compiledFilePath);
                                 }
                             }
                         }
@@ -289,49 +282,7 @@ namespace Orckestra.Web.BundlingAndMinification
             }
         }
 
-        private string PrepareTempFile(string virtualPathOrigin)
-        {
-            string physicalPathOrigin = HostingEnvironment.MapPath(virtualPathOrigin);
-            FileInfo physicalFileInfoOrigin = new FileInfo(physicalPathOrigin);
-
-            string fileNameTemp = string.Concat(virtualPathOrigin.GetMD5Hash(), ".css");
-
-            string physicalPathTemp = Path.Combine(_physicalFolderTemp, fileNameTemp);
-            FileInfo physicalFileInfoTemp = null;
-
-            string virtualPathTemp = $"~/{VirtualFolderTemp}/{fileNameTemp}"; 
-
-            if (File.Exists(physicalPathTemp))
-            {
-                physicalFileInfoTemp = new FileInfo(physicalPathTemp);
-            }
-
-            if (physicalFileInfoTemp != null 
-                && physicalFileInfoTemp.Exists 
-                && physicalFileInfoOrigin.LastWriteTimeUtc == physicalFileInfoTemp.LastWriteTimeUtc) return virtualPathTemp;
-
-            lock (_tempLocker)
-            {
-                if (physicalFileInfoTemp != null 
-                    && physicalFileInfoTemp.Exists 
-                    && physicalFileInfoOrigin.LastWriteTimeUtc == physicalFileInfoTemp.LastWriteTimeUtc) return virtualPathTemp;
-                 
-                var pattern = "url\\s*\\((?!\\s*['\"]?\\s*(?:data:|http:|https:|\\/|.\\s*\\/)\\s*['\"]?)\\s*['\"]?\\s*(.+?)\\s*['\"]?\\s*\\)";
-
-                string input = File.ReadAllText(physicalPathOrigin);
-
-                string virtualDirectoryOrigin = Path.GetDirectoryName(virtualPathOrigin);
-
-                input = Regex.Replace(input, 
-                    pattern, 
-                    m=> m.Value.Replace(m.Groups[1].Value, 
-                    VirtualPathUtility.ToAbsolute(Path.Combine(virtualDirectoryOrigin, m.Groups[1].Value))));
-
-                File.WriteAllText(physicalPathTemp, input);
-                File.SetLastWriteTimeUtc(physicalPathTemp, physicalFileInfoOrigin.LastWriteTimeUtc);
-            }
-            return virtualPathTemp;
-        }
+        
 
         internal enum ActionType
         {
