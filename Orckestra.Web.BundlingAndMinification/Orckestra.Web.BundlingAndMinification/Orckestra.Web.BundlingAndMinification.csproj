@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionContainer.cs" />
+    <Compile Include="CustomBundleBuilder.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="CustomCssMinify.cs" />
     <Compile Include="CustomStyleBundle.cs" />
