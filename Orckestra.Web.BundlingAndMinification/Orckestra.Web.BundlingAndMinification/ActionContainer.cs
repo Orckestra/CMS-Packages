@@ -22,7 +22,7 @@ namespace Orckestra.Web.BundlingAndMinification
         private const string VirtualFolderTemp = "./App_Data/Composite/Cache/Css";
         private static readonly string _physicalFolderTemp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, VirtualFolderTemp);
 
-        private object _tempLocker = new object();
+        private static object _styleCompilationLocker = new object();
 
         static ActionContainer()
         {
@@ -157,8 +157,7 @@ namespace Orckestra.Web.BundlingAndMinification
                                 }
                                 else
                                 {
-                                    var compiledFilePath = compiler.CompileCss(source);
-                                    bundle.Include(compiledFilePath);
+                                    bundle.Include(CompileStyle(source, compiler));
                                 }
                             }
                         }
@@ -206,6 +205,14 @@ namespace Orckestra.Web.BundlingAndMinification
             foreach (var el in StylesActions)
             {
                 el.Invoke();
+            }
+        }
+
+        private static string CompileStyle(string source, ICssCompiler compiler)
+        {
+            lock(_styleCompilationLocker)
+            {
+                return compiler.CompileCss(source);
             }
         }
 
