@@ -1,11 +1,12 @@
-﻿using Orckestra.Web.Typescript.Interfaces;
+﻿using System;
+using Orckestra.Web.Typescript.Interfaces;
 using System.Collections.Generic;
 
 namespace Orckestra.Web.Typescript.Classes
 {
     internal static class TasksPool
     {
-        private static ITypescriptCompileService[] _compilers;
+        private static ITypescriptCompileService[] _compilers = Array.Empty<ITypescriptCompileService>();
         #pragma warning disable IDE0052
         private static List<ITypescriptWatcherService> _watchers;
         #pragma warning restore IDE0052
