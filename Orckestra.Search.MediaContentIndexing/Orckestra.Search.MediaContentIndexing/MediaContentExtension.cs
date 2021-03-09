@@ -22,7 +22,9 @@ namespace Orckestra.Search.MediaContentIndexing
         private const string CacheDirectory = "~/App_Data/Composite/Cache/MediaContentIndexing";
 
         private const int MaxMissingFilesLogMessages = 100;
+        private const int MaxInvalidStreamsLogMessages = 100;
         private static int _missingFilesLogged;
+        private static int _invalidStreamsLogged;
 
 
         private const string LogTitle = nameof(MediaContentSearchExtension);
@@ -96,6 +98,14 @@ namespace Orckestra.Search.MediaContentIndexing
                 {
                     mediaStream.CopyTo(file);
                 }
+            }
+            catch (InvalidOperationException ex)
+            {
+                if (Interlocked.Increment(ref _invalidStreamsLogged) <= MaxInvalidStreamsLogMessages)
+                {
+                    Log.LogWarning(LogTitle, $"Failed to read the underlying stream for media file '{mediaFile.KeyPath}', error message: {ex.Message}");
+                }
+                return null;
             }
             catch (FileNotFoundException)
             {

@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Package\App_Data\Search\MediaContentIndexing\" />
-    <Folder Include="Package\bin\" />
+    <Folder Include="Package\Bin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -70,7 +70,11 @@
 DEL "$(TargetDir)\*.exe"</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
+    <PostBuildEvent>
+
+ROBOCOPY "$(ProjectDir)\Package" "$(TargetDir)_Package"  /MIR
+
+IF NOT EXIST "$(TargetDir)_Package\Bin\" mkdir "$(TargetDir)_Package\Bin\"
 
 COPY "$(TargetDir)\*.dll" "$(TargetDir)_Package\Bin\"
 DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
@@ -83,7 +87,7 @@ DEL "$(TargetDir)$(SolutionName).zip"
 
 "$(SolutionDir)..\References\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
 
-
+IF NOT EXIST "$(ProjectDir)Release" mkdir "$(ProjectDir)Release"
 COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"</PostBuildEvent>
   </PropertyGroup>
 </Project>
