@@ -6,10 +6,12 @@ using System.Text;
 using Composite.Core.IO;
 using Composite.Data;
 using Composite.Data.Plugins.DataProvider;
+using Composite.Data.Streams;
 using Composite.Data.Types;
 
 namespace Orckestra.Media.StaticFileLinkMediaProvider.Impl
 {
+    [FileStreamManager(typeof(StaticFileFileStreamManager))]
     public class StaticFile : IMediaFile
     {
         private static readonly MD5 HashingAlgorithm = MD5.Create();
@@ -19,16 +21,21 @@ namespace Orckestra.Media.StaticFileLinkMediaProvider.Impl
             string websitePath = PathUtil.GetWebsitePath(fullPath);
             string providerRelativePath = websitePath.Substring(providerRoot.Length - 1);
 
+            FullPath = fullPath;
             Id = CalculateId(providerRelativePath);
             DownloadUrl = websitePath;
             FileName = Path.GetFileName(providerRelativePath);
             FolderPath = Path.GetDirectoryName(providerRelativePath).Replace("\\","/");
             StoreId = storeId;
             DataSourceId = context.CreateDataSourceId( new MediaDataId { Id = this.Id, MediaType = MediaElementType.File }, typeof(IMediaFile) );
-            CreationTime = DateTime.MinValue;
-            LastWriteTime = DateTime.MinValue;
-            Length = 0;
+
+            var fileInfo = new FileInfo(FullPath);
+            CreationTime = fileInfo.CreationTimeUtc;
+            LastWriteTime = fileInfo.LastWriteTimeUtc;
+            Length = (int) fileInfo.Length;
         }
+
+        internal string FullPath { get; }
 
         public Guid Id { get; internal set; }
 

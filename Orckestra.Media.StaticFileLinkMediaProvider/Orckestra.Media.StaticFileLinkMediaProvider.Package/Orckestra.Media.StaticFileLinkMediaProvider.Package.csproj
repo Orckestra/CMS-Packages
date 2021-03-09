@@ -25,6 +25,7 @@
     <SccProvider>SAK</SccProvider>
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -128,12 +129,26 @@
   <PropertyGroup>
     <PostBuildEvent>ROBOCOPY "$(ProjectDir)Package" "$(TargetDir)_Package"  /MIR
 
+
+
+IF NOT EXIST "$(TargetDir)_Package\Bin\" MKDIR "$(TargetDir)_Package\Bin\"
+
 COPY "$(TargetDir)*.dll" "$(TargetDir)_Package\Bin\"
+
+
 DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+
 
 DEL "$(TargetDir)$(SolutionName).zip"
 
+
+
 "$(SolutionDir)packages\7-Zip.CommandLine.9.20.0\tools\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+
+
+IF NOT EXIST "$(ProjectDir)Release" MKDIR "$(ProjectDir)Release"
 
 COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)Release\$(SolutionName).zip"
 </PostBuildEvent>

@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
     <mi:PackageRequirements minimumCompositeVersion="6.2.0.0" maximumCompositeVersion="9.9999.9999.9999" />
-    <mi:PackageInformation name="Orckestra.Media.StaticFileLinkMediaProvider" groupName="Orckestra.Media" version="1.0.1" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Media.StaticFileLinkMediaProvider" id="50c17ce3-df89-458d-93a9-d09f80b475ec" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
+    <mi:PackageInformation name="Orckestra.Media.StaticFileLinkMediaProvider" groupName="Orckestra.Media" version="1.0.2" author="Orckestra" website="https://cms.orckestra.com/" readMoreUrl="http://docs.cms.orckestra.com/Orckestra.Media.StaticFileLinkMediaProvider" id="50c17ce3-df89-458d-93a9-d09f80b475ec" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true">
         <TechnicalDetails>This is a (read only) media provider that show up in the media structure, exposing files from website and allowing console users to link directly to static files. Implements "IMediaUrlProvider" to ensure links are mapped to normal relative paths (and as such this provider is safe to point even to the root of the website - it will not serve any protected files, since it does not serve files, just paths).</TechnicalDetails>
         <Description>This is a (read only) media provider that show up in the media structure, exposing files from website and allowing console users to link directly to static files.</Description>
     </mi:PackageInformation>
@@ -12,7 +12,7 @@
         <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
             <Files>
                 <File sourceFilename="~\download/readme.txt" targetFilename="~\download/readme.txt" allowOverwrite="true"  />
-                <File sourceFilename="~\Bin\Orckestra.Media.StaticFileLinkMediaProvider.dll" targetFilename="~\Bin\Orckestra.Media.StaticFileLinkMediaProvider.dll" allowOverwrite="false" />
+                <File sourceFilename="~\Bin\Orckestra.Media.StaticFileLinkMediaProvider.dll" targetFilename="~\Bin\Orckestra.Media.StaticFileLinkMediaProvider.dll" allowOverwrite="true" />
 
             </Files>
         </mi:Add>

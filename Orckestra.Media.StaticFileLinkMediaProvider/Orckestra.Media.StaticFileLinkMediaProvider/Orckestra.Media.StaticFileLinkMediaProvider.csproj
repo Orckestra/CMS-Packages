@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Impl\MediaDataId.cs" />
+    <Compile Include="Impl\StaticFileFileStreamManager.cs" />
     <Compile Include="Impl\StaticFolder.cs" />
     <Compile Include="Impl\MediaFileStore.cs" />
     <Compile Include="Impl\StaticFile.cs" />
