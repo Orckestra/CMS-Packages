@@ -1,7 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
 	<mi:PackageRequirements minimumCompositeVersion="6.0.0.0" maximumCompositeVersion="6.11.0.0" />
-	<mi:PackageInformation name="Composite.Hotfixes.Hotfix769" groupName="Composite.Hotfixes" version="1.0.2" author="Orckestra A/S" website="https://orckestra.com" readMoreUrl="https://orckestra.com" id="d3e8772f-6f48-4933-805e-d822e10c2e2a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" allowOverwrite="false">
+	<mi:PackageInformation name="Composite.Hotfixes.Hotfix769" groupName="Composite.Updates" version="1.0.2" author="Orckestra A/S"
+          website="https://c1.orckestra.com" readMoreUrl="https://github.com/Orckestra/C1-CMS-Foundation/issues/769"
+          id="d3e8772f-6f48-4933-805e-d822e10c2e2a" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" allowOverwrite="false">
 		<TechnicalDetails>Addresses the bug with popup-s not being shown in C1 Console , introduced by breaking changes in Chrome version 90. The hotfix  renames "ui|popup" html tags into "ui|plainpopup".</TechnicalDetails>
 		<Description>Addresses the bug with popup-s not being shown in C1 Console , introduced by breaking changes in Chrome version 90. The hotfix  renames "ui|popup" html tags into "ui|plainpopup".</Description>
 	</mi:PackageInformation>
