@@ -36,7 +36,7 @@ namespace Composite.Hotfixes
             {
 
                 OutputTransformationManager.RegisterTransformation(
-                    context.Request.MapPath("~/Composite/InstalledPackages/hotfixes/769/769.xsl"), 15);
+                    context.Request.MapPath("~/Composite/InstalledPackages/hotfixes/769/769.xsl"), 5);
 
             }
         }
