@@ -46,36 +46,5 @@ namespace Orckestra.Web.BundlingAndMinification
 
             return url.StartsWith("~") ? url : "~" + url;
         }
-
-        internal static bool ValidateFilePaths(HashSet<string> pageFilePaths)
-        {
-            foreach(var el in pageFilePaths)
-            {
-                var physicalPath = HostingEnvironment.MapPath(el);
-                if (!File.Exists(physicalPath))
-                {
-                    PackageStateManager.SetCriticalState();
-                    Log.LogError(AppNameForLogs, 
-                        $"During the validation the virtual path {el} was mapped " +
-                            $"to the physical path {physicalPath} and it does not exist.");
-                    return false;
-                }
-            }
-           
-            return true;
-        }
-
-        //internal static bool IsFileSharingException(IOException iOException)
-        //{
-        //    if (iOException == null) return false;
-        //    int errorCode = Marshal.GetHRForException(iOException) & ((1 << 16) - 1);
-        //    //32 (ERROR_SHARING_VIOLATION) and 33 (ERROR_LOCK_VIOLATION) are file sharing issues in case of multiinstance
-        //    if (errorCode == 32 || errorCode == 33)
-        //    {
-        //        Log.LogWarning(AppNameForLogs, iOException);
-        //        return true;
-        //    }
-        //    return false;
-        //}
     }
 }

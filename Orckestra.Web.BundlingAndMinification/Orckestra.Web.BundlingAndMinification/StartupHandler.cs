@@ -29,7 +29,6 @@ namespace Orckestra.Web.BundlingAndMinification
 
         public static void ConfigureServices(IServiceCollection services)
         {
-            if (PackageStateManager.IsCriticalState()) return;
             services.AddSingleton(typeof(IPageContentFilter), typeof(PageContentFilter));
         }
 
@@ -45,9 +44,9 @@ namespace Orckestra.Web.BundlingAndMinification
                 }
                 catch(Exception ex)
                 {
+                    //second validation if directory exist
                     Log.LogError(AppNameForLogs, $"Cannot create folder {physicalPath} for caching bundles.");
                     Log.LogError(AppNameForLogs, ex);
-                    PackageStateManager.SetCriticalState();
                     return;
                 }
             }

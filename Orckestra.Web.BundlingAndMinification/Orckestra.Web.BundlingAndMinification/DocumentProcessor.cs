@@ -47,8 +47,8 @@ namespace Orckestra.Web.BundlingAndMinification
 
         internal void Execute()
         {
-            if (!PackageStateManager.IsCriticalState() && BundleMinifyScripts) Execute(ActionType.Script);
-            if (!PackageStateManager.IsCriticalState() && BundleMinifyStyles ) Execute(ActionType.Style);
+            if (BundleMinifyScripts) Execute(ActionType.Script);
+            if (BundleMinifyStyles ) Execute(ActionType.Style);
         }
 
         private void Execute(ActionType actionType)
@@ -160,8 +160,6 @@ namespace Orckestra.Web.BundlingAndMinification
             catch (Exception ex)
             {
                 Log.LogError($"Cannot bundle and minify {actionType}", ex);
-                PackageStateManager.SetCriticalState();
-                return;
             }
         }
 
@@ -175,11 +173,12 @@ namespace Orckestra.Web.BundlingAndMinification
 
             if (bundleObj == null)
             {
-                var pathsAreValidated = ValidateFilePaths(pageFilePaths);
-                if (!pathsAreValidated)
-                {
-                    return;
-                }
+                //do not validate
+                //var pathsAreValidated = ValidateFilePaths(pageFilePaths);
+                //if (!pathsAreValidated)
+                //{
+                //    return;
+                //}
                 bundleObj = new ScriptBundle(bundleVirtualPath);
                 bundleObj.Include(pageFilePaths.ToArray());
                 BundleTable.Bundles.Add(bundleObj);
@@ -204,11 +203,6 @@ namespace Orckestra.Web.BundlingAndMinification
 
             if (bundleObj == null)
             {
-                var pathsAreValidated = ValidateFilePaths(pageFilePaths);
-                if (!pathsAreValidated)
-                {
-                    return;
-                }
                 bundleObj = new CustomStyleBundle(bundleVirtualPath);
                 
                 HashSet<string> notSupportedExtentions = new HashSet<string>();
@@ -250,8 +244,6 @@ namespace Orckestra.Web.BundlingAndMinification
                     string message = $"Styles with the following extensions have not available CSS decompilers: " +
                                         $"{string.Join(" ", notSupportedExtentions)}.";
                     Log.LogError(AppNameForLogs, message);
-                    PackageStateManager.SetCriticalState();
-                    return;
                 }
                 BundleTable.Bundles.Add(bundleObj);
                 if (!initialRunning)
@@ -269,16 +261,7 @@ namespace Orckestra.Web.BundlingAndMinification
         {
             lock (_styleCompilationLocker)
             {
-                try
-                {
-                    return compiler.CompileCss(source);
-                }
-                catch (Exception ex)
-                {
-                    Log.LogError(AppNameForLogs, ex);
-                    PackageStateManager.SetCriticalState();
-                    return null;
-                }
+                return compiler.CompileCss(source);
             }
         }
 
@@ -296,7 +279,6 @@ namespace Orckestra.Web.BundlingAndMinification
                 catch (Exception ex)
                 {
                     Log.LogError(AppNameForLogs, ex);
-                    PackageStateManager.SetCriticalState();
                 }
             }
         }
