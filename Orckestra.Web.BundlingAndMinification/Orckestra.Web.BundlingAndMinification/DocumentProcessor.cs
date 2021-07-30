@@ -12,7 +12,6 @@ using static Orckestra.Web.BundlingAndMinification.CommonValues;
 using Orckestra.Web.BundlingAndMinification.Customizations;
 using System.Web.Hosting;
 using System.Web;
-using System.Runtime.InteropServices;
 
 namespace Orckestra.Web.BundlingAndMinification
 {
@@ -146,39 +145,27 @@ namespace Orckestra.Web.BundlingAndMinification
             bundleUrl = null;
             if (pageFilePaths == null || !pageFilePaths.Any()) return;
 
-            try
+            if (actionType == ActionType.Script)
             {
-                if (actionType == ActionType.Script)
-                {
-                    CreateScriptsBundle(pageFilePaths, out bundleUrl);
-                }
-                else
-                {
-                    CreateStylesBundle(pageFilePaths, out bundleUrl);
-                }
+                CreateScriptsBundle(pageFilePaths, out bundleUrl);
             }
-            catch (Exception ex)
+            else
             {
-                Log.LogError($"Cannot bundle and minify {actionType}", ex);
+                CreateStylesBundle(pageFilePaths, out bundleUrl);
             }
+
         }
 
         private static void CreateScriptsBundle(HashSet<string> pageFilePaths, out string bundleUrl)
         {
             string hash = string.Join(string.Empty, pageFilePaths).GetMD5Hash();
-            string bundleVirtualPath = $"~/Bundles/{BundlePathPartScripts}" + hash;
+            string bundleVirtualPath = $"~/Bundles/{BundlePathPartScripts}{hash}";
             Bundle bundleObj = BundleTable.Bundles.GetBundleFor(bundleVirtualPath);
             bundleUrl = null;
             bool initialRunning = HttpContext.Current?.Handler == null;
 
             if (bundleObj == null)
             {
-                //do not validate
-                //var pathsAreValidated = ValidateFilePaths(pageFilePaths);
-                //if (!pathsAreValidated)
-                //{
-                //    return;
-                //}
                 bundleObj = new ScriptBundle(bundleVirtualPath);
                 bundleObj.Include(pageFilePaths.ToArray());
                 BundleTable.Bundles.Add(bundleObj);
@@ -231,8 +218,7 @@ namespace Orckestra.Web.BundlingAndMinification
                     string compiledStylePath = CompileStyle(source, compiler);
 
                     if (string.IsNullOrWhiteSpace(compiledStylePath))
-                    {   
-                        //Saas/less compilers use filesystem, so it could be multiinstance issue here.
+                    {
                         Log.LogWarning(AppNameForLogs, $"Could not compile styles for the source {source}");
                         return;
                     }

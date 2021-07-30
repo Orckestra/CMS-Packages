@@ -21,6 +21,11 @@
           </dependentAssembly>
         </assemblyBinding>
       </runtime>
+      <system.webServer>
+        <modules runAllManagedModulesForAllRequests="true">
+          <add name="BundleMinifyHttpModule" type="Orckestra.Web.BundlingAndMinification, Orckestra.Web.BundlingAndMinification" />
+        </modules>
+      </system.webServer>
     </configuration>
   </xsl:variable>
 
@@ -59,6 +64,14 @@
       </xsl:if>
       <xsl:if test="not(/configuration/appSettings/add[@key='Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles'])">
         <xsl:copy-of select="msxsl:node-set($structure)/configuration/appSettings/add[@key='Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles']" />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+  <xsl:template match="/configuration/system.webServer/modules">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()"/>
+      <xsl:if test="not(add[@name='BundleMinifyHttpModule'])">
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/system.webServer/modules/add[@key='BundleMinifyHttpModule']" />
       </xsl:if>
     </xsl:copy>
   </xsl:template>

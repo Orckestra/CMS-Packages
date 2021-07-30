@@ -1,13 +1,7 @@
 ﻿﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
-using System.Web.Hosting;
-using Composite.Core;
-using static Orckestra.Web.BundlingAndMinification.CommonValues;
 
 namespace Orckestra.Web.BundlingAndMinification
 {

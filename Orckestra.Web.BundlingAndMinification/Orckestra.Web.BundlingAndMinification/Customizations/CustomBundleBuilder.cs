@@ -54,7 +54,6 @@ namespace Orckestra.Web.BundlingAndMinification.Customizations
                 catch (Exception ex)
                 {
                     Log.LogError(AppNameForLogs, ex);
-                    PackageStateManager.SetCriticalState();
                     return text;
                 }
             }

@@ -131,6 +131,7 @@
     <Compile Include="Helpers.cs" />
     <Compile Include="Customizations\CustomCssMinify.cs" />
     <Compile Include="Customizations\CustomStyleBundle.cs" />
+    <Compile Include="BundleMinifyHttpModule.cs" />
     <Compile Include="PageContentFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartupHandler.cs" />
