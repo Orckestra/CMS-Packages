@@ -20,17 +20,17 @@ namespace Orckestra.Web.BundlingAndMinification
         {
             HttpContext httpContext = HttpContext.Current;
 
-            //if (
-            //    (!BundleMinifyScripts && !BundleMinifyStyles)
-            //    || IsAdminConsoleRequest(httpContext)
-            //    || (httpContext.Request["c1mode"] != "perf"
-            //    &&
-            //    (httpContext.IsDebuggingEnabled       
-            //    || UserValidationFacade.IsLoggedIn()))
-            //)
-            //{
-            //    return;
-            //}
+            if (
+                (!BundleMinifyScripts && !BundleMinifyStyles)
+                || IsAdminConsoleRequest(httpContext)
+                || (httpContext.Request["c1mode"] != "perf"
+                &&
+                (httpContext.IsDebuggingEnabled
+                || UserValidationFacade.IsLoggedIn()))
+            )
+            {
+                return;
+            }
 
             DocumentProcessor processor = new DocumentProcessor(document);
             processor.Execute();

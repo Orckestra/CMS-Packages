@@ -8,5 +8,5 @@
   </xsl:template>
   <xsl:template match="/configuration/appSettings/add[@key='Orckestra.Web.BundlingAndMinification.BundleAndMinifyScripts']" />
   <xsl:template match="/configuration/appSettings/add[@key='Orckestra.Web.BundlingAndMinification.BundleAndMinifyStyles']" />
-  <xsl:template match="/configuration/system.webServer/modules/add[@key='BundleMinifyHttpModule']" />
+  <xsl:template match="/configuration/system.webServer/modules/add[@key='BundlingAndMinificationHttpModule']" />
 </xsl:stylesheet>

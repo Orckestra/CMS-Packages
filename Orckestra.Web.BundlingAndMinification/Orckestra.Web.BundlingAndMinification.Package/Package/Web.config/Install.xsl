@@ -23,7 +23,7 @@
       </runtime>
       <system.webServer>
         <modules runAllManagedModulesForAllRequests="true">
-          <add name="BundleMinifyHttpModule" type="Orckestra.Web.BundlingAndMinification, Orckestra.Web.BundlingAndMinification" />
+          <add name="BundlingAndMinificationHttpModule" type="Orckestra.Web.BundlingAndMinification.BundlingAndMinificationHttpModule, Orckestra.Web.BundlingAndMinification" />
         </modules>
       </system.webServer>
     </configuration>
@@ -70,8 +70,8 @@
   <xsl:template match="/configuration/system.webServer/modules">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>
-      <xsl:if test="not(add[@name='BundleMinifyHttpModule'])">
-        <xsl:copy-of select="msxsl:node-set($structure)/configuration/system.webServer/modules/add[@key='BundleMinifyHttpModule']" />
+      <xsl:if test="not(add[@name='BundlingAndMinificationHttpModule'])">
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/system.webServer/modules/add[@key='BundlingAndMinificationHttpModule']" />
       </xsl:if>
     </xsl:copy>
   </xsl:template>
