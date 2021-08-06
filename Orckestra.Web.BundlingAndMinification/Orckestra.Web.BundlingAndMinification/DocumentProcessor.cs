@@ -227,7 +227,7 @@ namespace Orckestra.Web.BundlingAndMinification
 
                 if (notSupportedExtentions.Any())
                 {
-                    string message = $"Styles with the following extensions have not available CSS decompilers: " +
+                    string message = $"Styles with the following extensions have not available CSS compilers: " +
                                         $"{string.Join(" ", notSupportedExtentions)}.";
                     Log.LogError(AppNameForLogs, message);
                 }
