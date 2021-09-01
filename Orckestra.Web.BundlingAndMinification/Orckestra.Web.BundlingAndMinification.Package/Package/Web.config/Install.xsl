@@ -67,11 +67,12 @@
       </xsl:if>
     </xsl:copy>
   </xsl:template>
+
   <xsl:template match="/configuration/system.webServer/modules">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>
       <xsl:if test="not(add[@name='BundlingAndMinificationHttpModule'])">
-        <xsl:copy-of select="msxsl:node-set($structure)/configuration/system.webServer/modules/add[@key='BundlingAndMinificationHttpModule']" />
+        <xsl:copy-of select="msxsl:node-set($structure)/configuration/system.webServer/modules/add[@name='BundlingAndMinificationHttpModule']" />
       </xsl:if>
     </xsl:copy>
   </xsl:template>

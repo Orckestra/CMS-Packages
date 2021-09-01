@@ -15,7 +15,7 @@ namespace Orckestra.Web.BundlingAndMinification
     public class BundlingAndMinificationHttpModule : IHttpModule
     {
         private static readonly Regex _bundlePathRegex = 
-            new Regex("^" + Regex.Escape(UrlUtils.PublicRootPath) + "/Bundles/(Scripts|Styles)_([a-zA-Z0-9]{32})?v=(.+?)$", RegexOptions.Compiled);
+            new Regex("^" + Regex.Escape(UrlUtils.PublicRootPath) + "/Bundles/(Scripts|Styles)_([a-zA-Z0-9]{32})\\?v\\=(.+)$", RegexOptions.Compiled);
         public void Dispose() { }
 
         public void Init(HttpApplication application)
@@ -26,9 +26,8 @@ namespace Orckestra.Web.BundlingAndMinification
         private void context_BeginRequest(HttpContext context)
         {
             if (!BundleMinifyStyles && !BundleMinifyStyles) return;
-            var requestPath = context.Request.Path;
-
-            var match = _bundlePathRegex.Match(requestPath);
+            var rawPath = context.Request.RawUrl;
+            var match = _bundlePathRegex.Match(rawPath);
             if (!match.Success) return;
 
             var hash = match.Groups[2]?.Value;
@@ -37,8 +36,7 @@ namespace Orckestra.Web.BundlingAndMinification
             ActionType actionType = match.Groups[1]?.Value == "Scripts" ? ActionType.Script : ActionType.Style;
             if ((actionType == ActionType.Script && !BundleMinifyScripts) 
                     || (actionType == ActionType.Style && !BundleMinifyStyles)) return;
-
-            Bundle bundleObj = BundleTable.Bundles.GetBundleFor(requestPath);
+            Bundle bundleObj = BundleTable.Bundles.GetBundleFor($"~{context.Request.Path}");
             if (bundleObj != null) return;
 
             var bundleCacheFolderPath = HostingEnvironment.MapPath(BundlesCacheFolder);
