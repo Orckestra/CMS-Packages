@@ -124,11 +124,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionContainer.cs" />
-    <Compile Include="CustomBundleBuilder.cs" />
+    <Compile Include="ActionType.cs" />
+    <Compile Include="CommonValues.cs" />
+    <Compile Include="DocumentProcessor.cs" />
+    <Compile Include="Customizations\CustomBundleBuilder.cs" />
     <Compile Include="Helpers.cs" />
-    <Compile Include="CustomCssMinify.cs" />
-    <Compile Include="CustomStyleBundle.cs" />
+    <Compile Include="Customizations\CustomCssMinify.cs" />
+    <Compile Include="Customizations\CustomStyleBundle.cs" />
+    <Compile Include="BundlingAndMinificationHttpModule.cs" />
     <Compile Include="PageContentFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartupHandler.cs" />
@@ -143,5 +146,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

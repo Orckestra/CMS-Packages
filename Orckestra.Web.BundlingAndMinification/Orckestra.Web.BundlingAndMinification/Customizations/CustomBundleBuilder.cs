@@ -6,8 +6,10 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Hosting;
 using System.Web.Optimization;
+using Composite.Core;
+using static Orckestra.Web.BundlingAndMinification.CommonValues;
 
-namespace Orckestra.Web.BundlingAndMinification
+namespace Orckestra.Web.BundlingAndMinification.Customizations
 {
     public class CustomBundleBuilder : IBundleBuilder
     {
@@ -27,25 +29,33 @@ namespace Orckestra.Web.BundlingAndMinification
             foreach (BundleFile file in files)
             {
                 string text = null;
-                using (StreamReader streamReader = new StreamReader(HostingEnvironment.MapPath(file.IncludedVirtualPath)))
+                try
                 {
-                    text = streamReader.ReadToEnd();
-                }
-
-                if (string.IsNullOrWhiteSpace(text)) continue;
-
-                text = ReplacePathsToAbsolute(file.VirtualFile.VirtualPath, text);
-
-                if (file.Transforms != null && file.Transforms.Count > 0)
-                {
-                    foreach (IItemTransform transform in file.Transforms)
+                    using (StreamReader streamReader = new StreamReader(HostingEnvironment.MapPath(file.IncludedVirtualPath)))
                     {
-                        text = transform.Process(file.IncludedVirtualPath, text);
+                        text = streamReader.ReadToEnd();
                     }
-                }
 
-                stringBuilder.Append(text);
-                stringBuilder.Append(str1);
+                    if (string.IsNullOrWhiteSpace(text)) continue;
+
+                    text = ReplacePathsToAbsolute(file.VirtualFile.VirtualPath, text);
+
+                    if (file.Transforms != null && file.Transforms.Count > 0)
+                    {
+                        foreach (IItemTransform transform in file.Transforms)
+                        {
+                            text = transform.Process(file.IncludedVirtualPath, text);
+                        }
+                    }
+
+                    stringBuilder.Append(text);
+                    stringBuilder.Append(str1);
+                }
+                catch (Exception ex)
+                {
+                    Log.LogError(AppNameForLogs, ex);
+                    return text;
+                }
             }
 
             return stringBuilder.ToString();

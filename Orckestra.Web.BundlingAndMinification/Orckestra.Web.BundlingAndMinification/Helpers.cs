@@ -12,7 +12,7 @@ namespace Orckestra.Web.BundlingAndMinification
     {
         internal static string GetMD5Hash(this string text)
         {
-            if (string.IsNullOrEmpty(text)) { return null; }
+            if (string.IsNullOrEmpty(text)) return null;
 
             using (MD5 md5 = MD5.Create())
             {
@@ -23,7 +23,7 @@ namespace Orckestra.Web.BundlingAndMinification
         //Kept as in the previous package version
         internal static string GetVirtualPath(string url)
         {
-            if (string.IsNullOrEmpty(url)) { return null; }
+            if (string.IsNullOrEmpty(url)) return null;
 
             if (url.StartsWith("//"))
             {
@@ -31,7 +31,7 @@ namespace Orckestra.Web.BundlingAndMinification
             }
 
             bool createRes = Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out Uri uri);
-            if (!createRes || (uri.IsAbsoluteUri && uri.Host != HttpContext.Current.Request.Url.Host)) { return null; }
+            if (!createRes || (uri.IsAbsoluteUri && uri.Host != HttpContext.Current.Request.Url.Host)) return null;
 
             if (uri.IsAbsoluteUri)
             {
