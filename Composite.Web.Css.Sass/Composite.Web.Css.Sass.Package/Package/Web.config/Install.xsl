@@ -25,4 +25,12 @@
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
+	<xsl:template match="/configuration/appSettings">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()"/>
+      <xsl:if test="not(/configuration/appSettings/add[@key='Orckestra.Web.Css.Sass.Enable'])">
+        <add key="Orckestra.Web.Css.Sass.Enable" value="true"/>
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
 </xsl:stylesheet>

@@ -7,4 +7,5 @@
 	</xsl:template>
   <xsl:template match="/configuration/system.webServer/modules/add[@name='SassHttpModule']" />
 	<xsl:template match="/configuration/system.web/httpModules/add[@name='SassHttpModule']" />
+  <xsl:template match="/configuration/appSettings/add[@key='Orckestra.Web.Css.Sass.Enable']" />
 </xsl:stylesheet>
