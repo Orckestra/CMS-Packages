@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using Composite.Core.Routing.Pages;
 using Composite.Functions;
@@ -26,12 +27,18 @@ namespace Composite.AspNet.MvcFunctions.FunctionProvider
             var actions = _controllerDescriptor.GetCanonicalActions().Where(a => a.ActionName == actionName).ToList();
             Verify.That(actions.Any(), "Action name '{0}' isn't recognized", actionName);
 
-            PreventFunctionOutputCaching = actions.Any(attr =>
+            PreventFunctionOutputCaching = actions.Any(action =>
             {
-                var customAttributes = attr.GetCustomAttributes(true);
+                var customAttributes = action.GetCustomAttributes(true);
                 return customAttributes.OfType<OutputCacheAttribute>().Any(profile => profile.NoStore || profile.Duration <= 0)
                     || customAttributes.OfType<AuthorizeAttribute>().Any();
             });
+
+
+            RequireAsyncHandler = actions.Cast<ReflectedActionDescriptor>()
+                .Select(_ => _.MethodInfo)
+                .Any(method => method.ReturnType == typeof(Task)
+                               || (method.ReturnType.IsGenericType && method.ReturnType.GetGenericTypeDefinition() == typeof(Task<>)));
 
             _routeToRender = $"~/{_controllerDescriptor.ControllerName}/{actionName}";
         }

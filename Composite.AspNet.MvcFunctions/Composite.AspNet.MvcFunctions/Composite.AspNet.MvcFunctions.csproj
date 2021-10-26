@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Composite.AspNet.MvcFunctions</RootNamespace>
     <AssemblyName>Composite.AspNet.MvcFunctions</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -37,8 +37,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Composite, Version=6.9.7410.31615, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\C1CMS.Assemblies.6.9.7410.31615\lib\net471\Composite.dll</HintPath>
+    <Reference Include="Composite">
+      <HintPath>..\..\..\c1\Composite\bin\Debug\Composite.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Composite.Workflows, Version=6.9.7410.31618, Culture=neutral, processorArchitecture=MSIL">
@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="C1FunctionAttribute.cs" />
     <Compile Include="FunctionProvider\ActionLinkHelper.cs" />
+    <Compile Include="FunctionProvider\AsyncFunctionWrapper.cs" />
     <Compile Include="FunctionProvider\MvcActionFunction.cs" />
     <Compile Include="FunctionProvider\MvcControllerFunction.cs" />
     <Compile Include="Dependency\C1CmsDependencyResolver.cs" />
