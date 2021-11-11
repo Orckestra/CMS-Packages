@@ -17,6 +17,8 @@ namespace Orckestra.Web.BundlingAndMinification
     {
         public static void OnBeforeInitialize()
         {
+            if (!HostingEnvironment.IsHosted) return;
+
             CreateCacheFolder();
         }
 
@@ -42,11 +44,15 @@ namespace Orckestra.Web.BundlingAndMinification
 
         public static void OnInitialized()
         {
+            if (!HostingEnvironment.IsHosted) return;
+
             Routes.OnBeforePageRouteAdded += routeCollection => routeCollection.Ignore("Bundles/{*pathinfo}");
         }
 
         public static void ConfigureServices(IServiceCollection services)
         {
+            if (!HostingEnvironment.IsHosted) return;
+
             services.AddSingleton(typeof(IPageContentFilter), typeof(PageContentFilter));
         }
     }

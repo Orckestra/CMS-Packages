@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 <mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
     <mi:PackageRequirements minimumCompositeVersion="6.8" maximumCompositeVersion="9.9999.9999.9999" />
-    <mi:PackageInformation name="Orckestra.Web.Css.Less" groupName="Orckestra.Web" version="1.3.3" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="https://c1.orckestra.com/Add-ons/All/Composite.Web.Css.Less" id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
+    <mi:PackageInformation name="Orckestra.Web.Css.Less" groupName="Orckestra.Web" version="1.3.4" author="Orckestra A/S" website="https://c1.orckestra.com/" readMoreUrl="https://c1.orckestra.com/Add-ons/All/Composite.Web.Css.Less" id="b1b27757-a065-41fd-91b0-e8e5f2a0e8d0" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="false">
         <TechnicalDetails>Based on {less} version 1.4.2</TechnicalDetails>
         <Description>Allows you to create and use dynamic CSS's  by integrating .less support on your C1 website (http://lesscss.org/)</Description>
     </mi:PackageInformation>
