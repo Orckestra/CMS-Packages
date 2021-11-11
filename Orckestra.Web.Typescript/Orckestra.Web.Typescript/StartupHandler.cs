@@ -20,8 +20,6 @@ namespace Orckestra.Web.Typescript
 
         public static void ConfigureServices(IServiceCollection serviceCollection)
         {
-            if (!HostingEnvironment.IsHosted) return;
-
             serviceCollection.AddTransient<ITypescriptCompileService, TypescriptCompileService>();
             serviceCollection.AddTransient<ITypescriptWatcherService, TypescriptWatcherService>();
         }
@@ -30,7 +28,10 @@ namespace Orckestra.Web.Typescript
         {
             if (!HostingEnvironment.IsHosted) return;
 
-            if (!PackageEnabled) return;
+            if (!PackageEnabled)
+            {
+                return;
+            }
 
             Settings settings;
             try
