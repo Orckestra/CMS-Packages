@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    h1 {
+        @apply text-xl my-3 font-bold;
+    }
+
+    /** BUTTONS 
+    */
+    .btn {
+      @apply shadow text-xs py-2 px-3 rounded uppercase border border-gray-500 disabled:opacity-50;
+    }
+
+    .btn-secondary {
+        @apply btn hover:border-green-500 hover:text-green-600;
+    }
+
+    .btn-primary {
+        @apply btn bg-gradient-to-b border-green-500 from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700;
+    }
+
+    .btn-default {
+        @apply btn bg-white px-2 py-1 hover:border-green-500 hover:text-green-600;
+    }
+
+    /** TABLES 
+    */
+    .table-default {
+        @apply text-sm text-gray-800;
+    }
+
+    .table-default thead
+    {
+        @apply bg-gray-100 border border-gray-300;
+    }
+
+    .table-default thead th {
+        @apply py-2 px-3 text-left;
+    }
+
+    .table-default tbody tr {
+        @apply border border-gray-300;
+    }
+
+    .table-default tbody td {
+        @apply py-2 px-3;
+    }
+
+    .table-default.w-full thead {
+        @apply border-0;
+    }
+
+    .table-default.w-full tbody tr  {
+        @apply border-l-0 border-r-0;
+    }
+
+    /** FORMS 
+    */
+    .form-label {
+        @apply block text-sm;   
+    }
+
+    .form-label > span {
+        @apply text-gray-500 text-xs;
+    }
+
+    input[type='checkbox'] {
+        @apply rounded text-sm border-gray-400;
+    }
+
+    input[type='checkbox']:checked {
+        @apply bg-green-500 text-green-500 border-green-500 border; 
+    }
+
+    input[type='radio']:checked {
+        @apply bg-green-500 text-green-500 border-green-500 border; 
+    }
+
+    input[type='text'], input[type='number'], input[type='password'], select, textarea {
+        @apply py-1 rounded text-sm border-gray-300;
+    }
+
+  }

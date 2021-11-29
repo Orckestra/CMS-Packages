@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+  <mi:PackageInformation name="Orckestra.Tools.C1CMSConsoleCss" groupName="Orckestra.Tools" version="1.0.0" author="Orckestra A/S"
+                         website="https://c1.orckestra.com/"
+                         readMoreUrl="http://docs.c1.orckestra.com" id="a47b070b-5102-4ef5-b8dd-186df2b8ada7"
+                         canBeUninstalled="true"  systemLocking="hard" flushOnCompletion="true">
+    <TechnicalDetails>
+      Css based on Tailwindcss framework.
+      Examples of usage can be previewed in file ~\App_Data/Composite/InstalledPackages/Orckestra.Tools.C1CMSConsoleCss/index.html
+    </TechnicalDetails>
+    <Description>
+      Generated CSS based on Tailwindcss framework, wich can be used to create custom UI inside C1 CMS console.
+    </Description>
+  </mi:PackageInformation>
+  <mi:PackageFragmentInstallerBinaries />
+  <mi:PackageFragmentInstallers>
+    <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+      <Files>
+        <File sourceFilename="~\Composite/InstalledPackages/Orckestra.Tools.C1CMSConsoleCss/index.css" targetFilename="~\Composite/InstalledPackages/Orckestra.Tools.C1CMSConsoleCss/index.css" allowOverwrite="true" />
+        <File sourceFilename="~\Composite/InstalledPackages/Orckestra.Tools.C1CMSConsoleCss/index.html" targetFilename="~\Composite/InstalledPackages/Orckestra.Tools.C1CMSConsoleCss/index.html" allowOverwrite="true" />
+      </Files>
+    </mi:Add>
+  </mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
