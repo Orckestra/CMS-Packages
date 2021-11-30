@@ -10,7 +10,11 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       gray: colors.trueGray,
-      green: colors.green,
+      primary: {
+        light: '#22b980',
+        DEFAULT: '#22b980',
+        dark: '#1ea371',
+      },
     },
     extend: {},
   },

@@ -20,8 +20,8 @@
         <button class="btn-secondary" disabled="disabled">.btn-secondary disabled</button>
     </div>
     <div class="m-2">
-        <button class="btn-default">.btn-default</button>
-        <button class="btn-default" disabled="disabled">.btn-default disabled</button>
+        <button class="btn-primary-sm">.btn-primary-sm</button>
+        <button class="btn-secondary-sm">.btn-secondary-sm </button>
     </div>
     <h1>Tables</h1>
     <h1>.table-default</h1>
@@ -41,26 +41,26 @@
                 <td>Intro to CSS</td>
                 <td>Adam</td>
                 <td>858</td>
-                <td><button class="btn-default">Download</button></td>
+                <td><button class="btn-secondary-sm">Download</button></td>
             </tr>
             <tr>
                 <th><input type="checkbox" checked name="checkbox"/></th>
                 <td>A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
                 <td>Adam</td>
                 <td>112</td>
-                <td><button class="btn-default">Download</button></td>
+                <td><button class="btn-secondary-sm">Download</button></td>
             </tr>
             <tr>
                 <th><input type="checkbox" name="checkbox"/></th>
                 <td>Intro to JavaScript</td>
                 <td>Chris</td>
                 <td>1,280</td>
-                <td><button class="btn-default">Download</button></td>
+                <td><button class="btn-secondary-sm">Download</button></td>
             </tr>
         </tbody>
     </table>
-    <h1>.table-default .w-full</h1>
-    <table class="table-default my-2 w-full">
+    <h1>.table-default .outborder-0 .w-full</h1>
+    <table class="table-default my-2 w-full outborder-0">
         <thead>
             <tr>
                 <th>Title</th>
@@ -97,13 +97,13 @@
                 <span>Password</span>
                 <input type="password" name="input" value="password"  class="mt-1 block w-full" />
             </label>
-            <label class="form-label">
-                <input type="checkbox" name="checkbox" checked class="mt-1" />
-                <span>Checkbox</span>
+            <label class="form-label mt-1">
+                <input type="checkbox" name="checkbox" checked />
+                Checkbox
             </label>
-            <label class="form-label">
+            <label class="form-label mt-1">
                 <span>Select option</span>
-                <div class="grid grid-flow-col auto-cols-max gap-3 mt-1">
+                <div class="grid grid-flow-col auto-cols-max gap-3 mt-1 ">
                     <label class="block">
                         <input type="radio" name="radio" checked />
                         <span>Option 1</span>
@@ -118,15 +118,16 @@
                     </label>
                 </div>
             </label>
-            <label class="form-label">
+            <label class="form-label mt-1">
                 <span>Additional details</span>
-                <textarea class="mt-1 block w-full" rows="3"></textarea>
+                <textarea class="block mt-1  w-full" rows="3"></textarea>
               </label>
             <label class="form-label">
                 <span>Selection</span>
                 <select class="form-select mt-1 block w-full">
                     <option>Option 1</option>
                     <option>Option 2</option>
+                    <option>Option 3</option>
                 </select>
             </label>
         </div>
@@ -139,11 +140,10 @@
                 <span>Name</span>
                 <div class="grid grid-flow-col auto-cols-max gap-2">
                     <input type="text" name="input" value="Name" class="block" />
-                    <button class="btn-default">Button</button>
-                    <button class="btn-default">Button</button>
+                    <button class="btn-secondary-sm">Button</button>
+                    <button class="btn-secondary-sm">Button</button>
                 </div>
             </label>
-        
         </div>
     </div>
 </body>
