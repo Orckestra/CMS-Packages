@@ -4,6 +4,9 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      'roboto': 'Roboto Condensed, sans-serif'
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
