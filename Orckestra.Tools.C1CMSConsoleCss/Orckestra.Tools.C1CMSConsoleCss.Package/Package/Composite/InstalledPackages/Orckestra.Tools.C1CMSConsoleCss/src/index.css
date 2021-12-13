@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    h1 {
+        @apply text-xl my-3 font-bold;
+    }
+
+    /** BUTTONS 
+    */
+    .btn {
+      @apply shadow text-xs py-2 px-3 rounded uppercase border border-gray-500 disabled:opacity-50;
+    }
+
+    .btn-secondary {
+        @apply btn hover:border-primary-dark hover:text-primary;
+    }
+
+    .btn-primary {
+        @apply btn bg-gradient-to-b border-primary from-primary to-primary-dark text-white hover:from-primary-dark hover:to-primary-dark;
+    }
+
+    .btn-primary-sm {
+        @apply btn-primary px-2 py-1 bg-white;
+    }
+
+    .btn-secondary-sm {
+        @apply btn-secondary px-2 py-1;
+    }
+
+    /** TABLES 
+    */
+    .table-default {
+        @apply text-sm text-gray-800;
+    }
+
+    .table-default thead
+    {
+        @apply bg-gray-100 border border-gray-300;
+    }
+
+    .table-default thead th {
+        @apply py-2 px-3 text-left;
+    }
+
+    .table-default tbody tr {
+        @apply border border-gray-300;
+    }
+
+    .table-default tbody td {
+        @apply py-2 px-3;
+    }
+
+    .table-default.outborder-0 thead {
+        @apply border-0;
+    }
+
+    .table-default.outborder-0 tbody tr  {
+        @apply border-l-0 border-r-0;
+    }
+
+    /** FORMS 
+    */
+    .form-label {
+        @apply block text-sm;   
+    }
+
+    .form-label > span {
+        @apply text-gray-500 text-xs;
+    }
+
+    input[type='checkbox'] {
+        @apply rounded text-sm border-gray-400 focus:border-primary-dark  focus:ring-0;;
+    }
+
+    input[type='checkbox']:checked {
+        @apply bg-primary text-primary border-primary border; 
+    }
+
+    input[type='radio']:checked {
+        @apply bg-primary text-primary border-primary border; 
+    }
+
+    input[type='text'], input[type='number'], input[type='password'], select, textarea {
+        @apply py-1 rounded text-sm border-gray-300 focus:border-primary-dark  focus:ring-0;
+    }
+
+    /** Modal
+    */
+    .modal {
+        @apply hidden z-10 inset-0 overflow-y-auto;
+    }
+
+    .modal.show {
+        @apply fixed block;
+    }
+
+    .modal.show .modal-overlay {
+        @apply fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity;
+    }
+
+    .modal-container {
+        @apply flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0;
+    }
+
+    .modal-body {
+        @apply inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full;
+    }
+
+    .modal.modal-wide .modal-body {
+        @apply sm:max-w-5xl;
+    }
+
+    .modal-header, .modal-footer {
+        @apply py-3 px-4 bg-gray-100;
+    }
+
+    .close-modal {
+        @apply top-3 right-4 text-gray-400 absolute cursor-pointer;
+    }
+
+    .close-modal::after {
+        content: 'x';
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 20px;
+        height: 20px;
+        line-height: 20px; 
+        font-weight: bold;
+    }
+
+    .modal-header h1, .modal-title {
+        @apply text-primary uppercase text-base m-0 font-normal font-roboto;
+    }
+
+    .modal-content {
+        @apply border-t border-b border-gray-300 px-4 py-5 bg-white text-gray-700;
+    }
+    
+  }

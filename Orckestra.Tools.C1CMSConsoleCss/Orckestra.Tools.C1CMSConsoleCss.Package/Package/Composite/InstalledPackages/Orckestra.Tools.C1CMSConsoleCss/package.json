@@ -1,0 +1,18 @@
+{
+  "name": "orckestra.tools.c1cmsconsolecss",
+  "version": "1.0.0",
+  "description": "generated css for c1 cms console based on tailwindcss",
+  "main": "index.html",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.4",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+  	"build": "tailwindcss -i ./src/index.css -o index.css --watch",
+	"open": "index.html",
+    "start": "index.html"
+  },
+  "author": "orckestra",
+  "license": "ISC"
+}
