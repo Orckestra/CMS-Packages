@@ -17,6 +17,7 @@
   <mi:PackageFragmentInstallers>
     <mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
       <Files>
+        <File sourceFilename="~\Composite/InstalledPackages/Orckestra.Tools.C1CMSConsoleCss/flowbite.bundle.js" targetFilename="~\Composite/InstalledPackages/Orckestra.Tools.C1CMSConsoleCss/flowbite.bundle.js" allowOverwrite="true" />
         <File sourceFilename="~\Composite/InstalledPackages/Orckestra.Tools.C1CMSConsoleCss/index.css" targetFilename="~\Composite/InstalledPackages/Orckestra.Tools.C1CMSConsoleCss/index.css" allowOverwrite="true" />
         <File sourceFilename="~\Composite/InstalledPackages/Orckestra.Tools.C1CMSConsoleCss/index.html" targetFilename="~\Composite/InstalledPackages/Orckestra.Tools.C1CMSConsoleCss/index.html" allowOverwrite="true" />
       </Files>
