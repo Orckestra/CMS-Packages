@@ -30,6 +30,17 @@
         @apply btn-secondary px-2 py-1;
     }
 
+    .btn-dropdown {
+        @apply inline-flex justify-center;
+    }
+
+    .dropdown {
+        @apply bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow;
+    }
+    .dropdown-item {
+        @apply text-gray-700 block px-4 py-2 text-sm hover:text-white hover:bg-primary;
+    }
+
     /** TABLES 
     */
     .table-default {
@@ -89,28 +100,33 @@
 
     /** Modal
     */
+
+    .h-modal {
+        height: calc(100% - 2rem);
+      }
+
     .modal {
-        @apply hidden z-10 inset-0 overflow-y-auto;
-    }
-
-    .modal.show {
-        @apply fixed block;
-    }
-
-    .modal.show .modal-overlay {
-        @apply fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity;
+       @apply overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center;
     }
 
     .modal-container {
-        @apply flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0;
+        @apply relative w-full max-w-2xl px-4 h-full md:h-auto;
     }
 
     .modal-body {
-        @apply inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full;
+        @apply bg-white rounded-lg shadow relative;
     }
 
-    .modal.modal-wide .modal-body {
+    .modal.modal-wide .modal-container {
         @apply sm:max-w-5xl;
+    }
+
+    .modal-header {
+        @apply rounded-t;
+    }
+
+    .modal-footer {
+        @apply rounded-b;
     }
 
     .modal-header, .modal-footer {
@@ -139,5 +155,42 @@
     .modal-content {
         @apply border-t border-b border-gray-300 px-4 py-5 bg-white text-gray-700;
     }
-    
+
+    /** Tabs
+    */
+    .tabs {
+        @apply flex -space-x-2;
+    }
+
+    .tabs li {
+        @apply bg-white border-t border-l border-r border-gray-200 rounded-t-lg;
+    }
+
+    .tabs li a {
+        @apply leading-6 block px-4 py-2 font-normal text-base uppercase text-gray-800 opacity-50 border-b border-gray-400; 
+    }
+
+    .tabs li.active {
+        @apply border-gray-300 z-10;
+    }
+
+    .tabs li.active a {
+        @apply text-primary opacity-100 border-none;
+    }
+
+    .tab-content {
+        @apply -mt-px bg-white border border-gray-300;
+        overflow: auto;
+        position: relative;
+    }
+
+    /** Panel
+    */
+    .panel-content {
+        @apply border border-gray-300 p-4 bg-gray-100 rounded;
+    }
+
+    .panel-title {
+        @apply text-primary italic font-normal uppercase text-base;
+    }
   }
