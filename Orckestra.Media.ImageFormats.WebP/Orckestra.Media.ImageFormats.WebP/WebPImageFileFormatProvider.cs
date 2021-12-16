@@ -1,5 +1,7 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.IO;
+using Composite.Core;
 using Composite.Core.WebClient.Media;
 using ImageProcessor;
 using ImageProcessor.Plugins.WebP.Imaging.Formats;
@@ -14,6 +16,11 @@ namespace Orckestra.Media.ImageFormats.WebP
 
         public bool CanSetImageQuality => true;
         public bool CanReadImageSize => false;
+
+        private const string RequiredNativeDllName = "libwebp.dll";
+        private const string RequiredSoftwareName = "Visual C++ Redistributable Packages for Visual Studio 2013";
+
+        private static bool _softwareMissingErrorLogged = false;
 
         public bool TryGetSize(Stream imageStream, out Size size)
         {
@@ -46,7 +53,24 @@ namespace Orckestra.Media.ImageFormats.WebP
                         imageFactory.Quality(quality.Value);
                     }
 
-                    imageFactory.Save(webPFileStream);
+                    try
+                    {
+                        imageFactory.Save(webPFileStream);
+                    }
+                    catch (Exception ex)
+                    {
+                        if (!_softwareMissingErrorLogged
+                            && ex is TypeInitializationException
+                            && ex.ToString().Contains(RequiredNativeDllName))
+                        {
+                            var bitness = Environment.Is64BitProcess ? 64 : 32;
+                            Log.LogCritical(nameof(WebPImageFileFormatProvider), $"This package requires an installation of '{RequiredSoftwareName}' (X{bitness}) version");
+
+                            _softwareMissingErrorLogged = true;
+                        }
+
+                        throw;
+                    }
                 }
             }
         }
