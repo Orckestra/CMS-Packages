@@ -8,3 +8,4 @@ npx tailwindcss -i ./src/index.css -o index.css --watch
 Links:
 https://tailwindcss.com/
 https://github.com/tailwindlabs/tailwindcss-forms
+https://flowbite.com/docs/getting-started/quickstart/
