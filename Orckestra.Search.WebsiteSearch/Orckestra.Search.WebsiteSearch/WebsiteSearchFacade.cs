@@ -24,20 +24,18 @@ namespace Orckestra.Search.WebsiteSearch
     public class WebsiteSearchFacade
     {
         public static string PageTypeIdFieldName = DocumentFieldNames.GetFieldName(typeof(IPage), nameof(IPage.PageTypeId));
-        
-        const int MaximumTermCount = 10;
-        const int ResultsMaxLength = 200;
 
-        
+        private const int MaximumTermCount = 10;
+        private const int ResultsMaxLength = 200;
 
-        private static readonly MethodInfo String_ToLower;
-        private static readonly MethodInfo String_Contains;
+        private static readonly MethodInfo StringToLower;
+        private static readonly MethodInfo StringContains;
 
         static WebsiteSearchFacade()
         {
             var stringMethods = typeof (string).GetMethods();
-            String_ToLower = stringMethods.Single(x => x.Name == nameof(string.ToLower) && !x.GetParameters().Any());
-            String_Contains = stringMethods.Single(x => x.Name == nameof(string.Contains) && x.GetParameters().Length == 1);
+            StringToLower = stringMethods.Single(x => x.Name == nameof(string.ToLower) && !x.GetParameters().Any());
+            StringContains = stringMethods.Single(x => x.Name == nameof(string.Contains) && x.GetParameters().Length == 1);
         }
 
         public static WebsiteSearchResult Search(WebsiteSearchQuery query)
@@ -79,7 +77,8 @@ namespace Orckestra.Search.WebsiteSearch
                     Enabled = true,
                     FragmentsCount = 1,
                     FragmentSize = 120
-                }
+                },
+                ShowExplanation = query.ShowExplanation
             };
 
             var allFields = SearchFacade.DocumentSources.SelectMany(ds => ds.CustomFields).ToList();
@@ -182,7 +181,7 @@ namespace Orckestra.Search.WebsiteSearch
 
             return (from facet in result.Facets
                     let facetField = facetFields[facet.Key]
-                    let previeFunc = facetField.Facet.PreviewFunction ?? (value => value?.ToString())
+                    let previewFunc = facetField.Facet.PreviewFunction ?? (value => value?.ToString())
                     select new SearchResultFacet
                     {
                         Name = facet.Key,
@@ -190,7 +189,7 @@ namespace Orckestra.Search.WebsiteSearch
                                .Select(v => new SearchResultFacetHit
                                {
                                     Value = v.Value,
-                                    Label = previeFunc(v.Value),
+                                    Label = previewFunc(v.Value),
                                     HitCount = v.HitCount
                                })
                                .ToArray()
@@ -221,10 +220,8 @@ namespace Orckestra.Search.WebsiteSearch
 
         private static SearchResultEntry ToSearchResultEntry(SearchResultItem line)
         {
-            object desc;
-
             var doc = line.Document;
-            doc.FieldValues.TryGetValue(DocumentFieldNames.Description, out desc);
+            doc.FieldValues.TryGetValue(DocumentFieldNames.Description, out var desc);
 
             return new SearchResultEntry
             {
@@ -235,6 +232,9 @@ namespace Orckestra.Search.WebsiteSearch
                     line.FullTextHtmlHighlights != null && line.FullTextHtmlHighlights.Length > 0 
                     ? string.Join("<br />", line.FullTextHtmlHighlights)
                     : HttpUtility.HtmlEncode(desc as string),
+                Boost = doc.Boost,
+                Score = line.Score,
+                ExplanationSummary = line.ExplanationSummary,
                 FieldValues = doc.FieldValues
             };
         }
@@ -379,8 +379,8 @@ namespace Orckestra.Search.WebsiteSearch
 
                     var notNullExpression = Expression.NotEqual(propertyExpression, Expression.Constant(null, typeof(string)));
 
-                    var toLowerExpression = Expression.Call(propertyExpression, String_ToLower);
-                    var containsExpression = Expression.Call(toLowerExpression, String_Contains, 
+                    var toLowerExpression = Expression.Call(propertyExpression, StringToLower);
+                    var containsExpression = Expression.Call(toLowerExpression, StringContains, 
                         Expression.Constant(keyword));
 
                     var andExpression = Expression.AndAlso(notNullExpression, containsExpression);
