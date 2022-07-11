@@ -11,6 +11,7 @@ namespace Orckestra.Web.Css.Sass
 {
     public class CssCompilationHttpModule : IHttpModule
     {
+        private const int MaxRetryAttempts = 5;
         private static readonly ReaderWriterLockSlim _compilationLock = new ReaderWriterLockSlim();
         private static readonly Hashtable<string, CachedDirectoryInfo> _directoryInfo = new Hashtable<string, CachedDirectoryInfo>();
 
@@ -54,29 +55,31 @@ namespace Orckestra.Web.Css.Sass
             DateTime folderLastUpdatedUtc = GetCachedFolderLastUpdateDateUtc(directory, _fileWatcherMask);
 
             var filePathCss = filePath.Substring(0, filePath.Length - _extension.Length) + ".min.css";
-
-            if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < folderLastUpdatedUtc)
+            for (int i = 1; i <= MaxRetryAttempts; i++)
             {
-                try
+                if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < folderLastUpdatedUtc)
                 {
-                    _compilationLock.EnterWriteLock();
-
                     try
                     {
-                        if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < folderLastUpdatedUtc)
-                        {
-                            _compileAction(filePath, filePathCss, folderLastUpdatedUtc);
-                        }
-                    }
-                    catch (CssCompileException ex)
-                    {
-                        if (!UserValidationFacade.IsLoggedIn())
-                        {
-                            throw;
-                        }
+                        _compilationLock.EnterWriteLock();
 
-                        // Showing a friendly error message for logged in users
-                        context.Response.Write(string.Format(@"
+                        try
+                        {
+                            if (!File.Exists(filePathCss) || File.GetLastWriteTimeUtc(filePathCss) < folderLastUpdatedUtc)
+                            {
+                                _compileAction(filePath, filePathCss, folderLastUpdatedUtc);
+                            }
+                            break;
+                        }
+                        catch (CssCompileException ex)
+                        {
+                            if (!UserValidationFacade.IsLoggedIn())
+                            {
+                                throw;
+                            }
+
+                            // Showing a friendly error message for logged in users
+                            context.Response.Write(string.Format(@"
 /* 
 CSS COMPILE ERROR:
 {2}
@@ -98,13 +101,27 @@ body:before {{
    content: 'Error in {0}:\A\A {1}';
    z-index: 10000;
 }}", requestPath, EncodeCssContent(ex.Message), EncodeCssComment(ex.Message)));
-                        context.ApplicationInstance.CompleteRequest();
-                        return;
+                            context.ApplicationInstance.CompleteRequest();
+                            return;
+                        }
+                        catch
+                        {
+                            if (i == MaxRetryAttempts)
+                            {
+                                throw;
+                            }
+                            Thread.Sleep(1000);
+                            continue;
+                        }
+                    }
+                    finally
+                    {
+                        _compilationLock.ExitWriteLock();
                     }
                 }
-                finally
+                else
                 {
-                    _compilationLock.ExitWriteLock();
+                    break;
                 }
             }
 
