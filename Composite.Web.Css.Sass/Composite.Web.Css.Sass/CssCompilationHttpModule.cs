@@ -104,7 +104,7 @@ body:before {{
                             context.ApplicationInstance.CompleteRequest();
                             return;
                         }
-                        catch
+                        catch (IOException)
                         {
                             if (i == MaxRetryAttempts)
                             {
