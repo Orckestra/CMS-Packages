@@ -28,8 +28,9 @@ namespace Orckestra.Web.Css.Sass
 
         public void Init(HttpApplication application)
         {
-            bool packageEnabled = ConfigurationManager.AppSettings["Orckestra.Web.Css.Sass.Enable"] == "true";
-            if (!packageEnabled)
+            //TODO: fix package configuration issue
+            bool packageDisabled = ConfigurationManager.AppSettings["Orckestra.Web.Css.Sass.Enable"] == "false";
+            if (packageDisabled)
             {
                 return;
             }
