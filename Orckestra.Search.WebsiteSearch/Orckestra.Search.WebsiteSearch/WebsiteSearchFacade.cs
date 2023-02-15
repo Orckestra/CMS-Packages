@@ -200,6 +200,8 @@ namespace Orckestra.Search.WebsiteSearch
         private static DataEntityToken GetRootPageEntityToken()
         {
             var currentPageId = PageRenderer.CurrentPageId;
+            if (currentPageId == Guid.Empty) 
+                throw new InvalidOperationException("Cannot filter search results by the website's root page, as PageRenderer.CurrentPageId is not set.");
 
             for(int i=0; i<100; i++)
             {
@@ -208,8 +210,10 @@ namespace Orckestra.Search.WebsiteSearch
                 {
                     using (new DataConnection(PublicationScope.Unpublished))
                     {
-                        var rootPage = PageManager.GetPageById(currentPageId);
-                        return rootPage?.GetDataEntityToken();
+                        var rootPage = PageManager.GetPageById(currentPageId)
+                            ?? throw new InvalidOperationException($"Failed to get a page by id '{currentPageId}'");
+
+                        return rootPage.GetDataEntityToken();
                     }
                 }
 
