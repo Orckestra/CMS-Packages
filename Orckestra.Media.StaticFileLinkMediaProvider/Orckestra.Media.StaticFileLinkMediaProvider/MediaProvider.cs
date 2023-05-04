@@ -33,6 +33,7 @@ namespace Orckestra.Media.StaticFileLinkMediaProvider
             };
 
             _fileSystemWatcher.Created += FileChange;
+            _fileSystemWatcher.Changed += FileChange;
             _fileSystemWatcher.Deleted += FileChange;
             _fileSystemWatcher.Renamed += FileChange;
             _fileSystemWatcher.Error += FileChangeOverflow;
