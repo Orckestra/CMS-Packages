@@ -10,6 +10,7 @@ namespace Orckestra.Search.WebsiteSearch
     {
         public string Name { get; set; }
         public string[] Selections { get; set; }
+        public SearchQuerySelectionOperation? Operation { get; set; }
     }
 
     public class WebsiteSearchQuery
