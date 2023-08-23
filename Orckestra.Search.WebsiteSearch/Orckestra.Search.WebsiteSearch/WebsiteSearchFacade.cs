@@ -97,9 +97,9 @@ namespace Orckestra.Search.WebsiteSearch
                     {
                         FieldName = facet.Name,
                         Values = facet.Selections,
-                        Operation = field.Facet.FacetType == FacetType.SingleValue 
-                        ? SearchQuerySelectionOperation.Or
-                        : SearchQuerySelectionOperation.And
+                        Operation = facet.Operation ?? (field.Facet.FacetType == FacetType.SingleValue
+                            ? SearchQuerySelectionOperation.Or
+                            : SearchQuerySelectionOperation.And)
                     });
                 }
 
