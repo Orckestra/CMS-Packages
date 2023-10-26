@@ -65,7 +65,7 @@ namespace Orckestra.Search.LuceneNET
         }
 
 
-        private void UpdateDirectory(CultureInfo culture, Action<IndexWriter> action, bool optimize = false)
+        private void UpdateDirectory(CultureInfo culture, Action<IndexWriter> action)
         {
             var directory = _directories[culture];
 
@@ -76,11 +76,7 @@ namespace Orckestra.Search.LuceneNET
                     IndexWriter.MaxFieldLength.LIMITED))
                 {
                     action(writer);
-
-                    if (optimize)
-                    {
-                        writer.Optimize();
-                    }
+                    writer.Optimize();
 
                     writer.Commit();
                 }
