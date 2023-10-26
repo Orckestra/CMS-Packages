@@ -1,12 +1,11 @@
 ﻿using BoboBrowse.Net;
 using BoboBrowse.Net.Sort;
 using Lucene.Net.Search;
-using Orckestra.Search.LuceneNET.BoboCustomization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Orckestra.Search.LuceneNET
+namespace Orckestra.Search.LuceneNET.BoboCustomization
 {
     public class CustomBoboSubBrowser : BoboSubBrowser
     {

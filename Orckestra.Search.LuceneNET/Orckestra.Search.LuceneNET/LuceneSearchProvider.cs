@@ -16,6 +16,7 @@ using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
 using Lucene.Net.Search.Highlight;
 using Lucene.Net.Store;
+using Orckestra.Search.LuceneNET.BoboCustomization;
 
 namespace Orckestra.Search.LuceneNET
 {

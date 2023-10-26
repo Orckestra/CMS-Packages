@@ -5,7 +5,7 @@ using Lucene.Net.Search;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Orckestra.Search.LuceneNET
+namespace Orckestra.Search.LuceneNET.BoboCustomization
 {
     public class CustomBoboBrowser : MultiBoboBrowser
     {
