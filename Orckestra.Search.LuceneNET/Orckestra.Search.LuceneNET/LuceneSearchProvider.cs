@@ -16,6 +16,7 @@ using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
 using Lucene.Net.Search.Highlight;
 using Lucene.Net.Store;
+using Orckestra.Search.LuceneNET.BoboCustomization;
 
 namespace Orckestra.Search.LuceneNET
 {
@@ -127,8 +128,6 @@ namespace Orckestra.Search.LuceneNET
                                 select GetFacetHandler(name, info);
 
             var sortOptions = searchQuery.SortOptions?.ToArray() ?? Array.Empty<SearchQuerySortOption>();
-            facetHandlers = facetHandlers.Concat(
-                sortOptions.Select(so => new SimpleFacetHandler(ToPreviewFieldName(so.FieldName))));
 
             using (var reader = IndexReader.Open(directory, true))
             {
@@ -165,7 +164,7 @@ namespace Orckestra.Search.LuceneNET
                         {
                             MinHitCount = facetField.Value.MinHitCount,
                             MaxCount = facetField.Value.Limit,
-                            OrderBy = facetField.Value.FacetSorting == FacetSorting.HitCount 
+                            OrderBy = facetField.Value.FacetSorting == FacetSorting.HitCount
                                 ? FacetSpec.FacetSortSpec.OrderHitsDesc
                                 : FacetSpec.FacetSortSpec.OrderValueAsc,
                             ExpandSelection = true
@@ -180,7 +179,7 @@ namespace Orckestra.Search.LuceneNET
                         .ToArray();
 
                     // perform browse
-                    using (IBrowsable browser = new BoboBrowser(boboReader))
+                    using (IBrowsable browser = new CustomBoboBrowser(boboReader))
                     {
                         using (var browseResult = browser.Browse(browseRequest))
                         {
