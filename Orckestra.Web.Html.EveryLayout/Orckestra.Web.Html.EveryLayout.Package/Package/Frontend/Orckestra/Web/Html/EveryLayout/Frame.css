@@ -1,0 +1,25 @@
+.frame-el {
+  --n: 16; /* numerator */
+  --d: 9; /* denominator */
+  aspect-ratio: var(--n) / var(--d);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-el > picture {
+  aspect-ratio: var(--n) / var(--d);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-el > img,
+.frame-el > picture img,
+.frame-el > video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}

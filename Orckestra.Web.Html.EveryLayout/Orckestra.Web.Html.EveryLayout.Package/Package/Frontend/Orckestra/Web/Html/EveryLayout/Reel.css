@@ -1,0 +1,72 @@
+.reel-el {
+  /* ↓ Custom properties for ease of adjustment */
+  --space: var(--s0);
+  --color-light: #fff;
+  --color-dark: #000;
+  --reel-height: auto;
+  --item-width: auto;
+  display: flex;
+  block-size: var(--reel-height);
+  /* ↓ Overflow */
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* ↓ For Firefox */
+  scrollbar-color: var(--color-light) var(--color-dark);
+}
+
+.reel-el::-webkit-scrollbar {
+  /*
+  ↓ Instead, you could make the scrollbar height
+  a variable too. This is left as an exercise
+  (be mindful of the linear-gradient!)
+  */
+  block-size: 1rem;
+}
+
+.reel-el::-webkit-scrollbar-track {
+  background-color: var(--color-dark);
+}
+
+.reel-el::-webkit-scrollbar-thumb {
+  background-color: var(--color-dark);
+  /* ↓ Linear gradient ‘insets’ the white thumb within the black bar */
+  background-image: linear-gradient(var(--color-dark) 0, var(--color-dark) 0.25rem, var(--color-light) 0.25rem, var(--color-light) 0.75rem, var(--color dark) 0.75rem);
+}
+
+.reel-el > * {
+  /*
+  ↓ Just a `width` wouldn’t work because
+  `flex-shrink: 1` (default) still applies
+   */
+  flex: 0 0 var(--item-width);
+}
+
+.reel-el > picture {
+  display: flex;
+}
+
+.reel-el > img,
+.reel-el > picture img {
+  /* ↓ Reset for images */
+  block-size: 100%;
+  flex-basis: auto;
+  width: auto;
+}
+
+.reel-el > * + * {
+  margin-inline-start: var(--space);
+}
+
+.reel-el.overflowing:not(.no-bar) {
+  /* ↓ Only apply if there is a scrollbar (see the JavaScript) */
+  padding-block-end: var(--space);
+}
+
+/* ↓ Hide scrollbar with `no-bar` class */
+.reel-el.no-bar {
+  scrollbar-width: none;
+}
+
+.reel-el.no-bar::-webkit-scrollbar {
+  display: none;
+}

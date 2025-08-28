@@ -1,0 +1,69 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "GRID - A layout component for creating a responsive grid using the CSS Grid module"; }
+    }
+	
+	public static WidgetFunctionProvider GapWidget()
+    {
+        Expression<Func<object>> expression = () => GapOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Value", "Key", false);
+    }
+
+    public static Dictionary<string, string> GapOptions()
+    {
+        var options = new Dictionary<string, string>();
+
+        options.Add("-5 (0.33rem - 0.18rem)", "var(--s-5)");
+        options.Add("-4 (0.41rem - 0.25rem)", "var(--s-4)");
+        options.Add("-3 (0.51rem - 0.35rem)", "var(--s-3)");
+        options.Add("-2 (0.64rem - 0.5rem)", "var(--s-2)");
+        options.Add("-1 (0.8rem - 0.71rem)", "var(--s-1)");
+        options.Add("0 (1rem)", "var(--s0)");
+		options.Add("1 (1.25rem - 1.41rem)", "var(--s1)");
+		options.Add("2 (1.56rem - 2rem)", "var(--s2)");
+		options.Add("3 (1.95rem - 2.83rem)", "var(--s3)");
+		options.Add("4 (2.44rem - 4rem)", "var(--s4)");
+		options.Add("5 (3.05rem - 5.65rem)", "var(--s5)");
+
+        return options;
+    }
+
+    [FunctionParameter(Label = "GRID Content", Help = "Elements that will be displayed as a grid.")]
+    public XhtmlDocument Content { get; set; }
+	
+	[FunctionParameter(Label = "Minimum column width", DefaultValue = "20ch", Help = "If this minimum cannot be satisfied, items will wrap. Use any valid fixed CSS size.")]
+    public string MinWidth { get; set; }
+	
+	[FunctionParameter(Label = "Space around grid items", DefaultValue = "var(--s1)", WidgetFactoryMethod = "GapWidget", Help = "Gap around grid items.")]
+    public string Gap { get; set; }
+
+    [FunctionParameter(Label = "Additional CSS classes", Help = "Add your own CSS classes for further customization.", DefaultValue = "")]
+    public string CssClasses { get; set; }
+
+	private string gapStyle()
+    {
+        return (Gap != "var(--s1)" ? "grid-gap:" + Gap + ";" : "");
+    }
+
+	private string minWidthStyle()
+    {
+        return ((MinWidth != "var(--s1)" && MinWidth != "") ? "--minimum:" + MinWidth + ";" : "");
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+		<link id="everylayout-common" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Common.css"/>
+		<link id="everylayout-grid" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Grid.css"/>
+    </head>
+    <body>
+        <div class="grid-el @CssClasses" style="@gapStyle()@minWidthStyle()">
+            @Html.Raw(@Content)
+        </div>
+    </body>
+</html>

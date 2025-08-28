@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-CA" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EveryLayout DEMO</title>
+    <link rel="stylesheet" type="text/css" href="demo_assets/styles.css"/>
+    <link id="everylayout-common" rel="stylesheet" type="text/css" href="Common.css"/>
+    <link id="everylayout-center" rel="stylesheet" type="text/css" href="Center.css"/>
+    <link id="everylayout-stack" rel="stylesheet" type="text/css" href="Stack.css"/>
+    <link id="everylayout-box" rel="stylesheet" type="text/css" href="Box.css"/>
+    <link id="everylayout-sidebar" rel="stylesheet" type="text/css" href="Sidebar.css"/>
+    <link id="everylayout-cover" rel="stylesheet" type="text/css" href="Cover.css"/>
+    <link id="everylayout-cluster" rel="stylesheet" type="text/css" href="Cluster.css"/>
+    <link id="everylayout-switcher" rel="stylesheet" type="text/css" href="Switcher.css"/>
+    <link id="everylayout-grid" rel="stylesheet" type="text/css" href="Grid.css"/>
+    <link id="everylayout-frame" rel="stylesheet" type="text/css" href="Frame.css"/>
+    <link id="everylayout-reel" rel="stylesheet" type="text/css" href="Reel.css"/>
+    <script id="everylayout-reel-js" src="Reel.js"></script>
+</head>
+<body>
+<main class="container">
+	<h1 class="heading-1">EveryLayout functions demo</h1>
+	<p>Here are some fairly basic examples that were initially created in C1 with the functions available in this package. Make sure to play around with them, mix them together, and you'd be surprised by what kind of layouts you can achieve.</p>
+	<p>They were mostly based on a book available at <a href="https://every-layout.dev/">https://every-layout.dev/</a>, which I highly recommend to anyone who likes CSS.</p>
+	<br>
+    <h2 class="heading-2">Nested STACKs</h2>
+    <div class="center-el  center-el--block" style="--measure: none;">
+        <div class="stack-el ">
+            <div class="stack-el--items" style="--space:var(--s2);">
+                <div class="box-el " style=""></div>
+                <div class="box-el " style=""></div>
+                <div class="stack-el ">
+                    <div class="stack-el--items" style="--space:var(--s-2);">
+                        <div class="box-el " style="border:1px solid;"></div>
+                        <div class="box-el " style="border:1px solid;"></div>
+                        <div class="box-el " style="border:1px solid;"></div>
+                        <div class="box-el " style="border:1px solid;"></div>
+                    </div>
+                </div>
+                <div class="box-el " style=""></div>
+                <div class="box-el " style=""></div>
+            </div>
+        </div>
+    </div>
+    <h2 class="heading-2"><br/> STACK using recursion</h2>
+    <div class="center-el  center-el--block" style="--measure: none;">
+        <div class="stack-el  stack-el--recursive">
+            <div class="stack-el--items" style="">
+                <div class="box-el " style=""></div>
+                <div class="box-el " style=""></div>
+                <div class="box-el " style="">
+                    <div class="box-el " style=""></div>
+                    <div class="box-el " style=""></div>
+                </div>
+                <div class="box-el " style=""></div>
+            </div>
+        </div>
+    </div>
+    <h2 class="heading-2"><br/> Basic BOX</h2>
+    <div class="box-el " style="">Padding, border and colors can be changed</div>
+    <h2 class="heading-2"><br/> Header and body BOXes inside another BOX</h2>
+    <div class="box-el " style="padding:0;">
+        <div class="box-el " style="border:0 solid;--color-light:black;--color-dark:white;">HEADER</div>
+        <div class="box-el " style="border:0 solid;">BODY</div>
+    </div>
+    <h2 class="heading-2"><br/> CENTERed STACK in a BOX</h2>
+    <div class="box-el " style="border:1px solid;">
+        <div class="center-el  center-el--block" style="">
+            <div class="stack-el ">
+                <div class="stack-el--items" style="">
+                    <h2 class="heading-2">Some title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, feugiat erat cubilia sociis ullamcorper
+                        facilisis hac, neque fermentum lacinia proin ut ridiculus. Nulla vehicula fermentum faucibus
+                        facilisi eros aliquet per eget quis, ornare elementum maecenas curabitur varius eu litora
+                        senectus tristique, nullam dapibus duis ridiculus feugiat fusce himenaeos aenean.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, feugiat erat cubilia sociis ullamcorper
+                        facilisis hac, neque fermentum lacinia proin ut ridiculus. Nulla vehicula fermentum faucibus
+                        facilisi eros aliquet per eget quis, ornare elementum maecenas curabitur varius eu litora
+                        senectus tristique, nullam dapibus duis ridiculus feugiat fusce himenaeos aenean.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <h2 class="heading-2">SIDEBAR with a STACK of links as side content and CENTERed text as main content</h2>
+    <div class="sidebar-el  left" style="--sidebar-width:12rem;--main-width:58%;">
+        <div>
+            <div class="stack-el ">
+                <div class="stack-el--items" style="--space:var(--s-5);"><a href="#">Some link in a STACK #1</a> <a
+                        href="#">Some link in a STACK #2</a> <a href="#">Some link in a STACK #3</a> <a href="#">Some
+                    link in a STACK #4</a></div>
+            </div>
+        </div>
+        <div>
+            <div class="center-el  center-el--block" style="">
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, montes pretium cras imperdiet eu dapibus,
+                    rutrum vitae aliquam sagittis molestie maecenas. Tincidunt tristique dui magna aenean quam nam per
+                    curae himenaeos nulla rhoncus varius, potenti mattis neque velit placerat rutrum dictum dis
+                    hendrerit luctus laoreet, sociis nostra sodales sed orci ridiculus vivamus suscipit tempus netus
+                    lacus. Integer tristique nulla quisque blandit pellentesque commodo, dapibus habitasse ridiculus
+                    platea augue morbi, sociosqu cum ultricies massa nullam.</p>
+            </div>
+        </div>
+    </div>
+    <h2 class="heading-2"><br/> CENTER inside a COVER</h2>
+    <div class="cover-el " style="--min-height:50vh;background-color:black;color:white;">
+        <div></div>
+        <div class="cover--center">
+            <div class="center-el  center-el--flex" style="--measure: none;">I am in the absolute center!</div>
+        </div>
+        <div></div>
+    </div>
+    <h2 class="heading-2"><br/> Image and CLUSTER of links inside another CLUSTER</h2>
+    <div class="cluster-el " style="justify-content:space-between;">
+        <img src="demo_assets/small.jpg"/>
+        <div class="cluster-el " style="align-items:center;"><a href="#">Link #1</a> <a href="#">Link #2</a> <a
+                href="#">Link #3</a></div>
+    </div>
+    <h2 class="heading-2"><br/> CLUSTER as a list</h2>
+    <div class="cluster-el " style="">
+        <p>Lorem</p>
+        <p>ipsum</p>
+        <p>dolor</p>
+        <p>sit</p>
+        <p>amet</p>
+    </div>
+    <h2 class="heading-2"><br/> A "Media Object" using a SIDEBAR</h2>
+    <div class="sidebar-el  left" style="gap:var(--s2);--sidebar-width:15rem;">
+        <div>
+            <img src="demo_assets/small.jpg"/>
+        </div>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas platea nulla posuere, cubilia sed
+                pulvinar mi vehicula aliquam eu potenti felis dis, semper phasellus cras auctor scelerisque fringilla
+                nam dignissim mus fermentum.</p>
+        </div>
+    </div>
+    <h2 class="heading-2"><br/> SWITCHER</h2>
+    <div class="switcher-el " style="">
+        <div class="box-el " style="border:1px solid;">
+            <div class="center-el  center-el--block center-el--text-center" style="">
+                <h2 class="heading-2">1</h2>
+                <p>Nulla varius accumsan turpis penatibus vestibulum nunc nam et dis id</p>
+            </div>
+        </div>
+        <div class="box-el " style="border:1px solid;">
+            <div class="center-el  center-el--block center-el--text-center" style="">
+                <h2 class="heading-2">2</h2>
+                <p>Magnis accumsan id at tincidunt tortor elementum, nulla quisque himenaeos dui fringilla cras
+                    conubia</p>
+            </div>
+        </div>
+        <div class="box-el " style="border:1px solid;">
+            <div class="center-el  center-el--block center-el--text-center" style="">
+                <h2 class="heading-2">3</h2>
+                <p>Curabitur inceptos massa porta dictumst lacus himenaeos sollicitudin cum enim facilisis</p>
+            </div>
+        </div>
+    </div>
+    <h2 class="heading-2"><br/> COVER</h2>
+    <div class="cover-el " style="--min-height:50vh;background-color:#1F632B;color:#FFF;">
+        <div></div>
+        <div class="cover--center">
+            <h2 class="heading-2">Simple COVER</h2>
+        </div>
+        <div></div>
+    </div>
+    <h2 class="heading-2"><br/> STACKs in BOXes in a GRID</h2>
+    <div class="grid-el " style="--minimum:278px;">
+        <div class="box-el " style="border:1px solid;">
+            <div class="stack-el ">
+                <div class="stack-el--items" style="">
+                    <img src="demo_assets/small.jpg"/>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit neque, eros non mauris suscipit eleifend
+                        tristique aptent elementum, convallis dapibus vitae urna magna odio fames imperdiet, nostra
+                        accumsan tincidunt massa nulla netus congue.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box-el " style="border:1px solid;">
+            <div class="stack-el ">
+                <div class="stack-el--items" style="">
+                    <img src="demo_assets/small.jpg"/>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit neque, eros non mauris suscipit eleifend
+                        tristique aptent elementum, convallis dapibus vitae urna magna odio fames imperdiet, nostra
+                        accumsan tincidunt massa nulla netus congue.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box-el " style="border:1px solid;">
+            <div class="stack-el ">
+                <div class="stack-el--items" style="">
+                    <img src="demo_assets/small.jpg"/>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit neque, eros non mauris suscipit eleifend
+                        tristique aptent elementum, convallis dapibus vitae urna magna odio fames imperdiet, nostra
+                        accumsan tincidunt massa nulla netus congue.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box-el " style="border:1px solid;">
+            <div class="stack-el ">
+                <div class="stack-el--items" style="">
+                    <img src="demo_assets/small.jpg"/>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit neque, eros non mauris suscipit eleifend
+                        tristique aptent elementum, convallis dapibus vitae urna magna odio fames imperdiet, nostra
+                        accumsan tincidunt massa nulla netus congue.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="heading-2"><br/> FRAME</h2>
+    <div class="switcher-el " style="">
+        <div class="box-el " style="border:0 solid;">
+            <p>FRAME 16/9</p>
+            <div class="frame-el " style="">
+                <img src="demo_assets/large.jpg"/>
+            </div>
+        </div>
+        <div class="box-el " style="border:0 solid;">
+            <p>FRAME 4/3</p>
+            <div class="frame-el " style="--n:4;--d:3;">
+                <img src="demo_assets/large.jpg"/>
+            </div>
+        </div>
+    </div>
+    <h2 class="heading-2"><br/> STACKs in BOXes in a REEL</h2>
+    <div class="reel-el " style="--color-light:var(--primary-400);--color-dark:#333;--item-width:20rem;">
+        <div class="box-el " style="border:1px solid;">
+            <div class="stack-el ">
+                <div class="stack-el--items" style="">
+                    <img src="demo_assets/small.jpg"/>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit neque, eros non mauris suscipit eleifend
+                        tristique aptent elementum, convallis dapibus vitae urna magna odio fames imperdiet, nostra
+                        accumsan tincidunt massa nulla netus congue.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box-el " style="border:1px solid;">
+            <div class="stack-el ">
+                <div class="stack-el--items" style="">
+                    <img src="demo_assets/small.jpg"/>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit neque, eros non mauris suscipit eleifend
+                        tristique aptent elementum, convallis dapibus vitae urna magna odio fames imperdiet, nostra
+                        accumsan tincidunt massa nulla netus congue.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box-el " style="border:1px solid;">
+            <div class="stack-el ">
+                <div class="stack-el--items" style="">
+                    <img src="demo_assets/small.jpg"/>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit neque, eros non mauris suscipit eleifend
+                        tristique aptent elementum, convallis dapibus vitae urna magna odio fames imperdiet, nostra
+                        accumsan tincidunt massa nulla netus congue.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box-el " style="border:1px solid;">
+            <div class="stack-el ">
+                <div class="stack-el--items" style="">
+                    <img src="demo_assets/small.jpg"/>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit neque, eros non mauris suscipit eleifend
+                        tristique aptent elementum, convallis dapibus vitae urna magna odio fames imperdiet, nostra
+                        accumsan tincidunt massa nulla netus congue.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</main>
+</body>
+</html>

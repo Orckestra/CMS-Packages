@@ -1,0 +1,41 @@
+.cover-el {
+  --space: var(--s1);
+  --min-height: 100vh;
+  --color: currentColor;
+  /* ↓ Establish a columnal flex context */
+  display: flex;
+  flex-direction: column;
+  /* ↓ Set a minimum height to match the viewport height (any minimum would be fine) */
+  min-block-size: var(--min-height);
+  /* Set a padding value */
+  padding: var(--space);
+}
+
+.cover-el > * {
+  /* ↓ Give each child a top and bottom margin */
+  margin-block: var(--space);
+}
+
+.cover-el > :first-child:not(.cover--center) {
+  /* ↓ Remove the top margin from the first-child if it doesn't match the centered element */
+  margin-block-start: 0;
+}
+
+.cover-el > :last-child:not(.cover--center) {
+  /* ↓ Remove the bottom margin from the last-child if it doesn't match the centered element */
+  margin-block-end: 0;
+}
+
+.cover-el > .cover--center {
+  /* ↓ Center the centered element (h1 here) in the available vertical space */
+  margin-block: auto;
+}
+
+.cover-el > *:empty {
+  /* ↓ Hide empty elements so they don't use any space */
+  display: none;
+}
+
+.cover-el * {
+  color: var(--color);
+}

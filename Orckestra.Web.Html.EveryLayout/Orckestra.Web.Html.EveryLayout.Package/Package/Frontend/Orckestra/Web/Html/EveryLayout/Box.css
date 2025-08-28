@@ -1,0 +1,17 @@
+.box-el {
+  padding: var(--s1);
+  border: var(--border-thin) solid;
+  /* ↓ Always apply the transparent outline, for high contrast mode */
+  outline: var(--border-thin) transparent;
+  outline-offset: calc(var(--border-thin) * -1);
+  /* ↓ The light and dark color vars */
+  --color-light: #fff;
+  --color-dark: #000;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+.box-el * {
+  /* ↓ Force colors to inherit from the parent and honor inversion (below) */
+  color: var(--color-dark);
+}

@@ -1,0 +1,71 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "SWITCHER - Layout component that displays items horizontally until a given breakpoint or 'threshold' is reached. Then it switches to a vertical display."; }
+    }
+	
+	public static WidgetFunctionProvider GapWidget()
+    {
+        Expression<Func<object>> expression = () => GapOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Value", "Key", false);
+    }
+
+    public static Dictionary<string, string> GapOptions()
+    {
+        var options = new Dictionary<string, string>();
+
+        options.Add("-5 (0.33rem - 0.18rem)", "var(--s-5)");
+        options.Add("-4 (0.41rem - 0.25rem)", "var(--s-4)");
+        options.Add("-3 (0.51rem - 0.35rem)", "var(--s-3)");
+        options.Add("-2 (0.64rem - 0.5rem)", "var(--s-2)");
+        options.Add("-1 (0.8rem - 0.71rem)", "var(--s-1)");
+        options.Add("0 (1rem)", "var(--s0)");
+		options.Add("1 (1.25rem - 1.41rem)", "var(--s1)");
+		options.Add("2 (1.56rem - 2rem)", "var(--s2)");
+		options.Add("3 (1.95rem - 2.83rem)", "var(--s3)");
+		options.Add("4 (2.44rem - 4rem)", "var(--s4)");
+		options.Add("5 (3.05rem - 5.65rem)", "var(--s5)");
+
+        return options;
+    }
+
+    [FunctionParameter(Label = "SWITCHER content", Help = "Elements that will share the parent width until the breakpoint/threshold is reached.")]
+    public XhtmlDocument Content { get; set; }
+
+	[FunctionParameter(Label = "Vertical switch breakpoint", Help = "Width from which the layout will switch from horizontal to vertical layout. Defaults to 30rem.", DefaultValue = "30rem")]
+    public string Threshold { get; set; }
+
+    [FunctionParameter(Label = "Gap", Help = "The space around the elements.", DefaultValue = "var(--s1)", WidgetFactoryMethod = "GapWidget")]
+    public string Gap { get; set; }
+
+    [FunctionParameter(Label = "Additional CSS classes", Help = "Add your own CSS classes for further customization.", DefaultValue = "")]
+    public string CssClasses { get; set; }
+
+
+	private string thresholdStyle()
+    {
+        return ((Threshold != "30rem" && Threshold != "") ? "--threshold:" + Threshold + ";" : "");
+    }
+
+	private string gapStyle()
+    {
+        return (Gap != "var(--s1)" ? "gap:" + Gap + ";" : "");
+    }
+	
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+		<link id="everylayout-common" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Common.css"/>
+		<link id="everylayout-switcher" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Switcher.css"/>
+    </head>
+    <body>
+        <div class="switcher-el @CssClasses" style="@thresholdStyle()@gapStyle()">
+            @Html.Raw(@Content)
+        </div>
+    </body>
+</html>

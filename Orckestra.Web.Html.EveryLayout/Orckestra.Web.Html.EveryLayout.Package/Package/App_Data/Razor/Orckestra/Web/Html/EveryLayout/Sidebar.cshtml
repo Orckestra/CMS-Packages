@@ -1,0 +1,100 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "SIDEBAR - Layout component for placing two elements side-by-side. If space permits, the sidebar element has a set width, and the main element takes up the rest of the available horizontal space. If not, the elements are collapsed into a single column, each taking up 100% of the horizontal space."; }
+    }
+	
+	public static WidgetFunctionProvider GapWidget()
+    {
+        Expression<Func<object>> expression = () => GapOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Value", "Key", false);
+    }
+
+    public static Dictionary<string, string> GapOptions()
+    {
+        var options = new Dictionary<string, string>();
+
+        options.Add("-5 (0.33rem - 0.18rem)", "var(--s-5)");
+        options.Add("-4 (0.41rem - 0.25rem)", "var(--s-4)");
+        options.Add("-3 (0.51rem - 0.35rem)", "var(--s-3)");
+        options.Add("-2 (0.64rem - 0.5rem)", "var(--s-2)");
+        options.Add("-1 (0.8rem - 0.71rem)", "var(--s-1)");
+        options.Add("0 (1rem)", "var(--s0)");
+		options.Add("1 (1.25rem - 1.41rem)", "var(--s1)");
+		options.Add("2 (1.56rem - 2rem)", "var(--s2)");
+		options.Add("3 (1.95rem - 2.83rem)", "var(--s3)");
+		options.Add("4 (2.44rem - 4rem)", "var(--s4)");
+		options.Add("5 (3.05rem - 5.65rem)", "var(--s5)");
+
+        return options;
+    }
+
+    [FunctionParameter(Label = "Sidebar content", Help = "")]
+    public XhtmlDocument SidebarContent { get; set; }
+
+    [FunctionParameter(Label = "Main content", Help = "")]
+    public XhtmlDocument MainContent { get; set; }
+
+    [FunctionParameter(Label = "Sidebar width", DefaultValue = "", Help = "Represents the width of the sidebar (when adjacent to main content). If left empty it defaults to the sidebar's content width.")]
+    public string SidebarWidth { get; set; }
+
+    [FunctionParameter(Label = "Main content minimum width (in percentage)", DefaultValue = "50", Help = "The minimum width of the main content element in the horizontal configuration before it wraps. Defaults to 50%.")]
+    public int MainWidth { get; set; }
+
+    [FunctionParameter(Label = "Gap", Help = "The space between the sidebar and the main content containers.", DefaultValue = "var(--s1)", WidgetFactoryMethod = "GapWidget")]
+    public string Gap { get; set; }
+
+    [FunctionParameter(Label = "Sidebar on right side?", DefaultValue = "false", Help = "Whether the sidebar is on the right side.")]
+    public bool RightSidebar { get; set; }
+
+    [FunctionParameter(Label = "Additional CSS classes", Help = "Add your own CSS classes for further customization.", DefaultValue = "")]
+    public string CssClasses { get; set; }
+
+
+
+	private string sidebarWidthStyle()
+    {
+        return (SidebarWidth != "" ? "--sidebar-width:" + SidebarWidth + ";" : "");
+    }
+
+	private string mainWidthStyle()
+    {
+        return ((MainWidth != 50 && MainWidth != null) ? "--main-width:" + MainWidth + "%;" : "");
+    }
+
+	private string gapStyle()
+    {
+        return (Gap != "var(--s1)" ? "gap:" + Gap + ";" : "");
+    }
+
+	private string sidebarPosition()
+	{
+		return (RightSidebar ? " right" : " left");
+	}
+	
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+		<link id="everylayout-common" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Common.css"/>
+		<link id="everylayout-sidebar" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Sidebar.css"/>
+    </head>
+    <body>
+        <div class="sidebar-el @CssClasses@sidebarPosition()" style="@gapStyle()@sidebarWidthStyle()@mainWidthStyle()">
+			@if (RightSidebar)
+            {
+				<div>@Html.Raw(MainContent)</div>
+				<div>@Html.Raw(SidebarContent)</div>
+			}
+			else
+			{
+				<div>@Html.Raw(SidebarContent)</div>
+				<div>@Html.Raw(MainContent)</div>
+			}
+        </div>
+    </body>
+</html>

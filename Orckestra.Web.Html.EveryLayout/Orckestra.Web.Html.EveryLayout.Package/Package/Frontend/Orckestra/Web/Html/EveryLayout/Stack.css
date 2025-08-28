@@ -1,0 +1,19 @@
+.stack-el > .stack-el--items {
+  --space: var(--s1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack-el > .stack-el--items > * {
+	/* ↓ Remove default margin bottom of everything, like headings, paragraphs... */
+	margin-bottom: 0;
+}
+
+.stack-el:not(.stack-el--recursive) > .stack-el--items > * + * {
+  margin-block-start: var(--space);
+}
+
+.stack-el.stack-el--recursive > .stack-el--items * + * {
+  margin-block-start: var(--space);
+}

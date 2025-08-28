@@ -1,0 +1,116 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "BOX - Layout component for generic boxes/containers"; }
+    }
+	
+	public static WidgetFunctionProvider PaddingWidget()
+    {
+        Expression<Func<object>> expression = () => PaddingOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Value", "Key", false);
+    }
+
+    public static Dictionary<string, string> PaddingOptions()
+    {
+        var options = new Dictionary<string, string>();
+
+        options.Add("none", "0");
+		options.Add("-5 (0.33rem - 0.18rem)", "var(--s-5)");
+        options.Add("-4 (0.41rem - 0.25rem)", "var(--s-4)");
+        options.Add("-3 (0.51rem - 0.35rem)", "var(--s-3)");
+        options.Add("-2 (0.64rem - 0.5rem)", "var(--s-2)");
+        options.Add("-1 (0.8rem - 0.71rem)", "var(--s-1)");
+        options.Add("0 (1rem)", "var(--s0)");
+		options.Add("1 (1.25rem - 1.41rem)", "var(--s1)");
+		options.Add("2 (1.56rem - 2rem)", "var(--s2)");
+		options.Add("3 (1.95rem - 2.83rem)", "var(--s3)");
+		options.Add("4 (2.44rem - 4rem)", "var(--s4)");
+		options.Add("5 (3.05rem - 5.65rem)", "var(--s5)");
+
+        return options;
+    }
+	
+	public static WidgetFunctionProvider BordersWidget()
+    {
+        Expression<Func<object>> expression = () => BordersOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Value", "Key", false);
+    }
+
+    public static Dictionary<string, string> BordersOptions()
+    {
+        var options = new Dictionary<string, string>();
+
+        options.Add("none", "0");
+        options.Add("hairline (1px)", "1px");
+        options.Add("thin (1.25-1.41rem)", "var(--border-thin)");
+        options.Add("medium (1.95-2.83rem)", "var(--border-medium)");
+        options.Add("thick (3.05-5.65rem)", "var(--border-thick)");
+
+        return options;
+    }
+
+    [FunctionParameter(Label = "BOX content", Help = "")]
+    public XhtmlDocument Content { get; set; }
+
+    [FunctionParameter(Label = "Padding", DefaultValue = "var(--s1)", WidgetFactoryMethod = "PaddingWidget", Help = "Space between the border of the BOX and its content (padding).")]
+    public string Padding { get; set; }
+
+    [FunctionParameter(Label = "Border width", DefaultValue = "var(--border-thin)", WidgetFactoryMethod = "BordersWidget", Help = "The BOX border width.")]
+    public string BorderWidth { get; set; }
+
+    [FunctionParameter(Label = "Background color (defaults to white)", Help = "Use any valid CSS color.", DefaultValue = "")]
+    public string BackgroundColor { get; set; }
+
+    [FunctionParameter(Label = "Text and border color (defaults to black)", Help = "Use any valid CSS color.", DefaultValue = "")]
+    public string TextColor { get; set; }
+
+    [FunctionParameter(Label = "Additional CSS classes", Help = "Add your own CSS classes for further customization.", DefaultValue = "")]
+    public string CssClasses { get; set; }
+
+    [FunctionParameter(Label = "ARIA Role", Help = "Lets you add a role attribute value, like 'listitem'.", DefaultValue = "")]
+    public string AriaRole { get; set; }
+
+
+	private string paddingStyle()
+    {
+        return (Padding != "" && Padding != "var(--s1)" ? "padding:" + Padding + ";" : "");
+    }
+
+	private string borderWidthStyle()
+    {
+        return (BorderWidth != "var(--border-thin)" ? "border:" + BorderWidth + " solid;" : "");
+    }
+
+	private string backgroundColorStyle()
+    {
+        return (BackgroundColor != "" ? "--color-light:" + BackgroundColor + ";" : "");
+    }
+
+	private string textColorStyle()
+    {
+        return (TextColor != "" ? "--color-dark:" + TextColor + ";" : "");
+    }
+
+	private HtmlString role()
+    {
+        return new HtmlString((AriaRole != "" ? "role='" + AriaRole + "'" : ""));
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+		<link id="everylayout-common" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Common.css"/>
+		<link id="everylayout-box" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Box.css"/>
+    </head>
+    <body>
+        <div class="box-el @CssClasses" style="@borderWidthStyle()@backgroundColorStyle()@textColorStyle()@paddingStyle()" @role()>
+            @Html.Raw(@Content)
+        </div>
+    </body>
+</html>

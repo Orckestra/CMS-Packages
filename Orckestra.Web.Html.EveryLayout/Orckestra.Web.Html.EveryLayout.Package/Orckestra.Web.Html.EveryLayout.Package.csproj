@@ -1,0 +1,103 @@
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A80731BE-C8FB-321A-9613-949F7CD136EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ClassLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Orckestra.Web.Html.EveryLayout.Package</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Package\App_Data\Razor\Orckestra\Web\Html\EveryLayout\Box.cshtml" />
+    <None Include="Package\App_Data\Razor\Orckestra\Web\Html\EveryLayout\Center.cshtml" />
+    <None Include="Package\App_Data\Razor\Orckestra\Web\Html\EveryLayout\Cluster.cshtml" />
+    <None Include="Package\App_Data\Razor\Orckestra\Web\Html\EveryLayout\Cover.cshtml" />
+    <None Include="Package\App_Data\Razor\Orckestra\Web\Html\EveryLayout\Frame.cshtml" />
+    <None Include="Package\App_Data\Razor\Orckestra\Web\Html\EveryLayout\Grid.cshtml" />
+    <None Include="Package\App_Data\Razor\Orckestra\Web\Html\EveryLayout\Reel.cshtml" />
+    <None Include="Package\App_Data\Razor\Orckestra\Web\Html\EveryLayout\Sidebar.cshtml" />
+    <None Include="Package\App_Data\Razor\Orckestra\Web\Html\EveryLayout\Stack.cshtml" />
+    <None Include="Package\App_Data\Razor\Orckestra\Web\Html\EveryLayout\Switcher.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Box.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Center.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Cluster.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Common.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Cover.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\demo.html" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\demo_assets\large.jpg" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\demo_assets\small.jpg" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\demo_assets\styles.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Frame.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Grid.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Reel.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Reel.js" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Sidebar.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Stack.css" />
+    <Content Include="Package\Frontend\Orckestra\Web\Html\EveryLayout\Switcher.css" />
+    <Content Include="Package\install.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vs\Orckestra.Web.Html.EveryLayout.Package\v17\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>DEL "$(TargetDir)\*.dll"
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>ROBOCOPY "$(ProjectDir)Package" "$(TargetDir)_Package"  /MIR
+
+COPY "$(TargetDir)*.dll" "$(TargetDir)_Package\Bin\"
+DEL "$(TargetDir)_Package\Bin\$(ProjectName).dll"
+
+DEL "$(TargetDir)$(SolutionName).zip"
+
+"$(SolutionDir)packages\7-Zip.CommandLine.9.20.0\tools\7za.exe" a "$(TargetDir)$(SolutionName).zip" "$(TargetDir)_Package\*"
+
+COPY "$(TargetDir)$(SolutionName).zip" "$(ProjectDir)bin\Release\$(SolutionName).zip"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="yes"?>
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="5.0.0.0" maximumCompositeVersion="9.9999.9999.9999" />
+	<mi:PackageInformation name="Orckestra.Web.Html.EveryLayout" groupName="Orckestra.Web" version="1.0.0" author="Orckestra A/S" website="https://c1.orckestra.com" readMoreUrl="-" id="c9d3583b-6ca3-4886-8585-d102066348b2" canBeUninstalled="true" systemLocking="hard" flushOnCompletion="true" allowOverwrite="true">
+		<TechnicalDetails>Layout functions based on Every Layout book.</TechnicalDetails>
+		<Description>A bunch of functions you can use together to create all sorts of layouts.</Description>
+	</mi:PackageInformation>
+	<mi:PackageFragmentInstallerBinaries />
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Files>
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Box.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Box.cshtml" allowOverwrite="true" />
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Center.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Center.cshtml" allowOverwrite="true" />
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Cluster.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Cluster.cshtml" allowOverwrite="true" />
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Cover.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Cover.cshtml" allowOverwrite="true" />
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Frame.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Frame.cshtml" allowOverwrite="true" />
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Grid.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Grid.cshtml" allowOverwrite="true" />
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Reel.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Reel.cshtml" allowOverwrite="true" />
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Sidebar.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Sidebar.cshtml" allowOverwrite="true" />
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Stack.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Stack.cshtml" allowOverwrite="true" />
+				<File sourceFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Switcher.cshtml" targetFilename="~\App_Data/Razor/Orckestra/Web/Html/EveryLayout/Switcher.cshtml" allowOverwrite="true" />
+			</Files>
+			<Directories>
+				<Directory sourceDirectory="~\Frontend\Orckestra\Web\Html\EveryLayout\" targetDirectory="~\Frontend\Orckestra\Web\Html\EveryLayout\" allowOverwrite="true" deleteTargetDirectory="false" />
+			</Directories>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>

@@ -1,0 +1,24 @@
+.sidebar-el {
+  display: flex;
+  flex-wrap: wrap;
+  /* ↓ The default value is the first point on the modular scale */
+  gap: var(--gutter, var(--s1));
+  --sidebar-width: auto;
+  --main-width: 50%;
+}
+
+.sidebar-el.left > :first-child,
+.sidebar-el.right > :last-child {
+  /* ↓ The width when the sidebar _is_ a sidebar */
+  flex-basis: var(--sidebar-width);
+  flex-grow: 1;
+}
+
+.sidebar-el.left > :last-child,
+.sidebar-el.right > :first-child {
+  /* ↓ Grow from nothing */
+  flex-basis: 0;
+  flex-grow: 999;
+  /* ↓ Wrap when the elements are of equal width */
+  min-inline-size: var(--main-width);
+}

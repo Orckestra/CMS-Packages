@@ -1,0 +1,59 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "FRAME - A layout component to enforce a specific ratio to images or videos."; }
+    }    
+
+    [FunctionParameter(Label = "Image file", DefaultValue = null)]
+    public DataReference<IImageFile> Image { get; set; }
+	
+	[FunctionParameter(Label = "Image alternate text", Help = "Concise description of the image. Recommended (if there is an image).", DefaultValue = "")]
+    public string Alt { get; set; }
+
+    [FunctionParameter(Label = "Video file (MP4)", Help = "Please use H.264 (AVC) encoded videos to maximize browsers compatibility.", DefaultValue = null)]
+    public DataReference<IMediaFile> Video { get; set; }
+	
+	[FunctionParameter(Label = "Ratio numerator (width)", DefaultValue = "16")]
+    public string RatioWidth { get; set; }
+	
+	[FunctionParameter(Label = "Ratio denominator (height)", DefaultValue = "9")]
+    public string RatioHeight { get; set; }
+
+    [FunctionParameter(Label = "Additional CSS classes", Help = "Add your own CSS classes for further customization.", DefaultValue = "")]
+    public string CssClasses { get; set; }
+	
+	private string ratioWidthStyle()
+    {
+        return ((RatioWidth != "16" && RatioWidth != "") ? "--n:" + RatioWidth + ";" : "");
+    }	
+	
+	private string ratioHeightStyle()
+    {
+        return ((RatioHeight != "9" && RatioHeight != "") ? "--d:" + RatioHeight + ";" : "");
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+		<link id="everylayout-common" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Common.css"/>
+		<link id="everylayout-frame" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Frame.css"/>
+    </head>
+    <body>
+        <div class="frame-el @CssClasses" style="@ratioWidthStyle()@ratioHeightStyle()">
+			@if (Video != null)
+			{
+				<video controls="controls" muted="muted">
+					<source src="/media(@Video)" type="video/mp4" />
+					Video tag is not supported in this browser.
+				</video>
+			}
+			else if (Image != null)
+			{
+				
+				<img src="/media(@Image)" alt="@Alt" />
+			}
+        </div>
+    </body>
+</html>

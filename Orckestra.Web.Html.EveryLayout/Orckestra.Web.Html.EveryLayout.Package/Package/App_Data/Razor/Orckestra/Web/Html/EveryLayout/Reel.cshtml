@@ -1,0 +1,110 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "REEL - Layout component that let you scroll horizontally through multiple items. An alternative/antidote to carousels."; }
+    }
+	
+	public static WidgetFunctionProvider SpacingWidget()
+    {
+        Expression<Func<object>> expression = () => SpacingOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Value", "Key", false);
+    }
+
+    public static Dictionary<string, string> SpacingOptions()
+    {
+        var options = new Dictionary<string, string>();
+
+        options.Add("-5 (0.33rem - 0.18rem)", "var(--s-5)");
+        options.Add("-4 (0.41rem - 0.25rem)", "var(--s-4)");
+        options.Add("-3 (0.51rem - 0.35rem)", "var(--s-3)");
+        options.Add("-2 (0.64rem - 0.5rem)", "var(--s-2)");
+        options.Add("-1 (0.8rem - 0.71rem)", "var(--s-1)");
+        options.Add("0 (1rem)", "var(--s0)");
+		options.Add("1 (1.25rem - 1.41rem)", "var(--s1)");
+		options.Add("2 (1.56rem - 2rem)", "var(--s2)");
+		options.Add("3 (1.95rem - 2.83rem)", "var(--s3)");
+		options.Add("4 (2.44rem - 4rem)", "var(--s4)");
+		options.Add("5 (3.05rem - 5.65rem)", "var(--s5)");
+
+        return options;
+    }
+
+    [FunctionParameter(Label = "REEL Content", Help = "")]
+    public XhtmlDocument Content { get; set; }
+	
+	[FunctionParameter(Label = "Space between children", DefaultValue = "var(--s0)", WidgetFactoryMethod = "SpacingWidget", Help = "The space between Reel items (child elements).")]
+    public string Space { get; set; }
+	
+	[FunctionParameter(Label = "Reel height", DefaultValue = "auto", Help = "The height of the Reel itself. Defaults to 'auto'")]
+    public string ReelHeight { get; set; }
+	
+	[FunctionParameter(Label = "Items width", DefaultValue = "auto", Help = "The width of each item (child element) in the Reel. Defaults to 'auto'.")]
+    public string ItemsWidth { get; set; }
+	
+	[FunctionParameter(Label = "Scrollbar and arrows color", DefaultValue = "#FFF")]
+    public string ColorLight { get; set; }
+	
+	[FunctionParameter(Label = "Scrollbar track and thumbs color", DefaultValue = "#000")]
+    public string ColorDark { get; set; }
+	
+	[FunctionParameter(Label = "Hide Scrollbar", DefaultValue = "false")]
+    public bool HideScrollbar { get; set; }
+
+    [FunctionParameter(Label = "Additional CSS classes", Help = "Add your own CSS classes for further customization.", DefaultValue = "")]
+    public string CssClasses { get; set; }
+
+    [FunctionParameter(Label = "ARIA Role", Help = "Lets you add a role attribute value, like 'list' (make sure the first-level children have the 'listitem' role for the latter).", DefaultValue = "")]
+    public string AriaRole { get; set; }
+
+	private string spaceStyle()
+    {
+        return (Space != "var(--s0)" ? "--space:" + Space + ";" : "");
+    }
+
+	private string reelHeightStyle()
+    {
+        return ((ReelHeight != "auto" && ReelHeight != "") ? "--reel-height:" + ReelHeight + ";" : "");
+    }
+
+	private string itemsWidthStyle()
+    {
+        return ((ItemsWidth != "auto" && ItemsWidth != "") ? "--item-width:" + ItemsWidth + ";" : "");
+    }
+
+	private string colorLightStyle()
+    {
+        return ((ColorLight != "#FFF" && ColorLight != "") ? "--color-light:" + ColorLight + ";" : "");
+    }
+
+	private string colorDarkStyle()
+    {
+        return ((ColorDark != "#000" && ColorDark != "") ? "--color-dark:" + ColorDark + ";" : "");
+    }
+
+	private string hideScrollbarClass()
+    {
+        return ((HideScrollbar) ? " no-bar" : "");
+    }
+
+	private HtmlString role()
+    {
+        return new HtmlString((AriaRole != "" ? "role='" + AriaRole + "'" : ""));
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+		<link id="everylayout-common" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Common.css"/>
+		<link id="everylayout-reel" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Reel.css"/>
+		<script id="everylayout-reel-js" src="~/Frontend/Orckestra/Web/Html/EveryLayout/Reel.js"></script>
+    </head>
+    <body>
+        <div class="reel-el @CssClasses@hideScrollbarClass()" style="@spaceStyle()@colorLightStyle()@colorDarkStyle()@reelHeightStyle()@itemsWidthStyle()" @role()>
+            @Html.Raw(@Content)
+        </div>
+    </body>
+</html>

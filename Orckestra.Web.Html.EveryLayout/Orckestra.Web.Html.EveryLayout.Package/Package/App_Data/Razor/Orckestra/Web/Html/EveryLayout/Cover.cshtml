@@ -1,0 +1,103 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "COVER - Layout component with vertically centered content and optional top/header and bottom/footer elements."; }
+    }
+	
+	public static WidgetFunctionProvider SpacingWidget()
+    {
+        Expression<Func<object>> expression = () => SpacingOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Value", "Key", false);
+    }
+
+    public static Dictionary<string, string> SpacingOptions()
+    {
+        var options = new Dictionary<string, string>();
+
+        options.Add("-5 (0.33rem - 0.18rem)", "var(--s-5)");
+        options.Add("-4 (0.41rem - 0.25rem)", "var(--s-4)");
+        options.Add("-3 (0.51rem - 0.35rem)", "var(--s-3)");
+        options.Add("-2 (0.64rem - 0.5rem)", "var(--s-2)");
+        options.Add("-1 (0.8rem - 0.71rem)", "var(--s-1)");
+        options.Add("0 (1rem)", "var(--s0)");
+		options.Add("1 (1.25rem - 1.41rem)", "var(--s1)");
+		options.Add("2 (1.56rem - 2rem)", "var(--s2)");
+		options.Add("3 (1.95rem - 2.83rem)", "var(--s3)");
+		options.Add("4 (2.44rem - 4rem)", "var(--s4)");
+		options.Add("5 (3.05rem - 5.65rem)", "var(--s5)");
+
+        return options;
+    }
+
+    [FunctionParameter(Label = "Centered content", Help = "This content will be centered vertically in the COVER.")]
+    public XhtmlDocument Content { get; set; }
+
+	[FunctionParameter(Label = "Optional top/header content", Help = "", DefaultValue = null)]
+    public XhtmlDocument HeaderContent { get; set; }
+
+	[FunctionParameter(Label = "Optional bottom/footer content", Help = "", DefaultValue = null)]
+    public XhtmlDocument FooterContent { get; set; }
+
+	[FunctionParameter(Label = "Minimun height", Help = "The minimum height (block-size) of the parent element, before it grows to accommodate its content.", DefaultValue = "50vh")]
+    public string MinHeight { get; set; }
+
+    [FunctionParameter(Label = "Spacing", Help = "The minimum space between and around the child elements.", DefaultValue = "var(--s1)", WidgetFactoryMethod = "SpacingWidget")]
+    public string Space { get; set; }
+
+    [FunctionParameter(Label = "Background color", Help = "The background color of the 'Cover' container. Use valid CSS value, defaults to transparent.", DefaultValue = "")]
+    public string BgColor { get; set; }
+
+    [FunctionParameter(Label = "Text color", Help = "The text color of the 'Cover' container. Use valid CSS value, defaults to inherit.", DefaultValue = "")]
+    public string TextColor { get; set; }
+
+    [FunctionParameter(Label = "Additional CSS classes", Help = "Add your own CSS classes for further customization.", DefaultValue = "")]
+    public string CssClasses { get; set; }
+
+
+	private string minHeightStyle()
+    {
+        return ((MinHeight != "100vh" && MinHeight != "") ? "--min-height:" + MinHeight + ";" : "");
+    }
+
+	private string gapStyle()
+    {
+        return (Space != "var(--s1)" ? "--space:" + Space + ";" : "");
+    }
+
+	private string backgroundColorStyle()
+    {
+        return ((BgColor != "transparent" && BgColor != "") ? "background-color:" + BgColor + ";" : "");
+    }
+
+	private string textColorStyle()
+    {
+        return ((TextColor != "currentColor" && TextColor != "") ? "color:" + TextColor + ";" : "");
+    }
+	
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+		<link id="everylayout-common" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Common.css"/>
+		<link id="everylayout-cover" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Cover.css"/>
+    </head>
+    <body>
+        <div class="cover-el @CssClasses" style="@minHeightStyle()@gapStyle()@backgroundColorStyle()@textColorStyle()">
+			@if(HeaderContent != null)
+			{
+				<div>@Html.Raw(@HeaderContent)</div>
+			}
+			
+			<div class="cover--center">@Html.Raw(@Content)</div>
+					
+			@if(FooterContent != null)
+			{
+				<div>@Html.Raw(@FooterContent)</div>
+			}				
+        </div>
+    </body>
+</html>

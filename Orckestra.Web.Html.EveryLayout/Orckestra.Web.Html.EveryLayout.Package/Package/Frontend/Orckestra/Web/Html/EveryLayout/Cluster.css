@@ -1,0 +1,13 @@
+.cluster-el {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1); //Customizable
+  justify-content: flex-start; //Customizable
+  align-items: flex-start; //Customizable
+}
+
+.cluster-el > * {
+	margin-bottom: 0;
+}
+
+//TODO add common cluster roles, like a list

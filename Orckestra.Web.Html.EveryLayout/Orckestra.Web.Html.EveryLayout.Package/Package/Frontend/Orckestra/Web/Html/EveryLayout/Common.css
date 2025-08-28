@@ -1,0 +1,19 @@
+:root {
+  --s-5: clamp(0.33rem, calc(0.39rem + -0.29vw), 0.18rem);
+  --s-4: clamp(0.41rem, calc(0.47rem + -0.31vw), 0.25rem);
+  --s-3: clamp(0.51rem, calc(0.57rem + -0.31vw), 0.35rem);
+  --s-2: clamp(0.64rem, calc(0.69rem + -0.27vw), 0.5rem);
+  --s-1: clamp(0.8rem, calc(0.84rem + -0.18vw), 0.71rem);
+  --s0: clamp(1rem, calc(1rem + 0vw), 1rem);
+  --s1: clamp(1.25rem, calc(1.19rem + 0.32vw), 1.41rem);
+  --s2: clamp(1.56rem, calc(1.39rem + 0.85vw), 2rem);
+  --s3: clamp(1.95rem, calc(1.61rem + 1.7vw), 2.83rem);
+  --s4: clamp(2.44rem, calc(1.83rem + 3.04vw), 4rem);
+  --s5: clamp(3.05rem, calc(2.04rem + 5.07vw), 5.65rem);
+  --border-thin: var(--s-5);
+  --border-medium: var(--s-3);
+  --border-thick: var(--s-1);
+  --measure: 65ch;
+  --padding: var(--s1);
+  //font-size: calc(.333vw + 1em);
+}

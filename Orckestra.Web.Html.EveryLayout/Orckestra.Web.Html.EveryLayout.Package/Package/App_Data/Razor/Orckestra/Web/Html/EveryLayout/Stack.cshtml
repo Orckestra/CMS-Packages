@@ -1,0 +1,79 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "STACK - Layout component for injecting white space (margin) between flow (block) elements along a vertical axis."; }
+    }
+	
+	public static WidgetFunctionProvider SpacingWidget()
+    {
+        Expression<Func<object>> expression = () => SpacingOptions();
+        var method = (expression.Body as MethodCallExpression).Method;
+
+        return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Value", "Key", false);
+    }
+
+    public static Dictionary<string, string> SpacingOptions()
+    {
+        var options = new Dictionary<string, string>();
+
+        options.Add("-5 (0.33rem - 0.18rem)", "var(--s-5)");
+        options.Add("-4 (0.41rem - 0.25rem)", "var(--s-4)");
+        options.Add("-3 (0.51rem - 0.35rem)", "var(--s-3)");
+        options.Add("-2 (0.64rem - 0.5rem)", "var(--s-2)");
+        options.Add("-1 (0.8rem - 0.71rem)", "var(--s-1)");
+        options.Add("0 (1rem)", "var(--s0)");
+		options.Add("1 (1.25rem - 1.41rem)", "var(--s1)");
+		options.Add("2 (1.56rem - 2rem)", "var(--s2)");
+		options.Add("3 (1.95rem - 2.83rem)", "var(--s3)");
+		options.Add("4 (2.44rem - 4rem)", "var(--s4)");
+		options.Add("5 (3.05rem - 5.65rem)", "var(--s5)");
+
+        return options;
+    }
+
+    [FunctionParameter(Label = "STACK content", Help = "")]
+    public XhtmlDocument Content { get; set; }
+	
+	[FunctionParameter(Label = "Space height", Help = "White space (margin) that will be between the elements along the verical axis.", DefaultValue = "var(--s1)", WidgetFactoryMethod = "SpacingWidget")]
+    public string Space { get; set; }
+	
+	[FunctionParameter(Label = "Apply spaces recursively", DefaultValue = "false", Help = "Whether the spaces apply to nested children.")]
+    public bool Recursive { get; set; }
+
+    [FunctionParameter(Label = "Additional CSS classes", Help = "Add your own CSS classes for further customization.", DefaultValue = "")]
+    public string CssClasses { get; set; }
+
+    [FunctionParameter(Label = "ARIA Role", Help = "Lets you add a role attribute value, like 'navigation' or 'list' (make sure the first-level children have the 'listitem' role for the latter).", DefaultValue = "")]
+    public string AriaRole { get; set; }
+
+	private string spaceStyle()
+    {
+        return (Space != "var(--s1)" ? "--space:" + Space + ";" : "");
+    }
+
+	private string recursiveClass()
+    {
+        return (Recursive ? " stack-el--recursive" : "");
+    }
+
+	private HtmlString role()
+    {
+        return new HtmlString((AriaRole != "" ? "role='" + AriaRole + "'" : ""));
+    }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+		<link id="everylayout-common" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Common.css"/>
+		<link id="everylayout-stack" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Stack.css"/>		
+    </head>
+    <body>
+		<div class="stack-el @CssClasses@recursiveClass()">
+			<div class="stack-el--items" style="@spaceStyle()" @role()>
+				@Html.Raw(@Content)
+			</div>
+		</div>
+    </body>
+</html>
