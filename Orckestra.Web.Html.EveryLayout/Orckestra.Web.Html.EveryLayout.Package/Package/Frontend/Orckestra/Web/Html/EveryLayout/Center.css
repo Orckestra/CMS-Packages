@@ -17,10 +17,6 @@
   align-items: center;
 }
 
-.center-el.center-el--text-center > * {
+.center-el.center-el--text-center {
 	text-align: center;
-}
-
-.center-el.center-el--text-center > * > * {
-	text-align: left;
 }

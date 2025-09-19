@@ -3,22 +3,22 @@
 @functions {
     public override string FunctionDescription
     {
-        get  { return "CENTER - Layout component for centering a block-level element horizontally"; }
+        get { return "CENTER - Layout component for centering a block-level element horizontally"; }
     }
 
     [FunctionParameter(Label = "Content to be centered", Help = "")]
     public XhtmlDocument Content { get; set; }
-	
-	[FunctionParameter(Label = "Limit content to 65 characters wide (recommended for readability)", Help = "", DefaultValue="true")]
-    public bool LimitedWidth { get; set; }
-	
-	[FunctionParameter(Label = "Center text", Help = "Center align the text/inline elements too, not only other block elements.", DefaultValue="false")]
+
+    [FunctionParameter(Label = "Limit content width to", Help = "For readability it is recommended to limit text width to 50-70 characters. You can use the 'ch' (character) unit, for example 65ch. Leave empty or enter 'none' to remove limit.", DefaultValue = "65ch")]
+    public string LimitedWidth { get; set; }
+
+    [FunctionParameter(Label = "Center align the text too", Help = "The `text-align: center` rule is applied on the element.", DefaultValue = "false")]
     public bool CenterText { get; set; }
-	
-	[FunctionParameter(Label = "Intrinsic centering", Help = "Center child elements based on their content width instead of the CENTER element width. This may affect the minimum width of child elements.", DefaultValue="false")]
+
+    [FunctionParameter(Label = "Intrinsic centering", Help = "Center child elements based on their content width instead of the CENTER element width. This may affect the minimum width of child elements.", DefaultValue = "false")]
     public bool Intrinsic { get; set; }
-	
-	[FunctionParameter(Label = "Gutter size", Help = "The minimum space on either side of the content. Use valid CSS size.", DefaultValue="0")]
+
+    [FunctionParameter(Label = "Gutter size", Help = "The minimum space on either side of the content. Use valid CSS size.", DefaultValue = "0")]
     public string GutterSize { get; set; }
 
     [FunctionParameter(Label = "Additional CSS classes", Help = "Add your own CSS classes for further customization.", DefaultValue = "")]
@@ -26,42 +26,42 @@
 
     [FunctionParameter(Label = "ARIA Role", Help = "Lets you add a role attribute value.", DefaultValue = "")]
     public string AriaRole { get; set; }
-	
-	
-	private string limitedWidthStyle()
+
+
+    private string limitedWidthStyle()
     {
-        return (!LimitedWidth ? "--measure: none;" : "");
+        return (LimitedWidth == "65ch" ? "" : ((LimitedWidth == "") ? "--measure:none;" : "--measure:" + LimitedWidth + ";"));
     }
-	
-	private string intrinsicClass()
+
+    private string intrinsicClass()
     {
         return (Intrinsic ? " center-el--flex" : " center-el--block");
     }
-	
-	private string centerTextClass()
+
+    private string centerTextClass()
     {
         return (CenterText ? " center-el--text-center" : "");
     }
-	
-	private string gutterSizeStyle()
+
+    private string gutterSizeStyle()
     {
         return ((GutterSize != "0" && GutterSize != "") ? "--gutter:" + GutterSize + ";" : "");
     }
 
-	private HtmlString role()
+    private HtmlString role()
     {
         return new HtmlString((AriaRole != "" ? "role='" + AriaRole + "'" : ""));
     }
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
-    <head>
-		<link id="everylayout-common" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Common.css"/>
-		<link id="everylayout-center" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Center.css"/>
-    </head>
-    <body>
-        <div class="center-el @CssClasses@intrinsicClass()@centerTextClass()" style="@limitedWidthStyle()@gutterSizeStyle()" @role()>
-            @Html.Raw(@Content)
-        </div>
-    </body>
+<head>
+    <link id="everylayout-common" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Common.css" />
+    <link id="everylayout-center" rel="stylesheet" type="text/css" href="~/Frontend/Orckestra/Web/Html/EveryLayout/Center.css" />
+</head>
+<body>
+    <div class="center-el @CssClasses@intrinsicClass()@centerTextClass()" style="@limitedWidthStyle()@gutterSizeStyle()" @role()>
+        @Html.Raw(@Content)
+    </div>
+</body>
 </html>

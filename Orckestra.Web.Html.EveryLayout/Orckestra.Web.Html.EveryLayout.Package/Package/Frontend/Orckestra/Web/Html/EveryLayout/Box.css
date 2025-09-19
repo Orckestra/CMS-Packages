@@ -10,8 +10,3 @@
   color: var(--color-dark);
   background-color: var(--color-light);
 }
-
-.box-el * {
-  /* ↓ Force colors to inherit from the parent and honor inversion (below) */
-  color: var(--color-dark);
-}

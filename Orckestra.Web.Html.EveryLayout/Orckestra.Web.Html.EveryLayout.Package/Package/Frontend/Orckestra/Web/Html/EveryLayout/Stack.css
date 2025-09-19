@@ -17,3 +17,15 @@
 .stack-el.stack-el--recursive > .stack-el--items * + * {
   margin-block-start: var(--space);
 }
+
+.stack-el-align-center > * {
+	align-items: center;
+}
+
+.stack-el-align-flex-start > * {
+	align-items: flex-start;
+}
+
+.stack-el-align-flex-end > * {
+	align-items: flex-end;
+}
