@@ -56,7 +56,7 @@
     [FunctionParameter(Label = "STACK content", Help = "")]
     public XhtmlDocument Content { get; set; }
 
-    [FunctionParameter(Label = "Space height", Help = "White space (margin) that will be between the elements along the verical axis.", DefaultValue = "var(--s1)", WidgetFactoryMethod = "SpacingWidget")]
+    [FunctionParameter(Label = "Space between items", Help = "White space (margin) that will be between the elements along the verical axis.", DefaultValue = "var(--s1)", WidgetFactoryMethod = "SpacingWidget")]
     public string Space { get; set; }
 
     [FunctionParameter(Label = "Items alignment", Help = "How are the stacked items aligned horizontally.", DefaultValue = "flex-start", WidgetFactoryMethod = "ItemsAlignmentWidget")]

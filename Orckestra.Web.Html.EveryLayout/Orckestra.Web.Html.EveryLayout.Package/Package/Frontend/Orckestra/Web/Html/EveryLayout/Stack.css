@@ -10,6 +10,11 @@
 	margin-bottom: 0;
 }
 
+.stack-el > .stack-el--items > img,
+.stack-el > .stack-el--items > picture > img {
+	max-width: 100%;
+}
+
 .stack-el:not(.stack-el--recursive) > .stack-el--items > * + * {
   margin-block-start: var(--space);
 }
