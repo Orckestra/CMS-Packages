@@ -16,65 +16,42 @@ namespace Composite.Tools.PackageCreator.Types
         {
         }
 
-        public override string ActionLabel
-        {
-            get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName)); }
-        }
+        public override string ActionLabel => PackageCreatorFacade.GetLocalization($"{CategoryName}.Add.Label");
 
-        public override string ActionToolTip
-        {
-            get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.ToolTip", this.CategoryName)); }
-        }
+        public override string ActionToolTip => PackageCreatorFacade.GetLocalization($"{CategoryName}.Add.ToolTip");
 
-        protected override XNamespace ns
-        {
-            get
-            {
-                return PackageCreator.mi;
-            }
-        }
+        protected override XNamespace ns => PackageCreator.Mi;
 
-        protected override XName itemName
-        {
-            get
-            {
-                return ns + "Add";
-            }
-        }
+        protected override XName itemName => ns + "Add";
 
         public override void AddToConfiguration(XElement config)
         {
-            var category = config.ForceElement(ns + this.CategoryName);
-            if (category.Elements(itemName).Where(x => x.AttributeValue("path") == this.Id).Count() == 0)
-            {
+            var category = config.ForceElement(ns + CategoryName);
+            if (category.Elements(itemName).All(x => x.AttributeValue("path") != Id))
                 category.Add(
                     new XElement(itemName,
-                        new XAttribute("path", this.Id)
+                        new XAttribute("path", Id)
                     )
                 );
-            }
         }
 
-        public static new IEnumerable<IPackItem> GetItems(Type type, XElement config)
+        public new static IEnumerable<IPackItem> GetItems(Type type, XElement config)
         {
-            return GetItems(type, config, PackageCreator.mi, PackageCreator.mi + "Add");
+            return GetItems(type, config, PackageCreator.Mi, PackageCreator.Mi + "Add");
         }
 
         public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
-            if (entityToken is PackageCreatorItemElementProviderEntityToken)
-            {
-                var token = (PackageCreatorItemElementProviderEntityToken)entityToken;
+            if (!(entityToken is PackageCreatorItemElementProviderEntityToken token))
+                yield break;
 
-                if (token.Type == typeof(PCFile).GetCategoryName())
-                {
-                    if (Path.GetExtension(token.Id).ToLower() == ".dll")
-                    {
-                        yield return new MIPackageFragmentInstallerBinary(string.Format("~\\{0}", token.Id));
-                        yield break;
-                    }
-                }
-            }
+            if (token.Type != typeof(PCFile).GetCategoryName())
+                yield break;
+
+            if (Path.GetExtension(token.Id).ToLower() != ".dll")
+                yield break;
+
+            yield return new MIPackageFragmentInstallerBinary($"~\\{token.Id}");
         }
     }
 }

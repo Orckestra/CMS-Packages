@@ -1,49 +1,43 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace Utility.IO
 {
-	/// <summary>
-	/// Filesystem
-	/// </summary>
-	public class FileSystem
-	{
-		// Copy directory structure recursively
-		public static void CopyDirectory(string Src, string Dst)
-		{
-			String[] Files;
+    /// <summary>
+    ///     Filesystem
+    /// </summary>
+    public class FileSystem
+    {
+        // Copy directory structure recursively
+        public static void CopyDirectory(string Src, string Dst)
+        {
+            if (Dst[Dst.Length - 1] != Path.DirectorySeparatorChar)
+                Dst += Path.DirectorySeparatorChar;
+            if (!Directory.Exists(Dst)) Directory.CreateDirectory(Dst);
 
-			if (Dst[Dst.Length - 1] != Path.DirectorySeparatorChar)
-				Dst += Path.DirectorySeparatorChar;
-			if (!Directory.Exists(Dst)) Directory.CreateDirectory(Dst);
-			Files = Directory.GetFileSystemEntries(Src);
-			foreach (string Element in Files)
-			{
-				// Sub directories
-				if (Directory.Exists(Element))
-				{
-                    CopyDirectory(Element, Dst + Path.GetFileName(Element));
-				}
-				// Files in directory
-				else
-				{
-					File.Copy(Element, Dst + Path.GetFileName(Element), true);
-					SetFileReadAccess(Dst + Path.GetFileName(Element), false);
-				}
-			}
-		}
+            var files = Directory.GetFileSystemEntries(Src);
+            foreach (var element in files)
+                // Sub directories
+                if (Directory.Exists(element))
+                {
+                    CopyDirectory(element, Dst + Path.GetFileName(element));
+                }
+                // Files in directory
+                else
+                {
+                    File.Copy(element, Dst + Path.GetFileName(element), true);
+                    SetFileReadAccess(Dst + Path.GetFileName(element), false);
+                }
+        }
 
-		// Sets the read-only value of a file.
-		public static void SetFileReadAccess(string FileName, bool SetReadOnly)
-		{
-			// Create a new FileInfo object.
-			FileInfo fInfo = new FileInfo(FileName);
-
-			// Set the IsReadOnly property.
-			fInfo.IsReadOnly = SetReadOnly;
-
-		}
-
-	}
-
+        // Sets the read-only value of a file.
+        public static void SetFileReadAccess(string fileName, bool setReadOnly)
+        {
+            // Create a new FileInfo object.
+            _ = new FileInfo(fileName)
+            {
+                // Set the IsReadOnly property.
+                IsReadOnly = setReadOnly
+            };
+        }
+    }
 }

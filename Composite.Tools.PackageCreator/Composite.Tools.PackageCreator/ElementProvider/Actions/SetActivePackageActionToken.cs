@@ -10,12 +10,9 @@ namespace Composite.Tools.PackageCreator.ElementProvider.Actions
     [ActionExecutor(typeof(SetActivePackageActionExecutor))]
     public sealed class SetActivePackageActionToken : ActionToken
     {
-        static private readonly IEnumerable<PermissionType> _permissionTypes = new PermissionType[] { PermissionType.Administrate };
+        private static readonly IEnumerable<PermissionType> _permissionTypes = new[] { PermissionType.Administrate };
 
-        public override IEnumerable<PermissionType> PermissionTypes
-        {
-            get { return _permissionTypes; }
-        }
+        public override IEnumerable<PermissionType> PermissionTypes => _permissionTypes;
 
         public override string Serialize()
         {
@@ -30,16 +27,17 @@ namespace Composite.Tools.PackageCreator.ElementProvider.Actions
 
     public class SetActivePackageActionExecutor : IActionExecutor
     {
-        public FlowToken Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
+        public FlowToken Execute(EntityToken entityToken, ActionToken actionToken,
+            FlowControllerServicesContainer flowControllerServicesContainer)
         {
             PackageCreatorFacade.ActivePackageName = entityToken.Source;
-			Tree.Page.ClearCache();
-			Tree.Media.ClearCache();
+            Tree.Page.ClearCache();
+            Tree.Media.ClearCache();
             var specificTreeRefresher = new SpecificTreeRefresher(flowControllerServicesContainer);
-			var parentTreeRefresher = new ParentTreeRefresher(flowControllerServicesContainer);
+            var parentTreeRefresher = new ParentTreeRefresher(flowControllerServicesContainer);
             specificTreeRefresher.PostRefreshMesseges(new PackageCreatorElementProviderEntityToken());
-			specificTreeRefresher.PostRefreshMesseges(new PageElementProviderEntityToken("PageElementProvider"));
-			parentTreeRefresher.PostRefreshMesseges(PCMediaFolder.GetRootEntityToken());
+            specificTreeRefresher.PostRefreshMesseges(new PageElementProviderEntityToken("PageElementProvider"));
+            parentTreeRefresher.PostRefreshMesseges(PCMediaFolder.GetRootEntityToken());
 
 
             return null;

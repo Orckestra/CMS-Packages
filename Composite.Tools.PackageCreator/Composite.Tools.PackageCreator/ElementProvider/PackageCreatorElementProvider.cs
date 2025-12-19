@@ -11,40 +11,34 @@ using Composite.C1Console.Security;
 using Composite.C1Console.Users;
 using Composite.C1Console.Workflow;
 using Composite.Core.ResourceSystem;
-using Composite.Data.ProcessControlled.ProcessControllers.GenericPublishProcessController;
 using Composite.Tools.PackageCreator.Actions;
 using Composite.Tools.PackageCreator.ElementProvider.Actions;
 using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
 using Composite.Tools.PackageCreator.Types;
 using Composite.Tools.PackageCreator.Workflow;
 
-
 namespace Composite.Tools.PackageCreator.ElementProvider
 {
-
     public sealed class PackageCreatorElementProvider : IHooklessElementProvider
     {
-        private ElementProviderContext _context;
-        private List<EntityTokenHook> _currentEntityTokenHooks = null;
-
         private static readonly PermissionType[] _permissionTypes = { PermissionType.Administrate };
         private static readonly ActionGroup PrimaryActionGroup = new ActionGroup(ActionGroupPriority.PrimaryHigh);
+        private ElementProviderContext _context;
+        private List<EntityTokenHook> _currentEntityTokenHooks;
 
-        public PackageCreatorElementProvider()
-        {
-
-        }
+        private List<EntityTokenHook> CurrentEntityTokenHooks =>
+            _currentEntityTokenHooks ?? (_currentEntityTokenHooks = CreateHooks());
 
         public ElementProviderContext Context
         {
-            set { _context = value; }
+            set => _context = value;
         }
 
         public IEnumerable<Element> GetRoots(SearchToken seachToken)
         {
-            Element element = new Element(_context.CreateElementHandle(new PackageCreatorElementProviderEntityToken()))
+            var element = new Element(_context.CreateElementHandle(new PackageCreatorElementProviderEntityToken()))
             {
-                VisualData = new ElementVisualizedData()
+                VisualData = new ElementVisualizedData
                 {
                     Label = PackageCreatorFacade.GetLocalization("PackageCreatorElementProviderEntityToken.Label"),
                     ToolTip = PackageCreatorFacade.GetLocalization("PackageCreatorElementProviderEntityToken.ToolTip"),
@@ -54,7 +48,8 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                 }
             };
 
-            element.AddAction(new ElementAction(new ActionHandle(new WorkflowActionToken(typeof(CreatePackageWorkflow), new PermissionType[] { PermissionType.Administrate })))
+            element.AddAction(new ElementAction(new ActionHandle(new WorkflowActionToken(typeof(CreatePackageWorkflow),
+                new[] { PermissionType.Administrate })))
             {
                 VisualData = new ActionVisualizedData
                 {
@@ -72,7 +67,8 @@ namespace Composite.Tools.PackageCreator.ElementProvider
             });
 
 
-            element.AddAction(new ElementAction(new ActionHandle(new WorkflowActionToken(typeof(UploadConfigWorkflow), new PermissionType[] { PermissionType.Administrate })))
+            element.AddAction(new ElementAction(new ActionHandle(new WorkflowActionToken(typeof(UploadConfigWorkflow),
+                new[] { PermissionType.Administrate })))
             {
                 VisualData = new ActionVisualizedData
                 {
@@ -90,13 +86,20 @@ namespace Composite.Tools.PackageCreator.ElementProvider
             });
 
             if (UserSettings.C1ConsoleUiLanguage.Name != "en-US")
-            {
-                element.AddAction(new ElementAction(new ActionHandle(new CreatePackageWorkflowActionToken(string.Format("Composite.Localization.C1Console.{0}", new CultureInfo(UserSettings.C1ConsoleUiLanguage.TwoLetterISOLanguageName).EnglishName), new AddLocalizationActionToken(UserSettings.C1ConsoleUiLanguage.Name))))
+                element.AddAction(new ElementAction(new ActionHandle(new CreatePackageWorkflowActionToken(
+                    string.Format("Composite.Localization.C1Console.{0}",
+                        new CultureInfo(UserSettings.C1ConsoleUiLanguage.TwoLetterISOLanguageName).EnglishName),
+                    new AddLocalizationActionToken(UserSettings.C1ConsoleUiLanguage.Name))))
                 {
                     VisualData = new ActionVisualizedData
                     {
-                        Label = string.Format(PackageCreatorFacade.GetLocalization("CreateLocalizationPackage.Label"), StringResourceSystemFacade.GetString("Composite.Cultures", UserSettings.C1ConsoleUiLanguage.Name)),
-                        ToolTip = string.Format(PackageCreatorFacade.GetLocalization("CreateLocalizationPackage.ToolTip"), StringResourceSystemFacade.GetString("Composite.Cultures", UserSettings.C1ConsoleUiLanguage.Name)),
+                        Label = string.Format(PackageCreatorFacade.GetLocalization("CreateLocalizationPackage.Label"),
+                            StringResourceSystemFacade.GetString("Composite.Cultures",
+                                UserSettings.C1ConsoleUiLanguage.Name)),
+                        ToolTip = string.Format(
+                            PackageCreatorFacade.GetLocalization("CreateLocalizationPackage.ToolTip"),
+                            StringResourceSystemFacade.GetString("Composite.Cultures",
+                                UserSettings.C1ConsoleUiLanguage.Name)),
                         Icon = new ResourceHandle("Composite.Icons", "package-element-closed-availableitem"),
                         ActionLocation = new ActionLocation
                         {
@@ -107,7 +110,6 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                         }
                     }
                 });
-            }
 
             yield return element;
 
@@ -115,62 +117,34 @@ namespace Composite.Tools.PackageCreator.ElementProvider
             yield return GetXmlNodeElement(PCWebConfig.Source, string.Empty, PCWebConfig.Source);
         }
 
-        private Element GetXmlNodeElement(string source, string xpath, string name)
-        {
-
-            return new Element(_context.CreateElementHandle(new XmlNodeElementProviderEntityToken(xpath, source)))
-            {
-                VisualData = new ElementVisualizedData()
-                {
-                    Label = name,
-                    ToolTip = name,
-                    HasChildren = true,
-                    Icon = new ResourceHandle("Composite.Icons", "folder"),
-                    OpenedIcon = new ResourceHandle("Composite.Icons", "folder-open")
-                }
-            };
-        }
-
-        private Element GetXmlAttributeElement(string source, string xpath, string name)
-        {
-
-            var element = new Element(_context.CreateElementHandle(new XmlNodeAttributeProviderEntityToken(xpath, source)))
-            {
-                VisualData = new ElementVisualizedData()
-                {
-                    Label = name,
-                    ToolTip = name,
-                    HasChildren = false,
-                    Icon = new ResourceHandle("Composite.Icons", "data"),
-                    OpenedIcon = new ResourceHandle("Composite.Icons", "data")
-                }
-            };
-            return element;
-        }
-
         public IEnumerable<Element> GetChildren(EntityToken entityToken, SearchToken seachToken)
         {
             if (entityToken is PackageCreatorElementProviderEntityToken)
             {
-                IEnumerable<string> packages = PackageCreatorFacade.GetPackageNames();
+                var packages = PackageCreatorFacade.GetPackageNames();
                 foreach (var package in packages)
                 {
-                    bool isActivePackage = PackageCreatorFacade.ActivePackageName == package;
+                    var isActivePackage = PackageCreatorFacade.ActivePackageName == package;
 
-                    var icon = isActivePackage ? (new ResourceHandle("Composite.Icons", "inbox-green")) : new ResourceHandle("Composite.Icons", "inbox");
-                    var element = new Element(_context.CreateElementHandle(new PackageCreatorPackageElementProviderEntityToken(package)))
-                    {
-                        VisualData = new ElementVisualizedData()
+                    var icon = isActivePackage
+                        ? new ResourceHandle("Composite.Icons", "inbox-green")
+                        : new ResourceHandle("Composite.Icons", "inbox");
+                    var element =
+                        new Element(
+                            _context.CreateElementHandle(new PackageCreatorPackageElementProviderEntityToken(package)))
                         {
-                            Label = package,
-                            ToolTip = package,
-                            HasChildren = true,
-                            Icon = icon,
-                            OpenedIcon = icon
-                        }
-                    };
+                            VisualData = new ElementVisualizedData
+                            {
+                                Label = package,
+                                ToolTip = package,
+                                HasChildren = true,
+                                Icon = icon,
+                                OpenedIcon = icon
+                            }
+                        };
 
-                    element.AddAction(new ElementAction(new ActionHandle(new WorkflowActionToken(typeof(EditPackageWorkflow), new[] { PermissionType.Administrate })))
+                    element.AddAction(new ElementAction(new ActionHandle(
+                        new WorkflowActionToken(typeof(EditPackageWorkflow), new[] { PermissionType.Administrate })))
                     {
                         VisualData = new ActionVisualizedData
                         {
@@ -188,7 +162,6 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     });
 
                     if (!isActivePackage)
-                    {
                         element.AddAction(new ElementAction(new ActionHandle(new SetActivePackageActionToken()))
                         {
                             VisualData = new ActionVisualizedData
@@ -205,7 +178,6 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                                 }
                             }
                         });
-                    }
 
                     var isAllowOverwrite = PackageCreatorFacade.IsAllowOverwrite(package);
                     element.AddAction(
@@ -229,7 +201,8 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                         });
 
 
-                    element.AddAction(new ElementAction(new ActionHandle(new ConfirmWorkflowActionToken("Are you sure?", typeof(DeleteConfigPackageCreatorActionToken))))
+                    element.AddAction(new ElementAction(new ActionHandle(
+                        new ConfirmWorkflowActionToken("Are you sure?", typeof(DeleteConfigPackageCreatorActionToken))))
                     {
                         VisualData = new ActionVisualizedData
                         {
@@ -288,9 +261,10 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                 var categories = PackageCreatorFacade.GetCategories(entityToken.Source);
                 foreach (var category in categories)
                 {
-                    var element = new Element(_context.CreateElementHandle(new PackageCreatorCategoryElementProviderEntityToken(entityToken.Source, category.Name)))
+                    var element = new Element(_context.CreateElementHandle(
+                        new PackageCreatorCategoryElementProviderEntityToken(entityToken.Source, category.Name)))
                     {
-                        VisualData = new ElementVisualizedData()
+                        VisualData = new ElementVisualizedData
                         {
                             Label = category.GetLabel(),
                             ToolTip = category.GetLabel(),
@@ -301,16 +275,17 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     };
                     yield return element;
                 }
-
             }
             else if (entityToken is PackageCreatorCategoryElementProviderEntityToken)
             {
                 var items = PackageCreatorFacade.GetItems(entityToken.Type, entityToken.Source);
                 foreach (var item in items.OrderBy(d => d.Id))
                 {
-                    var element = new Element(_context.CreateElementHandle(new PackageCreatorItemElementProviderEntityToken(item.Id, entityToken.Source, entityToken.Type)))
+                    var element = new Element(_context.CreateElementHandle(
+                        new PackageCreatorItemElementProviderEntityToken(item.Id, entityToken.Source,
+                            entityToken.Type)))
                     {
-                        VisualData = new ElementVisualizedData()
+                        VisualData = new ElementVisualizedData
                         {
                             Label = item.GetLabel(),
                             ToolTip = item.Id,
@@ -340,11 +315,13 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     yield return element;
                 }
             }
-            else if (entityToken is XmlNodeElementProviderEntityToken)
+            else if (entityToken is XmlNodeElementProviderEntityToken token)
             {
-                var configuration = PackageCreatorFacade.GetConfigurationDocument(entityToken.Source);
-                var xpath = (entityToken as XmlNodeElementProviderEntityToken).XPath;
-                XContainer container = xpath == string.Empty ? configuration as XContainer : configuration.XPathSelectElement(xpath) as XContainer;
+                var configuration = PackageCreatorFacade.GetConfigurationDocument(token.Source);
+                var xpath = token.XPath;
+                var container = xpath == string.Empty
+                    ? configuration
+                    : configuration.XPathSelectElement(xpath) as XContainer;
                 var element = container as XElement;
                 var counter = new Dictionary<string, int>();
 
@@ -352,31 +329,24 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                 if (container != null)
                 {
                     var xmlElements = new List<Element>();
-                    foreach (XElement item in container.Elements())
+                    foreach (var item in container.Elements())
                     {
-                        string position = string.Empty;
-                        string name = item.Name.ToString();
+                        var position = string.Empty;
+                        var name = item.Name.ToString();
                         if (counter.ContainsKey(name))
-                        {
-                            position = string.Format("[{0}]", ++counter[name]);
-                        }
+                            position = $"[{++counter[name]}]";
                         else
-                        {
                             counter.Add(name, 1);
-                        }
-                        if (item.Attribute("name") != null)
-                        {
-                            position = string.Format("[@name='{0}']", item.Attribute("name").Value);
-                        }
+                        if (item.Attribute("name") != null) position = $"[@name='{item.Attribute("name").Value}']";
 
-                        string description = item.IndexAttributeValue();
+                        var description = item.IndexAttributeValue();
 
-                        xmlElements.Add(GetXmlNodeElement(entityToken.Source, string.Format("{0}/{1}{2}", xpath, name, position), name + (string.IsNullOrEmpty(description) ? string.Empty : string.Format("({0})", description))));
+                        xmlElements.Add(GetXmlNodeElement(token.Source, $"{xpath}/{name}{position}",
+                            name + (string.IsNullOrEmpty(description) ? string.Empty : $"({description})")));
                     }
 
-                    xmlElements.Sort((a, b) => string.Compare(a.VisualData.Label,
-                                                              b.VisualData.Label,
-                                                              StringComparison.InvariantCulture));
+                    xmlElements.Sort((a, b) =>
+                        string.Compare(a.VisualData.Label, b.VisualData.Label, StringComparison.InvariantCulture));
 
                     foreach (var e in xmlElements) yield return e;
                 }
@@ -386,11 +356,44 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     var elementPath = Regex.Replace(xpath, @"\[[^\]]*\]$", "");
                     foreach (var attribute in element.Attributes())
                     {
-                        string name = attribute.Name.ToString();
-                        yield return GetXmlAttributeElement(entityToken.Source, string.Format("{0}[@{1}='{2}']", elementPath, name, attribute.Value), string.Format("{0}={1}", name, attribute.Value));
+                        var name = attribute.Name.ToString();
+                        yield return GetXmlAttributeElement(token.Source, $"{elementPath}[@{name}='{attribute.Value}']",
+                            $"{name}={attribute.Value}");
                     }
                 }
             }
+        }
+
+        private Element GetXmlNodeElement(string source, string xpath, string name)
+        {
+            return new Element(_context.CreateElementHandle(new XmlNodeElementProviderEntityToken(xpath, source)))
+            {
+                VisualData = new ElementVisualizedData
+                {
+                    Label = name,
+                    ToolTip = name,
+                    HasChildren = true,
+                    Icon = new ResourceHandle("Composite.Icons", "folder"),
+                    OpenedIcon = new ResourceHandle("Composite.Icons", "folder-open")
+                }
+            };
+        }
+
+        private Element GetXmlAttributeElement(string source, string xpath, string name)
+        {
+            var element =
+                new Element(_context.CreateElementHandle(new XmlNodeAttributeProviderEntityToken(xpath, source)))
+                {
+                    VisualData = new ElementVisualizedData
+                    {
+                        Label = name,
+                        ToolTip = name,
+                        HasChildren = false,
+                        Icon = new ResourceHandle("Composite.Icons", "data"),
+                        OpenedIcon = new ResourceHandle("Composite.Icons", "data")
+                    }
+                };
+            return element;
         }
 
         public IEnumerable<LabeledProperty> GetLabeledProperties(EntityToken entityToken)
@@ -400,24 +403,12 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 
         public List<EntityTokenHook> GetHooks()
         {
-            return this.CurrentEntityTokenHooks;
+            return CurrentEntityTokenHooks;
         }
 
-        private List<EntityTokenHook> CurrentEntityTokenHooks
+        private static List<EntityTokenHook> CreateHooks()
         {
-            get
-            {
-                if (_currentEntityTokenHooks == null)
-                {
-                    _currentEntityTokenHooks = CreateHooks();
-                }
-                return _currentEntityTokenHooks;
-            }
-        }
-
-        private List<EntityTokenHook> CreateHooks()
-        {
-            EntityTokenHook entityTokenHook = new EntityTokenHook(new PackageCreatorElementProviderEntityToken());
+            var entityTokenHook = new EntityTokenHook(new PackageCreatorElementProviderEntityToken());
             return new List<EntityTokenHook> { entityTokenHook };
         }
     }

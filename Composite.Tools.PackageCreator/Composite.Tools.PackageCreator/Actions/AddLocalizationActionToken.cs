@@ -13,26 +13,23 @@ namespace Composite.Tools.PackageCreator.Actions
     [ActionExecutor(typeof(AddLocalizationActionExecutor))]
     internal class AddLocalizationActionToken : ActionToken
     {
-        static private IEnumerable<PermissionType> _permissionTypes = new PermissionType[] { PermissionType.Administrate };
-
-        public override IEnumerable<PermissionType> PermissionTypes
-        {
-            get { return _permissionTypes; }
-        }
+        private static readonly IEnumerable<PermissionType> _permissionTypes = new[] { PermissionType.Administrate };
 
         public AddLocalizationActionToken(string cultureName)
         {
             CultureName = cultureName;
         }
-        
+
+        public override IEnumerable<PermissionType> PermissionTypes => _permissionTypes;
+
+        public string CultureName { get; }
+
         public override string Serialize()
         {
             var sb = new StringBuilder();
             StringConversionServices.SerializeKeyValuePair<string>(sb, "_cultureName", CultureName);
             return sb.ToString();
         }
-        
-        public string CultureName { get; private set; }
 
         public static ActionToken Deserialize(string serializedData)
         {
@@ -46,33 +43,28 @@ namespace Composite.Tools.PackageCreator.Actions
     {
         #region IActionExecutor Members
 
-        public FlowToken Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
+        public FlowToken Execute(EntityToken entityToken, ActionToken actionToken,
+            FlowControllerServicesContainer flowControllerServicesContainer)
         {
             var packageName = PackageCreatorFacade.ActivePackageName;
-            if (entityToken is PackageCreatorEntityToken)
-            {
-                packageName = (entityToken as PackageCreatorEntityToken).Source;
-            }
+            if (entityToken is PackageCreatorEntityToken creatorEntityToken) packageName = creatorEntityToken.Source;
             if (string.IsNullOrEmpty(packageName))
             {
                 flowControllerServicesContainer.GetService<IManagementConsoleMessageService>();
                 var consoleServices = flowControllerServicesContainer.GetService<IManagementConsoleMessageService>();
-                consoleServices.ShowMessage(DialogType.Warning, PackageCreatorFacade.GetLocalization("NoPackages.Title"),
-                                            PackageCreatorFacade.GetLocalization("NoPackages.Message"));
+                consoleServices.ShowMessage(DialogType.Warning,
+                    PackageCreatorFacade.GetLocalization("NoPackages.Title"),
+                    PackageCreatorFacade.GetLocalization("NoPackages.Message"));
                 return null;
             }
 
-            if (actionToken is AddLocalizationActionToken)
-            {
-                var token = actionToken as AddLocalizationActionToken;
+            if (actionToken is AddLocalizationActionToken token)
                 PackageCreatorFacade.AddItem(new PCLocalizations(token.CultureName), packageName);
-            }
 
             var treeRefresher = new SpecificTreeRefresher(flowControllerServicesContainer);
             treeRefresher.PostRefreshMesseges(new PackageCreatorElementProviderEntityToken());
 
             return null;
-
         }
 
         #endregion

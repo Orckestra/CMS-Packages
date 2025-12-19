@@ -7,20 +7,16 @@ using Composite.Data.Types;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    partial class PCFunctions
+    internal partial class PCFunctions
     {
-
         public static IEnumerable<IPackItem> CreateCSharp(EntityToken entityToken)
         {
-            if (entityToken is DataEntityToken)
+            if (!(entityToken is DataEntityToken dataEntityToken)) 
+                yield break;
+
+            if (dataEntityToken.Data is IMethodBasedFunctionInfo data)
             {
-                DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
-                if (dataEntityToken.Data is IMethodBasedFunctionInfo)
-                {
-                    IMethodBasedFunctionInfo data = (IMethodBasedFunctionInfo)dataEntityToken.Data;
-                    yield return new PCFunctions(data.Namespace + "." + data.UserMethodName);
-                    yield break;
-                }
+                yield return new PCFunctions($"{data.Namespace}.{data.UserMethodName}");
             }
         }
 
@@ -30,16 +26,15 @@ namespace Composite.Tools.PackageCreator.Types
             try
             {
                 csharpFunction = (from i in DataFacade.GetData<IMethodBasedFunctionInfo>()
-                                  where i.Namespace + "." + i.UserMethodName == this.Id
-                                  select i).First();
+                    where i.Namespace + "." + i.UserMethodName == Id
+                    select i).First();
             }
             catch (Exception)
             {
-                throw new ArgumentException(string.Format(@"C# Function '{0}' doesn't exists", this.Id));
+                throw new ArgumentException($@"C# Function '{Id}' doesn't exists");
             }
 
             pc.AddData(csharpFunction);
         }
     }
-
 }

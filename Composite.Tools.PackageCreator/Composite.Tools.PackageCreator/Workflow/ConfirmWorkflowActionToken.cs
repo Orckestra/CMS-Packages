@@ -9,9 +9,9 @@ namespace Composite.Tools.PackageCreator.Workflow
     public class ConfirmWorkflowActionToken : WorkflowActionToken
     {
         public ConfirmWorkflowActionToken(string confirmMessage, Type actionTokenType) :
-            base(typeof(ConfirmPackageWorkflow), new PermissionType[] { PermissionType.Administrate })
+            base(typeof(ConfirmPackageWorkflow), new[] { PermissionType.Administrate })
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             StringConversionServices.SerializeKeyValuePair(sb, "ConfirmMessage", confirmMessage);
             StringConversionServices.SerializeKeyValuePair<Type>(sb, "ActionToken", actionTokenType);
             Payload = sb.ToString();

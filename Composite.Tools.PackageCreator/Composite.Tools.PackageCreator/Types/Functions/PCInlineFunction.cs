@@ -4,43 +4,35 @@ using Composite.C1Console.Security;
 using Composite.Data;
 using Composite.Data.Types;
 
-
-
 namespace Composite.Tools.PackageCreator.Types
 {
-    partial class PCFunctions
+    internal partial class PCFunctions
     {
-
-
         public static IEnumerable<IPackItem> CreateInline(EntityToken entityToken)
         {
-            if (entityToken is DataEntityToken)
+            if (!(entityToken is DataEntityToken dataEntityToken)) 
+                yield break;
+
+            if (dataEntityToken.Data is IInlineFunction data)
             {
-                DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
-                if (dataEntityToken.Data is IInlineFunction)
-                {
-                    IInlineFunction data = (IInlineFunction)dataEntityToken.Data;
-                    yield return new PCFunctions(data.Namespace + "." + data.Name);
-                    yield break;
-                }
+                yield return new PCFunctions($"{data.Namespace}.{data.Name}");
             }
         }
 
         public void PackInlineFunction(PackageCreator creator)
         {
-            var inlineFunction = DataFacade.GetData<IInlineFunction>(data => (data.Namespace + "." + data.Name) == this.Name).FirstOrDefault();
-            if (inlineFunction != null)
-            {
+            var inlineFunction = DataFacade.GetData<IInlineFunction>(data => $"{data.Namespace}.{data.Name}" == Name)
+                .FirstOrDefault();
 
-                var inlineFunctionId = inlineFunction.Id;
-                creator.AddData(inlineFunction);
-                creator.AddData<IInlineFunctionAssemblyReference>(d => d.Function == inlineFunctionId);
-                creator.AddData<IParameter>(d => d.OwnerId == inlineFunctionId);
+            if (inlineFunction == null) 
+                return;
 
-                creator.AddFile(string.Format(@"App_Data\Composite\InlineCSharpFunctions\{0}", inlineFunction.CodePath));
-            }
+            var inlineFunctionId = inlineFunction.Id;
+            creator.AddData(inlineFunction);
+            creator.AddData<IInlineFunctionAssemblyReference>(d => d.Function == inlineFunctionId);
+            creator.AddData<IParameter>(d => d.OwnerId == inlineFunctionId);
+
+            creator.AddFile($@"App_Data\Composite\InlineCSharpFunctions\{inlineFunction.CodePath}");
         }
     }
-
 }
-

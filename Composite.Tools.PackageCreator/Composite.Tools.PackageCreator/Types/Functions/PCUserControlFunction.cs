@@ -6,39 +6,31 @@ using Composite.Functions;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    partial class PCFunctions
+    internal partial class PCFunctions
     {
-
         public static IEnumerable<IPackItem> CreateUserControl(EntityToken entityToken)
         {
-            if (entityToken is FileBasedFunctionEntityToken)
-            {
-                var functionEntityToken = (FileBasedFunctionEntityToken)entityToken;
-                if (functionEntityToken.FunctionProviderName == PackageCreatorFacade.UserControlFunctionProviderName)
-                {
-                    yield return new PCFunctions(functionEntityToken.FunctionName);
-                }
-            }
-            yield break;
+            if (!(entityToken is FileBasedFunctionEntityToken functionEntityToken)) 
+                yield break;
+
+            if (functionEntityToken.FunctionProviderName == PackageCreatorFacade.UserControlFunctionProviderName)
+                yield return new PCFunctions(functionEntityToken.FunctionName);
         }
 
         public void PackUserControlFunction(PackageCreator pc, IFunction function)
         {
-            if (function.EntityToken is FileBasedFunctionEntityToken)
-            {
-                var functionEntityToken = (FileBasedFunctionEntityToken)function.EntityToken;
-                if (functionEntityToken.FunctionProviderName == PackageCreatorFacade.UserControlFunctionProviderName)
-                {
-                    var virtualPath = function.GetProperty("VirtualPath");
-                    pc.AddFile(virtualPath);
+            if (!(function.EntityToken is FileBasedFunctionEntityToken functionEntityToken)) 
+                return;
 
-                    string codeFile = virtualPath + ".cs";
-                    if (C1File.Exists(PathUtil.Resolve(codeFile)))
-                    {
-                        pc.AddFile(codeFile);
-                    }
-                }
-            }
+            if (functionEntityToken.FunctionProviderName != PackageCreatorFacade.UserControlFunctionProviderName) 
+                return;
+
+            var virtualPath = function.GetProperty("VirtualPath");
+            pc.AddFile(virtualPath);
+
+            var codeFile = $"{virtualPath}.cs";
+            if (C1File.Exists(PathUtil.Resolve(codeFile))) 
+                pc.AddFile(codeFile);
         }
     }
 }

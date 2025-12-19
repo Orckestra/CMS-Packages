@@ -6,41 +6,27 @@ namespace Composite.Tools.PackageCreator.ElementProvider.EntityTokens
     [SecurityAncestorProvider(typeof(PackageCreatorProviderEntityTokenSecurityAncestorProvider))]
     public sealed class PackageCreatorItemElementProviderEntityToken : PackageCreatorEntityToken
     {
-        private string _id;
-        private string _source;
-        private string _type;
-
         public PackageCreatorItemElementProviderEntityToken(string id, string source, string type)
         {
-            this._id = id;
-            this._source = source;
-            this._type = type;
+            Id = id;
+            Source = source;
+            Type = type;
         }
-        public override string Id
-        {
-            get { return _id; }
-        }
+
+        public override string Id { get; }
+
+        public override string Source { get; }
+
+        public override string Type { get; }
 
         public override string Serialize()
         {
-            return this.DoSerialize();
-        }
-
-        public override string Source
-        {
-            get { return _source; }
-        }
-
-        public override string Type
-        {
-            get { return _type; }
+            return DoSerialize();
         }
 
         public static EntityToken Deserialize(string serializedData)
         {
-            string type, source, id;
-
-            DoDeserialize(serializedData, out type, out source, out id);
+            DoDeserialize(serializedData, out var type, out var source, out var id);
 
             return new PackageCreatorItemElementProviderEntityToken(id, source, type);
         }

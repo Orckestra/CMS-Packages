@@ -3,42 +3,32 @@ using Composite.Tools.PackageCreator.ElementProvider.EntityTokens.Interfaces;
 
 namespace Composite.Tools.PackageCreator.ElementProvider.EntityTokens
 {
-	[SecurityAncestorProvider(typeof(PackageCreatorProviderEntityTokenSecurityAncestorProvider))]
-	public class PackageCreatorPackageElementProviderEntityToken : PackageCreatorEntityToken
-	{
-		private string _source;
+    [SecurityAncestorProvider(typeof(PackageCreatorProviderEntityTokenSecurityAncestorProvider))]
+    public class PackageCreatorPackageElementProviderEntityToken : PackageCreatorEntityToken
+    {
+        private readonly string _source;
 
-		public PackageCreatorPackageElementProviderEntityToken(string source)
-		{
-			this._source = source;
-		}
-		public override string Id
-		{
-			get { return ""; }
-		}
+        public PackageCreatorPackageElementProviderEntityToken(string source)
+        {
+            _source = source;
+        }
 
-		public override string Serialize()
-		{
-			return this.DoSerialize();
-		}
+        public override string Id => "";
 
-		public override string Source
-		{
-			get { return _source; }
-		}
+        public override string Source => _source;
 
-		public override string Type
-		{
-			get { return ""; }
-		}
+        public override string Type => "";
 
-		public static EntityToken Deserialize(string serializedData)
-		{
-			string type, source, id;
+        public override string Serialize()
+        {
+            return DoSerialize();
+        }
 
-			DoDeserialize(serializedData, out type, out source, out id);
+        public static EntityToken Deserialize(string serializedData)
+        {
+            DoDeserialize(serializedData, out _, out var source, out _);
 
-			return new PackageCreatorPackageElementProviderEntityToken(source);
-		}
-	}
+            return new PackageCreatorPackageElementProviderEntityToken(source);
+        }
+    }
 }

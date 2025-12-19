@@ -8,56 +8,40 @@ using Composite.Core.ResourceSystem;
 namespace Composite.Tools.PackageCreator.Types
 {
     /// <summary>
-    /// Represents a package creator item that has only one 'name' attribute in serialized state.
-    /// Derived classes have to define a constructor from with a single <see cref="string"/> parameter.
+    ///     Represents a package creator item that has only one 'name' attribute in serialized state.
+    ///     Derived classes have to define a constructor from with a single <see cref="string" /> parameter.
     /// </summary>
     public abstract class BasePackItem : IPackItem
     {
-
         protected EntityToken _entityToken;
-        protected virtual XNamespace ns
+
+
+        protected BasePackItem()
         {
-            get
-            {
-                return PackageCreator.pc;
-            }
         }
-
-        protected virtual XName itemName
-        {
-            get
-            {
-                return "Add";
-            }
-        }
-
-
-        protected BasePackItem() { }
 
         protected BasePackItem(string name)
         {
-            this.Name = name;
+            Name = name;
         }
 
         protected BasePackItem(XElement element)
         {
-            this.Name = element.IndexAttributeValue();
+            Name = element.IndexAttributeValue();
         }
 
         protected BasePackItem(EntityToken entityToken)
         {
-            this._entityToken = entityToken;
+            _entityToken = entityToken;
         }
 
-		public virtual string Name { get; set; }
+        protected virtual XNamespace ns => PackageCreator.Pc;
 
-        public virtual string Id
-        {
-            get
-            {
-                return Name;
-            }
-        }
+        protected virtual XName itemName => "Add";
+
+        public virtual string Name { get; set; }
+
+        public virtual string Id => Name;
 
         public virtual string GetLabel()
         {
@@ -65,81 +49,59 @@ namespace Composite.Tools.PackageCreator.Types
         }
 
 
-        public virtual string ActionLabel
-        {
-            get { return PackageCreatorFacade.GetLocalization(string.Format("Add.Label")); }
-        }
+        public virtual string ActionLabel => PackageCreatorFacade.GetLocalization("Add.Label");
 
-        public virtual string ActionToolTip
-        {
-            get { return PackageCreatorFacade.GetLocalization(string.Format("Add.ToolTip")); }
-        }
+        public virtual string ActionToolTip => PackageCreatorFacade.GetLocalization("Add.ToolTip");
 
-        public virtual ResourceHandle ItemIcon
-        {
-            get { return new ResourceHandle("Composite.Icons", "page-publication"); }
-        }
+        public virtual ResourceHandle ItemIcon => new ResourceHandle("Composite.Icons", "page-publication");
 
-        public virtual ResourceHandle ActionIcon
-        {
-            get { return new ResourceHandle("Composite.Icons", "package-element-closed-availableitem"); }
-        }
+        public virtual ResourceHandle ActionIcon =>
+            new ResourceHandle("Composite.Icons", "package-element-closed-availableitem");
 
         public virtual void AddToConfiguration(XElement config)
         {
             RemoveFromConfiguration(config);
-            var category = config.ForceElement(ns + this.CategoryName);
+            var category = config.ForceElement(ns + CategoryName);
             category.Add(
                 new XElement(itemName,
                     new XAttribute(category.IndexAttributeName(), Id)
-                )
-            );
-
+                ));
         }
+
         public virtual void RemoveFromConfiguration(XElement config)
         {
-            foreach (var name in this.CategoryAllNames)
-            {
+            foreach (var name in CategoryAllNames)
                 config.Elements(ns + name).Elements(itemName).Where(x => x.IndexAttributeValue() == Id).Remove();
-            }
         }
+
+        public string CategoryName => this.GetCategoryName();
+
+        public string[] CategoryAllNames => this.GetCategoryAllNames();
 
         public static IEnumerable<IPackItem> GetItems(Type type, XElement config)
         {
-            return GetItems(type, config, PackageCreator.pc, "Add");
+            return GetItems(type, config, PackageCreator.Pc, "Add");
         }
 
         public static IEnumerable<IPackItem> GetItems(Type type, XElement config, XNamespace ns, XName itemName)
         {
             foreach (var category in type.GetCategoryAllNames())
+            foreach (var element in config.Elements(ns + category).Elements(itemName)
+                         .Where(d => d.IndexAttributeValue() != null))
             {
-                foreach (var element in config.Elements(ns + category).Elements(itemName).Where(d => d.IndexAttributeValue() !=null))
+                object item = null;
+                try
                 {
-                    object item = null;
-                    try
-                    {
-                        item = Activator.CreateInstance(type, new object[] { element });
-                    }
-                    catch {}
-
-                    if (item == null)
-                    {
-                        item = Activator.CreateInstance(type, new object[] {element.IndexAttributeValue()});
-                    }
-                    yield return (IPackItem)item;
+                    item = Activator.CreateInstance(type, element);
                 }
+                catch
+                {
+                    // ignored
+                }
+
+                if (item == null) item = Activator.CreateInstance(type, element.IndexAttributeValue());
+                yield return (IPackItem)item;
             }
         }
-
-        public string CategoryName
-        {
-            get { return this.GetCategoryName(); }
-        }
-
-        public string[] CategoryAllNames
-        {
-            get { return this.GetCategoryAllNames(); }
-        }
-
     }
 }

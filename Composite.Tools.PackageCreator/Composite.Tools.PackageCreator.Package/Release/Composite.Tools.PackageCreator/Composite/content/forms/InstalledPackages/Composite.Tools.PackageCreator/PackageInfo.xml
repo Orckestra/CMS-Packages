@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cms:formdefinition xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0">
+	<cms:bindings>
+		<cms:binding name="Package" type="Composite.Tools.PackageCreator.PackageInformation"/>
+		<cms:binding name="MinCompositeVersionSupported" type="System.String"/>
+		<cms:binding name="MaxCompositeVersionSupported" type="System.String"/>
+	</cms:bindings>
+	<cms:layout iconhandle="package-element-closed-availableitem" label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.CreatePackage}">
+		<TabPanels PreSelectedIndex="0">
+			<PlaceHolder Label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.BasicTab}">
+				<FieldGroup Label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.PackageInfo}">
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.Name.Label}" Type="ProgrammingNamespace">
+						<cms:bind source="Package.Name" />
+					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.GroupName.Label}" Type="ProgrammingNamespace">
+						<cms:bind source="Package.GroupName" />
+					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.Version.Label}">
+						<cms:bind source="Package.Version" />
+					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.Author.Label}">
+						<cms:bind source="Package.Author" />
+					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.Website.Label}">
+						<cms:bind source="Package.Website" />
+					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.ReadMoreUrl.Label}">
+						<cms:bind source="Package.ReadMoreUrl" />
+					</TextBox>
+					<TextArea Label="${Composite.Tools.PackageCreator, Package.Description.Label}">
+						<cms:bind source="Package.Description" />
+					</TextArea>
+					<TextArea Label="${Composite.Tools.PackageCreator, Package.TechnicalDetails.Label}">
+						<cms:bind source="Package.TechnicalDetails" />
+					</TextArea>
+				</FieldGroup>
+			</PlaceHolder>
+			<PlaceHolder Label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.AdvancedTab}">
+				<FieldGroup Label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.PackageInfo}">
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.Id.Label}">
+						<cms:bind source="Package.Id" />
+					</TextBox>
+					<BoolSelector Label="${Composite.Tools.PackageCreator, Package.FlushOnCompletion.Label}" Help="" TrueLabel="True" FalseLabel="False">
+						<BoolSelector.IsTrue>
+							<cms:bind source="Package.FlushOnCompletion" />
+						</BoolSelector.IsTrue>
+					</BoolSelector>
+					<BoolSelector Label="${Composite.Tools.PackageCreator, Package.CanBeUninstalled.Label}" Help="" TrueLabel="True" FalseLabel="False">
+						<BoolSelector.IsTrue>
+							<cms:bind source="Package.CanBeUninstalled" />
+						</BoolSelector.IsTrue>
+					</BoolSelector>
+					<KeySelector Label="${Composite.Tools.PackageCreator, Package.SystemLockingType.Label}" Help="" OptionsKeyField="Key" OptionsLabelField="Label" Required="true" >
+						<KeySelector.Selected>
+							<cms:bind source="Package.SystemLockingType" />
+						</KeySelector.Selected>
+						<KeySelector.Options>
+							<f:StaticMethodCall Type="Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.String.SelectorWidgetFunction,Composite" Method="GetOptions" Parameters="&lt;SelectorOptionsSource KeyFieldName=&quot;&quot; LabelFieldName=&quot;&quot;&gt;&#xD;&#xA;  &lt;TreeNode&gt;&#xD;&#xA;    &lt;f:param xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Options&quot;&gt;&#xD;&#xA;      &lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Utils.String.Split&quot;&gt;&#xD;&#xA;        &lt;f:param name=&quot;String&quot; value=&quot;none,soft,hard&quot; /&gt;&#xD;&#xA;      &lt;/f:function&gt;&#xD;&#xA;    &lt;/f:param&gt;&#xD;&#xA;  &lt;/TreeNode&gt;&#xD;&#xA;&lt;/SelectorOptionsSource&gt;" />
+						</KeySelector.Options>
+					</KeySelector>
+					<BoolSelector Label="${Composite.Tools.PackageCreator, Package.ReloadConsoleOnCompletion.Label}" Help="" TrueLabel="True" FalseLabel="False">
+						<BoolSelector.IsTrue>
+							<cms:bind source="Package.ReloadConsoleOnCompletion" />
+						</BoolSelector.IsTrue>
+					</BoolSelector>
+                    <BoolSelector Label="${Composite.Tools.PackageCreator, Package.OverwriteOnInstall.Label}" Help="" TrueLabel="True" FalseLabel="False">
+                        <BoolSelector.IsTrue>
+                            <cms:bind source="Package.OverwriteDataOnInstall" />
+                        </BoolSelector.IsTrue>
+                    </BoolSelector>
+				</FieldGroup>
+				<FieldGroup Label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.Requirements}">
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.MinCompositeVersionSupported.Label}">
+						<cms:bind source="MinCompositeVersionSupported" />
+					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.MaxCompositeVersionSupported.Label}">
+						<cms:bind source="MaxCompositeVersionSupported" />
+					</TextBox>
+				</FieldGroup>
+			</PlaceHolder>
+		</TabPanels>
+	</cms:layout>
+</cms:formdefinition>

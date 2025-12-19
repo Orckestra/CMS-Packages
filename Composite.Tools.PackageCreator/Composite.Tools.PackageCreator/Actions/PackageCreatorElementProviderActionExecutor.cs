@@ -8,72 +8,58 @@ using Composite.Tools.PackageCreator.Types;
 
 namespace Composite.Tools.PackageCreator.Actions
 {
-    class PackageCreatorElementProviderActionExecutor : IActionExecutor
+    internal class PackageCreatorElementProviderActionExecutor : IActionExecutor
     {
         #region IActionExecutor Members
 
-        public FlowToken Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
+        public FlowToken Execute(EntityToken entityToken, ActionToken actionToken,
+            FlowControllerServicesContainer flowControllerServicesContainer)
         {
             var packageName = PackageCreatorFacade.ActivePackageName;
-	        
-            if (entityToken is PackageCreatorEntityToken)
-            {
-                packageName = (entityToken as PackageCreatorEntityToken).Source;
-            }
+
+            if (entityToken is PackageCreatorEntityToken creatorEntityToken) packageName = creatorEntityToken.Source;
             if (string.IsNullOrEmpty(packageName))
             {
                 flowControllerServicesContainer.GetService<IManagementConsoleMessageService>();
-                IManagementConsoleMessageService consoleServices = flowControllerServicesContainer.GetService<IManagementConsoleMessageService>();
-                consoleServices.ShowMessage(DialogType.Warning, PackageCreatorFacade.GetLocalization("NoPackages.Title"), PackageCreatorFacade.GetLocalization("NoPackages.Message"));
+                var consoleServices = flowControllerServicesContainer.GetService<IManagementConsoleMessageService>();
+                consoleServices.ShowMessage(DialogType.Warning,
+                    PackageCreatorFacade.GetLocalization("NoPackages.Title"),
+                    PackageCreatorFacade.GetLocalization("NoPackages.Message"));
                 return null;
             }
-            if (actionToken is PackageCreatorActionToken)
-            {
-                var token = actionToken as PackageCreatorActionToken;
 
+            if (actionToken is PackageCreatorActionToken token)
                 foreach (var item in PackageCreatorActionFacade.GetPackageCreatorItems(entityToken))
-                {
                     if (item.CategoryName == token.CategoryName)
                     {
-                        //if diffent item for one category and entitytoken
-                        var itemActionToken = item as IPackItemActionToken;
-                        if (itemActionToken != null)
-                        {
+                        //if different item for one category and entityToken
+                        if (item is IPackItemActionToken itemActionToken)
                             if (token.Name != itemActionToken.ActionTokenName)
-                            {
                                 continue;
-                            }
+
+                        if (item is IPackToggle toggle)
+                        {
+                            if (toggle.CheckedStatus == ActionCheckedStatus.Checked)
+                                PackageCreatorFacade.RemoveItem(item, packageName);
+                            else
+                                PackageCreatorFacade.AddItem(item, packageName);
+                            var parentTreeRefresher = new ParentTreeRefresher(flowControllerServicesContainer);
+                            parentTreeRefresher.PostRefreshMesseges(entityToken);
                         }
-	                    if (item is IPackToggle)
-	                    {
-		                    if ((item as IPackToggle).CheckedStatus == ActionCheckedStatus.Checked)
-		                    {
-								 PackageCreatorFacade.RemoveItem(item, packageName);
-		                    }
-		                    else
-		                    {
-								PackageCreatorFacade.AddItem(item, packageName);
-							}
-							var parentTreeRefresher = new ParentTreeRefresher(flowControllerServicesContainer);
-							parentTreeRefresher.PostRefreshMesseges(entityToken);
-	                    }
-	                    else
-	                    {
-		                    PackageCreatorFacade.AddItem(item, packageName);
-	                    }
-	                    break;
+                        else
+                        {
+                            PackageCreatorFacade.AddItem(item, packageName);
+                        }
+
+                        break;
                     }
-                }
 
-            }
-
-            SpecificTreeRefresher treeRefresher = new SpecificTreeRefresher(flowControllerServicesContainer);
+            var treeRefresher = new SpecificTreeRefresher(flowControllerServicesContainer);
             treeRefresher.PostRefreshMesseges(new PackageCreatorElementProviderEntityToken());
 
             return null;
-
         }
-        #endregion
 
+        #endregion
     }
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cms:formdefinition xmlns="http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0" xmlns:f="http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0" xmlns:cms="http://www.composite.net/ns/management/bindingforms/1.0">
+	<cms:bindings>
+		<cms:binding name="Package" type="Composite.Tools.PackageCreator.PackageInformation"/>
+	</cms:bindings>
+	<cms:layout iconhandle="package-element-closed-availableitem" label="${Composite.Tools.PackageCreator, Composite.Tools.PackageCreator.CreatePackage}">
+				<FieldGroup>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.Name.Label}" Type="ProgrammingNamespace">
+						<cms:bind source="Package.Name" />
+					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.GroupName.Label}" Type="ProgrammingNamespace" >
+						<cms:bind source="Package.GroupName" />
+					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.Version.Label}">
+						<cms:bind source="Package.Version" />
+					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.Author.Label}">
+						<cms:bind source="Package.Author" />
+					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.Website.Label}">
+						<cms:bind source="Package.Website" />
+					</TextBox>
+					<TextBox Label="${Composite.Tools.PackageCreator, Package.ReadMoreUrl.Label}">
+						<cms:bind source="Package.ReadMoreUrl" />
+					</TextBox>
+					<TextArea Label="${Composite.Tools.PackageCreator, Package.Description.Label}">
+						<cms:bind source="Package.Description" />
+					</TextArea>
+					<TextArea Label="${Composite.Tools.PackageCreator, Package.TechnicalDetails.Label}">
+						<cms:bind source="Package.TechnicalDetails" />
+					</TextArea>
+				</FieldGroup>
+	</cms:layout>
+</cms:formdefinition>

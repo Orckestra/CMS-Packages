@@ -5,33 +5,27 @@ using Composite.Functions;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    partial class PCFunctions
+    internal partial class PCFunctions
     {
-
         public static IEnumerable<IPackItem> CreateRazor(EntityToken entityToken)
         {
-            if (entityToken is FileBasedFunctionEntityToken)
-            {
-                var functionEntityToken = (FileBasedFunctionEntityToken)entityToken;
-                if (functionEntityToken.FunctionProviderName == PackageCreatorFacade.RazorFunctionProviderName)
-                {
-                    yield return new PCFunctions(functionEntityToken.FunctionName);
-                }
-            }
-            yield break;
+            if (!(entityToken is FileBasedFunctionEntityToken functionEntityToken)) 
+                yield break;
+
+            if (functionEntityToken.FunctionProviderName == PackageCreatorFacade.RazorFunctionProviderName)
+                yield return new PCFunctions(functionEntityToken.FunctionName);
         }
 
         public void PackRazorFunction(PackageCreator pc, IFunction function)
         {
-            if (function.EntityToken is FileBasedFunctionEntityToken)
-            {
-                var functionEntityToken = (FileBasedFunctionEntityToken)function.EntityToken;
-                if (functionEntityToken.FunctionProviderName == PackageCreatorFacade.RazorFunctionProviderName)
-                {
-                    var virtualPath = function.GetProperty("VirtualPath");
-                    pc.AddFile(virtualPath);
-                }
-            }
+            if (!(function.EntityToken is FileBasedFunctionEntityToken functionEntityToken))
+                return;
+
+            if (functionEntityToken.FunctionProviderName != PackageCreatorFacade.RazorFunctionProviderName) 
+                return;
+
+            var virtualPath = function.GetProperty("VirtualPath");
+            pc.AddFile(virtualPath);
         }
     }
 }

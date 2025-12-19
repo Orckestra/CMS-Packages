@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string key="Composite.Tools.PackageCreator.Directories.Label" value="R&#233;pertoires" />
+  <string key="Composite.Tools.PackageCreator.DynamicDataTypes.Label" value="Types de donn&#233;es" />
+  <string key="Composite.Tools.PackageCreator.DynamicDataTypesData.Label" value="&#201;l&#233;ment du types de donn&#233;es" />
+  <string key="Composite.Tools.PackageCreator.Files.Label" value="Fichiers" />
+  <string key="Composite.Tools.PackageCreator.FilesInDirectories.Label" value="Fichiers dans les r&#233;pertoires" />
+  <string key="Composite.Tools.PackageCreator.PageTemplates.Label" value="Mise en page" />
+  <string key="Composite.Tools.PackageCreator.Content.Label" value="Contenu" />
+  <string key="Composite.Tools.PackageCreator.FileXslTransformation.Label" value="Fichier de transformation XSL" />
+  <string key="Composite.Tools.PackageCreator.PageTypes.Label" value="Types de page" />
+  <string key="Composite.Tools.PackageCreator.Localizations.Label" value="Localisations" />
+  <string key="Composite.Tools.PackageCreator.Functions.Label" value="Fonctions" />
+  <string key="Composite.Tools.PackageCreator.PageTrees.Label" value="Arborescence de pages" />
+  <string key="Composite.Tools.PackageCreator.MediaFolders.Label" value="Dossiers des m&#233;dias" />
+
+  <string key="Composite.Tools.PackageCreator.NoPackages.Title" value="Un package est requis" />
+  <string key="Composite.Tools.PackageCreator.NoPackages.Message" value="Vous ne pouvez pas ajouter des donn&#233;es, car il n&#39;y a pas de package defini. Vous pouvez en d&#233;finir un dans la section &#39;Cr&#233;ateur de packages&#39;." />
+
+  <string key="Composite.Tools.PackageCreator.Add.Label" value="Ajouter au cr&#233;ateur de packages" />
+  <string key="Composite.Tools.PackageCreator.Add.ToolTip" value="Ajouter cet &#233;l&#233;ment au cr&#233;ateur de packages" />
+
+  <string key="Composite.Tools.PackageCreator.PageTrees.Add.Label" value="Ajouter cet arborescence de page au cr&#233;ateur de packages" />
+  <string key="Composite.Tools.PackageCreator.PageTrees.Add.ToolTip" value="Ajouter la page s&#233;lectionn&#233;e dans l&#39;arborescence au cr&#233;ateur de packages" />
+
+  <string key="Composite.Tools.PackageCreator.MediaFolders.Add.Label" value="Ajouter ce dossier au cr&#233;ateur de packages" />
+  <string key="Composite.Tools.PackageCreator.MediaFolders.Add.ToolTip" value="Ajouter le dossier de m&#233;dias s&#233;lectionn&#233; au cr&#233;ateur de packages" />
+
+  <string key="Composite.Tools.PackageCreator.DynamicDataTypesData.Add.Label" value="Ajouter des donn&#233;es au cr&#233;ateur de packages" />
+  <string key="Composite.Tools.PackageCreator.DynamicDataTypesData.Add.ToolTip" value="Ajouter des &#233;l&#233;ments de donn&#233;es au cr&#233;ateur de packages" />
+
+  <string key="Composite.Tools.PackageCreator.Content.Pages.Add.Label" value="Ajouter toutes les pages au cr&#233;ateur de packages" />
+  <string key="Composite.Tools.PackageCreator.Content.Pages.Add.ToolTip" value="Ajouter toutes les pages au cr&#233;ateur de packages" />
+  <string key="Composite.Tools.PackageCreator.Content.Medias.Add.Label" value="Ajouter tous les m&#233;dias au cr&#233;ateur de packages" />
+  <string key="Composite.Tools.PackageCreator.Content.Medias.Add.ToolTip" value="Ajouter tous les m&#233;dias au cr&#233;ateur de packages" />
+  <string key="Composite.Tools.PackageCreator.Content.DatatypesData.Add.Label" value="Ajouter des donn&#233;es de m&#233;tatypes et donn&#233;es de dossiers au cr&#233;ateur de packages" />
+  <string key="Composite.Tools.PackageCreator.Content.DatatypesData.Add.ToolTip" value="Ajouter des donn&#233;es de m&#233;tatypes et donn&#233;es de dossiers au cr&#233;ateur de packages" />
+  <string key="Composite.Tools.PackageCreator.Content.Applications.Add.Label" value="Ajouter des associations de pages au cr&#233;ateur de packages" />
+  <string key="Composite.Tools.PackageCreator.Content.Applications.Add.ToolTip" value="Ajouter des associations de pages au cr&#233;ateur de packages" />
+
+  <string key="Composite.Tools.PackageCreator.CreateLocalizationPackage.Label" value="Cr&#233;er {0} package(s)" />
+  <string key="Composite.Tools.PackageCreator.CreateLocalizationPackage.ToolTip" value="Cr&#233;er {0} package de traduction de la console C1" />
+
+  <string key="Composite.Tools.PackageCreator.EditPackage.Label" value="Modifier" />
+  <string key="Composite.Tools.PackageCreator.EditPackage.ToolTip" value="Modifier" />
+
+  <string key="Composite.Tools.PackageCreator.SetActivePackage.Label" value="Mettre actif" />
+  <string key="Composite.Tools.PackageCreator.SetActivePackage.ToolTip" value="Mettre actif" />
+
+  <string key="Composite.Tools.PackageCreator.DeleteConfigPackageCreator.Label" value="Effacer" />
+  <string key="Composite.Tools.PackageCreator.DeleteConfigPackageCreator.ToolTip" value="Effacer" />
+
+  <string key="Composite.Tools.PackageCreator.DeleteItemPackageCreator.Label" value="Effacer" />
+  <string key="Composite.Tools.PackageCreator.DeleteItemPackageCreator.ToolTip" value="Effacer" />
+
+  <string key="Composite.Tools.PackageCreator.OverwriteOnInstall.Label" value="Overwrite Data on Install" />
+  <string key="Composite.Tools.PackageCreator.OverwriteOnInstall.ToolTip" value="Overwrite Data on Install" />
+
+  <string key="Composite.Tools.PackageCreator.PackageCreatorElementProviderEntityToken.Label" value="Packages" />
+  <string key="Composite.Tools.PackageCreator.PackageCreatorElementProviderEntityToken.ToolTip" value="Packages" />
+
+  <string key="Composite.Tools.PackageCreator.CreatePackage" value="Cr&#233;er un package" />
+  <string key="Composite.Tools.PackageCreator.BasicTab" value="De base" />
+  <string key="Composite.Tools.PackageCreator.AdvancedTab" value="Avanc&#233;" />
+  <string key="Composite.Tools.PackageCreator.PackageInfo" value="Informations" />
+  <string key="Composite.Tools.PackageCreator.Required" value="Requis" />
+
+  <string key="Composite.Tools.PackageCreator.DownloadPackageButton.Label" value="T&#233;l&#233;charger un package" />
+  <string key="Composite.Tools.PackageCreator.DownloadPackageButton.ToolTip" value="T&#233;l&#233;charger un package" />
+  <string key="Composite.Tools.PackageCreator.DownloadConfigButton.Label" value="T&#233;l&#233;charger un configuration" />
+  <string key="Composite.Tools.PackageCreator.DownloadConfigButton.ToolTip" value="T&#233;l&#233;charger un configuration" />
+
+  <string key="Package.Name.Label" value="Nom" />
+  <string key="Package.GroupName.Label" value="Nom du groupe" />
+  <string key="Package.Version.Label" value="Version" />
+  <string key="Package.Author.Label" value="Auteur" />
+  <string key="Package.Website.Label" value="Site Web" />
+  <string key="Package.ReadMoreUrl.Label" value="URL pour lire la suite" />
+  <string key="Package.Description.Label" value="Description" />
+  <string key="Package.TechnicalDetails.Label" value="D&#233;tails techniques" />
+  <string key="Package.Id.Label" value="Id" />
+  <string key="Package.FlushOnCompletion.Label" value="Purger &#224; la fin" />
+  <string key="Package.CanBeUninstalled.Label" value="Peut &#234;tre d&#233;sinstall&#233;" />
+  <string key="Package.SystemLockingType.Label" value="Type de verrouillage du syst&#232;me" />
+  <string key="Package.ReloadConsoleOnCompletion.Label" value="Recharger la console &#224; la fin" />
+  <string key="Package.OverwriteOnInstall.Label" value="Overwrite Data on Install" />
+
+  <string key="Composite.Tools.PackageCreator.Requirements" value="Exigence de la version de Composite" />
+  <string key="Package.MinCompositeVersionSupported.Label" value="Version minimale" />
+  <string key="Package.MaxCompositeVersionSupported.Label" value="Version maximale" />
+
+  <string key="Composite.Tools.PackageCreator.CreatePackage.Label" value="Cr&#233;er un package" />
+  <string key="Composite.Tools.PackageCreator.CreatePackage.ToolTip" value="Cr&#233;er un package" />
+  <string key="Composite.Tools.PackageCreator.Error.FileIsNotXml" value="Le fichier n&#39;est pas un xml" />
+  <string key="Composite.Tools.PackageCreator.Error.PackageAlreadyExist" value="Le package existe d&#233;j&#224;" />
+  <string key="Composite.Tools.PackageCreator.UploadConfig.Label" value="T&#233;l&#233;verser la configuration" />
+  <string key="Composite.Tools.PackageCreator.UploadConfig.ToolTip" value="T&#233;l&#233;verser la configuration" />
+  <string key="UploadConfig.FieldGroupLabel" value="T&#233;l&#233;verser la configuration" />
+  <string key="UploadConfig.FileUploadHelp" value="T&#233;l&#233;verser la configuration" />
+  <string key="UploadConfig.FileUploadLabel" value="Fichier de configuration" />
+  <string key="UploadConfig.LayoutLabel" value="T&#233;l&#233;verser le package" />
+  <string key="UploadConfig.ShowError.InfoTableCaption" value="Le t&#233;l&#233;versement a &#233;chou&#233;" />
+  <string key="UploadConfig.ShowError.LayoutLabel" value="Le t&#233;l&#233;versement a &#233;chou&#233;" />
+  <string key="UploadConfigSuccessfull.HeadingDescription" value="Le t&#233;l&#233;versement a &#233;t&#233; fait avec succ&#232;s" />
+  <string key="UploadConfigSuccessfull.HeadingTitle" value="Le t&#233;l&#233;versement a &#233;t&#233; fait avec succ&#232;s" />
+
+  <string key="Composite.Tools.PackageCreator.Composite.config.Label" value="Composite.config" />
+  <string key="Composite.Tools.PackageCreator.Web.config.Label" value="Web.config" />
+  <string key="Composite.Tools.PackageCreator.PackageFragmentInstallerBinaries.Label" value="Installer Binaries" />
+  <string key="Composite.Tools.PackageCreator.PackageFragmentInstallerBinaries.Add.Label" value="Ajouter aux Binaries Installer" />
+  <string key="Composite.Tools.PackageCreator.PackageFragmentInstallerBinaries.Add.ToolTip" value="Ajouter aux Binaries Installer" />
+
+  <string key="Download.Message" value="Vous avez des probl&#232;mes avec le t&#233;l&#233;chargement? S&#39;il vous pla&#238;t utilisez le lien &lt;a href=&quot;{0}&quot; style=&quot;cursor:pointer;text-decoration:underline&quot;&gt;direct link&lt;/a&gt;" />
+
+
+
+</strings>

@@ -10,145 +10,122 @@ using Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvid
 
 namespace Composite.Tools.PackageCreator.Types
 {
-	[PackCategory("MediaFolders")]
-	internal class PCMediaFolder : BasePackItem, IPack, IPackToggle
-	{
-		private const string _storeId = "MediaArchive";
+    [PackCategory("MediaFolders")]
+    internal class PCMediaFolder : BasePackItem, IPack, IPackToggle
+    {
+        private const string _storeId = "MediaArchive";
 
-		public PCMediaFolder(string name)
-			: base(name)
-		{
-		}
+        public Func<IMediaFileData, string, bool> TestFile = (file, path) =>
+            path == "/" || file.FolderPath == path || file.FolderPath.StartsWith($"{path}/");
 
-		public string Path
-		{
-			get
-			{
-				Guid mediaFolderId;
-				if (Guid.TryParse(Name, out mediaFolderId))
-				{
-					var mediaFolder = GetMediaFolder();
-					return mediaFolder != null ? mediaFolder.Path : null;
-				}
-				return Name;
-			}
-		}
+        public Func<IMediaFolderData, string, bool> TestFolder = (file, path) =>
+            path == "/" || file.Path == path || file.Path.StartsWith($"{path}/");
 
-		public override string ActionLabel
-		{
-			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName)); }
-		}
+        public PCMediaFolder(string name) : base(name)
+        {
+        }
 
-		public override string ActionToolTip
-		{
-			get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.ToolTip", this.CategoryName)); }
-		}
+        public string Path
+        {
+            get
+            {
+                if (!Guid.TryParse(Name, out _))
+                    return Name;
 
-		public override string GetLabel()
-		{
-			return Path ?? "<empty>";
-		}
+                var mediaFolder = GetMediaFolder();
+                return mediaFolder?.Path;
+            }
+        }
 
-		public static IEnumerable<IPackItem> Create(EntityToken entityToken)
-		{
-			if (entityToken is DataEntityToken)
-			{
-				var dataEntityToken = (DataEntityToken)entityToken;
-				if (dataEntityToken.Data is IMediaFileFolder)
-				{
-					var mediaFolder = dataEntityToken.Data as IMediaFileFolder;
+        public override string ActionLabel => PackageCreatorFacade.GetLocalization($"{CategoryName}.Add.Label");
 
-					yield return new PCMediaFolder(mediaFolder.Path);
-				}
-			}
-			else if (entityToken is MediaRootFolderProviderEntityToken)
-			{
-				var mediaRootFolderProviderEntityToken = (MediaRootFolderProviderEntityToken) entityToken;
-				if(mediaRootFolderProviderEntityToken.Id == _storeId)
-					yield return  new PCMediaFolder("/");
-			}
-		}
+        public override string ActionToolTip => PackageCreatorFacade.GetLocalization($"{CategoryName}.Add.ToolTip");
 
-		private IMediaFileFolder GetMediaFolder()
-		{
-			Guid mediaFolderId;
-			if (Guid.TryParse(Name, out mediaFolderId))
-			{
-				return DataFacade.GetData<IMediaFileFolder>().FirstOrDefault(m => m.Id == mediaFolderId);
-			}
-			else
-			{
-				return DataFacade.GetData<IMediaFileFolder>().FirstOrDefault(m => m.Path == Name);
-			}
-		}
+        public void Pack(PackageCreator creator)
+        {
+            var path = Path;
 
-		public Func<IMediaFileData, string, bool> TestFile = (file, path) => (path == "/" || file.FolderPath == path || file.FolderPath.StartsWith(path + "/"));
-		public Func<IMediaFolderData, string, bool> TestFolder = (file, path) => (path == "/" || file.Path == path || file.Path.StartsWith(path + "/"));
+            Func<IMediaFileData, bool> fileFilter = file =>
+                TestFile(file, path) && !creator.ExcludedPaths.Any(p => TestFile(file, p));
+            Func<IMediaFolderData, bool> folderFilter = folder =>
+                TestFolder(folder, path) && !creator.ExcludedPaths.Any(p => TestFolder(folder, p));
 
-		public override void RemoveFromConfiguration(XElement config)
-		{
-			base.RemoveFromConfiguration(config);
-			Tree.Media.ClearCache();
-		}
+            creator.AddData(fileFilter);
+            creator.AddData(folderFilter);
 
-		public void Pack(PackageCreator creator)
-		{
-			var path = Path;
+            var files = DataFacade.GetData<IMediaFileData>().AsEnumerable().Where(fileFilter).ToList();
+            foreach (var mediaFileData in files) creator.AddFileIfExists(@"App_Data\Media\" + mediaFileData.Id);
+        }
 
-			Func<IMediaFileData, bool> fileFilter = file => TestFile(file, path) && !creator.ExcludedPaths.Any(p => TestFile(file, p));
-			Func<IMediaFolderData, bool> folderFilter = folder => TestFolder(folder, path) && !creator.ExcludedPaths.Any(p => TestFolder(folder, p));
+        public ActionCheckedStatus CheckedStatus
+        {
+            get
+            {
+                var status = Tree.Media.GetState(Path);
+                return status == TreeState.IncludedTree ? ActionCheckedStatus.Checked : ActionCheckedStatus.Unchecked;
+            }
+        }
 
-			creator.AddData(fileFilter);
-			creator.AddData(folderFilter);
+        public bool Disabled
+        {
+            get
+            {
+                var status = Tree.Media.GetState(Name);
+                switch (status)
+                {
+                    case TreeState.NotIncluded:
+                    case TreeState.IncludedTree:
+                        return false;
+                }
 
-			var files = DataFacade.GetData<IMediaFileData>().Where(fileFilter).ToList();
-			foreach (var mediaFileData in files)
-			{
-				creator.AddFileIfExists(@"App_Data\Media\" + mediaFileData.Id);
-			}
-		}
+                return true;
+            }
+        }
 
-		public ActionCheckedStatus CheckedStatus
-		{
-			get
-			{
-				var status = Tree.Media.GetState(Path);
-				return (status == TreeState.IncludedTree) ? ActionCheckedStatus.Checked : ActionCheckedStatus.Unchecked;
-			}
-		}
+        public EntityToken GetEntityToken()
+        {
+            if (Name == "/") return GetRootEntityToken();
 
-		public bool Disabled
-		{
-			get
-			{
-				var status = Tree.Media.GetState(Name);
-				switch (status)
-				{
-					case TreeState.NotIncluded:
-					case TreeState.IncludedTree:
-						return false;
-				}
-				return true;
-			}
-		}
+            var mediaFolder = GetMediaFolder();
 
-		public static EntityToken GetRootEntityToken()
-		{
-			return new MediaRootFolderProviderEntityToken(_storeId);
-		}
+            return mediaFolder?.GetDataEntityToken();
+        }
 
-		public EntityToken GetEntityToken()
-		{
-			if (Name == "/")
-			{
-				return GetRootEntityToken();
-			}
-			var mediaFolder = GetMediaFolder();
-			if (mediaFolder != null)
-			{
-				return mediaFolder.GetDataEntityToken();
-			}
-			return null;
-		}
-	}
+        public override string GetLabel()
+        {
+            return Path ?? "<empty>";
+        }
+
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
+        {
+            if (entityToken is DataEntityToken dataEntityToken)
+            {
+                if (dataEntityToken.Data is IMediaFileFolder mediaFolder)
+                    yield return new PCMediaFolder(mediaFolder.Path);
+            }
+            else if (entityToken is MediaRootFolderProviderEntityToken mediaRootFolderProviderEntityToken)
+            {
+                if (mediaRootFolderProviderEntityToken.Id == _storeId)
+                    yield return new PCMediaFolder("/");
+            }
+        }
+
+        private IMediaFileFolder GetMediaFolder()
+        {
+            return Guid.TryParse(Name, out var mediaFolderId)
+                ? DataFacade.GetData<IMediaFileFolder>().FirstOrDefault(m => m.Id == mediaFolderId)
+                : DataFacade.GetData<IMediaFileFolder>().FirstOrDefault(m => m.Path == Name);
+        }
+
+        public override void RemoveFromConfiguration(XElement config)
+        {
+            base.RemoveFromConfiguration(config);
+            Tree.Media.ClearCache();
+        }
+
+        public static EntityToken GetRootEntityToken()
+        {
+            return new MediaRootFolderProviderEntityToken(_storeId);
+        }
+    }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using Composite.C1Console.Security;
@@ -10,7 +9,15 @@ namespace Composite.Tools.PackageCreator.Types
     [PackCategory("DynamicDataTypesData")]
     public class PCDynamicDataTypesData : BasePackItem
     {
-        public PCDynamicDataTypesData(XElement element): base(element)
+        public PCDynamicDataTypesData(XElement element) : base(element)
+        {
+        }
+
+        public PCDynamicDataTypesData(EntityToken entityToken) : base(entityToken)
+        {
+        }
+
+        public PCDynamicDataTypesData(string name) : base(name)
         {
         }
 
@@ -18,46 +25,24 @@ namespace Composite.Tools.PackageCreator.Types
         {
             get
             {
-                if (Name == null)
-                {
-                    var castedEntityToken = _entityToken as GeneratedDataTypesElementProviderTypeEntityToken;
-                    if (castedEntityToken != null)
-                    {
-                        Type type = TypeManager.GetType(castedEntityToken.SerializedTypeName);
-                        Name = type.FullName;
-                    }
-                }
+                if (Name != null ||
+                    !(_entityToken is GeneratedDataTypesElementProviderTypeEntityToken castedEntityToken))
+                    return Name;
+
+                var type = TypeManager.GetType(castedEntityToken.SerializedTypeName);
+                Name = type.FullName;
                 return Name;
             }
         }
 
-        public override string ActionLabel
-        {
-            get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.Label", this.CategoryName)); }
-        }
+        public override string ActionLabel => PackageCreatorFacade.GetLocalization($"{CategoryName}.Add.Label");
 
-        public override string ActionToolTip
-        {
-            get { return PackageCreatorFacade.GetLocalization(string.Format("{0}.Add.ToolTip", this.CategoryName)); }
-        }
-
-        public PCDynamicDataTypesData(EntityToken entityToken)
-            : base(entityToken)
-        {
-        }
-
-        public PCDynamicDataTypesData(string name)
-            : base(name)
-        {
-        }
+        public override string ActionToolTip => PackageCreatorFacade.GetLocalization($"{CategoryName}.Add.ToolTip");
 
         public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
             if (entityToken is GeneratedDataTypesElementProviderTypeEntityToken)
-            {
                 yield return new PCDynamicDataTypesData(entityToken);
-            }
         }
     }
-
 }

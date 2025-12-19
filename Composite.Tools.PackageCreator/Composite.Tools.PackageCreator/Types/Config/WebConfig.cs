@@ -10,24 +10,20 @@ namespace Composite.Tools.PackageCreator.Types
         public const string Source = "Web.config";
         public const string Path = "~/Web.config";
 
-        public PCWebConfig(string name)
-            : base(name)
-        {
-        }
-
-        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
-        {
-            if (entityToken is XmlNodeAttributeProviderEntityToken && entityToken.Source == Source)
-            {
-                XmlNodeAttributeProviderEntityToken token = (XmlNodeAttributeProviderEntityToken)entityToken;
-                yield return new PCWebConfig(token.XPath);
-            };
-        }
+        public PCWebConfig(string name) : base(name) { }
 
 
         public void Pack(PackageCreator creator)
         {
-            creator.AddConfigurationXPath(PCWebConfig.Source, this.Id);
+            creator.AddConfigurationXPath(Source, Id);
+        }
+
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
+        {
+            if (entityToken is XmlNodeAttributeProviderEntityToken token && token.Source == Source)
+            {
+                yield return new PCWebConfig(token.XPath);
+            }
         }
     }
 }

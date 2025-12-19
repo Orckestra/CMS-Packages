@@ -1,21 +1,16 @@
 using System.Collections.Generic;
 using Composite.C1Console.Actions;
 using Composite.C1Console.Security;
-using Composite.Tools.PackageCreator.Actions;
 using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
-using Composite.Tools.PackageCreator.Types;
 
 namespace Composite.Tools.PackageCreator.ElementProvider.Actions
 {
     [ActionExecutor(typeof(OverwriteOnInstallPackageCreatorElementProviderActionExecutor))]
     public sealed class OverwriteOnInstallPackageCreatorActionToken : ActionToken
     {
-        static private IEnumerable<PermissionType> _permissionTypes = new PermissionType[] { PermissionType.Administrate };
+        private static readonly IEnumerable<PermissionType> _permissionTypes = new[] { PermissionType.Administrate };
 
-        public override IEnumerable<PermissionType> PermissionTypes
-        {
-            get { return _permissionTypes; }
-        }
+        public override IEnumerable<PermissionType> PermissionTypes => _permissionTypes;
 
         public override string Serialize()
         {
@@ -30,12 +25,13 @@ namespace Composite.Tools.PackageCreator.ElementProvider.Actions
 
     public class OverwriteOnInstallPackageCreatorElementProviderActionExecutor : IActionExecutor
     {
-        public FlowToken Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
+        public FlowToken Execute(EntityToken entityToken, ActionToken actionToken,
+            FlowControllerServicesContainer flowControllerServicesContainer)
         {
-			PackageCreatorFacade.ToggleAllowOverwrite(entityToken.Source);
+            PackageCreatorFacade.ToggleAllowOverwrite(entityToken.Source);
 
-           SpecificTreeRefresher treeRefresher = new SpecificTreeRefresher(flowControllerServicesContainer);
-           treeRefresher.PostRefreshMesseges(new PackageCreatorElementProviderEntityToken());
+            var treeRefresher = new SpecificTreeRefresher(flowControllerServicesContainer);
+            treeRefresher.PostRefreshMesseges(new PackageCreatorElementProviderEntityToken());
 
             return null;
         }

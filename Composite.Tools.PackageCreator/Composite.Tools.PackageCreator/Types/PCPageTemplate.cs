@@ -14,17 +14,15 @@ namespace Composite.Tools.PackageCreator.Types
     [PackCategory("PageTemplates")]
     internal class PCPageTemplate : BasePackItem, IPack
     {
-        public PCPageTemplate(string name)
-            : base(name)
+        public PCPageTemplate(string name) : base(name)
         {
         }
 
-        public PCPageTemplate(XElement element): base(element)
+        public PCPageTemplate(XElement element) : base(element)
         {
         }
 
-        public PCPageTemplate(EntityToken entityToken)
-            : base(entityToken)
+        public PCPageTemplate(EntityToken entityToken) : base(entityToken)
         {
         }
 
@@ -32,49 +30,27 @@ namespace Composite.Tools.PackageCreator.Types
         {
             get
             {
-                if (Name == null)
-                {
-                    if (_entityToken is PageTemplateEntityToken)
-                    {
-                        var pageTemplateEntityToken = (PageTemplateEntityToken)_entityToken;
-                        var template = PageTemplateFacade.GetPageTemplates().FirstOrDefault(t => t.Id == pageTemplateEntityToken.TemplateId);
-                        Verify.IsNotNull(template, "Faile to find page template by ID '{0}'", pageTemplateEntityToken.TemplateId);
+                if (Name != null || !(_entityToken is PageTemplateEntityToken pageTemplateEntityToken))
+                    return Name;
 
-                        Name = template.Title;
-                    }
-                }
+                var template = PageTemplateFacade.GetPageTemplates()
+                    .FirstOrDefault(t => t.Id == pageTemplateEntityToken.TemplateId);
+                Verify.IsNotNull(template, "Failed to find page template by ID '{0}'",
+                    pageTemplateEntityToken.TemplateId);
+
+                Name = template.Title;
                 return Name;
             }
         }
 
-        public override ResourceHandle ItemIcon
-        {
-            get { return new ResourceHandle("Composite.Icons", "page-template-template"); }
-        }
-
-        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
-        {
-            if (entityToken is DataEntityToken)
-            {
-                DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
-                if (dataEntityToken.Data is IXmlPageTemplate)
-                {
-                    var data = (IXmlPageTemplate)dataEntityToken.Data;
-                    yield return new PCPageTemplate(data.Title);
-                }
-            }
-            else if (entityToken is PageTemplateEntityToken)
-            {
-                yield return new PCPageTemplate(entityToken);
-            }
-        }
+        public override ResourceHandle ItemIcon => new ResourceHandle("Composite.Icons", "page-template-template");
 
         public void Pack(PackageCreator creator)
         {
             var pageTemplate = PageTemplateFacade.GetPageTemplates().FirstOrDefault(t => t.Title == Id);
 
             if (pageTemplate == null)
-                throw new InvalidOperationException(string.Format("Template '{0}' does not exists", Id));
+                throw new InvalidOperationException($"Template '{Id}' does not exists");
 
             if (pageTemplate.GetType().Name.Contains("MasterPagePageTemplateDescriptor"))
             {
@@ -88,8 +64,18 @@ namespace Composite.Tools.PackageCreator.Types
                 var virtualPath = pageTemplate.GetProperty("VirtualPath");
                 creator.AddFile(virtualPath);
             }
+        }
 
-
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
+        {
+            if (entityToken is DataEntityToken dataEntityToken)
+            {
+                if (dataEntityToken.Data is IXmlPageTemplate data) yield return new PCPageTemplate(data.Title);
+            }
+            else if (entityToken is PageTemplateEntityToken)
+            {
+                yield return new PCPageTemplate(entityToken);
+            }
         }
     }
 }

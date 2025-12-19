@@ -1,11 +1,7 @@
-﻿
-namespace Composite.Tools.PackageCreator.Types
+﻿namespace Composite.Tools.PackageCreator.Types
 {
-    interface IPackItemActionToken
+    internal interface IPackItemActionToken
     {
-        string ActionTokenName
-        {
-            get;
-        }
+        string ActionTokenName { get; }
     }
 }

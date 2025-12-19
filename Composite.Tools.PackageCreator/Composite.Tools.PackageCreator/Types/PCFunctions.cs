@@ -6,46 +6,27 @@ using Composite.C1Console.Security;
 using Composite.Core.ResourceSystem;
 using Composite.Functions;
 
-
 namespace Composite.Tools.PackageCreator.Types
 {
-    [PackCategory("Functions", AliasNames = new[] { "CSharpFunctions", "InlineFunctions", "RazorFunctions", "VisualFunctions", "XsltFunctions" })]
-    partial class PCFunctions : BasePackItem, IPack
+    [PackCategory("Functions",
+        AliasNames = new[]
+            { "CSharpFunctions", "InlineFunctions", "RazorFunctions", "VisualFunctions", "XsltFunctions" })]
+    internal partial class PCFunctions : BasePackItem, IPack
     {
-
-        public PCFunctions(string name)
-            : base(name)
+        public PCFunctions(string name) : base(name)
         {
         }
 
-        public PCFunctions(XElement element)
-           : base(element)
+        public PCFunctions(XElement element) : base(element)
         {
         }
 
-        public override ResourceHandle ItemIcon
-        {
-            get { return new ResourceHandle("Composite.Icons", "base-function-function"); }
-        }
-
-        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
-        {
-            return CreateCSharp(entityToken)
-                .Concat(CreateInline(entityToken))
-                .Concat(CreateRazor(entityToken))
-                .Concat(CreateUserControl(entityToken))
-                .Concat(CreateVisual(entityToken))
-                .Concat(CreateXslt(entityToken));
-
-        }
+        public override ResourceHandle ItemIcon => new ResourceHandle("Composite.Icons", "base-function-function");
 
         public void Pack(PackageCreator pc)
         {
-
-            IFunction function = null;
-            if (FunctionFacade.TryGetFunction(out function, this.Id))
+            if (FunctionFacade.TryGetFunction(out var function, Id))
             {
-
                 var innerFunction = function.GetProperty<IFunction>("InnerFunction");
                 var innerFunctionTypeName = innerFunction.GetType().Name;
 
@@ -54,7 +35,7 @@ namespace Composite.Tools.PackageCreator.Types
                     case "MethodBasedFunction":
                         PackCSharpFunction(pc);
                         break;
-					case "LazyInitializedInlineFunction":
+                    case "LazyInitializedInlineFunction":
                     case "InlineFunction":
                         PackInlineFunction(pc);
                         break;
@@ -74,10 +55,18 @@ namespace Composite.Tools.PackageCreator.Types
             }
             else
             {
-                throw new InvalidOperationException(string.Format("Function '{0}' does not exists", this.Name));
+                throw new InvalidOperationException($"Function '{Name}' does not exists");
             }
         }
+
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
+        {
+            return CreateCSharp(entityToken)
+                .Concat(CreateInline(entityToken))
+                .Concat(CreateRazor(entityToken))
+                .Concat(CreateUserControl(entityToken))
+                .Concat(CreateVisual(entityToken))
+                .Concat(CreateXslt(entityToken));
+        }
     }
-
 }
-

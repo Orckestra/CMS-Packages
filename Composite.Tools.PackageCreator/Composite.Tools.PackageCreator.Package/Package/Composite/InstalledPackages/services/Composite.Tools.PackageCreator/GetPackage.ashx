@@ -3,8 +3,6 @@
 using System;
 using System.IO;
 using System.Web;
-using System.Linq;
-using Composite.Core.IO;
 using Composite.C1Console.Security;
 using Composite.Tools.PackageCreator;
 using Composite.C1Console.Events;
@@ -15,27 +13,27 @@ public class GetPackage : IHttpHandler
 {
 	public void ProcessRequest(HttpContext context)
 	{
-		if (!Composite.C1Console.Security.UserValidationFacade.IsLoggedIn())
+		if (!UserValidationFacade.IsLoggedIn())
 		{
-			throw new Exception("Premission denied");
+			throw new Exception("Permission denied");
 		}
 
-		string configName = context.Request["config"];
-		string packageName = context.Request["package"];
+		var configName = context.Request["config"];
+		var packageName = context.Request["package"];
 
-		string consoleId = context.Request["consoleId"];
-		string viewId = context.Request["viewId"];
+		var consoleId = context.Request["consoleId"];
+		var viewId = context.Request["viewId"];
 
-		string fullpath = null;
+		string fullPath = null;
 
 		if (configName != null)
 		{
-			fullpath = PackageCreatorFacade.GetPackageConfigPath(configName);
+			fullPath = PackageCreatorFacade.GetPackageConfigPath(configName);
 		}
 		else if (packageName != null)
 		{
 			try{
-				fullpath = PackageCreatorFacade.CreatePackage(packageName);
+				fullPath = PackageCreatorFacade.CreatePackage(packageName);
 			}
 			catch(Exception e)
 			{
@@ -55,11 +53,11 @@ public class GetPackage : IHttpHandler
 			throw new Exception("Parameters empty");
 		}
 
-		if (File.Exists(fullpath))
+		if (File.Exists(fullPath))
 		{
-			context.Response.AddHeader("Content-Disposition", "attachment;filename=" + Path.GetFileName(fullpath));
+			context.Response.AddHeader("Content-Disposition", "attachment;filename=" + Path.GetFileName(fullPath));
             context.Response.ContentType = "application/zip";
-			context.Response.WriteFile(fullpath);
+			context.Response.WriteFile(fullPath);
 		}
 		else
 		{
@@ -67,12 +65,5 @@ public class GetPackage : IHttpHandler
 		}
 	}
 
-	public bool IsReusable
-	{
-		get
-		{
-			return false;
-		}
-	}
-
+	public bool IsReusable => false;
 }

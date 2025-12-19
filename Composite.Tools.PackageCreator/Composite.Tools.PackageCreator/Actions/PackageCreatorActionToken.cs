@@ -10,70 +10,48 @@ namespace Composite.Tools.PackageCreator.Actions
     [ActionExecutor(typeof(PackageCreatorElementProviderActionExecutor))]
     public class PackageCreatorActionToken : ActionToken
     {
-        static private IEnumerable<PermissionType> _permissionTypes = new PermissionType[] { PermissionType.Administrate, PermissionType.Configure };
-
-        public override bool IgnoreEntityTokenLocking
-        {
-            get
-            {
-                return true;
-            }
-        }
-
-        public override IEnumerable<PermissionType> PermissionTypes
-        {
-            get { return _permissionTypes; }
-        }
+        private static readonly IEnumerable<PermissionType> _permissionTypes = new[]
+            { PermissionType.Administrate, PermissionType.Configure };
 
         public PackageCreatorActionToken(Type type)
         {
-            this._categoryName = type.GetCategoryAtribute().Name;
+            CategoryName = type.GetCategoryAttribute().Name;
         }
 
         public PackageCreatorActionToken(string categoryName)
         {
-            this._categoryName = categoryName;
+            CategoryName = categoryName;
         }
+
         public PackageCreatorActionToken(string categoryName, string name)
         {
-            this._categoryName = categoryName;
-            this._name = name;
+            CategoryName = categoryName;
+            Name = name;
         }
+
+        public override bool IgnoreEntityTokenLocking => true;
+
+        public override IEnumerable<PermissionType> PermissionTypes => _permissionTypes;
+
+        public string CategoryName { get; }
+        public string Name { get; } = "";
 
         public override string Serialize()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
 
-            StringConversionServices.SerializeKeyValuePair<string>(sb, "_categoryName", _categoryName);
-            StringConversionServices.SerializeKeyValuePair<string>(sb, "_name", _name);
+            StringConversionServices.SerializeKeyValuePair<string>(sb, "_categoryName", CategoryName);
+            StringConversionServices.SerializeKeyValuePair<string>(sb, "_name", Name);
 
             return sb.ToString();
         }
 
-        private string _categoryName;
-        public string CategoryName
-        {
-            get
-            {
-                return _categoryName;
-            }
-        }
-
-        private string _name = "";
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-        }
-
         public static ActionToken Deserialize(string serializedData)
         {
-            Dictionary<string, string> dic = StringConversionServices.ParseKeyValueCollection(serializedData);
+            var dic = StringConversionServices.ParseKeyValueCollection(serializedData);
 
-            string categoryName = StringConversionServices.DeserializeValueString(dic["_categoryName"]);
-            string name = StringConversionServices.DeserializeValueString(dic["_name"]);
+            var categoryName = StringConversionServices.DeserializeValueString(dic["_categoryName"]);
+            var name = StringConversionServices.DeserializeValueString(dic["_name"]);
 
             return new PackageCreatorActionToken(categoryName, name);
         }

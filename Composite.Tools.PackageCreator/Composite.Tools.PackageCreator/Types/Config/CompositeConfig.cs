@@ -10,23 +10,19 @@ namespace Composite.Tools.PackageCreator.Types
         public const string Source = "Composite.config";
         public const string Path = "~/App_Data/Composite/Composite.config";
 
-        public PCCompositeConfig(string name)
-            : base(name)
+        public PCCompositeConfig(string name) : base(name) { }
+
+        public void Pack(PackageCreator creator)
         {
+            creator.AddConfigurationXPath(Source, Id);
         }
 
         public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
-            if (entityToken is XmlNodeAttributeProviderEntityToken && entityToken.Source == Source)
+            if (entityToken is XmlNodeAttributeProviderEntityToken token && token.Source == Source)
             {
-                XmlNodeAttributeProviderEntityToken token = (XmlNodeAttributeProviderEntityToken)entityToken;
                 yield return new PCCompositeConfig(token.XPath);
-            };
-        }
-
-        public void Pack(PackageCreator creator)
-        {
-            creator.AddConfigurationXPath(PCCompositeConfig.Source, this.Id);
+            }
         }
     }
 }

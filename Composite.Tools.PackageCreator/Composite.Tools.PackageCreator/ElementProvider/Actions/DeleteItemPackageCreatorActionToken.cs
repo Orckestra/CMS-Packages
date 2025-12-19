@@ -10,12 +10,9 @@ namespace Composite.Tools.PackageCreator.ElementProvider.Actions
     [ActionExecutor(typeof(DeleteItemPackageCreatorElementProviderActionExecutor))]
     public sealed class DeleteItemPackageCreatorActionToken : ActionToken
     {
-        static private IEnumerable<PermissionType> _permissionTypes = new PermissionType[] { PermissionType.Administrate };
+        private static readonly IEnumerable<PermissionType> _permissionTypes = new[] { PermissionType.Administrate };
 
-        public override IEnumerable<PermissionType> PermissionTypes
-        {
-            get { return _permissionTypes; }
-        }
+        public override IEnumerable<PermissionType> PermissionTypes => _permissionTypes;
 
         public override string Serialize()
         {
@@ -30,26 +27,26 @@ namespace Composite.Tools.PackageCreator.ElementProvider.Actions
 
     public class DeleteItemPackageCreatorElementProviderActionExecutor : IActionExecutor
     {
-        public FlowToken Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
+        public FlowToken Execute(EntityToken entityToken, ActionToken actionToken,
+            FlowControllerServicesContainer flowControllerServicesContainer)
         {
             var item = PackageCreatorActionFacade.GetPackageCreatorItem(entityToken.Type, entityToken.Id);
-			PackageCreatorFacade.RemoveItem(item, entityToken.Source);
+            PackageCreatorFacade.RemoveItem(item, entityToken.Source);
 
-            SpecificTreeRefresher treeRefresher = new SpecificTreeRefresher(flowControllerServicesContainer);
+            var treeRefresher = new SpecificTreeRefresher(flowControllerServicesContainer);
             treeRefresher.PostRefreshMesseges(new PackageCreatorElementProviderEntityToken());
 
-	        var itemToggle = item as IPackToggle;
-	        if (itemToggle != null)
-	        {
-		        var itemEntityToken = itemToggle.GetEntityToken();
-				if (itemEntityToken != null)
-		        {
-					var parentTreeRefresher = new ParentTreeRefresher(flowControllerServicesContainer);
-					parentTreeRefresher.PostRefreshMesseges(itemEntityToken);
-		        }
-	        }
+            if (item is IPackToggle itemToggle)
+            {
+                var itemEntityToken = itemToggle.GetEntityToken();
+                if (itemEntityToken != null)
+                {
+                    var parentTreeRefresher = new ParentTreeRefresher(flowControllerServicesContainer);
+                    parentTreeRefresher.PostRefreshMesseges(itemEntityToken);
+                }
+            }
 
-	        return null;
+            return null;
         }
     }
 }

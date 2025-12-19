@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Composite.C1Console.Actions;
+using System.Workflow.Activities;
 using Composite.C1Console.Forms.CoreUiControls;
+using Composite.C1Console.Workflow.Activities;
 using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
 
 namespace Composite.Tools.PackageCreator.Workflow
 {
-    public sealed partial class UploadConfigWorkflow : Composite.C1Console.Workflow.Activities.FormsWorkflow
+    public sealed partial class UploadConfigWorkflow : FormsWorkflow
     {
         public UploadConfigWorkflow()
         {
@@ -15,26 +16,26 @@ namespace Composite.Tools.PackageCreator.Workflow
 
         private void Upload_CodeActivity_ExecuteCode(object sender, EventArgs e)
         {
-            this.Bindings.Add("UploadedFile", new UploadedFile());
+            Bindings.Add("UploadedFile", new UploadedFile());
         }
 
-        private void DidValidate(object sender, System.Workflow.Activities.ConditionalEventArgs e)
+        private void DidValidate(object sender, ConditionalEventArgs e)
         {
-            e.Result = this.BindingExist("Errors") == false;
+            e.Result = !BindingExist("Errors");
         }
 
         private void AddConfig_CodeActivity_ExecuteCode(object sender, EventArgs e)
         {
             try
             {
-                UploadedFile uploadedFile = this.GetBinding<UploadedFile>("UploadedFile");
+                var uploadedFile = GetBinding<UploadedFile>("UploadedFile");
                 PackageCreatorFacade.AddConfig(uploadedFile);
-                SpecificTreeRefresher treeRefresher = this.CreateSpecificTreeRefresher();
+                var treeRefresher = CreateSpecificTreeRefresher();
                 treeRefresher.PostRefreshMesseges(new PackageCreatorElementProviderEntityToken());
             }
             catch (Exception ex)
             {
-                this.UpdateBinding("Errors", new List<List<string>> { new List<string> { ex.Message, "" } });
+                UpdateBinding("Errors", new List<List<string>> { new List<string> { ex.Message, "" } });
             }
         }
     }

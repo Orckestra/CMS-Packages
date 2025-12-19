@@ -7,19 +7,16 @@ using Composite.Data.Types;
 
 namespace Composite.Tools.PackageCreator.Types
 {
-    partial class PCFunctions
+    internal partial class PCFunctions
     {
         public static IEnumerable<IPackItem> CreateXslt(EntityToken entityToken)
         {
-            if (entityToken is DataEntityToken)
+            if (!(entityToken is DataEntityToken dataEntityToken)) 
+                yield break;
+
+            if (dataEntityToken.Data is IXsltFunction data)
             {
-                DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
-                if (dataEntityToken.Data is IXsltFunction)
-                {
-                    IXsltFunction data = (IXsltFunction)dataEntityToken.Data;
-                    yield return new PCFunctions(data.Namespace + "." + data.Name);
-                    yield break;
-                }
+                yield return new PCFunctions($"{data.Namespace}.{data.Name}");
             }
         }
 
@@ -28,36 +25,32 @@ namespace Composite.Tools.PackageCreator.Types
             IXsltFunction xsltFunction;
             try
             {
-                xsltFunction = (from i in DataFacade.GetData<IXsltFunction>()
-                                where i.Namespace + "." + i.Name == this.Id
-                                select i).First();
+                xsltFunction = DataFacade.GetData<IXsltFunction>().First(i => $"{i.Namespace}.{i.Name}" == Id);
             }
             catch (Exception)
             {
-                throw new ArgumentException(string.Format(@"XSLT Function '{0}' doesn't exists", this.Id));
+                throw new ArgumentException($@"XSLT Function '{Id}' doesn't exists");
             }
 
-            var newXslFilePath = "\\" + xsltFunction.Namespace.Replace(".", "\\") + "\\" + xsltFunction.Name + ".xsl";
-
-
-            pc.AddFile("App_Data\\Xslt" + xsltFunction.XslFilePath, "App_Data\\Xslt" + newXslFilePath);
+            var newXslFilePath = $"\\{xsltFunction.Namespace.Replace(".", "\\")}\\{xsltFunction.Name}.xsl";
+            
+            pc.AddFile($"App_Data\\Xslt{xsltFunction.XslFilePath}", "App_Data\\Xslt" + newXslFilePath);
             xsltFunction.XslFilePath = newXslFilePath;
 
             pc.AddData(xsltFunction);
 
-            var parameters = from i in DataFacade.GetData<IParameter>()
-                             where i.OwnerId == xsltFunction.Id
-                             orderby i.Position
-                             select i;
+            var parameters = DataFacade.GetData<IParameter>()
+                .Where(i => i.OwnerId == xsltFunction.Id)
+                .OrderBy(i => i.Position);
 
             foreach (var parameter in parameters) pc.AddData(parameter);
 
-            var namedFunctionCalls = from i in DataFacade.GetData<INamedFunctionCall>()
-                                     where i.XsltFunctionId == xsltFunction.Id
-                                     orderby i.Name
-                                     select i;
+            var namedFunctionCalls = DataFacade.GetData<INamedFunctionCall>()
+                .Where(i => i.XsltFunctionId == xsltFunction.Id)
+                .OrderBy(i => i.Name);
 
-            foreach (var namedFunctionCall in namedFunctionCalls) pc.AddData(namedFunctionCall);
+            foreach (var namedFunctionCall in namedFunctionCalls) 
+                pc.AddData(namedFunctionCall);
         }
     }
 }

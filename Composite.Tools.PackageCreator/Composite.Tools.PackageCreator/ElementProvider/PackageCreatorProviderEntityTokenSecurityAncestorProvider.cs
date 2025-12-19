@@ -4,7 +4,7 @@ using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
 
 namespace Composite.Tools.PackageCreator.ElementProvider
 {
-    class PackageCreatorProviderEntityTokenSecurityAncestorProvider : ISecurityAncestorProvider
+    internal class PackageCreatorProviderEntityTokenSecurityAncestorProvider : ISecurityAncestorProvider
     {
         public IEnumerable<EntityToken> GetParents(EntityToken entityToken)
         {

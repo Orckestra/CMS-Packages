@@ -16,30 +16,13 @@ namespace Composite.Tools.PackageCreator.Types
         {
         }
 
-        public override ResourceHandle ItemIcon
-        {
-            get { return new ResourceHandle("Composite.Icons", "base-function-function"); }
-        }
-
-        // NOTE: do not remove, this method is used with reflection in PackageCreatorActionFacade
-        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
-        {
-            if (entityToken is DataEntityToken)
-            {
-                DataEntityToken dataEntityToken = (DataEntityToken)entityToken;
-                if (dataEntityToken.Data is IPageType)
-                {
-                    var data = (IPageType)dataEntityToken.Data;
-                    yield return new PCPageType(data.Name);
-                }
-            }
-        }
+        public override ResourceHandle ItemIcon => new ResourceHandle("Composite.Icons", "base-function-function");
 
         public void Pack(PackageCreator creator)
         {
-            var pageType = DataFacade.GetData<IPageType>(d => d.Name == this.Name).FirstOrDefault();
+            var pageType = DataFacade.GetData<IPageType>(d => d.Name == Name).FirstOrDefault();
             if (pageType == null)
-                throw new InvalidOperationException(string.Format("PageType '{0}' does not exists", this.Name));
+                throw new InvalidOperationException($"PageType '{Name}' does not exists");
             var pageTypeId = pageType.Id;
             creator.AddData(pageType);
             creator.AddData<IPageTypeDataFolderTypeLink>(d => d.PageTypeId == pageTypeId);
@@ -48,11 +31,20 @@ namespace Composite.Tools.PackageCreator.Types
             creator.AddData<IPageTypePageTemplateRestriction>(d => d.PageTypeId == pageTypeId);
             creator.AddData<IPageTypeParentRestriction>(d => d.PageTypeId == pageTypeId);
             creator.AddData<IPageTypeTreeLink>(d => d.PageTypeId == pageTypeId);
-            foreach (var pageMetaDataDefinition in DataFacade.GetData<IPageMetaDataDefinition>(d => d.DefiningItemId == pageTypeId))
+            foreach (var pageMetaDataDefinition in DataFacade.GetData<IPageMetaDataDefinition>(d =>
+                         d.DefiningItemId == pageTypeId))
             {
                 creator.AddData(pageMetaDataDefinition);
                 creator.AddData<ICompositionContainer>(d => d.Id == pageMetaDataDefinition.MetaDataContainerId);
             }
+        }
+
+        // NOTE: do not remove, this method is used with reflection in PackageCreatorActionFacade
+        public static IEnumerable<IPackItem> Create(EntityToken entityToken)
+        {
+            if (entityToken is DataEntityToken dataEntityToken)
+                if (dataEntityToken.Data is IPageType data)
+                    yield return new PCPageType(data.Name);
         }
     }
 }
