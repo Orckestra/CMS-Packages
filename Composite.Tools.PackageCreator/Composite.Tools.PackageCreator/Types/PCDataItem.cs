@@ -32,8 +32,7 @@ namespace Composite.Tools.PackageCreator.Types
 
         private static Dictionary<string, Type> _typeCache = new Dictionary<string, Type>();
 
-        public PCDataItem(string name, string type, string label)
-            : base(name)
+        public PCDataItem(string name, string type, string label) : base(name)
         {
             DataType = type;
             Label = label;
@@ -47,11 +46,9 @@ namespace Composite.Tools.PackageCreator.Types
                 Label = data.GetLabel();
 
             var dataId = data.DataSourceId.DataId;
-            Name = new XElement(itemName,
-                    dataId.GetType()
-                        .GetProperties()
-                        .Select(p => new XAttribute(p.Name, dataId.GetProperty(p.Name))))
+            Name = new XElement(itemName, dataId.GetType().GetProperties().Select(p => new XAttribute(p.Name, dataId.GetProperty(p.Name))))
                 .ToString();
+
             DataType = data.DataSourceId.InterfaceType.ToString();
         }
 
@@ -59,7 +56,7 @@ namespace Composite.Tools.PackageCreator.Types
         public string Params { get; set; }
         public string Label { get; set; }
 
-        public override string Id => Name + "*" + DataType;
+        public override string Id => $"{Name}*{DataType}";
 
         public override string GetLabel()
         {
@@ -114,13 +111,13 @@ namespace Composite.Tools.PackageCreator.Types
             }
         }
 
-        private Dictionary<string, string> GetAttributeArray(XElement element)
+        private static Dictionary<string, string> GetAttributeArray(XElement element)
         {
             return element.Attributes().Where(x => x.Name.Namespace == XNamespace.None)
                 .ToDictionary(a => a.Name.LocalName, a => a.Value);
         }
 
-        private XElement ForceTypeElement(XElement category, string type)
+        private static XElement ForceTypeElement(XElement category, string type)
         {
             foreach (var typeElement in category.Elements("Type"))
             {
@@ -141,13 +138,10 @@ namespace Composite.Tools.PackageCreator.Types
 
         public static IEnumerable<IPackItem> Create(EntityToken entityToken)
         {
-            var dataEntityToken = entityToken as DataEntityToken;
-            if (dataEntityToken == null) yield break;
+            if (!(entityToken is DataEntityToken dataEntityToken)) 
+                yield break;
 
-#pragma warning disable 618
-            if (typeof(IPageFolderData).IsAssignableFrom(dataEntityToken.InterfaceType)
-#pragma warning restore 618
-                || typeof(IPageDataFolder).IsAssignableFrom(dataEntityToken.InterfaceType))
+            if (typeof(IPageDataFolder).IsAssignableFrom(dataEntityToken.InterfaceType))
             {
                 yield return new PCDataItem(dataEntityToken.Data);
             }
@@ -159,6 +153,7 @@ namespace Composite.Tools.PackageCreator.Types
             {
                 var data = dataEntityToken.Data;
                 var id = PCExclude.GetId(data);
+
                 if (id != Guid.Empty)
                     yield return new PCDataItem(data);
             }

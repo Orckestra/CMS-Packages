@@ -54,7 +54,8 @@ namespace Composite.Tools.PackageCreator
             set
             {
                 _activePackageName = value;
-                if (_activePackageName != null) File.WriteAllText(GetAbsolutePath(_activeFilePath), _activePackageName);
+                if (_activePackageName != null) 
+                    File.WriteAllText(GetAbsolutePath(_activeFilePath), _activePackageName);
             }
         }
 
@@ -64,7 +65,8 @@ namespace Composite.Tools.PackageCreator
             {
                 if (_currentContextItems == null)
                     _currentContextItems = new ContextItems();
-                else if (!_currentContextItems.IsCurrentContext) _currentContextItems = new ContextItems();
+                else if (!_currentContextItems.IsCurrentContext) 
+                    _currentContextItems = new ContextItems();
                 return _currentContextItems;
             }
         }
@@ -118,10 +120,8 @@ namespace Composite.Tools.PackageCreator
                 packageInformation.ForceElement("Description").Value = package.Description;
                 packageInformation.ForceElement("TechnicalDetails").Value = package.TechnicalDetails;
 
-                packageRequirements.SetAttributeValue("minimumCompositeVersion",
-                    package.MinCompositeVersionSupported.ToString());
-                packageRequirements.SetAttributeValue("maximumCompositeVersion",
-                    package.MaxCompositeVersionSupported.ToString());
+                packageRequirements.SetAttributeValue("minimumCompositeVersion", package.MinCompositeVersionSupported.ToString());
+                packageRequirements.SetAttributeValue("maximumCompositeVersion", package.MaxCompositeVersionSupported.ToString());
 
                 packageXml.SaveTabbed(GetPackageConfigPath(package.Name));
             }
@@ -132,7 +132,9 @@ namespace Composite.Tools.PackageCreator
             lock (_lockEditPackage)
             {
                 var packageConfigPath = GetPackageConfigPath(packageName);
-                if (File.Exists(packageConfigPath)) File.Delete(packageConfigPath);
+
+                if (File.Exists(packageConfigPath)) 
+                    File.Delete(packageConfigPath);
             }
         }
 
@@ -155,34 +157,27 @@ namespace Composite.Tools.PackageCreator
 
             package.Version = packageInformation.AttributeValue("version") ?? "1.0.0";
             var request = HttpContext.Current.Request;
-            package.Website = packageInformation.AttributeValue("website") ??
-                              new Uri(request.Url, request.ApplicationPath).ToString();
+            package.Website = packageInformation.AttributeValue("website") ?? new Uri(request.Url, request.ApplicationPath).ToString();
 
             package.Description = string.IsNullOrEmpty(packageInformation.ForceElement("Description").Value)
                 ? string.Empty
-                : packageInformation.ForceElement("Description")
-                    .Value; //string.Format("Created by {0}", package.Author) : packageInformation.ForceElement("Description").Value;
+                : packageInformation.ForceElement("Description").Value; //string.Format("Created by {0}", package.Author) : packageInformation.ForceElement("Description").Value;
             package.TechnicalDetails = string.IsNullOrEmpty(packageInformation.ForceElement("TechnicalDetails").Value)
                 ? string.Empty
                 : packageInformation.ForceElement("TechnicalDetails").Value;
 
-            package.FlushOnCompletion =
-                bool.Parse(packageInformation.AttributeValue("flushOnCompletion") ?? true.ToString());
-            package.CanBeUninstalled =
-                bool.Parse(packageInformation.AttributeValue("canBeUninstalled") ?? true.ToString());
+            package.FlushOnCompletion = bool.Parse(packageInformation.AttributeValue("flushOnCompletion") ?? true.ToString());
+            package.CanBeUninstalled = bool.Parse(packageInformation.AttributeValue("canBeUninstalled") ?? true.ToString());
             package.SystemLockingType = packageInformation.AttributeValue("systemLocking") ?? "hard";
 
-            package.ReloadConsoleOnCompletion =
-                bool.Parse(packageInformation.AttributeValue("reloadConsoleOnCompletion") ?? false.ToString());
-            package.OverwriteDataOnInstall =
-                bool.Parse(packageInformation.AttributeValue("allowOverwrite") ?? false.ToString());
+            package.ReloadConsoleOnCompletion = bool.Parse(packageInformation.AttributeValue("reloadConsoleOnCompletion") ?? false.ToString());
+            package.OverwriteDataOnInstall = bool.Parse(packageInformation.AttributeValue("allowOverwrite") ?? false.ToString());
             ;
 
             package.MinCompositeVersionSupported = packageRequirements.AttributeValue("minimumCompositeVersion") != null
                 ? new Version(packageRequirements.AttributeValue("minimumCompositeVersion"))
                 : RuntimeInformation.ProductVersion;
-            package.MaxCompositeVersionSupported =
-                new Version(packageRequirements.AttributeValue("maximumCompositeVersion") ?? "9.9999.9999.9999");
+            package.MaxCompositeVersionSupported = new Version(packageRequirements.AttributeValue("maximumCompositeVersion") ?? "9.9999.9999.9999");
 
             return package;
         }
@@ -214,7 +209,7 @@ namespace Composite.Tools.PackageCreator
         /// <returns>Absolute file path</returns>
         public static string GetPackageConfigPath(string packageName)
         {
-            return GetAbsolutePath(string.Format("{0}.xml", packageName));
+            return GetAbsolutePath($"{packageName}.xml");
         }
 
         /// <summary>
@@ -224,23 +219,20 @@ namespace Composite.Tools.PackageCreator
         /// <returns>A string containing the combined paths</returns>
         private static string PathCombine(params string[] path)
         {
-            if (path.Length == 0)
-                return string.Empty;
-            return path.Aggregate((path1, path2) => Path.Combine(path1, path2));
+            return path.Length == 0 ? string.Empty : path.Aggregate(Path.Combine);
         }
 
         /// <summary>
         ///     Create package
         /// </summary>
-        /// <param name="PackageName">package name</param>
+        /// <param name="packageName">package name</param>
         /// <returns>Web uri to the created package</returns>
         public static string CreatePackage(string packageName)
         {
             var packageCreator = new PackageCreator(GetAbsolutePath("."), packageName);
             var packagePath = packageCreator.CreatePackagePack();
-            var request = HttpContext.Current.Request;
-            var fullpath = GetAbsolutePath(packagePath);
-            return fullpath;
+            var fullPath = GetAbsolutePath(packagePath);
+            return fullPath;
         }
 
         internal static void AddItem(IPackItem item)

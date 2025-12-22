@@ -91,10 +91,13 @@ namespace Composite.Tools.PackageCreator
             {
                 #region Init
 
-                if (PackageName == string.Empty) return "";
+                if (PackageName == string.Empty) 
+                    return "";
 
                 _packageDirectoryPath = Path.Combine(_serviceDirectoryPath, PackageName);
-                if (Directory.Exists(_packageDirectoryPath)) Directory.Delete(_packageDirectoryPath, true);
+
+                if (Directory.Exists(_packageDirectoryPath)) 
+                    Directory.Delete(_packageDirectoryPath, true);
 
                 var dataPackageDirectoryPath = Path.Combine(_serviceDirectoryPath, $"{PackageName}_Data");
 
@@ -199,7 +202,7 @@ namespace Composite.Tools.PackageCreator
                         var filename = item.IndexAttributeValue();
 
                         if (string.IsNullOrEmpty(filename))
-                            throw new InvalidOperationException("Files->Add attribute 'name' must be spesified");
+                            throw new InvalidOperationException("Files->Add attribute 'name' must be specified");
 
                         AddFile(filename);
                     }
@@ -238,6 +241,7 @@ namespace Composite.Tools.PackageCreator
                 #region Datas
 
                 var blockElement = rootConfigElement.Element(Pc + "Datas");
+
                 if (blockElement != null)
                     foreach (var item in blockElement.Elements("Type"))
                     {
@@ -251,6 +255,7 @@ namespace Composite.Tools.PackageCreator
                 #region DataItems
 
                 blockElement = rootConfigElement.Element(Pc + "DataItems");
+
                 if (blockElement != null)
                     foreach (var item in blockElement.Elements("Type"))
                     {
@@ -258,8 +263,8 @@ namespace Composite.Tools.PackageCreator
 
                         Func<XElement, Func<IData, bool>> trueAttributes = e => e.Attributes()
                             .Where(x => x.Name.Namespace == XNamespace.None)
-                            .Aggregate(new Func<IData, bool>(d => true),
-                                (f, x) => d => d.GetProperty(x.Name.LocalName) == x.Value && f(d));
+                            .Aggregate(new Func<IData, bool>(d => true), (f, x) => d => d.GetProperty(x.Name.LocalName) == x.Value && f(d));
+
                         var where = item.Elements("Add")
                             .Aggregate(new Func<IData, bool>(d => false), (f, e) => d => trueAttributes(e)(d) || f(d));
 
@@ -268,7 +273,7 @@ namespace Composite.Tools.PackageCreator
 
                 #endregion
 
-#warning TODO: Datatypes data format depends from datatype exists in package or not, thats why list of dtatype must created before adding data
+#warning TODO: Datatypes data format depends from datatype exists in package or not, thats why list of datatype must created before adding data
 
                 #region DynamicDataTypes
 
@@ -277,8 +282,8 @@ namespace Composite.Tools.PackageCreator
                 if (dynamicDataTypes != null)
                 {
                     var dataTypes = new List<XElement>();
-                    foreach (var item in dynamicDataTypes.Elements("Add")
-                                 .OrderBy(e => DataPosition(e.IndexAttributeValue())))
+
+                    foreach (var item in dynamicDataTypes.Elements("Add").OrderBy(e => DataPosition(e.IndexAttributeValue())))
                     {
                         var dynamicDataType = TypeManager.GetType(item.IndexAttributeValue());
                         var dynamicDataTypeName = TypeManager.SerializeType(dynamicDataType);
@@ -295,30 +300,28 @@ namespace Composite.Tools.PackageCreator
                             new XAttribute("allowOverwrite", _allowOverwriteDataOnInstall))
                         );
 
-                        AddFileIfExists(
-                            $"App_Data\\Composite\\DynamicTypeForms\\{item.IndexAttributeValue().Replace('.', '\\')}.xml");
+                        AddFileIfExists($"App_Data\\Composite\\DynamicTypeForms\\{item.IndexAttributeValue().Replace('.', '\\')}.xml");
                     }
 
                     dynamicDataTypePackageFragmentInstaller = new XElement(Mi + "Add",
-                        new XAttribute("installerType",
-                            "Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite"),
-                        new XAttribute("uninstallerType",
-                            "Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite"),
+                        new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite"),
+                        new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite"),
                         new XElement("Types", dataTypes));
                 }
 
                 #endregion
 
+                var guidReplacer = new GuidReplacer(DataFacade.GetData<ICompositionContainer>()
+                    .Select(cd => new KeyValuePair<Guid, Guid>(cd.GetProperty<Guid>("Id"), GuidReplacer.CompositionContainerGuid)));
 
                 //Add only one MetaTypeTab
-                using (new GuidReplacer(DataFacade.GetData<ICompositionContainer>().Select(cd =>
-                           new KeyValuePair<Guid, Guid>(cd.GetProperty<Guid>("Id"),
-                               GuidReplacer.CompositionContainerGuid))))
+                using (guidReplacer)
                 {
-                    foreach (var packageItem in PackageCreatorActionFacade.CategoryTypes
-                                 .Where(categoryType => categoryType.Value.IsPackagable())
-                                 .SelectMany(categoryType =>
-                                     PackageCreatorFacade.GetItems(categoryType.Value, config.Root)))
+                    var packageItems = PackageCreatorActionFacade.CategoryTypes
+                        .Where(categoryType => categoryType.Value.IsPackagable())
+                        .SelectMany(categoryType => PackageCreatorFacade.GetItems(categoryType.Value, config.Root));
+
+                    foreach (var packageItem in packageItems)
                         (packageItem as IPack).Pack(this);
 
                     #region DynamicDataTypesData
@@ -347,11 +350,11 @@ namespace Composite.Tools.PackageCreator
                 {
                     var installXsl = XDocument.Parse(BlankXsl);
                     var uninstallXsl = XDocument.Parse(BlankXsl);
-
-
+                    
                     if (_configurationXPaths.TryGetValue(source, out var xPaths))
                     {
                         var nodes = new Dictionary<string, Dictionary<string, XElement>>();
+
                         foreach (var xpath in xPaths)
                         {
                             var configuration = PackageCreatorFacade.GetConfigurationDocument(source);
@@ -372,15 +375,12 @@ namespace Composite.Tools.PackageCreator
 
                         foreach (var node in nodes)
                             installXsl.Root.Add(
-                                new XElement(Xsl + "template",
-                                    new XAttribute("match", node.Key),
+                                new XElement(Xsl + "template", new XAttribute("match", node.Key),
                                     new XElement(Xsl + "copy",
-                                        new XElement(Xsl + "apply-templates",
-                                            new XAttribute("select", "@* | node()")),
+                                        new XElement(Xsl + "apply-templates", new XAttribute("select", "@* | node()")),
                                         from e in node.Value
                                         select
-                                            new XElement(Xsl + "if",
-                                                new XAttribute("test", $"count({e.Key})=0"),
+                                            new XElement(Xsl + "if", new XAttribute("test", $"count({e.Key})=0"),
                                                 e.Value
                                             )
                                     )
@@ -388,23 +388,23 @@ namespace Composite.Tools.PackageCreator
                             );
                     }
 
-                    if (_configurationTemplates.TryGetValue(source, out var templates)) installXsl.Root.Add(templates);
+                    if (_configurationTemplates.TryGetValue(source, out var templates)) 
+                        installXsl.Root.Add(templates);
 
                     var configDirectory = Path.Combine(_packageDirectoryPath, source);
+
                     if (!Directory.Exists(configDirectory))
                         Directory.CreateDirectory(configDirectory);
+
                     installXsl.SaveTabbed(Path.Combine(configDirectory, ConfigInstallFileName));
                     uninstallXsl.SaveTabbed(Path.Combine(configDirectory, ConfigUninstallFileName));
 
                     if (PCCompositeConfig.Source == source)
                         configurationTransformationPackageFragmentInstallers =
                             new XElement(Mi + "Add",
-                                new XAttribute("installerType",
-                                    "Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite"),
-                                new XAttribute("uninstallerType",
-                                    "Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite"),
-                                new XElement("Install",
-                                    new XAttribute("xsltFilePath", $@"~\{source}\{ConfigInstallFileName}")
+                                new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite"),
+                                new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite"),
+                                new XElement("Install", new XAttribute("xsltFilePath", $@"~\{source}\{ConfigInstallFileName}")
                                 ),
                                 new XElement("Uninstall",
                                     new XAttribute("xsltFilePath", $@"~\{source}\{ConfigUninstallFileName}")
@@ -424,7 +424,8 @@ namespace Composite.Tools.PackageCreator
 
 
                 var xPackageFragments = config.Descendants(Pc + "PackageFragmentInstallers").FirstOrDefault();
-                if (xPackageFragments != null) xPackageFragmentInstallers.Add(xPackageFragments.Elements());
+                if (xPackageFragments != null) 
+                    xPackageFragmentInstallers.Add(xPackageFragments.Elements());
 
 
                 xPackageFragmentInstallers.Add(configurationTransformationPackageFragmentInstallers);
@@ -434,10 +435,8 @@ namespace Composite.Tools.PackageCreator
                 if (_files.Count + _directories.Count > 0)
                 {
                     var filePackageFragmentInstaller = new XElement(Mi + "Add",
-                        new XAttribute("installerType",
-                            "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite"),
-                        new XAttribute("uninstallerType",
-                            "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite"),
+                        new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite"),
+                        new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite"),
                         _files.Count == 0
                             ? null
                             : new XElement("Files", _files.OrderBy(ReferencedAssemblies.AssemblyPosition)),
@@ -453,10 +452,8 @@ namespace Composite.Tools.PackageCreator
 
                 if (_xslFiles.Count > 0)
                     xPackageFragmentInstallers.Add(new XElement(Mi + "Add",
-                        new XAttribute("installerType",
-                            "Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite"),
-                        new XAttribute("uninstallerType",
-                            "Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite"),
+                        new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite"),
+                        new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite"),
                         new XElement("XslFiles", _xslFiles)));
 
                 #endregion
@@ -468,10 +465,8 @@ namespace Composite.Tools.PackageCreator
                 if (_datas.Count > 0)
                 {
                     var dataPackageFragmentInstaller = new XElement(Mi + "Add",
-                        new XAttribute("installerType",
-                            "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite"),
-                        new XAttribute("uninstallerType",
-                            "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite"),
+                        new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite"),
+                        new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite"),
                         new XElement("Types",
                             _datas.OrderBy(t => t.Key)
                                 .ThenBy(t => DataPosition(t.Value.AttributeValue("type")))
@@ -484,15 +479,18 @@ namespace Composite.Tools.PackageCreator
 
                 _dataFiles.Save();
 
-                xPackageFragmentInstallers.ReplaceNodes(xPackageFragmentInstallers.Elements().OrderBy(FragmentPosition)
+                xPackageFragmentInstallers
+                    .ReplaceNodes(xPackageFragmentInstallers.Elements()
+                    .OrderBy(FragmentPosition)
                     .Select(DeleteOrderingMark));
+
                 xPackageInstaller.Add(xPackageFragmentInstallers);
 
                 xPackage.Add(xPackageInstaller);
 
                 xPackage.SaveTabbed(Path.Combine(_packageDirectoryPath, InstallFilename));
 
-                var zipFilename = PackageName + ".zip";
+                var zipFilename = $"{PackageName}.zip";
 
 
                 #region Zipping
@@ -506,8 +504,7 @@ namespace Composite.Tools.PackageCreator
                 {
                     foreach (var directory in directories)
                     {
-                        var directoryEntryName =
-                            directory.Replace(_packageDirectoryPath + "\\", "").Replace("\\", "/") + "/";
+                        var directoryEntryName = $"{directory.Replace($"{_packageDirectoryPath}\\", "").Replace("\\", "/")}/";
 
                         var dirEntry = archive.CreateEntry(directoryEntryName);
                         dirEntry.LastWriteTime = Directory.GetLastWriteTime(directory);
@@ -515,7 +512,7 @@ namespace Composite.Tools.PackageCreator
 
                     foreach (var file in filenames)
                     {
-                        var fileEntryName = file.Replace(_packageDirectoryPath + "\\", "").Replace("\\", "/");
+                        var fileEntryName = file.Replace($"{_packageDirectoryPath}\\", "").Replace("\\", "/");
 
                         var entry = archive.CreateEntry(fileEntryName, PackageCompressionLevel);
 
@@ -529,12 +526,12 @@ namespace Composite.Tools.PackageCreator
 
                 #endregion
 
-                var packageCreatorDirectory = Path.Combine(_packageDirectoryPath, "../_" + CreatorDirectory);
+                var packageCreatorDirectory = Path.Combine(_packageDirectoryPath, $"../_{CreatorDirectory}");
                 try
                 {
                     Directory.CreateDirectory(packageCreatorDirectory);
 
-                    var packageCopyFilePath = packageCreatorDirectory + @"\" + PackageName + ".xml";
+                    var packageCopyFilePath = $@"{packageCreatorDirectory}\{PackageName}.xml";
                     File.Copy(packageConfigFilePath, packageCopyFilePath);
                     SetFileReadAccess(packageCopyFilePath, false);
                 }
@@ -546,8 +543,7 @@ namespace Composite.Tools.PackageCreator
                 try
                 {
                     if (Directory.Exists(dataPackageDirectoryPath))
-                        FileSystem.CopyDirectory(dataPackageDirectoryPath,
-                            packageCreatorDirectory + @"\" + PackageName + "_Data");
+                        FileSystem.CopyDirectory(dataPackageDirectoryPath, $@"{packageCreatorDirectory}\{PackageName}_Data");
                 }
                 catch
                 {
@@ -562,14 +558,15 @@ namespace Composite.Tools.PackageCreator
         {
             var targetFilename = Path.Combine(_packageDirectoryPath, filename);
             var targetDirectory = Path.GetDirectoryName(targetFilename);
-            if (!Directory.Exists(targetDirectory)) Directory.CreateDirectory(targetDirectory);
+            if (!Directory.Exists(targetDirectory)) 
+                Directory.CreateDirectory(targetDirectory);
 
             FileSystem.CopyDirectory(Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), filename), targetFilename);
 
             _directories.Add(
                 new XElement("Directory",
-                    new XAttribute("sourceDirectory", "~\\" + filename),
-                    new XAttribute("targetDirectory", "~\\" + filename),
+                    new XAttribute("sourceDirectory", $"~\\{filename}"),
+                    new XAttribute("targetDirectory", $"~\\{filename}"),
                     new XAttribute("allowOverwrite", _allowOverwriteDataOnInstall),
                     new XAttribute("deleteTargetDirectory", "false")
                 )
@@ -579,8 +576,9 @@ namespace Composite.Tools.PackageCreator
         internal void AddFilesInDirectory(string path)
         {
             var baseDirectory = PathUtil.Resolve(PathUtil.BaseDirectory);
-            foreach (var filename in Directory.GetFiles(Path.Combine(baseDirectory, path), "*",
-                         SearchOption.AllDirectories)) AddFile(filename.Replace(baseDirectory, ""));
+
+            foreach (var filename in Directory.GetFiles(Path.Combine(baseDirectory, path), "*", SearchOption.AllDirectories)) 
+                AddFile(filename.Replace(baseDirectory, ""));
         }
 
         #region SortingByForeignKey
@@ -637,13 +635,16 @@ namespace Composite.Tools.PackageCreator
                     toRemove.Add(type.Key);
                 }
 
-                foreach (var key in toRemove) foreignTypes.Remove(key);
+                foreach (var key in toRemove) 
+                    foreignTypes.Remove(key);
 
                 var prevDataPosition = _dataPosition.Keys.ToList();
                 foreignTypes = foreignTypes.ToDictionary(d => d.Key, d => d.Value.Except(prevDataPosition));
             }
 
-            foreach (var type in foreignTypes) _dataPosition.Add(type.Key, int.MaxValue);
+            foreach (var type in foreignTypes) 
+                _dataPosition.Add(type.Key, int.MaxValue);
+
             //IDataItemTreeAttachmentPoint does not have foreign key but referenced to other types
             _dataPosition[typeof(IDataItemTreeAttachmentPoint)] = int.MaxValue;
         }
@@ -713,12 +714,13 @@ namespace Composite.Tools.PackageCreator
 
         public void AddData<T>(Func<T, bool> where) where T : class, IData
         {
+            AddData(typeof(T), Func);
+            return;
+
             bool Func(IData d)
             {
                 return where((T)d);
             }
-
-            AddData(typeof(T), Func);
         }
 
         internal void AddData(Type type, Func<IData, bool> where)
@@ -745,12 +747,13 @@ namespace Composite.Tools.PackageCreator
 
         internal void AddData<T>(DataScopeIdentifier dataScopeIdentifier, Func<T, bool> where) where T : class, IData
         {
+            AddData(typeof(T), dataScopeIdentifier, Func);
+            return;
+
             bool Func(IData d)
             {
                 return where((T)d);
             }
-
-            AddData(typeof(T), dataScopeIdentifier, Func);
         }
 
         internal void AddData(Type type, DataScopeIdentifier dataScopeIdentifier, Func<IData, bool> where)
@@ -759,8 +762,8 @@ namespace Composite.Tools.PackageCreator
             {
                 conn.DisableServices();
 
-                foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where)
-                             .OrderBy(d => d.GetSelfPosition())) AddData(data);
+                foreach (var data in DataFacade.GetData(type).ToDataEnumerable().Where(where).OrderBy(d => d.GetSelfPosition())) 
+                    AddData(data);
             }
         }
 
@@ -805,37 +808,28 @@ namespace Composite.Tools.PackageCreator
         public void AddData(IData data)
         {
             // #3102 Do not export ICompositionContainer with id eb210a75-be25-401f-b0d4-b3787bce36fa - considered always installed
-            if (data is ICompositionContainer container)
-                if (container.Id == new Guid("eb210a75-be25-401f-b0d4-b3787bce36fa"))
-                    return;
+            if (data is ICompositionContainer container && container.Id == new Guid("eb210a75-be25-401f-b0d4-b3787bce36fa")) 
+                return;
 
             var keyProperties = data.GetKeyProperties();
-            if (keyProperties.Count == 1 && keyProperties.First().Name == "Id" &&
-                keyProperties.First().PropertyType == typeof(Guid))
-            {
-                var id = data.GetProperty<Guid>("Id");
-                if (ExcludedIds.Contains(id))
-                    return;
-            }
+
+            if (keyProperties.Count == 1 && keyProperties.First().Name == "Id" && keyProperties.First().PropertyType == typeof(Guid) && ExcludedIds.Contains(data.GetProperty<Guid>("Id"))) 
+                return;
 
             var dataTypeName = TypeManager.SerializeType(data.DataSourceId.InterfaceType);
             var dataScopeIdentifier = DataScopeManager.CurrentDataScope.Name;
 
             var cultureName = string.Empty;
-            if (data is ILocalizedControlled) cultureName = "?";
+            if (data is ILocalizedControlled) 
+                cultureName = "?";
 
-            var dataTypeKey = dataTypeName + dataScopeIdentifier +
-                              (string.IsNullOrEmpty(cultureName) ? string.Empty : "_" + cultureName);
-            var dataTypeFileName = Regex.Replace(dataTypeName, "(.+:|,.+)", "") + "s_" + dataScopeIdentifier +
-                                   (string.IsNullOrEmpty(cultureName) || cultureName.Length <= 1
-                                       ? string.Empty
-                                       : "_" + cultureName) + ".xml";
+            var dataTypeKey = $"{dataTypeName}{dataScopeIdentifier}{(string.IsNullOrEmpty(cultureName) ? string.Empty : $"_{cultureName}")}";
+            var dataTypeFileName = $"{Regex.Replace(dataTypeName, "(.+:|,.+)", "")}s_{dataScopeIdentifier}{(string.IsNullOrEmpty(cultureName) || cultureName.Length <= 1 ? string.Empty : $"_{cultureName}")}.xml";
 
 
             //Add only one MetaTypeTab
-            if (_datas.ContainsKey(dataTypeKey))
-                if (dataTypeName.Contains("Composite.Data.Types.ICompositionContainer"))
-                    return;
+            if (_datas.ContainsKey(dataTypeKey) && dataTypeName.Contains("Composite.Data.Types.ICompositionContainer")) 
+                return;
 
             var shortFilePath = $"Datas\\{dataTypeFileName}";
             var filePath = Path.Combine(_packageDirectoryPath, shortFilePath);
@@ -902,21 +896,24 @@ namespace Composite.Tools.PackageCreator
         {
             if (filename.StartsWith("~"))
                 filename = filename.Substring(2);
+
             if (newFilename.StartsWith("~"))
                 newFilename = newFilename.Substring(2);
 
             var targetFilename = Path.Combine(_packageDirectoryPath, newFilename);
             var targetDirectory = Path.GetDirectoryName(targetFilename);
-            if (!Directory.Exists(targetDirectory)) Directory.CreateDirectory(targetDirectory);
+
+            if (!Directory.Exists(targetDirectory)) 
+                Directory.CreateDirectory(targetDirectory);
 
             File.Copy(Path.Combine(PathUtil.Resolve(PathUtil.BaseDirectory), filename), targetFilename, true);
+
             _files.Add(
                 new XElement("File",
                     new XAttribute("sourceFilename", "~\\" + newFilename),
                     new XAttribute("targetFilename", "~\\" + newFilename),
                     new XAttribute("allowOverwrite", _allowOverwriteDataOnInstall)
-                )
-            );
+                ));
         }
 
         #endregion

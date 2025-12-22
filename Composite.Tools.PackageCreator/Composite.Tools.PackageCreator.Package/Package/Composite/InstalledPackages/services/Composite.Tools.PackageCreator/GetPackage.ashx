@@ -32,7 +32,8 @@ public class GetPackage : IHttpHandler
 		}
 		else if (packageName != null)
 		{
-			try{
+			try
+            {
 				fullPath = PackageCreatorFacade.CreatePackage(packageName);
 			}
 			catch(Exception e)

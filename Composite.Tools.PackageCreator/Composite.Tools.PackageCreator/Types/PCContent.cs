@@ -19,15 +19,11 @@ namespace Composite.Tools.PackageCreator.Types
         private const string ApplicationsName = "Applications";
         private const string MetatypesName = "MetatypesData";
 
-        public PCContent(string name)
-            : base(name)
-        {
-        }
+        public PCContent(string name) : base(name) { }
 
         public override string ActionLabel => PackageCreatorFacade.GetLocalization($"{CategoryName}.{Name}.Add.Label");
 
-        public override string ActionToolTip =>
-            PackageCreatorFacade.GetLocalization($"{CategoryName}.{Name}.Add.ToolTip");
+        public override string ActionToolTip => PackageCreatorFacade.GetLocalization($"{CategoryName}.{Name}.Add.ToolTip");
 
         public override ResourceHandle ItemIcon
         {

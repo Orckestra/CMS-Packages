@@ -87,8 +87,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
 
             if (UserSettings.C1ConsoleUiLanguage.Name != "en-US")
                 element.AddAction(new ElementAction(new ActionHandle(new CreatePackageWorkflowActionToken(
-                    string.Format("Composite.Localization.C1Console.{0}",
-                        new CultureInfo(UserSettings.C1ConsoleUiLanguage.TwoLetterISOLanguageName).EnglishName),
+                    $"Composite.Localization.C1Console.{new CultureInfo(UserSettings.C1ConsoleUiLanguage.TwoLetterISOLanguageName).EnglishName}",
                     new AddLocalizationActionToken(UserSettings.C1ConsoleUiLanguage.Name))))
                 {
                     VisualData = new ActionVisualizedData
@@ -216,7 +215,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                                 IsInToolbar = false,
                                 ActionGroup = new ActionGroup("Other", ActionGroupPriority.PrimaryLow)
                             }
-                        }
+                        } 
                     });
 
                     element.AddAction(new ElementAction(new ActionHandle(new DownloadPackageActionToken("package")))

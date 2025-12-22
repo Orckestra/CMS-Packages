@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,7 +33,8 @@ namespace Composite.Tools.PackageCreator
         {
             var attributes = type.GetCustomAttributes(typeof(PackCategoryAttribute), true);
 
-            if (attributes.Length == 0) return null;
+            if (attributes.Length == 0) 
+                return null;
 
             var category = (PackCategoryAttribute)attributes[0];
             return category;
@@ -67,8 +68,7 @@ namespace Composite.Tools.PackageCreator
         {
             try
             {
-                var property = o.GetType().GetProperty(propertyName,
-                    BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                var property = o.GetType().GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
                 return property.GetValue(o, null).ToString();
             }
             catch
@@ -103,6 +103,7 @@ namespace Composite.Tools.PackageCreator
         {
             if (!dictionary.ContainsKey(key))
                 dictionary[key] = new HashSet<TValue>();
+
             dictionary[key].Add(value);
         }
 
@@ -110,20 +111,20 @@ namespace Composite.Tools.PackageCreator
         {
             if (!dictionary.ContainsKey(key))
                 dictionary[key] = new List<TValue>();
+
             dictionary[key].Add(value);
         }
 
         public static bool IsBinFolder(this Assembly assembly)
         {
-            return !assembly.IsDynamic &&
-                   Path.GetFileName(Path.GetDirectoryName(assembly.CodeBase)).ToLower().Equals("bin");
+            return !assembly.IsDynamic && Path.GetFileName(Path.GetDirectoryName(assembly.CodeBase)).ToLower().Equals("bin");
         }
 
-        public static void Add(this Dictionary<string, Dictionary<string, XElement>> dictionary, string key,
-            string listKey, XElement listValue)
+        public static void Add(this Dictionary<string, Dictionary<string, XElement>> dictionary, string key, string listKey, XElement listValue)
         {
             if (!dictionary.ContainsKey(key))
                 dictionary[key] = new Dictionary<string, XElement>();
+
             dictionary[key][listKey] = listValue;
         }
 
