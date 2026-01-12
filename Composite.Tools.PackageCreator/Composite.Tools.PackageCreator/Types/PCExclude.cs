@@ -257,7 +257,7 @@ namespace Composite.Tools.PackageCreator.Types
     {
         public IEnumerable<IPackItem> GetItems(Type type, XElement config)
         {
-            var ns = PackageCreator.Pc;
+            var ns = PackageCreator.NsPc;
             XName itemName = "Add";
             foreach (var category in typeof(PCExclude).GetCategoryAllNames())
             foreach (var element in config.Elements(ns + category).Elements(itemName))

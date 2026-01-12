@@ -56,19 +56,22 @@ namespace Composite.Tools.PackageCreator
             {
                 if (_list != null) 
                     return GetState(pageId, _list);
-
-
+                
                 _list = new Dictionary<Guid, TreeState>();
 
                 foreach (var page in PackageCreatorFacade.GetItems<PCPageTree>())
                 {
-                    if (!Guid.TryParse(page.Name, out var id)) continue;
+                    if (!Guid.TryParse(page.Name, out var id)) 
+                        continue;
+
                     _list[id] = TreeState.IncludedTree;
                 }
 
                 foreach (var page in PackageCreatorFacade.GetItems<PCExclude>().Where(d => d.Type == PCExclude.Exclude.Page))
                 {
-                    if (!Guid.TryParse(page.Name, out var id)) continue;
+                    if (!Guid.TryParse(page.Name, out var id)) 
+                        continue;
+
                     _list[id] = TreeState.ExcludedTree;
                 }
 
@@ -91,6 +94,7 @@ namespace Composite.Tools.PackageCreator
 
             var status = TreeState.NotIncluded;
             var parentId = PageManager.GetParentId(pageId);
+
             if (parentId != Guid.Empty)
             {
                 var parentStatus = GetState(parentId, list);
@@ -116,8 +120,7 @@ namespace Composite.Tools.PackageCreator
     {
         private readonly object _syncRoot = new object();
         private Dictionary<string, TreeState> _list;
-
-
+        
         public TreeState GetState(string path)
         {
             lock (_syncRoot)
@@ -130,8 +133,7 @@ namespace Composite.Tools.PackageCreator
                 foreach (var media in PackageCreatorFacade.GetItems<PCMediaFolder>())
                     _list[media.Name] = TreeState.IncludedTree;
 
-                foreach (var media in PackageCreatorFacade.GetItems<PCExclude>()
-                             .Where(d => d.Type == PCExclude.Exclude.MediaFolder))
+                foreach (var media in PackageCreatorFacade.GetItems<PCExclude>().Where(d => d.Type == PCExclude.Exclude.MediaFolder))
                     _list[media.Name] = TreeState.ExcludedTree;
 
                 return GetState(path, _list);

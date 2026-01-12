@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,21 +20,22 @@ namespace Composite.Tools.PackageCreator
 {
     public static class PackageCreatorFacade
     {
-        private static readonly string _packageCreatorPath = "App_Data/PackageCreator";
+        private const string PackageCreatorPath = "App_Data/PackageCreator";
+        public const string AllowOverwrite = "allowOverwrite";
 
         //private static readonly string _providerName = "Composite.Tools.PackageCreator";
-        private static readonly string _activeFilePath = "ActivePackage";
+        private const string ActiveFilePath = "ActivePackage";
         private static string _activePackageName;
-        private static readonly XNamespace pc = PackageCreator.Pc;
-        private static readonly XNamespace mi = PackageCreator.Mi;
-        private static readonly XNamespace help = PackageCreator.Help;
+        private static readonly XNamespace NsPc = PackageCreator.NsPc;
+        private static readonly XNamespace NsMi = PackageCreator.NsMi;
+        private static readonly XNamespace NsHelp = PackageCreator.Help;
 
-        private static readonly object _lockEditPackage = new object();
+        private static readonly object LockEditPackage = new object();
 
         [ThreadStatic] private static ContextItems _currentContextItems;
 
         private static bool _isPackageCreatorPathCreated;
-        private static readonly object _isPackageCreatorPathCreatedLock = new object();
+        private static readonly object IsPackageCreatorPathCreatedLock = new object();
 
         public static string ProviderName => "Composite.Tools.PackageCreator";
         public static string RazorFunctionProviderName => "RazorFunctionProvider";
@@ -44,18 +45,20 @@ namespace Composite.Tools.PackageCreator
         {
             get
             {
-                if (_activePackageName == null)
-                    if (File.Exists(GetAbsolutePath(_activeFilePath)))
-                        _activePackageName = File.ReadAllText(GetAbsolutePath(_activeFilePath)).Trim();
+                if (_activePackageName == null && File.Exists(GetAbsolutePath(ActiveFilePath))) 
+                    _activePackageName = File.ReadAllText(GetAbsolutePath(ActiveFilePath)).Trim();
+
                 if (_activePackageName == null || !File.Exists(GetPackageConfigPath(_activePackageName)))
                     ActivePackageName = GetPackageNames().FirstOrDefault();
+
                 return _activePackageName;
             }
             set
             {
                 _activePackageName = value;
+
                 if (_activePackageName != null) 
-                    File.WriteAllText(GetAbsolutePath(_activeFilePath), _activePackageName);
+                    File.WriteAllText(GetAbsolutePath(ActiveFilePath), _activePackageName);
             }
         }
 
@@ -63,10 +66,9 @@ namespace Composite.Tools.PackageCreator
         {
             get
             {
-                if (_currentContextItems == null)
+                if (_currentContextItems == null || !_currentContextItems.IsCurrentContext)
                     _currentContextItems = new ContextItems();
-                else if (!_currentContextItems.IsCurrentContext) 
-                    _currentContextItems = new ContextItems();
+
                 return _currentContextItems;
             }
         }
@@ -89,7 +91,7 @@ namespace Composite.Tools.PackageCreator
         /// <param name="packageName">Previous package name</param>
         public static void SavePackageInformation(PackageInformation package, string packageName)
         {
-            lock (_lockEditPackage)
+            lock (LockEditPackage)
             {
                 if (!package.Name.Equals(packageName))
                     try
@@ -102,8 +104,8 @@ namespace Composite.Tools.PackageCreator
                     }
 
                 var packageXml = GetPackageXml(package.Name);
-                var packageInformation = packageXml.Root.ForceElement(mi + "PackageInformation");
-                var packageRequirements = packageXml.Root.ForceElement(mi + "PackageRequirements");
+                var packageInformation = packageXml.Root.ForceElement(NsMi + "PackageInformation");
+                var packageRequirements = packageXml.Root.ForceElement(NsMi + "PackageRequirements");
                 packageInformation.SetAttributeValue("name", package.Name);
                 packageInformation.SetAttributeValue("groupName", package.GroupName);
                 packageInformation.SetAttributeValue("version", package.Version);
@@ -114,7 +116,8 @@ namespace Composite.Tools.PackageCreator
                 packageInformation.SetAttributeValue("canBeUninstalled", package.CanBeUninstalled);
                 packageInformation.SetAttributeValue("systemLocking", package.SystemLockingType);
                 packageInformation.SetAttributeValue("flushOnCompletion", package.FlushOnCompletion);
-                packageInformation.SetAttributeValue("allowOverwrite", package.OverwriteDataOnInstall);
+                packageInformation.SetAttributeValue(AllowOverwrite, package.OverwriteDataOnInstall);
+                packageInformation.SetAttributeValue(IncludePageData, package.IncludePageData);
                 if (package.ReloadConsoleOnCompletion)
                     packageInformation.SetAttributeValue("reloadConsoleOnCompletion", "true");
                 packageInformation.ForceElement("Description").Value = package.Description;
@@ -129,7 +132,7 @@ namespace Composite.Tools.PackageCreator
 
         internal static void DeletePackageInformation(string packageName)
         {
-            lock (_lockEditPackage)
+            lock (LockEditPackage)
             {
                 var packageConfigPath = GetPackageConfigPath(packageName);
 
@@ -142,8 +145,8 @@ namespace Composite.Tools.PackageCreator
         {
             var package = new PackageInformation();
             var packageXml = GetPackageXml(packageName);
-            var packageInformation = packageXml.Root.ForceElement(mi + "PackageInformation");
-            var packageRequirements = packageXml.Root.ForceElement(mi + "PackageRequirements");
+            var packageInformation = packageXml.Root.ForceElement(NsMi + "PackageInformation");
+            var packageRequirements = packageXml.Root.ForceElement(NsMi + "PackageRequirements");
 
             package.Id = packageInformation.AttributeValue("id") != null
                 ? new Guid(packageInformation.AttributeValue("id"))
@@ -171,8 +174,8 @@ namespace Composite.Tools.PackageCreator
             package.SystemLockingType = packageInformation.AttributeValue("systemLocking") ?? "hard";
 
             package.ReloadConsoleOnCompletion = bool.Parse(packageInformation.AttributeValue("reloadConsoleOnCompletion") ?? false.ToString());
-            package.OverwriteDataOnInstall = bool.Parse(packageInformation.AttributeValue("allowOverwrite") ?? false.ToString());
-            ;
+            package.OverwriteDataOnInstall = bool.Parse(packageInformation.AttributeValue(AllowOverwrite) ?? false.ToString());
+            package.IncludePageData = bool.Parse(packageInformation.AttributeValue(IncludePageData) ?? false.ToString());
 
             package.MinCompositeVersionSupported = packageRequirements.AttributeValue("minimumCompositeVersion") != null
                 ? new Version(packageRequirements.AttributeValue("minimumCompositeVersion"))
@@ -189,10 +192,10 @@ namespace Composite.Tools.PackageCreator
         /// <returns>Absolute file path</returns>
         private static string GetAbsolutePath(string path)
         {
-            var directory = PathCombine(PathUtil.Resolve(PathUtil.BaseDirectory), _packageCreatorPath);
+            var directory = PathCombine(PathUtil.Resolve(PathUtil.BaseDirectory), PackageCreatorPath);
 
             if (!_isPackageCreatorPathCreated)
-                lock (_isPackageCreatorPathCreatedLock)
+                lock (IsPackageCreatorPathCreatedLock)
                 {
                     if (!Directory.Exists(directory))
                         Directory.CreateDirectory(directory);
@@ -243,7 +246,7 @@ namespace Composite.Tools.PackageCreator
 
         internal static void AddItem(IPackItem item, string packageName)
         {
-            lock (_lockEditPackage)
+            lock (LockEditPackage)
             {
                 var packageXml = GetPackageXml(packageName);
                 item.AddToConfiguration(packageXml.Root);
@@ -253,7 +256,7 @@ namespace Composite.Tools.PackageCreator
 
         internal static void RemoveItem(IPackItem item, string packageName)
         {
-            lock (_lockEditPackage)
+            lock (LockEditPackage)
             {
                 var packageXml = GetPackageXml(packageName);
                 item.RemoveFromConfiguration(packageXml.Root);
@@ -263,7 +266,7 @@ namespace Composite.Tools.PackageCreator
 
         internal static void ToggleAllowOverwrite(string packageName)
         {
-            lock (_lockEditPackage)
+            lock (LockEditPackage)
             {
                 var packageXml = GetPackageXml(packageName);
                 var element = packageXml.Root.Elements(PackageCreator.Mi + "PackageInformation").FirstOrDefault();
@@ -276,7 +279,7 @@ namespace Composite.Tools.PackageCreator
         internal static bool IsAllowOverwrite(string packageName)
         {
             var packageXml = GetPackageXml(packageName);
-            var element = packageXml.Root.Elements(PackageCreator.Mi + "PackageInformation").FirstOrDefault();
+            var element = packageXml.Root.Elements(PackageCreator.NsMi + "PackageInformation").FirstOrDefault();
             if (element == null) return false;
             return element.AllowOverwriteAttributeValue();
         }
@@ -284,7 +287,7 @@ namespace Composite.Tools.PackageCreator
         internal static IEnumerable<PackCategoryAttribute> GetCategories(string packageName)
         {
             XDocument packageXml;
-            lock (_lockEditPackage)
+            lock (LockEditPackage)
             {
                 packageXml = GetPackageXml(packageName);
             }
@@ -310,7 +313,7 @@ namespace Composite.Tools.PackageCreator
         internal static IEnumerable<IPackItem> GetItems(Type categoryType, string packageName)
         {
             XDocument packageXml;
-            lock (_lockEditPackage)
+            lock (LockEditPackage)
             {
                 packageXml = GetPackageXml(packageName);
             }
@@ -324,7 +327,8 @@ namespace Composite.Tools.PackageCreator
             if (manager != null)
             {
                 var results = manager.GetItems(type, config);
-                foreach (var result in results) yield return result;
+                foreach (var result in results) 
+                    yield return result;
             }
             else
             {
@@ -338,20 +342,20 @@ namespace Composite.Tools.PackageCreator
 
                 if (method == null)
                 {
-                    LoggingService.LogError("Type {0} doesnot have static methos GetItems", type.FullName);
+                    LoggingService.LogError("Type {0} doesn't have static methods GetItems", type.FullName);
                     yield break;
                 }
 
                 var results = (IEnumerable<IPackItem>)method.Invoke(Type.Missing, new object[] { type, config });
-                foreach (var result in results) yield return result;
+                foreach (var result in results) 
+                    yield return result;
             }
         }
 
 
         internal static IEnumerable<string> GetPackageNames()
         {
-            return from f in Directory.GetFiles(GetAbsolutePath("."), "*.xml")
-                select Path.GetFileNameWithoutExtension(f);
+            return Directory.GetFiles(GetAbsolutePath("."), "*.xml").Select(Path.GetFileNameWithoutExtension);
         }
 
         /// <summary>
@@ -369,20 +373,19 @@ namespace Composite.Tools.PackageCreator
                 }
                 catch
                 {
-                    LoggingService.LogError("PackageCreator",
-                        string.Format("Package config {0} is not xml", packageName));
+                    LoggingService.LogError("PackageCreator", $"Package config {packageName} is not xml");
                 }
 
             if (package == null) package = new XDocument();
 
-            if (package.Root == null || package.Root.Name != pc + "PackageCreator")
+            if (package.Root == null || package.Root.Name != NsPc + "PackageCreator")
             {
-                var Root = new XElement(pc + "PackageCreator");
-                Root.Add(new XAttribute(XNamespace.Xmlns + "mi", mi));
-                Root.Add(new XAttribute(XNamespace.Xmlns + "pc", pc));
-                Root.Add(new XAttribute(XNamespace.Xmlns + "help", help));
+                var root = new XElement(NsPc + "PackageCreator");
+                root.Add(new XAttribute(XNamespace.Xmlns + "mi", NsMi));
+                root.Add(new XAttribute(XNamespace.Xmlns + "pc", NsPc));
+                root.Add(new XAttribute(XNamespace.Xmlns + "help", NsHelp));
                 package.RemoveNodes();
-                package.Add(Root);
+                package.Add(root);
             }
 
             return package;
@@ -390,19 +393,18 @@ namespace Composite.Tools.PackageCreator
 
         internal static string GetLocalization(string part)
         {
-            return StringResourceSystemFacade.GetString(ProviderName, string.Format("{0}.{1}", ProviderName, part));
+            return StringResourceSystemFacade.GetString(ProviderName, $"{ProviderName}.{part}");
         }
 
         internal static XDocument GetConfigurationDocument(string source)
         {
             var configurationPath = GetConfigurationPath(source);
-            if (configurationPath != null)
-            {
-                configurationPath = PathUtil.Resolve(configurationPath);
-                return XDocument.Load(configurationPath);
-            }
+            if (configurationPath == null) 
+                return null;
 
-            return null;
+            configurationPath = PathUtil.Resolve(configurationPath);
+            return XDocument.Load(configurationPath);
+
         }
 
         internal static string GetConfigurationPath(string source)
@@ -421,11 +423,16 @@ namespace Composite.Tools.PackageCreator
         internal static void AddConfig(UploadedFile uploadedFile)
         {
             var extension = Path.GetExtension(uploadedFile.FileName);
-            if (extension.ToLower() != ".xml") throw new Exception(GetLocalization("Error.FileIsNotXml"));
+
+            if (extension.ToLower() != ".xml") 
+                throw new Exception(GetLocalization("Error.FileIsNotXml"));
+
             var packageName = Path.GetFileNameWithoutExtension(uploadedFile.FileName);
-            lock (_lockEditPackage)
+
+            lock (LockEditPackage)
             {
                 var configPath = GetPackageConfigPath(packageName);
+
                 if (File.Exists(configPath))
                     throw new Exception(GetLocalization("Error.PackageAlreadyExist"));
 
@@ -453,8 +460,7 @@ namespace Composite.Tools.PackageCreator
                 get
                 {
                     if (HttpContext.Current == null) return false;
-                    if (HttpContext.Current.GetHashCode() == _contextHashCode) return true;
-                    return false;
+                    return HttpContext.Current.GetHashCode() == _contextHashCode;
                 }
             }
         }
@@ -465,7 +471,7 @@ namespace Composite.Tools.PackageCreator
         private static readonly string[] indexNames = { "name", "fullName", "path", "fileName" };
 
         /// <summary>
-        ///     Gets the first (in document order) or new(if doesnot exists) child element with the specified System.Xml.Linq.XName
+        ///     Gets the first (in document order) or new (if doesn't exist) child element with the specified System.Xml.Linq.XName
         /// </summary>
         /// <param name="element"></param>
         /// <param name="name">The System.Xml.Linq.XName to match</param>
@@ -477,11 +483,11 @@ namespace Composite.Tools.PackageCreator
 
             var result = element.Element(name);
 
-            if (result == null)
-            {
-                result = new XElement(name);
-                element.AddFirst(result);
-            }
+            if (result != null) 
+                return result;
+
+            result = new XElement(name);
+            element.AddFirst(result);
 
             return result;
         }
@@ -489,27 +495,19 @@ namespace Composite.Tools.PackageCreator
         public static string AttributeValue(this XElement element, XName name)
         {
             var attribute = element.Attribute(name);
-            if (attribute != null) return attribute.Value;
-            return null;
+            return attribute?.Value;
         }
 
         public static string IndexAttributeValue(this XElement element)
         {
-            foreach (var name in indexNames)
-            {
-                var value = element.AttributeValue(name);
-                if (value != null)
-                    return value;
-            }
-
-            return null;
+            return indexNames.Select(name => element.AttributeValue(name)).FirstOrDefault(value => value != null);
         }
 
         public static bool AllowOverwriteAttributeValue(this XElement element)
         {
-            var value = element.AttributeValue("allowOverwrite");
-            if (value != null)
-                return bool.Parse(value);
+            var value = element.AttributeValue(PackageCreatorFacade.AllowOverwrite);
+            return value != null && bool.Parse(value);
+        }
 
             return false;
         }

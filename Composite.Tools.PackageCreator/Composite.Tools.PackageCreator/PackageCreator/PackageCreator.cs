@@ -34,8 +34,8 @@ namespace Composite.Tools.PackageCreator
 
 </xsl:stylesheet>";
 
-        public static readonly XNamespace Mi = "http://www.composite.net/ns/management/packageinstaller/1.0";
-        public static readonly XNamespace Pc = "http://www.composite.net/ns/management/packagecreator/2.0";
+        public static readonly XNamespace NsMi = "http://www.composite.net/ns/management/packageinstaller/1.0";
+        public static readonly XNamespace NsPc = "http://www.composite.net/ns/management/packagecreator/2.0";
         public static readonly XNamespace Help = "http://www.composite.net/ns/help/1.0";
         private static readonly XNamespace Xsl = "http://www.w3.org/1999/XSL/Transform";
 
@@ -114,7 +114,7 @@ namespace Composite.Tools.PackageCreator
 
                 var config = XDocument.Load(packageConfigFilePath);
 
-                var rootConfigElement = config.Element(Pc + "PackageCreator");
+                var rootConfigElement = config.Element(NsPc + "PackageCreator");
                 if (rootConfigElement == null)
                     throw new InvalidOperationException("Root element of config PackageCreator 2.0 not found");
 
@@ -127,24 +127,25 @@ namespace Composite.Tools.PackageCreator
                     Declaration = new XDeclaration("1.0", "utf-8", "yes")
                 };
 
-                var xPackageInstaller = new XElement(Mi + "PackageInstaller");
-                xPackageInstaller.Add(new XAttribute(XNamespace.Xmlns + "mi", Mi));
+                var xPackageInstaller = new XElement(NsMi + "PackageInstaller");
+                xPackageInstaller.Add(new XAttribute(XNamespace.Xmlns + "mi", NsMi));
 
-                var xPackageRequirements = config.Descendants(Mi + "PackageRequirements").FirstOrDefault();
+                var xPackageRequirements = config.Descendants(NsMi + "PackageRequirements").FirstOrDefault();
                 xPackageInstaller.Add(xPackageRequirements);
 
 
-                var xPackageInformation = config.Descendants(Mi + "PackageInformation").FirstOrDefault();
+                var xPackageInformation = config.Descendants(NsMi + "PackageInformation").FirstOrDefault();
                 _allowOverwriteDataOnInstall = xPackageInformation.AllowOverwriteAttributeValue();
+                _includePageData = xPackageInformation.IncludePageDataAttributeValue();
 
 
                 xPackageInstaller.Add(xPackageInformation);
 
-                var xPackageFragmentInstallerBinaries = new XElement(Mi + "PackageFragmentInstallerBinaries");
+                var xPackageFragmentInstallerBinaries = new XElement(NsMi + "PackageFragmentInstallerBinaries");
                 try
                 {
                     xPackageFragmentInstallerBinaries =
-                        config.Descendants(Mi + "PackageFragmentInstallerBinaries").First();
+                        config.Descendants(NsMi + "PackageFragmentInstallerBinaries").First();
                 }
                 catch
                 {
@@ -156,7 +157,7 @@ namespace Composite.Tools.PackageCreator
                 xPackageInstaller.Add(xPackageFragmentInstallerBinaries);
 
 
-                var xPackageFragmentInstallers = new XElement(Mi + "PackageFragmentInstallers");
+                var xPackageFragmentInstallers = new XElement(NsMi + "PackageFragmentInstallers");
 
                 #endregion
 
@@ -172,7 +173,7 @@ namespace Composite.Tools.PackageCreator
 
                 #region XML PageTemplates
 
-                var pageTemplates = config.Descendants(Pc + "PageTemplates").FirstOrDefault();
+                var pageTemplates = config.Descendants(NsPc + "PageTemplates").FirstOrDefault();
                 if (pageTemplates != null)
                     foreach (var item in pageTemplates.Elements("Add"))
                     {
@@ -195,7 +196,7 @@ namespace Composite.Tools.PackageCreator
 
                 #region Files
 
-                var installFiles = config.Descendants(Pc + "Files").FirstOrDefault();
+                var installFiles = config.Descendants(NsPc + "Files").FirstOrDefault();
                 if (installFiles != null)
                     foreach (var item in installFiles.Elements("Add"))
                     {
@@ -211,7 +212,7 @@ namespace Composite.Tools.PackageCreator
 
                 #region FilesInDirectory
 
-                var installFilesInDirectory = config.Descendants(Pc + "FilesInDirectories").FirstOrDefault();
+                var installFilesInDirectory = config.Descendants(NsPc + "FilesInDirectories").FirstOrDefault();
                 if (installFilesInDirectory != null)
                     foreach (var item in installFilesInDirectory.Elements("Add"))
                     {
@@ -223,7 +224,7 @@ namespace Composite.Tools.PackageCreator
 
                 #region Directories
 
-                var installDirectories = config.Descendants(Pc + "Directories").FirstOrDefault();
+                var installDirectories = config.Descendants(NsPc + "Directories").FirstOrDefault();
                 if (installDirectories != null)
                     foreach (var item in installDirectories.Elements("Add"))
                         try
@@ -240,7 +241,7 @@ namespace Composite.Tools.PackageCreator
 
                 #region Datas
 
-                var blockElement = rootConfigElement.Element(Pc + "Datas");
+                var blockElement = rootConfigElement.Element(NsPc + "Datas");
 
                 if (blockElement != null)
                     foreach (var item in blockElement.Elements("Type"))
@@ -254,7 +255,7 @@ namespace Composite.Tools.PackageCreator
 
                 #region DataItems
 
-                blockElement = rootConfigElement.Element(Pc + "DataItems");
+                blockElement = rootConfigElement.Element(NsPc + "DataItems");
 
                 if (blockElement != null)
                     foreach (var item in blockElement.Elements("Type"))
@@ -277,7 +278,7 @@ namespace Composite.Tools.PackageCreator
 
                 #region DynamicDataTypes
 
-                var dynamicDataTypes = config.Descendants(Pc + "DynamicDataTypes").FirstOrDefault();
+                var dynamicDataTypes = config.Descendants(NsPc + "DynamicDataTypes").FirstOrDefault();
                 XElement dynamicDataTypePackageFragmentInstaller = null;
                 if (dynamicDataTypes != null)
                 {
@@ -303,7 +304,7 @@ namespace Composite.Tools.PackageCreator
                         AddFileIfExists($"App_Data\\Composite\\DynamicTypeForms\\{item.IndexAttributeValue().Replace('.', '\\')}.xml");
                     }
 
-                    dynamicDataTypePackageFragmentInstaller = new XElement(Mi + "Add",
+                    dynamicDataTypePackageFragmentInstaller = new XElement(NsMi + "Add",
                         new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentInstaller, Composite"),
                         new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DynamicDataTypePackageFragmentUninstaller, Composite"),
                         new XElement("Types", dataTypes));
@@ -326,7 +327,7 @@ namespace Composite.Tools.PackageCreator
 
                     #region DynamicDataTypesData
 
-                    var element = config.Descendants(Pc + "DynamicDataTypesData").FirstOrDefault();
+                    var element = config.Descendants(NsPc + "DynamicDataTypesData").FirstOrDefault();
 
                     if (element != null)
                         foreach (var item in element.Elements("Add"))
@@ -401,14 +402,11 @@ namespace Composite.Tools.PackageCreator
 
                     if (PCCompositeConfig.Source == source)
                         configurationTransformationPackageFragmentInstallers =
-                            new XElement(Mi + "Add",
+                            new XElement(NsMi + "Add",
                                 new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentInstaller, Composite"),
                                 new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.ConfigurationTransformationPackageFragmentUninstaller, Composite"),
-                                new XElement("Install", new XAttribute("xsltFilePath", $@"~\{source}\{ConfigInstallFileName}")
-                                ),
-                                new XElement("Uninstall",
-                                    new XAttribute("xsltFilePath", $@"~\{source}\{ConfigUninstallFileName}")
-                                )
+                                new XElement("Install", new XAttribute("xsltFilePath", $@"~\{source}\{ConfigInstallFileName}")),
+                                new XElement("Uninstall", new XAttribute("xsltFilePath", $@"~\{source}\{ConfigUninstallFileName}"))
                             );
                     else
                         _xslFiles.Add(
@@ -423,18 +421,18 @@ namespace Composite.Tools.PackageCreator
                 #endregion
 
 
-                var xPackageFragments = config.Descendants(Pc + "PackageFragmentInstallers").FirstOrDefault();
+                var xPackageFragments = config.Descendants(NsPc + "PackageFragmentInstallers").FirstOrDefault();
+
                 if (xPackageFragments != null) 
                     xPackageFragmentInstallers.Add(xPackageFragments.Elements());
-
-
+                
                 xPackageFragmentInstallers.Add(configurationTransformationPackageFragmentInstallers);
 
                 #region FilePackageFragmentInstaller
 
                 if (_files.Count + _directories.Count > 0)
                 {
-                    var filePackageFragmentInstaller = new XElement(Mi + "Add",
+                    var filePackageFragmentInstaller = new XElement(NsMi + "Add",
                         new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite"),
                         new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite"),
                         _files.Count == 0
@@ -451,7 +449,7 @@ namespace Composite.Tools.PackageCreator
                 #region FileXslTransformationPackageFragmentInstaller
 
                 if (_xslFiles.Count > 0)
-                    xPackageFragmentInstallers.Add(new XElement(Mi + "Add",
+                    xPackageFragmentInstallers.Add(new XElement(NsMi + "Add",
                         new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite"),
                         new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite"),
                         new XElement("XslFiles", _xslFiles)));
@@ -464,7 +462,7 @@ namespace Composite.Tools.PackageCreator
 
                 if (_datas.Count > 0)
                 {
-                    var dataPackageFragmentInstaller = new XElement(Mi + "Add",
+                    var dataPackageFragmentInstaller = new XElement(NsMi + "Add",
                         new XAttribute("installerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentInstaller, Composite"),
                         new XAttribute("uninstallerType", "Composite.Core.PackageSystem.PackageFragmentInstallers.DataPackageFragmentUninstaller, Composite"),
                         new XElement("Types",
@@ -567,7 +565,7 @@ namespace Composite.Tools.PackageCreator
                 new XElement("Directory",
                     new XAttribute("sourceDirectory", $"~\\{filename}"),
                     new XAttribute("targetDirectory", $"~\\{filename}"),
-                    new XAttribute("allowOverwrite", _allowOverwriteDataOnInstall),
+                    new XAttribute(PackageCreatorFacade.AllowOverwrite, _allowOverwriteDataOnInstall),
                     new XAttribute("deleteTargetDirectory", "false")
                 )
             );
@@ -841,7 +839,7 @@ namespace Composite.Tools.PackageCreator
                         _installDataTypeNamesList.Contains(dataTypeName)
                             ? new XAttribute("isDynamicAdded", "true")
                             : null,
-                        _allowOverwriteDataOnInstall ? new XAttribute("allowOverwrite", "true") : null,
+                        _allowOverwriteDataOnInstall ? new XAttribute(PackageCreatorFacade.AllowOverwrite, "true") : null,
                         new XAttribute("type", dataTypeName),
                         new XElement("Data",
                             new XAttribute("dataScopeIdentifier", dataScopeIdentifier),
@@ -910,8 +908,8 @@ namespace Composite.Tools.PackageCreator
 
             _files.Add(
                 new XElement("File",
-                    new XAttribute("sourceFilename", "~\\" + newFilename),
-                    new XAttribute("targetFilename", "~\\" + newFilename),
+                    new XAttribute("sourceFilename", $"~\\{newFilename}"),
+                    new XAttribute("targetFilename", $"~\\{newFilename}"),
                     new XAttribute("allowOverwrite", _allowOverwriteDataOnInstall)
                 ));
         }

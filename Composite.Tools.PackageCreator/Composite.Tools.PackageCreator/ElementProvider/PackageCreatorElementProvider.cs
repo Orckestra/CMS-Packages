@@ -323,8 +323,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                     : configuration.XPathSelectElement(xpath) as XContainer;
                 var element = container as XElement;
                 var counter = new Dictionary<string, int>();
-
-
+                
                 if (container != null)
                 {
                     var xmlElements = new List<Element>();
@@ -336,7 +335,9 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             position = $"[{++counter[name]}]";
                         else
                             counter.Add(name, 1);
-                        if (item.Attribute("name") != null) position = $"[@name='{item.Attribute("name").Value}']";
+
+                        if (item.Attribute("name") != null) 
+                            position = $"[@name='{item.Attribute("name").Value}']";
 
                         var description = item.IndexAttributeValue();
 

@@ -29,19 +29,13 @@ namespace Composite.Tools.PackageCreator.Workflow
             var request = HttpContext.Current.Request;
             if (!BindingExist("PackageUrl"))
             {
-                var packageUrl =
-                    string.Format(
-                        "{0}/Composite/InstalledPackages/services/Composite.Tools.PackageCreator/GetPackage.ashx?package={1}",
-                        request.ApplicationPath == "/" ? "" : request.ApplicationPath, EntityToken.Source);
+                var packageUrl = $"{(request.ApplicationPath == "/" ? "" : request.ApplicationPath)}/Composite/InstalledPackages/services/Composite.Tools.PackageCreator/GetPackage.ashx?package={EntityToken.Source}";
                 Bindings.Add("PackageUrl", packageUrl);
             }
 
             if (!BindingExist("ConfigUrl"))
             {
-                var packageUrl =
-                    string.Format(
-                        "{0}/Composite/InstalledPackages/services/Composite.Tools.PackageCreator/GetPackage.ashx?config={1}",
-                        request.ApplicationPath == "/" ? "" : request.ApplicationPath, EntityToken.Source);
+                var packageUrl = $"{(request.ApplicationPath == "/" ? "" : request.ApplicationPath)}/Composite/InstalledPackages/services/Composite.Tools.PackageCreator/GetPackage.ashx?config={EntityToken.Source}";
                 Bindings.Add("ConfigUrl", packageUrl);
             }
         }
@@ -69,8 +63,7 @@ namespace Composite.Tools.PackageCreator.Workflow
             }
             catch
             {
-                ShowFieldMessage("MinCompositeVersionSupported",
-                    PackageCreatorFacade.GetLocalization("Error.WrongVersion"));
+                ShowFieldMessage("MinCompositeVersionSupported", PackageCreatorFacade.GetLocalization("Error.WrongVersion"));
                 e.Result = false;
             }
 
@@ -86,8 +79,7 @@ namespace Composite.Tools.PackageCreator.Workflow
                 e.Result = false;
             }
 
-            if (EntityToken.Source != package.Name &&
-                PackageCreatorFacade.GetPackageNames().Contains(package.Name.Trim()))
+            if (EntityToken.Source != package.Name && PackageCreatorFacade.GetPackageNames().Contains(package.Name.Trim()))
             {
                 ShowFieldMessage("Package.Name", PackageCreatorFacade.GetLocalization("Error.PackageAlreadyExist"));
                 e.Result = false;

@@ -164,7 +164,7 @@ namespace Composite.Tools.PackageCreator.Types
     {
         public IEnumerable<IPackItem> GetItems(Type type, XElement config)
         {
-            var ns = PackageCreator.Pc;
+            var ns = PackageCreator.NsPc;
             XName itemName = "Add";
             foreach (var element in config.Elements(ns + typeof(PCDataItem).GetCategoryName()).Elements("Type"))
             {

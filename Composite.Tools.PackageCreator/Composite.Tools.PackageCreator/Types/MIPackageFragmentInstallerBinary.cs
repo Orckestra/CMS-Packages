@@ -20,7 +20,7 @@ namespace Composite.Tools.PackageCreator.Types
 
         public override string ActionToolTip => PackageCreatorFacade.GetLocalization($"{CategoryName}.Add.ToolTip");
 
-        protected override XNamespace ns => PackageCreator.Mi;
+        protected override XNamespace ns => PackageCreator.NsMi;
 
         protected override XName itemName => ns + "Add";
 
@@ -37,7 +37,7 @@ namespace Composite.Tools.PackageCreator.Types
 
         public new static IEnumerable<IPackItem> GetItems(Type type, XElement config)
         {
-            return GetItems(type, config, PackageCreator.Mi, PackageCreator.Mi + "Add");
+            return GetItems(type, config, PackageCreator.NsMi, PackageCreator.NsMi + "Add");
         }
 
         public static IEnumerable<IPackItem> Create(EntityToken entityToken)

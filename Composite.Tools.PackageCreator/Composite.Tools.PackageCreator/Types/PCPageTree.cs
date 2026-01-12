@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -96,7 +96,7 @@ namespace Composite.Tools.PackageCreator.Types
                 result = base.GetLabel();
             }
 
-            return result + (IsRoot ? "(new)" : string.Empty);
+            return $"{result}{(IsRoot ? "(new)" : null)}";
         }
 
         public static IEnumerable<IPackItem> Create(EntityToken entityToken)
@@ -178,8 +178,8 @@ namespace Composite.Tools.PackageCreator.Types
     {
         public IEnumerable<IPackItem> GetItems(Type type, XElement config)
         {
-            var ns = PackageCreator.Pc;
-            var itemName = "Add";
+            var nsPc = PackageCreator.NsPc;
+            var nsMi = PackageCreator.NsMi;
             foreach (var category in typeof(PCPageTree).GetCategoryAllNames())
             foreach (var element in config.Elements(ns + category).Elements(itemName))
             {

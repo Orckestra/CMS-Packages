@@ -35,7 +35,7 @@ namespace Composite.Tools.PackageCreator.Types
             _entityToken = entityToken;
         }
 
-        protected virtual XNamespace ns => PackageCreator.Pc;
+        protected virtual XNamespace ns => PackageCreator.NsPc;
 
         protected virtual XName itemName => "Add";
 
@@ -80,7 +80,7 @@ namespace Composite.Tools.PackageCreator.Types
 
         public static IEnumerable<IPackItem> GetItems(Type type, XElement config)
         {
-            return GetItems(type, config, PackageCreator.Pc, "Add");
+            return GetItems(type, config, PackageCreator.NsPc, "Add");
         }
 
         public static IEnumerable<IPackItem> GetItems(Type type, XElement config, XNamespace ns, XName itemName)
