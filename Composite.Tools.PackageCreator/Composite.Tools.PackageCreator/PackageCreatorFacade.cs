@@ -265,24 +265,27 @@ namespace Composite.Tools.PackageCreator
             }
         }
 
-        internal static void ToggleAllowOverwrite(string packageName)
+        internal static void ToggleIncludePageData(string packageName)
         {
             lock (LockEditPackage)
             {
                 var packageXml = GetPackageXml(packageName);
-                var element = packageXml.Root.Elements(PackageCreator.Mi + "PackageInformation").FirstOrDefault();
-                if (element == null) return;
-                element.SetAttributeValue("allowOverwrite", !element.AllowOverwriteAttributeValue());
+                var element = packageXml.Root.Elements(PackageCreator.NsMi + "PackageInformation").FirstOrDefault();
+
+                if (element == null)
+                    return;
+
+                element.SetAttributeValue(IncludePageData, !element.IncludePageDataAttributeValue());
                 packageXml.SaveTabbed(GetPackageConfigPath(packageName));
             }
         }
 
-        internal static bool IsAllowOverwrite(string packageName)
+        internal static bool DoesIncludePageData(string packageName)
         {
             var packageXml = GetPackageXml(packageName);
             var element = packageXml.Root.Elements(PackageCreator.NsMi + "PackageInformation").FirstOrDefault();
-            if (element == null) return false;
-            return element.AllowOverwriteAttributeValue();
+
+            return element != null && element.IncludePageDataAttributeValue();
         }
 
         internal static IEnumerable<PackCategoryAttribute> GetCategories(string packageName)
@@ -510,7 +513,10 @@ namespace Composite.Tools.PackageCreator
             return value != null && bool.Parse(value);
         }
 
-            return false;
+        public static bool IncludePageDataAttributeValue(this XElement element)
+        {
+            var value = element.AttributeValue(PackageCreatorFacade.IncludePageData);
+            return value != null && bool.Parse(value);
         }
 
         public static string IndexAttributeName(this XElement element)

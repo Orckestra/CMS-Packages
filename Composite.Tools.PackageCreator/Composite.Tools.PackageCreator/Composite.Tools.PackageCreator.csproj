@@ -131,7 +131,7 @@
     <Compile Include="Actions\PackageCreatorActionToken.cs" />
     <Compile Include="Actions\PackageCreatorElementActionProvider.cs" />
     <Compile Include="Actions\PackageCreatorElementProviderActionExecutor.cs" />
-    <Compile Include="ElementProvider\Actions\OverwriteOnInstallPackageCreatorActionToken.cs" />
+    <Compile Include="ElementProvider\Actions\IncludePageDataPackageCreatorActionToken.cs" />
     <Compile Include="ElementProvider\Actions\DownloadPackageActionToken.cs" />
     <Compile Include="ElementProvider\Actions\SetActivePackageActionToken.cs" />
     <Compile Include="ElementProvider\EntityTokens\Interfaces\PackageCreatorEntityToken.cs" />

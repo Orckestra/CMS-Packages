@@ -5,8 +5,8 @@ using Composite.Tools.PackageCreator.ElementProvider.EntityTokens;
 
 namespace Composite.Tools.PackageCreator.ElementProvider.Actions
 {
-    [ActionExecutor(typeof(OverwriteOnInstallPackageCreatorElementProviderActionExecutor))]
-    public sealed class OverwriteOnInstallPackageCreatorActionToken : ActionToken
+    [ActionExecutor(typeof(IncludePageDataPackageCreatorElementProviderActionExecutor))]
+    public sealed class IncludePageDataPackageCreatorActionToken : ActionToken
     {
         private static readonly IEnumerable<PermissionType> _permissionTypes = new[] { PermissionType.Administrate };
 
@@ -14,21 +14,21 @@ namespace Composite.Tools.PackageCreator.ElementProvider.Actions
 
         public override string Serialize()
         {
-            return "OverwriteOnInstallPackageCreator";
+            return "IncludePageDataPackageCreator";
         }
 
         public static ActionToken Deserialize(string serializedData)
         {
-            return new OverwriteOnInstallPackageCreatorActionToken();
+            return new IncludePageDataPackageCreatorActionToken();
         }
     }
 
-    public class OverwriteOnInstallPackageCreatorElementProviderActionExecutor : IActionExecutor
+    public class IncludePageDataPackageCreatorElementProviderActionExecutor : IActionExecutor
     {
         public FlowToken Execute(EntityToken entityToken, ActionToken actionToken,
             FlowControllerServicesContainer flowControllerServicesContainer)
         {
-            PackageCreatorFacade.ToggleAllowOverwrite(entityToken.Source);
+            PackageCreatorFacade.ToggleIncludePageData(entityToken.Source);
 
             var treeRefresher = new SpecificTreeRefresher(flowControllerServicesContainer);
             treeRefresher.PostRefreshMesseges(new PackageCreatorElementProviderEntityToken());
