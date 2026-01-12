@@ -178,17 +178,16 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                             }
                         });
 
-                    var isAllowOverwrite = PackageCreatorFacade.IsAllowOverwrite(package);
+                    var doesIncludePageData = PackageCreatorFacade.DoesIncludePageData(package);
                     element.AddAction(
-                        new ElementAction(new ActionHandle(new OverwriteOnInstallPackageCreatorActionToken()))
+                        new ElementAction(new ActionHandle(new IncludePageDataPackageCreatorActionToken()))
                         {
                             VisualData = new ActionVisualizedData
                             {
-                                Label = PackageCreatorFacade.GetLocalization("OverwriteOnInstall.Label"),
-                                ToolTip = PackageCreatorFacade.GetLocalization("OverwriteOnInstall.Label"),
-                                Icon = new ResourceHandle("Composite.Icons", "page-edit-page"),
-                                ActionCheckedStatus =
-                                    isAllowOverwrite ? ActionCheckedStatus.Checked : ActionCheckedStatus.Unchecked,
+                                Label = PackageCreatorFacade.GetLocalization("IncludePageData.Label"),
+                                ToolTip = PackageCreatorFacade.GetLocalization("IncludePageData.Label"),
+                                Icon = new ResourceHandle("Composite.Icons", "inbox"),
+                                ActionCheckedStatus = doesIncludePageData ? ActionCheckedStatus.Checked : ActionCheckedStatus.Unchecked,
                                 ActionLocation = new ActionLocation
                                 {
                                     ActionType = ActionType.Other,
@@ -280,9 +279,7 @@ namespace Composite.Tools.PackageCreator.ElementProvider
                 var items = PackageCreatorFacade.GetItems(entityToken.Type, entityToken.Source);
                 foreach (var item in items.OrderBy(d => d.Id))
                 {
-                    var element = new Element(_context.CreateElementHandle(
-                        new PackageCreatorItemElementProviderEntityToken(item.Id, entityToken.Source,
-                            entityToken.Type)))
+                    var element = new Element(_context.CreateElementHandle(new PackageCreatorItemElementProviderEntityToken(item.Id, entityToken.Source, entityToken.Type)))
                     {
                         VisualData = new ElementVisualizedData
                         {
