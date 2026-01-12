@@ -63,6 +63,7 @@ namespace Composite.Tools.PackageCreator
         private readonly string _serviceDirectoryPath;
         private readonly List<XElement> _xslFiles = new List<XElement>();
         private bool _allowOverwriteDataOnInstall;
+        private bool _includePageData;
         private string _packageDirectoryPath;
         private string _zipDirectoryPath;
         public HashSet<Guid> AlreadyAddedIds = new HashSet<Guid>();
@@ -298,7 +299,7 @@ namespace Composite.Tools.PackageCreator
                         dataTypes.Add(new XElement("Type",
                             new XAttribute("providerName", "GeneratedDataTypesElementProvider"),
                             new XAttribute("dataTypeDescriptor", dataTypeDescriptor.ToXml().ToString()),
-                            new XAttribute("allowOverwrite", _allowOverwriteDataOnInstall))
+                            new XAttribute(PackageCreatorFacade.AllowOverwrite, _allowOverwriteDataOnInstall))
                         );
 
                         AddFileIfExists($"App_Data\\Composite\\DynamicTypeForms\\{item.IndexAttributeValue().Replace('.', '\\')}.xml");
@@ -775,9 +776,6 @@ namespace Composite.Tools.PackageCreator
                 .Except(PageFolderFacade.GetAllFolderTypes())
                 .Except(PageMetaDataFacade.GetAllMetaDataTypes());
 
-            var pageDataTypeInterfaces = PageFolderFacade.GetAllFolderTypes();
-            var pageMetaTypeInterfaces = PageMetaDataFacade.GetAllMetaDataTypes();
-
             var dataTypeDescriptor = DynamicTypeManager.GetDataTypeDescriptor(type);
 
             var resolvedType = dataTypeDescriptor.GetInterfaceType();
@@ -785,20 +783,6 @@ namespace Composite.Tools.PackageCreator
             // TODO: make by association
             if (globalDataTypeInterfaces.Contains(resolvedType))
             {
-                AddData(type);
-            }
-            else if (pageDataTypeInterfaces.Contains(resolvedType))
-            {
-                AddData<IPageFolderDefinition>(d => d.FolderTypeId == dataTypeDescriptor.DataTypeId);
-                AddData(type);
-            }
-            else if (pageMetaTypeInterfaces.Contains(resolvedType))
-            {
-                foreach (var j in DataFacade.GetData<IPageMetaDataDefinition>(d =>
-                             d.MetaDataTypeId == dataTypeDescriptor.DataTypeId))
-                    //Add only one MetaTypeTab
-                    AddData<ICompositionContainer>(d => d.Id == j.MetaDataContainerId);
-                AddData<IPageMetaDataDefinition>(d => d.MetaDataTypeId == dataTypeDescriptor.DataTypeId);
                 AddData(type);
             }
         }
@@ -910,7 +894,7 @@ namespace Composite.Tools.PackageCreator
                 new XElement("File",
                     new XAttribute("sourceFilename", $"~\\{newFilename}"),
                     new XAttribute("targetFilename", $"~\\{newFilename}"),
-                    new XAttribute("allowOverwrite", _allowOverwriteDataOnInstall)
+                    new XAttribute(PackageCreatorFacade.AllowOverwrite, _allowOverwriteDataOnInstall)
                 ));
         }
 

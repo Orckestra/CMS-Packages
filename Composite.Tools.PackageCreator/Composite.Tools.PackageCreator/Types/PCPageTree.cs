@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -14,14 +14,14 @@ namespace Composite.Tools.PackageCreator.Types
     [ItemManager(typeof(PCPageTreeManager))]
     internal class PCPageTree : BasePackItem, IPackItemActionToken, IPack, IPackToggle
     {
-        public PCPageTree(string name, bool isRoot, bool includeData) : base(name)
+        public PCPageTree(string name, bool isRoot, bool includePageData) : base(name)
         {
             IsRoot = isRoot;
-            IncludeData = includeData;
+            IncludePageData = includePageData;
         }
 
         public bool IsRoot { get; }
-        public bool IncludeData { get; }
+        public bool IncludePageData { get; }
 
         public override string ActionLabel =>
             IsRoot
@@ -118,7 +118,7 @@ namespace Composite.Tools.PackageCreator.Types
                 new XElement(itemName,
                     new XAttribute(category.IndexAttributeName(), Name),
                     new XAttribute("root", IsRoot.ToString().ToLower()),
-                    new XAttribute("data", IncludeData.ToString().ToLower())
+                    new XAttribute("data", IncludePageData.ToString().ToLower())
                 )
             );
         }
@@ -144,11 +144,22 @@ namespace Composite.Tools.PackageCreator.Types
                 PackPageTree(pc, childPageId);
             }
 
+            var versionId = page.VersionId;
+
             foreach (var dataScopeIdentifier in DataFacade.GetSupportedDataScopes(typeof(IPage)))
                 using (new DataScope(dataScopeIdentifier))
                 {
-                    pc.AddData<IPage>(dataScopeIdentifier, d => d.Id == pageId);
-                    pc.AddData<IPagePlaceholderContent>(dataScopeIdentifier, d => d.PageId == pageId);
+                    pc.AddData<IPage>(dataScopeIdentifier, d => d.Id == pageId && d.VersionId == versionId);
+                    pc.AddData<IPagePlaceholderContent>(dataScopeIdentifier, d => d.PageId == pageId && d.VersionId == versionId);
+
+                    if (!IncludePageData) 
+                        continue;
+
+                    foreach (var pageMetaType in PageMetaDataFacade.GetAllMetaDataTypes())
+                    {
+                        pc.AddData(pageMetaType, DataScopeIdentifier.Public, d => ((IPageMetaData)d).PageId == pageId && ((IPageMetaData)d).VersionId == versionId);
+                        pc.AddData(pageMetaType, DataScopeIdentifier.Administrated, d =>((IPageMetaData)d).PageId == pageId && ((IPageMetaData)d).VersionId == versionId);
+                    }
                 }
 
             if (isRoot)
@@ -163,14 +174,15 @@ namespace Composite.Tools.PackageCreator.Types
             else
                 pc.AddData<IPageStructure>(d => d.Id == pageId);
 
-            if (IncludeData)
-            {
-                pc.AddData<IDataItemTreeAttachmentPoint>(d => d.KeyValue == ValueTypeConverter.Convert<string>(pageId));
-                pc.AddData<IPageFolderDefinition>(d => d.PageId == pageId);
+            if (!IncludePageData) 
+                return;
 
-                foreach (var folderType in page.GetDefinedFolderTypes())
-                    pc.AddData(folderType, d => ((IPageRelatedData)d).PageId == pageId);
-            }
+            pc.AddData<IPageMetaDataDefinition>(d => d.DefiningItemId == pageId);
+            pc.AddData<IPageFolderDefinition>(d => d.PageId == pageId);
+            pc.AddData<IDataItemTreeAttachmentPoint>(d => d.KeyValue == ValueTypeConverter.Convert<string>(pageId));
+
+            foreach (var folderType in page.GetDefinedFolderTypes())
+                pc.AddData(folderType, d => ((IPageRelatedData)d).PageId == pageId);
         }
     }
 
@@ -180,18 +192,18 @@ namespace Composite.Tools.PackageCreator.Types
         {
             var nsPc = PackageCreator.NsPc;
             var nsMi = PackageCreator.NsMi;
-            foreach (var category in typeof(PCPageTree).GetCategoryAllNames())
-            foreach (var element in config.Elements(ns + category).Elements(itemName))
-            {
-                var item = new PCPageTree(
-                    element.IndexAttributeValue(),
-                    element.AttributeValue("root") != "false",
-                    element.AttributeValue("data") != "false"
-                );
-                yield return item;
-            }
+            var includePageData = config.Element(nsMi + "PackageInformation")?.AttributeValue(PackageCreatorFacade.IncludePageData) == "true";
 
-            ;
+            foreach (var category in typeof(PCPageTree).GetCategoryAllNames())
+                foreach (var element in config.Elements(nsPc + category).Elements("Add"))
+                {
+                    var item = new PCPageTree(
+                        element.IndexAttributeValue(),
+                        element.AttributeValue("root") != "false",
+                        includePageData
+                    );
+                    yield return item;
+                }
         }
 
         public IPackItem GetItem(Type type, string id)
