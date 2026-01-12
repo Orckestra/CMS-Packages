@@ -27,6 +27,7 @@ namespace Composite.Tools.PackageCreator
         public string SystemLockingType { get; set; }
         public bool FlushOnCompletion { get; set; }
         public bool OverwriteDataOnInstall { get; set; }
+        public bool IncludePageData { get; set; }
         public bool ReloadConsoleOnCompletion { get; set; }
         public Version MaxCompositeVersionSupported { get; set; }
         public Version MinCompositeVersionSupported { get; set; }

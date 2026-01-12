@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,6 +22,7 @@ namespace Composite.Tools.PackageCreator
     {
         private const string PackageCreatorPath = "App_Data/PackageCreator";
         public const string AllowOverwrite = "allowOverwrite";
+        public const string IncludePageData = "includePageData";
 
         //private static readonly string _providerName = "Composite.Tools.PackageCreator";
         private const string ActiveFilePath = "ActivePackage";
