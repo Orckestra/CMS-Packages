@@ -65,7 +65,7 @@ namespace Composite.Tools.PackageCreator.Workflow
 			// wizardFormActivity2
 			// 
 			this.wizardFormActivity2.ContainerLabel = null;
-			this.wizardFormActivity2.FormDefinitionFileName = "\\InstalledPackages\\Composite.Tools.PackageCreator\\UploadConfigSuccessfull.xml";
+			this.wizardFormActivity2.FormDefinitionFileName = "\\InstalledPackages\\Composite.Tools.PackageCreator\\UploadConfigSuccessful.xml";
 			this.wizardFormActivity2.Name = "wizardFormActivity2";
 			// 
 			// ifElseBranchActivity2

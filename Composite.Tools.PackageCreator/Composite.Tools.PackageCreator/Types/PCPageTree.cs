@@ -157,8 +157,7 @@ namespace Composite.Tools.PackageCreator.Types
 
                     foreach (var pageMetaType in PageMetaDataFacade.GetAllMetaDataTypes())
                     {
-                        pc.AddData(pageMetaType, DataScopeIdentifier.Public, d => ((IPageMetaData)d).PageId == pageId && ((IPageMetaData)d).VersionId == versionId);
-                        pc.AddData(pageMetaType, DataScopeIdentifier.Administrated, d =>((IPageMetaData)d).PageId == pageId && ((IPageMetaData)d).VersionId == versionId);
+                        pc.AddData(pageMetaType, dataScopeIdentifier, d => ((IPageMetaData)d).PageId == pageId && ((IPageMetaData)d).VersionId == versionId);
                     }
                 }
 

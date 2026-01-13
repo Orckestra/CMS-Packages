@@ -6,7 +6,6 @@
 	<string key="Composite.Tools.PackageCreator.Files.Label" value="Fichiers" />
 	<string key="Composite.Tools.PackageCreator.FilesInDirectories.Label" value="Fichiers dans les r&#233;pertoires" />
 	<string key="Composite.Tools.PackageCreator.PageTemplates.Label" value="Mise en page" />
-	<string key="Composite.Tools.PackageCreator.Content.Label" value="Contenu" />
 	<string key="Composite.Tools.PackageCreator.FileXslTransformation.Label" value="Fichier de transformation XSL" />
 	<string key="Composite.Tools.PackageCreator.PageTypes.Label" value="Types de page" />
 	<string key="Composite.Tools.PackageCreator.Localizations.Label" value="Localisations" />
@@ -29,15 +28,6 @@
 	<string key="Composite.Tools.PackageCreator.DynamicDataTypesData.Add.Label" value="Ajouter des donn&#233;es au cr&#233;ateur de packages" />
 	<string key="Composite.Tools.PackageCreator.DynamicDataTypesData.Add.ToolTip" value="Ajouter des &#233;l&#233;ments de donn&#233;es au cr&#233;ateur de packages" />
 
-	<string key="Composite.Tools.PackageCreator.Content.Pages.Add.Label" value="Ajouter toutes les pages au cr&#233;ateur de packages" />
-	<string key="Composite.Tools.PackageCreator.Content.Pages.Add.ToolTip" value="Ajouter toutes les pages au cr&#233;ateur de packages" />
-	<string key="Composite.Tools.PackageCreator.Content.Medias.Add.Label" value="Ajouter tous les m&#233;dias au cr&#233;ateur de packages" />
-	<string key="Composite.Tools.PackageCreator.Content.Medias.Add.ToolTip" value="Ajouter tous les m&#233;dias au cr&#233;ateur de packages" />
-	<string key="Composite.Tools.PackageCreator.Content.DatatypesData.Add.Label" value="Ajouter des donn&#233;es de m&#233;tatypes et donn&#233;es de dossiers au cr&#233;ateur de packages" />
-	<string key="Composite.Tools.PackageCreator.Content.DatatypesData.Add.ToolTip" value="Ajouter des donn&#233;es de m&#233;tatypes et donn&#233;es de dossiers au cr&#233;ateur de packages" />
-	<string key="Composite.Tools.PackageCreator.Content.Applications.Add.Label" value="Ajouter des associations de pages au cr&#233;ateur de packages" />
-	<string key="Composite.Tools.PackageCreator.Content.Applications.Add.ToolTip" value="Ajouter des associations de pages au cr&#233;ateur de packages" />
-
 	<string key="Composite.Tools.PackageCreator.CreateLocalizationPackage.Label" value="Cr&#233;er {0} package(s)" />
 	<string key="Composite.Tools.PackageCreator.CreateLocalizationPackage.ToolTip" value="Cr&#233;er {0} package de traduction de la console C1" />
 
@@ -53,9 +43,6 @@
 	<string key="Composite.Tools.PackageCreator.DeleteItemPackageCreator.Label" value="Effacer" />
 	<string key="Composite.Tools.PackageCreator.DeleteItemPackageCreator.ToolTip" value="Effacer" />
 
-	<string key="Composite.Tools.PackageCreator.IncludePageData.Label" value="Include Page Data" />
-	<string key="Composite.Tools.PackageCreator.IncludePageData.ToolTip" value="Include Page Data" />
-
 	<string key="Composite.Tools.PackageCreator.PackageCreatorElementProviderEntityToken.Label" value="Packages" />
 	<string key="Composite.Tools.PackageCreator.PackageCreatorElementProviderEntityToken.ToolTip" value="Packages" />
 
@@ -63,12 +50,19 @@
 	<string key="Composite.Tools.PackageCreator.BasicTab" value="De base" />
 	<string key="Composite.Tools.PackageCreator.AdvancedTab" value="Avanc&#233;" />
 	<string key="Composite.Tools.PackageCreator.PackageInfo" value="Informations" />
+	<string key="Composite.Tools.PackageCreator.AdditionalPageData" value="Donn&#233;es de page suppl&#233;mentaires" />
+	<string key="Composite.Tools.PackageCreator.InstallationInfo" value="Informations d'installation" />
+	<string key="Composite.Tools.PackageCreator.PackageDetails" value="Détails du package" />
+	<string key="Composite.Tools.PackageCreator.InstallationDetails" value="Détails de l'installation" />
 	<string key="Composite.Tools.PackageCreator.Required" value="Requis" />
 
 	<string key="Composite.Tools.PackageCreator.DownloadPackageButton.Label" value="T&#233;l&#233;charger un package" />
 	<string key="Composite.Tools.PackageCreator.DownloadPackageButton.ToolTip" value="T&#233;l&#233;charger un package" />
 	<string key="Composite.Tools.PackageCreator.DownloadConfigButton.Label" value="T&#233;l&#233;charger un configuration" />
 	<string key="Composite.Tools.PackageCreator.DownloadConfigButton.ToolTip" value="T&#233;l&#233;charger un configuration" />
+
+	<string key="Composite.Tools.PackageCreator.IncludePageData.Label" value="Include Page Data" />
+	<string key="Composite.Tools.PackageCreator.IncludePageData.ToolTip" value="Include Page Data" />
 
 	<string key="Package.Name.Label" value="Nom" />
 	<string key="Package.GroupName.Label" value="Nom du groupe" />
@@ -101,8 +95,8 @@
 	<string key="UploadConfig.LayoutLabel" value="T&#233;l&#233;verser le package" />
 	<string key="UploadConfig.ShowError.InfoTableCaption" value="Le t&#233;l&#233;versement a &#233;chou&#233;" />
 	<string key="UploadConfig.ShowError.LayoutLabel" value="Le t&#233;l&#233;versement a &#233;chou&#233;" />
-	<string key="UploadConfigSuccessfull.HeadingDescription" value="Le t&#233;l&#233;versement a &#233;t&#233; fait avec succ&#232;s" />
-	<string key="UploadConfigSuccessfull.HeadingTitle" value="Le t&#233;l&#233;versement a &#233;t&#233; fait avec succ&#232;s" />
+	<string key="UploadConfigSuccessful.HeadingDescription" value="Le t&#233;l&#233;versement a &#233;t&#233; fait avec succ&#232;s" />
+	<string key="UploadConfigSuccessful.HeadingTitle" value="Le t&#233;l&#233;versement a &#233;t&#233; fait avec succ&#232;s" />
 
 	<string key="Composite.Tools.PackageCreator.Composite.config.Label" value="Composite.config" />
 	<string key="Composite.Tools.PackageCreator.Web.config.Label" value="Web.config" />
