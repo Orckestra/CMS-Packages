@@ -1,13 +1,9 @@
-﻿@using System.Text
-@using Composite.Search
+@using Composite.C1Console.Security
 @using Orckestra.Search.WebsiteSearch
 
 @inherits RazorFunction
 @functions {
-    public override string FunctionDescription
-    {
-        get { return "${Orckestra.Search.WebsiteSearch,Component.SearchResults.Destription}"; }
-    }
+    public override string FunctionDescription => "${Orckestra.Search.WebsiteSearch,Component.SearchResults.Destription}";
 
     public static WidgetFunctionProvider SearchableDataTypeSelector()
     {
@@ -26,43 +22,43 @@
         return StandardWidgetFunctions.DropDownList(method.DeclaringType, method.Name, "Item1", "Item2", true, false);
     }
 
-    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.ShowSearchForm.Label}", 
-		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.ShowSearchForm.Help}", 
-		DefaultValue = true)]
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.ShowSearchForm.Label}",
+        Help = "${Orckestra.Search.WebsiteSearch,SearchResults.ShowSearchForm.Help}",
+        DefaultValue = true)]
     public bool ShowSearchForm { get; set; }
 
-    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchButtonLabel.Label}", 
-		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchButtonLabel.Help}", 
-		DefaultValue = "")]
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchButtonLabel.Label}",
+        Help = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchButtonLabel.Help}",
+        DefaultValue = "")]
     public string SearchButtonLabel { get; set; }
 
-    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchFieldTeaserText.Label}", 
-		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchFieldTeaserText.Help}",
-		DefaultValue = "Search")]
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchFieldTeaserText.Label}",
+        Help = "${Orckestra.Search.WebsiteSearch,SearchResults.SearchFieldTeaserText.Help}",
+        DefaultValue = "Search")]
     public string SearchFieldTeaserText { get; set; }
 
     [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.PageSize.Label}",
-		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.PageSize.Help}", DefaultValue = 10)]
+        Help = "${Orckestra.Search.WebsiteSearch,SearchResults.PageSize.Help}", DefaultValue = 10)]
     public int PageSize { get; set; }
 
     [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.CurrentSite.Label}",
-		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.CurrentSite.Help}", DefaultValue = true)]
+        Help = "${Orckestra.Search.WebsiteSearch,SearchResults.CurrentSite.Help}", DefaultValue = true)]
     public bool CurrentSite { get; set; }
 
     [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.ShowHighlights.Label}",
-		Help = "${Orckestra.Search.WebsiteSearch,SearchResults.ShowHighlights.Help}",
-		DefaultValue = false)]
+        Help = "${Orckestra.Search.WebsiteSearch,SearchResults.ShowHighlights.Help}",
+        DefaultValue = false)]
     public bool ShowHighlights { get; set; }
 
-    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.DataTypes.Label}", 
-	    Help = "${Orckestra.Search.WebsiteSearch,SearchResults.DataTypes.Help}",
-		DefaultValue = null,
+    [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.DataTypes.Label}",
+        Help = "${Orckestra.Search.WebsiteSearch,SearchResults.DataTypes.Help}",
+        DefaultValue = null,
         WidgetFactoryMethod = "SearchableDataTypeSelector")]
     public IEnumerable<string> DataTypes { get; set; }
 
     [FunctionParameter(Label = "${Orckestra.Search.WebsiteSearch,SearchResults.FacetFields.Label}",
         Help = "${Orckestra.Search.WebsiteSearch,SearchResults.FacetFields.Help}",
-	    DefaultValue = null,
+        DefaultValue = null,
         WidgetFactoryMethod = "FacetSelector")]
     public IEnumerable<string> FacetFields { get; set; }
 
@@ -85,19 +81,9 @@
     WebsiteSearchResult _searchResult;
 
 
-    private int PageNumber
-    {
-        get
-        {
-            int page;
-            return int.TryParse(Request["p"], out page) && page >= 1 ? page : 1;
-        }
-    }
+    private int PageNumber => int.TryParse(Request["p"], out var page) && page >= 1 ? page : 1;
 
-    protected int TotalPages
-    {
-        get { return (int)Math.Ceiling((decimal)_searchResult.ResultsFound / PageSize); }
-    }
+    protected int TotalPages => (int)Math.Ceiling((decimal)_searchResult.ResultsFound / PageSize);
 
     private string[] GetFacetSelection(string fieldName)
     {
@@ -108,12 +94,12 @@
             .ToArray();
     }
 
+    private bool _showExplanation;
 }
 
 @{
 
     var searchQuery = Request.QueryString["q"] ?? string.Empty;
-
     bool showFacets = false;
 
     if (!string.IsNullOrWhiteSpace(searchQuery) && searchQuery.Length > 1)
@@ -123,11 +109,9 @@
         string[] keywords = searchQuery.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
         var knowTypes = DataFacade.GetAllInterfaces().ToDictionary(t => t.FullName);
+        _showExplanation = UserValidationFacade.IsLoggedIn() && Request.QueryString["showExplanation"] == "true";
 
-        Type[] dataTypes = DataTypes != null
-            ? DataTypes.Select(name => knowTypes[name]).ToArray()
-            : null;
-
+        Type[] dataTypes = DataTypes?.Select(name => knowTypes[name]).ToArray();
 
         var facetsToQuery = FacetFields ?? Array.Empty<string>();
 
@@ -145,7 +129,8 @@
             CurrentSiteOnly = CurrentSite,
             PageNumber = PageNumber - 1,
             Facets = facets.ToArray(),
-            PageSize = PageSize
+            PageSize = PageSize,
+            ShowExplanation = _showExplanation
         });
 
         showFacets = _searchResult.Facets.Any(f => f.Hits.Any());
@@ -158,14 +143,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
 <head>
-	@if (ShowSearchForm && showFacets)
-	{
-		<script type="text/javascript">
-			function SubmitContentSearchForm() {
-				document.getElementById('SearchForm').submit();
-			}
-		</script>
-	}
+    @if (ShowSearchForm && showFacets)
+    {
+        <script type="text/javascript">
+            function SubmitContentSearchForm() {
+                document.getElementById('SearchForm').submit();
+            }
+        </script>
+    }
 </head>
 <body>
     <div class="websitesearch clearfix">
@@ -174,8 +159,6 @@
             if (showFacets)
             {
                 <form id="SearchForm" action="@CurrentPageNode.Url" class="search-form form-inline" method="get" role="search">
-
-
                     <div class="row">
                         <div class="col-md-8">
 
@@ -242,11 +225,28 @@
                     <br />
                     @Html.Raw(HttpUtility.HtmlEncode(entry.Highlight))
                 }
+                @if (_showExplanation)
+                {
+                    <table class="table">
+                        <tr>
+                            <th>Boost</th>
+                            <td>@entry.Boost</td>
+                        </tr>
+                        <tr>
+                            <th>Score</th>
+                            <td>@entry.Score</td>
+                        </tr>
+                        <tr>
+                            <th>ExplanationSummary</th>
+                            <td>@entry.ExplanationSummary</td>
+                        </tr>
+                    </table>
+                }
             </li>
         }
     </ol>
-if (TotalPages > 1)
-{
+    if (TotalPages > 1)
+    {
         <ul class="pagination">
             @for (int i = 1; i <= TotalPages; i++)
             {
@@ -260,16 +260,22 @@ if (TotalPages > 1)
                 }
             }
         </ul>
-}
+    }
 }
 
 @helper SearchForm(string searchQuery)
 {
-
     <div class="clearfix">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="@SearchFieldTeaserText" id="searchText" name="q" value="@searchQuery" />
         </div>
+
+        @if (UserValidationFacade.IsLoggedIn())
+        {
+            <div class="form-group">
+                <label title="Show score and score explanation summary below each search result item">Show score <input type="checkbox" name="showExplanation" value="true" checked="@(_showExplanation ? "checked" : null)" /></label>
+            </div>
+        }
 
         <button type="submit" class="btn btn-default">
             @if (string.IsNullOrEmpty(@SearchButtonLabel))
@@ -308,9 +314,9 @@ if (TotalPages > 1)
                             <div class="list-group-item">
                                 <div class="checkbox">
                                     <label for="@key">
-	                                    <input type="checkbox" name="@key" value="1" id="@key"
-	                                           onchange="SubmitContentSearchForm()"
-                                               @if (isChecked) { <text> checked="checked" </text>    } />
+                                        <input type="checkbox" name="@key" value="1" id="@key"
+                                               onchange="SubmitContentSearchForm()"
+                                               @if (isChecked) { <text> checked="checked" </text> } />
                                         @hit.Label
                                     </label>
                                 </div>
@@ -320,7 +326,6 @@ if (TotalPages > 1)
                     </div>
                 </div>
             </div>
-
         }
     </div>
 }

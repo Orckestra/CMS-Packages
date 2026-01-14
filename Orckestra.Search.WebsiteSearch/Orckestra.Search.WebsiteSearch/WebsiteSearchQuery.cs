@@ -43,5 +43,7 @@ namespace Orckestra.Search.WebsiteSearch
         public int PageNumber { get; set; }
 
         public EntityToken[] FilterByAncestorEntityTokens { get; set; } = null;
+
+        public bool ShowExplanation { get; set; } = false;
     }
 }
