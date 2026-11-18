@@ -20,8 +20,9 @@
       <!-- A path to the "tsconfig.json" file, which includes all typescript compilation options.
       More information here: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html -->
       <pathTypescriptConfigFile>~/tsconfig.json</pathTypescriptConfigFile>
-      <!-- To turn on or to turn off the minification of a compiled file. Set up the "outFile" parameter 
-      value in the "tsconfig.json" file to use it-->
+      <!-- A path of the single javascript file to produce. The compiled files are concatenated into it. -->
+      <pathBundleFile>~/UI.Package/JavaScript/orckestra.composer.js</pathBundleFile>
+      <!-- To turn on or to turn off the minification of a compiled file. The minified file is written next to the bundle file (pathBundleFile). -->
       <useMinification>true</useMinification>
       <!-- A filename of minified javascript-->
       <minifiedFileName>orckestra.composer.min.js</minifiedFileName>

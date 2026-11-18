@@ -4,7 +4,7 @@
 	<mi:PackageInformation 
     name="Orckestra.Web.Typescript" 
     groupName="Orckestra.Web" 
-    version="1.0.2"
+    version="2.0.0"
     author="Orckestra A/S" 
     website="https://c1.orckestra.com/" 
     readMoreUrl="https://docs.c1.orckestra.com/" 
@@ -14,7 +14,7 @@
     flushOnCompletion="true" 
     reloadConsoleOnCompletion="false">
 		<TechnicalDetails>
-      The package provides typescripts compilation into javascript using Microsoft Typescript Compiler of version 3.1.5.
+      The package provides typescripts compilation into javascript using Microsoft Typescript native Compiler of version 7.0.1.
       Any typescript changes recompiles dynamically into a javascript file.
       Typescripts changes can critically influence on a live web site. 
       Therefore it pretty recommended providing any tests, changes, or configurations both with this package and with typescripts in a test environment, not on a live web site.
@@ -60,7 +60,8 @@
       Initially, this file is used by Microsoft Typescript Compiler for compilation.
       The path to the "tsconfig.json" file is configuring in tasks in package settings (level 2).
       Default "tsconfig.json" file has a minimal set of settings, but any other compilation settings can be specified.
-      It is compulsory to set up the "outFile" value in the "tsconfig.json" file.
+      It is compulsory to set up the "rootDir" and "outDir" values in the "tsconfig.json" file.
+      The compiled files are written into "outDir", then concatenated into one file, the "pathBundleFile" of the task.
       More about the "tsconfig.json" project files, possible attributes and options at https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
     </Description>
 	</mi:PackageInformation>

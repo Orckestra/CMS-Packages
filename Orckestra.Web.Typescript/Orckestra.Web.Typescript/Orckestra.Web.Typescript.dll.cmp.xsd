@@ -21,6 +21,7 @@
                     </xs:element>
                     <xs:element name="fileMask" type="xs:string" />
                     <xs:element name="pathTypescriptConfigFile" type="xs:string" />
+                    <xs:element name="pathBundleFile" type="xs:string" />
                     <xs:element name="useMinification" type="xs:boolean" />
                     <xs:element name="minifiedFileName" type="xs:string" />
                   </xs:sequence>

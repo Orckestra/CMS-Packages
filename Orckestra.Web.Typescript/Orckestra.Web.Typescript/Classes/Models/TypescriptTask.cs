@@ -19,6 +19,9 @@ namespace Orckestra.Web.Typescript.Classes.Models
         [XmlElement("pathTypescriptConfigFile")]
         public string PathTypescriptConfigFile { get; set; }
 
+        [XmlElement("pathBundleFile")]
+        public string PathBundleFile { get; set; }
+
         [XmlElement("compilerTimeOutSeconds")]
         public int CompilerTimeOutSeconds { get; set; }
 

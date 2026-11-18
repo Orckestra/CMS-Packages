@@ -1,4 +1,5 @@
-﻿using NUglify;
+﻿using Newtonsoft.Json.Linq;
+using NUglify;
 using NUglify.JavaScript;
 using Orckestra.Web.Typescript.Interfaces;
 using System;
@@ -21,7 +22,8 @@ namespace Orckestra.Web.Typescript.Classes.Services
         private int _compilerTimeOutSeconds;
         private string _absolutePathConfigFile;
         private string _absolutePathDestFile;
-        private string _pathOutFile;
+        private string _absolutePathOutDir;
+        private string _absolutePathRootDir;
         private bool _allowOverwrite;
         private bool _useMinification;
         private string _minifiedName;
@@ -35,6 +37,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
             string baseDirPath,
             int compilerTimeOutSeconds,
             string pathConfigFile,
+            string pathBundleFile,
             bool allowOverwrite,
             bool useMinification,
             string minifiedName)
@@ -83,28 +86,22 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 return false;
             }
 
-            try
+            if (!ReadCompilerOptions(warnMessage))
             {
-                dynamic tsconfigObj = Newtonsoft.Json.JsonConvert
-                    .DeserializeAnonymousType<dynamic>(File.ReadAllText(_absolutePathConfigFile), null);
-                _pathOutFile = tsconfigObj?.compilerOptions?.outFile;
-                if (string.IsNullOrEmpty(_pathOutFile))
-                {
-                    throw new ArgumentNullException($"No \"outFile\" parameter value in \"tsconfig.json\". Check and set this value.");
-                }
-            }
-            catch (Exception ex)
-            {
-                RegisterException(ex);
                 return false;
             }
-            string configDirectoryName = Path.GetDirectoryName(_absolutePathConfigFile);
-            _absolutePathDestFile = Path.Combine(configDirectoryName, _pathOutFile);
 
+            if (string.IsNullOrEmpty(pathBundleFile))
+            {
+                RegisterException($"{warnMessage} Parameter \"{nameof(pathBundleFile)}\" is null or empty.", typeof(ArgumentNullException));
+                return false;
+            }
+
+            _absolutePathDestFile = HostingEnvironment.MapPath(pathBundleFile);
             if (string.IsNullOrEmpty(_absolutePathDestFile))
             {
-                RegisterException($"{warnMessage} Cannot resolve absolute path of output javascript from the parts \"{configDirectoryName}\" " +
-                    $"and \"{_pathOutFile}\".", typeof(ArgumentNullException));
+                RegisterException($"{warnMessage} Cannot get absolute path of the bundle file for the path \"{pathBundleFile}\".",
+                    typeof(ArgumentNullException));
                 return false;
             }
 
@@ -174,7 +171,7 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 tscProcess = Process.Start(new ProcessStartInfo()
                 {
                     FileName = compilerPath,
-                    Arguments = $"--project {_absolutePathConfigFile}",
+                    Arguments = $"--project \"{_absolutePathConfigFile}\"",
                     RedirectStandardError = true,
                     RedirectStandardOutput = true,
                     UseShellExecute = false,
@@ -263,6 +260,10 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 }
                 return false;
             }
+            if (!CreateBundle(compilerPath, warnMessage))
+            {
+                return false;
+            }
             //kept minifying feature, but also BundlingAndMinification package could be used
             if (_useMinification)
             {
@@ -287,6 +288,76 @@ namespace Orckestra.Web.Typescript.Classes.Services
                 }
             }
             return true;
+        }
+
+        /// <summary>
+        /// Reads "outDir" and "rootDir" from the tsconfig file. Both are needed to locate the compiled file of a source file.
+        /// </summary>
+        private bool ReadCompilerOptions(string warnMessage)
+        {
+            try
+            {
+                JObject options = (JObject)JObject.Parse(File.ReadAllText(_absolutePathConfigFile))["compilerOptions"];
+                string outDir = (string)options?["outDir"];
+                string rootDir = (string)options?["rootDir"];
+                if (string.IsNullOrEmpty(outDir) || string.IsNullOrEmpty(rootDir))
+                {
+                    RegisterException($"{warnMessage} \"outDir\" and \"rootDir\" must be set in \"{_absolutePathConfigFile}\".",
+                        typeof(ArgumentNullException));
+                    return false;
+                }
+                string configDirectory = Path.GetDirectoryName(_absolutePathConfigFile);
+                _absolutePathOutDir = Path.GetFullPath(Path.Combine(configDirectory, outDir));
+                _absolutePathRootDir = Path.GetFullPath(Path.Combine(configDirectory, rootDir));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                RegisterException(ex);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Concatenates the compiled scripts into the bundle file, in the order the compiler loads the sources.
+        /// That order keeps base classes ahead of derived classes.
+        /// </summary>
+        private bool CreateBundle(string compilerPath, string warnMessage)
+        {
+            try
+            {
+                Uri rootUri = new Uri(_absolutePathRootDir.TrimEnd('\\') + "\\");
+                IEnumerable<string> scripts = ListSourceFiles(compilerPath)
+                    .Where(f => f.EndsWith(".ts", StringComparison.OrdinalIgnoreCase) && !f.EndsWith(".d.ts", StringComparison.OrdinalIgnoreCase))
+                    .Select(f => Uri.UnescapeDataString(rootUri.MakeRelativeUri(new Uri(f)).ToString()).Replace('/', '\\'))
+                    .Select(f => Path.Combine(_absolutePathOutDir, Path.ChangeExtension(f, ".js")))
+                    .Select(File.ReadAllText);
+                File.WriteAllText(_absolutePathDestFile, string.Join("\n", scripts));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                RegisterException(ex);
+                return false;
+            }
+        }
+
+        private IEnumerable<string> ListSourceFiles(string compilerPath)
+        {
+            using (Process process = Process.Start(new ProcessStartInfo()
+            {
+                FileName = compilerPath,
+                Arguments = $"--project \"{_absolutePathConfigFile}\" --listFilesOnly",
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                WorkingDirectory = _baseDirPath,
+                CreateNoWindow = true
+            }))
+            {
+                string output = process.StandardOutput.ReadToEnd();
+                process.WaitForExit(_compilerTimeOutSeconds * 1000);
+                return output.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            }
         }
 
         public void SetSourceLast()

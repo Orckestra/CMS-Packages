@@ -62,6 +62,7 @@ namespace Orckestra.Web.Typescript
                     baseDirPath,
                     el.CompilerTimeOutSeconds,
                     el.PathTypescriptConfigFile,
+                    el.PathBundleFile,
                     el.AllowOverwrite,
                     el.UseMinification,
                     el.MinifiedFileName);

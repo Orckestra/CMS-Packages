@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "outFile": "./UI.Package/JavaScript/orckestra.composer.js",
-    "sourceMap": true,
+    "target": "ES2021",
+    "strict": false,
+    "rootDir": "./UI.Package",
+    "outDir": "./UI.Package/.temp",
     "removeComments": true
   },
   "include": [
